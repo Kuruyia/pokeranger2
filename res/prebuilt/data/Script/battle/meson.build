@@ -1,0 +1,6 @@
+subdir('tutorial')
+subdir('pokemon')
+subdir('teamAI')
+subdir('effect')
+subdir('start')
+subdir('sequence')

@@ -1,0 +1,6 @@
+subdir('battle')
+subdir('area')
+subdir('field')
+subdir('chapter')
+subdir('system')
+subdir('quest')

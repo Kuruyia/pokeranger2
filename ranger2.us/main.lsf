@@ -1,0 +1,206 @@
+############################################################
+###        Linker spec file for Pokemon Ranger 2         ###
+###      Pass this to the SDK's makelcf.exe utility      ###
+###           along with the ARM9-TS template.           ###
+###                        WIP                           ###
+############################################################
+
+Static main
+{
+	Address 0x02000000
+	StackSize 0 2048
+	Object main.nef.p/asm_main.s.o
+}
+
+Autoload ITCM
+{
+	Address 0x01FF8000
+	Object main.nef.p/asm_itcm.s.o (.itcm)
+}
+
+Autoload DTCM
+{
+	Address 0x027E0000
+	Object main.nef.p/asm_dtcm.s.o (.dtcm)
+	Object main.nef.p/asm_dtcm.s.o (.bss)
+}
+
+Overlay overlay0
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_00.s.o
+}
+
+Overlay overlay1
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_01.s.o
+}
+
+Overlay overlay2
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_02.s.o
+}
+
+Overlay overlay3
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_03.s.o
+}
+
+Overlay overlay4
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_04.s.o
+}
+
+Overlay overlay5
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_05.s.o
+}
+
+Overlay overlay6
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_06.s.o
+}
+
+Overlay overlay7
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_07.s.o
+}
+
+Overlay overlay8
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_08.s.o
+}
+
+Overlay overlay9
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_09.s.o
+}
+
+Overlay overlay10
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_10.s.o
+}
+
+Overlay overlay11
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_11.s.o
+}
+
+Overlay overlay12
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_12.s.o
+}
+
+Overlay overlay13
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_13.s.o
+}
+
+Overlay overlay14
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_14.s.o
+}
+
+Overlay overlay15
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_15.s.o
+}
+
+Overlay overlay16
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_16.s.o
+}
+
+Overlay overlay17
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_17.s.o
+}
+
+Overlay overlay18
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_18.s.o
+}
+
+Overlay overlay19
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_19.s.o
+}
+
+Overlay overlay20
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_20.s.o
+}
+
+Overlay overlay21
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_21.s.o
+}
+
+Overlay overlay22
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_22.s.o
+}
+
+Overlay overlay23
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_23.s.o
+}
+
+Overlay overlay24
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_24.s.o
+}
+
+Overlay overlay25
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_25.s.o
+}
+
+Overlay overlay26
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_26.s.o
+}
+
+Overlay overlay27
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_27.s.o
+}
+
+Overlay overlay28
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_28.s.o
+}
+
+Overlay overlay29
+{
+	Address 0x0211C9E0
+	Object main.nef.p/asm_overlay_29.s.o
+}

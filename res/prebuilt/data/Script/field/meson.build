@@ -1,0 +1,8 @@
+subdir('eventrect')
+subdir('effect')
+subdir('map')
+subdir('targetobject')
+subdir('poketargetclear')
+subdir('actor')
+subdir('npc')
+subdir('targettouch')

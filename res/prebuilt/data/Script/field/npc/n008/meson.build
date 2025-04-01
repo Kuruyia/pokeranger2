@@ -1,0 +1,36 @@
+prebuilt_files = [
+    'Npc008916.fsb',
+    'Npc008902.fsb',
+    'Npc008903.fsb',
+    'Npc008917.fsb',
+    'Npc008901.fsb',
+    'Npc008915.fsb',
+    'Npc008929.fsb',
+    'Npc008928.fsb',
+    'Npc008914.fsb',
+    'Npc008900.fsb',
+    'Npc008904.fsb',
+    'Npc008910.fsb',
+    'Npc008911.fsb',
+    'Npc008905.fsb',
+    'Npc008913.fsb',
+    'Npc008907.fsb',
+    'Npc008906.fsb',
+    'Npc008912.fsb',
+    'Npc008923.fsb',
+    'Npc008922.fsb',
+    'Npc008920.fsb',
+    'Npc008908.fsb',
+    'Npc008909.fsb',
+    'Npc008921.fsb',
+    'Npc008919.fsb',
+    'Npc008925.fsb',
+    'Npc008924.fsb',
+    'Npc008918.fsb',
+    'Npc008926.fsb',
+    'Npc008927.fsb',
+]
+
+foreach f : prebuilt_files
+    nitrofs_files += fs.copyfile(f)
+endforeach

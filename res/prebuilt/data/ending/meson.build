@@ -1,0 +1,38 @@
+prebuilt_files = [
+    'edu027_LZ.bin',
+    'edu003_LZ.bin',
+    'edu011_LZ.bin',
+    'edobj000_LZ.bin',
+    'edu029_LZ.bin',
+    'edu025_LZ.bin',
+    'edu013_LZ.bin',
+    'edu001_LZ.bin',
+    'edu005_LZ.bin',
+    'edu017_LZ.bin',
+    'edu009_LZ.bin',
+    'edu021_LZ.bin',
+    'edu015_LZ.bin',
+    'edu019_LZ.bin',
+    'edu007_LZ.bin',
+    'edu023_LZ.bin',
+    'edu002_LZ.bin',
+    'edu010_LZ.bin',
+    'edu026_LZ.bin',
+    'edu012_LZ.bin',
+    'edu000_LZ.bin',
+    'edu028_LZ.bin',
+    'edu024_LZ.bin',
+    'edu020_LZ.bin',
+    'edu004_LZ.bin',
+    'edu008_LZ.bin',
+    'edu016_LZ.bin',
+    'edu030_LZ.bin',
+    'edu022_LZ.bin',
+    'edu014_LZ.bin',
+    'edu006_LZ.bin',
+    'edu018_LZ.bin',
+]
+
+foreach f : prebuilt_files
+    nitrofs_files += fs.copyfile(f)
+endforeach

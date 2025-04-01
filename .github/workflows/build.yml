@@ -1,0 +1,75 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+env:
+  LM_LICENSE_FILE: "${{ github.workspace }}/tools/cw/license.dat"
+  BUILD: /var/tmp/pokeplatinum
+  WINEARCH: win32
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Install Software
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo mkdir -pm755 /etc/apt/keyrings
+          sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+          sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/$(lsb_release -cs)/winehq-$(lsb_release -cs).sources
+          sudo apt-get update -y
+          sudo apt-get install -y bison flex g++ gcc-arm-none-eabi git make ninja-build pkg-config python3
+          sudo apt-get install -y --install-recommends winehq-stable
+
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Configure Repo
+        run: make configure
+
+      - name: Build Repo
+        run: make check
+
+      - name: Checkout xMAP
+        if: ${{ github.event_name == 'push' }}
+        uses: actions/checkout@v4
+        with:
+          path: 'xmap'
+          ref: 'xmap'
+
+      - name: Move xMAP
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          mkdir -p xmap
+          cp "$BUILD"/*.xMAP xmap/platinumus.xMAP
+          echo "XMAP_COMMIT_MSG=$( git log --format=%s ${GITHUB_SHA} )" >> $GITHUB_ENV
+
+      - name: Update xMAP
+        if: ${{ github.event_name == 'push' }}
+        uses: EndBug/add-and-commit@v9
+        with:
+          cwd: "./xmap"
+          add: "*.xMAP"
+          message: ${{ env.XMAP_COMMIT_MSG }}
+
+      - name: Post error archive
+        if: failure()
+        continue-on-error: true
+        run: tar czf failure.tar.gz "$BUILD"
+
+      - name: Post error upload
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokeplatinum-failure-${{ github.run_id }}
+          path: failure.tar.gz
+          retention-days: 1

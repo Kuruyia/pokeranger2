@@ -1,0 +1,37 @@
+prebuilt_files = [
+    'EventRect016000.fsb',
+    'EventRect016202.fsb',
+    'EventRect016203.fsb',
+    'EventRect016001.fsb',
+    'EventRect016003.fsb',
+    'EventRect016201.fsb',
+    'EventRect016200.fsb',
+    'EventRect016002.fsb',
+    'EventRect016012.fsb',
+    'EventRect016006.fsb',
+    'EventRect016204.fsb',
+    'EventRect016205.fsb',
+    'EventRect016007.fsb',
+    'EventRect016005.fsb',
+    'EventRect016011.fsb',
+    'EventRect016207.fsb',
+    'EventRect016206.fsb',
+    'EventRect016010.fsb',
+    'EventRect016004.fsb',
+    'EventRect016103.fsb',
+    'EventRect016102.fsb',
+    'EventRect016100.fsb',
+    'EventRect016101.fsb',
+    'EventRect016105.fsb',
+    'EventRect016104.fsb',
+    'EventRect016106.fsb',
+    'EventRect016107.fsb',
+    'EventRect016108.fsb',
+    'EventRect016009.fsb',
+    'EventRect016008.fsb',
+    'EventRect016208.fsb',
+]
+
+foreach f : prebuilt_files
+    nitrofs_files += fs.copyfile(f)
+endforeach

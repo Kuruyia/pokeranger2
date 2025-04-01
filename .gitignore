@@ -1,0 +1,120 @@
+# Meson files
+/build/
+/tools/cw/build/
+/tools/cw/mwrap
+/tools/cw/mwrap.exe
+
+# Wrapped subprojects folders
+/subprojects/libvct-*/
+/subprojects/NitroDWC-*/
+/subprojects/NitroSDK-*/
+/subprojects/NitroSystem-*/
+/subprojects/NitroWiFi-*/
+/subprojects/nitrogfx/
+/subprojects/libpng-*/
+/subprojects/zlib-*/
+/subprojects/packagecache
+/subprojects/constgen/
+/subprojects/SDATTool/
+/subprojects/knarc/
+/subprojects/narc/
+/subprojects/metang/
+/subprojects/rapidjson-*/
+/subprojects/meson-*/
+
+# CLion folders
+.idea/
+cmake-build-debug/
+
+# Generated files
+*.4bpp
+*.lz
+*.gbapal
+
+# For asmdiff
+*/baserom.*
+*.dump
+
+# For decomp.me
+ctx.c
+
+# Working files
+overlays/*/module_*.s
+overlays/*/module_*.sbin
+overlays/*/module_*.cfg
+
+*.bnr
+*.nbfp
+*.nbfc
+
+# Dism scripts
+dism.sh
+asmdiff.sh
+
+# Symbols CSV
+symbols.csv
+
+# NARCs
+res/**/*.c
+*.o
+
+# SDAT Files
+res/sound/*.sdat
+res/sound/*/Files/BANK/*.sbnk
+res/sound/*/Files/SEQ/*.sseq
+res/sound/*/Files/WAVARC/*.swar
+
+# Utilities
+ntruncompbw
+*.elf
+cmake-build-*
+*.sbin_LZ
+*.diff
+
+*.dSYM
+
+# MacOS garbage
+.DS_Store
+
+# Depfiles
+*.d
+
+diff.txt
+
+.vs/
+.vscode/*
+!.vscode/launch.json
+
+temp_asm/
+asm_old/
+
+!platinum.us/banner.bnr
+
+uncrustify.cfg
+compare.sh
+diff/
+
+sdk/
+
+!tools/asmdiff/asmdiff.sh
+
+__pycache__
+.cache
+.venv/
+.python-version
+
+compile_commands.json
+
+# Save files
+*.dsv
+*.sav
+
+# Savestate files
+*.ds[0-9]
+*.dst
+*.ml[0-9]
+*.mln
+
+# Cheat files
+*.dct
+*.mch
