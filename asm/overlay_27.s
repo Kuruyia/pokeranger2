@@ -74,7 +74,7 @@ ov27_0211CA84: ; 0x0211CA84
 	mov r0, r4
 	bl sub_02007CC0
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -468,7 +468,7 @@ ov27_0211CFD0: ; 0x0211CFD0
 	ldr r0, [r4, #0x34c]
 	cmp r0, #0
 	beq _0211D008
-	bl sub_0200147C
+	bl _ZdaPv
 	mov r0, #0
 	str r0, [r4, #0x34c]
 	arm_func_end ov27_0211CFD0
@@ -479,7 +479,7 @@ _0211D008:
 	ldr r3, _0211D050 ; =ov27_0211FA70
 	mov r1, #0xc
 	mov r2, #8
-	bl NITRO_Runtime___cxa_vec_delete
+	bl __cxa_vec_delete
 	mov r0, #0
 	str r0, [r4, #0x33c]
 _0211D02C:
@@ -508,7 +508,7 @@ ov27_0211D054: ; 0x0211D054
 	ldr r0, [r4, #0x34c]
 	cmp r0, #0
 	beq _0211D08C
-	bl sub_0200147C
+	bl _ZdaPv
 	mov r0, #0
 	str r0, [r4, #0x34c]
 	arm_func_end ov27_0211D054
@@ -519,7 +519,7 @@ _0211D08C:
 	ldr r3, _0211D0DC ; =ov27_0211FA70
 	mov r1, #0xc
 	mov r2, #8
-	bl NITRO_Runtime___cxa_vec_delete
+	bl __cxa_vec_delete
 	mov r0, #0
 	str r0, [r4, #0x33c]
 _0211D0B0:
@@ -528,7 +528,7 @@ _0211D0B0:
 	add r0, r4, #0x184
 	bl ov27_0211E8D8
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -915,7 +915,7 @@ _0211D634:
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211D668:
 	mov r0, #0
 	str r0, [r4, #0x48]
@@ -927,7 +927,7 @@ _0211D670:
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211D690:
 	mov r0, #0
 	str r0, [r4, #0x44]
@@ -935,7 +935,7 @@ _0211D698:
 	ldr r0, [r4, #0x34c]
 	cmp r0, #0
 	beq _0211D6B0
-	bl sub_0200147C
+	bl _ZdaPv
 	mov r0, #0
 	str r0, [r4, #0x34c]
 _0211D6B0:
@@ -945,7 +945,7 @@ _0211D6B0:
 	ldr r3, _0211D6D8 ; =ov27_0211FA70
 	mov r1, #0xc
 	mov r2, #8
-	bl NITRO_Runtime___cxa_vec_delete
+	bl __cxa_vec_delete
 	mov r0, #0
 	str r0, [r4, #0x33c]
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
@@ -1529,7 +1529,7 @@ _0211DEA0:
 	mov r1, #0xc
 	mov r2, #8
 	str r4, [sp]
-	bl NITRO_Runtime___cxa_vec_new
+	bl __cxa_vec_new
 	str r0, [sl, #0x33c]
 	cmp r0, #0
 	beq _0211DF34
@@ -1559,7 +1559,7 @@ _0211DF34:
 	ldr r1, [sl, #0x338]
 	mov r0, #0xc
 	mul r0, r1, r0
-	bl MemoryAlloc_Thunk2
+	bl _Znam
 	cmp r0, #0
 	addeq sp, sp, #0xa4
 	str r0, [sl, #0x34c]
@@ -1786,7 +1786,7 @@ _0211E234:
 ov27_0211E23C: ; 0x0211E23C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov27_0211E23C
@@ -1845,7 +1845,7 @@ ov27_0211E2B8: ; 0x0211E2B8
 	ldrlt r0, [sb, #8]
 	strlt r0, [sp, #0x20]
 	mov r0, #0x44
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r5, r0
 	beq _0211E324
 	ldr r3, [sp, #0x20]
@@ -2275,7 +2275,7 @@ ov27_0211E804: ; 0x0211E804
 	mov r2, #0
 	mov r1, #0x10
 	str r2, [sp]
-	bl NITRO_Runtime___cxa_vec_new
+	bl __cxa_vec_new
 	arm_func_end ov27_0211E804
 _0211E89C:
 	str r0, [r5, #0x90]
@@ -2306,7 +2306,7 @@ ov27_0211E8D8: ; 0x0211E8D8
 	ldr r0, [r4, #0x90]
 	cmp r0, #0
 	beq _0211E908
-	bl sub_0200147C
+	bl _ZdaPv
 	mov r0, #0
 	str r0, [r4, #0x90]
 	arm_func_end ov27_0211E8D8
@@ -2327,13 +2327,13 @@ ov27_0211E914: ; 0x0211E914
 	ldr r0, [r4, #0x90]
 	cmp r0, #0
 	beq _0211E944
-	bl sub_0200147C
+	bl _ZdaPv
 	mov r0, #0
 	str r0, [r4, #0x90]
 	arm_func_end ov27_0211E914
 _0211E944:
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -3614,7 +3614,7 @@ ov27_0211FA84: ; 0x0211FA84
 	cmp r5, #0
 	beq _0211FB30
 	mov r0, #0xb8
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211FAB8
 	mov r1, r5
@@ -3632,7 +3632,7 @@ _0211FAB8:
 	cmp r0, #0
 	ble _0211FB30
 	mov r0, r0, lsl #2
-	bl MemoryAlloc_Thunk2
+	bl _Znam
 	str r0, [r4, #8]
 	cmp r0, #0
 	beq _0211FB30
@@ -3678,7 +3678,7 @@ ov27_0211FB5C: ; 0x0211FB5C
 	ldr r0, [r4, #8]
 	cmp r0, #0
 	beq _0211FB7C
-	bl sub_0200147C
+	bl _ZdaPv
 	mov r0, #0
 	str r0, [r4, #8]
 	arm_func_end ov27_0211FB5C
@@ -3734,7 +3734,7 @@ _0211FBF4:
 	blt _0211FBF4
 	mov r0, #0x68
 	str r1, [r4, #4]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211FC24
 	ldr r1, [r4, #0x38]
@@ -3869,7 +3869,7 @@ ov27_0211FD70: ; 0x0211FD70
 	mov r0, r5
 	bl sub_02021428
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov27_0211FD70
 _0211FDA8:
 	mov r0, #0
@@ -3882,7 +3882,7 @@ _0211FDB0:
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211FDD0:
 	mov r0, #0
 	str r0, [r4, #0x14]
@@ -3894,7 +3894,7 @@ _0211FDD8:
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211FDF8:
 	mov r0, #0
 	str r0, [r4, #0x18]
@@ -3906,7 +3906,7 @@ _0211FE00:
 	mov r0, r5
 	bl sub_0202A528
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211FE20:
 	mov r0, #0
 	str r0, [r4, #8]
@@ -3947,7 +3947,7 @@ ov27_0211FE58: ; 0x0211FE58
 	mov r1, #6
 	bl sub_0202A724
 	mov r0, #0x44
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211FED4
 	ldr r2, [r4, #0x38]
@@ -3998,7 +3998,7 @@ _0211FED4:
 	ldr r1, [r1, #0x30]
 	add r1, r2, r1
 	strb r1, [sp, #8]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211FF98
 	ldr r2, [r4, #0x38]
@@ -4052,7 +4052,7 @@ _0211FF98:
 	strb r1, [sp, #8]
 	str r0, [r4, #0xc]
 	mov r0, #4
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _02120048
 	ldr r1, _02120064 ; =s_data_message_etc_place_name_overlay_27_021214c4
@@ -4499,7 +4499,7 @@ ov27_021205AC: ; 0x021205AC
 	mov r1, #2
 	mov r2, #0xe0
 	str ip, [sp]
-	bl NITRO_Runtime___cxa_vec_ctor
+	bl __cxa_vec_ctor
 	add r0, r4, #0x1f4
 	bl sub_02040F34
 	mov r0, r4
@@ -4523,7 +4523,7 @@ ov27_021205F8: ; 0x021205F8
 	add r0, r4, #0x30
 	mov r1, #2
 	mov r2, #0xe0
-	bl NITRO_Runtime___cxa_vec_cleanup
+	bl __cxa_vec_cleanup
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -4640,7 +4640,7 @@ ov27_02120758: ; 0x02120758
 	mov r0, r4
 	bl sub_0200372C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov27_02120758
 _02120790:
 	mov r0, #0
@@ -4653,7 +4653,7 @@ _02120798:
 	mov r0, r4
 	bl sub_0200ED2C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _021207B8:
 	mov r0, #0
 	str r0, [r5, #0x10]
@@ -4799,7 +4799,7 @@ ov27_02120870: ; 0x02120870
 	str ip, [sp]
 	bl sub_02062C10
 	mov r0, #0x44
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _021209FC
 	mov r1, #0x40
@@ -4956,7 +4956,7 @@ _02120B14:
 	mov r3, #0xa
 	bl sub_0200C6C8
 	mov r0, #0x2c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _02120C48
 	bl sub_02003718
@@ -5199,7 +5199,7 @@ ov27_02120F50: ; 0x02120F50
 	mov r0, r4
 	bl ov27_0211FBBC
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov27_02120F50
 _02120F80:
 	mov r0, #0
@@ -5223,14 +5223,14 @@ ov27_02120F94: ; 0x02120F94
 	mov r0, r4
 	bl ov27_0211FBBC
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov27_02120F94
 _02120FC4:
 	mov r0, #0
 	str r0, [r5, #8]
 _02120FCC:
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -5247,14 +5247,14 @@ ov27_02120FE0: ; 0x02120FE0
 	mov r0, r4
 	bl ov27_0211FBBC
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov27_02120FE0
 _02121008:
 	mov r0, #0
 	str r0, [r5, #8]
 _02121010:
 	mov r0, #0x3c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r4, r0
 	beq _02121034
 	bl sub_0201001C
@@ -5279,7 +5279,7 @@ ov27_02121044: ; 0x02121044
 	mov r0, r4
 	bl ov27_0211FBBC
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov27_02121044
 _0212106C:
 	mov r0, #0
@@ -5358,7 +5358,7 @@ ov27_02121114: ; 0x02121114
 
     .data
 PTR_ptr_FUN_020835bc_overlay_27_02121140: ; 0x02121140
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_15CQuestListScene_overlay_27_0212114c
 	.word PTR_ptr_FUN_02083578_0208a804
 s_15CQuestListScene_overlay_27_0212114c: ; 0x0212114C
@@ -5389,14 +5389,14 @@ ptr_FUN_overlay_27_0211ce1c_overlay_27_0212118c: ; 0x0212118C
 	.word ov27_0211CE1C
 	.word ov27_0211CEB4
 PTR_ptr_FUN_02083578_overlay_27_02121194: ; 0x02121194
-	.word ptr_FUN_02083578_0208f26c
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
 	.word s_20CQuestListScreenBase_overlay_27_021211e4
 PTR_ptr_FUN_02083578_overlay_27_0212119c: ; 0x0212119C
-	.word ptr_FUN_02083578_0208f26c
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
 ptr_FUN_overlay_11_02121214_overlay_27_021211a0: ; 0x021211A0
 	.word s_23IQLListBoxEventListener_overlay_27_02121214
 PTR_ptr_FUN_02083578_overlay_27_021211a4: ; 0x021211A4
-	.word ptr_FUN_02083578_0208f26c
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
 	.word s_21IQLPushButtonListener_overlay_27_021211fc
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_02083578_overlay_27_021211a4
@@ -5422,7 +5422,7 @@ s_23IQLListBoxEventListener_overlay_27_02121214: ; 0x02121214
 _0212122E:
 	.byte 0x00, 0x00
 PTR_ptr_FUN_020835ec_overlay_27_02121230: ; 0x02121230
-	.word ptr_FUN_020835ec_0208f24c
+	.word _ZTVN10__cxxabiv121__vmi_class_type_infoE+8
 	.word s_16CQuestListScreen_overlay_27_021211bc
 	.byte 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_02083578_overlay_27_02121194
@@ -5516,7 +5516,7 @@ s_data_message_etc_quest_info_02d_overlay_27_02121360: ; 0x02121360
 _02121381:
 	.byte 0x00, 0x00, 0x00
 PTR_ptr_FUN_02083578_overlay_27_02121384: ; 0x02121384
-	.word ptr_FUN_02083578_0208f26c
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
 	.word s_10CQLListBox_overlay_27_0212138c
 s_10CQLListBox_overlay_27_0212138c: ; 0x0212138C
 	.asciz "10CQLListBox"
@@ -5606,7 +5606,7 @@ s_mmq000_00_overlay_27_02121618: ; 0x02121618
 _02121622:
 	.byte 0x00, 0x00
 PTR_ptr_FUN_020835bc_overlay_27_02121624: ; 0x02121624
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_19CQuestListMapScreen_overlay_27_02121630
 	.word PTR_ptr_FUN_02083578_overlay_27_02121194
 s_19CQuestListMapScreen_overlay_27_02121630: ; 0x02121630

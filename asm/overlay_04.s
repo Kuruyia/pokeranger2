@@ -49,7 +49,7 @@ _0211CA60:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _0211CA88
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #8]
 	ldr r0, [r0, #8]
 	add r0, r0, r4, lsl #3
@@ -64,7 +64,7 @@ _0211CA9C:
 	ldr r0, [r1, #8]
 	cmp r0, #0
 	beq _0211CAB8
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #8]
 	mov r1, #0
 	str r1, [r0, #8]
@@ -72,7 +72,7 @@ _0211CAB8:
 	ldr r0, [r5, #8]
 	cmp r0, #0
 	beq _0211CAD0
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, #0
 	str r0, [r5, #8]
 _0211CAD0:
@@ -83,7 +83,7 @@ _0211CAD0:
 	mov r0, r4
 	bl sub_0200ED2C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211CAF0:
 	mov r0, #0
 	str r0, [r5, #0x2c]
@@ -123,7 +123,7 @@ _0211CB58:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _0211CB80
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #8]
 	ldr r0, [r0, #8]
 	add r0, r0, r4, lsl #3
@@ -138,7 +138,7 @@ _0211CB94:
 	ldr r0, [r1, #8]
 	cmp r0, #0
 	beq _0211CBB0
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #8]
 	mov r1, #0
 	str r1, [r0, #8]
@@ -146,7 +146,7 @@ _0211CBB0:
 	ldr r0, [r5, #8]
 	cmp r0, #0
 	beq _0211CBC8
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, #0
 	str r0, [r5, #8]
 _0211CBC8:
@@ -157,7 +157,7 @@ _0211CBC8:
 	mov r0, r4
 	bl sub_0200ED2C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211CBE8:
 	mov r0, #0
 	str r0, [r5, #0x2c]
@@ -172,7 +172,7 @@ _0211CBF0:
 	mov r0, r5
 	bl sub_02007CC0
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r5
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -233,7 +233,7 @@ ov4_0211CCD8: ; 0x0211CCD8
 	sub sp, sp, #0x44
 	mov r7, r0
 	mov r0, #0x44
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211CD14
 	ldr r3, [r7, #4]
@@ -396,7 +396,7 @@ _0211CF1C:
 	add r0, sp, #4
 	bl sub_02064F28
 	mov r0, #0xb8
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r6, r0
 	beq _0211CF4C
 	add r1, sp, #4
@@ -405,7 +405,7 @@ _0211CF1C:
 	mov r6, r0
 _0211CF4C:
 	mov r0, #0xc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	str r0, [r7, #8]
 	ldr r1, [r6, #0x4c]
 	mov r4, #2
@@ -418,7 +418,7 @@ _0211CF4C:
 	ldr r0, [r7, #8]
 	ldr r0, [r0, #4]
 	mov r0, r0, lsl #3
-	bl MemoryAlloc_Thunk2
+	bl _Znam
 	ldr r1, [r7, #8]
 	mov r5, #0
 	str r0, [r1, #8]
@@ -435,7 +435,7 @@ _0211CFA4:
 	ldr r0, [r7, #8]
 	ldr r0, [r0, #8]
 	ldr r0, [r0, r5, lsl #3]
-	bl MemoryAlloc_Thunk2
+	bl _Znam
 	ldr r1, [r7, #8]
 	ldr r1, [r1, #8]
 	add r1, r1, r5, lsl #3
@@ -484,7 +484,7 @@ ov4_0211D060: ; 0x0211D060
 	sub sp, sp, #0x10
 	mov r8, r0
 	mov r0, #0x6c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r4, r0
 	beq _0211D0A4
 	mov r1, #1
@@ -500,7 +500,7 @@ ov4_0211D060: ; 0x0211D060
 	arm_func_end ov4_0211D060
 _0211D0A4:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r5, r0
 	beq _0211D0CC
 	mov r2, #0
@@ -511,7 +511,7 @@ _0211D0A4:
 	mov r5, r0
 _0211D0CC:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r6, r0
 	beq _0211D0F4
 	mov r2, #0
@@ -531,7 +531,7 @@ _0211D0F4:
 	b _0211D194
 _0211D114:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r7, r0
 	beq _0211D194
 	mov r2, #0
@@ -543,7 +543,7 @@ _0211D114:
 	b _0211D194
 _0211D140:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r7, r0
 	beq _0211D194
 	mov r2, #0
@@ -555,7 +555,7 @@ _0211D140:
 	b _0211D194
 _0211D16C:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r7, r0
 	beq _0211D194
 	mov r2, #0
@@ -602,10 +602,10 @@ _0211D208:
 	mov r0, r4
 	bl sub_02002B6C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211D220:
 	mov r0, #0x6c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r4, r0
 	beq _0211D258
 	mov r1, #1
@@ -620,7 +620,7 @@ _0211D220:
 	mov r4, r0
 _0211D258:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r5, r0
 	beq _0211D280
 	mov r2, #0
@@ -631,7 +631,7 @@ _0211D258:
 	mov r5, r0
 _0211D280:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r6, r0
 	beq _0211D2A8
 	mov r2, #0
@@ -642,7 +642,7 @@ _0211D280:
 	mov r6, r0
 _0211D2A8:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r7, r0
 	beq _0211D2D0
 	mov r2, #0
@@ -690,7 +690,7 @@ _0211D344:
 	mov r0, r4
 	bl sub_02002B6C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	add sp, sp, #0x10
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -1009,7 +1009,7 @@ ov4_0211D7A4: ; 0x0211D7A4
 
     .data
 PTR_ptr_FUN_020835bc_overlay_4_0211d7c0: ; 0x0211D7C0
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_12CLetterScene_overlay_4_0211d7cc
 	.word PTR_ptr_FUN_02083578_0208a804
 s_12CLetterScene_overlay_4_0211d7cc: ; 0x0211D7CC

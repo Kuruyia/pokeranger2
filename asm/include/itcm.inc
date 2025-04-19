@@ -16,5 +16,5 @@
 .public sub_0206CBC4
 .public OS_IRQTable
 .public DTCM_BSS
-.public MAIN_BSS_02112EA4
+.public OSi_ThreadInfo
 .public MAIN_BSS_021131E4

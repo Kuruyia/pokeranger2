@@ -1,6 +1,6 @@
 #pragma once
-.public MemoryAlloc_Thunk1
-.public sub_02001470
+.public _Znwm
+.public _ZdlPv
 .public sub_020028A4
 .public sub_02007C98
 .public sub_02007CC0
@@ -51,6 +51,6 @@
 .public MAIN_BSS_0208F304
 .public MAIN_BSS_020B26A0
 .public PTR_ptr_FUN_02083578_0208a804
-.public ptr_FUN_020835bc_0208f25c
+.public _ZTVN10__cxxabiv120__si_class_type_infoE
 .public sub_02007CC4
 .public sub_02007CE0

@@ -75,7 +75,7 @@ _0211CAC4:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _0211CAEC
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x88]
 	ldr r0, [r0, #8]
 	add r0, r0, r4, lsl #3
@@ -90,7 +90,7 @@ _0211CB00:
 	ldr r0, [r1, #8]
 	cmp r0, #0
 	beq _0211CB1C
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x88]
 	mov r1, #0
 	str r1, [r0, #8]
@@ -98,7 +98,7 @@ _0211CB1C:
 	ldr r0, [r5, #0x88]
 	cmp r0, #0
 	beq _0211CB34
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, #0
 	str r0, [r5, #0x88]
 _0211CB34:
@@ -109,7 +109,7 @@ _0211CB34:
 	mov r0, r4
 	bl sub_0200ED2C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211CB54:
 	mov r0, #0
 	str r0, [r5, #4]
@@ -121,7 +121,7 @@ _0211CB5C:
 	mov r0, r4
 	bl sub_0200ED2C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211CB7C:
 	mov r0, #0
 	str r0, [r5, #8]
@@ -135,7 +135,7 @@ _0211CB84:
 	mov r0, r4
 	bl sub_02025690
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211CBAC:
 	mov r0, #0
 	str r0, [r5, #0x84]
@@ -183,7 +183,7 @@ _0211CC34:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _0211CC5C
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x88]
 	ldr r0, [r0, #8]
 	add r0, r0, r4, lsl #3
@@ -198,7 +198,7 @@ _0211CC70:
 	ldr r0, [r1, #8]
 	cmp r0, #0
 	beq _0211CC8C
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x88]
 	mov r1, #0
 	str r1, [r0, #8]
@@ -206,7 +206,7 @@ _0211CC8C:
 	ldr r0, [r5, #0x88]
 	cmp r0, #0
 	beq _0211CCA4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, #0
 	str r0, [r5, #0x88]
 _0211CCA4:
@@ -217,7 +217,7 @@ _0211CCA4:
 	mov r0, r4
 	bl sub_0200ED2C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211CCC4:
 	mov r0, #0
 	str r0, [r5, #4]
@@ -229,7 +229,7 @@ _0211CCCC:
 	mov r0, r4
 	bl sub_0200ED2C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211CCEC:
 	mov r0, #0
 	str r0, [r5, #8]
@@ -243,7 +243,7 @@ _0211CCF4:
 	mov r0, r4
 	bl sub_02025690
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211CD1C:
 	mov r0, #0
 	str r0, [r5, #0x84]
@@ -256,7 +256,7 @@ _0211CD24:
 	mov r0, r5
 	bl sub_02007CC0
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r5
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -306,7 +306,7 @@ ov6_0211CD54: ; 0x0211CD54
 	ldr r1, [r2]
 	orr r1, r1, #0x10000
 	str r1, [r2]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211CE0C
 	bl sub_02025648
@@ -356,7 +356,7 @@ ov6_0211CE24: ; 0x0211CE24
 	bl sub_02019278
 	str r0, [r7, #0x80]
 	mov r0, #0xb8
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r6, r0
 	beq _0211CEC8
 	ldr r1, _0211D450 ; =s_data_message_etc_menu_mes_overlay_6_0211dcb0
@@ -366,7 +366,7 @@ ov6_0211CE24: ; 0x0211CE24
 	arm_func_end ov6_0211CE24
 _0211CEC8:
 	mov r0, #0xc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	str r0, [r7, #0x88]
 	ldr r1, [r6, #0x4c]
 	mov r4, #2
@@ -379,7 +379,7 @@ _0211CEC8:
 	ldr r0, [r7, #0x88]
 	ldr r0, [r0, #4]
 	mov r0, r0, lsl #3
-	bl MemoryAlloc_Thunk2
+	bl _Znam
 	ldr r1, [r7, #0x88]
 	mov r5, #0
 	str r0, [r1, #8]
@@ -396,7 +396,7 @@ _0211CF20:
 	ldr r0, [r7, #0x88]
 	ldr r0, [r0, #8]
 	ldr r0, [r0, r5, lsl #3]
-	bl MemoryAlloc_Thunk2
+	bl _Znam
 	ldr r1, [r7, #0x88]
 	ldr r1, [r1, #8]
 	add r1, r1, r5, lsl #3
@@ -426,7 +426,7 @@ _0211CF90:
 _0211CFA8:
 	mov r0, #0x44
 	mov r4, #0
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211CFDC
 	ldr r3, [r7, #0x70]
@@ -638,7 +638,7 @@ _0211D134:
 	mov r0, #0x44
 	ldr r1, [r1, #0x24]
 	str r1, [r7, #0x6c]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D31C
 	ldr r3, [r7, #0x70]
@@ -740,7 +740,7 @@ ov6_0211D460: ; 0x0211D460
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	sub sp, sp, #0x10
 	mov r0, #0x6c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r4, r0
 	beq _0211D4A0
 	mov r3, #1
@@ -756,7 +756,7 @@ ov6_0211D460: ; 0x0211D460
 	arm_func_end ov6_0211D460
 _0211D4A0:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r5, r0
 	beq _0211D4C8
 	ldr r1, _0211D628 ; =s_BGS_mo000_NCGR_overlay_6_0211dd10
@@ -767,7 +767,7 @@ _0211D4A0:
 	mov r5, r0
 _0211D4C8:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r6, r0
 	beq _0211D4F0
 	ldr r1, _0211D62C ; =s_BGS_mo000_NCLR_overlay_6_0211dd20
@@ -778,7 +778,7 @@ _0211D4C8:
 	mov r6, r0
 _0211D4F0:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r7, r0
 	beq _0211D518
 	ldr r1, _0211D630 ; =s_BGS_mo000_02_NSCR_overlay_6_0211dd30
@@ -789,7 +789,7 @@ _0211D4F0:
 	mov r7, r0
 _0211D518:
 	mov r0, #0xbc
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r8, r0
 	beq _0211D540
 	ldr r1, _0211D634 ; =s_BGS_mo000_03_NSCR_overlay_6_0211dd44
@@ -856,7 +856,7 @@ _0211D5FC:
 	mov r0, r4
 	bl sub_02002B6C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	add sp, sp, #0x10
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -1311,7 +1311,7 @@ DAT_overlay_6_0211dc24: ; 0x0211DC24
 
     .data
 PTR_ptr_FUN_020835bc_overlay_6_0211dc60: ; 0x0211DC60
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_12COptionScene_overlay_6_0211dc6c
 	.word PTR_ptr_FUN_02083578_0208a804
 s_12COptionScene_overlay_6_0211dc6c: ; 0x0211DC6C

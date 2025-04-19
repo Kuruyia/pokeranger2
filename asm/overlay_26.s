@@ -52,7 +52,7 @@ ov26_0211CA4C: ; 0x0211CA4C
 	mov r0, r4
 	bl sub_02007CC0
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -524,7 +524,7 @@ ov26_0211D094: ; 0x0211D094
 	ldr r0, [r0, #0x490]
 	bl sub_0200AB28
 	mov r0, #0x44
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D15C
 	ldr r1, _0211D330 ; =MAIN_BSS_0208F304
@@ -688,7 +688,7 @@ ov26_0211D348: ; 0x0211D348
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov26_0211D348
 _0211D398:
 	mov r0, #0
@@ -719,7 +719,7 @@ ov26_0211D3C0: ; 0x0211D3C0
 	mov r2, r7
 	bl sub_02064F28
 	mov r0, #0x64
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r5, r0
 	beq _0211D410
 	ldr r1, _0211D5B8 ; =MAIN_BSS_0208F304
@@ -729,7 +729,7 @@ ov26_0211D3C0: ; 0x0211D3C0
 	arm_func_end ov26_0211D3C0
 _0211D410:
 	mov r0, #0x64
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r6, r0
 	beq _0211D430
 	ldr r1, _0211D5B8 ; =MAIN_BSS_0208F304
@@ -822,7 +822,7 @@ _0211D430:
 	mov r0, r6
 	bl sub_0201FCB4
 	mov r0, r6
-	bl sub_02001470
+	bl _ZdlPv
 _0211D588:
 	cmp r5, #0
 	addeq sp, sp, #0x48
@@ -830,7 +830,7 @@ _0211D588:
 	mov r0, r5
 	bl sub_0201FCB4
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	add sp, sp, #0x48
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -852,7 +852,7 @@ ov26_0211D5C4: ; 0x0211D5C4
 
     .data
 PTR_ptr_FUN_020835bc_overlay_26_0211d5e0: ; 0x0211D5E0
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_18CSuitePictureScene_overlay_26_0211daa8
 	.word PTR_ptr_FUN_02083578_0208a804
 PTR_DAT_overlay_26_0211d79c_overlay_26_0211d5ec: ; 0x0211D5EC

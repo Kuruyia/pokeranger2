@@ -1,6 +1,6 @@
 #pragma once
-.public MemoryAlloc_Thunk1
-.public sub_02001470
+.public _Znwm
+.public _ZdlPv
 .public Heap_AllocWithAlignment
 .public Heap_Free
 .public sub_020033B0
@@ -99,12 +99,12 @@
 .public sub_02064F28
 .public DC_FlushRange
 .public NitroSDK_mi_MIi_CpuClearFast
-.public FP__s32_div_f
-.public NITRO_Runtime___cxa_vec_new
-.public NITRO_Runtime___cxa_vec_delete
+.public _s32_div_f
+.public __cxa_vec_new
+.public __cxa_vec_delete
 .public MAIN_BSS_0208F304
 .public MAIN_BSS_020B26A0
 .public PTR_ptr_FUN_02083578_0208a804
-.public ptr_FUN_020835bc_0208f25c
+.public _ZTVN10__cxxabiv120__si_class_type_infoE
 .public s_c000First_0208ac1c
 .public sub_02007CC4

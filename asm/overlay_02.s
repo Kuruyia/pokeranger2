@@ -384,7 +384,7 @@ _0211CF18:
 	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	add r0, r5, #0x344
 	add r0, r0, #0x8800
-	bl MSL_C_string_strcpy
+	bl strcpy
 	add sp, sp, #0x30
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _0211CF54:
@@ -397,7 +397,7 @@ _0211CF54:
 	beq _0211CFA0
 	add r0, r5, #0x344
 	add r0, r0, #0x8800
-	bl MSL_C_string_strcpy
+	bl strcpy
 	b _0211CFA0
 _0211CF80:
 	ldr r1, _0211D084 ; =s_sGameOverB_overlay_2_0211d1d0
@@ -407,7 +407,7 @@ _0211CF80:
 	beq _0211CFA0
 	add r0, r5, #0x344
 	add r0, r0, #0x8800
-	bl MSL_C_string_strcpy
+	bl strcpy
 _0211CFA0:
 	add r0, r5, #0x8000
 	mov r1, #1
@@ -518,7 +518,7 @@ ov2_0211D108: ; 0x0211D108
 	mov r4, r0
 	bl sub_02007CC0
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov2_0211D108
@@ -572,7 +572,7 @@ ov2_0211D144: ; 0x0211D144
 
     .data
 PTR_ptr_FUN_020835bc_overlay_2_0211d160: ; 0x0211D160
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_19CBattleToFieldScene_overlay_2_0211d16c
 	.word PTR_ptr_FUN_02083578_0208a804
 s_19CBattleToFieldScene_overlay_2_0211d16c: ; 0x0211D16C

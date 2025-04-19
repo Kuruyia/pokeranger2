@@ -1,5 +1,5 @@
 #pragma once
-.public sub_02001470
+.public _ZdlPv
 .public sub_02007CC0
-.public ptr_FUN_020835bc_0208f25c
+.public _ZTVN10__cxxabiv120__si_class_type_infoE
 .public PTR_ptr_FUN_02083578_0208a804

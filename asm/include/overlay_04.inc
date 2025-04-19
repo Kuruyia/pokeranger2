@@ -1,8 +1,8 @@
 #pragma once
-.public MemoryAlloc_Thunk1
-.public MemoryAlloc_Thunk2
-.public sub_02001470
-.public sub_0200147C
+.public _Znwm
+.public _Znam
+.public _ZdlPv
+.public _ZdaPv
 .public sub_02002AEC
 .public sub_02002B6C
 .public CBinaryFileMes_ctor
@@ -50,7 +50,7 @@
 .public sub_02064F28
 .public sub_02067E7C
 .public PTR_ptr_FUN_02083578_0208a804
-.public ptr_FUN_020835bc_0208f25c
+.public _ZTVN10__cxxabiv120__si_class_type_infoE
 .public sub_02007CC4
 .public sub_02007CD4
 .public sub_02007CE0

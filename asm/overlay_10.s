@@ -20,7 +20,7 @@ ov10_0211C9EC: ; 0x0211C9EC
 	mov r4, r0
 	bl sub_02007CC0
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov10_0211C9EC
@@ -75,7 +75,7 @@ ov10_0211CA28: ; 0x0211CA28
 
     .data
 PTR_ptr_FUN_020835bc_overlay_10_0211ca40: ; 0x0211CA40
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 ptr_FUN_overlay_26_0211ca4c_overlay_10_0211ca44: ; 0x0211CA44
 	.word s_17CFieldToMenuScene_overlay_10_0211ca4c
 	.word PTR_ptr_FUN_02083578_0208a804

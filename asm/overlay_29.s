@@ -204,7 +204,7 @@ ov29_0211CC90: ; 0x0211CC90
 	mov r4, r0
 	bl sub_02007CC0
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov29_0211CC90
@@ -228,7 +228,7 @@ ov29_0211CCB4: ; 0x0211CCB4
 
     .data
 _0211CCE0: ; 0x0211CCE0
-    .word ptr_FUN_020835bc_0208f25c
+    .word _ZTVN10__cxxabiv120__si_class_type_infoE+8
     .word _0211CCEC
     .word PTR_ptr_FUN_02083578_0208a804
 

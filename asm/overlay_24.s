@@ -37,7 +37,7 @@ ov24_0211CA2C: ; 0x0211CA2C
 	mov r4, r0
 	bl sub_02007CC0
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov24_0211CA2C
@@ -132,7 +132,7 @@ _0211CAFC:
 	b _0211CFE4
 _0211CB90:
 	mov r0, #0x74
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211CBA8
 	mov r1, #1
@@ -252,7 +252,7 @@ _0211CD28:
 	mov r0, r6
 	bl sub_02028054
 	mov r0, r6
-	bl sub_02001470
+	bl _ZdlPv
 _0211CD58:
 	mov r0, #0
 	str r0, [r4, #0x10]
@@ -601,7 +601,7 @@ ov24_0211D224: ; 0x0211D224
 	mov r0, r4
 	bl sub_02028054
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov24_0211D224
 _0211D24C:
 	mov r0, #0
@@ -638,7 +638,7 @@ ov24_0211D29C: ; 0x0211D29C
 
     .data
 PTR_ptr_FUN_020835bc_overlay_24_0211d2c0: ; 0x0211D2C0
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_11CRetryScene_overlay_24_0211d2cc
 	.word PTR_ptr_FUN_02083578_0208a804
 s_11CRetryScene_overlay_24_0211d2cc: ; 0x0211D2CC

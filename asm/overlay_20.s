@@ -33,7 +33,7 @@ ov20_0211CA1C: ; 0x0211CA1C
 	mov r4, r0
 	bl sub_02007CC0
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov20_0211CA1C
@@ -95,7 +95,7 @@ _0211CA68:
 	ldr r0, [r0]
 	bl sub_02010400
 	mov r0, #0x74
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211CB1C
 	mov r1, #1
@@ -400,7 +400,7 @@ ov20_0211CF30: ; 0x0211CF30
 	mov r0, r4
 	bl sub_02028054
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov20_0211CF30
 _0211CF58:
 	mov r0, #0
@@ -431,7 +431,7 @@ ov20_0211CF90: ; 0x0211CF90
 
     .data
 PTR_ptr_FUN_020835bc_overlay_20_0211cfa0: ; 0x0211CFA0
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_14CAutoSaveScene_overlay_20_0211cfac
 	.word PTR_ptr_FUN_02083578_0208a804
 s_14CAutoSaveScene_overlay_20_0211cfac: ; 0x0211CFAC

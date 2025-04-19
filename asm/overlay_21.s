@@ -80,7 +80,7 @@ ov21_0211CAC0: ; 0x0211CAC0
 	mov r4, r0
 	bl sub_02007CC0
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov21_0211CAC0
@@ -237,7 +237,7 @@ ov21_0211CCA8: ; 0x0211CCA8
 	add r0, r0, #0x1400
 	bl sub_02008DB4
 	mov r0, #0x260
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211CD38
 	ldr r1, _0211CD80 ; =MAIN_BSS_0208F304
@@ -277,7 +277,7 @@ ov21_0211CD84: ; 0x0211CD84
 	mov r0, r5
 	bl ov21_0211D390
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov21_0211CD84
 _0211CDAC:
 	mov r0, #0
@@ -769,7 +769,7 @@ _0211D40C:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _0211D434
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x250]
 	ldr r0, [r0, #8]
 	add r0, r0, r4, lsl #3
@@ -784,7 +784,7 @@ _0211D448:
 	ldr r0, [r1, #8]
 	cmp r0, #0
 	beq _0211D464
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x250]
 	mov r1, #0
 	str r1, [r0, #8]
@@ -792,7 +792,7 @@ _0211D464:
 	ldr r0, [r5, #0x250]
 	cmp r0, #0
 	beq _0211D47C
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, #0
 	str r0, [r5, #0x250]
 _0211D47C:
@@ -810,7 +810,7 @@ _0211D49C:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _0211D4C4
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x254]
 	ldr r0, [r0, #8]
 	add r0, r0, r4, lsl #3
@@ -825,7 +825,7 @@ _0211D4D8:
 	ldr r0, [r1, #8]
 	cmp r0, #0
 	beq _0211D4F4
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x254]
 	mov r1, #0
 	str r1, [r0, #8]
@@ -833,7 +833,7 @@ _0211D4F4:
 	ldr r0, [r5, #0x254]
 	cmp r0, #0
 	beq _0211D50C
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, #0
 	str r0, [r5, #0x254]
 _0211D50C:
@@ -851,7 +851,7 @@ _0211D52C:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _0211D554
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x258]
 	ldr r0, [r0, #8]
 	add r0, r0, r4, lsl #3
@@ -866,7 +866,7 @@ _0211D568:
 	ldr r0, [r1, #8]
 	cmp r0, #0
 	beq _0211D584
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x258]
 	mov r1, #0
 	str r1, [r0, #8]
@@ -874,7 +874,7 @@ _0211D584:
 	ldr r0, [r5, #0x258]
 	cmp r0, #0
 	beq _0211D59C
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, #0
 	str r0, [r5, #0x258]
 _0211D59C:
@@ -892,7 +892,7 @@ _0211D5BC:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _0211D5E4
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x25c]
 	ldr r0, [r0, #8]
 	add r0, r0, r4, lsl #3
@@ -907,7 +907,7 @@ _0211D5F8:
 	ldr r0, [r1, #8]
 	cmp r0, #0
 	beq _0211D614
-	bl sub_0200147C
+	bl _ZdaPv
 	ldr r0, [r5, #0x25c]
 	mov r1, #0
 	str r1, [r0, #8]
@@ -915,7 +915,7 @@ _0211D614:
 	ldr r0, [r5, #0x25c]
 	cmp r0, #0
 	beq _0211D62C
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, #0
 	str r0, [r5, #0x25c]
 _0211D62C:
@@ -926,7 +926,7 @@ _0211D62C:
 	mov r0, r4
 	bl ov21_02122720
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211D64C:
 	mov r0, #0
 	str r0, [r5, #0x10]
@@ -971,7 +971,7 @@ _0211D6C0:
 	mov r0, r4
 	bl sub_0200ED2C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211D6E0:
 	mov r0, #0
 	str r0, [r5, #0x80]
@@ -987,7 +987,7 @@ _0211D6F0:
 	mov r0, r7
 	bl sub_0200ED2C
 	mov r0, r7
-	bl sub_02001470
+	bl _ZdlPv
 _0211D714:
 	add r0, r5, r6, lsl #2
 	str r4, [r0, #0x84]
@@ -1002,7 +1002,7 @@ _0211D71C:
 	mov r0, r4
 	bl sub_0201CAF0
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211D748:
 	mov r0, #0
 	str r0, [r5, #4]
@@ -1014,7 +1014,7 @@ _0211D750:
 	mov r0, r4
 	bl ov21_021220A4
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211D770:
 	mov r0, #0
 	str r0, [r5, #8]
@@ -1026,7 +1026,7 @@ _0211D778:
 	mov r0, r4
 	bl sub_0202A2EC
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211D798:
 	mov r0, #0
 	str r0, [r5, #0xc]
@@ -1038,7 +1038,7 @@ _0211D7A0:
 	mov r0, r4
 	bl ov21_02122720
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211D7C0:
 	mov r0, #0
 	str r0, [r5, #0x10]
@@ -1050,7 +1050,7 @@ _0211D7C8:
 	mov r0, r4
 	bl sub_0200C3A8
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211D7E8:
 	mov r0, #0
 	str r0, [r5, #0x24]
@@ -1062,7 +1062,7 @@ _0211D7F0:
 	mov r0, r4
 	bl sub_0200C3A8
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211D810:
 	mov r0, #0
 	str r0, [r5, #0x28]
@@ -1101,7 +1101,7 @@ ov21_0211D824: ; 0x0211D824
 	mov r0, r4
 	bl ov21_0211E7D8
 	mov r0, #0x28
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D8A0
 	bl sub_0202A2AC
@@ -1134,7 +1134,7 @@ ov21_0211D8D4: ; 0x0211D8D4
 	str r2, [r1, #8]
 	mov r0, #0x4c
 	str r2, [r1, #0xc]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D910
 	ldr r1, [r4]
@@ -1144,7 +1144,7 @@ _0211D910:
 	str r0, [r4, #8]
 	bl ov21_02122214
 	mov r0, #0x7c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D92C
 	bl sub_0201CA6C
@@ -1166,7 +1166,7 @@ ov21_0211D950: ; 0x0211D950
 	sub sp, sp, #0xc
 	mov r7, r0
 	mov r0, #0x64
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r6, r0
 	beq _0211D974
 	bl sub_0201FC80
@@ -1247,7 +1247,7 @@ _0211D974:
 	mov r0, r6
 	bl sub_0201FCB4
 	mov r0, r6
-	bl sub_02001470
+	bl _ZdlPv
 	add sp, sp, #0xc
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -1260,10 +1260,10 @@ ov21_0211DAB4: ; 0x0211DAB4
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r0, #0xc
 	mov r5, r1
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	mov r4, r0
 	mov r0, #0xb8
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r7, r0
 	beq _0211DAE8
 	mov r1, r5
@@ -1280,7 +1280,7 @@ _0211DAE8:
 	ldr r0, [r0, #4]
 	str r0, [r4, #4]
 	mov r0, r0, lsl #3
-	bl MemoryAlloc_Thunk2
+	bl _Znam
 	str r0, [r4, #8]
 	ldr r0, [r4, #4]
 	mov r6, #0
@@ -1294,7 +1294,7 @@ _0211DB20:
 	str r1, [r0, r6, lsl #3]
 	ldr r0, [r4, #8]
 	ldr r0, [r0, r6, lsl #3]
-	bl MemoryAlloc_Thunk2
+	bl _Znam
 	ldr r1, [r4, #8]
 	add r1, r1, r6, lsl #3
 	str r0, [r1, #4]
@@ -1382,7 +1382,7 @@ _0211DC2C:
 	orr r1, r1, #0xe10
 	orr r1, r1, #0x5000
 	strh r1, [r2]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r4, r0
 	beq _0211DCB8
 	bl sub_0201001C
@@ -1409,7 +1409,7 @@ _0211DCB8:
 	mov r2, #0x800
 	bl NitroSDK_mi_MIi_CpuClearFast
 	mov r0, #0x44
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r4, r0
 	beq _0211DD20
 	bl sub_0201001C
@@ -1782,7 +1782,7 @@ ov21_0211E14C: ; 0x0211E14C
 	bl sub_02067E7C
 	mov r0, #0x44
 	mov r4, #2
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211E2D4
 	ldr r3, [r5]
@@ -1799,7 +1799,7 @@ _0211E2D4:
 	add r1, r4, #0x64
 	mov r0, #0x44
 	and r4, r1, #0xff
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211E314
 	ldr r2, [r5]
@@ -1814,7 +1814,7 @@ _0211E2D4:
 _0211E314:
 	str r0, [r5, #0x84]
 	mov r0, #0x44
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211E34C
 	ldr r2, [r5]
@@ -1829,7 +1829,7 @@ _0211E314:
 _0211E34C:
 	str r0, [r5, #0x88]
 	mov r0, #0x44
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211E384
 	ldr r2, [r5]
@@ -2130,7 +2130,7 @@ ov21_0211E7D8: ; 0x0211E7D8
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r0, #0x8c0
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211E7F4
 	bl ov21_021226C0
@@ -2138,7 +2138,7 @@ ov21_0211E7D8: ; 0x0211E7D8
 _0211E7F4:
 	str r0, [r5, #0x10]
 	mov r0, #0x90
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211E80C
 	bl ov21_021215A8
@@ -2148,7 +2148,7 @@ _0211E80C:
 	mov r2, r5
 	bl ov21_021215F8
 	mov r0, #0x8c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r4, r0
 	beq _0211E834
 	bl ov21_02121FBC
@@ -2164,7 +2164,7 @@ _0211E834:
 	mov r2, #4
 	bl ov21_02120A00
 	mov r0, #0x138
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211E86C
 	bl ov21_02121C24
@@ -4055,7 +4055,7 @@ _02120354:
 	mla r1, r3, r2, r1
 	ldr r2, _021203A0 ; =0x000082EA
 	mov r3, #0
-	bl FP__ll_udiv
+	bl _ll_udiv
 	ldr r2, _021203A4 ; =0x00001388
 	cmp r1, #0
 	cmpeq r0, r2
@@ -4360,7 +4360,7 @@ ov21_02120768: ; 0x02120768
 	mov r7, r1
 	mov r6, r2
 	mov r5, r3
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r4, r0
 	beq _02120798
 	bl ov21_02120754
@@ -4496,7 +4496,7 @@ _02120928:
 	cmp r6, #0x10
 	blt _02120900
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -5240,7 +5240,7 @@ ov21_0212128C: ; 0x0212128C
 	mov r0, r4
 	bl ov21_02120764
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov21_0212128C
 _021212BC:
 	mov r0, #0
@@ -5264,14 +5264,14 @@ ov21_021212D0: ; 0x021212D0
 	mov r0, r4
 	bl ov21_02120764
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov21_021212D0
 _02121300:
 	mov r0, #0
 	str r0, [r5, #0x18]
 _02121308:
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -5380,7 +5380,7 @@ ov21_0212140C: ; 0x0212140C
 	mov r0, r4
 	bl ov21_02120764
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov21_0212140C
 _0212143C:
 	mov r0, #0
@@ -5404,14 +5404,14 @@ ov21_02121450: ; 0x02121450
 	mov r0, r4
 	bl ov21_02120764
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov21_02121450
 _02121480:
 	mov r0, #0
 	str r0, [r5, #0x14]
 _02121488:
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -5530,7 +5530,7 @@ ov21_021215DC: ; 0x021215DC
 	mov r4, r0
 	bl ov21_02120948
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov21_021215DC
@@ -5544,7 +5544,7 @@ ov21_021215F8: ; 0x021215F8
 	mov r0, #0x20
 	mov sb, r1
 	str r2, [sl, #0x20]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r4, r0
 	beq _02121628
 	bl ov21_021213F4
@@ -5571,7 +5571,7 @@ _02121628:
 	mov r5, #0x1c
 _02121670:
 	mov r0, r5
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r7, r0
 	beq _02121688
 	bl ov21_02121274
@@ -5674,7 +5674,7 @@ _02121774:
 	mov r0, r6
 	bl ov21_02120764
 	mov r0, r6
-	bl sub_02001470
+	bl _ZdlPv
 _02121798:
 	add r0, r7, r5, lsl #2
 	str r4, [r0, #0x18]
@@ -5705,7 +5705,7 @@ _021217D0:
 	mov r0, r6
 	bl ov21_02120764
 	mov r0, r6
-	bl sub_02001470
+	bl _ZdlPv
 _021217F4:
 	add r0, r7, r5, lsl #2
 	str r4, [r0, #0x18]
@@ -5714,7 +5714,7 @@ _021217FC:
 	cmp r5, #3
 	blt _021217D0
 	mov r0, r7
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r7
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -5916,7 +5916,7 @@ ov21_02121A60: ; 0x02121A60
 	mov r0, r4
 	bl ov21_02120764
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov21_02121A60
 _02121A90:
 	mov r0, #0
@@ -5940,14 +5940,14 @@ ov21_02121AA4: ; 0x02121AA4
 	mov r0, r4
 	bl ov21_02120764
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov21_02121AA4
 _02121AD4:
 	mov r0, #0
 	str r0, [r5, #0x14]
 _02121ADC:
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -6077,7 +6077,7 @@ ov21_02121C58: ; 0x02121C58
 	mov r4, r0
 	bl ov21_02120948
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov21_02121C58
@@ -6115,7 +6115,7 @@ _02121CB0:
 	mov r5, #0x24
 _02121CDC:
 	mov r0, r5
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r7, r0
 	beq _02121CF4
 	bl ov21_02121730
@@ -6140,7 +6140,7 @@ _02121CF4:
 	cmp r6, #9
 	blt _02121CDC
 	mov r0, #0x28
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r4, r0
 	beq _02121D54
 	bl ov21_02121A34
@@ -6251,7 +6251,7 @@ ov21_02121E90: ; 0x02121E90
 ov21_02121E94: ; 0x02121E94
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov21_02121E94
@@ -6384,7 +6384,7 @@ ov21_02121FF0: ; 0x02121FF0
 	mov r4, r0
 	bl ov21_02120948
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov21_02121FF0
@@ -6401,7 +6401,7 @@ ov21_0212200C: ; 0x0212200C
 	arm_func_end ov21_0212200C
 _02122028:
 	mov r0, r5
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r7, r0
 	beq _02122040
 	bl ov21_02121E74
@@ -6464,7 +6464,7 @@ _021220D0:
 	str r1, [r4, #4]
 	mov r0, #0x68
 	str r1, [r4, #0x3c]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _02122104
 	ldr r1, [r4, #0x48]
@@ -6535,7 +6535,7 @@ ov21_02122180: ; 0x02122180
 	mov r0, r5
 	bl sub_02021428
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov21_02122180
 _021221B8:
 	mov r0, #0
@@ -6548,7 +6548,7 @@ _021221C0:
 	mov r0, r5
 	bl sub_0202A528
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _021221E0:
 	mov r0, #0
 	str r0, [r4, #8]
@@ -6560,7 +6560,7 @@ _021221E8:
 	mov r0, r5
 	bl sub_0201FCB4
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _02122208:
 	mov r0, #0
 	str r0, [r4, #0x3c]
@@ -6591,14 +6591,14 @@ ov21_02122214: ; 0x02122214
 	mov r0, r5
 	bl sub_02021428
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov21_02122214
 _02122274:
 	mov r0, #0
 	str r0, [r4, #0x10]
 _0212227C:
 	mov r0, #4
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _02122294
 	ldr r1, _02122354 ; =s_data_message_etc_pokebook_info_overlay_21_02123150
@@ -6612,13 +6612,13 @@ _02122294:
 	mov r0, r5
 	bl sub_0201FCB4
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _021222B8:
 	mov r0, #0
 	str r0, [r4, #0x3c]
 _021222C0:
 	mov r0, #0x64
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _021222D8
 	ldr r1, [r4, #0x48]
@@ -7293,7 +7293,7 @@ _02122BAC: .word OVERLAY21_BSS_021242C4
 
     .data
 PTR_ptr_FUN_020835bc_overlay_21_02122bc0: ; 0x02122BC0
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 ptr_FUN_overlay_3_02122bcc_overlay_21_02122bc4: ; 0x02122BC4
 	.word s_13CBrowserScene_overlay_21_02122bcc
 	.word PTR_ptr_FUN_02083578_0208a804
@@ -7421,7 +7421,7 @@ s_ma000_01_overlay_21_02122e2c: ; 0x02122E2C
 _02122E35:
 	.byte 0x00, 0x00, 0x00
 PTR_ptr_FUN_02083578_overlay_21_02122e38: ; 0x02122E38
-	.word ptr_FUN_02083578_0208f26c
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
 	.word s_19CBrowserMenuManager_overlay_21_02122e40
 s_19CBrowserMenuManager_overlay_21_02122e40: ; 0x02122E40
 	.asciz "19CBrowserMenuManager"
@@ -7444,21 +7444,21 @@ ptr_FUN_overlay_21_02121208_overlay_21_02122e7c: ; 0x02122E7C
 ptr_FUN_overlay_21_02120a94_overlay_21_02122e80: ; 0x02122E80
 	.word ov21_02120A94
 PTR_ptr_FUN_02083578_overlay_21_02122e84: ; 0x02122E84
-	.word ptr_FUN_02083578_0208f26c
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
 	.word s_16CBrowserMenuItem_overlay_21_02122eb8
 PTR_ptr_FUN_02083578_overlay_21_02122e8c: ; 0x02122E8C
-	.word ptr_FUN_02083578_0208f26c
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
 	.word s_18CBrowserMenuCursor_overlay_21_02122ecc
 PTR_ptr_FUN_020835bc_overlay_21_02122e94: ; 0x02122E94
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_25CBrowserMenuCursorPokemon_overlay_21_02122f00
 	.word PTR_ptr_FUN_02083578_overlay_21_02122e8c
 PTR_ptr_FUN_020835bc_overlay_21_02122ea0: ; 0x02122EA0
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_23CBrowserMenuItemPokemon_overlay_21_02122ee4
 	.word PTR_ptr_FUN_02083578_overlay_21_02122e84
 PTR_ptr_FUN_020835bc_overlay_21_02122eac: ; 0x02122EAC
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_26CBrowserMenuManagerPokemon_overlay_21_02122f1c
 	.word PTR_ptr_FUN_02083578_overlay_21_02122e38
 s_16CBrowserMenuItem_overlay_21_02122eb8: ; 0x02122EB8
@@ -7524,15 +7524,15 @@ ptr_FUN_overlay_21_021213b0_overlay_21_02122fac: ; 0x02122FAC
 	.word ov21_02120BCC
 	.word ov21_021216D4
 PTR_ptr_FUN_020835bc_overlay_21_02122fb8: ; 0x02122FB8
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_22CBrowserMenuCursorIcon_overlay_21_02122ff4
 	.word PTR_ptr_FUN_02083578_overlay_21_02122e8c
 PTR_ptr_FUN_020835bc_overlay_21_02122fc4: ; 0x02122FC4
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_20CBrowserMenuItemIcon_overlay_21_02122fdc
 	.word PTR_ptr_FUN_02083578_overlay_21_02122e84
 PTR_ptr_FUN_020835bc_overlay_21_02122fd0: ; 0x02122FD0
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_23CBrowserMenuManagerIcon_overlay_21_02123010
 	.word PTR_ptr_FUN_02083578_overlay_21_02122e38
 s_20CBrowserMenuItemIcon_overlay_21_02122fdc: ; 0x02122FDC
@@ -7593,11 +7593,11 @@ ptr_FUN_overlay_21_021219ac_overlay_21_0212309c: ; 0x0212309C
 	.word ov21_02120BCC
 	.word ov21_021216D4
 PTR_ptr_FUN_020835bc_overlay_21_021230a8: ; 0x021230A8
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_20CBrowserMenuItemType_overlay_21_021230c0
 	.word PTR_ptr_FUN_02083578_overlay_21_02122e84
 PTR_ptr_FUN_020835bc_overlay_21_021230b4: ; 0x021230B4
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_23CBrowserMenuManagerType_overlay_21_021230d8
 	.word PTR_ptr_FUN_02083578_overlay_21_02122e38
 s_20CBrowserMenuItemType_overlay_21_021230c0: ; 0x021230C0

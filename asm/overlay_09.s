@@ -32,7 +32,7 @@ ov9_0211CA0C: ; 0x0211CA0C
 	mov r0, r4
 	bl ov9_0211CCB8
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov9_0211CA0C
 _0211CA3C:
 	mov r0, #0
@@ -58,7 +58,7 @@ ov9_0211CA58: ; 0x0211CA58
 	mov r0, r4
 	bl ov9_0211CCB8
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov9_0211CA58
 _0211CA88:
 	mov r0, #0
@@ -67,7 +67,7 @@ _0211CA90:
 	mov r0, r5
 	bl sub_02007CC0
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -78,7 +78,7 @@ ov9_0211CAAC: ; 0x0211CAAC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	mov r0, #0x58
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211CACC
 	ldr r1, [r4, #4]
@@ -278,7 +278,7 @@ _0211CD00:
 	str r1, [r4, #0x10]
 	mov r0, #0x68
 	str r1, [r4, #0x50]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211CD38
 	ldr r1, [r4, #0x54]
@@ -468,7 +468,7 @@ ov9_0211CF48: ; 0x0211CF48
 	mov r0, r5
 	bl sub_0201CAF0
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov9_0211CF48
 _0211CF94:
 	mov r0, #0
@@ -481,7 +481,7 @@ _0211CF9C:
 	mov r0, r5
 	bl sub_02021428
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211CFBC:
 	mov r0, #0
 	str r0, [r4, #0x20]
@@ -493,7 +493,7 @@ _0211CFC4:
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211CFE4:
 	mov r0, #0
 	str r0, [r4, #0x24]
@@ -505,7 +505,7 @@ _0211CFEC:
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211D00C:
 	mov r0, #0
 	str r0, [r4, #0x30]
@@ -513,7 +513,7 @@ _0211D014:
 	ldr r0, [r4, #0x34]
 	cmp r0, #0
 	beq _0211D02C
-	bl sub_0200147C
+	bl _ZdaPv
 	mov r0, #0
 	str r0, [r4, #0x34]
 _0211D02C:
@@ -524,7 +524,7 @@ _0211D02C:
 	mov r0, r5
 	bl sub_0202A528
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211D04C:
 	mov r0, #0
 	str r0, [r4, #0x14]
@@ -677,7 +677,7 @@ ov9_0211D0CC: ; 0x0211D0CC
 	mov r0, #0x44
 	add r1, r1, #2
 	str r1, [sp, #0x1c]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D2B8
 	ldr r2, [r4, #0x54]
@@ -728,7 +728,7 @@ _0211D2B8:
 	mov r0, #0x44
 	strb r2, [sp, #0x18]
 	str r1, [sp, #0x1c]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D37C
 	ldr r2, [r4, #0x54]
@@ -782,7 +782,7 @@ _0211D37C:
 	add r2, r3, r2
 	strb r2, [sp, #0x18]
 	str r1, [r4, #0x1c]
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D430
 	ldr r1, _0211D480 ; =s_data_message_etc_place_name_overlay_9_0211df50
@@ -790,7 +790,7 @@ _0211D37C:
 _0211D430:
 	str r0, [r4, #0x20]
 	mov r0, #0x7c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D448
 	bl sub_0201CA6C
@@ -1193,7 +1193,7 @@ ov9_0211D8F8: ; 0x0211D8F8
 	beq _0211D95C
 	add r0, r0, #0x344
 	add r0, r0, #0x8800
-	bl MSL_C_string_strcpy
+	bl strcpy
 	arm_func_end ov9_0211D8F8
 _0211D95C:
 	mov r0, #1
@@ -1327,7 +1327,7 @@ _0211DAE0:
 
     .data
 PTR_ptr_FUN_020835bc_overlay_9_0211db00: ; 0x0211DB00
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_12CFlyingScene_overlay_9_0211db0c
 	.word PTR_ptr_FUN_02083578_0208a804
 s_12CFlyingScene_overlay_9_0211db0c: ; 0x0211DB0C

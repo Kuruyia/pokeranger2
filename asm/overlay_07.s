@@ -34,7 +34,7 @@ ov7_0211CA14: ; 0x0211CA14
 	mov r0, r4
 	bl ov7_0211CDB4
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov7_0211CA14
 _0211CA44:
 	mov r0, #0
@@ -60,7 +60,7 @@ ov7_0211CA60: ; 0x0211CA60
 	mov r0, r4
 	bl ov7_0211CDB4
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov7_0211CA60
 _0211CA90:
 	mov r0, #0
@@ -69,7 +69,7 @@ _0211CA98:
 	mov r0, r5
 	bl sub_02007CC0
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -80,7 +80,7 @@ ov7_0211CAB4: ; 0x0211CAB4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	mov r0, #0x280
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211CAD4
 	ldr r1, [r4, #4]
@@ -324,7 +324,7 @@ ov7_0211CDB4: ; 0x0211CDB4
 	mov r0, r5
 	bl sub_02042120
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov7_0211CDB4
 _0211CDE0:
 	mov r0, #0
@@ -337,7 +337,7 @@ _0211CDE8:
 	mov r0, r5
 	bl sub_0200372C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211CE08:
 	mov r0, #0
 	str r0, [r4, #0xc]
@@ -349,7 +349,7 @@ _0211CE10:
 	mov r0, r5
 	bl sub_0200D414
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211CE30:
 	mov r0, #0
 	str r0, [r4, #0x10]
@@ -361,7 +361,7 @@ _0211CE38:
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211CE58:
 	mov r0, #0
 	str r0, [r4, #0x58]
@@ -373,7 +373,7 @@ _0211CE60:
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211CE80:
 	mov r0, #0
 	str r0, [r4, #0x5c]
@@ -385,7 +385,7 @@ _0211CE88:
 	mov r0, r5
 	bl sub_02040F88
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211CEA8:
 	mov r0, #0
 	str r0, [r4, #0xa0]
@@ -396,7 +396,7 @@ _0211CEB0:
 	ldr r3, _0211CFAC ; =0x0211CFB0
 	mov r1, #4
 	mov r2, #8
-	bl NITRO_Runtime___cxa_vec_delete
+	bl __cxa_vec_delete
 	mov r0, #0
 	str r0, [r4, #0xa8]
 _0211CED4:
@@ -418,7 +418,7 @@ _0211CEF8:
 	mov r0, r5
 	bl sub_02041704
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211CF18:
 	mov r0, #0
 	str r0, [r4, #0xac]
@@ -430,7 +430,7 @@ _0211CF20:
 	mov r0, r5
 	bl sub_0201CAF0
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211CF40:
 	mov r0, #0
 	str r0, [r4, #0x224]
@@ -442,7 +442,7 @@ _0211CF48:
 	mov r0, r5
 	bl sub_0201AB14
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211CF68:
 	mov r0, #0
 	str r0, [r4, #0x228]
@@ -1123,14 +1123,14 @@ ov7_0211D7FC: ; 0x0211D7FC
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov7_0211D7FC
 _0211D8EC:
 	mov r0, #0
 	str r0, [sl, #0x58]
 _0211D8F4:
 	mov r0, #0x44
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D924
 	ldr r3, [sl, #0x27c]
@@ -1158,13 +1158,13 @@ _0211D924:
 	mov r0, r5
 	bl sub_0200ED2C
 	mov r0, r5
-	bl sub_02001470
+	bl _ZdlPv
 _0211D968:
 	mov r0, #0
 	str r0, [sl, #0x5c]
 _0211D970:
 	mov r0, #0x44
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211D9A0
 	ldr r3, [sl, #0x27c]
@@ -1240,13 +1240,13 @@ _0211D9A0:
 	mov r0, r4
 	bl sub_0200372C
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211DAA4:
 	mov r0, #0
 	str r0, [sl, #0xc]
 _0211DAAC:
 	mov r0, #0x2c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211DAC0
 	bl sub_02003718
@@ -1259,13 +1259,13 @@ _0211DAC0:
 	mov r0, r4
 	bl sub_0200D414
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211DAE4:
 	mov r0, #0
 	str r0, [sl, #0x10]
 _0211DAEC:
 	mov r0, #0x28
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211DB04
 	ldr r1, [sl, #0xc]
@@ -1294,13 +1294,13 @@ _0211DB04:
 	mov r0, r4
 	bl sub_02042120
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211DB64:
 	mov r0, #0
 	str r0, [sl, #0x14]
 _0211DB6C:
 	mov r0, #0x1c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211DB90
 	ldr r1, [sl, #0xb0]
@@ -1311,7 +1311,7 @@ _0211DB6C:
 _0211DB90:
 	str r0, [sl, #0x14]
 	mov r0, #8
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211DBA8
 	bl sub_02040F34
@@ -1329,7 +1329,7 @@ _0211DBC8:
 	str r0, [sl, #0xa4]
 _0211DBD0:
 	mov r0, #0x10
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211DBE4
 	bl sub_0203EF40
@@ -1345,7 +1345,7 @@ _0211DBE4:
 	ldr r3, _0211DFFC ; =0x0211CFB0
 	mov r1, #4
 	mov r2, #8
-	bl NITRO_Runtime___cxa_vec_delete
+	bl __cxa_vec_delete
 	mov r0, #0
 	str r0, [sl, #0xa8]
 _0211DC1C:
@@ -1355,7 +1355,7 @@ _0211DC1C:
 	mov r0, #0xa
 	mov r1, #4
 	mov r2, #8
-	bl NITRO_Runtime___cxa_vec_new
+	bl __cxa_vec_new
 	str r0, [sl, #0xa8]
 	ldr r4, [sl, #0xac]
 	cmp r4, #0
@@ -1364,13 +1364,13 @@ _0211DC1C:
 	mov r0, r4
 	bl sub_02041704
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211DC5C:
 	mov r0, #0
 	str r0, [sl, #0xac]
 _0211DC64:
 	ldr r0, _0211E004 ; =0x00000918
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211DC7C
 	mov r1, #5
@@ -1432,7 +1432,7 @@ _0211DCDC:
 	bl sub_020107A8
 	mov r4, r0
 	mov r0, #0xe0
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	movs r5, r0
 	beq _0211DD64
 	bl sub_0203BFD4
@@ -1536,13 +1536,13 @@ _0211DEB4:
 	mov r0, r4
 	bl sub_0201CAF0
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 _0211DEE4:
 	mov r0, #0
 	str r0, [sl, #0x224]
 _0211DEEC:
 	mov r0, #0x7c
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211DF00
 	bl sub_0201CA6C
@@ -1566,7 +1566,7 @@ _0211DF38:
 	str r0, [sl, #0x278]
 _0211DF40:
 	ldr r0, _0211E00C ; =0x000005E4
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211DF54
 	bl sub_02019284
@@ -3037,14 +3037,14 @@ ov7_0211F2E0: ; 0x0211F2E0
 	mov r0, r4
 	bl sub_0201AB14
 	mov r0, r4
-	bl sub_02001470
+	bl _ZdlPv
 	arm_func_end ov7_0211F2E0
 _0211F30C:
 	mov r0, #0
 	str r0, [r5, #0x228]
 _0211F314:
 	mov r0, #0x18
-	bl MemoryAlloc_Thunk1
+	bl _Znwm
 	cmp r0, #0
 	beq _0211F34C
 	ldr r2, _0211F358 ; =s_RSC_mr001_NCLR_overlay_7_0211f80c
@@ -3287,7 +3287,7 @@ ov7_0211F604: ; 0x0211F604
 
     .data
 PTR_ptr_FUN_020835bc_overlay_7_0211f640: ; 0x0211F640
-	.word ptr_FUN_020835bc_0208f25c
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 ptr_FUN_overlay_5_0211f64c_overlay_7_0211f644: ; 0x0211F644
 	.word s_13CReleaseScene_overlay_7_0211f64c
 	.word PTR_ptr_FUN_02083578_0208a804
