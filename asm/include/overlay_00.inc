@@ -401,14 +401,14 @@
 .public sub_02064664
 .public sub_02064F28
 .public OS_Terminate
-.public sub_02067E7C
+.public MIi_CpuCopyFast
 .public MI_CpuFill8
 .public MI_CpuCopy8
 .public FS_InitFile
 .public FS_CloseFile
 .public FS_ReadFile
 .public sub_0206E2DC
-.public sub_0206E388
+.public RTC_GetTime
 .public STD_CopyString
 .public memcpy
 .public strcpy

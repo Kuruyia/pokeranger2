@@ -446,7 +446,7 @@ sub_02001248: ; 0x02001248
 	bl sub_0206AF74
 	bl sub_020612A0
 	bl sub_02062F9C
-	bl sub_0206E200
+	bl RTC_Init
 	mov r0, #0xb0000
 	bl Heap_Init
 	bl sub_0204436C
@@ -11298,7 +11298,7 @@ _0200A1BC:
 	ldr r1, [r4, #0xf8]
 	mov r2, #0xa80
 	add r0, r1, #0x380
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r1, [r4, #0xf8]
 	ldr r0, _0200A7FC ; =0x33333333
 	add r1, r1, #0xa80
@@ -11342,7 +11342,7 @@ _0200A25C:
 	ldr r1, [r4, #0xf8]
 	mov r2, #0xa80
 	add r0, r1, #0x380
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r1, [r4, #0xf8]
 	ldr r0, _0200A7FC ; =0x33333333
 	add r1, r1, #0xa80
@@ -12057,7 +12057,7 @@ _0200ABF4:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r8, #4]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -12224,7 +12224,7 @@ _0200AE38:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r8, #8]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -12398,7 +12398,7 @@ _0200B090:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r8, #0xc]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -12565,7 +12565,7 @@ _0200B2D4:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r8, #0x10]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -12727,7 +12727,7 @@ _0200B504:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r8, #0x14]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -13338,7 +13338,7 @@ _0200BD60:
 	add r1, r1, #0x6400000
 	ldr r0, [r2, #0x14]
 	ldr r2, [r2, #0x10]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	cmp r6, #0
 	beq _0200BD94
 	mov r0, r6
@@ -13364,7 +13364,7 @@ _0200BDBC:
 	ldr r0, [r2, #0xc]
 	ldr r2, [r2, #8]
 	add r1, r1, #0x5000000
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	cmp r6, #0
 	beq _0200BDF4
 	mov r0, r6
@@ -17207,7 +17207,7 @@ _0200F030:
 	ldr r0, [r0, #0xb8]
 	mov r2, r5
 	ldr r0, [r0, #0x14]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	mov r0, r5, asr #4
 	add r0, r5, r0, lsr #27
 	mov r0, r0, asr #5
@@ -17238,7 +17238,7 @@ _0200F0A0:
 	ldr r1, [r4, #0x18]
 	ldr r0, [r2, #0xc]
 	ldr r2, [r2, #8]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r0, [r4, #0x40]
 	cmp r0, #0
 	beq _0200F0DC
@@ -17458,7 +17458,7 @@ sub_0200F398: ; 0x0200F398
 	ldr r4, [r0, #0x10]
 	ldr r0, [r0, #0x14]
 	mov r2, r4
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	mov r0, r4, asr #4
 	add r0, r4, r0, lsr #27
 	mov r0, r0, asr #5
@@ -17468,7 +17468,7 @@ sub_0200F398: ; 0x0200F398
 	ldr r2, [r0, #0xb8]
 	ldr r0, [r2, #0xc]
 	ldr r2, [r2, #8]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end sub_0200F398
@@ -17876,7 +17876,7 @@ sub_0200F8BC: ; 0x0200F8BC
 	arm_func_end sub_0200F8BC
 _0200F910:
 	add r0, sp, #0x10
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0
 	bl sub_0206E2DC
 	ldr r0, _0200F9D8 ; =MAIN_BSS_020B26A0
@@ -17888,7 +17888,7 @@ _0200F910:
 	mov r0, #0xc
 	bl sub_0206DCB0
 	add r0, sp, #0x10
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0
 	bl sub_0206E2DC
 	ldr r1, [sp, #0x10]
@@ -26185,7 +26185,7 @@ sub_0201630C: ; 0x0201630C
 	cmp r0, #0
 	bne _02016380
 	add r0, sp, #0x1c
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0x1c
 	str r0, [sp]
 	arm_func_end sub_0201630C
@@ -26411,7 +26411,7 @@ sub_0201668C: ; 0x0201668C
 	sub sp, sp, #0x1c
 	mov r5, r0
 	add r0, sp, #0x10
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0
 	bl sub_0206E2DC
 	add r1, sp, #0x10
@@ -28605,7 +28605,7 @@ _020182E0:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -28735,7 +28735,7 @@ _020184A0:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7, #4]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -28865,7 +28865,7 @@ _02018660:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7, #8]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -28995,7 +28995,7 @@ _02018820:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7, #0xc]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -29125,7 +29125,7 @@ _020189E0:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7, #0x10]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -32886,7 +32886,7 @@ _0201BBE4:
 	add r1, r2, r6, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r6, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r4, #0x2c]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r6, lsl #3]
@@ -32958,7 +32958,7 @@ _0201BCF0:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r4, #0x30]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -33030,7 +33030,7 @@ _0201BDFC:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r4, #0x34]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -34273,7 +34273,7 @@ _0201CF48:
 	add r1, r2, r7, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r7, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r4, #0x48]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r7, lsl #3]
@@ -34341,7 +34341,7 @@ _0201D048:
 	add r1, r2, r6, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r6, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r4, #0x4c]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r6, lsl #3]
@@ -34409,7 +34409,7 @@ _0201D148:
 	add r1, r2, r6, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r6, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r4, #0x50]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r6, lsl #3]
@@ -34828,7 +34828,7 @@ _0201D75C:
 	add r1, r2, r6, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r6, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r4, #0x48]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r6, lsl #3]
@@ -34900,7 +34900,7 @@ _0201D868:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r4, #0x4c]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -34972,7 +34972,7 @@ _0201D974:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r4, #0x50]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -39356,7 +39356,7 @@ _0202156C:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -43739,7 +43739,7 @@ _02024D84:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7, #0x74]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -43976,7 +43976,7 @@ sub_0202510C: ; 0x0202510C
 	add r0, r0, #0x600
 	add r1, r4, #0xc0
 	mov r2, #0x100
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	arm_func_end sub_0202510C
 _0202513C:
 	ldr r1, [r7, #0x2c]
@@ -44611,7 +44611,7 @@ _020259EC:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [sb, #0x3c]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -45241,7 +45241,7 @@ _02026310:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [sb, #0x3c]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -46951,7 +46951,7 @@ sub_02027B34: ; 0x02027B34
 	cmp r0, #4
 	bne _02027C04
 	add r0, sp, #0x10
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0
 	bl sub_0206E2DC
 	ldr r0, _02027CA8 ; =MAIN_BSS_020B26A0
@@ -80277,7 +80277,7 @@ _02042954:
 	str r1, [r0, #4]
 	strb r2, [r0, #1]
 	add r0, sp, #0x1c
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0xc
 	bl sub_0206E2DC
 	ldr r2, [sp, #0x1c]
@@ -80766,11 +80766,11 @@ sub_02043180: ; 0x02043180
 	str r5, [r4, #0x14]
 	ldr r3, [r3, #0x2c]
 	str r3, [r4, #0x18]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r0, _02043328 ; =MAIN_BSS_020BA550
 	add r1, r4, #0x9c
 	mov r2, #0x80
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r0, _0204332C ; =MAIN_BSS_020BA35C
 	add r1, r4, #0x11c
 	mov r2, #0x1f4
@@ -80789,7 +80789,7 @@ sub_02043180: ; 0x02043180
 	str r5, [r4, #0x320]
 	ldr r3, [r3, #0x768]
 	str r3, [r4, #0x324]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, _02043320 ; =MAIN_BSS_020BA6A0
 	ldr r1, _02043334 ; =MAIN_BSS_020BADA0
 	ldr r3, [r2, #0x7b0]
@@ -80983,11 +80983,11 @@ _02043498:
 	ldr r1, _02043864 ; =MAIN_BSS_020BA2DC
 	add r0, r4, #0x1c
 	mov r2, #0x80
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r1, _02043868 ; =MAIN_BSS_020BA550
 	add r0, r4, #0x9c
 	mov r2, #0x80
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r1, _0204386C ; =MAIN_BSS_020BA35C
 	add r0, r4, #0x11c
 	mov r2, #0x1f4
@@ -81013,7 +81013,7 @@ _02043498:
 	add r0, r4, #0x328
 	ldr r1, _02043874 ; =MAIN_BSS_020BAE0C
 	mov r2, #0x44
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r0, _02043860 ; =MAIN_BSS_020B26A0
 	ldr r1, [r4, #0x36c]
 	bl sub_02017020
@@ -85762,7 +85762,7 @@ sub_0204734C: ; 0x0204734C
 	ldr r0, _020473D8 ; =MAIN_BSS_0210D030
 	mov r1, r6
 	mov r2, r4
-	bl sub_02065BCC
+	bl OS_InitMessageQueue
 	cmp r4, #0
 	add r5, r6, r5
 	ble _020473C4
@@ -85813,7 +85813,7 @@ sub_02047428: ; 0x02047428
 	mov r2, r0
 	ldr r0, _0204744C ; =MAIN_BSS_0210D030
 	add r1, sp, #0
-	bl sub_02065C88
+	bl OS_ReceiveMessage
 	cmp r0, #0
 	ldrne r0, [sp]
 	moveq r0, #0
@@ -85849,7 +85849,7 @@ sub_02047490: ; 0x02047490
 	ldmeqia sp!, {r3, pc}
 	ldr r0, _020474AC ; =MAIN_BSS_0210D030
 	mov r2, #0
-	bl sub_02065BF4
+	bl OS_SendMessage
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _020474AC: .word MAIN_BSS_0210D030
@@ -85880,7 +85880,7 @@ _020474E4:
 	mov r2, #0
 _020474E8:
 	mov r1, r5
-	bl sub_02065BF4
+	bl OS_SendMessage
 	movs r4, r0
 	bne _02047500
 	mov r0, r5
@@ -85913,7 +85913,7 @@ sub_02047528: ; 0x02047528
 	add r0, sp, #8
 	add r1, sp, #0
 	mov r2, #1
-	bl sub_02065BCC
+	bl OS_InitMessageQueue
 	add r2, sp, #8
 	mov r0, r5
 	mov r1, r4
@@ -85922,7 +85922,7 @@ sub_02047528: ; 0x02047528
 	add r0, sp, #8
 	add r1, sp, #4
 	mov r2, #1
-	bl sub_02065C88
+	bl OS_ReceiveMessage
 	b _0204758C
 	arm_func_end sub_02047528
 _0204757C:
@@ -85991,7 +85991,7 @@ _020475EC:
 	mov r0, sb
 	mov r1, r4
 	mov r2, r4
-	bl sub_02065C88
+	bl OS_ReceiveMessage
 	ldr r0, [sp]
 	ldr r0, [r0, #4]
 	cmp r0, #0
@@ -86002,7 +86002,7 @@ _020475EC:
 	beq _02047660
 	mov r1, r8
 	mov r2, sl
-	bl sub_02065BF4
+	bl OS_SendMessage
 _02047660:
 	ldr r0, [sp]
 	bl sub_02047490
@@ -86254,7 +86254,7 @@ sub_02047964: ; 0x02047964
 	ldrb r2, [r5, #3]
 	mov r0, r6
 	mov r1, r7
-	bl sub_02065BCC
+	bl OS_InitMessageQueue
 	add r0, r6, #0xe0
 	bl NitroSDK_OS_InitMutex
 	ldrh r2, [r5]
@@ -87834,7 +87834,7 @@ sub_02048E84: ; 0x02048E84
 	add r1, sp, #0
 	mov r0, sb
 	mov r2, #0
-	bl sub_02065C88
+	bl OS_ReceiveMessage
 	cmp r0, #0
 	beq _02048F10
 	mov r6, #0
@@ -87851,7 +87851,7 @@ _02048ECC:
 	beq _02048EF0
 	mov r1, r7
 	mov r2, r6
-	bl sub_02065BF4
+	bl OS_SendMessage
 _02048EF0:
 	ldr r0, [sp]
 	bl sub_02047490
@@ -87859,7 +87859,7 @@ _02048EF8:
 	mov r0, sb
 	mov r1, r5
 	mov r2, r4
-	bl sub_02065C88
+	bl OS_ReceiveMessage
 	cmp r0, #0
 	bne _02048ECC
 _02048F10:
@@ -94765,7 +94765,7 @@ sub_0204EAD0: ; 0x0204EAD0
 	add r0, sp, #0xc
 	bl sub_0206E2DC
 	add r0, sp, #0
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0xc
 	add r1, sp, #0
 	bl sub_0206EB70
@@ -100501,7 +100501,7 @@ _02053990:
 	ldr r1, [r1, #0x26c]
 	mov r1, r1, lsl #0x10
 	mov r1, r1, lsr #0x10
-	bl sub_020701D8
+	bl WM_Init
 	cmp r0, #6
 	addls pc, pc, r0, lsl #2
 	b _020539FC
@@ -100536,7 +100536,7 @@ _02053A14:
 	bl WM_GetAllowedChannel
 	cmp r0, #0
 	bne _02053A54
-	bl sub_020703E8
+	bl WM_Finish
 	cmp r0, #0
 	beq _02053A44
 	mov r0, #0xb
@@ -100563,7 +100563,7 @@ _02053A54:
 	ldmia sp!, {r4, r5, r6, pc}
 _02053A7C:
 	ldr r0, _02053B08 ; =sub_02054A68
-	bl sub_0207129C
+	bl WM_Enable
 	cmp r0, #2
 	beq _02053AA0
 	cmp r0, #3
@@ -100639,7 +100639,7 @@ _02053B6C:
 	ldmia sp!, {r4, pc}
 _02053B78:
 	ldr r0, _02053BF8 ; =sub_02054A68
-	bl sub_0207137C
+	bl WM_PowerOff
 	cmp r0, #2
 	beq _02053B9C
 	cmp r0, #3
@@ -100760,7 +100760,7 @@ _02053CC0:
 	ldr r1, [r2]
 	add r1, r1, #0x288
 	add r1, r1, #0x2000
-	bl sub_02071754
+	bl WM_StartScanEx
 	cmp r0, #2
 	beq _02053D34
 	cmp r0, #3
@@ -101047,7 +101047,7 @@ _020540A8:
 	b _02054140
 _020540D4:
 	ldr r0, _02054154 ; =sub_020554BC
-	bl sub_020720B8
+	bl WM_EndDCF
 	cmp r0, #2
 	beq _020540F8
 	cmp r0, #3
@@ -101157,7 +101157,7 @@ _02054220:
 	strh r1, [r0, #0x80]
 	b _0205434C
 _0205424C:
-	bl sub_02070AB4
+	bl WMi_GetStatusAddress
 	mov r5, r0
 	mov r1, #2
 	bl DC_InvalidateRange
@@ -101170,7 +101170,7 @@ _0205424C:
 	beq _020542C0
 	b _020542CC
 _0205427C:
-	bl sub_020703E8
+	bl WM_Finish
 	cmp r0, #0
 	bne _020542E8
 	mov r0, #1
@@ -101186,11 +101186,11 @@ _0205427C:
 	ldmia sp!, {r3, r4, r5, pc}
 _020542B4:
 	ldr r0, _02054360 ; =sub_02054A68
-	bl sub_020712FC
+	bl WM_Disable
 	b _020542E8
 _020542C0:
 	ldr r0, _02054360 ; =sub_02054A68
-	bl sub_0207137C
+	bl WM_PowerOff
 	b _020542E8
 _020542CC:
 	ldr r1, _0205435C ; =MAIN_BSS_0210EAAC
@@ -101422,7 +101422,7 @@ sub_02054564: ; 0x02054564
 	ldrh r0, [r0, #0x68]
 	cmp r0, #0
 	bne _020545D8
-	bl sub_0207103C
+	bl WM_GetDispersionScanPeriod
 	arm_func_end sub_02054564
 _020545D8:
 	ldr r2, _020546F0 ; =MAIN_BSS_0210EAAC
@@ -101831,11 +101831,11 @@ _02054ADC:
 	b _02054C08
 _02054AE8:
 	ldr r0, _02054D00 ; =sub_02054A68
-	bl sub_0207133C
+	bl WM_PowerOn
 	mov r2, r0
 	b _02054C08
 _02054AF8:
-	bl sub_020703E8
+	bl WM_Finish
 	cmp r0, #0
 	beq _02054B0C
 	cmp r0, #4
@@ -101869,7 +101869,7 @@ _02054B4C:
 	ldmia sp!, {r3, pc}
 _02054B6C:
 	ldr r0, _02054D00 ; =sub_02054A68
-	bl sub_020712FC
+	bl WM_Disable
 	mov r2, r0
 	b _02054C08
 _02054B7C:
@@ -101886,7 +101886,7 @@ _02054B90:
 	ldrb r1, [r2, #0x250]
 	ldrb r2, [r2, #0x251]
 	add r3, r3, #0x2200
-	bl sub_02072D40
+	bl WM_SetWEPKeyEx
 	mov r2, r0
 	b _02054C08
 _02054BB8:
@@ -102125,12 +102125,12 @@ _02054EB0:
 	ldr r1, [r2]
 	add r1, r1, #0x288
 	add r1, r1, #0x2000
-	bl sub_02071754
+	bl WM_StartScanEx
 	mov r4, r0
 	b _02054F4C
 _02054F30:
 	ldr r0, _02054FF8 ; =sub_02055008
-	bl sub_020718A4
+	bl WM_EndScan
 	mov r4, r0
 	b _02054F4C
 _02054F40:
@@ -102332,7 +102332,7 @@ _020551B0:
 	ldr r0, _020552D0 ; =sub_020553AC
 	add r1, r1, #0x1500
 	mov r2, #0x620
-	bl sub_02071F4C
+	bl WM_StartDCF
 	cmp r0, #2
 	ldmeqia sp!, {r4, pc}
 	cmp r0, #3
@@ -102783,7 +102783,7 @@ _020557E8:
 	ldmia sp!, {r3, r4, pc}
 _02055814:
 	ldr r0, _020558F8 ; =sub_02054A68
-	bl sub_0207137C
+	bl WM_PowerOff
 	cmp r0, #2
 	addeq sp, sp, #4
 	ldmeqia sp!, {r3, r4, pc}
@@ -103004,7 +103004,7 @@ _02055AE8:
 	add r1, r7, #0x10
 	mov r2, #0xc0
 	strh r4, [r7, #2]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	mov r0, r7
 	bl sub_02055CC8
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
@@ -103257,7 +103257,7 @@ sub_02055DF8: ; 0x02055DF8
 	add r1, r1, #0x2000
 	add r2, r4, #0xf00
 	mov r3, #0
-	bl sub_02071FEC
+	bl WM_SetDCFData
 	cmp r0, #2
 	ldmeqia sp!, {r4, pc}
 	ldr r0, _02055E60 ; =MAIN_BSS_0210EABC
@@ -103385,7 +103385,7 @@ _02055FC0:
 	mov r1, r8
 	add r2, r4, #0xf00
 	mov r3, r3, lsr #0x10
-	bl sub_02071FEC
+	bl WM_SetDCFData
 	cmp r0, #8
 	addls pc, pc, r0, lsl #2
 	b _02056018
@@ -111950,7 +111950,7 @@ _0205CB94:
 	mov r0, r6
 	mov r1, r5
 	mov r2, r5
-	bl sub_02065C88
+	bl OS_ReceiveMessage
 	cmp r0, #0
 	bne _0205CB94
 _0205CBAC:
@@ -113262,7 +113262,7 @@ sub_0205DBEC: ; 0x0205DBEC
 	ldmneia sp!, {r3, r4, r5, r6, r7, r8, pc}
 	mov r0, r4
 	mov r1, r5
-	bl sub_020660BC
+	bl DC_StoreRange
 	mov r0, r4
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
@@ -113463,7 +113463,7 @@ _0205DEA8:
 	bl MI_CpuFill8
 	mov r0, r5
 	add r1, r4, #0x3c
-	bl sub_020660BC
+	bl DC_StoreRange
 	cmp r7, #0
 	beq _0205DF30
 	mov r0, sb
@@ -113629,7 +113629,7 @@ sub_0205E08C: ; 0x0205E08C
 	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	mov r0, r5
 	mov r1, sb
-	bl sub_020660BC
+	bl DC_StoreRange
 	mov r0, r8
 	mov r1, r7
 	mov r2, r5
@@ -117375,7 +117375,7 @@ _02061314:
 	beq _0206136C
 	add r1, r3, #8
 	mov r3, #0x60
-	bl sub_0206788C
+	bl MI_DmaFill32
 	ldr r1, _020613DC ; =0x0400006C
 	mov r2, #0
 	ldr r0, _020613D8 ; =DAT_0208e7ec
@@ -117383,7 +117383,7 @@ _02061314:
 	ldr r0, [r0, #4]
 	ldr r1, _020613E0 ; =0x04001000
 	mov r3, #0x70
-	bl sub_0206788C
+	bl MI_DmaFill32
 	b _02061394
 _0206136C:
 	mov r0, r2
@@ -120009,7 +120009,7 @@ sub_020632A4: ; 0x020632A4
 	ldr r0, [r0]
 	mov r2, #0
 	mov r3, #0x60
-	bl sub_0206788C
+	bl MI_DmaFill32
 	b _02063310
 	arm_func_end sub_020632A4
 _020632F4:
@@ -123425,8 +123425,8 @@ _02065BC4: .word 0x82000001
 _02065BC8: .word DAT_0208e804
 	arm_func_end sub_02065BB4
 
-	arm_func_start sub_02065BCC
-sub_02065BCC: ; 0x02065BCC
+	arm_func_start OS_InitMessageQueue
+OS_InitMessageQueue: ; 0x02065BCC
 	mov r3, #0
 	str r3, [r0, #4]
 	str r3, [r0]
@@ -123437,10 +123437,10 @@ sub_02065BCC: ; 0x02065BCC
 	str r3, [r0, #0x18]
 	str r3, [r0, #0x1c]
 	bx lr
-	arm_func_end sub_02065BCC
+	arm_func_end OS_InitMessageQueue
 
-	arm_func_start sub_02065BF4
-sub_02065BF4: ; 0x02065BF4
+	arm_func_start OS_SendMessage
+OS_SendMessage: ; 0x02065BF4
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r5, r0
 	mov r4, r1
@@ -123452,7 +123452,7 @@ sub_02065BF4: ; 0x02065BF4
 	cmp r1, r2
 	bgt _02065C50
 	and r7, r7, #1
-	arm_func_end sub_02065BF4
+	arm_func_end OS_SendMessage
 _02065C20:
 	cmp r7, #0
 	bne _02065C38
@@ -123483,8 +123483,8 @@ _02065C50:
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
-	arm_func_start sub_02065C88
-sub_02065C88: ; 0x02065C88
+	arm_func_start OS_ReceiveMessage
+OS_ReceiveMessage: ; 0x02065C88
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r6, r0
 	mov r5, r1
@@ -123495,7 +123495,7 @@ sub_02065C88: ; 0x02065C88
 	cmp r1, #0
 	bne _02065CDC
 	and r7, r7, #1
-	arm_func_end sub_02065C88
+	arm_func_end OS_ReceiveMessage
 _02065CB0:
 	cmp r7, #0
 	bne _02065CC8
@@ -123532,8 +123532,8 @@ _02065CF4:
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
-	arm_func_start sub_02065D2C
-sub_02065D2C: ; 0x02065D2C
+	arm_func_start OS_JamMessage
+OS_JamMessage: ; 0x02065D2C
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r6, r0
 	mov r5, r1
@@ -123545,7 +123545,7 @@ sub_02065D2C: ; 0x02065D2C
 	cmp r1, r2
 	bgt _02065D88
 	and r7, r7, #1
-	arm_func_end sub_02065D2C
+	arm_func_end OS_JamMessage
 _02065D58:
 	cmp r7, #0
 	bne _02065D70
@@ -123835,11 +123835,11 @@ _020660A8:
 	blt _020660A8
 	bx lr
 
-	arm_func_start sub_020660BC
-sub_020660BC: ; 0x020660BC
+	arm_func_start DC_StoreRange
+DC_StoreRange: ; 0x020660BC
 	add r1, r1, r0
 	bic r0, r0, #0x1f
-	arm_func_end sub_020660BC
+	arm_func_end DC_StoreRange
 _020660C4:
 	mcr p15, 0, r0, c7, c10, 1
 	add r0, r0, #0x20
@@ -125807,8 +125807,8 @@ sub_0206787C: ; 0x0206787C
 _02067888: .word 0x04000247
 	arm_func_end sub_0206787C
 
-	arm_func_start sub_0206788C
-sub_0206788C: ; 0x0206788C
+	arm_func_start MI_DmaFill32
+MI_DmaFill32: ; 0x0206788C
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	movs r4, r3
 	mov r8, r0
@@ -125820,7 +125820,7 @@ sub_0206788C: ; 0x0206788C
 	mov r0, r0, lsl #2
 	add r0, r0, #0xb0
 	add r5, r0, #0x4000000
-	arm_func_end sub_0206788C
+	arm_func_end MI_DmaFill32
 _020678B8:
 	ldr r0, [r5]
 	tst r0, #0x80000000
@@ -126296,13 +126296,13 @@ _02067E70:
 	ldmia sp!, {r4, r5, r6, r7, r8, sb}
 	bx lr
 
-	arm_func_start sub_02067E7C
-sub_02067E7C: ; 0x02067E7C
+	arm_func_start MIi_CpuCopyFast
+MIi_CpuCopyFast: ; 0x02067E7C
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl}
 	add sl, r1, r2
 	mov ip, r2, lsr #5
 	add ip, r1, ip, lsl #5
-	arm_func_end sub_02067E7C
+	arm_func_end MIi_CpuCopyFast
 _02067E8C:
 	cmp r1, ip
 	blt _02067E98
@@ -127925,7 +127925,7 @@ _0206919C:
 	mov r1, #0x3c
 	str r0, [r2, #0x18]
 	ldr r0, [r3, #0x18]
-	bl sub_020660BC
+	bl DC_StoreRange
 	b _020691F8
 _020691C8:
 	cmp r0, #0
@@ -127941,7 +127941,7 @@ _020691E4:
 	ldr r2, [r1, #0x1c]
 	mov r1, #8
 	str r2, [r0, #4]
-	bl sub_020660BC
+	bl DC_StoreRange
 _020691F8:
 	add r0, r6, #0x18
 	ldr r1, [r4, #0x18]
@@ -127953,10 +127953,10 @@ _020691F8:
 	bl sub_02068840
 	mov r0, r6
 	mov r1, #0x3c
-	bl sub_020660BC
+	bl DC_StoreRange
 	mov r0, r4
 	mov r1, #0x3c
-	bl sub_020660BC
+	bl DC_StoreRange
 	ldmia sp!, {r4, r5, r6, pc}
 
 	arm_func_start sub_02069234
@@ -127980,7 +127980,7 @@ _02069250:
 	ldr r2, [r1, #0x1c]
 	mov r1, r4
 	str r2, [r0, #0x18]
-	bl sub_020660BC
+	bl DC_StoreRange
 	b _020692B4
 _02069280:
 	cmp r3, #0
@@ -127997,7 +127997,7 @@ _0206929C:
 	mov r0, r3
 	mov r1, r8
 	str r2, [r3, #4]
-	bl sub_020660BC
+	bl DC_StoreRange
 _020692B4:
 	add r6, r6, #1
 	cmp r6, #4
@@ -128022,7 +128022,7 @@ _020692EC:
 	mov r1, r4
 	str r5, [r0]
 	str r5, [r0, #4]
-	bl sub_020660BC
+	bl DC_StoreRange
 	mov r0, r6
 	cmp r6, #0
 	bne _020692EC
@@ -128184,7 +128184,7 @@ sub_020694EC: ; 0x020694EC
 	add r0, r0, r5, lsl #2
 	mov r1, #4
 	str r4, [r2, #0x3c]
-	bl sub_020660BC
+	bl DC_StoreRange
 	bl sub_02068840
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end sub_020694EC
@@ -134015,8 +134015,8 @@ _0206E1F8: .word sub_0206E130
 _0206E1FC: .word MAIN_BSS_02114EC0
 	arm_func_end sub_0206E1E8
 
-	arm_func_start sub_0206E200
-sub_0206E200: ; 0x0206E200
+	arm_func_start RTC_Init
+RTC_Init: ; 0x0206E200
 	stmdb sp!, {r3, r4, r5, lr}
 	ldr r0, _0206E264 ; =MAIN_BSS_02114F14
 	ldrh r1, [r0]
@@ -134033,7 +134033,7 @@ sub_0206E200: ; 0x0206E200
 	bl PXI_Init
 	mov r5, #5
 	mov r4, #1
-	arm_func_end sub_0206E200
+	arm_func_end RTC_Init
 _0206E240:
 	mov r0, r5
 	mov r1, r4
@@ -134137,8 +134137,8 @@ _0206E344:
 	.align 2, 0
 _0206E384: .word MAIN_BSS_02114F14
 
-	arm_func_start sub_0206E388
-sub_0206E388: ; 0x0206E388
+	arm_func_start RTC_GetTime
+RTC_GetTime: ; 0x0206E388
 	stmdb sp!, {r3, lr}
 	ldr r1, _0206E3B8 ; =sub_0206EA34
 	mov r2, #0
@@ -134148,7 +134148,7 @@ sub_0206E388: ; 0x0206E388
 	str r0, [r1, #0x24]
 	bne _0206E3AC
 	bl sub_0206EA44
-	arm_func_end sub_0206E388
+	arm_func_end RTC_GetTime
 _0206E3AC:
 	ldr r0, _0206E3BC ; =MAIN_BSS_02114F14
 	ldr r0, [r0, #0x24]
@@ -135911,10 +135911,10 @@ _0206FA4C:
 	sub sb, sb, sl
 	mov r0, sb
 	mov r1, #0x20
-	bl sub_020660BC
+	bl DC_StoreRange
 	add r0, sb, r5
 	mov r1, #0x20
-	bl sub_020660BC
+	bl DC_StoreRange
 	add r5, r5, #0x20
 _0206FA80:
 	mov r0, sb
@@ -136503,3367 +136503,6 @@ _020701B4:
 	cmp r0, #0
 	bne _020701B4
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start sub_020701D8
-sub_020701D8: ; 0x020701D8
-	stmdb sp!, {r3, lr}
-	mov r2, #0xf00
-	bl sub_02070204
-	cmp r0, #0
-	ldmneia sp!, {r3, pc}
-	ldr r1, _02070200 ; =MAIN_BSS_02115840
-	mov r2, #0
-	ldr r1, [r1, #4]
-	strh r2, [r1, #0x16]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02070200: .word MAIN_BSS_02115840
-	arm_func_end sub_020701D8
-
-	arm_func_start sub_02070204
-sub_02070204: ; 0x02070204
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
-	mov r6, r0
-	mov r4, r1
-	mov r7, r2
-	bl OS_DisableInterrupts
-	ldr r1, _020703D4 ; =MAIN_BSS_02115840
-	mov r5, r0
-	ldrh r1, [r1]
-	cmp r1, #0
-	beq _02070238
-	bl OS_RestoreInterrupts
-	mov r0, #3
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	arm_func_end sub_02070204
-_02070238:
-	cmp r6, #0
-	bne _0207024C
-	bl OS_RestoreInterrupts
-	mov r0, #6
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-_0207024C:
-	cmp r4, #3
-	bls _02070260
-	bl OS_RestoreInterrupts
-	mov r0, #6
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-_02070260:
-	tst r6, #0x1f
-	beq _02070274
-	bl OS_RestoreInterrupts
-	mov r0, #6
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-_02070274:
-	bl PXI_Init
-	mov r0, #0xa
-	mov r1, #1
-	bl PXI_IsCallbackReady
-	cmp r0, #0
-	bne _0207029C
-	mov r0, r5
-	bl OS_RestoreInterrupts
-	mov r0, #4
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-_0207029C:
-	mov r0, r6
-	mov r1, r7
-	bl DC_InvalidateRange
-	mov r0, r4
-	mov r1, r6
-	mov r3, r7
-	mov r2, #0
-	bl sub_0206788C
-	ldr r0, _020703D4 ; =MAIN_BSS_02115840
-	add r1, r6, #0x200
-	str r6, [r0, #4]
-	str r1, [r6]
-	ldr r2, [r0, #4]
-	ldr r1, [r2]
-	add r1, r1, #0x300
-	str r1, [r2, #4]
-	ldr r2, [r0, #4]
-	ldr r1, [r2, #4]
-	add r1, r1, #0x800
-	str r1, [r2, #0xc]
-	ldr r1, [r0, #4]
-	ldr r0, [r1, #0xc]
-	add r0, r0, #0x100
-	str r0, [r1, #0x10]
-	bl sub_02070A98
-	ldr r1, _020703D4 ; =MAIN_BSS_02115840
-	mov r3, #0
-	ldr r0, [r1, #4]
-	mov r2, r3
-	strh r4, [r0, #0x14]
-	ldr r0, [r1, #4]
-	str r3, [r0, #0x14c]
-	ldr r0, [r1, #4]
-	add r0, r0, #0x100
-	strh r3, [r0, #0x50]
-	b _02070348
-_0207032C:
-	ldr r0, [r1, #4]
-	add r0, r0, r3, lsl #2
-	str r2, [r0, #0xcc]
-	ldr r0, [r1, #4]
-	add r0, r0, r3, lsl #2
-	str r2, [r0, #0x10c]
-	add r3, r3, #1
-_02070348:
-	cmp r3, #0x10
-	blt _0207032C
-	ldr r0, _020703D8 ; =MAIN_BSS_02115848
-	ldr r1, _020703DC ; =MAIN_BSS_02115868
-	mov r2, #0xa
-	bl sub_02065BCC
-	mov r6, #0
-	mov r4, #0x8000
-	ldr sl, _020703E0 ; =MAIN_BSS_021158E0
-	mov sb, #2
-	ldr r8, _020703D8 ; =MAIN_BSS_02115848
-	mov r7, #1
-	b _020703A4
-_0207037C:
-	mov r2, r6, lsl #8
-	mov r1, sb
-	add r0, sl, r6, lsl #8
-	strh r4, [sl, r2]
-	bl sub_020660BC
-	mov r0, r8
-	mov r2, r7
-	add r1, sl, r6, lsl #8
-	bl sub_02065BF4
-	add r6, r6, #1
-_020703A4:
-	cmp r6, #0xa
-	blt _0207037C
-	ldr r1, _020703E4 ; =sub_020706EC
-	mov r0, #0xa
-	bl PXI_SetFifoRecvCallback
-	ldr r1, _020703D4 ; =MAIN_BSS_02115840
-	mov r2, #1
-	mov r0, r5
-	strh r2, [r1]
-	bl OS_RestoreInterrupts
-	mov r0, #0
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	.align 2, 0
-_020703D4: .word MAIN_BSS_02115840
-_020703D8: .word MAIN_BSS_02115848
-_020703DC: .word MAIN_BSS_02115868
-_020703E0: .word MAIN_BSS_021158E0
-_020703E4: .word sub_020706EC
-
-	arm_func_start sub_020703E8
-sub_020703E8: ; 0x020703E8
-	stmdb sp!, {r4, lr}
-	bl OS_DisableInterrupts
-	mov r4, r0
-	bl sub_020705F4
-	cmp r0, #0
-	beq _02070410
-	mov r0, r4
-	bl OS_RestoreInterrupts
-	mov r0, #3
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_020703E8
-_02070410:
-	mov r0, #1
-	mov r1, #0
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r4, pc}
-	bl sub_02070A98
-	mov r0, #0xa
-	mov r1, #0
-	bl PXI_SetFifoRecvCallback
-	ldr r1, _02070454 ; =MAIN_BSS_02115840
-	mov r2, #0
-	str r2, [r1, #4]
-	mov r0, r4
-	strh r2, [r1]
-	bl OS_RestoreInterrupts
-	mov r0, #0
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02070454: .word MAIN_BSS_02115840
-
-	arm_func_start sub_02070458
-sub_02070458: ; 0x02070458
-	ldr r2, _0207046C ; =MAIN_BSS_02115840
-	ldr r2, [r2, #4]
-	add r0, r2, r0, lsl #2
-	str r1, [r0, #0x18]
-	bx lr
-	.align 2, 0
-_0207046C: .word MAIN_BSS_02115840
-	arm_func_end sub_02070458
-
-	arm_func_start sub_02070470
-sub_02070470: ; 0x02070470
-	stmdb sp!, {r3, lr}
-	ldr r0, _020704C4 ; =MAIN_BSS_02115848
-	add r1, sp, #0
-	mov r2, #0
-	bl sub_02065C88
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	ldr r0, [sp]
-	mov r1, #2
-	bl DC_InvalidateRange
-	ldr r1, [sp]
-	ldrh r0, [r1]
-	tst r0, #0x8000
-	movne r0, r1
-	ldmneia sp!, {r3, pc}
-	ldr r0, _020704C4 ; =MAIN_BSS_02115848
-	mov r2, #1
-	bl sub_02065D2C
-	mov r0, #0
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_020704C4: .word MAIN_BSS_02115848
-	arm_func_end sub_02070470
-
-	arm_func_start sub_020704C8
-sub_020704C8: ; 0x020704C8
-	stmdb sp!, {r0, r1, r2, r3}
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	bl sub_02070470
-	movs r4, r0
-	moveq r0, #8
-	ldmeqia sp!, {r3, r4, r5, lr}
-	addeq sp, sp, #0x10
-	bxeq lr
-	strh r5, [r4]
-	ldrh r5, [sp, #0x14]
-	add r0, sp, #0x14
-	bic r0, r0, #3
-	mov r3, #0
-	cmp r5, #0
-	add r2, r0, #4
-	ble _02070528
-	arm_func_end sub_020704C8
-_0207050C:
-	add r2, r2, #4
-	ldr r1, [r2, #-4]
-	add r0, r4, r3, lsl #2
-	add r3, r3, #1
-	str r1, [r0, #4]
-	cmp r3, r5
-	blt _0207050C
-_02070528:
-	mov r0, r4
-	mov r1, #0x100
-	bl sub_020660BC
-	mov r1, r4
-	mov r0, #0xa
-	mov r2, #0
-	bl PXI_SendWordByFifo
-	mov r5, r0
-	ldr r0, _02070570 ; =MAIN_BSS_02115848
-	mov r1, r4
-	mov r2, #1
-	bl sub_02065BF4
-	cmp r5, #0
-	movlt r0, #8
-	movge r0, #2
-	ldmia sp!, {r3, r4, r5, lr}
-	add sp, sp, #0x10
-	bx lr
-	.align 2, 0
-_02070570: .word MAIN_BSS_02115848
-
-	arm_func_start sub_02070574
-sub_02070574: ; 0x02070574
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r4, r1
-	bl sub_02070470
-	movs r5, r0
-	moveq r0, #8
-	ldmeqia sp!, {r4, r5, r6, pc}
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl MI_CpuCopy8
-	mov r0, r5
-	mov r1, r4
-	bl sub_020660BC
-	mov r1, r5
-	mov r0, #0xa
-	mov r2, #0
-	bl PXI_SendWordByFifo
-	mov r4, r0
-	ldr r0, _020705E0 ; =MAIN_BSS_02115848
-	mov r1, r5
-	mov r2, #1
-	bl sub_02065BF4
-	cmp r4, #0
-	movlt r0, #8
-	movge r0, #2
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_020705E0: .word MAIN_BSS_02115848
-	arm_func_end sub_02070574
-
-	arm_func_start sub_020705E4
-sub_020705E4: ; 0x020705E4
-	ldr r0, _020705F0 ; =MAIN_BSS_02115840
-	ldr r0, [r0, #4]
-	bx lr
-	.align 2, 0
-_020705F0: .word MAIN_BSS_02115840
-	arm_func_end sub_020705E4
-
-	arm_func_start sub_020705F4
-sub_020705F4: ; 0x020705F4
-	ldr r0, _0207060C ; =MAIN_BSS_02115840
-	ldrh r0, [r0]
-	cmp r0, #0
-	movne r0, #0
-	moveq r0, #3
-	bx lr
-	.align 2, 0
-_0207060C: .word MAIN_BSS_02115840
-	arm_func_end sub_020705F4
-
-	arm_func_start sub_02070610
-sub_02070610: ; 0x02070610
-	stmdb sp!, {r3, lr}
-	bl sub_020705F4
-	cmp r0, #0
-	ldmneia sp!, {r3, pc}
-	ldr r0, _02070654 ; =MAIN_BSS_02115840
-	mov r1, #2
-	ldr r0, [r0, #4]
-	ldr r0, [r0, #4]
-	bl DC_InvalidateRange
-	ldr r0, _02070654 ; =MAIN_BSS_02115840
-	ldr r0, [r0, #4]
-	ldr r0, [r0, #4]
-	ldrh r0, [r0]
-	cmp r0, #1
-	movls r0, #3
-	movhi r0, #0
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02070654: .word MAIN_BSS_02115840
-	arm_func_end sub_02070610
-
-	arm_func_start sub_02070658
-sub_02070658: ; 0x02070658
-	stmdb sp!, {r0, r1, r2, r3}
-	stmdb sp!, {r3, lr}
-	bl sub_020705F4
-	cmp r0, #0
-	ldmneia sp!, {r3, lr}
-	addne sp, sp, #0x10
-	bxne lr
-	ldr r0, _020706E8 ; =MAIN_BSS_02115840
-	mov r1, #2
-	ldr r0, [r0, #4]
-	ldr r0, [r0, #4]
-	bl DC_InvalidateRange
-	ldr r0, _020706E8 ; =MAIN_BSS_02115840
-	ldr r3, [sp, #8]
-	ldr r0, [r0, #4]
-	add r1, sp, #8
-	ldr r2, [r0, #4]
-	bic r0, r1, #3
-	add ip, r0, #4
-	ldrh lr, [r2]
-	cmp r3, #0
-	mov r0, #3
-	ldmeqia sp!, {r3, lr}
-	addeq sp, sp, #0x10
-	bxeq lr
-	mov r1, #0
-	arm_func_end sub_02070658
-_020706C0:
-	add ip, ip, #4
-	ldr r2, [ip, #-4]
-	cmp r2, lr
-	moveq r0, r1
-	subs r3, r3, #1
-	str r3, [sp, #8]
-	bne _020706C0
-	ldmia sp!, {r3, lr}
-	add sp, sp, #0x10
-	bx lr
-	.align 2, 0
-_020706E8: .word MAIN_BSS_02115840
-
-	arm_func_start sub_020706EC
-sub_020706EC: ; 0x020706EC
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #8
-	ldr r0, _02070A84 ; =MAIN_BSS_02115840
-	cmp r2, #0
-	ldr r4, [r0, #4]
-	mov sl, r1
-	addne sp, sp, #8
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r0, [r4, #0x10]
-	mov r1, #0x100
-	bl DC_InvalidateRange
-	ldrh r0, [r4, #0x16]
-	cmp r0, #0
-	bne _02070730
-	ldr r0, [r4, #4]
-	mov r1, #0x800
-	bl DC_InvalidateRange
-	arm_func_end sub_020706EC
-_02070730:
-	ldr r0, [r4, #0x10]
-	cmp sl, r0
-	beq _02070748
-	mov r0, sl
-	mov r1, #0x100
-	bl DC_InvalidateRange
-_02070748:
-	ldrh r0, [sl]
-	cmp r0, #0x2c
-	blo _02070800
-	cmp r0, #0x80
-	bne _02070784
-	ldrh r0, [sl, #2]
-	cmp r0, #0x13
-	bne _0207076C
-	bl OS_Terminate
-_0207076C:
-	ldr r1, [r4, #0xc8]
-	cmp r1, #0
-	beq _02070A44
-	mov r0, sl
-	blx r1
-	b _02070A44
-_02070784:
-	cmp r0, #0x82
-	bne _020707D8
-	ldrh r0, [sl, #6]
-	add r1, r4, r0, lsl #2
-	ldr r0, [r1, #0xcc]
-	cmp r0, #0
-	beq _02070A44
-	ldr r0, [r1, #0x10c]
-	str r0, [sl, #0x1c]
-	ldr r0, [r4, #0x14c]
-	strh r0, [sl, #0x22]
-	ldr r1, [r4, #4]
-	ldr r0, [sl, #8]
-	ldrh r1, [r1, #0x72]
-	bl DC_InvalidateRange
-	ldrh r1, [sl, #6]
-	mov r0, sl
-	add r1, r4, r1, lsl #2
-	ldr r1, [r1, #0xcc]
-	blx r1
-	b _02070A44
-_020707D8:
-	cmp r0, #0x81
-	bne _02070A44
-	mov r0, #0xf
-	strh r0, [sl]
-	ldr r1, [sl, #0x1c]
-	cmp r1, #0
-	beq _02070A44
-	mov r0, sl
-	blx r1
-	b _02070A44
-_02070800:
-	cmp r0, #0xe
-	bne _02070840
-	ldrh r0, [sl, #4]
-	add r0, r0, #0xf5
-	add r0, r0, #0xff00
-	mov r0, r0, lsl #0x10
-	mov r0, r0, lsr #0x10
-	cmp r0, #1
-	bhi _02070840
-	ldrh r0, [sl, #2]
-	cmp r0, #0
-	bne _02070840
-	ldr r1, [r4, #4]
-	ldr r0, [sl, #8]
-	ldrh r1, [r1, #0x72]
-	bl DC_InvalidateRange
-_02070840:
-	ldrh r1, [sl]
-	cmp r1, #2
-	ldreqh r0, [sl, #2]
-	cmpeq r0, #0
-	add r0, r4, r1, lsl #2
-	bne _0207087C
-	ldr r4, [r0, #0x18]
-	bl sub_020703E8
-	cmp r4, #0
-	addeq sp, sp, #8
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	mov r0, sl
-	blx r4
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0207087C:
-	ldr r1, [r0, #0x18]
-	cmp r1, #0
-	beq _020708A4
-	mov r0, sl
-	blx r1
-	ldr r0, _02070A84 ; =MAIN_BSS_02115840
-	ldrh r0, [r0]
-	cmp r0, #0
-	addeq sp, sp, #8
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_020708A4:
-	ldrh r0, [sl]
-	cmp r0, #8
-	cmpne r0, #0xc
-	bne _02070A44
-	cmp r0, #8
-	bne _020708E8
-	add r0, sl, #0xa
-	str r0, [sp]
-	ldrh r5, [sl, #8]
-	ldrh r6, [sl, #0x10]
-	ldrh r0, [sl, #0x12]
-	add fp, sl, #0x14
-	mov r7, #0
-	str r0, [sp, #4]
-	ldrh r8, [sl, #0x2c]
-	ldrh sb, [sl, #0x2e]
-	b _02070918
-_020708E8:
-	cmp r0, #0xc
-	bne _02070918
-	ldrh r5, [sl, #8]
-	ldrh r7, [sl, #0xa]
-	ldrh r0, [sl, #0xc]
-	mov r6, #0
-	mov fp, r6
-	str r0, [sp, #4]
-	add r0, sl, #0x10
-	ldrh r8, [sl, #0x16]
-	ldrh sb, [sl, #0x18]
-	str r0, [sp]
-_02070918:
-	cmp r5, #7
-	cmpne r5, #9
-	cmpne r5, #0x1a
-	bne _02070A44
-	cmp r5, #7
-	ldreq r1, [r4, #0x14c]
-	mov r0, #1
-	orreq r0, r1, r0, lsl r6
-	mvnne r0, r0, lsl r6
-	ldrne r1, [r4, #0x14c]
-	add r3, r4, #0x100
-	andne r0, r1, r0
-	str r0, [r4, #0x14c]
-	ldr r0, _02070A88 ; =MAIN_BSS_02115890
-	mov r1, #0
-	mov r2, #0x44
-	strh r7, [r3, #0x50]
-	bl MI_CpuFill8
-	ldr ip, _02070A84 ; =MAIN_BSS_02115840
-	mov r1, #0x82
-	strh r1, [ip, #0x50]
-	mov r1, #0
-	strh r1, [ip, #0x52]
-	strh r5, [ip, #0x54]
-	str r1, [ip, #0x58]
-	str r1, [ip, #0x5c]
-	strh r1, [ip, #0x60]
-	strh r6, [ip, #0x62]
-	strh r7, [ip, #0x70]
-	ldr r2, [r4, #0x14c]
-	ldr r1, _02070A8C ; =0x0000FFFF
-	strh r2, [ip, #0x72]
-	strh r1, [ip, #0x6a]
-	ldr r3, [sp, #4]
-	ldr r0, [sp]
-	ldr r1, _02070A90 ; =MAIN_BSS_021158A4
-	mov r2, #6
-	strh r3, [ip, #0x8c]
-	bl MI_CpuCopy8
-	cmp fp, #0
-	mov r2, #0x18
-	beq _020709D0
-	ldr r1, _02070A94 ; =MAIN_BSS_021158B4
-	mov r0, fp
-	bl MIi_CpuCopy16
-	b _020709DC
-_020709D0:
-	ldr r1, _02070A94 ; =MAIN_BSS_021158B4
-	mov r0, #0
-	bl MIi_CpuClear16
-_020709DC:
-	cmp r7, #0
-	moveq r1, r8
-	movne r1, sb
-	cmp r7, #0
-	ldr r0, _02070A84 ; =MAIN_BSS_02115840
-	ldr r7, _02070A84 ; =MAIN_BSS_02115840
-	strh r1, [r0, #0x90]
-	movne sb, r8
-	ldr r5, _02070A88 ; =MAIN_BSS_02115890
-	mov r6, #0
-	strh sb, [r7, #0x92]
-_02070A08:
-	strh r6, [r7, #0x56]
-	add r2, r4, r6, lsl #2
-	ldr r0, [r2, #0xcc]
-	cmp r0, #0
-	beq _02070A30
-	ldr r1, [r2, #0x10c]
-	mov r0, r5
-	str r1, [r7, #0x6c]
-	ldr r1, [r2, #0xcc]
-	blx r1
-_02070A30:
-	add r0, r6, #1
-	mov r0, r0, lsl #0x10
-	mov r6, r0, lsr #0x10
-	cmp r6, #0x10
-	blo _02070A08
-_02070A44:
-	ldr r0, [r4, #0x10]
-	mov r1, #0x100
-	bl DC_InvalidateRange
-	bl sub_02070A98
-	ldr r0, [r4, #0x10]
-	cmp sl, r0
-	addeq sp, sp, #8
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldrh r2, [sl]
-	mov r0, sl
-	mov r1, #0x100
-	orr r2, r2, #0x8000
-	strh r2, [sl]
-	bl sub_020660BC
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_02070A84: .word MAIN_BSS_02115840
-_02070A88: .word MAIN_BSS_02115890
-_02070A8C: .word 0x0000FFFF
-_02070A90: .word MAIN_BSS_021158A4
-_02070A94: .word MAIN_BSS_021158B4
-
-	arm_func_start sub_02070A98
-sub_02070A98: ; 0x02070A98
-	ldr r1, _02070AB0 ; =0x027FFF96
-	ldrh r0, [r1]
-	tst r0, #1
-	bicne r0, r0, #1
-	strneh r0, [r1]
-	bx lr
-	.align 2, 0
-_02070AB0: .word 0x027FFF96
-	arm_func_end sub_02070A98
-
-	arm_func_start sub_02070AB4
-sub_02070AB4: ; 0x02070AB4
-	stmdb sp!, {r3, lr}
-	bl sub_020705F4
-	cmp r0, #0
-	movne r0, #0
-	ldreq r0, _02070AD4 ; =MAIN_BSS_02115840
-	ldreq r0, [r0, #4]
-	ldreq r0, [r0, #4]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02070AD4: .word MAIN_BSS_02115840
-	arm_func_end sub_02070AB4
-
-	arm_func_start sub_02070AD8
-sub_02070AD8: ; 0x02070AD8
-	stmdb sp!, {r4, lr}
-	bl OS_DisableInterrupts
-	ldr r1, _02070B04 ; =MAIN_BSS_02115840
-	ldr r1, [r1, #4]
-	cmp r1, #0
-	addne r1, r1, #0x100
-	ldrneh r4, [r1, #0x50]
-	moveq r4, #0
-	bl OS_RestoreInterrupts
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02070B04: .word MAIN_BSS_02115840
-	arm_func_end sub_02070AD8
-
-	arm_func_start sub_02070B08
-sub_02070B08: ; 0x02070B08
-	stmdb sp!, {r4, lr}
-	bl OS_DisableInterrupts
-	ldr r1, _02070B34 ; =MAIN_BSS_02115840
-	ldr r1, [r1, #4]
-	cmp r1, #0
-	ldrne r4, [r1, #0x14c]
-	moveq r4, #0
-	bl OS_RestoreInterrupts
-	mov r0, r4, lsl #0x10
-	mov r0, r0, lsr #0x10
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02070B34: .word MAIN_BSS_02115840
-	arm_func_end sub_02070B08
-
-	arm_func_start sub_02070B38
-sub_02070B38: ; 0x02070B38
-	stmdb sp!, {r3, r4, r5, lr}
-	bl OS_DisableInterrupts
-	ldr r1, _02070B7C ; =MAIN_BSS_02115840
-	mov r5, r0
-	ldr r0, [r1, #4]
-	cmp r0, #0
-	moveq r4, #0
-	beq _02070B6C
-	ldr r4, [r0, #4]
-	mov r1, #2
-	add r0, r4, #0x86
-	bl DC_InvalidateRange
-	ldrh r4, [r4, #0x86]
-	arm_func_end sub_02070B38
-_02070B6C:
-	mov r0, r5
-	bl OS_RestoreInterrupts
-	mov r0, r4
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_02070B7C: .word MAIN_BSS_02115840
-
-	arm_func_start WM_SetIndCallback
-WM_SetIndCallback: ; 0x02070B80
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	bl OS_DisableInterrupts
-	mov r5, r0
-	bl sub_020705F4
-	movs r4, r0
-	beq _02070BAC
-	mov r0, r5
-	bl OS_RestoreInterrupts
-	mov r0, r4
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end WM_SetIndCallback
-_02070BAC:
-	bl sub_020705E4
-	str r6, [r0, #0xc8]
-	mov r0, r5
-	bl OS_RestoreInterrupts
-	mov r0, #0
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start WM_SetPortCallback
-WM_SetPortCallback: ; 0x02070BC4
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0x44
-	movs r5, r1
-	mov r6, r0
-	mov r4, r2
-	beq _02070C2C
-	add r0, sp, #0
-	mov r1, #0
-	mov r2, #0x44
-	bl MI_CpuFill8
-	mov r3, #0
-	ldr r1, _02070C98 ; =0x0000FFFF
-	mov r7, #0x82
-	mov r2, #0x19
-	add r0, sp, #0x14
-	strh r7, [sp]
-	strh r3, [sp, #2]
-	strh r2, [sp, #4]
-	strh r6, [sp, #6]
-	str r3, [sp, #8]
-	str r3, [sp, #0xc]
-	strh r3, [sp, #0x10]
-	strh r1, [sp, #0x1a]
-	str r4, [sp, #0x1c]
-	strh r3, [sp, #0x12]
-	bl OS_GetMacAddress
-	arm_func_end WM_SetPortCallback
-_02070C2C:
-	bl OS_DisableInterrupts
-	mov r8, r0
-	bl sub_020705F4
-	movs r7, r0
-	beq _02070C54
-	mov r0, r8
-	bl OS_RestoreInterrupts
-	add sp, sp, #0x44
-	mov r0, r7
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
-_02070C54:
-	bl sub_020705E4
-	add r0, r0, r6, lsl #2
-	str r5, [r0, #0xcc]
-	str r4, [r0, #0x10c]
-	cmp r5, #0
-	beq _02070C84
-	bl sub_02070B08
-	strh r0, [sp, #0x22]
-	bl sub_02070AD8
-	strh r0, [sp, #0x20]
-	add r0, sp, #0
-	blx r5
-_02070C84:
-	mov r0, r8
-	bl OS_RestoreInterrupts
-	mov r0, #0
-	add sp, sp, #0x44
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
-	.align 2, 0
-_02070C98: .word 0x0000FFFF
-
-	arm_func_start sub_02070C9C
-sub_02070C9C: ; 0x02070C9C
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	bl sub_020705E4
-	mov r4, r0
-	bl sub_020705F4
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	cmp r5, #0
-	moveq r0, #6
-	ldmeqia sp!, {r3, r4, r5, pc}
-	ldr r0, [r4, #4]
-	mov r1, #0x7d0
-	bl DC_InvalidateRange
-	ldr r0, [r4, #4]
-	mov r1, r5
-	mov r2, #0x7d0
-	bl sub_02067E7C
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_02070C9C
-
-	arm_func_start sub_02070CE8
-sub_02070CE8: ; 0x02070CE8
-	stmdb sp!, {r4, lr}
-	bl sub_020705E4
-	mov r4, r0
-	mov r0, #2
-	mov r1, #7
-	mov r2, #8
-	bl sub_02070658
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r4, pc}
-	ldr r0, [r4, #4]
-	mov r1, #4
-	add r0, r0, #0xc
-	bl DC_InvalidateRange
-	ldr r1, [r4, #4]
-	ldr r0, [r1, #0xc]
-	cmp r0, #1
-	moveq r0, #0
-	ldmeqia sp!, {r4, pc}
-	add r0, r1, #0x3c
-	mov r1, #4
-	bl DC_InvalidateRange
-	ldr r0, [r4, #4]
-	ldrh r0, [r0, #0x3c]
-	add r0, r0, #0x1f
-	bic r0, r0, #0x1f
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02070CE8
-
-	arm_func_start sub_02070D54
-sub_02070D54: ; 0x02070D54
-	stmdb sp!, {r3, r4, r5, lr}
-	bl sub_020705E4
-	mov r4, r0
-	mov r0, #2
-	mov r1, #7
-	mov r2, #8
-	bl sub_02070658
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	ldr r0, [r4, #4]
-	mov r1, #4
-	add r0, r0, #0xc
-	bl DC_InvalidateRange
-	ldr r1, [r4, #4]
-	ldr r0, [r1, #0xc]
-	cmp r0, #1
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	add r0, r1, #0x188
-	mov r1, #2
-	bl DC_InvalidateRange
-	ldr r1, [r4, #4]
-	add r0, r1, #0x100
-	ldrh r0, [r0, #0x88]
-	cmp r0, #0
-	moveq r5, #1
-	add r0, r1, #0x3e
-	mov r1, #2
-	movne r5, #0
-	bl DC_InvalidateRange
-	ldr r0, [r4, #4]
-	cmp r5, #1
-	ldrh r5, [r0, #0x3e]
-	addne r0, r5, #0x51
-	bicne r0, r0, #0x1f
-	movne r0, r0, lsl #1
-	ldmneia sp!, {r3, r4, r5, pc}
-	add r0, r0, #0xf8
-	mov r1, #2
-	bl DC_InvalidateRange
-	ldr r0, [r4, #4]
-	add r1, r5, #0xc
-	ldrh r0, [r0, #0xf8]
-	mul r0, r1, r0
-	add r0, r0, #0x29
-	bic r0, r0, #0x1f
-	mov r0, r0, lsl #1
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_02070D54
-
-	arm_func_start WM_ReadMPData
-WM_ReadMPData: ; 0x02070E18
-	stmdb sp!, {r3, r4, r5, r6, lr}
-	sub sp, sp, #0x3c
-	mov r5, r0
-	mov r4, r1
-	bl sub_020705E4
-	mov r6, r0
-	bl sub_020705F4
-	cmp r0, #0
-	addne sp, sp, #0x3c
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, pc}
-	cmp r4, #1
-	blo _02070E54
-	cmp r4, #0xf
-	bls _02070E60
-	arm_func_end WM_ReadMPData
-_02070E54:
-	add sp, sp, #0x3c
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, pc}
-_02070E60:
-	ldr r0, [r6, #4]
-	mov r1, #2
-	add r0, r0, #0x82
-	add r0, r0, #0x100
-	bl DC_InvalidateRange
-	ldr r0, [r6, #4]
-	mov r1, #1
-	add r0, r0, #0x100
-	ldrh r0, [r0, #0x82]
-	tst r0, r1, lsl r4
-	addeq sp, sp, #0x3c
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	ldrh r0, [r5, #4]
-	cmp r0, #0
-	addeq sp, sp, #0x3c
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	add r0, r5, #0xa
-	str r0, [sp]
-	mov r3, #0
-	add r2, sp, #0
-_02070EB8:
-	ldr r0, [r2, r3, lsl #2]
-	ldrh r1, [r0, #4]
-	cmp r4, r1
-	addeq sp, sp, #0x3c
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	add r3, r3, #1
-	add r0, r2, r3, lsl #2
-	ldrh r1, [r5, #6]
-	ldr r0, [r0, #-4]
-	add r0, r1, r0
-	str r0, [r2, r3, lsl #2]
-	ldrh r0, [r5, #4]
-	cmp r3, r0
-	blt _02070EB8
-	mov r0, #0
-	add sp, sp, #0x3c
-	ldmia sp!, {r3, r4, r5, r6, pc}
-
-	arm_func_start WM_GetAllowedChannel
-WM_GetAllowedChannel: ; 0x02070EFC
-	stmdb sp!, {r3, lr}
-	bl sub_020705F4
-	cmp r0, #0
-	movne r0, #0x8000
-	ldreq r0, _02070F18 ; =0x027FFCFA
-	ldreqh r0, [r0]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02070F18: .word 0x027FFCFA
-	arm_func_end WM_GetAllowedChannel
-
-	arm_func_start sub_02070F1C
-sub_02070F1C: ; 0x02070F1C
-	stmdb sp!, {r4, lr}
-	bl sub_020705E4
-	mov r4, r0
-	bl sub_020705F4
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r4, pc}
-	ldr r0, [r4, #4]
-	mov r1, #2
-	bl DC_InvalidateRange
-	ldr r1, [r4, #4]
-	ldrh r0, [r1]
-	cmp r0, #9
-	beq _02070F64
-	cmp r0, #0xa
-	cmpne r0, #0xb
-	beq _02070F8C
-	b _02070FA4
-	arm_func_end sub_02070F1C
-_02070F64:
-	add r0, r1, #0x82
-	add r0, r0, #0x100
-	mov r1, #2
-	bl DC_InvalidateRange
-	ldr r1, [r4, #4]
-	add r0, r1, #0x100
-	ldrh r0, [r0, #0x82]
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r4, pc}
-_02070F8C:
-	add r0, r1, #0xbc
-	mov r1, #2
-	bl DC_InvalidateRange
-	ldr r0, [r4, #4]
-	ldrh r0, [r0, #0xbc]
-	ldmia sp!, {r4, pc}
-_02070FA4:
-	mov r0, #0
-	ldmia sp!, {r4, pc}
-
-	arm_func_start sub_02070FAC
-sub_02070FAC: ; 0x02070FAC
-	stmdb sp!, {r3, lr}
-	sub sp, sp, #8
-	add r0, sp, #0
-	bl OS_GetMacAddress
-	mov r2, #0
-	add r3, sp, #0
-	mov r1, r2
-	arm_func_end sub_02070FAC
-_02070FC8:
-	ldrb r0, [r3], #1
-	add r2, r2, #1
-	cmp r2, #6
-	add r0, r1, r0
-	mov r0, r0, lsl #0x10
-	mov r1, r0, lsr #0x10
-	blt _02070FC8
-	ldr r0, _02071034 ; =0x027FFC3C
-	ldr ip, _02071038 ; =0x66666667
-	ldr r0, [r0]
-	mov r3, #0x14
-	add r0, r1, r0
-	mov r0, r0, lsl #0x10
-	mov r0, r0, lsr #0x10
-	rsb r0, r0, r0, lsl #3
-	mov r0, r0, lsl #0x10
-	mov r2, r0, lsr #0x10
-	mov r1, r2, lsr #0x1f
-	smull r2, lr, ip, r2
-	add lr, r1, lr, asr #3
-	smull r1, r2, r3, lr
-	rsb lr, r1, r0, lsr #16
-	add r0, lr, #0xc8
-	mov r0, r0, lsl #0x10
-	mov r0, r0, lsr #0x10
-	add sp, sp, #8
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02071034: .word 0x027FFC3C
-_02071038: .word 0x66666667
-
-	arm_func_start sub_0207103C
-sub_0207103C: ; 0x0207103C
-	stmdb sp!, {r3, lr}
-	sub sp, sp, #8
-	add r0, sp, #0
-	bl OS_GetMacAddress
-	mov r1, #0
-	add r3, sp, #0
-	mov r2, r1
-	arm_func_end sub_0207103C
-_02071058:
-	ldrb r0, [r3], #1
-	add r1, r1, #1
-	cmp r1, #6
-	add r0, r2, r0
-	mov r0, r0, lsl #0x10
-	mov r2, r0, lsr #0x10
-	blt _02071058
-	ldr r0, _020710C8 ; =0x027FFC3C
-	mov r1, #0xd
-	ldr r0, [r0]
-	ldr r3, _020710CC ; =0x66666667
-	add r0, r2, r0
-	mov r0, r0, lsl #0x10
-	mov r2, r0, lsr #0x10
-	mul r0, r2, r1
-	mov r0, r0, lsl #0x10
-	mov r2, r0, lsr #0x10
-	mov r1, r2, lsr #0x1f
-	smull r2, ip, r3, r2
-	add ip, r1, ip, asr #2
-	mov r3, #0xa
-	smull r1, r2, r3, ip
-	rsb ip, r1, r0, lsr #16
-	add r0, ip, #0x1e
-	mov r0, r0, lsl #0x10
-	mov r0, r0, lsr #0x10
-	add sp, sp, #8
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_020710C8: .word 0x027FFC3C
-_020710CC: .word 0x66666667
-
-	arm_func_start sub_020710D0
-sub_020710D0: ; 0x020710D0
-	stmdb sp!, {r3, r4, r5, r6, lr}
-	sub sp, sp, #0x84
-	ldrh r2, [r1, #0x3c]
-	mov lr, r0
-	cmp r2, #0
-	beq _02071118
-	mov r0, #0
-	add r5, sp, #0
-	strb r0, [sp]
-	mov r4, #8
-	arm_func_end sub_020710D0
-_020710F8:
-	ldmia r5!, {r0, r1, r2, r3}
-	stmia lr!, {r0, r1, r2, r3}
-	subs r4, r4, #1
-	bne _020710F8
-	ldr r0, [r5]
-	add sp, sp, #0x84
-	str r0, [lr]
-	ldmia sp!, {r3, r4, r5, r6, pc}
-_02071118:
-	ldrh r0, [r1, #0x3e]
-	strb r0, [sp]
-	ands r0, r0, #0xff
-	bne _02071150
-	add r5, sp, #0
-	mov r4, #8
-_02071130:
-	ldmia r5!, {r0, r1, r2, r3}
-	stmia lr!, {r0, r1, r2, r3}
-	subs r4, r4, #1
-	bne _02071130
-	ldr r0, [r5]
-	add sp, sp, #0x84
-	str r0, [lr]
-	ldmia sp!, {r3, r4, r5, r6, pc}
-_02071150:
-	cmp r0, #0x10
-	movhi r0, #0x10
-	strhib r0, [sp]
-	ldrh r2, [r1]
-	ldrb r0, [sp]
-	mov r3, #0
-	mov r2, r2, lsl #1
-	sub r4, r2, #0x40
-	cmp r0, #0
-	add r0, r1, #0x40
-	mov r2, r3
-	and r1, r4, #0xff
-	ble _02071200
-	add ip, sp, #0
-_02071188:
-	ldrb r5, [r0]
-	add r6, ip, r2, lsl #3
-	add r4, r0, #2
-	strb r5, [r6, #4]
-	ldrb r5, [r0, #1]
-	strb r5, [r6, #5]
-	str r4, [r6, #8]
-	ldrb r4, [r6, #5]
-	add r4, r4, #2
-	and r5, r4, #0xff
-	add r3, r3, r5
-	and r3, r3, #0xff
-	cmp r3, r1
-	bls _020711EC
-	mov r0, #0
-	strb r0, [sp]
-	mov r4, #8
-_020711CC:
-	ldmia ip!, {r0, r1, r2, r3}
-	stmia lr!, {r0, r1, r2, r3}
-	subs r4, r4, #1
-	bne _020711CC
-	ldr r0, [ip]
-	add sp, sp, #0x84
-	str r0, [lr]
-	ldmia sp!, {r3, r4, r5, r6, pc}
-_020711EC:
-	ldrb r4, [sp]
-	add r2, r2, #1
-	add r0, r0, r5
-	cmp r2, r4
-	blt _02071188
-_02071200:
-	add r4, sp, #0
-	mov ip, #8
-_02071208:
-	ldmia r4!, {r0, r1, r2, r3}
-	stmia lr!, {r0, r1, r2, r3}
-	subs ip, ip, #1
-	bne _02071208
-	ldr r0, [r4]
-	str r0, [lr]
-	add sp, sp, #0x84
-	ldmia sp!, {r3, r4, r5, r6, pc}
-
-	arm_func_start WM_GetNextTgid
-WM_GetNextTgid: ; 0x02071228
-	stmdb sp!, {lr}
-	sub sp, sp, #0xc
-	ldr r0, _02071298 ; =DAT_0208eb2c
-	ldr r0, [r0]
-	cmp r0, #0x10000
-	bne _02071270
-	bl sub_0206E200
-	add r0, sp, #0
-	bl sub_0206E388
-	cmp r0, #0
-	bne _02071270
-	ldr r2, [sp, #8]
-	ldr r0, [sp, #4]
-	ldr r1, _02071298 ; =DAT_0208eb2c
-	add r0, r2, r0, lsl #8
-	mov r0, r0, lsl #0x10
-	mov r0, r0, lsr #0x10
-	str r0, [r1]
-	arm_func_end WM_GetNextTgid
-_02071270:
-	ldr r1, _02071298 ; =DAT_0208eb2c
-	ldr r0, [r1]
-	add r0, r0, #1
-	mov r0, r0, lsl #0x10
-	mov r2, r0, lsr #0x10
-	mov r0, r2, lsl #0x10
-	str r2, [r1]
-	mov r0, r0, lsr #0x10
-	add sp, sp, #0xc
-	ldmia sp!, {pc}
-	.align 2, 0
-_02071298: .word DAT_0208eb2c
-
-	arm_func_start sub_0207129C
-sub_0207129C: ; 0x0207129C
-	stmdb sp!, {r3, r4, lr}
-	sub sp, sp, #4
-	mov r4, r0
-	mov r0, #1
-	mov r1, #0
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #4
-	ldmneia sp!, {r3, r4, pc}
-	mov r1, r4
-	mov r0, #3
-	bl sub_02070458
-	bl sub_020705E4
-	mov r3, r0
-	ldr r1, [r3, #0x10]
-	mov r0, #3
-	str r1, [sp]
-	mov r1, r0
-	ldmia r3, {r2, r3}
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #4
-	ldmia sp!, {r3, r4, pc}
-	arm_func_end sub_0207129C
-
-	arm_func_start sub_020712FC
-sub_020712FC: ; 0x020712FC
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, #1
-	mov r1, r0
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r4, pc}
-	mov r1, r4
-	mov r0, #4
-	bl sub_02070458
-	mov r0, #4
-	mov r1, #0
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_020712FC
-
-	arm_func_start sub_0207133C
-sub_0207133C: ; 0x0207133C
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, #1
-	mov r1, r0
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r4, pc}
-	mov r1, r4
-	mov r0, #5
-	bl sub_02070458
-	mov r0, #5
-	mov r1, #0
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0207133C
-
-	arm_func_start sub_0207137C
-sub_0207137C: ; 0x0207137C
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, #1
-	mov r1, #2
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r4, pc}
-	mov r1, r4
-	mov r0, #6
-	bl sub_02070458
-	mov r0, #6
-	mov r1, #0
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0207137C
-
-	arm_func_start WM_Initialize
-WM_Initialize: ; 0x020713BC
-	stmdb sp!, {r3, r4, lr}
-	sub sp, sp, #4
-	mov r4, r1
-	mov r1, r2
-	bl sub_020701D8
-	cmp r0, #0
-	addne sp, sp, #4
-	ldmneia sp!, {r3, r4, pc}
-	mov r1, r4
-	mov r0, #0
-	bl sub_02070458
-	bl sub_020705E4
-	mov r3, r0
-	ldr r1, [r3, #0x10]
-	mov r0, #0
-	str r1, [sp]
-	mov r1, #3
-	ldmia r3, {r2, r3}
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #4
-	ldmia sp!, {r3, r4, pc}
-	arm_func_end WM_Initialize
-
-	arm_func_start WM_Reset
-WM_Reset: ; 0x02071418
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl sub_02070610
-	cmp r0, #0
-	ldmneia sp!, {r4, pc}
-	mov r1, r4
-	mov r0, #1
-	bl sub_02070458
-	mov r0, #1
-	mov r1, #0
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r4, pc}
-	arm_func_end WM_Reset
-
-	arm_func_start WM_End
-WM_End: ; 0x02071450
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, #1
-	mov r1, #2
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r4, pc}
-	mov r1, r4
-	mov r0, #2
-	bl sub_02070458
-	mov r0, #2
-	mov r1, #0
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r4, pc}
-	arm_func_end WM_End
-
-	arm_func_start WM_SetParentParameter
-WM_SetParentParameter: ; 0x02071490
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r1
-	mov r0, #1
-	mov r1, #2
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	cmp r4, #0
-	moveq r0, #6
-	ldmeqia sp!, {r3, r4, r5, pc}
-	ldrh r0, [r4, #4]
-	cmp r0, #0
-	beq _020714D8
-	ldr r0, [r4]
-	cmp r0, #0
-	moveq r0, #6
-	ldmeqia sp!, {r3, r4, r5, pc}
-	arm_func_end WM_SetParentParameter
-_020714D8:
-	ldrh r1, [r4, #0x14]
-	ldrh r0, [r4, #0x34]
-	cmp r1, #0
-	movne r2, #0x2a
-	moveq r2, #0
-	add r0, r0, r2
-	cmp r0, #0x200
-	bgt _02071514
-	ldrh r0, [r4, #0x36]
-	cmp r1, #0
-	movne r1, #6
-	moveq r1, #0
-	add r0, r0, r1
-	cmp r0, #0x200
-	ble _0207151C
-_02071514:
-	mov r0, #6
-	ldmia sp!, {r3, r4, r5, pc}
-_0207151C:
-	mov r0, r4
-	bl sub_0207156C
-	mov r1, r5
-	mov r0, #7
-	bl sub_02070458
-	mov r0, r4
-	mov r1, #0x40
-	bl sub_020660BC
-	ldrh r1, [r4, #4]
-	cmp r1, #0
-	beq _02071550
-	ldr r0, [r4]
-	bl sub_020660BC
-_02071550:
-	mov r2, r4
-	mov r0, #7
-	mov r1, #1
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r3, r4, r5, pc}
-
-	arm_func_start sub_0207156C
-sub_0207156C: ; 0x0207156C
-	ldrh r1, [r0, #4]
-	cmp r1, #0x70
-	movhi r0, #0
-	bxhi lr
-	ldrh r1, [r0, #0x18]
-	cmp r1, #0xa
-	blo _02071590
-	cmp r1, #0x3e8
-	bls _02071598
-	arm_func_end sub_0207156C
-_02071590:
-	mov r0, #0
-	bx lr
-_02071598:
-	ldrh r0, [r0, #0x32]
-	cmp r0, #1
-	blo _020715AC
-	cmp r0, #0xe
-	bls _020715B4
-_020715AC:
-	mov r0, #0
-	bx lr
-_020715B4:
-	mov r0, #1
-	bx lr
-
-	arm_func_start WMi_StartParentEx
-WMi_StartParentEx: ; 0x020715BC
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r1
-	mov r0, #1
-	mov r1, #2
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	bl sub_020705E4
-	add r1, r0, #0x100
-	mov r2, #0
-	strh r2, [r1, #0x50]
-	str r2, [r0, #0x14c]
-	mov r1, r5
-	mov r0, #8
-	bl sub_02070458
-	mov r2, r4
-	mov r0, #8
-	mov r1, #1
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end WMi_StartParentEx
-
-	arm_func_start sub_02071618
-sub_02071618: ; 0x02071618
-	ldr ip, _02071624 ; =WMi_StartParentEx
-	mov r1, #1
-	bx ip
-	.align 2, 0
-_02071624: .word WMi_StartParentEx
-	arm_func_end sub_02071618
-
-	arm_func_start sub_02071628
-sub_02071628: ; 0x02071628
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, #1
-	mov r1, #7
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r4, pc}
-	mov r1, r4
-	mov r0, #9
-	bl sub_02070458
-	mov r0, #9
-	mov r1, #0
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02071628
-
-	arm_func_start WM_StartScan
-WM_StartScan: ; 0x02071668
-	stmdb sp!, {r3, r4, r5, lr}
-	sub sp, sp, #0x10
-	mov r5, r0
-	mov r0, #3
-	mov r4, r1
-	mov r2, r0
-	mov r1, #2
-	mov r3, #5
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #0x10
-	ldmneia sp!, {r3, r4, r5, pc}
-	cmp r4, #0
-	addeq sp, sp, #0x10
-	moveq r0, #6
-	ldmeqia sp!, {r3, r4, r5, pc}
-	ldr r0, [r4]
-	cmp r0, #0
-	addeq sp, sp, #0x10
-	moveq r0, #6
-	ldmeqia sp!, {r3, r4, r5, pc}
-	ldrh r0, [r4, #4]
-	cmp r0, #1
-	blo _020716D0
-	cmp r0, #0xe
-	bls _020716DC
-	arm_func_end WM_StartScan
-_020716D0:
-	add sp, sp, #0x10
-	mov r0, #6
-	ldmia sp!, {r3, r4, r5, pc}
-_020716DC:
-	mov r1, r5
-	mov r0, #0xa
-	bl sub_02070458
-	mov r0, #0xa
-	strh r0, [sp]
-	ldrh r2, [r4, #4]
-	add r0, sp, #0
-	mov r1, #0x10
-	strh r2, [sp, #2]
-	ldr r2, [r4]
-	str r2, [sp, #4]
-	ldrh r2, [r4, #6]
-	strh r2, [sp, #8]
-	ldrb r2, [r4, #8]
-	strb r2, [sp, #0xa]
-	ldrb r2, [r4, #9]
-	strb r2, [sp, #0xb]
-	ldrb r2, [r4, #0xa]
-	strb r2, [sp, #0xc]
-	ldrb r2, [r4, #0xb]
-	strb r2, [sp, #0xd]
-	ldrb r2, [r4, #0xc]
-	strb r2, [sp, #0xe]
-	ldrb r2, [r4, #0xd]
-	strb r2, [sp, #0xf]
-	bl sub_02070574
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #0x10
-	ldmia sp!, {r3, r4, r5, pc}
-
-	arm_func_start sub_02071754
-sub_02071754: ; 0x02071754
-	stmdb sp!, {r4, r5, lr}
-	sub sp, sp, #0x3c
-	mov r5, r0
-	mov r0, #3
-	mov r4, r1
-	mov r2, r0
-	mov r1, #2
-	mov r3, #5
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #0x3c
-	ldmneia sp!, {r4, r5, pc}
-	cmp r4, #0
-	addeq sp, sp, #0x3c
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, pc}
-	ldr r0, [r4]
-	cmp r0, #0
-	addeq sp, sp, #0x3c
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, pc}
-	ldrh r0, [r4, #4]
-	cmp r0, #0x400
-	addhi sp, sp, #0x3c
-	movhi r0, #6
-	ldmhiia sp!, {r4, r5, pc}
-	ldrh r0, [r4, #0x12]
-	cmp r0, #0x20
-	addhi sp, sp, #0x3c
-	movhi r0, #6
-	ldmhiia sp!, {r4, r5, pc}
-	ldrh r0, [r4, #0x10]
-	cmp r0, #0
-	cmpne r0, #1
-	cmpne r0, #2
-	cmpne r0, #3
-	addne sp, sp, #0x3c
-	movne r0, #6
-	ldmneia sp!, {r4, r5, pc}
-	add r0, r0, #0xfe
-	add r0, r0, #0xff00
-	mov r0, r0, lsl #0x10
-	mov r0, r0, lsr #0x10
-	cmp r0, #1
-	bhi _0207181C
-	ldrh r0, [r4, #0x34]
-	cmp r0, #0x20
-	addhi sp, sp, #0x3c
-	movhi r0, #6
-	ldmhiia sp!, {r4, r5, pc}
-	arm_func_end sub_02071754
-_0207181C:
-	mov r1, r5
-	mov r0, #0x26
-	bl sub_02070458
-	mov r0, #0x26
-	strh r0, [sp]
-	ldrh r2, [r4, #6]
-	add r1, sp, #0xc
-	add r0, r4, #0xa
-	strh r2, [sp, #2]
-	ldr r3, [r4]
-	mov r2, #6
-	str r3, [sp, #4]
-	ldrh r3, [r4, #4]
-	strh r3, [sp, #8]
-	ldrh r3, [r4, #8]
-	strh r3, [sp, #0xa]
-	bl MI_CpuCopy8
-	ldrh r2, [r4, #0x10]
-	add r1, sp, #0x16
-	add r0, r4, #0x14
-	strh r2, [sp, #0x12]
-	ldrh r3, [r4, #0x34]
-	mov r2, #0x20
-	strh r3, [sp, #0x36]
-	ldrh r3, [r4, #0x12]
-	strh r3, [sp, #0x14]
-	bl MI_CpuCopy8
-	add r0, sp, #0
-	mov r1, #0x3c
-	bl sub_02070574
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #0x3c
-	ldmia sp!, {r4, r5, pc}
-
-	arm_func_start sub_020718A4
-sub_020718A4: ; 0x020718A4
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, #1
-	mov r1, #5
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r4, pc}
-	mov r1, r4
-	mov r0, #0xb
-	bl sub_02070458
-	mov r0, #0xb
-	mov r1, #0
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_020718A4
-
-	arm_func_start WM_StartConnectEx
-WM_StartConnectEx: ; 0x020718E4
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #0x28
-	mov r7, r0
-	mov r6, r1
-	mov r0, #1
-	mov r1, #2
-	mov r5, r2
-	mov r4, r3
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #0x28
-	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
-	cmp r6, #0
-	addeq sp, sp, #0x28
-	moveq r0, #6
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldrh r1, [r6]
-	mov r0, r6
-	mov r1, r1, lsl #1
-	bl sub_020660BC
-	bl sub_020705E4
-	add r1, r0, #0x100
-	mov r2, #0
-	strh r2, [r1, #0x50]
-	str r2, [r0, #0x14c]
-	mov r1, r7
-	mov r0, #0xc
-	bl sub_02070458
-	mov r0, #0xc
-	strh r0, [sp]
-	str r6, [sp, #4]
-	cmp r5, #0
-	mov r2, #0x18
-	beq _0207197C
-	add r1, sp, #8
-	mov r0, r5
-	bl MI_CpuCopy8
-	b _02071988
-	arm_func_end WM_StartConnectEx
-_0207197C:
-	add r0, sp, #8
-	mov r1, #0
-	bl MI_CpuFill8
-_02071988:
-	ldrh r2, [sp, #0x40]
-	add r0, sp, #0
-	mov r1, #0x28
-	str r4, [sp, #0x20]
-	strh r2, [sp, #0x26]
-	bl sub_02070574
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #0x28
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start WM_Disconnect
-WM_Disconnect: ; 0x020719B0
-	stmdb sp!, {r4, r5, r6, lr}
-	sub sp, sp, #8
-	mov r5, r0
-	mov r4, r1
-	bl sub_020705E4
-	mov r1, #0xa
-	mov r6, r0
-	str r1, [sp]
-	mov ip, #0xb
-	mov r0, #5
-	mov r1, #7
-	mov r2, #9
-	mov r3, #8
-	str ip, [sp, #4]
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #8
-	ldmneia sp!, {r4, r5, r6, pc}
-	ldr r1, [r6, #4]
-	ldrh r0, [r1]
-	cmp r0, #7
-	cmpne r0, #9
-	bne _02071A5C
-	cmp r4, #1
-	blo _02071A1C
-	cmp r4, #0xf
-	bls _02071A28
-	arm_func_end WM_Disconnect
-_02071A1C:
-	add sp, sp, #8
-	mov r0, #6
-	ldmia sp!, {r4, r5, r6, pc}
-_02071A28:
-	add r0, r1, #0x82
-	add r0, r0, #0x100
-	mov r1, #2
-	bl DC_InvalidateRange
-	ldr r0, [r6, #4]
-	mov r1, #1
-	add r0, r0, #0x100
-	ldrh r0, [r0, #0x82]
-	tst r0, r1, lsl r4
-	bne _02071A6C
-	add sp, sp, #8
-	mov r0, #7
-	ldmia sp!, {r4, r5, r6, pc}
-_02071A5C:
-	cmp r4, #0
-	addne sp, sp, #8
-	movne r0, #6
-	ldmneia sp!, {r4, r5, r6, pc}
-_02071A6C:
-	mov r1, r5
-	mov r0, #0xd
-	bl sub_02070458
-	mov r1, #1
-	mov r2, r1, lsl r4
-	mov r0, #0xd
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start sub_02071A98
-sub_02071A98: ; 0x02071A98
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r5, r0
-	mov r4, r1
-	bl sub_020705E4
-	mov r6, r0
-	mov r0, #2
-	mov r1, #7
-	mov r2, #9
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r4, r5, r6, pc}
-	ldr r0, [r6, #4]
-	mov r1, #2
-	add r0, r0, #0x82
-	add r0, r0, #0x100
-	bl DC_InvalidateRange
-	ldr r0, [r6, #4]
-	ldr r1, _02071B20 ; =0x0000FFFE
-	add r0, r0, #0x100
-	ldrh r0, [r0, #0x82]
-	and r0, r0, r4
-	tst r0, r1
-	moveq r0, #7
-	ldmeqia sp!, {r4, r5, r6, pc}
-	mov r1, r5
-	mov r0, #0xd
-	bl sub_02070458
-	mov r2, r4
-	mov r0, #0xd
-	mov r1, #1
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02071B20: .word 0x0000FFFE
-	arm_func_end sub_02071A98
-
-	arm_func_start sub_02071B24
-sub_02071B24: ; 0x02071B24
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	sub sp, sp, #0x40
-	mov r8, r0
-	mov r7, r1
-	mov r6, r2
-	mov r5, r3
-	bl sub_020705E4
-	ldr r4, [r0, #4]
-	mov r0, #2
-	mov r1, #7
-	mov r2, #8
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #0x40
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	add r0, r4, #0x188
-	mov r1, #2
-	bl DC_InvalidateRange
-	add r0, r4, #0xc6
-	mov r1, #2
-	bl DC_InvalidateRange
-	add r0, r4, #0x100
-	ldrh r0, [r0, #0x88]
-	cmp r0, #0
-	ldrneh r0, [r4, #0xc6]
-	cmpne r0, #1
-	addne sp, sp, #0x40
-	movne r0, #3
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	add r0, r4, #0xc
-	mov r1, #4
-	bl DC_InvalidateRange
-	ldr r0, [r4, #0xc]
-	cmp r0, #1
-	addeq sp, sp, #0x40
-	moveq r0, #3
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	tst r6, #0x3f
-	addne sp, sp, #0x40
-	movne r0, #6
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	ldrh sb, [sp, #0x60]
-	tst sb, #0x1f
-	addne sp, sp, #0x40
-	movne r0, #6
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	add r0, r4, #0x9c
-	mov r1, #2
-	bl DC_InvalidateRange
-	ldrh r0, [r4, #0x9c]
-	cmp r0, #0
-	bne _02071C1C
-	bl sub_02070D54
-	cmp r6, r0
-	addlt sp, sp, #0x40
-	movlt r0, #6
-	ldmltia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	bl sub_02070CE8
-	cmp sb, r0
-	addlt sp, sp, #0x40
-	movlt r0, #6
-	ldmltia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	arm_func_end sub_02071B24
-_02071C1C:
-	mov r1, r8
-	mov r0, #0xe
-	bl sub_02070458
-	add r1, sp, #0
-	mov r0, #0
-	mov r2, #0x40
-	bl MIi_CpuClear32
-	mov r4, r6, lsr #1
-	ldrh r3, [sp, #0x60]
-	mov r6, #0xe
-	add r1, sp, #0x14
-	mov r0, #0
-	mov r2, #0x1c
-	strh r6, [sp]
-	str r7, [sp, #4]
-	str r4, [sp, #8]
-	str r5, [sp, #0xc]
-	str r3, [sp, #0x10]
-	bl MIi_CpuClear32
-	ldr r0, [sp, #0x64]
-	add r1, sp, #0x30
-	mov r2, #0x10
-	bl MIi_CpuCopy32
-	add r0, sp, #0
-	mov r1, #0x40
-	bl sub_02070574
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #0x40
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-
-	arm_func_start WM_StartMPEx
-WM_StartMPEx: ; 0x02071C94
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0x18
-	mov r7, r1
-	mov r8, r0
-	mov r6, r2
-	add r1, sp, #8
-	mov r0, #0
-	mov r2, #0x10
-	mov r5, r3
-	ldr r4, [sp, #0x34]
-	bl MIi_CpuClear32
-	ldr r1, [sp, #0x48]
-	ldrh ip, [sp, #0x38]
-	ldr r0, [sp, #0x44]
-	ldr lr, _02071D34 ; =0x00001E03
-	ldr r3, [sp, #0x3c]
-	ldr r2, [sp, #0x40]
-	strb r1, [sp, #0x16]
-	cmp r0, #0
-	cmpne r4, #0
-	strb r3, [sp, #0x14]
-	strb r2, [sp, #0x15]
-	ldrh r1, [sp, #0x30]
-	str lr, [sp, #8]
-	orrne r0, lr, #4
-	strne r0, [sp, #8]
-	strh ip, [sp, #0x12]
-	strh r4, [sp, #0xc]
-	strh r4, [sp, #0xe]
-	strneh r4, [sp, #0x10]
-	str r1, [sp]
-	add r4, sp, #8
-	mov r0, r8
-	mov r1, r7
-	mov r2, r6
-	mov r3, r5
-	str r4, [sp, #4]
-	bl sub_02071B24
-	add sp, sp, #0x18
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	.align 2, 0
-_02071D34: .word 0x00001E03
-	arm_func_end WM_StartMPEx
-
-	arm_func_start sub_02071D38
-sub_02071D38: ; 0x02071D38
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #0x18
-	mov r6, r1
-	mov r7, r0
-	mov r5, r2
-	add r1, sp, #8
-	mov r0, #0
-	mov r2, #0x10
-	mov r4, r3
-	bl MIi_CpuClear32
-	ldrh ip, [sp, #0x34]
-	mov r0, #3
-	str r0, [sp, #8]
-	ldrh lr, [sp, #0x30]
-	strh ip, [sp, #0xc]
-	strh ip, [sp, #0xe]
-	mov r0, r7
-	mov r1, r6
-	mov r2, r5
-	mov r3, r4
-	add ip, sp, #8
-	str lr, [sp]
-	str ip, [sp, #4]
-	bl sub_02071B24
-	add sp, sp, #0x18
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	arm_func_end sub_02071D38
-
-	arm_func_start WM_SetMPDataToPortEx
-WM_SetMPDataToPortEx: ; 0x02071DA0
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, lr}
-	sub sp, sp, #0x14
-	mov sb, r0
-	mov r8, r1
-	mov r7, r2
-	mov r6, r3
-	mov r4, #1
-	bl sub_020705E4
-	ldr r5, [r0, #4]
-	mov r0, #2
-	mov r1, #9
-	mov r2, #0xa
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #0x14
-	ldmneia sp!, {r4, r5, r6, r7, r8, sb, pc}
-	add r0, r5, #0x3c
-	mov r1, #2
-	bl DC_InvalidateRange
-	add r0, r5, #0x188
-	mov r1, #2
-	bl DC_InvalidateRange
-	add r0, r5, #0x100
-	ldrh r0, [r0, #0x88]
-	cmp r0, #0
-	bne _02071E2C
-	add r0, r5, #0x82
-	add r0, r0, #0x100
-	mov r1, #2
-	bl DC_InvalidateRange
-	add r2, r5, #0x100
-	add r0, r5, #0x86
-	mov r1, #2
-	ldrh r4, [r2, #0x82]
-	bl DC_InvalidateRange
-	arm_func_end WM_SetMPDataToPortEx
-_02071E2C:
-	cmp r7, #0
-	addeq sp, sp, #0x14
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, pc}
-	cmp r4, #0
-	addeq sp, sp, #0x14
-	moveq r0, #7
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, pc}
-	add r0, r5, #0x7c
-	mov r1, #2
-	bl DC_InvalidateRange
-	ldr r0, [r5, #0x7c]
-	cmp r7, r0
-	addeq sp, sp, #0x14
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, pc}
-	cmp r6, #0x200
-	addhi sp, sp, #0x14
-	movhi r0, #6
-	ldmhiia sp!, {r4, r5, r6, r7, r8, sb, pc}
-	cmp r6, #0
-	addeq sp, sp, #0x14
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, pc}
-	mov r0, r7
-	mov r1, r6
-	bl sub_020660BC
-	ldrh r2, [sp, #0x30]
-	ldrh r1, [sp, #0x34]
-	ldrh r0, [sp, #0x38]
-	str r2, [sp]
-	str r1, [sp, #4]
-	str r0, [sp, #8]
-	str sb, [sp, #0xc]
-	mov r2, r7
-	mov r3, r6
-	mov r0, #0xf
-	mov r1, #7
-	str r8, [sp, #0x10]
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #0x14
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, pc}
-
-	arm_func_start sub_02071EDC
-sub_02071EDC: ; 0x02071EDC
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	bl sub_020705E4
-	mov r4, r0
-	mov r0, #2
-	mov r1, #9
-	mov r2, #0xa
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	ldr r0, [r4, #4]
-	mov r1, #4
-	add r0, r0, #0xc
-	bl DC_InvalidateRange
-	ldr r0, [r4, #4]
-	ldr r0, [r0, #0xc]
-	cmp r0, #0
-	moveq r0, #3
-	ldmeqia sp!, {r3, r4, r5, pc}
-	mov r1, r5
-	mov r0, #0x10
-	bl sub_02070458
-	mov r0, #0x10
-	mov r1, #0
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_02071EDC
-
-	arm_func_start sub_02071F4C
-sub_02071F4C: ; 0x02071F4C
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	bl sub_020705E4
-	mov r4, r0
-	mov r0, #1
-	mov r1, #8
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
-	ldr r0, [r4, #4]
-	mov r1, #4
-	add r0, r0, #0x10
-	bl DC_InvalidateRange
-	ldr r0, [r4, #4]
-	ldr r0, [r0, #0x10]
-	cmp r0, #1
-	moveq r0, #3
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	cmp r5, #0x10
-	movlo r0, #6
-	ldmloia sp!, {r3, r4, r5, r6, r7, pc}
-	cmp r6, #0
-	moveq r0, #6
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r0, r6
-	mov r1, r5
-	bl sub_020660BC
-	mov r1, r7
-	mov r0, #0x11
-	bl sub_02070458
-	mov r2, r6
-	mov r3, r5
-	mov r0, #0x11
-	mov r1, #2
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	arm_func_end sub_02071F4C
-
-	arm_func_start sub_02071FEC
-sub_02071FEC: ; 0x02071FEC
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0x10
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	bl sub_020705E4
-	mov r8, r0
-	mov r0, #1
-	mov r1, #0xb
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #0x10
-	ldmneia sp!, {r4, r5, r6, r7, r8, pc}
-	ldr r0, [r8, #4]
-	mov r1, #4
-	add r0, r0, #0x10
-	bl DC_InvalidateRange
-	ldr r0, [r8, #4]
-	ldr r0, [r0, #0x10]
-	cmp r0, #0
-	addeq sp, sp, #0x10
-	moveq r0, #3
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	ldr r0, _020720B4 ; =0x000005E4
-	cmp r4, r0
-	addhi sp, sp, #0x10
-	movhi r0, #6
-	ldmhiia sp!, {r4, r5, r6, r7, r8, pc}
-	mov r0, r5
-	mov r1, r4
-	bl sub_020660BC
-	mov r1, r7
-	mov r0, #0x12
-	bl sub_02070458
-	add r1, sp, #8
-	mov r0, r6
-	mov r2, #6
-	bl MI_CpuCopy8
-	str r5, [sp]
-	str r4, [sp, #4]
-	ldr r2, [sp, #8]
-	ldr r3, [sp, #0xc]
-	mov r0, #0x12
-	mov r1, #4
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #0x10
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	.align 2, 0
-_020720B4: .word 0x000005E4
-	arm_func_end sub_02071FEC
-
-	arm_func_start sub_020720B8
-sub_020720B8: ; 0x020720B8
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	bl sub_020705E4
-	mov r4, r0
-	mov r0, #1
-	mov r1, #0xb
-	bl sub_02070658
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	ldr r0, [r4, #4]
-	mov r1, #4
-	add r0, r0, #0x10
-	bl DC_InvalidateRange
-	ldr r0, [r4, #4]
-	ldr r0, [r0, #0x10]
-	cmp r0, #0
-	moveq r0, #3
-	ldmeqia sp!, {r3, r4, r5, pc}
-	mov r1, r5
-	mov r0, #0x13
-	bl sub_02070458
-	mov r0, #0x13
-	mov r1, #0
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_020720B8
-
-	arm_func_start sub_02072124
-sub_02072124: ; 0x02072124
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0xc
-	mov sl, r0
-	mov r7, r1
-	mov r6, r2
-	mov r0, #2
-	mov r1, #9
-	mov r2, #0xa
-	mov r5, r3
-	mov r8, #1
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #0xc
-	ldmneia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp sl, #0
-	addeq sp, sp, #0xc
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp r7, #0x10
-	addhs sp, sp, #0xc
-	movhs r0, #6
-	ldmhsia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp r6, #0
-	addeq sp, sp, #0xc
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	bl sub_02070AD8
-	movs r4, r0
-	bne _020721A0
-	bl sub_02070B38
-	mov r8, r0
-	arm_func_end sub_02072124
-_020721A0:
-	mov r1, sl
-	mov r0, #0
-	mov r2, #0x820
-	bl MIi_CpuClearFast
-	add r0, sl, #0x800
-	mov r2, #0
-	strh r2, [r0, #8]
-	strh r2, [r0, #0xa]
-	strh r2, [r0, #0xc]
-	strh r5, [r0, #0x10]
-	strh r7, [r0, #0x16]
-	strh r2, [r0, #0xe]
-	mov r0, #1
-	ldr r1, [sp, #0x30]
-	orr r0, r6, r0, lsl r4
-	cmp r1, #0
-	mov r0, r0, lsl #0x10
-	movne r2, #1
-	add r1, sl, #0x800
-	strh r2, [r1, #0x18]
-	mov r0, r0, lsr #0x10
-	strh r0, [r1, #0xe]
-	bl MATH_CountPopulation
-	add r3, sl, #0x800
-	mul r1, r5, r0
-	strh r0, [r3, #0x12]
-	strh r1, [r3, #0x14]
-	ldrh r0, [r3, #0x14]
-	cmp r0, #0x1fc
-	bls _0207222C
-	mov r0, #0
-	strh r0, [r3, #0xe]
-	add sp, sp, #0xc
-	mov r0, #6
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0207222C:
-	add r0, r0, #4
-	strh r0, [r3, #0x14]
-	mov r0, #1
-	strh r0, [r3, #0x1c]
-	cmp r4, #0
-	bne _02072344
-	orr r4, r8, #1
-	mov r2, #0
-_0207224C:
-	ldrh r1, [r3, #0xe]
-	mov r0, r2, lsl #9
-	add r2, r2, #1
-	and r1, r1, r4
-	strh r1, [sl, r0]
-	cmp r2, #4
-	blt _0207224C
-	ldr r1, _02072368 ; =sub_020727E0
-	mov r0, r7
-	mov r2, sl
-	bl WM_SetPortCallback
-	mov r7, sl
-	mov sb, #0
-	add r4, sl, #0x800
-	mov r6, #1
-	ldr fp, _0207236C ; =sub_02072708
-	ldr r5, _02072370 ; =0x0000FFFF
-	b _02072328
-_02072294:
-	ldrh r2, [r4, #8]
-	mov r0, fp
-	mov r1, sl
-	add r2, r2, #1
-	and r2, r2, #3
-	strh r2, [r4, #8]
-	ldrh r3, [r4, #0xe]
-	mov r2, r7
-	and r3, r3, r8
-	mov r3, r3, lsl #0x10
-	mov r3, r3, lsr #0x10
-	str r3, [sp]
-	ldrh r3, [r4, #0x16]
-	stmib sp, {r3, r6}
-	ldrh r3, [r4, #0x14]
-	bl WM_SetMPDataToPortEx
-	cmp r0, #7
-	bne _020722FC
-	add r0, sl, sb, lsl #1
-	add r0, r0, #0x800
-	strh r5, [r0]
-	ldrh r0, [r4, #0xa]
-	add r0, r0, #1
-	and r0, r0, #3
-	strh r0, [r4, #0xa]
-	b _02072320
-_020722FC:
-	cmp r0, #0
-	cmpne r0, #2
-	beq _02072320
-	add r0, sl, #0x800
-	mov r1, #5
-	strh r1, [r0, #0x1c]
-	add sp, sp, #0xc
-	mov r0, #1
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02072320:
-	add r7, r7, #0x200
-	add sb, sb, #1
-_02072328:
-	ldrh r0, [r4, #0x18]
-	cmp r0, #1
-	movne r0, #1
-	moveq r0, #2
-	cmp sb, r0
-	blt _02072294
-	b _0207235C
-_02072344:
-	ldr r1, _02072374 ; =sub_0207290C
-	mov r4, #3
-	mov r0, r7
-	mov r2, sl
-	strh r4, [r3, #0xa]
-	bl WM_SetPortCallback
-_0207235C:
-	mov r0, #0
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_02072368: .word sub_020727E0
-_0207236C: .word sub_02072708
-_02072370: .word 0x0000FFFF
-_02072374: .word sub_0207290C
-
-	arm_func_start sub_02072378
-sub_02072378: ; 0x02072378
-	stmdb sp!, {r4, lr}
-	movs r4, r0
-	moveq r0, #6
-	ldmeqia sp!, {r4, pc}
-	add r0, r4, #0x800
-	ldrh r1, [r0, #0xe]
-	cmp r1, #0
-	moveq r0, #3
-	ldmeqia sp!, {r4, pc}
-	ldrh r0, [r0, #0x16]
-	mov r1, #0
-	mov r2, r1
-	bl WM_SetPortCallback
-	add r1, r4, #0x800
-	mov r0, #0
-	strh r0, [r1, #0xe]
-	strh r0, [r1, #0x1c]
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02072378
-
-	arm_func_start sub_020723C0
-sub_020723C0: ; 0x020723C0
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0xc
-	mov sl, r0
-	mov sb, r1
-	mov r8, r2
-	mov r0, #2
-	mov r1, #9
-	mov r2, #0xa
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #0xc
-	ldmneia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp sl, #0
-	addeq sp, sp, #0xc
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp sb, #0
-	addeq sp, sp, #0xc
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp r8, #0
-	addeq sp, sp, #0xc
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	bl sub_02070AD8
-	movs r5, r0
-	bne _02072434
-	bl sub_02070B38
-	mov r4, r0
-	arm_func_end sub_020723C0
-_02072434:
-	add r0, sl, #0x800
-	ldrh r0, [r0, #0x1c]
-	cmp r0, #5
-	addeq sp, sp, #0xc
-	moveq r0, #1
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp r0, #1
-	cmpne r0, #4
-	addne sp, sp, #0xc
-	movne r0, #3
-	ldmneia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp r5, #0
-	mov r7, #5
-	bne _020725F8
-	mov r5, #0
-	mov fp, r5
-	cmp r0, #4
-	bne _0207251C
-	add ip, sl, #0x800
-	mov r2, #1
-	strh r2, [ip, #0x1c]
-	ldrh r3, [ip, #0xe]
-	ldrh r1, [ip, #8]
-	ldr r0, _02072700 ; =sub_02072708
-	and r3, r3, r4
-	mov r3, r3, lsl #0x10
-	mov r3, r3, lsr #0x10
-	str r3, [sp]
-	ldrh r3, [ip, #0x16]
-	add r1, r1, #3
-	and r6, r1, #3
-	str r3, [sp, #4]
-	str r2, [sp, #8]
-	ldrh r3, [ip, #0x14]
-	mov r1, sl
-	add r2, sl, r6, lsl #9
-	bl WM_SetMPDataToPortEx
-	cmp r0, #7
-	bne _020724F8
-	add r0, sl, r6, lsl #1
-	ldr r1, _02072704 ; =0x0000FFFF
-	add r0, r0, #0x800
-	strh r1, [r0]
-	add r0, sl, #0x800
-	ldrh r1, [r0, #0xa]
-	add r1, r1, #1
-	and r1, r1, #3
-	strh r1, [r0, #0xa]
-	b _0207251C
-_020724F8:
-	cmp r0, #0
-	cmpne r0, #2
-	beq _0207251C
-	add r0, sl, #0x800
-	mov r1, r7
-	strh r1, [r0, #0x1c]
-	add sp, sp, #0xc
-	mov r0, #1
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0207251C:
-	add r0, sl, #0x800
-	ldrh r2, [r0, #0xc]
-	ldrh r1, [r0, #0xa]
-	cmp r2, r1
-	beq _020725B4
-	mov r5, r2, lsl #9
-	ldrh r3, [sl, r5]
-	mov r1, r8
-	mov r2, #0x200
-	orr r3, r3, #1
-	strh r3, [sl, r5]
-	ldrh r0, [r0, #0xc]
-	add r0, sl, r0, lsl #9
-	bl MIi_CpuCopy16
-	add r1, sl, #0x800
-	ldrh r0, [r1, #0xc]
-	mov r5, #1
-	mov r7, #0
-	add r0, sl, r0, lsl #1
-	add r0, r0, #0x800
-	ldrh r0, [r0]
-	strh r0, [r1, #0x1a]
-	ldrh r0, [r1, #0xc]
-	add r0, r0, #1
-	and r0, r0, #3
-	strh r0, [r1, #0xc]
-	ldrh r0, [r1, #0x18]
-	cmp r0, #0
-	bne _020725B0
-	cmp r4, #0
-	beq _020725B0
-	ldrh r0, [r1, #8]
-	mov r0, r0, lsl #9
-	ldrh r0, [sl, r0]
-	cmp r0, #1
-	moveq fp, r5
-	beq _020725B4
-_020725B0:
-	mov fp, #0
-_020725B4:
-	mov r0, sl
-	mov r1, #0
-	bl sub_02072ACC
-	cmp r5, #0
-	beq _020726F4
-	mov r0, sl
-	mov r2, sb
-	mov r1, #0
-	bl sub_02072A00
-	add r0, sl, #0x800
-	ldrh r0, [r0, #0x18]
-	cmp r0, #0
-	bne _020726F4
-	mov r0, sl
-	mov r1, fp
-	bl sub_02072ACC
-	b _020726F4
-_020725F8:
-	cmp r0, #4
-	mov r0, #0
-	add r1, sl, #0x800
-	moveq r0, #1
-	streqh r0, [r1, #0x1c]
-	beq _02072678
-	ldrh r2, [r1, #0xc]
-	ldrh r1, [r1, #8]
-	cmp r2, r1
-	beq _02072678
-	mov r2, r2, lsl #9
-	ldrh r1, [sl, r2]
-	tst r1, #1
-	orreq r1, r1, #1
-	streqh r1, [sl, r2]
-	beq _02072678
-	mov r1, r8
-	add r0, sl, r2
-	mov r2, #0x200
-	bl MIi_CpuCopy16
-	add r2, sl, #0x800
-	ldrh r1, [r2, #0xc]
-	mov r0, #1
-	mov r7, #0
-	add r1, sl, r1, lsl #1
-	add r1, r1, #0x800
-	ldrh r1, [r1]
-	strh r1, [r2, #0x1a]
-	ldrh r1, [r2, #0xc]
-	add r1, r1, #1
-	and r1, r1, #3
-	strh r1, [r2, #0xc]
-_02072678:
-	cmp r0, #0
-	beq _020726F4
-	add r0, sl, #0x800
-	ldrh r1, [r0, #0xa]
-	ldrh r2, [r0, #0x10]
-	mov r0, sb
-	add r6, sl, r1, lsl #9
-	add r1, r6, #0x20
-	bl MIi_CpuCopy16
-	add r3, sl, #0x800
-	ldrh r1, [r3, #0xe]
-	mov r4, #1
-	ldr r0, _02072700 ; =sub_02072708
-	str r1, [sp]
-	ldrh r5, [r3, #0x16]
-	mov r1, sl
-	add r2, r6, #0x20
-	str r5, [sp, #4]
-	str r4, [sp, #8]
-	ldrh r3, [r3, #0x10]
-	bl WM_SetMPDataToPortEx
-	add r1, sl, #0x800
-	ldrh r2, [r1, #0xa]
-	cmp r0, #2
-	cmpne r0, #0
-	add r2, r2, #1
-	and r2, r2, #3
-	strh r2, [r1, #0xa]
-	movne r0, #5
-	strneh r0, [r1, #0x1c]
-	movne r7, r4
-_020726F4:
-	mov r0, r7
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_02072700: .word sub_02072708
-_02072704: .word 0x0000FFFF
-
-	arm_func_start sub_02072708
-sub_02072708: ; 0x02072708
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	bl sub_020705E4
-	ldrh r2, [r5, #0xa]
-	ldr r1, _020727D8 ; =sub_020727E0
-	add r0, r0, r2, lsl #2
-	ldr r2, [r0, #0xcc]
-	ldr r4, [r0, #0x10c]
-	cmp r2, r1
-	ldrne r0, _020727DC ; =sub_0207290C
-	cmpne r2, r0
-	ldmneia sp!, {r3, r4, r5, pc}
-	cmp r4, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	ldr r0, [r5, #0x20]
-	cmp r4, r0
-	ldmneia sp!, {r3, r4, r5, pc}
-	bl sub_02070AD8
-	ldrh r1, [r5, #2]
-	cmp r1, #0
-	bne _02072794
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	add r1, r4, #0x800
-	ldrh r0, [r1, #0xa]
-	ldrh r2, [r5, #0x1a]
-	add r0, r4, r0, lsl #1
-	mov r2, r2, asr #1
-	add r0, r0, #0x800
-	strh r2, [r0]
-	ldrh r0, [r1, #0xa]
-	add r0, r0, #1
-	and r0, r0, #3
-	strh r0, [r1, #0xa]
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_02072708
-_02072794:
-	cmp r1, #0xa
-	bne _020727C8
-	cmp r0, #0
-	beq _020727B8
-	add r0, r4, #0x800
-	ldrh r1, [r0, #0xa]
-	add r1, r1, #3
-	and r1, r1, #3
-	strh r1, [r0, #0xa]
-_020727B8:
-	add r0, r4, #0x800
-	mov r1, #4
-	strh r1, [r0, #0x1c]
-	ldmia sp!, {r3, r4, r5, pc}
-_020727C8:
-	add r0, r4, #0x800
-	mov r1, #5
-	strh r1, [r0, #0x1c]
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_020727D8: .word sub_020727E0
-_020727DC: .word sub_0207290C
-
-	arm_func_start sub_020727E0
-sub_020727E0: ; 0x020727E0
-	stmdb sp!, {r4, r5, r6, lr}
-	ldr r4, [r0, #0x1c]
-	cmp r4, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	ldrh r1, [r0, #2]
-	cmp r1, #0
-	bne _020728FC
-	ldrh r1, [r0, #4]
-	cmp r1, #0x15
-	bgt _0207282C
-	bge _0207284C
-	cmp r1, #9
-	ldmgtia sp!, {r4, r5, r6, pc}
-	cmp r1, #7
-	ldmltia sp!, {r4, r5, r6, pc}
-	beq _0207286C
-	cmp r1, #9
-	beq _0207287C
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end sub_020727E0
-_0207282C:
-	cmp r1, #0x1a
-	ldmgtia sp!, {r4, r5, r6, pc}
-	cmp r1, #0x19
-	ldmltia sp!, {r4, r5, r6, pc}
-	ldmeqia sp!, {r4, r5, r6, pc}
-	cmp r1, #0x1a
-	beq _0207287C
-	ldmia sp!, {r4, r5, r6, pc}
-_0207284C:
-	ldrh r1, [r0, #0x12]
-	ldr r2, [r0, #0xc]
-	mov r0, r4
-	bl sub_02072A00
-	mov r0, r4
-	mov r1, #0
-	bl sub_02072ACC
-	ldmia sp!, {r4, r5, r6, pc}
-_0207286C:
-	mov r0, r4
-	mov r1, #0
-	bl sub_02072ACC
-	ldmia sp!, {r4, r5, r6, pc}
-_0207287C:
-	ldrh r5, [r0, #0x12]
-	mov r6, #1
-	bl OS_DisableInterrupts
-	add r1, r4, #0x800
-	ldrh lr, [r1, #8]
-	mvn ip, r6, lsl r5
-	mov r3, lr, lsl #9
-	ldrh r2, [r4, r3]
-	and r2, r2, ip
-	strh r2, [r4, r3]
-	ldrh r1, [r1, #0x18]
-	cmp r1, #1
-	bne _020728CC
-	add r1, lr, #1
-	and r1, r1, #3
-	mov r1, r1, lsl #0x10
-	mov r2, r1, lsr #7
-	ldrh r1, [r4, r2]
-	and r1, r1, ip
-	strh r1, [r4, r2]
-_020728CC:
-	bl OS_RestoreInterrupts
-	mov r0, r4
-	mov r1, #0
-	bl sub_02072ACC
-	add r0, r4, #0x800
-	ldrh r0, [r0, #0x18]
-	cmp r0, #1
-	ldmneia sp!, {r4, r5, r6, pc}
-	mov r0, r4
-	mov r1, #0
-	bl sub_02072ACC
-	ldmia sp!, {r4, r5, r6, pc}
-_020728FC:
-	add r0, r4, #0x800
-	mov r1, #5
-	strh r1, [r0, #0x1c]
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start sub_0207290C
-sub_0207290C: ; 0x0207290C
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	mov r8, r0
-	ldr r4, [r8, #0x1c]
-	cmp r4, #0
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	ldrh r0, [r8, #2]
-	cmp r0, #0
-	bne _020729F0
-	ldrh r0, [r8, #4]
-	cmp r0, #0x15
-	bgt _02072954
-	bge _0207296C
-	cmp r0, #9
-	ldmgtia sp!, {r4, r5, r6, r7, r8, pc}
-	cmp r0, #7
-	ldmltia sp!, {r4, r5, r6, r7, r8, pc}
-	cmpne r0, #9
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	arm_func_end sub_0207290C
-_02072954:
-	cmp r0, #0x1a
-	ldmgtia sp!, {r4, r5, r6, r7, r8, pc}
-	cmp r0, #0x19
-	ldmltia sp!, {r4, r5, r6, r7, r8, pc}
-	cmpne r0, #0x1a
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-_0207296C:
-	ldr r7, [r8, #0xc]
-	ldrh r5, [r8, #0x10]
-	ldrh r6, [r7]
-	bl sub_02070AD8
-	add r1, r4, #0x800
-	ldrh r1, [r1, #0x14]
-	cmp r5, r1
-	beq _02072994
-	cmp r5, #0x200
-	movhi r5, #0x200
-_02072994:
-	cmp r5, #4
-	ldmloia sp!, {r4, r5, r6, r7, r8, pc}
-	mov r1, #1
-	tst r6, r1, lsl r0
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	add r0, r4, #0x800
-	ldrh r1, [r0, #8]
-	mov r0, r7
-	mov r2, r5
-	add r1, r4, r1, lsl #9
-	bl MIi_CpuCopy16
-	add r1, r4, #0x800
-	ldrh r0, [r1, #8]
-	ldrh r2, [r8, #0x1a]
-	add r0, r4, r0, lsl #1
-	mov r2, r2, asr #1
-	add r0, r0, #0x800
-	strh r2, [r0]
-	ldrh r0, [r1, #8]
-	add r0, r0, #1
-	and r0, r0, #3
-	strh r0, [r1, #8]
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-_020729F0:
-	add r0, r4, #0x800
-	mov r1, #5
-	strh r1, [r0, #0x1c]
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start sub_02072A00
-sub_02072A00: ; 0x02072A00
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r6, r0
-	mov r3, r1
-	mov r1, #1
-	mov r4, r1, lsl r3
-	add r0, r6, #0x800
-	ldrh r1, [r0, #0xe]
-	mov r7, r4, lsl #0x10
-	mov r5, r2
-	tst r1, r7, lsr #16
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldrh r4, [r0, #8]
-	mov r2, r4, lsl #9
-	ldrh r2, [r6, r2]
-	tst r2, r7, lsr #16
-	bne _02072A64
-	ldrh r0, [r0, #0x18]
-	cmp r0, #1
-	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
-	add r0, r4, #1
-	and r4, r0, #3
-	mov r0, r4, lsl #9
-	ldrh r0, [r6, r0]
-	tst r0, r7, lsr #16
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	arm_func_end sub_02072A00
-_02072A64:
-	add r2, r6, r4, lsl #9
-	mov r0, r6
-	add r2, r2, #4
-	bl sub_02072C74
-	mov r1, r0
-	add r0, r6, #0x800
-	cmp r5, #0
-	ldrh r2, [r0, #0x10]
-	beq _02072A94
-	mov r0, r5
-	bl MIi_CpuCopy16
-	b _02072A9C
-_02072A94:
-	mov r0, #0
-	bl MIi_CpuClear16
-_02072A9C:
-	bl OS_DisableInterrupts
-	mov r4, r4, lsl #9
-	ldrh r3, [r6, r4]
-	mvn r1, r7, lsr #16
-	add r2, r6, #2
-	and r1, r3, r1
-	strh r1, [r6, r4]
-	ldrh r1, [r2, r4]
-	orr r1, r1, r7, lsr #16
-	strh r1, [r2, r4]
-	bl OS_RestoreInterrupts
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start sub_02072ACC
-sub_02072ACC: ; 0x02072ACC
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, lr}
-	sub sp, sp, #0xc
-	mov sl, r0
-	mov sb, r1
-	bl OS_DisableInterrupts
-	add r1, sl, #0x800
-	ldrh r1, [r1, #8]
-	mov r4, r0
-	mov r1, r1, lsl #9
-	ldrh r1, [sl, r1]
-	cmp r1, #0
-	bne _02072C0C
-	bl sub_02070B38
-	add r1, sl, #0x800
-	ldrh r6, [r1, #8]
-	ldrh r1, [r1, #0x18]
-	mov r7, r0
-	add r0, r6, #1
-	and r5, r0, #3
-	cmp r1, #1
-	addeq r0, r5, #1
-	andeq r8, r0, #3
-	movne r8, r5
-	add r1, sl, r8, lsl #9
-	mov r0, #0
-	mov r2, #0x200
-	bl MIi_CpuClear16
-	add r0, sl, #0x800
-	ldrh r3, [r0, #0xe]
-	orr r2, r7, #1
-	mov r1, r8, lsl #9
-	and r2, r3, r2
-	strh r2, [sl, r1]
-	strh r5, [r0, #8]
-	ldrh r0, [r0, #0xe]
-	mov r1, r6, lsl #9
-	cmp sb, #1
-	strh r0, [sl, r1]
-	ldreqh r0, [sl, r1]
-	biceq r0, r0, #1
-	streqh r0, [sl, r1]
-	mov r0, r4
-	bl OS_RestoreInterrupts
-	add r3, sl, #0x800
-	ldrh r1, [r3, #0xe]
-	mov r4, #1
-	ldr r0, _02072C18 ; =sub_02072708
-	and r1, r1, r7
-	mov r1, r1, lsl #0x10
-	mov r1, r1, lsr #0x10
-	str r1, [sp]
-	ldrh r5, [r3, #0x16]
-	mov r1, sl
-	add r2, sl, r6, lsl #9
-	str r5, [sp, #4]
-	str r4, [sp, #8]
-	ldrh r3, [r3, #0x14]
-	bl WM_SetMPDataToPortEx
-	cmp r0, #7
-	bne _02072BE8
-	add r0, sl, r6, lsl #1
-	ldr r1, _02072C1C ; =0x0000FFFF
-	add r0, r0, #0x800
-	strh r1, [r0]
-	add r0, sl, #0x800
-	ldrh r1, [r0, #0xa]
-	add sp, sp, #0xc
-	add r1, r1, #1
-	and r1, r1, #3
-	strh r1, [r0, #0xa]
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
-	arm_func_end sub_02072ACC
-_02072BE8:
-	cmp r0, #0
-	cmpne r0, #2
-	addeq sp, sp, #0xc
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
-	add r0, sl, #0x800
-	mov r1, #5
-	strh r1, [r0, #0x1c]
-	add sp, sp, #0xc
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
-_02072C0C:
-	bl OS_RestoreInterrupts
-	add sp, sp, #0xc
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
-	.align 2, 0
-_02072C18: .word sub_02072708
-_02072C1C: .word 0x0000FFFF
-
-	arm_func_start sub_02072C20
-sub_02072C20: ; 0x02072C20
-	stmdb sp!, {r3, lr}
-	mov lr, r1
-	mov r3, r2
-	cmp r0, #0
-	ldrh r1, [lr]
-	ldrh ip, [lr, #2]
-	mov r2, #1
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	cmp lr, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	tst r1, r2, lsl r3
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	tst ip, r2, lsl r3
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	add r2, lr, #4
-	bl sub_02072C74
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_02072C20
-
-	arm_func_start sub_02072C74
-sub_02072C74: ; 0x02072C74
-	stmdb sp!, {r3, r4, r5, lr}
-	mov ip, #1
-	mov r3, ip, lsl r3
-	sub r3, r3, #1
-	mov r5, r0
-	and r0, r1, r3
-	mov r4, r2
-	bl MATH_CountPopulation
-	add r1, r5, #0x800
-	ldrh r1, [r1, #0x10]
-	mla r0, r1, r0, r4
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_02072C74
-
-	arm_func_start sub_02072CA4
-sub_02072CA4: ; 0x02072CA4
-	stmdb sp!, {r3, lr}
-	mov ip, #1
-	rsb r2, ip, #0x10000
-	mov r3, #2
-	str ip, [sp]
-	bl sub_02072124
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_02072CA4
-
-	arm_func_start sub_02072CC0
-sub_02072CC0: ; 0x02072CC0
-	ldr ip, _02072CC8 ; =sub_02072378
-	bx ip
-	.align 2, 0
-_02072CC8: .word sub_02072378
-	arm_func_end sub_02072CC0
-
-	arm_func_start sub_02072CCC
-sub_02072CCC: ; 0x02072CCC
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02070610
-	cmp r0, #0
-	ldmneia sp!, {r4, r5, r6, pc}
-	cmp r5, #3
-	movhi r0, #6
-	ldmhiia sp!, {r4, r5, r6, pc}
-	cmp r5, #0
-	beq _02072D14
-	cmp r4, #0
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, r6, pc}
-	mov r0, r4
-	mov r1, #0x50
-	bl sub_020660BC
-	arm_func_end sub_02072CCC
-_02072D14:
-	mov r1, r6
-	mov r0, #0x14
-	bl sub_02070458
-	mov r2, r5
-	mov r3, r4
-	mov r0, #0x14
-	mov r1, #2
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start sub_02072D40
-sub_02072D40: ; 0x02072D40
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	bl sub_02070610
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
-	cmp r6, #3
-	movhi r0, #6
-	ldmhiia sp!, {r3, r4, r5, r6, r7, pc}
-	cmp r6, #0
-	beq _02072D8C
-	cmp r4, #0
-	moveq r0, #6
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r0, r4
-	mov r1, #0x50
-	bl sub_020660BC
-	arm_func_end sub_02072D40
-_02072D8C:
-	mov r1, r7
-	mov r0, #0x27
-	bl sub_02070458
-	mov r2, r6
-	mov r3, r4
-	mov r0, #0x27
-	mov r1, #3
-	str r5, [sp]
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start WM_SetGameInfo
-WM_SetGameInfo: ; 0x02072DBC
-	stmdb sp!, {r4, r5, r6, r7, lr}
-	sub sp, sp, #0xc
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r0, #2
-	mov r1, #7
-	mov r2, #9
-	mov r4, r3
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #0xc
-	ldmneia sp!, {r4, r5, r6, r7, pc}
-	cmp r6, #0
-	addeq sp, sp, #0xc
-	moveq r0, #6
-	ldmeqia sp!, {r4, r5, r6, r7, pc}
-	cmp r5, #0x70
-	addhi sp, sp, #0xc
-	movhi r0, #6
-	ldmhiia sp!, {r4, r5, r6, r7, pc}
-	ldr r1, _02072E70 ; =MAIN_BSS_021162E0
-	mov r0, r6
-	mov r2, r5
-	bl MIi_CpuCopy16
-	ldr r0, _02072E70 ; =MAIN_BSS_021162E0
-	mov r1, r5
-	bl sub_020660BC
-	mov r1, r7
-	mov r0, #0x18
-	bl sub_02070458
-	ldrh r0, [sp, #0x20]
-	str r4, [sp]
-	ldrb r1, [sp, #0x24]
-	str r0, [sp, #4]
-	ldr r2, _02072E70 ; =MAIN_BSS_021162E0
-	str r1, [sp, #8]
-	mov r3, r5
-	mov r0, #0x18
-	mov r1, #5
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, pc}
-	.align 2, 0
-_02072E70: .word MAIN_BSS_021162E0
-	arm_func_end WM_SetGameInfo
-
-	arm_func_start WM_SetBeaconIndication
-WM_SetBeaconIndication: ; 0x02072E74
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r1
-	bl sub_02070610
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	cmp r4, #0
-	cmpne r4, #1
-	movne r0, #6
-	ldmneia sp!, {r3, r4, r5, pc}
-	mov r1, r5
-	mov r0, #0x19
-	bl sub_02070458
-	mov r2, r4
-	mov r0, #0x19
-	mov r1, #1
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end WM_SetBeaconIndication
-
-	arm_func_start WM_SetLifeTime
-WM_SetLifeTime: ; 0x02072EC4
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #8
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	bl sub_02070610
-	cmp r0, #0
-	addne sp, sp, #8
-	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r1, r7
-	mov r0, #0x1d
-	bl sub_02070458
-	ldrh ip, [sp, #0x20]
-	mov r2, r6
-	mov r3, r5
-	mov r0, #0x1d
-	mov r1, #4
-	stmia sp, {r4, ip}
-	bl sub_020704C8
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	arm_func_end WM_SetLifeTime
-
-	arm_func_start sub_02072F24
-sub_02072F24: ; 0x02072F24
-	stmdb sp!, {r4, r5, r6, r7, lr}
-	sub sp, sp, #0xc
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	bl sub_020705E4
-	mov r0, #1
-	mov r1, #2
-	bl sub_02070658
-	cmp r0, #0
-	addne sp, sp, #0xc
-	ldmneia sp!, {r4, r5, r6, r7, pc}
-	mov r1, r7
-	mov r0, #0x1e
-	bl sub_02070458
-	ldrh r2, [sp, #0x20]
-	mov r3, #0x1e
-	add r0, sp, #0
-	mov r1, #0xa
-	strh r3, [sp]
-	strh r6, [sp, #2]
-	strh r5, [sp, #4]
-	strh r4, [sp, #6]
-	strh r2, [sp, #8]
-	bl sub_02070574
-	cmp r0, #0
-	moveq r0, #2
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, pc}
-	arm_func_end sub_02072F24
 
     .section .init, 4
 
@@ -149281,10 +145920,6 @@ _0208EAF5:
 PTR_LAB_0208eb28: ; 0x0208EB28
 	.word 0x027FFE00
 
-	.global DAT_0208eb2c
-DAT_0208eb2c: ; 0x0208EB2C
-	.byte 0x00, 0x00, 0x01, 0x00
-
     .bss
     .global MAIN_BSS_0208F300
 MAIN_BSS_0208F300: ; 0x0208F300
@@ -150417,35 +147052,3 @@ MAIN_BSS_02115600: ; 0x02115600
     .global MAIN_BSS_02115820
 MAIN_BSS_02115820: ; 0x02115820
     .space 0x20
-
-    .global MAIN_BSS_02115840
-MAIN_BSS_02115840: ; 0x02115840
-    .space 0x8
-
-    .global MAIN_BSS_02115848
-MAIN_BSS_02115848: ; 0x02115848
-    .space 0x20
-
-    .global MAIN_BSS_02115868
-MAIN_BSS_02115868: ; 0x02115868
-    .space 0x28
-
-    .global MAIN_BSS_02115890
-MAIN_BSS_02115890: ; 0x02115890
-    .space 0x14
-
-    .global MAIN_BSS_021158A4
-MAIN_BSS_021158A4: ; 0x021158A4
-    .space 0x10
-
-    .global MAIN_BSS_021158B4
-MAIN_BSS_021158B4: ; 0x021158B4
-    .space 0x2C
-
-    .global MAIN_BSS_021158E0
-MAIN_BSS_021158E0: ; 0x021158E0
-    .space 0xA00
-
-    .global MAIN_BSS_021162E0
-MAIN_BSS_021162E0: ; 0x021162E0
-    .space 0x80

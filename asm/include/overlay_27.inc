@@ -103,9 +103,9 @@
 .public OS_CreateThread
 .public sub_02065658
 .public OS_WakeupThreadDirect
-.public sub_02065BCC
-.public sub_02065BF4
-.public sub_02065C88
+.public OS_InitMessageQueue
+.public OS_SendMessage
+.public OS_ReceiveMessage
 .public sub_02066DE4
 .public sub_02066E2C
 .public sub_02066F40

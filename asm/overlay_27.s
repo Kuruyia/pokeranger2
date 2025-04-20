@@ -4550,7 +4550,7 @@ ov27_0212062C: ; 0x0212062C
 	add r1, r1, #0x1000
 	mov r2, #1
 	str r3, [r4, #8]
-	bl sub_02065BCC
+	bl OS_InitMessageQueue
 	add r3, r4, #0x2bc
 	mov r0, #0x1000
 	ldr r1, _021206B0 ; =ov27_02120E2C
@@ -4603,7 +4603,7 @@ _02120714:
 	add r0, r4, #0x2bc
 	add r0, r0, #0x1000
 	mov r2, #0
-	bl sub_02065BF4
+	bl OS_SendMessage
 	cmp r0, #0
 	mvnne r0, #0
 	strne r0, [r4, #8]
@@ -4663,7 +4663,7 @@ _021207C0:
 	add r0, r0, #0x1000
 	mov r2, #1
 	str r1, [r5, #8]
-	bl sub_02065BF4
+	bl OS_SendMessage
 	add r0, r5, #0x1fc
 	bl sub_02065658
 	ldmia sp!, {r3, r4, r5, pc}
@@ -5109,7 +5109,7 @@ _02120E44:
 	mov r1, r6
 	mov r2, r5
 	add r0, r4, #0x1000
-	bl sub_02065C88
+	bl OS_ReceiveMessage
 	ldr r1, [sp]
 	cmp r1, #0
 	ldmltia sp!, {r3, r4, r5, r6, r7, pc}

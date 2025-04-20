@@ -946,7 +946,7 @@ _0211D5F4:
 	ldr r1, [r0, #4]
 	ldr r2, [r2, r6, lsl #3]
 	add r0, r3, r5, lsl #2
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldmib r4, {r0, r1}
 	ldr r1, [r1, r6, lsl #3]
 	add r6, r6, #1
@@ -2516,7 +2516,7 @@ ov5_0211EC10: ; 0x0211EC10
 	add r0, r4, #0x10
 	mov r2, #0x1e0
 	str ip, [r3, #0x14]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211EC54: .word 0x05000200
@@ -2696,7 +2696,7 @@ _0211EE54:
 	ldr r0, _0211EEEC ; =0x05000200
 	add r1, r4, #0x10
 	mov r2, #0x1e0
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -2813,7 +2813,7 @@ _0211F048:
 	mov r1, r0
 	add r0, sp, #0x10
 	mov r2, #0x800
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	add sp, sp, #0x810
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -3490,7 +3490,7 @@ ov5_0211F948: ; 0x0211F948
 	ldr r1, _0211F974 ; =0x05000200
 	add r0, r4, #0x18
 	mov r2, #0x1e0
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211F974: .word 0x05000200
@@ -3603,7 +3603,7 @@ _0211FAB8:
 	ldr r0, _0211FB00 ; =0x05000200
 	add r1, r5, #0x18
 	mov r2, #0x1e0
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0211FAF4: .word s_data_menu_overlay_5_02120d34

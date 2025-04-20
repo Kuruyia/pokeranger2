@@ -253,7 +253,7 @@ _0211CCCC:
 	add r0, r0, #0x1000
 	add r1, r1, #0x1000
 	mov r2, #1
-	bl sub_02065BCC
+	bl OS_InitMessageQueue
 	add r3, r4, #0xd8
 	mov r0, #0x1000
 	ldr r1, _0211CD20 ; =ov28_0211D030
@@ -284,7 +284,7 @@ ov28_0211CD24: ; 0x0211CD24
 	add r0, r0, #0x1000
 	mvn r1, #0
 	mov r2, #1
-	bl sub_02065BF4
+	bl OS_SendMessage
 	add r0, r4, #0x18
 	bl sub_02065658
 	arm_func_end ov28_0211CD24
@@ -381,7 +381,7 @@ ov28_0211CE70: ; 0x0211CE70
 	add r0, r0, #0x1000
 	mov r2, #0
 	str r1, [r4]
-	bl sub_02065BF4
+	bl OS_SendMessage
 	cmp r0, #0
 	moveq r0, #0
 	ldmeqia sp!, {r4, pc}
@@ -401,7 +401,7 @@ ov28_0211CEA8: ; 0x0211CEA8
 	add r0, r4, #0xd8
 	add r0, r0, #0x1000
 	mov r2, #0
-	bl sub_02065BF4
+	bl OS_SendMessage
 	cmp r0, #0
 	mvnne r0, #0
 	strne r0, [r4]
@@ -516,7 +516,7 @@ _0211D04C:
 	mov r1, r7
 	mov r2, #1
 	add r0, r4, #0x1000
-	bl sub_02065C88
+	bl OS_ReceiveMessage
 	ldr r8, [sp]
 	cmp r8, #0
 	ldmltia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
@@ -577,7 +577,7 @@ ov28_0211D108: ; 0x0211D108
 	add r0, r0, #0x1000
 	mvn r1, #0
 	mov r2, #0
-	bl sub_02065BF4
+	bl OS_SendMessage
 	cmp r0, #0
 	movne r0, #1
 	ldmneia sp!, {r4, pc}

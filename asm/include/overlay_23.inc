@@ -61,7 +61,7 @@
 .public NitroSDK_gx_GX_ResetBankForSubBGExtPltt
 .public NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
 .public sub_02062C10
-.public sub_02067E7C
+.public MIi_CpuCopyFast
 .public MI_CpuFill8
 .public _s32_div_f
 .public MAIN_BSS_0208F304

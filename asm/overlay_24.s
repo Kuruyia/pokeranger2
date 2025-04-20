@@ -404,7 +404,7 @@ _0211CF54:
 	cmp r0, #0
 	bne _0211CFE4
 	add r0, sp, #0x18
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #8
 	bl sub_0206E2DC
 	ldr r1, [sp, #0x18]

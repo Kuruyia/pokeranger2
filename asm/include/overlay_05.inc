@@ -86,7 +86,7 @@
 .public OS_Terminate
 .public MIi_CpuCopy16
 .public MIi_CpuClearFast
-.public sub_02067E7C
+.public MIi_CpuCopyFast
 .public MI_CpuFill8
 .public _s32_div_f
 .public MAIN_BSS_020B26A0

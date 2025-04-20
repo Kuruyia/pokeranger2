@@ -340,7 +340,7 @@
 .public NitroSDK_gx_GX_EndLoadTexPltt
 .public sub_02064F28
 .public DC_FlushRange
-.public sub_02067E7C
+.public MIi_CpuCopyFast
 .public MI_CpuFill8
 .public abort
 .public printf

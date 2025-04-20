@@ -1011,7 +1011,7 @@ _0211D7E8:
 	str r1, [sl, #0xc]
 	bl ov3_0211CD2C
 	add r0, sp, #0x28
-	bl sub_0206E388
+	bl RTC_GetTime
 	ldr r0, [sp, #0x28]
 	cmp r0, #6
 	blo _0211D8AC
@@ -1085,7 +1085,7 @@ _0211D954:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [sl, #0x8c]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -1153,7 +1153,7 @@ _0211DA54:
 	add r1, r2, r4, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r4, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [sl, #0x90]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r4, lsl #3]
@@ -1298,7 +1298,7 @@ _0211DCAC:
 	ldr r0, [sl, #8]
 	bl sub_0200FAA4
 	add r0, sp, #0x28
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0x18
 	bl sub_0206E2DC
 	ldr r1, [sp, #0x28]
@@ -3777,7 +3777,7 @@ _02120084:
 	cmp r0, #0
 	bne _02120108
 	add r0, sp, #0x24
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0x14
 	bl sub_0206E2DC
 	ldr r1, [sp, #0x24]
@@ -4901,7 +4901,7 @@ _02120F80:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7, #0x30]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -5572,7 +5572,7 @@ _02121898:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7, #0x2c]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -7657,7 +7657,7 @@ _0212359C:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7, #0x1dc]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]

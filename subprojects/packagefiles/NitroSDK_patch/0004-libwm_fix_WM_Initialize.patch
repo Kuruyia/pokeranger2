@@ -1,0 +1,49 @@
+diff --git a/include/nitro/wm/ARM9/wm_api.h b/include/nitro/wm/ARM9/wm_api.h
+index 3cc3498..b58a896 100644
+--- a/include/nitro/wm/ARM9/wm_api.h
++++ b/include/nitro/wm/ARM9/wm_api.h
+@@ -22,8 +22,6 @@ WMErrCode WM_PowerOn(WMCallbackFunc callback);
+ WMErrCode WM_PowerOff(WMCallbackFunc callback);
+ 
+ WMErrCode WM_Initialize(void * wmSysBuf, WMCallbackFunc callback, u16 dmaNo);
+-WMErrCode WM_InitializeForListening(void * wmSysBuf, WMCallbackFunc callback, u16 dmaNo, BOOL blink);
+-WMErrCode WMi_InitializeEx(void * wmSysBuf, WMCallbackFunc callback, u16 dmaNo, u32 miscFlags);
+ 
+ WMErrCode WM_SetIndCallback(WMCallbackFunc callback);
+ WMErrCode WM_SetPortCallback(u16 port, WMCallbackFunc callback, void * arg);
+diff --git a/libraries/wm/src/wm_standard.c b/libraries/wm/src/wm_standard.c
+index 64a049c..b8c0cea 100644
+--- a/libraries/wm/src/wm_standard.c
++++ b/libraries/wm/src/wm_standard.c
+@@ -85,22 +85,6 @@ WMErrCode WM_PowerOff (WMCallbackFunc callback)
+ }
+ 
+ WMErrCode WM_Initialize (void * wmSysBuf, WMCallbackFunc callback, u16 dmaNo)
+-{
+-    return WMi_InitializeEx(wmSysBuf, callback, dmaNo, 0);
+-}
+-
+-WMErrCode WM_InitializeForListening (void * wmSysBuf, WMCallbackFunc callback, u16 dmaNo, BOOL blink)
+-{
+-    u32 miscFlags = WM_MISC_FLAG_LISTEN_ONLY;
+-
+-    if (!blink) {
+-        miscFlags |= WM_MISC_FLAG_NO_BLINK;
+-    }
+-
+-    return WMi_InitializeEx(wmSysBuf, callback, dmaNo, miscFlags);
+-}
+-
+-WMErrCode WMi_InitializeEx (void * wmSysBuf, WMCallbackFunc callback, u16 dmaNo, u32 miscFlags)
+ {
+     WMErrCode result;
+ 
+@@ -112,7 +96,7 @@ WMErrCode WMi_InitializeEx (void * wmSysBuf, WMCallbackFunc callback, u16 dmaNo,
+     {
+         WMArm9Buf * p = WMi_GetSystemWork();
+ 
+-        result = WMi_SendCommand(WM_APIID_INITIALIZE, 4, (u32)(p->WM7), (u32)(p->status), (u32)(p->fifo7to9), miscFlags);
++        result = WMi_SendCommand(WM_APIID_INITIALIZE, 3, (u32)(p->WM7), (u32)(p->status), (u32)(p->fifo7to9));
+         WM_CHECK_RESULT(result);
+     }
+ 

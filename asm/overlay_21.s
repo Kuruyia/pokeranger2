@@ -1234,13 +1234,13 @@ _0211D974:
 	add r1, r0, #0x500
 	add r0, r4, #0x600
 	mov r2, #0xc0
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	bl sub_02062744
 	mov r1, r0
 	add r0, r4, #0x740
 	add r1, r1, #0x5c0
 	mov r2, #0x40
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	cmp r6, #0
 	addeq sp, sp, #0xc
 	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, pc}
@@ -1304,7 +1304,7 @@ _0211DB20:
 	ldr r1, [r0, #4]
 	ldr r2, [r2, r6, lsl #3]
 	add r0, r3, r5, lsl #2
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldmib r4, {r0, r1}
 	ldr r1, [r1, r6, lsl #3]
 	add r6, r6, #1
@@ -1772,14 +1772,14 @@ ov21_0211E14C: ; 0x0211E14C
 	add r0, r0, #0xb80
 	add r1, r4, #0xe00
 	mov r2, #0x180
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	bl sub_02062890
 	mov r4, r0
 	bl sub_02062890
 	add r1, r4, #0xb80
 	add r0, r0, #0x480
 	mov r2, #0x180
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	mov r0, #0x44
 	mov r4, #2
 	bl _Znwm
@@ -4232,7 +4232,7 @@ _021205A4:
 	add r0, r0, #0x480
 	add r1, r4, #0xb80
 	mov r2, #0x180
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	b _02120600
 _021205E4:
 	bl sub_02062890
@@ -4241,7 +4241,7 @@ _021205E4:
 	add r0, r0, #0xe00
 	add r1, r4, #0xb80
 	mov r2, #0x180
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 _02120600:
 	ldr r0, [r8, #0x14]
 	ldr r1, [r0, #0x18]
@@ -4298,7 +4298,7 @@ _021206AC:
 	mov r1, sl
 	add r0, r0, #0x700
 	mov r2, #0x80
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	b _021206F0
 _021206D4:
 	bl sub_02062798
@@ -4307,7 +4307,7 @@ _021206D4:
 	mov r1, sl
 	add r0, r0, #0x780
 	mov r2, #0x80
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 _021206F0:
 	add r5, r5, #1
 	cmp r5, r7

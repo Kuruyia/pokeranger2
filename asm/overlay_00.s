@@ -2208,7 +2208,7 @@ _0211E8F4:
 	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
 	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
 	add r0, sp, #0x10
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0
 	bl sub_0206E2DC
 	ldr r0, _0211E954 ; =MAIN_BSS_020B26A0
@@ -2349,7 +2349,7 @@ CFieldScene_ov0_0211EA94: ; 0x0211EA94
 	ldr r0, [r0, #0x48c]
 	bl sub_02034C2C
 	add r0, sp, #0x20c
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0x1fc
 	bl sub_0206E2DC
 	ldr r0, _0211FA7C ; =MAIN_BSS_020B26A0
@@ -26810,19 +26810,19 @@ _02134098:
 	str r3, [sp, #0x10]
 	str r5, [sp, #0x14]
 	str lr, [sp, #0x18]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	add r0, sp, #0x6c
 	add r1, r4, #0x158
 	mov r2, #0x28
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	add r1, sp, #0x6c
 	add r0, r4, #0x180
 	mov r2, #0x30
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	add r0, sp, #0x6c
 	add r1, r4, #0x188
 	mov r2, #0x28
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	mov r1, r5
 	str r1, [r4, #0x150]
 	ldr r0, [sp, #0x18]
@@ -32812,19 +32812,19 @@ _02139318:
 	str r3, [sp, #0x10]
 	str r5, [sp, #0x14]
 	str lr, [sp, #0x18]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	add r0, sp, #0x6c
 	add r1, r4, #0x20c
 	mov r2, #0x28
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	add r1, sp, #0x6c
 	add r0, r4, #0x234
 	mov r2, #0x30
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	add r0, sp, #0x6c
 	add r1, r4, #0x23c
 	mov r2, #0x28
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	mov r1, r5
 	str r1, [r4, #0x204]
 	ldr r0, [sp, #0x18]
@@ -58772,7 +58772,7 @@ ov0_0214F830: ; 0x0214F830
 	and r3, r3, #0xff
 	bl sub_02018148
 	add r0, sp, #0x10
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #0
 	bl sub_0206E2DC
 	ldr r2, [sp, #0x10]

@@ -72,9 +72,9 @@
 .public sub_02065688
 .public OS_WakeupThreadDirect
 .public sub_02065928
-.public sub_02065BCC
-.public sub_02065BF4
-.public sub_02065C88
+.public OS_InitMessageQueue
+.public OS_SendMessage
+.public OS_ReceiveMessage
 .public sub_02065DC8
 .public DC_FlushRange
 .public sub_02066A24

@@ -1,0 +1,12 @@
+diff --git a/libraries/wm/src/wm_mp.c b/libraries/wm/src/wm_mp.c
+index 396ffcb..e5eb102 100644
+--- a/libraries/wm/src/wm_mp.c
++++ b/libraries/wm/src/wm_mp.c
+@@ -235,6 +235,7 @@ WMErrCode WM_SetMPDataToPortEx (WMCallbackFunc callback, void * arg, const u16 *
+     result = WMi_CheckStateEx(2, WM_STATE_MP_PARENT, WM_STATE_MP_CHILD);
+     WM_CHECK_RESULT(result);
+ 
++    DC_InvalidateRange(&(status->mp_maxSendSize), 2);
+     DC_InvalidateRange(&(status->aid), 2);
+     isParent = (status->aid == 0) ? TRUE : FALSE;
+ 

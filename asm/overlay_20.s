@@ -84,7 +84,7 @@ _0211CA68:
 	mov r3, #0x100
 	bl sub_02034DE8
 	add r0, sp, #0x18
-	bl sub_0206E388
+	bl RTC_GetTime
 	add r0, sp, #8
 	bl sub_0206E2DC
 	ldr r0, _0211CCF8 ; =MAIN_BSS_020B26A0

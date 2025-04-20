@@ -1,0 +1,109 @@
+diff --git a/libraries/wm/src/wm_ds.c b/libraries/wm/src/wm_ds.c
+index 865cff1..37b01b9 100644
+--- a/libraries/wm/src/wm_ds.c
++++ b/libraries/wm/src/wm_ds.c
+@@ -23,7 +23,7 @@ WMErrCode WM_StartDataSharing (WMDataSharingInfo * dsInfo, u16 port, u16 aidBitm
+ {
+     WMErrCode result;
+     int aid;
+-    u16 connectedAIDs = 0x0001;
++    u16 mpReadyAIDs = 0x0001;
+ 
+     result = WMi_CheckStateEx(2, WM_STATE_MP_PARENT, WM_STATE_MP_CHILD);
+     WM_CHECK_RESULT(result);
+@@ -49,7 +49,7 @@ WMErrCode WM_StartDataSharing (WMDataSharingInfo * dsInfo, u16 port, u16 aidBitm
+ 
+     aid = WM_GetAID();
+     if (aid == 0) {
+-        connectedAIDs = WM_GetConnectedAIDs();
++        mpReadyAIDs = WMi_GetMPReadyAIDs();
+     }
+ 
+     MI_CpuClearFast(dsInfo, sizeof(WMDataSharingInfo));
+@@ -87,7 +87,7 @@ WMErrCode WM_StartDataSharing (WMDataSharingInfo * dsInfo, u16 port, u16 aidBitm
+         int i;
+ 
+         for (i = 0; i < WM_DS_DATASET_NUM; i++) {
+-            dsInfo->ds[i].aidBitmap = (u16)(dsInfo->aidBitmap & (connectedAIDs | 0x0001));
++            dsInfo->ds[i].aidBitmap = (u16)(dsInfo->aidBitmap & (mpReadyAIDs | 0x0001));
+         }
+ 
+         (void)WM_SetPortCallback(port, WmDataSharingReceiveCallback_Parent, (void *)dsInfo);
+@@ -99,7 +99,7 @@ WMErrCode WM_StartDataSharing (WMDataSharingInfo * dsInfo, u16 port, u16 aidBitm
+             res =
+                 WM_SetMPDataToPortEx(WmDataSharingSetDataCallback, dsInfo, (u16 *)&dsInfo->ds[i],
+                                      dsInfo->dataSetLength,
+-                                     (u16)(dsInfo->aidBitmap & connectedAIDs), dsInfo->port,
++                                     (u16)(dsInfo->aidBitmap & mpReadyAIDs), dsInfo->port,
+                                      WM_PRIORITY_HIGH);
+             if (res == WM_ERRCODE_NO_CHILD) {
+                 dsInfo->seqNum[i] = 0xffff;
+@@ -143,7 +143,7 @@ WMErrCode WM_StepDataSharing (WMDataSharingInfo * dsInfo, const u16 * sendData,
+ {
+     WMErrCode result;
+     u16 aid;
+-    u16 connectedAIDs;
++    u16 mpReadyAIDs;
+     u16 state;
+ 
+     result = WMi_CheckStateEx(2, WM_STATE_MP_PARENT, WM_STATE_MP_CHILD);
+@@ -166,7 +166,7 @@ WMErrCode WM_StepDataSharing (WMDataSharingInfo * dsInfo, const u16 * sendData,
+ 
+     aid = WM_GetAID();
+     if (aid == 0) {
+-        connectedAIDs = WM_GetConnectedAIDs();
++        mpReadyAIDs = WMi_GetMPReadyAIDs();
+     }
+ 
+     state = dsInfo->state;
+@@ -197,7 +197,7 @@ WMErrCode WM_StepDataSharing (WMDataSharingInfo * dsInfo, const u16 * sendData,
+             res =
+                 WM_SetMPDataToPortEx(WmDataSharingSetDataCallback, dsInfo,
+                                      (u16 *)&dsInfo->ds[oldWI], dsInfo->dataSetLength,
+-                                     (u16)(dsInfo->aidBitmap & connectedAIDs), dsInfo->port,
++                                     (u16)(dsInfo->aidBitmap & mpReadyAIDs), dsInfo->port,
+                                      WM_PRIORITY_HIGH);
+             if (res == WM_ERRCODE_NO_CHILD) {
+                 WM_DLOGF_DATASHARING("sent ds   : write: %d, read: %d, send: %d\n",
+@@ -225,7 +225,7 @@ WMErrCode WM_StepDataSharing (WMDataSharingInfo * dsInfo, const u16 * sendData,
+ 
+             sendFlag = TRUE;
+             result = WM_ERRCODE_SUCCESS;
+-            if (dsInfo->doubleMode == FALSE && connectedAIDs != 0
++            if (dsInfo->doubleMode == FALSE && mpReadyAIDs != 0
+                 && dsInfo->ds[dsInfo->writeIndex].aidBitmap == 0x0001) {
+ 
+                 delayed = TRUE;
+@@ -504,12 +504,12 @@ void WmDataSharingSendDataSet (WMDataSharingInfo * dsInfo, BOOL delayed)
+     if (dsInfo->ds[dsInfo->writeIndex].aidBitmap == 0) {
+         u16 newWI, oldWI, resetWI;
+         WMErrCode res;
+-        u16 connectedAIDs;
++        u16 mpReadyAIDs;
+ 
+         WM_DLOGF_DATASHARING("send ds   : write: %d, read: %d, send: %d", dsInfo->writeIndex,
+                              dsInfo->readIndex, dsInfo->sendIndex);
+ 
+-        connectedAIDs = WM_GetConnectedAIDs();
++        mpReadyAIDs = WMi_GetMPReadyAIDs();
+         oldWI = dsInfo->writeIndex;
+         newWI = WmDataSharingGetNextIndex(oldWI);
+         if (dsInfo->doubleMode == TRUE) {
+@@ -521,7 +521,7 @@ void WmDataSharingSendDataSet (WMDataSharingInfo * dsInfo, BOOL delayed)
+ 
+         MI_CpuClear16(&dsInfo->ds[resetWI], sizeof(WMDataSet));
+ 
+-        dsInfo->ds[resetWI].aidBitmap = (u16)(dsInfo->aidBitmap & (connectedAIDs | 0x0001));
++        dsInfo->ds[resetWI].aidBitmap = (u16)(dsInfo->aidBitmap & (mpReadyAIDs | 0x0001));
+         dsInfo->writeIndex = newWI;
+         dsInfo->ds[oldWI].aidBitmap = dsInfo->aidBitmap;
+ 
+@@ -532,7 +532,7 @@ void WmDataSharingSendDataSet (WMDataSharingInfo * dsInfo, BOOL delayed)
+         (void)OS_RestoreInterrupts(enabled);
+         res =
+             WM_SetMPDataToPortEx(WmDataSharingSetDataCallback, dsInfo, (u16 *)&dsInfo->ds[oldWI],
+-                                 dsInfo->dataSetLength, (u16)(dsInfo->aidBitmap & connectedAIDs),
++                                 dsInfo->dataSetLength, (u16)(dsInfo->aidBitmap & mpReadyAIDs),
+                                  dsInfo->port, WM_PRIORITY_HIGH);
+         if (res == WM_ERRCODE_NO_CHILD) {
+             WM_DLOGF_DATASHARING("sent ds   : write: %d, read: %d, send: %d", dsInfo->writeIndex,

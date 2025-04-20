@@ -3668,7 +3668,7 @@ _0211FB8C:
 _0211FBA0:
 	cmp r2, #0
 	bge _0211FBB0
-	bl sub_02070F1C
+	bl WM_GetLinkLevel
 	mov r2, r0
 _0211FBB0:
 	ldr r0, [r4, #0x14]
@@ -10025,7 +10025,7 @@ ov11_02125048: ; 0x02125048
 	stmdb sp!, {r4, lr}
 	bl ov11_02126D3C
 	mov r4, r0
-	bl sub_02070FAC
+	bl WM_GetDispersionBeaconPeriod
 	strh r0, [r4, #0x18]
 	bl WM_GetNextTgid
 	strh r0, [r4, #0xc]
@@ -10042,7 +10042,7 @@ ov11_02125068: ; 0x02125068
 	bl ov11_02126D3C
 	ldrh r0, [r0, #0x32]
 	strh r0, [r4, #4]
-	bl sub_0207103C
+	bl WM_GetDispersionScanPeriod
 	strh r0, [r4, #6]
 	mov r0, #0xff
 	strb r0, [r4, #8]
@@ -10152,7 +10152,7 @@ ov11_021251C4: ; 0x021251C4
 	bl ov11_02126D78
 	cmp r0, #0xc
 	bne _021251F8
-	bl sub_020703E8
+	bl WM_Finish
 	mov r0, #0xc
 	bl ov11_02126D64
 	mov r0, #1
@@ -11274,7 +11274,7 @@ ov11_0212600C: ; 0x0212600C
 	ldr r0, [r4, #0x34]
 	mov r1, #2
 	add r5, r2, #0xe0
-	bl sub_020701D8
+	bl WM_Init
 	bl ov11_02125F50
 	str r0, [r4, #0x10]
 	mov r0, #0
@@ -11964,7 +11964,7 @@ ov11_021268F8: ; 0x021268F8
 	ldmia sp!, {r4, pc}
 	arm_func_end ov11_021268F8
 _02126920:
-	bl sub_020703E8
+	bl WM_Finish
 	mov r0, #1
 	bl ov11_02126E7C
 	ldmia sp!, {r4, pc}
@@ -12057,7 +12057,7 @@ _021269F0: .word ov11_02125144
 ov11_021269F4: ; 0x021269F4
 	stmdb sp!, {r3, lr}
 	ldr r0, _02126A18 ; =ov11_02125168
-	bl sub_0207129C
+	bl WM_Enable
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12072,7 +12072,7 @@ _02126A18: .word ov11_02125168
 ov11_02126A1C: ; 0x02126A1C
 	stmdb sp!, {r3, lr}
 	ldr r0, _02126A44 ; =ov11_021251C4
-	bl sub_020712FC
+	bl WM_Disable
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12094,7 +12094,7 @@ ov11_02126A48: ; 0x02126A48
 	mov r1, #3
 	mov r2, #0x11
 	str ip, [sp]
-	bl sub_02072F24
+	bl WM_MeasureChannel
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12135,7 +12135,7 @@ _02126AD8: .word ov11_021252A4
 ov11_02126ADC: ; 0x02126ADC
 	stmdb sp!, {r3, lr}
 	ldr r0, _02126B00 ; =ov11_021252E0
-	bl sub_02071618
+	bl WM_StartParent
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12167,7 +12167,7 @@ _02126B30: .word ov11_02125758
 ov11_02126B34: ; 0x02126B34
 	stmdb sp!, {r3, lr}
 	ldr r0, _02126B58 ; =ov11_021257F8
-	bl sub_020718A4
+	bl WM_EndScan
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12209,7 +12209,7 @@ ov11_02126BB0: ; 0x02126BB0
 	stmdb sp!, {r3, lr}
 	mov r1, r0
 	ldr r0, _02126BD8 ; =ov11_021259B4
-	bl sub_02071A98
+	bl WM_DisconnectChildren
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12258,7 +12258,7 @@ _02126C0C:
 	mov r1, r6
 	mov r2, r2, lsr #0x10
 	mov r3, r4
-	bl sub_02071D38
+	bl WM_StartMP
 	cmp r0, #2
 	addeq sp, sp, #8
 	moveq r0, #1
@@ -12275,7 +12275,7 @@ _02126C8C: .word ov11_02125A08
 ov11_02126C90: ; 0x02126C90
 	stmdb sp!, {r3, lr}
 	ldr r0, _02126CB4 ; =ov11_02125E2C
-	bl sub_0207133C
+	bl WM_PowerOn
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12290,7 +12290,7 @@ _02126CB4: .word ov11_02125E2C
 ov11_02126CB8: ; 0x02126CB8
 	stmdb sp!, {r3, lr}
 	ldr r0, _02126CE0 ; =ov11_02125E64
-	bl sub_0207137C
+	bl WM_PowerOff
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12958,7 +12958,7 @@ ov11_021273B4: ; 0x021273B4
 	cmp r0, #2
 	movls r0, #1
 	ldmlsia sp!, {r4, pc}
-	bl sub_02070AB4
+	bl WMi_GetStatusAddress
 	mov r4, r0
 	add r0, r4, #0x198
 	mov r1, #4
@@ -12969,7 +12969,7 @@ ov11_021273B4: ; 0x021273B4
 	str r2, [r4, #0x198]
 	bl DC_FlushRange
 	ldr r0, _02127448 ; =ov11_0212744C
-	bl sub_02071618
+	bl WM_StartParent
 	cmp r0, #2
 	beq _0212741C
 	bl ov11_02127310
@@ -13136,7 +13136,7 @@ ov11_021275E4: ; 0x021275E4
 	add r3, lr, #0xf60
 	mov r2, r2, lsl #0x10
 	mov r2, r2, lsr #0x10
-	bl sub_02071D38
+	bl WM_StartMP
 	cmp r0, #2
 	addeq sp, sp, #8
 	moveq r0, #1
@@ -13198,7 +13198,7 @@ ov11_02127700: ; 0x02127700
 	mov r0, #3
 	bl ov11_021272F8
 	ldr r0, _0212772C ; =ov11_02127730
-	bl sub_02071EDC
+	bl WM_EndMP
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -13230,7 +13230,7 @@ _0212774C:
 ov11_02127760: ; 0x02127760
 	stmdb sp!, {r3, lr}
 	ldr r0, _02127784 ; =ov11_02127788
-	bl sub_02071628
+	bl WM_EndParent
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -13279,7 +13279,7 @@ ov11_021277E0: ; 0x021277E0
 	mov r0, #3
 	bl ov11_021272F8
 	ldr r0, _0212780C ; =ov11_02127810
-	bl sub_02071EDC
+	bl WM_EndMP
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -13747,7 +13747,7 @@ ov11_02127D7C: ; 0x02127D7C
 	mov r1, #3
 	mov r2, #0x11
 	str ip, [sp]
-	bl sub_02072F24
+	bl WM_MeasureChannel
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_02127D7C
 
@@ -15810,7 +15810,7 @@ _021297B8: .word 0x0000FFFE
 ov11_021297BC: ; 0x021297BC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02070FAC
+	bl WM_GetDispersionBeaconPeriod
 	cmp r4, #0xa
 	moveq r0, r0, lsl #0xe
 	moveq r0, r0, lsr #0x10
@@ -18967,7 +18967,7 @@ ov11_0212C21C: ; 0x0212C21C
 	add r0, sp, #0xc
 	bl sub_0206E2DC
 	add r0, sp, #0
-	bl sub_0206E388
+	bl RTC_GetTime
 	mov r0, #0
 	mov r2, r0, lsl #4
 	ldr r1, [sp, #0xc]
@@ -23223,7 +23223,7 @@ _0212FB3C: .word s_not_my_parent_ggid_d_d_overlay_11_02166620
 ov11_0212FB40: ; 0x0212FB40
 	stmdb sp!, {r3, lr}
 	ldr r0, _0212FB64 ; =ov11_0212FB68
-	bl sub_020718A4
+	bl WM_EndScan
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -35619,7 +35619,7 @@ _0213A2F0:
 	bl PXI_SetFifoRecvCallback
 	mov r0, r6
 	mov r1, r7
-	bl sub_020660BC
+	bl DC_StoreRange
 	mov r4, #0x40000
 	mov r5, #2
 _0213A324:
@@ -36220,7 +36220,7 @@ ov11_0213AB40: ; 0x0213AB40
 	sub sp, sp, #0x24
 	mov sl, r0
 	bl ov11_02139940
-	bl sub_0206E200
+	bl RTC_Init
 	add r0, sp, #0x14
 	bl sub_0206E2DC
 	cmp r0, #0
@@ -36228,7 +36228,7 @@ ov11_0213AB40: ; 0x0213AB40
 	movne r0, #0
 	ldmneia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	add r0, sp, #8
-	bl sub_0206E388
+	bl RTC_GetTime
 	cmp r0, #0
 	addne sp, sp, #0x24
 	movne r0, #0
@@ -36404,7 +36404,7 @@ ov11_0213ADB0: ; 0x0213ADB0
 	strb r1, [r2, #4]
 	strb r1, [r2, #5]
 	bl ov11_02139940
-	bl sub_0206E200
+	bl RTC_Init
 	add r0, sp, #0x14
 	bl sub_0206E2DC
 	cmp r0, #0
@@ -36412,7 +36412,7 @@ ov11_0213ADB0: ; 0x0213ADB0
 	movne r0, #0
 	ldmneia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	add r0, sp, #8
-	bl sub_0206E388
+	bl RTC_GetTime
 	cmp r0, #0
 	addne sp, sp, #0x24
 	movne r0, #0
@@ -42165,7 +42165,7 @@ ov11_0213E0C0: ; 0x0213E0C0
 	mov r2, #0xc
 	bl ov11_0213DF88
 	add r0, sp, #0
-	blx sub_0206E388
+	blx RTC_GetTime
 	cmp r0, #0
 	bne _0213E0F2
 	ldr r0, [sp]
@@ -42335,11 +42335,11 @@ _0213E200: .word 0x0213E145
 	thumb_func_end ov11_0213E1F4
 _0213E204:
 	.byte 0x02, 0x4B, 0x01, 0x1C, 0x02, 0x48, 0x00, 0x22, 0x18, 0x47, 0xC0, 0x46
-	.word sub_02065BF4
+	.word OS_SendMessage
 	.word OVERLAY11_BSS_0216ABC0
 	.byte 0x02, 0x4B, 0x01, 0x1C, 0x02, 0x48, 0x00, 0x22
 	.byte 0x18, 0x47, 0xC0, 0x46
-	.word sub_02065BF4
+	.word OS_SendMessage
 	.word OVERLAY11_BSS_0216ABC0
 
 	thumb_func_start ov11_0213E22C
@@ -42351,7 +42351,7 @@ ov11_0213E22C: ; 0x0213E22C
 	ldr r1, _0213E2E0 ; =OVERLAY11_BSS_0216ABB0
 	mov r2, #4
 	mov r4, #1
-	blx sub_02065BCC
+	blx OS_InitMessageQueue
 	cmp r5, #0
 	beq _0213E246
 	cmp r6, #0
@@ -42394,7 +42394,7 @@ _0213E286:
 	add r0, r5, #0
 	add r1, r6, #0
 	add r2, r7, #0
-	blx sub_02065C88
+	blx OS_ReceiveMessage
 	ldr r0, [sp]
 	cmp r0, #0xf
 	bhi _0213E2C6
@@ -42469,7 +42469,7 @@ _0213E312:
 	add r0, r7, #0
 	add r1, sp, #0
 	mov r2, #1
-	blx sub_02065C88
+	blx OS_ReceiveMessage
 	ldr r0, [sp]
 	cmp r0, #0x14
 	bhi _0213E364
@@ -42541,7 +42541,7 @@ _0213E39C:
 	add r0, r4, #0
 	add r1, r6, #0
 	add r2, r7, #0
-	blx sub_02065C88
+	blx OS_ReceiveMessage
 	ldr r0, [sp]
 	cmp r0, #0xe
 	bne _0213E3B2
@@ -42618,7 +42618,7 @@ _0213E426:
 	ldr r0, _0213E534 ; =OVERLAY11_BSS_0216ABC0
 	add r1, sp, #0x14
 	mov r2, #1
-	blx sub_02065C88
+	blx OS_ReceiveMessage
 	ldr r0, [sp, #0x14]
 	cmp r0, #0x13
 	bhi _0213E4FA
@@ -42735,7 +42735,7 @@ _0213E506:
 	add r0, r5, #0
 	add r1, r4, #0
 	add r2, r6, #0
-	blx sub_02065C88
+	blx OS_ReceiveMessage
 	cmp r0, #1
 	beq _0213E506
 _0213E514:
@@ -42845,7 +42845,7 @@ _0213E5E0:
 	ldr r0, _0213E6FC ; =OVERLAY11_BSS_0216ABC0
 	add r1, sp, #0x10
 	mov r2, #1
-	blx sub_02065C88
+	blx OS_ReceiveMessage
 	ldr r0, [sp, #0x10]
 	cmp r0, #0x13
 	bhi _0213E6B2
@@ -42965,7 +42965,7 @@ _0213E6C4:
 	add r0, r5, #0
 	add r1, r4, #0
 	add r2, r6, #0
-	blx sub_02065C88
+	blx OS_ReceiveMessage
 	cmp r0, #1
 	beq _0213E6C4
 _0213E6D2:
@@ -52326,7 +52326,7 @@ ov11_021433F4: ; 0x021433F4
 	mov r4, r0
 	ldr r1, [r1]
 	mov r2, #0xc0
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	mov r0, r4
 	bl ov11_0215B060
 	mov r0, #1
@@ -52465,7 +52465,7 @@ ov11_021435BC: ; 0x021435BC
 	bl WM_GetAllowedChannel
 	cmp r0, #0x8000
 	beq _021435E4
-	bl sub_02070F1C
+	bl WM_GetLinkLevel
 	mov r4, r0
 	arm_func_end ov11_021435BC
 _021435E4:
@@ -56452,7 +56452,7 @@ _02146BB0:
 	mvn r0, #0
 	bl sub_0206AF74
 	bl sub_0206CE80
-	bl sub_0206E200
+	bl RTC_Init
 	bl sub_0206147C
 	ldr r1, _02146C28 ; =0x04001000
 	ldr r0, [r1]
@@ -73704,7 +73704,7 @@ ov11_02154838: ; 0x02154838
 	add r1, ip, #4
 	mov r2, #0x600
 	str ip, [r3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r1, _02154894 ; =ov11_02154934
 	mov r0, #1
 	mov r2, #0
@@ -74465,7 +74465,7 @@ _021551B8:
 	ldr r0, [r4]
 	add r0, r0, #0x28c
 	add r0, r0, #0x1400
-	bl sub_02070C9C
+	bl WM_ReadStatus
 	ldr ip, [r4]
 	add r0, ip, #0x1600
 	ldrh r0, [r0, #0x8c]
@@ -74485,7 +74485,7 @@ _021551EC:
 	str r0, [lr]
 	add r0, ip, #0x1000
 	str r1, [r0, #0x648]
-	bl sub_0207103C
+	bl WM_GetDispersionScanPeriod
 	ldr r1, _02155238 ; =OVERLAY11_BSS_0216C3C0
 	ldr r1, [r1]
 	add r1, r1, #0x1600
@@ -74508,7 +74508,7 @@ ov11_02155244: ; 0x02155244
 	ldr r1, [r1]
 	add r1, r1, #0x248
 	add r1, r1, #0x1400
-	bl sub_02071754
+	bl WM_StartScanEx
 	cmp r0, #2
 	moveq r0, #1
 	movne r0, #0
@@ -74529,7 +74529,7 @@ ov11_02155278: ; 0x02155278
 	ldr r0, [r1]
 	add r0, r0, #0x28c
 	add r0, r0, #0x1400
-	bl sub_02070C9C
+	bl WM_ReadStatus
 	ldr r0, _0215530C ; =OVERLAY11_BSS_0216C3C0
 	ldr r0, [r0]
 	add r0, r0, #0x1600
@@ -74547,7 +74547,7 @@ _021552D0:
 	ldr r0, [r4]
 	add r0, r0, #0x28c
 	add r0, r0, #0x1400
-	bl sub_02070C9C
+	bl WM_ReadStatus
 	ldr r0, [r4]
 	add r0, r0, #0x1600
 	ldrh r0, [r0, #0x8c]
@@ -74712,7 +74712,7 @@ _021554B0:
 	add r0, sp, #4
 	mov r1, r4
 	strb r2, [sb, #0x28]
-	bl sub_020710D0
+	bl WM_GetOtherElements
 	ldrb r8, [sp, #4]
 	mov r7, #0
 	cmp r8, #0
@@ -76654,7 +76654,7 @@ _02156DF0:
 	ldr r0, [r4]
 	add r0, r0, #0x3b8
 	add r0, r0, #0x1000
-	bl sub_02070C9C
+	bl WM_ReadStatus
 	ldr ip, [r4]
 	add r0, ip, #0x1300
 	ldrh r0, [r0, #0xb8]
@@ -76674,7 +76674,7 @@ _02156E24:
 	str r0, [lr]
 	add r0, ip, #0x1000
 	str r1, [r0, #0x374]
-	bl sub_0207103C
+	bl WM_GetDispersionScanPeriod
 	ldr r1, _02156F04 ; =OVERLAY11_BSS_0216C3D4
 	ldr r1, [r1]
 	add r1, r1, #0x1300
@@ -76738,7 +76738,7 @@ ov11_02156F1C: ; 0x02156F1C
 	ldr r1, [r1]
 	add r1, r1, #0x374
 	add r1, r1, #0x1000
-	bl sub_02071754
+	bl WM_StartScanEx
 	cmp r0, #2
 	moveq r0, #1
 	movne r0, #0
@@ -76759,7 +76759,7 @@ ov11_02156F50: ; 0x02156F50
 	ldr r0, [r1]
 	add r0, r0, #0x3b8
 	add r0, r0, #0x1000
-	bl sub_02070C9C
+	bl WM_ReadStatus
 	ldr r0, _02157028 ; =OVERLAY11_BSS_0216C3D4
 	ldr r0, [r0]
 	add r0, r0, #0x1300
@@ -76777,7 +76777,7 @@ _02156FA8:
 	ldr r0, [r4]
 	add r0, r0, #0x3b8
 	add r0, r0, #0x1000
-	bl sub_02070C9C
+	bl WM_ReadStatus
 	ldr r0, [r4]
 	add r0, r0, #0x1300
 	ldrh r0, [r0, #0xb8]
@@ -79037,7 +79037,7 @@ ov11_02158E04: ; 0x02158E04
 	ldr r2, [r2, #4]
 	ldr r0, _02158E64 ; =ov11_02158E68
 	add r2, r2, #0x13c0
-	bl sub_02072CCC
+	bl WM_SetWEPKey
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79081,7 +79081,7 @@ ov11_02158EA0: ; 0x02158EA0
 	movls r0, #1
 	ldmlsia sp!, {r3, pc}
 	ldr r0, _02158F00 ; =ov11_02158F04
-	bl sub_02071618
+	bl WM_StartParent
 	cmp r0, #2
 	beq _02158EDC
 	bl ov11_02158D34
@@ -79236,7 +79236,7 @@ ov11_02159074: ; 0x02159074
 	mov r2, r3, lsl #0x10
 	mov r2, r2, lsr #0x10
 	add r3, lr, #0xf80
-	bl sub_02071D38
+	bl WM_StartMP
 	cmp r0, #2
 	addeq sp, sp, #8
 	moveq r0, #1
@@ -79310,7 +79310,7 @@ _021591B4:
 	mov r2, #7
 	mov r3, #0x44
 	str ip, [sp]
-	bl sub_02072124
+	bl WM_StartDataSharing
 	cmp r0, #0
 	beq _021591F4
 	bl ov11_02158D34
@@ -79348,7 +79348,7 @@ ov11_02159238: ; 0x02159238
 	mov r1, #0xd
 	ldr r0, [r0, #4]
 	add r0, r0, #0x1e00
-	bl sub_02072CA4
+	bl WM_StartKeySharing
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79365,7 +79365,7 @@ ov11_02159274: ; 0x02159274
 	ldr r0, _021592A0 ; =OVERLAY11_BSS_0216C3E0
 	ldr r0, [r0, #4]
 	add r0, r0, #0x1e00
-	bl sub_02072CC0
+	bl WM_EndKeySharing
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79382,7 +79382,7 @@ ov11_021592A4: ; 0x021592A4
 	mov r0, #3
 	bl ov11_02158CB8
 	ldr r0, _021592D0 ; =ov11_021592D4
-	bl sub_02071EDC
+	bl WM_EndMP
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79425,7 +79425,7 @@ _02159324: .word s_DWCi_MOV_WH_StateInEndParent_fai_overlay_11_02169694
 ov11_02159328: ; 0x02159328
 	stmdb sp!, {r3, lr}
 	ldr r0, _0215934C ; =ov11_02159350
-	bl sub_02071628
+	bl WM_EndParent
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79464,7 +79464,7 @@ ov11_02159374: ; 0x02159374
 	ldr r0, _021593C0 ; =OVERLAY11_BSS_0216C3E0
 	ldr r0, [r0, #4]
 	add r0, r0, #0x1e00
-	bl sub_02072CC0
+	bl WM_EndKeySharing
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79481,7 +79481,7 @@ ov11_021593C4: ; 0x021593C4
 	mov r0, #3
 	bl ov11_02158CB8
 	ldr r0, _021593F0 ; =ov11_021593F4
-	bl sub_02071EDC
+	bl WM_EndMP
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79803,7 +79803,7 @@ ov11_02159798: ; 0x02159798
 	mov r1, #3
 	mov r2, #0x11
 	str ip, [sp]
-	bl sub_02072F24
+	bl WM_MeasureChannel
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_02159798
 
@@ -80065,7 +80065,7 @@ _02159AE8:
 	strh r5, [r1, #0xc]
 	ldr r0, [r0, #4]
 	strh r4, [r0, #0x32]
-	bl sub_02070FAC
+	bl WM_GetDispersionBeaconPeriod
 	ldr r1, _02159BB4 ; =OVERLAY11_BSS_0216C3E0
 	mov r2, #0xd0
 	ldr r3, [r1, #4]
@@ -80136,7 +80136,7 @@ ov11_02159BD8: ; 0x02159BD8
 	bx ip
 	.align 2, 0
 _02159BF8: .word OVERLAY11_BSS_0216C3E0
-_02159BFC: .word sub_02072C20
+_02159BFC: .word WM_GetSharedDataAddress
 	arm_func_end ov11_02159BD8
 
 	arm_func_start ov11_02159C00
@@ -80148,7 +80148,7 @@ ov11_02159C00: ; 0x02159C00
 	add r0, r2, #0x3e0
 	add r0, r0, #0x1000
 	add r2, r2, #0x1c00
-	bl sub_020723C0
+	bl WM_StepDataSharing
 	mov r4, r0
 	cmp r4, #7
 	bne _02159C50
@@ -85614,7 +85614,7 @@ ov11_0215E220: ; 0x0215E220
 	ldr r0, _0215E288 ; =OVERLAY11_BSS_0216CD68
 	ldr r1, _0215E28C ; =OVERLAY11_BSS_0216CD4C
 	mov r2, #1
-	bl sub_02065BCC
+	bl OS_InitMessageQueue
 	mov r0, #0x2000
 	str r0, [sp]
 	ldr r0, _0215E290 ; =OVERLAY11_BSS_0216CD88
@@ -85656,7 +85656,7 @@ ov11_0215E2C0: ; 0x0215E2C0
 	ldr r0, _0215E2D8 ; =OVERLAY11_BSS_0216CD68
 	add r1, sp, #0
 	mov r2, #1
-	bl sub_02065C88
+	bl OS_ReceiveMessage
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0215E2D8: .word OVERLAY11_BSS_0216CD68
@@ -85670,7 +85670,7 @@ ov11_0215E2DC: ; 0x0215E2DC
 	mov r2, r1
 	bx ip
 	.align 2, 0
-_0215E2F0: .word sub_02065BF4
+_0215E2F0: .word OS_SendMessage
 _0215E2F4: .word OVERLAY11_BSS_0216CD68
 	arm_func_end ov11_0215E2DC
 
@@ -90793,7 +90793,7 @@ ov11_021627AC: ; 0x021627AC
 	mov r2, r1
 	bx ip
 	.align 2, 0
-_021627BC: .word sub_02065BF4
+_021627BC: .word OS_SendMessage
 	arm_func_end ov11_021627AC
 
 	arm_func_start ov11_021627C0

@@ -1,0 +1,49 @@
+diff --git a/include/nitro/wm/ARM9/wm_api.h b/include/nitro/wm/ARM9/wm_api.h
+index b58a896..802413d 100644
+--- a/include/nitro/wm/ARM9/wm_api.h
++++ b/include/nitro/wm/ARM9/wm_api.h
+@@ -13,8 +13,6 @@ WMErrCode WM_Init(void * wmSysBuf, u16 dmaNo);
+ WMErrCode WM_Finish(void);
+ 
+ WMErrCode WM_Enable(WMCallbackFunc callback);
+-WMErrCode WM_EnableForListening(WMCallbackFunc callback, BOOL blink);
+-WMErrCode WMi_EnableEx(WMCallbackFunc callback, u32 miscFlags);
+ 
+ WMErrCode WM_Disable(WMCallbackFunc callback);
+ 
+diff --git a/libraries/wm/src/wm_standard.c b/libraries/wm/src/wm_standard.c
+index b8c0cea..8518018 100644
+--- a/libraries/wm/src/wm_standard.c
++++ b/libraries/wm/src/wm_standard.c
+@@ -5,22 +5,6 @@
+ static BOOL WmCheckParentParameter(const WMParentParam * param);
+ 
+ WMErrCode WM_Enable (WMCallbackFunc callback)
+-{
+-    return WMi_EnableEx(callback, 0);
+-}
+-
+-WMErrCode WM_EnableForListening (WMCallbackFunc callback, BOOL blink)
+-{
+-    u32 miscFlags = WM_MISC_FLAG_LISTEN_ONLY;
+-
+-    if (!blink) {
+-        miscFlags |= WM_MISC_FLAG_NO_BLINK;
+-    }
+-
+-    return WMi_EnableEx(callback, miscFlags);
+-}
+-
+-WMErrCode WMi_EnableEx (WMCallbackFunc callback, u32 miscFlags)
+ {
+     WMErrCode result;
+ 
+@@ -32,7 +16,7 @@ WMErrCode WMi_EnableEx (WMCallbackFunc callback, u32 miscFlags)
+     {
+         WMArm9Buf * p = WMi_GetSystemWork();
+ 
+-        result = WMi_SendCommand(WM_APIID_ENABLE, 4, (u32)(p->WM7), (u32)(p->status), (u32)(p->fifo7to9), miscFlags);
++        result = WMi_SendCommand(WM_APIID_ENABLE, 3, (u32)(p->WM7), (u32)(p->status), (u32)(p->fifo7to9));
+         WM_CHECK_RESULT(result);
+     }
+ 

@@ -1908,7 +1908,7 @@ _0211E4D4:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7, #0x60]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]
@@ -1976,7 +1976,7 @@ _0211E5D4:
 	add r1, r2, r5, lsl #3
 	ldr r1, [r1, #4]
 	ldr r2, [r2, r5, lsl #3]
-	bl sub_02067E7C
+	bl MIi_CpuCopyFast
 	ldr r2, [r7, #0x64]
 	ldmib r2, {r0, r1}
 	ldr r1, [r1, r5, lsl #3]

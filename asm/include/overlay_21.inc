@@ -119,7 +119,7 @@
 .public DC_FlushRange
 .public sub_020668E8
 .public MIi_CpuClearFast
-.public sub_02067E7C
+.public MIi_CpuCopyFast
 .public _ll_udiv
 .public OS_IRQTable
 .public DAT_0208c55c

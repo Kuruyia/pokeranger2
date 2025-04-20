@@ -163,10 +163,10 @@
 .public DC_FlushRange
 .public sub_020668E8
 .public MIi_CpuClearFast
-.public sub_02067E7C
+.public MIi_CpuCopyFast
 .public MI_CpuFill8
 .public sub_0206E2DC
-.public sub_0206E388
+.public RTC_GetTime
 .public strcpy
 .public strcat
 .public _ll_div
