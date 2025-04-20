@@ -408,8 +408,8 @@
 .public sub_020780D8
 .public sub_020781E0
 .public sub_0207824C
-.public sub_02078778
-.public sub_020787FC
+.public MATHi_CRC16InitTableRev
+.public MATH_CalcCRC16
 .public STD_GetStringLength
 .public STD_ConcatenateString
 .public STD_CompareString

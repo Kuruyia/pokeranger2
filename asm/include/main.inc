@@ -123,3 +123,4 @@
 .public STD_CopyLString
 .public STD_CopyString
 .public STD_GetStringLength
+.public MATH_CountPopulation

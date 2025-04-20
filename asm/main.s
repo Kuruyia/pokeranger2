@@ -138881,7 +138881,7 @@ _020721A0:
 	strh r2, [r1, #0x18]
 	mov r0, r0, lsr #0x10
 	strh r0, [r1, #0xe]
-	bl sub_02078734
+	bl MATH_CountPopulation
 	add r3, sl, #0x800
 	mul r1, r5, r0
 	strh r0, [r3, #0x12]
@@ -139632,7 +139632,7 @@ sub_02072C74: ; 0x02072C74
 	mov r5, r0
 	and r0, r1, r3
 	mov r4, r2
-	bl sub_02078734
+	bl MATH_CountPopulation
 	add r1, r5, #0x800
 	ldrh r1, [r1, #0x10]
 	mla r0, r1, r0, r4
@@ -146393,87 +146393,6 @@ _02078724:
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
 _02078730: .word MAIN_BSS_0211C048
-
-	arm_func_start sub_02078734
-sub_02078734: ; 0x02078734
-	ldr r1, _0207876C ; =0x55555555
-	ldr r2, _02078770 ; =0x33333333
-	and r1, r1, r0, lsr #1
-	sub r0, r0, r1
-	and r1, r0, r2
-	and r0, r2, r0, lsr #2
-	add r1, r1, r0
-	ldr r0, _02078774 ; =0x0F0F0F0F
-	add r1, r1, r1, lsr #4
-	and r0, r1, r0
-	add r0, r0, r0, lsr #8
-	add r0, r0, r0, lsr #16
-	and r0, r0, #0xff
-	bx lr
-	.align 2, 0
-_0207876C: .word 0x55555555
-_02078770: .word 0x33333333
-_02078774: .word 0x0F0F0F0F
-	arm_func_end sub_02078734
-
-	arm_func_start sub_02078778
-sub_02078778: ; 0x02078778
-	stmdb sp!, {r3, lr}
-	mov lr, #0
-	mov r3, lr
-	arm_func_end sub_02078778
-_02078784:
-	mov ip, lr
-	mov r2, r3
-_0207878C:
-	tst ip, #1
-	eorne ip, r1, ip, lsr #1
-	add r2, r2, #1
-	moveq ip, ip, lsr #1
-	cmp r2, #8
-	blo _0207878C
-	mov r2, lr, lsl #1
-	add lr, lr, #1
-	strh ip, [r0, r2]
-	cmp lr, #0x100
-	blo _02078784
-	ldmia sp!, {r3, pc}
-
-	arm_func_start sub_020787BC
-sub_020787BC: ; 0x020787BC
-	stmdb sp!, {r4, lr}
-	cmp r3, #0
-	ldrh lr, [r1]
-	mov r4, #0
-	bls _020787F4
-	arm_func_end sub_020787BC
-_020787D0:
-	ldrb ip, [r2], #1
-	add r4, r4, #1
-	cmp r4, r3
-	eor ip, lr, ip
-	mov ip, ip, lsl #0x18
-	mov ip, ip, lsr #0x17
-	ldrh ip, [r0, ip]
-	eor lr, ip, lr, lsr #8
-	blo _020787D0
-_020787F4:
-	strh lr, [r1]
-	ldmia sp!, {r4, pc}
-
-	arm_func_start sub_020787FC
-sub_020787FC: ; 0x020787FC
-	stmdb sp!, {r3, lr}
-	mov lr, r1
-	mov ip, #0
-	mov r3, r2
-	add r1, sp, #0
-	mov r2, lr
-	strh ip, [sp]
-	bl sub_020787BC
-	ldrh r0, [sp]
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_020787FC
 
     .section .init, 4
 

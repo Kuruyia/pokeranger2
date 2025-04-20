@@ -20693,11 +20693,11 @@ ov11_0212D8A0: ; 0x0212D8A0
 	bl Heap_Alloc
 	ldr r1, _0212D970 ; =0x0000A001
 	mov r6, r0
-	bl sub_02078778
+	bl MATHi_CRC16InitTableRev
 	mov r0, r6
 	mov r1, r5
 	mov r2, #0x50
-	bl sub_020787FC
+	bl MATH_CalcCRC16
 	mov r7, r0
 	cmp r6, #0
 	beq _0212D8E8
@@ -34952,7 +34952,7 @@ ov11_02139A18: ; 0x02139A18
 	bl ov11_0213A43C
 	ldr r1, _02139AEC ; =0x0000A001
 	add r0, sl, #0x200
-	bl sub_02078778
+	bl MATHi_CRC16InitTableRev
 	mov r5, #0x100
 	ldr r6, _02139AF0 ; =OVERLAY11_BSS_02169D6C
 	mov r8, #0
@@ -34978,7 +34978,7 @@ _02139A74:
 	mov r1, sl
 	mov r2, #0xfe
 	add r0, sl, #0x200
-	bl sub_020787FC
+	bl MATH_CalcCRC16
 	strh r0, [sl, #0xfe]
 _02139A98:
 	mov r0, sb
@@ -35102,7 +35102,7 @@ _02139C10:
 	mov r1, r7
 	mov r2, r4
 	add r0, r8, #0x500
-	bl sub_020787FC
+	bl MATH_CalcCRC16
 	add r1, r8, r5, lsl #8
 	strh r0, [r1, #0xfe]
 _02139C28:
@@ -35789,7 +35789,7 @@ ov11_0213A508: ; 0x0213A508
 	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 	ldr r1, _0213A800 ; =0x0000A001
 	add r0, r8, #0x500
-	bl sub_02078778
+	bl MATHi_CRC16InitTableRev
 	mov r0, r8
 	bl ov11_02139B38
 	cmp r0, #0
@@ -35811,7 +35811,7 @@ _0213A584:
 	mov r1, r6
 	mov r2, r4
 	add r0, r8, #0x500
-	bl sub_020787FC
+	bl MATH_CalcCRC16
 	add r1, r8, r5, lsl #8
 	ldrh r1, [r1, #0xfe]
 	cmp r0, r1
@@ -35829,7 +35829,7 @@ _0213A5B4:
 	add r0, r8, #0x500
 	add r1, r8, #0x300
 	mov r2, #0xfe
-	bl sub_020787FC
+	bl MATH_CalcCRC16
 	add r1, r8, #0x300
 	ldrh r1, [r1, #0xfe]
 	cmp r0, r1
@@ -74767,7 +74767,7 @@ ov11_021555A8: ; 0x021555A8
 	str r0, [r1]
 	ldr r1, _021555E8 ; =0x0000A001
 	add r0, r2, #0x400
-	bl sub_02078778
+	bl MATHi_CRC16InitTableRev
 	ldr r0, _021555E4 ; =OVERLAY11_BSS_0216C3C4
 	ldr r0, [r0]
 	bl ov11_02139B38
@@ -75588,7 +75588,7 @@ _02155FF0:
 	add r0, r1, #0xf8
 	add r0, r0, #0x400
 	add r1, r1, r7
-	bl sub_020787FC
+	bl MATH_CalcCRC16
 	ldr r1, [r8]
 	add r1, r1, r6, lsl #8
 	strh r0, [r1, #0xfe]

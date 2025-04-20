@@ -10,6 +10,7 @@ Static main
 	Address 0x02000000
 	StackSize 0 2048
 	Object main.nef.p/asm_main.s.o
+	Library libmath.a
 	Library libstd.a
 	Library MSL_C_NITRO_Ai_LE.a
 	Library MSL_Extras_NITRO_Ai_LE.a
