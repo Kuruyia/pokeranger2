@@ -7901,7 +7901,7 @@ _02123530:
 	bl sub_020215F8
 	mov r1, r0
 	mov r0, sb
-	bl sub_020788E0
+	bl STD_ConcatenateString
 	add r7, r7, #1
 	add r6, r6, #3
 	mov r0, #0
@@ -86994,7 +86994,7 @@ ov11_0215F41C: ; 0x0215F41C
 	ldr ip, _0215F424 ; =FUN_02078904
 	bx ip
 	.align 2, 0
-_0215F424: .word sub_02078904
+_0215F424: .word STD_CompareString
 	arm_func_end ov11_0215F41C
 
 	arm_func_start ov11_0215F428
@@ -87037,7 +87037,7 @@ _0215F488:
 	ldr ip, _0215F498 ; =FUN_020788B8
 	bx ip
 	.align 2, 0
-_0215F498: .word sub_020788B8
+_0215F498: .word STD_GetStringLength
 	arm_func_end ov11_0215F490
 
 	arm_func_start ov11_0215F49C
@@ -90830,7 +90830,7 @@ ov11_02162820: ; 0x02162820
 	ldr ip, _02162828 ; =FUN_020788B8
 	bx ip
 	.align 2, 0
-_02162828: .word sub_020788B8
+_02162828: .word STD_GetStringLength
 	arm_func_end ov11_02162820
 
 	arm_func_start thunk_FUN_02078930
@@ -90838,7 +90838,7 @@ thunk_FUN_02078930: ; 0x0216282C
 	ldr ip, _02162834 ; =FUN_02078930
 	bx ip
 	.align 2, 0
-_02162834: .word sub_02078930
+_02162834: .word STD_CompareNString
 	arm_func_end thunk_FUN_02078930
 
 	arm_func_start ov11_02162838

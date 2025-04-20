@@ -409,7 +409,7 @@
 .public FS_ReadFile
 .public sub_0206E2DC
 .public sub_0206E388
-.public sub_02078824
+.public STD_CopyString
 .public memcpy
 .public strcpy
 .public _ZNSt13__vec_deleterImSaImEE13sub_push_backERKmN10Metrowerks8int2typeILi1EEE

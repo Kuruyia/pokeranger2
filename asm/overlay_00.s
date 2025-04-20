@@ -10585,7 +10585,7 @@ ov0_02125D28: ; 0x02125D28
 	beq _02126608
 	add r0, sp, #0x38
 	mov r1, r5
-	bl sub_02078824
+	bl STD_CopyString
 	ldr r1, _02126614 ; =s_data_field_map_s_map_lz_overlay_0_02173234
 	add r0, sp, #0x2c8
 	add r2, sp, #0x38

@@ -410,10 +410,10 @@
 .public sub_0207824C
 .public sub_02078778
 .public sub_020787FC
-.public sub_020788B8
-.public sub_020788E0
-.public sub_02078904
-.public sub_02078930
+.public STD_GetStringLength
+.public STD_ConcatenateString
+.public STD_CompareString
+.public STD_CompareNString
 .public memcpy
 .public memmove
 .public memset

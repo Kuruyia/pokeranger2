@@ -119,3 +119,7 @@
 .public _f_add
 .public _f_fgt
 .public __global_destructor_chain
+.public STD_TVSNPrintf
+.public STD_CopyLString
+.public STD_CopyString
+.public STD_GetStringLength
