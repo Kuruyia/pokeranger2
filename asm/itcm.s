@@ -264,12 +264,12 @@ _01FF8324:
 	ldr r8, [r0, #0x10]
 	ldr sb, [r0, #0x18]
 	ldr sl, [r0, #0x1c]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov fp, r0
 	bl sub_02066040
 	bl sub_02066034
 	mov r0, fp
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	bl sub_02066108
 	bl sub_020660FC
 	add r5, r5, r4
@@ -365,7 +365,7 @@ sub_01FF8480: ; 0x01FF8480
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r1, #0xc
 	mul r2, r7, r1
 	add r1, r2, #0xb0
@@ -374,7 +374,7 @@ sub_01FF8480: ; 0x01FF8480
 	add r1, r1, #0x4000000
 	str r5, [r1, #4]
 	str r4, [r1, #8]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	arm_func_end sub_01FF8480
 
@@ -385,7 +385,7 @@ sub_01FF84C0: ; 0x01FF84C0
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r1, #0xc
 	mul r2, r7, r1
 	add r1, r2, #0xb0
@@ -405,7 +405,7 @@ sub_01FF84C0: ; 0x01FF84C0
 	str r2, [r3, #4]
 	str r1, [r3, #8]
 _01FF8520:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 _01FF8528: .word 0x040000B0

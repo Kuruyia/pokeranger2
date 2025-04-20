@@ -1604,7 +1604,7 @@ ov11_0211DF64: ; 0x0211DF64
 	arm_func_start ov11_0211DF6C
 ov11_0211DF6C: ; 0x0211DF6C
 	stmdb sp!, {r3, lr}
-	bl sub_02077DF0
+	bl CTRDG_GetAgbGameCode
 	mov r2, r0, lsr #8
 	ldr r1, _0211DFDC ; =DAT_overlay_11_021661f4
 	mov ip, r0, lsr #0x10
@@ -1641,14 +1641,14 @@ _0211DFE0: .word DAT_overlay_11_021661f4
 	arm_func_start ov11_0211DFE4
 ov11_0211DFE4: ; 0x0211DFE4
 	stmdb sp!, {r3, lr}
-	bl sub_0207824C
-	bl sub_02077D88
+	bl CTRDG_Init
+	bl CTRDG_IsAgbCartridge
 	cmp r0, #0
 	moveq r0, #0
 	ldmeqia sp!, {r3, pc}
 	mov r0, #1
-	bl sub_020781E0
-	bl sub_02077E38
+	bl CTRDG_Enable
+	bl CTRDG_GetAgbMakerCode
 	ldr r1, _0211E02C ; =0x00003130
 	cmp r0, r1
 	movne r0, #0
@@ -1671,7 +1671,7 @@ ov11_0211E030: ; 0x0211E030
 	ldmeqia sp!, {r3, pc}
 	ldr r0, _0211E058 ; =0x08100004
 	add r1, sp, #0
-	bl sub_020780D8
+	bl CTRDG_Read32
 	ldr r0, [sp]
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -5937,11 +5937,11 @@ ov11_02121A08: ; 0x02121A08
 	ldr r1, _02121A74 ; =0x04000210
 	mov r0, #0
 	ldr r4, [r1]
-	bl sub_02064A68
+	bl OS_SetIrqMask
 	ldr r0, [r5, #0x718]
 	bl ov11_021304B4
 	mov r0, r4
-	bl sub_02064A68
+	bl OS_SetIrqMask
 	ldr r2, _02121A78 ; =0x04000208
 	mov r0, r5
 	ldrh r1, [r2]
@@ -10500,7 +10500,7 @@ _02125680:
 _02125688:
 	mov r0, r4
 	mov r1, #0xc0
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	bl ov11_02126EA0
 	bl ov11_0212697C
 	ldrh r0, [r5, #0x36]
@@ -12003,7 +12003,7 @@ ov11_0212696C: ; 0x0212696C
 	mov r1, #0xc0
 	bx ip
 	.align 2, 0
-_02126978: .word NitroSDK_DC_InvalidateRange
+_02126978: .word DC_InvalidateRange
 	arm_func_end ov11_0212696C
 
 	arm_func_start ov11_0212697C
@@ -12962,7 +12962,7 @@ ov11_021273B4: ; 0x021273B4
 	mov r4, r0
 	add r0, r4, #0x198
 	mov r1, #4
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	mov r2, #0
 	add r0, r4, #0x198
 	mov r1, #4
@@ -23132,7 +23132,7 @@ _0212F9EC:
 _0212F9F8:
 	add r0, r2, #0xf00
 	mov r1, #0xc0
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldrh r0, [r4, #0x36]
 	cmp r0, #8
 	blo _0212FA20
@@ -23620,7 +23620,7 @@ _0213001C:
 	ldr r1, [r1, #4]
 	mov r2, #0x68
 	add r1, r1, #0xfe0
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldr r0, _02130184 ; =OVERLAY11_BSS_02169C7C
 	mov r1, #1
 	ldr r0, [r0, #4]
@@ -23672,7 +23672,7 @@ _021300A4:
 	add r0, r4, #8
 	add r1, r1, r3
 	sub r2, r2, r3
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	b _02130124
 _0213010C:
 	add r0, r1, #0x1000
@@ -23680,7 +23680,7 @@ _0213010C:
 	mov r2, #0x68
 	mla r1, ip, r2, r0
 	add r0, r4, #8
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 _02130124:
 	ldr r1, _02130184 ; =OVERLAY11_BSS_02169C7C
 	ldr r0, [r1, #4]
@@ -23973,14 +23973,14 @@ ov11_02130470: ; 0x02130470
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r1
 	mov r4, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	mov r0, r6
 	mov r1, r4
 	bl Heap_AllocWithAlignment
 	mov r4, r0
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end ov11_02130470
@@ -26485,13 +26485,13 @@ ov11_0213270C: ; 0x0213270C
 _0213272C:
 	cmp r5, #7
 	bhs _02132754
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl ov11_021340C8
 	mov r5, r0
 	bl ov11_02132B74
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	b _021327A0
 _02132754:
 	cmp r5, #9
@@ -26603,7 +26603,7 @@ ov11_0213288C: ; 0x0213288C
 	bl sub_02055E68
 	mov r4, r0
 	mov r1, #6
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	cmp r4, #0
 	moveq r0, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
@@ -26618,7 +26618,7 @@ ov11_0213288C: ; 0x0213288C
 	bl sub_02055EAC
 	mov r4, r0
 	mov r1, #0x20
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	mov r0, r4
 	add r1, r6, #6
 	bl ov11_02134E3C
@@ -26661,7 +26661,7 @@ ov11_02132958: ; 0x02132958
 	mov r0, r4
 	add r1, r1, r5, lsl #8
 	mov r2, #0xf0
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end ov11_02132958
 
@@ -27263,7 +27263,7 @@ ov11_021330F8: ; 0x021330F8
 	add r1, r3, #0xbf0
 	mov r2, #0xc0
 	strb lr, [ip, #0x403]
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_021330F8
 
@@ -27296,7 +27296,7 @@ _0213319C:
 	mov r0, r1
 	add r1, r3, ip
 	mov r2, #0xc0
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r3, r4, r5, pc}
 
 	arm_func_start ov11_021331B0
@@ -27324,30 +27324,30 @@ _021331E0:
 	mov r0, sb
 	mov r1, fp
 	mov r2, #4
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add r5, r7, r4, lsl #2
 	mov r0, r5
 	mov r1, sb
 	mov r2, #4
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	mov r1, r5
 	mov r0, fp
 	mov r2, #4
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	mov r0, sl
 	add r1, sp, #4
 	mov r2, #0xc0
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	mov r0, #0xc0
 	mul r5, r4, r0
 	add r0, r8, r5
 	mov r1, sl
 	mov r2, #0xc0
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add r1, r8, r5
 	add r0, sp, #4
 	mov r2, #0xc0
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	mov r4, r6
 	sub sb, sb, #4
 	sub sl, sl, #0xc0
@@ -30042,12 +30042,12 @@ _02135520:
 	add r0, r0, #0x1000
 	add r3, lr, #0x1000
 	str ip, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	ldr r0, _0213556C ; =OVERLAY11_BSS_02169CA8
 	ldr r0, [r0, #8]
 	add r0, r0, #0x318
 	add r0, r0, #0x1000
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -31063,16 +31063,16 @@ _021362B4:
 	str r3, [sp, #0x10]
 	ldr r3, [sp, #0x28]
 	bl sub_02064F68
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r6, r0
 	bl sub_02055E68
 	mov r7, r0
 	mov r1, #6
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	cmp r7, #0
 	bne _021363B8
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #0x8c
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, pc}
@@ -31099,11 +31099,11 @@ _021363C4:
 	bl sub_02055EAC
 	mov r5, r0
 	mov r1, #0x20
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	cmp r5, #0
 	bne _0213642C
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #0x8c
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, pc}
@@ -31116,7 +31116,7 @@ _0213642C:
 	mov r2, #0x20
 	bl MI_CpuCopy8
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	add sp, sp, #0x8c
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, pc}
@@ -31510,10 +31510,10 @@ _021369F0:
 	add r0, r0, #0x1800
 	add r3, r5, #0x1000
 	str r4, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	add r0, r5, #0x338
 	add r0, r0, #0x1800
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -32991,12 +32991,12 @@ _02137E30:
 	add r0, r0, #0x1000
 	add r3, r2, #0x1000
 	str ip, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	ldr r0, _02137E78 ; =OVERLAY11_BSS_02169CCC
 	ldr r0, [r0]
 	add r0, r0, #0x11c
 	add r0, r0, #0x1000
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -35327,42 +35327,42 @@ _02139EFC:
 	ldr r1, [sp]
 	mov r0, #4
 	mov r2, r5
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _02139EC0
 	mov r0, #4
 	mov r1, r4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _02139EC0
 	ldr r1, [sp, #4]
 	mov r0, #4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _02139EC0
 	ldr r1, [sp, #8]
 	mov r0, #4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _02139EC0
 	ldr r1, [sp, #0xc]
 	mov r0, #4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _02139EC0
 	ldr r1, [sp, #0x10]
 	mov r0, #4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	movge r6, #1
@@ -35371,7 +35371,7 @@ _02139FA8:
 	ldr r1, [sp, #0x14]
 	mov r0, #4
 	mov r2, r5
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	movge r6, #1
@@ -35380,35 +35380,35 @@ _02139FC8:
 	ldr r1, [sp, #0x18]
 	mov r0, #4
 	mov r2, r5
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _0213A054
 	mov r0, #4
 	mov r1, r4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _0213A054
 	ldr r1, [sp, #0x1c]
 	mov r0, #4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _0213A054
 	ldr r1, [sp, #0x20]
 	mov r0, #4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _0213A054
 	ldr r1, [sp, #0x24]
 	mov r0, #4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	movge r6, #1
@@ -35421,21 +35421,21 @@ _0213A064:
 	ldr r1, [sp, #0x28]
 	mov r0, #4
 	mov r2, r5
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _02139EC0
 	ldr r1, [sp, #0x2c]
 	mov r0, #4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	blt _02139EC0
 	ldr r1, [sp, #0x30]
 	mov r0, #4
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	movge r6, #1
@@ -35445,7 +35445,7 @@ _0213A0BC:
 	mov r0, #4
 	add r1, r1, #0xc00
 	mov r2, r5
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	movge r6, #1
@@ -35454,7 +35454,7 @@ _0213A0E0:
 	ldr r1, _0213A23C ; =0x03002100
 	mov r0, #4
 	mov r2, r5
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r6, #0
 	movge r6, #1
@@ -35494,7 +35494,7 @@ _0213A164:
 _0213A16C:
 	mov r0, sl
 	mov r1, #1
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	cmp r7, #4
 	ldrb r0, [sl]
 	bne _0213A19C
@@ -35533,7 +35533,7 @@ _0213A1F8:
 	b _02139EC0
 _0213A200:
 	mov r0, #0x4000
-	blx sub_02000446
+	blx SVC_WaitByLoop
 	b _02139EC0
 _0213A20C:
 	add sp, sp, #0x3c
@@ -35562,19 +35562,19 @@ ov11_0213A248: ; 0x0213A248
 	mov r6, r0
 	mov r0, r4
 	mov r5, r1
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	mov r8, #4
 	mov r7, #1
 	arm_func_end ov11_0213A248
 _0213A268:
 	mov r0, r8
 	mov r1, r7
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	beq _0213A268
 	ldr r1, _0213A2D4 ; =ov11_0213A40C
 	mov r0, #4
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	mov r0, r5, lsl #0x10
 	mov r8, r0, lsr #0x10
 	mov r7, #0x40000
@@ -35588,12 +35588,12 @@ _0213A298:
 	cmp r0, #1
 	beq _0213A2C0
 	mov r0, r7
-	blx sub_02000446
+	blx SVC_WaitByLoop
 	b _0213A298
 _0213A2C0:
 	mov r0, r4
 	mov r1, r5
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
@@ -35611,12 +35611,12 @@ ov11_0213A2D8: ; 0x0213A2D8
 _0213A2F0:
 	mov r0, r5
 	mov r1, r4
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	beq _0213A2F0
 	ldr r1, _0213A350 ; =ov11_0213A40C
 	mov r0, #4
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	mov r0, r6
 	mov r1, r7
 	bl sub_020660BC
@@ -35631,7 +35631,7 @@ _0213A324:
 	cmp r0, #1
 	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
 	mov r0, r4
-	blx sub_02000446
+	blx SVC_WaitByLoop
 	b _0213A324
 _0213A34C:
 	.byte 0xF0, 0x81, 0xBD, 0xE8
@@ -35669,12 +35669,12 @@ ov11_0213A3A0: ; 0x0213A3A0
 _0213A3AC:
 	mov r0, r5
 	mov r1, r4
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	beq _0213A3AC
 	ldr r1, _0213A408 ; =ov11_0213A40C
 	mov r0, #4
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	mov r4, #0x40000
 	mov r6, #7
 	mov r5, #0
@@ -35687,7 +35687,7 @@ _0213A3D8:
 	cmp r0, #1
 	beq _0213A400
 	mov r0, r4
-	blx sub_02000446
+	blx SVC_WaitByLoop
 	b _0213A3D8
 _0213A400:
 	mov r0, #1
@@ -37063,16 +37063,16 @@ ov11_0213B5A4: ; 0x0213B5A4
 	ldmneia sp!, {r3, r4, r5, r6, pc}
 	bl ov11_02132848
 	str r0, [r4]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r6, r0
 	bl sub_02055E68
 	mov r5, r0
 	mov r1, #6
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	cmp r5, #0
 	bne _0213B614
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #0x14
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, pc}
@@ -37091,11 +37091,11 @@ _0213B614:
 	bl sub_02055EAC
 	mov r5, r0
 	mov r1, #0x20
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	cmp r5, #0
 	bne _0213B668
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #0x14
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, pc}
@@ -37106,7 +37106,7 @@ _0213B668:
 	bl MI_CpuCopy8
 _0213B678:
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add r0, sp, #2
 	mov r1, #0
 	mov r2, #0x10
@@ -37637,11 +37637,11 @@ _0213BD58:
 	add r3, r3, #0x9c0
 	mov r2, #0
 	str ip, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	ldr r0, _0213BDA0 ; =OVERLAY11_BSS_02169DB8
 	ldr r0, [r0]
 	add r0, r0, #0x9c0
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	mov r0, #1
 	add sp, sp, #8
 	ldmia sp!, {r4, r5, r6, pc}
@@ -42362,11 +42362,11 @@ _0213E246:
 	mvn r0, r0
 	pop {r3, r4, r5, r6, r7, pc}
 _0213E24C:
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	ldr r1, _0213E2E4 ; =OVERLAY11_BSS_0216ABA0
 	str r5, [r1]
 	str r6, [r1, #0xc]
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	ldr r1, _0213E2E4 ; =OVERLAY11_BSS_0216ABA0
 	ldr r0, _0213E2E8 ; =0x00005890
 	ldr r1, [r1]
@@ -42513,12 +42513,12 @@ _0213E364:
 _0213E366:
 	cmp r4, #0
 	bne _0213E312
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	ldr r1, _0213E380 ; =OVERLAY11_BSS_0216ABA0
 	mov r2, #0
 	str r2, [r1]
 	str r2, [r1, #0xc]
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	add r0, r5, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	nop
@@ -43465,7 +43465,7 @@ _0213EA60:
 	blx sub_02055A2C
 	add r1, r5, #0
 	mov r2, #0xc0
-	blx NitroSDK_mi_MIi_CpuCopy32
+	blx MIi_CpuCopy32
 	add r4, r4, #1
 	add r5, #0xc0
 	cmp r4, r6
@@ -43484,7 +43484,7 @@ ov11_0213EA88: ; 0x0213EA88
 	add r5, r0, #0
 	add r4, r1, #0
 	add r6, r2, #0
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	add r7, r0, #0
 	ldr r1, _0213EB64 ; =OVERLAY11_BSS_0216AD00
 	ldr r0, [sp]
@@ -43573,7 +43573,7 @@ _0213EB1A:
 	mov r1, #6
 	str r1, [r0, #0x18]
 	add r0, r7, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r3, r4, r5, r6, r7, pc}
 _0213EB40:
@@ -43584,12 +43584,12 @@ _0213EB40:
 	mov r1, #6
 	str r1, [r0, #0x18]
 	add r0, r7, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r3, r4, r5, r6, r7, pc}
 _0213EB58:
 	add r0, r7, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	nop
@@ -43602,7 +43602,7 @@ _0213EB74: .word DAT_02084d80
 	thumb_func_start ov11_0213EB78
 ov11_0213EB78: ; 0x0213EB78
 	push {r4, lr}
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	add r4, r0, #0
 	ldr r0, _0213EBB0 ; =OVERLAY11_BSS_0216AD00
 	ldr r0, [r0, #0x18]
@@ -43618,13 +43618,13 @@ ov11_0213EB78: ; 0x0213EB78
 	mov r1, #4
 	str r1, [r0, #0x18]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r4, pc}
 	thumb_func_end ov11_0213EB78
 _0213EBA6:
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r4, pc}
 	.align 2, 0
@@ -43633,7 +43633,7 @@ _0213EBB0: .word OVERLAY11_BSS_0216AD00
 	thumb_func_start ov11_0213EBB4
 ov11_0213EBB4: ; 0x0213EBB4
 	push {r4, lr}
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	add r4, r0, #0
 	ldr r0, _0213EBE8 ; =OVERLAY11_BSS_0216AD00
 	ldr r0, [r0, #0x18]
@@ -43646,13 +43646,13 @@ ov11_0213EBB4: ; 0x0213EBB4
 	mov r1, #4
 	str r1, [r0, #0x18]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r4, pc}
 	thumb_func_end ov11_0213EBB4
 _0213EBDC:
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r4, pc}
 	nop
@@ -43661,7 +43661,7 @@ _0213EBE8: .word OVERLAY11_BSS_0216AD00
 	thumb_func_start ov11_0213EBEC
 ov11_0213EBEC: ; 0x0213EBEC
 	push {r4, lr}
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	add r4, r0, #0
 	ldr r0, _0213EC40 ; =OVERLAY11_BSS_0216AD00
 	ldr r0, [r0, #0x18]
@@ -43671,7 +43671,7 @@ ov11_0213EBEC: ; 0x0213EBEC
 	cmp r0, #3
 	beq _0213EC0E
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r4, pc}
 	thumb_func_end ov11_0213EBEC
@@ -43680,7 +43680,7 @@ _0213EC0E:
 	mov r1, #2
 	str r1, [r0, #0x18]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r4, pc}
 _0213EC1E:
@@ -43691,12 +43691,12 @@ _0213EC1E:
 	mov r1, #2
 	str r1, [r0, #0x18]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r4, pc}
 _0213EC36:
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r4, pc}
 	.align 2, 0
@@ -43708,7 +43708,7 @@ ov11_0213EC44: ; 0x0213EC44
 	add r7, r0, #0
 	add r5, r1, #0
 	add r6, r2, #0
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	ldr r1, _0213ECC4 ; =OVERLAY11_BSS_0216AD00
 	add r4, r0, #0
 	str r6, [r1, #0xc]
@@ -43730,7 +43730,7 @@ _0213EC70:
 	add r0, r7, #0
 	ldr r1, [r1, #0x20]
 	mov r2, #0xc0
-	blx NitroSDK_mi_MIi_CpuCopy32
+	blx MIi_CpuCopy32
 	bl ov11_0213E9DC
 	cmp r0, #1
 	bne _0213EC94
@@ -43738,7 +43738,7 @@ _0213EC70:
 	mov r1, #8
 	str r1, [r0, #0x18]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r3, r4, r5, r6, r7, pc}
 _0213EC94:
@@ -43756,12 +43756,12 @@ _0213EC94:
 	mov r1, #8
 	str r1, [r0, #0x18]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r3, r4, r5, r6, r7, pc}
 _0213ECBA:
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -43773,7 +43773,7 @@ ov11_0213ECC8: ; 0x0213ECC8
 	add r5, r1, #0
 	add r7, r0, #0
 	str r2, [sp]
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	add r4, r0, #0
 	add r0, r5, #0
 	ldr r2, _0213ED74 ; =OVERLAY11_BSS_0216AD00
@@ -43817,7 +43817,7 @@ ov11_0213ECC8: ; 0x0213ECC8
 	cmp r0, #0
 	beq _0213ED34
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	thumb_func_end ov11_0213ECC8
@@ -43836,7 +43836,7 @@ _0213ED3A:
 	cmp r0, #3
 	beq _0213ED58
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r3, r4, r5, r6, r7, pc}
 _0213ED58:
@@ -43844,12 +43844,12 @@ _0213ED58:
 	mov r1, #4
 	str r1, [r0, #0x18]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r3, r4, r5, r6, r7, pc}
 _0213ED68:
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	nop
@@ -44351,7 +44351,7 @@ _0213F110:
 	blx sub_02055A2C
 	add r1, r5, #0
 	mov r2, #0xc0
-	blx NitroSDK_mi_MIi_CpuCopy32
+	blx MIi_CpuCopy32
 	add r4, r4, #1
 	add r5, #0xc0
 	cmp r4, r6
@@ -44370,7 +44370,7 @@ ov11_0213F138: ; 0x0213F138
 	add r5, r0, #0
 	add r4, r1, #0
 	add r6, r2, #0
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	add r7, r0, #0
 	ldr r1, _0213F20C ; =OVERLAY11_BSS_0216AD50
 	ldr r0, [sp]
@@ -44454,7 +44454,7 @@ _0213F1C2:
 	mov r1, #6
 	str r1, [r0, #0x2c]
 	add r0, r7, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r3, r4, r5, r6, r7, pc}
 _0213F1E8:
@@ -44465,12 +44465,12 @@ _0213F1E8:
 	mov r1, #6
 	str r1, [r0, #0x2c]
 	add r0, r7, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r3, r4, r5, r6, r7, pc}
 _0213F200:
 	add r0, r7, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	nop
@@ -44483,7 +44483,7 @@ _0213F21C: .word DAT_02084d80
 	thumb_func_start ov11_0213F220
 ov11_0213F220: ; 0x0213F220
 	push {r4, lr}
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	add r4, r0, #0
 	ldr r0, _0213F254 ; =OVERLAY11_BSS_0216AD50
 	ldr r0, [r0, #0x2c]
@@ -44496,13 +44496,13 @@ ov11_0213F220: ; 0x0213F220
 	mov r1, #4
 	str r1, [r0, #0x2c]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r4, pc}
 	thumb_func_end ov11_0213F220
 _0213F248:
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r4, pc}
 	nop
@@ -44511,7 +44511,7 @@ _0213F254: .word OVERLAY11_BSS_0216AD50
 	thumb_func_start ov11_0213F258
 ov11_0213F258: ; 0x0213F258
 	push {r4, lr}
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	add r4, r0, #0
 	ldr r0, _0213F2AC ; =OVERLAY11_BSS_0216AD50
 	ldr r0, [r0, #0x2c]
@@ -44521,7 +44521,7 @@ ov11_0213F258: ; 0x0213F258
 	cmp r0, #3
 	beq _0213F27A
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r4, pc}
 	thumb_func_end ov11_0213F258
@@ -44530,7 +44530,7 @@ _0213F27A:
 	mov r1, #2
 	str r1, [r0, #0x2c]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r4, pc}
 _0213F28A:
@@ -44541,12 +44541,12 @@ _0213F28A:
 	mov r1, #2
 	str r1, [r0, #0x2c]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r4, pc}
 _0213F2A2:
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r4, pc}
 	.align 2, 0
@@ -44558,7 +44558,7 @@ ov11_0213F2B0: ; 0x0213F2B0
 	add r7, r0, #0
 	add r5, r1, #0
 	add r6, r2, #0
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	ldr r1, _0213F330 ; =OVERLAY11_BSS_0216AD50
 	add r4, r0, #0
 	str r6, [r1, #0x58]
@@ -44580,7 +44580,7 @@ _0213F2DC:
 	add r0, r7, #0
 	ldr r1, [r1, #0x4c]
 	mov r2, #0xc0
-	blx NitroSDK_mi_MIi_CpuCopy32
+	blx MIi_CpuCopy32
 	bl ov11_0213F08C
 	cmp r0, #1
 	bne _0213F300
@@ -44588,7 +44588,7 @@ _0213F2DC:
 	mov r1, #8
 	str r1, [r0, #0x2c]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r3, r4, r5, r6, r7, pc}
 _0213F300:
@@ -44606,12 +44606,12 @@ _0213F300:
 	mov r1, #8
 	str r1, [r0, #0x2c]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r3, r4, r5, r6, r7, pc}
 _0213F326:
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -44623,7 +44623,7 @@ ov11_0213F334: ; 0x0213F334
 	add r5, r1, #0
 	add r7, r0, #0
 	str r2, [sp]
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	add r4, r0, #0
 	add r0, r5, #0
 	ldr r2, _0213F3E0 ; =OVERLAY11_BSS_0216AD50
@@ -44668,7 +44668,7 @@ ov11_0213F334: ; 0x0213F334
 	cmp r0, #0
 	beq _0213F3A2
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	thumb_func_end ov11_0213F334
@@ -44687,7 +44687,7 @@ _0213F3A8:
 	cmp r0, #3
 	beq _0213F3C6
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r3, r4, r5, r6, r7, pc}
 _0213F3C6:
@@ -44695,12 +44695,12 @@ _0213F3C6:
 	mov r1, #4
 	str r1, [r0, #0x2c]
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #1
 	pop {r3, r4, r5, r6, r7, pc}
 _0213F3D6:
 	add r0, r4, #0
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	mov r0, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -44768,7 +44768,7 @@ _0213F450: .word OVERLAY11_BSS_0216AD50
 	thumb_func_start ov11_0213F454
 ov11_0213F454: ; 0x0213F454
 	push {r3, lr}
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	ldr r1, _0213F474 ; =OVERLAY11_BSS_0216AD50
 	mov r2, #0
 	str r2, [r1, #0x68]
@@ -44781,7 +44781,7 @@ _0213F466:
 	stmia r3!, {r1}
 	cmp r2, #4
 	blt _0213F466
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	pop {r3, pc}
 	.align 2, 0
 _0213F474: .word OVERLAY11_BSS_0216AD50
@@ -44790,7 +44790,7 @@ _0213F478: .word OVERLAY11_BSS_0216ADD4
 	thumb_func_start ov11_0213F47C
 ov11_0213F47C: ; 0x0213F47C
 	push {r3, r4, r5, lr}
-	blx NitroSDK_OS_DisableInterrupts
+	blx OS_DisableInterrupts
 	ldr r1, _0213F4AC ; =OVERLAY11_BSS_0216AD50
 	ldr r5, [r1, #0x6c]
 	ldr r2, [r1, #0x68]
@@ -44810,7 +44810,7 @@ _0213F490:
 	mov r2, #0
 	str r2, [r1, #0x6c]
 _0213F4A2:
-	blx NitroSDK_OS_RestoreInterrupts
+	blx OS_RestoreInterrupts
 	add r0, r4, #0
 	pop {r3, r4, r5, pc}
 	nop
@@ -51017,7 +51017,7 @@ _021423F8:
 	bic r3, r4
 	mov r2, #0
 	add r3, r5, r3
-	blx sub_020653B8
+	blx OS_CreateThread
 	ldr r0, _02142454 ; =OVERLAY11_BSS_0216AD50
 	mov r1, #1
 	str r1, [r0, #0x38]
@@ -51042,7 +51042,7 @@ _02142436:
 	stmia r5!, {r0, r1}
 	bl ov11_0214254C
 	ldr r0, _0214245C ; =OVERLAY11_BSS_0216ADFC
-	blx sub_02065754
+	blx OS_WakeupThreadDirect
 	ldr r1, _02142454 ; =OVERLAY11_BSS_0216AD50
 	mov r0, #1
 	str r0, [r1, #0x64]
@@ -51089,7 +51089,7 @@ _02142490:
 	ldr r4, _021424FC ; =OVERLAY11_BSS_0216ADFC
 _021424A4:
 	add r0, r4, #0
-	blx sub_02065754
+	blx OS_WakeupThreadDirect
 	add r0, r4, #0
 	blx sub_02065658
 	add r0, r4, #0
@@ -72120,7 +72120,7 @@ ov11_02153514: ; 0x02153514
 	ldr r0, _021535A4 ; =PTR_LAB_overlay_11_021537b8_overlay_11_02165d14
 	add r1, sp, #4
 	mov r2, #0xc
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add r1, sp, #0
 	mov r0, #0
 	bl ov11_02146F58
@@ -74636,7 +74636,7 @@ ov11_021553D4: ; 0x021553D4
 	add r0, r2, #0xf00
 	add r2, r2, #0x1300
 	str r2, [sp]
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldrh r0, [fp, #0xe]
 	mov sl, #0
 	cmp r0, #0
@@ -76885,7 +76885,7 @@ _021570F4:
 	ldr r6, [r0, #0x10]
 	mov r1, #0xc0
 	mov r0, r6
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r1, _02157228 ; =s_NWCUSBAP_overlay_11_02165dc4
 	add r0, r6, #0xc
 	mov r2, #8
@@ -76987,7 +76987,7 @@ ov11_02157234: ; 0x02157234
 _02157268:
 	add r0, r2, #0xf00
 	mov r1, #0x400
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldrh fp, [sl, #0xe]
 	mov r6, #0
 	cmp fp, #0
@@ -78157,7 +78157,7 @@ ov11_02158260: ; 0x02158260
 	mov r0, #1
 	mvn r0, r0, lsl r4
 	mov r5, r0, lsl #0x10
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _021582FC ; =OVERLAY11_BSS_0216C3DC
 	ldr r3, [r1]
 	ldrh r2, [r3, #2]
@@ -78183,7 +78183,7 @@ ov11_02158260: ; 0x02158260
 	ldrh r1, [r2, #0xc]
 	and r1, r1, r5, lsr #16
 	strh r1, [r2, #0xc]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	bl sub_020771F4
 	ldmia sp!, {r3, r4, r5, pc}
@@ -78202,7 +78202,7 @@ ov11_02158300: ; 0x02158300
 	mov r0, #1
 	mvn r0, r0, lsl r4
 	mov r5, r0, lsl #0x10
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _021583D4 ; =OVERLAY11_BSS_0216C3DC
 	ldr r3, [r1]
 	ldrh r2, [r3, #2]
@@ -78228,13 +78228,13 @@ ov11_02158300: ; 0x02158300
 	ldrh r1, [r2, #0xc]
 	and r1, r1, r5, lsr #16
 	strh r1, [r2, #0xc]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	bl sub_020771F4
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end ov11_02158300
 _0215839C:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _021583D4 ; =OVERLAY11_BSS_0216C3DC
 	mov r2, #1
 	ldr r3, [r1]
@@ -78246,7 +78246,7 @@ _0215839C:
 	ldrh r1, [r2, #2]
 	and r1, r1, r4
 	strh r1, [r2, #2]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _021583D4: .word OVERLAY11_BSS_0216C3DC
@@ -78262,7 +78262,7 @@ ov11_021583D8: ; 0x021583D8
 	mov r0, #1
 	mvn r0, r0, lsl r4
 	mov r5, r0, lsl #0x10
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _021584AC ; =OVERLAY11_BSS_0216C3DC
 	ldr r3, [r1]
 	ldrh r2, [r3, #2]
@@ -78288,13 +78288,13 @@ ov11_021583D8: ; 0x021583D8
 	ldrh r1, [r2, #0xc]
 	and r1, r1, r5, lsr #16
 	strh r1, [r2, #0xc]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	bl sub_020771F4
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end ov11_021583D8
 _02158474:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _021584AC ; =OVERLAY11_BSS_0216C3DC
 	mov ip, #1
 	ldr r5, [r1]
@@ -78306,7 +78306,7 @@ _02158474:
 	ldrh r1, [r2, #8]
 	orr r1, r1, ip, lsl r4
 	strh r1, [r2, #8]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _021584AC: .word OVERLAY11_BSS_0216C3DC
@@ -78333,7 +78333,7 @@ _021584C8:
 	bne _0215856C
 	mvn r0, r4, lsl r5
 	mov r6, r0, lsl #0x10
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, [r7]
 	ldrh r1, [r2, #2]
 	and r1, r1, r6, lsr #16
@@ -78358,7 +78358,7 @@ _021584C8:
 	ldrh r1, [r2, #0xc]
 	and r1, r1, r6, lsr #16
 	strh r1, [r2, #0xc]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	bl sub_020771F4
 	b _02158574
@@ -78432,7 +78432,7 @@ _02158610:
 	bne _021586B8
 	mvn r0, r6, lsl r7
 	mov sb, r0, lsl #0x10
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, [r4]
 	ldrh r1, [r2, #2]
 	and r1, r1, sb, lsr #16
@@ -78457,7 +78457,7 @@ _02158610:
 	ldrh r1, [r2, #0xc]
 	and r1, r1, sb, lsr #16
 	strh r1, [r2, #0xc]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r7
 	bl sub_020771F4
 _021586B8:
@@ -78535,12 +78535,12 @@ _02158788:
 	ldmneia sp!, {r4, r5, r6, pc}
 	ldr r0, _02158A54 ; =OVERLAY11_BSS_0216C3DC
 	ldr r6, [r0]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldrh r2, [r6, #2]
 	mov r1, #1
 	orr r1, r2, r1, lsl r5
 	strh r1, [r6, #2]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r1, _02158A54 ; =OVERLAY11_BSS_0216C3DC
 	sub r3, r5, #1
 	mov r0, #0x1e
@@ -78571,7 +78571,7 @@ _02158810:
 	mov r0, #1
 	mvn r0, r0, lsl r5
 	mov r4, r0, lsl #0x10
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02158A54 ; =OVERLAY11_BSS_0216C3DC
 	ldr r3, [r1]
 	ldrh r2, [r3, #2]
@@ -78597,7 +78597,7 @@ _02158810:
 	ldrh r1, [r2, #0xc]
 	and r1, r1, r4, lsr #16
 	strh r1, [r2, #0xc]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	bl ov11_02158704
 	ldmia sp!, {r4, r5, r6, pc}
 _0215889C:
@@ -78777,7 +78777,7 @@ ov11_02158AD8: ; 0x02158AD8
 	stmdb sp!, {r3, r4, r5, lr}
 	sub sp, sp, #0x10
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02158B9C ; =OVERLAY11_BSS_0216C3DC
 	mov r3, #1
 	ldr r2, [r1]
@@ -78787,7 +78787,7 @@ ov11_02158AD8: ; 0x02158AD8
 	mov r5, r0
 	tst r1, r4, lsr #16
 	bne _02158B1C
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #0x10
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
@@ -78798,7 +78798,7 @@ _02158B1C:
 	mov r2, #0xe
 	bl MI_CpuCopy8
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldrh r0, [sp, #4]
 	tst r0, r4, lsr #16
 	addne sp, sp, #0x10
@@ -81413,7 +81413,7 @@ ov11_0215AC74: ; 0x0215AC74
 	bl OS_Terminate
 	arm_func_end ov11_0215AC74
 _0215ACB0:
-	bl sub_02064E78
+	bl OS_GetLockID
 	ldr r2, _0215AE04 ; =OVERLAY11_BSS_0216C3EC
 	add r1, sp, #0x18
 	ldr r3, [r2]
@@ -82236,7 +82236,7 @@ _0215B754:
 	mov r0, r8
 	mov r1, r5
 	mov r2, r6
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add sl, sl, #1
 	cmp sl, r4
 	add sb, sb, #6
@@ -84136,7 +84136,7 @@ ov11_0215CFD0: ; 0x0215CFD0
 	ldr r2, [r0]
 	ldr r0, _0215D038 ; =0x00040018
 	str r2, [r1, #4]
-	bl sub_02064A68
+	bl OS_SetIrqMask
 	mov r0, #1
 	bl NitroSDK_os_OS_EnableIrqMask
 	mov r0, #1
@@ -84171,7 +84171,7 @@ ov11_0215D044: ; 0x0215D044
 	ldr r0, _0215D07C ; =OVERLAY11_BSS_0216C420
 	strh r1, [r2]
 	ldr r0, [r0, #4]
-	bl sub_02064A68
+	bl OS_SetIrqMask
 	ldr r1, _0215D07C ; =OVERLAY11_BSS_0216C420
 	mov r0, #1
 	ldr r1, [r1]
@@ -85150,9 +85150,9 @@ ov11_0215DC84: ; 0x0215DC84
 	str ip, [sp]
 	mov ip, #0x10
 	str ip, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	ldr r0, _0215DCC0 ; =OVERLAY11_BSS_0216C48C
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -85622,9 +85622,9 @@ ov11_0215E220: ; 0x0215E220
 	add r3, r4, #0x2000
 	mov r2, #0
 	str r5, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	ldr r0, _0215E290 ; =OVERLAY11_BSS_0216CD88
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	mov r0, #1
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}

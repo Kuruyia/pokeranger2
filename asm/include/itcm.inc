@@ -9,8 +9,8 @@
 .public sub_02066040
 .public sub_020660FC
 .public sub_02066108
-.public NitroSDK_OS_DisableInterrupts
-.public NitroSDK_OS_RestoreInterrupts
+.public OS_DisableInterrupts
+.public OS_RestoreInterrupts
 .public NitroSDK_mi_MIi_CheckDma0SourceAddress
 .public sub_0206CB84
 .public sub_0206CBC4

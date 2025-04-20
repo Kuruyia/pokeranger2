@@ -100,9 +100,9 @@
 .public sub_02062914
 .public sub_02062C10
 .public sub_02064F28
-.public sub_020653B8
+.public OS_CreateThread
 .public sub_02065658
-.public sub_02065754
+.public OS_WakeupThreadDirect
 .public sub_02065BCC
 .public sub_02065BF4
 .public sub_02065C88

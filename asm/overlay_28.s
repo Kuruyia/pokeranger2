@@ -263,9 +263,9 @@ _0211CCCC:
 	add r0, r4, #0x18
 	add r3, r3, #0x1000
 	str ip, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	add r0, r4, #0x18
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	mov r0, r4
 	add sp, sp, #8
 	ldmia sp!, {r4, pc}

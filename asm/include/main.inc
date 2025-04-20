@@ -4,8 +4,8 @@
 .public sub_01FF84C0
 .public sub_01FF8530
 .public sub_01FF8554
-.public sub_02000074
-.public sub_02000446
+.public SVC_CpuSet
+.public SVC_WaitByLoop
 .public MIi_UncompressBackward
 .public OSi_ReferSymbol
 .public _ZdlPv
@@ -124,3 +124,5 @@
 .public STD_CopyString
 .public STD_GetStringLength
 .public MATH_CountPopulation
+.public CTRDG_Init
+.public CTRDG_IsExisting

@@ -9374,7 +9374,7 @@ _020088E4:
 	mov r0, r0, lsl #2
 	mul r2, r3, r0
 	add r0, r4, #0xc
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	cmp r5, #0
 	beq _0200895C
 	mov r0, r5
@@ -33291,7 +33291,7 @@ _0201C1CC:
 	str r0, [r4, #0x50]
 	b _0201C304
 _0201C22C:
-	bl sub_0206606C
+	bl DC_FlushAll
 	mov r1, #0
 	str r1, [sp]
 	str r1, [sp, #4]
@@ -33310,7 +33310,7 @@ _0201C22C:
 	str r0, [r4, #0x50]
 	b _0201C304
 _0201C274:
-	bl sub_0206606C
+	bl DC_FlushAll
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -33326,7 +33326,7 @@ _0201C274:
 	str r0, [r4, #0x50]
 	b _0201C304
 _0201C2B0:
-	bl sub_0206606C
+	bl DC_FlushAll
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -35274,7 +35274,7 @@ _0201DE2C:
 	str r0, [r4, #0x70]
 	b _0201DF10
 _0201DE38:
-	bl sub_0206606C
+	bl DC_FlushAll
 	mov r1, #0
 	str r1, [sp]
 	str r1, [sp, #4]
@@ -35293,7 +35293,7 @@ _0201DE38:
 	str r0, [r4, #0x70]
 	b _0201DF10
 _0201DE80:
-	bl sub_0206606C
+	bl DC_FlushAll
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -35309,7 +35309,7 @@ _0201DE80:
 	str r0, [r4, #0x70]
 	b _0201DF10
 _0201DEBC:
-	bl sub_0206606C
+	bl DC_FlushAll
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -37797,7 +37797,7 @@ _02020134:
 	ldr r3, [sp, #8]
 	bl sub_0202015C
 _02020150:
-	bl sub_0206606C
+	bl DC_FlushAll
 	add sp, sp, #0x24
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, pc}
 
@@ -51485,7 +51485,7 @@ sub_0202B674: ; 0x0202B674
 	cmp r0, #0
 	bne _0202B6C0
 	bl sub_0206FDB8
-	bl sub_02064E78
+	bl OS_GetLockID
 	mvn r1, #2
 	str r0, [r4, #8]
 	cmp r0, r1
@@ -51594,7 +51594,7 @@ _0202B7E8:
 	arm_func_start sub_0202B80C
 sub_0202B80C: ; 0x0202B80C
 	stmdb sp!, {r3, r4, r5, lr}
-	bl sub_02064E78
+	bl OS_GetLockID
 	mov r4, r0
 	mov r0, #0
 	ldr r2, _0202B89C ; =MAIN_BSS_0210CA30
@@ -85001,10 +85001,10 @@ sub_02046948: ; 0x02046948
 	mov r7, r0
 	mov r6, r1
 	mov r5, r2
-	bl sub_0206955C
+	bl PXI_Init
 	mov r0, #0xf
 	mov r1, #1
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	moveq r0, #2
 	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
@@ -85015,7 +85015,7 @@ sub_02046948: ; 0x02046948
 	mvn r4, #2
 	arm_func_end sub_02046948
 _02046988:
-	bl sub_02064E78
+	bl OS_GetLockID
 	cmp r0, r4
 	moveq r0, #7
 	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
@@ -85024,20 +85024,20 @@ _02046988:
 	cmp r0, #0
 	beq _02046988
 _020469A8:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02046B70 ; =MAIN_BSS_0210CFD8
 	mov r4, r0
 	ldr r2, [r1, #8]
 	cmp r2, #0
 	beq _020469CC
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #5
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _020469CC:
 	ldrh r2, [r1, #2]
 	cmp r2, #0
 	beq _020469E4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #5
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _020469E4:
@@ -85055,7 +85055,7 @@ _02046A00:
 	cmp r0, #0
 	bne _02046A24
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #6
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02046A24:
@@ -85073,7 +85073,7 @@ _02046A40:
 	cmp r0, #0
 	bne _02046A64
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #6
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02046A64:
@@ -85091,7 +85091,7 @@ _02046A80:
 	cmp r0, #0
 	bne _02046AA4
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #6
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02046AA4:
@@ -85105,18 +85105,18 @@ _02046AA4:
 	strb r0, [r1, #1]
 	b _02046AD4
 _02046AC8:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02046AD4:
 	mov r0, #0xf
 	mov r1, #0
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	bne _02046AF4
 	ldr r1, _02046B7C ; =sub_02046C64
 	mov r0, #0xf
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 _02046AF4:
 	cmp r6, #0
 	ldrne r0, _02046B70 ; =MAIN_BSS_0210CFD8
@@ -85131,7 +85131,7 @@ _02046B10:
 	mov r1, #0x10000
 	mov r2, #0
 	str r5, [r3, #4]
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	bge _02046B60
 	ldr r1, _02046B70 ; =MAIN_BSS_0210CFD8
@@ -85143,12 +85143,12 @@ _02046B10:
 	strh r2, [r1, #2]
 	mov r0, r4
 	str r2, [r1, #8]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #4
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02046B60:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -85163,32 +85163,32 @@ sub_02046B84: ; 0x02046B84
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r0
 	mov r5, r1
-	bl sub_0206955C
+	bl PXI_Init
 	mov r0, #0xf
 	mov r1, #1
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	moveq r0, #2
 	ldmeqia sp!, {r4, r5, r6, pc}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02046C58 ; =MAIN_BSS_0210CFD8
 	mov r4, r0
 	ldr r1, [r1, #8]
 	cmp r1, #0
 	beq _02046BD0
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #5
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end sub_02046B84
 _02046BD0:
 	mov r0, #0xf
 	mov r1, #0
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	bne _02046BF0
 	ldr r1, _02046C5C ; =sub_02046C64
 	mov r0, #0xf
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 _02046BF0:
 	cmp r6, #0
 	ldrne r0, _02046C58 ; =MAIN_BSS_0210CFD8
@@ -85203,19 +85203,19 @@ _02046C0C:
 	mov r1, #0x20000
 	mov r2, #0
 	str r5, [r3, #4]
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	bge _02046C48
 	ldr r1, _02046C58 ; =MAIN_BSS_0210CFD8
 	mov r2, #0
 	mov r0, r4
 	str r2, [r1, #8]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #4
 	ldmia sp!, {r4, r5, r6, pc}
 _02046C48:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -85271,7 +85271,7 @@ _02046CD0:
 _02046D04:
 	mov r0, #0xf
 	mov r1, #0
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 _02046D10:
 	cmp r4, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
@@ -85985,7 +85985,7 @@ _020475EC:
 	ldr r1, [r0]
 	blx r1
 	mov r8, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r7, r0
 	bl sub_02065A28
 	mov r0, sb
@@ -86008,7 +86008,7 @@ _02047660:
 	bl sub_02047490
 	bl sub_02065A5C
 	mov r0, r7
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	b _020475EC
 _02047678:
 	.byte 0x04, 0xD0, 0x8D, 0xE2, 0xF8, 0x87, 0xBD, 0xE8
@@ -86078,7 +86078,7 @@ sub_02047730: ; 0x02047730
 	mov r7, r0
 	bl sub_02047798
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02047794 ; =DAT_0208e538
 	mov r6, r0
 	ldr r1, [r1]
@@ -86098,7 +86098,7 @@ sub_02047730: ; 0x02047730
 	arm_func_end sub_02047730
 _02047784:
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -86265,9 +86265,9 @@ sub_02047964: ; 0x02047964
 	mov r2, r6
 	add r3, r7, r4
 	str ip, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	add r0, r6, #0x20
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	add r0, r7, r4
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
@@ -86624,7 +86624,7 @@ sub_02047E64: ; 0x02047E64
 	mov r8, r1
 	mov r7, r2
 	mov r6, r3
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	add r1, sp, #8
 	mov r4, r0
 	str r1, [sp]
@@ -86685,7 +86685,7 @@ _02047F48:
 	streqh r0, [sb, #0x74]
 _02047F58:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	add sp, sp, #0x10
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
@@ -86879,7 +86879,7 @@ _020481D4: .word sub_020481D8
 sub_020481D8: ; 0x020481D8
 	stmdb sp!, {r4, r5, r6, lr}
 	ldr r4, [r0, #0x64]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r6, [r4, #0xf8]
 	mov r5, r0
 	cmp r6, #0
@@ -86891,7 +86891,7 @@ sub_020481D8: ; 0x020481D8
 	arm_func_end sub_020481D8
 _02048204:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r6
 	ldmia sp!, {r4, r5, r6, pc}
 
@@ -86905,7 +86905,7 @@ sub_02048214: ; 0x02048214
 	ldr r0, [r6, #0x104]
 	str r2, [sp, #4]
 	mov fp, r3
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r7, [r6, #0x104]
 	str r0, [sp, #8]
 	cmp r7, #0
@@ -86920,7 +86920,7 @@ _02048258:
 	mvneq r8, #5
 	beq _020482B0
 	add r0, r6, #0x10c
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	mov r0, sl
 	bl sub_0204949C
 	cmp r0, #0
@@ -86980,7 +86980,7 @@ _020482B0:
 	strh r1, [r0, #8]
 _02048340:
 	ldr r0, [sp, #8]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r8
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
@@ -86994,7 +86994,7 @@ sub_02048358: ; 0x02048358
 	ldr r4, [r7, #0x64]
 	mov sb, r0
 	mov r8, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	add r1, r4, #0x100
 	ldrh r2, [r1, #8]
 	ldrh r1, [r1, #0xa]
@@ -87057,7 +87057,7 @@ _0204842C:
 	str r1, [r7, #0x1c]
 	bl NitroSDK_OS_WakeupThread
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
@@ -87228,7 +87228,7 @@ sub_02048684: ; 0x02048684
 	mov r7, r3
 	ldr r4, [sl, #0x68]
 	movgt r8, sb
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [sp, #0x28]
 	mov fp, r0
 	and r6, r1, #1
@@ -87250,11 +87250,11 @@ _020486E0:
 	moveq r5, #0
 	beq _020486F8
 	add r0, r4, #0x104
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	b _020486B4
 _020486F8:
 	mov r0, fp
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
@@ -87470,7 +87470,7 @@ sub_020489D0: ; 0x020489D0
 	mov r4, r0
 	ldr r0, [r1, #4]
 	ldr r5, [r0, #0xa4]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	cmp r5, #0
 	beq _02048A34
 	ldrh r3, [r5, #0x2e]
@@ -87497,7 +87497,7 @@ _02048A34:
 	ldr r1, [r1, #0x24]
 	mov r5, r1, lsl #1
 _02048A40:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r5, #0
 	ble _02048A64
 	mov r0, r4
@@ -87733,14 +87733,14 @@ _02048D28:
 	ldreq r0, [r4, #0x68]
 	ldrne r0, [r4, #0x64]
 	bl sub_020474C4
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	mov r0, r4
 	bl sub_02049424
 	mov r0, r4
 	bl sub_0204940C
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldrsh r1, [r4, #0x70]
 	mov r0, #0
 	orr r1, r1, #0x20
@@ -87804,7 +87804,7 @@ _02048E38:
 	ldr r0, [r4, #0x68]
 	bl sub_02048E84
 _02048E48:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	mov r0, r4
 	bl sub_02049424
@@ -87816,7 +87816,7 @@ _02048E48:
 	ldr r1, [r1, #0x1c]
 	blx r1
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02048E80: .word DAT_0208e538
@@ -87828,7 +87828,7 @@ sub_02048E84: ; 0x02048E84
 	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	add r0, sb, #0x20
 	bl sub_02065658
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r8, r0
 	bl sub_02065A28
 	add r1, sp, #0
@@ -87866,13 +87866,13 @@ _02048F10:
 	bl sub_02065A5C
 	bl sub_020657A4
 	mov r0, r8
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 
 	arm_func_start sub_02048F24
 sub_02048F24: ; 0x02048F24
 	stmdb sp!, {r3, r4, r5, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r4, _02048F5C ; =MAIN_BSS_0210D05C
 	mov r5, r0
 	ldr r0, [r4]
@@ -87886,7 +87886,7 @@ _02048F40:
 	bne _02048F40
 _02048F50:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _02048F5C: .word MAIN_BSS_0210D05C
@@ -87948,7 +87948,7 @@ sub_02049004: ; 0x02049004
 	ldr r5, _020490A4 ; =MAIN_BSS_0210D058
 	arm_func_end sub_02049004
 _02049010:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r6, [r5]
 	cmp r6, #0
 	beq _02049044
@@ -87964,7 +87964,7 @@ _02049038:
 	cmp r6, #0
 	bne _02049024
 _02049044:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r6, #0
 	beq _0204905C
 	mov r0, r6
@@ -88087,7 +88087,7 @@ _020491D4: .word 0x00000466
 sub_020491D8: ; 0x020491D8
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02049220 ; =MAIN_BSS_0210D138
 	mov r5, r0
 	ldmia r1, {r6, r7}
@@ -88100,7 +88100,7 @@ sub_020491D8: ; 0x020491D8
 	mov r4, r0
 	mov r0, r5
 	stmia r1, {r6, r7}
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -88178,7 +88178,7 @@ sub_020492C0: ; 0x020492C0
 	beq _02049330
 	arm_func_end sub_020492C0
 _02049300:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r6, r0
 	mov r0, r5
 	bl sub_02049390
@@ -88189,7 +88189,7 @@ _02049300:
 	cmp r0, #0
 	mov r0, r6
 	orrgt r4, r4, #8
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 _02049330:
 	ldrsb r0, [r5, #0x73]
 	mov r1, #1
@@ -88953,7 +88953,7 @@ _02049C44:
 	beq _02049C80
 	str r4, [r1, #4]
 	ldr r0, [r1]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 _02049C80:
 	ldr r6, [r6, #0x68]
 	cmp r6, #0
@@ -89119,7 +89119,7 @@ _02049DCC:
 	ldr r0, _02049F3C ; =MAIN_BSS_0210D340
 	ldr r3, _02049F40 ; =MAIN_BSS_0210E920
 	str r4, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	mov r1, #0x800
 	ldr r0, _02049F34 ; =DAT_0208e588
 	str r1, [sp]
@@ -89129,11 +89129,11 @@ _02049DCC:
 	ldr r1, _02049F48 ; =sub_0204D6F8
 	ldr r3, _02049F4C ; =MAIN_BSS_0210E120
 	mov r2, #0
-	bl sub_020653B8
+	bl OS_CreateThread
 	ldr r0, _02049F3C ; =MAIN_BSS_0210D340
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	ldr r0, _02049F44 ; =MAIN_BSS_0210D280
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -89158,7 +89158,7 @@ _02049F4C: .word MAIN_BSS_0210E120
 	arm_func_start sub_02049F50
 sub_02049F50: ; 0x02049F50
 	stmdb sp!, {r3, r4, r5, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	ldr r0, _02049F98 ; =MAIN_BSS_0210D280
 	bl sub_02065688
@@ -89170,11 +89170,11 @@ sub_02049F50: ; 0x02049F50
 	ldr r0, _02049F98 ; =MAIN_BSS_0210D280
 	mov r2, #1
 	str r2, [r1, #0x44]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	arm_func_end sub_02049F50
 _02049F88:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -89645,7 +89645,7 @@ sub_0204A52C: ; 0x0204A52C
 	ldmneia sp!, {r3, pc}
 	ldr r0, _0204A580 ; =MAIN_BSS_0210D0D8
 	ldr r0, [r0, #0x54]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -89656,7 +89656,7 @@ _0204A580: .word MAIN_BSS_0210D0D8
 sub_0204A584: ; 0x0204A584
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
 	mov r7, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr sb, _0204A63C ; =MAIN_BSS_0210D0D8
 	mov r6, r0
 	ldr r1, [sb, #0x30]
@@ -89671,7 +89671,7 @@ _0204A5B4:
 	ldr r1, [r8, #4]
 	mov r0, r5
 	str r1, [sb, #0x54]
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	str r4, [sb, #0x54]
 	ldr r1, [sb, #0x30]
 	ldr r0, [sb, #0x28]
@@ -89679,7 +89679,7 @@ _0204A5B4:
 	beq _0204A5B4
 _0204A5D8:
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0204A63C ; =MAIN_BSS_0210D0D8
 	mov r3, #0
 	ldr r5, [r0, #0x58]
@@ -89711,7 +89711,7 @@ _0204A640: .word OSi_ThreadInfo
 	arm_func_start sub_0204A644
 sub_0204A644: ; 0x0204A644
 	stmdb sp!, {r3, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0204A684 ; =MAIN_BSS_0210D0D8
 	ldr ip, [r1, #0x30]
 	ldr r3, [r1, #0x58]
@@ -89724,7 +89724,7 @@ sub_0204A644: ; 0x0204A644
 	cmp r3, r2
 	movhs r2, #0
 	strhs r2, [r1, #0x30]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0204A684: .word MAIN_BSS_0210D0D8
@@ -89734,7 +89734,7 @@ _0204A684: .word MAIN_BSS_0210D0D8
 sub_0204A688: ; 0x0204A688
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0204A740 ; =0x7F000001
 	mov r4, r0
 	cmp r5, r1
@@ -89781,7 +89781,7 @@ _0204A720:
 	blo _0204A6E8
 _0204A730:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r7
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -90105,7 +90105,7 @@ _0204ABA4:
 	sub r1, r8, #0x1c
 	mov r2, #8
 	bl MI_CpuCopy8
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	ldr r0, _0204ABF4 ; =MAIN_BSS_0210D5C0
 	str r6, [sp]
@@ -90115,7 +90115,7 @@ _0204ABA4:
 	add r3, r7, #0x1c
 	bl sub_0204A338
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #8
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -90761,7 +90761,7 @@ sub_0204B520: ; 0x0204B520
 	mov r8, r0
 	mov r7, r1
 	mov r6, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0204B61C ; =OSi_ThreadInfo
 	mov r5, r0
 	ldr r1, [r1, #8]
@@ -90814,7 +90814,7 @@ _0204B548:
 	mov r0, #0
 	str r0, [r4, #4]
 	ldr r0, [r4]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	b _0204B610
 _0204B604:
 	ldr r1, [r1, #0x68]
@@ -90822,7 +90822,7 @@ _0204B604:
 	bne _0204B548
 _0204B610:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
 _0204B61C: .word OSi_ThreadInfo
@@ -91467,7 +91467,7 @@ _0204BE00:
 	mov r0, #0
 	str r0, [r4, #4]
 	ldr r0, [r4]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start sub_0204BEB8
@@ -91560,7 +91560,7 @@ _0204BFE0:
 	mov r0, #0
 	str r0, [r5, #4]
 	ldr r0, [r5]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 _0204C004:
 	cmp r8, #0
 	beq _0204C1C8
@@ -91577,7 +91577,7 @@ _0204C00C:
 	movls r7, #1
 	cmp r8, #0
 	beq _0204C0A8
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldrb r1, [sb, #0xc]
 	ldr ip, [r5, #0x40]
 	ldr r3, [r5, #0x44]
@@ -91596,14 +91596,14 @@ _0204C00C:
 	ldr r1, [r5, #0x24]
 	add r1, r1, r8
 	str r1, [r5, #0x24]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, [r5, #4]
 	cmp r0, #2
 	bne _0204C0A8
 	mov r0, #0
 	str r0, [r5, #4]
 	ldr r0, [r5]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 _0204C0A8:
 	cmp r7, #0
 	beq _0204C0FC
@@ -91624,7 +91624,7 @@ _0204C0A8:
 	mov r0, #0
 	str r0, [r5, #4]
 	ldr r0, [r5]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	b _0204C1C8
 _0204C0FC:
 	cmp r8, #0
@@ -91650,7 +91650,7 @@ _0204C114:
 	bne _0204C1C8
 	str r1, [r5, #4]
 	ldr r0, [r5]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	b _0204C1C8
 _0204C15C:
 	cmp r8, #0
@@ -91673,7 +91673,7 @@ _0204C188:
 	bne _0204C1C8
 	str r1, [r5, #4]
 	ldr r0, [r5]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	b _0204C1C8
 _0204C1AC:
 	tst r6, #1
@@ -91727,7 +91727,7 @@ _0204C22C:
 	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
 	str r1, [r4, #4]
 	ldr r0, [r4]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _0204C264:
 	ldr r2, [r4, #0x24]
@@ -91761,7 +91761,7 @@ sub_0204C29C: ; 0x0204C29C
 	ldmhiia sp!, {r4, pc}
 	str r1, [r4, #4]
 	ldr r0, [r4]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_0204C29C
 
@@ -91866,7 +91866,7 @@ sub_0204C3F8: ; 0x0204C3F8
 	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	arm_func_end sub_0204C3F8
 _0204C430:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0204C600 ; =OSi_ThreadInfo
 	mov r5, r0
 	ldr r1, [r1, #8]
@@ -91967,7 +91967,7 @@ _0204C56C:
 	mov r0, #0
 	str r0, [r4, #4]
 	ldr r0, [r4]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	b _0204C5F4
 _0204C5BC:
 	ldr r3, [r4, #0x38]
@@ -91987,7 +91987,7 @@ _0204C5E8:
 	bne _0204C44C
 _0204C5F4:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
 _0204C600: .word OSi_ThreadInfo
@@ -92565,7 +92565,7 @@ _0204CD54:
 	mov r1, fp
 	mov r2, #0x18
 	bl sub_0204B99C
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov sb, r0
 	ldrb r0, [sl, #8]
 	cmp r0, #2
@@ -92575,10 +92575,10 @@ _0204CD54:
 	beq _0204CDA8
 	mov r0, #0
 	str r5, [sl, #4]
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 _0204CDA8:
 	mov r0, sb
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldrb r0, [sl, #8]
 	cmp r0, #4
 	moveq r0, #0
@@ -92712,7 +92712,7 @@ sub_0204CF38: ; 0x0204CF38
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
 	mov r8, r1
 	mov sb, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r6, [r8, #0x44]
 	mov r7, r0
 	cmp r6, #0
@@ -92723,13 +92723,13 @@ sub_0204CF38: ; 0x0204CF38
 _0204CF60:
 	mov r0, r4
 	str r5, [r8, #4]
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r6, [r8, #0x44]
 	cmp r6, #0
 	beq _0204CF60
 _0204CF78:
 	mov r0, r7
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	str r6, [sb]
 	ldr r0, [r8, #0x40]
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
@@ -92744,7 +92744,7 @@ sub_0204CF8C: ; 0x0204CF8C
 	ldreqb r0, [r4, #8]
 	cmpeq r0, #4
 	bne _0204CFEC
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r8, r0
 	mov r7, #2
 	mov r6, #0
@@ -92753,7 +92753,7 @@ sub_0204CF8C: ; 0x0204CF8C
 _0204CFC0:
 	mov r0, r6
 	str r7, [r4, #4]
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 _0204CFCC:
 	ldr r0, [r4, #0x44]
 	cmp r0, #0
@@ -92761,7 +92761,7 @@ _0204CFCC:
 	cmpeq r0, #4
 	beq _0204CFC0
 	mov r0, r8
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	b _0204CFF0
 _0204CFEC:
 	bl sub_020657C0
@@ -92811,7 +92811,7 @@ sub_0204D06C: ; 0x0204D06C
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r4, r1
 	mov r7, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, [r4, #0x44]
 	ldr r1, [r4, #0x3c]
 	mov r5, r0
@@ -92833,7 +92833,7 @@ _0204D09C:
 	bl memmove
 _0204D0C0:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldrb r0, [r4, #8]
 	cmp r0, #0xa
 	cmpne r0, #0xb
@@ -93492,7 +93492,7 @@ _0204D958:
 	strb r7, [r0, #8]
 	str r7, [r0, #4]
 	ldr r0, [r0]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	b _0204D9B0
 _0204D990:
 	cmp r1, #4
@@ -93502,7 +93502,7 @@ _0204D990:
 	bne _0204D9B0
 	str r6, [r0, #4]
 	ldr r0, [r0]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 _0204D9B0:
 	ldr sb, [sb, #0x68]
 	cmp sb, #0
@@ -94567,7 +94567,7 @@ _0204E844: .word MAIN_BSS_0210D138
 sub_0204E848: ; 0x0204E848
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	mov r7, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, #0
 	ldr r6, _0204E8D8 ; =MAIN_BSS_0210E928
 	mov r5, r0
@@ -94603,7 +94603,7 @@ _0204E8BC:
 	blt _0204E868
 _0204E8CC:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
 _0204E8D8: .word MAIN_BSS_0210E928
@@ -94614,7 +94614,7 @@ sub_0204E8DC: ; 0x0204E8DC
 	mov r8, r0
 	mov r7, r1
 	mov r6, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r1, #0
 	ldr r5, _0204E978 ; =MAIN_BSS_0210E928
 	mov r4, r0
@@ -94651,7 +94651,7 @@ _0204E95C:
 	blt _0204E900
 _0204E96C:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
 _0204E978: .word MAIN_BSS_0210E928
@@ -94662,7 +94662,7 @@ sub_0204E97C: ; 0x0204E97C
 	mov r8, r0
 	mov r7, r1
 	mov r6, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl sub_020668E8
 	ldr sb, _0204EA64 ; =MAIN_BSS_0210E928
@@ -94719,7 +94719,7 @@ _0204EA24:
 	str r7, [sb, #0x54]
 	mov r0, r4
 	strh r6, [sb, #0x58]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
 _0204EA64: .word MAIN_BSS_0210E928
@@ -94728,7 +94728,7 @@ _0204EA64: .word MAIN_BSS_0210E928
 sub_0204EA68: ; 0x0204EA68
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	mov r8, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r7, _0204EACC ; =MAIN_BSS_0210E928
 	mov r6, r0
 	mov r5, #0
@@ -94753,7 +94753,7 @@ _0204EAB0:
 	blt _0204EA84
 _0204EAC0:
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
 _0204EACC: .word MAIN_BSS_0210E928
@@ -97165,7 +97165,7 @@ _02050BA8:
 	bne _02050C1C
 	mov r0, r6
 	bl sub_020526C8
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r7, r0
 	mov r0, r6
 	mov r1, r5
@@ -97189,7 +97189,7 @@ _02050BEC:
 	bpl _02050BEC
 	str r0, [sp]
 	mov r0, r7
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r1, #0
 _02050C1C:
 	ldrb r0, [r4, r1]
@@ -97215,7 +97215,7 @@ sub_02050C50: ; 0x02050C50
 	add r0, sp, #0
 	mov r5, r1
 	bl sub_020526C8
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	ldr r1, _02050CB8 ; =MAIN_BSS_0210EA98
 	add r0, sp, #0
@@ -97229,7 +97229,7 @@ sub_02050C50: ; 0x02050C50
 	add r0, sp, #0
 	bl sub_020527D4
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _02050CBC ; =MAIN_BSS_0210E920
 	mov r1, #1
 	strb r1, [r0]
@@ -98108,7 +98108,7 @@ _020518BC: .word OSi_ThreadInfo
 sub_020518C0: ; 0x020518C0
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, #0
 	ldr r6, _02051994 ; =MAIN_BSS_0210E928
 	ldr r1, _02051998 ; =0x000003BD
@@ -98127,7 +98127,7 @@ _020518F8:
 	cmp r4, #4
 	add r6, r6, #0x5c
 	blt _020518DC
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0205199C ; =OSi_ThreadInfo
 	ldr r4, [r0, #8]
 	cmp r4, #0
@@ -98158,7 +98158,7 @@ _02051920:
 	strb r6, [r1, #8]
 	str r6, [r1, #4]
 	ldr r0, [r1]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 _02051984:
 	ldr r4, [r4, #0x68]
 	cmp r4, #0
@@ -100347,32 +100347,32 @@ sub_02053798: ; 0x02053798
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r0
 	mov r5, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, _020538AC ; =MAIN_BSS_0210EAAC
 	mov r4, r0
 	ldr r1, [r2]
 	cmp r1, #0
 	beq _020537C8
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end sub_02053798
 _020537C8:
 	cmp r6, #0
 	bne _020537DC
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
 _020537DC:
 	tst r6, #0x1f
 	beq _020537F0
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
 _020537F0:
 	cmp r5, #0x2300
 	bhs _02053804
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #6
 	ldmia sp!, {r4, r5, r6, pc}
 _02053804:
@@ -100417,7 +100417,7 @@ _02053888:
 	add r0, r0, #0x2000
 	bl sub_02066AB4
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -100426,12 +100426,12 @@ _020538AC: .word MAIN_BSS_0210EAAC
 	arm_func_start sub_020538B0
 sub_020538B0: ; 0x020538B0
 	stmdb sp!, {r3, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, _02053904 ; =MAIN_BSS_0210EAAC
 	ldr r1, [r2]
 	cmp r1, #0
 	bne _020538D4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_020538B0
@@ -100440,13 +100440,13 @@ _020538D4:
 	ldr r1, [r1, #0x260]
 	cmp r1, #1
 	beq _020538F0
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 _020538F0:
 	mov r1, #0
 	str r1, [r2]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -100457,13 +100457,13 @@ sub_02053908: ; 0x02053908
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r0
 	mov r5, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02053B00 ; =MAIN_BSS_0210EAAC
 	mov r4, r0
 	ldr r1, [r1]
 	cmp r1, #0
 	bne _02053938
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end sub_02053908
@@ -100483,15 +100483,15 @@ _0205395C:
 	bl sub_02054444
 	b _02053990
 _0205396C:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #2
 	ldmia sp!, {r4, r5, r6, pc}
 _02053978:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, pc}
 _02053984:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
 _02053990:
@@ -100517,19 +100517,19 @@ _020539D4:
 	mov r0, #0xb
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #7
 	ldmia sp!, {r4, r5, r6, pc}
 _020539EC:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #5
 	ldmia sp!, {r4, r5, r6, pc}
 _020539FC:
 	mov r0, #0xb
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #7
 	ldmia sp!, {r4, r5, r6, pc}
 _02053A14:
@@ -100542,12 +100542,12 @@ _02053A14:
 	mov r0, #0xb
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #7
 	ldmia sp!, {r4, r5, r6, pc}
 _02053A44:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #5
 	ldmia sp!, {r4, r5, r6, pc}
 _02053A54:
@@ -100558,7 +100558,7 @@ _02053A54:
 	mov r0, #0xb
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #7
 	ldmia sp!, {r4, r5, r6, pc}
 _02053A7C:
@@ -100584,19 +100584,19 @@ _02053AC0:
 	mov r0, #0xc
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
 _02053AD8:
 	mov r0, #0xb
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #7
 	ldmia sp!, {r4, r5, r6, pc}
 _02053AF0:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -100607,13 +100607,13 @@ _02053B08: .word sub_02054A68
 	arm_func_start sub_02053B0C
 sub_02053B0C: ; 0x02053B0C
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02053BF4 ; =MAIN_BSS_0210EAAC
 	mov r4, r0
 	ldr r1, [r1]
 	cmp r1, #0
 	bne _02053B34
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02053B0C
@@ -100626,15 +100626,15 @@ _02053B34:
 	beq _02053B78
 	cmp r1, #4
 	bne _02053B6C
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #2
 	ldmia sp!, {r4, pc}
 _02053B60:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 _02053B6C:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 _02053B78:
@@ -100658,19 +100658,19 @@ _02053B9C:
 	b _02053BE4
 _02053BBC:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #4
 	ldmia sp!, {r4, pc}
 _02053BCC:
 	mov r0, #0xb
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #7
 	ldmia sp!, {r4, pc}
 _02053BE4:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -100696,13 +100696,13 @@ sub_02053C1C: ; 0x02053C1C
 	mov r7, r0
 	mov r6, r1
 	mov r5, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02053D8C ; =MAIN_BSS_0210EAAC
 	mov r4, r0
 	ldr r1, [r1]
 	cmp r1, #0
 	bne _02053C50
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	arm_func_end sub_02053C1C
@@ -100722,7 +100722,7 @@ _02053C74:
 	mov r2, r5
 	bl sub_02054564
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #2
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053C94:
@@ -100731,11 +100731,11 @@ _02053C94:
 	mov r2, r5
 	bl sub_02054564
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053CB4:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053CC0:
@@ -100749,7 +100749,7 @@ _02053CC0:
 	add r0, r0, #0x2000
 	ldrh r1, [r1, #0x8c]
 	ldr r0, [r0, #0x288]
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r2, _02053D8C ; =MAIN_BSS_0210EAAC
 	ldr r0, _02053D90 ; =sub_02054D24
 	ldr r1, [r2]
@@ -100779,19 +100779,19 @@ _02053D34:
 	b _02053D7C
 _02053D54:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053D64:
 	mov r0, #0xb
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #7
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053D7C:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -100801,13 +100801,13 @@ _02053D90: .word sub_02054D24
 	arm_func_start sub_02053D94
 sub_02053D94: ; 0x02053D94
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02053E34 ; =MAIN_BSS_0210EAAC
 	mov r4, r0
 	ldr r1, [r1]
 	cmp r1, #0
 	bne _02053DBC
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02053D94
@@ -100831,20 +100831,20 @@ _02053DE0:
 	strh r1, [r0, #0x80]
 	b _02053E24
 _02053E00:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #2
 	ldmia sp!, {r4, pc}
 _02053E0C:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 _02053E18:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 _02053E24:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -100856,13 +100856,13 @@ sub_02053E38: ; 0x02053E38
 	mov r7, r0
 	mov r6, r1
 	mov r5, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, _02054030 ; =MAIN_BSS_0210EAAC
 	mov r4, r0
 	ldr ip, [r2]
 	cmp ip, #0
 	bne _02053E6C
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	arm_func_end sub_02053E38
@@ -100879,14 +100879,14 @@ _02053E6C:
 _02053E90:
 	cmp r7, #0
 	bne _02053EA4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053EA4:
 	ldrh r3, [r7, #0x3c]
 	cmp r3, #0
 	beq _02053EBC
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053EBC:
@@ -100898,7 +100898,7 @@ _02053EBC:
 	cmplo r0, #4
 	blo _02053EE8
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053EE8:
@@ -100944,15 +100944,15 @@ _02053F44:
 	bl sub_02054398
 	b _02053FA4
 _02053F80:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #2
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053F8C:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053F98:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02053FA4:
@@ -100980,19 +100980,19 @@ _02053FD8:
 	b _02054020
 _02053FF8:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02054008:
 	mov r0, #0xb
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #7
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02054020:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -101003,13 +101003,13 @@ _02054038: .word sub_02054A68
 	arm_func_start sub_0205403C
 sub_0205403C: ; 0x0205403C
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02054150 ; =MAIN_BSS_0210EAAC
 	mov r4, r0
 	ldr r1, [r1]
 	cmp r1, #0
 	bne _02054064
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_0205403C
@@ -101022,15 +101022,15 @@ _02054064:
 	beq _020540A8
 	cmp r2, #0xa
 	bne _0205409C
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #2
 	ldmia sp!, {r4, pc}
 _02054090:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 _0205409C:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 _020540A8:
@@ -101066,19 +101066,19 @@ _020540F8:
 	b _02054140
 _02054118:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #4
 	ldmia sp!, {r4, pc}
 _02054128:
 	mov r0, #0xb
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #7
 	ldmia sp!, {r4, pc}
 _02054140:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -101088,13 +101088,13 @@ _02054154: .word sub_020554BC
 	arm_func_start sub_02054158
 sub_02054158: ; 0x02054158
 	stmdb sp!, {r3, r4, r5, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0205435C ; =MAIN_BSS_0210EAAC
 	mov r4, r0
 	ldr r1, [r1]
 	cmp r1, #0
 	bne _02054180
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end sub_02054158
@@ -101120,11 +101120,11 @@ _02054194: ; jump table
 	b _02054220 ; case 12
 	b _020541CC ; case 13
 _020541CC:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #2
 	ldmia sp!, {r3, r4, r5, pc}
 _020541D8:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
 _020541E4:
@@ -101136,12 +101136,12 @@ _020541E4:
 	mov r0, r4
 	add r1, r1, #0x2200
 	strh r2, [r1, #0x80]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r3, r4, r5, pc}
 _02054210:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, pc}
 _02054220:
@@ -101160,7 +101160,7 @@ _0205424C:
 	bl sub_02070AB4
 	mov r5, r0
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldrh r0, [r5]
 	cmp r0, #0
 	beq _0205427C
@@ -101181,7 +101181,7 @@ _0205427C:
 	mov r0, r4
 	add r1, r1, #0x2200
 	strh r2, [r1, #0x80]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
 _020542B4:
@@ -101219,19 +101219,19 @@ _02054304:
 	b _0205434C
 _02054324:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #4
 	ldmia sp!, {r3, r4, r5, pc}
 _02054334:
 	mov r0, #0xb
 	bl sub_02054844
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #7
 	ldmia sp!, {r3, r4, r5, pc}
 _0205434C:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -101242,14 +101242,14 @@ _02054364: .word sub_020555D8
 	arm_func_start sub_02054368
 sub_02054368: ; 0x02054368
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02054394 ; =MAIN_BSS_0210EAAC
 	mov r4, #0
 	ldr r1, [r1]
 	cmp r1, #0
 	addne r1, r1, #0x2000
 	ldrne r4, [r1, #0x260]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -101260,7 +101260,7 @@ _02054394: .word MAIN_BSS_0210EAAC
 sub_02054398: ; 0x02054398
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0205442C ; =MAIN_BSS_0210EAAC
 	mov r2, #0
 	ldr r3, [r1]
@@ -101268,7 +101268,7 @@ sub_02054398: ; 0x02054398
 	cmp r3, #0
 	ldr r4, [r1, #0x264]
 	bne _020543CC
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end sub_02054398
@@ -101295,7 +101295,7 @@ _020543EC:
 	orr r2, r5, r1
 	add r1, r3, #0x2000
 	str r2, [r1, #0x264]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -101614,7 +101614,7 @@ _02054840: .word MAIN_BSS_0210EAAC
 sub_02054844: ; 0x02054844
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _020548D0 ; =MAIN_BSS_0210EAAC
 	mov r4, r0
 	ldr r1, [r1]
@@ -101648,7 +101648,7 @@ _02054880:
 	bl sub_02066BF0
 _020548C4:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _020548D0: .word MAIN_BSS_0210EAAC
@@ -101659,7 +101659,7 @@ _020548D8: .word sub_02054950
 sub_020548DC: ; 0x020548DC
 	stmdb sp!, {r3, r4, lr}
 	sub sp, sp, #4
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02054944 ; =MAIN_BSS_0210EAAC
 	mov r4, r0
 	ldr r0, [r1]
@@ -101682,7 +101682,7 @@ sub_020548DC: ; 0x020548DC
 	arm_func_end sub_020548DC
 _02054934:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
@@ -102042,7 +102042,7 @@ _02054DB8:
 	add r0, r0, #0x2000
 	ldrh r1, [r1, #0x8c]
 	ldr r0, [r0, #0x288]
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldrh r0, [r5, #0xe]
 	mov r4, #0
 	cmp r0, #0
@@ -102114,7 +102114,7 @@ _02054EB0:
 	add r0, r0, #0x2000
 	ldrh r1, [r1, #0x8c]
 	ldr r0, [r0, #0x288]
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r2, _02054FE0 ; =MAIN_BSS_0210EAAC
 	ldr r0, _02054FF4 ; =sub_02054D24
 	ldr r1, [r2]
@@ -102512,7 +102512,7 @@ _02055430:
 	bl sub_0205628C
 	ldr r0, [r4, #8]
 	mov r1, #0x620
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r4, #8]
 	bl sub_02055DC4
 	ldmia sp!, {r4, pc}
@@ -102850,13 +102850,13 @@ _02055900: .word 0x00000953
 	arm_func_start sub_02055904
 sub_02055904: ; 0x02055904
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl sub_02054434
 	cmp r0, #0
 	bne _02055928
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02055904
 _02055928:
@@ -102871,20 +102871,20 @@ _02055928:
 	bl MI_CpuFill8
 _0205594C:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 
 	arm_func_start sub_02055958
 sub_02055958: ; 0x02055958
 	stmdb sp!, {r3, r4, r5, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl sub_02054434
 	cmp r0, #0
 	mov r5, #0
 	bne _02055984
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end sub_02055958
@@ -102898,7 +102898,7 @@ _02055984:
 	ldrhi r5, [r1]
 _020559A0:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 
@@ -102906,13 +102906,13 @@ _020559A0:
 sub_020559B0: ; 0x020559B0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl sub_02054434
 	cmp r0, #0
 	bne _020559DC
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end sub_020559B0
@@ -102936,7 +102936,7 @@ _02055A04:
 _02055A18:
 	strb r1, [r0, #0x26a]
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 
@@ -102944,13 +102944,13 @@ _02055A18:
 sub_02055A2C: ; 0x02055A2C
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	bl sub_02054434
 	cmp r0, #0
 	bne _02055A58
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end sub_02055A2C
@@ -102960,11 +102960,11 @@ _02055A58:
 	movs r4, r0
 	mov r0, r5
 	bne _02055A78
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
 _02055A78:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add r0, r4, #0x10
 	ldmia sp!, {r3, r4, r5, pc}
 
@@ -103274,7 +103274,7 @@ sub_02055E68: ; 0x02055E68
 	mov r5, #0
 	bl sub_02054434
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	cmp r4, #0
 	beq _02055EA0
 	add r1, r4, #0x2000
@@ -103286,7 +103286,7 @@ sub_02055E68: ; 0x02055E68
 	addeq r5, r1, #0x2000
 	arm_func_end sub_02055E68
 _02055EA0:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 
@@ -103298,7 +103298,7 @@ sub_02055EAC: ; 0x02055EAC
 	mov r4, r7
 	bl sub_02054434
 	mov r6, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	cmp r6, #0
 	beq _02055EF8
 	add r1, r6, #0x2000
@@ -103313,7 +103313,7 @@ sub_02055EAC: ; 0x02055EAC
 	add r7, r1, #0x2000
 	arm_func_end sub_02055EAC
 _02055EF8:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r5, #0
 	strneh r4, [r5]
 	mov r0, r7
@@ -103323,10 +103323,10 @@ _02055EF8:
 sub_02055F0C: ; 0x02055F0C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02055F28 ; =MAIN_BSS_0210EAB0
 	str r4, [r1, #0x28]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02055F28: .word MAIN_BSS_0210EAB0
@@ -103338,13 +103338,13 @@ sub_02055F2C: ; 0x02055F2C
 	mov r8, r0
 	mov r7, r1
 	mov r6, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	bl sub_02054434
 	cmp r0, #0
 	bne _02055F60
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mvn r0, #0
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	arm_func_end sub_02055F2C
@@ -103357,7 +103357,7 @@ _02055F60:
 	ldr r0, _0205607C ; =MAIN_BSS_0210EABC
 	bl OS_UnlockMutex
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mvn r0, #0
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02055F8C:
@@ -103372,7 +103372,7 @@ _02055FA8:
 	ldr r0, _0205607C ; =MAIN_BSS_0210EABC
 	bl OS_UnlockMutex
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mvn r0, #3
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02055FC0:
@@ -103403,12 +103403,12 @@ _02056018:
 	ldr r0, _0205607C ; =MAIN_BSS_0210EABC
 	bl OS_UnlockMutex
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mvn r0, #4
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02056030:
 	ldr r0, _02056084 ; =MAIN_BSS_0210EAB4
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, _02056088 ; =MAIN_BSS_0210EAB0
 	ldr r0, [r0, #0x24]
 	cmp r0, #0
@@ -103417,14 +103417,14 @@ _02056030:
 	ldr r0, _0205607C ; =MAIN_BSS_0210EABC
 	bl OS_UnlockMutex
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mvn r0, #4
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02056064:
 	ldr r0, _0205607C ; =MAIN_BSS_0210EABC
 	bl OS_UnlockMutex
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r6
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -103529,7 +103529,7 @@ _0205616C:
 	arm_func_start sub_02056194
 sub_02056194: ; 0x02056194
 	stmdb sp!, {r3, r4, r5, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl sub_02054434
 	cmp r0, #0
@@ -103544,7 +103544,7 @@ sub_02056194: ; 0x02056194
 	arm_func_end sub_02056194
 _020561C8:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 
@@ -107390,7 +107390,7 @@ _02058F60:
 	mov r3, r6
 	add r1, lr, r1
 	add r2, r7, ip
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	b _02058FA8
 _02058F98:
 	mov r2, r6
@@ -107411,7 +107411,7 @@ _02058FB8:
 	ldr r1, [sb, #0xc]
 	beq _02058FE0
 	mov r2, r7
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _02058FE0:
 	mov r0, r1
@@ -107723,7 +107723,7 @@ _020593A4:
 	cmp r0, r2
 	beq _020593C8
 	add r2, r5, r4
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r4, r5, r6, pc}
 _020593C8:
 	mov r0, r1
@@ -111593,7 +111593,7 @@ _0205C6C0:
 	bic r0, r0, #1
 	orr r0, r0, #1
 	str r0, [sl, #0x24]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	mov r2, #1
 	mov r0, sl
@@ -111602,7 +111602,7 @@ _0205C6C0:
 	bl sub_0205C918
 	mov r0, r4
 	str fp, [sl, #0x2c]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	add sp, sp, #0x1c
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
@@ -111844,13 +111844,13 @@ sub_0205CA14: ; 0x0205CA14
 	mov r5, #1
 	arm_func_end sub_0205CA14
 _0205CA3C:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r6, r0
 	mov r0, r4
 	mov r1, r5
 	bl sub_0205C918
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, [r4, #0x38]
 	cmp r0, #0
 	bne _0205CA3C
@@ -112221,7 +112221,7 @@ sub_0205CF4C: ; 0x0205CF4C
 	mov r0, r4
 	mov r1, r5
 	mov r2, #0x30
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldr r0, [r5, #0x18]
 	mov r3, #0
 	cmp r0, #0
@@ -113484,7 +113484,7 @@ sub_0205DF44: ; 0x0205DF44
 	mov r7, r0
 	mov r6, r2
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	mov r0, r4
 	bl sub_0205D00C
@@ -113501,7 +113501,7 @@ _0205DF88:
 	mov r0, r4
 	bl sub_0205D00C
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start sub_0205DF9C
@@ -114631,7 +114631,7 @@ sub_0205EE58: ; 0x0205EE58
 	ldr r1, _0205EEB4 ; =sub_0205FCBC
 	mov r2, r4
 	add r3, r4, #0x4c0
-	bl sub_020653B8
+	bl OS_CreateThread
 	add r0, r4, #0x4e0
 	mov r1, #0
 	bl NitroSystem_NNS_FndInitList
@@ -114642,7 +114642,7 @@ sub_0205EE58: ; 0x0205EE58
 	str r1, [r4, #0x4c4]
 	mov r0, r4
 	str r1, [r4, #0x4c0]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	add sp, sp, #8
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -114654,7 +114654,7 @@ sub_0205EEB8: ; 0x0205EEB8
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	mov r8, r0
 	mov r7, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	mov r0, r8
 	mov r1, #0
@@ -114681,14 +114681,14 @@ _0205EF10:
 	bne _0205EEE0
 _0205EF1C:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 
 	arm_func_start sub_0205EF28
 sub_0205EF28: ; 0x0205EF28
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	mov r0, r6
 	mov r1, #0
@@ -114705,14 +114705,14 @@ sub_0205EF28: ; 0x0205EF28
 	arm_func_end sub_0205EF28
 _0205EF68:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r4, r5, r6, pc}
 
 	arm_func_start sub_0205EF78
 sub_0205EF78: ; 0x0205EF78
 	stmdb sp!, {r3, r4, r5, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	ldr r0, _0205EFB4 ; =MAIN_BSS_02111F5C
 	mov r1, #0
@@ -114725,7 +114725,7 @@ sub_0205EF78: ; 0x0205EF78
 	arm_func_end sub_0205EF78
 _0205EFA4:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -114735,13 +114735,13 @@ _0205EFB4: .word MAIN_BSS_02111F5C
 sub_0205EFB8: ; 0x0205EFB8
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	ldr r0, _0205EFE0 ; =MAIN_BSS_02111F5C
 	mov r1, r5
 	bl NitroSystem_NNS_FndAppendListObject
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0205EFE0: .word MAIN_BSS_02111F5C
@@ -115687,7 +115687,7 @@ sub_0205FCBC: ; 0x0205FCBC
 	arm_func_end sub_0205FCBC
 _0205FCC8:
 	add r0, r6, #0x4c0
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 _0205FCD0:
 	add r0, r4, #0x400
 	bl OS_LockMutex
@@ -117352,7 +117352,7 @@ sub_020612A0: ; 0x020612A0
 	mvn r4, #2
 	arm_func_end sub_020612A0
 _020612F0:
-	bl sub_02064E78
+	bl OS_GetLockID
 	mov r6, r0
 	cmp r6, r4
 	bne _02061304
@@ -120207,7 +120207,7 @@ NitroSDK_gx_GX_LoadBGPltt: ; 0x02063550
 	bls _0206358C
 	mov r1, r4
 	add r2, lr, #0x5000000
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r4, pc}
 	arm_func_end NitroSDK_gx_GX_LoadBGPltt
 _0206358C:
@@ -120234,7 +120234,7 @@ NitroSDK_gx_GXS_LoadBGPltt: ; 0x020635A4
 	add r2, r1, #0x400
 	mov r1, lr
 	add r2, r2, #0x5000000
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r3, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadBGPltt
 _020635E0:
@@ -120262,7 +120262,7 @@ NitroSDK_gx_GX_LoadOBJPltt: ; 0x020635FC
 	add r2, r1, #0x200
 	mov r1, lr
 	add r2, r2, #0x5000000
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r3, pc}
 	arm_func_end NitroSDK_gx_GX_LoadOBJPltt
 _02063638:
@@ -120290,7 +120290,7 @@ NitroSDK_gx_GXS_LoadOBJPltt: ; 0x02063654
 	add r2, r1, #0x600
 	mov r1, lr
 	add r2, r2, #0x5000000
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r3, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadOBJPltt
 _02063690:
@@ -120325,7 +120325,7 @@ _020636E8:
 	mov r0, r4
 	mov r2, r3
 	add r1, lr, #0x7000000
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _020636FC: .word DAT_0208e7f0
@@ -120353,7 +120353,7 @@ _0206373C:
 	mov r0, lr
 	mov r2, r3
 	add r1, r1, #0x7000000
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02063754: .word DAT_0208e7f0
@@ -120381,7 +120381,7 @@ _02063798:
 	mov r0, r4
 	mov r2, r3
 	add r1, ip, lr
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _020637AC: .word DAT_0208e7f0
@@ -120409,7 +120409,7 @@ _020637F0:
 	mov r0, r4
 	mov r2, r3
 	add r1, ip, lr
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02063804: .word DAT_0208e7f0
@@ -120432,7 +120432,7 @@ NitroSDK_gx_GX_LoadBG0Scr: ; 0x02063808
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GX_LoadBG0Scr
 _02063850:
@@ -120462,7 +120462,7 @@ NitroSDK_gx_GXS_LoadBG0Scr: ; 0x02063868
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadBG0Scr
 _020638B0:
@@ -120492,7 +120492,7 @@ NitroSDK_gx_GX_LoadBG1Scr: ; 0x020638C8
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GX_LoadBG1Scr
 _02063910:
@@ -120522,7 +120522,7 @@ NitroSDK_gx_GXS_LoadBG1Scr: ; 0x02063928
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadBG1Scr
 _02063970:
@@ -120552,7 +120552,7 @@ NitroSDK_gx_GX_LoadBG2ScrBmp: ; 0x02063988
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GX_LoadBG2ScrBmp
 _020639D0:
@@ -120582,7 +120582,7 @@ NitroSDK_gx_GXS_LoadBG2ScrBmp: ; 0x020639E8
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadBG2ScrBmp
 _02063A30:
@@ -120612,7 +120612,7 @@ NitroSDK_gx_GX_LoadBG3ScrBmp: ; 0x02063A48
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GX_LoadBG3ScrBmp
 _02063A90:
@@ -120642,7 +120642,7 @@ NitroSDK_gx_GXS_LoadBG3ScrBmp: ; 0x02063AA8
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadBG3ScrBmp
 _02063AF0:
@@ -120679,7 +120679,7 @@ _02063B50:
 	mov r0, r6
 	mov r2, r4
 	add r1, ip, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02063B64: .word DAT_0208e7f0
@@ -120709,7 +120709,7 @@ _02063BB0:
 	mov r0, r6
 	mov r2, r4
 	add r1, ip, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02063BC4: .word DAT_0208e7f0
@@ -120739,7 +120739,7 @@ _02063C10:
 	mov r0, r6
 	mov r2, r4
 	add r1, ip, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02063C24: .word DAT_0208e7f0
@@ -120769,7 +120769,7 @@ _02063C70:
 	mov r0, r6
 	mov r2, r4
 	add r1, ip, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02063C84: .word DAT_0208e7f0
@@ -120799,7 +120799,7 @@ _02063CD0:
 	mov r0, r6
 	mov r2, r4
 	add r1, ip, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02063CE4: .word DAT_0208e7f0
@@ -120829,7 +120829,7 @@ _02063D30:
 	mov r0, r6
 	mov r2, r4
 	add r1, ip, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02063D44: .word DAT_0208e7f0
@@ -120859,7 +120859,7 @@ _02063D90:
 	mov r0, r6
 	mov r2, r4
 	add r1, ip, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02063DA4: .word DAT_0208e7f0
@@ -120889,7 +120889,7 @@ _02063DF0:
 	mov r0, r6
 	mov r2, r4
 	add r1, ip, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02063E04: .word DAT_0208e7f0
@@ -120971,7 +120971,7 @@ NitroSDK_gx_GX_LoadBGExtPltt: ; 0x02063EA8
 	arm_func_end NitroSDK_gx_GX_LoadBGExtPltt
 _02063F00:
 	mov r1, r4
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -121052,7 +121052,7 @@ NitroSDK_gx_GX_LoadOBJExtPltt: ; 0x02063FA8
 	arm_func_end NitroSDK_gx_GX_LoadOBJExtPltt
 _02063FFC:
 	add r1, lr, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add sp, sp, #8
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -121118,7 +121118,7 @@ NitroSDK_gx_GXS_LoadBGExtPltt: ; 0x02064070
 _020640BC:
 	add r1, r1, #0x98000
 	add r1, r1, #0x6800000
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add sp, sp, #8
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -121182,7 +121182,7 @@ NitroSDK_gx_GXS_LoadOBJExtPltt: ; 0x0206412C
 _02064178:
 	add r1, r1, #0x8a0000
 	add r1, r1, #0x6000000
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add sp, sp, #8
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -121280,7 +121280,7 @@ _020642B8:
 	mov r0, r7
 	mov r2, r5
 	add r1, lr, ip
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 _020642C8:
 	ldr r0, _02064368 ; =DAT_0208e7f0
 	mvn r1, #0
@@ -121300,7 +121300,7 @@ _02064300:
 	mov r1, r4
 	add r0, r7, r5
 	sub r2, r6, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02064318:
@@ -121321,7 +121321,7 @@ _0206434C:
 	mov r1, r2
 	mov r0, r7
 	mov r2, r6
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -121397,7 +121397,7 @@ NitroSDK_gx_GX_LoadTexPltt: ; 0x020643EC
 	arm_func_end NitroSDK_gx_GX_LoadTexPltt
 _02064440:
 	add r1, lr, r5
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add sp, sp, #8
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -121498,7 +121498,7 @@ NitroSDK_gx_GX_LoadClearImageColor: ; 0x0206452C
 _02064578:
 	mov r1, r2
 	mov r2, r3
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add sp, sp, #8
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -121531,7 +121531,7 @@ NitroSDK_gx_GX_LoadClearImageDepth: ; 0x02064594
 _020645E4:
 	mov r2, r3
 	add r1, r4, #0x20000
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -121643,7 +121643,7 @@ sub_0206472C: ; 0x0206472C
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r5, r0
 	mov r4, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	cmp r5, #0
 	beq _0206475C
 	ldr r1, _02064798 ; =OS_IRQTable
@@ -121654,7 +121654,7 @@ sub_0206472C: ; 0x0206472C
 	str r2, [r1, #0xff8]
 	arm_func_end sub_0206472C
 _0206475C:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r1, _02064798 ; =OS_IRQTable
 	add r0, r1, #0x3000
 	ldr r0, [r0, #0xff8]
@@ -121665,7 +121665,7 @@ _0206475C:
 	add r6, r0, #0x3c00
 _02064780:
 	mov r0, r5
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r6]
 	tst r4, r0
 	beq _02064780
@@ -121936,8 +121936,8 @@ _02064A60: .word MAIN_BSS_02112E54
 _02064A64: .word MAIN_BSS_02112E50
 	arm_func_end sub_02064A20
 
-	arm_func_start sub_02064A68
-sub_02064A68: ; 0x02064A68
+	arm_func_start OS_SetIrqMask
+OS_SetIrqMask: ; 0x02064A68
 	ldr r3, _02064A90 ; =0x04000208
 	mov r1, #0
 	ldrh r2, [r3]
@@ -121950,7 +121950,7 @@ sub_02064A68: ; 0x02064A68
 	bx lr
 	.align 2, 0
 _02064A90: .word 0x04000208
-	arm_func_end sub_02064A68
+	arm_func_end OS_SetIrqMask
 
 	arm_func_start NitroSDK_os_OS_EnableIrqMask
 NitroSDK_os_OS_EnableIrqMask: ; 0x02064A94
@@ -122042,7 +122042,7 @@ sub_02064B54: ; 0x02064B54
 	arm_func_end sub_02064B54
 _02064B98:
 	mov r0, r4
-	blx sub_02000446
+	blx SVC_WaitByLoop
 	ldrh r0, [r5, #6]
 	cmp r0, #0
 	bne _02064B98
@@ -122092,7 +122092,7 @@ sub_02064C20: ; 0x02064C20
 	arm_func_end sub_02064C20
 _02064C44:
 	mov r0, r4
-	blx sub_02000446
+	blx SVC_WaitByLoop
 	mov r0, r8
 	mov r1, r7
 	mov r2, r6
@@ -122127,7 +122127,7 @@ sub_02064C7C: ; 0x02064C7C
 	b _02064CB0
 	arm_func_end sub_02064C7C
 _02064CAC:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 _02064CB0:
 	mov r4, r0
 	mov r0, #0
@@ -122144,7 +122144,7 @@ _02064CC8:
 	bl sub_020673A4
 	b _02064CE8
 _02064CE4:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 _02064CE8:
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
@@ -122170,7 +122170,7 @@ sub_02064D00: ; 0x02064D00
 	b _02064D24
 	arm_func_end sub_02064D00
 _02064D20:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 _02064D24:
 	mov r5, r0
 	mov r0, sb
@@ -122190,13 +122190,13 @@ _02064D4C:
 	bl sub_020673A4
 	b _02064D64
 _02064D60:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 _02064D64:
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 
-	arm_func_start sub_02064D6C
-sub_02064D6C: ; 0x02064D6C
+	arm_func_start OS_LockCartridge
+OS_LockCartridge: ; 0x02064D6C
 	ldr ip, _02064D80 ; =sub_02064C20
 	ldr r1, _02064D84 ; =0x027FFFE8
 	ldr r2, _02064D88 ; =sub_02064DD8
@@ -122206,10 +122206,10 @@ sub_02064D6C: ; 0x02064D6C
 _02064D80: .word sub_02064C20
 _02064D84: .word 0x027FFFE8
 _02064D88: .word sub_02064DD8
-	arm_func_end sub_02064D6C
+	arm_func_end OS_LockCartridge
 
-	arm_func_start sub_02064D8C
-sub_02064D8C: ; 0x02064D8C
+	arm_func_start OS_UnlockCartridge
+OS_UnlockCartridge: ; 0x02064D8C
 	ldr ip, _02064DA0 ; =sub_02064C7C
 	ldr r1, _02064DA4 ; =0x027FFFE8
 	ldr r2, _02064DA8 ; =sub_02064DF0
@@ -122219,18 +122219,18 @@ sub_02064D8C: ; 0x02064D8C
 _02064DA0: .word sub_02064C7C
 _02064DA4: .word 0x027FFFE8
 _02064DA8: .word sub_02064DF0
-	arm_func_end sub_02064D8C
+	arm_func_end OS_UnlockCartridge
 
-	arm_func_start thunk_FUN_02064d8c
-thunk_FUN_02064d8c: ; 0x02064DAC
-	ldr r1, _02064DB4 ; =sub_02064D8C
+	arm_func_start OS_UnLockCartridge
+OS_UnLockCartridge: ; 0x02064DAC
+	ldr r1, _02064DB4 ; =OS_UnlockCartridge
 	bx r1
 	.align 2, 0
-_02064DB4: .word sub_02064D8C
-	arm_func_end thunk_FUN_02064d8c
+_02064DB4: .word OS_UnlockCartridge
+	arm_func_end OS_UnLockCartridge
 
-	arm_func_start sub_02064DB8
-sub_02064DB8: ; 0x02064DB8
+	arm_func_start OS_TryLockCartridge
+OS_TryLockCartridge: ; 0x02064DB8
 	ldr ip, _02064DCC ; =sub_02064D00
 	ldr r1, _02064DD0 ; =0x027FFFE8
 	ldr r2, _02064DD4 ; =sub_02064DD8
@@ -122240,7 +122240,7 @@ sub_02064DB8: ; 0x02064DB8
 _02064DCC: .word sub_02064D00
 _02064DD0: .word 0x027FFFE8
 _02064DD4: .word sub_02064DD8
-	arm_func_end sub_02064DB8
+	arm_func_end OS_TryLockCartridge
 
 	arm_func_start sub_02064DD8
 sub_02064DD8: ; 0x02064DD8
@@ -122292,21 +122292,21 @@ _02064E40:
 	.byte 0x1E, 0xFF, 0x2F, 0xE1, 0x04, 0x02, 0x00, 0x04, 0x0C, 0x10, 0x9F, 0xE5, 0xB0, 0x00, 0xD1, 0xE1
 	.byte 0x02, 0x0B, 0x80, 0xE3, 0xB0, 0x00, 0xC1, 0xE1, 0x1E, 0xFF, 0x2F, 0xE1, 0x04, 0x02, 0x00, 0x04
 
-	arm_func_start sub_02064E70
-sub_02064E70: ; 0x02064E70
+	arm_func_start OS_ReadOwnerOfLockWord
+OS_ReadOwnerOfLockWord: ; 0x02064E70
 	ldrh r0, [r0, #4]
 	bx lr
-	arm_func_end sub_02064E70
+	arm_func_end OS_ReadOwnerOfLockWord
 
-	arm_func_start sub_02064E78
-sub_02064E78: ; 0x02064E78
+	arm_func_start OS_GetLockID
+OS_GetLockID: ; 0x02064E78
 	ldr r3, _02064ED8 ; =0x027FFFB0
 	ldr r1, [r3]
 	clz r2, r1
 	cmp r2, #0x20
 	bne _02064E90
 	b _02064E94
-	arm_func_end sub_02064E78
+	arm_func_end OS_GetLockID
 _02064E90:
 	mov r0, #0x40
 _02064E94:
@@ -122710,7 +122710,7 @@ _020652D4:
 	ldr r3, _020653A4 ; =MAIN_BSS_021130FC
 	mov r2, #0
 	str ip, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	ldr r0, _02065370 ; =MAIN_BSS_02112E80
 	mov r1, #0x20
 	str r1, [r0, #0xa4]
@@ -122743,14 +122743,14 @@ sub_020653A8: ; 0x020653A8
 _020653B4: .word MAIN_BSS_02112E8C
 	arm_func_end sub_020653A8
 
-	arm_func_start sub_020653B8
-sub_020653B8: ; 0x020653B8
+	arm_func_start OS_CreateThread
+OS_CreateThread: ; 0x020653B8
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	mov r8, r0
 	mov r5, r1
 	mov r7, r2
 	mov r6, r3
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl sub_02064FA8
 	ldr r2, [sp, #0x1c]
@@ -122779,7 +122779,7 @@ sub_020653B8: ; 0x020653B8
 	mov r0, r8
 	str ip, [r8, #0x9c]
 	bl sub_02065A98
-	ldr r2, _020654B0 ; =sub_020654B4
+	ldr r2, _020654B0 ; =OS_ExitThread
 	str r7, [r8, #4]
 	str r2, [r8, #0x3c]
 	ldr r2, [sp, #0x18]
@@ -122803,18 +122803,18 @@ sub_020653B8: ; 0x020653B8
 	mov r1, #0
 	mov r0, r4
 	str r1, [r8, #0xb0]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
 _020654A8: .word 0xFDDB597D
 _020654AC: .word 0x7BF9DD5B
-_020654B0: .word sub_020654B4
-	arm_func_end sub_020653B8
+_020654B0: .word OS_ExitThread
+	arm_func_end OS_CreateThread
 
-	arm_func_start sub_020654B4
-sub_020654B4: ; 0x020654B4
+	arm_func_start OS_ExitThread
+OS_ExitThread: ; 0x020654B4
 	stmdb sp!, {r3, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r0, _020654D0 ; =MAIN_BSS_02112E80
 	mov r1, #0
 	ldr r0, [r0, #0x28]
@@ -122822,7 +122822,7 @@ sub_020654B4: ; 0x020654B4
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _020654D0: .word MAIN_BSS_02112E80
-	arm_func_end sub_020654B4
+	arm_func_end OS_ExitThread
 
 	arm_func_start sub_020654D4
 sub_020654D4: ; 0x020654D4
@@ -122865,7 +122865,7 @@ sub_02065530: ; 0x02065530
 	mov r1, #0
 	str r1, [r3, #0xb4]
 	blx r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	arm_func_end sub_02065530
 _0206555C:
 	bl sub_02065568
@@ -122906,7 +122906,7 @@ _020655C0: .word MAIN_BSS_02112E80
 sub_020655C4: ; 0x020655C4
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0206563C ; =MAIN_BSS_02112E80
 	mov r4, r0
 	ldr r0, [r1, #0x28]
@@ -122934,7 +122934,7 @@ _02065610:
 	bl NitroSDK_OS_WakeupThread
 	bl sub_02065A5C
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	bl sub_020657A4
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -122954,17 +122954,17 @@ sub_02065640: ; 0x02065640
 sub_02065658: ; 0x02065658
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r5, #0x64]
 	mov r4, r0
 	cmp r1, #2
 	beq _0206567C
 	add r0, r5, #0x9c
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	arm_func_end sub_02065658
 _0206567C:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 
 	arm_func_start sub_02065688
@@ -122976,11 +122976,11 @@ sub_02065688: ; 0x02065688
 	bx lr
 	arm_func_end sub_02065688
 
-	arm_func_start NitroSDK_OS_SleepThread
-NitroSDK_OS_SleepThread: ; 0x0206569C
+	arm_func_start OS_SleepThread
+OS_SleepThread: ; 0x0206569C
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _020656E8 ; =MAIN_BSS_02112E80
 	mov r4, r0
 	ldr r0, [r1, #8]
@@ -122991,13 +122991,13 @@ NitroSDK_OS_SleepThread: ; 0x0206569C
 	mov r1, r5
 	str r6, [r5, #0x78]
 	bl NitroSDK_OSi_InsertLinkToQueue
-	arm_func_end NitroSDK_OS_SleepThread
+	arm_func_end OS_SleepThread
 _020656D0:
 	mov r0, #0
 	str r0, [r5, #0x64]
 	bl NitroSDK_OSi_RescheduleThread
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _020656E8: .word MAIN_BSS_02112E80
@@ -123006,7 +123006,7 @@ _020656E8: .word MAIN_BSS_02112E80
 NitroSDK_OS_WakeupThread: ; 0x020656EC
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r7, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r7]
 	mov r6, r0
 	cmp r1, #0
@@ -123032,22 +123032,22 @@ _02065738:
 	bl NitroSDK_OSi_RescheduleThread
 _02065748:
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
-	arm_func_start sub_02065754
-sub_02065754: ; 0x02065754
+	arm_func_start OS_WakeupThreadDirect
+OS_WakeupThreadDirect: ; 0x02065754
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r1, #1
 	mov r4, r0
 	str r1, [r5, #0x64]
 	bl NitroSDK_OSi_RescheduleThread
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_02065754
+	arm_func_end OS_WakeupThreadDirect
 
 	arm_func_start sub_0206577C
 sub_0206577C: ; 0x0206577C
@@ -123069,11 +123069,11 @@ _020657A0: .word MAIN_BSS_02112E80
 	arm_func_start sub_020657A4
 sub_020657A4: ; 0x020657A4
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl NitroSDK_OSi_RescheduleThread
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020657A4
 
@@ -123085,7 +123085,7 @@ sub_020657C0: ; 0x020657C0
 	mov r5, r4
 	mov r6, r4
 	ldr r8, [r0, #0x28]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02065874 ; =MAIN_BSS_02112E80
 	mov r7, r0
 	ldr r1, [r1, #0x2c]
@@ -123112,7 +123112,7 @@ _02065820:
 	bne _0206583C
 _02065830:
 	mov r0, r7
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _0206583C:
 	cmp r4, #0
@@ -123128,7 +123128,7 @@ _02065858:
 	str r8, [r5, #0x68]
 	bl NitroSDK_OSi_RescheduleThread
 	mov r0, r7
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
 _02065874: .word MAIN_BSS_02112E80
@@ -123141,7 +123141,7 @@ sub_02065878: ; 0x02065878
 	mov r6, r1
 	ldr r8, [r2, #0x2c]
 	mov r4, #0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	b _020658A4
 	arm_func_end sub_02065878
@@ -123157,7 +123157,7 @@ _020658A4:
 	cmpne r8, r0
 	bne _020658D0
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _020658D0:
@@ -123178,7 +123178,7 @@ _020658F8:
 	bl NitroSDK_OSi_RescheduleThread
 _02065908:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -123202,7 +123202,7 @@ sub_02065928: ; 0x02065928
 	ldr r0, [r0, #8]
 	ldr r0, [r0]
 	str r0, [sp, #4]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _020659C8 ; =0x000082EA
 	mov r2, #0
 	umull r5, r3, r4, r1
@@ -123226,13 +123226,13 @@ sub_02065928: ; 0x02065928
 	arm_func_end sub_02065928
 _020659A0:
 	mov r0, r5
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [sp, #4]
 	cmp r0, #0
 	bne _020659A0
 _020659B4:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #0x34
 	ldmia sp!, {r4, r5, pc}
 	.align 2, 0
@@ -123245,23 +123245,23 @@ sub_020659D0: ; 0x020659D0
 	ldr r2, [r0]
 	mov r1, #0
 	str r1, [r0]
-	ldr ip, _020659EC ; =sub_02065754
+	ldr ip, _020659EC ; =OS_WakeupThreadDirect
 	mov r0, r2
 	str r1, [r2, #0xb0]
 	bx ip
 	.align 2, 0
-_020659EC: .word sub_02065754
+_020659EC: .word OS_WakeupThreadDirect
 	arm_func_end sub_020659D0
 
 	arm_func_start sub_020659F0
 sub_020659F0: ; 0x020659F0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02065A14 ; =MAIN_BSS_02112E80
 	ldr r4, [r1, #0x30]
 	str r5, [r1, #0x30]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -123280,7 +123280,7 @@ _02065A20:
 	arm_func_start sub_02065A28
 sub_02065A28: ; 0x02065A28
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, _02065A58 ; =MAIN_BSS_02112E80
 	mvn r1, #0
 	ldr r3, [r2, #4]
@@ -123288,7 +123288,7 @@ sub_02065A28: ; 0x02065A28
 	addlo r1, r3, #1
 	movlo r4, r3
 	strlo r1, [r2, #4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -123298,7 +123298,7 @@ _02065A58: .word MAIN_BSS_02112E80
 	arm_func_start sub_02065A5C
 sub_02065A5C: ; 0x02065A5C
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02065A8C ; =MAIN_BSS_02112E80
 	mov r4, #0
 	ldr r3, [r1, #4]
@@ -123306,7 +123306,7 @@ sub_02065A5C: ; 0x02065A5C
 	subne r2, r3, #1
 	movne r4, r3
 	strne r2, [r1, #4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -123445,7 +123445,7 @@ sub_02065BF4: ; 0x02065BF4
 	mov r5, r0
 	mov r4, r1
 	mov r7, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, [r5, #0x1c]
 	ldr r1, [r5, #0x14]
 	mov r6, r0
@@ -123457,12 +123457,12 @@ _02065C20:
 	cmp r7, #0
 	bne _02065C38
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02065C38:
 	mov r0, r5
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r2, [r5, #0x1c]
 	ldr r1, [r5, #0x14]
 	cmp r1, r2
@@ -123479,7 +123479,7 @@ _02065C50:
 	str r1, [r5, #0x1c]
 	bl NitroSDK_OS_WakeupThread
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
@@ -123489,7 +123489,7 @@ sub_02065C88: ; 0x02065C88
 	mov r6, r0
 	mov r5, r1
 	mov r7, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r6, #0x1c]
 	mov r4, r0
 	cmp r1, #0
@@ -123500,12 +123500,12 @@ _02065CB0:
 	cmp r7, #0
 	bne _02065CC8
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02065CC8:
 	add r0, r6, #8
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r6, #0x1c]
 	cmp r0, #0
 	beq _02065CB0
@@ -123528,7 +123528,7 @@ _02065CF4:
 	str r1, [r6, #0x1c]
 	bl NitroSDK_OS_WakeupThread
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
@@ -123538,7 +123538,7 @@ sub_02065D2C: ; 0x02065D2C
 	mov r6, r0
 	mov r5, r1
 	mov r7, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r6, #0x14]
 	ldr r2, [r6, #0x1c]
 	mov r4, r0
@@ -123550,12 +123550,12 @@ _02065D58:
 	cmp r7, #0
 	bne _02065D70
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02065D70:
 	mov r0, r6
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r1, [r6, #0x14]
 	ldr r0, [r6, #0x1c]
 	cmp r1, r0
@@ -123574,7 +123574,7 @@ _02065D88:
 	str r1, [r6, #0x1c]
 	bl NitroSDK_OS_WakeupThread
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
@@ -123584,7 +123584,7 @@ sub_02065DC8: ; 0x02065DC8
 	mov r6, r0
 	mov r5, r1
 	mov r7, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r6, #0x1c]
 	mov r4, r0
 	cmp r1, #0
@@ -123595,12 +123595,12 @@ _02065DF0:
 	cmp r7, #0
 	bne _02065E08
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02065E08:
 	add r0, r6, #8
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r6, #0x1c]
 	cmp r0, #0
 	beq _02065DF0
@@ -123613,7 +123613,7 @@ _02065E1C:
 	str r0, [r5]
 _02065E34:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
@@ -123631,7 +123631,7 @@ NitroSDK_OS_InitMutex: ; 0x02065E44
 OS_LockMutex: ; 0x02065E5C
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02065EDC ; =OSi_ThreadInfo
 	mov r4, r0
 	ldr r7, [r1, #4]
@@ -123659,12 +123659,12 @@ _02065EA4:
 _02065EBC:
 	mov r0, r5
 	str r5, [r7, #0x84]
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	str r6, [r7, #0x84]
 	b _02065E78
 _02065ED0:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 _02065EDC: .word OSi_ThreadInfo
@@ -123673,7 +123673,7 @@ _02065EDC: .word OSi_ThreadInfo
 OS_UnlockMutex: ; 0x02065EE0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02065F38 ; =OSi_ThreadInfo
 	mov r4, r0
 	ldr r0, [r1, #4]
@@ -123693,7 +123693,7 @@ OS_UnlockMutex: ; 0x02065EE0
 	arm_func_end OS_UnlockMutex
 _02065F2C:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _02065F38: .word OSi_ThreadInfo
@@ -123722,7 +123722,7 @@ _02065F54:
 OS_TryLockMutex: ; 0x02065F78
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, [r5, #8]
 	ldr r1, _02065FE8 ; =OSi_ThreadInfo
 	mov r4, r0
@@ -123748,7 +123748,7 @@ _02065FBC:
 	str r0, [r5, #0xc]
 _02065FD8:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r6
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -123804,11 +123804,11 @@ _02066048:
     bne _02066044
     bx lr
 
-	arm_func_start sub_0206606C
-sub_0206606C: ; 0x0206606C
+	arm_func_start DC_FlushAll
+DC_FlushAll: ; 0x0206606C
 	mov ip, #0
 	mov r1, #0
-	arm_func_end sub_0206606C
+	arm_func_end DC_FlushAll
 _02066074:
 	mov r0, #0
 _02066078:
@@ -123823,11 +123823,11 @@ _02066078:
 	bne _02066074
 	bx lr
 
-	arm_func_start NitroSDK_DC_InvalidateRange
-NitroSDK_DC_InvalidateRange: ; 0x020660A0
+	arm_func_start DC_InvalidateRange
+DC_InvalidateRange: ; 0x020660A0
 	add r1, r1, r0
 	bic r0, r0, #0x1f
-	arm_func_end NitroSDK_DC_InvalidateRange
+	arm_func_end DC_InvalidateRange
 _020660A8:
 	mcr p15, 0, r0, c7, c6, 1
 	add r0, r0, #0x20
@@ -123904,7 +123904,7 @@ _0206613C:
 sub_02066150: ; 0x02066150
 	stmdb sp!, {r3, lr}
 	bl sub_02066198
-	bl sub_0206955C
+	bl PXI_Init
 	bl sub_02064B54
 	bl sub_0206629C
 	bl sub_020648AC
@@ -123915,7 +123915,7 @@ sub_02066150: ; 0x02066150
 	bl sub_02067614
 	bl sub_02065260
 	bl sub_020673FC
-	bl sub_0207824C
+	bl CTRDG_Init
 	bl sub_0206FDB8
 	bl sub_0206D740
 	bl sub_02066130
@@ -124248,14 +124248,14 @@ sub_02066574: ; 0x02066574
 	bx lr
 	arm_func_end sub_02066574
 
-	arm_func_start sub_02066584
-sub_02066584: ; 0x02066584
+	arm_func_start OS_SetDPermissionsForProtectionRegion
+OS_SetDPermissionsForProtectionRegion: ; 0x02066584
 	mrc p15, 0, r2, c5, c0, 2
 	bic r2, r2, r0
 	orr r2, r2, r1
 	mcr p15, 0, r2, c5, c0, 2
 	bx lr
-	arm_func_end sub_02066584
+	arm_func_end OS_SetDPermissionsForProtectionRegion
 
 	arm_func_start sub_02066598
 sub_02066598: ; 0x02066598
@@ -124538,7 +124538,7 @@ _020668E4: .word sub_02066880
 sub_020668E8: ; 0x020668E8
 	stmdb sp!, {lr}
 	sub sp, sp, #0xc
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr lr, _0206697C ; =0x04000100
 	ldr r2, _02066980 ; =0x0000FFFF
 	ldrh ip, [lr]
@@ -124565,7 +124565,7 @@ sub_020668E8: ; 0x020668E8
 	str r1, [sp, #8]
 	arm_func_end sub_020668E8
 _02066954:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r2, [sp, #4]
 	ldr r1, [sp, #8]
 	ldrh r0, [sp]
@@ -124654,7 +124654,7 @@ _02066A60: .word MAIN_BSS_021131C4
 	arm_func_start sub_02066A64
 sub_02066A64: ; 0x02066A64
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02066AA0 ; =MAIN_BSS_021131C4
 	mov r4, r0
 	ldrh r0, [r1]
@@ -124668,7 +124668,7 @@ sub_02066A64: ; 0x02066A64
 	arm_func_end sub_02066A64
 _02066A94:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02066AA0: .word MAIN_BSS_021131C4
@@ -124789,7 +124789,7 @@ sub_02066BF0: ; 0x02066BF0
 _02066C14:
 	bl OS_Terminate
 _02066C18:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r1, #0
 	str r1, [r6, #0x1c]
 	str r1, [r6, #0x20]
@@ -124804,19 +124804,19 @@ _02066C18:
 	mov r1, r3
 	bl sub_02066AC4
 	mov r0, r7
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start sub_02066C5C
 sub_02066C5C: ; 0x02066C5C
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r5]
 	mov r4, r0
 	cmp r1, #0
 	bne _02066C80
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end sub_02066C5C
 _02066C80:
@@ -124844,7 +124844,7 @@ _02066CC4:
 	str r1, [r5, #0x1c]
 	mov r0, r4
 	str r1, [r5, #0x20]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _02066CE0: .word MAIN_BSS_021131C4
@@ -124951,13 +124951,13 @@ _02066E28: .word MAIN_BSS_021131D0
 	arm_func_start sub_02066E2C
 sub_02066E2C: ; 0x02066E2C
 	stmdb sp!, {r3, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02066E50 ; =MAIN_BSS_021131D0
 	ldrh r2, [r1]
 	cmp r2, #0
 	movne r2, #0
 	strneh r2, [r1]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02066E50: .word MAIN_BSS_021131D0
@@ -125057,7 +125057,7 @@ sub_02066F54: ; 0x02066F54
 	mov r7, r1
 	mov r6, r2
 	mov r5, r3
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	cmp r8, #0
 	beq _02066F84
@@ -125087,7 +125087,7 @@ _02066F88:
 	str r1, [r8, #0x24]
 	bl sub_02066E54
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
 _02066FDC: .word 0x04000006
@@ -125099,7 +125099,7 @@ sub_02066FE0: ; 0x02066FE0
 	mov r7, r1
 	mov r6, r2
 	mov r5, r3
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	cmp r8, #0
 	beq _02067010
@@ -125129,7 +125129,7 @@ _02067014:
 	str r1, [r8, #0x24]
 	bl sub_02066E54
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
 _02067068: .word 0x04000006
@@ -125159,14 +125159,14 @@ _020670A8: .word 0x04000004
 sub_020670AC: ; 0x020670AC
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r1, #1
 	str r1, [r5, #0x24]
 	ldr r1, [r5]
 	mov r4, r0
 	cmp r1, #0
 	bne _020670D8
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end sub_020670AC
 _020670D8:
@@ -125175,13 +125175,13 @@ _020670D8:
 	mov r1, #0
 	mov r0, r4
 	str r1, [r5]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 
 	arm_func_start sub_020670F4
 sub_020670F4: ; 0x020670F4
 	stmdb sp!, {r4, r5, r6, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02067148 ; =MAIN_BSS_021131D0
 	mov r5, r0
 	ldr r0, [r1, #0xc]
@@ -125202,7 +125202,7 @@ _02067120:
 	bne _02067120
 _0206713C:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02067148: .word MAIN_BSS_021131D0
@@ -125341,7 +125341,7 @@ _020672F0:
 sub_02067310: ; 0x02067310
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0206734C ; =MAIN_BSS_021131D0
 	ldr r2, [r1, #4]
 	cmp r4, r2
@@ -125350,7 +125350,7 @@ sub_02067310: ; 0x02067310
 	strlt r2, [r1, #8]
 	ldr r1, _0206734C ; =MAIN_BSS_021131D0
 	str r4, [r1, #4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0206734C ; =MAIN_BSS_021131D0
 	ldr r0, [r0, #8]
 	ldmia sp!, {r4, pc}
@@ -125367,24 +125367,24 @@ sub_02067350: ; 0x02067350
 	bx lr
 	arm_func_end sub_02067350
 
-	arm_func_start NitroSDK_OS_DisableInterrupts
-NitroSDK_OS_DisableInterrupts: ; 0x02067364
+	arm_func_start OS_DisableInterrupts
+OS_DisableInterrupts: ; 0x02067364
 	mrs r0, cpsr
 	orr r1, r0, #0x80
 	msr cpsr_c, r1
 	and r0, r0, #0x80
 	bx lr
-	arm_func_end NitroSDK_OS_DisableInterrupts
+	arm_func_end OS_DisableInterrupts
 
-	arm_func_start NitroSDK_OS_RestoreInterrupts
-NitroSDK_OS_RestoreInterrupts: ; 0x02067378
+	arm_func_start OS_RestoreInterrupts
+OS_RestoreInterrupts: ; 0x02067378
 	mrs r1, cpsr
 	bic r2, r1, #0x80
 	orr r2, r2, r0
 	msr cpsr_c, r2
 	and r0, r1, #0x80
 	bx lr
-	arm_func_end NitroSDK_OS_RestoreInterrupts
+	arm_func_end OS_RestoreInterrupts
 
 	arm_func_start sub_02067390
 sub_02067390: ; 0x02067390
@@ -125430,7 +125430,7 @@ NitroSDK_OS_SpinWait:
 sub_020673E0: ; 0x020673E0
 	stmdb sp!, {r3, lr}
 	mov r0, #1
-	blx sub_02000446
+	blx SVC_WaitByLoop
 	mov r0, #1
 	mov r1, r0
 	bl sub_0206472C
@@ -125446,19 +125446,19 @@ sub_020673FC: ; 0x020673FC
 	ldmneia sp!, {r3, r4, r5, pc}
 	mov r1, #1
 	strh r1, [r0, #2]
-	bl sub_0206955C
+	bl PXI_Init
 	mov r5, #0xc
 	mov r4, #1
 	arm_func_end sub_020673FC
 _02067424:
 	mov r0, r5
 	mov r1, r4
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	beq _02067424
 	ldr r1, _0206744C ; =sub_02067450
 	mov r0, #0xc
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _02067448: .word MAIN_BSS_021131E4
@@ -125494,7 +125494,7 @@ _02067494:
 	mov r0, r5
 	mov r1, r6
 	mov r2, r4
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	bne _02067494
 	ldmia sp!, {r4, r5, r6, pc}
@@ -125513,7 +125513,7 @@ sub_020674B0: ; 0x020674B0
 	bl OS_Terminate
 	arm_func_end sub_020674B0
 _020674D8:
-	bl sub_02064E78
+	bl OS_GetLockID
 	mov r0, r0, lsl #0x10
 	mov r0, r0, lsr #0x10
 	bl sub_0206EFA0
@@ -125526,7 +125526,7 @@ _020674D8:
 	ldr r0, _02067550 ; =0x00000003
 	bl sub_02067C2C
 	ldr r0, _02067554 ; =0x00040000
-	bl sub_02064A68
+	bl OS_SetIrqMask
 	ldr r0, _02067558 ; =0xFFFFFFFF
 	bl sub_02064AF4
 	ldr r1, _0206755C ; =0x027FFC20
@@ -125632,7 +125632,7 @@ sub_02067648: ; 0x02067648
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
 	mov r7, r0
 	mov r8, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _020676FC ; =MAIN_BSS_021131E8
 	mov r6, r0
 	ldr r0, [r1]
@@ -125652,7 +125652,7 @@ _02067670:
 	and r5, r5, r1
 	beq _02067670
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 _020676A8:
@@ -125676,7 +125676,7 @@ _020676BC:
 	b _020676BC
 _020676EC:
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
@@ -125689,7 +125689,7 @@ sub_02067708: ; 0x02067708
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
 	mov r5, r0
 	mov sl, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r4, _02067784 ; =MAIN_BSS_021131E8
 	ldr r1, _02067788 ; =0x000001FF
 	ldr r2, [r4]
@@ -125718,7 +125718,7 @@ _0206773C:
 	b _0206773C
 _02067778:
 	mov r0, sb
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 	.align 2, 0
 _02067784: .word MAIN_BSS_021131E8
@@ -125787,7 +125787,7 @@ OS_Terminate: ; 0x02067860
 	stmdb sp!, {r3, lr}
 	arm_func_end OS_Terminate
 _02067864:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	bl OS_Halt
 	b _02067864
 
@@ -125825,7 +125825,7 @@ _020678B8:
 	ldr r0, [r5]
 	tst r0, #0x80000000
 	bne _020678B8
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r2, r8, lsl #2
 	add r1, r2, #0xe0
 	mov r3, r4, lsr #2
@@ -125838,7 +125838,7 @@ _020678B8:
 	str r6, [ip, #0xe0]
 	bl sub_01FF8554
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 _020678FC:
 	ldr r0, [r5]
 	tst r0, #0x80000000
@@ -125897,7 +125897,7 @@ _020679A8:
 	ldr r0, [r5]
 	tst r0, #0x80000000
 	bne _020679A8
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r2, r8, lsl #2
 	add r1, r2, #0xe0
 	mov r3, r4, lsr #1
@@ -125910,15 +125910,15 @@ _020679A8:
 	str r6, [ip, #0xe0]
 	bl sub_01FF8554
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 _020679EC:
 	ldr r0, [r5]
 	tst r0, #0x80000000
 	bne _020679EC
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 
-	arm_func_start sub_020679FC
-sub_020679FC: ; 0x020679FC
+	arm_func_start MI_DmaCopy16
+MI_DmaCopy16: ; 0x020679FC
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	movs r5, r3
 	mov r8, r0
@@ -125933,7 +125933,7 @@ sub_020679FC: ; 0x020679FC
 	mov r0, r0, lsl #2
 	add r0, r0, #0xb0
 	add r4, r0, #0x4000000
-	arm_func_end sub_020679FC
+	arm_func_end MI_DmaCopy16
 _02067A34:
 	ldr r0, [r4]
 	tst r0, #0x80000000
@@ -125973,7 +125973,7 @@ _02067A98:
 	mov r0, r7
 	mov r1, r8
 	bl NitroSDK_os_OSi_EnterDmaCallback
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r3, r4, lsr #2
 	mov r2, r7, lsl #2
 	add r1, r2, #0xe0
@@ -125986,10 +125986,10 @@ _02067A98:
 	orr r3, r3, #0xc5000000
 	bl sub_01FF8530
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02067AF0:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r2, r7, lsl #2
 	add r1, r2, #0xe0
 	mov r3, r4, lsr #2
@@ -126002,7 +126002,7 @@ _02067AF0:
 	str r5, [ip, #0xe0]
 	bl sub_01FF8530
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 
 	arm_func_start NitroSDK_mi_MI_DmaCopy32Async
@@ -126053,7 +126053,7 @@ _02067BA8:
 NitroSDK_mi_MI_WaitDma: ; 0x02067BC4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	add r1, r4, r4, lsl #1
 	add r1, r1, #2
 	mov r1, r1, lsl #2
@@ -126077,7 +126077,7 @@ _02067BE4:
 	str r3, [r2, #4]
 	str r1, [r2, #8]
 _02067C20:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02067C28: .word 0x81400001
@@ -126086,7 +126086,7 @@ _02067C28: .word 0x81400001
 sub_02067C2C: ; 0x02067C2C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r1, #6
 	mul r1, r4, r1
 	add r1, r1, #5
@@ -126114,7 +126114,7 @@ sub_02067C2C: ; 0x02067C2C
 	str r1, [r2, #8]
 	arm_func_end sub_02067C2C
 _02067C9C:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02067CA4: .word 0x81400001
@@ -126244,10 +126244,10 @@ _02067DF0:
 	blt _02067DE0
 	bx lr
 
-	arm_func_start NitroSDK_mi_MIi_CpuCopy32
-NitroSDK_mi_MIi_CpuCopy32: ; 0x02067DF8
+	arm_func_start MIi_CpuCopy32
+MIi_CpuCopy32: ; 0x02067DF8
 	add ip, r1, r2
-	arm_func_end NitroSDK_mi_MIi_CpuCopy32
+	arm_func_end MIi_CpuCopy32
 _02067DFC:
 	cmp r1, ip
 	blt _02067E08
@@ -127231,7 +127231,7 @@ _02068924: .word MAIN_BSS_02114D60
 NitroSDK_SND_RecvCommandReply: ; 0x02068928
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	tst r5, #1
 	beq _02068984
@@ -127244,10 +127244,10 @@ NitroSDK_SND_RecvCommandReply: ; 0x02068928
 	arm_func_end NitroSDK_SND_RecvCommandReply
 _02068958:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r6
 	bl NitroSDK_OS_SpinWait
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl NitroSDK_SNDi_GetFinishedCommandTag
 	ldr r1, [r5, #4]
@@ -127261,7 +127261,7 @@ _02068984:
 	cmp r1, r0
 	bne _020689A8
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, pc}
 _020689A8:
@@ -127298,7 +127298,7 @@ _020689EC:
 	ldr r2, [r1, #4]
 	add r2, r2, #1
 	str r2, [r1, #4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -127351,7 +127351,7 @@ _02068AA8:
 NitroSDK_SND_PushCommand: ; 0x02068AC0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02068AF4 ; =MAIN_BSS_02113220
 	ldr r2, [r1, #0xc]
 	cmp r2, #0
@@ -127360,7 +127360,7 @@ NitroSDK_SND_PushCommand: ; 0x02068AC0
 	str r4, [r1, #0xc]
 	mov r1, #0
 	str r1, [r4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02068AF4: .word MAIN_BSS_02113220
@@ -127370,13 +127370,13 @@ _02068AF4: .word MAIN_BSS_02113220
 NitroSDK_SND_FlushCommand: ; 0x02068AF8
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	mov sl, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r4, _02068CA8 ; =MAIN_BSS_02113220
 	mov sb, r0
 	ldr r1, [r4, #8]
 	cmp r1, #0
 	bne _02068B24
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	arm_func_end NitroSDK_SND_FlushCommand
@@ -127386,7 +127386,7 @@ _02068B24:
 	blt _02068B7C
 	tst sl, #1
 	bne _02068B44
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _02068B44:
@@ -127402,7 +127402,7 @@ _02068B48:
 	cmp r0, #0
 	bne _02068B7C
 	mov r0, sb
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _02068B7C:
@@ -127413,13 +127413,13 @@ _02068B7C:
 	mov r0, #7
 	ldr r1, [r1, #8]
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	bge _02068C3C
 	tst sl, #1
 	bne _02068BBC
 	mov r0, sb
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _02068BBC:
@@ -127432,10 +127432,10 @@ _02068BBC:
 	b _02068C18
 _02068BD8:
 	mov r0, sb
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r8
 	bl NitroSDK_SND_RecvCommandReply
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov sb, r0
 	mov r0, r7
 	mov r1, r6
@@ -127444,7 +127444,7 @@ _02068BD8:
 	cmp r0, #0
 	bne _02068C18
 	mov r0, sb
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _02068C18:
@@ -127454,7 +127454,7 @@ _02068C18:
 	ldr r1, [r4, #8]
 	mov r0, r5
 	mov r2, fp
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	blt _02068BD8
 _02068C3C:
@@ -127479,7 +127479,7 @@ _02068C3C:
 	ldr r2, [r1, #0x20]
 	add r2, r2, #1
 	str r2, [r1, #0x20]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	tst sl, #2
 	beq _02068CA0
 	bl NitroSDK_snd_RequestCommandProc
@@ -127527,13 +127527,13 @@ _02068D04:
 	arm_func_start sub_02068D20
 sub_02068D20: ; 0x02068D20
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02068D48 ; =MAIN_BSS_02113220
 	ldr r2, [r1, #8]
 	cmp r2, #0
 	ldreq r4, [r1, #4]
 	ldrne r4, [r1, #0x20]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -127544,7 +127544,7 @@ _02068D48: .word MAIN_BSS_02113220
 sub_02068D4C: ; 0x02068D4C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02068D98 ; =MAIN_BSS_02113220
 	ldr r1, [r1, #4]
 	cmp r4, r1
@@ -127561,7 +127561,7 @@ _02068D7C:
 	movlo r4, #1
 	movhs r4, #0
 _02068D8C:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -127570,7 +127570,7 @@ _02068D98: .word MAIN_BSS_02113220
 	arm_func_start sub_02068D9C
 sub_02068D9C: ; 0x02068D9C
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02068DD4 ; =MAIN_BSS_02113220
 	mov r4, #0
 	ldr r1, [r1]
@@ -127583,7 +127583,7 @@ _02068DB8:
 	cmp r1, #0
 	bne _02068DB8
 _02068DC8:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -127592,7 +127592,7 @@ _02068DD4: .word MAIN_BSS_02113220
 	arm_func_start sub_02068DD8
 sub_02068DD8: ; 0x02068DD8
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02068E10 ; =MAIN_BSS_02113220
 	mov r4, #0
 	ldr r1, [r1, #8]
@@ -127605,7 +127605,7 @@ _02068DF4:
 	cmp r1, #0
 	bne _02068DF4
 _02068E04:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -127626,12 +127626,12 @@ sub_02068E14: ; 0x02068E14
 NitroSDK_snd_PxiFifoCallback: ; 0x02068E30
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	mov r0, r5
 	bl NitroSDK_SNDi_CallAlarmHandler
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end NitroSDK_snd_PxiFifoCallback
 
@@ -127640,13 +127640,13 @@ NitroSDK_snd_InitPXI: ; 0x02068E54
 	stmdb sp!, {r4, r5, r6, lr}
 	ldr r1, _02068EB0 ; =NitroSDK_snd_PxiFifoCallback
 	mov r0, #7
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	bl NitroSDK_snd_IsCommandAvailable
 	cmp r0, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
 	mov r0, #7
 	mov r1, #1
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	ldmneia sp!, {r4, r5, r6, pc}
 	mov r6, #0x64
@@ -127658,7 +127658,7 @@ _02068E90:
 	bl NitroSDK_OS_SpinWait
 	mov r0, r5
 	mov r1, r4
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	beq _02068E90
 	ldmia sp!, {r4, r5, r6, pc}
@@ -127675,7 +127675,7 @@ _02068EC0:
 	mov r0, r5
 	mov r1, r4
 	mov r2, r4
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	blt _02068EC0
 	ldmia sp!, {r3, r4, r5, pc}
@@ -127683,12 +127683,12 @@ _02068EC0:
 	arm_func_start NitroSDK_snd_AllocCommand
 NitroSDK_snd_AllocCommand: ; 0x02068EDC
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02068F20 ; =MAIN_BSS_02113220
 	ldr r4, [r1]
 	cmp r4, #0
 	bne _02068F00
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 	arm_func_end NitroSDK_snd_AllocCommand
@@ -127698,7 +127698,7 @@ _02068F00:
 	cmp r2, #0
 	moveq r2, #0
 	streq r2, [r1, #0x10]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -127711,12 +127711,12 @@ NitroSDK_snd_IsCommandAvailable: ; 0x02068F24
 	cmp r0, #0
 	moveq r0, #1
 	ldmeqia sp!, {r4, pc}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02068F60 ; =0x04FFF200
 	mov r2, #0x10
 	str r2, [r1]
 	ldr r4, [r1]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r4, #0
 	movne r0, #1
 	moveq r0, #0
@@ -127802,7 +127802,7 @@ sub_02069028: ; 0x02069028
 	mov r1, #4
 	ldr r0, [r0]
 	add r0, r0, #4
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, _02069050 ; =MAIN_BSS_02114D60
 	ldr r0, [r0]
 	ldr r0, [r0, #4]
@@ -127817,7 +127817,7 @@ NitroSDK_SNDi_GetFinishedCommandTag: ; 0x02069054
 	ldr r0, _02069078 ; =MAIN_BSS_02114D60
 	mov r1, #4
 	ldr r0, [r0]
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, _02069078 ; =MAIN_BSS_02114D60
 	ldr r0, [r0]
 	ldr r0, [r0]
@@ -128210,18 +128210,18 @@ _02069550:
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, pc}
 
-	arm_func_start sub_0206955C
-sub_0206955C: ; 0x0206955C
+	arm_func_start PXI_Init
+PXI_Init: ; 0x0206955C
 	ldr ip, _02069564 ; =sub_02069568
 	bx ip
 	.align 2, 0
 _02069564: .word sub_02069568
-	arm_func_end sub_0206955C
+	arm_func_end PXI_Init
 
 	arm_func_start sub_02069568
 sub_02069568: ; 0x02069568
 	stmdb sp!, {r3, r4, r5, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0206964C ; =MAIN_BSS_02114D64
 	mov r4, r0
 	ldrh r0, [r1]
@@ -128282,7 +128282,7 @@ _02069638:
 	b _020695E8
 _02069640:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0206964C: .word MAIN_BSS_02114D64
@@ -128293,12 +128293,12 @@ _0206965C: .word 0x04000184
 _02069660: .word sub_02069760
 _02069664: .word 0x04000180
 
-	arm_func_start NitroSDK_PXI_SetFifoRecvCallback
-NitroSDK_PXI_SetFifoRecvCallback: ; 0x02069668
+	arm_func_start PXI_SetFifoRecvCallback
+PXI_SetFifoRecvCallback: ; 0x02069668
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r4, r0
 	mov r5, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _020696AC ; =MAIN_BSS_02114D68
 	ldr r3, _020696B0 ; =0x027FFC00
 	str r5, [r1, r4, lsl #2]
@@ -128310,15 +128310,15 @@ NitroSDK_PXI_SetFifoRecvCallback: ; 0x02069668
 	ldreq r2, [r3, #0x388]
 	andeq r1, r2, r1
 	str r1, [r3, #0x388]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _020696AC: .word MAIN_BSS_02114D68
 _020696B0: .word 0x027FFC00
-	arm_func_end NitroSDK_PXI_SetFifoRecvCallback
+	arm_func_end PXI_SetFifoRecvCallback
 
-	arm_func_start NitroSDK_PXI_IsCallbackReady
-NitroSDK_PXI_IsCallbackReady: ; 0x020696B4
+	arm_func_start PXI_IsCallbackReady
+PXI_IsCallbackReady: ; 0x020696B4
 	ldr r2, _020696D4 ; =0x027FFC00
 	mov r3, #1
 	add r1, r2, r1, lsl #2
@@ -128329,10 +128329,10 @@ NitroSDK_PXI_IsCallbackReady: ; 0x020696B4
 	bx lr
 	.align 2, 0
 _020696D4: .word 0x027FFC00
-	arm_func_end NitroSDK_PXI_IsCallbackReady
+	arm_func_end PXI_IsCallbackReady
 
-	arm_func_start NitroSDK_PXI_SendWordByFifo
-NitroSDK_PXI_SendWordByFifo: ; 0x020696D8
+	arm_func_start PXI_SendWordByFifo
+PXI_SendWordByFifo: ; 0x020696D8
 	stmdb sp!, {r3, lr}
 	ldr ip, [sp]
 	ldr r3, _0206975C ; =0x04000184
@@ -128353,20 +128353,20 @@ NitroSDK_PXI_SendWordByFifo: ; 0x020696D8
 	orr r1, r1, #0xc000
 	strh r1, [r3]
 	ldmia sp!, {r3, pc}
-	arm_func_end NitroSDK_PXI_SendWordByFifo
+	arm_func_end PXI_SendWordByFifo
 _02069728:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, _0206975C ; =0x04000184
 	ldrh r1, [r2]
 	tst r1, #2
 	beq _02069748
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mvn r0, #1
 	ldmia sp!, {r3, pc}
 _02069748:
 	ldr r1, [sp]
 	str r1, [r2, #4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -128394,17 +128394,17 @@ _02069784:
 	strh r0, [sb]
 	b _020697D0
 _020697A4:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldrh r1, [sb]
 	tst r1, #0x100
 	beq _020697C0
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r1, r8
 	b _020697D0
 _020697C0:
 	ldr r6, [r7]
 	str r6, [sp]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r1, r5
 _020697D0:
 	cmp r1, r8
@@ -128437,16 +128437,16 @@ _02069810:
 	strh r0, [sb]
 	b _02069784
 _02069840:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldrh r1, [sb]
 	tst r1, #2
 	beq _02069858
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	b _02069784
 _02069858:
 	mov r1, r6
 	str r1, [sb, #4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	b _02069784
 _02069868:
 	.byte 0x04, 0xD0, 0x8D, 0xE2, 0xF8, 0x87, 0xBD, 0xE8
@@ -128458,7 +128458,7 @@ NitroSDK_FSi_ReleaseCommand: ; 0x02069878
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r5, r0
 	mov r4, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r5]
 	mov r6, r0
 	ldr r0, [r5, #4]
@@ -128476,7 +128476,7 @@ NitroSDK_FSi_ReleaseCommand: ; 0x02069878
 	str r4, [r5, #0x14]
 	bl NitroSDK_OS_WakeupThread
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_FSi_ReleaseCommand
 
@@ -128547,7 +128547,7 @@ _0206999C:
 	moveq r0, #0
 	cmp r0, #0
 	beq _02069A58
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r5, #0x1c]
 	mov r7, r0
 	tst r1, #0x200
@@ -128559,7 +128559,7 @@ _0206999C:
 	mov r6, #1
 _020699E4:
 	add r0, r5, #0xc
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r5, #0x1c]
 	tst r0, #0x200
 	movne r0, r6
@@ -128569,7 +128569,7 @@ _020699E4:
 _02069A04:
 	mov r0, r7
 	ldr r4, [r8, #0x14]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	b _02069A58
 _02069A14:
 	ldr r0, [r8, #0xc]
@@ -128649,7 +128649,7 @@ _02069AFC:
 	str r1, [r4, #0x1c]
 	b _02069B64
 _02069B0C:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #0x1c]
 	mov r5, r0
 	tst r1, #0x200
@@ -128661,7 +128661,7 @@ _02069B0C:
 	mov sb, #1
 _02069B34:
 	add r0, r4, #0xc
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r4, #0x1c]
 	tst r0, #0x200
 	movne r0, sb
@@ -128670,7 +128670,7 @@ _02069B34:
 	bne _02069B34
 _02069B54:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, [r4, #0x24]
 	ldr r0, [r0, #0x14]
 _02069B64:
@@ -129374,7 +129374,7 @@ NitroSDK_FSi_NextCommand: ; 0x0206A4B0
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
 	sub sp, sp, #0x48
 	mov r6, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r6, #0x1c]
 	mov r4, r0
 	tst r1, #0x20
@@ -129439,7 +129439,7 @@ _0206A544:
 	orrne r0, r0, #0x10
 	strne r0, [r6, #0x1c]
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r7, #0
 	beq _0206A5D8
 	ldr r0, [r6, #0x58]
@@ -129450,7 +129450,7 @@ _0206A544:
 	mov r1, #9
 	blx r2
 _0206A5D8:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r5, #0xc]
 	mov r4, r0
 	orr r0, r1, #0x40
@@ -129464,13 +129464,13 @@ _0206A5D8:
 	add r0, r5, #0x18
 	bl NitroSDK_OS_WakeupThread
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #0x48
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 _0206A620:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #0x48
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
@@ -129509,7 +129509,7 @@ _0206A680:
 	bl NitroSDK_OS_WakeupThread
 _0206A6B0:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	add sp, sp, #0x48
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
@@ -129524,7 +129524,7 @@ NitroSDK_FSi_ExecuteAsyncCommand: ; 0x0206A6C4
 	mov r8, #1
 	arm_func_end NitroSDK_FSi_ExecuteAsyncCommand
 _0206A6DC:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r6, #0xc]
 	mov r5, r0
 	orr r0, r1, #0x40
@@ -129538,14 +129538,14 @@ _0206A6DC:
 	add r0, r6, #0x18
 	bl NitroSDK_OS_WakeupThread
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _0206A71C:
 	ldr r1, [r6, #0xc]
 	mov r0, r5
 	orr r1, r1, #8
 	str r1, [r6, #0xc]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r1, [r6, #0x10]
 	mov r0, r6
 	bl NitroSDK_FSi_TranslateCommand
@@ -129592,7 +129592,7 @@ NitroSDK_FSi_SendCommand: ; 0x0206A79C
 	mov r7, r2, lsl r1
 	orr r0, r0, #1
 	str r0, [r6, #0xc]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #0x1c]
 	mov r5, r0
 	tst r1, #0x80
@@ -129601,7 +129601,7 @@ NitroSDK_FSi_SendCommand: ; 0x0206A79C
 	mov r1, #3
 	bl NitroSDK_FSi_ReleaseCommand
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	arm_func_end NitroSDK_FSi_SendCommand
@@ -129645,7 +129645,7 @@ _0206A840:
 	mov r0, r5
 	orr r1, r1, #0x10
 	str r1, [r4, #0x1c]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, [r4, #0x58]
 	tst r0, #0x200
 	beq _0206A8AC
@@ -129654,7 +129654,7 @@ _0206A840:
 	mov r1, #9
 	blx r2
 _0206A8AC:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r6, #0xc]
 	orr r1, r1, #0x40
 	str r1, [r6, #0xc]
@@ -129664,13 +129664,13 @@ _0206A8AC:
 	moveq r1, #0
 	cmp r1, #0
 	bne _0206A8E8
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r6
 	bl NitroSDK_FSi_ExecuteAsyncCommand
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _0206A8E8:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	b _0206A934
 _0206A8F0:
 	ldr r0, [r6, #0xc]
@@ -129680,17 +129680,17 @@ _0206A8F0:
 	cmp r0, #0
 	bne _0206A918
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _0206A918:
 	add r0, r6, #0x18
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r6, #0xc]
 	tst r0, #0x40
 	beq _0206A918
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 _0206A934:
 	mov r0, r6
 	bl NitroSDK_FSi_ExecuteSyncCommand
@@ -129716,7 +129716,7 @@ NitroSDK_FS_FindArchive: ; 0x0206A96C
 	stmdb sp!, {r3, r4, r5, lr}
 	bl NitroSDK_FSi_GetPackedName
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0206A9A8 ; =MAIN_BSS_02114DE8
 	ldr r5, [r1]
 	b _0206A98C
@@ -129728,7 +129728,7 @@ _0206A98C:
 	ldrne r1, [r5]
 	cmpne r1, r4
 	bne _0206A988
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -129741,7 +129741,7 @@ NitroSDK_FS_RegisterArchiveName: ; 0x0206A9AC
 	mov r5, r2
 	mov r7, r0
 	mov r8, #0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	mov r0, r6
 	mov r1, r5
@@ -129783,7 +129783,7 @@ _0206AA2C:
 	str r0, [r7, #0x1c]
 _0206AA4C:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r8
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -129796,7 +129796,7 @@ NitroSDK_FS_ReleaseArchiveName: ; 0x0206AA60
 	ldr r0, [r4]
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r2, [r4, #4]
 	mov r3, #0
 	cmp r2, #0
@@ -129823,7 +129823,7 @@ NitroSDK_FS_ReleaseArchiveName: ; 0x0206AA60
 	strh r3, [r1, #8]
 	arm_func_end NitroSDK_FS_ReleaseArchiveName
 _0206AAD8:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0206AAE0: .word MAIN_BSS_02114DE8
@@ -129865,7 +129865,7 @@ _0206AB50: .word NitroSDK_FSi_WriteMemCallback
 NitroSDK_FS_UnloadArchive: ; 0x0206AB54
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	mov r6, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r6, #0x1c]
 	mov r4, r0
 	tst r1, #2
@@ -129913,7 +129913,7 @@ _0206ABD8:
 	str r0, [r6, #0x1c]
 _0206AC04:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 
@@ -130045,7 +130045,7 @@ _0206ADBC:
 NitroSDK_FS_SuspendArchive: ; 0x0206ADC4
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	mov r6, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r6, #0x1c]
 	mov r4, r0
 	tst r1, #8
@@ -130070,7 +130070,7 @@ NitroSDK_FS_SuspendArchive: ; 0x0206ADC4
 	arm_func_end NitroSDK_FS_SuspendArchive
 _0206AE24:
 	add r0, r6, #0x14
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r6, #0x1c]
 	tst r0, #0x40
 	movne r0, r8
@@ -130083,7 +130083,7 @@ _0206AE48:
 	str r0, [r6, #0x1c]
 _0206AE50:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 
@@ -130092,7 +130092,7 @@ NitroSDK_FS_ResumeArchive: ; 0x0206AE60
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r4, r0
 	mov r5, #0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #0x1c]
 	mov r6, r0
 	tst r1, #8
@@ -130112,7 +130112,7 @@ NitroSDK_FS_ResumeArchive: ; 0x0206AE60
 	arm_func_end NitroSDK_FS_ResumeArchive
 _0206AEB0:
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r5, #0
 	beq _0206AEC8
 	mov r0, r5
@@ -130160,7 +130160,7 @@ sub_0206AEF0: ; 0x0206AEF0
 	arm_func_end sub_0206AEF0
 _0206AF44:
 	ldr r5, [r4, #0x24]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	str r6, [r5, #0x14]
 	ldr r1, [r4, #0x1c]
 	mov r5, r0
@@ -130169,7 +130169,7 @@ _0206AF44:
 	str r1, [r4, #0x1c]
 	bl NitroSDK_OS_WakeupThread
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, pc}
 
 	arm_func_start sub_0206AF74
@@ -130449,7 +130449,7 @@ sub_0206B300: ; 0x0206B300
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	mov r6, r0
 	mov r5, #0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r6, #0xc]
 	mov r4, r0
 	tst r1, #1
@@ -130469,7 +130469,7 @@ sub_0206B300: ; 0x0206B300
 	arm_func_end sub_0206B300
 _0206B350:
 	add r0, r6, #0x18
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r6, #0xc]
 	tst r0, #0x40
 	beq _0206B350
@@ -130479,7 +130479,7 @@ _0206B368:
 	mov r8, #1
 _0206B370:
 	add r0, r6, #0x18
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r6, #0xc]
 	tst r0, #1
 	movne r0, r8
@@ -130488,7 +130488,7 @@ _0206B370:
 	bne _0206B370
 _0206B390:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r5, #0
 	beq _0206B3AC
 	mov r0, r6
@@ -130505,7 +130505,7 @@ _0206B3AC:
 sub_0206B3C0: ; 0x0206B3C0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #0xc]
 	tst r1, #1
 	movne r1, #1
@@ -130521,7 +130521,7 @@ sub_0206B3C0: ; 0x0206B3C0
 	str r1, [r2, #0x1c]
 	arm_func_end sub_0206B3C0
 _0206B400:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 
 	arm_func_start FS_ReadFile
@@ -130692,7 +130692,7 @@ sub_0206B5CC: ; 0x0206B5CC
 	sub sp, sp, #0x10
 	ldr r1, _0206B6EC ; =MAIN_BSS_02114DFC
 	str r0, [r1, #4]
-	bl sub_02064E78
+	bl OS_GetLockID
 	ldr r1, _0206B6EC ; =MAIN_BSS_02114DFC
 	mov r2, #0
 	str r0, [r1]
@@ -130778,7 +130778,7 @@ _0206B710: .word sub_0206B500
 FS_SetDefaultDMA: ; 0x0206B714
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	ldr r1, _0206B75C ; =MAIN_BSS_02114DFC
 	ldr r0, _0206B760 ; =MAIN_BSS_02114E14
@@ -130793,7 +130793,7 @@ FS_SetDefaultDMA: ; 0x0206B714
 	arm_func_end FS_SetDefaultDMA
 _0206B74C:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -130822,7 +130822,7 @@ FS_ClearOverlayImage: ; 0x0206B780
 	bl sub_02066114
 	mov r0, r4
 	mov r1, r6
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	add r0, r4, r5
 	sub r2, r6, r5
 	mov r1, #0
@@ -131150,7 +131150,7 @@ _0206BBF8:
 	add r0, r1, r0
 	mov r5, r4
 	add r7, r6, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0206BCDC ; =__global_destructor_chain
 	mov ip, r4
 	ldr lr, [r1]
@@ -131192,7 +131192,7 @@ _0206BC98:
 	cmp sb, #0
 	bne _0206BC34
 _0206BCA4:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r4, #0
 	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _0206BCB0:
@@ -132475,7 +132475,7 @@ sub_0206CE80: ; 0x0206CE80
 	ldmneia sp!, {r3, r4, r5, pc}
 	mov r1, #1
 	strh r1, [r0]
-	bl sub_0206955C
+	bl PXI_Init
 	ldr r0, _0206CEF0 ; =MAIN_BSS_02114E70
 	mov r1, #0
 	strh r1, [r0, #0x10]
@@ -132491,12 +132491,12 @@ sub_0206CE80: ; 0x0206CE80
 _0206CECC:
 	mov r0, r5
 	mov r1, r4
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	beq _0206CECC
 	ldr r1, _0206CEF4 ; =sub_0206CC00
 	mov r0, #6
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0206CEF0: .word MAIN_BSS_02114E70
@@ -132557,7 +132557,7 @@ sub_0206CF8C: ; 0x0206CF8C
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_0206CF8C
 _0206CFA8:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldrsh r2, [r4, #4]
 	cmp r2, #0
 	beq _0206D00C
@@ -132622,7 +132622,7 @@ _0206D080:
 	str r2, [r1, #0x2c]
 	str r2, [r1, #0x30]
 _0206D094:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0206D0A8 ; =MAIN_BSS_02114E70
 	mov r1, #1
 	strh r1, [r0, #0x34]
@@ -132635,19 +132635,19 @@ _0206D0B0: .word 0x040002A0
 	arm_func_start sub_0206D0B4
 sub_0206D0B4: ; 0x0206D0B4
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	mov r0, #6
 	mov r1, #0x3000000
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movge r0, #1
 	movlt r0, #0
 	cmp r0, #0
 	bne _0206D11C
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0206D144 ; =MAIN_BSS_02114E70
 	ldrh r1, [r0, #0x38]
 	orr r1, r1, #1
@@ -132670,7 +132670,7 @@ _0206D11C:
 	ldrh r2, [r1, #0x38]
 	bic r2, r2, #1
 	strh r2, [r1, #0x38]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0206D144: .word MAIN_BSS_02114E70
@@ -132723,14 +132723,14 @@ _0206D1C8:
 	cmp lr, r3
 	blo _0206D1C8
 _0206D1E0:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	and r1, r5, #0xff
 	orr r1, r1, #0x100
 	mov r5, r0
 	orr r1, r1, #0x2000000
 	mov r0, #6
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r0, #0
 	blt _0206D22C
@@ -132738,7 +132738,7 @@ _0206D1E0:
 	orr r1, r1, #0x1000000
 	mov r0, #6
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movlt r0, #0
 	movge r0, #1
@@ -132746,7 +132746,7 @@ _0206D22C:
 	tst r0, #0xff
 	bne _0206D26C
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0206D294 ; =MAIN_BSS_02114E70
 	ldrh r1, [r0, #0x38]
 	orr r1, r1, #2
@@ -132768,7 +132768,7 @@ _0206D26C:
 	ldrh r2, [r1, #0x38]
 	bic r2, r2, #2
 	strh r2, [r1, #0x38]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0206D294: .word MAIN_BSS_02114E70
@@ -132776,19 +132776,19 @@ _0206D294: .word MAIN_BSS_02114E70
 	arm_func_start sub_0206D298
 sub_0206D298: ; 0x0206D298
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	ldr r1, _0206D328 ; =0x03000200
 	mov r0, #6
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movge r0, #1
 	movlt r0, #0
 	cmp r0, #0
 	bne _0206D300
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0206D32C ; =MAIN_BSS_02114E70
 	ldrh r1, [r0, #0x38]
 	orr r1, r1, #4
@@ -132811,7 +132811,7 @@ _0206D300:
 	ldrh r2, [r1, #0x38]
 	bic r2, r2, #4
 	strh r2, [r1, #0x38]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0206D328: .word 0x03000200
@@ -132856,7 +132856,7 @@ sub_0206D340: ; 0x0206D340
 	cmpne r8, r3
 	moveq r0, #1
 	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldrh lr, [sp, #0x2c]
 	ldrh ip, [sp, #0x34]
 	ldr r3, _0206D524 ; =0x04000280
@@ -132898,7 +132898,7 @@ _0206D3FC:
 	cmp r2, r1
 	bge _0206D458
 _0206D44C:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _0206D458:
@@ -132917,7 +132917,7 @@ _0206D458:
 	cmp r2, r1
 	bge _0206D49C
 _0206D490:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _0206D49C:
@@ -132930,7 +132930,7 @@ _0206D4A8:
 	bne _0206D4A8
 	ldr r1, _0206D528 ; =0x040002A0
 	ldr r7, [r1]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r7, #0x8000
 	bge _0206D4D8
 	mov r1, #0x8000
@@ -133070,19 +133070,19 @@ _0206D678: .word MAIN_BSS_02114E70
 	arm_func_start sub_0206D67C
 sub_0206D67C: ; 0x0206D67C
 	stmdb sp!, {r3, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0206D6B4 ; =MAIN_BSS_02114EAC
 	ldr r2, [r1, #0x18]
 	cmp r2, #0
 	beq _0206D6A0
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_0206D67C
 _0206D6A0:
 	mov r2, #1
 	str r2, [r1, #0x18]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -133150,19 +133150,19 @@ sub_0206D740: ; 0x0206D740
 	mov r1, #0
 	str r1, [r0, #0x18]
 	str r1, [r0, #0x1c]
-	bl sub_0206955C
+	bl PXI_Init
 	mov r5, #8
 	mov r4, #1
 	arm_func_end sub_0206D740
 _0206D774:
 	mov r0, r5
 	mov r1, r4
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	beq _0206D774
 	ldr r1, _0206D7D4 ; =sub_0206D7E4
 	mov r0, #8
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	mov r3, #0
 	ldr r0, _0206D7D8 ; =MAIN_BSS_02114EEC
 	mov r2, r3
@@ -133571,7 +133571,7 @@ _0206DC94:
 	mov r0, r5
 	mov r1, r6
 	mov r2, r4
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	bne _0206DC94
 	ldmia sp!, {r4, r5, r6, pc}
@@ -133591,15 +133591,15 @@ sub_0206DCB0: ; 0x0206DCB0
 	mov r0, r4
 	ldrh r8, [r1]
 	strh r0, [r1]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	str r0, [sp, #8]
 	ldr r0, _0206DECC ; =0x003FFFFF
 	bl sub_02064AC4
 	str r0, [sp, #4]
 	mov r0, #0x40000
-	bl sub_02064A68
+	bl OS_SetIrqMask
 	ldr r0, [sp, #8]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r2, _0206DEC8 ; =0x04000208
 	mov r0, #1
 	ldrh r1, [r2]
@@ -133614,7 +133614,7 @@ sub_0206DCB0: ; 0x0206DCB0
 _0206DD30:
 	tst sl, #0x10
 	beq _0206DD44
-	bl sub_02077E80
+	bl CTRDG_IsExisting
 	cmp r0, #0
 	biceq sl, sl, #0x10
 _0206DD44:
@@ -133706,11 +133706,11 @@ _0206DE6C:
 _0206DE7C:
 	ldr r0, _0206DEDC ; =0x00708100
 	bl NitroSDK_OS_SpinWait
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r0, [sp, #4]
-	bl sub_02064A68
+	bl OS_SetIrqMask
 	ldr r0, [sp, #8]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r1, _0206DEC8 ; =0x04000208
 	cmp r4, #0
 	ldrh r0, [r1]
@@ -134030,19 +134030,19 @@ sub_0206E200: ; 0x0206E200
 	str r1, [r0, #0x20]
 	str r1, [r0, #0xc]
 	str r1, [r0, #0x10]
-	bl sub_0206955C
+	bl PXI_Init
 	mov r5, #5
 	mov r4, #1
 	arm_func_end sub_0206E200
 _0206E240:
 	mov r0, r5
 	mov r1, r4
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	beq _0206E240
 	ldr r1, _0206E268 ; =sub_0206E474
 	mov r0, #5
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0206E264: .word MAIN_BSS_02114F14
@@ -134054,19 +134054,19 @@ sub_0206E26C: ; 0x0206E26C
 	mov r6, r0
 	mov r5, r1
 	mov r4, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0206E2D8 ; =MAIN_BSS_02114F14
 	ldr r2, [r1, #4]
 	cmp r2, #0
 	beq _0206E29C
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end sub_0206E26C
 _0206E29C:
 	mov r2, #1
 	str r2, [r1, #4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0206E2D8 ; =MAIN_BSS_02114F14
 	mov r1, #0
 	str r1, [r0, #0x18]
@@ -134108,19 +134108,19 @@ sub_0206E314: ; 0x0206E314
 	mov r6, r0
 	mov r5, r1
 	mov r4, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0206E384 ; =MAIN_BSS_02114F14
 	ldr r2, [r1, #4]
 	cmp r2, #0
 	beq _0206E344
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end sub_0206E314
 _0206E344:
 	mov r2, #1
 	str r2, [r1, #4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0206E384 ; =MAIN_BSS_02114F14
 	mov r1, #1
 	str r1, [r0, #0x18]
@@ -134164,19 +134164,19 @@ sub_0206E3C0: ; 0x0206E3C0
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _0206E438 ; =MAIN_BSS_02114F14
 	ldr r2, [r1, #4]
 	cmp r2, #0
 	beq _0206E3F4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	arm_func_end sub_0206E3C0
 _0206E3F4:
 	mov r2, #1
 	str r2, [r1, #4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0206E438 ; =MAIN_BSS_02114F14
 	mov r1, #2
 	str r1, [r0, #0x18]
@@ -134681,7 +134681,7 @@ sub_0206EA9C: ; 0x0206EA9C
 	and r1, r0, #0x7f00
 	mov r0, #5
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	movge r0, #1
 	movlt r0, #0
@@ -134840,7 +134840,7 @@ sub_0206EC90: ; 0x0206EC90
 	str r0, [r4, #0x104]
 	str r5, [r4, #0x40]
 	str r1, [r4, #0x114]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0206ECC8: .word MAIN_BSS_02114FC0
@@ -134852,7 +134852,7 @@ sub_0206ECCC: ; 0x0206ECCC
 	ldr r4, _0206ED4C ; =MAIN_BSS_02114FC0
 	mov r8, r0
 	mov r7, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #8]
 	mov r5, r0
 	cmp r1, r8
@@ -134868,7 +134868,7 @@ _0206ED04:
 	b _0206ED14
 _0206ED0C:
 	add r0, r4, #0x10
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 _0206ED14:
 	ldr r0, [r4, #8]
 	cmp r0, r6
@@ -134883,7 +134883,7 @@ _0206ED28:
 	str r2, [r4, #0xc]
 	mov r2, #0
 	str r2, [r1]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
 _0206ED4C: .word MAIN_BSS_02114FC0
@@ -134894,7 +134894,7 @@ sub_0206ED50: ; 0x0206ED50
 	ldr r4, _0206EDD8 ; =MAIN_BSS_02114FC0
 	mov r7, r0
 	mov r6, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #8]
 	mov r5, r0
 	cmp r1, r7
@@ -134927,7 +134927,7 @@ _0206EDC0:
 	mov r2, #0
 	mov r0, r5
 	str r2, [r1]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 _0206EDD8: .word MAIN_BSS_02114FC0
@@ -134979,12 +134979,12 @@ _0206EE50:
 	ldr r3, _0206EEE4 ; =MAIN_BSS_021155E0
 	add r0, r4, #0x44
 	str ip, [sp, #4]
-	bl sub_020653B8
+	bl OS_CreateThread
 	add r0, r4, #0x44
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	ldr r1, _0206EEE8 ; =sub_0206FE34
 	mov r0, #0xb
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	ldr r0, _0206EED8 ; =0x027FFC40
 	ldrh r0, [r0]
 	cmp r0, #2
@@ -135038,19 +135038,19 @@ _0206EF20: .word MAIN_BSS_02114F40
 sub_0206EF24: ; 0x0206EF24
 	stmdb sp!, {r3, r4, r5, lr}
 	ldr r4, _0206EF6C ; =MAIN_BSS_02114FC0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	b _0206EF40
 	arm_func_end sub_0206EF24
 _0206EF38:
 	add r0, r4, #0x10c
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 _0206EF40:
 	ldr r0, [r4, #0x114]
 	tst r0, #4
 	bne _0206EF38
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, [r4]
 	ldr r0, [r0]
 	cmp r0, #0
@@ -135374,7 +135374,7 @@ _0206F360: ; jump table
 _0206F370:
 	mov r0, r6
 	mov r1, r8
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r1, [sb, #0x1c]
 	ldr r0, [sb]
 	str r1, [r0, #0xc]
@@ -135440,7 +135440,7 @@ _0206F438:
 _0206F460:
 	ldr r6, [sb, #0x38]
 	ldr r5, [sb, #0x3c]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [sb, #0x114]
 	mov r4, r0
 	bic r0, r1, #0x4c
@@ -135451,10 +135451,10 @@ _0206F460:
 	tst r0, #0x10
 	beq _0206F498
 	add r0, sb, #0x44
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 _0206F498:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r6, #0
 	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	mov r0, r5
@@ -135473,7 +135473,7 @@ sub_0206F4B8: ; 0x0206F4B8
 	mov r7, r2
 	mov r6, r3
 	bl OSi_ReferSymbol
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #0x114]
 	mov r5, r0
 	tst r1, #4
@@ -135481,7 +135481,7 @@ sub_0206F4B8: ; 0x0206F4B8
 	arm_func_end sub_0206F4B8
 _0206F4EC:
 	add r0, r4, #0x10c
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r4, #0x114]
 	tst r0, #4
 	bne _0206F4EC
@@ -135493,7 +135493,7 @@ _0206F500:
 	str r2, [r4, #0x114]
 	str r6, [r4, #0x38]
 	str r1, [r4, #0x3c]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r3, [sp, #0x28]
 	ldr r2, [sp, #0x2c]
 	ldr r1, [sp, #0x30]
@@ -135582,14 +135582,14 @@ sub_0206F5F0: ; 0x0206F5F0
 	arm_func_end sub_0206F5F0
 _0206F610:
 	bl sub_0206EEFC
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #0x114]
 	mov r5, r0
 	tst r1, #4
 	beq _0206F63C
 _0206F628:
 	add r0, r4, #0x10c
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r4, #0x114]
 	tst r0, #4
 	bne _0206F628
@@ -135601,7 +135601,7 @@ _0206F63C:
 	str r2, [r4, #0x114]
 	str r1, [r4, #0x38]
 	str r1, [r4, #0x3c]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r6
 	bl sub_0206F010
 	ldr r0, _0206F724 ; =OSi_ThreadInfo
@@ -135626,7 +135626,7 @@ _0206F63C:
 	bl sub_0206FEB8
 	ldr r7, [r4, #0x38]
 	ldr r6, [r4, #0x3c]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	ldr r1, [r4, #0x114]
 	add r0, r4, #0x10c
@@ -135637,10 +135637,10 @@ _0206F63C:
 	tst r0, #0x10
 	beq _0206F6EC
 	add r0, r4, #0x44
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 _0206F6EC:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r7, #0
 	beq _0206F704
 	mov r0, r6
@@ -135802,7 +135802,7 @@ sub_0206F880: ; 0x0206F880
 	str r1, [r0]
 	ldr r5, [r4, #0x38]
 	ldr r6, [r4, #0x3c]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #0x114]
 	mov r7, r0
 	bic r0, r1, #0x4c
@@ -135813,11 +135813,11 @@ sub_0206F880: ; 0x0206F880
 	tst r0, #0x10
 	beq _0206F928
 	add r0, r4, #0x44
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	arm_func_end sub_0206F880
 _0206F928:
 	mov r0, r7
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r5, #0
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
 	mov r0, r6
@@ -135891,7 +135891,7 @@ _0206F9F8:
 	cmp r6, #0
 	str r0, [fp, #4]
 	beq _0206FAC0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #0x118]
 	mov r7, r0
 	cmp r5, r1
@@ -135919,11 +135919,11 @@ _0206FA4C:
 _0206FA80:
 	mov r0, sb
 	mov r1, r5
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	bl sub_020660FC
 	b _0206FA98
 _0206FA94:
-	bl sub_0206606C
+	bl DC_FlushAll
 _0206FA98:
 	ldr r1, _0206FAD8 ; =sub_0206F880
 	mov r0, #0x80000
@@ -135933,7 +135933,7 @@ _0206FA98:
 	mov r0, #0x80000
 	bl NitroSDK_os_OS_EnableIrqMask
 	mov r0, r7
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	bl sub_0206F82C
 _0206FAC0:
 	mov r0, r6
@@ -136066,7 +136066,7 @@ _0206FC4C:
 	str r1, [r0]
 	ldr r5, [r4, #0x38]
 	ldr r6, [r4, #0x3c]
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r4, #0x114]
 	mov r7, r0
 	bic r0, r1, #0x4c
@@ -136077,10 +136077,10 @@ _0206FC4C:
 	tst r0, #0x10
 	beq _0206FC9C
 	add r0, r4, #0x44
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 _0206FC9C:
 	mov r0, r7
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	cmp r5, #0
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
 	mov r0, r6
@@ -136100,13 +136100,13 @@ sub_0206FCC0: ; 0x0206FCC0
 	ldr r4, _0206FDA4 ; =MAIN_BSS_02115600
 	ldr r5, _0206FDA8 ; =MAIN_BSS_02114FC0
 	bl sub_0206EEFC
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r6, r0
 	b _0206FCF4
 	arm_func_end sub_0206FCC0
 _0206FCEC:
 	add r0, r5, #0x10c
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 _0206FCF4:
 	ldr r0, [r5, #0x114]
 	tst r0, #4
@@ -136119,7 +136119,7 @@ _0206FCF4:
 	str r3, [r5, #0x114]
 	str r2, [r5, #0x38]
 	str r1, [r5, #0x3c]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _0206FDAC ; =MAIN_BSS_021155E0
 	str sl, [r5, #0x28]
 	ldr r0, [r0]
@@ -136220,7 +136220,7 @@ sub_0206FE34: ; 0x0206FE34
 	ldr r0, [r2, #0x104]
 	bic r1, r1, #0x20
 	str r1, [r2, #0x114]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0206FE64: .word MAIN_BSS_02114FC0
@@ -136233,20 +136233,20 @@ sub_0206FE68: ; 0x0206FE68
 	mov r4, #0
 	arm_func_end sub_0206FE68
 _0206FE74:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r5, #0x114]
 	mov r6, r0
 	tst r1, #8
 	bne _0206FE9C
 _0206FE88:
 	mov r0, r4
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r5, #0x114]
 	tst r0, #8
 	beq _0206FE88
 _0206FE9C:
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r1, [r5, #0x40]
 	mov r0, r5
 	blx r1
@@ -136268,7 +136268,7 @@ sub_0206FEB8: ; 0x0206FEB8
 	orr r2, r1, #2
 	mov r1, #1
 	str r2, [sl, #0x114]
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	bne _0206FF1C
 	mov r6, #0x64
@@ -136280,7 +136280,7 @@ _0206FF00:
 	bl NitroSDK_OS_SpinWait
 	mov r0, r5
 	mov r1, r4
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	beq _0206FF00
 _0206FF1C:
@@ -136307,7 +136307,7 @@ _0206FF60:
 	mov r0, r7
 	mov r1, sb
 	mov r2, r6
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	blt _0206FF60
 	cmp sb, #0
@@ -136317,27 +136317,27 @@ _0206FF84:
 	mov r0, r5
 	mov r1, r8
 	mov r2, r4
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	blt _0206FF84
 _0206FF9C:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [sl, #0x114]
 	mov r8, r0
 	tst r1, #0x20
 	beq _0206FFC4
 _0206FFB0:
 	mov r0, fp
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [sl, #0x114]
 	tst r0, #0x20
 	bne _0206FFB0
 _0206FFC4:
 	mov r0, r8
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, [sl]
 	mov r1, #0x60
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [sl]
 	ldr r1, [r0]
 	cmp r1, #4
@@ -136356,10 +136356,10 @@ _0206FFFC:
 	arm_func_start sub_0207000C
 sub_0207000C: ; 0x0207000C
 	stmdb sp!, {r3, lr}
-	bl sub_0206955C
+	bl PXI_Init
 	ldr r1, _02070030 ; =sub_02070038
 	mov r0, #0xe
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	ldr r0, _02070034 ; =MAIN_BSS_02115820
 	mov r1, #0
 	str r1, [r0, #4]
@@ -136465,14 +136465,14 @@ sub_02070128: ; 0x02070128
 	cmp r0, r1
 	addeq sp, sp, #4
 	ldmeqia sp!, {r3, r4, pc}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	mov r0, #0xe
 	mov r1, #0x11
 	mov r2, #0
 	bl sub_02070038
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
@@ -136487,7 +136487,7 @@ sub_02070188: ; 0x02070188
 	mov r1, r7
 	mov r0, #0xe
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
 	mov r5, #0xe
@@ -136495,11 +136495,11 @@ sub_02070188: ; 0x02070188
 	arm_func_end sub_02070188
 _020701B4:
 	mov r0, r6
-	blx sub_02000446
+	blx SVC_WaitByLoop
 	mov r0, r5
 	mov r1, r7
 	mov r2, r4
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	cmp r0, #0
 	bne _020701B4
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
@@ -136526,49 +136526,49 @@ sub_02070204: ; 0x02070204
 	mov r6, r0
 	mov r4, r1
 	mov r7, r2
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _020703D4 ; =MAIN_BSS_02115840
 	mov r5, r0
 	ldrh r1, [r1]
 	cmp r1, #0
 	beq _02070238
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 	arm_func_end sub_02070204
 _02070238:
 	cmp r6, #0
 	bne _0207024C
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #6
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 _0207024C:
 	cmp r4, #3
 	bls _02070260
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #6
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 _02070260:
 	tst r6, #0x1f
 	beq _02070274
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #6
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 _02070274:
-	bl sub_0206955C
+	bl PXI_Init
 	mov r0, #0xa
 	mov r1, #1
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	cmp r0, #0
 	bne _0207029C
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #4
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 _0207029C:
 	mov r0, r6
 	mov r1, r7
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	mov r0, r4
 	mov r1, r6
 	mov r3, r7
@@ -136640,12 +136640,12 @@ _020703A4:
 	blt _0207037C
 	ldr r1, _020703E4 ; =sub_020706EC
 	mov r0, #0xa
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	ldr r1, _020703D4 ; =MAIN_BSS_02115840
 	mov r2, #1
 	mov r0, r5
 	strh r2, [r1]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 	.align 2, 0
@@ -136658,13 +136658,13 @@ _020703E4: .word sub_020706EC
 	arm_func_start sub_020703E8
 sub_020703E8: ; 0x020703E8
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl sub_020705F4
 	cmp r0, #0
 	beq _02070410
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #3
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020703E8
@@ -136677,13 +136677,13 @@ _02070410:
 	bl sub_02070A98
 	mov r0, #0xa
 	mov r1, #0
-	bl NitroSDK_PXI_SetFifoRecvCallback
+	bl PXI_SetFifoRecvCallback
 	ldr r1, _02070454 ; =MAIN_BSS_02115840
 	mov r2, #0
 	str r2, [r1, #4]
 	mov r0, r4
 	strh r2, [r1]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -136712,7 +136712,7 @@ sub_02070470: ; 0x02070470
 	ldmeqia sp!, {r3, pc}
 	ldr r0, [sp]
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r1, [sp]
 	ldrh r0, [r1]
 	tst r0, #0x8000
@@ -136762,7 +136762,7 @@ _02070528:
 	mov r1, r4
 	mov r0, #0xa
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	mov r5, r0
 	ldr r0, _02070570 ; =MAIN_BSS_02115848
 	mov r1, r4
@@ -136796,7 +136796,7 @@ sub_02070574: ; 0x02070574
 	mov r1, r5
 	mov r0, #0xa
 	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
+	bl PXI_SendWordByFifo
 	mov r4, r0
 	ldr r0, _020705E0 ; =MAIN_BSS_02115848
 	mov r1, r5
@@ -136841,7 +136841,7 @@ sub_02070610: ; 0x02070610
 	mov r1, #2
 	ldr r0, [r0, #4]
 	ldr r0, [r0, #4]
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, _02070654 ; =MAIN_BSS_02115840
 	ldr r0, [r0, #4]
 	ldr r0, [r0, #4]
@@ -136867,7 +136867,7 @@ sub_02070658: ; 0x02070658
 	mov r1, #2
 	ldr r0, [r0, #4]
 	ldr r0, [r0, #4]
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, _020706E8 ; =MAIN_BSS_02115840
 	ldr r3, [sp, #8]
 	ldr r0, [r0, #4]
@@ -136909,13 +136909,13 @@ sub_020706EC: ; 0x020706EC
 	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	ldr r0, [r4, #0x10]
 	mov r1, #0x100
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldrh r0, [r4, #0x16]
 	cmp r0, #0
 	bne _02070730
 	ldr r0, [r4, #4]
 	mov r1, #0x800
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	arm_func_end sub_020706EC
 _02070730:
 	ldr r0, [r4, #0x10]
@@ -136923,7 +136923,7 @@ _02070730:
 	beq _02070748
 	mov r0, sl
 	mov r1, #0x100
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 _02070748:
 	ldrh r0, [sl]
 	cmp r0, #0x2c
@@ -136956,7 +136956,7 @@ _02070784:
 	ldr r1, [r4, #4]
 	ldr r0, [sl, #8]
 	ldrh r1, [r1, #0x72]
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldrh r1, [sl, #6]
 	mov r0, sl
 	add r1, r4, r1, lsl #2
@@ -136990,7 +136990,7 @@ _02070800:
 	ldr r1, [r4, #4]
 	ldr r0, [sl, #8]
 	ldrh r1, [r1, #0x72]
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 _02070840:
 	ldrh r1, [sl]
 	cmp r1, #2
@@ -137132,7 +137132,7 @@ _02070A30:
 _02070A44:
 	ldr r0, [r4, #0x10]
 	mov r1, #0x100
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	bl sub_02070A98
 	ldr r0, [r4, #0x10]
 	cmp sl, r0
@@ -137182,14 +137182,14 @@ _02070AD4: .word MAIN_BSS_02115840
 	arm_func_start sub_02070AD8
 sub_02070AD8: ; 0x02070AD8
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02070B04 ; =MAIN_BSS_02115840
 	ldr r1, [r1, #4]
 	cmp r1, #0
 	addne r1, r1, #0x100
 	ldrneh r4, [r1, #0x50]
 	moveq r4, #0
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -137199,13 +137199,13 @@ _02070B04: .word MAIN_BSS_02115840
 	arm_func_start sub_02070B08
 sub_02070B08: ; 0x02070B08
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02070B34 ; =MAIN_BSS_02115840
 	ldr r1, [r1, #4]
 	cmp r1, #0
 	ldrne r4, [r1, #0x14c]
 	moveq r4, #0
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4, lsl #0x10
 	mov r0, r0, lsr #0x10
 	ldmia sp!, {r4, pc}
@@ -137216,7 +137216,7 @@ _02070B34: .word MAIN_BSS_02115840
 	arm_func_start sub_02070B38
 sub_02070B38: ; 0x02070B38
 	stmdb sp!, {r3, r4, r5, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02070B7C ; =MAIN_BSS_02115840
 	mov r5, r0
 	ldr r0, [r1, #4]
@@ -137226,12 +137226,12 @@ sub_02070B38: ; 0x02070B38
 	ldr r4, [r0, #4]
 	mov r1, #2
 	add r0, r4, #0x86
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldrh r4, [r4, #0x86]
 	arm_func_end sub_02070B38
 _02070B6C:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -137241,13 +137241,13 @@ _02070B7C: .word MAIN_BSS_02115840
 sub_02070B80: ; 0x02070B80
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	bl sub_020705F4
 	movs r4, r0
 	beq _02070BAC
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end sub_02070B80
@@ -137255,7 +137255,7 @@ _02070BAC:
 	bl sub_020705E4
 	str r6, [r0, #0xc8]
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, pc}
 
@@ -137289,13 +137289,13 @@ sub_02070BC4: ; 0x02070BC4
 	bl sub_0206756C
 	arm_func_end sub_02070BC4
 _02070C2C:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r8, r0
 	bl sub_020705F4
 	movs r7, r0
 	beq _02070C54
 	mov r0, r8
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #0x44
 	mov r0, r7
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
@@ -137314,7 +137314,7 @@ _02070C54:
 	blx r5
 _02070C84:
 	mov r0, r8
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	add sp, sp, #0x44
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
@@ -137335,7 +137335,7 @@ sub_02070C9C: ; 0x02070C9C
 	ldmeqia sp!, {r3, r4, r5, pc}
 	ldr r0, [r4, #4]
 	mov r1, #0x7d0
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r4, #4]
 	mov r1, r5
 	mov r2, #0x7d0
@@ -137359,7 +137359,7 @@ sub_02070CE8: ; 0x02070CE8
 	ldr r0, [r4, #4]
 	mov r1, #4
 	add r0, r0, #0xc
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r1, [r4, #4]
 	ldr r0, [r1, #0xc]
 	cmp r0, #1
@@ -137367,7 +137367,7 @@ sub_02070CE8: ; 0x02070CE8
 	ldmeqia sp!, {r4, pc}
 	add r0, r1, #0x3c
 	mov r1, #4
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r4, #4]
 	ldrh r0, [r0, #0x3c]
 	add r0, r0, #0x1f
@@ -137390,7 +137390,7 @@ sub_02070D54: ; 0x02070D54
 	ldr r0, [r4, #4]
 	mov r1, #4
 	add r0, r0, #0xc
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r1, [r4, #4]
 	ldr r0, [r1, #0xc]
 	cmp r0, #1
@@ -137398,7 +137398,7 @@ sub_02070D54: ; 0x02070D54
 	ldmeqia sp!, {r3, r4, r5, pc}
 	add r0, r1, #0x188
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r1, [r4, #4]
 	add r0, r1, #0x100
 	ldrh r0, [r0, #0x88]
@@ -137407,7 +137407,7 @@ sub_02070D54: ; 0x02070D54
 	add r0, r1, #0x3e
 	mov r1, #2
 	movne r5, #0
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r4, #4]
 	cmp r5, #1
 	ldrh r5, [r0, #0x3e]
@@ -137417,7 +137417,7 @@ sub_02070D54: ; 0x02070D54
 	ldmneia sp!, {r3, r4, r5, pc}
 	add r0, r0, #0xf8
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r4, #4]
 	add r1, r5, #0xc
 	ldrh r0, [r0, #0xf8]
@@ -137455,7 +137455,7 @@ _02070E60:
 	mov r1, #2
 	add r0, r0, #0x82
 	add r0, r0, #0x100
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r6, #4]
 	mov r1, #1
 	add r0, r0, #0x100
@@ -137516,7 +137516,7 @@ sub_02070F1C: ; 0x02070F1C
 	ldmneia sp!, {r4, pc}
 	ldr r0, [r4, #4]
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r1, [r4, #4]
 	ldrh r0, [r1]
 	cmp r0, #9
@@ -137530,7 +137530,7 @@ _02070F64:
 	add r0, r1, #0x82
 	add r0, r0, #0x100
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r1, [r4, #4]
 	add r0, r1, #0x100
 	ldrh r0, [r0, #0x82]
@@ -137540,7 +137540,7 @@ _02070F64:
 _02070F8C:
 	add r0, r1, #0xbc
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r4, #4]
 	ldrh r0, [r0, #0xbc]
 	ldmia sp!, {r4, pc}
@@ -138336,7 +138336,7 @@ _02071A28:
 	add r0, r1, #0x82
 	add r0, r0, #0x100
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r6, #4]
 	mov r1, #1
 	add r0, r0, #0x100
@@ -138381,7 +138381,7 @@ sub_02071A98: ; 0x02071A98
 	mov r1, #2
 	add r0, r0, #0x82
 	add r0, r0, #0x100
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r6, #4]
 	ldr r1, _02071B20 ; =0x0000FFFE
 	add r0, r0, #0x100
@@ -138423,10 +138423,10 @@ sub_02071B24: ; 0x02071B24
 	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	add r0, r4, #0x188
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	add r0, r4, #0xc6
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	add r0, r4, #0x100
 	ldrh r0, [r0, #0x88]
 	cmp r0, #0
@@ -138437,7 +138437,7 @@ sub_02071B24: ; 0x02071B24
 	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	add r0, r4, #0xc
 	mov r1, #4
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r4, #0xc]
 	cmp r0, #1
 	addeq sp, sp, #0x40
@@ -138454,7 +138454,7 @@ sub_02071B24: ; 0x02071B24
 	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	add r0, r4, #0x9c
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldrh r0, [r4, #0x9c]
 	cmp r0, #0
 	bne _02071C1C
@@ -138492,7 +138492,7 @@ _02071C1C:
 	ldr r0, [sp, #0x64]
 	add r1, sp, #0x30
 	mov r2, #0x10
-	bl NitroSDK_mi_MIi_CpuCopy32
+	bl MIi_CpuCopy32
 	add r0, sp, #0
 	mov r1, #0x40
 	bl sub_02070574
@@ -138597,10 +138597,10 @@ sub_02071DA0: ; 0x02071DA0
 	ldmneia sp!, {r4, r5, r6, r7, r8, sb, pc}
 	add r0, r5, #0x3c
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	add r0, r5, #0x188
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	add r0, r5, #0x100
 	ldrh r0, [r0, #0x88]
 	cmp r0, #0
@@ -138608,12 +138608,12 @@ sub_02071DA0: ; 0x02071DA0
 	add r0, r5, #0x82
 	add r0, r0, #0x100
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	add r2, r5, #0x100
 	add r0, r5, #0x86
 	mov r1, #2
 	ldrh r4, [r2, #0x82]
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	arm_func_end sub_02071DA0
 _02071E2C:
 	cmp r7, #0
@@ -138626,7 +138626,7 @@ _02071E2C:
 	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, pc}
 	add r0, r5, #0x7c
 	mov r1, #2
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r5, #0x7c]
 	cmp r7, r0
 	addeq sp, sp, #0x14
@@ -138676,7 +138676,7 @@ sub_02071EDC: ; 0x02071EDC
 	ldr r0, [r4, #4]
 	mov r1, #4
 	add r0, r0, #0xc
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r4, #4]
 	ldr r0, [r0, #0xc]
 	cmp r0, #0
@@ -138709,7 +138709,7 @@ sub_02071F4C: ; 0x02071F4C
 	ldr r0, [r4, #4]
 	mov r1, #4
 	add r0, r0, #0x10
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r4, #4]
 	ldr r0, [r0, #0x10]
 	cmp r0, #1
@@ -138756,7 +138756,7 @@ sub_02071FEC: ; 0x02071FEC
 	ldr r0, [r8, #4]
 	mov r1, #4
 	add r0, r0, #0x10
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r8, #4]
 	ldr r0, [r0, #0x10]
 	cmp r0, #0
@@ -138807,7 +138807,7 @@ sub_020720B8: ; 0x020720B8
 	ldr r0, [r4, #4]
 	mov r1, #4
 	add r0, r0, #0x10
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r0, [r4, #4]
 	ldr r0, [r0, #0x10]
 	cmp r0, #0
@@ -139342,7 +139342,7 @@ _0207286C:
 _0207287C:
 	ldrh r5, [r0, #0x12]
 	mov r6, #1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	add r1, r4, #0x800
 	ldrh lr, [r1, #8]
 	mvn ip, r6, lsl r5
@@ -139361,7 +139361,7 @@ _0207287C:
 	and r1, r1, ip
 	strh r1, [r4, r2]
 _020728CC:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	mov r1, #0
 	bl sub_02072ACC
@@ -139493,7 +139493,7 @@ _02072A94:
 	mov r0, #0
 	bl sub_02067D80
 _02072A9C:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r4, lsl #9
 	ldrh r3, [r6, r4]
 	mvn r1, r7, lsr #16
@@ -139503,7 +139503,7 @@ _02072A9C:
 	ldrh r1, [r2, r4]
 	orr r1, r1, r7, lsr #16
 	strh r1, [r2, r4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start sub_02072ACC
@@ -139512,7 +139512,7 @@ sub_02072ACC: ; 0x02072ACC
 	sub sp, sp, #0xc
 	mov sl, r0
 	mov sb, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	add r1, sl, #0x800
 	ldrh r1, [r1, #8]
 	mov r4, r0
@@ -139550,7 +139550,7 @@ sub_02072ACC: ; 0x02072ACC
 	biceq r0, r0, #1
 	streqh r0, [sl, r1]
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add r3, sl, #0x800
 	ldrh r1, [r3, #0xe]
 	mov r4, #1
@@ -139591,7 +139591,7 @@ _02072BE8:
 	add sp, sp, #0xc
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _02072C0C:
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #0xc
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 	.align 2, 0
@@ -139869,12 +139869,12 @@ sub_02072F24: ; 0x02072F24
 sub_02072F9C: ; 0x02072F9C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02072FC0 ; =MAIN_BSS_0211BE2C
 	ldr r1, [r1]
 	add r1, r1, #0x1000
 	str r4, [r1, #0x4e4]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02072FC0: .word MAIN_BSS_0211BE2C
@@ -139884,7 +139884,7 @@ _02072FC0: .word MAIN_BSS_0211BE2C
 sub_02072FC4: ; 0x02072FC4
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02073044 ; =MAIN_BSS_0211BE2C
 	mov r4, r0
 	ldr r0, [r1]
@@ -139904,7 +139904,7 @@ sub_02072FC4: ; 0x02072FC4
 	add r1, r1, #0x1700
 	bl MI_CpuCopy8
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r0, _02073044 ; =MAIN_BSS_0211BE2C
 	ldr r0, [r0]
 	add r0, r0, #0x72
@@ -139913,7 +139913,7 @@ sub_02072FC4: ; 0x02072FC4
 	arm_func_end sub_02072FC4
 _02073034:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -139951,7 +139951,7 @@ sub_0207309C: ; 0x0207309C
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r4, r1
 	mov r7, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r6, r0
 	cmp r4, #3
 	addls pc, pc, r4, lsl #2
@@ -139980,7 +139980,7 @@ _020730F0:
 	b _0207310C
 _020730FC:
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _0207310C:
@@ -140004,12 +140004,12 @@ _0207310C:
 	add r1, r0, #0x1700
 	mov r0, r6
 	strh r4, [r1, #0x54]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02073168:
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -141686,13 +141686,13 @@ sub_020748C8: ; 0x020748C8
 	mov r8, r0
 	mov r7, r1
 	mov r4, #0xff
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	bl sub_02077544
 	cmp r0, #0
 	bne _020748FC
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	arm_func_end sub_020748C8
@@ -141705,7 +141705,7 @@ _020748FC:
 	cmp r1, #0x10
 	ble _02074928
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 _02074928:
@@ -141718,7 +141718,7 @@ _02074930:
 	cmp r3, r8
 	bne _02074954
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 _02074954:
@@ -141734,7 +141734,7 @@ _02074974:
 	cmp r6, #0x10
 	bne _0207498C
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 _0207498C:
@@ -141765,7 +141765,7 @@ _0207498C:
 	cmp r0, #0
 	bne _02074A04
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 _02074A04:
@@ -141849,7 +141849,7 @@ _02074B10:
 	ldrb r2, [r1, #0x524]
 	add r2, r2, #1
 	strb r2, [r1, #0x524]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
@@ -143782,7 +143782,7 @@ _02076548:
 	mov r0, #0x180
 	mla r0, r5, r0, r1
 	mov r1, #0xc0
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r1, _02076A9C ; =MAIN_BSS_0211BE20
 	add r2, r4, #0x600
 	mov r0, #0x180
@@ -143790,7 +143790,7 @@ _02076548:
 	ldrh r0, [r1]
 	add r1, r4, #0x440
 	mov r3, #0xc0
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	str r5, [r4, #0x5ec]
 	b _02076608
 _02076594:
@@ -143814,7 +143814,7 @@ _02076598:
 	mov r0, #0x180
 	mla r0, r5, r0, r1
 	mov r1, #0xc0
-	bl NitroSDK_DC_InvalidateRange
+	bl DC_InvalidateRange
 	ldr r1, _02076A9C ; =MAIN_BSS_0211BE20
 	add r2, r4, #0x600
 	mov r0, #0x180
@@ -143822,7 +143822,7 @@ _02076598:
 	ldrh r0, [r1]
 	add r1, r4, #0x440
 	mov r3, #0xc0
-	bl sub_020679FC
+	bl MI_DmaCopy16
 	str r5, [r4, #0x5ec]
 _02076608:
 	ldr r2, [r4, #0x51c]
@@ -144210,7 +144210,7 @@ sub_02076B18: ; 0x02076B18
 	mov r7, r0
 	arm_func_end sub_02076B18
 _02076B6C:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r3, _02076CF4 ; =0x0000FFFF
 	ldr r1, _02076CF8 ; =DAT_0208eb3c
 	mov r2, #5
@@ -144309,7 +144309,7 @@ _02076C64:
 	strh r2, [r1, #0x16]
 	add r1, r5, #0x1000
 	str r3, [r1, #0x31c]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
@@ -144359,14 +144359,14 @@ sub_02076D6C: ; 0x02076D6C
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r5, r0
 	mov r4, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02076E00 ; =MAIN_BSS_0211BE20
 	mov r6, r0
 	ldr r1, [r1, #8]
 	ldrb r1, [r1, #0x50d]
 	cmp r1, #0
 	beq _02076DA0
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end sub_02076D6C
@@ -144378,7 +144378,7 @@ _02076DA0:
 	cmp r0, #0
 	bne _02076DC8
 	mov r0, r6
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, pc}
 _02076DC8:
@@ -144393,7 +144393,7 @@ _02076DC8:
 	ldr r1, [r2, #8]
 	add r1, r1, #0x500
 	strh r3, [r1, #2]
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -144463,7 +144463,7 @@ _02076ED4: .word MAIN_BSS_0211BE20
 sub_02076ED8: ; 0x02076ED8
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r3, _020770A8 ; =MAIN_BSS_0211BE20
 	mov r4, r0
 	ldr r0, [r3, #8]
@@ -144569,10 +144569,10 @@ _02076F7C:
 	bl sub_02076E04
 	mov r5, r0
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, #0xf
 	mov r1, #1
-	bl NitroSDK_PXI_IsCallbackReady
+	bl PXI_IsCallbackReady
 	ldr r1, _020770A8 ; =MAIN_BSS_0211BE20
 	ldr r1, [r1, #0xc]
 	add r1, r1, #0x7000
@@ -144631,7 +144631,7 @@ _02077120: .word sub_020770E0
 sub_02077124: ; 0x02077124
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, #1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _020771B0 ; =MAIN_BSS_0211BE20
 	mov r4, r0
 	ldr r2, [r1, #8]
@@ -144665,7 +144665,7 @@ _02077198:
 	mov r5, r0
 _020771A0:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -144675,7 +144675,7 @@ _020771B4: .word sub_02077118
 	arm_func_start sub_020771B8
 sub_020771B8: ; 0x020771B8
 	stmdb sp!, {r4, lr}
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _020771F0 ; =MAIN_BSS_0211BE20
 	mov r4, r0
 	ldr r0, [r1, #0xc]
@@ -144688,7 +144688,7 @@ sub_020771B8: ; 0x020771B8
 _020771E0:
 	bl sub_02077124
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _020771F0: .word MAIN_BSS_0211BE20
@@ -144995,7 +144995,7 @@ sub_020775B0: ; 0x020775B0
 	mov sb, r1
 	mov r8, r2
 	mov r7, r3
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	add r6, r4, #0x30
 	mov r5, r0
 	add r4, r4, #0x70
@@ -145019,7 +145019,7 @@ _02077604:
 	b _020775D4
 _0207760C:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 
 	arm_func_start sub_02077618
@@ -145030,7 +145030,7 @@ sub_02077618: ; 0x02077618
 	mov r7, r2
 	mov r6, r3
 	mov r4, #0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	add r2, sb, #0x30
 	add r1, sb, #0x70
 	mov r5, r0
@@ -145063,7 +145063,7 @@ _02077694:
 	blo _02077648
 _020776A0:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 
@@ -145073,7 +145073,7 @@ sub_020776B0: ; 0x020776B0
 	mov r7, r0
 	arm_func_end sub_020776B0
 _020776B8:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [r7, #0xc0]
 	mov r5, r0
 	cmp r1, #0
@@ -145085,7 +145085,7 @@ _020776D4:
 	mov r1, r6
 	bl sub_02065878
 	mov r0, r4
-	bl NitroSDK_OS_SleepThread
+	bl OS_SleepThread
 	ldr r0, [r7, #0xc0]
 	cmp r0, #0
 	beq _020776D4
@@ -145099,14 +145099,14 @@ _020776F4:
 	mov r1, r1, lsr #1
 	bl sub_02065878
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldr r1, [r4, #8]
 	cmp r1, #0
 	beq _02077730
 	mov r0, r4
 	blx r1
 _02077730:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r5, r0
 	mov r0, r7
 	ldr r6, [r4, #0xc]
@@ -145143,10 +145143,10 @@ _020777A8:
 	cmp r4, r0
 	beq _020777C0
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	b _020776B8
 _020777C0:
-	bl sub_020654B4
+	bl OS_ExitThread
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start sub_020777C8
@@ -145155,7 +145155,7 @@ sub_020777C8: ; 0x020777C8
 	sub sp, sp, #8
 	mov r5, r0
 	mov r6, r1
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, _02077840 ; =MAIN_BSS_0211BE60
 	mov r4, r0
 	ldr r0, [r1]
@@ -145174,13 +145174,13 @@ sub_020777C8: ; 0x020777C8
 	mov r2, r5
 	add r3, r3, ip
 	stmia sp, {ip, lr}
-	bl sub_020653B8
+	bl OS_CreateThread
 	mov r0, r5
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	arm_func_end sub_020777C8
 _02077830:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	add sp, sp, #8
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -145258,7 +145258,7 @@ _02077908:
 	moveq r6, r0
 	movne r6, #0x1f
 _02077914:
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	ldr r1, [sb, #4]
 	mov r5, r0
 	bic r0, r1, #1
@@ -145278,7 +145278,7 @@ _02077914:
 	streq r1, [r0]
 	mov r0, r4
 	str sb, [r4, #0xc0]
-	bl sub_02065754
+	bl OS_WakeupThreadDirect
 	b _020779E4
 _0207796C:
 	cmp sb, r0
@@ -145319,7 +145319,7 @@ _020779DC:
 	str sb, [r1]
 _020779E4:
 	mov r0, r5
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
 _020779F0: .word MAIN_BSS_0211BE60
@@ -145328,7 +145328,7 @@ _020779F0: .word MAIN_BSS_0211BE60
 sub_020779F4: ; 0x020779F4
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
+	bl OS_DisableInterrupts
 	mov r4, r0
 	bl sub_02077848
 	cmp r0, #0
@@ -145343,7 +145343,7 @@ sub_020779F4: ; 0x020779F4
 	arm_func_end sub_020779F4
 _02077A2C:
 	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
+	bl OS_RestoreInterrupts
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _02077A38: .word MAIN_BSS_0211BE60
@@ -145590,809 +145590,6 @@ _02077D44:
 	bx lr
 	.align 2, 0
 _02077D4C: .word MAIN_BSS_0211BE64
-
-	arm_func_start sub_02077D50
-sub_02077D50: ; 0x02077D50
-	stmdb sp!, {r3, lr}
-	ldr r1, _02077D7C ; =MAIN_BSS_0211BE7C
-	mov r3, #0
-	ldr r2, _02077D80 ; =0x05000001
-	add r0, sp, #0
-	str r3, [sp]
-	blx sub_02000074
-	bl sub_02064E78
-	ldr r1, _02077D84 ; =MAIN_BSS_0211BE78
-	strh r0, [r1, #6]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02077D7C: .word MAIN_BSS_0211BE7C
-_02077D80: .word 0x05000001
-_02077D84: .word MAIN_BSS_0211BE78
-	arm_func_end sub_02077D50
-
-	arm_func_start sub_02077D88
-sub_02077D88: ; 0x02077D88
-	stmdb sp!, {r3, lr}
-	bl sub_02077E80
-	cmp r0, #0
-	beq _02077DA8
-	bl sub_02077DD8
-	cmp r0, #0
-	movne r0, #1
-	ldmneia sp!, {r3, pc}
-	arm_func_end sub_02077D88
-_02077DA8:
-	mov r0, #0
-	ldmia sp!, {r3, pc}
-
-	arm_func_start sub_02077DB0
-sub_02077DB0: ; 0x02077DB0
-	stmdb sp!, {r3, lr}
-	bl sub_02077E80
-	cmp r0, #0
-	beq _02077DD0
-	bl sub_02077DD8
-	cmp r0, #0
-	moveq r0, #1
-	ldmeqia sp!, {r3, pc}
-	arm_func_end sub_02077DB0
-_02077DD0:
-	mov r0, #0
-	ldmia sp!, {r3, pc}
-
-	arm_func_start sub_02077DD8
-sub_02077DD8: ; 0x02077DD8
-	ldr r0, _02077DEC ; =0x027FFC30
-	ldrb r0, [r0, #5]
-	mov r0, r0, lsl #0x1f
-	mov r0, r0, lsr #0x1f
-	bx lr
-	.align 2, 0
-_02077DEC: .word 0x027FFC30
-	arm_func_end sub_02077DD8
-
-	arm_func_start sub_02077DF0
-sub_02077DF0: ; 0x02077DF0
-	stmdb sp!, {r4, lr}
-	mov r4, #0
-	bl sub_02077E80
-	cmp r0, #0
-	beq _02077E0C
-	bl sub_02077E14
-	mov r4, r0
-	arm_func_end sub_02077DF0
-_02077E0C:
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-
-	arm_func_start sub_02077E14
-sub_02077E14: ; 0x02077E14
-	stmdb sp!, {r4, lr}
-	mov r4, #0
-	bl sub_02077DD8
-	cmp r0, #0
-	ldrne r0, _02077E34 ; =0x027FFC30
-	ldrne r4, [r0, #8]
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02077E34: .word 0x027FFC30
-	arm_func_end sub_02077E14
-
-	arm_func_start sub_02077E38
-sub_02077E38: ; 0x02077E38
-	stmdb sp!, {r4, lr}
-	mov r4, #0
-	bl sub_02077E80
-	cmp r0, #0
-	beq _02077E54
-	bl sub_02077E5C
-	mov r4, r0
-	arm_func_end sub_02077E38
-_02077E54:
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-
-	arm_func_start sub_02077E5C
-sub_02077E5C: ; 0x02077E5C
-	stmdb sp!, {r4, lr}
-	mov r4, #0
-	bl sub_02077DD8
-	cmp r0, #0
-	ldrne r0, _02077E7C ; =0x027FFC30
-	ldrneh r4, [r0, #6]
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02077E7C: .word 0x027FFC30
-	arm_func_end sub_02077E5C
-
-	arm_func_start sub_02077E80
-sub_02077E80: ; 0x02077E80
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #0x10
-	ldr r2, _02077F80 ; =0x027FFC30
-	mov r4, #1
-	ldrh r1, [r2]
-	rsb r0, r4, #0x10000
-	cmp r1, r0
-	addeq sp, sp, #0x10
-	moveq r0, #0
-	ldmeqia sp!, {r4, pc}
-	ldrb r0, [r2, #5]
-	mov r0, r0, lsl #0x1e
-	mov r0, r0, lsr #0x1f
-	cmp r0, #1
-	addeq sp, sp, #0x10
-	moveq r0, #0
-	ldmeqia sp!, {r4, pc}
-	ldr r0, _02077F84 ; =MAIN_BSS_0211BE78
-	add r1, sp, #8
-	ldrh r0, [r0, #6]
-	bl sub_02078008
-	add r0, sp, #0
-	bl sub_02077F8C
-	mov r0, #0x8000000
-	ldrb r2, [r0, #0xb2]
-	cmp r2, #0x96
-	bne _02077F00
-	ldr r1, _02077F80 ; =0x027FFC30
-	ldrh r0, [r0, #0xbe]
-	ldrh r1, [r1]
-	cmp r1, r0
-	bne _02077F48
-	arm_func_end sub_02077E80
-_02077F00:
-	cmp r2, #0x96
-	beq _02077F20
-	ldr r1, _02077F80 ; =0x027FFC30
-	ldr r0, _02077F88 ; =0x0801FFFE
-	ldrh r1, [r1]
-	ldrh r0, [r0]
-	cmp r1, r0
-	bne _02077F48
-_02077F20:
-	ldr r2, _02077F80 ; =0x027FFC30
-	mov r0, #0x8000000
-	ldr r1, [r2, #8]
-	ldr r0, [r0, #0xac]
-	cmp r1, r0
-	beq _02077F5C
-	ldrb r0, [r2, #5]
-	mov r0, r0, lsl #0x1f
-	movs r0, r0, lsr #0x1f
-	beq _02077F5C
-_02077F48:
-	ldr r1, _02077F80 ; =0x027FFC30
-	mov r4, #0
-	ldrb r0, [r1, #5]
-	orr r0, r0, #2
-	strb r0, [r1, #5]
-_02077F5C:
-	add r0, sp, #0
-	bl sub_02077FD4
-	ldr r0, _02077F84 ; =MAIN_BSS_0211BE78
-	add r1, sp, #8
-	ldrh r0, [r0, #6]
-	bl sub_02078064
-	mov r0, r4
-	add sp, sp, #0x10
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02077F80: .word 0x027FFC30
-_02077F84: .word MAIN_BSS_0211BE78
-_02077F88: .word 0x0801FFFE
-
-	arm_func_start sub_02077F8C
-sub_02077F8C: ; 0x02077F8C
-	ldr r2, _02077FD0 ; =0x04000204
-	ldrh r1, [r2]
-	and r1, r1, #0xc
-	mov r1, r1, asr #2
-	str r1, [r0]
-	ldrh r1, [r2]
-	and r1, r1, #0x10
-	mov r1, r1, asr #4
-	str r1, [r0, #4]
-	ldrh r0, [r2]
-	bic r0, r0, #0xc
-	orr r0, r0, #0xc
-	strh r0, [r2]
-	ldrh r0, [r2]
-	bic r0, r0, #0x10
-	strh r0, [r2]
-	bx lr
-	.align 2, 0
-_02077FD0: .word 0x04000204
-	arm_func_end sub_02077F8C
-
-	arm_func_start sub_02077FD4
-sub_02077FD4: ; 0x02077FD4
-	ldr r3, _02078004 ; =0x04000204
-	ldr r2, [r0]
-	ldrh r1, [r3]
-	bic r1, r1, #0xc
-	orr r1, r1, r2, lsl #2
-	strh r1, [r3]
-	ldrh r1, [r3]
-	ldr r2, [r0, #4]
-	bic r0, r1, #0x10
-	orr r0, r0, r2, lsl #4
-	strh r0, [r3]
-	bx lr
-	.align 2, 0
-_02078004: .word 0x04000204
-	arm_func_end sub_02077FD4
-
-	arm_func_start sub_02078008
-sub_02078008: ; 0x02078008
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	ldr r5, _02078060 ; =0x027FFFE8
-	mov r7, r0
-	mov r6, r1
-	mov r4, #1
-	arm_func_end sub_02078008
-_0207801C:
-	bl NitroSDK_OS_DisableInterrupts
-	str r0, [r6, #4]
-	mov r0, r5
-	bl sub_02064E70
-	ands r0, r0, #0x40
-	str r0, [r6]
-	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r0, r7
-	bl sub_02064DB8
-	cmp r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldr r0, [r6, #4]
-	bl NitroSDK_OS_RestoreInterrupts
-	mov r0, r4
-	blx sub_02000446
-	b _0207801C
-_0207805C:
-	.byte 0xF8, 0x80, 0xBD, 0xE8
-_02078060: .word 0x027FFFE8
-
-	arm_func_start sub_02078064
-sub_02078064: ; 0x02078064
-	stmdb sp!, {r4, lr}
-	mov r4, r1
-	ldr r1, [r4]
-	cmp r1, #0
-	bne _0207807C
-	bl thunk_FUN_02064d8c
-	arm_func_end sub_02078064
-_0207807C:
-	ldr r0, [r4, #4]
-	bl NitroSDK_OS_RestoreInterrupts
-	ldmia sp!, {r4, pc}
-
-	arm_func_start sub_02078088
-sub_02078088: ; 0x02078088
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r1, r7
-	mov r0, #0xd
-	mov r2, #0
-	bl NitroSDK_PXI_SendWordByFifo
-	cmp r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r6, #1
-	mov r5, #0xd
-	mov r4, #0
-	arm_func_end sub_02078088
-_020780B4:
-	mov r0, r6
-	blx sub_02000446
-	mov r0, r5
-	mov r1, r7
-	mov r2, r4
-	bl NitroSDK_PXI_SendWordByFifo
-	cmp r0, #0
-	bne _020780B4
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start sub_020780D8
-sub_020780D8: ; 0x020780D8
-	ldr ip, _020780EC ; =sub_020780F0
-	mov r2, r1
-	mov r1, #0
-	mov r3, #0x41
-	bx ip
-	.align 2, 0
-_020780EC: .word sub_020780F0
-	arm_func_end sub_020780D8
-
-	arm_func_start sub_020780F0
-sub_020780F0: ; 0x020780F0
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	bl sub_02077E80
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	bl sub_02078228
-	ldr r0, _020781CC ; =MAIN_BSS_0211BE78
-	ldrh r0, [r0, #6]
-	bl sub_02064D6C
-	cmp r4, #0x21
-	bhi _0207815C
-	bhs _02078188
-	cmp r4, #0x11
-	bhi _02078150
-	cmp r4, #0x10
-	blo _020781AC
-	beq _020781A8
-	cmp r4, #0x11
-	beq _02078178
-	b _020781AC
-	arm_func_end sub_020780F0
-_02078150:
-	cmp r4, #0x20
-	streqh r6, [r7]
-	b _020781AC
-_0207815C:
-	cmp r4, #0x40
-	bhi _0207816C
-	streq r6, [r7]
-	b _020781AC
-_0207816C:
-	cmp r4, #0x41
-	beq _02078198
-	b _020781AC
-_02078178:
-	cmp r5, #0
-	ldrneb r0, [r7]
-	strneb r0, [r5]
-	b _020781AC
-_02078188:
-	cmp r5, #0
-	ldrneh r0, [r7]
-	strneh r0, [r5]
-	b _020781AC
-_02078198:
-	cmp r5, #0
-	ldrne r0, [r7]
-	strne r0, [r5]
-	b _020781AC
-_020781A8:
-	strb r6, [r7]
-_020781AC:
-	ldr r0, _020781CC ; =MAIN_BSS_0211BE78
-	ldrh r0, [r0, #6]
-	bl thunk_FUN_02064d8c
-	bl sub_02077E80
-	cmp r0, #0
-	movne r0, #1
-	moveq r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_020781CC: .word MAIN_BSS_0211BE78
-
-	arm_func_start sub_020781D0
-sub_020781D0: ; 0x020781D0
-	ldr r0, _020781DC ; =MAIN_BSS_0211BE78
-	ldr r0, [r0]
-	bx lr
-	.align 2, 0
-_020781DC: .word MAIN_BSS_0211BE78
-	arm_func_end sub_020781D0
-
-	arm_func_start sub_020781E0
-sub_020781E0: ; 0x020781E0
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
-	ldr r1, _02078224 ; =MAIN_BSS_0211BE78
-	mov r4, r0
-	str r5, [r1]
-	bl sub_02077DB0
-	cmp r0, #0
-	bne _02078218
-	cmp r5, #0
-	movne r1, #0x1000
-	moveq r1, #0x5000
-	mov r0, #0xf000
-	bl sub_02066584
-	arm_func_end sub_020781E0
-_02078218:
-	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_02078224: .word MAIN_BSS_0211BE78
-
-	arm_func_start sub_02078228
-sub_02078228: ; 0x02078228
-	stmdb sp!, {r3, lr}
-	bl sub_02077DB0
-	cmp r0, #0
-	ldmneia sp!, {r3, pc}
-	bl sub_020781D0
-	cmp r0, #0
-	ldmneia sp!, {r3, pc}
-	bl OS_Terminate
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_02078228
-
-	arm_func_start sub_0207824C
-sub_0207824C: ; 0x0207824C
-	stmdb sp!, {r3, r4, r5, lr}
-	ldr r0, _020782EC ; =MAIN_BSS_0211BE80
-	ldr r1, [r0, #8]
-	cmp r1, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	mov r1, #1
-	str r1, [r0, #8]
-	bl sub_02077D50
-	ldr r0, _020782EC ; =MAIN_BSS_0211BE80
-	mov r1, #0
-	str r1, [r0, #0xc]
-	bl sub_0206955C
-	mov r5, #0xd
-	mov r4, #1
-	arm_func_end sub_0207824C
-_02078284:
-	mov r0, r5
-	mov r1, r4
-	bl NitroSDK_PXI_IsCallbackReady
-	cmp r0, #0
-	beq _02078284
-	ldr r1, _020782F0 ; =sub_020784F4
-	mov r0, #0xd
-	bl NitroSDK_PXI_SetFifoRecvCallback
-	bl sub_02078300
-	mov r0, #0xd
-	mov r1, #0
-	bl NitroSDK_PXI_SetFifoRecvCallback
-	ldr r1, _020782F4 ; =sub_02078520
-	mov r0, #0xd
-	bl NitroSDK_PXI_SetFifoRecvCallback
-	ldr r1, _020782EC ; =MAIN_BSS_0211BE80
-	mov r2, #0
-	ldr r0, _020782F8 ; =MAIN_BSS_0211BF60
-	str r2, [r1, #0x18]
-	bl sub_020785A4
-	ldr r1, _020782FC ; =sub_02078590
-	mov r0, #0x11
-	bl NitroSDK_PXI_SetFifoRecvCallback
-	mov r0, #0
-	bl sub_020781E0
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_020782EC: .word MAIN_BSS_0211BE80
-_020782F0: .word sub_020784F4
-_020782F4: .word sub_02078520
-_020782F8: .word MAIN_BSS_0211BF60
-_020782FC: .word sub_02078590
-
-	arm_func_start sub_02078300
-sub_02078300: ; 0x02078300
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #0x10
-	ldr r0, _020784C8 ; =MAIN_BSS_0211BE80
-	ldr r1, [r0]
-	cmp r1, #0
-	addne sp, sp, #0x10
-	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
-	ldr r1, _020784CC ; =0x04000300
-	mov r2, #1
-	ldrh r1, [r1]
-	str r2, [r0]
-	tst r1, #1
-	addeq sp, sp, #0x10
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r0, #0x40000
-	bl sub_02064A68
-	ldr r3, _020784D0 ; =0x04000208
-	mov r2, #1
-	ldrh r5, [r3]
-	ldr r1, _020784D4 ; =MAIN_BSS_0211BE7C
-	mov r4, r0
-	strh r2, [r3]
-	ldrh r0, [r1, #2]
-	add r1, sp, #8
-	bl sub_02078008
-	ldr r1, _020784D8 ; =0x04000204
-	add r0, sp, #0
-	ldrh r1, [r1]
-	and r1, r1, #0x8000
-	mov r6, r1, asr #0xf
-	bl sub_02077F8C
-	ldr r3, _020784D8 ; =0x04000204
-	ldr r0, _020784DC ; =MAIN_BSS_0211BEA0
-	ldrh r2, [r3]
-	add r0, r0, #0x80
-	mov r1, #0x40
-	bic r2, r2, #0x8000
-	strh r2, [r3]
-	bl NitroSDK_DC_InvalidateRange
-	ldr r2, _020784DC ; =MAIN_BSS_0211BEA0
-	ldr r1, _020784E0 ; =0x08000080
-	mov r0, #1
-	mov r3, #0x40
-	add r2, r2, #0x80
-	bl sub_020679FC
-	ldr r2, _020784D8 ; =0x04000204
-	add r0, sp, #0
-	ldrh r1, [r2]
-	bic r1, r1, #0x8000
-	orr r1, r1, r6, lsl #15
-	strh r1, [r2]
-	bl sub_02077FD4
-	ldr r0, _020784D4 ; =MAIN_BSS_0211BE7C
-	add r1, sp, #8
-	ldrh r0, [r0, #2]
-	bl sub_02078064
-	ldr r1, _020784E4 ; =0x027FFF9B
-	ldrb r0, [r1]
-	cmp r0, #0
-	bne _020783FC
-	ldrb r0, [r1, #-1]
-	cmp r0, #0
-	bne _02078460
-	arm_func_end sub_02078300
-_020783FC:
-	ldr r3, _020784DC ; =MAIN_BSS_0211BEA0
-	ldr r6, _020784E8 ; =0x027FFC30
-	ldrh r0, [r3, #0xbe]
-	mov r2, #0
-	strh r0, [r6]
-	b _02078428
-_02078414:
-	add r0, r3, r2
-	ldrb r1, [r0, #0xb5]
-	add r0, r6, r2
-	add r2, r2, #1
-	strb r1, [r0, #2]
-_02078428:
-	cmp r2, #3
-	blt _02078414
-	ldrh r0, [r3, #0xb0]
-	strh r0, [r6, #6]
-	ldr r0, [r3, #0xac]
-	str r0, [r6, #8]
-	bl sub_02077E80
-	cmp r0, #0
-	movne r2, #1
-	ldr r1, _020784E4 ; =0x027FFF9B
-	moveq r2, #0
-	mov r0, #1
-	strb r2, [r1]
-	strb r0, [r1, #-1]
-_02078460:
-	ldr r0, _020784EC ; =0xFFFF0020
-	ldr r1, _020784F0 ; =MAIN_BSS_0211BEA4
-	mov r2, #0x9c
-	bl NitroSDK_mi_MIi_CpuCopy32
-	bl sub_0206606C
-	ldr r0, _020784DC ; =MAIN_BSS_0211BEA0
-	add r0, r0, #0xfe000000
-	mov r0, r0, lsr #5
-	mov r0, r0, lsl #6
-	orr r0, r0, #1
-	bl sub_02078088
-	mov r7, #1
-	ldr r6, _020784D4 ; =MAIN_BSS_0211BE7C
-	b _020784A0
-_02078498:
-	mov r0, r7
-	blx sub_02000446
-_020784A0:
-	ldrh r0, [r6]
-	cmp r0, #1
-	bne _02078498
-	ldr r2, _020784D0 ; =0x04000208
-	mov r0, r4
-	ldrh r1, [r2]
-	strh r5, [r2]
-	bl sub_02064A68
-	add sp, sp, #0x10
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_020784C8: .word MAIN_BSS_0211BE80
-_020784CC: .word 0x04000300
-_020784D0: .word 0x04000208
-_020784D4: .word MAIN_BSS_0211BE7C
-_020784D8: .word 0x04000204
-_020784DC: .word MAIN_BSS_0211BEA0
-_020784E0: .word 0x08000080
-_020784E4: .word 0x027FFF9B
-_020784E8: .word 0x027FFC30
-_020784EC: .word 0xFFFF0020
-_020784F0: .word MAIN_BSS_0211BEA4
-
-	arm_func_start sub_020784F4
-sub_020784F4: ; 0x020784F4
-	stmdb sp!, {r3, lr}
-	and r0, r1, #0x3f
-	cmp r0, #1
-	bne _02078514
-	ldr r0, _0207851C ; =MAIN_BSS_0211BE7C
-	mov r1, #1
-	strh r1, [r0]
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_020784F4
-_02078514:
-	bl OS_Terminate
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0207851C: .word MAIN_BSS_0211BE7C
-
-	arm_func_start sub_02078520
-sub_02078520: ; 0x02078520
-	stmdb sp!, {r3, lr}
-	and r0, r1, #0x3f
-	cmp r0, #0x11
-	bne _02078570
-	ldr r0, _02078578 ; =MAIN_BSS_0211BE80
-	ldr r1, [r0, #0xc]
-	cmp r1, #0
-	ldmneia sp!, {r3, pc}
-	ldr r1, [r0, #0x18]
-	mov r0, #0
-	cmp r1, #0
-	beq _02078554
-	blx r1
-	arm_func_end sub_02078520
-_02078554:
-	cmp r0, #0
-	beq _02078560
-	bl sub_0207857C
-_02078560:
-	ldr r0, _02078578 ; =MAIN_BSS_0211BE80
-	mov r1, #1
-	str r1, [r0, #0xc]
-	ldmia sp!, {r3, pc}
-_02078570:
-	bl OS_Terminate
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02078578: .word MAIN_BSS_0211BE80
-
-	arm_func_start sub_0207857C
-sub_0207857C: ; 0x0207857C
-	stmdb sp!, {r3, lr}
-	mov r0, #2
-	bl sub_02078088
-	bl OS_Terminate
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0207857C
-
-	arm_func_start sub_02078590
-sub_02078590: ; 0x02078590
-	ldr r0, _020785A0 ; =MAIN_BSS_0211BE80
-	mov r1, #0
-	str r1, [r0, #4]
-	bx lr
-	.align 2, 0
-_020785A0: .word MAIN_BSS_0211BE80
-	arm_func_end sub_02078590
-
-	arm_func_start sub_020785A4
-sub_020785A4: ; 0x020785A4
-	stmdb sp!, {r3, r4, r5, lr}
-	sub sp, sp, #8
-	mov r5, r0
-	bl NitroSDK_OS_DisableInterrupts
-	ldr r1, _02078620 ; =MAIN_BSS_0211C048
-	mov r4, r0
-	ldr r0, [r1]
-	cmp r0, #0
-	bne _02078610
-	add r0, r5, #0xc4
-	str r5, [r1]
-	bl sub_02078630
-	ldr r0, _02078624 ; =MAIN_BSS_0211C04C
-	bl sub_02078630
-	mov r0, #0
-	str r0, [r5, #0xc0]
-	mov r2, #0x400
-	ldr r1, _02078628 ; =sub_02078644
-	ldr r3, _0207862C ; =MAIN_BSS_0211C04C_end
-	mov r0, r5
-	str r2, [sp]
-	mov r2, #0x14
-	str r2, [sp, #4]
-	mov r2, r5
-	bl sub_020653B8
-	mov r0, r5
-	bl sub_02065754
-	arm_func_end sub_020785A4
-_02078610:
-	mov r0, r4
-	bl NitroSDK_OS_RestoreInterrupts
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_02078620: .word MAIN_BSS_0211C048
-_02078624: .word MAIN_BSS_0211C04C
-_02078628: .word sub_02078644
-_0207862C: .word MAIN_BSS_0211C04C_end
-
-	arm_func_start sub_02078630
-sub_02078630: ; 0x02078630
-	ldr ip, _02078640 ; =MI_CpuFill8
-	mov r1, #0
-	mov r2, #0x24
-	bx ip
-	.align 2, 0
-_02078640: .word MI_CpuFill8
-	arm_func_end sub_02078630
-
-	arm_func_start sub_02078644
-sub_02078644: ; 0x02078644
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x24
-	mov r4, #0
-	mov r8, r0
-	add r6, sp, #0
-	mov sl, r4
-	mov sb, r4
-	mov r5, r4
-	mov fp, #0x24
-	arm_func_end sub_02078644
-_02078668:
-	mov r0, r6
-	mov r1, r5
-	mov r2, fp
-	bl MI_CpuFill8
-	bl NitroSDK_OS_DisableInterrupts
-	ldr r1, [r8, #0xc0]
-	mov r7, r0
-	cmp r1, #0
-	bne _020786A0
-_0207868C:
-	mov r0, r4
-	bl NitroSDK_OS_SleepThread
-	ldr r0, [r8, #0xc0]
-	cmp r0, #0
-	beq _0207868C
-_020786A0:
-	ldr lr, [r8, #0xc0]
-	add ip, sp, #0
-	ldmia lr!, {r0, r1, r2, r3}
-	stmia ip!, {r0, r1, r2, r3}
-	ldmia lr!, {r0, r1, r2, r3}
-	stmia ip!, {r0, r1, r2, r3}
-	ldr r1, [lr]
-	mov r0, r7
-	str r1, [ip]
-	bl NitroSDK_OS_RestoreInterrupts
-	ldr r1, [sp]
-	cmp r1, #0
-	beq _020786E0
-	mov r0, r6
-	blx r1
-	str r0, [sp, #8]
-_020786E0:
-	bl NitroSDK_OS_DisableInterrupts
-	ldr r2, [sp, #4]
-	ldr r1, _02078730 ; =MAIN_BSS_0211C048
-	mov r7, r0
-	strb sl, [r1, #0x26]
-	cmp r2, #0
-	beq _02078704
-	mov r0, r6
-	blx r2
-_02078704:
-	ldr r0, _02078730 ; =MAIN_BSS_0211C048
-	ldr r0, [r0]
-	cmp r0, #0
-	beq _02078724
-	mov r0, r7
-	str sb, [r8, #0xc0]
-	bl NitroSDK_OS_RestoreInterrupts
-	b _02078668
-_02078724:
-	bl sub_020654B4
-	add sp, sp, #0x24
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_02078730: .word MAIN_BSS_0211C048
 
     .section .init, 4
 
@@ -157103,36 +156300,3 @@ MAIN_BSS_0211BE60: ; 0x0211BE60
     .global MAIN_BSS_0211BE64
 MAIN_BSS_0211BE64: ; 0x0211BE64
     .space 0x14
-
-    .global MAIN_BSS_0211BE78
-MAIN_BSS_0211BE78: ; 0x0211BE78
-    .space 0x4
-
-    .global MAIN_BSS_0211BE7C
-MAIN_BSS_0211BE7C: ; 0x0211BE7C
-    .space 0x4
-
-    .global MAIN_BSS_0211BE80
-MAIN_BSS_0211BE80: ; 0x0211BE80
-    .space 0x20
-
-    .global MAIN_BSS_0211BEA0
-MAIN_BSS_0211BEA0: ; 0x0211BEA0
-    .space 0x4
-
-    .global MAIN_BSS_0211BEA4
-MAIN_BSS_0211BEA4: ; 0x0211BEA4
-    .space 0xBC
-
-    .global MAIN_BSS_0211BF60
-MAIN_BSS_0211BF60: ; 0x0211BF60
-    .space 0xE8
-
-    .global MAIN_BSS_0211C048
-MAIN_BSS_0211C048: ; 0x0211C048
-    .space 0x4
-
-    .global MAIN_BSS_0211C04C
-MAIN_BSS_0211C04C: ; 0x0211C04C
-    .space 0x424
-MAIN_BSS_0211C04C_end: ; 0x0211C470
