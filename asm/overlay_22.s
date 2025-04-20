@@ -586,12 +586,12 @@ ov22_0211D1A4: ; 0x0211D1A4
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x20
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	bl sub_02062724
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x800
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0211D1FC: .word 0x04001008
@@ -3235,7 +3235,7 @@ ov22_0211F594: ; 0x0211F594
 	mov r1, r0
 	mov r0, #0x8000
 	mov r2, #0x18000
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	ldr r3, _0211F6F0 ; =0x0400000A
 	mov r1, #0
 	ldrh r2, [r3]

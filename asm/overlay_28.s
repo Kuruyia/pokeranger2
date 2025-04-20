@@ -337,7 +337,7 @@ ov28_0211CD9C: ; 0x0211CD9C
 	mov r1, r0
 	mov r0, #0x8000
 	mov r2, #0x18000
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	ldr r1, _0211CE58 ; =0x0400101C
 	mov r2, #0
 	add r0, sp, #0x10

@@ -162,7 +162,7 @@
 .public sub_02064F28
 .public DC_FlushRange
 .public sub_020668E8
-.public NitroSDK_mi_MIi_CpuClearFast
+.public MIi_CpuClearFast
 .public sub_02067E7C
 .public MI_CpuFill8
 .public sub_0206E2DC

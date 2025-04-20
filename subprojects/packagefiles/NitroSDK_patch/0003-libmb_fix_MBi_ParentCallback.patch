@@ -1,0 +1,55 @@
+diff --git a/libraries/mb/src/mb_wm_base.c b/libraries/mb/src/mb_wm_base.c
+index f98d002..10996b4 100644
+--- a/libraries/mb/src/mb_wm_base.c
++++ b/libraries/mb/src/mb_wm_base.c
+@@ -173,22 +173,13 @@ static void MBi_ParentCallback (void * arg)
+     }
+     break;
+     case WM_APIID_SET_BEACON_IND:
+-        if (!p_mbi_param->endReq) {
+-            if (buf->errcode != WM_ERRCODE_SUCCESS) {
+-                p_mbi_param->callback(MB_CALLBACK_ERROR, arg);
+-                return;
+-            }
+-
+-            errcode = WMi_StartParentEx(MBi_ParentCallback, mbi_power_save_mode);
+-            MBi_CheckWmErrcode(WM_APIID_START_PARENT, errcode);
+-        } else {
+-            if (buf->errcode != WM_ERRCODE_SUCCESS) {
+-                p_mbi_param->endReq = 0;
+-                p_mbi_param->callback(MB_CALLBACK_ERROR, arg);
+-            } else {
+-                MBi_EndCommon(arg);
+-            }
++        if (buf->errcode != WM_ERRCODE_SUCCESS) {
++            p_mbi_param->callback(MB_CALLBACK_ERROR, arg);
++            return;
+         }
++
++        errcode = WMi_StartParentEx(MBi_ParentCallback, mbi_power_save_mode);
++        MBi_CheckWmErrcode(WM_APIID_START_PARENT, errcode);
+         break;
+     case WM_APIID_START_PARENT:
+     {
+@@ -298,19 +289,12 @@ static void MBi_ParentCallback (void * arg)
+                 errcode = WM_End(MBi_ParentCallback);
+                 MBi_CheckWmErrcode(WM_APIID_END, errcode);
+             }
++
++            break;
+         } else {
+             (void)WM_SetPortCallback(WM_PORT_BT, NULL, NULL);
+             (void)WM_SetIndCallback(NULL);
+-
+-            if (buf->errcode != WM_ERRCODE_SUCCESS) {
+-                p_mbi_param->endReq = 0;
+-                p_mbi_param->callback(MB_CALLBACK_ERROR, arg);
+-            } else {
+-                errcode = WM_SetBeaconIndication(MBi_ParentCallback, 0);
+-                MBi_CheckWmErrcode(WM_APIID_SET_BEACON_IND, errcode);
+-            }
+         }
+-        break;
+     case WM_APIID_END:
+     {
+         if (buf->errcode != WM_ERRCODE_SUCCESS) {

@@ -113,7 +113,7 @@
 .public sub_02066FE0
 .public sub_020670AC
 .public sub_020670F4
-.public NitroSDK_mi_MIi_CpuClearFast
+.public MIi_CpuClearFast
 .public MI_CpuFill8
 .public MI_CpuCopy8
 .public __cxa_vec_new

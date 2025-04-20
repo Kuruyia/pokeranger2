@@ -404,8 +404,8 @@
 .public sub_02067E7C
 .public MI_CpuFill8
 .public MI_CpuCopy8
-.public NitroSDK_FS_InitFile
-.public NitroSDK_FS_CloseFile
+.public FS_InitFile
+.public FS_CloseFile
 .public FS_ReadFile
 .public sub_0206E2DC
 .public sub_0206E388

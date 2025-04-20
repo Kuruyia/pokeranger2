@@ -1,0 +1,12 @@
+diff --git a/libraries/mb/src/mb_fileinfo.c b/libraries/mb/src/mb_fileinfo.c
+index 2dca001..8a626dd 100644
+--- a/libraries/mb/src/mb_fileinfo.c
++++ b/libraries/mb/src/mb_fileinfo.c
+@@ -147,7 +147,6 @@ BOOL MB_ReadSegment (FSFile * file, void * buf, u32 len)
+ 
+ 				MI_CpuCopy8(p_arc->name.ptr, p_cache->arc_name, (u32)i);
+ 				p_cache->arc_name_len = (u32)i;
+-				p_cache->arc_pointer = p_arc;
+ 			}
+ 		} else {
+ 			rest = 0;

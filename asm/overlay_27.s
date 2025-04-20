@@ -631,12 +631,12 @@ ov27_0211D1F0: ; 0x0211D1F0
 	and r3, r3, #0x43
 	orr r3, r3, #0x3000
 	strh r3, [ip]
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	bl sub_02062724
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x800
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, r4
 	bl ov27_0211DBB4
 	ldr r0, _0211D2C4 ; =0x04001000

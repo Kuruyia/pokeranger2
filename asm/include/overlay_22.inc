@@ -84,8 +84,8 @@
 .public NitroSDK_gx_GX_LoadBG3ScrBmp
 .public sub_02064F28
 .public DC_FlushRange
-.public sub_02067D80
-.public NitroSDK_mi_MIi_CpuClearFast
+.public MIi_CpuClear16
+.public MIi_CpuClearFast
 .public MI_CpuFill8
 .public MI_CpuCopy8
 .public __cxa_vec_new

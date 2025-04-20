@@ -84,8 +84,8 @@
 .public sub_0206281C
 .public sub_02062C10
 .public OS_Terminate
-.public sub_02067DA8
-.public NitroSDK_mi_MIi_CpuClearFast
+.public MIi_CpuCopy16
+.public MIi_CpuClearFast
 .public sub_02067E7C
 .public MI_CpuFill8
 .public _s32_div_f

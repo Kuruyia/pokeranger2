@@ -104,24 +104,24 @@ ov3_0211CAE4: ; 0x0211CAE4
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0xa4000
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	bl sub_02062634
 	mov r0, #0xc0
 	mov r1, #0x7000000
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0
 	mov r1, #0x5000000
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0xc0
 	ldr r1, _0211CD08 ; =0x07000400
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0
 	ldr r1, _0211CD0C ; =0x05000400
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r2, #2
 	ldr r1, _0211CD10 ; =0x04000540
 	mov r0, #0
@@ -156,7 +156,7 @@ ov3_0211CAE4: ; 0x0211CAE4
 	orr ip, r2, #3
 	mov r2, #0x20000
 	strh ip, [r3, #6]
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #4
 	bl sub_02062110
 	mov r0, #8
@@ -180,7 +180,7 @@ ov3_0211CAE4: ; 0x0211CAE4
 	ldrh r3, [ip, #6]
 	bic r3, r3, #3
 	strh r3, [ip, #6]
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r1, #0
 	str r1, [sp]
 	ldr r0, _0211CD1C ; =0x04000050
@@ -8672,24 +8672,24 @@ ov3_021242F8: ; 0x021242F8
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0xa4000
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	bl sub_02062634
 	mov r0, #0xc0
 	mov r1, #0x7000000
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0
 	mov r1, #0x5000000
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	ldr r1, _021244C4 ; =0x07000400
 	mov r0, #0xc0
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	ldr r1, _021244C8 ; =0x05000400
 	mov r0, #0
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	ldr r1, _021244CC ; =0x04000540
 	mov r0, #3
 	str r0, [r1]

@@ -7,7 +7,7 @@
 .public sub_01FF8480
 .public sub_02066034
 .public sub_02066040
-.public sub_020660FC
+.public DC_WaitWriteBufferEmpty
 .public sub_02066108
 .public OS_DisableInterrupts
 .public OS_RestoreInterrupts

@@ -105,7 +105,7 @@ ov21_0211CADC: ; 0x0211CADC
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0xa4000
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	bl sub_02062634
 	mov r0, #0
 	bl NitroSDK_gx_GX_SetBankForTex
@@ -1407,7 +1407,7 @@ _0211DCB8:
 	add r1, r0, #0x800
 	mov r0, #0
 	mov r2, #0x800
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0x44
 	bl _Znwm
 	movs r4, r0
@@ -1439,7 +1439,7 @@ _0211DD20:
 	add r1, r0, #0x800
 	mov r0, #0
 	mov r2, #0x800
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, sl
 	bl ov21_0211D950
 	ldr r0, [sl, #0x24]
@@ -4325,7 +4325,7 @@ _02120718:
 	add r1, r0, r7, lsl #6
 	mov r0, r6
 	mov r2, r4
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	add r5, r5, #1
 	cmp r5, #8
 	add r7, r7, #2
@@ -6926,12 +6926,12 @@ ov21_021226C0: ; 0x021226C0
 	mov r0, #0
 	mov r2, #0x48
 	str r3, [r4]
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	add r0, r4, #0x5c
 	add r1, r0, #0x800
 	mov r0, #0
 	mov r2, #0x64
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, r4
 	bl ov21_02122A8C
 	mov r1, #0

@@ -271,7 +271,7 @@ _01FF8324:
 	mov r0, fp
 	bl OS_RestoreInterrupts
 	bl sub_02066108
-	bl sub_020660FC
+	bl DC_WaitWriteBufferEmpty
 	add r5, r5, r4
 	cmp r5, #0x8000
 	bhs _01FF837C

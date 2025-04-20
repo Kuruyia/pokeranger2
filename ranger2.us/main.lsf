@@ -10,6 +10,7 @@ Static main
 	Address 0x02000000
 	StackSize 0 2048
 	Object main.nef.p/asm_main.s.o
+    Library libmb.a
 	Library libctrdg.a
 	Library libmath.a
 	Library libstd.a

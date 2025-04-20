@@ -4974,7 +4974,7 @@ _02120D5C:
 	ldr r0, _02120DA4 ; =ov11_02123EA8
 	mov r2, #0
 	str r2, [r1]
-	bl sub_02071450
+	bl WM_End
 	mov r0, #5
 	strh r0, [r4, #2]
 	ldmia sp!, {r3, r4, r5, pc}
@@ -8082,12 +8082,12 @@ ov11_02123794: ; 0x02123794
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x20
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	bl sub_02062724
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x800
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	ldr r0, [r5, #0x14]
 	mov r2, #0
 	ldr r0, [r0, #0x24]
@@ -8504,10 +8504,10 @@ ov11_02123D20: ; 0x02123D20
 	add r2, sp, #0x30
 	bl sub_02064F28
 	add r0, sp, #0x60
-	bl NitroSDK_FS_InitFile
+	bl FS_InitFile
 	add r0, sp, #0x60
 	add r1, sp, #0
-	bl NitroSDK_FS_OpenFile
+	bl FS_OpenFile
 	cmp r0, #0
 	bne _02123D9C
 	mov r0, r6
@@ -8572,11 +8572,11 @@ ov11_02123E40: ; 0x02123E40
 	mov r2, #0
 	ldr r0, _02123E8C ; =ov11_02123E94
 	str r2, [r1]
-	bl sub_02071418
+	bl WM_Reset
 	cmp r0, #2
 	beq _02123E80
 	ldr r0, _02123E90 ; =ov11_02123EA8
-	bl sub_02071450
+	bl WM_End
 	cmp r0, #2
 	ldrne r0, _02123E88 ; =OVERLAY11_BSS_02169B40
 	movne r1, #1
@@ -10005,7 +10005,7 @@ ov11_02125000: ; 0x02125000
 	mov r4, r0
 	mov r0, #1
 	strb r0, [r4, #0xc]
-	bl sub_02070EFC
+	bl WM_GetAllowedChannel
 	strh r0, [r4, #0xe]
 	ldrh r0, [r4, #0xe]
 	cmp r0, #0
@@ -10027,7 +10027,7 @@ ov11_02125048: ; 0x02125048
 	mov r4, r0
 	bl sub_02070FAC
 	strh r0, [r4, #0x18]
-	bl sub_02071228
+	bl WM_GetNextTgid
 	strh r0, [r4, #0xc]
 	ldmia sp!, {r4, pc}
 	arm_func_end ov11_02125048
@@ -10059,7 +10059,7 @@ ov11_021250B0: ; 0x021250B0
 	stmdb sp!, {r3, r4, r5, lr}
 	bl ov11_02126DD0
 	mov r4, r0
-	bl sub_02070EFC
+	bl WM_GetAllowedChannel
 	cmp r0, #0
 	ldmeqia sp!, {r3, r4, r5, pc}
 	ldrh r5, [r4, #4]
@@ -11167,7 +11167,7 @@ _02125F3C:
 ov11_02125F50: ; 0x02125F50
 	stmdb sp!, {r3, lr}
 	ldr r0, _02125F78 ; =ov11_0212511C
-	bl sub_02070B80
+	bl WM_SetIndCallback
 	cmp r0, #0
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -11248,7 +11248,7 @@ ov11_0212600C: ; 0x0212600C
 	rsbne r0, r0, #0x20
 	addne r5, r5, r0
 	add r0, sp, #0
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	mov r2, #0
 	strb r2, [r4]
 	strb r2, [r4, #1]
@@ -11347,7 +11347,7 @@ _02126188:
 	add r5, r5, r0
 	bl ov11_02126ED0
 	str r5, [r0, #0xc]
-	bl sub_02071228
+	bl WM_GetNextTgid
 	add sp, sp, #8
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -12040,7 +12040,7 @@ ov11_02126988: ; 0x02126988
 	mov r2, r6
 	mov r1, #0
 	str ip, [sp, #8]
-	bl sub_02071DA0
+	bl WM_SetMPDataToPortEx
 	cmp r0, #2
 	addeq sp, sp, #0xc
 	moveq r0, #1
@@ -12120,7 +12120,7 @@ ov11_02126A88: ; 0x02126A88
 	strh r0, [r5, #4]
 	ldr r0, _02126AD8 ; =ov11_021252A4
 	mov r1, r5
-	bl sub_02071490
+	bl WM_SetParentParameter
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, r4, r5, pc}
@@ -12152,7 +12152,7 @@ ov11_02126B04: ; 0x02126B04
 	bl ov11_02126DD0
 	mov r1, r0
 	ldr r0, _02126B30 ; =ov11_02125758
-	bl sub_02071668
+	bl WM_StartScan
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12191,7 +12191,7 @@ ov11_02126B5C: ; 0x02126B5C
 	mov r2, r4
 	mov r3, #1
 	str ip, [sp]
-	bl sub_020718E4
+	bl WM_StartConnectEx
 	cmp r0, #2
 	addeq sp, sp, #4
 	moveq r0, #1
@@ -12227,7 +12227,7 @@ ov11_02126BDC: ; 0x02126BDC
 	ldr r1, _02126C88 ; =ov11_02125D58
 	mov r0, #4
 	mov r2, #0
-	bl sub_02070BC4
+	bl WM_SetPortCallback
 	cmp r0, #0
 	beq _02126C0C
 	bl ov11_02126964
@@ -12306,7 +12306,7 @@ _02126CE0: .word ov11_02125E64
 ov11_02126CE4: ; 0x02126CE4
 	stmdb sp!, {r3, lr}
 	ldr r0, _02126D0C ; =ov11_02125EA0
-	bl sub_02071418
+	bl WM_Reset
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12322,7 +12322,7 @@ _02126D0C: .word ov11_02125EA0
 ov11_02126D10: ; 0x02126D10
 	stmdb sp!, {r3, lr}
 	ldr r0, _02126D38 ; =ov11_02125F18
-	bl sub_02071450
+	bl WM_End
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -12914,7 +12914,7 @@ ov11_02127334: ; 0x02127334
 	ldr r0, _02127378 ; =ov11_0212737C
 	ldr r1, [r1]
 	add r1, r1, #0xf20
-	bl sub_02071490
+	bl WM_SetParentParameter
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -13065,7 +13065,7 @@ _021274E4:
 _02127548:
 	ldrh r1, [r4, #0x10]
 	mov r0, #0
-	bl sub_020719B0
+	bl WM_Disconnect
 	cmp r0, #2
 	ldmeqia sp!, {r3, r4, r5, pc}
 	bl ov11_02127310
@@ -13315,7 +13315,7 @@ ov11_02127844: ; 0x02127844
 	bl ov11_021272F8
 	ldr r0, _02127878 ; =ov11_0212787C
 	mov r1, #0
-	bl sub_020719B0
+	bl WM_Disconnect
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -13347,7 +13347,7 @@ ov11_021278A0: ; 0x021278A0
 	mov r0, #3
 	bl ov11_021272F8
 	ldr r0, _021278CC ; =ov11_021278D0
-	bl sub_02071418
+	bl WM_Reset
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -13401,7 +13401,7 @@ ov11_02127904: ; 0x02127904
 	str ip, [sp, #4]
 	mov r4, #2
 	str r4, [sp, #8]
-	bl sub_02071DA0
+	bl WM_SetMPDataToPortEx
 	cmp r0, #2
 	moveq r0, #1
 	movne r0, #0
@@ -13575,7 +13575,7 @@ ov11_02127B38: ; 0x02127B38
 	stmdb sp!, {r3, lr}
 	sub sp, sp, #8
 	add r0, sp, #0
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	ldr r0, _02127C14 ; =0x027FFC3C
 	ldrh r1, [sp]
 	ldr ip, [r0]
@@ -13638,7 +13638,7 @@ _02127C1C: .word 0x00010DCD
 ov11_02127C20: ; 0x02127C20
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02070EFC
+	bl WM_GetAllowedChannel
 	cmp r0, #0x8000
 	bne _02127C4C
 	mov r0, #3
@@ -13931,7 +13931,7 @@ ov11_02127FD4: ; 0x02127FD4
 	ldr r1, _02128018 ; =ov11_0212801C
 	ldr r0, [r0]
 	mov r2, #2
-	bl sub_020713BC
+	bl WM_Initialize
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -13958,7 +13958,7 @@ ov11_0212801C: ; 0x0212801C
 	arm_func_end ov11_0212801C
 _0212803C:
 	ldr r0, _02128068 ; =ov11_02127FB0
-	bl sub_02070B80
+	bl WM_SetIndCallback
 	cmp r0, #0
 	beq _0212805C
 	bl ov11_02127310
@@ -14081,7 +14081,7 @@ ov11_021281CC: ; 0x021281CC
 	str r0, [r2, #0x338]
 	mov r0, r3, lsr #0x10
 	mov r2, #0
-	bl sub_02070BC4
+	bl WM_SetPortCallback
 	cmp r0, #0
 	ldmeqia sp!, {r3, pc}
 	mov r0, #9
@@ -14179,7 +14179,7 @@ ov11_021282FC: ; 0x021282FC
 	mov r0, #3
 	bl ov11_021272F8
 	ldr r0, _0212832C ; =ov11_02127A3C
-	bl sub_02071450
+	bl WM_End
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -14284,7 +14284,7 @@ ov11_021283E8: ; 0x021283E8
 	mov r2, ip, lsr #0x10
 	mov r0, #0
 	str lr, [sp, #4]
-	bl sub_02072DBC
+	bl WM_SetGameInfo
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -14604,7 +14604,7 @@ ov11_021287A8: ; 0x021287A8
 	ldr r0, [r2]
 	add r0, r0, r4
 	add r0, r0, #0x5c
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	ldr r1, _021287E8 ; =OVERLAY11_BSS_02169C50
 	mov r0, #3
 	ldr r1, [r1]
@@ -15253,7 +15253,7 @@ ov11_02129080: ; 0x02129080
 	str r1, [r0, #0xd88]
 	bl ov11_02127ED0
 	ldr r0, _021290B8 ; =ov11_02129058
-	bl sub_02070B80
+	bl WM_SetIndCallback
 	ldr r0, _021290B4 ; =OVERLAY11_BSS_02169C58
 	ldr r0, [r0, #8]
 	ldr r0, [r0, #0xd94]
@@ -20706,7 +20706,7 @@ ov11_0212D8A0: ; 0x0212D8A0
 	arm_func_end ov11_0212D8A0
 _0212D8E8:
 	add r0, sp, #0
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	ldrh r0, [sp, #2]
 	ldr r3, _0212D974 ; =0x0000D679
 	mov r6, #0
@@ -21273,7 +21273,7 @@ _0212E0B0:
 	ldr r1, [r4, #0x60]
 	mov r0, #0
 	mov r2, #4
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	ldr r0, [r4, #0x60]
 	bl ov11_021267C4
 	mov r0, #0xa
@@ -21629,7 +21629,7 @@ _0212E5BC:
 	ldr r1, [r4, #0x64]
 	mov r0, #0
 	mov r2, #4
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	ldr ip, _0212E9A4 ; =DAT_overlay_11_021664e0
 	ldr r0, _0212E9A8 ; =0x00000457
 	ldrh r1, [ip]
@@ -22978,7 +22978,7 @@ ov11_0212F7C0: ; 0x0212F7C0
 	movs r0, #0
 	arm_func_end ov11_0212F7C0
 _0212F7E4:
-	bl sub_02070EFC
+	bl WM_GetAllowedChannel
 	cmp r0, #0x8000
 	bne _0212F800
 	mov r0, #3
@@ -23063,7 +23063,7 @@ _0212F900:
 	ldr r0, _0212F934 ; =ov11_0212F938
 	ldr r1, [r1, #4]
 	add r1, r1, #0xfc0
-	bl sub_02071668
+	bl WM_StartScan
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r4, r5, r6, pc}
@@ -23323,7 +23323,7 @@ ov11_0212FC50: ; 0x0212FC50
 	ldr r1, _0212FC94 ; =ov11_0212FC98
 	ldr r0, [r0, #4]
 	mov r2, #2
-	bl sub_020713BC
+	bl WM_Initialize
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -23350,7 +23350,7 @@ ov11_0212FC98: ; 0x0212FC98
 	arm_func_end ov11_0212FC98
 _0212FCB8:
 	ldr r0, _0212FCF4 ; =ov11_0212FC0C
-	bl sub_02070B80
+	bl WM_SetIndCallback
 	cmp r0, #0
 	beq _0212FCD8
 	bl ov11_0212F6CC
@@ -23384,7 +23384,7 @@ _0212FD1C:
 	mov r0, #3
 	bl ov11_0212F64C
 	ldr r0, _0212FD70 ; =ov11_0212FB8C
-	bl sub_02071450
+	bl WM_End
 	cmp r0, #2
 	beq _0212FD64
 	mov r0, #9
@@ -23431,7 +23431,7 @@ ov11_0212FDA4: ; 0x0212FDA4
 	mov r0, #3
 	bl ov11_0212F64C
 	ldr r0, _0212FDD0 ; =ov11_0212FDD4
-	bl sub_02071418
+	bl WM_Reset
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -26371,7 +26371,7 @@ ov11_02132564: ; 0x02132564
 	mov r0, #0
 	mov r2, #0x18
 	str r1, [r3, #0x10]
-	bl NitroSDK_MIi_CpuClear32
+	bl MIi_CpuClear32
 	ldr r0, _02132704 ; =OVERLAY11_BSS_02169C94
 	ldr r1, [r4]
 	ldr r3, [r0, #0x10]
@@ -26405,22 +26405,22 @@ ov11_02132564: ; 0x02132564
 	str r0, [r1, #0xc]
 	ldr r1, [r1]
 	mov r0, #0
-	bl NitroSDK_MIi_CpuClear32
+	bl MIi_CpuClear32
 	mov r0, #0
 	ldr r1, _02132704 ; =OVERLAY11_BSS_02169C94
 	mov r2, #0x2300
 	ldr r1, [r1, #4]
-	bl NitroSDK_MIi_CpuClear32
+	bl MIi_CpuClear32
 	mov r0, #0
 	ldr r1, _02132704 ; =OVERLAY11_BSS_02169C94
 	mov r2, #0x58
 	ldr r1, [r1, #8]
-	bl NitroSDK_MIi_CpuClear32
+	bl MIi_CpuClear32
 	mov r0, #0
 	ldr r1, _02132704 ; =OVERLAY11_BSS_02169C94
 	mov r2, #0xc
 	ldr r1, [r1, #0xc]
-	bl NitroSDK_MIi_CpuClear32
+	bl MIi_CpuClear32
 	ldr r1, _02132704 ; =OVERLAY11_BSS_02169C94
 	ldrb r2, [r4, #8]
 	ldr r0, [r1]
@@ -27357,11 +27357,11 @@ _02133278:
 	add r1, r7, #0x28
 	mov r0, #0
 	mov r2, #4
-	bl NitroSDK_MIi_CpuClear32
+	bl MIi_CpuClear32
 	add r1, r8, #0x780
 	mov r0, #0
 	mov r2, #0xc0
-	bl NitroSDK_MIi_CpuClear32
+	bl MIi_CpuClear32
 	add sp, sp, #0xc4
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
@@ -28118,7 +28118,7 @@ _02133C14:
 	add r1, r4, #0x300
 	mov r0, #0
 	mov r2, #0x144
-	bl NitroSDK_MIi_CpuClear32
+	bl MIi_CpuClear32
 	mov r0, r4
 	bl ov11_02133CC4
 	strb r0, [r4, #0xd10]
@@ -28134,7 +28134,7 @@ _02133C4C:
 	add r1, r4, #0x300
 	mov r0, #0
 	mov r2, #0x144
-	bl NitroSDK_MIi_CpuClear32
+	bl MIi_CpuClear32
 	mov r1, #0
 	mov r0, r4
 	strb r1, [r4, #0xd0f]
@@ -30266,7 +30266,7 @@ _021357D8:
 	ldmneia sp!, {r4, pc}
 	ldr r0, _02135874 ; =OSi_ThreadInfo
 	ldr r0, [r0, #4]
-	bl sub_02065920
+	bl OS_GetThreadPriority
 	ldr r1, _02135868 ; =OVERLAY11_BSS_02169CA8
 	ldr r2, [r1, #8]
 	sub r1, r0, #1
@@ -31005,7 +31005,7 @@ _02136284:
 	mov r1, #0x30
 	add r0, sp, #0x16
 	strb r1, [r4, #0x1d]
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	ldr r5, _0213646C ; =s_02x_overlay_11_02166910
 	add r7, sp, #0x16
 	add r8, r4, #0x1f
@@ -33071,7 +33071,7 @@ _02137F48:
 _02137F70:
 	ldr r0, _02138D0C ; =OSi_ThreadInfo
 	ldr r0, [r0, #4]
-	bl sub_02065920
+	bl OS_GetThreadPriority
 	sub r1, r0, #1
 	ldr r0, [r5, #0x14]
 	bl ov11_02136974
@@ -33260,7 +33260,7 @@ _021381D4:
 _0213822C:
 	ldr r0, _02138D0C ; =OSi_ThreadInfo
 	ldr r0, [r0, #4]
-	bl sub_02065920
+	bl OS_GetThreadPriority
 	ldr r2, _02138CFC ; =OVERLAY11_BSS_02169CCC
 	sub r1, r0, #1
 	ldr r0, [r2, #0x14]
@@ -33543,7 +33543,7 @@ _021385EC:
 _0213863C:
 	ldr r0, _02138D0C ; =OSi_ThreadInfo
 	ldr r0, [r0, #4]
-	bl sub_02065920
+	bl OS_GetThreadPriority
 	sub r1, r0, #1
 	ldr r0, [r5, #0x14]
 	bl ov11_02136974
@@ -33898,7 +33898,7 @@ _02138B34:
 _02138B5C:
 	ldr r0, _02138D0C ; =OSi_ThreadInfo
 	ldr r0, [r0, #4]
-	bl sub_02065920
+	bl OS_GetThreadPriority
 	sub r1, r0, #1
 	ldr r0, [r5, #0x14]
 	bl ov11_02136974
@@ -34413,7 +34413,7 @@ _0213926C:
 _021392AC:
 	ldr r0, _0213932C ; =OSi_ThreadInfo
 	ldr r0, [r0, #4]
-	bl sub_02065920
+	bl OS_GetThreadPriority
 	ldr r1, _0213930C ; =OVERLAY11_BSS_02169D5C
 	ldr r2, [r1]
 	sub r1, r0, #1
@@ -35942,7 +35942,7 @@ _0213A764:
 	add r1, r8, #0x300
 	mov r0, #0
 	mov r2, #0x100
-	bl sub_02067D80
+	bl MIi_CpuClear16
 _0213A780:
 	mov r4, #0
 	mov r5, r4
@@ -36063,7 +36063,7 @@ ov11_0213A910: ; 0x0213A910
 	mov r1, r7
 	mov r0, #0
 	mov r2, #0x400
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	mov r2, #0
 	mov r1, #0xff
 	arm_func_end ov11_0213A910
@@ -36101,7 +36101,7 @@ ov11_0213A990: ; 0x0213A990
 	add r1, r5, r4, lsl #8
 	mov r0, #0
 	mov r2, #0x100
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	add r0, r5, r4, lsl #8
 	mov r1, #0xff
 	strb r1, [r0, #0xe7]
@@ -36250,7 +36250,7 @@ ov11_0213AB40: ; 0x0213AB40
 	arm_func_end ov11_0213AB40
 _0213ABBC:
 	add r0, sp, #0
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	ldrb r0, [sp, #1]
 	ldr r5, _0213AD10 ; =0x5D588B65
 	ldr r6, _0213AD14 ; =0x00269EC3
@@ -36434,7 +36434,7 @@ ov11_0213ADB0: ; 0x0213ADB0
 	arm_func_end ov11_0213ADB0
 _0213AE4C:
 	add r0, sp, #0
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	ldrb r0, [sp, #1]
 	ldr r5, _0213AF44 ; =0x5D588B65
 	ldr r6, _0213AF48 ; =0x00269EC3
@@ -42237,14 +42237,14 @@ ov11_0213E144: ; 0x0213E144
 	add r0, r5, #0
 	add r0, #0xc
 	mov r2, #0x20
-	blx sub_02067DA8
+	blx MIi_CpuCopy16
 	ldrh r0, [r5, #0x36]
 	add r1, r4, #0
 	add r1, #0x30
 	str r0, [r4, #0x24]
 	add r0, r5, #4
 	mov r2, #6
-	blx sub_02067DA8
+	blx MIi_CpuCopy16
 	mov r1, #0
 	ldr r2, _0213E1CC ; =DAT_overlay_11_02167e08
 	add r0, r1, #0
@@ -42310,7 +42310,7 @@ ov11_0213E1D0: ; 0x0213E1D0
 	mov r0, #0
 	add r1, #0xc
 	mov r2, #0x20
-	blx sub_02067D80
+	blx MIi_CpuClear16
 	ldr r0, [r5]
 	add r1, r4, #0
 	strh r0, [r4, #0xa]
@@ -46377,7 +46377,7 @@ _02140030: .word OVERLAY11_BSS_0216B284
 	thumb_func_start ov11_02140034
 ov11_02140034: ; 0x02140034
 	push {r3, lr}
-	blx sub_0206756C
+	blx OS_GetMacAddress
 	mov r0, #1
 	pop {r3, pc}
 	.align 2, 0
@@ -52462,7 +52462,7 @@ ov11_021435BC: ; 0x021435BC
 	mov r4, #0
 	ldrh r5, [r0]
 	strh r4, [r0]
-	bl sub_02070EFC
+	bl WM_GetAllowedChannel
 	cmp r0, #0x8000
 	beq _021435E4
 	bl sub_02070F1C
@@ -56197,7 +56197,7 @@ ov11_02146864: ; 0x02146864
 	mov r0, #0
 	mov r2, #0x104
 	strb r0, [r3]
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	mov r3, #0x50
 	mov r2, #0xc
 	ldr r0, _02146968 ; =s_NINTENDO_DS_overlay_11_021658bc
@@ -56242,7 +56242,7 @@ _021468D0:
 	strh r2, [r0, #0xe]
 	ldr r0, [r1, #4]
 	add r0, r0, #0x110
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	ldr r0, _0214696C ; =ov11_02146A24
 	ldr r1, _02146970 ; =ov11_02146A34
 	blx ov11_0213E22C
@@ -57115,7 +57115,7 @@ _021473DC:
 	bl ov11_0215A4AC
 	add r1, r4, #0x1c000
 	mov r2, #0x16
-	bl sub_02067DA8
+	bl MIi_CpuCopy16
 	ldr r0, _02147568 ; =OVERLAY11_BSS_0216C310
 	ldr r0, [r0]
 	add r0, r0, #0x1e000
@@ -58552,7 +58552,7 @@ ov11_021485B0: ; 0x021485B0
 	cmp r0, #0
 	ldmneia sp!, {r3, pc}
 	mov r0, #0x1000000
-	bl NitroSDK_OS_SpinWait
+	bl OS_SpinWait
 	bl sub_0206DC00
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_021485B0
@@ -58621,7 +58621,7 @@ ov11_02148698: ; 0x02148698
 	bl ov11_0215BEB0
 	mov fp, r0
 	add r0, sp, #0x14
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	ldrb r1, [sp, #0x15]
 	ldr r2, _0214885C ; =u_02X_02X_02X_02X_02X_02X_overlay_11_021685ac
 	add r0, sp, #0x1a
@@ -59845,7 +59845,7 @@ ov11_021495D0: ; 0x021495D0
 	cmp r0, #0
 	ldmneia sp!, {r3, pc}
 	mov r0, #0x1000000
-	bl NitroSDK_OS_SpinWait
+	bl OS_SpinWait
 	bl sub_0206DC00
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_021495D0
@@ -60787,12 +60787,12 @@ ov11_0214A0CC: ; 0x0214A0CC
 	mov r0, #0
 	add r1, sp, #0x10
 	mov r2, #0x16
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	ldrb r2, [r5, #1]
 	add r0, r5, #2
 	add r1, sp, #0x10
 	mov r2, r2, lsl #1
-	bl sub_02067DA8
+	bl MIi_CpuCopy16
 	mov r0, #0x1c
 	str r0, [sp]
 	mov r0, #2
@@ -73237,12 +73237,12 @@ ov11_0215425C: ; 0x0215425C
 	add r1, sp, #0
 	mov r0, #0
 	mov r2, #0x16
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	ldrh r2, [sp, #0x30]
 	add r0, sp, #0x1a
 	add r1, sp, #0
 	mov r2, r2, lsl #1
-	bl sub_02067DA8
+	bl MIi_CpuCopy16
 	add r0, sp, #0
 	mov r1, #0x28
 	bl ov11_02143070
@@ -73765,7 +73765,7 @@ _02154908:
 	mov r0, r8
 	mov r1, r4
 	mov r2, r6
-	bl sub_02067DA8
+	bl MIi_CpuCopy16
 	add r5, r5, #1
 	cmp r5, r7
 	add r8, r8, #0x40
@@ -73828,7 +73828,7 @@ ov11_021549C4: ; 0x021549C4
 	mov r4, r0
 	mov r2, #0x20
 	ldmib r1, {r0, r1}
-	bl sub_02067DA8
+	bl MIi_CpuCopy16
 	mov r1, r4
 	mov r0, #1
 	bl ov11_0215DAD0
@@ -73861,7 +73861,7 @@ ov11_02154A1C: ; 0x02154A1C
 	ldr r0, [r1, #4]
 	mov r1, #0x5000000
 	mov r2, #0x200
-	bl sub_02067DA8
+	bl MIi_CpuCopy16
 	mov r1, r4
 	mov r0, #1
 	bl ov11_0215DAD0
@@ -74432,7 +74432,7 @@ ov11_02155144: ; 0x02155144
 	ldmeqia sp!, {r3, pc}
 	arm_func_end ov11_02155144
 _02155158:
-	bl sub_02070EFC
+	bl WM_GetAllowedChannel
 	cmp r0, #0x8000
 	bne _02155158
 	ldr r0, _02155174 ; =OVERLAY11_BSS_0216C3C0
@@ -74450,12 +74450,12 @@ ov11_02155178: ; 0x02155178
 	ldr r1, [r1]
 	mov r2, #0x348
 	add r1, r1, #0x1300
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	ldr r0, _02155238 ; =OVERLAY11_BSS_0216C3C0
 	ldr r1, _0215523C ; =ov11_02155370
 	ldr r0, [r0]
 	mov r2, #3
-	bl sub_020713BC
+	bl WM_Initialize
 	cmp r0, #2
 	movne r0, #0
 	ldmneia sp!, {r3, r4, r5, pc}
@@ -74537,7 +74537,7 @@ ov11_02155278: ; 0x02155278
 	cmp r0, #2
 	beq _021552F4
 	ldr r0, _02155310 ; =ov11_02155370
-	bl sub_02071418
+	bl WM_Reset
 	cmp r0, #2
 	movne r0, #0
 	ldmneia sp!, {r4, pc}
@@ -74555,7 +74555,7 @@ _021552D0:
 	bne _021552D0
 _021552F4:
 	ldr r0, _02155310 ; =ov11_02155370
-	bl sub_02071450
+	bl WM_End
 	cmp r0, #2
 	movne r0, #0
 	moveq r0, #1
@@ -75470,7 +75470,7 @@ ov11_02155E50: ; 0x02155E50
 	mov r0, #0
 	ldr r1, [r1]
 	mov r2, #0x400
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	ldr r0, _02155EFC ; =OVERLAY11_BSS_0216C3C4
 	mov r3, #0
 	mov r2, #0xff
@@ -76646,7 +76646,7 @@ ov11_02156D98: ; 0x02156D98
 	str r1, [r3, #0xb8c]
 	ldr r0, [r4]
 	ldr r1, _02156F08 ; =ov11_0215704C
-	bl sub_020713BC
+	bl WM_Initialize
 	cmp r0, #2
 	bne _02156EEC
 	arm_func_end ov11_02156D98
@@ -76767,7 +76767,7 @@ ov11_02156F50: ; 0x02156F50
 	cmp r0, #2
 	beq _02156FCC
 	ldr r0, _0215702C ; =ov11_0215704C
-	bl sub_02071418
+	bl WM_Reset
 	cmp r0, #2
 	movne r0, #0
 	ldmneia sp!, {r4, pc}
@@ -76785,7 +76785,7 @@ _02156FA8:
 	bne _02156FA8
 _02156FCC:
 	ldr r0, _0215702C ; =ov11_0215704C
-	bl sub_02071450
+	bl WM_End
 	cmp r0, #2
 	movne r0, #0
 	ldmneia sp!, {r4, pc}
@@ -78044,16 +78044,16 @@ _021580AC:
 	add r0, r0, #0x1b000
 	ldr r0, [r0, #0x140]
 	mov r3, r4
-	bl sub_02076B18
+	bl MB_Init
 	cmp r0, #0
 	beq _02158118
 	bl OS_Terminate
 _02158118:
 	mov r0, #0x100
 	mov r1, #1
-	bl sub_02076D6C
+	bl MB_SetParentCommParam
 	ldr r0, _02158140 ; =ov11_02158734
-	bl sub_02072F9C
+	bl MB_CommSetParentStateCallback
 	mov r0, #1
 	bl ov11_02158A58
 	add sp, sp, #0x7c
@@ -78070,7 +78070,7 @@ ov11_02158144: ; 0x02158144
 	mov r0, #2
 	bl ov11_02158A58
 	mov r0, r4
-	bl sub_020770BC
+	bl MB_StartParentFromIdle
 	cmp r0, #0
 	beq _02158174
 	mov r0, #7
@@ -78096,10 +78096,10 @@ ov11_0215818C: ; 0x0215818C
 	moveq r4, r5
 	beq _021581D4
 	add r0, sp, #0
-	bl NitroSDK_FS_InitFile
+	bl FS_InitFile
 	ldr r1, [r6]
 	add r0, sp, #0
-	bl NitroSDK_FS_OpenFile
+	bl FS_OpenFile
 	cmp r0, #0
 	addeq sp, sp, #0x48
 	moveq r0, r5
@@ -78108,7 +78108,7 @@ ov11_0215818C: ; 0x0215818C
 	arm_func_end ov11_0215818C
 _021581D4:
 	mov r0, r4
-	bl sub_02074374
+	bl MB_GetSegmentLength
 	cmp r0, #0
 	beq _02158240
 	ldr r1, _0215825C ; =OVERLAY11_BSS_0216C3DC
@@ -78123,7 +78123,7 @@ _021581D4:
 	beq _02158240
 	mov r0, r4
 	mov r2, #0x10000
-	bl sub_020743F4
+	bl MB_ReadSegment
 	cmp r0, #0
 	beq _02158240
 	ldr r1, _0215825C ; =OVERLAY11_BSS_0216C3DC
@@ -78131,14 +78131,14 @@ _021581D4:
 	ldr r1, [r1]
 	add r1, r1, #0x1b000
 	ldr r1, [r1, #0x144]
-	bl sub_020748C8
+	bl MB_RegisterFile
 	cmp r0, #0
 	movne r5, #1
 _02158240:
 	add r0, sp, #0
 	cmp r4, r0
 	bne _02158250
-	bl NitroSDK_FS_CloseFile
+	bl FS_CloseFile
 _02158250:
 	mov r0, r5
 	add sp, sp, #0x48
@@ -78151,7 +78151,7 @@ ov11_02158260: ; 0x02158260
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r1, #1
 	mov r4, r0
-	bl sub_0207309C
+	bl MB_CommResponseRequest
 	cmp r0, #0
 	ldmneia sp!, {r3, r4, r5, pc}
 	mov r0, #1
@@ -78185,7 +78185,7 @@ ov11_02158260: ; 0x02158260
 	strh r1, [r2, #0xc]
 	bl OS_RestoreInterrupts
 	mov r0, r4
-	bl sub_020771F4
+	bl MB_DisconnectChild
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _021582FC: .word OVERLAY11_BSS_0216C3DC
@@ -78196,7 +78196,7 @@ ov11_02158300: ; 0x02158300
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r1, #0
 	mov r4, r0
-	bl sub_0207309C
+	bl MB_CommResponseRequest
 	cmp r0, #0
 	bne _0215839C
 	mov r0, #1
@@ -78230,7 +78230,7 @@ ov11_02158300: ; 0x02158300
 	strh r1, [r2, #0xc]
 	bl OS_RestoreInterrupts
 	mov r0, r4
-	bl sub_020771F4
+	bl MB_DisconnectChild
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end ov11_02158300
 _0215839C:
@@ -78256,7 +78256,7 @@ ov11_021583D8: ; 0x021583D8
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r1, #2
 	mov r4, r0
-	bl sub_0207309C
+	bl MB_CommResponseRequest
 	cmp r0, #0
 	bne _02158474
 	mov r0, #1
@@ -78290,7 +78290,7 @@ ov11_021583D8: ; 0x021583D8
 	strh r1, [r2, #0xc]
 	bl OS_RestoreInterrupts
 	mov r0, r4
-	bl sub_020771F4
+	bl MB_DisconnectChild
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end ov11_021583D8
 _02158474:
@@ -78360,7 +78360,7 @@ _021584C8:
 	strh r1, [r2, #0xc]
 	bl OS_RestoreInterrupts
 	mov r0, r5
-	bl sub_020771F4
+	bl MB_DisconnectChild
 	b _02158574
 _0215856C:
 	mov r0, r5
@@ -78393,7 +78393,7 @@ _021585B4:
 	tst r0, r5, lsl r6
 	beq _021585D8
 	mov r0, r6
-	bl sub_02073048
+	bl MB_CommIsBootable
 	cmp r0, #0
 	moveq r0, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
@@ -78424,7 +78424,7 @@ _02158610:
 	beq _021586B8
 	mov r0, r7
 	mov r1, r5
-	bl sub_0207309C
+	bl MB_CommResponseRequest
 	cmp r0, #0
 	orrne r0, r8, r6, lsl r7
 	movne r0, r0, lsl #0x10
@@ -78459,7 +78459,7 @@ _02158610:
 	strh r1, [r2, #0xc]
 	bl OS_RestoreInterrupts
 	mov r0, r7
-	bl sub_020771F4
+	bl MB_DisconnectChild
 _021586B8:
 	add r0, r7, #1
 	mov r0, r0, lsl #0x10
@@ -78483,7 +78483,7 @@ ov11_021586F0: ; 0x021586F0
 	stmdb sp!, {r3, lr}
 	mov r0, #6
 	bl ov11_02158A58
-	bl sub_020771B8
+	bl MB_EndToIdle
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_021586F0
 
@@ -78498,7 +78498,7 @@ ov11_02158704: ; 0x02158704
 	ldreqh r0, [r2, #0xc]
 	cmpeq r1, r0
 	ldmneia sp!, {r3, pc}
-	bl sub_020771B8
+	bl MB_EndToIdle
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02158730: .word OVERLAY11_BSS_0216C3DC
@@ -78617,7 +78617,7 @@ _021588B4:
 	strh r1, [r3, #4]
 	bl ov11_02158260
 	mov r0, r5
-	bl sub_02072FC4
+	bl MB_CommGetChildUser
 	cmp r0, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
 	ldr r1, _02158A54 ; =OVERLAY11_BSS_0216C3DC
@@ -78973,7 +78973,7 @@ ov11_02158D54: ; 0x02158D54
 	ldr r1, _02158D90 ; =OVERLAY11_BSS_0216C3E0
 	ldr r0, _02158D94 ; =ov11_02158D98
 	ldr r1, [r1, #4]
-	bl sub_02071490
+	bl WM_SetParentParameter
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79154,7 +79154,7 @@ _02158F90:
 	bne _02158FD8
 	ldrh r1, [r4, #0x10]
 	mov r0, #0
-	bl sub_020719B0
+	bl WM_Disconnect
 	cmp r0, #2
 	ldmeqia sp!, {r3, r4, r5, pc}
 	bl ov11_02158D34
@@ -79517,7 +79517,7 @@ ov11_02159428: ; 0x02159428
 	bl ov11_02158CB8
 	ldr r0, _0215945C ; =ov11_02159460
 	mov r1, #0
-	bl sub_020719B0
+	bl WM_Disconnect
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79549,7 +79549,7 @@ ov11_02159484: ; 0x02159484
 	mov r0, #3
 	bl ov11_02158CB8
 	ldr r0, _021594B0 ; =ov11_021594B4
-	bl sub_02071418
+	bl WM_Reset
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79628,7 +79628,7 @@ ov11_0215954C: ; 0x0215954C
 	stmdb sp!, {r3, lr}
 	sub sp, sp, #8
 	add r0, sp, #0
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	ldr r2, _02159618 ; =0x027FFC3C
 	ldrh r0, [sp]
 	ldr r3, [r2]
@@ -79687,7 +79687,7 @@ _02159620: .word 0x00010DCD
 ov11_02159624: ; 0x02159624
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02070EFC
+	bl WM_GetAllowedChannel
 	cmp r0, #0x8000
 	bne _02159650
 	mov r0, #3
@@ -79969,7 +79969,7 @@ ov11_021599B0: ; 0x021599B0
 	ldr r0, [r0, #4]
 	mov r2, #2
 	add r0, r0, #0x80
-	bl sub_020713BC
+	bl WM_Initialize
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -79996,7 +79996,7 @@ ov11_021599FC: ; 0x021599FC
 	arm_func_end ov11_021599FC
 _02159A1C:
 	ldr r0, _02159A48 ; =ov11_02159990
-	bl sub_02070B80
+	bl WM_SetIndCallback
 	cmp r0, #0
 	beq _02159A3C
 	bl ov11_02158D34
@@ -80294,7 +80294,7 @@ _02159DE8:
 	mov r0, #3
 	bl ov11_02158CB8
 	ldr r0, _02159E18 ; =ov11_021594E8
-	bl sub_02071450
+	bl WM_End
 	cmp r0, #2
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
@@ -80405,7 +80405,7 @@ _02159F54:
 	movlo r0, #0
 	ldmloia sp!, {r3, pc}
 _02159F80:
-	bl sub_020771B8
+	bl MB_EndToIdle
 	ldr r0, _02159FE4 ; =OVERLAY11_BSS_0216C3E8
 	mov r3, #0x10
 	ldr r1, [r0]
@@ -80446,7 +80446,7 @@ ov11_02159FE8: ; 0x02159FE8
 	mov r1, #1
 	ldr r0, [r0]
 	strb r1, [r0, #0xa90]
-	bl sub_02071228
+	bl WM_GetNextTgid
 	ldr r3, _0215A064 ; =OVERLAY11_BSS_0216C3E8
 	mov r2, #0x40
 	ldr r1, [r3]
@@ -80620,7 +80620,7 @@ _0215A234:
 	bl ov11_0215A960
 	ldmia sp!, {r3, pc}
 _0215A250:
-	bl sub_020771B8
+	bl MB_EndToIdle
 	ldr r0, _0215A460 ; =OVERLAY11_BSS_0216C3E8
 	mov r3, #0
 	ldr r2, [r0]
@@ -80795,7 +80795,7 @@ ov11_0215A4AC: ; 0x0215A4AC
 	mov r0, #1
 	bx ip
 	.align 2, 0
-_0215A4B8: .word sub_02072FC4
+_0215A4B8: .word MB_CommGetChildUser
 	arm_func_end ov11_0215A4AC
 
 	arm_func_start ov11_0215A4BC
@@ -81404,10 +81404,10 @@ ov11_0215AC74: ; 0x0215AC74
 	ldr r1, _0215AE04 ; =OVERLAY11_BSS_0216C3EC
 	str r0, [r1]
 	add r0, sp, #0xa0
-	bl NitroSDK_FS_InitFile
+	bl FS_InitFile
 	ldr r1, _0215AE08 ; =s_rom_dwc_utility_bin_overlay_11_021697e4
 	add r0, sp, #0xa0
-	bl NitroSDK_FS_OpenFile
+	bl FS_OpenFile
 	cmp r0, #0
 	bne _0215ACB0
 	bl OS_Terminate
@@ -81427,7 +81427,7 @@ _0215ACB0:
 	mov r2, #8
 	bl FS_ReadFile
 	add r0, sp, #0xa0
-	bl NitroSDK_FS_CloseFile
+	bl FS_CloseFile
 	ldr r0, _0215AE04 ; =OVERLAY11_BSS_0216C3EC
 	ldr r0, [r0]
 	add r0, r0, #0x88
@@ -81632,10 +81632,10 @@ ov11_0215AF6C: ; 0x0215AF6C
 	mov r4, r2
 	bl ov11_0215B8F0
 	add r0, sp, #4
-	bl NitroSDK_FS_InitFile
+	bl FS_InitFile
 	add r0, sp, #4
 	mov r1, r6
-	bl NitroSDK_FS_OpenFile
+	bl FS_OpenFile
 	cmp r0, #0
 	bne _0215AFB0
 	bl OS_Terminate
@@ -81662,7 +81662,7 @@ _0215AFB0:
 	str r1, [sp]
 	bl FS_ReadFile
 	add r0, sp, #4
-	bl NitroSDK_FS_CloseFile
+	bl FS_CloseFile
 	cmp r6, #0
 	ldrgt r0, [sp]
 	addgt sp, sp, #0x4c
@@ -82219,7 +82219,7 @@ ov11_0215B700: ; 0x0215B700
 	mov r0, #0
 	mov r2, #8
 	add sb, r6, r3
-	bl NitroSDK_MIi_CpuClear32
+	bl MIi_CpuClear32
 	cmp r4, #0
 	mov sl, #0
 	addle sp, sp, #8
@@ -82232,7 +82232,7 @@ _0215B754:
 	mov r0, sb
 	mov r1, r8
 	mov r2, r7
-	bl sub_02067DA8
+	bl MIi_CpuCopy16
 	mov r0, r8
 	mov r1, r5
 	mov r2, r6
@@ -82959,7 +82959,7 @@ ov11_0215C0B0: ; 0x0215C0B0
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x6000
-	bl sub_02067D80
+	bl MIi_CpuClear16
 	b _0215C104
 	arm_func_end ov11_0215C0B0
 _0215C0F0:
@@ -82967,7 +82967,7 @@ _0215C0F0:
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x3000
-	bl sub_02067D80
+	bl MIi_CpuClear16
 _0215C104:
 	add r0, r4, #0x28
 	bl ov11_0215C8C0
@@ -84286,7 +84286,7 @@ ov11_0215D178: ; 0x0215D178
 	mov r0, #0x200
 	mov r2, #0x800
 	str r1, [r3]
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r5, #0
 	ldr r7, _0215D20C ; =OVERLAY11_BSS_0216C428
 	mov r6, r5
@@ -84731,28 +84731,28 @@ ov11_0215D75C: ; 0x0215D75C
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0x40000
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	ldr r1, _0215D7D4 ; =0x06880000
 	mov r0, #0
 	mov r2, #0x24000
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	bl sub_02062634
 	mov r0, #0x200
 	mov r1, #0x7000000
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0
 	mov r1, #0x5000000
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0x200
 	ldr r1, _0215D7D8 ; =0x07000400
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0
 	ldr r1, _0215D7DC ; =0x05000400
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0215D7D0: .word 0x000001F3
@@ -90802,7 +90802,7 @@ ov11_021627C0: ; 0x021627C0
 	sub sp, sp, #0x14
 	mov sb, r0
 	add r0, sp, #0
-	bl sub_0206756C
+	bl OS_GetMacAddress
 	mov r6, #0
 	add r7, sp, #0
 	mov r8, r6

@@ -98,7 +98,7 @@
 .public NitroSDK_gx_GXS_LoadBG3ScrBmp
 .public sub_02064F28
 .public DC_FlushRange
-.public NitroSDK_mi_MIi_CpuClearFast
+.public MIi_CpuClearFast
 .public _s32_div_f
 .public __cxa_vec_new
 .public __cxa_vec_delete

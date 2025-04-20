@@ -80,7 +80,7 @@
 .public sub_02066A24
 .public sub_02066A64
 .public sub_02066AA4
-.public sub_02067D80
+.public MIi_CpuClear16
 .public MAIN_BSS_02090024
 .public MAIN_BSS_020A0027
 .public MAIN_BSS_020B0029

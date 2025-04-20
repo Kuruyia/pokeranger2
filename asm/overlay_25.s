@@ -399,24 +399,24 @@ ov25_0211CEFC: ; 0x0211CEFC
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0xa4000
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	bl sub_02062634
 	mov r0, #0xc0
 	mov r1, #0x7000000
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0
 	mov r1, #0x5000000
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0xc0
 	ldr r1, _0211D080 ; =0x07000400
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0
 	ldr r1, _0211D084 ; =0x05000400
 	mov r2, #0x400
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #0
 	bl NitroSDK_gx_GX_SetBankForTex
 	mov r0, #0
@@ -609,7 +609,7 @@ _0211D218:
 	mov r0, #0
 	mov r1, #0x6200000
 	mov r2, #0x20
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	ldr r2, _0211D398 ; =0x0400000A
 	mov r0, #0x30
 	ldrh r1, [r2]
@@ -1250,7 +1250,7 @@ _0211DAE4:
 	mov r1, r4
 	mov r0, #0
 	mov r2, #0x800
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	mov r0, #4
 	str r0, [sp]
 	mov r2, #0x20
@@ -1410,7 +1410,7 @@ ov25_0211DD14: ; 0x0211DD14
 	mov r2, #0x8000
 	bx ip
 	.align 2, 0
-_0211DD2C: .word NitroSDK_mi_MIi_CpuClearFast
+_0211DD2C: .word MIi_CpuClearFast
 	arm_func_end ov25_0211DD14
 
 	arm_func_start ov25_0211DD30

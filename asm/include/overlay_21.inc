@@ -118,7 +118,7 @@
 .public NitroSDK_os_OS_EnableIrqMask
 .public DC_FlushRange
 .public sub_020668E8
-.public NitroSDK_mi_MIi_CpuClearFast
+.public MIi_CpuClearFast
 .public sub_02067E7C
 .public _ll_udiv
 .public OS_IRQTable

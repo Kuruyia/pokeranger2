@@ -10189,7 +10189,7 @@ _021257EC:
 	cmp r2, r0
 	bne _021258C4
 	add r0, sp, #0x38
-	bl NitroSDK_FS_InitFile
+	bl FS_InitFile
 	ldr r2, [sp, #8]
 	add r0, sp, #0x38
 	add r1, sp, #0x80
@@ -10240,7 +10240,7 @@ _02125874:
 	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
 _021258BC:
 	add r0, sp, #0x38
-	bl NitroSDK_FS_CloseFile
+	bl FS_CloseFile
 _021258C4:
 	ldr r0, [sp, #8]
 	add r1, r0, #1

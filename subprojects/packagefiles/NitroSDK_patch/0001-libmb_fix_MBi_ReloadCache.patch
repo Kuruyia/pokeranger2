@@ -1,0 +1,22 @@
+diff --git a/libraries/mb/src/mb_parent.c b/libraries/mb/src/mb_parent.c
+index 7d49d72..1e51425 100644
+--- a/libraries/mb/src/mb_parent.c
++++ b/libraries/mb/src/mb_parent.c
+@@ -566,16 +566,10 @@ static void MBi_ReloadCache (MBiTaskInfo * p_task)
+ 	MBiCacheInfo * const p_info = (MBiCacheInfo *) p_task->param[0];
+ 	MBiCacheList * const p_list = (MBiCacheList *) p_task->param[1];
+ 	FSFile file[1];
+-	FSArchive * arc;
+-
+-	arc = FS_FindArchive(p_list->arc_name, (int)p_list->arc_name_len);
+-	if (!arc) {
+-		arc = p_list->arc_pointer;
+-	}
+ 
+ 	FS_InitFile(file);
+ 
+-	if (FS_OpenFileDirect(file, arc, p_info->src, p_info->src + p_info->len, (u32) ~0)) {
++	if (FS_OpenFileDirect(file, FS_FindArchive(p_list->arc_name, (int)p_list->arc_name_len), p_info->src, p_info->src + p_info->len, (u32) ~0)) {
+ 		if (FS_ReadFile(file, p_info->ptr, (int)p_info->len) == p_info->len) {
+ 			p_info->state = MB_CACHE_STATE_READY;
+ 		}

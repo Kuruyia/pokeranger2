@@ -62,7 +62,7 @@ ov5_0211CA48: ; 0x0211CA48
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0xa4000
-	bl NitroSDK_mi_MIi_CpuClearFast
+	bl MIi_CpuClearFast
 	bl sub_02062634
 	mov r0, #1
 	bl sub_020616C4
@@ -2229,7 +2229,7 @@ _0211E8B0:
 	mov r2, r7
 	add r0, r0, #0x610
 	add r1, sb, r8
-	bl sub_02067DA8
+	bl MIi_CpuCopy16
 	add r6, r6, #1
 	cmp r6, r4
 	blt _0211E8B0
@@ -2245,7 +2245,7 @@ _0211E8E4:
 	add r0, r0, r1
 	add r1, r6, r4
 	mov r2, #2
-	bl sub_02067DA8
+	bl MIi_CpuCopy16
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 _0211E918:
 	mov r7, #0
@@ -2260,7 +2260,7 @@ _0211E920:
 	mov r2, r4
 	add r0, r0, #0x610
 	add r1, r6, r5
-	bl sub_02067DA8
+	bl MIi_CpuCopy16
 	add r7, r7, #1
 	cmp r7, #0x10
 	blt _0211E920
