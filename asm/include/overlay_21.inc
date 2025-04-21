@@ -113,9 +113,9 @@
 .public sub_02062C10
 .public NitroSDK_gx_GX_LoadBGPltt
 .public NitroSDK_gx_GX_LoadBG1Char
-.public sub_020648C4
+.public OS_SetIrqFunction
 .public sub_0206494C
-.public NitroSDK_os_OS_EnableIrqMask
+.public OS_EnableIrqMask
 .public DC_FlushRange
 .public sub_020668E8
 .public MIi_CpuClearFast

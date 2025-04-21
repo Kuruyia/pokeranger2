@@ -8,7 +8,7 @@
 .public sub_02066034
 .public sub_02066040
 .public DC_WaitWriteBufferEmpty
-.public sub_02066108
+.public IC_InvalidateAll
 .public OS_DisableInterrupts
 .public OS_RestoreInterrupts
 .public NitroSDK_mi_MIi_CheckDma0SourceAddress

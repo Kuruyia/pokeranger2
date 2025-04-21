@@ -270,7 +270,7 @@ _01FF8324:
 	bl sub_02066034
 	mov r0, fp
 	bl OS_RestoreInterrupts
-	bl sub_02066108
+	bl IC_InvalidateAll
 	bl DC_WaitWriteBufferEmpty
 	add r5, r5, r4
 	cmp r5, #0x8000

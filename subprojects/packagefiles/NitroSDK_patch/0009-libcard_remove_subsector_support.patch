@@ -1,0 +1,228 @@
+diff --git a/include/nitro/card/backup.h b/include/nitro/card/backup.h
+index fee6761..998902b 100644
+--- a/include/nitro/card/backup.h
++++ b/include/nitro/card/backup.h
+@@ -76,14 +76,6 @@ SDK_INLINE BOOL CARDi_EraseBackupSector (u32 dst, u32 len,
+ 	                                  CARD_REQUEST_MODE_SPECIAL);
+ }
+ 
+-SDK_INLINE BOOL CARDi_EraseBackupSubSector (u32 dst, u32 len,
+-                                            MIDmaCallback callback, void * arg, BOOL is_async)
+-{
+-	return CARDi_RequestStreamCommand(0, (u32)dst, len, callback, arg, is_async,
+-	                                  CARD_REQ_ERASE_SUBSECTOR_BACKUP, CARD_RETRY_COUNT_MAX,
+-	                                  CARD_REQUEST_MODE_SPECIAL);
+-}
+-
+ SDK_INLINE BOOL CARDi_EraseBackupChip (MIDmaCallback callback, void * arg, BOOL is_async)
+ {
+ 	return CARDi_RequestStreamCommand(0, 0, 0, callback, arg, is_async,
+@@ -165,16 +157,6 @@ SDK_INLINE BOOL CARD_EraseBackupSector (u32 dst, u32 len)
+ 	return CARDi_EraseBackupSector(dst, len, NULL, NULL, FALSE);
+ }
+ 
+-SDK_INLINE void CARD_EraseBackupSubSectorAsync (u32 dst, u32 len, MIDmaCallback callback, void * arg)
+-{
+-	(void)CARDi_EraseBackupSubSector(dst, len, callback, arg, TRUE);
+-}
+-
+-SDK_INLINE BOOL CARD_EraseBackupSubSector (u32 dst, u32 len)
+-{
+-	return CARDi_EraseBackupSubSector(dst, len, NULL, NULL, FALSE);
+-}
+-
+ SDK_INLINE void CARD_EraseBackupChipAsync (MIDmaCallback callback, void * arg)
+ {
+ 	(void)CARDi_EraseBackupChip(callback, arg, TRUE);
+diff --git a/include/nitro/card/common.h b/include/nitro/card/common.h
+index 9bde37d..5d14de1 100644
+--- a/include/nitro/card/common.h
++++ b/include/nitro/card/common.h
+@@ -66,7 +66,6 @@ typedef enum {
+ 	CARD_REQ_ERASE_CHIP_BACKUP,
+ 	CARD_REQ_READ_STATUS,
+ 	CARD_REQ_WRITE_STATUS,
+-	CARD_REQ_ERASE_SUBSECTOR_BACKUP,
+ 	CARD_REQ_MAX
+ } CARDRequest;
+ 
+diff --git a/libraries/card/include/card_common.h b/libraries/card/include/card_common.h
+index 2c45d27..9cd7f47 100644
+--- a/libraries/card/include/card_common.h
++++ b/libraries/card/include/card_common.h
+@@ -38,7 +38,6 @@ typedef enum {
+ #define CARD_BACKUP_CAPS_ERASE_CHIP         (u32)(1 << CARD_REQ_ERASE_CHIP_BACKUP)
+ #define CARD_BACKUP_CAPS_READ_STATUS        (u32)(1 << CARD_REQ_READ_STATUS)
+ #define CARD_BACKUP_CAPS_WRITE_STATUS       (u32)(1 << CARD_REQ_WRITE_STATUS)
+-#define CARD_BACKUP_CAPS_ERASE_SUBSECTOR    (u32)(1 << CARD_REQ_ERASE_SUBSECTOR_BACKUP)
+ 
+ typedef s32 CARDiOwner;
+ 
+@@ -52,7 +51,6 @@ typedef struct CARDiCommandArg {
+ 	struct {
+ 		u32 total_size;
+ 		u32 sect_size;
+-		u32 subsect_size;
+ 		u32 page_size;
+ 		u32 addr_width;
+ 		u32 program_page;
+@@ -62,13 +60,11 @@ typedef struct CARDiCommandArg {
+ 		u32 erase_chip_total;
+ 		u32 erase_sector;
+ 		u32 erase_sector_total;
+-		u32 erase_subsector;
+-		u32 erase_subsector_total;
+ 		u32 erase_page;
+ 		u8 initial_status;
+ 		u8 padding1[3];
+ 		u32 caps;
+-		u8 padding2[4];
++		u8 padding2[16];
+ 	} spec;
+ } CARDiCommandArg;
+ 
+diff --git a/libraries/card/include/card_spi.h b/libraries/card/include/card_spi.h
+index 403fec1..e1f0ade 100644
+--- a/libraries/card/include/card_spi.h
++++ b/libraries/card/include/card_spi.h
+@@ -14,7 +14,6 @@
+ #define COMM_PAGE_WRITE              0x0A
+ #define COMM_PAGE_ERASE              0xDB
+ #define COMM_SECTOR_ERASE            0xD8
+-#define COMM_SUBSECTOR_ERASE         0x20
+ #define COMM_CHIP_ERASE              0xC7
+ #define CARDFLASH_READ_BYTES_FAST    0x0B
+ #define CARDFLASH_DEEP_POWDOWN       0xB9
+@@ -37,7 +36,6 @@ void CARDi_ProgramBackupCore(u32 dst, const void * src, u32 len);
+ void CARDi_WriteBackupCore(u32 dst, const void * src, u32 len);
+ void CARDi_VerifyBackupCore(u32 dst, const void * src, u32 len);
+ void CARDi_EraseBackupSectorCore(u32 dst, u32 len);
+-void CARDi_EraseBackupSubSectorCore(u32 dst, u32 len);
+ void CARDi_EraseChipCore(void);
+ void CARDi_SetWriteProtectCore(u16 stat);
+ 
+diff --git a/libraries/card/src/card_backup.c b/libraries/card/src/card_backup.c
+index fe70439..67bb143 100644
+--- a/libraries/card/src/card_backup.c
++++ b/libraries/card/src/card_backup.c
+@@ -21,8 +21,6 @@ static void CARDi_RequestStreamCommandCore (CARDiCommon *p)
+ 
+ 	if (req_type == CARD_REQ_ERASE_SECTOR_BACKUP) {
+ 		size = CARD_GetBackupSectorSize();
+-	} else if (req_type == CARD_REQ_ERASE_SUBSECTOR_BACKUP)   {
+-		size = cardi_common.cmd->spec.subsect_size;
+ 	}
+ 	do {
+ 		const u32 len = (size < p->len) ? size : p->len;
+diff --git a/libraries/card/src/card_spi.c b/libraries/card/src/card_spi.c
+index 5cf9e7b..6273cad 100644
+--- a/libraries/card/src/card_spi.c
++++ b/libraries/card/src/card_spi.c
+@@ -216,11 +216,10 @@ void CARDi_IdentifyBackupCore (CARDBackupType type)
+ 
+ 		MI_CpuFill8(&p->spec, 0, sizeof(p->spec));
+ 		p->type = type;
+-		p->spec.caps = (CARD_BACKUP_CAPS_AVAILABLE | CARD_BACKUP_CAPS_READ_STATUS);
++		p->spec.caps = CARD_BACKUP_CAPS_AVAILABLE;
+ 		if (type != CARD_BACKUP_TYPE_NOT_USE) {
+ 			const u32 size = (u32)(1 << ((type >> CARD_BACKUP_TYPE_SIZEBIT_SHIFT) & CARD_BACKUP_TYPE_SIZEBIT_MASK));
+ 			const int device = ((type >> CARD_BACKUP_TYPE_DEVICE_SHIFT) & CARD_BACKUP_TYPE_DEVICE_MASK);
+-			const int vender = ((type >> CARD_BACKUP_TYPE_VENDER_SHIFT) & CARD_BACKUP_TYPE_VENDER_MASK);
+ 
+ 			p->spec.total_size = size;
+ 
+@@ -253,7 +252,6 @@ void CARDi_IdentifyBackupCore (CARDBackupType type)
+ 				p->spec.caps |= CARD_BACKUP_CAPS_READ;
+ 				p->spec.caps |= CARD_BACKUP_CAPS_PROGRAM;
+ 				p->spec.caps |= CARD_BACKUP_CAPS_VERIFY;
+-				p->spec.caps |= CARD_BACKUP_CAPS_WRITE_STATUS;
+ 			} else if (device == CARD_BACKUP_TYPE_DEVICE_FLASH) {
+ 				switch (size) {
+ 				default:
+@@ -279,39 +277,22 @@ void CARDi_IdentifyBackupCore (CARDBackupType type)
+ 					p->spec.caps |= CARD_BACKUP_CAPS_WRITE;
+ 					p->spec.caps |= CARD_BACKUP_CAPS_ERASE_PAGE;
+ 					p->spec.caps |= CARD_BACKUP_CAPS_ERASE_CHIP;
+-					p->spec.caps |= CARD_BACKUP_CAPS_WRITE_STATUS;
+ 					break;
+ 				case 0x400000:
+ 					p->spec.erase_sector = 600;
+ 					p->spec.erase_sector_total = 3000;
+-					p->spec.erase_subsector = 70;
+-					p->spec.erase_subsector_total = 150;
+ 					p->spec.erase_chip = 23000;
+ 					p->spec.erase_chip_total = 800000;
+ 					p->spec.initial_status = 0x00;
+-					p->spec.subsect_size = 0x1000;
+-					p->spec.caps |= CARD_BACKUP_CAPS_ERASE_SUBSECTOR;
+ 					p->spec.caps |= CARD_BACKUP_CAPS_ERASE_CHIP;
+-					p->spec.caps |= CARD_BACKUP_CAPS_WRITE_STATUS;
+ 					break;
+ 				case 0x800000:
+-					if (vender == 0) {
+-						p->spec.erase_sector = 1000;
+-						p->spec.erase_sector_total = 3000;
+-						p->spec.erase_chip = 68000;
+-						p->spec.erase_chip_total = 160000;
+-						p->spec.initial_status = 0x00;
+-						p->spec.caps |= CARD_BACKUP_CAPS_ERASE_CHIP;
+-						p->spec.caps |= CARD_BACKUP_CAPS_WRITE_STATUS;
+-					} else if (vender == 1)   {
+-						p->spec.erase_sector = 1000;
+-						p->spec.erase_sector_total = 3000;
+-						p->spec.erase_chip = 68000;
+-						p->spec.erase_chip_total = 160000;
+-						p->spec.initial_status = 0x84;
+-						p->spec.caps |= CARD_BACKUP_CAPS_ERASE_CHIP;
+-						p->spec.caps |= CARD_BACKUP_CAPS_WRITE_STATUS;
+-					}
++                    p->spec.erase_sector = 1000;
++                    p->spec.erase_sector_total = 3000;
++                    p->spec.erase_chip = 68000;
++                    p->spec.erase_chip_total = 160000;
++                    p->spec.initial_status = 0x00;
++                    p->spec.caps |= CARD_BACKUP_CAPS_ERASE_CHIP;
+ 					break;
+ 				}
+ 				p->spec.sect_size = 0x010000;
+@@ -334,10 +315,9 @@ void CARDi_IdentifyBackupCore (CARDBackupType type)
+ 				p->spec.sect_size = size;
+ 				p->spec.addr_width = 2;
+ 				p->spec.initial_status = 0x00;
+-				p->spec.caps |= CARD_BACKUP_CAPS_READ;
+ 				p->spec.caps |= CARD_BACKUP_CAPS_PROGRAM;
+ 				p->spec.caps |= CARD_BACKUP_CAPS_VERIFY;
+-				p->spec.caps |= CARD_BACKUP_CAPS_WRITE_STATUS;
++				p->spec.caps |= CARD_BACKUP_CAPS_READ;
+ 			} else {
+ invalid_type:
+ 				p->type = CARD_BACKUP_TYPE_NOT_USE;
+@@ -453,28 +433,6 @@ void CARDi_EraseBackupSectorCore (u32 dst, u32 len)
+ 	}
+ }
+ 
+-void CARDi_EraseBackupSubSectorCore (u32 dst, u32 len)
+-{
+-	CARDiCommandArg *const cmd = cardi_common.cmd;
+-	const u32 sector = cmd->spec.subsect_size;
+-
+-	if (((dst | len) & (sector - 1)) != 0) {
+-		cmd->result = CARD_RESULT_INVALID_PARAM;
+-	} else if (CARDi_WaitPrevCommand())   {
+-		while (len > 0) {
+-			CARDi_WriteEnable();
+-			CARDi_CommandBegin((int)(1 + cmd->spec.addr_width + 0));
+-			CARDi_SendSpiAddressingCommand(dst, COMM_SUBSECTOR_ERASE);
+-			CARDi_CommandEnd(cmd->spec.erase_subsector, cmd->spec.erase_subsector_total);
+-			if (cmd->result != CARD_RESULT_SUCCESS) {
+-				break;
+-			}
+-			dst += sector;
+-			len -= sector;
+-		}
+-	}
+-}
+-
+ void CARDi_EraseChipCore (void)
+ {
+ 	if (CARDi_WaitPrevCommand()) {

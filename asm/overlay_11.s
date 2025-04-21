@@ -58553,7 +58553,7 @@ ov11_021485B0: ; 0x021485B0
 	ldmneia sp!, {r3, pc}
 	mov r0, #0x1000000
 	bl OS_SpinWait
-	bl sub_0206DC00
+	bl PM_ForceToPowerOff
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_021485B0
 
@@ -59846,7 +59846,7 @@ ov11_021495D0: ; 0x021495D0
 	ldmneia sp!, {r3, pc}
 	mov r0, #0x1000000
 	bl OS_SpinWait
-	bl sub_0206DC00
+	bl PM_ForceToPowerOff
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_021495D0
 
@@ -81565,14 +81565,14 @@ _0215AED0:
 	ldr r0, _0215AF10 ; =OVERLAY11_BSS_0216C3EC
 	ldr r0, [r0]
 	ldrh r0, [r0, #0xe4]
-	bl sub_0206EFA0
+	bl CARD_LockRom
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 _0215AEE8:
 	ldr r0, _0215AF10 ; =OVERLAY11_BSS_0216C3EC
 	ldr r0, [r0]
 	ldrh r0, [r0, #0xe4]
-	bl sub_0206EFBC
+	bl CARD_UnlockRom
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 _0215AF00:
@@ -81597,7 +81597,7 @@ ov11_0215AF14: ; 0x0215AF14
 	add r1, r2, r0
 	mov r2, lr
 	sub r0, ip, #2
-	bl sub_0206FCC0
+	bl CARDi_ReadRom
 	mov r0, #6
 	add sp, sp, #0xc
 	ldmia sp!, {pc}
@@ -81832,7 +81832,7 @@ ov11_0215B214: ; 0x0215B214
 	bl ov11_0215B8F0
 	mov r4, r0
 	mov r0, #1
-	bl sub_02064AC4
+	bl OS_DisableIrqMask
 	mov r6, r0
 	cmp r5, #0
 	mov r0, #0x228
@@ -81910,7 +81910,7 @@ _0215B33C:
 	bl OS_Terminate
 _0215B358:
 	mov r0, r6
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	mov r0, r4
 	strb r8, [r4, #0xc]
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
@@ -82341,7 +82341,7 @@ ov11_0215B898: ; 0x0215B898
 	mov r5, r0
 	mov r0, #1
 	mov r4, r1
-	bl sub_02064AC4
+	bl OS_DisableIrqMask
 	ldrb r2, [r5, #3]
 	mov r6, r0
 	ldrh r1, [r5]
@@ -82359,7 +82359,7 @@ _0215B8D4:
 	add r1, r5, r1, lsl #2
 	str r4, [r1, #4]
 	strb r7, [r5, #3]
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start ov11_0215B8F0
@@ -82368,7 +82368,7 @@ ov11_0215B8F0: ; 0x0215B8F0
 	mov r6, r0
 	mov r0, #1
 	mov r4, #0
-	bl sub_02064AC4
+	bl OS_DisableIrqMask
 	ldrb r2, [r6, #3]
 	ldrb r1, [r6, #2]
 	mov r5, r0
@@ -82385,7 +82385,7 @@ ov11_0215B8F0: ; 0x0215B8F0
 	arm_func_end ov11_0215B8F0
 _0215B938:
 	mov r0, r5
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	mov r0, r4
 	ldmia sp!, {r4, r5, r6, pc}
 
@@ -83549,7 +83549,7 @@ ov11_0215C850: ; 0x0215C850
 	mov r6, r0
 	mov r0, #1
 	mov r4, r1
-	bl sub_02064AC4
+	bl OS_DisableIrqMask
 	ldr r1, _0215C898 ; =OVERLAY11_BSS_0216C404
 	mov r5, r0
 	ldr r0, [r1]
@@ -83562,7 +83562,7 @@ ov11_0215C850: ; 0x0215C850
 	arm_func_end ov11_0215C850
 _0215C888:
 	mov r0, r5
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	mov r0, r4
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
@@ -83586,7 +83586,7 @@ ov11_0215C8C0: ; 0x0215C8C0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r0, #1
-	bl sub_02064AC4
+	bl OS_DisableIrqMask
 	ldr r1, [r5]
 	mov r4, r0
 	cmp r1, #0
@@ -83595,7 +83595,7 @@ ov11_0215C8C0: ; 0x0215C8C0
 	ldr r0, [r0]
 	bl NitroSystem_NNS_FndFreeToExpHeap
 	mov r0, r4
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	mov r0, #0
 	str r0, [r5]
 	ldmia sp!, {r3, r4, r5, pc}
@@ -83608,7 +83608,7 @@ ov11_0215C904: ; 0x0215C904
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r0, #1
-	bl sub_02064AC4
+	bl OS_DisableIrqMask
 	mov r4, r0
 	cmp r5, #0
 	ldmeqia sp!, {r3, r4, r5, pc}
@@ -83617,7 +83617,7 @@ ov11_0215C904: ; 0x0215C904
 	ldr r0, [r0]
 	bl NitroSystem_NNS_FndFreeToExpHeap
 	mov r0, r4
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0215C93C: .word OVERLAY11_BSS_0216C404
@@ -84138,16 +84138,16 @@ ov11_0215CFD0: ; 0x0215CFD0
 	str r2, [r1, #4]
 	bl OS_SetIrqMask
 	mov r0, #1
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	mov r0, #1
 	bl sub_0206494C
 	ldr r2, _0215D034 ; =OVERLAY11_BSS_0216C420
 	ldr r1, _0215D03C ; =ov11_0215D080
 	str r0, [r2]
 	mov r0, #1
-	bl sub_020648C4
+	bl OS_SetIrqFunction
 	mov r0, #1
-	bl sub_02064AF4
+	bl OS_ResetRequestIrqMask
 	ldr r2, _0215D040 ; =0x04000208
 	mov r0, #1
 	ldrh r1, [r2]
@@ -84175,7 +84175,7 @@ ov11_0215D044: ; 0x0215D044
 	ldr r1, _0215D07C ; =OVERLAY11_BSS_0216C420
 	mov r0, #1
 	ldr r1, [r1]
-	bl sub_020648C4
+	bl OS_SetIrqFunction
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0215D078: .word 0x04000208
@@ -84228,7 +84228,7 @@ ov11_0215D0F0: ; 0x0215D0F0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	mov r0, #1
-	bl sub_02064AC4
+	bl OS_DisableIrqMask
 	ldmia r4, {r2, r3}
 	str r3, [r2, #4]
 	ldr r3, [r4]
@@ -84237,7 +84237,7 @@ ov11_0215D0F0: ; 0x0215D0F0
 	str r3, [r2]
 	str r1, [r4, #4]
 	str r1, [r4]
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	ldmia sp!, {r4, pc}
 	arm_func_end ov11_0215D0F0
 
@@ -84247,13 +84247,13 @@ ov11_0215D128: ; 0x0215D128
 	mov r5, r0
 	mov r0, #1
 	mov r4, r1
-	bl sub_02064AC4
+	bl OS_DisableIrqMask
 	ldr r1, [r5]
 	str r4, [r1, #4]
 	ldr r1, [r5]
 	stmia r4, {r1, r5}
 	str r4, [r5]
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end ov11_0215D128
 
@@ -84481,7 +84481,7 @@ ov11_0215D3CC: ; 0x0215D3CC
 	mov r8, r1, asr #2
 	mov r0, #1
 	strh r8, [r6, #0xa]
-	bl sub_02064AC4
+	bl OS_DisableIrqMask
 	mov r7, r0
 	cmp sl, #0
 	mov r0, #0x1a0
@@ -84562,7 +84562,7 @@ _0215D528:
 	ldrh r1, [r6, #8]
 	mov r0, r7
 	str r1, [r4]
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	mov r0, r6
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 	.align 2, 0
@@ -84963,7 +84963,7 @@ ov11_0215DA3C: ; 0x0215DA3C
 	strb r6, [r4, #0x10]
 	mov r0, #1
 	strb r1, [r4, #0x11]
-	bl sub_02064AC4
+	bl OS_DisableIrqMask
 	ldr r1, _0215DAC4 ; =OVERLAY11_BSS_0216C464
 	mov r5, r0
 	ldr r0, [r1]
@@ -84982,7 +84982,7 @@ _0215DAAC:
 	b _0215DA94
 _0215DAB4:
 	mov r0, r5
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	mov r0, r4
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0

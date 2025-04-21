@@ -53,9 +53,9 @@ ov21_0211CA50: ; 0x0211CA50
     str r0, [r4, #0x1c]
     ldr r1, _0211CAA8 ; =ov21_0211C9E0
     mov r0, #2
-    bl sub_020648C4
+    bl OS_SetIrqFunction
     mov r0, #2
-    bl NitroSDK_os_OS_EnableIrqMask
+    bl OS_EnableIrqMask
     mov r0, #1
     bl sub_02061414
     mov r0, r4
@@ -318,9 +318,9 @@ _0211CDB4:
 	str r0, [r2]
 	ldr r1, [r4, #0x1c]
 	mov r0, #2
-	bl sub_020648C4
+	bl OS_SetIrqFunction
 	mov r0, #2
-	bl NitroSDK_os_OS_EnableIrqMask
+	bl OS_EnableIrqMask
 	mov r0, #1
 	bl sub_02061414
 	ldmia sp!, {r3, r4, r5, pc}
