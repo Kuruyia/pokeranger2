@@ -182,3 +182,5 @@
 .public TP_SetCalibrateParam
 .public TP_GetUserInfo
 .public TP_Init
+.public CP_SaveContext
+.public CPi_RestoreContext

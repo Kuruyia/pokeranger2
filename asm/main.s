@@ -123346,7 +123346,7 @@ _02065AD8:
 sub_02065B1C: ; 0x02065B1C
 	stmdb sp!, {r0, lr}
 	add r0, r0, #0x48
-	ldr r1, _02065B64 ; =sub_0206CB84
+	ldr r1, _02065B64 ; =CP_SaveContext
 	blx r1
 	ldmia sp!, {r0, lr}
 	add r1, r0, #0
@@ -123363,14 +123363,14 @@ sub_02065B1C: ; 0x02065B1C
 	mov r0, #0
 	bx lr
 	.align 2, 0
-_02065B64: .word sub_0206CB84
+_02065B64: .word CP_SaveContext
 	arm_func_end sub_02065B1C
 
 	arm_func_start sub_02065B68
 sub_02065B68: ; 0x02065B68
 	stmdb sp!, {r0, lr}
 	add r0, r0, #0x48
-	ldr r1, _02065BA8 ; =sub_0206CBC4
+	ldr r1, _02065BA8 ; =CPi_RestoreContext
 	blx r1
 	ldmia sp!, {r0, lr}
 	mrs r1, cpsr
@@ -123385,7 +123385,7 @@ sub_02065B68: ; 0x02065B68
 	mov r0, r0
 	subs pc, lr, #4
 	.align 2, 0
-_02065BA8: .word sub_0206CBC4
+_02065BA8: .word CPi_RestoreContext
 	arm_func_end sub_02065B68
 
 	arm_func_start NitroSDK_OS_IsRunOnEmulator
@@ -132227,47 +132227,6 @@ _0206CAE4:
 	bgt _0206C914
 	add sp, sp, #0x84
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, ip, pc}
-
-	arm_func_start sub_0206CB84
-sub_0206CB84: ; 0x0206CB84
-	ldr r1, _0206CBC0 ; =0x04000290
-	stmdb sp!, {r4}
-	ldmia r1, {r2, r3, r4, ip}
-	stmia r0!, {r2, r3, r4, ip}
-	ldrh ip, [r1, #-0x10]
-	add r1, r1, #0x28
-	ldmia r1, {r2, r3}
-	stmia r0!, {r2, r3}
-	and ip, ip, #3
-	ldrh r2, [r1, #-8]
-	strh ip, [r0]
-	and r2, r2, #1
-	strh r2, [r0, #2]
-	ldmia sp!, {r4}
-	bx lr
-	.align 2, 0
-_0206CBC0: .word 0x04000290
-	arm_func_end sub_0206CB84
-
-	arm_func_start sub_0206CBC4
-sub_0206CBC4: ; 0x0206CBC4
-	stmdb sp!, {r4}
-	ldr r1, _0206CBFC ; =0x04000290
-	ldmia r0, {r2, r3, r4, ip}
-	stmia r1, {r2, r3, r4, ip}
-	ldrh r2, [r0, #0x18]
-	ldrh r3, [r0, #0x1a]
-	strh r2, [r1, #-0x10]
-	strh r3, [r1, #0x20]
-	add r0, r0, #0x10
-	add r1, r1, #0x28
-	ldmia r0, {r2, r3}
-	stmia r1, {r2, r3}
-	ldmia sp!, {r4}
-	bx lr
-	.align 2, 0
-_0206CBFC: .word 0x04000290
-	arm_func_end sub_0206CBC4
 
     .section .init, 4
 

@@ -150,8 +150,8 @@ _01FF8150:
 	.align 2, 0
 _01FF81D4: .word DTCM_BSS
 _01FF81D8: .word OSi_ThreadInfo
-_01FF81DC: .word sub_0206CB84
-_01FF81E0: .word sub_0206CBC4
+_01FF81DC: .word CP_SaveContext
+_01FF81E0: .word CPi_RestoreContext
     arm_func_end sub_01FF8068
 
     arm_func_start sub_01FF81E4

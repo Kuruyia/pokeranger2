@@ -12,8 +12,8 @@
 .public OS_DisableInterrupts
 .public OS_RestoreInterrupts
 .public NitroSDK_mi_MIi_CheckDma0SourceAddress
-.public sub_0206CB84
-.public sub_0206CBC4
+.public CP_SaveContext
+.public CPi_RestoreContext
 .public OS_IRQTable
 .public DTCM_BSS
 .public OSi_ThreadInfo
