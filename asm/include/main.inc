@@ -184,3 +184,5 @@
 .public TP_Init
 .public CP_SaveContext
 .public CPi_RestoreContext
+.public DGT_Hash2CalcHmac
+.public DGTi_hash2_arm4_small

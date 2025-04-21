@@ -15,6 +15,7 @@ Static main
 	Library libcard.a (.version)
 	Library libdwcaccount.a (.version)
 	Object main.nef.p/asm_main.s.o
+	Library libdgt.a
 	Library libcp.a
     Library libspi.a
     Library librtc.a

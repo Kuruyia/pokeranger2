@@ -327,9 +327,9 @@
 .public FS_CloseFile
 .public FS_ReadFile
 .public sub_0206B484
-.public sub_0206BD90
-.public sub_0206BDD0
-.public sub_0206BE98
+.public DGT_Hash1Reset
+.public DGT_Hash1SetSource
+.public DGT_Hash1GetDigest_R
 .public TP_Init
 .public TP_GetUserInfo
 .public TP_SetCalibrateParam
