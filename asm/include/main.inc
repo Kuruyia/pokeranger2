@@ -204,3 +204,7 @@
 .public FS_SetDefaultDMA
 .public FS_UnloadOverlay
 .public FS_Init
+.public PXI_SendWordByFifo
+.public PXI_IsCallbackReady
+.public PXI_SetFifoRecvCallback
+.public PXI_Init
