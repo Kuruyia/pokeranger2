@@ -1,0 +1,109 @@
+diff --git a/include/nitro/spi/ARM9/pm.h b/include/nitro/spi/ARM9/pm.h
+index fb0a136..cefee58 100644
+--- a/include/nitro/spi/ARM9/pm.h
++++ b/include/nitro/spi/ARM9/pm.h
+@@ -75,18 +75,9 @@ u32 PM_SetBackLight(PMLCDTarget target, PMBackLightSwitch status);
+ u32 PM_ForceToPowerOffAsync(PMCallback callback, void * arg);
+ u32 PM_ForceToPowerOff(void);
+ 
+-u32 PM_SetAmpAsync(PMAmpSwitch sw, PMCallback callback, void * arg);
+-u32 PM_SetAmp(PMAmpSwitch sw);
+-
+-u32 PM_SetAmpGainAsync(PMAmpGain gain, PMCallback callback, void * arg);
+-u32 PM_SetAmpGain(PMAmpGain gain);
+-
+ u32 PM_GetBattery(PMBattery * batteryBuf);
+ u32 PM_GetBackLight(PMBackLightSwitch * top, PMBackLightSwitch * bottom);
+ 
+-u32 PM_GetAmp(PMAmpSwitch * swBuf);
+-u32 PM_GetAmpGain(PMAmpGain * gainBuf);
+-
+ void PM_GoSleepMode(PMWakeUpTrigger trigger, PMLogic logic, u16 keyPattern);
+ 
+ static inline void PM_SetSleepCallbackInfo (PMSleepCallbackInfo * info, PMSleepCallback callback, void * arg)
+diff --git a/libraries/spi/src/pm.c b/libraries/spi/src/pm.c
+index 6d67d71..407109a 100644
+--- a/libraries/spi/src/pm.c
++++ b/libraries/spi/src/pm.c
+@@ -56,9 +56,6 @@ static u32 PMi_LCDCount;
+ static PMSleepCallbackInfo * PMi_PreSleepCallbackList = NULL;
+ static PMSleepCallbackInfo * PMi_PostSleepCallbackList = NULL;
+ 
+-static u32 PMi_SetAmp(PMAmpSwitch status);
+-static PMAmpSwitch sAmpSwitch = PM_AMP_OFF;
+-
+ static BOOL PMi_Lock (void)
+ {
+     OSIntrMode enabled = OS_DisableInterrupts();
+@@ -475,36 +472,6 @@ u32 PM_ForceToPowerOff (void)
+     return sendResult;
+ }
+ 
+-u32 PM_SetAmpAsync (PMAmpSwitch status, PMCallback callback, void * arg)
+-{
+-    return PMi_WriteRegisterAsync(REG_PMIC_OP_CTL_ADDR, (u16)status, callback, arg);
+-}
+-
+-u32 PM_SetAmp (PMAmpSwitch status)
+-{
+-    sAmpSwitch = status;
+-    return PMi_SetAmp(status);
+-}
+-
+-static u32 PMi_SetAmp (PMAmpSwitch status)
+-{
+-    if (PM_GetLCDPower()) {
+-        return PMi_WriteRegister(REG_PMIC_OP_CTL_ADDR, (u16)status);
+-    } else {
+-        return PM_RESULT_SUCCESS;
+-    }
+-}
+-
+-u32 PM_SetAmpGainAsync (PMAmpGain status, PMCallback callback, void * arg)
+-{
+-    return PMi_WriteRegisterAsync(REG_PMIC_PGA_GAIN_ADDR, (u16)status, callback, arg);
+-}
+-
+-u32 PM_SetAmpGain (PMAmpGain status)
+-{
+-    return PMi_WriteRegister(REG_PMIC_PGA_GAIN_ADDR, (u16)status);
+-}
+-
+ u32 PM_GetBattery (PMBattery * batteryBuf)
+ {
+     u16 reg;
+@@ -565,34 +532,6 @@ u32 PMi_GetSoundVolume (PMSoundVolumeSwitch * swBuf)
+     return result;
+ }
+ 
+-u32 PM_GetAmp (PMAmpSwitch * swBuf)
+-{
+-    u16 reg;
+-    u32 result;
+-
+-    if ((result = PMi_ReadRegister(REG_PMIC_OP_CTL_ADDR, &reg)) == PM_SUCCESS) {
+-        if (swBuf) {
+-            *swBuf = (PMAmpSwitch)reg;
+-        }
+-    }
+-
+-    return result;
+-}
+-
+-u32 PM_GetAmpGain (PMAmpGain * gainBuf)
+-{
+-    u16 reg;
+-    u32 result;
+-
+-    if ((result = PMi_ReadRegister(REG_PMIC_PGA_GAIN_ADDR, &reg)) == PM_SUCCESS) {
+-        if (gainBuf) {
+-            *gainBuf = (PMAmpGain)reg;
+-        }
+-    }
+-
+-    return result;
+-}
+-
+ void PMi_SendPxiData (u32 data)
+ {
+     while (PXI_SendWordByFifo(PXI_FIFO_TAG_PM, data, FALSE) != PXI_FIFO_SUCCESS) {

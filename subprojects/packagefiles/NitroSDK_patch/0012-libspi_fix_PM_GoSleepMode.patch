@@ -1,0 +1,18 @@
+diff --git a/libraries/spi/src/pm.c b/libraries/spi/src/pm.c
+index 6d67d71..43a3190 100644
+--- a/libraries/spi/src/pm.c
++++ b/libraries/spi/src/pm.c
+@@ -618,12 +618,7 @@ void PM_GoSleepMode (PMWakeUpTrigger trigger, PMLogic logic, u16 keyPattern)
+     prepIntrMode = OS_DisableInterrupts();
+     prepIntrMask = OS_DisableIrqMask((1 << OS_IRQ_TABLE_MAX) - 1);
+ 
+-    {
+-
+-        OSIntrMode intr = OS_IE_FIFO_RECV | (OS_IsTickAvailable()? OS_IE_TIMER0: 0);
+-        (void)OS_SetIrqMask(intr);
+-    }
+-
++    (void)OS_SetIrqMask(OS_IE_FIFO_RECV);
+     (void)OS_RestoreInterrupts(prepIntrMode);
+     (void)OS_EnableIrq();
+ 

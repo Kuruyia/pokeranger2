@@ -1,0 +1,15 @@
+diff --git a/libraries/spi/src/pm.c b/libraries/spi/src/pm.c
+index 3ff27fb..6d67d71 100644
+--- a/libraries/spi/src/pm.c
++++ b/libraries/spi/src/pm.c
+@@ -721,10 +721,8 @@ BOOL PMi_SetLCDPower (PMLCDPower sw, PMLEDStatus led, BOOL skip, BOOL isSync)
+         }
+ 
+         (void)GXi_PowerLCD(TRUE);
+-        (void)PMi_SetAmp(sAmpSwitch);
+         break;
+     case PM_LCD_POWER_OFF:
+-        (void)PMi_SetAmp(PM_AMP_OFF);
+         (void)GXi_PowerLCD(FALSE);
+ 
+         PMi_LCDCount = OS_GetVBlankCount();

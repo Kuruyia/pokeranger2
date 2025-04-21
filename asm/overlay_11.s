@@ -30012,7 +30012,7 @@ ov11_021354C4: ; 0x021354C4
 	ldr r0, [r0, #8]
 	add r0, r0, #0x3d8
 	add r0, r0, #0x1000
-	bl NitroSDK_OS_InitMutex
+	bl OS_InitMutex
 	ldr r1, _0213556C ; =OVERLAY11_BSS_02169CA8
 	mov r2, #0
 	ldr r0, [r1, #8]
@@ -31478,10 +31478,10 @@ ov11_02136974: ; 0x02136974
 	add r0, r0, #0x1800
 	mov r4, r1
 	str r3, [r2, #0xc10]
-	bl NitroSDK_OS_InitMutex
+	bl OS_InitMutex
 	add r0, r5, #0x218
 	add r0, r0, #0x1800
-	bl NitroSDK_OS_InitMutex
+	bl OS_InitMutex
 	add r0, r5, #0x1000
 	ldr r0, [r0, #0x18]
 	cmp r0, #1
@@ -32815,7 +32815,7 @@ ov11_02137B60: ; 0x02137B60
 	ldr r0, [r1]
 	add r0, r0, #0x1dc
 	add r0, r0, #0x1000
-	bl NitroSDK_OS_InitMutex
+	bl OS_InitMutex
 	bl ov11_02137DF8
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
@@ -56451,7 +56451,7 @@ _02146BB0:
 	bl sub_0206129C
 	mvn r0, #0
 	bl sub_0206AF74
-	bl sub_0206CE80
+	bl TP_Init
 	bl RTC_Init
 	bl sub_0206147C
 	ldr r1, _02146C28 ; =0x04001000
@@ -83633,24 +83633,24 @@ ov11_0215C940: ; 0x0215C940
 	ldr r1, _0215C9B8 ; =OVERLAY11_BSS_0216C408
 	str r0, [r1, #4]
 	add r0, sp, #0
-	bl sub_0206CEF8
+	bl TP_GetUserInfo
 	cmp r0, #0
 	bne _0215C970
 	bl OS_Terminate
 	arm_func_end ov11_0215C940
 _0215C970:
 	add r0, sp, #0
-	bl sub_0206CF8C
+	bl TP_SetCalibrateParam
 	ldr r1, _0215C9B8 ; =OVERLAY11_BSS_0216C408
 	mov r0, #0
 	ldr r2, [r1, #4]
 	mov r1, #4
 	mov r3, #5
-	bl sub_0206D198
+	bl TP_RequestAutoSamplingStartAsync
 	mov r0, #2
-	bl sub_0206D650
+	bl TP_WaitBusy
 	mov r0, #2
-	bl sub_0206D668
+	bl TP_CheckError
 	cmp r0, #0
 	beq _0215C9AC
 	bl OS_Terminate
@@ -83668,11 +83668,11 @@ ov11_0215C9BC: ; 0x0215C9BC
 	mov r4, r5
 	arm_func_end ov11_0215C9BC
 _0215C9C8:
-	bl sub_0206D298
+	bl TP_RequestAutoSamplingStopAsync
 	mov r0, r5
-	bl sub_0206D650
+	bl TP_WaitBusy
 	mov r0, r4
-	bl sub_0206D668
+	bl TP_CheckError
 	cmp r0, #0
 	bne _0215C9C8
 	ldr r0, _0215C9F0 ; =OVERLAY11_BSS_0216C40C
@@ -83774,7 +83774,7 @@ ov11_0215CB08: ; 0x0215CB08
 	movs r0, r0, lsr #0x1f
 	movne r6, #1
 	moveq r6, #0
-	bl sub_0206D330
+	bl TP_GetLatestIndexInAuto
 	ldr r7, _0215CCA0 ; =OVERLAY11_BSS_0216C408
 	mov r4, r5
 	ldr r3, [r7, #4]
@@ -83794,7 +83794,7 @@ _0215CB54:
 	bne _0215CB98
 	add r0, sp, #0
 	mov r5, #1
-	bl sub_0206D52C
+	bl TP_GetCalibratedPoint
 	ldr r1, _0215CCA0 ; =OVERLAY11_BSS_0216C408
 	ldrh r0, [sp]
 	ldr r2, [r1, #4]
@@ -84104,7 +84104,7 @@ ov11_0215CF54: ; 0x0215CF54
 	movs r0, r0, asr #0xf
 	ldmneia sp!, {r3, pc}
 	mov r0, #1
-	bl sub_0206DFB4
+	bl PM_SetLCDPower
 	cmp r0, #0
 	ldmeqia sp!, {r3, pc}
 	ldr r0, _0215CFC8 ; =OVERLAY11_BSS_0216C408
@@ -84118,7 +84118,7 @@ _0215CF9C:
 	movs r0, r0, asr #0xf
 	ldmeqia sp!, {r3, pc}
 	mov r0, #0
-	bl sub_0206DFB4
+	bl PM_SetLCDPower
 	cmp r0, #0
 	ldrne r0, _0215CFC8 ; =OVERLAY11_BSS_0216C408
 	movne r1, #1
@@ -84715,7 +84715,7 @@ ov11_0215D664: ; 0x0215D664
 	str r3, [r0, #4]
 	str r3, [r0, #8]
 	mov r0, #1
-	bl sub_0206DFB4
+	bl PM_SetLCDPower
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0215D750: .word OVERLAY11_BSS_0216C430
@@ -84765,14 +84765,14 @@ _0215D7DC: .word 0x05000400
 ov11_0215D7E0: ; 0x0215D7E0
 	stmdb sp!, {r3, lr}
 	add r0, sp, #0
-	bl sub_0206E0A8
+	bl PM_GetLEDPattern
 	cmp r0, #0
 	ldmneia sp!, {r3, pc}
 	ldr r0, [sp]
 	cmp r0, #0xf
 	ldmeqia sp!, {r3, pc}
 	mov r0, #0xf
-	bl sub_0206E038
+	bl PMi_SendLEDPatternCommand
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_0215D7E0
 
@@ -84782,7 +84782,7 @@ ov11_0215D80C: ; 0x0215D80C
 	mov r0, #1
 	bx ip
 	.align 2, 0
-_0215D818: .word sub_0206E038
+_0215D818: .word PMi_SendLEDPatternCommand
 	arm_func_end ov11_0215D80C
 
 	arm_func_start ov11_0215D81C
@@ -85568,7 +85568,7 @@ _0215E1D8: .word OVERLAY11_BSS_0216C488
 ov11_0215E1DC: ; 0x0215E1DC
 	stmdb sp!, {r3, lr}
 	ldr r0, _0215E1F0 ; =OVERLAY11_BSS_0216CD50
-	bl NitroSDK_OS_InitMutex
+	bl OS_InitMutex
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -90695,7 +90695,7 @@ _021626C4: .word s_Content_Length_overlay_11_02169b24
 ov11_021626C8: ; 0x021626C8
 	stmdb sp!, {r3, lr}
 	ldr r0, _021626DC ; =OVERLAY11_BSS_0216D458
-	bl NitroSDK_OS_InitMutex
+	bl OS_InitMutex
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -90731,7 +90731,7 @@ _02162708: .word OVERLAY11_BSS_0216D458
 ov11_0216270C: ; 0x0216270C
 	stmdb sp!, {r3, lr}
 	ldr r0, _0216272C ; =OVERLAY11_BSS_0216D440
-	bl NitroSDK_OS_InitMutex
+	bl OS_InitMutex
 	ldr r0, _02162730 ; =OVERLAY11_BSS_0216D43C
 	mov r1, #0
 	str r1, [r0]

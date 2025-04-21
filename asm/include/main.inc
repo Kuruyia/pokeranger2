@@ -168,3 +168,17 @@
 .public RTC_ConvertDateTimeToSecond
 .public RTC_GetTime
 .public RTC_Init
+.public PM_Init
+.public PM_DeletePostSleepCallback
+.public PM_DeletePreSleepCallback
+.public PM_AppendPostSleepCallback
+.public PM_SetLCDPower
+.public PM_GetLCDPower
+.public PM_PrependPreSleepCallback
+.public PM_GoSleepMode
+.public TP_GetCalibratedPoint
+.public TP_WaitRawResult
+.public TP_RequestSamplingAsync
+.public TP_SetCalibrateParam
+.public TP_GetUserInfo
+.public TP_Init
