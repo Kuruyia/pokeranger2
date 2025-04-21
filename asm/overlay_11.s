@@ -56450,7 +56450,7 @@ _02146BB0:
 	bl sub_02061448
 	bl sub_0206129C
 	mvn r0, #0
-	bl sub_0206AF74
+	bl FS_Init
 	bl TP_Init
 	bl RTC_Init
 	bl sub_0206147C
@@ -81431,13 +81431,13 @@ _0215ACB0:
 	ldr r0, _0215AE04 ; =OVERLAY11_BSS_0216C3EC
 	ldr r0, [r0]
 	add r0, r0, #0x88
-	bl NitroSDK_FS_InitArchive
+	bl FS_InitArchive
 	ldr r0, _0215AE04 ; =OVERLAY11_BSS_0216C3EC
 	ldr r1, _0215AE0C ; =s_dwc_overlay_11_02165ed8
 	ldr r0, [r0]
 	mov r2, #3
 	add r0, r0, #0x88
-	bl NitroSDK_FS_RegisterArchiveName
+	bl FS_RegisterArchiveName
 	cmp r0, #0
 	bne _0215AD20
 	bl OS_Terminate
@@ -81447,7 +81447,7 @@ _0215AD20:
 	ldr r0, [r0]
 	ldr r2, _0215AE14 ; =0x00000602
 	add r0, r0, #0x88
-	bl sub_0206AED0
+	bl FS_SetArchiveProc
 	ldr r0, [sp, #0x18]
 	ldr r1, _0215AE18 ; =ov11_0215AF14
 	str r0, [sp]
@@ -81462,7 +81462,7 @@ _0215AD20:
 	ldr r3, [sp, #0x14]
 	mov r1, r4
 	add r0, r0, #0x88
-	bl NitroSDK_FS_LoadArchive
+	bl FS_LoadArchive
 	cmp r0, #0
 	bne _0215AD80
 	bl OS_Terminate
@@ -81472,7 +81472,7 @@ _0215AD80:
 	ldr r0, [r0]
 	mov r2, r1
 	add r0, r0, #0x88
-	bl sub_0206AC14
+	bl FS_LoadArchiveTables
 	mov r1, #4
 	mov r4, r0
 	bl ov11_0215C89C
@@ -81482,7 +81482,7 @@ _0215AD80:
 	str r0, [r3]
 	ldr r0, [r1]
 	ldr r1, [r0], #0x88
-	bl sub_0206AC14
+	bl FS_LoadArchiveTables
 	ldr r1, _0215AE04 ; =OVERLAY11_BSS_0216C3EC
 	mov r0, #0x20
 	ldr r1, [r1]
@@ -81497,7 +81497,7 @@ _0215AD80:
 	add r0, sp, #0x20
 	bl sub_02064F28
 	add r0, sp, #0x20
-	bl sub_0206B484
+	bl FS_ChangeDir
 	add sp, sp, #0xe8
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -81514,19 +81514,19 @@ _0215AE20: .word s_s_overlay_11_021697fc
 ov11_0215AE24: ; 0x0215AE24
 	stmdb sp!, {r3, lr}
 	ldr r0, _0215AEA4 ; =s_rom_overlay_11_02169804
-	bl sub_0206B484
+	bl FS_ChangeDir
 	ldr r0, _0215AEA8 ; =OVERLAY11_BSS_0216C3EC
 	ldr r0, [r0]
 	add r0, r0, #0x88
-	bl sub_0206AD38
+	bl FS_UnloadArchiveTables
 	ldr r0, _0215AEA8 ; =OVERLAY11_BSS_0216C3EC
 	ldr r0, [r0]
 	add r0, r0, #0x88
-	bl NitroSDK_FS_UnloadArchive
+	bl FS_UnloadArchive
 	ldr r0, _0215AEA8 ; =OVERLAY11_BSS_0216C3EC
 	ldr r0, [r0]
 	add r0, r0, #0x88
-	bl NitroSDK_FS_ReleaseArchiveName
+	bl FS_ReleaseArchiveName
 	ldr r0, _0215AEA8 ; =OVERLAY11_BSS_0216C3EC
 	ldr r0, [r0]
 	ldrh r0, [r0, #0xe4]
@@ -81611,7 +81611,7 @@ ov11_0215AF54: ; 0x0215AF54
 	mov r1, #0
 	bx ip
 	.align 2, 0
-_0215AF60: .word sub_0206AEF0
+_0215AF60: .word FS_NotifyArchiveAsyncEnd
 	arm_func_end ov11_0215AF54
 
 	arm_func_start ov11_0215AF64
