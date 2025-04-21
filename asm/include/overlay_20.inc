@@ -46,7 +46,7 @@
 .public NitroSDK_gx_GX_ResetBankForSubBGExtPltt
 .public NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
 .public sub_02062C10
-.public sub_0206E2DC
+.public RTC_GetDate
 .public RTC_GetTime
 .public MAIN_BSS_0208F304
 .public MAIN_BSS_020B26A0

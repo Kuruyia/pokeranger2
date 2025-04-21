@@ -1,0 +1,36 @@
+diff --git a/libraries/rtc/src/external.c b/libraries/rtc/src/external.c
+index a2d29ac..460729b 100644
+--- a/libraries/rtc/src/external.c
++++ b/libraries/rtc/src/external.c
+@@ -41,7 +41,6 @@ typedef struct RTCWork {
+ static u16 rtcInitialized;
+ static RTCWork rtcWork;
+ static u16 rtcTickInitialized;
+-static OSTick rtcInitialTotalTicks;
+ 
+ static void RtcCommonCallback(PXIFifoTag tag, u32 data, BOOL err);
+ static u32 RtcBCD2HEX(u32 bcd);
+@@ -210,7 +209,7 @@ RTCResult RTC_GetDateTimeExByTick (RTCDate * date, RTCTimeEx * time)
+ 
+     SDK_ASSERT(OS_IsTickAvailable());
+ 
+-    totalTicks = OS_GetTick() + rtcInitialTotalTicks;
++    totalTicks = OS_GetTick();
+ 
+     RtcConvertTickToDateTimeEx(date, time, totalTicks);
+ 
+@@ -1021,7 +1020,6 @@ static RTCResult RtcTickInit (void)
+     result = RTC_GetDateTime(&currentDate, &currentTime);
+     totalSeconds = RTC_ConvertDateTimeToSecond(&currentDate, &currentTime);
+ 
+-    rtcInitialTotalTicks = OS_SecondsToTicks(totalSeconds) - OS_GetTick();
+     rtcTickInitialized = TRUE;
+ 
+     return result;
+@@ -1039,4 +1037,4 @@ loop:
+     bx lr
+ }
+ 
+-#include <nitro/codereset.h>
+\ No newline at end of file
++#include <nitro/codereset.h>

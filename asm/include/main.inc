@@ -164,3 +164,7 @@
 .public CARDi_WaitAsync
 .public CARD_WaitBackupAsync
 .public CARD_TryWaitBackupAsync
+.public RTC_GetDate
+.public RTC_ConvertDateTimeToSecond
+.public RTC_GetTime
+.public RTC_Init

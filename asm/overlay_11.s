@@ -18965,7 +18965,7 @@ ov11_0212C21C: ; 0x0212C21C
 	sub sp, sp, #0x1c
 	mov r4, r0
 	add r0, sp, #0xc
-	bl sub_0206E2DC
+	bl RTC_GetDate
 	add r0, sp, #0
 	bl RTC_GetTime
 	mov r0, #0
@@ -31043,7 +31043,7 @@ _021362B4:
 	bl sub_02064F68
 	add r0, sp, #0x28
 	add r1, sp, #0x1c
-	bl sub_0206E43C
+	bl RTC_GetDateTime
 	cmp r0, #0
 	addne sp, sp, #0x8c
 	movne r0, #0
@@ -34093,12 +34093,12 @@ ov11_02138DC8: ; 0x02138DC8
 	bne _02138FC8
 	add r0, sp, #0x2c
 	add r1, sp, #0x20
-	bl sub_0206E43C
+	bl RTC_GetDateTime
 	cmp r0, #0
 	bne _02138FC8
 	add r0, sp, #0x2c
 	add r1, sp, #0x20
-	bl sub_0206EB70
+	bl RTC_ConvertDateTimeToSecond
 	mov r4, r0
 	mov r5, r1
 	mvn r0, #0
@@ -34186,7 +34186,7 @@ _02138EE4:
 	beq _02138FC8
 	add r0, sp, #0x2c
 	add r1, sp, #0x20
-	bl sub_0206EB70
+	bl RTC_ConvertDateTimeToSecond
 	mvn r2, #0
 	cmp r1, r2
 	cmpeq r0, r2
@@ -36222,7 +36222,7 @@ ov11_0213AB40: ; 0x0213AB40
 	bl ov11_02139940
 	bl RTC_Init
 	add r0, sp, #0x14
-	bl sub_0206E2DC
+	bl RTC_GetDate
 	cmp r0, #0
 	addne sp, sp, #0x24
 	movne r0, #0
@@ -36235,7 +36235,7 @@ ov11_0213AB40: ; 0x0213AB40
 	ldmneia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	add r0, sp, #0x14
 	add r1, sp, #8
-	bl sub_0206EB70
+	bl RTC_ConvertDateTimeToSecond
 	mov r4, r0
 	mov r0, #0
 	subs r2, r4, r0
@@ -36406,7 +36406,7 @@ ov11_0213ADB0: ; 0x0213ADB0
 	bl ov11_02139940
 	bl RTC_Init
 	add r0, sp, #0x14
-	bl sub_0206E2DC
+	bl RTC_GetDate
 	cmp r0, #0
 	addne sp, sp, #0x24
 	movne r0, #0
@@ -36419,7 +36419,7 @@ ov11_0213ADB0: ; 0x0213ADB0
 	ldmneia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	add r0, sp, #0x14
 	add r1, sp, #8
-	bl sub_0206EB70
+	bl RTC_ConvertDateTimeToSecond
 	mov r4, r0
 	mov r0, #0
 	subs r2, r4, r0

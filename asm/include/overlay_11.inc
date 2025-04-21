@@ -344,10 +344,10 @@
 .public sub_0206E038
 .public sub_0206E0A8
 .public RTC_Init
-.public sub_0206E2DC
+.public RTC_GetDate
 .public RTC_GetTime
-.public sub_0206E43C
-.public sub_0206EB70
+.public RTC_GetDateTime
+.public RTC_ConvertDateTimeToSecond
 .public CARD_LockRom
 .public CARD_UnlockRom
 .public CARDi_ReadRom

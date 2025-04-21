@@ -407,7 +407,7 @@
 .public FS_InitFile
 .public FS_CloseFile
 .public FS_ReadFile
-.public sub_0206E2DC
+.public RTC_GetDate
 .public RTC_GetTime
 .public STD_CopyString
 .public memcpy

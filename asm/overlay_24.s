@@ -406,7 +406,7 @@ _0211CF54:
 	add r0, sp, #0x18
 	bl RTC_GetTime
 	add r0, sp, #8
-	bl sub_0206E2DC
+	bl RTC_GetDate
 	ldr r1, [sp, #0x18]
 	ldr r0, _0211CFFC ; =MAIN_BSS_020BA6A0
 	ldr r2, [sp, #0x1c]

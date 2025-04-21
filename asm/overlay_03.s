@@ -1300,7 +1300,7 @@ _0211DCAC:
 	add r0, sp, #0x28
 	bl RTC_GetTime
 	add r0, sp, #0x18
-	bl sub_0206E2DC
+	bl RTC_GetDate
 	ldr r1, [sp, #0x28]
 	ldr r0, _0211DD8C ; =MAIN_BSS_020BA6A0
 	ldr r2, [sp, #0x2c]
@@ -3779,7 +3779,7 @@ _02120084:
 	add r0, sp, #0x24
 	bl RTC_GetTime
 	add r0, sp, #0x14
-	bl sub_0206E2DC
+	bl RTC_GetDate
 	ldr r1, [sp, #0x24]
 	ldr r0, _02120114 ; =MAIN_BSS_020BA6A0
 	ldr r2, [sp, #0x28]

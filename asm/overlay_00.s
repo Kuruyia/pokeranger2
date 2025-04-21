@@ -2210,7 +2210,7 @@ _0211E8F4:
 	add r0, sp, #0x10
 	bl RTC_GetTime
 	add r0, sp, #0
-	bl sub_0206E2DC
+	bl RTC_GetDate
 	ldr r0, _0211E954 ; =MAIN_BSS_020B26A0
 	add r1, sp, #0x10
 	add r2, sp, #0
@@ -2351,7 +2351,7 @@ CFieldScene_ov0_0211EA94: ; 0x0211EA94
 	add r0, sp, #0x20c
 	bl RTC_GetTime
 	add r0, sp, #0x1fc
-	bl sub_0206E2DC
+	bl RTC_GetDate
 	ldr r0, _0211FA7C ; =MAIN_BSS_020B26A0
 	add r1, sp, #0x20c
 	add r2, sp, #0x1fc
@@ -58774,7 +58774,7 @@ ov0_0214F830: ; 0x0214F830
 	add r0, sp, #0x10
 	bl RTC_GetTime
 	add r0, sp, #0
-	bl sub_0206E2DC
+	bl RTC_GetDate
 	ldr r2, [sp, #0x10]
 	ldr r0, _0214F900 ; =MAIN_BSS_020BA6A0
 	ldr r1, [sp, #0x14]

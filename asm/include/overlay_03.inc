@@ -165,7 +165,7 @@
 .public MIi_CpuClearFast
 .public MIi_CpuCopyFast
 .public MI_CpuFill8
-.public sub_0206E2DC
+.public RTC_GetDate
 .public RTC_GetTime
 .public strcpy
 .public strcat
