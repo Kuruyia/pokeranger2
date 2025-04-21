@@ -4,14 +4,14 @@
 .public sub_01FF82E4
 .public sub_01FF8300
 .public sub_01FF83A8
-.public sub_01FF8480
+.public MIi_DmaSetParams
 .public sub_02066034
 .public sub_02066040
 .public DC_WaitWriteBufferEmpty
 .public IC_InvalidateAll
 .public OS_DisableInterrupts
 .public OS_RestoreInterrupts
-.public NitroSDK_mi_MIi_CheckDma0SourceAddress
+.public MIi_CheckDma0SourceAddress
 .public CP_SaveContext
 .public CPi_RestoreContext
 .public OS_IRQTable

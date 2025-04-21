@@ -81677,7 +81677,7 @@ _0215AFB0:
 	mov r4, r0
 	ldr r0, [sp]
 	mov r1, r4
-	bl sub_02068158
+	bl MI_UncompressLZ8
 	add r0, sp, #0
 	bl ov11_0215C8C0
 	mov r0, r4

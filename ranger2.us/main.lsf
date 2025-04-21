@@ -15,6 +15,7 @@ Static main
 	Library libcard.a (.version)
 	Library libdwcaccount.a (.version)
 	Object main.nef.p/asm_main.s.o
+    Library libmi.a
     Library libsnd.a
 	Library libpxi.a
 	Library libfs.a
@@ -39,6 +40,7 @@ Autoload ITCM
 {
 	Address 0x01FF8000
 	Object main.nef.p/asm_itcm.s.o (.itcm)
+	Library libmi.a (.itcm)
 }
 
 Autoload DTCM

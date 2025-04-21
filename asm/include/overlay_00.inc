@@ -1,5 +1,5 @@
 #pragma once
-.public sub_01FF85B8
+.public MI_SendGXCommand
 .public _Znwm
 .public _Znam
 .public _ZdlPv

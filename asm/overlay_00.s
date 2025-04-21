@@ -11313,7 +11313,7 @@ _0212671C:
 	add r2, r1, r7
 	ldr r1, [r2, #0x10]
 	ldr r2, [r2, #0x14]
-	bl sub_01FF85B8
+	bl MI_SendGXCommand
 _02126754:
 	ldr r0, [r8, #0x34]
 	add r6, r6, #1
@@ -18269,7 +18269,7 @@ _0212C988:
 	mov r1, r1, lsl #0x1e
 	add r1, r6, r1, lsr #28
 	ldr r1, [r1, #0x10]
-	bl sub_01FF85B8
+	bl MI_SendGXCommand
 _0212CA74:
 	add r7, r7, #6
 	add r5, r5, #1

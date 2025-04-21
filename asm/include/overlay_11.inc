@@ -308,7 +308,7 @@
 .public MIi_CpuCopyFast
 .public MI_CpuFill8
 .public MI_CpuCopy8
-.public sub_02068158
+.public MI_UncompressLZ8
 .public PXI_SetFifoRecvCallback
 .public PXI_IsCallbackReady
 .public PXI_SendWordByFifo

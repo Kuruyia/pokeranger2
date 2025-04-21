@@ -127,14 +127,14 @@ _02000DE8:
 	mov r0, #3
 	add r2, r1, #0x24
 	add r1, r2, #0x800
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldr r0, [sp, #4]
 	mov r3, #0x400
 	add r2, r0, #0x24
 	add r1, r2, #0x800
 	mov r0, #3
 	add r2, r2, #0x400
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	mov r0, #0x18
 	str r0, [sp]
 	ldr r0, [r4, #4]
@@ -2109,7 +2109,7 @@ _0200284C:
 	mov r3, r8
 	add r1, r1, r5, lsl #1
 	add r2, r6, r5, lsl #1
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldr r0, [sb, #0x1c]
 	add r7, r7, #1
 	cmp r7, r0, asr #12
@@ -2288,7 +2288,7 @@ _02002AA4:
 	mov r2, fp
 	mov r3, r6
 	add r1, r1, sb, lsl #1
-	bl sub_0206797C
+	bl MI_DmaFill16
 	add r5, r5, #1
 	cmp r5, r7
 	blt _02002AA4
@@ -2735,22 +2735,22 @@ _02003070:
 _0200307C:
 	ldr r0, [sl, #0x4c]
 	mov r1, r8
-	bl sub_02068158
+	bl MI_UncompressLZ8
 	b _020030B8
 _0200308C:
 	ldr r0, [sl, #0x4c]
 	mov r1, r8
-	bl sub_020681F4
+	bl MI_UncompressHuffman
 	b _020030B8
 _0200309C:
 	ldr r0, [sl, #0x4c]
 	mov r1, r8
-	bl sub_020682EC
+	bl MI_UncompressRL8
 	b _020030B8
 _020030AC:
 	ldr r0, [sl, #0x4c]
 	mov r1, r8
-	bl sub_02068358
+	bl MI_UnfilterDiff8
 _020030B8:
 	str r8, [sl, #0x4c]
 _020030BC:
@@ -79981,22 +79981,22 @@ _020426C4:
 _020426D0:
 	mov r0, r6
 	add r1, r5, #0x1c
-	bl sub_02068158
+	bl MI_UncompressLZ8
 	b _0204270C
 _020426E0:
 	mov r0, r6
 	add r1, r5, #0x1c
-	bl sub_020681F4
+	bl MI_UncompressHuffman
 	b _0204270C
 _020426F0:
 	mov r0, r6
 	add r1, r5, #0x1c
-	bl sub_020682EC
+	bl MI_UncompressRL8
 	b _0204270C
 _02042700:
 	mov r0, r6
 	add r1, r5, #0x1c
-	bl sub_02068358
+	bl MI_UnfilterDiff8
 _0204270C:
 	add r0, r5, #0x1c
 	bl sub_02044AC8
@@ -81526,22 +81526,22 @@ _02043C84:
 _02043C90:
 	mov r0, r5
 	add r1, r4, #0x1c
-	bl sub_02068158
+	bl MI_UncompressLZ8
 	b _02043CCC
 _02043CA0:
 	mov r0, r5
 	add r1, r4, #0x1c
-	bl sub_020681F4
+	bl MI_UncompressHuffman
 	b _02043CCC
 _02043CB0:
 	mov r0, r5
 	add r1, r4, #0x1c
-	bl sub_020682EC
+	bl MI_UncompressRL8
 	b _02043CCC
 _02043CC0:
 	mov r0, r5
 	add r1, r4, #0x1c
-	bl sub_02068358
+	bl MI_UnfilterDiff8
 _02043CCC:
 	add r0, r4, #0x1c
 	bl sub_02044AC8
@@ -115840,7 +115840,7 @@ sub_0205FE7C: ; 0x0205FE7C
 	mov r4, r3
 	cmp r7, r6
 	beq _0205FE9C
-	bl sub_02067EF0
+	bl MI_Copy48B
 	arm_func_end sub_0205FE7C
 _0205FE9C:
 	ldr r0, [r7, #0x10]
@@ -119725,12 +119725,12 @@ _02062F7C: .word sub_02064710
 sub_02062F80: ; 0x02062F80
 	ldr r1, _02062F94 ; =0x04000400
 	mov r2, #0x1a
-	ldr ip, _02062F98 ; =sub_02067ED4
+	ldr ip, _02062F98 ; =MI_Copy36B
 	str r2, [r1]
 	bx ip
 	.align 2, 0
 _02062F94: .word 0x04000400
-_02062F98: .word sub_02067ED4
+_02062F98: .word MI_Copy36B
 	arm_func_end sub_02062F80
 
 	arm_func_start sub_02062F9C
@@ -119983,7 +119983,7 @@ sub_020632A4: ; 0x020632A4
 	str r2, [sp]
 	mov r3, #0x10
 	str r2, [sp, #4]
-	bl sub_02067A68
+	bl MI_DmaFill32Async
 	ldr r0, _02063334 ; =DAT_0208e7f0
 	ldr r1, _0206333C ; =0x04000360
 	ldr r0, [r0]
@@ -120298,7 +120298,7 @@ NitroSDK_gx_GX_LoadOAM: ; 0x020636AC
 	bls _020636E8
 	mov r1, r4
 	add r2, lr, #0x7000000
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, pc}
 	arm_func_end NitroSDK_gx_GX_LoadOAM
 _020636E8:
@@ -120325,7 +120325,7 @@ NitroSDK_gx_GXS_LoadOAM: ; 0x02063700
 	add r2, r1, #0x400
 	mov r1, lr
 	add r2, r2, #0x7000000
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r3, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadOAM
 _0206373C:
@@ -120354,7 +120354,7 @@ NitroSDK_gx_GX_LoadOBJ: ; 0x02063758
 	bls _02063798
 	mov r1, r4
 	add r2, ip, lr
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, pc}
 	arm_func_end NitroSDK_gx_GX_LoadOBJ
 _02063798:
@@ -120382,7 +120382,7 @@ NitroSDK_gx_GXS_LoadOBJ: ; 0x020637B0
 	bls _020637F0
 	mov r1, r4
 	add r2, ip, lr
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadOBJ
 _020637F0:
@@ -120652,7 +120652,7 @@ NitroSDK_gx_GX_LoadBG0Char: ; 0x02063B08
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GX_LoadBG0Char
 _02063B50:
@@ -120682,7 +120682,7 @@ NitroSDK_gx_GXS_LoadBG0Char: ; 0x02063B68
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadBG0Char
 _02063BB0:
@@ -120712,7 +120712,7 @@ NitroSDK_gx_GX_LoadBG1Char: ; 0x02063BC8
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GX_LoadBG1Char
 _02063C10:
@@ -120742,7 +120742,7 @@ NitroSDK_gx_GXS_LoadBG1Char: ; 0x02063C28
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadBG1Char
 _02063C70:
@@ -120772,7 +120772,7 @@ NitroSDK_gx_GX_LoadBG2Char: ; 0x02063C88
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GX_LoadBG2Char
 _02063CD0:
@@ -120802,7 +120802,7 @@ NitroSDK_gx_GXS_LoadBG2Char: ; 0x02063CE8
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadBG2Char
 _02063D30:
@@ -120832,7 +120832,7 @@ NitroSDK_gx_GX_LoadBG3Char: ; 0x02063D48
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GX_LoadBG3Char
 _02063D90:
@@ -120862,7 +120862,7 @@ NitroSDK_gx_GXS_LoadBG3Char: ; 0x02063DA8
 	mov r1, r6
 	mov r3, r4
 	add r2, ip, r5
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadBG3Char
 _02063DF0:
@@ -120945,7 +120945,7 @@ NitroSDK_gx_GX_LoadBGExtPltt: ; 0x02063EA8
 	mov r0, lr
 	mov r2, r4
 	str ip, [sp, #4]
-	bl NitroSDK_mi_MI_DmaCopy32Async
+	bl MI_DmaCopy32Async
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end NitroSDK_gx_GX_LoadBGExtPltt
@@ -120966,7 +120966,7 @@ NitroSDK_gx_GX_EndLoadBGExtPltt: ; 0x02063F18
 	ldr r0, [r0]
 	cmp r0, r1
 	beq _02063F34
-	bl NitroSDK_mi_MI_WaitDma
+	bl MI_WaitDma
 	arm_func_end NitroSDK_gx_GX_EndLoadBGExtPltt
 _02063F34:
 	ldr r0, _02063F5C ; =MAIN_BSS_02112DE0
@@ -121026,7 +121026,7 @@ NitroSDK_gx_GX_LoadOBJExtPltt: ; 0x02063FA8
 	mov r1, r6
 	add r2, lr, r5
 	str ip, [sp, #4]
-	bl NitroSDK_mi_MI_DmaCopy32Async
+	bl MI_DmaCopy32Async
 	add sp, sp, #8
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GX_LoadOBJExtPltt
@@ -121047,7 +121047,7 @@ NitroSDK_gx_GX_EndLoadOBJExtPltt: ; 0x02064014
 	ldr r0, [r0]
 	cmp r0, r1
 	beq _02064030
-	bl NitroSDK_mi_MI_WaitDma
+	bl MI_WaitDma
 	arm_func_end NitroSDK_gx_GX_EndLoadOBJExtPltt
 _02064030:
 	ldr r0, _02064054 ; =MAIN_BSS_02112DE0
@@ -121091,7 +121091,7 @@ NitroSDK_gx_GXS_LoadBGExtPltt: ; 0x02064070
 	mov r1, r4
 	add r2, r2, #0x6800000
 	str ip, [sp, #4]
-	bl NitroSDK_mi_MI_DmaCopy32Async
+	bl MI_DmaCopy32Async
 	add sp, sp, #8
 	ldmia sp!, {r4, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadBGExtPltt
@@ -121112,7 +121112,7 @@ NitroSDK_gx_GXS_EndLoadBGExtPltt: ; 0x020640D4
 	ldr r0, [r0]
 	cmp r0, r1
 	beq _020640F0
-	bl NitroSDK_mi_MI_WaitDma
+	bl MI_WaitDma
 	arm_func_end NitroSDK_gx_GXS_EndLoadBGExtPltt
 _020640F0:
 	ldr r0, _02064110 ; =MAIN_BSS_02112DE0
@@ -121155,7 +121155,7 @@ NitroSDK_gx_GXS_LoadOBJExtPltt: ; 0x0206412C
 	mov r1, r4
 	add r2, r2, #0x6000000
 	str ip, [sp, #4]
-	bl NitroSDK_mi_MI_DmaCopy32Async
+	bl MI_DmaCopy32Async
 	add sp, sp, #8
 	ldmia sp!, {r4, pc}
 	arm_func_end NitroSDK_gx_GXS_LoadOBJExtPltt
@@ -121176,7 +121176,7 @@ NitroSDK_gx_GXS_EndLoadOBJExtPltt: ; 0x02064190
 	ldr r0, [r0]
 	cmp r0, r1
 	beq _020641AC
-	bl NitroSDK_mi_MI_WaitDma
+	bl MI_WaitDma
 	arm_func_end NitroSDK_gx_GXS_EndLoadOBJExtPltt
 _020641AC:
 	ldr r0, _020641CC ; =MAIN_BSS_02112DE0
@@ -121253,7 +121253,7 @@ NitroSDK_gx_GX_LoadTex: ; 0x0206422C
 	mov r1, r7
 	mov r3, r5
 	add r2, lr, ip
-	bl NitroSDK_mi_MI_DmaCopy32
+	bl MI_DmaCopy32
 	b _020642C8
 	arm_func_end NitroSDK_gx_GX_LoadTex
 _020642B8:
@@ -121273,7 +121273,7 @@ _020642C8:
 	add r1, r7, r5
 	sub r3, r6, r5
 	str ip, [sp, #4]
-	bl NitroSDK_mi_MI_DmaCopy32Async
+	bl MI_DmaCopy32Async
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02064300:
@@ -121294,7 +121294,7 @@ _02064318:
 	mov r1, r7
 	mov r3, r6
 	str r4, [sp, #4]
-	bl NitroSDK_mi_MI_DmaCopy32Async
+	bl MI_DmaCopy32Async
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _0206434C:
@@ -121316,7 +121316,7 @@ NitroSDK_gx_GX_EndLoadTex: ; 0x0206436C
 	ldr r0, [r0]
 	cmp r0, r1
 	beq _02064388
-	bl NitroSDK_mi_MI_WaitDma
+	bl MI_WaitDma
 	arm_func_end NitroSDK_gx_GX_EndLoadTex
 _02064388:
 	ldr r0, _020643B4 ; =MAIN_BSS_02112DFC
@@ -121371,7 +121371,7 @@ NitroSDK_gx_GX_LoadTexPltt: ; 0x020643EC
 	mov r1, r6
 	add r2, lr, r5
 	str ip, [sp, #4]
-	bl NitroSDK_mi_MI_DmaCopy32Async
+	bl MI_DmaCopy32Async
 	add sp, sp, #8
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSDK_gx_GX_LoadTexPltt
@@ -121392,7 +121392,7 @@ NitroSDK_gx_GX_EndLoadTexPltt: ; 0x02064458
 	ldr r0, [r0]
 	cmp r0, r1
 	beq _02064474
-	bl NitroSDK_mi_MI_WaitDma
+	bl MI_WaitDma
 	arm_func_end NitroSDK_gx_GX_EndLoadTexPltt
 _02064474:
 	ldr r0, _02064498 ; =MAIN_BSS_02112DFC
@@ -121471,7 +121471,7 @@ NitroSDK_gx_GX_LoadClearImageColor: ; 0x0206452C
 	mov r0, lr
 	mov r1, r4
 	str ip, [sp, #4]
-	bl NitroSDK_mi_MI_DmaCopy32Async
+	bl MI_DmaCopy32Async
 	add sp, sp, #8
 	ldmia sp!, {r4, pc}
 	arm_func_end NitroSDK_gx_GX_LoadClearImageColor
@@ -121504,7 +121504,7 @@ NitroSDK_gx_GX_LoadClearImageDepth: ; 0x02064594
 	mov r1, r5
 	add r2, r4, #0x20000
 	str ip, [sp, #4]
-	bl NitroSDK_mi_MI_DmaCopy32Async
+	bl MI_DmaCopy32Async
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end NitroSDK_gx_GX_LoadClearImageDepth
@@ -121526,7 +121526,7 @@ NitroSDK_gx_GX_EndLoadClearImage: ; 0x02064600
 	ldr r0, [r0]
 	cmp r0, r1
 	beq _0206461C
-	bl NitroSDK_mi_MI_WaitDma
+	bl MI_WaitDma
 	arm_func_end NitroSDK_gx_GX_EndLoadClearImage
 _0206461C:
 	ldr r0, _02064640 ; =MAIN_BSS_02112DFC
@@ -121870,8 +121870,8 @@ _020649B4:
 _020649D0: .word OS_IRQTable
 _020649D4: .word MAIN_BSS_02112E1C
 
-	arm_func_start NitroSDK_os_OSi_EnterDmaCallback
-NitroSDK_os_OSi_EnterDmaCallback: ; 0x020649D8
+	arm_func_start OSi_EnterDmaCallback
+OSi_EnterDmaCallback: ; 0x020649D8
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r3, #0xc
 	mul r6, r0, r3
@@ -121891,7 +121891,7 @@ NitroSDK_os_OSi_EnterDmaCallback: ; 0x020649D8
 _02064A14: .word MAIN_BSS_02112E1C
 _02064A18: .word MAIN_BSS_02112E24
 _02064A1C: .word MAIN_BSS_02112E20
-	arm_func_end NitroSDK_os_OSi_EnterDmaCallback
+	arm_func_end OSi_EnterDmaCallback
 
 	arm_func_start sub_02064A20
 sub_02064A20: ; 0x02064A20
@@ -122155,7 +122155,7 @@ _02064D24:
 	mov r5, r0
 	mov r0, sb
 	mov r1, r8
-	bl sub_02068150
+	bl MI_SwapWord
 	movs r4, r0
 	bne _02064D4C
 	cmp r7, #0
@@ -123890,7 +123890,7 @@ sub_02066150: ; 0x02066150
 	bl sub_020648AC
 	bl sub_02064B20
 	bl sub_020665A8
-	bl sub_0206842C
+	bl MI_Init
 	bl sub_02066DE4
 	bl sub_02067614
 	bl sub_02065260
@@ -125777,1001 +125777,6 @@ OS_Halt: ; 0x02067870
 	mcr p15, 0, r0, c7, c0, 4
 	bx lr
 	arm_func_end OS_Halt
-
-	arm_func_start sub_0206787C
-sub_0206787C: ; 0x0206787C
-	ldr r1, _02067888 ; =0x04000247
-	strb r0, [r1]
-	bx lr
-	.align 2, 0
-_02067888: .word 0x04000247
-	arm_func_end sub_0206787C
-
-	arm_func_start MI_DmaFill32
-MI_DmaFill32: ; 0x0206788C
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	movs r4, r3
-	mov r8, r0
-	mov r7, r1
-	mov r6, r2
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	add r0, r8, r8, lsl #1
-	add r0, r0, #2
-	mov r0, r0, lsl #2
-	add r0, r0, #0xb0
-	add r5, r0, #0x4000000
-	arm_func_end MI_DmaFill32
-_020678B8:
-	ldr r0, [r5]
-	tst r0, #0x80000000
-	bne _020678B8
-	bl OS_DisableInterrupts
-	mov r2, r8, lsl #2
-	add r1, r2, #0xe0
-	mov r3, r4, lsr #2
-	mov r4, r0
-	add ip, r2, #0x4000000
-	mov r0, r8
-	mov r2, r7
-	add r1, r1, #0x4000000
-	orr r3, r3, #0x85000000
-	str r6, [ip, #0xe0]
-	bl sub_01FF8554
-	mov r0, r4
-	bl OS_RestoreInterrupts
-_020678FC:
-	ldr r0, [r5]
-	tst r0, #0x80000000
-	bne _020678FC
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start NitroSDK_mi_MI_DmaCopy32
-NitroSDK_mi_MI_DmaCopy32: ; 0x0206790C
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	mov r5, r3
-	mov r6, r2
-	mov r2, r5
-	mov r3, #0
-	mov r8, r0
-	mov r7, r1
-	bl NitroSDK_mi_MIi_CheckDma0SourceAddress
-	cmp r5, #0
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	add r0, r8, r8, lsl #1
-	add r0, r0, #2
-	mov r0, r0, lsl #2
-	add r0, r0, #0xb0
-	add r4, r0, #0x4000000
-	arm_func_end NitroSDK_mi_MI_DmaCopy32
-_02067948:
-	ldr r0, [r4]
-	tst r0, #0x80000000
-	bne _02067948
-	mov r3, r5, lsr #2
-	mov r0, r8
-	mov r1, r7
-	mov r2, r6
-	orr r3, r3, #0x84000000
-	bl sub_01FF84C0
-_0206796C:
-	ldr r0, [r4]
-	tst r0, #0x80000000
-	bne _0206796C
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start sub_0206797C
-sub_0206797C: ; 0x0206797C
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	movs r4, r3
-	mov r8, r0
-	mov r7, r1
-	mov r6, r2
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	add r0, r8, r8, lsl #1
-	add r0, r0, #2
-	mov r0, r0, lsl #2
-	add r0, r0, #0xb0
-	add r5, r0, #0x4000000
-	arm_func_end sub_0206797C
-_020679A8:
-	ldr r0, [r5]
-	tst r0, #0x80000000
-	bne _020679A8
-	bl OS_DisableInterrupts
-	mov r2, r8, lsl #2
-	add r1, r2, #0xe0
-	mov r3, r4, lsr #1
-	mov r4, r0
-	add ip, r2, #0x4000000
-	mov r0, r8
-	mov r2, r7
-	add r1, r1, #0x4000000
-	orr r3, r3, #0x81000000
-	str r6, [ip, #0xe0]
-	bl sub_01FF8554
-	mov r0, r4
-	bl OS_RestoreInterrupts
-_020679EC:
-	ldr r0, [r5]
-	tst r0, #0x80000000
-	bne _020679EC
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start MI_DmaCopy16
-MI_DmaCopy16: ; 0x020679FC
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	movs r5, r3
-	mov r8, r0
-	mov r7, r1
-	mov r6, r2
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	mov r2, r5
-	mov r3, #0
-	bl NitroSDK_mi_MIi_CheckDma0SourceAddress
-	add r0, r8, r8, lsl #1
-	add r0, r0, #2
-	mov r0, r0, lsl #2
-	add r0, r0, #0xb0
-	add r4, r0, #0x4000000
-	arm_func_end MI_DmaCopy16
-_02067A34:
-	ldr r0, [r4]
-	tst r0, #0x80000000
-	bne _02067A34
-	mov r3, r5, lsr #1
-	mov r0, r8
-	mov r1, r7
-	mov r2, r6
-	orr r3, r3, #0x80000000
-	bl sub_01FF84C0
-_02067A58:
-	ldr r0, [r4]
-	tst r0, #0x80000000
-	bne _02067A58
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start sub_02067A68
-sub_02067A68: ; 0x02067A68
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	movs r4, r3
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	ldr r8, [sp, #0x18]
-	bne _02067A98
-	cmp r8, #0
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	ldr r0, [sp, #0x1c]
-	blx r8
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	arm_func_end sub_02067A68
-_02067A98:
-	bl NitroSDK_mi_MI_WaitDma
-	cmp r8, #0
-	beq _02067AF0
-	ldr r2, [sp, #0x1c]
-	mov r0, r7
-	mov r1, r8
-	bl NitroSDK_os_OSi_EnterDmaCallback
-	bl OS_DisableInterrupts
-	mov r3, r4, lsr #2
-	mov r2, r7, lsl #2
-	add r1, r2, #0xe0
-	add r2, r2, #0x4000000
-	str r5, [r2, #0xe0]
-	mov r4, r0
-	mov r0, r7
-	mov r2, r6
-	add r1, r1, #0x4000000
-	orr r3, r3, #0xc5000000
-	bl sub_01FF8530
-	mov r0, r4
-	bl OS_RestoreInterrupts
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-_02067AF0:
-	bl OS_DisableInterrupts
-	mov r2, r7, lsl #2
-	add r1, r2, #0xe0
-	mov r3, r4, lsr #2
-	mov r4, r0
-	add ip, r2, #0x4000000
-	mov r0, r7
-	mov r2, r6
-	add r1, r1, #0x4000000
-	orr r3, r3, #0x85000000
-	str r5, [ip, #0xe0]
-	bl sub_01FF8530
-	mov r0, r4
-	bl OS_RestoreInterrupts
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start NitroSDK_mi_MI_DmaCopy32Async
-NitroSDK_mi_MI_DmaCopy32Async: ; 0x02067B2C
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	mov r5, r3
-	mov r6, r2
-	mov r2, r5
-	mov r3, #0
-	mov r8, r0
-	mov r7, r1
-	ldr r4, [sp, #0x18]
-	bl NitroSDK_mi_MIi_CheckDma0SourceAddress
-	cmp r5, #0
-	bne _02067B6C
-	cmp r4, #0
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	ldr r0, [sp, #0x1c]
-	blx r4
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	arm_func_end NitroSDK_mi_MI_DmaCopy32Async
-_02067B6C:
-	mov r0, r8
-	bl NitroSDK_mi_MI_WaitDma
-	cmp r4, #0
-	beq _02067BA8
-	ldr r2, [sp, #0x1c]
-	mov r0, r8
-	mov r1, r4
-	bl NitroSDK_os_OSi_EnterDmaCallback
-	mov r3, r5, lsr #2
-	mov r0, r8
-	mov r1, r7
-	mov r2, r6
-	orr r3, r3, #0xc4000000
-	bl sub_01FF8480
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-_02067BA8:
-	mov r3, r5, lsr #2
-	mov r0, r8
-	mov r1, r7
-	mov r2, r6
-	orr r3, r3, #0x84000000
-	bl sub_01FF8480
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start NitroSDK_mi_MI_WaitDma
-NitroSDK_mi_MI_WaitDma: ; 0x02067BC4
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl OS_DisableInterrupts
-	add r1, r4, r4, lsl #1
-	add r1, r1, #2
-	mov r1, r1, lsl #2
-	add r1, r1, #0xb0
-	add r2, r1, #0x4000000
-	arm_func_end NitroSDK_mi_MI_WaitDma
-_02067BE4:
-	ldr r1, [r2]
-	tst r1, #0x80000000
-	bne _02067BE4
-	cmp r4, #0
-	bne _02067C20
-	mov r1, #0xc
-	mul r2, r4, r1
-	add r1, r2, #0xb0
-	add r2, r2, #0x4000000
-	mov r3, #0
-	str r3, [r2, #0xb0]
-	add r2, r1, #0x4000000
-	ldr r1, _02067C28 ; =0x81400001
-	str r3, [r2, #4]
-	str r1, [r2, #8]
-_02067C20:
-	bl OS_RestoreInterrupts
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02067C28: .word 0x81400001
-
-	arm_func_start MI_StopDma
-MI_StopDma: ; 0x02067C2C
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl OS_DisableInterrupts
-	mov r1, #6
-	mul r1, r4, r1
-	add r1, r1, #5
-	mov r1, r1, lsl #1
-	add r1, r1, #0x4000000
-	ldrh r2, [r1, #0xb0]
-	cmp r4, #0
-	bic r2, r2, #0x3a00
-	strh r2, [r1, #0xb0]
-	ldrh r2, [r1, #0xb0]
-	bic r2, r2, #0x8000
-	strh r2, [r1, #0xb0]
-	ldrh r2, [r1, #0xb0]
-	ldrh r1, [r1, #0xb0]
-	bne _02067C9C
-	mov r1, #0xc
-	mul r2, r4, r1
-	add r1, r2, #0xb0
-	add r2, r2, #0x4000000
-	mov r3, #0
-	str r3, [r2, #0xb0]
-	add r2, r1, #0x4000000
-	ldr r1, _02067CA4 ; =0x81400001
-	str r3, [r2, #4]
-	str r1, [r2, #8]
-	arm_func_end MI_StopDma
-_02067C9C:
-	bl OS_RestoreInterrupts
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02067CA4: .word 0x81400001
-
-	arm_func_start sub_02067CA8
-sub_02067CA8: ; 0x02067CA8
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	ldr r5, _02067D28 ; =0x040000B8
-	mov r7, r0
-	mov r6, r1
-	mov r4, #0
-	arm_func_end sub_02067CA8
-_02067CBC:
-	cmp r4, r7
-	beq _02067D14
-	ldr r0, [r5]
-	tst r0, #0x80000000
-	andne r0, r0, #0x38000000
-	cmpne r0, r6
-	beq _02067D14
-	cmp r0, #0x8000000
-	cmpeq r6, #0x10000000
-	beq _02067D14
-	cmp r0, #0x10000000
-	cmpeq r6, #0x8000000
-	beq _02067D14
-	cmp r0, #0x18000000
-	cmpne r0, #0x20000000
-	cmpne r0, #0x28000000
-	cmpne r0, #0x30000000
-	cmpne r0, #0x38000000
-	cmpne r0, #0x8000000
-	cmpne r0, #0x10000000
-	bne _02067D14
-	bl OS_Terminate
-_02067D14:
-	add r4, r4, #1
-	cmp r4, #3
-	add r5, r5, #0xc
-	blt _02067CBC
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_02067D28: .word 0x040000B8
-
-	arm_func_start NitroSDK_mi_MIi_CheckDma0SourceAddress
-NitroSDK_mi_MIi_CheckDma0SourceAddress: ; 0x02067D2C
-	stmdb sp!, {r3, lr}
-	cmp r0, #0
-	ldmneia sp!, {r3, pc}
-	cmp r3, #0
-	and ip, r1, #0xff000000
-	beq _02067D50
-	cmp r3, #0x800000
-	subeq r1, r1, r2
-	b _02067D54
-	arm_func_end NitroSDK_mi_MIi_CheckDma0SourceAddress
-_02067D50:
-	add r1, r1, r2
-_02067D54:
-	cmp ip, #0x4000000
-	and r0, r1, #0xff000000
-	beq _02067D78
-	cmp ip, #0x8000000
-	bhs _02067D78
-	cmp r0, #0x4000000
-	beq _02067D78
-	cmp r0, #0x8000000
-	ldmloia sp!, {r3, pc}
-_02067D78:
-	bl OS_Terminate
-	ldmia sp!, {r3, pc}
-
-	arm_func_start MIi_CpuClear16
-MIi_CpuClear16: ; 0x02067D80
-	mov r3, #0
-	arm_func_end MIi_CpuClear16
-_02067D84:
-	cmp r3, r2
-	blt _02067D90
-	b _02067D94
-_02067D90:
-	strh r0, [r1, r3]
-_02067D94:
-	blt _02067D9C
-	b _02067DA0
-_02067D9C:
-	add r3, r3, #2
-_02067DA0:
-	blt _02067D84
-	bx lr
-
-	arm_func_start MIi_CpuCopy16
-MIi_CpuCopy16: ; 0x02067DA8
-	mov ip, #0
-	arm_func_end MIi_CpuCopy16
-_02067DAC:
-	cmp ip, r2
-	blt _02067DB8
-	b _02067DBC
-_02067DB8:
-	ldrh r3, [r0, ip]
-_02067DBC:
-	blt _02067DC4
-	b _02067DC8
-_02067DC4:
-	strh r3, [r1, ip]
-_02067DC8:
-	blt _02067DD0
-	b _02067DD4
-_02067DD0:
-	add ip, ip, #2
-_02067DD4:
-	blt _02067DAC
-	bx lr
-
-	arm_func_start MIi_CpuClear32
-MIi_CpuClear32: ; 0x02067DDC
-	add ip, r1, r2
-	arm_func_end MIi_CpuClear32
-_02067DE0:
-	cmp r1, ip
-	blt _02067DEC
-	b _02067DF0
-_02067DEC:
-	stmia r1!, {r0}
-_02067DF0:
-	blt _02067DE0
-	bx lr
-
-	arm_func_start MIi_CpuCopy32
-MIi_CpuCopy32: ; 0x02067DF8
-	add ip, r1, r2
-	arm_func_end MIi_CpuCopy32
-_02067DFC:
-	cmp r1, ip
-	blt _02067E08
-	b _02067E0C
-_02067E08:
-	ldmia r0!, {r2}
-_02067E0C:
-	blt _02067E14
-	b _02067E18
-_02067E14:
-	stmia r1!, {r2}
-_02067E18:
-	blt _02067DFC
-	bx lr
-
-	arm_func_start MIi_CpuClearFast
-MIi_CpuClearFast: ; 0x02067E20
-	stmdb sp!, {r4, r5, r6, r7, r8, sb}
-	add sb, r1, r2
-	mov ip, r2, lsr #5
-	add ip, r1, ip, lsl #5
-	mov r2, r0
-	mov r3, r2
-	mov r4, r2
-	mov r5, r2
-	mov r6, r2
-	mov r7, r2
-	mov r8, r2
-	arm_func_end MIi_CpuClearFast
-_02067E4C:
-	cmp r1, ip
-	blt _02067E58
-	b _02067E5C
-_02067E58:
-	stmia r1!, {r0, r2, r3, r4, r5, r6, r7, r8}
-_02067E5C:
-	blt _02067E4C
-_02067E60:
-	cmp r1, sb
-	blt _02067E6C
-	b _02067E70
-_02067E6C:
-	stmia r1!, {r0}
-_02067E70:
-	blt _02067E60
-	ldmia sp!, {r4, r5, r6, r7, r8, sb}
-	bx lr
-
-	arm_func_start MIi_CpuCopyFast
-MIi_CpuCopyFast: ; 0x02067E7C
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl}
-	add sl, r1, r2
-	mov ip, r2, lsr #5
-	add ip, r1, ip, lsl #5
-	arm_func_end MIi_CpuCopyFast
-_02067E8C:
-	cmp r1, ip
-	blt _02067E98
-	b _02067E9C
-_02067E98:
-	ldmia r0!, {r2, r3, r4, r5, r6, r7, r8, sb}
-_02067E9C:
-	blt _02067EA4
-	b _02067EA8
-_02067EA4:
-	stmia r1!, {r2, r3, r4, r5, r6, r7, r8, sb}
-_02067EA8:
-	blt _02067E8C
-_02067EAC:
-	cmp r1, sl
-	blt _02067EB8
-	b _02067EBC
-_02067EB8:
-	ldmia r0!, {r2}
-_02067EBC:
-	blt _02067EC4
-	b _02067EC8
-_02067EC4:
-	stmia r1!, {r2}
-_02067EC8:
-	blt _02067EAC
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl}
-	bx lr
-
-	arm_func_start sub_02067ED4
-sub_02067ED4: ; 0x02067ED4
-	ldmia r0!, {r2, r3, ip}
-	stmia r1!, {r2, r3, ip}
-	ldmia r0!, {r2, r3, ip}
-	stmia r1!, {r2, r3, ip}
-	ldmia r0!, {r2, r3, ip}
-	stmia r1!, {r2, r3, ip}
-	bx lr
-	arm_func_end sub_02067ED4
-
-	arm_func_start sub_02067EF0
-sub_02067EF0: ; 0x02067EF0
-	ldmia r0!, {r2, r3, ip}
-	stmia r1!, {r2, r3, ip}
-	ldmia r0!, {r2, r3, ip}
-	stmia r1!, {r2, r3, ip}
-	ldmia r0!, {r2, r3, ip}
-	stmia r1!, {r2, r3, ip}
-	ldmia r0!, {r2, r3, ip}
-	stmia r1!, {r2, r3, ip}
-	bx lr
-	arm_func_end sub_02067EF0
-
-	arm_func_start MI_CpuFill8
-MI_CpuFill8: ; 0x02067F14
-	cmp r2, #0
-	beq _02067F20
-	b _02067F24
-	arm_func_end MI_CpuFill8
-_02067F20:
-	bx lr
-_02067F24:
-	tst r0, #1
-	beq _02067F50
-	ldrh ip, [r0, #-1]
-	and ip, ip, #0xff
-	orr r3, ip, r1, lsl #8
-	strh r3, [r0, #-1]
-	add r0, r0, #1
-	subs r2, r2, #1
-	beq _02067F4C
-	b _02067F50
-_02067F4C:
-	bx lr
-_02067F50:
-	cmp r2, #2
-	blo _02067FA8
-	orr r1, r1, r1, lsl #8
-	tst r0, #2
-	beq _02067F78
-	strh r1, [r0], #2
-	subs r2, r2, #2
-	beq _02067F74
-	b _02067F78
-_02067F74:
-	bx lr
-_02067F78:
-	orr r1, r1, r1, lsl #16
-	bics r3, r2, #3
-	beq _02067F98
-	sub r2, r2, r3
-	add ip, r3, r0
-_02067F8C:
-	str r1, [r0], #4
-	cmp r0, ip
-	blo _02067F8C
-_02067F98:
-	tst r2, #2
-	bne _02067FA4
-	b _02067FA8
-_02067FA4:
-	strh r1, [r0], #2
-_02067FA8:
-	tst r2, #1
-	beq _02067FB4
-	b _02067FB8
-_02067FB4:
-	bx lr
-_02067FB8:
-	ldrh r3, [r0]
-	and r3, r3, #0xff00
-	and r1, r1, #0xff
-	orr r1, r1, r3
-	strh r1, [r0]
-	bx lr
-
-	arm_func_start MI_CpuCopy8
-MI_CpuCopy8: ; 0x02067FD0
-	cmp r2, #0
-	beq _02067FDC
-	b _02067FE0
-	arm_func_end MI_CpuCopy8
-_02067FDC:
-	bx lr
-_02067FE0:
-	tst r1, #1
-	beq _02068038
-	ldrh ip, [r1, #-1]
-	and ip, ip, #0xff
-	tst r0, #1
-	bne _02067FFC
-	b _02068000
-_02067FFC:
-	ldrh r3, [r0, #-1]
-_02068000:
-	bne _02068008
-	b _0206800C
-_02068008:
-	mov r3, r3, lsr #8
-_0206800C:
-	beq _02068014
-	b _02068018
-_02068014:
-	ldrh r3, [r0]
-_02068018:
-	orr r3, ip, r3, lsl #8
-	strh r3, [r1, #-1]
-	add r0, r0, #1
-	add r1, r1, #1
-	subs r2, r2, #1
-	beq _02068034
-	b _02068038
-_02068034:
-	bx lr
-_02068038:
-	eor ip, r1, r0
-	tst ip, #1
-	beq _02068094
-	bic r0, r0, #1
-	ldrh ip, [r0], #2
-	mov r3, ip, lsr #8
-	subs r2, r2, #2
-	blo _02068070
-_02068058:
-	ldrh ip, [r0], #2
-	orr ip, r3, ip, lsl #8
-	strh ip, [r1], #2
-	mov r3, ip, lsr #0x10
-	subs r2, r2, #2
-	bhs _02068058
-_02068070:
-	tst r2, #1
-	beq _0206807C
-	b _02068080
-_0206807C:
-	bx lr
-_02068080:
-	ldrh ip, [r1]
-	and ip, ip, #0xff00
-	orr ip, ip, r3
-	strh ip, [r1]
-	bx lr
-_02068094:
-	tst ip, #2
-	beq _020680C0
-	bics r3, r2, #1
-	beq _02068124
-	sub r2, r2, r3
-	add ip, r3, r1
-_020680AC:
-	ldrh r3, [r0], #2
-	strh r3, [r1], #2
-	cmp r1, ip
-	blo _020680AC
-	b _02068124
-_020680C0:
-	cmp r2, #2
-	blo _02068124
-	tst r1, #2
-	beq _020680E8
-	ldrh r3, [r0], #2
-	strh r3, [r1], #2
-	subs r2, r2, #2
-	beq _020680E4
-	b _020680E8
-_020680E4:
-	bx lr
-_020680E8:
-	bics r3, r2, #3
-	beq _02068108
-	sub r2, r2, r3
-	add ip, r3, r1
-_020680F8:
-	ldr r3, [r0], #4
-	str r3, [r1], #4
-	cmp r1, ip
-	blo _020680F8
-_02068108:
-	tst r2, #2
-	bne _02068114
-	b _02068118
-_02068114:
-	ldrh r3, [r0], #2
-_02068118:
-	bne _02068120
-	b _02068124
-_02068120:
-	strh r3, [r1], #2
-_02068124:
-	tst r2, #1
-	beq _02068130
-	b _02068134
-_02068130:
-	bx lr
-_02068134:
-	ldrh r2, [r1]
-	ldrh r0, [r0]
-	and r2, r2, #0xff00
-	and r0, r0, #0xff
-	orr r0, r2, r0
-	strh r0, [r1]
-	bx lr
-
-	arm_func_start sub_02068150
-sub_02068150: ; 0x02068150
-	.word 0xE1010090
-	bx lr
-	arm_func_end sub_02068150
-
-	arm_func_start sub_02068158
-sub_02068158: ; 0x02068158
-	stmdb sp!, {r4, r5, r6, lr}
-	ldr r5, [r0], #4
-	mov r2, r5, lsr #8
-	arm_func_end sub_02068158
-_02068164:
-	cmp r2, #0
-	ble _020681EC
-	ldrb lr, [r0], #1
-	mov r4, #8
-_02068174:
-	subs r4, r4, #1
-	blt _02068164
-	tst lr, #0x80
-	bne _02068198
-	ldrb r6, [r0], #1
-	.word 0xE1416096
-	add r1, r1, #1
-	sub r2, r2, #1
-	b _020681D4
-_02068198:
-	ldrb r5, [r0]
-	mov r6, #3
-	add r3, r6, r5, asr #4
-	ldrb r6, [r0], #1
-	and r5, r6, #0xf
-	mov ip, r5, lsl #8
-	ldrb r6, [r0], #1
-	orr r5, r6, ip
-	add ip, r5, #1
-	sub r2, r2, r3
-_020681C0:
-	ldrb r5, [r1, -ip]
-	.word 0xE1415095
-	add r1, r1, #1
-	subs r3, r3, #1
-	bgt _020681C0
-_020681D4:
-	cmp r2, #0
-	bgt _020681E0
-	b _020681E4
-_020681E0:
-	mov lr, lr, lsl #1
-_020681E4:
-	bgt _02068174
-	b _02068164
-_020681EC:
-	ldmia sp!, {r4, r5, r6, lr}
-	bx lr
-
-	arm_func_start sub_020681F4
-sub_020681F4: ; 0x020681F4
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #4
-	add r2, r0, #4
-	add r7, r2, #1
-	ldrb sl, [r0]
-	and r4, sl, #0xf
-	mov r3, #0
-	mov lr, #0
-	and sl, r4, #7
-	add fp, sl, #4
-	str fp, [sp]
-	ldr sl, [r0]
-	mov ip, sl, lsr #8
-	ldrb sl, [r2]
-	add sl, sl, #1
-	add r0, r2, sl, lsl #1
-	mov r2, r7
-	arm_func_end sub_020681F4
-_02068238:
-	cmp ip, #0
-	ble _020682E0
-	mov r8, #0x20
-	ldr r5, [r0], #4
-_02068248:
-	subs r8, r8, #1
-	blt _02068238
-	mov sl, #1
-	and sb, sl, r5, lsr #31
-	ldrb r6, [r2]
-	mov r6, r6, lsl sb
-	mov sl, r2, lsr #1
-	mov sl, sl, lsl #1
-	ldrb fp, [r2]
-	and fp, fp, #0x3f
-	add fp, fp, #1
-	add sl, sl, fp, lsl #1
-	add r2, sl, sb
-	tst r6, #0x80
-	beq _020682C8
-	mov r3, r3, lsr r4
-	ldrb sl, [r2]
-	rsb fp, r4, #0x20
-	orr r3, r3, sl, lsl fp
-	mov r2, r7
-	add lr, lr, #1
-	ldr fp, [sp]
-	cmp lr, fp
-	beq _020682AC
-	b _020682B0
-_020682AC:
-	str r3, [r1], #4
-_020682B0:
-	beq _020682B8
-	b _020682BC
-_020682B8:
-	sub ip, ip, #4
-_020682BC:
-	beq _020682C4
-	b _020682C8
-_020682C4:
-	mov lr, #0
-_020682C8:
-	cmp ip, #0
-	bgt _020682D4
-	b _020682D8
-_020682D4:
-	mov r5, r5, lsl #1
-_020682D8:
-	bgt _02068248
-	b _02068238
-_020682E0:
-	add sp, sp, #4
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	bx lr
-
-	arm_func_start sub_020682EC
-sub_020682EC: ; 0x020682EC
-	stmdb sp!, {r4, r5, r7}
-	ldmia r0!, {r3}
-	mov r7, r3, lsr #8
-	arm_func_end sub_020682EC
-_020682F8:
-	cmp r7, #0
-	ble _02068350
-	ldrb r4, [r0], #1
-	ands r2, r4, #0x7f
-	tst r4, #0x80
-	bne _02068330
-	add r2, r2, #1
-	sub r7, r7, r2
-_02068318:
-	ldrb r3, [r0], #1
-	.word 0xE1413093
-	add r1, r1, #1
-	subs r2, r2, #1
-	bgt _02068318
-	b _020682F8
-_02068330:
-	add r2, r2, #3
-	sub r7, r7, r2
-	ldrb r5, [r0], #1
-_0206833C:
-	.word 0xE1414095
-	add r1, r1, #1
-	subs r2, r2, #1
-	bgt _0206833C
-	b _020682F8
-_02068350:
-	ldmia sp!, {r4, r5, r7}
-	bx lr
-
-	arm_func_start sub_02068358
-sub_02068358: ; 0x02068358
-	stmdb sp!, {r4}
-	ldmia r0, {r2}
-	mov r3, #0
-	and r4, r2, #0xf
-	mov r2, r2, lsr #8
-	cmp r4, #1
-	bne _02068394
-	add r0, r0, #3
-	sub r1, r1, #1
-	arm_func_end sub_02068358
-_0206837C:
-	ldrb r4, [r0, #1]!
-	subs r2, r2, #1
-	add r3, r3, r4
-	strb r3, [r1, #1]!
-	bgt _0206837C
-	b _020683B0
-_02068394:
-	add r0, r0, #2
-	sub r1, r1, #2
-_0206839C:
-	ldrh r4, [r0, #2]!
-	subs r2, r2, #2
-	add r3, r3, r4
-	strh r3, [r1, #2]!
-	bgt _0206839C
-_020683B0:
-	ldmia sp!, {r4}
-	bx lr
-
-	arm_func_start MIi_CardDmaCopy32
-MIi_CardDmaCopy32: ; 0x020683B8
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r5, r1
-	mov r6, r0
-	mov r7, r3
-	mvn r1, #0
-	mov r4, r2
-	bl sub_02067CA8
-	mov r0, r6
-	mov r1, r5
-	mov r2, r7
-	mov r3, #0x1000000
-	bl NitroSDK_mi_MIi_CheckDma0SourceAddress
-	cmp r7, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	add r0, r6, r6, lsl #1
-	add r0, r0, #2
-	mov r0, r0, lsl #2
-	add r0, r0, #0xb0
-	add r1, r0, #0x4000000
-	arm_func_end MIi_CardDmaCopy32
-_02068404:
-	ldr r0, [r1]
-	tst r0, #0x80000000
-	bne _02068404
-	ldr r3, _02068428 ; =0xAF000001
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl sub_01FF8480
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_02068428: .word 0xAF000001
-
-	arm_func_start sub_0206842C
-sub_0206842C: ; 0x0206842C
-	stmdb sp!, {r3, lr}
-	mov r0, #3
-	bl sub_0206787C
-	mov r0, #0
-	bl MI_StopDma
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0206842C
 
     .section .init, 4
 
