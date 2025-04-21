@@ -1,0 +1,21 @@
+diff --git a/include/nitroWiFi/version.h b/include/nitroWiFi/version.h
+index b0f147b..336c20f 100644
+--- a/include/nitroWiFi/version.h
++++ b/include/nitroWiFi/version.h
+@@ -1,12 +1,12 @@
+ #ifndef    NITROWIFI_VERSION_H_
+ #define    NITROWIFI_VERSION_H_
+ 
+-#define    SDK_WIFI_VERSION_DATE        20070920
+-#define    SDK_WIFI_VERSION_TIME        229
++#define    SDK_WIFI_VERSION_DATE        20070912
++#define    SDK_WIFI_VERSION_TIME        1007
+ #define    SDK_WIFI_VERSION_MAJOR        2
+ #define    SDK_WIFI_VERSION_MINOR        1
+-#define    SDK_WIFI_VERSION_RELSTEP    30003
+-#define    SDK_WIFI_VERSION_STRING        "2.1.30003.0709200229"
++#define    SDK_WIFI_VERSION_RELSTEP    30002
++#define    SDK_WIFI_VERSION_STRING        "2.1.30002.0709121007"
+ 
+ #define    SDK_WIFI_BUILDINFO_CW_CC    127
+ #define    SDK_WIFI_BUILDINFO_CW_LD    85

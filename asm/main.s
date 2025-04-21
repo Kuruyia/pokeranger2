@@ -3,26 +3,6 @@
 
     .text
 
-_02000BC4: ; 0x02000BC4
-    .string "[SDK+NINTENDO:WiFi2.1.30002.0709121007]"
-
-_02000BEC: ; 0x02000BEC
-    .string "[SDK+UBIQUITOUS:CPS]"
-    .byte 0x00, 0x00, 0x00
-
-_02000C04: ; 0x02000C04
-    .string "[SDK+UBIQUITOUS:SSL]"
-    .byte 0x00, 0x00, 0x00
-
-_02000C1C: ; 0x02000C1C
-    .string "[SDK+NINTENDO:BACKUP]"
-    .byte 0x00, 0x00
-
-    .global NITRO_DWC_VERSION_STRING
-NITRO_DWC_VERSION_STRING: ; 0x02000C34
-    .string "[SDK+NINTENDO:DWC-DL2.2.30000.070824.2031_DWC-DL_2_2]"
-    .byte 0x00, 0x00
-
 	arm_func_start NitroMain
 NitroMain: ; 0x02000C6C
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
@@ -85554,7 +85534,7 @@ _020470C0:
 sub_020470D8: ; 0x020470D8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	ldr r0, _0204710C ; =_02000BC4
+	ldr r0, _0204710C ; =0x02000BC4
 	bl OSi_ReferSymbol
 	ldr r0, _02047110 ; =DAT_0208e538
 	ldr r1, [r0]
@@ -85566,7 +85546,7 @@ sub_020470D8: ; 0x020470D8
 	bl sub_02047114
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0204710C: .word _02000BC4
+_0204710C: .word 0x02000BC4
 _02047110: .word DAT_0208e538
 	arm_func_end sub_020470D8
 
@@ -89008,7 +88988,7 @@ sub_02049D14: ; 0x02049D14
 	stmdb sp!, {r3, r4, r5, lr}
 	sub sp, sp, #8
 	mov r4, r0
-	ldr r0, _02049F0C ; =_02000BEC
+	ldr r0, _02049F0C ; =0x02000BEC
 	bl OSi_ReferSymbol
 	ldr r3, [r4, #0x18]
 	ldr r5, [r4, #0x14]
@@ -89137,7 +89117,7 @@ _02049DCC:
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
-_02049F0C: .word _02000BEC
+_02049F0C: .word 0x02000BEC
 _02049F10: .word MAIN_BSS_0210D0D8
 _02049F14: .word 0x6C078965
 _02049F18: .word 0x5D588B65
@@ -98091,7 +98071,7 @@ _0205188C: .word MAIN_BSS_0210D118
 sub_02051890: ; 0x02051890
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	ldr r0, _020518B8 ; =_02000C04
+	ldr r0, _020518B8 ; =0x02000C04
 	bl OSi_ReferSymbol
 	ldr r0, _020518BC ; =OSi_ThreadInfo
 	ldr r0, [r0, #4]
@@ -98100,7 +98080,7 @@ sub_02051890: ; 0x02051890
 	strneb r4, [r0, #9]
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_020518B8: .word _02000C04
+_020518B8: .word 0x02000C04
 _020518BC: .word OSi_ThreadInfo
 	arm_func_end sub_02051890
 
@@ -135333,7 +135313,7 @@ sub_0206F2E0: ; 0x0206F2E0
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	mov sb, r0
 	ldr r7, [sb, #0x2c]
-	ldr r0, _0206F4B4 ; =_02000C1C
+	ldr r0, _0206F4B4 ; =0x02000C1C
 	ldr r4, [sb, #0x34]
 	ldr sl, [sb, #0x30]
 	mov r5, #0x100
@@ -135461,14 +135441,14 @@ _0206F498:
 	blx r6
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_0206F4B4: .word _02000C1C
+_0206F4B4: .word 0x02000C1C
 
 	arm_func_start sub_0206F4B8
 sub_0206F4B8: ; 0x0206F4B8
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
 	mov sb, r0
 	ldr r4, _0206F590 ; =MAIN_BSS_02114FC0
-	ldr r0, _0206F594 ; =_02000C1C
+	ldr r0, _0206F594 ; =0x02000C1C
 	mov r8, r1
 	mov r7, r2
 	mov r6, r3
@@ -135525,7 +135505,7 @@ _0206F560:
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
 _0206F590: .word MAIN_BSS_02114FC0
-_0206F594: .word _02000C1C
+_0206F594: .word 0x02000C1C
 _0206F598: .word sub_0206F2E0
 _0206F59C: .word OSi_ThreadInfo
 
@@ -135573,7 +135553,7 @@ _0206F5EC: .word MAIN_BSS_02114FC0
 sub_0206F5F0: ; 0x0206F5F0
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r6, r0
-	ldr r0, _0206F71C ; =_02000C1C
+	ldr r0, _0206F71C ; =0x02000C1C
 	ldr r4, _0206F720 ; =MAIN_BSS_02114FC0
 	bl OSi_ReferSymbol
 	cmp r6, #0
@@ -135653,7 +135633,7 @@ _0206F704:
 	movne r0, #0
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
-_0206F71C: .word _02000C1C
+_0206F71C: .word 0x02000C1C
 _0206F720: .word MAIN_BSS_02114FC0
 _0206F724: .word OSi_ThreadInfo
 

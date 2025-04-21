@@ -9,6 +9,11 @@ Static main
 {
 	Address 0x02000000
 	StackSize 0 2048
+	Library libsoc.a (.version)
+	Library libcps.a (.version)
+	Library libssl.a (.version)
+	Library libcard.a (.version)
+	Library libdwcaccount.a (.version)
 	Object main.nef.p/asm_main.s.o
 	Library libwm.a
     Library libmb.a

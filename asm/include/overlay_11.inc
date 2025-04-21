@@ -453,7 +453,6 @@
 .public OSi_ThreadInfo
 .public errno
 .public PTR_ptr_FUN_02083578_0208a804
-.public NITRO_DWC_VERSION_STRING
 .public _ZTVN10__cxxabiv120__si_class_type_infoE
 .public sub_02007CC4
 .public sub_02007CE0

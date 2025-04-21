@@ -85053,7 +85053,7 @@ _0215DB54: .word OVERLAY11_BSS_0216C464
 ov11_0215DB58: ; 0x0215DB58
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r0
-	ldr r0, _0215DBB8 ; =NITRO_DWC_VERSION_STRING
+	ldr r0, _0215DBB8 ; =0x02000C34
 	mov r5, #0
 	bl OSi_ReferSymbol
 	mov r0, r6
@@ -85079,7 +85079,7 @@ _0215DBA8:
 	moveq r0, #0
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
-_0215DBB8: .word NITRO_DWC_VERSION_STRING
+_0215DBB8: .word 0x02000C34
 
 	arm_func_start ov11_0215DBBC
 ov11_0215DBBC: ; 0x0215DBBC
