@@ -952,7 +952,7 @@ _0211D79C:
 	mov r0, r6
 	mov r1, r5
 	mov r2, sb
-	bl sub_02064F28
+	bl OS_SPrintf
 	add r1, sb, #8
 	mov r0, r7, asr #4
 	add r2, r7, r0, lsr #27
@@ -4359,7 +4359,7 @@ _02120860:
 	mov r1, fp
 	mov r2, sl
 	mov r3, sb
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, r7
 	mov r1, r8
 	bl strcpy
@@ -7701,7 +7701,7 @@ ov3_02123654: ; 0x02123654
 	ldr r1, _0212386C ; =s_tp_03d_overlay_3_0212abd4
 	add r0, sp, #4
 	mov r4, #0
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x44
 	bl _Znwm
 	cmp r0, #0
@@ -7878,7 +7878,7 @@ _021238B8:
 	ldr r1, _021239A4 ; =s_mp_03d_00_overlay_3_0212ac00
 	add r2, r2, #3
 	and r2, r2, #0xff
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x44
 	bl _Znwm
 	cmp r0, #0
@@ -8834,11 +8834,11 @@ _021245F0:
 	mov r0, r5
 	mov r1, fp
 	mov r2, r6
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02124C48 ; =s_OPD_opdm_02d_ntfp_overlay_3_0212ad48
 	mov r0, r4
 	mov r2, r6
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, r8
 	mov r1, r5
 	mov r2, r4
@@ -9199,7 +9199,7 @@ _02124B70:
 	mov r0, r6
 	mov r1, r5
 	mov r2, sb
-	bl sub_02064F28
+	bl OS_SPrintf
 	add r1, sb, #8
 	mov r0, r7, asr #4
 	add r2, r7, r0, lsr #27
@@ -13751,13 +13751,13 @@ _02128AC4:
 	ldr r2, [r2, #8]
 	blx r2
 _02128AF8:
-	bl sub_020668E8
+	bl OS_GetTick
 	add r0, r7, #0x138
 	ldr r2, [r0]
 	mov r1, r6
 	ldr r2, [r2, #8]
 	blx r2
-	bl sub_020668E8
+	bl OS_GetTick
 	ldr r0, [r7, #0x7fc]
 	cmp r0, #0
 	beq _02128C5C

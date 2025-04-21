@@ -2721,11 +2721,11 @@ _0211EF64:
 	ldr r1, _0211F0B4 ; =s_data_menu_rd_03d_LZ_bin_overlay_22_02121b24
 	add r0, sp, #0x70
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0211F0B8 ; =s_rd_03d_nbfs_overlay_22_02121b3c
 	add r0, sp, #0x10
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, [sl, #0x1c]
 	add r1, sp, #0x70
 	add r2, sp, #0x10
@@ -3395,7 +3395,7 @@ _0211F81C:
 	ldr r1, _0211F8A4 ; =s_DCB_s_overlay_22_02121b4c
 	add r0, sp, #0x7c
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r3, #0
 	str r3, [sp]
 	str r3, [sp, #4]

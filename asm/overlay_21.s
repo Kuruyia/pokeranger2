@@ -49,7 +49,7 @@ ov21_0211CA50: ; 0x0211CA50
     str r1, [r4, #0x10]
     mov r0, #2
     str r1, [r4, #8]
-    bl sub_0206494C
+    bl OS_GetIrqFunction
     str r0, [r4, #0x1c]
     ldr r1, _0211CAA8 ; =ov21_0211C9E0
     mov r0, #2
@@ -3841,7 +3841,7 @@ ov21_0212004C: ; 0x0212004C
 	stmdb sp!, {r4, r5, r6, lr}
 	sub sp, sp, #0x10
 	mov r6, r0
-	bl sub_020668E8
+	bl OS_GetTick
 	mov r4, r0
 	ldr r0, [r6, #0xc]
 	mov r5, r1
@@ -4047,7 +4047,7 @@ _02120344:
 	beq _02120354
 	bl ov21_02122114
 _02120354:
-	bl sub_020668E8
+	bl OS_GetTick
 	subs r4, r0, r4
 	mov r2, #0xfa00
 	sbc r3, r1, r5
@@ -4063,7 +4063,7 @@ _02120354:
 	mov r0, r6
 	bl ov21_0211FF20
 _02120390:
-	bl sub_020668E8
+	bl OS_GetTick
 	add sp, sp, #0x10
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0

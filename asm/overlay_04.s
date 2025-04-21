@@ -394,7 +394,7 @@ _0211CF1C:
 	ldr r2, [r7, #0xc]
 	ldr r1, _0211D05C ; =s_data_message_chapter_chapter_03d_overlay_4_0211d830
 	add r0, sp, #4
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xb8
 	bl _Znwm
 	movs r6, r0

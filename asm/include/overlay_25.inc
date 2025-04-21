@@ -96,7 +96,7 @@
 .public NitroSDK_gx_GXS_LoadBG2ScrBmp
 .public NitroSDK_gx_GX_LoadBG3ScrBmp
 .public NitroSDK_gx_GXS_LoadBG3ScrBmp
-.public sub_02064F28
+.public OS_SPrintf
 .public DC_FlushRange
 .public MIi_CpuClearFast
 .public _s32_div_f

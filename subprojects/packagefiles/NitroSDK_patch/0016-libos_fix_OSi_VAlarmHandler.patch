@@ -1,0 +1,20 @@
+diff --git a/libraries/os/src/os_valarm.c b/libraries/os/src/os_valarm.c
+index 0641307..d055210 100644
+--- a/libraries/os/src/os_valarm.c
++++ b/libraries/os/src/os_valarm.c
+@@ -370,13 +370,13 @@ static void OSi_VAlarmHandler (void *)
+             if (alarm->period && !alarm->canceled) {
+                 alarm->handler = handler;
+                 alarm->frame = (u32)OSi_VFrameCount + 1;
+-                OSi_InsertVAlarm(alarm);
++                OSi_AppendVAlarm(alarm);
+             }
+             break;
+         case OSi_VALARM_TIMEOUT:
+             OSi_DetachVAlarm(alarm);
++            OSi_AppendVAlarm(alarm);
+             alarm->frame = (u32)OSi_VFrameCount + 1;
+-            OSi_InsertVAlarm(alarm);
+             break;
+         }
+     }

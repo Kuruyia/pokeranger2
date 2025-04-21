@@ -778,7 +778,7 @@ _0211D3FC:
 	ldr r1, _0211D4BC ; =s_data_message_etc_mission_info_0_overlay_11_02166178
 	mov r0, r4
 	add r2, sb, #0x50
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #4
 	bl _Znwm
 	cmp r0, #0
@@ -2104,7 +2104,7 @@ _0211E5D0:
 	ldr r1, _0211EF30 ; =s_rn001_02d_overlay_11_02166338
 	mov r0, r6
 	add r2, r8, #0xa
-	bl sub_02064F28
+	bl OS_SPrintf
 	str r5, [sp]
 	ldr r4, [sl, #0x40]
 	add r0, sl, r8, lsl #2
@@ -2610,7 +2610,7 @@ _0211ED7C:
 	mov r0, r8
 	mov r1, r7
 	add r2, sb, #7
-	bl sub_02064F28
+	bl OS_SPrintf
 	add r0, sl, sb, lsl #2
 	ldr r0, [r0, #0xc4]
 	cmp r0, #0
@@ -5360,7 +5360,7 @@ ov11_02121270: ; 0x02121270
 	mov r0, #0
 	bl sub_0200FA48
 	mov r0, #0
-	bl sub_020674B0
+	bl OS_ResetSystem
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_02121270
 
@@ -5933,7 +5933,7 @@ ov11_02121A08: ; 0x02121A08
 	mov r0, r5
 	bl ov11_0211F52C
 	bl ov11_02128FEC
-	bl sub_02066A24
+	bl OS_InitAlarm
 	ldr r1, _02121A74 ; =0x04000210
 	mov r0, #0
 	ldr r4, [r1]
@@ -6191,7 +6191,7 @@ _02121D80:
 	ldr r1, _02121EDC ; =s_rn001_02d_overlay_11_02166338
 	ldr r2, [r6, sb, lsl #2]
 	mov r0, r7
-	bl sub_02064F28
+	bl OS_SPrintf
 	str r5, [sp]
 	str r4, [sp, #4]
 	str r4, [sp, #8]
@@ -6245,7 +6245,7 @@ _02121E74:
 	mov r0, r6
 	mov r1, r5
 	mov r2, r7
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, r4
 	bl _Znwm
 	cmp r0, #0
@@ -8442,7 +8442,7 @@ _02123CA4:
 	mov r0, r5
 	mov r1, r4
 	add r2, r6, #1
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, r5
 	mov r1, r7
 	bl strcmp
@@ -8498,11 +8498,11 @@ ov11_02123D20: ; 0x02123D20
 	ldr r1, _02123DD4 ; =s_PRS_MISSION_0d_dat_overlay_11_021663fc
 	add r0, sp, #0x30
 	add r2, r5, #1
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02123DD8 ; =s_RNS_s_overlay_11_02166410
 	add r0, sp, #0
 	add r2, sp, #0x30
-	bl sub_02064F28
+	bl OS_SPrintf
 	add r0, sp, #0x60
 	bl FS_InitFile
 	add r0, sp, #0x60
@@ -12684,7 +12684,7 @@ ov11_02127034: ; 0x02127034
 	stmdb sp!, {r4, lr}
 	ldr r0, _02127054 ; =0x04000006
 	ldrh r4, [r0]
-	bl sub_020668E8
+	bl OS_GetTick
 	adds r0, r0, r4
 	bic r0, r0, #1
 	add r0, r0, #1
@@ -24777,7 +24777,7 @@ _02130F84:
 	ldr r1, _02131698 ; =s_PRS_MISSION_02d_prs_overlay_11_02166660
 	mov r0, r6
 	add r2, r7, #1
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr sl, [r4, #0x4b0]
 	mov r8, #0
 	cmp sl, #0
@@ -27583,7 +27583,7 @@ _02133578:
 	bne _0213359C
 	mov r0, #0
 	strb r0, [r7, #0xd15]
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [r7, #0xcb0]
 	str r1, [r7, #0xcb4]
 	mov r0, #0xa
@@ -28601,7 +28601,7 @@ ov11_02134228: ; 0x02134228
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end ov11_02134228
 _02134258:
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [r4, #0xcb0]
 	str r1, [r4, #0xcb4]
 	add r0, r4, #0xd00
@@ -28612,7 +28612,7 @@ _02134258:
 	bl ov11_02134874
 	ldmia sp!, {r3, r4, r5, pc}
 _02134280:
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [r4, #0xcb0]
 	str r1, [r4, #0xcb4]
 	ldrb r2, [r4, #0xd0f]
@@ -28632,7 +28632,7 @@ _02134280:
 	bl ov11_02134874
 	ldmia sp!, {r3, r4, r5, pc}
 _021342CC:
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [r4, #0xcb0]
 	str r1, [r4, #0xcb4]
 	ldrb r3, [r4, #0xd0f]
@@ -28653,12 +28653,12 @@ _02134304: .word DAT_02084d80
 ov11_02134308: ; 0x02134308
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [r4, #0xcb0]
 	str r1, [r4, #0xcb4]
 	mov r0, #0
 	strb r0, [r4, #0xd11]
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [r4, #0xcb0]
 	str r1, [r4, #0xcb4]
 	add r0, r4, #0xd00
@@ -28678,7 +28678,7 @@ _02134354: .word DAT_02084d80
 ov11_02134358: ; 0x02134358
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_020668E8
+	bl OS_GetTick
 	ldr r3, [r4, #0xcb0]
 	ldr r2, [r4, #0xcb4]
 	subs r3, r0, r3
@@ -28705,7 +28705,7 @@ ov11_02134358: ; 0x02134358
 	ldmia sp!, {r4, pc}
 	arm_func_end ov11_02134358
 _021343C4:
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [r4, #0xcb0]
 	str r1, [r4, #0xcb4]
 	add r0, r4, #0xd00
@@ -28748,7 +28748,7 @@ ov11_021343FC: ; 0x021343FC
 ov11_02134444: ; 0x02134444
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_020668E8
+	bl OS_GetTick
 	ldr r3, [r4, #0xcb0]
 	ldr r2, [r4, #0xcb4]
 	subs r3, r0, r3
@@ -28804,7 +28804,7 @@ _021344F8:
 	bl ov11_0213468C
 	ldmia sp!, {r4, pc}
 _02134518:
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [r4, #0xcb0]
 	str r1, [r4, #0xcb4]
 	ldrb r2, [r4, #0xd0f]
@@ -28832,7 +28832,7 @@ _02134568: .word 0x000082EA
 ov11_0213456C: ; 0x0213456C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_020668E8
+	bl OS_GetTick
 	ldr r3, [r4, #0xcb0]
 	ldr r2, [r4, #0xcb4]
 	subs r3, r0, r3
@@ -28890,7 +28890,7 @@ _02134624:
 	bl ov11_0213468C
 	ldmia sp!, {r4, pc}
 _0213464C:
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [r4, #0xcb0]
 	str r1, [r4, #0xcb4]
 	ldrb r3, [r4, #0xd0f]
@@ -29238,7 +29238,7 @@ ov11_02134A80: ; 0x02134A80
 	ldmia sp!, {r4, pc}
 	arm_func_end ov11_02134A80
 _02134AB8:
-	bl sub_020668E8
+	bl OS_GetTick
 	ldr r3, [r4, #0xcb0]
 	ldr r2, [r4, #0xcb4]
 	subs r3, r0, r3
@@ -30025,7 +30025,7 @@ ov11_021354C4: ; 0x021354C4
 	beq _02135520
 	add r0, r1, #0x318
 	add r0, r0, #0x1000
-	bl sub_02065688
+	bl OS_IsThreadTerminated
 	cmp r0, #0
 	addeq sp, sp, #8
 	ldmeqia sp!, {r3, pc}
@@ -30091,7 +30091,7 @@ _021355D8:
 	ldmeqia sp!, {r3, pc}
 	add r0, r1, #0x318
 	add r0, r0, #0x1000
-	bl sub_02065658
+	bl OS_JoinThread
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02135600: .word OVERLAY11_BSS_02169CA8
@@ -30135,7 +30135,7 @@ ov11_0213565C: ; 0x0213565C
 	ldmeqia sp!, {r3, pc}
 	add r0, r1, #0x318
 	add r0, r0, #0x1000
-	bl sub_02065658
+	bl OS_JoinThread
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02135688: .word OVERLAY11_BSS_02169CA8
@@ -30299,7 +30299,7 @@ _02135880:
 	beq _021358AC
 	add r0, r1, #0x338
 	add r0, r0, #0x1800
-	bl sub_02065658
+	bl OS_JoinThread
 _021358AC:
 	ldr r2, _02135B1C ; =OVERLAY11_BSS_02169CA8
 	ldr r0, [r2, #8]
@@ -30379,10 +30379,10 @@ _021359AC:
 	add r8, r8, #1
 	str r0, [sp]
 _021359B8:
-	bl sub_020668E8
+	bl OS_GetTick
 	mov sb, r0
 	mov sl, r1
-	bl sub_020668E8
+	bl OS_GetTick
 	subs r2, r0, sb
 	sbc r0, r1, sl
 	mov r1, r0, lsl #6
@@ -30424,8 +30424,8 @@ _02135A54:
 	add r0, r0, #0x1000
 	bl OS_UnlockMutex
 	mov r0, r7
-	bl sub_02065928
-	bl sub_020668E8
+	bl OS_Sleep
+	bl OS_GetTick
 	subs r2, r0, sb
 	sbc r0, r1, sl
 	mov r1, r0, lsl #6
@@ -30966,7 +30966,7 @@ ov11_021361DC: ; 0x021361DC
 	ldr r2, _0213645C ; =s_013llu_overlay_11_02166900
 	mov r0, r4
 	str r5, [sp]
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	b _02136238
 	arm_func_end ov11_021361DC
 _02136220:
@@ -30975,13 +30975,13 @@ _02136220:
 	ldr r2, _0213645C ; =s_013llu_overlay_11_02166900
 	mov r0, r4
 	str r5, [sp]
-	bl sub_02064F68
+	bl STD_TSNPrintf
 _02136238:
 	ldrh r3, [r6, #0x10]
 	ldr r2, _02136460 ; =s_03u_overlay_11_02166908
 	add r0, r4, #0xe
 	mov r1, #7
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	ldr r0, _02136464 ; =0x027FFE0C
 	ldrb r0, [r0]
 	cmp r0, #0
@@ -31014,13 +31014,13 @@ _021362B4:
 	ldrb r2, [r7], #1
 	mov r0, r8
 	mov r1, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	add r6, r6, #1
 	cmp r6, #6
 	add r8, r8, #2
 	blt _021362B4
 	add r0, sp, #0x38
-	bl sub_02067588
+	bl OS_GetOwnerInfo
 	ldrb r0, [sp, #0x38]
 	ldr r2, _0213646C ; =s_02x_overlay_11_02166910
 	mov r1, #3
@@ -31029,7 +31029,7 @@ _021362B4:
 	strcsb r0, [sp, #0x38]
 	ldrb r3, [sp, #0x38]
 	add r0, r4, #0x2c
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	add r0, sp, #0x3c
 	add r1, r4, #0x7e
 	mov r2, #0x14
@@ -31040,7 +31040,7 @@ _021362B4:
 	str r1, [sp]
 	ldrb r3, [sp, #0x3a]
 	mov r1, #5
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	add r0, sp, #0x28
 	add r1, sp, #0x1c
 	bl RTC_GetDateTime
@@ -31062,7 +31062,7 @@ _021362B4:
 	ldr r3, [sp, #0x24]
 	str r3, [sp, #0x10]
 	ldr r3, [sp, #0x28]
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	bl OS_DisableInterrupts
 	mov r6, r0
 	bl sub_02055E68
@@ -31084,7 +31084,7 @@ _021363C4:
 	ldrb r2, [r7, sb]
 	mov r0, r8
 	mov r1, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	add sb, sb, #1
 	cmp sb, #6
 	add r8, r8, #2
@@ -31094,7 +31094,7 @@ _021363C4:
 	ldr r2, _02136478 ; =s_02d_0000000_00_overlay_11_02166940
 	add r0, r4, #0x6f
 	mov r1, #0xe
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	add r0, sp, #0x14
 	bl sub_02055EAC
 	mov r5, r0
@@ -31142,7 +31142,7 @@ ov11_0213647C: ; 0x0213647C
 	add r0, sp, #4
 	mov r1, #0x21
 	str r3, [sp]
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	add r0, sp, #4
 	bl strlen
 	mov r3, r0
@@ -31307,7 +31307,7 @@ _0213671C:
 	add r0, sp, #4
 	mov r1, #0x21
 	str r3, [sp]
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	ldr r1, _021367B8 ; =s_User_Agent_overlay_11_021669e4
 	add r2, sp, #4
 	mov r0, r6
@@ -31446,7 +31446,7 @@ ov11_021368DC: ; 0x021368DC
 	ldr r2, _0213696C ; =s_d_overlay_11_02166a7c
 	add r0, sp, #0
 	mov r1, #7
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	ldr r1, _02136970 ; =s_Content_Length_overlay_11_02166a80
 	add r2, sp, #0
 	mov r0, r4
@@ -31496,7 +31496,7 @@ ov11_02136974: ; 0x02136974
 	beq _021369F0
 	add r0, r5, #0x338
 	add r0, r0, #0x1800
-	bl sub_02065688
+	bl OS_IsThreadTerminated
 	cmp r0, #0
 	addeq sp, sp, #8
 	ldmeqia sp!, {r3, r4, r5, pc}
@@ -31543,7 +31543,7 @@ ov11_02136A30: ; 0x02136A30
 	ldmeqia sp!, {r4, pc}
 	add r0, r4, #0x338
 	add r0, r0, #0x1800
-	bl sub_02065658
+	bl OS_JoinThread
 	ldmia sp!, {r4, pc}
 	arm_func_end ov11_02136A30
 
@@ -31557,7 +31557,7 @@ ov11_02136A8C: ; 0x02136A8C
 	bne _02136AC0
 	add r0, r4, #0x1d4
 	add r0, r0, #0x1800
-	bl sub_02067790
+	bl OS_GetLowEntropyData
 	add r0, r4, #0x1d4
 	add r0, r0, #0x1800
 	mov r1, #0x20
@@ -31579,7 +31579,7 @@ _02136AC0:
 _02136AF0:
 	bl OS_UnlockMutex
 	mov r0, #0xa
-	bl sub_02065928
+	bl OS_Sleep
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 
@@ -31778,7 +31778,7 @@ _02136DA0:
 	ldr r0, [r7, #0xc]
 	add r0, r1, r0
 	str r0, [r7, #8]
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [sp, #8]
 	add r0, sl, #0x234
 	str r1, [sp, #4]
@@ -31800,7 +31800,7 @@ _02136DF4:
 	cmp r0, #0
 	blt _02136F24
 	ble _02136EA8
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [sp, #8]
 	add r0, sp, #0x10
 	str r1, [sp, #4]
@@ -31849,7 +31849,7 @@ _02136EA8:
 	ldrge r0, [r4, #0xa34]
 	cmpge r0, r1
 	bge _02136F24
-	bl sub_020668E8
+	bl OS_GetTick
 	ldr r2, [sp, #8]
 	mov r3, #0
 	subs r2, r0, r2
@@ -31993,7 +31993,7 @@ ov11_02137028: ; 0x02137028
 	ldr r0, [r5, #4]
 	ldr r1, [r5, #0xc]
 	ldr r3, [r3, #0x128]
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	ldr r1, [r5, #4]
 	add r0, r1, r0
 	str r0, [r5, #4]
@@ -32055,7 +32055,7 @@ _02137160:
 	mov r3, r7
 	mov r0, sb
 	add r1, r4, #1
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	strb r8, [sb, r0]
 	ldr r1, [r5, #4]
 	mov r0, #0
@@ -32116,7 +32116,7 @@ ov11_021371C4: ; 0x021371C4
 _02137274:
 	mov r2, r7
 	mov r3, sb
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	ldr r2, [r6, #4]
 	mov r1, fp
 	add r2, r2, r0
@@ -32167,7 +32167,7 @@ ov11_021372D0: ; 0x021372D0
 _02137328:
 	ldr r2, _02137354 ; =s_s_overlay_11_02166b64
 	mov r3, r6
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	cmp r0, r4
 	movne r0, #1
 	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
@@ -32920,7 +32920,7 @@ _02137D5C:
 	beq _02137D84
 	add r0, r1, #0x11c
 	add r0, r0, #0x1000
-	bl sub_02065658
+	bl OS_JoinThread
 _02137D84:
 	ldr r0, _02137D9C ; =OVERLAY11_BSS_02169CCC
 	mvn r1, #6
@@ -32975,7 +32975,7 @@ ov11_02137DF8: ; 0x02137DF8
 	beq _02137E30
 	add r0, r1, #0x11c
 	add r0, r0, #0x1000
-	bl sub_02065688
+	bl OS_IsThreadTerminated
 	cmp r0, #0
 	addeq sp, sp, #8
 	ldmeqia sp!, {r3, pc}
@@ -33082,7 +33082,7 @@ _02137F70:
 	beq _02137FA8
 	add r0, r1, #0x338
 	add r0, r0, #0x1800
-	bl sub_02065658
+	bl OS_JoinThread
 _02137FA8:
 	ldr r0, [r5, #0x14]
 	add r1, r0, #0x1000
@@ -33273,7 +33273,7 @@ _0213822C:
 	beq _0213826C
 	add r0, r1, #0x338
 	add r0, r0, #0x1800
-	bl sub_02065658
+	bl OS_JoinThread
 _0213826C:
 	ldr r2, _02138CFC ; =OVERLAY11_BSS_02169CCC
 	ldr r0, [r2, #0x14]
@@ -33554,7 +33554,7 @@ _0213863C:
 	beq _02138674
 	add r0, r1, #0x338
 	add r0, r0, #0x1800
-	bl sub_02065658
+	bl OS_JoinThread
 _02138674:
 	ldr r0, [r5, #0x14]
 	add r1, r0, #0x1000
@@ -33909,7 +33909,7 @@ _02138B5C:
 	beq _02138B94
 	add r0, r1, #0x338
 	add r0, r0, #0x1800
-	bl sub_02065658
+	bl OS_JoinThread
 _02138B94:
 	ldr r0, [r5, #0x14]
 	add r1, r0, #0x1000
@@ -33984,7 +33984,7 @@ _02138C7C:
 	ldr r0, [r5, #0x14]
 	bl ov11_02136F74
 	ldr r0, [sp, #8]
-	bl sub_02065928
+	bl OS_Sleep
 	b _02137EE0
 _02138CA8:
 	cmp sb, #0
@@ -34300,7 +34300,7 @@ ov11_021390C8: ; 0x021390C8
 	cmp r0, #0
 	beq _02139120
 	add r0, r1, #0x1b40
-	bl sub_02065688
+	bl OS_IsThreadTerminated
 	cmp r0, #0
 	bne _02139120
 	bl OS_Terminate
@@ -34460,7 +34460,7 @@ ov11_02139330: ; 0x02139330
 	moveq r0, #1
 	ldmeqia sp!, {r3, pc}
 	add r0, r1, #0x1b40
-	bl sub_02065688
+	bl OS_IsThreadTerminated
 	cmp r0, #1
 	bne _021393F4
 	ldr r0, _021393FC ; =OVERLAY11_BSS_02169D5C
@@ -35413,7 +35413,7 @@ _02139FC8:
 	movlt r6, #0
 	movge r6, #1
 _0213A054:
-	bl sub_020668E8
+	bl OS_GetTick
 	str r0, [sp, #0x34]
 	mov fp, r1
 	b _02139EC0
@@ -35511,7 +35511,7 @@ _0213A19C:
 	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	tst r0, #0x20
 	bne _0213A1F8
-	bl sub_020668E8
+	bl OS_GetTick
 	ldr r2, [sp, #0x34]
 	mov ip, r6
 	subs sb, r0, r2
@@ -36242,7 +36242,7 @@ ov11_0213AB40: ; 0x0213AB40
 	sbcs r2, r1, r0
 	addlt sp, sp, #0x24
 	ldmltia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	bl sub_02066870
+	bl OS_IsTickAvailable
 	cmp r0, #0
 	beq _0213ABBC
 	ldr r0, _0213AD0C ; =FUN_020668E8
@@ -36340,7 +36340,7 @@ _0213AD00:
 	add sp, sp, #0x24
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_0213AD0C: .word sub_020668E8
+_0213AD0C: .word OS_GetTick
 _0213AD10: .word 0x5D588B65
 _0213AD14: .word 0x00269EC3
 _0213AD18: .word 0x000009BF
@@ -36426,7 +36426,7 @@ ov11_0213ADB0: ; 0x0213ADB0
 	sbcs r2, r1, r0
 	addlt sp, sp, #0x24
 	ldmltia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	bl sub_02066870
+	bl OS_IsTickAvailable
 	cmp r0, #0
 	beq _0213AE4C
 	ldr r0, _0213AF40 ; =FUN_020668E8
@@ -36499,7 +36499,7 @@ _0213AF34:
 	add sp, sp, #0x24
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_0213AF40: .word sub_020668E8
+_0213AF40: .word OS_GetTick
 _0213AF44: .word 0x5D588B65
 _0213AF48: .word 0x00269EC3
 _0213AF4C: .word 0x000009BF
@@ -36975,7 +36975,7 @@ ov11_0213B49C: ; 0x0213B49C
 	arm_func_end ov11_0213B49C
 _0213B4D4:
 	mov r0, r4
-	bl sub_02065928
+	bl OS_Sleep
 	bl ov11_0213291C
 	cmp r0, #0
 	beq _0213B4D4
@@ -37437,7 +37437,7 @@ ov11_0213BA98: ; 0x0213BA98
 	ldr r0, _0213BAD8 ; =OVERLAY11_BSS_02169DB8
 	ldr r0, [r0]
 	add r0, r0, #0x9c0
-	bl sub_02065658
+	bl OS_JoinThread
 	ldr r0, _0213BAD8 ; =OVERLAY11_BSS_02169DB8
 	ldr r0, [r0]
 	ldr r4, [r0, #4]
@@ -37487,7 +37487,7 @@ _0213BB40:
 	add r0, sp, #0x1a0
 	add r3, r5, #0x50
 	mov r1, #0x100
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	ldr r0, _0213BC7C ; =OVERLAY11_BSS_02169DB8
 	ldr r4, [r0]
 	add r0, r4, #0x91
@@ -37563,7 +37563,7 @@ _0213BC50:
 	bl ov11_0213B9A0
 _0213BC68:
 	mov r0, r4
-	bl sub_02065928
+	bl OS_Sleep
 	b _0213BAF4
 _0213BC74:
 	.byte 0x2A, 0xDE, 0x8D, 0xE2, 0xF8, 0x80, 0xBD, 0xE8
@@ -41879,7 +41879,7 @@ _0213DF0E:
 	mov r4, #0x64
 _0213DF18:
 	add r0, r4, #0
-	blx sub_02065928
+	blx OS_Sleep
 	ldr r0, [r5]
 	cmp r0, #0
 	beq _0213DF18
@@ -42606,14 +42606,14 @@ _0213E3FC:
 	b _0213E514
 _0213E410:
 	add r0, sp, #0x18
-	blx sub_02066AB4
+	blx OS_CreateAlarm
 	mov r0, #0x13
 	str r0, [sp]
 	ldr r1, _0213E52C ; =0x003FEC42
 	ldr r3, _0213E530 ; =0x0213E219
 	add r0, sp, #0x18
 	add r2, r6, #0
-	blx sub_02066BF0
+	blx OS_SetAlarm
 _0213E426:
 	ldr r0, _0213E534 ; =OVERLAY11_BSS_0216ABC0
 	add r1, sp, #0x14
@@ -42727,7 +42727,7 @@ _0213E4E8:
 	blt _0213E4E8
 _0213E4FA:
 	add r0, sp, #0x18
-	blx sub_02066C5C
+	blx OS_CancelAlarm
 	ldr r5, _0213E534 ; =OVERLAY11_BSS_0216ABC0
 	add r4, sp, #0x14
 	mov r6, #0
@@ -42832,14 +42832,14 @@ _0213E5C4:
 	mov r0, #0
 	str r0, [sp, #8]
 	add r0, sp, #0x14
-	blx sub_02066AB4
+	blx OS_CreateAlarm
 	mov r0, #0x12
 	str r0, [sp]
 	ldr r1, _0213E6F4 ; =0x003FEC42
 	ldr r3, _0213E6F8 ; =0x0213E219
 	add r0, sp, #0x14
 	mov r2, #0
-	blx sub_02066BF0
+	blx OS_SetAlarm
 	b _0213E6B4
 _0213E5E0:
 	ldr r0, _0213E6FC ; =OVERLAY11_BSS_0216ABC0
@@ -42886,7 +42886,7 @@ _0213E62C:
 	cmp r6, #0
 	bne _0213E6B4
 	add r0, sp, #0x14
-	blx sub_02066C5C
+	blx OS_CancelAlarm
 	ldr r0, _0213E700 ; =OVERLAY11_BSS_0216ABE0
 	mov r1, #1
 	bl ov11_0213EA44
@@ -42957,7 +42957,7 @@ _0213E6B4:
 	cmp r4, #0
 	bne _0213E5E0
 	add r0, sp, #0x14
-	blx sub_02066C5C
+	blx OS_CancelAlarm
 	ldr r5, _0213E6FC ; =OVERLAY11_BSS_0216ABC0
 	add r4, sp, #0x10
 	mov r6, #0
@@ -42997,7 +42997,7 @@ thunk_FUN_02065928: ; 0x0213E708
 	ldr r3, _0213E70C ; =FUN_02065928
 	bx r3
 	.align 2, 0
-_0213E70C: .word sub_02065928
+_0213E70C: .word OS_Sleep
 	thumb_func_end thunk_FUN_02065928
 
 	thumb_func_start ov11_0213E710
@@ -44901,7 +44901,7 @@ _0213F54C:
 	add r7, r4, #0
 _0213F550:
 	mov r0, #0xa
-	blx sub_02065928
+	blx OS_Sleep
 	bl ov11_0213F47C
 	cmp r0, #0
 	beq _0213F57C
@@ -44946,7 +44946,7 @@ ov11_0213F594: ; 0x0213F594
 	thumb_func_end ov11_0213F594
 _0213F5A6:
 	add r0, r7, #0
-	blx sub_02065928
+	blx OS_Sleep
 	bl ov11_0213F47C
 	cmp r0, #0
 	beq _0213F5CE
@@ -45014,14 +45014,14 @@ _0213F60A:
 	pop {r3, r4, r5, r6, r7, pc}
 _0213F61E:
 	add r0, sp, #4
-	blx sub_02066AB4
+	blx OS_CreateAlarm
 	mov r0, #0x12
 	str r0, [sp]
 	ldr r1, _0213F700 ; =0x003FEC42
 	ldr r3, _0213F704 ; =0x0213F4E5
 	add r0, sp, #4
 	mov r2, #0
-	blx sub_02066BF0
+	blx OS_SetAlarm
 	mov r7, #0
 _0213F636:
 	bl ov11_021422CC
@@ -45042,7 +45042,7 @@ _0213F648:
 	b _0213F6C8
 _0213F656:
 	mov r0, #0xa
-	blx sub_02065928
+	blx OS_Sleep
 	bl ov11_0213F47C
 	cmp r0, #0
 	beq _0213F6C4
@@ -45104,7 +45104,7 @@ _0213F6C4:
 	bne _0213F636
 _0213F6C8:
 	add r0, sp, #4
-	blx sub_02066C5C
+	blx OS_CancelAlarm
 _0213F6CE:
 	bl ov11_0213F47C
 	cmp r0, #0
@@ -45153,7 +45153,7 @@ ov11_0213F710: ; 0x0213F710
 	thumb_func_end ov11_0213F710
 _0213F72A:
 	add r0, r7, #0
-	blx sub_02065928
+	blx OS_Sleep
 	bl ov11_0213F47C
 	cmp r0, #0
 	beq _0213F752
@@ -45482,21 +45482,21 @@ _0213F980:
 	b _0213FB9E
 _0213F9A2:
 	add r0, sp, #0x24
-	blx sub_02066AB4
+	blx OS_CreateAlarm
 	mov r0, #0x13
 	str r0, [sp]
 	ldr r1, _0213FBC4 ; =0x000FFB10
 	ldr r3, _0213FBC8 ; =0x0213F4E5
 	add r0, sp, #0x24
 	mov r2, #0
-	blx sub_02066BF0
+	blx OS_SetAlarm
 	ldr r7, _0213FBB8 ; =OVERLAY11_BSS_0216AD50
 	mov r5, #1
 	mov r4, #0
 	add r6, sp, #0x24
 _0213F9C0:
 	mov r0, #0xa
-	blx sub_02065928
+	blx OS_Sleep
 	bl ov11_021422CC
 	ldr r1, _0213FBBC ; =PTR_DAT_overlay_11_02167e38
 	ldr r1, [r1, #0xc]
@@ -45549,14 +45549,14 @@ _0213FA1C:
 	ble _0213FA48
 	add r4, r0, #0
 	add r0, r6, #0
-	blx sub_02066C5C
+	blx OS_CancelAlarm
 	mov r0, #0x13
 	str r0, [sp]
 	ldr r1, _0213FBC4 ; =0x000FFB10
 	ldr r3, _0213FBC8 ; =0x0213F4E5
 	add r0, r6, #0
 	mov r2, #0
-	blx sub_02066BF0
+	blx OS_SetAlarm
 	b _0213FA48
 _0213FA42:
 	mov r5, #0
@@ -45572,7 +45572,7 @@ _0213FA50:
 	bne _0213F9C0
 _0213FA54:
 	add r0, sp, #0x24
-	blx sub_02066C5C
+	blx OS_CancelAlarm
 _0213FA5A:
 	bl ov11_0213F47C
 	cmp r0, #0
@@ -47085,7 +47085,7 @@ ov11_0214054C: ; 0x0214054C
 _02140564:
 	mov r0, #0x7d
 	lsl r0, r0, #2
-	blx sub_02065928
+	blx OS_Sleep
 	ldr r0, _02140894 ; =OVERLAY11_BSS_0216AD50
 	ldr r0, [r0, #0x1c]
 	cmp r0, #0xa
@@ -50833,7 +50833,7 @@ ov11_021422A4: ; 0x021422A4
 	thumb_func_start ov11_021422CC
 ov11_021422CC: ; 0x021422CC
 	push {r3, lr}
-	blx sub_020668E8
+	blx OS_GetTick
 	lsr r2, r0, #0x1a
 	lsl r1, r1, #6
 	orr r1, r2
@@ -50995,7 +50995,7 @@ _021423CA:
 	add sp, #8
 	pop {r4, r5, r6, pc}
 _021423E4:
-	blx sub_020653A8
+	blx OS_IsThreadAvailable
 	cmp r0, #1
 	beq _021423F8
 	add r0, r6, #0
@@ -51071,7 +51071,7 @@ ov11_0214246C: ; 0x0214246C
 	thumb_func_end ov11_0214246C
 _02142480:
 	add r0, r5, #0
-	blx sub_02065928
+	blx OS_Sleep
 _02142486:
 	ldr r0, [r4, #0x38]
 	cmp r0, #1
@@ -51081,9 +51081,9 @@ _02142486:
 _02142490:
 	mov r0, #0x7d
 	lsl r0, r0, #2
-	blx sub_02065928
+	blx OS_Sleep
 	ldr r0, _021424FC ; =OVERLAY11_BSS_0216ADFC
-	blx sub_02065688
+	blx OS_IsThreadTerminated
 	cmp r0, #0
 	bne _021424BA
 	ldr r4, _021424FC ; =OVERLAY11_BSS_0216ADFC
@@ -51091,9 +51091,9 @@ _021424A4:
 	add r0, r4, #0
 	blx OS_WakeupThreadDirect
 	add r0, r4, #0
-	blx sub_02065658
+	blx OS_JoinThread
 	add r0, r4, #0
-	blx sub_02065688
+	blx OS_IsThreadTerminated
 	cmp r0, #0
 	beq _021424A4
 _021424BA:
@@ -56363,7 +56363,7 @@ _02146A8C:
 	bl ov11_0215D978
 	bl ov11_0215CF54
 	bl ov11_0215D7E0
-	bl sub_020673E0
+	bl OS_WaitVBlankIntr
 	ldrb r0, [r4, #1]
 	cmp r0, #0
 	beq _02146A8C
@@ -56435,13 +56435,13 @@ ov11_02146B68: ; 0x02146B68
 	ldr r0, [r1]
 	bic r0, r0, #0x10000
 	str r0, [r1]
-	bl sub_02066870
+	bl OS_IsTickAvailable
 	cmp r0, #0
 	bne _02146BA0
 	bl OS_Terminate
 	arm_func_end ov11_02146B68
 _02146BA0:
-	bl sub_02066AA4
+	bl OS_IsAlarmAvailable
 	cmp r0, #0
 	bne _02146BB0
 	bl OS_Terminate
@@ -57238,7 +57238,7 @@ ov11_02147570: ; 0x02147570
 	arm_func_end ov11_02147570
 _021475BC:
 	mov r0, #0xa
-	bl sub_02065928
+	bl OS_Sleep
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -68929,7 +68929,7 @@ _02150C60: .word ov11_02150C64
 ov11_02150C64: ; 0x02150C64
 	stmdb sp!, {r3, lr}
 	mov r0, #0xa
-	bl sub_02065928
+	bl OS_Sleep
 	bl ov11_02150E48
 	bl ov11_02150C84
 	bl ov11_02150CBC
@@ -69276,7 +69276,7 @@ _02151078: .word ov11_0215107C
 ov11_0215107C: ; 0x0215107C
 	stmdb sp!, {r3, lr}
 	mov r0, #0xa
-	bl sub_02065928
+	bl OS_Sleep
 	bl ov11_02151244
 	bl ov11_0215109C
 	bl ov11_021510D4
@@ -69841,7 +69841,7 @@ _0215174C: .word ov11_02151750
 ov11_02151750: ; 0x02151750
 	stmdb sp!, {r3, lr}
 	mov r0, #0xa
-	bl sub_02065928
+	bl OS_Sleep
 	bl ov11_02151934
 	bl ov11_02151770
 	bl ov11_021517A8
@@ -73233,7 +73233,7 @@ ov11_0215425C: ; 0x0215425C
 	mov r0, #2
 	bl ov11_02142F74
 	add r0, sp, #0x16
-	bl sub_02067588
+	bl OS_GetOwnerInfo
 	add r1, sp, #0
 	mov r0, #0
 	mov r2, #0x16
@@ -75044,7 +75044,7 @@ ov11_021558C0: ; 0x021558C0
 	str r2, [sp, #4]
 	ldrb r2, [r3, #0x4c0]
 	ldrb r3, [r3, #0x4c1]
-	bl sub_02064F28
+	bl OS_SPrintf
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -75065,7 +75065,7 @@ ov11_02155900: ; 0x02155900
 	str r2, [sp, #4]
 	ldrb r2, [r3, #0x4f0]
 	ldrb r3, [r3, #0x4f1]
-	bl sub_02064F28
+	bl OS_SPrintf
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -75087,7 +75087,7 @@ ov11_02155940: ; 0x02155940
 	str r2, [sp, #4]
 	ldrb r2, [ip, #0x4c4]
 	ldrb r3, [r3, #0x401]
-	bl sub_02064F28
+	bl OS_SPrintf
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -75109,7 +75109,7 @@ ov11_02155984: ; 0x02155984
 	str r2, [sp, #4]
 	ldrb r2, [ip, #0x4c8]
 	ldrb r3, [r3, #0x401]
-	bl sub_02064F28
+	bl OS_SPrintf
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -75131,7 +75131,7 @@ ov11_021559C8: ; 0x021559C8
 	str r2, [sp, #4]
 	ldrb r2, [ip, #0x4cc]
 	ldrb r3, [r3, #0x401]
-	bl sub_02064F28
+	bl OS_SPrintf
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -76637,7 +76637,7 @@ ov11_02156D98: ; 0x02156D98
 	add r1, r0, #0x1000
 	str r0, [r2]
 	str r4, [r1, #0x370]
-	bl sub_020668E8
+	bl OS_GetTick
 	ldr r4, _02156F04 ; =OVERLAY11_BSS_0216C3D4
 	mov r2, #3
 	ldr r3, [r4]
@@ -76680,7 +76680,7 @@ _02156E24:
 	add r1, r1, #0x1300
 	strh r0, [r1, #0x7c]
 	add r0, sp, #0
-	bl sub_02067588
+	bl OS_GetOwnerInfo
 	ldr r1, _02156F04 ; =OVERLAY11_BSS_0216C3D4
 	ldr r0, _02156F10 ; =s_NWCUSBAP_overlay_11_02165dc4
 	ldr r1, [r1]
@@ -77049,7 +77049,7 @@ _0215733C: .word s_NWCUSBAP_overlay_11_02165dc4
 ov11_02157340: ; 0x02157340
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	str r0, [sp]
-	bl sub_020668E8
+	bl OS_GetTick
 	ldr r2, _02157470 ; =OVERLAY11_BSS_0216C3D4
 	ldr r3, _02157474 ; =0x0017F898
 	ldr sl, [r2]
@@ -77990,7 +77990,7 @@ ov11_02158024: ; 0x02158024
 	mov r5, r0
 	add r0, sp, #0x28
 	mov r4, r1
-	bl sub_02067588
+	bl OS_GetOwnerInfo
 	ldrb r2, [sp, #0x12]
 	ldrb r1, [sp, #0x29]
 	ldrh r3, [sp, #0x42]
@@ -80355,13 +80355,13 @@ ov11_02159E1C: ; 0x02159E1C
 	strb r3, [r2, #0xa92]
 	ldr r0, [r0]
 	strb r1, [r0, #0xacc]
-	bl sub_020668E8
+	bl OS_GetTick
 	ldr r0, _02159F08 ; =OVERLAY11_BSS_0216C3E8
 	ldr r0, [r0]
 	add r0, r0, #0x24c
 	add r0, r0, #0x400
 	bl ov11_02139B38
-	bl sub_020668E8
+	bl OS_GetTick
 	bl ov11_02155E04
 	ldr r1, _02159F08 ; =OVERLAY11_BSS_0216C3E8
 	ldr r1, [r1]
@@ -81495,7 +81495,7 @@ _0215AD80:
 	ldr r2, _0215AE0C ; =s_dwc_overlay_11_02165ed8
 	str r0, [r3, #0x84]
 	add r0, sp, #0x20
-	bl sub_02064F28
+	bl OS_SPrintf
 	add r0, sp, #0x20
 	bl FS_ChangeDir
 	add sp, sp, #0xe8
@@ -81530,7 +81530,7 @@ ov11_0215AE24: ; 0x0215AE24
 	ldr r0, _0215AEA8 ; =OVERLAY11_BSS_0216C3EC
 	ldr r0, [r0]
 	ldrh r0, [r0, #0xe4]
-	bl sub_02064EE0
+	bl OS_ReleaseLockID
 	ldr r0, _0215AEA8 ; =OVERLAY11_BSS_0216C3EC
 	mov r2, #0
 	ldr r1, [r0]
@@ -84140,7 +84140,7 @@ ov11_0215CFD0: ; 0x0215CFD0
 	mov r0, #1
 	bl OS_EnableIrqMask
 	mov r0, #1
-	bl sub_0206494C
+	bl OS_GetIrqFunction
 	ldr r2, _0215D034 ; =OVERLAY11_BSS_0216C420
 	ldr r1, _0215D03C ; =ov11_0215D080
 	str r0, [r2]
@@ -84152,7 +84152,7 @@ ov11_0215CFD0: ; 0x0215CFD0
 	mov r0, #1
 	ldrh r1, [r2]
 	strh r0, [r2]
-	bl sub_02067350
+	bl OS_EnableInterrupts
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0215D030: .word 0x04000210
@@ -85606,7 +85606,7 @@ ov11_0215E220: ; 0x0215E220
 	sub sp, sp, #8
 	mov r5, r0
 	mov r4, r1
-	bl sub_020653A8
+	bl OS_IsThreadAvailable
 	cmp r0, #0
 	addeq sp, sp, #8
 	moveq r0, #0
@@ -85643,7 +85643,7 @@ ov11_0215E298: ; 0x0215E298
 	str r1, [r0]
 	bl ov11_0215E2DC
 	ldr r0, _0215E2BC ; =OVERLAY11_BSS_0216CD88
-	bl sub_02065658
+	bl OS_JoinThread
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0215E2B8: .word OVERLAY11_BSS_0216C47C
@@ -86817,7 +86817,7 @@ ov11_0215F1F4: ; 0x0215F1F4
 ov11_0215F200: ; 0x0215F200
 	stmdb sp!, {r3, lr}
 	ldr r0, _0215F21C ; =OVERLAY11_BSS_0216CE48
-	bl sub_02067790
+	bl OS_GetLowEntropyData
 	ldr r0, _0215F21C ; =OVERLAY11_BSS_0216CE48
 	mov r1, #0x20
 	bl sub_02050C50
@@ -86886,7 +86886,7 @@ ov11_0215F2B0: ; 0x0215F2B0
 	arm_func_end ov11_0215F2B0
 _0215F2D0:
 	mov r0, r5
-	bl sub_02065928
+	bl OS_Sleep
 	mov r0, r6
 	bl sub_02049710
 	cmp r0, r4
@@ -89613,7 +89613,7 @@ ov11_021617C4: ; 0x021617C4
 	mov r3, #2
 	mov r1, #0x21
 	str r3, [sp]
-	bl sub_02064F68
+	bl STD_TSNPrintf
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _021617E0: .word s_Nitro_WiFi_SDK_d_d_overlay_11_02169a6c

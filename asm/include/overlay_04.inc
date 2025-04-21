@@ -47,7 +47,7 @@
 .public sub_02062430
 .public NitroSDK_gx_GX_ResetBankForSubBGExtPltt
 .public NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-.public sub_02064F28
+.public OS_SPrintf
 .public MIi_CpuCopyFast
 .public PTR_ptr_FUN_02083578_0208a804
 .public _ZTVN10__cxxabiv120__si_class_type_infoE

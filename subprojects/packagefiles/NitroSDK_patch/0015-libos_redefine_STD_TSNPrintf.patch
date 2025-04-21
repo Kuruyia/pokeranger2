@@ -1,0 +1,21 @@
+diff --git a/libraries/os/src/os_printf.c b/libraries/os/src/os_printf.c
+index 126bf04..1db9065 100644
+--- a/libraries/os/src/os_printf.c
++++ b/libraries/os/src/os_printf.c
+@@ -396,6 +396,16 @@ SDK_WEAK_SYMBOL int OS_SNPrintf (char * dst, size_t len, const char * fmt, ...)
+     return ret;
+ }
+ 
++int STD_TSNPrintf (char * dst, size_t len, const char * fmt, ...)
++{
++    int ret;
++    va_list va;
++    va_start(va, fmt);
++    ret = OS_VSNPrintf(dst, len, fmt, va);
++    va_end(va);
++    return ret;
++}
++
+ SDK_WEAK_SYMBOL int OS_VSNPrintf (char * dst, size_t len, const char * fmt, va_list vlist)
+ {
+     return STD_TVSNPrintf(dst, len, fmt, vlist);

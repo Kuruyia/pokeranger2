@@ -114,10 +114,10 @@
 .public NitroSDK_gx_GX_LoadBGPltt
 .public NitroSDK_gx_GX_LoadBG1Char
 .public OS_SetIrqFunction
-.public sub_0206494C
+.public OS_GetIrqFunction
 .public OS_EnableIrqMask
 .public DC_FlushRange
-.public sub_020668E8
+.public OS_GetTick
 .public MIi_CpuClearFast
 .public MIi_CpuCopyFast
 .public _ll_udiv

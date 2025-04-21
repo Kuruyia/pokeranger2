@@ -241,11 +241,11 @@ ov28_0211CC98: ; 0x0211CC98
 	mov r0, #0
 	str r0, [r4, #8]
 	str r0, [r4, #0xc]
-	bl sub_02066AA4
+	bl OS_IsAlarmAvailable
 	str r0, [r4, #0x14]
 	cmp r0, #0
 	bne _0211CCCC
-	bl sub_02066A24
+	bl OS_InitAlarm
 	arm_func_end ov28_0211CC98
 _0211CCCC:
 	add r0, r4, #0xd8
@@ -277,7 +277,7 @@ ov28_0211CD24: ; 0x0211CD24
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x18
-	bl sub_02065688
+	bl OS_IsThreadTerminated
 	cmp r0, #0
 	bne _0211CD58
 	add r0, r4, #0xd8
@@ -286,13 +286,13 @@ ov28_0211CD24: ; 0x0211CD24
 	mov r2, #1
 	bl OS_SendMessage
 	add r0, r4, #0x18
-	bl sub_02065658
+	bl OS_JoinThread
 	arm_func_end ov28_0211CD24
 _0211CD58:
 	ldr r0, [r4, #0x14]
 	cmp r0, #0
 	bne _0211CD68
-	bl sub_02066A64
+	bl OS_EndAlarm
 _0211CD68:
 	mov r0, r4
 	bl ov28_0211CE60
@@ -459,7 +459,7 @@ _0211CF8C:
 	ldr r1, _0211D02C ; =s_DCB_s_overlay_28_0211dc34
 	add r0, sp, #0x7c
 	add r2, sp, #0x194
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r3, #0
 	str r3, [sp]
 	str r3, [sp, #4]
@@ -539,11 +539,11 @@ _0211D094:
 	beq _0211D0DC
 _0211D0A8:
 	mov r0, r6
-	bl sub_02065928
+	bl OS_Sleep
 	add r0, r4, #0x1000
 	mov r1, r7
 	mov r2, r5
-	bl sub_02065DC8
+	bl OS_ReadMessage
 	cmp r0, #0
 	movne sb, #1
 	bne _0211D0DC
@@ -570,7 +570,7 @@ ov28_0211D108: ; 0x0211D108
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x18
-	bl sub_02065688
+	bl OS_IsThreadTerminated
 	cmp r0, #0
 	bne _0211D140
 	add r0, r4, #0xd8
@@ -590,7 +590,7 @@ _0211D140:
 ov28_0211D148: ; 0x0211D148
 	stmdb sp!, {r3, lr}
 	add r0, r0, #0x18
-	bl sub_02065688
+	bl OS_IsThreadTerminated
 	cmp r0, #0
 	movne r0, #1
 	moveq r0, #0
@@ -1347,7 +1347,7 @@ ov28_0211DAC8: ; 0x0211DAC8
 	mov r0, r2
 	ldr r1, _0211DAE8 ; =s_data_menu_rd_03d_LZ_bin_overlay_28_0211dcd8
 	mov r2, r3
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -1361,7 +1361,7 @@ ov28_0211DAEC: ; 0x0211DAEC
 	mov r0, r2
 	ldr r1, _0211DB0C ; =s_rd_03d_nbfs_overlay_28_0211dcf0
 	mov r2, r3
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0

@@ -266,8 +266,8 @@ _01FF8324:
 	ldr sl, [r0, #0x1c]
 	bl OS_DisableInterrupts
 	mov fp, r0
-	bl sub_02066040
-	bl sub_02066034
+	bl DC_StoreAll
+	bl DC_InvalidateAll
 	mov r0, fp
 	bl OS_RestoreInterrupts
 	bl IC_InvalidateAll

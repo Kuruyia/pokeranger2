@@ -5,8 +5,8 @@
 .public sub_01FF8300
 .public sub_01FF83A8
 .public MIi_DmaSetParams
-.public sub_02066034
-.public sub_02066040
+.public DC_InvalidateAll
+.public DC_StoreAll
 .public DC_WaitWriteBufferEmpty
 .public IC_InvalidateAll
 .public OS_DisableInterrupts

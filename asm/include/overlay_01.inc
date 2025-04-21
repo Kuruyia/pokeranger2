@@ -338,7 +338,7 @@
 .public NitroSDK_gx_GX_BeginLoadTexPltt
 .public NitroSDK_gx_GX_LoadTexPltt
 .public NitroSDK_gx_GX_EndLoadTexPltt
-.public sub_02064F28
+.public OS_SPrintf
 .public DC_FlushRange
 .public MIi_CpuCopyFast
 .public MI_CpuFill8

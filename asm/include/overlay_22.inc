@@ -82,7 +82,7 @@
 .public sub_02062C10
 .public NitroSDK_gx_GX_LoadBGPltt
 .public NitroSDK_gx_GX_LoadBG3ScrBmp
-.public sub_02064F28
+.public OS_SPrintf
 .public DC_FlushRange
 .public MIi_CpuClear16
 .public MIi_CpuClearFast

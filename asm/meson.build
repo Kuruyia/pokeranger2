@@ -1,7 +1,7 @@
 pokeranger2_asm = files(
     # 'crt0.s',
-    'dtcm.s',
-    'itcm.s',
+    # 'dtcm.s',
+    # 'itcm.s',
     'main.s',
     'overlay_00.s',
     'overlay_01.s',

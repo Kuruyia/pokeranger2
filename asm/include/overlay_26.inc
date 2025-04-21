@@ -58,7 +58,7 @@
 .public NitroSDK_gx_GX_ResetBankForSubBGExtPltt
 .public NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
 .public sub_02062C10
-.public sub_02064F28
+.public OS_SPrintf
 .public MAIN_BSS_0208F304
 .public MAIN_BSS_0210CAB0
 .public PTR_ptr_FUN_02083578_0208a804

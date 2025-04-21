@@ -713,11 +713,11 @@ ov26_0211D3C0: ; 0x0211D3C0
 	add r0, sp, #0x2a
 	mov r2, r7
 	ldr r4, _0211D5B0 ; =s_event_overlay_26_0211db14
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0211D5B4 ; =s_event_03d_00_overlay_26_0211db2c
 	add r0, sp, #0xc
 	mov r2, r7
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x64
 	bl _Znwm
 	movs r5, r0
@@ -776,11 +776,11 @@ _0211D430:
 	ldr r1, _0211D5BC ; =s_event_03d_01_overlay_26_0211db3c
 	add r0, sp, #0x2a
 	mov r2, r7
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0211D5C0 ; =s_event_03d_01_overlay_26_0211db4c
 	mov r2, r7
 	add r0, sp, #0xc
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, r6
 	mov r1, #0
 	bl sub_02020328

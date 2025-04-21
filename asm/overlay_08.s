@@ -1654,7 +1654,7 @@ _0211DF28:
 _0211DF7C:
 	ldr r1, _0211E094 ; =s_data_message_etc_mission_info_0_overlay_8_0211e624
 	mov r0, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #4
 	bl _Znwm
 	cmp r0, #0
@@ -1676,7 +1676,7 @@ _0211DFA8:
 	ldrh r7, [r0, r1]
 	ldr r1, _0211E09C ; =s_data_message_etc_quest_info_02d_overlay_8_0211e648
 	mov r0, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #4
 	bl _Znwm
 	cmp r0, #0

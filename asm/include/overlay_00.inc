@@ -399,7 +399,7 @@
 .public sub_0206349C
 .public sub_02064644
 .public sub_02064664
-.public sub_02064F28
+.public OS_SPrintf
 .public OS_Terminate
 .public MIi_CpuCopyFast
 .public MI_CpuFill8

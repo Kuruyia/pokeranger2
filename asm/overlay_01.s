@@ -797,7 +797,7 @@ _0211D520:
 	ldrh r2, [r0]
 	ldr r1, _0211DE48 ; =s_bp_03d_overlay_1_021407d0
 	mov r0, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	add r0, r6, #8
 	str r0, [sp]
 	add r0, sl, r6, lsl #2
@@ -1267,7 +1267,7 @@ _0211DBDC:
 	mov r2, r0
 	ldr r1, _0211DE68 ; =s_data_script_battle_sequence_s_03_overlay_1_021407e8
 	add r0, sp, #0xd8
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xb8
 	bl _Znwm
 	cmp r0, #0
@@ -1314,7 +1314,7 @@ _0211DC24:
 	mov r2, r0
 	ldr r1, _0211DE74 ; =s_data_script_battle_tutorial_t_03_overlay_1_02140824
 	add r0, sp, #0x78
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xb8
 	bl _Znwm
 	cmp r0, #0
@@ -1362,7 +1362,7 @@ _0211DCDC:
 	mov r2, r0
 	ldr r1, _0211DE78 ; =s_data_script_battle_start_s_03d_f_overlay_1_0214084c
 	add r0, sp, #0x18
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xb8
 	bl _Znwm
 	cmp r0, #0
@@ -7530,19 +7530,19 @@ ov1_021232CC: ; 0x021232CC
 	ldr r1, _021235C0 ; =s_data_interface_i001_LZ_bin_overlay_1_0214087c
 	mov r5, r0
 	add r0, sp, #0x190
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _021235C4 ; =s_BLN_i001_00_NCBR_overlay_1_02140898
 	add r0, sp, #0x130
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _021235C8 ; =s_BLN_i001_NCLR_overlay_1_021408ac
 	add r0, sp, #0xd0
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _021235CC ; =s_BLN_i001_00_NCER_overlay_1_021408bc
 	add r0, sp, #0x70
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _021235D0 ; =s_BLN_i001_00_cac_overlay_1_021408d0
 	add r0, sp, #0x10
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x6c
 	bl _Znwm
 	movs r4, r0
@@ -9214,23 +9214,23 @@ ov1_02124B08: ; 0x02124B08
 	ldrb r4, [r1, r5]
 	ldr r1, _02124DD4 ; =s_data_interface_i_03d_LZ_bin_overlay_1_02140954
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02124DD8 ; =s_BAL_i_03d_00_NCBR_overlay_1_02140970
 	add r0, sp, #0x130
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02124DDC ; =s_BAL_i_03d_NCLR_overlay_1_02140984
 	add r0, sp, #0xd0
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02124DE0 ; =s_BAL_i_03d_00_NCER_overlay_1_02140994
 	add r0, sp, #0x70
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02124DE4 ; =s_BAL_i_03d_00_cac_overlay_1_021409a8
 	mov r2, r4
 	add r0, sp, #0x10
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x6c
 	bl _Znwm
 	movs r4, r0
@@ -9606,7 +9606,7 @@ ov1_02124F90: ; 0x02124F90
 	mov r2, r2, lsl #0xc
 	str r2, [r6, #0x50]
 	ldrh r2, [r6, #0x16]
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, [sp, #0x80]
 	add r0, sp, #0xc
 	bl sub_02003108
@@ -11347,7 +11347,7 @@ _021268A4:
 	mov r0, r7
 	mov r1, r6
 	add r3, r8, #1
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, r7
 	mov r1, r5
 	bl sub_02003108
@@ -11373,7 +11373,7 @@ _021268F8:
 	ldr r1, _021269B4 ; =s_data_script_battle_effect_e_03d_overlay_1_02140ae8
 	ldr r2, [sp, #0xc]
 	add r0, sp, #0x14
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, [sp, #0x10]
 	add r0, sp, #0x14
 	bl sub_02003108
@@ -14285,7 +14285,7 @@ _02128ED4:
 	ldr r1, _021290C0 ; =s_data_interface_i_03d_LZ_bin_overlay_1_02140e80
 	mov r0, r5
 	mov r2, r8
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x6c
 	bl _Znwm
 	movs r7, r0
@@ -14304,7 +14304,7 @@ _02128F18:
 	mov r0, r5
 	mov r2, r6
 	mov r3, r8
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x3c
 	bl _Znwm
 	cmp r0, #0
@@ -14334,7 +14334,7 @@ _02128F54:
 	mov r0, r5
 	mov r2, r6
 	mov r3, r8
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x24
 	bl _Znwm
 	cmp r0, #0
@@ -14365,7 +14365,7 @@ _02128FC0:
 	mov r0, r5
 	mov r2, r6
 	mov r3, r8
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xbc
 	bl _Znwm
 	cmp r0, #0
@@ -14383,7 +14383,7 @@ _02129040:
 	mov r0, r5
 	mov r2, r6
 	mov r3, r8
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x10
 	bl _Znwm
 	cmp r0, #0
@@ -17867,7 +17867,7 @@ _0212BB14:
 	strh r0, [r1, #0x30]
 	ldr r1, _0212BC38 ; =s_data_interface_i019_LZ_bin_overlay_1_02141274
 	add r0, sp, #0x18c
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r8, _0212BC3C ; =ptr_s_DP1_overlay_1_021411c0_overlay_1_021411cc
 	ldr r7, _0212BC40 ; =ptr_s_00_overlay_1_021411b8_overlay_1_021411c4
 	mov sb, #0
@@ -17880,21 +17880,21 @@ _0212BB58:
 	ldr r2, [r8, sb, lsl #2]
 	ldr r3, [r7, sb, lsl #2]
 	mov r0, fp
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0212BC48 ; =s_s_i019_NCLR_overlay_1_021412a0
 	ldr r2, [r8, sb, lsl #2]
 	mov r0, r6
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0212BC4C ; =s_s_i019_s_NCER_overlay_1_021412b0
 	ldr r2, [r8, sb, lsl #2]
 	ldr r3, [r7, sb, lsl #2]
 	mov r0, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0212BC50 ; =s_s_i019_s_cac_overlay_1_021412c0
 	ldr r2, [r8, sb, lsl #2]
 	ldr r3, [r7, sb, lsl #2]
 	mov r0, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x18
 	bl _Znwm
 	cmp r0, #0
@@ -30245,7 +30245,7 @@ _021362D0:
 	ldr r1, _02136340 ; =s_d_overlay_1_021418f8
 	add r0, sp, #0
 	strb r3, [r4, #0x201]
-	bl sub_02064F28
+	bl OS_SPrintf
 	tst r0, #0xff
 	addeq sp, sp, #8
 	strb r0, [r4, #0x202]
@@ -31161,26 +31161,26 @@ ov1_02136E08: ; 0x02136E08
 _02136E30:
 	ldr r1, _02136F8C ; =s_data_interface_i025_LZ_bin_overlay_1_02141a18
 	mov r0, fp
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02136F90 ; =s_s_i025_s_NCBR_overlay_1_02141a34
 	ldr r2, [r8, sb, lsl #2]
 	ldr r3, [r7, sb, lsl #2]
 	add r0, sp, #0x12c
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02136F94 ; =s_s_i025_NCLR_overlay_1_02141a44
 	ldr r2, [r8, sb, lsl #2]
 	mov r0, r6
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02136F98 ; =s_s_i025_s_NCER_overlay_1_02141a54
 	ldr r2, [r8, sb, lsl #2]
 	ldr r3, [r7, sb, lsl #2]
 	mov r0, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02136F9C ; =s_s_i025_s_cac_overlay_1_02141a64
 	ldr r2, [r8, sb, lsl #2]
 	ldr r3, [r7, sb, lsl #2]
 	mov r0, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x18
 	bl _Znwm
 	cmp r0, #0
@@ -33465,7 +33465,7 @@ ov1_02138DE4: ; 0x02138DE4
 	ldr r1, _02138F48 ; =s_data_battle_result_r000_00_LZ_bi_overlay_1_02141bc8
 	mov r4, r0
 	add r0, sp, #0x10
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x6c
 	bl _Znwm
 	movs r5, r0
@@ -33484,7 +33484,7 @@ ov1_02138DE4: ; 0x02138DE4
 _02138E34:
 	ldr r1, _02138F50 ; =s_BRM_r000_00_NCBR_overlay_1_02141bf0
 	add r0, sp, #0x10
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x3c
 	bl _Znwm
 	cmp r0, #0
@@ -33510,7 +33510,7 @@ _02138E64:
 	bl sub_020076B0
 	ldr r1, _02138F54 ; =s_BRM_r000_NCLR_overlay_1_02141c04
 	add r0, sp, #0x10
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x24
 	bl _Znwm
 	cmp r0, #0
@@ -34782,12 +34782,12 @@ ov1_02139FD8: ; 0x02139FD8
 	blt _0213A008
 	ldr r1, _0213A098 ; =s_4d_overlay_1_02141c28
 	sub r2, r3, #1
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0213A010
 	arm_func_end ov1_02139FD8
 _0213A008:
 	ldr r1, _0213A098 ; =s_4d_overlay_1_02141c28
-	bl sub_02064F28
+	bl OS_SPrintf
 _0213A010:
 	mov r5, #0
 	add r6, sp, #0
@@ -34897,12 +34897,12 @@ ov1_0213A164: ; 0x0213A164
 	add r0, sp, #0
 	bpl _0213A188
 	ldr r1, _0213A214 ; =s_5d_overlay_1_02141c2c
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0213A190
 	arm_func_end ov1_0213A164
 _0213A188:
 	ldr r1, _0213A218 ; =s_4d_overlay_1_02141c30
-	bl sub_02064F28
+	bl OS_SPrintf
 _0213A190:
 	mov r5, #0
 	add r6, sp, #0
@@ -34956,7 +34956,7 @@ ov1_0213A21C: ; 0x0213A21C
 	ldr r1, _0213A354 ; =s_2d_overlay_1_02141c38
 	add r0, sp, #0
 	mov r2, r3
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r2, #0
 	add r3, sp, #0
 	mov ip, r5
@@ -34998,7 +34998,7 @@ _0213A2AC:
 	ldr r1, _0213A354 ; =s_2d_overlay_1_02141c38
 	add r0, sp, #0
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r6, #0
 	add r7, sp, #0
 	mov r4, #0x1f
@@ -35048,7 +35048,7 @@ ov1_0213A358: ; 0x0213A358
 	mov r4, r0
 	ldr r1, _0213A3F8 ; =s_2d_overlay_1_02141c3c
 	add r0, sp, #0
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r5, #0
 	add r6, sp, #0
 	mov ip, #0x1f
@@ -35099,7 +35099,7 @@ ov1_0213A3FC: ; 0x0213A3FC
 	mov r4, r0
 	ldr r1, _0213A49C ; =s_2d_overlay_1_02141c3c
 	add r0, sp, #0
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r5, #0
 	add r6, sp, #0
 	mov ip, #0x1f
@@ -35315,26 +35315,26 @@ ov1_0213A6A0: ; 0x0213A6A0
 	mov r4, r0
 	add r0, sp, #0xc
 	mov r2, #0x13
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A768 ; =s_BOA_i_03d_02d_NCBR_overlay_1_02141c9c
 	add r0, sp, #0x6c
 	mov r2, #0x13
 	mov r3, #2
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A76C ; =s_BOA_i_03d_NCLR_overlay_1_02141cb0
 	add r0, sp, #0xcc
 	mov r2, #0x13
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A770 ; =s_BOA_i_03d_02d_NCER_overlay_1_02141cc0
 	add r0, sp, #0x12c
 	mov r2, #0x13
 	mov r3, #2
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A774 ; =s_BOA_i_03d_02d_cac_overlay_1_02141cd4
 	add r0, sp, #0x18c
 	mov r2, #0x13
 	mov r3, #2
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x18
 	bl _Znwm
 	cmp r0, #0
@@ -35376,26 +35376,26 @@ ov1_0213A77C: ; 0x0213A77C
 	mov r4, r0
 	add r0, sp, #0xc
 	mov r2, #0x13
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A844 ; =s_BOB_i_03d_02d_NCBR_overlay_1_02141cec
 	add r0, sp, #0x6c
 	mov r2, #0x13
 	mov r3, #3
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A848 ; =s_BOB_i_03d_NCLR_overlay_1_02141d00
 	add r0, sp, #0xcc
 	mov r2, #0x13
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A84C ; =s_BOB_i_03d_02d_NCER_overlay_1_02141d10
 	add r0, sp, #0x12c
 	mov r2, #0x13
 	mov r3, #3
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A850 ; =s_BOB_i_03d_02d_cac_overlay_1_02141d24
 	add r0, sp, #0x18c
 	mov r2, #0x13
 	mov r3, #3
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x18
 	bl _Znwm
 	cmp r0, #0
@@ -35436,19 +35436,19 @@ ov1_0213A858: ; 0x0213A858
 	ldr r1, _0213A8FC ; =s_data_interface_i019_LZ_bin_overlay_1_02141d3c
 	mov r4, r0
 	add r0, sp, #0xc
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A900 ; =s_BOC_i019_03_NCBR_overlay_1_02141d58
 	add r0, sp, #0x6c
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A904 ; =s_BOC_i019_NCLR_overlay_1_02141d6c
 	add r0, sp, #0xcc
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A908 ; =s_BOC_i019_03_NCER_overlay_1_02141d7c
 	add r0, sp, #0x12c
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213A90C ; =s_BOC_i019_03_cac_overlay_1_02141d90
 	add r0, sp, #0x18c
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x18
 	bl _Znwm
 	cmp r0, #0
@@ -37967,7 +37967,7 @@ ov1_0213CA78: ; 0x0213CA78
 	ldr r1, _0213CAC4 ; =s_sAssist_03d_overlay_1_02141f68
 	add r0, sp, #0
 	and r2, r2, #0xff
-	bl sub_02064F28
+	bl OS_SPrintf
 	bl sub_0201001C
 	mov r4, r0
 	add r0, r4, #0x1000
@@ -38436,7 +38436,7 @@ _0213D0C8:
 	ldr r1, _0213D338 ; =s_BGU_pam_03d_NCLR_overlay_1_02141fa4
 	add r0, sp, #0x10
 	mov r2, r7
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xbc
 	bl _Znwm
 	cmp r0, #0
@@ -38649,7 +38649,7 @@ _0213D3C8:
 	ldr r1, _0213D454 ; =s_BGU_pam_03d_NCLR_overlay_1_02141fa4
 	add r0, sp, #0x10
 	mov r2, r6
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xbc
 	bl _Znwm
 	cmp r0, #0
@@ -39057,7 +39057,7 @@ _0213D970:
 	ldr r1, _0213DA0C ; =s_bp_03d_overlay_1_02142080
 	add r0, sp, #4
 	mov r2, r7
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x44
 	bl _Znwm
 	cmp r0, #0
@@ -40825,23 +40825,23 @@ ov1_0213F0C8: ; 0x0213F0C8
 	ldr r1, _0213F27C ; =s_data_interface_i_03d_LZ_bin_overlay_1_021420e0
 	add r0, sp, #0x18c
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213F280 ; =s_BCO_i_03d_00_NCBR_overlay_1_021420fc
 	add r0, sp, #0x12c
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213F284 ; =s_BCO_i_03d_NCLR_overlay_1_02142110
 	add r0, sp, #0xcc
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213F288 ; =s_BCO_i_03d_00_NCER_overlay_1_02142120
 	add r0, sp, #0x6c
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0213F28C ; =s_BCO_i_03d_00_cac_overlay_1_02142134
 	mov r2, r5
 	add r0, sp, #0xc
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x18
 	bl _Znwm
 	cmp r0, #0

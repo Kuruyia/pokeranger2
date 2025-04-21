@@ -6481,7 +6481,7 @@ _021225A4:
 	ldrb r2, [r0]
 	ldrb r3, [r0, #1]
 	add r0, sp, #0x40
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _021225FC
 _021225DC:
 	add r0, r0, #0x61
@@ -6491,7 +6491,7 @@ _021225DC:
 	ldrb r2, [r0]
 	ldrb r3, [r0, #1]
 	add r0, sp, #0x40
-	bl sub_02064F28
+	bl OS_SPrintf
 _021225FC:
 	ldr r0, [sp, #0xc]
 	ldrb r1, [r0]
@@ -7081,7 +7081,7 @@ _02122E0C:
 	ldr r1, _02122EEC ; =s_m_03d_m_03d_03d_fsb_overlay_0_021730f4
 	mov r3, r2
 	str r4, [sp]
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _02122E9C
 _02122E84:
 	ldr r1, _02122EF0 ; =s_m_03d_m_03d_03d_c_fsb_overlay_0_0217310c
@@ -7089,7 +7089,7 @@ _02122E84:
 	add r4, r5, #0x61
 	mov r3, r2
 	str r4, [sp, #4]
-	bl sub_02064F28
+	bl OS_SPrintf
 _02122E9C:
 	ldr r0, [sb, #0x10]
 	add r1, sp, #0x40
@@ -9422,7 +9422,7 @@ ov0_02124D98: ; 0x02124D98
 	add r3, r2, #0x1000
 	mov r2, r4
 	ldr r4, [r3, #0x4a8]
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xb8
 	bl _Znwm
 	cmp r0, #0
@@ -10589,11 +10589,11 @@ ov0_02125D28: ; 0x02125D28
 	ldr r1, _02126614 ; =s_data_field_map_s_map_lz_overlay_0_02173234
 	add r0, sp, #0x2c8
 	add r2, sp, #0x38
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02126618 ; =s_data_field_map_s_map_dat_lz_overlay_0_02173250
 	add r0, sp, #0x2c8
 	add r2, sp, #0x38
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xb8
 	bl _Znwm
 	movs fp, r0
@@ -10623,7 +10623,7 @@ _02125DDC:
 	ldr r1, _02126614 ; =s_data_field_map_s_map_lz_overlay_0_02173234
 	add r0, sp, #0x2c8
 	add r2, sp, #0x38
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xb8
 	bl _Znwm
 	movs fp, r0
@@ -10642,7 +10642,7 @@ _02125E24:
 	ldr r1, _0212661C ; =s_data_field_map_s_map_tex_lz_overlay_0_02173270
 	add r0, sp, #0x2c8
 	add r2, sp, #0x38
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xb8
 	bl _Znwm
 	str r0, [sp, #0x10]
@@ -28638,7 +28638,7 @@ _02135968:
 	str r0, [r6, r4, lsl #2]
 	add r0, sp, #0
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, [r6, r4, lsl #2]
 	add r1, sp, #0
 	bl ov0_02135824
@@ -36367,7 +36367,7 @@ _0213C408:
 	mov r3, r4
 	add r2, lr, r2, asr #6
 	ldr r6, [ip, #0x4a8]
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xb8
 	str r4, [r5, #0x1d4]
 	bl _Znwm
@@ -38175,7 +38175,7 @@ ov0_0213DB68: ; 0x0213DB68
 	add r0, sp, #0xc
 	add r2, lr, r2, asr #6
 	ldr r4, [ip, #0x4a8]
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xb8
 	bl _Znwm
 	cmp r0, #0
@@ -38868,7 +38868,7 @@ ov0_0213E3E4: ; 0x0213E3E4
 	ldr r1, _0213E4B4 ; =s_data_Script_field_poketargetclea_overlay_0_021741d4
 	add r0, sp, #0xc
 	ldr r5, [ip, #0x4a8]
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, [r4, #0x270]
 	cmp r0, #0
 	beq _0213E430
@@ -43183,7 +43183,7 @@ _02142110:
 	add r0, sp, #0
 	mov r3, r7
 	add r2, r6, r2, asr #2
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _02142158
 _02142140:
 	smull r0, r2, r1, r7
@@ -43191,7 +43191,7 @@ _02142140:
 	add r0, sp, #0
 	mov r3, r7
 	add r2, r6, r2, asr #2
-	bl sub_02064F28
+	bl OS_SPrintf
 _02142158:
 	ldr r0, [r8, r5, lsl #2]
 	add r1, sp, #0
@@ -45071,7 +45071,7 @@ _02143948:
 	mov r0, r8
 	mov r1, r7
 	add r2, sb, #1
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, r6
 	bl _Znwm
 	cmp r0, #0
@@ -45087,7 +45087,7 @@ _0214397C:
 	mov r0, r8
 	mov r1, r5
 	add r2, sb, #1
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, r4
 	bl _Znwm
 	cmp r0, #0
@@ -55136,7 +55136,7 @@ ov0_0214B9B0: ; 0x0214B9B0
 	ldrb r3, [r0, #1]
 	ldr r1, _0214BAA0 ; =s_m_03d_03d_overlay_0_021775bc
 	mov r0, r7
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214BA8C
 	arm_func_end ov0_0214B9B0
 _0214BA3C:
@@ -55146,7 +55146,7 @@ _0214BA3C:
 	ldrb r3, [r0, #1]
 	ldr r1, _0214BAA4 ; =s_m_03d_03d_c_overlay_0_021775c8
 	mov r0, r7
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214BA8C
 _0214BA5C:
 	ldr r0, _0214BAA8 ; =DAT_overlay_0_021775d8
@@ -55264,7 +55264,7 @@ ov0_0214BB38: ; 0x0214BB38
 	str r2, [sp]
 	ldrh r3, [r3]
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	arm_func_end ov0_0214BB38
 _0214BBB4:
 	ldr r0, _0214BBC0 ; =OVERLAY0_BSS_0217B178
@@ -55723,7 +55723,7 @@ ov0_0214C4A0: ; 0x0214C4A0
 	str r2, [sp]
 	ldrh r3, [r3]
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	arm_func_end ov0_0214C4A0
 _0214C524:
 	ldr r0, _0214C538 ; =OVERLAY0_BSS_0217B188
@@ -56982,7 +56982,7 @@ _0214DE9C:
 	ldr r0, _0214DEC0 ; =OVERLAY0_BSS_0217B0FC
 	ldr r3, [r1, ip, lsl #2]
 	ldr r1, _0214DEC4 ; =s_02d_s_overlay_0_02177734
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214DEC0 ; =OVERLAY0_BSS_0217B0FC
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -57101,7 +57101,7 @@ ov0_0214E000: ; 0x0214E000
 	ldr r3, [r3, r0, lsl #2]
 	ldr r0, _0214E030 ; =OVERLAY0_BSS_0217B108
 	ldr r1, _0214E034 ; =s_02d_s_overlay_0_02177734
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E030 ; =OVERLAY0_BSS_0217B108
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -57283,19 +57283,19 @@ ov0_0214E24C: ; 0x0214E24C
 	ldr r0, _0214E7D8 ; =OVERLAY0_BSS_0217B198
 	ldr r2, [r1, #8]
 	ldr r1, _0214E7DC ; =s_ChaptNo_02d_overlay_0_0217773c
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0214E7D4 ; =MAIN_BSS_020B2638
 	ldr r0, _0214E7E0 ; =OVERLAY0_BSS_0217B1B0
 	ldrb r2, [r1, #2]
 	ldrb r3, [r1]
 	ldr r1, _0214E7E4 ; =s_MissSta_02d_d_overlay_0_0217774c
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _0214E7D4 ; =MAIN_BSS_020B2638
 	ldr r0, _0214E7E8 ; =OVERLAY0_BSS_0217B1C8
 	ldrb r2, [r1, #3]
 	ldrb r3, [r1, #1]
 	ldr r1, _0214E7EC ; =s_QueSta_02d_d_overlay_0_02177760
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E7F0 ; =MAIN_BSS_0210C0B0
 	mov r1, #0
 	bl sub_02018E54
@@ -57337,7 +57337,7 @@ ov0_0214E24C: ; 0x0214E24C
 	str r0, [sp, #0x14]
 	ldr r0, _0214E7F4 ; =OVERLAY0_BSS_0217B1E0
 	ldr r1, _0214E7F8 ; =s_e00_07_02d_02d_02d_02d_02d_overlay_0_02177774
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E7F0 ; =MAIN_BSS_0210C0B0
 	mov r1, #8
 	bl sub_02018E54
@@ -57379,7 +57379,7 @@ ov0_0214E24C: ; 0x0214E24C
 	str r0, [sp, #0x14]
 	ldr r0, _0214E7FC ; =OVERLAY0_BSS_0217B200
 	ldr r1, _0214E800 ; =s_e08_15_02d_02d_02d_02d_02d_overlay_0_021777a4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E7F0 ; =MAIN_BSS_0210C0B0
 	mov r1, #0x10
 	bl sub_02018E54
@@ -57406,7 +57406,7 @@ ov0_0214E24C: ; 0x0214E24C
 	str r0, [sp, #8]
 	ldr r0, _0214E804 ; =OVERLAY0_BSS_0217B220
 	ldr r1, _0214E808 ; =s_e16_20_02d_02d_02d_02d_02d_overlay_0_021777d4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E7F0 ; =MAIN_BSS_0210C0B0
 	mov r1, #0
 	bl sub_02019278
@@ -57448,7 +57448,7 @@ ov0_0214E24C: ; 0x0214E24C
 	str r0, [sp, #0x14]
 	ldr r0, _0214E80C ; =OVERLAY0_BSS_0217B240
 	ldr r1, _0214E810 ; =s_s00_07_02d_02d_02d_02d_02d_overlay_0_021777f4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E7F0 ; =MAIN_BSS_0210C0B0
 	mov r1, #8
 	bl sub_02019278
@@ -57490,7 +57490,7 @@ ov0_0214E24C: ; 0x0214E24C
 	str r0, [sp, #0x14]
 	ldr r0, _0214E814 ; =OVERLAY0_BSS_0217B260
 	ldr r1, _0214E818 ; =s_s08_15_02d_02d_02d_02d_02d_overlay_0_02177824
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E7F0 ; =MAIN_BSS_0210C0B0
 	mov r1, #0x10
 	bl sub_02019278
@@ -57532,7 +57532,7 @@ ov0_0214E24C: ; 0x0214E24C
 	str r0, [sp, #0x14]
 	ldr r0, _0214E81C ; =OVERLAY0_BSS_0217B280
 	ldr r1, _0214E820 ; =s_s16_19_02d_02d_02d_02d_02d_overlay_0_02177854
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E7F0 ; =MAIN_BSS_0210C0B0
 	mov r1, #0x18
 	bl sub_02019278
@@ -57569,7 +57569,7 @@ ov0_0214E24C: ; 0x0214E24C
 	str r0, [sp, #0x10]
 	ldr r0, _0214E824 ; =OVERLAY0_BSS_0217B2A0
 	ldr r1, _0214E828 ; =s_s20_27_02d_02d_02d_02d_02d_overlay_0_02177884
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E7F0 ; =MAIN_BSS_0210C0B0
 	mov r1, #0
 	bl sub_02018E88
@@ -57611,7 +57611,7 @@ ov0_0214E24C: ; 0x0214E24C
 	ldr r1, _0214E830 ; =s_q00_07_02d_02d_02d_02d_02d_overlay_0_021778b0
 	mov r2, sl
 	mov r3, sb
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E7F0 ; =MAIN_BSS_0210C0B0
 	mov r1, #8
 	bl sub_02018E88
@@ -57628,7 +57628,7 @@ ov0_0214E24C: ; 0x0214E24C
 	str r0, [sp]
 	ldr r0, _0214E834 ; =OVERLAY0_BSS_0217B2E0
 	ldr r1, _0214E838 ; =s_q08_15_02d_02d_02d_overlay_0_021778e0
-	bl sub_02064F28
+	bl OS_SPrintf
 	add sp, sp, #0x18
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 	.align 2, 0
@@ -57747,7 +57747,7 @@ _0214E8EC:
 	ldr r0, _0214E910 ; =OVERLAY0_BSS_0217B114
 	ldr r3, [r1, r3, lsl #2]
 	ldr r1, _0214E914 ; =s_02d_s_overlay_0_02177734
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E910 ; =OVERLAY0_BSS_0217B114
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -57783,7 +57783,7 @@ _0214E960:
 	ldr r0, _0214E984 ; =OVERLAY0_BSS_0217B120
 	ldr r3, [r1, r3, lsl #2]
 	ldr r1, _0214E988 ; =s_02d_s_overlay_0_02177734
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E984 ; =OVERLAY0_BSS_0217B120
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -57819,7 +57819,7 @@ _0214E9D4:
 	ldr r0, _0214E9F8 ; =OVERLAY0_BSS_0217B12C
 	ldr r3, [r1, r3, lsl #2]
 	ldr r1, _0214E9FC ; =s_02d_s_overlay_0_02177734
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214E9F8 ; =OVERLAY0_BSS_0217B12C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -57899,7 +57899,7 @@ ov0_0214EACC: ; 0x0214EACC
 	ldr r3, [r3, r0, lsl #2]
 	ldr r0, _0214EAFC ; =OVERLAY0_BSS_0217B138
 	ldr r1, _0214EB00 ; =s_02d_s_overlay_0_02177734
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214EAFC ; =OVERLAY0_BSS_0217B138
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -57980,7 +57980,7 @@ ov0_0214EBD0: ; 0x0214EBD0
 	ldr r3, [r3, r0, lsl #2]
 	ldr r0, _0214EC00 ; =OVERLAY0_BSS_0217B144
 	ldr r1, _0214EC04 ; =s_02d_s_overlay_0_02177734
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214EC00 ; =OVERLAY0_BSS_0217B144
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -58061,7 +58061,7 @@ ov0_0214ECD4: ; 0x0214ECD4
 	ldr r3, [r3, r0, lsl #2]
 	ldr r0, _0214ED04 ; =OVERLAY0_BSS_0217B150
 	ldr r1, _0214ED08 ; =s_02d_s_overlay_0_02177734
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214ED04 ; =OVERLAY0_BSS_0217B150
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -58532,124 +58532,124 @@ _0214F4E0:
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F694 ; =s_GONB_d_overlay_0_021778f8
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F4F8:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F698 ; =s_HIKO_d_overlay_0_02177900
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F510:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F69C ; =s_POCH_d_overlay_0_02177908
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F528:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6A0 ; =s_NAET_d_overlay_0_02177910
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F540:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6A4 ; =s_PACH_d_overlay_0_02177918
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F558:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6A8 ; =s_YUKI_d_overlay_0_02177920
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F570:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6AC ; =s_WANR_d_overlay_0_02177928
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F588:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6B0 ; =s_GURE_d_overlay_0_02177930
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F5A0:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6B4 ; =s_HIPP_d_overlay_0_02177938
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F5B8:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6B8 ; =s_MUKK_d_overlay_0_02177940
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F5D0:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6BC ; =s_MANE_d_overlay_0_02177948
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F5E8:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6C0 ; =s_KORO_d_overlay_0_02177950
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F600:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6C4 ; =s_ZUGA_d_overlay_0_02177958
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F618:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6C8 ; =s_MUMA_d_overlay_0_02177960
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F630:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6CC ; =s_FUKA_d_overlay_0_02177968
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F648:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6D0 ; =s_NYUL_d_overlay_0_02177970
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F660:
 	ldr r1, _0214F68C ; =MAIN_BSS_020BAE0C
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r2, [r1, r2, lsl #2]
 	ldr r1, _0214F6D4 ; =s_TATE_d_overlay_0_02177978
-	bl sub_02064F28
+	bl OS_SPrintf
 	b _0214F684
 _0214F678:
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldr r1, _0214F6D8 ; =s_ERROR_d_overlay_0_02177980
-	bl sub_02064F28
+	bl OS_SPrintf
 _0214F684:
 	ldr r0, _0214F690 ; =OVERLAY0_BSS_0217B340
 	ldmia sp!, {r3, pc}
@@ -58828,7 +58828,7 @@ ov0_0214F904: ; 0x0214F904
 	ldr r0, _0214F988 ; =OVERLAY0_BSS_0217B168
 	ldr r1, _0214F98C ; =s_02d_02d_02d_overlay_0_0217798c
 	add r3, r4, r3, asr #5
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, _0214F988 ; =OVERLAY0_BSS_0217B168
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, pc}
@@ -59398,7 +59398,7 @@ ov0_0214FFF0: ; 0x0214FFF0
 	add r0, sp, #0x7c
 	mov r2, sb
 	mov r7, r3
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r3, #1
 	str r3, [sp]
 	mov r0, #0
@@ -59412,7 +59412,7 @@ ov0_0214FFF0: ; 0x0214FFF0
 	ldr r1, _021501A8 ; =s_EFC_e_03d_NCLR_overlay_0_02177bf8
 	add r0, sp, #0x7c
 	mov r2, sb
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r2, #0
 	add r0, sl, #4
 	add r1, sp, #0x7c
@@ -59438,7 +59438,7 @@ _0215009C:
 	mov r1, r4
 	mov r2, sb
 	mov r3, r8
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, fp
 	bl _Znwm
 	cmp r0, #0
@@ -59456,7 +59456,7 @@ _021500D8:
 	mov r0, r5
 	mov r2, sb
 	mov r3, r8
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xbc
 	bl _Znwm
 	cmp r0, #0
@@ -59475,7 +59475,7 @@ _0215011C:
 	mov r0, r5
 	mov r2, sb
 	mov r3, r8
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x10
 	bl _Znwm
 	cmp r0, #0
@@ -59545,7 +59545,7 @@ ov0_02150204: ; 0x02150204
 	ldr r1, _02150360 ; =s_data_interface_i_03d_LZ_bin_overlay_0_02177c4c
 	add r0, sp, #0x7c
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r3, #1
 	str r3, [sp]
 	mov ip, #0
@@ -59559,7 +59559,7 @@ ov0_02150204: ; 0x02150204
 	ldr r1, _02150368 ; =s_MEF_i_03d_NCLR_overlay_0_02177c6c
 	add r0, sp, #0x7c
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r2, #0
 	add r0, r5, #4
 	add r1, sp, #0x7c
@@ -59576,7 +59576,7 @@ ov0_02150204: ; 0x02150204
 	ldr r1, _02150370 ; =s_MEF_i_03d_00_NCBR_overlay_0_02177c7c
 	add r0, sp, #0x7c
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x3c
 	bl _Znwm
 	cmp r0, #0
@@ -59593,7 +59593,7 @@ _021502C4:
 	str r0, [r2]
 	add r0, sp, #0x7c
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xbc
 	bl _Znwm
 	cmp r0, #0
@@ -59609,7 +59609,7 @@ _02150300:
 	str r0, [r2, #4]
 	add r0, sp, #0x7c
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x10
 	bl _Znwm
 	cmp r0, #0
@@ -59667,7 +59667,7 @@ ov0_021503B8: ; 0x021503B8
 	ldr r1, _02150520 ; =s_data_field_effect_ef_03d_LZ_bin_overlay_0_02177cb8
 	add r0, sp, #0x7c
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r3, #1
 	str r3, [sp]
 	mov r2, #0
@@ -59681,7 +59681,7 @@ ov0_021503B8: ; 0x021503B8
 	ldr r1, _02150528 ; =s_MEF_ef_03d_NCLR_overlay_0_02177cd8
 	add r0, sp, #0x7c
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r2, #0
 	add r0, r6, #4
 	add r1, sp, #0x7c
@@ -59698,7 +59698,7 @@ ov0_021503B8: ; 0x021503B8
 	ldr r1, _02150530 ; =s_MEF_ef_03d_NCBR_overlay_0_02177ce8
 	add r0, sp, #0x7c
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x3c
 	bl _Znwm
 	cmp r0, #0
@@ -59715,7 +59715,7 @@ _0215047C:
 	str r0, [r2]
 	add r0, sp, #0x7c
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0xbc
 	bl _Znwm
 	cmp r0, #0
@@ -59731,7 +59731,7 @@ _021504B8:
 	str r0, [r2, #4]
 	add r0, sp, #0x7c
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x10
 	bl _Znwm
 	cmp r0, #0
@@ -82658,7 +82658,7 @@ ov0_02163904: ; 0x02163904
 	mov r5, r0
 	ldr r1, _021639B8 ; =s_data_Script_field_effect_ef_03d_overlay_0_02179360
 	add r0, sp, #0xc
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r1, r5
 	mov r4, #0
 	arm_func_end ov0_02163904
@@ -87168,11 +87168,11 @@ ov0_02167488: ; 0x02167488
 	bge _02167524
 	ldr r1, _02167530 ; =s_MEF_ef100_02d_ntft_overlay_0_02179a94
 	add r0, sp, #0x60
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02167534 ; =s_MEF_ef100_02d_ntfp_overlay_0_02179aa8
 	add r0, sp, #0
 	mov r2, r5
-	bl sub_02064F28
+	bl OS_SPrintf
 	mov r0, #0x2c
 	mul r5, r6, r0
 	add r0, r4, #4
@@ -98720,11 +98720,11 @@ ov0_02170F88: ; 0x02170F88
 	ldr r1, _02171004 ; =s_MEF_ef100_02d_ntft_overlay_0_0217ada4
 	add r0, sp, #0x60
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02171008 ; =s_MEF_ef100_02d_ntfp_overlay_0_0217adb8
 	add r0, sp, #0
 	mov r2, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	add r1, sp, #0x60
 	add r2, sp, #0
 	add r0, r5, #4
@@ -100390,11 +100390,11 @@ ov0_02172518: ; 0x02172518
 	bge _021725F4
 	ldr r1, _02172604 ; =s_MEF_ef104_02d_ntft_overlay_0_0217b08c
 	add r0, sp, #0x68
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r1, _02172608 ; =s_MEF_ef104_02d_ntfp_overlay_0_0217b0a0
 	add r0, sp, #8
 	mov r2, r7
-	bl sub_02064F28
+	bl OS_SPrintf
 	cmp r6, #0
 	mov r0, #0x2c
 	add r2, sp, #8

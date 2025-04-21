@@ -1244,7 +1244,7 @@ _0211DACC:
 	bl ov27_0211F294
 	cmp r5, #0
 	beq _0211DB14
-	bl sub_020670F4
+	bl OS_CancelAllVAlarms
 	ldr r2, _0211DB1C ; =0x04001000
 	add r0, r4, #0x1000
 	ldr r1, [r2]
@@ -1490,7 +1490,7 @@ ov27_0211DE28: ; 0x0211DE28
 	add r0, sp, #0x41
 	mov r2, #0x3d
 	ldr r6, _0211E068 ; =MAIN_BSS_020B2638
-	bl sub_02064F28
+	bl OS_SPrintf
 	add r1, sp, #0x41
 	add r0, sl, #0x340
 	bl ov27_0211FA84
@@ -1545,7 +1545,7 @@ _0211DF00:
 	ldrb r2, [r8], #1
 	mov r0, r5
 	mov r1, r4
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r0, [sl, #0x33c]
 	mov r1, r5
 	add r0, r0, sb
@@ -2279,13 +2279,13 @@ ov27_0211E804: ; 0x0211E804
 	arm_func_end ov27_0211E804
 _0211E89C:
 	str r0, [r5, #0x90]
-	bl sub_02066DE4
+	bl OS_InitVAlarm
 	ldr r0, _0211E8CC ; =OVERLAY27_BSS_02121684
-	bl sub_02066F40
+	bl OS_CreateVAlarm
 	ldr r0, _0211E8D0 ; =OVERLAY27_BSS_021216AC
-	bl sub_02066F40
+	bl OS_CreateVAlarm
 	ldr r0, _0211E8D4 ; =OVERLAY27_BSS_021216D4
-	bl sub_02066F40
+	bl OS_CreateVAlarm
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -2301,8 +2301,8 @@ ov27_0211E8D8: ; 0x0211E8D8
 	ldr r1, _0211E910 ; =ptr_FUN_overlay_27_0211e8d8_overlay_27_021213a4
 	mov r4, r0
 	str r1, [r4]
-	bl sub_020670F4
-	bl sub_02066E2C
+	bl OS_CancelAllVAlarms
+	bl OS_EndVAlarm
 	ldr r0, [r4, #0x90]
 	cmp r0, #0
 	beq _0211E908
@@ -2322,8 +2322,8 @@ ov27_0211E914: ; 0x0211E914
 	ldr r1, _0211E954 ; =ptr_FUN_overlay_27_0211e8d8_overlay_27_021213a4
 	mov r4, r0
 	str r1, [r4]
-	bl sub_020670F4
-	bl sub_02066E2C
+	bl OS_CancelAllVAlarms
+	bl OS_EndVAlarm
 	ldr r0, [r4, #0x90]
 	cmp r0, #0
 	beq _0211E944
@@ -2478,13 +2478,13 @@ _0211EB40:
 	mov r1, #0x16
 	mov r2, #2
 	str r4, [sp]
-	bl sub_02066FE0
+	bl OS_SetPeriodicVAlarm
 	ldr r0, _0211EB7C ; =OVERLAY27_BSS_02121684
 	ldr r3, _0211EB80 ; =ov27_0211F844
 	mov r1, #0x2e
 	mov r2, #2
 	str r4, [sp]
-	bl sub_02066FE0
+	bl OS_SetPeriodicVAlarm
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 _0211EB74: .word OVERLAY27_BSS_021216D4
@@ -3382,7 +3382,7 @@ ov27_0211F7A0: ; 0x0211F7A0
 	ldr r1, _0211F838 ; =OVERLAY27_BSS_02121680
 	ldr r0, _0211F83C ; =OVERLAY27_BSS_021216AC
 	strb r2, [r1]
-	bl sub_020670AC
+	bl OS_CancelVAlarm
 	ldr r2, _0211F838 ; =OVERLAY27_BSS_02121680
 	mvn r1, #0
 	ldrb r0, [r2]
@@ -3411,7 +3411,7 @@ _0211F810:
 	ldr r3, _0211F840 ; =ov27_0211F870
 	mov r2, #4
 	str ip, [sp]
-	bl sub_02066F54
+	bl OS_SetVAlarm
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0211F834: .word 0x04001010
@@ -4665,7 +4665,7 @@ _021207C0:
 	str r1, [r5, #8]
 	bl OS_SendMessage
 	add r0, r5, #0x1fc
-	bl sub_02065658
+	bl OS_JoinThread
 	ldmia sp!, {r3, r4, r5, pc}
 
 	arm_func_start ov27_021207E4

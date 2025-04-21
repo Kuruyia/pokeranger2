@@ -79,7 +79,7 @@
 .public NitroSDK_gx_GX_ResetBankForSubBGExtPltt
 .public NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
 .public sub_02062C10
-.public sub_02064F28
+.public OS_SPrintf
 .public __cxa_vec_ctor
 .public __cxa_vec_cleanup
 .public MAIN_BSS_020B26A0

@@ -655,11 +655,11 @@ _0211D304:
 	ldr r2, [r8, sb, lsl #2]
 	mov r0, r7
 	mov r1, r6
-	bl sub_02064F28
+	bl OS_SPrintf
 	ldr r2, [r8, sb, lsl #2]
 	mov r0, r5
 	mov r1, fp
-	bl sub_02064F28
+	bl OS_SPrintf
 	str r5, [sp]
 	str r4, [sp, #4]
 	str r4, [sp, #8]
