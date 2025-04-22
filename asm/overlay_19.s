@@ -878,30 +878,30 @@ _0211D5DC: .word s_mps002_00_overlay_19_0211e654
 	arm_func_start ov19_0211D5E0
 ov19_0211D5E0: ; 0x0211D5E0
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #7
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x40
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #0x30
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #8
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r0
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	ldr r2, _0211D78C ; =0x04000008
 	mov r0, #0x80
 	ldrh r1, [r2]
@@ -919,9 +919,9 @@ ov19_0211D5E0: ; 0x0211D5E0
 	bic r1, r1, #3
 	orr r1, r1, #3
 	strh r1, [r2, #6]
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	ldr r1, _0211D790 ; =0x04001008
 	ldrh r0, [r1]
 	bic r0, r0, #3
@@ -948,7 +948,7 @@ ov19_0211D5E0: ; 0x0211D5E0
 	mov r3, r1
 	add r0, r0, #0x40
 	str r1, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _0211D798 ; =0x04000060
 	mov r2, #0x4000000
 	ldrh r1, [lr]
@@ -978,7 +978,7 @@ ov19_0211D5E0: ; 0x0211D5E0
 	bic r0, r0, #0x1f00
 	orr r0, r0, #0x200
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _0211D7A0 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -1480,7 +1480,7 @@ ov19_0211DE04: ; 0x0211DE04
 	mov r1, #1
 	mov r2, #8
 	str r3, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	arm_func_end ov19_0211DE04
 _0211DE80:
 	ldrh r0, [r4, #8]

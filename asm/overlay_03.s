@@ -87,25 +87,25 @@ _0211CAE0: .word ptr_FUN_overlay_3_0211ca7c_overlay_3_0212a820
 	arm_func_start ov3_0211CAE4
 ov3_0211CAE4: ; 0x0211CAE4
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	ldr r0, _0211CD04 ; =0x000001FF
-	bl sub_020620F0
+	bl GX_SetBankForLCDC
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0xa4000
 	bl MIi_CpuClearFast
-	bl sub_02062634
+	bl GX_DisableBankForLCDC
 	mov r0, #0xc0
 	mov r1, #0x7000000
 	mov r2, #0x400
@@ -126,17 +126,17 @@ ov3_0211CAE4: ; 0x0211CAE4
 	ldr r1, _0211CD10 ; =0x04000540
 	mov r0, #0
 	str r2, [r1]
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #0x70
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #3
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r1
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	ldr r3, _0211CD14 ; =0x04000008
 	ldrh r0, [r3]
 	bic r0, r0, #3
@@ -158,9 +158,9 @@ ov3_0211CAE4: ; 0x0211CAE4
 	strh ip, [r3, #6]
 	bl MIi_CpuClearFast
 	mov r0, #4
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #8
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	ldr ip, _0211CD18 ; =0x04001008
 	mov r0, #0
 	ldrh r3, [ip]
@@ -186,7 +186,7 @@ ov3_0211CAE4: ; 0x0211CAE4
 	ldr r0, _0211CD1C ; =0x04000050
 	mov r2, r1
 	mov r3, r1
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _0211CD20 ; =0x04000060
 	ldr r0, _0211CD24 ; =0xFFFFFDF1
 	ldrh r1, [lr]
@@ -216,7 +216,7 @@ ov3_0211CAE4: ; 0x0211CAE4
 	bic r0, r0, #0x1f00
 	orr r0, r0, #0x1200
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _0211CD28 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -1688,7 +1688,7 @@ _0211E1B4:
 	ldr r0, _0211E24C ; =0x04001050
 	str r2, [r1]
 	mov r1, #2
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
 _0211E244: .word 0x04000010
@@ -1894,7 +1894,7 @@ _0211E520:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -2620,7 +2620,7 @@ _0211EFCC:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -2698,7 +2698,7 @@ _0211F0EC:
 	mov r1, #2
 	ldr r0, _0211F254 ; =0x04001050
 	sub r2, r1, #0x21
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	mov r0, r4
 	bl sub_02015198
 	ldr r0, [r7, #8]
@@ -2951,7 +2951,7 @@ _0211F474:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -3020,7 +3020,7 @@ _0211F57C:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -3060,7 +3060,7 @@ _0211F614:
 	str r1, [r7, #0xc]
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0x24]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -3318,7 +3318,7 @@ _0211F9EC:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -3526,7 +3526,7 @@ _0211FCF4:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -3560,7 +3560,7 @@ _0211FD7C:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -3606,7 +3606,7 @@ _0211FE28:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -3629,7 +3629,7 @@ _0211FE80:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -3671,7 +3671,7 @@ _0211FF1C:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -3713,7 +3713,7 @@ _0211FFB8:
 	ldr r0, _0211F254 ; =0x04001050
 	mov r1, #2
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, [r7, #0xa4]
 	bl sub_0201FEDC
 	mov r0, r7
@@ -4592,30 +4592,30 @@ ov3_02120B2C: ; 0x02120B2C
 	arm_func_start ov3_02120B48
 ov3_02120B48: ; 0x02120B48
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #0xf
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x40
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #0x10
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #0x20
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r0
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	ldr r2, _02120CDC ; =0x04000008
 	mov r0, #0x80
 	ldrh r1, [r2]
@@ -4633,9 +4633,9 @@ ov3_02120B48: ; 0x02120B48
 	ldrh r1, [r2, #6]
 	bic r1, r1, #3
 	strh r1, [r2, #6]
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	ldr r1, _02120CE0 ; =0x04001008
 	ldrh r0, [r1]
 	bic r0, r0, #3
@@ -4657,7 +4657,7 @@ ov3_02120B48: ; 0x02120B48
 	mov r2, r1
 	mov r3, r1
 	str r1, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _02120CE8 ; =0x04000060
 	mov r2, #0x4000000
 	ldrh r1, [lr]
@@ -4686,7 +4686,7 @@ ov3_02120B48: ; 0x02120B48
 	bic r0, r0, #0x1f00
 	orr r0, r0, #0x200
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _02120CF0 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -5290,30 +5290,30 @@ ov3_021214AC: ; 0x021214AC
 	arm_func_start ov3_021214C8
 ov3_021214C8: ; 0x021214C8
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #0xf
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x40
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #0x10
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #0x20
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r0
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	ldr r2, _0212165C ; =0x04000008
 	mov r0, #0x80
 	ldrh r1, [r2]
@@ -5331,9 +5331,9 @@ ov3_021214C8: ; 0x021214C8
 	ldrh r1, [r2, #6]
 	bic r1, r1, #3
 	strh r1, [r2, #6]
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	ldr r1, _02121660 ; =0x04001008
 	ldrh r0, [r1]
 	bic r0, r0, #3
@@ -5355,7 +5355,7 @@ ov3_021214C8: ; 0x021214C8
 	mov r2, r1
 	mov r3, r1
 	str r1, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _02121668 ; =0x04000060
 	mov r2, #0x4000000
 	ldrh r1, [lr]
@@ -5384,7 +5384,7 @@ ov3_021214C8: ; 0x021214C8
 	bic r0, r0, #0x1f00
 	orr r0, r0, #0x200
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _02121670 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -7057,34 +7057,34 @@ ov3_02122D40: ; 0x02122D40
 	arm_func_start ov3_02122D44
 ov3_02122D44: ; 0x02122D44
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #4
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x40
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #3
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #8
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r1
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r0, #0x80
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	ldr ip, _02122E5C ; =0x04000304
 	ldr r1, _02122E60 ; =0xFFFFFDF1
 	ldrh r3, [ip]
@@ -7120,7 +7120,7 @@ ov3_02122D44: ; 0x02122D44
 	bic r1, r1, #3
 	orr r1, r1, #3
 	strh r1, [r0, #0xe]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _02122E64 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -8655,25 +8655,25 @@ ov3_021242F8: ; 0x021242F8
 	ldrb r1, [sp, #4]
 	strb r1, [sp, #6]
 	strb r1, [r0, #0x4c9]
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	ldr r0, _021244C0 ; =0x000001FF
-	bl sub_020620F0
+	bl GX_SetBankForLCDC
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0xa4000
 	bl MIi_CpuClearFast
-	bl sub_02062634
+	bl GX_DisableBankForLCDC
 	mov r0, #0xc0
 	mov r1, #0x7000000
 	mov r2, #0x400
@@ -8693,9 +8693,9 @@ ov3_021242F8: ; 0x021242F8
 	ldr r1, _021244CC ; =0x04000540
 	mov r0, #3
 	str r0, [r1]
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x70
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	ldr r2, _021244D0 ; =0x04000060
 	ldr r0, _021244D4 ; =0x0000CFEF
 	ldrh r1, [r2]
@@ -8705,7 +8705,7 @@ ov3_021242F8: ; 0x021242F8
 	ldrh r1, [r2]
 	and r0, r1, r0
 	strh r0, [r2]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r2, _021244D8 ; =0x04001000
 	mov r0, r4
 	ldr r1, [r2]
@@ -8731,13 +8731,13 @@ ov3_021242F8: ; 0x021242F8
 	bic r4, r4, #0x3f
 	strh r4, [ip, #0xa]
 	str r1, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	mov r1, #0
 	str r1, [sp]
 	ldr r0, _021244E8 ; =0x04001050
 	mov r2, r1
 	mov r3, r1
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr r1, _021244EC ; =0xBFFF0000
 	ldr r0, _021244F0 ; =0x04000580
 	str r1, [r0]
@@ -9417,7 +9417,7 @@ _02124E50:
 	mov r1, r0
 	mov r3, r0
 	str r0, [sp]
-	bl sub_0206327C
+	bl G3X_SetClearColor
 	ldr r2, _02124F10 ; =0x04000048
 	add r0, r4, #0x1000
 	ldrb r1, [r0, #0x4c8]
@@ -9449,7 +9449,7 @@ _02124E50:
 	orr r1, r1, r0, lsl #13
 	mov r0, #0
 	str r1, [r2]
-	bl sub_02061568
+	bl GXS_SetGraphicsMode
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -9513,7 +9513,7 @@ _02124F78:
 	add r0, r0, #0x1000
 	mov r1, #0
 	mov r2, #0x400
-	bl NitroSDK_gx_GXS_LoadOAM
+	bl GXS_LoadOAM
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
 _02124FE4: .word 0x04001000
@@ -9526,18 +9526,18 @@ ov3_02124FEC: ; 0x02124FEC
 	ldrh r0, [r1]
 	orr r0, r0, #0x8000
 	strh r0, [r1]
-	bl sub_02062430
+	bl GX_ResetBankForSubOBJ
 	mov r0, #4
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #8
-	bl sub_020620F0
+	bl GX_SetBankForLCDC
 	mov r0, #1
 	ldr ip, _021250A0 ; =0x81330010
 	ldr r3, _021250A4 ; =0x04000064
 	mov r2, r0
 	mov r1, #0
 	str ip, [r3]
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r2, #0x4000000
 	ldr r1, [r2]
 	mov r0, #5
@@ -9547,7 +9547,7 @@ ov3_02124FEC: ; 0x02124FEC
 	ldrh r1, [r2, #8]
 	bic r1, r1, #3
 	strh r1, [r2, #8]
-	bl sub_02061568
+	bl GXS_SetGraphicsMode
 	ldr r1, _021250A8 ; =0x04001000
 	ldr r0, [r1]
 	bic r0, r0, #0x1f00
@@ -9579,18 +9579,18 @@ ov3_021250AC: ; 0x021250AC
 	ldrh r0, [r1]
 	bic r0, r0, #0x8000
 	strh r0, [r1]
-	bl sub_0206241C
+	bl GX_ResetBankForSubBG
 	mov r0, #8
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r0, #4
-	bl sub_020620F0
+	bl GX_SetBankForLCDC
 	mov r0, #1
 	ldr ip, _02125134 ; =0x81320010
 	ldr r3, _02125138 ; =0x04000064
 	mov r2, r0
 	mov r1, #0
 	str ip, [r3]
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r2, #0x4000000
 	ldr r1, [r2]
 	mov r0, #5
@@ -9600,7 +9600,7 @@ ov3_021250AC: ; 0x021250AC
 	ldrh r1, [r2, #8]
 	bic r1, r1, #3
 	strh r1, [r2, #8]
-	bl sub_02061568
+	bl GXS_SetGraphicsMode
 	ldr r1, _0212513C ; =0x04001000
 	ldr r0, [r1]
 	bic r0, r0, #0x1f00
@@ -10160,7 +10160,7 @@ ov3_02125834: ; 0x02125834
 	mov r1, #0x1f
 	mov r3, #0x3f
 	str r4, [sp]
-	bl sub_0206327C
+	bl G3X_SetClearColor
 	ldr r1, _02125C8C ; =DAT_overlay_3_0212af64
 	ldr r2, [sp, #4]
 	mov r0, r4
@@ -10234,15 +10234,15 @@ _02125878:
 	mov r4, r0
 	mov r0, #0
 	strh r0, [r4]
-	bl NitroSDK_gx_GX_BeginLoadTexPltt
+	bl GX_BeginLoadTexPltt
 	mov r0, r4
 	mov r1, #4
 	bl DC_FlushRange
 	mov r1, r6
 	mov r0, r4
 	mov r2, #4
-	bl NitroSDK_gx_GX_LoadTexPltt
-	bl NitroSDK_gx_GX_EndLoadTexPltt
+	bl GX_LoadTexPltt
+	bl GX_EndLoadTexPltt
 	mov r0, r4
 	bl Heap_Free
 	ldr r0, _02125C94 ; =DAT_overlay_3_0212a680
@@ -10470,7 +10470,7 @@ _02125CB8:
 	blt _02125CB8
 	add r0, r0, #0xd2
 	add r0, r0, #0x500
-	bl sub_02063264
+	bl G3X_SetToonTable
 	ldr r2, _02125D04 ; =0x04000060
 	ldr r0, _02125D08 ; =0xFFFFCFFD
 	ldrh r1, [r2]
@@ -12375,7 +12375,7 @@ ov3_021276D8: ; 0x021276D8
 	str r0, [sp]
 	mov r1, #0x1f
 	mov r3, #0x3f
-	bl sub_0206327C
+	bl G3X_SetClearColor
 	ldr r1, [r4, #0x58]
 	mov r0, #0
 	ldmia r1, {r2, r3, r6}
@@ -12432,15 +12432,15 @@ _02127744:
 	ldr r1, _02127B1C ; =0x00007FFF
 	mov r6, r0
 	strh r1, [r6]
-	bl NitroSDK_gx_GX_BeginLoadTexPltt
+	bl GX_BeginLoadTexPltt
 	mov r0, r6
 	mov r1, #4
 	bl DC_FlushRange
 	mov r0, r6
 	mov r1, r7
 	mov r2, #4
-	bl NitroSDK_gx_GX_LoadTexPltt
-	bl NitroSDK_gx_GX_EndLoadTexPltt
+	bl GX_LoadTexPltt
+	bl GX_EndLoadTexPltt
 	mov r0, r6
 	bl Heap_Free
 	mov r0, #0
@@ -15312,7 +15312,7 @@ _0212A050:
 	str r7, [r4, #0x20]
 	mov r0, fp
 	str r5, [r4, #0x20]
-	bl sub_02062F80
+	bl G3_MultMtx33
 	mov r0, sl
 	ldr r2, [r0]
 	mov r1, sb

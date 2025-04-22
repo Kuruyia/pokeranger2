@@ -57,7 +57,7 @@ ov21_0211CA50: ; 0x0211CA50
     mov r0, #2
     bl OS_EnableIrqMask
     mov r0, #1
-    bl sub_02061414
+    bl GX_HBlankIntr
     mov r0, r4
     ldmia sp!, {r4, pc}
     .align 2, 0
@@ -88,41 +88,41 @@ ov21_0211CAC0: ; 0x0211CAC0
 	arm_func_start ov21_0211CADC
 ov21_0211CADC: ; 0x0211CADC
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	ldr r0, _0211CC90 ; =0x000001FF
-	bl sub_020620F0
+	bl GX_SetBankForLCDC
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0xa4000
 	bl MIi_CpuClearFast
-	bl sub_02062634
+	bl GX_DisableBankForLCDC
 	mov r0, #0
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #3
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #0x70
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #1
 	mov r1, #0
 	mov r2, r1
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r0, #4
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	ldr r3, _0211CC94 ; =0x04001008
 	mov ip, #0x4000000
 	ldrh r1, [r3]
@@ -156,7 +156,7 @@ ov21_0211CADC: ; 0x0211CADC
 	mov r3, r1
 	add r0, ip, #0x50
 	str r1, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _0211CC9C ; =0x04000060
 	mov r2, #0x4000000
 	ldrh r1, [lr]
@@ -190,7 +190,7 @@ ov21_0211CADC: ; 0x0211CADC
 	ldr r0, [r1]
 	bic r0, r0, #0x1f00
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _0211CCA4 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -322,7 +322,7 @@ _0211CDB4:
 	mov r0, #2
 	bl OS_EnableIrqMask
 	mov r0, #1
-	bl sub_02061414
+	bl GX_HBlankIntr
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0211CE58: .word MAIN_BSS_0208F304
@@ -1220,7 +1220,7 @@ _0211D974:
 	mov r0, r8
 	mov r1, #0xc0
 	mov r2, #0x20
-	bl NitroSDK_gx_GX_LoadBGPltt
+	bl GX_LoadBGPltt
 	add r0, r7, #1
 	add r5, r5, r0, lsl #8
 	mov r0, r5
@@ -1229,13 +1229,13 @@ _0211D974:
 	mov r0, r5
 	mov r1, #0
 	mov r2, #0x100
-	bl NitroSDK_gx_GX_LoadBG1Char
-	bl sub_02062744
+	bl GX_LoadBG1Char
+	bl G2_GetBG1ScrPtr
 	add r1, r0, #0x500
 	add r0, r4, #0x600
 	mov r2, #0xc0
 	bl MIi_CpuCopyFast
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	mov r1, r0
 	add r0, r4, #0x740
 	add r1, r1, #0x5c0
@@ -1403,7 +1403,7 @@ _0211DCB8:
 	mov r3, #0
 	str r4, [sl, #0x24]
 	bl sub_0200C408
-	bl sub_020626F0
+	bl G2_GetBG0ScrPtr
 	add r1, r0, #0x800
 	mov r0, #0
 	mov r2, #0x800
@@ -1435,7 +1435,7 @@ _0211DD20:
 	and r0, r0, #0x43
 	orr r0, r0, #0x4600
 	strh r0, [r1]
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	add r1, r0, #0x800
 	mov r0, #0
 	mov r2, #0x800
@@ -1541,7 +1541,7 @@ _0211DD20:
 	ldr r0, [sl, #0x28]
 	mov r2, #0x1c
 	bl sub_0200C6C8
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	mov r1, #0x15
 	str r1, [sp]
 	mov r1, #0x20
@@ -1766,16 +1766,16 @@ ov21_0211E14C: ; 0x0211E14C
 	mov r2, #3
 	str r4, [sp, #0xc]
 	bl sub_02020FF0
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	mov r4, r0
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	add r0, r0, #0xb80
 	add r1, r4, #0xe00
 	mov r2, #0x180
 	bl MIi_CpuCopyFast
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	mov r4, r0
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	add r1, r4, #0xb80
 	add r0, r0, #0x480
 	mov r2, #0x180
@@ -4226,18 +4226,18 @@ _021205A4:
 	ldr r0, [r8, #0x40]
 	cmp r0, #3
 	blt _021205E4
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	mov r4, r0
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	add r0, r0, #0x480
 	add r1, r4, #0xb80
 	mov r2, #0x180
 	bl MIi_CpuCopyFast
 	b _02120600
 _021205E4:
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	mov r4, r0
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	add r0, r0, #0xe00
 	add r1, r4, #0xb80
 	mov r2, #0x180
@@ -4292,18 +4292,18 @@ _021206A8:
 _021206AC:
 	cmp r0, #2
 	bne _021206D4
-	bl sub_02062798
+	bl G2_GetBG2ScrPtr
 	add sl, r0, r6, lsl #6
-	bl sub_02062798
+	bl G2_GetBG2ScrPtr
 	mov r1, sl
 	add r0, r0, #0x700
 	mov r2, #0x80
 	bl MIi_CpuCopyFast
 	b _021206F0
 _021206D4:
-	bl sub_02062798
+	bl G2_GetBG2ScrPtr
 	add sl, r0, r6, lsl #6
-	bl sub_02062798
+	bl G2_GetBG2ScrPtr
 	mov r1, sl
 	add r0, r0, #0x780
 	mov r2, #0x80
@@ -4321,7 +4321,7 @@ _02120700:
 	mov r6, #0
 	mov r4, #0x80
 _02120718:
-	bl sub_02062798
+	bl G2_GetBG2ScrPtr
 	add r1, r0, r7, lsl #6
 	mov r0, r6
 	mov r2, r4
@@ -6821,7 +6821,7 @@ ov21_02122534: ; 0x02122534
 	mov r3, #8
 	add r0, ip, #0x50
 	str r3, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	b _021225D8
 	arm_func_end ov21_02122534
 _0212259C:
@@ -6839,7 +6839,7 @@ _0212259C:
 	mov r1, #4
 	mov r2, #0x20
 	str r3, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 _021225D8:
 	ldr r0, [r4, #8]
 	mov r1, #0

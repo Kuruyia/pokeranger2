@@ -382,25 +382,25 @@ _0211CEF8: .word sub_02007D98
 	arm_func_start ov25_0211CEFC
 ov25_0211CEFC: ; 0x0211CEFC
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	ldr r0, _0211D07C ; =0x000001FF
-	bl sub_020620F0
+	bl GX_SetBankForLCDC
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0xa4000
 	bl MIi_CpuClearFast
-	bl sub_02062634
+	bl GX_DisableBankForLCDC
 	mov r0, #0xc0
 	mov r1, #0x7000000
 	mov r2, #0x400
@@ -418,31 +418,31 @@ ov25_0211CEFC: ; 0x0211CEFC
 	mov r2, #0x400
 	bl MIi_CpuClearFast
 	mov r0, #0
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #0
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #3
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r1
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r0, #0x10
-	bl NitroSDK_gx_GX_SetBankForBGExtPltt
+	bl GX_SetBankForBGExtPltt
 	mov r0, #4
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #8
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r0, #0x80
-	bl NitroSDK_gx_GX_SetBankForSubBGExtPltt
+	bl GX_SetBankForSubBGExtPltt
 	mov r1, #0
 	str r1, [sp]
 	ldr r0, _0211D088 ; =0x04000050
 	mov r2, r1
 	mov r3, r1
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _0211D08C ; =0x04000060
 	mov r2, #0x4000000
 	ldrh r1, [lr]
@@ -471,7 +471,7 @@ ov25_0211CEFC: ; 0x0211CEFC
 	bic r0, r0, #0x1f00
 	orr r0, r0, #0x1000
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _0211D094 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -578,12 +578,12 @@ _0211D1C8:
 	mov r1, #0x1e0
 	ldr r0, [r0, #0xc]
 	mov r2, #0x20
-	bl NitroSDK_gx_GX_LoadBGPltt
+	bl GX_LoadBGPltt
 	ldr r0, [r4, #0xb8]
 	mov r1, #0x1e0
 	ldr r0, [r0, #0xc]
 	mov r2, #0x20
-	bl NitroSDK_gx_GXS_LoadBGPltt
+	bl GXS_LoadBGPltt
 	cmp r4, #0
 	beq _0211D218
 	mov r0, r4
@@ -1064,9 +1064,9 @@ _0211D7D8:
 	bic r1, r1, #3
 	orr r1, r1, r5
 	strh r1, [r0]
-	bl sub_020626F0
+	bl G2_GetBG0ScrPtr
 	mov r4, r0
-	bl sub_02062988
+	bl G2_GetBG0CharPtr
 	mov sl, r0
 	b _0211DAE4
 _0211D83C:
@@ -1090,9 +1090,9 @@ _0211D83C:
 	bic r1, r1, #3
 	orr r1, r1, r5
 	strh r1, [r0]
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	mov r4, r0
-	bl sub_020629DC
+	bl G2_GetBG1CharPtr
 	mov sl, r0
 	b _0211DAE4
 _0211D8A0:
@@ -1115,9 +1115,9 @@ _0211D8A0:
 	bic r1, r1, #3
 	orr r1, r1, r5
 	strh r1, [r0]
-	bl sub_02062798
+	bl G2_GetBG2ScrPtr
 	mov r4, r0
-	bl sub_02062A30
+	bl G2_GetBG2CharPtr
 	mov sl, r0
 	b _0211DAE4
 _0211D900:
@@ -1140,9 +1140,9 @@ _0211D900:
 	bic r1, r1, #3
 	orr r1, r1, r5
 	strh r1, [r0]
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	mov r4, r0
-	bl sub_02062AC0
+	bl G2_GetBG3CharPtr
 	mov sl, r0
 	b _0211DAE4
 _0211D960:
@@ -1166,9 +1166,9 @@ _0211D960:
 	bic r1, r1, #3
 	orr r1, r1, r5
 	strh r1, [r0]
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	mov r4, r0
-	bl sub_020629BC
+	bl G2S_GetBG0CharPtr
 	mov sl, r0
 	b _0211DAE4
 _0211D9C4:
@@ -1192,9 +1192,9 @@ _0211D9C4:
 	bic r1, r1, #3
 	orr r1, r1, r5
 	strh r1, [r0]
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	mov r4, r0
-	bl sub_02062A10
+	bl G2S_GetBG1CharPtr
 	mov sl, r0
 	b _0211DAE4
 _0211DA28:
@@ -1217,9 +1217,9 @@ _0211DA28:
 	bic r1, r1, #3
 	orr r1, r1, r5
 	strh r1, [r0]
-	bl sub_0206281C
+	bl G2S_GetBG2ScrPtr
 	mov r4, r0
-	bl sub_02062A80
+	bl G2S_GetBG2CharPtr
 	mov sl, r0
 	b _0211DAE4
 _0211DA88:
@@ -1242,9 +1242,9 @@ _0211DA88:
 	bic r1, r1, #3
 	orr r1, r1, r5
 	strh r1, [r0]
-	bl sub_02062914
+	bl G2S_GetBG3ScrPtr
 	mov r4, r0
-	bl sub_02062B18
+	bl G2S_GetBG3CharPtr
 	mov sl, r0
 _0211DAE4:
 	mov r1, r4
@@ -1460,13 +1460,13 @@ _0211DD98:
 	mov r2, r6
 	add r0, r0, r4, lsl #6
 	mov r1, #0
-	bl NitroSDK_gx_GX_LoadBG0Scr
+	bl GX_LoadBG0Scr
 	cmp r4, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
 	ldr r0, [r5, #0x1c]
 	mov r1, r6
 	mov r2, r4, lsl #6
-	bl NitroSDK_gx_GX_LoadBG0Scr
+	bl GX_LoadBG0Scr
 	ldmia sp!, {r4, r5, r6, pc}
 _0211DDF8:
 	ldr r3, _0211E098 ; =0x000001FF
@@ -1485,13 +1485,13 @@ _0211DDF8:
 	mov r2, r6
 	add r0, r0, r4, lsl #6
 	mov r1, #0
-	bl NitroSDK_gx_GX_LoadBG1Scr
+	bl GX_LoadBG1Scr
 	cmp r4, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
 	ldr r0, [r5, #0x1c]
 	mov r1, r6
 	mov r2, r4, lsl #6
-	bl NitroSDK_gx_GX_LoadBG1Scr
+	bl GX_LoadBG1Scr
 	ldmia sp!, {r4, r5, r6, pc}
 _0211DE58:
 	ldr r3, _0211E098 ; =0x000001FF
@@ -1510,13 +1510,13 @@ _0211DE58:
 	mov r2, r6
 	add r0, r0, r4, lsl #6
 	mov r1, #0
-	bl NitroSDK_gx_GX_LoadBG2ScrBmp
+	bl GX_LoadBG2Scr
 	cmp r4, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
 	ldr r0, [r5, #0x1c]
 	mov r1, r6
 	mov r2, r4, lsl #6
-	bl NitroSDK_gx_GX_LoadBG2ScrBmp
+	bl GX_LoadBG2Scr
 	ldmia sp!, {r4, r5, r6, pc}
 _0211DEB8:
 	ldr r3, _0211E098 ; =0x000001FF
@@ -1535,13 +1535,13 @@ _0211DEB8:
 	mov r2, r6
 	add r0, r0, r4, lsl #6
 	mov r1, #0
-	bl NitroSDK_gx_GX_LoadBG3ScrBmp
+	bl GX_LoadBG3Scr
 	cmp r4, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
 	ldr r0, [r5, #0x1c]
 	mov r1, r6
 	mov r2, r4, lsl #6
-	bl NitroSDK_gx_GX_LoadBG3ScrBmp
+	bl GX_LoadBG3Scr
 	ldmia sp!, {r4, r5, r6, pc}
 _0211DF18:
 	ldr r3, _0211E098 ; =0x000001FF
@@ -1560,13 +1560,13 @@ _0211DF18:
 	mov r2, r6
 	add r0, r0, r4, lsl #6
 	mov r1, #0
-	bl NitroSDK_gx_GXS_LoadBG0Scr
+	bl GXS_LoadBG0Scr
 	cmp r4, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
 	ldr r0, [r5, #0x1c]
 	mov r1, r6
 	mov r2, r4, lsl #6
-	bl NitroSDK_gx_GXS_LoadBG0Scr
+	bl GXS_LoadBG0Scr
 	ldmia sp!, {r4, r5, r6, pc}
 _0211DF78:
 	ldr r3, _0211E098 ; =0x000001FF
@@ -1585,13 +1585,13 @@ _0211DF78:
 	mov r2, r6
 	add r0, r0, r4, lsl #6
 	mov r1, #0
-	bl NitroSDK_gx_GXS_LoadBG1Scr
+	bl GXS_LoadBG1Scr
 	cmp r4, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
 	ldr r0, [r5, #0x1c]
 	mov r1, r6
 	mov r2, r4, lsl #6
-	bl NitroSDK_gx_GXS_LoadBG1Scr
+	bl GXS_LoadBG1Scr
 	ldmia sp!, {r4, r5, r6, pc}
 _0211DFD8:
 	ldr r3, _0211E098 ; =0x000001FF
@@ -1610,13 +1610,13 @@ _0211DFD8:
 	mov r2, r6
 	add r0, r0, r4, lsl #6
 	mov r1, #0
-	bl NitroSDK_gx_GXS_LoadBG2ScrBmp
+	bl GXS_LoadBG2Scr
 	cmp r4, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
 	ldr r0, [r5, #0x1c]
 	mov r1, r6
 	mov r2, r4, lsl #6
-	bl NitroSDK_gx_GXS_LoadBG2ScrBmp
+	bl GXS_LoadBG2Scr
 	ldmia sp!, {r4, r5, r6, pc}
 _0211E038:
 	ldr r3, _0211E098 ; =0x000001FF
@@ -1635,13 +1635,13 @@ _0211E038:
 	mov r2, r6
 	add r0, r0, r4, lsl #6
 	mov r1, #0
-	bl NitroSDK_gx_GXS_LoadBG3ScrBmp
+	bl GXS_LoadBG3Scr
 	cmp r4, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
 	ldr r0, [r5, #0x1c]
 	mov r1, r6
 	mov r2, r4, lsl #6
-	bl NitroSDK_gx_GXS_LoadBG3ScrBmp
+	bl GXS_LoadBG3Scr
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _0211E098: .word 0x000001FF
@@ -1865,7 +1865,7 @@ _0211E368:
 	and r1, r1, #3
 	mov r1, r2, lsl r1
 	rsb r2, r4, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _0211E39C:
@@ -1874,7 +1874,7 @@ _0211E39C:
 	and r1, r1, #3
 	mov r1, r2, lsl r1
 	rsb r2, r4, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _0211E3BC:
@@ -1888,7 +1888,7 @@ _0211E3BC:
 	and r1, r1, #3
 	mov r1, r2, lsl r1
 	mov r2, r4
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _0211E3F0:
@@ -1897,7 +1897,7 @@ _0211E3F0:
 	and r1, r1, #3
 	mov r1, r2, lsl r1
 	mov r2, r4
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _0211E410:
@@ -1919,7 +1919,7 @@ _0211E410:
 	mov r2, r2, lsl r0
 	ldr r0, _0211EFE8 ; =0x04000050
 	mov r3, r4
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _0211E464:
@@ -1937,7 +1937,7 @@ _0211E464:
 	mov r2, r2, lsl r0
 	ldr r0, _0211EFEC ; =0x04001050
 	mov r3, r4
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _0211E4A8:
@@ -2417,13 +2417,13 @@ _0211EBC8:
 	beq _0211EBEC
 	ldr r0, _0211EFE8 ; =0x04000050
 	mov r1, r1, asr #1
-	bl sub_02062C54
+	bl G2x_ChangeBlendBrightness_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _0211EBEC:
 	ldr r0, _0211EFEC ; =0x04001050
 	mov r1, r1, asr #1
-	bl sub_02062C54
+	bl G2x_ChangeBlendBrightness_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _0211EC00:
@@ -2432,13 +2432,13 @@ _0211EC00:
 	beq _0211EC20
 	ldr r0, _0211EFE8 ; =0x04000050
 	mov r1, r1, asr #1
-	bl sub_02062C54
+	bl G2x_ChangeBlendBrightness_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _0211EC20:
 	ldr r0, _0211EFEC ; =0x04001050
 	mov r1, r1, asr #1
-	bl sub_02062C54
+	bl G2x_ChangeBlendBrightness_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 _0211EC34:
@@ -2820,12 +2820,12 @@ ov25_0211F16C: ; 0x0211F16C
 	mov r1, r1, lsl r0
 	bgt _0211F1C0
 	ldr r0, _0211F1CC ; =0x04000050
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldmia sp!, {r3, pc}
 	arm_func_end ov25_0211F16C
 _0211F1C0:
 	ldr r0, _0211F1D0 ; =0x04001050
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0211F1CC: .word 0x04000050

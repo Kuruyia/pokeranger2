@@ -127,30 +127,30 @@ _0211CB84: .word MAIN_BSS_0210CA40
 	arm_func_start CFieldScene_ov0_0211CB88
 CFieldScene_ov0_0211CB88: ; 0x0211CB88
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #0xf
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x40
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #0x10
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #0x20
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r0
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	ldr r3, _0211CD44 ; =0x04000008
 	mov r1, #0
 	ldrh r2, [r3]
@@ -173,9 +173,9 @@ CFieldScene_ov0_0211CB88: ; 0x0211CB88
 	str r1, [r3, #0xc]
 	str r1, [r3, #0x10]
 	str r1, [r3, #0x14]
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	ldr ip, _0211CD48 ; =0x04001008
 	ldrh r0, [ip]
 	bic r0, r0, #3
@@ -201,7 +201,7 @@ CFieldScene_ov0_0211CB88: ; 0x0211CB88
 	str r1, [ip, #0x10]
 	str r1, [ip, #0x14]
 	str r1, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _0211CD50 ; =0x04000060
 	mov r2, #0x4000000
 	ldrh r1, [lr]
@@ -231,7 +231,7 @@ CFieldScene_ov0_0211CB88: ; 0x0211CB88
 	bic r0, r0, #0x1f00
 	orr r0, r0, #0x800
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _0211CD58 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -2455,7 +2455,7 @@ _0211EBF0:
 	mov r1, #0
 	ldr r0, _0211FA84 ; =0x04000050
 	mov r2, r1
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	mov r0, #0
 	str r0, [sb, #0xec]
 	b _021201DC
@@ -12049,7 +12049,7 @@ _021270A8:
 	mov r5, r5, lsl #0xc
 	add r3, r4, r3
 	str r5, [r3, #0xc]
-	bl sub_02064644
+	bl G3_BeginMakeDL
 	ldr r1, [sp, #0x78]
 	mov r0, #0
 	str r0, [sp, #0x48]
@@ -12111,7 +12111,7 @@ _021271EC:
 	ldr r1, [sb, #0x14]
 	ldr r3, [sb, #0xc]
 	mov r0, r4
-	bl sub_02062E94
+	bl G3C_TexImageParam
 _021272C0:
 	ldr r0, [sp, #0x14]
 	mov r3, #3
@@ -12126,7 +12126,7 @@ _021272C0:
 	str r2, [sp, #8]
 	ldr r2, [sp, #0x14]
 	ldr r2, [r2, #0x20]
-	bl sub_02062E54
+	bl G3C_PolygonAttr
 	mov r0, #0xff
 	str r0, [sp, #0x3c]
 	str r0, [sp, #0x38]
@@ -12256,7 +12256,7 @@ _02127470:
 	cmp r5, #0
 	beq _021274F8
 	mov r0, r4
-	bl sub_02062F44
+	bl G3C_End
 	mov r5, #0
 _021274F8:
 	ldr r0, [sp, #0x44]
@@ -12280,7 +12280,7 @@ _021274F8:
 	ldr r1, [sb, #0x14]
 	ldr r3, [sb, #0xc]
 	mov r0, r4
-	bl sub_02062E94
+	bl G3C_TexImageParam
 	ldrsh r0, [sp, #0x60]
 	str r0, [sp, #0x34]
 _02127558:
@@ -12294,7 +12294,7 @@ _02127558:
 	cmp r5, #0
 	beq _02127588
 	mov r0, r4
-	bl sub_02062F44
+	bl G3C_End
 	mov r5, #0
 _02127588:
 	ldr r0, [sp, #0x44]
@@ -12309,7 +12309,7 @@ _02127588:
 	ldr r2, [sb, #0x14]
 	mov r0, r4
 	add r1, r3, r1, lsl #5
-	bl sub_02062EE8
+	bl G3C_TexPlttBase
 	ldrb r0, [sp, #0x56]
 	str r0, [sp, #0x3c]
 	ldrb r0, [sp, #0x55]
@@ -12319,32 +12319,32 @@ _021275CC:
 	bne _021275E0
 	mov r0, r4
 	mov r1, #1
-	bl sub_02062F20
+	bl G3C_Begin
 _021275E0:
 	ldr r1, [sp, #0x20]
 	mov r0, r4
 	mov r2, r6
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	ldr r1, [sp, #0x2c]
 	ldr r2, [sp, #0x28]
 	mov r0, r4
 	mov r3, #0
-	bl sub_02062DE4
+	bl G3C_Vtx
 	ldr r1, [sp, #0x20]
 	mov r0, r4
 	mov r2, r8
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	ldr r0, [sp, #0x28]
 	ldr r1, [sp, #0x2c]
 	add fp, r0, fp
 	mov r2, fp, lsl #0x10
 	mov r0, r4
 	mov r2, r2, asr #0x10
-	bl sub_02062E20
+	bl G3C_VtxXY
 	mov r2, r8
 	mov r0, r4
 	mov r1, r7
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	ldr r1, [sp, #0x2c]
 	ldr r0, [sp, #0x24]
 	add r8, r1, r0
@@ -12353,16 +12353,16 @@ _021275E0:
 	mov r2, r0, asr #0x10
 	mov r0, r4
 	mov r1, r1, asr #0x10
-	bl sub_02062E20
+	bl G3C_VtxXY
 	mov r1, r7
 	mov r2, r6
 	mov r0, r4
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	mov r0, r8, lsl #0x10
 	mov r1, r0, asr #0x10
 	ldr r2, [sp, #0x28]
 	mov r0, r4
-	bl sub_02062E20
+	bl G3C_VtxXY
 	ldr r0, [sp, #0x30]
 	ldr r1, [sp, #0x70]
 	add r0, r0, #1
@@ -12373,7 +12373,7 @@ _021276A0:
 	cmp r5, #0
 	beq _021276B0
 	mov r0, r4
-	bl sub_02062F44
+	bl G3C_End
 _021276B0:
 	ldr r0, [sp, #0x48]
 	ldr r1, [sp, #0x78]
@@ -12383,7 +12383,7 @@ _021276B0:
 	blt _021271EC
 _021276C8:
 	add r0, sp, #0x8c
-	bl sub_02064664
+	bl G3_EndMakeDL
 	ldr r1, [sp, #0x14]
 	ldr r2, [sp, #0x1c]
 	ldr r3, [r1, #0x30]
@@ -21320,7 +21320,7 @@ ov0_0212F3D8: ; 0x0212F3D8
 	str r2, [sp, #0x34]
 	mov r2, #3
 	str r2, [r1]
-	bl sub_0206349C
+	bl G3_LoadTexMtxTexCoord
 	ldr r2, _0212F464 ; =0x04000440
 	mov r3, #1
 	mov r0, r5
@@ -21334,7 +21334,7 @@ ov0_0212F3D8: ; 0x0212F3D8
 	mov r2, #3
 	add r0, sp, #0
 	str r2, [r1]
-	bl sub_0206349C
+	bl G3_LoadTexMtxTexCoord
 	ldr r1, _0212F464 ; =0x04000440
 	mov r2, #1
 	mov r0, r4
@@ -21871,7 +21871,7 @@ _0212FB78:
 	mov r1, r0
 	ldr r2, [r6, #0x24]
 	mov r0, r4
-	bl sub_02064644
+	bl G3_BeginMakeDL
 	ldr sl, [sp, #0x40]
 	tst r7, #1
 	ldr sb, [sp, #0x3c]
@@ -21907,7 +21907,7 @@ _0212FBE4:
 	ldr r1, [r5, #0x1c]
 	ldr r3, [r5, #0x14]
 	mov r0, r4
-	bl sub_02062E94
+	bl G3C_TexImageParam
 	ldr r0, [sp, #0x4c]
 	mov r1, #0
 	add r0, r0, #8
@@ -21917,7 +21917,7 @@ _0212FBE4:
 	ldr r2, [r5, #0x1c]
 	mov r0, r4
 	add r1, r3, r1, lsl #5
-	bl sub_02062EE8
+	bl G3C_TexPlttBase
 	ldr r0, [sp, #0x14]
 	mov r3, #3
 	ldr r1, [r0, #0x1c]
@@ -21928,54 +21928,54 @@ _0212FBE4:
 	mov r1, #0
 	mov r2, r1
 	str r1, [sp, #8]
-	bl sub_02062E54
+	bl G3C_PolygonAttr
 	mov r0, r4
 	mov r1, #1
-	bl sub_02062F20
+	bl G3C_Begin
 	mov sb, sb, lsl #0xc
 	mov sl, sl, lsl #0xc
 	mov r0, r4
 	mov r1, sl
 	mov r2, sb
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	ldr r1, [sp, #0x1c]
 	ldr r2, [sp, #0x20]
 	mov r0, r4
 	mov r3, #0
-	bl sub_02062DE4
+	bl G3C_Vtx
 	mov r8, r8, lsl #0xc
 	mov r1, sl
 	mov r0, r4
 	mov r2, r8
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	ldr r1, [sp, #0x1c]
 	ldr r2, [sp, #0x58]
 	mov r0, r4
-	bl sub_02062E20
+	bl G3C_VtxXY
 	ldr r0, [sp, #0x30]
 	mov r2, r8
 	mov sl, r0, lsl #0xc
 	mov r0, r4
 	mov r1, sl
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	ldr r1, [sp, #0x5c]
 	ldr r2, [sp, #0x58]
 	mov r0, r4
-	bl sub_02062E20
+	bl G3C_VtxXY
 	mov r1, sl
 	mov r2, sb
 	mov r0, r4
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	ldr r1, [sp, #0x5c]
 	ldr r2, [sp, #0x20]
 	mov r0, r4
-	bl sub_02062E20
+	bl G3C_VtxXY
 	mov r0, r4
-	bl sub_02062F44
+	bl G3C_End
 	cmp r7, #0
 	bne _0212FD38
 	mov r0, r4
-	bl sub_02064664
+	bl G3_EndMakeDL
 	str r0, [r6, #0x20]
 _0212FD38:
 	add r7, r7, #1
@@ -89325,7 +89325,7 @@ _02169230:
 	str r1, [sp, #0x28]
 	ldr r1, [sl, #0x28]
 	str r1, [sp, #0x30]
-	bl sub_02062F80
+	bl G3_MultMtx33
 _02169264:
 	ldrsh r0, [sl, #0x38]
 	cmp r0, #0
@@ -89341,7 +89341,7 @@ _02169264:
 	add r0, sp, #0
 	blx sub_0205FE38
 	add r0, sp, #0
-	bl sub_02062F80
+	bl G3_MultMtx33
 _021692A0:
 	ldr r3, [sl, #0x20]
 	cmp r3, #0x1000
@@ -100061,7 +100061,7 @@ _0217202C:
 	mov r1, #0
 	str r1, [r0, #4]
 	mov r0, r4
-	bl sub_0206349C
+	bl G3_LoadTexMtxTexCoord
 	ldr r0, _0217219C ; =0x04000440
 	mov r1, #1
 	str r1, [r0]

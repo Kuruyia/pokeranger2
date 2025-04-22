@@ -151,7 +151,7 @@ _02000DE8:
 	mov r2, r1
 	mov r3, #0x20
 	bl sub_02002A78
-	bl sub_020630A8
+	bl G3X_Reset
 	ldr r0, _020010D0 ; =0x04000454
 	mov r1, #0
 	str r1, [r0]
@@ -424,8 +424,8 @@ sub_02001248: ; 0x02001248
 	bl OS_InitTick
 	mov r0, #2
 	bl FS_Init
-	bl sub_020612A0
-	bl sub_02062F9C
+	bl GX_Init
+	bl G3X_Init
 	bl RTC_Init
 	mov r0, #0xb0000
 	bl Heap_Init
@@ -449,14 +449,14 @@ InitBlankInterrupts: ; 0x02001294
 	mov r0, #1
 	bl OS_EnableIrqMask
 	mov r0, #1
-	bl sub_02061448
+	bl GX_VBlankIntr
 	ldr r1, _020012E8 ; =HBlankIntr
 	mov r0, #2
 	bl OS_SetIrqFunction
 	mov r0, #2
 	bl OS_EnableIrqMask
 	mov r0, #1
-	bl sub_02061414
+	bl GX_HBlankIntr
 	ldr r2, _020012EC ; =0x04000208
 	mov r0, #1
 	ldrh r1, [r2]
@@ -3347,7 +3347,7 @@ sub_020037B4: ; 0x020037B4
 	str r1, [sp, #0xc]
 	str r0, [sp, #0x10]
 	ldmia r3, {r0, r1, r2, r3}
-	bl sub_02063438
+	bl G3i_OrthoW_
 	ldr r0, _02003818 ; =0x04000440
 	mov r1, #1
 	str r1, [r0]
@@ -3391,7 +3391,7 @@ sub_0200381C: ; 0x0200381C
 	ldrsh r2, [r3, r2]
 	blx sub_0205FE38
 	add r0, sp, #0
-	bl sub_02062F80
+	bl G3_MultMtx33
 	add sp, sp, #0x24
 	ldmia sp!, {pc}
 	.align 2, 0
@@ -4428,14 +4428,14 @@ sub_02004658: ; 0x02004658
 	ldr r1, [r5, #0x1c]
 	mov r0, r7
 	ldr r3, [r5, #0x14]
-	bl sub_02062E94
+	bl G3C_TexImageParam
 	add r0, r4, #8
 	mov r1, #0
 	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
 	ldr r2, [r5, #0x1c]
 	mov r1, r0
 	mov r0, r7
-	bl sub_02062EE8
+	bl G3C_TexPlttBase
 	ldr r0, [r8, #0x10]
 	mov r1, #0
 	str r0, [sp]
@@ -4445,17 +4445,17 @@ sub_02004658: ; 0x02004658
 	str r1, [sp, #8]
 	ldr r2, [r8, #0xc]
 	mov r3, #3
-	bl sub_02062E54
+	bl G3C_PolygonAttr
 	mov r0, r7
 	mov r1, #1
-	bl sub_02062F20
+	bl G3C_Begin
 	mov r0, r7
 	ldrh r1, [r8, #8]
-	bl sub_02062D7C
+	bl G3C_Color
 	mov r0, r7
 	ldr r1, [r8, #0x38]
 	ldr r2, [r8, #0x3c]
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	mov r0, r7
 	ldr r1, [r8, #0x18]
 	ldr r2, [r8, #0x1c]
@@ -4470,11 +4470,11 @@ sub_02004658: ; 0x02004658
 	ldr r3, [r8, #4]
 	mov r3, r3, lsl #0x10
 	mov r3, r3, asr #0x10
-	bl sub_02062DE4
+	bl G3C_Vtx
 	mov r0, r7
 	ldr r1, [r8, #0x40]
 	ldr r2, [r8, #0x44]
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	mov r0, r7
 	ldr r1, [r8, #0x20]
 	ldr r2, [r8, #0x24]
@@ -4486,11 +4486,11 @@ sub_02004658: ; 0x02004658
 	mov r2, r2, lsl r6
 	mov r2, r2, lsl #0x10
 	mov r2, r2, asr #0x10
-	bl sub_02062E20
+	bl G3C_VtxXY
 	ldr r1, [r8, #0x48]
 	ldr r2, [r8, #0x4c]
 	mov r0, r7
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	ldr r1, [r8, #0x28]
 	ldr r0, [r8, #0x2c]
 	mov r1, r1, asr #0xc
@@ -4502,11 +4502,11 @@ sub_02004658: ; 0x02004658
 	mov r0, r7
 	mov r1, r1, asr #0x10
 	mov r2, r2, asr #0x10
-	bl sub_02062E20
+	bl G3C_VtxXY
 	ldr r1, [r8, #0x50]
 	ldr r2, [r8, #0x54]
 	mov r0, r7
-	bl sub_02062DA0
+	bl G3C_TexCoord
 	ldr r1, [r8, #0x30]
 	ldr r0, [r8, #0x34]
 	mov r1, r1, asr #0xc
@@ -4518,12 +4518,12 @@ sub_02004658: ; 0x02004658
 	mov r0, r7
 	mov r1, r1, asr #0x10
 	mov r2, r2, asr #0x10
-	bl sub_02062E20
+	bl G3C_VtxXY
 	mov r0, r7
-	bl sub_02062F44
+	bl G3C_End
 	mov r0, r7
 	mov r1, #0
-	bl sub_02062D58
+	bl G3C_PopMtx
 	mov r0, #1
 	add sp, sp, #0x14
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
@@ -4545,7 +4545,7 @@ sub_0200483C: ; 0x0200483C
 	mov r3, r1
 	str r1, [sp, #0x10]
 	mov r2, #1
-	bl sub_02062E94
+	bl G3C_TexImageParam
 	ldr r0, [r6, #0x10]
 	mov r1, #0
 	str r0, [sp]
@@ -4555,13 +4555,13 @@ sub_0200483C: ; 0x0200483C
 	str r1, [sp, #8]
 	ldr r2, [r6, #0xc]
 	mov r3, #3
-	bl sub_02062E54
+	bl G3C_PolygonAttr
 	mov r0, r5
 	mov r1, #1
-	bl sub_02062F20
+	bl G3C_Begin
 	mov r0, r5
 	ldrh r1, [r6, #8]
-	bl sub_02062D7C
+	bl G3C_Color
 	mov r0, r5
 	ldr r1, [r6, #0x18]
 	ldr r2, [r6, #0x1c]
@@ -4576,7 +4576,7 @@ sub_0200483C: ; 0x0200483C
 	ldr r3, [r6, #4]
 	mov r3, r3, lsl #0x10
 	mov r3, r3, asr #0x10
-	bl sub_02062DE4
+	bl G3C_Vtx
 	mov r0, r5
 	ldr r1, [r6, #0x20]
 	ldr r2, [r6, #0x24]
@@ -4588,7 +4588,7 @@ sub_0200483C: ; 0x0200483C
 	mov r2, r2, lsl r4
 	mov r2, r2, lsl #0x10
 	mov r2, r2, asr #0x10
-	bl sub_02062E20
+	bl G3C_VtxXY
 	mov r0, r5
 	ldr r1, [r6, #0x28]
 	ldr r2, [r6, #0x2c]
@@ -4600,7 +4600,7 @@ sub_0200483C: ; 0x0200483C
 	mov r2, r2, lsl r4
 	mov r2, r2, lsl #0x10
 	mov r2, r2, asr #0x10
-	bl sub_02062E20
+	bl G3C_VtxXY
 	mov r0, r5
 	ldr r1, [r6, #0x30]
 	ldr r2, [r6, #0x34]
@@ -4612,12 +4612,12 @@ sub_0200483C: ; 0x0200483C
 	mov r2, r2, lsl r4
 	mov r2, r2, lsl #0x10
 	mov r2, r2, asr #0x10
-	bl sub_02062E20
+	bl G3C_VtxXY
 	mov r0, r5
-	bl sub_02062F44
+	bl G3C_End
 	mov r0, r5
 	mov r1, #0
-	bl sub_02062D58
+	bl G3C_PopMtx
 	mov r0, #1
 	add sp, sp, #0x14
 	ldmia sp!, {r3, r4, r5, r6, pc}
@@ -5321,7 +5321,7 @@ _020052AC:
 	ldrsh r2, [r3, r2]
 	blx sub_0205FE38
 	add r0, sp, #0x44
-	bl sub_02062F80
+	bl G3_MultMtx33
 	ldr r3, [sl, #0x24]
 	ldr r2, [sl, #0x20]
 	ldr r1, _020058A0 ; =0x0400046C
@@ -5732,7 +5732,7 @@ sub_020058BC: ; 0x020058BC
 	ldrsh r2, [r3, r2]
 	blx sub_0205FE38
 	add r0, sp, #0x58
-	bl sub_02062F80
+	bl G3_MultMtx33
 	ldr r3, [sl, #0x24]
 	ldr r2, [sl, #0x20]
 	ldr r1, _02005EE8 ; =0x0400046C
@@ -8442,7 +8442,7 @@ sub_02007D98: ; 0x02007D98
 	add r0, r4, #0x24
 	mov r1, #0
 	mov r2, #0x400
-	bl NitroSDK_gx_GX_LoadOAM
+	bl GX_LoadOAM
 	add r4, r4, #0x24
 	add r0, r4, #0x400
 	mov r1, #0x400
@@ -8450,7 +8450,7 @@ sub_02007D98: ; 0x02007D98
 	add r0, r4, #0x400
 	mov r1, #0
 	mov r2, #0x400
-	bl NitroSDK_gx_GXS_LoadOAM
+	bl GXS_LoadOAM
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02007D98
 
@@ -10447,7 +10447,7 @@ _02009624:
 	mov r1, #0x1e0
 	ldr r0, [r0, #0xc]
 	mov r2, #0x20
-	bl NitroSDK_gx_GX_LoadBGPltt
+	bl GX_LoadBGPltt
 	cmp r4, #0
 	addeq sp, sp, #4
 	ldmeqia sp!, {r3, r4, pc}
@@ -10465,7 +10465,7 @@ sub_02009670: ; 0x02009670
 	stmdb sp!, {r3, r4, r5, lr}
 	sub sp, sp, #0x10
 	mov r5, r0
-	bl sub_020629DC
+	bl G2_GetBG1CharPtr
 	mov r4, r0
 	mov r3, #4
 	str r3, [sp]
@@ -10481,7 +10481,7 @@ sub_02009670: ; 0x02009670
 	str r0, [r5, #0x118]
 	mov r0, #4
 	str r0, [r5, #0x11c]
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	mov r1, #0x19
 	str r1, [sp]
 	mov r1, #0x20
@@ -10509,7 +10509,7 @@ sub_02009670: ; 0x02009670
 	str r0, [r5, #0x140]
 	mov r0, #4
 	str r0, [r5, #0x144]
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	mov r1, #0x1e
 	str r1, [sp]
 	mov r1, #0x20
@@ -10989,7 +10989,7 @@ _02009DB0:
 	beq _02009E04
 	b _02009E58
 _02009DE8:
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	add r2, r0, #0x600
 	mov r0, #9
 	mov r1, #0
@@ -10999,13 +10999,13 @@ _02009DE8:
 _02009E04:
 	cmp r6, #0
 	bne _02009E40
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	add r2, r0, #0x600
 	mov r0, #9
 	mov r1, #0x500
 	mov r3, #0xc0
 	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	add r2, r0, #0x740
 	mov r0, #9
 	mov r1, #0x5c0
@@ -11013,7 +11013,7 @@ _02009E04:
 	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
 	b _02009E58
 _02009E40:
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	add r2, r0, #0x600
 	mov r0, #9
 	mov r1, #0x480
@@ -12839,12 +12839,12 @@ sub_0200B6D4: ; 0x0200B6D4
 	arm_func_start sub_0200B6E4
 sub_0200B6E4: ; 0x0200B6E4
 	stmdb sp!, {r3, lr}
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x180
 	bl MIi_CpuClearFast
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	add r1, r0, #0x480
 	mov r0, #0
 	mov r2, #0x180
@@ -13952,7 +13952,7 @@ _0200C5C4:
 	mov r1, #0x1c0
 	ldr r0, [r0, #0xc]
 	mov r2, #0x20
-	bl NitroSDK_gx_GX_LoadBGPltt
+	bl GX_LoadBGPltt
 	cmp r4, #0
 	addeq sp, sp, #4
 	ldmeqia sp!, {r3, r4, pc}
@@ -13981,7 +13981,7 @@ _0200C630:
 	mov r1, #0x1c0
 	ldr r0, [r0, #0xc]
 	mov r2, #0x20
-	bl NitroSDK_gx_GX_LoadBGPltt
+	bl GX_LoadBGPltt
 	cmp r4, #0
 	addeq sp, sp, #4
 	ldmeqia sp!, {r3, r4, pc}
@@ -14257,16 +14257,16 @@ _0200C9FC: ; jump table
 	b _0200CA24 ; case 3
 	arm_func_end sub_0200C9E8
 _0200CA0C:
-	bl sub_02062988
+	bl G2_GetBG0CharPtr
 	ldmia sp!, {r3, pc}
 _0200CA14:
-	bl sub_020629DC
+	bl G2_GetBG1CharPtr
 	ldmia sp!, {r3, pc}
 _0200CA1C:
-	bl sub_02062A30
+	bl G2_GetBG2CharPtr
 	ldmia sp!, {r3, pc}
 _0200CA24:
-	bl sub_02062AC0
+	bl G2_GetBG3CharPtr
 	ldmia sp!, {r3, pc}
 
 	arm_func_start sub_0200CA2C
@@ -14283,16 +14283,16 @@ _0200CA40: ; jump table
 	b _0200CA68 ; case 3
 	arm_func_end sub_0200CA2C
 _0200CA50:
-	bl sub_020626F0
+	bl G2_GetBG0ScrPtr
 	ldmia sp!, {r3, pc}
 _0200CA58:
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	ldmia sp!, {r3, pc}
 _0200CA60:
-	bl sub_02062798
+	bl G2_GetBG2ScrPtr
 	ldmia sp!, {r3, pc}
 _0200CA68:
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	ldmia sp!, {r3, pc}
 
 	arm_func_start sub_0200CA70
@@ -14385,7 +14385,7 @@ sub_0200CB14: ; 0x0200CB14
 	bic r3, r3, #3
 	strh r3, [ip]
 	bl MIi_CpuClearFast
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x800
@@ -14422,7 +14422,7 @@ _0200CBCC:
 	mov r1, #0x1c0
 	ldr r0, [r0, #0xc]
 	mov r2, #0x20
-	bl NitroSDK_gx_GXS_LoadBGPltt
+	bl GXS_LoadBGPltt
 	cmp r4, #0
 	addeq sp, sp, #4
 	ldmeqia sp!, {r3, r4, pc}
@@ -14451,7 +14451,7 @@ _0200CC38:
 	mov r1, #0x1c0
 	ldr r0, [r0, #0xc]
 	mov r2, #0x20
-	bl NitroSDK_gx_GXS_LoadBGPltt
+	bl GXS_LoadBGPltt
 	cmp r4, #0
 	addeq sp, sp, #4
 	ldmeqia sp!, {r3, r4, pc}
@@ -14496,7 +14496,7 @@ sub_0200CCD0: ; 0x0200CCD0
 	mov r7, r1
 	mov r6, r2
 	mov r5, r3
-	bl sub_020629BC
+	bl G2S_GetBG0CharPtr
 	mov r1, #0x30
 	mul r4, r7, r1
 	ldr r1, [r8, #8]
@@ -14524,7 +14524,7 @@ sub_0200CCD0: ; 0x0200CCD0
 	str r0, [r1, #0x24]
 	ldr r0, [r8, #8]
 	add r4, r0, r4
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	ldr r2, [sp, #0x2c]
 	mov r1, #0x20
 	str r2, [sp]
@@ -16149,12 +16149,12 @@ sub_0200E2D4: ; 0x0200E2D4
 	tst r0, #1
 	beq _0200E2FC
 	ldr r0, _0200E308 ; =0x0400006C
-	bl sub_02061584
+	bl GXx_SetMasterBrightness_
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_0200E2D4
 _0200E2FC:
 	ldr r0, _0200E30C ; =0x0400106C
-	bl sub_02061584
+	bl GXx_SetMasterBrightness_
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0200E308: .word 0x0400006C
@@ -17112,7 +17112,7 @@ _0200EF34:
 	cmp r0, #1
 	mov r6, #0
 	bne _0200EF78
-	bl sub_020626E0
+	bl GX_GetBankForSubOBJ
 	cmp r0, #0
 	beq _0200F014
 	cmp r0, #8
@@ -17124,7 +17124,7 @@ _0200EF70:
 	mov r6, #0x20000
 	b _0200F014
 _0200EF78:
-	bl sub_020626C0
+	bl GX_GetBankForOBJ
 	cmp r0, #0x30
 	bgt _0200EFBC
 	bge _0200F000
@@ -33537,7 +33537,7 @@ sub_0201C558: ; 0x0201C558
 	orr r4, r4, #3
 	strh r4, [ip, #0xe]
 	str lr, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
@@ -36120,7 +36120,7 @@ sub_0201E9A8: ; 0x0201E9A8
 	orr r4, r4, #3
 	strh r4, [ip, #0xe]
 	str lr, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
@@ -37561,28 +37561,28 @@ _0201FE54: ; jump table
 	b _0201FEAC ; case 7
 	arm_func_end sub_0201FE40
 _0201FE74:
-	bl sub_020626F0
+	bl G2_GetBG0ScrPtr
 	ldmia sp!, {r3, pc}
 _0201FE7C:
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	ldmia sp!, {r3, pc}
 _0201FE84:
-	bl sub_02062798
+	bl G2_GetBG2ScrPtr
 	ldmia sp!, {r3, pc}
 _0201FE8C:
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	ldmia sp!, {r3, pc}
 _0201FE94:
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	ldmia sp!, {r3, pc}
 _0201FE9C:
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	ldmia sp!, {r3, pc}
 _0201FEA4:
-	bl sub_0206281C
+	bl G2S_GetBG2ScrPtr
 	ldmia sp!, {r3, pc}
 _0201FEAC:
-	bl sub_02062914
+	bl G2S_GetBG3ScrPtr
 	ldmia sp!, {r3, pc}
 _0201FEB4:
 	mov r0, #0
@@ -38500,49 +38500,49 @@ _02020AA0:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadBG0Char
+	bl GX_LoadBG0Char
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02020AB4:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadBG1Char
+	bl GX_LoadBG1Char
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02020AC8:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadBG2Char
+	bl GX_LoadBG2Char
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02020ADC:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadBG3Char
+	bl GX_LoadBG3Char
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02020AF0:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GXS_LoadBG0Char
+	bl GXS_LoadBG0Char
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02020B04:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GXS_LoadBG1Char
+	bl GXS_LoadBG1Char
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02020B18:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GXS_LoadBG2Char
+	bl GXS_LoadBG2Char
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02020B2C:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GXS_LoadBG3Char
+	bl GXS_LoadBG3Char
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start sub_02020B40
@@ -38863,18 +38863,18 @@ _02020F6C:
 	ldr r0, [sp, #0x18]
 	cmp r0, #0
 	beq _02020F94
-	bl NitroSDK_gx_GX_BeginLoadBGExtPltt
+	bl GX_BeginLoadBGExtPltt
 	mov r0, r5
 	mov r2, r4
 	add r1, r7, r6
-	bl NitroSDK_gx_GX_LoadBGExtPltt
-	bl NitroSDK_gx_GX_EndLoadBGExtPltt
+	bl GX_LoadBGExtPltt
+	bl GX_EndLoadBGExtPltt
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02020F94:
 	mov r0, r5
 	mov r1, r7
 	mov r2, r4
-	bl NitroSDK_gx_GX_LoadBGPltt
+	bl GX_LoadBGPltt
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02020FA8:
 	add r6, r6, #0x2000
@@ -38886,18 +38886,18 @@ _02020FB4:
 	ldr r0, [sp, #0x18]
 	cmp r0, #0
 	beq _02020FDC
-	bl NitroSDK_gx_GXS_BeginLoadBGExtPltt
+	bl GXS_BeginLoadBGExtPltt
 	mov r0, r5
 	mov r2, r4
 	add r1, r7, r6
-	bl NitroSDK_gx_GXS_LoadBGExtPltt
-	bl NitroSDK_gx_GXS_EndLoadBGExtPltt
+	bl GXS_LoadBGExtPltt
+	bl GXS_EndLoadBGExtPltt
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 _02020FDC:
 	mov r0, r5
 	mov r1, r7
 	mov r2, r4
-	bl NitroSDK_gx_GXS_LoadBGPltt
+	bl GXS_LoadBGPltt
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 
 	arm_func_start sub_02020FF0
@@ -39156,49 +39156,49 @@ _02021364:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadBG0Scr
+	bl GX_LoadBG0Scr
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _02021378:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadBG1Scr
+	bl GX_LoadBG1Scr
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _0202138C:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadBG2ScrBmp
+	bl GX_LoadBG2Scr
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _020213A0:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadBG3ScrBmp
+	bl GX_LoadBG3Scr
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _020213B4:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GXS_LoadBG0Scr
+	bl GXS_LoadBG0Scr
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _020213C8:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GXS_LoadBG1Scr
+	bl GXS_LoadBG1Scr
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _020213DC:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GXS_LoadBG2ScrBmp
+	bl GXS_LoadBG2Scr
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 _020213F0:
 	mov r0, r6
 	mov r1, r4
 	mov r2, r5
-	bl NitroSDK_gx_GXS_LoadBG3ScrBmp
+	bl GXS_LoadBG3Scr
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start sub_02021404
@@ -40126,7 +40126,7 @@ sub_02022038: ; 0x02022038
 	stmdb sp!, {r3, r4, lr}
 	sub sp, sp, #4
 	mov r0, #0
-	bl sub_02061568
+	bl GXS_SetGraphicsMode
 	ldr ip, _020220F8 ; =0x04001000
 	mov lr, #0x1a
 	ldr r1, [ip]
@@ -40168,7 +40168,7 @@ sub_02022038: ; 0x02022038
 	bic r4, r4, #0x40
 	strh r4, [ip, #8]
 	str lr, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
@@ -40394,16 +40394,16 @@ _0202236C: .word s_uppict_0208becc
 sub_02022370: ; 0x02022370
 	stmdb sp!, {r3, r4, lr}
 	sub sp, sp, #4
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
 	mov r0, #0x180
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r0, #0
-	bl sub_02061568
+	bl GXS_SetGraphicsMode
 	ldr ip, _02022400 ; =0x04001000
 	mov lr, #7
 	ldr r1, [ip]
@@ -40425,7 +40425,7 @@ sub_02022370: ; 0x02022370
 	bic r4, r4, #0x40
 	strh r4, [ip, #8]
 	str lr, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
@@ -41529,9 +41529,9 @@ _0202317C: .word 0x04001010
 sub_02023180: ; 0x02023180
 	stmdb sp!, {r3, lr}
 	mov r0, #0x80
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_02023180
 
@@ -42838,7 +42838,7 @@ sub_02024214: ; 0x02024214
 	add r0, ip, #0x50
 	mov r1, #0
 	mov r2, #1
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr r5, [r4, #0x1c]
 	cmp r5, #0
 	beq _02024298
@@ -43950,9 +43950,9 @@ sub_0202510C: ; 0x0202510C
 	ldr r0, [r7, #0x20]
 	cmp r0, #1
 	bne _0202513C
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	mov r4, r0
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	add r0, r0, #0x600
 	add r1, r4, #0xc0
 	mov r2, #0x100
@@ -43970,20 +43970,20 @@ _0202513C:
 	mov r6, #0xc
 	mov fp, sl
 _02025164:
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	mov r1, r5, lsl #6
 	mov sb, r0
 	add r8, r1, #6
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	add r1, sb, r8
 	mov r2, sl
 	add r0, r0, #0x700
 	bl MIi_CpuCopy16
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	mov sb, r0
 	mov r0, r6, lsl #6
 	add r8, r0, #6
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	add r1, sb, r8
 	add r0, r0, #0x740
 	mov r2, fp
@@ -44026,7 +44026,7 @@ _020251D8:
 	orr r5, r5, #3
 	strh r5, [r4, #0xe]
 	str r3, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
 _02025248: .word 0x04001000
@@ -46025,7 +46025,7 @@ sub_02026E54: ; 0x02026E54
 	orr lr, lr, #3
 	strh lr, [ip, #0xe]
 	str r3, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02026EC8: .word 0x04001000
@@ -46477,12 +46477,12 @@ sub_02027550: ; 0x02027550
 	mov r7, #2
 	arm_func_end sub_02027550
 _02027598:
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	add r1, r6, #2
 	mov r1, r1, lsl #1
 	mov sb, r0
 	add r8, r1, #0x440
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	mov r2, r7
 	add r0, r0, #0x610
 	add r1, sb, r8
@@ -46491,12 +46491,12 @@ _02027598:
 	cmp r6, r4
 	blt _02027598
 _020275CC:
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	add r1, r6, #2
 	mov r1, r1, lsl #1
 	mov r6, r0
 	add r4, r1, #0x440
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	mov r1, r5, lsl #1
 	add r1, r1, #0x600
 	add r0, r0, r1
@@ -46508,12 +46508,12 @@ _02027600:
 	mov r7, #0
 	mov r4, #2
 _02027608:
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	add r1, r7, #2
 	mov r1, r1, lsl #1
 	mov r6, r0
 	add r5, r1, #0x440
-	bl sub_02062778
+	bl G2S_GetBG1ScrPtr
 	mov r2, r4
 	add r0, r0, #0x610
 	add r1, r6, r5
@@ -58873,7 +58873,7 @@ _020311A0:
 	mov r1, #1
 	ldr r0, _02031204 ; =0x04000050
 	sub r2, r1, #9
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, _02031208 ; =_0208F304
 	mov r1, #0x29
 	ldr r0, [r0]
@@ -58933,7 +58933,7 @@ _02031260:
 	ldr r0, _020312B8 ; =0x04000050
 	mov r1, #1
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r1, _020312BC ; =_0208F304
 	ldr r0, _020312C0 ; =MAIN_BSS_020B26A0
 	ldr r2, [r1]
@@ -65554,21 +65554,21 @@ _02036208:
 	ldr r0, [r5, #0x4c]
 	ldr r1, [r5, #0x50]
 	bl DC_FlushRange
-	bl NitroSDK_gx_GX_BeginLoadTexPltt
+	bl GX_BeginLoadTexPltt
 	ldr r0, [r5, #0x4c]
 	ldr r1, [r7, #0xc]
 	mov r2, r6
-	bl NitroSDK_gx_GX_LoadTexPltt
-	bl NitroSDK_gx_GX_EndLoadTexPltt
+	bl GX_LoadTexPltt
+	bl GX_EndLoadTexPltt
 	ldr r0, [r4, #0x4c]
 	ldr r1, [r4, #0x50]
 	bl DC_FlushRange
-	bl NitroSDK_gx_GX_BeginLoadTex
+	bl GX_BeginLoadTex
 	ldr r1, [r7, #8]
 	ldr r0, [r4, #0x4c]
 	ldr r2, [r4, #0x50]
-	bl NitroSDK_gx_GX_LoadTex
-	bl NitroSDK_gx_GX_EndLoadTex
+	bl GX_LoadTex
+	bl GX_EndLoadTex
 	cmp r4, #0
 	beq _020362C4
 	mov r0, r4
@@ -79368,7 +79368,7 @@ sub_02041DF8: ; 0x02041DF8
 	add r0, sp, #0
 	blx sub_0205FE38
 	add r0, sp, #0
-	bl sub_02062F80
+	bl G3_MultMtx33
 	arm_func_end sub_02041DF8
 _02041ED4:
 	ldr r3, [r7, #0x44]
@@ -80573,40 +80573,40 @@ _02042F80: .word MAIN_BSS_0210C228
 	arm_func_start sub_02042F84
 sub_02042F84: ; 0x02042F84
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #0xf
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x40
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #0x10
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #0x20
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r0
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r0, #0x80
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r1, #0
 	str r1, [sp]
 	ldr r0, _020430C0 ; =0x04000050
 	mov r2, r1
 	mov r3, r1
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _020430C4 ; =0x04000060
 	ldr r0, _020430C8 ; =0xFFFFFDF1
 	ldrh r1, [lr]
@@ -80645,7 +80645,7 @@ sub_02042F84: ; 0x02042F84
 	ldr r0, [r1]
 	bic r0, r0, #0x1f00
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _020430CC ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -81215,40 +81215,40 @@ _0204387C: .word MAIN_BSS_020AF5E4
 	arm_func_start sub_02043880
 sub_02043880: ; 0x02043880
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #0xf
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x40
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #0x10
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #0x20
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r0
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r0, #0x80
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r1, #0
 	str r1, [sp]
 	ldr r0, _02043998 ; =0x04000050
 	mov r2, r1
 	mov r3, r1
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _0204399C ; =0x04000060
 	ldr r0, _020439A0 ; =0xFFFFFDF1
 	ldrh r1, [lr]
@@ -81278,7 +81278,7 @@ sub_02043880: ; 0x02043880
 	bic r0, r0, #0x1f00
 	orr r0, r0, #0x800
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _020439A4 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -81749,40 +81749,40 @@ _02043FC4: .word DAT_0208e11c
 	arm_func_start sub_02043FC8
 sub_02043FC8: ; 0x02043FC8
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #0xf
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x40
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #0x10
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #0x20
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r0
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r0, #0x80
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r1, #0
 	str r1, [sp]
 	ldr r0, _020440E0 ; =0x04000050
 	mov r2, r1
 	mov r3, r1
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _020440E4 ; =0x04000060
 	ldr r0, _020440E8 ; =0xFFFFFDF1
 	ldrh r1, [lr]
@@ -81812,7 +81812,7 @@ sub_02043FC8: ; 0x02043FC8
 	bic r0, r0, #0x1f00
 	orr r0, r0, #0x800
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _020440EC ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -104823,12 +104823,12 @@ NitroSystem_gfd_VramTransferMan_DoTransfer3dTex: ; 0x02057198
 	mov r6, r0
 	mov r5, r1
 	mov r4, r2
-	bl NitroSDK_gx_GX_BeginLoadTex
+	bl GX_BeginLoadTex
 	mov r0, r6
 	mov r1, r5
 	mov r2, r4
-	bl NitroSDK_gx_GX_LoadTex
-	bl NitroSDK_gx_GX_EndLoadTex
+	bl GX_LoadTex
+	bl GX_EndLoadTex
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer3dTex
 
@@ -104838,12 +104838,12 @@ NitroSystem_gfd_VramTransferMan_DoTransfer3dTexPltt: ; 0x020571C4
 	mov r6, r0
 	mov r5, r1
 	mov r4, r2
-	bl NitroSDK_gx_GX_BeginLoadTexPltt
+	bl GX_BeginLoadTexPltt
 	mov r0, r6
 	mov r1, r5
 	mov r2, r4
-	bl NitroSDK_gx_GX_LoadTexPltt
-	bl NitroSDK_gx_GX_EndLoadTexPltt
+	bl GX_LoadTexPltt
+	bl GX_EndLoadTexPltt
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer3dTexPltt
 
@@ -104852,11 +104852,11 @@ NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageColor: ; 0x020571F0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r4, r2
-	bl NitroSDK_gx_GX_BeginLoadClearImage
+	bl GX_BeginLoadClearImage
 	mov r0, r5
 	mov r1, r4
-	bl NitroSDK_gx_GX_LoadClearImageColor
-	bl NitroSDK_gx_GX_EndLoadClearImage
+	bl GX_LoadClearImageColor
+	bl GX_EndLoadClearImage
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageColor
 
@@ -104865,108 +104865,108 @@ NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageDepth: ; 0x02057214
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r4, r2
-	bl NitroSDK_gx_GX_BeginLoadClearImage
+	bl GX_BeginLoadClearImage
 	mov r0, r5
 	mov r1, r4
-	bl NitroSDK_gx_GX_LoadClearImageDepth
-	bl NitroSDK_gx_GX_EndLoadClearImage
+	bl GX_LoadClearImageDepth
+	bl GX_EndLoadClearImage
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageDepth
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharMain: ; 0x02057238
-	ldr ip, _02057240 ; =NitroSDK_gx_GX_LoadBG0Char
+	ldr ip, _02057240 ; =GX_LoadBG0Char
 	bx ip
 	.align 2, 0
-_02057240: .word NitroSDK_gx_GX_LoadBG0Char
+_02057240: .word GX_LoadBG0Char
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharMain: ; 0x02057244
-	ldr ip, _0205724C ; =NitroSDK_gx_GX_LoadBG1Char
+	ldr ip, _0205724C ; =GX_LoadBG1Char
 	bx ip
 	.align 2, 0
-_0205724C: .word NitroSDK_gx_GX_LoadBG1Char
+_0205724C: .word GX_LoadBG1Char
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharMain: ; 0x02057250
-	ldr ip, _02057258 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr ip, _02057258 ; =GX_LoadBG2Char
 	bx ip
 	.align 2, 0
-_02057258: .word NitroSDK_gx_GX_LoadBG2Char
+_02057258: .word GX_LoadBG2Char
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharMain: ; 0x0205725C
-	ldr ip, _02057264 ; =NitroSDK_gx_GX_LoadBG3Char
+	ldr ip, _02057264 ; =GX_LoadBG3Char
 	bx ip
 	.align 2, 0
-_02057264: .word NitroSDK_gx_GX_LoadBG3Char
+_02057264: .word GX_LoadBG3Char
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrMain: ; 0x02057268
-	ldr ip, _02057270 ; =NitroSDK_gx_GX_LoadBG0Scr
+	ldr ip, _02057270 ; =GX_LoadBG0Scr
 	bx ip
 	.align 2, 0
-_02057270: .word NitroSDK_gx_GX_LoadBG0Scr
+_02057270: .word GX_LoadBG0Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrMain: ; 0x02057274
-	ldr ip, _0205727C ; =NitroSDK_gx_GX_LoadBG1Scr
+	ldr ip, _0205727C ; =GX_LoadBG1Scr
 	bx ip
 	.align 2, 0
-_0205727C: .word NitroSDK_gx_GX_LoadBG1Scr
+_0205727C: .word GX_LoadBG1Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrMain: ; 0x02057280
-	ldr ip, _02057288 ; =NitroSDK_gx_GX_LoadBG2ScrBmp
+	ldr ip, _02057288 ; =GX_LoadBG2Scr
 	bx ip
 	.align 2, 0
-_02057288: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02057288: .word GX_LoadBG2Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrMain: ; 0x0205728C
-	ldr ip, _02057294 ; =NitroSDK_gx_GX_LoadBG3ScrBmp
+	ldr ip, _02057294 ; =GX_LoadBG3Scr
 	bx ip
 	.align 2, 0
-_02057294: .word NitroSDK_gx_GX_LoadBG3ScrBmp
+_02057294: .word GX_LoadBG3Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpMain: ; 0x02057298
-	ldr ip, _020572A0 ; =NitroSDK_gx_GX_LoadBG2ScrBmp
+	ldr ip, _020572A0 ; =GX_LoadBG2Scr
 	bx ip
 	.align 2, 0
-_020572A0: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_020572A0: .word GX_LoadBG2Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpMain: ; 0x020572A4
-	ldr ip, _020572AC ; =NitroSDK_gx_GX_LoadBG3ScrBmp
+	ldr ip, _020572AC ; =GX_LoadBG3Scr
 	bx ip
 	.align 2, 0
-_020572AC: .word NitroSDK_gx_GX_LoadBG3ScrBmp
+_020572AC: .word GX_LoadBG3Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttMain: ; 0x020572B0
-	ldr ip, _020572B8 ; =NitroSDK_gx_GX_LoadOBJPltt
+	ldr ip, _020572B8 ; =GX_LoadOBJPltt
 	bx ip
 	.align 2, 0
-_020572B8: .word NitroSDK_gx_GX_LoadOBJPltt
+_020572B8: .word GX_LoadOBJPltt
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttMain: ; 0x020572BC
-	ldr ip, _020572C4 ; =NitroSDK_gx_GX_LoadBGPltt
+	ldr ip, _020572C4 ; =GX_LoadBGPltt
 	bx ip
 	.align 2, 0
-_020572C4: .word NitroSDK_gx_GX_LoadBGPltt
+_020572C4: .word GX_LoadBGPltt
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttMain
@@ -104975,12 +104975,12 @@ NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttMain: ; 0x020572C8
 	mov r6, r0
 	mov r5, r1
 	mov r4, r2
-	bl NitroSDK_gx_GX_BeginLoadOBJExtPltt
+	bl GX_BeginLoadOBJExtPltt
 	mov r0, r6
 	mov r1, r5
 	mov r2, r4
-	bl NitroSDK_gx_GX_LoadOBJExtPltt
-	bl NitroSDK_gx_GX_EndLoadOBJExtPltt
+	bl GX_LoadOBJExtPltt
+	bl GX_EndLoadOBJExtPltt
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttMain
 
@@ -104990,125 +104990,125 @@ NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttMain: ; 0x020572F4
 	mov r6, r0
 	mov r5, r1
 	mov r4, r2
-	bl NitroSDK_gx_GX_BeginLoadBGExtPltt
+	bl GX_BeginLoadBGExtPltt
 	mov r0, r6
 	mov r1, r5
 	mov r2, r4
-	bl NitroSDK_gx_GX_LoadBGExtPltt
-	bl NitroSDK_gx_GX_EndLoadBGExtPltt
+	bl GX_LoadBGExtPltt
+	bl GX_EndLoadBGExtPltt
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamMain: ; 0x02057320
-	ldr ip, _02057328 ; =NitroSDK_gx_GX_LoadOAM
+	ldr ip, _02057328 ; =GX_LoadOAM
 	bx ip
 	.align 2, 0
-_02057328: .word NitroSDK_gx_GX_LoadOAM
+_02057328: .word GX_LoadOAM
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharMain
 NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharMain: ; 0x0205732C
-	ldr ip, _02057334 ; =NitroSDK_gx_GX_LoadOBJ
+	ldr ip, _02057334 ; =GX_LoadOBJ
 	bx ip
 	.align 2, 0
-_02057334: .word NitroSDK_gx_GX_LoadOBJ
+_02057334: .word GX_LoadOBJ
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharMain
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharSub: ; 0x02057338
-	ldr ip, _02057340 ; =NitroSDK_gx_GXS_LoadBG0Char
+	ldr ip, _02057340 ; =GXS_LoadBG0Char
 	bx ip
 	.align 2, 0
-_02057340: .word NitroSDK_gx_GXS_LoadBG0Char
+_02057340: .word GXS_LoadBG0Char
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharSub: ; 0x02057344
-	ldr ip, _0205734C ; =NitroSDK_gx_GXS_LoadBG1Char
+	ldr ip, _0205734C ; =GXS_LoadBG1Char
 	bx ip
 	.align 2, 0
-_0205734C: .word NitroSDK_gx_GXS_LoadBG1Char
+_0205734C: .word GXS_LoadBG1Char
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharSub: ; 0x02057350
-	ldr ip, _02057358 ; =NitroSDK_gx_GXS_LoadBG2Char
+	ldr ip, _02057358 ; =GXS_LoadBG2Char
 	bx ip
 	.align 2, 0
-_02057358: .word NitroSDK_gx_GXS_LoadBG2Char
+_02057358: .word GXS_LoadBG2Char
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharSub: ; 0x0205735C
-	ldr ip, _02057364 ; =NitroSDK_gx_GXS_LoadBG3Char
+	ldr ip, _02057364 ; =GXS_LoadBG3Char
 	bx ip
 	.align 2, 0
-_02057364: .word NitroSDK_gx_GXS_LoadBG3Char
+_02057364: .word GXS_LoadBG3Char
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrSub: ; 0x02057368
-	ldr ip, _02057370 ; =NitroSDK_gx_GXS_LoadBG0Scr
+	ldr ip, _02057370 ; =GXS_LoadBG0Scr
 	bx ip
 	.align 2, 0
-_02057370: .word NitroSDK_gx_GXS_LoadBG0Scr
+_02057370: .word GXS_LoadBG0Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrSub: ; 0x02057374
-	ldr ip, _0205737C ; =NitroSDK_gx_GXS_LoadBG1Scr
+	ldr ip, _0205737C ; =GXS_LoadBG1Scr
 	bx ip
 	.align 2, 0
-_0205737C: .word NitroSDK_gx_GXS_LoadBG1Scr
+_0205737C: .word GXS_LoadBG1Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrSub: ; 0x02057380
-	ldr ip, _02057388 ; =NitroSDK_gx_GXS_LoadBG2ScrBmp
+	ldr ip, _02057388 ; =GXS_LoadBG2Scr
 	bx ip
 	.align 2, 0
-_02057388: .word NitroSDK_gx_GXS_LoadBG2ScrBmp
+_02057388: .word GXS_LoadBG2Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrSub: ; 0x0205738C
-	ldr ip, _02057394 ; =NitroSDK_gx_GXS_LoadBG3ScrBmp
+	ldr ip, _02057394 ; =GXS_LoadBG3Scr
 	bx ip
 	.align 2, 0
-_02057394: .word NitroSDK_gx_GXS_LoadBG3ScrBmp
+_02057394: .word GXS_LoadBG3Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpSub: ; 0x02057398
-	ldr ip, _020573A0 ; =NitroSDK_gx_GXS_LoadBG2ScrBmp
+	ldr ip, _020573A0 ; =GXS_LoadBG2Scr
 	bx ip
 	.align 2, 0
-_020573A0: .word NitroSDK_gx_GXS_LoadBG2ScrBmp
+_020573A0: .word GXS_LoadBG2Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpSub: ; 0x020573A4
-	ldr ip, _020573AC ; =NitroSDK_gx_GXS_LoadBG3ScrBmp
+	ldr ip, _020573AC ; =GXS_LoadBG3Scr
 	bx ip
 	.align 2, 0
-_020573AC: .word NitroSDK_gx_GXS_LoadBG3ScrBmp
+_020573AC: .word GXS_LoadBG3Scr
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttSub: ; 0x020573B0
-	ldr ip, _020573B8 ; =NitroSDK_gx_GXS_LoadOBJPltt
+	ldr ip, _020573B8 ; =GXS_LoadOBJPltt
 	bx ip
 	.align 2, 0
-_020573B8: .word NitroSDK_gx_GXS_LoadOBJPltt
+_020573B8: .word GXS_LoadOBJPltt
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttSub: ; 0x020573BC
-	ldr ip, _020573C4 ; =NitroSDK_gx_GXS_LoadBGPltt
+	ldr ip, _020573C4 ; =GXS_LoadBGPltt
 	bx ip
 	.align 2, 0
-_020573C4: .word NitroSDK_gx_GXS_LoadBGPltt
+_020573C4: .word GXS_LoadBGPltt
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttSub
@@ -105117,12 +105117,12 @@ NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttSub: ; 0x020573C8
 	mov r6, r0
 	mov r5, r1
 	mov r4, r2
-	bl NitroSDK_gx_GXS_BeginLoadOBJExtPltt
+	bl GXS_BeginLoadOBJExtPltt
 	mov r0, r6
 	mov r1, r5
 	mov r2, r4
-	bl NitroSDK_gx_GXS_LoadOBJExtPltt
-	bl NitroSDK_gx_GXS_EndLoadOBJExtPltt
+	bl GXS_LoadOBJExtPltt
+	bl GXS_EndLoadOBJExtPltt
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttSub
 
@@ -105132,29 +105132,29 @@ NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttSub: ; 0x020573F4
 	mov r6, r0
 	mov r5, r1
 	mov r4, r2
-	bl NitroSDK_gx_GXS_BeginLoadBGExtPltt
+	bl GXS_BeginLoadBGExtPltt
 	mov r0, r6
 	mov r1, r5
 	mov r2, r4
-	bl NitroSDK_gx_GXS_LoadBGExtPltt
-	bl NitroSDK_gx_GXS_EndLoadBGExtPltt
+	bl GXS_LoadBGExtPltt
+	bl GXS_EndLoadBGExtPltt
 	ldmia sp!, {r4, r5, r6, pc}
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamSub: ; 0x02057420
-	ldr ip, _02057428 ; =NitroSDK_gx_GXS_LoadOAM
+	ldr ip, _02057428 ; =GXS_LoadOAM
 	bx ip
 	.align 2, 0
-_02057428: .word NitroSDK_gx_GXS_LoadOAM
+_02057428: .word GXS_LoadOAM
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharSub
 NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharSub: ; 0x0205742C
-	ldr ip, _02057434 ; =NitroSDK_gx_GXS_LoadOBJ
+	ldr ip, _02057434 ; =GXS_LoadOBJ
 	bx ip
 	.align 2, 0
-_02057434: .word NitroSDK_gx_GXS_LoadOBJ
+_02057434: .word GXS_LoadOBJ
 	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharSub
 
 	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer_
@@ -106780,24 +106780,24 @@ _02058814:
 	beq _0205886C
 	b _0205887C
 _0205883C:
-	bl NitroSDK_gx_GX_BeginLoadTex
+	bl GX_BeginLoadTex
 	ldr r0, [r7, #0x14]
 	ldr r2, [r7, #0x10]
 	mov r1, r6
-	bl NitroSDK_gx_GX_LoadTex
-	bl NitroSDK_gx_GX_EndLoadTex
+	bl GX_LoadTex
+	bl GX_EndLoadTex
 	b _0205887C
 _02058858:
 	ldr r0, [r7, #0x14]
 	ldr r2, [r7, #0x10]
 	mov r1, r6
-	bl NitroSDK_gx_GX_LoadOBJ
+	bl GX_LoadOBJ
 	b _0205887C
 _0205886C:
 	ldr r0, [r7, #0x14]
 	ldr r2, [r7, #0x10]
 	mov r1, r6
-	bl NitroSDK_gx_GXS_LoadOBJ
+	bl GXS_LoadOBJ
 _0205887C:
 	ldr r0, [r7, #8]
 	cmp r0, #0
@@ -106935,43 +106935,43 @@ _02058A20:
 	ldr r0, [sb, #4]
 	cmp r0, #0
 	beq _02058A48
-	bl NitroSDK_gx_GX_BeginLoadOBJExtPltt
+	bl GX_BeginLoadOBJExtPltt
 	mov r0, r4
 	mov r1, r8
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadOBJExtPltt
-	bl NitroSDK_gx_GX_EndLoadOBJExtPltt
+	bl GX_LoadOBJExtPltt
+	bl GX_EndLoadOBJExtPltt
 	b _02058AB0
 _02058A48:
 	mov r0, r4
 	mov r1, r8
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadOBJPltt
+	bl GX_LoadOBJPltt
 	b _02058AB0
 _02058A5C:
 	ldr r0, [sb, #4]
 	cmp r0, #0
 	beq _02058A84
-	bl NitroSDK_gx_GXS_BeginLoadOBJExtPltt
+	bl GXS_BeginLoadOBJExtPltt
 	mov r0, r4
 	mov r1, r8
 	mov r2, r5
-	bl NitroSDK_gx_GXS_LoadOBJExtPltt
-	bl NitroSDK_gx_GXS_EndLoadOBJExtPltt
+	bl GXS_LoadOBJExtPltt
+	bl GXS_EndLoadOBJExtPltt
 	b _02058AB0
 _02058A84:
 	mov r0, r4
 	mov r1, r8
 	mov r2, r5
-	bl NitroSDK_gx_GXS_LoadOBJPltt
+	bl GXS_LoadOBJPltt
 	b _02058AB0
 _02058A98:
-	bl NitroSDK_gx_GX_BeginLoadTexPltt
+	bl GX_BeginLoadTexPltt
 	mov r0, r4
 	mov r1, r8
 	mov r2, r5
-	bl NitroSDK_gx_GX_LoadTexPltt
-	bl NitroSDK_gx_GX_EndLoadTexPltt
+	bl GX_LoadTexPltt
+	bl GX_EndLoadTexPltt
 _02058AB0:
 	ldr r1, [sb]
 	mov r0, r6
@@ -107209,18 +107209,18 @@ NitroSystem_g2d_Screen_ChangeBGModeByTableMain: ; 0x02058D50
 	movne r2, #1
 	moveq r2, #0
 	cmp r1, #8
-	ldr ip, _02058D90 ; =sub_02061500
+	ldr ip, _02058D90 ; =GX_SetGraphicsMode
 	subge r1, r1, #8
 	mov r0, #1
 	bx ip
 	.align 2, 0
-_02058D90: .word sub_02061500
+_02058D90: .word GX_SetGraphicsMode
 	arm_func_end NitroSystem_g2d_Screen_ChangeBGModeByTableMain
 
 	arm_func_start NitroSystem_g2d_Screen_ChangeBGModeByTableSub
 NitroSystem_g2d_Screen_ChangeBGModeByTableSub: ; 0x02058D94
 	ldr r1, _02058DB4 ; =0x04001000
-	ldr ip, _02058DB8 ; =sub_02061568
+	ldr ip, _02058DB8 ; =GXS_SetGraphicsMode
 	ldr r1, [r1]
 	and r1, r1, #7
 	ldrb r0, [r0, r1]
@@ -107229,7 +107229,7 @@ NitroSystem_g2d_Screen_ChangeBGModeByTableSub: ; 0x02058D94
 	bx ip
 	.align 2, 0
 _02058DB4: .word 0x04001000
-_02058DB8: .word sub_02061568
+_02058DB8: .word GXS_SetGraphicsMode
 	arm_func_end NitroSystem_g2d_Screen_ChangeBGModeByTableSub
 
 	arm_func_start NitroSystem_g2d_Screen_LoadBGPlttToExtendedPltt
@@ -107245,18 +107245,18 @@ NitroSystem_g2d_Screen_LoadBGPlttToExtendedPltt: ; 0x02058DBC
 	bl DC_FlushRange
 	cmp r4, #3
 	bgt _02058E00
-	ldr r0, _02058ED4 ; =NitroSDK_gx_GX_BeginLoadBGExtPltt
-	ldr fp, _02058ED8 ; =NitroSDK_gx_GX_LoadBGExtPltt
+	ldr r0, _02058ED4 ; =GX_BeginLoadBGExtPltt
+	ldr fp, _02058ED8 ; =GX_LoadBGExtPltt
 	str r0, [sp, #8]
-	ldr r0, _02058EDC ; =NitroSDK_gx_GX_EndLoadBGExtPltt
+	ldr r0, _02058EDC ; =GX_EndLoadBGExtPltt
 	str r0, [sp, #4]
 	b _02058E18
 	arm_func_end NitroSystem_g2d_Screen_LoadBGPlttToExtendedPltt
 _02058E00:
-	ldr r0, _02058EE0 ; =NitroSDK_gx_GXS_BeginLoadBGExtPltt
-	ldr fp, _02058EE4 ; =NitroSDK_gx_GXS_LoadBGExtPltt
+	ldr r0, _02058EE0 ; =GXS_BeginLoadBGExtPltt
+	ldr fp, _02058EE4 ; =GXS_LoadBGExtPltt
 	str r0, [sp, #8]
-	ldr r0, _02058EE8 ; =NitroSDK_gx_GXS_EndLoadBGExtPltt
+	ldr r0, _02058EE8 ; =GXS_EndLoadBGExtPltt
 	sub r5, r5, #0x8000
 	str r0, [sp, #4]
 _02058E18:
@@ -107314,12 +107314,12 @@ _02058EAC:
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_02058ED4: .word NitroSDK_gx_GX_BeginLoadBGExtPltt
-_02058ED8: .word NitroSDK_gx_GX_LoadBGExtPltt
-_02058EDC: .word NitroSDK_gx_GX_EndLoadBGExtPltt
-_02058EE0: .word NitroSDK_gx_GXS_BeginLoadBGExtPltt
-_02058EE4: .word NitroSDK_gx_GXS_LoadBGExtPltt
-_02058EE8: .word NitroSDK_gx_GXS_EndLoadBGExtPltt
+_02058ED4: .word GX_BeginLoadBGExtPltt
+_02058ED8: .word GX_LoadBGExtPltt
+_02058EDC: .word GX_EndLoadBGExtPltt
+_02058EE0: .word GXS_BeginLoadBGExtPltt
+_02058EE4: .word GXS_LoadBGExtPltt
+_02058EE8: .word GXS_EndLoadBGExtPltt
 
 	arm_func_start NitroSystem_g2d_Screen_LoadBGPlttToNormalPltt
 NitroSystem_g2d_Screen_LoadBGPlttToNormalPltt: ; 0x02058EEC
@@ -107355,7 +107355,7 @@ _02058F48:
 	mov r5, #0
 	cmp r4, #0
 	ldmleia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr fp, _02058FF8 ; =DAT_0208e7f0
+	ldr fp, _02058FF8 ; =GXi_DmaId
 	mvn sl, #0
 _02058F60:
 	ldr r1, [r8, #4]
@@ -107383,7 +107383,7 @@ _02058FA8:
 	blt _02058F60
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _02058FB8:
-	ldr r0, _02058FF8 ; =DAT_0208e7f0
+	ldr r0, _02058FF8 ; =GXi_DmaId
 	mvn r1, #0
 	ldr r0, [r0]
 	ldr r3, [sb, #8]
@@ -107401,7 +107401,7 @@ _02058FE0:
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
 _02058FF4: .word 0x05000400
-_02058FF8: .word DAT_0208e7f0
+_02058FF8: .word GXi_DmaId
 
 	arm_func_start NitroSystem_g2d_Screen_GetBGExtPlttSlot
 NitroSystem_g2d_Screen_GetBGExtPlttSlot: ; 0x02058FFC
@@ -107430,7 +107430,7 @@ NitroSystem_g2d_Screen_SetBGnControlToText: ; 0x02059028
 	and r5, sb, #3
 	mov r4, #0
 	bgt _02059070
-	bl sub_020626D0
+	bl GX_GetBankForBGExtPltt
 	cmp r0, #0x20
 	cmpne r0, #0x10
 	cmpne r0, #0x60
@@ -107696,7 +107696,7 @@ _02059358:
 	mov r0, r0, lsl #0x10
 	add r6, r0, #0x6000000
 _020593A4:
-	ldr r0, _020593E0 ; =DAT_0208e7f0
+	ldr r0, _020593E0 ; =GXi_DmaId
 	mvn r2, #0
 	ldr r0, [r0]
 	add r5, r6, r5, lsl #14
@@ -107713,7 +107713,7 @@ _020593C8:
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _020593DC: .word DAT_02084fc8
-_020593E0: .word DAT_0208e7f0
+_020593E0: .word GXi_DmaId
 
 	arm_func_start NitroSystem_g2d_Screen_LoadBGScreen
 NitroSystem_g2d_Screen_LoadBGScreen: ; 0x020593E4
@@ -116402,8 +116402,8 @@ sub_0206009C: ; 0x0206009C
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	arm_func_end sub_0206009C
 
-	arm_func_start sub_02060700
-sub_02060700: ; 0x02060700
+	arm_func_start MTX_OrthoW
+MTX_OrthoW: ; 0x02060700
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #8
 	str r2, [sp]
@@ -116448,7 +116448,7 @@ sub_02060700: ; 0x02060700
 	bl _ll_div
 	mov r4, r0
 	mov r6, r1
-	arm_func_end sub_02060700
+	arm_func_end MTX_OrthoW
 _020607B0:
 	mov r1, r6, lsl #0xd
 	mov r0, #0x80000000
@@ -117307,4316 +117307,6 @@ _02061298: .word DAT_020891b0
 sub_0206129C: ; 0x0206129C
 	bx lr
 	arm_func_end sub_0206129C
-
-	arm_func_start sub_020612A0
-sub_020612A0: ; 0x020612A0
-	stmdb sp!, {r4, r5, r6, lr}
-	ldr r2, _020613C8 ; =0x04000304
-	ldr r0, _020613CC ; =0xFFFFFDF1
-	ldrh r1, [r2]
-	orr r1, r1, #0x8000
-	strh r1, [r2]
-	ldrh r1, [r2]
-	and r0, r1, r0
-	orr r0, r0, #0xe
-	orr r0, r0, #0x200
-	strh r0, [r2]
-	ldrh r0, [r2]
-	orr r0, r0, #1
-	strh r0, [r2]
-	bl sub_020615AC
-	ldr r5, _020613D0 ; =MAIN_BSS_02112DC0
-	ldrh r0, [r5, #2]
-	cmp r0, #0
-	bne _02061314
-	mvn r4, #2
-	arm_func_end sub_020612A0
-_020612F0:
-	bl OS_GetLockID
-	mov r6, r0
-	cmp r6, r4
-	bne _02061304
-	bl OS_Terminate
-_02061304:
-	strh r6, [r5, #2]
-	ldrh r0, [r5, #2]
-	cmp r0, #0
-	beq _020612F0
-_02061314:
-	ldr r0, _020613D4 ; =0x04000004
-	mov r2, #0
-	mov r3, #0x4000000
-	strh r2, [r0]
-	ldr r0, _020613D8 ; =DAT_0208e7ec
-	str r2, [r3]
-	ldr r0, [r0, #4]
-	sub r1, r3, #0x4000001
-	cmp r0, r1
-	beq _0206136C
-	add r1, r3, #8
-	mov r3, #0x60
-	bl MI_DmaFill32
-	ldr r1, _020613DC ; =0x0400006C
-	mov r2, #0
-	ldr r0, _020613D8 ; =DAT_0208e7ec
-	strh r2, [r1]
-	ldr r0, [r0, #4]
-	ldr r1, _020613E0 ; =0x04001000
-	mov r3, #0x70
-	bl MI_DmaFill32
-	b _02061394
-_0206136C:
-	mov r0, r2
-	add r1, r3, #8
-	mov r2, #0x60
-	bl MIi_CpuClear32
-	ldr r3, _020613DC ; =0x0400006C
-	mov r0, #0
-	ldr r1, _020613E0 ; =0x04001000
-	mov r2, #0x70
-	strh r0, [r3]
-	bl MIi_CpuClear32
-_02061394:
-	ldr r0, _020613E4 ; =0x04000020
-	mov r2, #0x100
-	strh r2, [r0]
-	strh r2, [r0, #6]
-	strh r2, [r0, #0x10]
-	strh r2, [r0, #0x16]
-	add r1, r0, #0x1000
-	ldr r0, _020613E8 ; =0x04001026
-	strh r2, [r1]
-	strh r2, [r0]
-	strh r2, [r0, #0xa]
-	strh r2, [r0, #0x10]
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_020613C8: .word 0x04000304
-_020613CC: .word 0xFFFFFDF1
-_020613D0: .word MAIN_BSS_02112DC0
-_020613D4: .word 0x04000004
-_020613D8: .word DAT_0208e7ec
-_020613DC: .word 0x0400006C
-_020613E0: .word 0x04001000
-_020613E4: .word 0x04000020
-_020613E8: .word 0x04001026
-
-	arm_func_start GX_SetVCountEqVal
-GX_SetVCountEqVal: ; 0x020613EC
-	ldr r3, _02061410 ; =0x04000004
-	mov r1, r0, lsl #0x18
-	ldrh r2, [r3]
-	and ip, r0, #0x100
-	and r0, r2, #0x3f
-	orr r0, r0, r1, lsr #16
-	orr r0, r0, ip, asr #1
-	strh r0, [r3]
-	bx lr
-	.align 2, 0
-_02061410: .word 0x04000004
-	arm_func_end GX_SetVCountEqVal
-
-	arm_func_start sub_02061414
-sub_02061414: ; 0x02061414
-	ldr r2, _02061444 ; =0x04000004
-	cmp r0, #0
-	ldrh r0, [r2]
-	ldreqh r1, [r2]
-	and r0, r0, #0x10
-	biceq r1, r1, #0x10
-	streqh r1, [r2]
-	bxeq lr
-	ldrh r1, [r2]
-	orr r1, r1, #0x10
-	strh r1, [r2]
-	bx lr
-	.align 2, 0
-_02061444: .word 0x04000004
-	arm_func_end sub_02061414
-
-	arm_func_start sub_02061448
-sub_02061448: ; 0x02061448
-	ldr r2, _02061478 ; =0x04000004
-	cmp r0, #0
-	ldrh r0, [r2]
-	ldreqh r1, [r2]
-	and r0, r0, #8
-	biceq r1, r1, #8
-	streqh r1, [r2]
-	bxeq lr
-	ldrh r1, [r2]
-	orr r1, r1, #8
-	strh r1, [r2]
-	bx lr
-	.align 2, 0
-_02061478: .word 0x04000004
-	arm_func_end sub_02061448
-
-	arm_func_start sub_0206147C
-sub_0206147C: ; 0x0206147C
-	stmdb sp!, {r3, lr}
-	mov lr, #0x4000000
-	ldr ip, [lr]
-	ldr r1, _020614B0 ; =DAT_0208e7ec
-	and r2, ip, #0x30000
-	mov r3, #0
-	ldr r0, _020614B4 ; =MAIN_BSS_02112DC0
-	mov r2, r2, lsr #0x10
-	strh r3, [r1]
-	strh r2, [r0]
-	bic r0, ip, #0x30000
-	str r0, [lr]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_020614B0: .word DAT_0208e7ec
-_020614B4: .word MAIN_BSS_02112DC0
-	arm_func_end sub_0206147C
-
-	arm_func_start sub_020614B8
-sub_020614B8: ; 0x020614B8
-	ldr r0, _020614F8 ; =MAIN_BSS_02112DC0
-	ldr r1, _020614FC ; =DAT_0208e7ec
-	ldrh r2, [r0]
-	mov r0, #1
-	strh r0, [r1]
-	mov r1, #0x4000000
-	cmp r2, #0
-	ldreq r0, [r1]
-	orreq r0, r0, #0x10000
-	streq r0, [r1]
-	bxeq lr
-	ldr r0, [r1]
-	bic r0, r0, #0x30000
-	orr r0, r0, r2, lsl #16
-	str r0, [r1]
-	bx lr
-	.align 2, 0
-_020614F8: .word MAIN_BSS_02112DC0
-_020614FC: .word DAT_0208e7ec
-	arm_func_end sub_020614B8
-
-	arm_func_start sub_02061500
-sub_02061500: ; 0x02061500
-	stmdb sp!, {r3, lr}
-	ldr r3, _0206155C ; =DAT_0208e7ec
-	mov lr, #0x4000000
-	ldrh ip, [r3]
-	ldr lr, [lr]
-	ldr r3, _02061560 ; =MAIN_BSS_02112DC0
-	cmp ip, #0
-	strh r0, [r3]
-	ldr r3, _02061564 ; =0xFFF0FFF0
-	moveq r0, #0
-	and r3, lr, r3
-	orr r0, r3, r0, lsl #16
-	orr r0, r1, r0
-	orr r1, r0, r2, lsl #3
-	mov ip, #0x4000000
-	ldr r0, _02061560 ; =MAIN_BSS_02112DC0
-	str r1, [ip]
-	ldrh r0, [r0]
-	cmp r0, #0
-	ldreq r0, _0206155C ; =DAT_0208e7ec
-	moveq r1, #0
-	streqh r1, [r0]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0206155C: .word DAT_0208e7ec
-_02061560: .word MAIN_BSS_02112DC0
-_02061564: .word 0xFFF0FFF0
-	arm_func_end sub_02061500
-
-	arm_func_start sub_02061568
-sub_02061568: ; 0x02061568
-	ldr r2, _02061580 ; =0x04001000
-	ldr r1, [r2]
-	bic r1, r1, #7
-	orr r0, r1, r0
-	str r0, [r2]
-	bx lr
-	.align 2, 0
-_02061580: .word 0x04001000
-	arm_func_end sub_02061568
-
-	arm_func_start sub_02061584
-sub_02061584: ; 0x02061584
-	cmp r1, #0
-	moveq r1, #0
-	streqh r1, [r0]
-	bxeq lr
-	orrgt r1, r1, #0x4000
-	strgth r1, [r0]
-	rsble r1, r1, #0
-	orrle r1, r1, #0x8000
-	strleh r1, [r0]
-	bx lr
-	arm_func_end sub_02061584
-
-	arm_func_start sub_020615AC
-sub_020615AC: ; 0x020615AC
-	ldr r0, _02061604 ; =MAIN_BSS_02112DC4
-	mov r2, #0
-	strh r2, [r0]
-	strh r2, [r0, #2]
-	strh r2, [r0, #4]
-	strh r2, [r0, #6]
-	strh r2, [r0, #8]
-	strh r2, [r0, #0xa]
-	strh r2, [r0, #0xc]
-	strh r2, [r0, #0xe]
-	strh r2, [r0, #0x10]
-	strh r2, [r0, #0x12]
-	strh r2, [r0, #0x14]
-	strh r2, [r0, #0x16]
-	ldr r1, _02061608 ; =0x04000240
-	strh r2, [r0, #0x18]
-	str r2, [r1]
-	strb r2, [r1, #4]
-	strb r2, [r1, #5]
-	strb r2, [r1, #6]
-	strh r2, [r1, #8]
-	bx lr
-	.align 2, 0
-_02061604: .word MAIN_BSS_02112DC4
-_02061608: .word 0x04000240
-	arm_func_end sub_020615AC
-
-	arm_func_start NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-NitroSDK_gx_GX_VRAMCNT_SetLCDC_: ; 0x0206160C
-	tst r0, #1
-	ldrne r1, _020616A0 ; =0x04000240
-	movne r2, #0x80
-	strneb r2, [r1]
-	tst r0, #2
-	ldrne r1, _020616A4 ; =0x04000241
-	movne r2, #0x80
-	strneb r2, [r1]
-	tst r0, #4
-	ldrne r1, _020616A8 ; =0x04000242
-	movne r2, #0x80
-	strneb r2, [r1]
-	tst r0, #8
-	ldrne r1, _020616AC ; =0x04000243
-	movne r2, #0x80
-	strneb r2, [r1]
-	tst r0, #0x10
-	ldrne r1, _020616B0 ; =0x04000244
-	movne r2, #0x80
-	strneb r2, [r1]
-	tst r0, #0x20
-	ldrne r1, _020616B4 ; =0x04000245
-	movne r2, #0x80
-	strneb r2, [r1]
-	tst r0, #0x40
-	ldrne r1, _020616B8 ; =0x04000246
-	movne r2, #0x80
-	strneb r2, [r1]
-	tst r0, #0x80
-	ldrne r1, _020616BC ; =0x04000248
-	movne r2, #0x80
-	strneb r2, [r1]
-	tst r0, #0x100
-	ldrne r0, _020616C0 ; =0x04000249
-	movne r1, #0x80
-	strneb r1, [r0]
-	bx lr
-	.align 2, 0
-_020616A0: .word 0x04000240
-_020616A4: .word 0x04000241
-_020616A8: .word 0x04000242
-_020616AC: .word 0x04000243
-_020616B0: .word 0x04000244
-_020616B4: .word 0x04000245
-_020616B8: .word 0x04000246
-_020616BC: .word 0x04000248
-_020616C0: .word 0x04000249
-	arm_func_end NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-
-	arm_func_start sub_020616C4
-sub_020616C4: ; 0x020616C4
-	stmdb sp!, {r3, lr}
-	ldr r1, _02061934 ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #2]
-	cmp r0, #0x40
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #2]
-	bgt _0206179C
-	cmp r0, #0x40
-	bge _02061918
-	cmp r0, #0x20
-	bgt _02061790
-	cmp r0, #0
-	addge pc, pc, r0, lsl #2
-	b _02061924
-_0206170C: ; jump table
-	b _02061924 ; case 0
-	b _02061838 ; case 1
-	b _02061804 ; case 2
-	b _0206182C ; case 3
-	b _020617DC ; case 4
-	b _02061874 ; case 5
-	b _020617F8 ; case 6
-	b _02061820 ; case 7
-	b _020617C0 ; case 8
-	b _0206188C ; case 9
-	b _020618A4 ; case 10
-	b _02061848 ; case 11
-	b _020617D0 ; case 12
-	b _02061868 ; case 13
-	b _020617EC ; case 14
-	b _02061814 ; case 15
-	b _020618D4 ; case 16
-	b _02061924 ; case 17
-	b _02061924 ; case 18
-	b _02061924 ; case 19
-	b _02061924 ; case 20
-	b _02061924 ; case 21
-	b _02061924 ; case 22
-	b _02061924 ; case 23
-	b _02061924 ; case 24
-	b _02061924 ; case 25
-	b _02061924 ; case 26
-	b _02061924 ; case 27
-	b _02061924 ; case 28
-	b _02061924 ; case 29
-	b _02061924 ; case 30
-	b _02061924 ; case 31
-	b _02061908 ; case 32
-	arm_func_end sub_020616C4
-_02061790:
-	cmp r0, #0x30
-	beq _020618C8
-	b _02061924
-_0206179C:
-	cmp r0, #0x60
-	bgt _020617B4
-	bge _020618FC
-	cmp r0, #0x50
-	beq _020618E4
-	b _02061924
-_020617B4:
-	cmp r0, #0x70
-	beq _020618BC
-	b _02061924
-_020617C0:
-	ldr r0, _02061938 ; =0x04000243
-	mov r1, #0x81
-	strb r1, [r0]
-	b _02061924
-_020617D0:
-	ldr r0, _02061938 ; =0x04000243
-	mov r1, #0x89
-	strb r1, [r0]
-_020617DC:
-	ldr r0, _0206193C ; =0x04000242
-	mov r1, #0x81
-	strb r1, [r0]
-	b _02061924
-_020617EC:
-	ldr r0, _02061938 ; =0x04000243
-	mov r1, #0x91
-	strb r1, [r0]
-_020617F8:
-	ldr r0, _0206193C ; =0x04000242
-	mov r1, #0x89
-	strb r1, [r0]
-_02061804:
-	ldr r0, _02061940 ; =0x04000241
-	mov r1, #0x81
-	strb r1, [r0]
-	b _02061924
-_02061814:
-	ldr r0, _02061938 ; =0x04000243
-	mov r1, #0x99
-	strb r1, [r0]
-_02061820:
-	ldr r0, _0206193C ; =0x04000242
-	mov r1, #0x91
-	strb r1, [r0]
-_0206182C:
-	ldr r0, _02061940 ; =0x04000241
-	mov r1, #0x89
-	strb r1, [r0]
-_02061838:
-	ldr r0, _02061944 ; =0x04000240
-	mov r1, #0x81
-	strb r1, [r0]
-	b _02061924
-_02061848:
-	ldr r1, _02061944 ; =0x04000240
-	mov r0, #0x81
-	strb r0, [r1]
-	mov r0, #0x89
-	strb r0, [r1, #1]
-	mov r0, #0x91
-	strb r0, [r1, #3]
-	b _02061924
-_02061868:
-	ldr r0, _02061938 ; =0x04000243
-	mov r1, #0x91
-	strb r1, [r0]
-_02061874:
-	ldr r1, _02061944 ; =0x04000240
-	mov r0, #0x81
-	strb r0, [r1]
-	mov r0, #0x89
-	strb r0, [r1, #2]
-	b _02061924
-_0206188C:
-	ldr r1, _02061944 ; =0x04000240
-	mov r0, #0x81
-	strb r0, [r1]
-	mov r0, #0x89
-	strb r0, [r1, #3]
-	b _02061924
-_020618A4:
-	ldr r1, _02061940 ; =0x04000241
-	mov r0, #0x81
-	strb r0, [r1]
-	mov r0, #0x89
-	strb r0, [r1, #2]
-	b _02061924
-_020618BC:
-	ldr r0, _02061948 ; =0x04000246
-	mov r1, #0x99
-	strb r1, [r0]
-_020618C8:
-	ldr r0, _0206194C ; =0x04000245
-	mov r1, #0x91
-	strb r1, [r0]
-_020618D4:
-	ldr r0, _02061950 ; =0x04000244
-	mov r1, #0x81
-	strb r1, [r0]
-	b _02061924
-_020618E4:
-	ldr r1, _02061948 ; =0x04000246
-	mov r0, #0x91
-	strb r0, [r1]
-	mov r0, #0x81
-	strb r0, [r1, #-2]
-	b _02061924
-_020618FC:
-	ldr r0, _02061948 ; =0x04000246
-	mov r1, #0x89
-	strb r1, [r0]
-_02061908:
-	ldr r0, _0206194C ; =0x04000245
-	mov r1, #0x81
-	strb r1, [r0]
-	b _02061924
-_02061918:
-	ldr r0, _02061948 ; =0x04000246
-	mov r1, #0x81
-	strb r1, [r0]
-_02061924:
-	ldr r0, _02061934 ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02061934: .word MAIN_BSS_02112DC4
-_02061938: .word 0x04000243
-_0206193C: .word 0x04000242
-_02061940: .word 0x04000241
-_02061944: .word 0x04000240
-_02061948: .word 0x04000246
-_0206194C: .word 0x04000245
-_02061950: .word 0x04000244
-
-	arm_func_start sub_02061954
-sub_02061954: ; 0x02061954
-	stmdb sp!, {r3, lr}
-	ldr r1, _02061A8C ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #4]
-	cmp r0, #0x30
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #4]
-	bgt _020619BC
-	cmp r0, #0x30
-	bge _02061A30
-	cmp r0, #0x10
-	bgt _020619B0
-	bge _02061A3C
-	cmp r0, #3
-	addls pc, pc, r0, lsl #2
-	b _02061A7C
-_020619A0: ; jump table
-	b _02061A7C ; case 0
-	b _02061A04 ; case 1
-	b _02061A14 ; case 2
-	b _020619F8 ; case 3
-	arm_func_end sub_02061954
-_020619B0:
-	cmp r0, #0x20
-	beq _02061A70
-	b _02061A7C
-_020619BC:
-	cmp r0, #0x50
-	bgt _020619DC
-	bge _02061A4C
-	cmp r0, #0x40
-	ldreq r0, _02061A90 ; =0x04000246
-	moveq r1, #0x82
-	streqb r1, [r0]
-	b _02061A7C
-_020619DC:
-	cmp r0, #0x60
-	bgt _020619EC
-	beq _02061A64
-	b _02061A7C
-_020619EC:
-	cmp r0, #0x70
-	beq _02061A24
-	b _02061A7C
-_020619F8:
-	ldr r0, _02061A94 ; =0x04000241
-	mov r1, #0x8a
-	strb r1, [r0]
-_02061A04:
-	ldr r0, _02061A98 ; =0x04000240
-	mov r1, #0x82
-	strb r1, [r0]
-	b _02061A7C
-_02061A14:
-	ldr r0, _02061A94 ; =0x04000241
-	mov r1, #0x82
-	strb r1, [r0]
-	b _02061A7C
-_02061A24:
-	ldr r0, _02061A90 ; =0x04000246
-	mov r1, #0x9a
-	strb r1, [r0]
-_02061A30:
-	ldr r0, _02061A9C ; =0x04000245
-	mov r1, #0x92
-	strb r1, [r0]
-_02061A3C:
-	ldr r0, _02061AA0 ; =0x04000244
-	mov r1, #0x82
-	strb r1, [r0]
-	b _02061A7C
-_02061A4C:
-	ldr r1, _02061A90 ; =0x04000246
-	mov r0, #0x92
-	strb r0, [r1]
-	mov r0, #0x82
-	strb r0, [r1, #-2]
-	b _02061A7C
-_02061A64:
-	ldr r0, _02061A90 ; =0x04000246
-	mov r1, #0x8a
-	strb r1, [r0]
-_02061A70:
-	ldr r0, _02061A9C ; =0x04000245
-	mov r1, #0x82
-	strb r1, [r0]
-_02061A7C:
-	ldr r0, _02061A8C ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02061A8C: .word MAIN_BSS_02112DC4
-_02061A90: .word 0x04000246
-_02061A94: .word 0x04000241
-_02061A98: .word 0x04000240
-_02061A9C: .word 0x04000245
-_02061AA0: .word 0x04000244
-
-	arm_func_start NitroSDK_gx_GX_SetBankForBGExtPltt
-NitroSDK_gx_GX_SetBankForBGExtPltt: ; 0x02061AA4
-	stmdb sp!, {r3, lr}
-	ldr r1, _02061B98 ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #0xe]
-	cmp r0, #0x20
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #0xe]
-	bgt _02061AF4
-	cmp r0, #0x20
-	bge _02061B58
-	cmp r0, #0
-	bgt _02061AE8
-	beq _02061B78
-	b _02061B88
-	arm_func_end NitroSDK_gx_GX_SetBankForBGExtPltt
-_02061AE8:
-	cmp r0, #0x10
-	beq _02061B10
-	b _02061B88
-_02061AF4:
-	cmp r0, #0x40
-	bgt _02061B04
-	beq _02061B2C
-	b _02061B88
-_02061B04:
-	cmp r0, #0x60
-	beq _02061B4C
-	b _02061B88
-_02061B10:
-	mov r2, #0x4000000
-	ldr r1, [r2]
-	mov r0, #0x84
-	orr r1, r1, #0x40000000
-	str r1, [r2]
-	strb r0, [r2, #0x244]
-	b _02061B88
-_02061B2C:
-	mov r2, #0x4000000
-	ldr r1, [r2]
-	ldr r0, _02061B9C ; =0x04000246
-	orr r1, r1, #0x40000000
-	str r1, [r2]
-	mov r1, #0x8c
-	strb r1, [r0]
-	b _02061B88
-_02061B4C:
-	ldr r0, _02061B9C ; =0x04000246
-	mov r1, #0x8c
-	strb r1, [r0]
-_02061B58:
-	ldr r0, _02061BA0 ; =0x04000245
-	mov r1, #0x84
-	strb r1, [r0]
-	mov r1, #0x4000000
-	ldr r0, [r1]
-	orr r0, r0, #0x40000000
-	str r0, [r1]
-	b _02061B88
-_02061B78:
-	mov r1, #0x4000000
-	ldr r0, [r1]
-	bic r0, r0, #0x40000000
-	str r0, [r1]
-_02061B88:
-	ldr r0, _02061B98 ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02061B98: .word MAIN_BSS_02112DC4
-_02061B9C: .word 0x04000246
-_02061BA0: .word 0x04000245
-
-	arm_func_start NitroSDK_gx_GX_SetBankForOBJExtPltt
-NitroSDK_gx_GX_SetBankForOBJExtPltt: ; 0x02061BA4
-	stmdb sp!, {r3, lr}
-	ldr r1, _02061C44 ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #0x10]
-	cmp r0, #0
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #0x10]
-	beq _02061C24
-	cmp r0, #0x20
-	beq _02061BE4
-	cmp r0, #0x40
-	beq _02061C04
-	b _02061C34
-	arm_func_end NitroSDK_gx_GX_SetBankForOBJExtPltt
-_02061BE4:
-	mov r2, #0x4000000
-	ldr r1, [r2]
-	ldr r0, _02061C48 ; =0x04000245
-	orr r1, r1, #0x80000000
-	str r1, [r2]
-	mov r1, #0x85
-	strb r1, [r0]
-	b _02061C34
-_02061C04:
-	mov r2, #0x4000000
-	ldr r1, [r2]
-	ldr r0, _02061C4C ; =0x04000246
-	orr r1, r1, #0x80000000
-	str r1, [r2]
-	mov r1, #0x85
-	strb r1, [r0]
-	b _02061C34
-_02061C24:
-	mov r1, #0x4000000
-	ldr r0, [r1]
-	bic r0, r0, #0x80000000
-	str r0, [r1]
-_02061C34:
-	ldr r0, _02061C44 ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02061C44: .word MAIN_BSS_02112DC4
-_02061C48: .word 0x04000245
-_02061C4C: .word 0x04000246
-
-	arm_func_start NitroSDK_gx_GX_SetBankForTex
-NitroSDK_gx_GX_SetBankForTex: ; 0x02061C50
-	stmdb sp!, {r3, lr}
-	ldr r1, _02061E0C ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #8]
-	cmp r0, #0
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #8]
-	ldr r2, _02061E10 ; =0x04000060
-	bne _02061C94
-	ldrh r1, [r2]
-	ldr r0, _02061E14 ; =0x0000CFFE
-	and r0, r1, r0
-	strh r0, [r2]
-	b _02061DFC
-	arm_func_end NitroSDK_gx_GX_SetBankForTex
-_02061C94:
-	ldrh r1, [r2]
-	cmp r0, #0xf
-	bic r1, r1, #0x3000
-	orr r1, r1, #1
-	strh r1, [r2]
-	addls pc, pc, r0, lsl #2
-	b _02061DFC
-_02061CB0: ; jump table
-	b _02061DFC ; case 0
-	b _02061DF0 ; case 1
-	b _02061DBC ; case 2
-	b _02061DE4 ; case 3
-	b _02061D94 ; case 4
-	b _02061CF0 ; case 5
-	b _02061DB0 ; case 6
-	b _02061DD8 ; case 7
-	b _02061D78 ; case 8
-	b _02061D08 ; case 9
-	b _02061D20 ; case 10
-	b _02061D38 ; case 11
-	b _02061D88 ; case 12
-	b _02061D58 ; case 13
-	b _02061DA4 ; case 14
-	b _02061DCC ; case 15
-_02061CF0:
-	mov r1, #0x83
-	ldr r0, _02061E18 ; =0x04000242
-	strb r1, [r2, #0x1e0]
-	mov r1, #0x8b
-	strb r1, [r0]
-	b _02061DFC
-_02061D08:
-	mov r1, #0x83
-	ldr r0, _02061E1C ; =0x04000243
-	strb r1, [r2, #0x1e0]
-	mov r1, #0x8b
-	strb r1, [r0]
-	b _02061DFC
-_02061D20:
-	ldr r1, _02061E20 ; =0x04000241
-	mov r0, #0x83
-	strb r0, [r1]
-	mov r0, #0x8b
-	strb r0, [r1, #2]
-	b _02061DFC
-_02061D38:
-	mov r0, #0x83
-	ldr r1, _02061E20 ; =0x04000241
-	strb r0, [r2, #0x1e0]
-	mov r0, #0x8b
-	strb r0, [r1]
-	mov r0, #0x93
-	strb r0, [r1, #2]
-	b _02061DFC
-_02061D58:
-	mov r0, #0x83
-	ldr r1, _02061E18 ; =0x04000242
-	strb r0, [r2, #0x1e0]
-	mov r0, #0x8b
-	strb r0, [r1]
-	mov r0, #0x93
-	strb r0, [r1, #1]
-	b _02061DFC
-_02061D78:
-	ldr r0, _02061E1C ; =0x04000243
-	mov r1, #0x83
-	strb r1, [r0]
-	b _02061DFC
-_02061D88:
-	ldr r0, _02061E1C ; =0x04000243
-	mov r1, #0x8b
-	strb r1, [r0]
-_02061D94:
-	ldr r0, _02061E18 ; =0x04000242
-	mov r1, #0x83
-	strb r1, [r0]
-	b _02061DFC
-_02061DA4:
-	ldr r0, _02061E1C ; =0x04000243
-	mov r1, #0x93
-	strb r1, [r0]
-_02061DB0:
-	ldr r0, _02061E18 ; =0x04000242
-	mov r1, #0x8b
-	strb r1, [r0]
-_02061DBC:
-	ldr r0, _02061E20 ; =0x04000241
-	mov r1, #0x83
-	strb r1, [r0]
-	b _02061DFC
-_02061DCC:
-	ldr r0, _02061E1C ; =0x04000243
-	mov r1, #0x9b
-	strb r1, [r0]
-_02061DD8:
-	ldr r0, _02061E18 ; =0x04000242
-	mov r1, #0x93
-	strb r1, [r0]
-_02061DE4:
-	ldr r0, _02061E20 ; =0x04000241
-	mov r1, #0x8b
-	strb r1, [r0]
-_02061DF0:
-	ldr r0, _02061E24 ; =0x04000240
-	mov r1, #0x83
-	strb r1, [r0]
-_02061DFC:
-	ldr r0, _02061E0C ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02061E0C: .word MAIN_BSS_02112DC4
-_02061E10: .word 0x04000060
-_02061E14: .word 0x0000CFFE
-_02061E18: .word 0x04000242
-_02061E1C: .word 0x04000243
-_02061E20: .word 0x04000241
-_02061E24: .word 0x04000240
-
-	arm_func_start NitroSDK_gx_GX_SetBankForTexPltt
-NitroSDK_gx_GX_SetBankForTexPltt: ; 0x02061E28
-	stmdb sp!, {r3, lr}
-	ldr r1, _02061F00 ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #0xa]
-	cmp r0, #0x30
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #0xa]
-	bgt _02061E7C
-	cmp r0, #0x30
-	bge _02061ED8
-	cmp r0, #0x10
-	bgt _02061E70
-	bge _02061EE4
-	cmp r0, #0
-	b _02061EF0
-	arm_func_end NitroSDK_gx_GX_SetBankForTexPltt
-_02061E70:
-	cmp r0, #0x20
-	beq _02061EAC
-	b _02061EF0
-_02061E7C:
-	cmp r0, #0x60
-	bgt _02061E94
-	bge _02061EA0
-	cmp r0, #0x40
-	beq _02061EBC
-	b _02061EF0
-_02061E94:
-	cmp r0, #0x70
-	beq _02061ECC
-	b _02061EF0
-_02061EA0:
-	ldr r0, _02061F04 ; =0x04000246
-	mov r1, #0x8b
-	strb r1, [r0]
-_02061EAC:
-	ldr r0, _02061F08 ; =0x04000245
-	mov r1, #0x83
-	strb r1, [r0]
-	b _02061EF0
-_02061EBC:
-	ldr r0, _02061F04 ; =0x04000246
-	mov r1, #0x83
-	strb r1, [r0]
-	b _02061EF0
-_02061ECC:
-	ldr r0, _02061F04 ; =0x04000246
-	mov r1, #0x9b
-	strb r1, [r0]
-_02061ED8:
-	ldr r0, _02061F08 ; =0x04000245
-	mov r1, #0x93
-	strb r1, [r0]
-_02061EE4:
-	ldr r0, _02061F0C ; =0x04000244
-	mov r1, #0x83
-	strb r1, [r0]
-_02061EF0:
-	ldr r0, _02061F00 ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02061F00: .word MAIN_BSS_02112DC4
-_02061F04: .word 0x04000246
-_02061F08: .word 0x04000245
-_02061F0C: .word 0x04000244
-
-	arm_func_start NitroSDK_gx_GX_SetBankForClearImage
-NitroSDK_gx_GX_SetBankForClearImage: ; 0x02061F10
-	stmdb sp!, {r3, lr}
-	ldr r1, _0206202C ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #0xc]
-	cmp r0, #0xc
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #0xc]
-	addls pc, pc, r0, lsl #2
-	b _0206201C
-_02061F40: ; jump table
-	b _02061FCC ; case 0
-	b _02061FE0 ; case 1
-	b _02061F80 ; case 2
-	b _02061F74 ; case 3
-	b _02062000 ; case 4
-	b _0206201C ; case 5
-	b _0206201C ; case 6
-	b _0206201C ; case 7
-	b _02061FAC ; case 8
-	b _0206201C ; case 9
-	b _0206201C ; case 10
-	b _0206201C ; case 11
-	b _02061FA0 ; case 12
-	arm_func_end NitroSDK_gx_GX_SetBankForClearImage
-_02061F74:
-	ldr r0, _02062030 ; =0x04000240
-	mov r1, #0x93
-	strb r1, [r0]
-_02061F80:
-	ldr r0, _02062034 ; =0x04000241
-	mov r2, #0x9b
-	ldr r1, _02062038 ; =0x04000060
-	strb r2, [r0]
-	ldrh r0, [r1]
-	orr r0, r0, #0x4000
-	strh r0, [r1]
-	b _0206201C
-_02061FA0:
-	ldr r0, _0206203C ; =0x04000242
-	mov r1, #0x93
-	strb r1, [r0]
-_02061FAC:
-	ldr r0, _02062040 ; =0x04000243
-	mov r2, #0x9b
-	ldr r1, _02062038 ; =0x04000060
-	strb r2, [r0]
-	ldrh r0, [r1]
-	orr r0, r0, #0x4000
-	strh r0, [r1]
-	b _0206201C
-_02061FCC:
-	ldr r1, _02062038 ; =0x04000060
-	ldrh r0, [r1]
-	bic r0, r0, #0x4000
-	strh r0, [r1]
-	b _0206201C
-_02061FE0:
-	ldr r0, _02062030 ; =0x04000240
-	mov r1, #0x9b
-	strb r1, [r0]
-	sub r1, r0, #0x1e0
-	ldrh r0, [r1]
-	orr r0, r0, #0x4000
-	strh r0, [r1]
-	b _0206201C
-_02062000:
-	ldr r0, _0206203C ; =0x04000242
-	mov r2, #0x9b
-	ldr r1, _02062038 ; =0x04000060
-	strb r2, [r0]
-	ldrh r0, [r1]
-	orr r0, r0, #0x4000
-	strh r0, [r1]
-_0206201C:
-	ldr r0, _0206202C ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0206202C: .word MAIN_BSS_02112DC4
-_02062030: .word 0x04000240
-_02062034: .word 0x04000241
-_02062038: .word 0x04000060
-_0206203C: .word 0x04000242
-_02062040: .word 0x04000243
-
-	arm_func_start sub_02062044
-sub_02062044: ; 0x02062044
-	stmdb sp!, {r3, lr}
-	ldr r1, _020620E4 ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #6]
-	cmp r0, #8
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #6]
-	bgt _02062098
-	cmp r0, #8
-	bge _020620C8
-	cmp r0, #4
-	bgt _020620D4
-	cmp r0, #0
-	blt _020620D4
-	beq _020620D4
-	cmp r0, #4
-	beq _020620B8
-	b _020620D4
-	arm_func_end sub_02062044
-_02062098:
-	cmp r0, #0xc
-	bne _020620D4
-	ldr r1, _020620E8 ; =0x04000243
-	mov r0, #0x8a
-	strb r0, [r1]
-	mov r0, #0x82
-	strb r0, [r1, #-1]
-	b _020620D4
-_020620B8:
-	ldr r0, _020620EC ; =0x04000242
-	mov r1, #0x82
-	strb r1, [r0]
-	b _020620D4
-_020620C8:
-	ldr r0, _020620E8 ; =0x04000243
-	mov r1, #0x82
-	strb r1, [r0]
-_020620D4:
-	ldr r0, _020620E4 ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_020620E4: .word MAIN_BSS_02112DC4
-_020620E8: .word 0x04000243
-_020620EC: .word 0x04000242
-
-	arm_func_start sub_020620F0
-sub_020620F0: ; 0x020620F0
-	ldr r1, _02062108 ; =MAIN_BSS_02112DC4
-	ldr ip, _0206210C ; =NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldrh r2, [r1]
-	orr r2, r2, r0
-	strh r2, [r1]
-	bx ip
-	.align 2, 0
-_02062108: .word MAIN_BSS_02112DC4
-_0206210C: .word NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	arm_func_end sub_020620F0
-
-	arm_func_start sub_02062110
-sub_02062110: ; 0x02062110
-	stmdb sp!, {r3, lr}
-	ldr r1, _020621A8 ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #0x12]
-	cmp r0, #0x80
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #0x12]
-	bgt _02062164
-	cmp r0, #0x80
-	bge _0206218C
-	cmp r0, #4
-	bgt _02062198
-	cmp r0, #0
-	blt _02062198
-	beq _02062198
-	cmp r0, #4
-	beq _02062170
-	b _02062198
-	arm_func_end sub_02062110
-_02062164:
-	cmp r0, #0x180
-	beq _02062180
-	b _02062198
-_02062170:
-	ldr r0, _020621AC ; =0x04000242
-	mov r1, #0x84
-	strb r1, [r0]
-	b _02062198
-_02062180:
-	ldr r0, _020621B0 ; =0x04000249
-	mov r1, #0x81
-	strb r1, [r0]
-_0206218C:
-	ldr r0, _020621B4 ; =0x04000248
-	mov r1, #0x81
-	strb r1, [r0]
-_02062198:
-	ldr r0, _020621A8 ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_020621A8: .word MAIN_BSS_02112DC4
-_020621AC: .word 0x04000242
-_020621B0: .word 0x04000249
-_020621B4: .word 0x04000248
-
-	arm_func_start sub_020621B8
-sub_020621B8: ; 0x020621B8
-	stmdb sp!, {r3, lr}
-	ldr r1, _0206221C ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #0x14]
-	cmp r0, #0
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #0x14]
-	beq _0206220C
-	cmp r0, #8
-	beq _02062200
-	cmp r0, #0x100
-	ldreq r0, _02062220 ; =0x04000249
-	moveq r1, #0x82
-	streqb r1, [r0]
-	b _0206220C
-	arm_func_end sub_020621B8
-_02062200:
-	ldr r0, _02062224 ; =0x04000243
-	mov r1, #0x84
-	strb r1, [r0]
-_0206220C:
-	ldr r0, _0206221C ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0206221C: .word MAIN_BSS_02112DC4
-_02062220: .word 0x04000249
-_02062224: .word 0x04000243
-
-	arm_func_start NitroSDK_gx_GX_SetBankForSubBGExtPltt
-NitroSDK_gx_GX_SetBankForSubBGExtPltt: ; 0x02062228
-	stmdb sp!, {r3, lr}
-	ldr r1, _0206229C ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #0x16]
-	cmp r0, #0
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #0x16]
-	beq _0206227C
-	cmp r0, #0x80
-	bne _0206228C
-	ldr r3, _020622A0 ; =0x04001000
-	ldr r0, _020622A4 ; =0x04000248
-	ldr r2, [r3]
-	mov r1, #0x82
-	orr r2, r2, #0x40000000
-	str r2, [r3]
-	strb r1, [r0]
-	b _0206228C
-	arm_func_end NitroSDK_gx_GX_SetBankForSubBGExtPltt
-_0206227C:
-	ldr r1, _020622A0 ; =0x04001000
-	ldr r0, [r1]
-	bic r0, r0, #0x40000000
-	str r0, [r1]
-_0206228C:
-	ldr r0, _0206229C ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0206229C: .word MAIN_BSS_02112DC4
-_020622A0: .word 0x04001000
-_020622A4: .word 0x04000248
-
-	arm_func_start NitroSDK_gx_GX_SetBankForSubOBJExtPltt
-NitroSDK_gx_GX_SetBankForSubOBJExtPltt: ; 0x020622A8
-	stmdb sp!, {r3, lr}
-	ldr r1, _0206231C ; =MAIN_BSS_02112DC4
-	mvn ip, r0
-	ldrh r3, [r1]
-	ldrh r2, [r1, #0x18]
-	cmp r0, #0
-	orr r2, r3, r2
-	and r2, ip, r2
-	strh r2, [r1]
-	strh r0, [r1, #0x18]
-	beq _020622FC
-	cmp r0, #0x100
-	bne _0206230C
-	ldr r3, _02062320 ; =0x04001000
-	ldr r0, _02062324 ; =0x04000249
-	ldr r2, [r3]
-	mov r1, #0x83
-	orr r2, r2, #0x80000000
-	str r2, [r3]
-	strb r1, [r0]
-	b _0206230C
-	arm_func_end NitroSDK_gx_GX_SetBankForSubOBJExtPltt
-_020622FC:
-	ldr r1, _02062320 ; =0x04001000
-	ldr r0, [r1]
-	bic r0, r0, #0x80000000
-	str r0, [r1]
-_0206230C:
-	ldr r0, _0206231C ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0206231C: .word MAIN_BSS_02112DC4
-_02062320: .word 0x04001000
-_02062324: .word 0x04000249
-
-	arm_func_start NitroSDK_gx_resetBankForX_
-NitroSDK_gx_resetBankForX_: ; 0x02062328
-	stmdb sp!, {r4, lr}
-	ldrh r4, [r0]
-	mov r2, #0
-	ldr r1, _02062358 ; =MAIN_BSS_02112DC4
-	strh r2, [r0]
-	ldrh r2, [r1]
-	mov r0, r4
-	orr r2, r2, r4
-	strh r2, [r1]
-	bl NitroSDK_gx_GX_VRAMCNT_SetLCDC_
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02062358: .word MAIN_BSS_02112DC4
-	arm_func_end NitroSDK_gx_resetBankForX_
-
-	arm_func_start sub_0206235C
-sub_0206235C: ; 0x0206235C
-	ldr ip, _02062368 ; =NitroSDK_gx_resetBankForX_
-	ldr r0, _0206236C ; =MAIN_BSS_02112DC6
-	bx ip
-	.align 2, 0
-_02062368: .word NitroSDK_gx_resetBankForX_
-_0206236C: .word MAIN_BSS_02112DC6
-	arm_func_end sub_0206235C
-
-	arm_func_start sub_02062370
-sub_02062370: ; 0x02062370
-	ldr ip, _0206237C ; =NitroSDK_gx_resetBankForX_
-	ldr r0, _02062380 ; =MAIN_BSS_02112DC8
-	bx ip
-	.align 2, 0
-_0206237C: .word NitroSDK_gx_resetBankForX_
-_02062380: .word MAIN_BSS_02112DC8
-	arm_func_end sub_02062370
-
-	arm_func_start NitroSDK_gx_GX_ResetBankForBGExtPltt
-NitroSDK_gx_GX_ResetBankForBGExtPltt: ; 0x02062384
-	mov r2, #0x4000000
-	ldr r1, [r2]
-	ldr ip, _020623A0 ; =NitroSDK_gx_resetBankForX_
-	bic r1, r1, #0x40000000
-	ldr r0, _020623A4 ; =MAIN_BSS_02112DD2
-	str r1, [r2]
-	bx ip
-	.align 2, 0
-_020623A0: .word NitroSDK_gx_resetBankForX_
-_020623A4: .word MAIN_BSS_02112DD2
-	arm_func_end NitroSDK_gx_GX_ResetBankForBGExtPltt
-
-	arm_func_start NitroSDK_gx_GX_ResetBankForOBJExtPltt
-NitroSDK_gx_GX_ResetBankForOBJExtPltt: ; 0x020623A8
-	mov r2, #0x4000000
-	ldr r1, [r2]
-	ldr ip, _020623C4 ; =NitroSDK_gx_resetBankForX_
-	bic r1, r1, #0x80000000
-	ldr r0, _020623C8 ; =MAIN_BSS_02112DD4
-	str r1, [r2]
-	bx ip
-	.align 2, 0
-_020623C4: .word NitroSDK_gx_resetBankForX_
-_020623C8: .word MAIN_BSS_02112DD4
-	arm_func_end NitroSDK_gx_GX_ResetBankForOBJExtPltt
-
-	arm_func_start NitroSDK_gx_GX_ResetBankForTex
-NitroSDK_gx_GX_ResetBankForTex: ; 0x020623CC
-	ldr ip, _020623D8 ; =NitroSDK_gx_resetBankForX_
-	ldr r0, _020623DC ; =MAIN_BSS_02112DCC
-	bx ip
-	.align 2, 0
-_020623D8: .word NitroSDK_gx_resetBankForX_
-_020623DC: .word MAIN_BSS_02112DCC
-	arm_func_end NitroSDK_gx_GX_ResetBankForTex
-
-	arm_func_start NitroSDK_gx_GX_ResetBankForTexPltt
-NitroSDK_gx_GX_ResetBankForTexPltt: ; 0x020623E0
-	ldr ip, _020623EC ; =NitroSDK_gx_resetBankForX_
-	ldr r0, _020623F0 ; =MAIN_BSS_02112DCE
-	bx ip
-	.align 2, 0
-_020623EC: .word NitroSDK_gx_resetBankForX_
-_020623F0: .word MAIN_BSS_02112DCE
-	arm_func_end NitroSDK_gx_GX_ResetBankForTexPltt
-
-	arm_func_start NitroSDK_gx_GX_ResetBankForClearImage
-NitroSDK_gx_GX_ResetBankForClearImage: ; 0x020623F4
-	ldr ip, _02062400 ; =NitroSDK_gx_resetBankForX_
-	ldr r0, _02062404 ; =MAIN_BSS_02112DD0
-	bx ip
-	.align 2, 0
-_02062400: .word NitroSDK_gx_resetBankForX_
-_02062404: .word MAIN_BSS_02112DD0
-	arm_func_end NitroSDK_gx_GX_ResetBankForClearImage
-
-	arm_func_start sub_02062408
-sub_02062408: ; 0x02062408
-	ldr ip, _02062414 ; =NitroSDK_gx_resetBankForX_
-	ldr r0, _02062418 ; =MAIN_BSS_02112DCA
-	bx ip
-	.align 2, 0
-_02062414: .word NitroSDK_gx_resetBankForX_
-_02062418: .word MAIN_BSS_02112DCA
-	arm_func_end sub_02062408
-
-	arm_func_start sub_0206241C
-sub_0206241C: ; 0x0206241C
-	ldr ip, _02062428 ; =NitroSDK_gx_resetBankForX_
-	ldr r0, _0206242C ; =MAIN_BSS_02112DD6
-	bx ip
-	.align 2, 0
-_02062428: .word NitroSDK_gx_resetBankForX_
-_0206242C: .word MAIN_BSS_02112DD6
-	arm_func_end sub_0206241C
-
-	arm_func_start sub_02062430
-sub_02062430: ; 0x02062430
-	ldr ip, _0206243C ; =NitroSDK_gx_resetBankForX_
-	ldr r0, _02062440 ; =MAIN_BSS_02112DD8
-	bx ip
-	.align 2, 0
-_0206243C: .word NitroSDK_gx_resetBankForX_
-_02062440: .word MAIN_BSS_02112DD8
-	arm_func_end sub_02062430
-
-	arm_func_start NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-NitroSDK_gx_GX_ResetBankForSubBGExtPltt: ; 0x02062444
-	ldr r2, _02062460 ; =0x04001000
-	ldr ip, _02062464 ; =NitroSDK_gx_resetBankForX_
-	ldr r1, [r2]
-	ldr r0, _02062468 ; =MAIN_BSS_02112DDA
-	bic r1, r1, #0x40000000
-	str r1, [r2]
-	bx ip
-	.align 2, 0
-_02062460: .word 0x04001000
-_02062464: .word NitroSDK_gx_resetBankForX_
-_02062468: .word MAIN_BSS_02112DDA
-	arm_func_end NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-
-	arm_func_start NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-NitroSDK_gx_GX_ResetBankForSubOBJExtPltt: ; 0x0206246C
-	ldr r2, _02062488 ; =0x04001000
-	ldr ip, _0206248C ; =NitroSDK_gx_resetBankForX_
-	ldr r1, [r2]
-	ldr r0, _02062490 ; =MAIN_BSS_02112DDC
-	bic r1, r1, #0x80000000
-	str r1, [r2]
-	bx ip
-	.align 2, 0
-_02062488: .word 0x04001000
-_0206248C: .word NitroSDK_gx_resetBankForX_
-_02062490: .word MAIN_BSS_02112DDC
-	arm_func_end NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-
-	arm_func_start sub_02062494
-sub_02062494: ; 0x02062494
-	stmdb sp!, {r4, lr}
-	ldrh r4, [r0]
-	mov r1, #0
-	strh r1, [r0]
-	tst r4, #1
-	ldrne r0, _0206254C ; =0x04000240
-	strneb r1, [r0]
-	tst r4, #2
-	ldrne r0, _02062550 ; =0x04000241
-	movne r1, #0
-	strneb r1, [r0]
-	tst r4, #4
-	ldrne r0, _02062554 ; =0x04000242
-	movne r1, #0
-	strneb r1, [r0]
-	tst r4, #8
-	ldrne r0, _02062558 ; =0x04000243
-	movne r1, #0
-	strneb r1, [r0]
-	tst r4, #0x10
-	ldrne r0, _0206255C ; =0x04000244
-	movne r1, #0
-	strneb r1, [r0]
-	tst r4, #0x20
-	ldrne r0, _02062560 ; =0x04000245
-	movne r1, #0
-	strneb r1, [r0]
-	tst r4, #0x40
-	ldrne r0, _02062564 ; =0x04000246
-	movne r1, #0
-	strneb r1, [r0]
-	tst r4, #0x80
-	ldrne r0, _02062568 ; =0x04000248
-	movne r1, #0
-	strneb r1, [r0]
-	tst r4, #0x100
-	ldrne r0, _0206256C ; =0x04000249
-	movne r1, #0
-	strneb r1, [r0]
-	ldr r1, _02062570 ; =MAIN_BSS_02112DC2
-	mov r0, r4, lsl #0x10
-	ldrh r1, [r1]
-	mov r0, r0, lsr #0x10
-	bl OSi_UnlockVram
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0206254C: .word 0x04000240
-_02062550: .word 0x04000241
-_02062554: .word 0x04000242
-_02062558: .word 0x04000243
-_0206255C: .word 0x04000244
-_02062560: .word 0x04000245
-_02062564: .word 0x04000246
-_02062568: .word 0x04000248
-_0206256C: .word 0x04000249
-_02062570: .word MAIN_BSS_02112DC2
-	arm_func_end sub_02062494
-
-	arm_func_start sub_02062574
-sub_02062574: ; 0x02062574
-	ldr ip, _02062580 ; =sub_02062494
-	ldr r0, _02062584 ; =MAIN_BSS_02112DC6
-	bx ip
-	.align 2, 0
-_02062580: .word sub_02062494
-_02062584: .word MAIN_BSS_02112DC6
-	arm_func_end sub_02062574
-
-	arm_func_start sub_02062588
-sub_02062588: ; 0x02062588
-	ldr ip, _02062594 ; =sub_02062494
-	ldr r0, _02062598 ; =MAIN_BSS_02112DC8
-	bx ip
-	.align 2, 0
-_02062594: .word sub_02062494
-_02062598: .word MAIN_BSS_02112DC8
-	arm_func_end sub_02062588
-
-	arm_func_start sub_0206259C
-sub_0206259C: ; 0x0206259C
-	mov r2, #0x4000000
-	ldr r1, [r2]
-	ldr ip, _020625B8 ; =sub_02062494
-	bic r1, r1, #0x40000000
-	ldr r0, _020625BC ; =MAIN_BSS_02112DD2
-	str r1, [r2]
-	bx ip
-	.align 2, 0
-_020625B8: .word sub_02062494
-_020625BC: .word MAIN_BSS_02112DD2
-	arm_func_end sub_0206259C
-
-	arm_func_start sub_020625C0
-sub_020625C0: ; 0x020625C0
-	mov r2, #0x4000000
-	ldr r1, [r2]
-	ldr ip, _020625DC ; =sub_02062494
-	bic r1, r1, #0x80000000
-	ldr r0, _020625E0 ; =MAIN_BSS_02112DD4
-	str r1, [r2]
-	bx ip
-	.align 2, 0
-_020625DC: .word sub_02062494
-_020625E0: .word MAIN_BSS_02112DD4
-	arm_func_end sub_020625C0
-
-	arm_func_start sub_020625E4
-sub_020625E4: ; 0x020625E4
-	ldr ip, _020625F0 ; =sub_02062494
-	ldr r0, _020625F4 ; =MAIN_BSS_02112DCC
-	bx ip
-	.align 2, 0
-_020625F0: .word sub_02062494
-_020625F4: .word MAIN_BSS_02112DCC
-	arm_func_end sub_020625E4
-
-	arm_func_start sub_020625F8
-sub_020625F8: ; 0x020625F8
-	ldr ip, _02062604 ; =sub_02062494
-	ldr r0, _02062608 ; =MAIN_BSS_02112DCE
-	bx ip
-	.align 2, 0
-_02062604: .word sub_02062494
-_02062608: .word MAIN_BSS_02112DCE
-	arm_func_end sub_020625F8
-
-	arm_func_start sub_0206260C
-sub_0206260C: ; 0x0206260C
-	ldr ip, _02062618 ; =sub_02062494
-	ldr r0, _0206261C ; =MAIN_BSS_02112DD0
-	bx ip
-	.align 2, 0
-_02062618: .word sub_02062494
-_0206261C: .word MAIN_BSS_02112DD0
-	arm_func_end sub_0206260C
-
-	arm_func_start sub_02062620
-sub_02062620: ; 0x02062620
-	ldr ip, _0206262C ; =sub_02062494
-	ldr r0, _02062630 ; =MAIN_BSS_02112DCA
-	bx ip
-	.align 2, 0
-_0206262C: .word sub_02062494
-_02062630: .word MAIN_BSS_02112DCA
-	arm_func_end sub_02062620
-
-	arm_func_start sub_02062634
-sub_02062634: ; 0x02062634
-	ldr ip, _02062640 ; =sub_02062494
-	ldr r0, _02062644 ; =MAIN_BSS_02112DC4
-	bx ip
-	.align 2, 0
-_02062640: .word sub_02062494
-_02062644: .word MAIN_BSS_02112DC4
-	arm_func_end sub_02062634
-
-	arm_func_start sub_02062648
-sub_02062648: ; 0x02062648
-	ldr ip, _02062654 ; =sub_02062494
-	ldr r0, _02062658 ; =MAIN_BSS_02112DD6
-	bx ip
-	.align 2, 0
-_02062654: .word sub_02062494
-_02062658: .word MAIN_BSS_02112DD6
-	arm_func_end sub_02062648
-
-	arm_func_start sub_0206265C
-sub_0206265C: ; 0x0206265C
-	ldr ip, _02062668 ; =sub_02062494
-	ldr r0, _0206266C ; =MAIN_BSS_02112DD8
-	bx ip
-	.align 2, 0
-_02062668: .word sub_02062494
-_0206266C: .word MAIN_BSS_02112DD8
-	arm_func_end sub_0206265C
-
-	arm_func_start sub_02062670
-sub_02062670: ; 0x02062670
-	ldr r2, _0206268C ; =0x04001000
-	ldr ip, _02062690 ; =sub_02062494
-	ldr r1, [r2]
-	ldr r0, _02062694 ; =MAIN_BSS_02112DDA
-	bic r1, r1, #0x40000000
-	str r1, [r2]
-	bx ip
-	.align 2, 0
-_0206268C: .word 0x04001000
-_02062690: .word sub_02062494
-_02062694: .word MAIN_BSS_02112DDA
-	arm_func_end sub_02062670
-
-	arm_func_start sub_02062698
-sub_02062698: ; 0x02062698
-	ldr r2, _020626B4 ; =0x04001000
-	ldr ip, _020626B8 ; =sub_02062494
-	ldr r1, [r2]
-	ldr r0, _020626BC ; =MAIN_BSS_02112DDC
-	bic r1, r1, #0x80000000
-	str r1, [r2]
-	bx ip
-	.align 2, 0
-_020626B4: .word 0x04001000
-_020626B8: .word sub_02062494
-_020626BC: .word MAIN_BSS_02112DDC
-	arm_func_end sub_02062698
-
-	arm_func_start sub_020626C0
-sub_020626C0: ; 0x020626C0
-	ldr r0, _020626CC ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0, #4]
-	bx lr
-	.align 2, 0
-_020626CC: .word MAIN_BSS_02112DC4
-	arm_func_end sub_020626C0
-
-	arm_func_start sub_020626D0
-sub_020626D0: ; 0x020626D0
-	ldr r0, _020626DC ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0, #0xe]
-	bx lr
-	.align 2, 0
-_020626DC: .word MAIN_BSS_02112DC4
-	arm_func_end sub_020626D0
-
-	arm_func_start sub_020626E0
-sub_020626E0: ; 0x020626E0
-	ldr r0, _020626EC ; =MAIN_BSS_02112DC4
-	ldrh r0, [r0, #0x14]
-	bx lr
-	.align 2, 0
-_020626EC: .word MAIN_BSS_02112DC4
-	arm_func_end sub_020626E0
-
-	arm_func_start sub_020626F0
-sub_020626F0: ; 0x020626F0
-	ldr r1, _02062720 ; =0x04000008
-	mov r0, #0x4000000
-	ldrh r1, [r1]
-	ldr r0, [r0]
-	and r0, r0, #0x38000000
-	mov r0, r0, lsr #0x1b
-	and r1, r1, #0x1f00
-	mov r0, r0, lsl #0x10
-	mov r1, r1, asr #8
-	add r0, r0, #0x6000000
-	add r0, r0, r1, lsl #11
-	bx lr
-	.align 2, 0
-_02062720: .word 0x04000008
-	arm_func_end sub_020626F0
-
-	arm_func_start sub_02062724
-sub_02062724: ; 0x02062724
-	ldr r0, _02062740 ; =0x04001008
-	ldrh r0, [r0]
-	and r0, r0, #0x1f00
-	mov r0, r0, asr #8
-	mov r0, r0, lsl #0xb
-	add r0, r0, #0x6200000
-	bx lr
-	.align 2, 0
-_02062740: .word 0x04001008
-	arm_func_end sub_02062724
-
-	arm_func_start sub_02062744
-sub_02062744: ; 0x02062744
-	ldr r1, _02062774 ; =0x0400000A
-	mov r0, #0x4000000
-	ldrh r1, [r1]
-	ldr r0, [r0]
-	and r0, r0, #0x38000000
-	mov r0, r0, lsr #0x1b
-	and r1, r1, #0x1f00
-	mov r0, r0, lsl #0x10
-	mov r1, r1, asr #8
-	add r0, r0, #0x6000000
-	add r0, r0, r1, lsl #11
-	bx lr
-	.align 2, 0
-_02062774: .word 0x0400000A
-	arm_func_end sub_02062744
-
-	arm_func_start sub_02062778
-sub_02062778: ; 0x02062778
-	ldr r0, _02062794 ; =0x0400100A
-	ldrh r0, [r0]
-	and r0, r0, #0x1f00
-	mov r0, r0, asr #8
-	mov r0, r0, lsl #0xb
-	add r0, r0, #0x6200000
-	bx lr
-	.align 2, 0
-_02062794: .word 0x0400100A
-	arm_func_end sub_02062778
-
-	arm_func_start sub_02062798
-sub_02062798: ; 0x02062798
-	mov r0, #0x4000000
-	ldr r1, [r0]
-	ldrh r3, [r0, #0xc]
-	ldr r0, [r0]
-	and ip, r1, #7
-	and r0, r0, #0x38000000
-	mov r1, r0, lsr #0x1b
-	and r0, r3, #0x1f00
-	mov r2, r1, lsl #0x10
-	cmp ip, #6
-	mov r1, r0, lsr #8
-	addls pc, pc, ip, lsl #2
-	b _02062814
-_020627CC: ; jump table
-	b _020627E8 ; case 0
-	b _020627E8 ; case 1
-	b _020627E8 ; case 2
-	b _020627E8 ; case 3
-	b _020627E8 ; case 4
-	b _020627F4 ; case 5
-	b _0206280C ; case 6
-	arm_func_end sub_02062798
-_020627E8:
-	add r0, r2, #0x6000000
-	add r0, r0, r1, lsl #11
-	bx lr
-_020627F4:
-	tst r3, #0x80
-	movne r0, r1, lsl #0xe
-	addne r0, r0, #0x6000000
-	addeq r0, r2, #0x6000000
-	addeq r0, r0, r1, lsl #11
-	bx lr
-_0206280C:
-	mov r0, #0x6000000
-	bx lr
-_02062814:
-	mov r0, #0
-	bx lr
-
-	arm_func_start sub_0206281C
-sub_0206281C: ; 0x0206281C
-	ldr r1, _0206288C ; =0x04001000
-	ldr r0, [r1]
-	ldrh r1, [r1, #0xc]
-	and r2, r0, #7
-	cmp r2, #6
-	and r0, r1, #0x1f00
-	mov r0, r0, lsr #8
-	addls pc, pc, r2, lsl #2
-	b _02062884
-_02062840: ; jump table
-	b _0206285C ; case 0
-	b _0206285C ; case 1
-	b _0206285C ; case 2
-	b _0206285C ; case 3
-	b _0206285C ; case 4
-	b _02062868 ; case 5
-	b _0206287C ; case 6
-	arm_func_end sub_0206281C
-_0206285C:
-	mov r0, r0, lsl #0xb
-	add r0, r0, #0x6200000
-	bx lr
-_02062868:
-	tst r1, #0x80
-	movne r0, r0, lsl #0xe
-	moveq r0, r0, lsl #0xb
-	add r0, r0, #0x6200000
-	bx lr
-_0206287C:
-	mov r0, #0
-	bx lr
-_02062884:
-	mov r0, #0
-	bx lr
-	.align 2, 0
-_0206288C: .word 0x04001000
-
-	arm_func_start sub_02062890
-sub_02062890: ; 0x02062890
-	mov r0, #0x4000000
-	ldr r1, [r0]
-	ldrh r3, [r0, #0xe]
-	ldr r0, [r0]
-	and ip, r1, #7
-	and r0, r0, #0x38000000
-	mov r1, r0, lsr #0x1b
-	and r0, r3, #0x1f00
-	mov r2, r1, lsl #0x10
-	cmp ip, #6
-	mov r1, r0, lsr #8
-	addls pc, pc, ip, lsl #2
-	b _0206290C
-_020628C4: ; jump table
-	b _020628E0 ; case 0
-	b _020628E0 ; case 1
-	b _020628E0 ; case 2
-	b _020628EC ; case 3
-	b _020628EC ; case 4
-	b _020628EC ; case 5
-	b _02062904 ; case 6
-	arm_func_end sub_02062890
-_020628E0:
-	add r0, r2, #0x6000000
-	add r0, r0, r1, lsl #11
-	bx lr
-_020628EC:
-	tst r3, #0x80
-	movne r0, r1, lsl #0xe
-	addne r0, r0, #0x6000000
-	addeq r0, r2, #0x6000000
-	addeq r0, r0, r1, lsl #11
-	bx lr
-_02062904:
-	mov r0, #0
-	bx lr
-_0206290C:
-	mov r0, #0
-	bx lr
-
-	arm_func_start sub_02062914
-sub_02062914: ; 0x02062914
-	ldr r1, _02062984 ; =0x04001000
-	ldr r0, [r1]
-	ldrh r1, [r1, #0xe]
-	and r2, r0, #7
-	cmp r2, #6
-	and r0, r1, #0x1f00
-	mov r0, r0, lsr #8
-	addls pc, pc, r2, lsl #2
-	b _0206297C
-_02062938: ; jump table
-	b _02062954 ; case 0
-	b _02062954 ; case 1
-	b _02062954 ; case 2
-	b _02062960 ; case 3
-	b _02062960 ; case 4
-	b _02062960 ; case 5
-	b _02062974 ; case 6
-	arm_func_end sub_02062914
-_02062954:
-	mov r0, r0, lsl #0xb
-	add r0, r0, #0x6200000
-	bx lr
-_02062960:
-	tst r1, #0x80
-	movne r0, r0, lsl #0xe
-	moveq r0, r0, lsl #0xb
-	add r0, r0, #0x6200000
-	bx lr
-_02062974:
-	mov r0, #0
-	bx lr
-_0206297C:
-	mov r0, #0
-	bx lr
-	.align 2, 0
-_02062984: .word 0x04001000
-
-	arm_func_start sub_02062988
-sub_02062988: ; 0x02062988
-	ldr r1, _020629B8 ; =0x04000008
-	mov r0, #0x4000000
-	ldrh r1, [r1]
-	ldr r0, [r0]
-	and r0, r0, #0x7000000
-	mov r0, r0, lsr #0x18
-	and r1, r1, #0x3c
-	mov r0, r0, lsl #0x10
-	mov r1, r1, asr #2
-	add r0, r0, #0x6000000
-	add r0, r0, r1, lsl #14
-	bx lr
-	.align 2, 0
-_020629B8: .word 0x04000008
-	arm_func_end sub_02062988
-
-	arm_func_start sub_020629BC
-sub_020629BC: ; 0x020629BC
-	ldr r0, _020629D8 ; =0x04001008
-	ldrh r0, [r0]
-	and r0, r0, #0x3c
-	mov r0, r0, asr #2
-	mov r0, r0, lsl #0xe
-	add r0, r0, #0x6200000
-	bx lr
-	.align 2, 0
-_020629D8: .word 0x04001008
-	arm_func_end sub_020629BC
-
-	arm_func_start sub_020629DC
-sub_020629DC: ; 0x020629DC
-	ldr r1, _02062A0C ; =0x0400000A
-	mov r0, #0x4000000
-	ldrh r1, [r1]
-	ldr r0, [r0]
-	and r0, r0, #0x7000000
-	mov r0, r0, lsr #0x18
-	and r1, r1, #0x3c
-	mov r0, r0, lsl #0x10
-	mov r1, r1, asr #2
-	add r0, r0, #0x6000000
-	add r0, r0, r1, lsl #14
-	bx lr
-	.align 2, 0
-_02062A0C: .word 0x0400000A
-	arm_func_end sub_020629DC
-
-	arm_func_start sub_02062A10
-sub_02062A10: ; 0x02062A10
-	ldr r0, _02062A2C ; =0x0400100A
-	ldrh r0, [r0]
-	and r0, r0, #0x3c
-	mov r0, r0, asr #2
-	mov r0, r0, lsl #0xe
-	add r0, r0, #0x6200000
-	bx lr
-	.align 2, 0
-_02062A2C: .word 0x0400100A
-	arm_func_end sub_02062A10
-
-	arm_func_start sub_02062A30
-sub_02062A30: ; 0x02062A30
-	mov r1, #0x4000000
-	ldr r0, [r1]
-	ldrh r2, [r1, #0xc]
-	and r0, r0, #7
-	cmp r0, #5
-	blt _02062A50
-	tst r2, #0x80
-	bne _02062A78
-	arm_func_end sub_02062A30
-_02062A50:
-	mov r0, #0x4000000
-	ldr r1, [r0]
-	and r0, r2, #0x3c
-	and r1, r1, #0x7000000
-	mov r1, r1, lsr #0x18
-	mov r1, r1, lsl #0x10
-	add r1, r1, #0x6000000
-	mov r0, r0, lsr #2
-	add r0, r1, r0, lsl #14
-	bx lr
-_02062A78:
-	mov r0, #0
-	bx lr
-
-	arm_func_start sub_02062A80
-sub_02062A80: ; 0x02062A80
-	ldr r1, _02062ABC ; =0x04001000
-	ldr r0, [r1]
-	ldrh r1, [r1, #0xc]
-	and r0, r0, #7
-	cmp r0, #5
-	blt _02062AA0
-	tst r1, #0x80
-	bne _02062AB4
-	arm_func_end sub_02062A80
-_02062AA0:
-	and r0, r1, #0x3c
-	mov r0, r0, lsr #2
-	mov r0, r0, lsl #0xe
-	add r0, r0, #0x6200000
-	bx lr
-_02062AB4:
-	mov r0, #0
-	bx lr
-	.align 2, 0
-_02062ABC: .word 0x04001000
-
-	arm_func_start sub_02062AC0
-sub_02062AC0: ; 0x02062AC0
-	mov r1, #0x4000000
-	ldr r0, [r1]
-	ldrh r2, [r1, #0xe]
-	and r0, r0, #7
-	cmp r0, #3
-	blt _02062AE8
-	cmp r0, #6
-	bge _02062B10
-	tst r2, #0x80
-	bne _02062B10
-	arm_func_end sub_02062AC0
-_02062AE8:
-	mov r0, #0x4000000
-	ldr r1, [r0]
-	and r0, r2, #0x3c
-	and r1, r1, #0x7000000
-	mov r1, r1, lsr #0x18
-	mov r1, r1, lsl #0x10
-	add r1, r1, #0x6000000
-	mov r0, r0, lsr #2
-	add r0, r1, r0, lsl #14
-	bx lr
-_02062B10:
-	mov r0, #0
-	bx lr
-
-	arm_func_start sub_02062B18
-sub_02062B18: ; 0x02062B18
-	ldr r1, _02062B5C ; =0x04001000
-	ldr r0, [r1]
-	ldrh r1, [r1, #0xe]
-	and r0, r0, #7
-	cmp r0, #3
-	blt _02062B40
-	cmp r0, #6
-	bge _02062B54
-	tst r1, #0x80
-	bne _02062B54
-	arm_func_end sub_02062B18
-_02062B40:
-	and r0, r1, #0x3c
-	mov r0, r0, lsr #2
-	mov r0, r0, lsl #0xe
-	add r0, r0, #0x6200000
-	bx lr
-_02062B54:
-	mov r0, #0
-	bx lr
-	.align 2, 0
-_02062B5C: .word 0x04001000
-
-	arm_func_start sub_02062B60
-sub_02062B60: ; 0x02062B60
-	stmdb sp!, {r4, r5, r6, lr}
-	ldr r4, [r1, #4]
-	ldr r5, [r1]
-	mov ip, r4, lsl #0xc
-	mov r4, ip, asr #0x10
-	mov ip, r5, lsl #0xc
-	mov lr, r4, lsl #0x10
-	mov r5, ip, asr #0x10
-	mov r4, lr, lsr #0x10
-	mov ip, r5, lsl #0x10
-	mov r4, r4, lsl #0x10
-	orr r4, r4, ip, lsr #16
-	str r4, [r0]
-	ldr r4, [r1, #0xc]
-	ldr r5, [r1, #8]
-	mov ip, r4, lsl #0xc
-	mov r4, ip, asr #0x10
-	mov ip, r5, lsl #0xc
-	mov lr, r4, lsl #0x10
-	mov r6, ip, asr #0x10
-	mov r5, lr, lsr #0x10
-	ldr r4, [sp, #0x14]
-	mov ip, r6, lsl #0x10
-	mov r5, r5, lsl #0x10
-	orr r5, r5, ip, lsr #16
-	str r5, [r0, #4]
-	ldr r6, [sp, #0x10]
-	ldr ip, [r1, #4]
-	sub r5, r4, r3
-	ldr r4, [r1, #0xc]
-	mul lr, ip, r5
-	mul r5, r4, r5
-	ldr ip, [r1]
-	sub r6, r6, r2
-	ldr r4, [r1, #8]
-	mla r1, ip, r6, lr
-	mla r5, r4, r6, r5
-	add r1, r1, r2, lsl #12
-	add r2, r5, r3, lsl #12
-	mov r1, r1, asr #4
-	str r1, [r0, #8]
-	mov r1, r2, asr #4
-	str r1, [r0, #0xc]
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end sub_02062B60
-
-	arm_func_start sub_02062C10
-sub_02062C10: ; 0x02062C10
-	ldr ip, [sp]
-	orr r1, r1, #0x40
-	orr r2, r1, r2, lsl #8
-	orr r1, r3, ip, lsl #8
-	orr r1, r2, r1, lsl #16
-	str r1, [r0]
-	bx lr
-	arm_func_end sub_02062C10
-
-	arm_func_start sub_02062C2C
-sub_02062C2C: ; 0x02062C2C
-	cmp r2, #0
-	orrge r1, r1, #0x80
-	strgeh r1, [r0]
-	strgeh r2, [r0, #4]
-	bxge lr
-	orr r1, r1, #0xc0
-	strh r1, [r0]
-	rsb r1, r2, #0
-	strh r1, [r0, #4]
-	bx lr
-	arm_func_end sub_02062C2C
-
-	arm_func_start sub_02062C54
-sub_02062C54: ; 0x02062C54
-	ldrh r3, [r0]
-	cmp r1, #0
-	and r2, r3, #0xc0
-	bge _02062C80
-	cmp r2, #0x80
-	biceq r2, r3, #0xc0
-	orreq r2, r2, #0xc0
-	streqh r2, [r0]
-	rsb r1, r1, #0
-	strh r1, [r0, #4]
-	bx lr
-	arm_func_end sub_02062C54
-_02062C80:
-	cmp r2, #0xc0
-	biceq r2, r3, #0xc0
-	orreq r2, r2, #0x80
-	streqh r2, [r0]
-	strh r1, [r0, #4]
-	bx lr
-
-	arm_func_start sub_02062C98
-sub_02062C98: ; 0x02062C98
-	cmp r1, #0
-	beq _02062CB0
-	ldr r2, [r0]
-	tst r2, #3
-	movne r2, #1
-	strne r2, [r0, #0x10]
-	arm_func_end sub_02062C98
-_02062CB0:
-	ldr r0, [r0]
-	strb r1, [r0]
-	bx lr
-
-	arm_func_start sub_02062CBC
-sub_02062CBC: ; 0x02062CBC
-	mov r3, #0
-	str r3, [r0, #0x10]
-	ldr r3, [r0]
-	strb r1, [r3]
-	ldr r0, [r0, #4]
-	str r2, [r0]
-	bx lr
-	arm_func_end sub_02062CBC
-
-	arm_func_start sub_02062CD8
-sub_02062CD8: ; 0x02062CD8
-	mov ip, #0
-	str ip, [r0, #0x10]
-	ldr ip, [r0]
-	strb r1, [ip]
-	ldr r1, [r0, #4]
-	str r2, [r1]
-	ldr r0, [r0, #4]
-	str r3, [r0, #4]
-	bx lr
-	arm_func_end sub_02062CD8
-
-	arm_func_start sub_02062CFC
-sub_02062CFC: ; 0x02062CFC
-	ldr r2, [r0, #4]
-	add r1, r2, r1, lsl #2
-	str r1, [r0, #4]
-	ldr r1, [r0]
-	add r1, r1, #1
-	str r1, [r0]
-	tst r1, #3
-	bxne lr
-	ldr r1, [r0, #0x10]
-	cmp r1, #0
-	beq _02062D44
-	ldr r1, [r0, #4]
-	mov r2, r1
-	add r1, r1, #4
-	str r1, [r0, #4]
-	mov r1, #0
-	str r1, [r2]
-	str r1, [r0, #0x10]
-	arm_func_end sub_02062CFC
-_02062D44:
-	ldr r2, [r0, #4]
-	add r1, r2, #4
-	str r1, [r0, #4]
-	str r2, [r0]
-	bx lr
-
-	arm_func_start sub_02062D58
-sub_02062D58: ; 0x02062D58
-	stmdb sp!, {r4, lr}
-	mov r2, r1
-	mov r4, r0
-	mov r1, #0x12
-	bl sub_02062CBC
-	mov r0, r4
-	mov r1, #1
-	bl sub_02062CFC
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02062D58
-
-	arm_func_start sub_02062D7C
-sub_02062D7C: ; 0x02062D7C
-	stmdb sp!, {r4, lr}
-	mov r2, r1
-	mov r4, r0
-	mov r1, #0x20
-	bl sub_02062CBC
-	mov r0, r4
-	mov r1, #1
-	bl sub_02062CFC
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02062D7C
-
-	arm_func_start sub_02062DA0
-sub_02062DA0: ; 0x02062DA0
-	stmdb sp!, {r4, lr}
-	mov r2, r2, lsl #8
-	mov r2, r2, asr #0x10
-	mov r1, r1, lsl #8
-	mov r2, r2, lsl #0x10
-	mov r1, r1, asr #0x10
-	mov r2, r2, lsr #0x10
-	mov r1, r1, lsl #0x10
-	mov r2, r2, lsl #0x10
-	orr r2, r2, r1, lsr #16
-	mov r4, r0
-	mov r1, #0x22
-	bl sub_02062CBC
-	mov r0, r4
-	mov r1, #1
-	bl sub_02062CFC
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02062DA0
-
-	arm_func_start sub_02062DE4
-sub_02062DE4: ; 0x02062DE4
-	stmdb sp!, {r4, lr}
-	mov r2, r2, lsl #0x10
-	mov r2, r2, lsr #0x10
-	mov r3, r3, lsl #0x10
-	mov r1, r1, lsl #0x10
-	mov r2, r2, lsl #0x10
-	orr r2, r2, r1, lsr #16
-	mov r4, r0
-	mov r3, r3, lsr #0x10
-	mov r1, #0x23
-	bl sub_02062CD8
-	mov r0, r4
-	mov r1, #2
-	bl sub_02062CFC
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02062DE4
-
-	arm_func_start sub_02062E20
-sub_02062E20: ; 0x02062E20
-	stmdb sp!, {r4, lr}
-	mov r2, r2, lsl #0x10
-	mov r2, r2, lsr #0x10
-	mov r1, r1, lsl #0x10
-	mov r2, r2, lsl #0x10
-	orr r2, r2, r1, lsr #16
-	mov r4, r0
-	mov r1, #0x25
-	bl sub_02062CBC
-	mov r0, r4
-	mov r1, #1
-	bl sub_02062CFC
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02062E20
-
-	arm_func_start sub_02062E54
-sub_02062E54: ; 0x02062E54
-	stmdb sp!, {r4, lr}
-	orr r1, r1, r2, lsl #4
-	orr r1, r1, r3, lsl #6
-	ldr r2, [sp, #0x10]
-	ldr r3, [sp, #8]
-	orr r1, r2, r1
-	ldr r2, [sp, #0xc]
-	orr r1, r1, r3, lsl #24
-	orr r2, r1, r2, lsl #16
-	mov r4, r0
-	mov r1, #0x29
-	bl sub_02062CBC
-	mov r0, r4
-	mov r1, #1
-	bl sub_02062CFC
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02062E54
-
-	arm_func_start sub_02062E94
-sub_02062E94: ; 0x02062E94
-	stmdb sp!, {r4, lr}
-	ldr ip, [sp, #0x18]
-	mov r1, r1, lsl #0x1a
-	orr r1, r1, ip, lsr #3
-	orr r1, r1, r2, lsl #30
-	orr r1, r1, r3, lsl #20
-	ldr r2, [sp, #8]
-	ldr r3, [sp, #0xc]
-	orr r1, r1, r2, lsl #23
-	orr r1, r1, r3, lsl #16
-	ldr r2, [sp, #0x10]
-	ldr r3, [sp, #0x14]
-	orr r1, r1, r2, lsl #18
-	orr r2, r1, r3, lsl #29
-	mov r4, r0
-	mov r1, #0x2a
-	bl sub_02062CBC
-	mov r0, r4
-	mov r1, #1
-	bl sub_02062CFC
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02062E94
-
-	arm_func_start sub_02062EE8
-sub_02062EE8: ; 0x02062EE8
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	cmp r2, #2
-	moveq r0, #1
-	movne r0, #0
-	rsb r0, r0, #4
-	mov r2, r1, lsr r0
-	mov r0, r4
-	mov r1, #0x2b
-	bl sub_02062CBC
-	mov r0, r4
-	mov r1, #1
-	bl sub_02062CFC
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02062EE8
-
-	arm_func_start sub_02062F20
-sub_02062F20: ; 0x02062F20
-	stmdb sp!, {r4, lr}
-	mov r2, r1
-	mov r4, r0
-	mov r1, #0x40
-	bl sub_02062CBC
-	mov r0, r4
-	mov r1, #1
-	bl sub_02062CFC
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02062F20
-
-	arm_func_start sub_02062F44
-sub_02062F44: ; 0x02062F44
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r1, #0x41
-	bl sub_02062C98
-	mov r0, r4
-	mov r1, #0
-	bl sub_02062CFC
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02062F44
-
-	arm_func_start sub_02062F64
-sub_02062F64: ; 0x02062F64
-	ldr r1, _02062F78 ; =0x04000400
-	mov r2, #0x16
-	ldr ip, _02062F7C ; =sub_02064710
-	str r2, [r1]
-	bx ip
-	.align 2, 0
-_02062F78: .word 0x04000400
-_02062F7C: .word sub_02064710
-	arm_func_end sub_02062F64
-
-	arm_func_start sub_02062F80
-sub_02062F80: ; 0x02062F80
-	ldr r1, _02062F94 ; =0x04000400
-	mov r2, #0x1a
-	ldr ip, _02062F98 ; =MI_Copy36B
-	str r2, [r1]
-	bx ip
-	.align 2, 0
-_02062F94: .word 0x04000400
-_02062F98: .word MI_Copy36B
-	arm_func_end sub_02062F80
-
-	arm_func_start sub_02062F9C
-sub_02062F9C: ; 0x02062F9C
-	stmdb sp!, {r3, lr}
-	bl sub_02063114
-	ldr r1, _02063088 ; =0x04000504
-	mov r0, #0
-	str r0, [r1]
-	arm_func_end sub_02062F9C
-_02062FB0:
-	ldr r0, [r1, #0xfc]
-	tst r0, #0x8000000
-	bne _02062FB0
-	ldr r0, _0206308C ; =0x04000060
-	mov r2, #0
-	strh r2, [r0]
-	str r2, [r1, #0xfc]
-	str r2, [r0, #-0x50]
-	ldrh ip, [r0]
-	ldr r2, _02063090 ; =0xFFFFCFFD
-	ldr r3, _02063094 ; =0x0000CFFB
-	orr ip, ip, #0x2000
-	strh ip, [r0]
-	ldrh ip, [r0]
-	orr ip, ip, #0x1000
-	strh ip, [r0]
-	ldrh ip, [r0]
-	and r2, ip, r2
-	strh r2, [r0]
-	ldrh r2, [r0]
-	bic r2, r2, #0x3000
-	orr r2, r2, #0x10
-	strh r2, [r0]
-	ldrh r2, [r0]
-	and r2, r2, r3
-	strh r2, [r0]
-	ldr r0, [r1, #0xfc]
-	orr r0, r0, #0x8000
-	str r0, [r1, #0xfc]
-	ldr r0, [r1, #0xfc]
-	bic r0, r0, #0xc0000000
-	orr r0, r0, #0x80000000
-	str r0, [r1, #0xfc]
-	bl sub_0206313C
-	ldr r1, _02063098 ; =0x04000350
-	mov r2, #0
-	ldr r0, _0206309C ; =0x00007FFF
-	str r2, [r1]
-	strh r0, [r1, #4]
-	strh r2, [r1, #6]
-	str r2, [r1, #8]
-	strh r2, [r1, #0xc]
-	sub r1, r1, #0x348
-	ldrh r0, [r1]
-	bic r0, r0, #3
-	strh r0, [r1]
-	bl sub_020632A4
-	ldr r2, _020630A0 ; =0x001F0080
-	ldr r1, _020630A4 ; =0x040004A4
-	mov r0, #0
-	str r2, [r1]
-	str r0, [r1, #4]
-	str r0, [r1, #8]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02063088: .word 0x04000504
-_0206308C: .word 0x04000060
-_02063090: .word 0xFFFFCFFD
-_02063094: .word 0x0000CFFB
-_02063098: .word 0x04000350
-_0206309C: .word 0x00007FFF
-_020630A0: .word 0x001F0080
-_020630A4: .word 0x040004A4
-
-	arm_func_start sub_020630A8
-sub_020630A8: ; 0x020630A8
-	stmdb sp!, {r3, lr}
-	ldr r2, _02063104 ; =0x04000600
-	arm_func_end sub_020630A8
-_020630B0:
-	ldr r0, [r2]
-	tst r0, #0x8000000
-	bne _020630B0
-	ldr r0, [r2]
-	ldr r1, _02063108 ; =0x04000060
-	orr r0, r0, #0x8000
-	str r0, [r2]
-	ldrh r0, [r1]
-	orr r0, r0, #0x2000
-	strh r0, [r1]
-	ldrh r0, [r1]
-	orr r0, r0, #0x1000
-	strh r0, [r1]
-	bl sub_020631D4
-	ldr r2, _0206310C ; =0x001F0080
-	ldr r1, _02063110 ; =0x040004A4
-	mov r0, #0
-	str r2, [r1]
-	str r0, [r1, #4]
-	str r0, [r1, #8]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02063104: .word 0x04000600
-_02063108: .word 0x04000060
-_0206310C: .word 0x001F0080
-_02063110: .word 0x040004A4
-
-	arm_func_start sub_02063114
-sub_02063114: ; 0x02063114
-	stmdb sp!, {r3, lr}
-	ldr r0, _02063134 ; =0x04000400
-	bl sub_020633A4
-	ldr r1, _02063138 ; =0x04000600
-	arm_func_end sub_02063114
-_02063124:
-	ldr r0, [r1]
-	tst r0, #0x8000000
-	bne _02063124
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02063134: .word 0x04000400
-_02063138: .word 0x04000600
-
-	arm_func_start sub_0206313C
-sub_0206313C: ; 0x0206313C
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #8
-	ldr r1, _020631C8 ; =0x04000600
-	ldr r0, [r1]
-	orr r0, r0, #0x8000
-	str r0, [r1]
-	add r4, sp, #4
-	arm_func_end sub_0206313C
-_02063158:
-	mov r0, r4
-	bl sub_02063344
-	cmp r0, #0
-	bne _02063158
-	add r4, sp, #0
-_0206316C:
-	mov r0, r4
-	bl sub_02063374
-	cmp r0, #0
-	bne _0206316C
-	ldr r1, _020631CC ; =0x04000440
-	mov r0, #3
-	str r0, [r1]
-	mov r0, #0
-	str r0, [r1, #0x14]
-	str r0, [r1]
-	ldr r0, [sp]
-	mov r2, #0
-	cmp r0, #0
-	strne r0, [r1, #8]
-	ldr r1, _020631D0 ; =0x04000454
-	mov r0, #2
-	str r2, [r1]
-	str r0, [r1, #-0x14]
-	ldr r0, [sp, #4]
-	str r0, [r1, #-0xc]
-	str r2, [r1]
-	add sp, sp, #8
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_020631C8: .word 0x04000600
-_020631CC: .word 0x04000440
-_020631D0: .word 0x04000454
-
-	arm_func_start sub_020631D4
-sub_020631D4: ; 0x020631D4
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #8
-	ldr r1, _0206325C ; =0x04000600
-	ldr r0, [r1]
-	orr r0, r0, #0x8000
-	str r0, [r1]
-	add r4, sp, #4
-	arm_func_end sub_020631D4
-_020631F0:
-	mov r0, r4
-	bl sub_02063344
-	cmp r0, #0
-	bne _020631F0
-	add r4, sp, #0
-_02063204:
-	mov r0, r4
-	bl sub_02063374
-	cmp r0, #0
-	bne _02063204
-	ldr r1, _02063260 ; =0x04000440
-	mov r0, #3
-	str r0, [r1]
-	mov r0, #0
-	str r0, [r1, #0x14]
-	str r0, [r1]
-	ldr r0, [sp]
-	ldr r2, _02063260 ; =0x04000440
-	cmp r0, #0
-	strne r0, [r1, #8]
-	mov r0, #2
-	str r0, [r2]
-	ldr r1, [sp, #4]
-	mov r0, #0
-	str r1, [r2, #8]
-	str r0, [r2, #0x14]
-	add sp, sp, #8
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0206325C: .word 0x04000600
-_02063260: .word 0x04000440
-
-	arm_func_start sub_02063264
-sub_02063264: ; 0x02063264
-	ldr ip, _02063274 ; =MIi_CpuCopy16
-	ldr r1, _02063278 ; =0x04000380
-	mov r2, #0x40
-	bx ip
-	.align 2, 0
-_02063274: .word MIi_CpuCopy16
-_02063278: .word 0x04000380
-	arm_func_end sub_02063264
-
-	arm_func_start sub_0206327C
-sub_0206327C: ; 0x0206327C
-	ldr ip, [sp]
-	orr r0, r0, r1, lsl #16
-	orr r1, r0, r3, lsl #24
-	cmp ip, #0
-	ldr r0, _020632A0 ; =0x04000350
-	orrne r1, r1, #0x8000
-	str r1, [r0]
-	strh r2, [r0, #4]
-	bx lr
-	.align 2, 0
-_020632A0: .word 0x04000350
-	arm_func_end sub_0206327C
-
-	arm_func_start sub_020632A4
-sub_020632A4: ; 0x020632A4
-	stmdb sp!, {r3, lr}
-	sub sp, sp, #8
-	ldr r0, _02063334 ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	cmp r0, r1
-	ldr r1, _02063338 ; =0x04000330
-	beq _020632F4
-	mov r2, #0
-	str r2, [sp]
-	mov r3, #0x10
-	str r2, [sp, #4]
-	bl MI_DmaFill32Async
-	ldr r0, _02063334 ; =DAT_0208e7f0
-	ldr r1, _0206333C ; =0x04000360
-	ldr r0, [r0]
-	mov r2, #0
-	mov r3, #0x60
-	bl MI_DmaFill32
-	b _02063310
-	arm_func_end sub_020632A4
-_020632F4:
-	mov r0, #0
-	mov r2, #0x10
-	bl MIi_CpuClear32
-	ldr r1, _0206333C ; =0x04000360
-	mov r0, #0
-	mov r2, #0x60
-	bl MIi_CpuClear32
-_02063310:
-	mov r2, #0
-	ldr r0, _02063340 ; =0x040004D0
-	mov r1, r2
-_0206331C:
-	add r2, r2, #1
-	str r1, [r0]
-	cmp r2, #0x20
-	blt _0206331C
-	add sp, sp, #8
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02063334: .word DAT_0208e7f0
-_02063338: .word 0x04000330
-_0206333C: .word 0x04000360
-_02063340: .word 0x040004D0
-
-	arm_func_start sub_02063344
-sub_02063344: ; 0x02063344
-	ldr r2, _02063370 ; =0x04000600
-	ldr r1, [r2]
-	tst r1, #0x4000
-	mvnne r0, #0
-	bxne lr
-	ldr r1, [r2]
-	and r1, r1, #0x1f00
-	mov r1, r1, lsr #8
-	str r1, [r0]
-	mov r0, #0
-	bx lr
-	.align 2, 0
-_02063370: .word 0x04000600
-	arm_func_end sub_02063344
-
-	arm_func_start sub_02063374
-sub_02063374: ; 0x02063374
-	ldr r2, _020633A0 ; =0x04000600
-	ldr r1, [r2]
-	tst r1, #0x4000
-	mvnne r0, #0
-	bxne lr
-	ldr r1, [r2]
-	and r1, r1, #0x2000
-	mov r1, r1, lsr #0xd
-	str r1, [r0]
-	mov r0, #0
-	bx lr
-	.align 2, 0
-_020633A0: .word 0x04000600
-	arm_func_end sub_02063374
-
-	arm_func_start sub_020633A4
-sub_020633A4: ; 0x020633A4
-	mov r1, #0
-	mov r2, #0
-	mov r3, #0
-	mov ip, #0
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	stmia r0, {r1, r2, r3, ip}
-	bx lr
-	arm_func_end sub_020633A4
-
-	arm_func_start sub_02063438
-sub_02063438: ; 0x02063438
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #0x50
-	ldr ip, [sp, #0x58]
-	ldr lr, [sp, #0x5c]
-	str ip, [sp]
-	ldr r4, [sp, #0x68]
-	ldr ip, [sp, #0x60]
-	str lr, [sp, #4]
-	cmp r4, #0
-	addeq r4, sp, #0x10
-	str ip, [sp, #8]
-	str r4, [sp, #0xc]
-	bl sub_02060700
-	ldr r0, [sp, #0x64]
-	cmp r0, #0
-	addeq sp, sp, #0x50
-	ldmeqia sp!, {r4, pc}
-	ldr r1, _02063498 ; =0x04000440
-	mov r2, #0
-	mov r0, r4
-	str r2, [r1]
-	bl sub_02062F64
-	add sp, sp, #0x50
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02063498: .word 0x04000440
-	arm_func_end sub_02063438
-
-	arm_func_start sub_0206349C
-sub_0206349C: ; 0x0206349C
-	ldr r1, _0206354C ; =0x04000440
-	mov r2, #3
-	str r2, [r1]
-	ldr r2, [r0]
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #4]
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #8]
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0xc]
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x10]
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x14]
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x18]
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x1c]
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x20]
-	mov r2, r2, lsl #4
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x24]
-	mov r2, r2, lsl #4
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x28]
-	mov r2, r2, lsl #4
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x2c]
-	mov r2, r2, lsl #4
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x30]
-	mov r2, r2, lsl #4
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x34]
-	mov r2, r2, lsl #4
-	str r2, [r1, #0x18]
-	ldr r2, [r0, #0x38]
-	mov r2, r2, lsl #4
-	str r2, [r1, #0x18]
-	ldr r0, [r0, #0x3c]
-	mov r0, r0, lsl #4
-	str r0, [r1, #0x18]
-	bx lr
-	.align 2, 0
-_0206354C: .word 0x04000440
-	arm_func_end sub_0206349C
-
-	arm_func_start NitroSDK_gx_GX_LoadBGPltt
-NitroSDK_gx_GX_LoadBGPltt: ; 0x02063550
-	stmdb sp!, {r4, lr}
-	ldr r3, _020635A0 ; =DAT_0208e7f0
-	mov r4, r0
-	ldr r0, [r3]
-	mvn ip, #0
-	mov lr, r1
-	mov r3, r2
-	cmp r0, ip
-	beq _0206358C
-	cmp r3, #0x1c
-	bls _0206358C
-	mov r1, r4
-	add r2, lr, #0x5000000
-	bl MI_DmaCopy16
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSDK_gx_GX_LoadBGPltt
-_0206358C:
-	mov r0, r4
-	mov r2, r3
-	add r1, lr, #0x5000000
-	bl MIi_CpuCopy16
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_020635A0: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadBGPltt
-NitroSDK_gx_GXS_LoadBGPltt: ; 0x020635A4
-	stmdb sp!, {r3, lr}
-	ldr r3, _020635F8 ; =DAT_0208e7f0
-	mov lr, r0
-	ldr r0, [r3]
-	mvn ip, #0
-	mov r3, r2
-	cmp r0, ip
-	beq _020635E0
-	cmp r3, #0x1c
-	bls _020635E0
-	add r2, r1, #0x400
-	mov r1, lr
-	add r2, r2, #0x5000000
-	bl MI_DmaCopy16
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadBGPltt
-_020635E0:
-	add r1, r1, #0x400
-	mov r0, lr
-	mov r2, r3
-	add r1, r1, #0x5000000
-	bl MIi_CpuCopy16
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_020635F8: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadOBJPltt
-NitroSDK_gx_GX_LoadOBJPltt: ; 0x020635FC
-	stmdb sp!, {r3, lr}
-	ldr r3, _02063650 ; =DAT_0208e7f0
-	mov lr, r0
-	ldr r0, [r3]
-	mvn ip, #0
-	mov r3, r2
-	cmp r0, ip
-	beq _02063638
-	cmp r3, #0x1c
-	bls _02063638
-	add r2, r1, #0x200
-	mov r1, lr
-	add r2, r2, #0x5000000
-	bl MI_DmaCopy16
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSDK_gx_GX_LoadOBJPltt
-_02063638:
-	add r1, r1, #0x200
-	mov r0, lr
-	mov r2, r3
-	add r1, r1, #0x5000000
-	bl MIi_CpuCopy16
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02063650: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadOBJPltt
-NitroSDK_gx_GXS_LoadOBJPltt: ; 0x02063654
-	stmdb sp!, {r3, lr}
-	ldr r3, _020636A8 ; =DAT_0208e7f0
-	mov lr, r0
-	ldr r0, [r3]
-	mvn ip, #0
-	mov r3, r2
-	cmp r0, ip
-	beq _02063690
-	cmp r3, #0x1c
-	bls _02063690
-	add r2, r1, #0x600
-	mov r1, lr
-	add r2, r2, #0x5000000
-	bl MI_DmaCopy16
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadOBJPltt
-_02063690:
-	add r1, r1, #0x600
-	mov r0, lr
-	mov r2, r3
-	add r1, r1, #0x5000000
-	bl MIi_CpuCopy16
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_020636A8: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadOAM
-NitroSDK_gx_GX_LoadOAM: ; 0x020636AC
-	stmdb sp!, {r4, lr}
-	ldr r3, _020636FC ; =DAT_0208e7f0
-	mov r4, r0
-	ldr r0, [r3]
-	mvn ip, #0
-	mov lr, r1
-	mov r3, r2
-	cmp r0, ip
-	beq _020636E8
-	cmp r3, #0x30
-	bls _020636E8
-	mov r1, r4
-	add r2, lr, #0x7000000
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSDK_gx_GX_LoadOAM
-_020636E8:
-	mov r0, r4
-	mov r2, r3
-	add r1, lr, #0x7000000
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_020636FC: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadOAM
-NitroSDK_gx_GXS_LoadOAM: ; 0x02063700
-	stmdb sp!, {r3, lr}
-	ldr r3, _02063754 ; =DAT_0208e7f0
-	mov lr, r0
-	ldr r0, [r3]
-	mvn ip, #0
-	mov r3, r2
-	cmp r0, ip
-	beq _0206373C
-	cmp r3, #0x30
-	bls _0206373C
-	add r2, r1, #0x400
-	mov r1, lr
-	add r2, r2, #0x7000000
-	bl MI_DmaCopy32
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadOAM
-_0206373C:
-	add r1, r1, #0x400
-	mov r0, lr
-	mov r2, r3
-	add r1, r1, #0x7000000
-	bl MIi_CpuCopy32
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02063754: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadOBJ
-NitroSDK_gx_GX_LoadOBJ: ; 0x02063758
-	stmdb sp!, {r4, lr}
-	ldr r3, _020637AC ; =DAT_0208e7f0
-	mov r4, r0
-	ldr r0, [r3]
-	mvn ip, #0
-	mov lr, r1
-	mov r3, r2
-	cmp r0, ip
-	mov ip, #0x6400000
-	beq _02063798
-	cmp r3, #0x30
-	bls _02063798
-	mov r1, r4
-	add r2, ip, lr
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSDK_gx_GX_LoadOBJ
-_02063798:
-	mov r0, r4
-	mov r2, r3
-	add r1, ip, lr
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_020637AC: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadOBJ
-NitroSDK_gx_GXS_LoadOBJ: ; 0x020637B0
-	stmdb sp!, {r4, lr}
-	ldr r3, _02063804 ; =DAT_0208e7f0
-	mov r4, r0
-	ldr r0, [r3]
-	mvn ip, #0
-	mov lr, r1
-	mov r3, r2
-	cmp r0, ip
-	mov ip, #0x6600000
-	beq _020637F0
-	cmp r3, #0x30
-	bls _020637F0
-	mov r1, r4
-	add r2, ip, lr
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadOBJ
-_020637F0:
-	mov r0, r4
-	mov r2, r3
-	add r1, ip, lr
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02063804: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadBG0Scr
-NitroSDK_gx_GX_LoadBG0Scr: ; 0x02063808
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_020626F0
-	ldr r1, _02063864 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063850
-	cmp r4, #0x1c
-	bls _02063850
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GX_LoadBG0Scr
-_02063850:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063864: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadBG0Scr
-NitroSDK_gx_GXS_LoadBG0Scr: ; 0x02063868
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062724
-	ldr r1, _020638C4 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _020638B0
-	cmp r4, #0x1c
-	bls _020638B0
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadBG0Scr
-_020638B0:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_020638C4: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadBG1Scr
-NitroSDK_gx_GX_LoadBG1Scr: ; 0x020638C8
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062744
-	ldr r1, _02063924 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063910
-	cmp r4, #0x1c
-	bls _02063910
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GX_LoadBG1Scr
-_02063910:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063924: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadBG1Scr
-NitroSDK_gx_GXS_LoadBG1Scr: ; 0x02063928
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062778
-	ldr r1, _02063984 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063970
-	cmp r4, #0x1c
-	bls _02063970
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadBG1Scr
-_02063970:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063984: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadBG2ScrBmp
-NitroSDK_gx_GX_LoadBG2ScrBmp: ; 0x02063988
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062798
-	ldr r1, _020639E4 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _020639D0
-	cmp r4, #0x1c
-	bls _020639D0
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GX_LoadBG2ScrBmp
-_020639D0:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_020639E4: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadBG2ScrBmp
-NitroSDK_gx_GXS_LoadBG2ScrBmp: ; 0x020639E8
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_0206281C
-	ldr r1, _02063A44 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063A30
-	cmp r4, #0x1c
-	bls _02063A30
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadBG2ScrBmp
-_02063A30:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063A44: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadBG3ScrBmp
-NitroSDK_gx_GX_LoadBG3ScrBmp: ; 0x02063A48
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062890
-	ldr r1, _02063AA4 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063A90
-	cmp r4, #0x1c
-	bls _02063A90
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GX_LoadBG3ScrBmp
-_02063A90:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063AA4: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadBG3ScrBmp
-NitroSDK_gx_GXS_LoadBG3ScrBmp: ; 0x02063AA8
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062914
-	ldr r1, _02063B04 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063AF0
-	cmp r4, #0x1c
-	bls _02063AF0
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadBG3ScrBmp
-_02063AF0:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063B04: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadBG0Char
-NitroSDK_gx_GX_LoadBG0Char: ; 0x02063B08
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062988
-	ldr r1, _02063B64 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063B50
-	cmp r4, #0x30
-	bls _02063B50
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GX_LoadBG0Char
-_02063B50:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063B64: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadBG0Char
-NitroSDK_gx_GXS_LoadBG0Char: ; 0x02063B68
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_020629BC
-	ldr r1, _02063BC4 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063BB0
-	cmp r4, #0x30
-	bls _02063BB0
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadBG0Char
-_02063BB0:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063BC4: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadBG1Char
-NitroSDK_gx_GX_LoadBG1Char: ; 0x02063BC8
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_020629DC
-	ldr r1, _02063C24 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063C10
-	cmp r4, #0x30
-	bls _02063C10
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GX_LoadBG1Char
-_02063C10:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063C24: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadBG1Char
-NitroSDK_gx_GXS_LoadBG1Char: ; 0x02063C28
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062A10
-	ldr r1, _02063C84 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063C70
-	cmp r4, #0x30
-	bls _02063C70
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadBG1Char
-_02063C70:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063C84: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadBG2Char
-NitroSDK_gx_GX_LoadBG2Char: ; 0x02063C88
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062A30
-	ldr r1, _02063CE4 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063CD0
-	cmp r4, #0x30
-	bls _02063CD0
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GX_LoadBG2Char
-_02063CD0:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063CE4: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadBG2Char
-NitroSDK_gx_GXS_LoadBG2Char: ; 0x02063CE8
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062A80
-	ldr r1, _02063D44 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063D30
-	cmp r4, #0x30
-	bls _02063D30
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadBG2Char
-_02063D30:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063D44: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_LoadBG3Char
-NitroSDK_gx_GX_LoadBG3Char: ; 0x02063D48
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062AC0
-	ldr r1, _02063DA4 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063D90
-	cmp r4, #0x30
-	bls _02063D90
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GX_LoadBG3Char
-_02063D90:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063DA4: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_LoadBG3Char
-NitroSDK_gx_GXS_LoadBG3Char: ; 0x02063DA8
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_02062B18
-	ldr r1, _02063E04 ; =DAT_0208e7f0
-	mov ip, r0
-	ldr r0, [r1]
-	mvn r1, #0
-	cmp r0, r1
-	beq _02063DF0
-	cmp r4, #0x30
-	bls _02063DF0
-	mov r1, r6
-	mov r3, r4
-	add r2, ip, r5
-	bl MI_DmaCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadBG3Char
-_02063DF0:
-	mov r0, r6
-	mov r2, r4
-	add r1, ip, r5
-	bl MIi_CpuCopy32
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02063E04: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_BeginLoadBGExtPltt
-NitroSDK_gx_GX_BeginLoadBGExtPltt: ; 0x02063E08
-	stmdb sp!, {r3, lr}
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	ldr r1, _02063E98 ; =MAIN_BSS_02112DE0
-	cmp r0, #0x20
-	str r0, [r1, #0x14]
-	bgt _02063E3C
-	cmp r0, #0x20
-	bge _02063E80
-	cmp r0, #0
-	ldmleia sp!, {r3, pc}
-	cmp r0, #0x10
-	beq _02063E58
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSDK_gx_GX_BeginLoadBGExtPltt
-_02063E3C:
-	cmp r0, #0x40
-	bgt _02063E4C
-	beq _02063E6C
-	ldmia sp!, {r3, pc}
-_02063E4C:
-	cmp r0, #0x60
-	beq _02063E80
-	ldmia sp!, {r3, pc}
-_02063E58:
-	ldr r2, _02063E9C ; =0x06880000
-	mov r0, #0
-	str r2, [r1, #0x10]
-	str r0, [r1, #0xc]
-	ldmia sp!, {r3, pc}
-_02063E6C:
-	ldr r2, _02063EA0 ; =0x06894000
-	mov r0, #0x4000
-	str r2, [r1, #0x10]
-	str r0, [r1, #0xc]
-	ldmia sp!, {r3, pc}
-_02063E80:
-	ldr r2, _02063EA4 ; =0x06890000
-	ldr r0, _02063E98 ; =MAIN_BSS_02112DE0
-	mov r1, #0
-	str r2, [r0, #0x10]
-	str r1, [r0, #0xc]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02063E98: .word MAIN_BSS_02112DE0
-_02063E9C: .word 0x06880000
-_02063EA0: .word 0x06894000
-_02063EA4: .word 0x06890000
-
-	arm_func_start NitroSDK_gx_GX_LoadBGExtPltt
-NitroSDK_gx_GX_LoadBGExtPltt: ; 0x02063EA8
-	stmdb sp!, {r3, r4, r5, lr}
-	sub sp, sp, #8
-	ldr ip, _02063F10 ; =MAIN_BSS_02112DE0
-	ldr r3, _02063F14 ; =DAT_0208e7f0
-	ldr lr, [ip, #0x10]
-	ldr r4, [ip, #0xc]
-	add r5, lr, r1
-	ldr lr, [r3]
-	mvn ip, #0
-	mov r1, r0
-	mov r3, r2
-	cmp lr, ip
-	sub r4, r5, r4
-	beq _02063F00
-	mov ip, #0
-	str ip, [sp]
-	mov r0, lr
-	mov r2, r4
-	str ip, [sp, #4]
-	bl MI_DmaCopy32Async
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSDK_gx_GX_LoadBGExtPltt
-_02063F00:
-	mov r1, r4
-	bl MIi_CpuCopy32
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_02063F10: .word MAIN_BSS_02112DE0
-_02063F14: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_EndLoadBGExtPltt
-NitroSDK_gx_GX_EndLoadBGExtPltt: ; 0x02063F18
-	stmdb sp!, {r3, lr}
-	ldr r0, _02063F58 ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	cmp r0, r1
-	beq _02063F34
-	bl MI_WaitDma
-	arm_func_end NitroSDK_gx_GX_EndLoadBGExtPltt
-_02063F34:
-	ldr r0, _02063F5C ; =MAIN_BSS_02112DE0
-	ldr r0, [r0, #0x14]
-	bl NitroSDK_gx_GX_SetBankForBGExtPltt
-	ldr r0, _02063F5C ; =MAIN_BSS_02112DE0
-	mov r1, #0
-	str r1, [r0, #0x14]
-	str r1, [r0, #0x10]
-	str r1, [r0, #0xc]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02063F58: .word DAT_0208e7f0
-_02063F5C: .word MAIN_BSS_02112DE0
-
-	arm_func_start NitroSDK_gx_GX_BeginLoadOBJExtPltt
-NitroSDK_gx_GX_BeginLoadOBJExtPltt: ; 0x02063F60
-	stmdb sp!, {r3, lr}
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	ldr r1, _02063F9C ; =MAIN_BSS_02112DE0
-	cmp r0, #0
-	str r0, [r1, #8]
-	ldmeqia sp!, {r3, pc}
-	cmp r0, #0x20
-	beq _02063F90
-	cmp r0, #0x40
-	ldreq r0, _02063FA0 ; =0x06894000
-	streq r0, [r1, #4]
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSDK_gx_GX_BeginLoadOBJExtPltt
-_02063F90:
-	ldr r0, _02063FA4 ; =0x06890000
-	str r0, [r1, #4]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02063F9C: .word MAIN_BSS_02112DE0
-_02063FA0: .word 0x06894000
-_02063FA4: .word 0x06890000
-
-	arm_func_start NitroSDK_gx_GX_LoadOBJExtPltt
-NitroSDK_gx_GX_LoadOBJExtPltt: ; 0x02063FA8
-	stmdb sp!, {r4, r5, r6, lr}
-	sub sp, sp, #8
-	ldr r3, _0206400C ; =DAT_0208e7f0
-	ldr lr, _02064010 ; =MAIN_BSS_02112DE0
-	ldr r4, [r3]
-	mvn ip, #0
-	mov r6, r0
-	mov r5, r1
-	mov r3, r2
-	cmp r4, ip
-	ldr lr, [lr, #4]
-	beq _02063FFC
-	mov ip, #0
-	str ip, [sp]
-	mov r0, r4
-	mov r1, r6
-	add r2, lr, r5
-	str ip, [sp, #4]
-	bl MI_DmaCopy32Async
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GX_LoadOBJExtPltt
-_02063FFC:
-	add r1, lr, r5
-	bl MIi_CpuCopy32
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0206400C: .word DAT_0208e7f0
-_02064010: .word MAIN_BSS_02112DE0
-
-	arm_func_start NitroSDK_gx_GX_EndLoadOBJExtPltt
-NitroSDK_gx_GX_EndLoadOBJExtPltt: ; 0x02064014
-	stmdb sp!, {r3, lr}
-	ldr r0, _02064050 ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	cmp r0, r1
-	beq _02064030
-	bl MI_WaitDma
-	arm_func_end NitroSDK_gx_GX_EndLoadOBJExtPltt
-_02064030:
-	ldr r0, _02064054 ; =MAIN_BSS_02112DE0
-	ldr r0, [r0, #8]
-	bl NitroSDK_gx_GX_SetBankForOBJExtPltt
-	ldr r0, _02064054 ; =MAIN_BSS_02112DE0
-	mov r1, #0
-	str r1, [r0, #8]
-	str r1, [r0, #4]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02064050: .word DAT_0208e7f0
-_02064054: .word MAIN_BSS_02112DE0
-
-	arm_func_start NitroSDK_gx_GXS_BeginLoadBGExtPltt
-NitroSDK_gx_GXS_BeginLoadBGExtPltt: ; 0x02064058
-	stmdb sp!, {r3, lr}
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	ldr r1, _0206406C ; =MAIN_BSS_02112DE0
-	str r0, [r1]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0206406C: .word MAIN_BSS_02112DE0
-	arm_func_end NitroSDK_gx_GXS_BeginLoadBGExtPltt
-
-	arm_func_start NitroSDK_gx_GXS_LoadBGExtPltt
-NitroSDK_gx_GXS_LoadBGExtPltt: ; 0x02064070
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #8
-	ldr r3, _020640D0 ; =DAT_0208e7f0
-	mvn ip, #0
-	ldr lr, [r3]
-	mov r4, r0
-	mov r3, r2
-	cmp lr, ip
-	beq _020640BC
-	add r2, r1, #0x98000
-	mov ip, #0
-	str ip, [sp]
-	mov r0, lr
-	mov r1, r4
-	add r2, r2, #0x6800000
-	str ip, [sp, #4]
-	bl MI_DmaCopy32Async
-	add sp, sp, #8
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadBGExtPltt
-_020640BC:
-	add r1, r1, #0x98000
-	add r1, r1, #0x6800000
-	bl MIi_CpuCopy32
-	add sp, sp, #8
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_020640D0: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_EndLoadBGExtPltt
-NitroSDK_gx_GXS_EndLoadBGExtPltt: ; 0x020640D4
-	stmdb sp!, {r3, lr}
-	ldr r0, _0206410C ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	cmp r0, r1
-	beq _020640F0
-	bl MI_WaitDma
-	arm_func_end NitroSDK_gx_GXS_EndLoadBGExtPltt
-_020640F0:
-	ldr r0, _02064110 ; =MAIN_BSS_02112DE0
-	ldr r0, [r0]
-	bl NitroSDK_gx_GX_SetBankForSubBGExtPltt
-	ldr r0, _02064110 ; =MAIN_BSS_02112DE0
-	mov r1, #0
-	str r1, [r0]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0206410C: .word DAT_0208e7f0
-_02064110: .word MAIN_BSS_02112DE0
-
-	arm_func_start NitroSDK_gx_GXS_BeginLoadOBJExtPltt
-NitroSDK_gx_GXS_BeginLoadOBJExtPltt: ; 0x02064114
-	stmdb sp!, {r3, lr}
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	ldr r1, _02064128 ; =MAIN_BSS_02112DE0
-	str r0, [r1, #0x18]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02064128: .word MAIN_BSS_02112DE0
-	arm_func_end NitroSDK_gx_GXS_BeginLoadOBJExtPltt
-
-	arm_func_start NitroSDK_gx_GXS_LoadOBJExtPltt
-NitroSDK_gx_GXS_LoadOBJExtPltt: ; 0x0206412C
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #8
-	ldr r3, _0206418C ; =DAT_0208e7f0
-	mvn ip, #0
-	ldr lr, [r3]
-	mov r4, r0
-	mov r3, r2
-	cmp lr, ip
-	beq _02064178
-	add r2, r1, #0x8a0000
-	mov ip, #0
-	str ip, [sp]
-	mov r0, lr
-	mov r1, r4
-	add r2, r2, #0x6000000
-	str ip, [sp, #4]
-	bl MI_DmaCopy32Async
-	add sp, sp, #8
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSDK_gx_GXS_LoadOBJExtPltt
-_02064178:
-	add r1, r1, #0x8a0000
-	add r1, r1, #0x6000000
-	bl MIi_CpuCopy32
-	add sp, sp, #8
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0206418C: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GXS_EndLoadOBJExtPltt
-NitroSDK_gx_GXS_EndLoadOBJExtPltt: ; 0x02064190
-	stmdb sp!, {r3, lr}
-	ldr r0, _020641C8 ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	cmp r0, r1
-	beq _020641AC
-	bl MI_WaitDma
-	arm_func_end NitroSDK_gx_GXS_EndLoadOBJExtPltt
-_020641AC:
-	ldr r0, _020641CC ; =MAIN_BSS_02112DE0
-	ldr r0, [r0, #0x18]
-	bl NitroSDK_gx_GX_SetBankForSubOBJExtPltt
-	ldr r0, _020641CC ; =MAIN_BSS_02112DE0
-	mov r1, #0
-	str r1, [r0, #0x18]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_020641C8: .word DAT_0208e7f0
-_020641CC: .word MAIN_BSS_02112DE0
-
-	arm_func_start NitroSDK_gx_GX_BeginLoadTex
-NitroSDK_gx_GX_BeginLoadTex: ; 0x020641D0
-	stmdb sp!, {r3, lr}
-	bl NitroSDK_gx_GX_ResetBankForTex
-	mov r1, #6
-	mul lr, r0, r1
-	ldr r2, _0206421C ; =DAT_020892c4
-	ldr r1, _02064220 ; =DAT_020892c6
-	ldrh ip, [r2, lr]
-	ldr r2, _02064224 ; =DAT_020892c8
-	ldrh r3, [r1, lr]
-	ldr r1, _02064228 ; =MAIN_BSS_02112DFC
-	ldrh r2, [r2, lr]
-	str r0, [r1, #0x14]
-	mov r0, ip, lsl #0xc
-	str r0, [r1, #4]
-	mov r0, r3, lsl #0xc
-	str r0, [r1, #0x18]
-	mov r0, r2, lsl #0xc
-	str r0, [r1, #0x1c]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0206421C: .word DAT_020892c4
-_02064220: .word DAT_020892c6
-_02064224: .word DAT_020892c8
-_02064228: .word MAIN_BSS_02112DFC
-	arm_func_end NitroSDK_gx_GX_BeginLoadTex
-
-	arm_func_start NitroSDK_gx_GX_LoadTex
-NitroSDK_gx_GX_LoadTex: ; 0x0206422C
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #8
-	ldr r3, _02064364 ; =MAIN_BSS_02112DFC
-	mov r7, r0
-	ldr r4, [r3, #0x18]
-	mov ip, r1
-	cmp r4, #0
-	ldreq r0, [r3, #4]
-	mov r6, r2
-	addeq r2, r0, ip
-	beq _02064318
-	ldr r2, [r3, #0x1c]
-	add r0, ip, r6
-	cmp r0, r2
-	ldrlo r0, [r3, #4]
-	addlo r2, r0, ip
-	blo _02064318
-	cmp ip, r2
-	addhs r0, r4, ip
-	subhs r2, r0, r2
-	bhs _02064318
-	ldr r0, _02064368 ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	sub r5, r2, ip
-	cmp r0, r1
-	ldr lr, [r3, #4]
-	beq _020642B8
-	cmp r5, #0x30
-	bls _020642B8
-	mov r1, r7
-	mov r3, r5
-	add r2, lr, ip
-	bl MI_DmaCopy32
-	b _020642C8
-	arm_func_end NitroSDK_gx_GX_LoadTex
-_020642B8:
-	mov r0, r7
-	mov r2, r5
-	add r1, lr, ip
-	bl MIi_CpuCopy32
-_020642C8:
-	ldr r0, _02064368 ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	cmp r0, r1
-	beq _02064300
-	mov ip, #0
-	str ip, [sp]
-	mov r2, r4
-	add r1, r7, r5
-	sub r3, r6, r5
-	str ip, [sp, #4]
-	bl MI_DmaCopy32Async
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-_02064300:
-	mov r1, r4
-	add r0, r7, r5
-	sub r2, r6, r5
-	bl MIi_CpuCopy32
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-_02064318:
-	ldr r0, _02064368 ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	cmp r0, r1
-	beq _0206434C
-	mov r4, #0
-	str r4, [sp]
-	mov r1, r7
-	mov r3, r6
-	str r4, [sp, #4]
-	bl MI_DmaCopy32Async
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-_0206434C:
-	mov r1, r2
-	mov r0, r7
-	mov r2, r6
-	bl MIi_CpuCopy32
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_02064364: .word MAIN_BSS_02112DFC
-_02064368: .word DAT_0208e7f0
-
-	arm_func_start NitroSDK_gx_GX_EndLoadTex
-NitroSDK_gx_GX_EndLoadTex: ; 0x0206436C
-	stmdb sp!, {r3, lr}
-	ldr r0, _020643B0 ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	cmp r0, r1
-	beq _02064388
-	bl MI_WaitDma
-	arm_func_end NitroSDK_gx_GX_EndLoadTex
-_02064388:
-	ldr r0, _020643B4 ; =MAIN_BSS_02112DFC
-	ldr r0, [r0, #0x14]
-	bl NitroSDK_gx_GX_SetBankForTex
-	ldr r0, _020643B4 ; =MAIN_BSS_02112DFC
-	mov r1, #0
-	str r1, [r0, #0x1c]
-	str r1, [r0, #0x18]
-	str r1, [r0, #4]
-	str r1, [r0, #0x14]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_020643B0: .word DAT_0208e7f0
-_020643B4: .word MAIN_BSS_02112DFC
-
-	arm_func_start NitroSDK_gx_GX_BeginLoadTexPltt
-NitroSDK_gx_GX_BeginLoadTexPltt: ; 0x020643B8
-	stmdb sp!, {r3, lr}
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	mov r3, r0, asr #4
-	ldr r1, _020643E4 ; =MAIN_BSS_02112DFC
-	ldr r2, _020643E8 ; =DAT_020892b4
-	mov r3, r3, lsl #1
-	ldrh r2, [r2, r3]
-	str r0, [r1, #0xc]
-	mov r0, r2, lsl #0xc
-	str r0, [r1, #8]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_020643E4: .word MAIN_BSS_02112DFC
-_020643E8: .word DAT_020892b4
-	arm_func_end NitroSDK_gx_GX_BeginLoadTexPltt
-
-	arm_func_start NitroSDK_gx_GX_LoadTexPltt
-NitroSDK_gx_GX_LoadTexPltt: ; 0x020643EC
-	stmdb sp!, {r4, r5, r6, lr}
-	sub sp, sp, #8
-	ldr r3, _02064450 ; =DAT_0208e7f0
-	ldr lr, _02064454 ; =MAIN_BSS_02112DFC
-	ldr r4, [r3]
-	mvn ip, #0
-	mov r6, r0
-	mov r5, r1
-	mov r3, r2
-	cmp r4, ip
-	ldr lr, [lr, #8]
-	beq _02064440
-	mov ip, #0
-	str ip, [sp]
-	mov r0, r4
-	mov r1, r6
-	add r2, lr, r5
-	str ip, [sp, #4]
-	bl MI_DmaCopy32Async
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSDK_gx_GX_LoadTexPltt
-_02064440:
-	add r1, lr, r5
-	bl MIi_CpuCopy32
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02064450: .word DAT_0208e7f0
-_02064454: .word MAIN_BSS_02112DFC
-
-	arm_func_start NitroSDK_gx_GX_EndLoadTexPltt
-NitroSDK_gx_GX_EndLoadTexPltt: ; 0x02064458
-	stmdb sp!, {r3, lr}
-	ldr r0, _02064494 ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	cmp r0, r1
-	beq _02064474
-	bl MI_WaitDma
-	arm_func_end NitroSDK_gx_GX_EndLoadTexPltt
-_02064474:
-	ldr r0, _02064498 ; =MAIN_BSS_02112DFC
-	ldr r0, [r0, #0xc]
-	bl NitroSDK_gx_GX_SetBankForTexPltt
-	ldr r0, _02064498 ; =MAIN_BSS_02112DFC
-	mov r1, #0
-	str r1, [r0, #0xc]
-	str r1, [r0, #8]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02064494: .word DAT_0208e7f0
-_02064498: .word MAIN_BSS_02112DFC
-
-	arm_func_start NitroSDK_gx_GX_BeginLoadClearImage
-NitroSDK_gx_GX_BeginLoadClearImage: ; 0x0206449C
-	stmdb sp!, {r3, lr}
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	ldr r1, _0206451C ; =MAIN_BSS_02112DFC
-	cmp r0, #0xc
-	str r0, [r1]
-	addls pc, pc, r0, lsl #2
-	ldmia sp!, {r3, pc}
-_020644B8: ; jump table
-	ldmia sp!, {r3, pc} ; case 0
-	b _02064504 ; case 1
-	b _020644EC ; case 2
-	b _020644EC ; case 3
-	b _02064510 ; case 4
-	ldmia sp!, {r3, pc} ; case 5
-	ldmia sp!, {r3, pc} ; case 6
-	ldmia sp!, {r3, pc} ; case 7
-	b _020644F8 ; case 8
-	ldmia sp!, {r3, pc} ; case 9
-	ldmia sp!, {r3, pc} ; case 10
-	ldmia sp!, {r3, pc} ; case 11
-	b _020644F8 ; case 12
-	arm_func_end NitroSDK_gx_GX_BeginLoadClearImage
-_020644EC:
-	mov r0, #0x6800000
-	str r0, [r1, #0x10]
-	ldmia sp!, {r3, pc}
-_020644F8:
-	ldr r0, _02064520 ; =0x06840000
-	str r0, [r1, #0x10]
-	ldmia sp!, {r3, pc}
-_02064504:
-	ldr r0, _02064524 ; =0x067E0000
-	str r0, [r1, #0x10]
-	ldmia sp!, {r3, pc}
-_02064510:
-	ldr r0, _02064528 ; =0x06820000
-	str r0, [r1, #0x10]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0206451C: .word MAIN_BSS_02112DFC
-_02064520: .word 0x06840000
-_02064524: .word 0x067E0000
-_02064528: .word 0x06820000
-
-	arm_func_start NitroSDK_gx_GX_LoadClearImageColor
-NitroSDK_gx_GX_LoadClearImageColor: ; 0x0206452C
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #8
-	ldr r2, _0206458C ; =DAT_0208e7f0
-	ldr ip, _02064590 ; =MAIN_BSS_02112DFC
-	ldr lr, [r2]
-	mvn r2, #0
-	mov r4, r0
-	mov r3, r1
-	cmp lr, r2
-	ldr r2, [ip, #0x10]
-	beq _02064578
-	mov ip, #0
-	str ip, [sp]
-	mov r0, lr
-	mov r1, r4
-	str ip, [sp, #4]
-	bl MI_DmaCopy32Async
-	add sp, sp, #8
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSDK_gx_GX_LoadClearImageColor
-_02064578:
-	mov r1, r2
-	mov r2, r3
-	bl MIi_CpuCopy32
-	add sp, sp, #8
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0206458C: .word DAT_0208e7f0
-_02064590: .word MAIN_BSS_02112DFC
-
-	arm_func_start NitroSDK_gx_GX_LoadClearImageDepth
-NitroSDK_gx_GX_LoadClearImageDepth: ; 0x02064594
-	stmdb sp!, {r3, r4, r5, lr}
-	sub sp, sp, #8
-	ldr r2, _020645F8 ; =DAT_0208e7f0
-	ldr ip, _020645FC ; =MAIN_BSS_02112DFC
-	ldr lr, [r2]
-	mvn r2, #0
-	mov r5, r0
-	mov r3, r1
-	cmp lr, r2
-	ldr r4, [ip, #0x10]
-	beq _020645E4
-	mov ip, #0
-	str ip, [sp]
-	mov r0, lr
-	mov r1, r5
-	add r2, r4, #0x20000
-	str ip, [sp, #4]
-	bl MI_DmaCopy32Async
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSDK_gx_GX_LoadClearImageDepth
-_020645E4:
-	mov r2, r3
-	add r1, r4, #0x20000
-	bl MIi_CpuCopy32
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_020645F8: .word DAT_0208e7f0
-_020645FC: .word MAIN_BSS_02112DFC
-
-	arm_func_start NitroSDK_gx_GX_EndLoadClearImage
-NitroSDK_gx_GX_EndLoadClearImage: ; 0x02064600
-	stmdb sp!, {r3, lr}
-	ldr r0, _0206463C ; =DAT_0208e7f0
-	mvn r1, #0
-	ldr r0, [r0]
-	cmp r0, r1
-	beq _0206461C
-	bl MI_WaitDma
-	arm_func_end NitroSDK_gx_GX_EndLoadClearImage
-_0206461C:
-	ldr r0, _02064640 ; =MAIN_BSS_02112DFC
-	ldr r0, [r0]
-	bl NitroSDK_gx_GX_SetBankForClearImage
-	ldr r0, _02064640 ; =MAIN_BSS_02112DFC
-	mov r1, #0
-	str r1, [r0]
-	str r1, [r0, #0x10]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0206463C: .word DAT_0208e7f0
-_02064640: .word MAIN_BSS_02112DFC
-
-	arm_func_start sub_02064644
-sub_02064644: ; 0x02064644
-	str r2, [r0, #0xc]
-	str r1, [r0, #8]
-	str r1, [r0]
-	add r1, r1, #4
-	str r1, [r0, #4]
-	mov r1, #0
-	str r1, [r0, #0x10]
-	bx lr
-	arm_func_end sub_02064644
-
-	arm_func_start sub_02064664
-sub_02064664: ; 0x02064664
-	ldr r3, [r0]
-	ldr r2, [r0, #8]
-	cmp r2, r3
-	moveq r0, #0
-	bxeq lr
-	and r1, r3, #3
-	cmp r1, #3
-	addls pc, pc, r1, lsl #2
-	b _020646D8
-_02064688: ; jump table
-	b _02064698 ; case 0
-	b _020646A0 ; case 1
-	b _020646B0 ; case 2
-	b _020646C4 ; case 3
-	arm_func_end sub_02064664
-_02064698:
-	sub r0, r3, r2
-	bx lr
-_020646A0:
-	add r1, r3, #1
-	str r1, [r0]
-	mov r1, #0
-	strb r1, [r3]
-_020646B0:
-	ldr r3, [r0]
-	mov r1, #0
-	add r2, r3, #1
-	str r2, [r0]
-	strb r1, [r3]
-_020646C4:
-	ldr r3, [r0]
-	mov r1, #0
-	add r2, r3, #1
-	str r2, [r0]
-	strb r1, [r3]
-_020646D8:
-	ldr r1, [r0, #0x10]
-	cmp r1, #0
-	beq _020646FC
-	ldr r3, [r0, #4]
-	mov r1, #0
-	add r2, r3, #4
-	str r2, [r0, #4]
-	str r1, [r3]
-	str r1, [r0, #0x10]
-_020646FC:
-	ldr r1, [r0, #4]
-	str r1, [r0]
-	ldr r0, [r0, #8]
-	sub r0, r1, r0
-	bx lr
-
-	arm_func_start sub_02064710
-sub_02064710: ; 0x02064710
-	stmdb sp!, {r4, r5, r6, r7, r8}
-	ldmia r0!, {r2, r3, r4, r5, r6, r7, r8, ip}
-	stmia r1, {r2, r3, r4, r5, r6, r7, r8, ip}
-	ldmia r0!, {r2, r3, r4, r5, r6, r7, r8, ip}
-	stmia r1, {r2, r3, r4, r5, r6, r7, r8, ip}
-	ldmia sp!, {r4, r5, r6, r7, r8}
-	bx lr
-	arm_func_end sub_02064710
 
     .section .init, 4
 
@@ -124015,29 +119705,6 @@ DAT_020891b0: ; 0x020891B0
 	.byte 0x4A, 0x1D, 0x78, 0x1D, 0xA5, 0x1D, 0xD3, 0x1D, 0xFF, 0x1D, 0x2C, 0x1E, 0x58, 0x1E, 0x84, 0x1E
 	.byte 0xB0, 0x1E, 0xDB, 0x1E, 0x06, 0x1F, 0x30, 0x1F, 0x5A, 0x1F, 0x84, 0x1F, 0xAE, 0x1F, 0xD7, 0x1F
 	.byte 0x00, 0x20, 0x00, 0x00
-
-	.global DAT_020892b4
-DAT_020892b4: ; 0x020892B4
-	.byte 0x00, 0x00, 0x80, 0x68, 0x90, 0x68, 0x80, 0x68, 0x94, 0x68, 0x00, 0x00
-	.byte 0x90, 0x68, 0x80, 0x68
-
-	.global DAT_020892c4
-DAT_020892c4: ; 0x020892C4
-	.byte 0x00, 0x00
-
-	.global DAT_020892c6
-DAT_020892c6: ; 0x020892C6
-	.byte 0x00, 0x00
-
-	.global DAT_020892c8
-DAT_020892c8: ; 0x020892C8
-	.byte 0x00, 0x00, 0x00, 0x68, 0x00, 0x00, 0x00, 0x00
-	.byte 0x20, 0x68, 0x00, 0x00, 0x00, 0x00, 0x00, 0x68, 0x00, 0x00, 0x00, 0x00, 0x40, 0x68, 0x00, 0x00
-	.byte 0x00, 0x00, 0x00, 0x68, 0x40, 0x68, 0x20, 0x00, 0x20, 0x68, 0x00, 0x00, 0x00, 0x00, 0x00, 0x68
-	.byte 0x00, 0x00, 0x00, 0x00, 0x60, 0x68, 0x00, 0x00, 0x00, 0x00, 0x00, 0x68, 0x60, 0x68, 0x20, 0x00
-	.byte 0x20, 0x68, 0x60, 0x68, 0x20, 0x00, 0x00, 0x68, 0x60, 0x68, 0x40, 0x00, 0x40, 0x68, 0x00, 0x00
-	.byte 0x00, 0x00, 0x00, 0x68, 0x40, 0x68, 0x20, 0x00, 0x20, 0x68, 0x00, 0x00, 0x00, 0x00, 0x00, 0x68
-	.byte 0x00, 0x00, 0x00, 0x00
 
     .section .sinit,4
 
@@ -130475,14 +126142,6 @@ PTR_LAB_0208e7e4: ; 0x0208E7E4
 PTR_LAB_0208e7e8: ; 0x0208E7E8
 	.word sub_02057144
 
-	.global DAT_0208e7ec
-DAT_0208e7ec: ; 0x0208E7EC
-	.byte 0x01, 0x00, 0x00, 0x00
-
-	.global DAT_0208e7f0
-DAT_0208e7f0: ; 0x0208E7F0
-	.byte 0x03, 0x00, 0x00, 0x00
-
     .bss
 
     .global MAIN_BSS_0208F300
@@ -131300,71 +126959,3 @@ MAIN_BSS_021125EC: ; 0x021125EC
     .global MAIN_BSS_02112BC0
 MAIN_BSS_02112BC0: ; 0x02112BC0
     .space 0x200
-
-    .global MAIN_BSS_02112DC0
-MAIN_BSS_02112DC0: ; 0x02112DC0
-    .space 0x2
-
-    .global MAIN_BSS_02112DC2
-MAIN_BSS_02112DC2: ; 0x02112DC2
-    .space 0x2
-
-    .global MAIN_BSS_02112DC4
-MAIN_BSS_02112DC4: ; 0x02112DC4
-    .space 0x2
-
-    .global MAIN_BSS_02112DC6
-MAIN_BSS_02112DC6: ; 0x02112DC6
-    .space 0x2
-
-    .global MAIN_BSS_02112DC8
-MAIN_BSS_02112DC8: ; 0x02112DC8
-    .space 0x2
-
-    .global MAIN_BSS_02112DCA
-MAIN_BSS_02112DCA: ; 0x02112DCA
-    .space 0x2
-
-    .global MAIN_BSS_02112DCC
-MAIN_BSS_02112DCC: ; 0x02112DCC
-    .space 0x2
-
-    .global MAIN_BSS_02112DCE
-MAIN_BSS_02112DCE: ; 0x02112DCE
-    .space 0x2
-
-    .global MAIN_BSS_02112DD0
-MAIN_BSS_02112DD0: ; 0x02112DD0
-    .space 0x2
-
-    .global MAIN_BSS_02112DD2
-MAIN_BSS_02112DD2: ; 0x02112DD2
-    .space 0x2
-
-    .global MAIN_BSS_02112DD4
-MAIN_BSS_02112DD4: ; 0x02112DD4
-    .space 0x2
-
-    .global MAIN_BSS_02112DD6
-MAIN_BSS_02112DD6: ; 0x02112DD6
-    .space 0x2
-
-    .global MAIN_BSS_02112DD8
-MAIN_BSS_02112DD8: ; 0x02112DD8
-    .space 0x2
-
-    .global MAIN_BSS_02112DDA
-MAIN_BSS_02112DDA: ; 0x02112DDA
-    .space 0x2
-
-    .global MAIN_BSS_02112DDC
-MAIN_BSS_02112DDC: ; 0x02112DDC
-    .space 0x4
-
-    .global MAIN_BSS_02112DE0
-MAIN_BSS_02112DE0: ; 0x02112DE0
-    .space 0x1C
-
-    .global MAIN_BSS_02112DFC
-MAIN_BSS_02112DFC: ; 0x02112DFC
-    .space 0x20

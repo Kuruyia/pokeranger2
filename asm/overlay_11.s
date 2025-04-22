@@ -113,39 +113,39 @@ _0211CB08:
 	arm_func_start ov11_0211CB2C
 ov11_0211CB2C: ; 0x0211CB2C
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #2
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x40
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #0x30
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #1
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #0
 	mov r2, r0
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r0, #0
-	bl sub_02061568
+	bl GXS_SetGraphicsMode
 	mov r0, #4
-	bl sub_02062110
-	bl sub_02062648
+	bl GX_SetBankForSubBG
+	bl GX_DisableBankForSubBG
 	mov r0, #8
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r0, #0x180
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	ldr ip, _0211CC6C ; =0x04000304
 	mov r1, #0
 	ldrh r3, [ip]
@@ -155,7 +155,7 @@ ov11_0211CB2C: ; 0x0211CB2C
 	strh r3, [ip]
 	str r1, [sp]
 	mov r3, r1
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr ip, _0211CC70 ; =0x04000060
 	ldr r0, _0211CC74 ; =0xFFFFFDF1
 	ldrh r1, [ip]
@@ -186,7 +186,7 @@ ov11_0211CB2C: ; 0x0211CB2C
 	ldr r0, [r1]
 	bic r0, r0, #0x1f00
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _0211CC78 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -647,7 +647,7 @@ ov11_0211D0D0: ; 0x0211D0D0
 	mov r2, #6
 	mov r3, #8
 	str r4, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	mov r0, #0x44
 	bl _Znwm
 	cmp r0, #0
@@ -2690,7 +2690,7 @@ _0211EE6C:
 	mov r1, #0
 	mov r2, #0xc
 	mov r3, #0xa
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr r0, [sl, #0x72c]
 	mov r1, #3
 	add r0, r0, #0x1000
@@ -8078,12 +8078,12 @@ ov11_02123794: ; 0x02123794
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x498]
 	bl sub_0200CAE0
-	bl sub_020629BC
+	bl G2S_GetBG0CharPtr
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x20
 	bl MIi_CpuClearFast
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x800
@@ -25995,43 +25995,43 @@ ov11_02132020: ; 0x02132020
 	arm_func_start ov11_02132024
 ov11_02132024: ; 0x02132024
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #3
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #0
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #0
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #1
 	mov r1, #0
 	mov r2, r1
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r0, #4
-	bl sub_02062110
-	bl sub_02062648
+	bl GX_SetBankForSubBG
+	bl GX_DisableBankForSubBG
 	mov r0, #0x180
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r1, #0
 	str r1, [sp]
 	ldr r0, _02132170 ; =0x04000050
 	mov r2, r1
 	mov r3, r1
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _02132174 ; =0x04000060
 	ldr r0, _02132178 ; =0xFFFFFDF1
 	ldrh r1, [lr]
@@ -26061,7 +26061,7 @@ ov11_02132024: ; 0x02132024
 	bic r0, r0, #0x1f00
 	orr r0, r0, #0x100
 	str r0, [r1]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r2, _0213217C ; =0x04001000
 	ldr r1, _02132180 ; =0x04000008
 	ldr r0, [r2]
@@ -26315,11 +26315,11 @@ _021324AC:
 	ldr r0, _02132514 ; =0x04000050
 	mov r1, #1
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, _02132518 ; =0x04001050
 	mov r1, #1
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, _02132510 ; =MAIN_BSS_0208F304
 	ldr r0, [r0]
 	add r0, r0, #0x1000
@@ -26339,13 +26339,13 @@ ov11_0213251C: ; 0x0213251C
 	ldr r0, _02132554 ; =0x04000050
 	mov r2, r1, lsr #0x10
 	mov r1, #1
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	mov r0, r4, asr #0x10
 	mov r1, r0, lsl #0x10
 	ldr r0, _02132558 ; =0x04001050
 	mov r2, r1, lsr #0x10
 	mov r1, #1
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02132554: .word 0x04000050
@@ -51847,7 +51847,7 @@ ov11_02142DC8: ; 0x02142DC8
 	movne r0, #0
 	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
 	ldr r0, _02142E88 ; =s_char_jtNull_nsc_l_overlay_11_02167f00
-	ldr r1, _02142E8C ; =NitroSDK_gx_GXS_LoadBG0Scr
+	ldr r1, _02142E8C ; =GXS_LoadBG0Scr
 	bl ov11_02142F34
 	ldr r3, _02142E90 ; =0x01920000
 	ldr r2, _02142E94 ; =0x04001010
@@ -51885,7 +51885,7 @@ ov11_02142DC8: ; 0x02142DC8
 	.align 2, 0
 _02142E84: .word OVERLAY11_BSS_0216C28C
 _02142E88: .word s_char_jtNull_nsc_l_overlay_11_02167f00
-_02142E8C: .word NitroSDK_gx_GXS_LoadBG0Scr
+_02142E8C: .word GXS_LoadBG0Scr
 _02142E90: .word 0x01920000
 _02142E94: .word 0x04001010
 _02142E98: .word OVERLAY11_BSS_0216C318
@@ -52273,7 +52273,7 @@ ov11_02143368: ; 0x02143368
 	mov r1, #4
 	bl ov11_0215C89C
 	ldr r2, _021433CC ; =OVERLAY11_BSS_0216C2D4
-	ldr r1, _021433D0 ; =NitroSDK_gx_GX_LoadBG1Char
+	ldr r1, _021433D0 ; =GX_LoadBG1Char
 	str r0, [r2]
 	ldr r0, _021433D4 ; =s_char_jbBgHl_ncg_l_overlay_11_02168134
 	bl ov11_02142F34
@@ -52298,10 +52298,10 @@ _021433B8:
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _021433CC: .word OVERLAY11_BSS_0216C2D4
-_021433D0: .word NitroSDK_gx_GX_LoadBG1Char
+_021433D0: .word GX_LoadBG1Char
 _021433D4: .word s_char_jbBgHl_ncg_l_overlay_11_02168134
 _021433D8: .word ptr_s_char_jb2HlWiFi_nsc_l_overlay_11_02167fac_overlay_11_021680e4
-_021433DC: .word NitroSDK_gx_GX_LoadBG1Scr
+_021433DC: .word GX_LoadBG1Scr
 
 	arm_func_start ov11_021433E0
 ov11_021433E0: ; 0x021433E0
@@ -52373,7 +52373,7 @@ ov11_02143480: ; 0x02143480
 	mov r1, #0
 	ldr r0, [r0]
 	mov r2, #0xc0
-	bl NitroSDK_gx_GX_LoadBG1Scr
+	bl GX_LoadBG1Scr
 	mov r1, r4
 	mov r0, #1
 	bl ov11_0215DAD0
@@ -56430,7 +56430,7 @@ ov11_02146B68: ; 0x02146B68
 	mov r0, #0
 	ldrh r1, [r2]
 	strh r0, [r2]
-	bl sub_0206147C
+	bl GX_DispOff
 	ldr r1, _02146C28 ; =0x04001000
 	ldr r0, [r1]
 	bic r0, r0, #0x10000
@@ -56447,13 +56447,13 @@ _02146BA0:
 	bl OS_Terminate
 _02146BB0:
 	mov r0, #0
-	bl sub_02061448
+	bl GX_VBlankIntr
 	bl sub_0206129C
 	mvn r0, #0
 	bl FS_Init
 	bl TP_Init
 	bl RTC_Init
-	bl sub_0206147C
+	bl GX_DispOff
 	ldr r1, _02146C28 ; =0x04001000
 	ldr r0, [r1]
 	bic r0, r0, #0x10000
@@ -56484,15 +56484,15 @@ _02146C2C: .word OVERLAY11_BSS_0216C2EC
 ov11_02146C30: ; 0x02146C30
 	stmdb sp!, {r4, lr}
 	mov r0, #0
-	bl sub_02061448
+	bl GX_VBlankIntr
 	mov r0, #1
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #2
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r1, #0
 	mov r2, r1
 	mov r0, #1
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r3, #0x4000000
 	ldr r1, [r3]
 	add r0, r3, #0x6c
@@ -56502,7 +56502,7 @@ ov11_02146C30: ; 0x02146C30
 	mov r1, #0
 	bic r2, r2, #0xe000
 	str r2, [r3]
-	bl sub_02061584
+	bl GXx_SetMasterBrightness_
 	mov r3, #0x4000000
 	ldr r2, [r3]
 	ldr r0, _02146E94 ; =0xFFCFFFEF
@@ -56532,13 +56532,13 @@ ov11_02146C30: ; 0x02146C30
 	str lr, [r3, #0x14]
 	str lr, [r3, #0x18]
 	str lr, [r3, #0x1c]
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	mov r0, #0x80
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r0, #0
-	bl sub_02061568
+	bl GXS_SetGraphicsMode
 	ldr r1, _02146E9C ; =0x04001000
 	ldr r0, [r1]
 	bic r0, r0, #0x1f00
@@ -56548,7 +56548,7 @@ ov11_02146C30: ; 0x02146C30
 	str r0, [r1]
 	add r0, r1, #0x6c
 	mov r1, #0
-	bl sub_02061584
+	bl GXx_SetMasterBrightness_
 	ldr r3, _02146E9C ; =0x04001000
 	ldr r0, _02146E94 ; =0xFFCFFFEF
 	ldr r1, [r3]
@@ -56575,7 +56575,7 @@ ov11_02146C30: ; 0x02146C30
 	str ip, [r3, #0x14]
 	str ip, [r3, #0x18]
 	str ip, [r3, #0x1c]
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r2, _02146EA0 ; =0x04000008
 	ldr r3, _02146EA4 ; =0x0400100A
 	ldrh r0, [r2]
@@ -56627,13 +56627,13 @@ ov11_02146C30: ; 0x02146C30
 	bl ov11_0215D178
 	bl ov11_0215D30C
 	bl ov11_0215B0EC
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r2, _02146E9C ; =0x04001000
 	mov r0, #1
 	ldr r1, [r2]
 	orr r1, r1, #0x10000
 	str r1, [r2]
-	bl sub_02061448
+	bl GX_VBlankIntr
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02146E94: .word 0xFFCFFFEF
@@ -56646,7 +56646,7 @@ _02146EA4: .word 0x0400100A
 	arm_func_start ov11_02146EA8
 ov11_02146EA8: ; 0x02146EA8
 	stmdb sp!, {r3, lr}
-	bl sub_0206147C
+	bl GX_DispOff
 	ldr r1, _02146EF4 ; =0x04001000
 	ldr r0, [r1]
 	bic r0, r0, #0x10000
@@ -57461,28 +57461,28 @@ _0214782C:
 	mov r0, #0
 	bl ov11_0215B6A8
 	ldr r0, _02147958 ; =s_char_jtBgMain_ncg_l_overlay_11_0216844c
-	ldr r1, _0214795C ; =NitroSDK_gx_GXS_LoadBG1Char
+	ldr r1, _0214795C ; =GXS_LoadBG1Char
 	bl ov11_02142F34
 	ldr r0, _02147960 ; =s_char_jtBgMain_ncl_l_overlay_11_02168460
-	ldr r1, _02147964 ; =NitroSDK_gx_GXS_LoadBGPltt
+	ldr r1, _02147964 ; =GXS_LoadBGPltt
 	bl ov11_02142F34
 	ldr r0, _02147968 ; =s_char_jtObjMain_ncg_l_overlay_11_02168474
-	ldr r1, _0214796C ; =NitroSDK_gx_GXS_LoadOBJ
+	ldr r1, _0214796C ; =GXS_LoadOBJ
 	bl ov11_02142F34
 	ldr r0, _02147970 ; =s_char_xtObjMain_ncl_l_overlay_11_0216848c
-	ldr r1, _02147974 ; =NitroSDK_gx_GXS_LoadOBJPltt
+	ldr r1, _02147974 ; =GXS_LoadOBJPltt
 	bl ov11_02142F34
 	ldr r0, _02147978 ; =s_char_jbBgStep1_ncg_l_overlay_11_021684a4
-	ldr r1, _0214797C ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _0214797C ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _02147980 ; =s_char_jbBgStep1_ncl_l_overlay_11_021684bc
 	ldr r1, _02147984 ; =FUN_02063550
 	bl ov11_02142F34
 	ldr r0, _02147988 ; =s_char_jbObjMain_ncg_l_overlay_11_021684d4
-	ldr r1, _0214798C ; =NitroSDK_gx_GX_LoadOBJ
+	ldr r1, _0214798C ; =GX_LoadOBJ
 	bl ov11_02142F34
 	ldr r0, _02147990 ; =s_char_ybObjMain_ncl_l_overlay_11_021684ec
-	ldr r1, _02147994 ; =NitroSDK_gx_GX_LoadOBJPltt
+	ldr r1, _02147994 ; =GX_LoadOBJPltt
 	bl ov11_02142F34
 	bl ov11_02146F90
 	cmp r0, #0
@@ -57530,23 +57530,23 @@ _0214794C: .word ptr_s_msg_jap_bmg_l_overlay_11_021683e8_overlay_11_021683f8
 _02147950: .word s_char_jtMain_nce_l_overlay_11_02168424
 _02147954: .word s_char_jbMain_nce_l_overlay_11_02168438
 _02147958: .word s_char_jtBgMain_ncg_l_overlay_11_0216844c
-_0214795C: .word NitroSDK_gx_GXS_LoadBG1Char
+_0214795C: .word GXS_LoadBG1Char
 _02147960: .word s_char_jtBgMain_ncl_l_overlay_11_02168460
-_02147964: .word NitroSDK_gx_GXS_LoadBGPltt
+_02147964: .word GXS_LoadBGPltt
 _02147968: .word s_char_jtObjMain_ncg_l_overlay_11_02168474
-_0214796C: .word NitroSDK_gx_GXS_LoadOBJ
+_0214796C: .word GXS_LoadOBJ
 _02147970: .word s_char_xtObjMain_ncl_l_overlay_11_0216848c
-_02147974: .word NitroSDK_gx_GXS_LoadOBJPltt
+_02147974: .word GXS_LoadOBJPltt
 _02147978: .word s_char_jbBgStep1_ncg_l_overlay_11_021684a4
-_0214797C: .word NitroSDK_gx_GX_LoadBG2Char
+_0214797C: .word GX_LoadBG2Char
 _02147980: .word s_char_jbBgStep1_ncl_l_overlay_11_021684bc
-_02147984: .word NitroSDK_gx_GX_LoadBGPltt
+_02147984: .word GX_LoadBGPltt
 _02147988: .word s_char_jbObjMain_ncg_l_overlay_11_021684d4
-_0214798C: .word NitroSDK_gx_GX_LoadOBJ
+_0214798C: .word GX_LoadOBJ
 _02147990: .word s_char_ybObjMain_ncl_l_overlay_11_021684ec
-_02147994: .word NitroSDK_gx_GX_LoadOBJPltt
+_02147994: .word GX_LoadOBJPltt
 _02147998: .word s_char_jtTop_nsc_l_overlay_11_02168504
-_0214799C: .word NitroSDK_gx_GXS_LoadBG1Scr
+_0214799C: .word GXS_LoadBG1Scr
 _021479A0: .word s_char_jtStep1_nsc_l_overlay_11_02168518
 _021479A4: .word 0x0400100A
 _021479A8: .word ov11_021479AC
@@ -57661,7 +57661,7 @@ _02147AEC:
 	subs r2, r2, #1
 	bne _02147AEC
 	ldr r0, _02147BA0 ; =s_char_jbBgStep1_ncg_l_overlay_11_0216852c
-	ldr r1, _02147BA4 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _02147BA4 ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _02147BA8 ; =s_char_jbBgStep1_ncl_l_overlay_11_02168544
 	ldr r1, _02147BAC ; =FUN_02063550
@@ -57699,11 +57699,11 @@ _02147AEC:
 	.align 2, 0
 _02147B9C: .word s_char_ybBgStep11_ncl_l_overlay_11_021658ea
 _02147BA0: .word s_char_jbBgStep1_ncg_l_overlay_11_0216852c
-_02147BA4: .word NitroSDK_gx_GX_LoadBG2Char
+_02147BA4: .word GX_LoadBG2Char
 _02147BA8: .word s_char_jbBgStep1_ncl_l_overlay_11_02168544
-_02147BAC: .word NitroSDK_gx_GX_LoadBGPltt
+_02147BAC: .word GX_LoadBGPltt
 _02147BB0: .word s_char_jb2Menu_nsc_l_overlay_11_0216855c
-_02147BB4: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02147BB4: .word GX_LoadBG2Scr
 _02147BB8: .word OVERLAY11_BSS_0216C31C
 _02147BBC: .word 0x04001008
 _02147BC0: .word 0x0400000A
@@ -58092,7 +58092,7 @@ ov11_0214801C: ; 0x0214801C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0214808C: .word s_char_yb5Multi_nsc_l_overlay_11_02168570
-_02148090: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02148090: .word GX_LoadBG2Scr
 _02148094: .word 0x04001008
 _02148098: .word 0x0400000A
 	arm_func_end ov11_0214801C
@@ -58408,7 +58408,7 @@ ov11_021483DC: ; 0x021483DC
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0214844C: .word s_char_yb5Multi_nsc_l_overlay_11_02168584
-_02148450: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02148450: .word GX_LoadBG2Scr
 _02148454: .word 0x04001008
 _02148458: .word 0x0400000A
 	arm_func_end ov11_021483DC
@@ -58607,7 +58607,7 @@ ov11_02148618: ; 0x02148618
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02148688: .word s_char_jb5Info_nsc_l_overlay_11_02168598
-_0214868C: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_0214868C: .word GX_LoadBG2Scr
 _02148690: .word 0x04001008
 _02148694: .word 0x0400000A
 	arm_func_end ov11_02148618
@@ -58996,7 +58996,7 @@ _02148B6C:
 	bne _02148B6C
 	ldrb r2, [r4]
 	ldr r0, _02148CAC ; =s_char_jbBgOption_ncg_l_overlay_11_02168638
-	ldr r1, _02148CB0 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _02148CB0 ; =GX_LoadBG2Char
 	strb r2, [r3]
 	bl ov11_02142F34
 	ldr r0, _02148CB4 ; =s_char_jb5OptMenu_nsc_l_overlay_11_02168650
@@ -59043,7 +59043,7 @@ _02148C30:
 	mov r0, r8
 	mov r1, #0
 	mov r2, #0x200
-	bl NitroSDK_gx_GX_LoadBGPltt
+	bl GX_LoadBGPltt
 	mov r0, r8
 	bl ov11_0215B060
 	ldr r2, _02148CC0 ; =0x04001008
@@ -59070,9 +59070,9 @@ _02148C30:
 _02148CA4: .word s_char_ybBgOption_ncl_l_overlay_11_02165908
 _02148CA8: .word s_char_ybBgOption1_ncl_l_overlay_11_0216591e
 _02148CAC: .word s_char_jbBgOption_ncg_l_overlay_11_02168638
-_02148CB0: .word NitroSDK_gx_GX_LoadBG2Char
+_02148CB0: .word GX_LoadBG2Char
 _02148CB4: .word s_char_jb5OptMenu_nsc_l_overlay_11_02168650
-_02148CB8: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02148CB8: .word GX_LoadBG2Scr
 _02148CBC: .word OVERLAY11_BSS_0216C328
 _02148CC0: .word 0x04001008
 _02148CC4: .word 0x0400000A
@@ -59503,7 +59503,7 @@ ov11_021491B4: ; 0x021491B4
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02149224: .word s_char_yb5Multi_nsc_l_overlay_11_02168668
-_02149228: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02149228: .word GX_LoadBG2Scr
 _0214922C: .word 0x04001008
 _02149230: .word 0x0400000A
 	arm_func_end ov11_021491B4
@@ -60101,7 +60101,7 @@ ov11_02149878: ; 0x02149878
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _021498E8: .word s_char_yb5Multi_nsc_l_overlay_11_0216867c
-_021498EC: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_021498EC: .word GX_LoadBG2Scr
 _021498F0: .word 0x04001008
 _021498F4: .word 0x0400000A
 	arm_func_end ov11_02149878
@@ -60366,7 +60366,7 @@ ov11_02149BAC: ; 0x02149BAC
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02149C08: .word s_char_yb5Multi_nsc_l_overlay_11_02168690
-_02149C0C: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02149C0C: .word GX_LoadBG2Scr
 _02149C10: .word 0x04001008
 _02149C14: .word 0x0400000A
 	arm_func_end ov11_02149BAC
@@ -60539,7 +60539,7 @@ ov11_02149DA0: ; 0x02149DA0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02149E10: .word s_char_yb5Multi_nsc_l_overlay_11_021686a4
-_02149E14: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02149E14: .word GX_LoadBG2Scr
 _02149E18: .word 0x04001008
 _02149E1C: .word 0x0400000A
 	arm_func_end ov11_02149DA0
@@ -60858,7 +60858,7 @@ ov11_0214A19C: ; 0x0214A19C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0214A20C: .word s_char_jb5Move_nsc_l_overlay_11_021686b8
-_0214A210: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_0214A210: .word GX_LoadBG2Scr
 _0214A214: .word 0x04001008
 _0214A218: .word 0x0400000A
 	arm_func_end ov11_0214A19C
@@ -61153,7 +61153,7 @@ ov11_0214A510: ; 0x0214A510
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0214A580: .word s_char_yb5Multi_nsc_l_overlay_11_021686cc
-_0214A584: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_0214A584: .word GX_LoadBG2Scr
 _0214A588: .word 0x04001008
 _0214A58C: .word 0x0400000A
 	arm_func_end ov11_0214A510
@@ -61462,7 +61462,7 @@ _0214A918: .word ov11_0214A9C4
 ov11_0214A91C: ; 0x0214A91C
 	stmdb sp!, {r3, lr}
 	ldr r0, _0214A9A4 ; =s_char_jbBgStep3_ncg_l_overlay_11_021686e0
-	ldr r1, _0214A9A8 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _0214A9A8 ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _0214A9AC ; =s_char_ybBgStep3_ncl_l_overlay_11_021686f8
 	ldr r1, _0214A9B0 ; =FUN_02063550
@@ -61496,11 +61496,11 @@ ov11_0214A91C: ; 0x0214A91C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0214A9A4: .word s_char_jbBgStep3_ncg_l_overlay_11_021686e0
-_0214A9A8: .word NitroSDK_gx_GX_LoadBG2Char
+_0214A9A8: .word GX_LoadBG2Char
 _0214A9AC: .word s_char_ybBgStep3_ncl_l_overlay_11_021686f8
-_0214A9B0: .word NitroSDK_gx_GX_LoadBGPltt
+_0214A9B0: .word GX_LoadBGPltt
 _0214A9B4: .word s_char_xb4Multi_nsc_l_overlay_11_02168710
-_0214A9B8: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_0214A9B8: .word GX_LoadBG2Scr
 _0214A9BC: .word 0x04001008
 _0214A9C0: .word 0x0400000A
 	arm_func_end ov11_0214A91C
@@ -61925,7 +61925,7 @@ ov11_0214AE94: ; 0x0214AE94
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0214AEF0: .word s_char_xb4Multi_nsc_l_overlay_11_02168724
-_0214AEF4: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_0214AEF4: .word GX_LoadBG2Scr
 _0214AEF8: .word 0x04001008
 _0214AEFC: .word 0x0400000A
 	arm_func_end ov11_0214AE94
@@ -62138,7 +62138,7 @@ _0214B16C:
 	subs r2, r2, #1
 	bne _0214B16C
 	ldr r0, _0214B264 ; =s_char_jb4ApList_nsc_l_overlay_11_02168738
-	ldr r1, _0214B268 ; =NitroSDK_gx_GX_LoadBG3ScrBmp
+	ldr r1, _0214B268 ; =GX_LoadBG3Scr
 	bl ov11_02142F34
 	add r0, sp, #0x16
 	bl ov11_02142ED4
@@ -62193,7 +62193,7 @@ _0214B16C:
 _0214B25C: .word s_char_xb4ApListBack_nsc_l_overlay_11_0216597f
 _0214B260: .word s_char_ybBgStep31_ncl_l_overlay_11_02165969
 _0214B264: .word s_char_jb4ApList_nsc_l_overlay_11_02168738
-_0214B268: .word NitroSDK_gx_GX_LoadBG3ScrBmp
+_0214B268: .word GX_LoadBG3Scr
 _0214B26C: .word OVERLAY11_BSS_0216C358
 _0214B270: .word 0x04001008
 _0214B274: .word 0x0400000A
@@ -63734,10 +63734,10 @@ _0214C718: .word ov11_0214C7D8
 ov11_0214C71C: ; 0x0214C71C
 	stmdb sp!, {r3, lr}
 	ldr r0, _0214C7B0 ; =s_char_ybObjKb_ncl_l_overlay_11_02168750
-	ldr r1, _0214C7B4 ; =NitroSDK_gx_GX_LoadOBJPltt
+	ldr r1, _0214C7B4 ; =GX_LoadOBJPltt
 	bl ov11_02142F34
 	ldr r0, _0214C7B8 ; =s_char_jbBgStep3_ncg_l_overlay_11_02168764
-	ldr r1, _0214C7BC ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _0214C7BC ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _0214C7C0 ; =s_char_ybBgStep3_ncl_l_overlay_11_0216877c
 	ldr r1, _0214C7C4 ; =FUN_02063550
@@ -63771,13 +63771,13 @@ ov11_0214C71C: ; 0x0214C71C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0214C7B0: .word s_char_ybObjKb_ncl_l_overlay_11_02168750
-_0214C7B4: .word NitroSDK_gx_GX_LoadOBJPltt
+_0214C7B4: .word GX_LoadOBJPltt
 _0214C7B8: .word s_char_jbBgStep3_ncg_l_overlay_11_02168764
-_0214C7BC: .word NitroSDK_gx_GX_LoadBG2Char
+_0214C7BC: .word GX_LoadBG2Char
 _0214C7C0: .word s_char_ybBgStep3_ncl_l_overlay_11_0216877c
-_0214C7C4: .word NitroSDK_gx_GX_LoadBGPltt
+_0214C7C4: .word GX_LoadBGPltt
 _0214C7C8: .word s_char_xb4Edit_nsc_l_overlay_11_02168794
-_0214C7CC: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_0214C7CC: .word GX_LoadBG2Scr
 _0214C7D0: .word 0x04001008
 _0214C7D4: .word 0x0400000A
 	arm_func_end ov11_0214C71C
@@ -64101,7 +64101,7 @@ ov11_0214CBC0: ; 0x0214CBC0
 	mov r0, #0
 	bl ov11_0215C114
 	ldr r0, _0214CCAC ; =s_char_ybObjMain_ncl_l_overlay_11_021687a8
-	ldr r1, _0214CCB0 ; =NitroSDK_gx_GX_LoadOBJPltt
+	ldr r1, _0214CCB0 ; =GX_LoadOBJPltt
 	bl ov11_02142F34
 	mov r0, #1
 	mov r1, r0
@@ -64156,7 +64156,7 @@ _0214CC98:
 	.align 2, 0
 _0214CCA8: .word OVERLAY11_BSS_0216C360
 _0214CCAC: .word s_char_ybObjMain_ncl_l_overlay_11_021687a8
-_0214CCB0: .word NitroSDK_gx_GX_LoadOBJPltt
+_0214CCB0: .word GX_LoadOBJPltt
 _0214CCB4: .word ov11_0214E414
 _0214CCB8: .word ov11_0214B04C
 _0214CCBC: .word ov11_02153A50
@@ -64602,10 +64602,10 @@ _0214D298: .word ov11_0214D358
 ov11_0214D29C: ; 0x0214D29C
 	stmdb sp!, {r3, lr}
 	ldr r0, _0214D330 ; =s_char_ybObjKb_ncl_l_overlay_11_021687c4
-	ldr r1, _0214D334 ; =NitroSDK_gx_GX_LoadOBJPltt
+	ldr r1, _0214D334 ; =GX_LoadOBJPltt
 	bl ov11_02142F34
 	ldr r0, _0214D338 ; =s_char_jbBgStep3_ncg_l_overlay_11_021687d8
-	ldr r1, _0214D33C ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _0214D33C ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _0214D340 ; =s_char_ybBgStep3_ncl_l_overlay_11_021687f0
 	ldr r1, _0214D344 ; =FUN_02063550
@@ -64639,13 +64639,13 @@ ov11_0214D29C: ; 0x0214D29C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0214D330: .word s_char_ybObjKb_ncl_l_overlay_11_021687c4
-_0214D334: .word NitroSDK_gx_GX_LoadOBJPltt
+_0214D334: .word GX_LoadOBJPltt
 _0214D338: .word s_char_jbBgStep3_ncg_l_overlay_11_021687d8
-_0214D33C: .word NitroSDK_gx_GX_LoadBG2Char
+_0214D33C: .word GX_LoadBG2Char
 _0214D340: .word s_char_ybBgStep3_ncl_l_overlay_11_021687f0
-_0214D344: .word NitroSDK_gx_GX_LoadBGPltt
+_0214D344: .word GX_LoadBGPltt
 _0214D348: .word s_char_xb4EditAddr_nsc_l_overlay_11_02168808
-_0214D34C: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_0214D34C: .word GX_LoadBG2Scr
 _0214D350: .word 0x04001008
 _0214D354: .word 0x0400000A
 	arm_func_end ov11_0214D29C
@@ -65088,7 +65088,7 @@ ov11_0214D8E8: ; 0x0214D8E8
 	mov r0, #0
 	bl ov11_0215C114
 	ldr r0, _0214D97C ; =s_char_ybObjMain_ncl_l_overlay_11_02168820
-	ldr r1, _0214D980 ; =NitroSDK_gx_GX_LoadOBJPltt
+	ldr r1, _0214D980 ; =GX_LoadOBJPltt
 	bl ov11_02142F34
 	mov r0, #1
 	mov r1, r0
@@ -65118,7 +65118,7 @@ ov11_0214D8E8: ; 0x0214D8E8
 	.align 2, 0
 _0214D978: .word OVERLAY11_BSS_0216C364
 _0214D97C: .word s_char_ybObjMain_ncl_l_overlay_11_02168820
-_0214D980: .word NitroSDK_gx_GX_LoadOBJPltt
+_0214D980: .word GX_LoadOBJPltt
 _0214D984: .word ov11_0214E414
 _0214D988: .word OVERLAY11_BSS_0216C364
 	arm_func_end ov11_0214D8E8
@@ -65504,7 +65504,7 @@ ov11_0214DE0C: ; 0x0214DE0C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0214DE7C: .word s_char_jb4Error_nsc_l_overlay_11_02168838
-_0214DE80: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_0214DE80: .word GX_LoadBG2Scr
 _0214DE84: .word 0x04001008
 _0214DE88: .word 0x0400000A
 	arm_func_end ov11_0214DE0C
@@ -66110,23 +66110,23 @@ _0214E68C:
 	ldr r3, _0214E7F0 ; =0x0400000C
 	ldr r0, _0214E7F4 ; =s_char_ybObjKb_ncl_l_overlay_11_02168854
 	ldrh r2, [r3]
-	ldr r1, _0214E7F8 ; =NitroSDK_gx_GX_LoadOBJPltt
+	ldr r1, _0214E7F8 ; =GX_LoadOBJPltt
 	and r2, r2, #0x43
 	orr r2, r2, #0x218
 	orr r2, r2, #0xc00
 	strh r2, [r3]
 	bl ov11_02142F34
 	ldr r0, _0214E7FC ; =s_char_jbBgStep2_ncg_l_overlay_11_02168868
-	ldr r1, _0214E800 ; =NitroSDK_gx_GX_LoadBG3Char
+	ldr r1, _0214E800 ; =GX_LoadBG3Char
 	bl ov11_02142F34
 	ldr r0, _0214E804 ; =s_char_jbBgStep21_ncg_l_overlay_11_02168880
-	ldr r1, _0214E808 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _0214E808 ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r1, _0214E80C ; =FUN_02063550
 	add r0, sp, #0x16
 	bl ov11_02142F34
 	ldr r0, _0214E810 ; =s_char_jb3List_nsc_l_overlay_11_02168898
-	ldr r1, _0214E814 ; =NitroSDK_gx_GX_LoadBG3ScrBmp
+	ldr r1, _0214E814 ; =GX_LoadBG3Scr
 	bl ov11_02142F34
 	add r0, sp, #0x2b
 	bl ov11_02142ED4
@@ -66191,14 +66191,14 @@ _0214E7E8: .word s_char_ybBgStep2_ncl_l_overlay_11_02165ae4
 _0214E7EC: .word s_char_ybBgStep21_ncl_l_overlay_11_02165af9
 _0214E7F0: .word 0x0400000C
 _0214E7F4: .word s_char_ybObjKb_ncl_l_overlay_11_02168854
-_0214E7F8: .word NitroSDK_gx_GX_LoadOBJPltt
+_0214E7F8: .word GX_LoadOBJPltt
 _0214E7FC: .word s_char_jbBgStep2_ncg_l_overlay_11_02168868
-_0214E800: .word NitroSDK_gx_GX_LoadBG3Char
+_0214E800: .word GX_LoadBG3Char
 _0214E804: .word s_char_jbBgStep21_ncg_l_overlay_11_02168880
-_0214E808: .word NitroSDK_gx_GX_LoadBG2Char
-_0214E80C: .word NitroSDK_gx_GX_LoadBGPltt
+_0214E808: .word GX_LoadBG2Char
+_0214E80C: .word GX_LoadBGPltt
 _0214E810: .word s_char_jb3List_nsc_l_overlay_11_02168898
-_0214E814: .word NitroSDK_gx_GX_LoadBG3ScrBmp
+_0214E814: .word GX_LoadBG3Scr
 _0214E818: .word OVERLAY11_BSS_0216C36C
 _0214E81C: .word 0x04001008
 _0214E820: .word 0x0400000A
@@ -66928,7 +66928,7 @@ _0214F1B4:
 	cmp r5, #2
 	blt _0214F1B4
 	ldr r0, _0214F3B4 ; =s_char_ybObjMain_ncl_l_overlay_11_021688ac
-	ldr r1, _0214F3B8 ; =NitroSDK_gx_GX_LoadOBJPltt
+	ldr r1, _0214F3B8 ; =GX_LoadOBJPltt
 	bl ov11_02142F34
 	mov r0, #1
 	mov r1, r0
@@ -67060,7 +67060,7 @@ _0214F3A4:
 	.align 2, 0
 _0214F3B0: .word OVERLAY11_BSS_0216C36C
 _0214F3B4: .word s_char_ybObjMain_ncl_l_overlay_11_021688ac
-_0214F3B8: .word NitroSDK_gx_GX_LoadOBJPltt
+_0214F3B8: .word GX_LoadOBJPltt
 _0214F3BC: .word 0x04000010
 _0214F3C0: .word ov11_0214C5E8
 _0214F3C4: .word ov11_0214D128
@@ -68644,7 +68644,7 @@ _021508FC: .word ov11_02150994
 ov11_02150900: ; 0x02150900
 	stmdb sp!, {r3, lr}
 	ldr r0, _02150974 ; =s_char_jbBgStep3_ncg_l_overlay_11_021688e4
-	ldr r1, _02150978 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _02150978 ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _0215097C ; =s_char_ybBgStep3_ncl_l_overlay_11_021688fc
 	ldr r1, _02150980 ; =FUN_02063550
@@ -68673,11 +68673,11 @@ ov11_02150900: ; 0x02150900
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02150974: .word s_char_jbBgStep3_ncg_l_overlay_11_021688e4
-_02150978: .word NitroSDK_gx_GX_LoadBG2Char
+_02150978: .word GX_LoadBG2Char
 _0215097C: .word s_char_ybBgStep3_ncl_l_overlay_11_021688fc
-_02150980: .word NitroSDK_gx_GX_LoadBGPltt
+_02150980: .word GX_LoadBGPltt
 _02150984: .word s_char_xb4None_nsc_l_overlay_11_02168914
-_02150988: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02150988: .word GX_LoadBG2Scr
 _0215098C: .word 0x04001008
 _02150990: .word 0x0400000A
 	arm_func_end ov11_02150900
@@ -68871,7 +68871,7 @@ ov11_02150B5C: ; 0x02150B5C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02150BCC: .word s_char_xb4Multi_nsc_l_overlay_11_02168928
-_02150BD0: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02150BD0: .word GX_LoadBG2Scr
 _02150BD4: .word 0x04001008
 _02150BD8: .word 0x0400000A
 	arm_func_end ov11_02150B5C
@@ -69218,7 +69218,7 @@ ov11_02150F74: ; 0x02150F74
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02150FE4: .word s_char_xb4Multi_nsc_l_overlay_11_0216893c
-_02150FE8: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02150FE8: .word GX_LoadBG2Scr
 _02150FEC: .word 0x04001008
 _02150FF0: .word 0x0400000A
 	arm_func_end ov11_02150F74
@@ -69566,7 +69566,7 @@ ov11_021513A4: ; 0x021513A4
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02151414: .word s_char_xb4Multi_nsc_l_overlay_11_02168950
-_02151418: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02151418: .word GX_LoadBG2Scr
 _0215141C: .word 0x04001008
 _02151420: .word 0x0400000A
 	arm_func_end ov11_021513A4
@@ -69732,7 +69732,7 @@ _021515E8: .word ov11_02151694
 ov11_021515EC: ; 0x021515EC
 	stmdb sp!, {r3, lr}
 	ldr r0, _02151674 ; =s_char_jbBgStep3_ncg_l_overlay_11_02168964
-	ldr r1, _02151678 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _02151678 ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _0215167C ; =s_char_ybBgStep3_ncl_l_overlay_11_0216897c
 	ldr r1, _02151680 ; =FUN_02063550
@@ -69766,11 +69766,11 @@ ov11_021515EC: ; 0x021515EC
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02151674: .word s_char_jbBgStep3_ncg_l_overlay_11_02168964
-_02151678: .word NitroSDK_gx_GX_LoadBG2Char
+_02151678: .word GX_LoadBG2Char
 _0215167C: .word s_char_ybBgStep3_ncl_l_overlay_11_0216897c
-_02151680: .word NitroSDK_gx_GX_LoadBGPltt
+_02151680: .word GX_LoadBGPltt
 _02151684: .word s_char_xb4Multi_nsc_l_overlay_11_02168994
-_02151688: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02151688: .word GX_LoadBG2Scr
 _0215168C: .word 0x04001008
 _02151690: .word 0x0400000A
 	arm_func_end ov11_021515EC
@@ -70100,7 +70100,7 @@ _02151A68: .word ov11_02151B14
 ov11_02151A6C: ; 0x02151A6C
 	stmdb sp!, {r3, lr}
 	ldr r0, _02151AF4 ; =s_char_jbBgStep3_ncg_l_overlay_11_021689a8
-	ldr r1, _02151AF8 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _02151AF8 ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _02151AFC ; =s_char_ybBgStep3_ncl_l_overlay_11_021689c0
 	ldr r1, _02151B00 ; =FUN_02063550
@@ -70134,11 +70134,11 @@ ov11_02151A6C: ; 0x02151A6C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02151AF4: .word s_char_jbBgStep3_ncg_l_overlay_11_021689a8
-_02151AF8: .word NitroSDK_gx_GX_LoadBG2Char
+_02151AF8: .word GX_LoadBG2Char
 _02151AFC: .word s_char_ybBgStep3_ncl_l_overlay_11_021689c0
-_02151B00: .word NitroSDK_gx_GX_LoadBGPltt
+_02151B00: .word GX_LoadBGPltt
 _02151B04: .word s_char_xb4Multi_nsc_l_overlay_11_021689d8
-_02151B08: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02151B08: .word GX_LoadBG2Scr
 _02151B0C: .word 0x04001008
 _02151B10: .word 0x0400000A
 	arm_func_end ov11_02151A6C
@@ -70503,10 +70503,10 @@ _02151F5C:
 	subs r2, r2, #1
 	bne _02151F5C
 	ldr r0, _0215202C ; =s_char_ybObjWay_ncl_l_overlay_11_021689ec
-	ldr r1, _02152030 ; =NitroSDK_gx_GX_LoadOBJPltt
+	ldr r1, _02152030 ; =GX_LoadOBJPltt
 	bl ov11_02142F34
 	ldr r0, _02152034 ; =s_char_jbBgStep1_ncg_l_overlay_11_02168a00
-	ldr r1, _02152038 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _02152038 ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _0215203C ; =s_char_jbBgStep1_ncl_l_overlay_11_02168a18
 	ldr r1, _02152040 ; =FUN_02063550
@@ -70548,13 +70548,13 @@ _02151F5C:
 	.align 2, 0
 _02152028: .word s_char_ybBgStep11_ncl_l_overlay_11_02165ba8
 _0215202C: .word s_char_ybObjWay_ncl_l_overlay_11_021689ec
-_02152030: .word NitroSDK_gx_GX_LoadOBJPltt
+_02152030: .word GX_LoadOBJPltt
 _02152034: .word s_char_jbBgStep1_ncg_l_overlay_11_02168a00
-_02152038: .word NitroSDK_gx_GX_LoadBG2Char
+_02152038: .word GX_LoadBG2Char
 _0215203C: .word s_char_jbBgStep1_ncl_l_overlay_11_02168a18
-_02152040: .word NitroSDK_gx_GX_LoadBGPltt
+_02152040: .word GX_LoadBGPltt
 _02152044: .word s_char_jb2Ap_nsc_l_overlay_11_02168a30
-_02152048: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02152048: .word GX_LoadBG2Scr
 _0215204C: .word OVERLAY11_BSS_0216C38C
 _02152050: .word 0x04001008
 _02152054: .word 0x0400000A
@@ -70985,7 +70985,7 @@ _021525AC:
 	ldr r0, [r0]
 	bl ov11_0215B060
 	ldr r0, _021526AC ; =s_char_ybObjMain_ncl_l_overlay_11_02168a44
-	ldr r1, _021526B0 ; =NitroSDK_gx_GX_LoadOBJPltt
+	ldr r1, _021526B0 ; =GX_LoadOBJPltt
 	bl ov11_02142F34
 	mov r0, #1
 	mov r1, r0
@@ -71047,7 +71047,7 @@ _0215269C:
 	.align 2, 0
 _021526A8: .word OVERLAY11_BSS_0216C38C
 _021526AC: .word s_char_ybObjMain_ncl_l_overlay_11_02168a44
-_021526B0: .word NitroSDK_gx_GX_LoadOBJPltt
+_021526B0: .word GX_LoadOBJPltt
 _021526B4: .word ov11_02147A5C
 _021526B8: .word ov11_02152C28
 _021526BC: .word ov11_0214E414
@@ -71537,7 +71537,7 @@ _02152D60:
 	subs r2, r2, #1
 	bne _02152D60
 	ldr r0, _02152E14 ; =s_char_jbBgStep2_ncg_l_overlay_11_02168a5c
-	ldr r1, _02152E18 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _02152E18 ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _02152E1C ; =s_char_ybBgStep2_ncl_l_overlay_11_02168a74
 	ldr r1, _02152E20 ; =FUN_02063550
@@ -71575,11 +71575,11 @@ _02152D60:
 	.align 2, 0
 _02152E10: .word s_char_ybBgStep21_ncl_l_overlay_11_02165c54
 _02152E14: .word s_char_jbBgStep2_ncg_l_overlay_11_02168a5c
-_02152E18: .word NitroSDK_gx_GX_LoadBG2Char
+_02152E18: .word GX_LoadBG2Char
 _02152E1C: .word s_char_ybBgStep2_ncl_l_overlay_11_02168a74
-_02152E20: .word NitroSDK_gx_GX_LoadBGPltt
+_02152E20: .word GX_LoadBGPltt
 _02152E24: .word s_char_jb3Way_nsc_l_overlay_11_02168a8c
-_02152E28: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02152E28: .word GX_LoadBG2Scr
 _02152E2C: .word OVERLAY11_BSS_0216C394
 _02152E30: .word 0x04001008
 _02152E34: .word 0x0400000A
@@ -72068,7 +72068,7 @@ _02153468: .word ov11_021535AC
 ov11_0215346C: ; 0x0215346C
 	stmdb sp!, {r3, lr}
 	ldr r0, _021534F4 ; =s_char_jbBgStep3_ncg_l_overlay_11_02168aa0
-	ldr r1, _021534F8 ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _021534F8 ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _021534FC ; =s_char_ybBgStep3_ncl_l_overlay_11_02168ab8
 	ldr r1, _02153500 ; =FUN_02063550
@@ -72102,11 +72102,11 @@ ov11_0215346C: ; 0x0215346C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _021534F4: .word s_char_jbBgStep3_ncg_l_overlay_11_02168aa0
-_021534F8: .word NitroSDK_gx_GX_LoadBG2Char
+_021534F8: .word GX_LoadBG2Char
 _021534FC: .word s_char_ybBgStep3_ncl_l_overlay_11_02168ab8
-_02153500: .word NitroSDK_gx_GX_LoadBGPltt
+_02153500: .word GX_LoadBGPltt
 _02153504: .word s_char_xb4Multi_nsc_l_overlay_11_02168ad0
-_02153508: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02153508: .word GX_LoadBG2Scr
 _0215350C: .word 0x04001008
 _02153510: .word 0x0400000A
 	arm_func_end ov11_0215346C
@@ -72388,7 +72388,7 @@ ov11_0215380C: ; 0x0215380C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02153868: .word s_char_xb4Multi_nsc_l_overlay_11_02168ae4
-_0215386C: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_0215386C: .word GX_LoadBG2Scr
 _02153870: .word 0x04001008
 _02153874: .word 0x0400000A
 	arm_func_end ov11_0215380C
@@ -72603,7 +72603,7 @@ ov11_02153AA8: ; 0x02153AA8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02153B04: .word s_char_xb4None_nsc_l_overlay_11_02168af8
-_02153B08: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02153B08: .word GX_LoadBG2Scr
 _02153B0C: .word 0x04001008
 _02153B10: .word 0x0400000A
 	arm_func_end ov11_02153AA8
@@ -72794,7 +72794,7 @@ ov11_02153CE4: ; 0x02153CE4
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02153D54: .word s_char_xb4Multi_nsc_l_overlay_11_02168b0c
-_02153D58: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02153D58: .word GX_LoadBG2Scr
 _02153D5C: .word 0x04001008
 _02153D60: .word 0x0400000A
 	arm_func_end ov11_02153CE4
@@ -72944,7 +72944,7 @@ _02153EFC: .word ov11_02153FA8
 ov11_02153F00: ; 0x02153F00
 	stmdb sp!, {r3, lr}
 	ldr r0, _02153F88 ; =s_char_jbBgStep2_ncg_l_overlay_11_02168b20
-	ldr r1, _02153F8C ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _02153F8C ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _02153F90 ; =s_char_ybBgStep2_ncl_l_overlay_11_02168b38
 	ldr r1, _02153F94 ; =FUN_02063550
@@ -72978,11 +72978,11 @@ ov11_02153F00: ; 0x02153F00
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02153F88: .word s_char_jbBgStep2_ncg_l_overlay_11_02168b20
-_02153F8C: .word NitroSDK_gx_GX_LoadBG2Char
+_02153F8C: .word GX_LoadBG2Char
 _02153F90: .word s_char_ybBgStep2_ncl_l_overlay_11_02168b38
-_02153F94: .word NitroSDK_gx_GX_LoadBGPltt
+_02153F94: .word GX_LoadBGPltt
 _02153F98: .word s_char_xb3Multi_nsc_l_overlay_11_02168b50
-_02153F9C: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_02153F9C: .word GX_LoadBG2Scr
 _02153FA0: .word 0x04001008
 _02153FA4: .word 0x0400000A
 	arm_func_end ov11_02153F00
@@ -73266,7 +73266,7 @@ _021542EC: .word ov11_02154398
 ov11_021542F0: ; 0x021542F0
 	stmdb sp!, {r3, lr}
 	ldr r0, _02154378 ; =s_char_jbBgStep3_ncg_l_overlay_11_02168b64
-	ldr r1, _0215437C ; =NitroSDK_gx_GX_LoadBG2Char
+	ldr r1, _0215437C ; =GX_LoadBG2Char
 	bl ov11_02142F34
 	ldr r0, _02154380 ; =s_char_ybBgStep3_ncl_l_overlay_11_02168b7c
 	ldr r1, _02154384 ; =FUN_02063550
@@ -73300,11 +73300,11 @@ ov11_021542F0: ; 0x021542F0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02154378: .word s_char_jbBgStep3_ncg_l_overlay_11_02168b64
-_0215437C: .word NitroSDK_gx_GX_LoadBG2Char
+_0215437C: .word GX_LoadBG2Char
 _02154380: .word s_char_ybBgStep3_ncl_l_overlay_11_02168b7c
-_02154384: .word NitroSDK_gx_GX_LoadBGPltt
+_02154384: .word GX_LoadBGPltt
 _02154388: .word s_char_jb4Usb_nsc_l_overlay_11_02168b94
-_0215438C: .word NitroSDK_gx_GX_LoadBG2ScrBmp
+_0215438C: .word GX_LoadBG2Scr
 _02154390: .word 0x04001008
 _02154394: .word 0x0400000A
 	arm_func_end ov11_021542F0
@@ -73791,7 +73791,7 @@ ov11_02154934: ; 0x02154934
 	ldr r0, [r0]
 	mov r2, #0x600
 	add r0, r0, #4
-	bl NitroSDK_gx_GX_LoadBG2ScrBmp
+	bl GX_LoadBG2Scr
 	ldr r0, _02154984 ; =OVERLAY11_BSS_0216C3B0
 	mov r1, #0
 	ldr r0, [r0]
@@ -76613,7 +76613,7 @@ ov11_02156D4C: ; 0x02156D4C
 	mov r1, #0
 	ldr r0, [r0]
 	mov r2, #0x600
-	bl NitroSDK_gx_GXS_LoadBG1Scr
+	bl GXS_LoadBG1Scr
 	ldr r0, _02156D94 ; =OVERLAY11_BSS_0216C3CC
 	ldr r0, [r0]
 	bl ov11_0215B060
@@ -77176,7 +77176,7 @@ ov11_0215747C: ; 0x0215747C
 	mov r1, #0x1f
 	strb r2, [r3, #0x1e]
 	mov r2, #0
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r1, _02157788 ; =DAT_overlay_11_02165ec8
 	mov r0, #0
 	ldrb r1, [r1, sl]
@@ -77401,7 +77401,7 @@ ov11_0215781C: ; 0x0215781C
 	strb r2, [r3, #0x1a]
 	ldr r1, [r1]
 	ldrsb r1, [r1, #0x1a]
-	bl sub_02062C54
+	bl G2x_ChangeBlendBrightness_
 	ldr r1, _02157870 ; =OVERLAY11_BSS_0216C3D8
 	mvn r0, #0xb
 	ldr r1, [r1]
@@ -77894,7 +77894,7 @@ ov11_02157ED8: ; 0x02157ED8
 	strb r2, [r3, #0x1a]
 	ldr r1, [r1]
 	ldrsb r1, [r1, #0x1a]
-	bl sub_02062C54
+	bl G2x_ChangeBlendBrightness_
 	ldr r0, _02157F28 ; =OVERLAY11_BSS_0216C3D8
 	ldr r0, [r0]
 	ldrsb r0, [r0, #0x1a]
@@ -82400,11 +82400,11 @@ ov11_0215B948: ; 0x0215B948
 	str r0, [r2]
 	ldr r0, _0215B988 ; =0x04000050
 	mov r2, #0x10
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldr r0, _0215B98C ; =0x04001050
 	mov r1, #0x3f
 	mov r2, #0x10
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0215B984: .word OVERLAY11_BSS_0216C3FC
@@ -82468,13 +82468,13 @@ ov11_0215B9C8: ; 0x0215B9C8
 	bne _0215BA48
 	ldrsb r2, [r0, r5]
 	ldr r0, _0215BA94 ; =0x04001050
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 	b _0215BA54
 	arm_func_end ov11_0215B9C8
 _0215BA48:
 	ldrsb r2, [r0, r5]
 	ldr r0, _0215BA98 ; =0x04000050
-	bl sub_02062C2C
+	bl G2x_SetBlendBrightness_
 _0215BA54:
 	ldr r1, _0215BA9C ; =ov11_0215BAA0
 	mov r2, r6
@@ -82540,12 +82540,12 @@ ov11_0215BAA0: ; 0x0215BAA0
 	cmp r4, r0
 	bne _0215BB4C
 	ldr r0, _0215BBC0 ; =0x04001050
-	bl sub_02062C54
+	bl G2x_ChangeBlendBrightness_
 	b _0215BB54
 	arm_func_end ov11_0215BAA0
 _0215BB4C:
 	ldr r0, _0215BBC4 ; =0x04000050
-	bl sub_02062C54
+	bl G2x_ChangeBlendBrightness_
 _0215BB54:
 	ldrsh r1, [r4, #4]
 	ldrh r0, [r4, #6]
@@ -82560,12 +82560,12 @@ _0215BB54:
 	bne _0215BB90
 	ldrsb r1, [r1, r2]
 	ldr r0, _0215BBC0 ; =0x04001050
-	bl sub_02062C54
+	bl G2x_ChangeBlendBrightness_
 	b _0215BB9C
 _0215BB90:
 	ldrsb r1, [r1, r2]
 	ldr r0, _0215BBC4 ; =0x04000050
-	bl sub_02062C54
+	bl G2x_ChangeBlendBrightness_
 _0215BB9C:
 	mov r2, #0
 	mov r1, r5
@@ -82859,10 +82859,10 @@ _0215BF48:
 	str r1, [r4, #0x20]
 	str r1, [r4, #0x24]
 	bne _0215BF94
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	b _0215BF98
 _0215BF94:
-	bl sub_020626F0
+	bl G2_GetBG0ScrPtr
 _0215BF98:
 	ldr r1, _0215C020 ; =DAT_overlay_11_02165ee8
 	mov r2, r8, lsl #1
@@ -82923,7 +82923,7 @@ ov11_0215C028: ; 0x0215C028
 	ldr r0, [r0]
 	mov r2, #0x6000
 	ldr r0, [r0, #0x638]
-	bl NitroSDK_gx_GX_LoadBG0Char
+	bl GX_LoadBG0Char
 	b _0215C0A0
 	arm_func_end ov11_0215C028
 _0215C07C:
@@ -82935,7 +82935,7 @@ _0215C07C:
 	ldr r0, [r0]
 	mov r2, r1
 	ldr r0, [r0, #0x668]
-	bl NitroSDK_gx_GXS_LoadBG0Char
+	bl GXS_LoadBG0Char
 _0215C0A0:
 	mov r0, #0
 	strb r0, [r4]
@@ -82955,7 +82955,7 @@ ov11_0215C0B0: ; 0x0215C0B0
 	add r0, r0, #0x610
 	cmp r4, r0
 	bne _0215C0F0
-	bl sub_02062988
+	bl G2_GetBG0CharPtr
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x6000
@@ -82963,7 +82963,7 @@ ov11_0215C0B0: ; 0x0215C0B0
 	b _0215C104
 	arm_func_end ov11_0215C0B0
 _0215C0F0:
-	bl sub_02062988
+	bl G2_GetBG0CharPtr
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x3000
@@ -84331,13 +84331,13 @@ ov11_0215D214: ; 0x0215D214
 	mov r1, #0
 	ldr r0, [r0]
 	mov r2, #0x400
-	bl NitroSDK_gx_GX_LoadOAM
+	bl GX_LoadOAM
 	ldr r0, _0215D258 ; =OVERLAY11_BSS_0216C428
 	mov r1, #0
 	ldr r0, [r0]
 	mov r2, #0x400
 	add r0, r0, #0x400
-	bl NitroSDK_gx_GXS_LoadOAM
+	bl GXS_LoadOAM
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0215D258: .word OVERLAY11_BSS_0216C428
@@ -84609,47 +84609,47 @@ _0215D5A8:
 	arm_func_start ov11_0215D5B0
 ov11_0215D5B0: ; 0x0215D5B0
 	stmdb sp!, {r3, lr}
-	bl sub_02062574
+	bl GX_DisableBankForBG
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1]
-	bl sub_02062588
+	bl GX_DisableBankForOBJ
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #4]
-	bl sub_0206259C
+	bl GX_DisableBankForBGExtPltt
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #8]
-	bl sub_020625C0
+	bl GX_DisableBankForOBJExtPltt
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #0xc]
-	bl sub_020625E4
+	bl GX_DisableBankForTex
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #0x10]
-	bl sub_020625F8
+	bl GX_DisableBankForTexPltt
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #0x14]
-	bl sub_0206260C
+	bl GX_DisableBankForClearImage
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #0x18]
-	bl sub_02062648
+	bl GX_DisableBankForSubBG
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #0x1c]
-	bl sub_0206265C
+	bl GX_DisableBankForSubOBJ
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #0x20]
-	bl sub_02062670
+	bl GX_DisableBankForSubBGExtPltt
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #0x24]
-	bl sub_02062698
+	bl GX_DisableBankForSubOBJExtPltt
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #0x28]
-	bl sub_02062620
+	bl GX_DisableBankForARM7
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #0x2c]
-	bl sub_02062634
+	bl GX_DisableBankForLCDC
 	ldr r1, _0215D660 ; =OVERLAY11_BSS_0216C430
 	str r0, [r1, #0x30]
 	ldr r0, [r1, #0x2c]
-	bl sub_02062044
+	bl GX_SetBankForARM7
 	bl ov11_0215D75C
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -84659,47 +84659,47 @@ _0215D660: .word OVERLAY11_BSS_0216C430
 	arm_func_start ov11_0215D664
 ov11_0215D664: ; 0x0215D664
 	stmdb sp!, {r3, lr}
-	bl sub_02062574
-	bl sub_02062588
-	bl sub_02062648
-	bl sub_0206265C
+	bl GX_DisableBankForBG
+	bl GX_DisableBankForOBJ
+	bl GX_DisableBankForSubBG
+	bl GX_DisableBankForSubOBJ
 	bl ov11_0215D75C
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0]
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #4]
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #8]
-	bl NitroSDK_gx_GX_SetBankForBGExtPltt
+	bl GX_SetBankForBGExtPltt
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #0xc]
-	bl NitroSDK_gx_GX_SetBankForOBJExtPltt
+	bl GX_SetBankForOBJExtPltt
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #0x10]
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #0x14]
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #0x18]
-	bl NitroSDK_gx_GX_SetBankForClearImage
+	bl GX_SetBankForClearImage
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #0x1c]
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #0x20]
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #0x24]
-	bl NitroSDK_gx_GX_SetBankForSubBGExtPltt
+	bl GX_SetBankForSubBGExtPltt
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #0x28]
-	bl NitroSDK_gx_GX_SetBankForSubOBJExtPltt
+	bl GX_SetBankForSubOBJExtPltt
 	ldr r0, _0215D750 ; =OVERLAY11_BSS_0216C430
 	ldr r0, [r0, #0x30]
-	bl sub_020620F0
+	bl GX_SetBankForLCDC
 	mov r3, #0
 	ldr r2, _0215D754 ; =0x04000050
 	ldr r0, _0215D758 ; =0x04001014
@@ -84727,7 +84727,7 @@ _0215D758: .word 0x04001014
 ov11_0215D75C: ; 0x0215D75C
 	stmdb sp!, {r3, lr}
 	ldr r0, _0215D7D0 ; =0x000001F3
-	bl sub_020620F0
+	bl GX_SetBankForLCDC
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0x40000
@@ -84736,7 +84736,7 @@ ov11_0215D75C: ; 0x0215D75C
 	mov r0, #0
 	mov r2, #0x24000
 	bl MIi_CpuClearFast
-	bl sub_02062634
+	bl GX_DisableBankForLCDC
 	mov r0, #0x200
 	mov r1, #0x7000000
 	mov r2, #0x400

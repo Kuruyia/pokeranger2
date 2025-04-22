@@ -45,37 +45,37 @@ ov5_0211CA2C: ; 0x0211CA2C
 	arm_func_start ov5_0211CA48
 ov5_0211CA48: ; 0x0211CA48
 	stmdb sp!, {r3, lr}
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	ldr r0, _0211CB48 ; =0x000001FF
-	bl sub_020620F0
+	bl GX_SetBankForLCDC
 	mov r0, #0
 	mov r1, #0x6800000
 	mov r2, #0xa4000
 	bl MIi_CpuClearFast
-	bl sub_02062634
+	bl GX_DisableBankForLCDC
 	mov r0, #1
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #2
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #1
 	mov r1, #0
 	mov r2, r1
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r0, #4
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r2, #0x4000000
 	ldr r1, [r2]
 	ldr r0, _0211CB4C ; =0xFFCFFFEF
@@ -102,7 +102,7 @@ ov5_0211CA48: ; 0x0211CA48
 	ldrh r0, [r2]
 	bic r0, r0, #0x8000
 	strh r0, [r2]
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _0211CB58 ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -1164,7 +1164,7 @@ ov5_0211D8A4: ; 0x0211D8A4
 	orr lr, lr, #3
 	strh lr, [ip, #0xe]
 	str r3, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0211D914: .word 0x04001000
@@ -2220,12 +2220,12 @@ ov5_0211E868: ; 0x0211E868
 	mov r7, #2
 	arm_func_end ov5_0211E868
 _0211E8B0:
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	add r1, r6, #0xd
 	mov r1, r1, lsl #1
 	mov sb, r0
 	add r8, r1, #0x200
-	bl sub_0206281C
+	bl G2S_GetBG2ScrPtr
 	mov r2, r7
 	add r0, r0, #0x610
 	add r1, sb, r8
@@ -2234,12 +2234,12 @@ _0211E8B0:
 	cmp r6, r4
 	blt _0211E8B0
 _0211E8E4:
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	add r1, r6, #0xd
 	mov r1, r1, lsl #1
 	mov r6, r0
 	add r4, r1, #0x200
-	bl sub_0206281C
+	bl G2S_GetBG2ScrPtr
 	mov r1, r5, lsl #1
 	add r1, r1, #0x600
 	add r0, r0, r1
@@ -2251,12 +2251,12 @@ _0211E918:
 	mov r7, #0
 	mov r4, #2
 _0211E920:
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	add r1, r7, #0xd
 	mov r1, r1, lsl #1
 	mov r6, r0
 	add r5, r1, #0x200
-	bl sub_0206281C
+	bl G2S_GetBG2ScrPtr
 	mov r2, r4
 	add r0, r0, #0x610
 	add r1, r6, r5
@@ -2809,7 +2809,7 @@ _0211F048:
 	cmp r6, #0x11
 	add r7, r7, #0x14
 	blt _0211F024
-	bl sub_02062798
+	bl G2_GetBG2ScrPtr
 	mov r1, r0
 	add r0, sp, #0x10
 	mov r2, #0x800

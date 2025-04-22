@@ -296,24 +296,24 @@ ov22_0211CD80: ; 0x0211CD80
 	ldrb r0, [sp, #4]
 	strb r0, [sp, #6]
 	strb r0, [r4, #0x3ad]
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #4
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	mov r0, #0
-	bl sub_02061568
+	bl GXS_SetGraphicsMode
 	ldr r1, _0211CF3C ; =0x04001000
 	mov r2, #0
 	ldr r3, [r1]
@@ -348,7 +348,7 @@ ov22_0211CD80: ; 0x0211CD80
 	mov r2, r1
 	mov r3, r1
 	str r1, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr lr, _0211CF4C ; =0x04000060
 	mov r2, #0
 	ldrh r0, [lr]
@@ -379,7 +379,7 @@ ov22_0211CD80: ; 0x0211CD80
 	blx r1
 	arm_func_end ov22_0211CD80
 _0211CF0C:
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _0211CF3C ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -582,12 +582,12 @@ ov22_0211D1A4: ; 0x0211D1A4
 	orr r0, r0, #0x20c
 	orr r0, r0, #0x400
 	strh r0, [r1]
-	bl sub_020629BC
+	bl G2S_GetBG0CharPtr
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x20
 	bl MIi_CpuClearFast
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x800
@@ -3216,22 +3216,22 @@ ov22_0211F594: ; 0x0211F594
 	sub sp, sp, #0x20
 	mov r4, r0
 	mov r0, #0
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #1
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #1
 	mov r1, #3
 	mov r2, r0
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	ldr r1, _0211F6EC ; =0x0400000E
 	ldrh r0, [r1]
 	and r0, r0, #0x43
 	orr r0, r0, #0x284
 	orr r0, r0, #0x4000
 	strh r0, [r1]
-	bl sub_02062890
+	bl G2_GetBG3ScrPtr
 	mov r1, r0
 	mov r0, #0x8000
 	mov r2, #0x18000
@@ -3252,7 +3252,7 @@ ov22_0211F594: ; 0x0211F594
 	add r1, sp, #0x10
 	mov r3, r2
 	str r2, [sp, #4]
-	bl sub_02062B60
+	bl G2x_SetBGyAffine_
 	ldr ip, _0211F6F0 ; =0x0400000A
 	mov r3, #0
 	ldrh r1, [ip]
@@ -3271,7 +3271,7 @@ ov22_0211F594: ; 0x0211F594
 	orr lr, lr, #2
 	strh lr, [ip, #4]
 	str r3, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	mov r1, #0x4000000
 	ldr r0, [r1]
 	bic r0, r0, #0x1f00
@@ -3331,9 +3331,9 @@ ov22_0211F72C: ; 0x0211F72C
 	bl sub_0201001C
 	add r0, r0, #0x1000
 	ldr r6, [r0, #0x4ac]
-	bl sub_02062744
+	bl G2_GetBG1ScrPtr
 	mov r5, r0
-	bl sub_020629DC
+	bl G2_GetBG1CharPtr
 	mov r3, r0
 	mov r0, #0
 	str r0, [sp]
@@ -3419,7 +3419,7 @@ _0211F870:
 	ldr r0, [sp, #0x128]
 	ldr r2, [sp, #0x12c]
 	mov r1, #0
-	bl NitroSDK_gx_GX_LoadBG3ScrBmp
+	bl GX_LoadBG3Scr
 	add r0, sp, #0xdc
 	bl CBinaryFile_complete_obj_dtor
 	add r0, sp, #0x10
@@ -5269,7 +5269,7 @@ ov22_021210B8: ; 0x021210B8
 	mov r1, #0x1c0
 	ldr r0, [r0, #0xc]
 	mov r2, #0x20
-	bl NitroSDK_gx_GX_LoadBGPltt
+	bl GX_LoadBGPltt
 	add r0, sp, #4
 	bl CNCLRFile_complete_obj_dtor
 	add sp, sp, #0xc0

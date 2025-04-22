@@ -178,34 +178,34 @@ ov27_0211CBFC: ; 0x0211CBFC
 	stmdb sp!, {r3, r4, lr}
 	sub sp, sp, #4
 	mov r4, r0
-	bl sub_0206235C
-	bl sub_02062370
-	bl NitroSDK_gx_GX_ResetBankForBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForOBJExtPltt
-	bl NitroSDK_gx_GX_ResetBankForTex
-	bl NitroSDK_gx_GX_ResetBankForTexPltt
-	bl NitroSDK_gx_GX_ResetBankForClearImage
-	bl sub_0206241C
-	bl sub_02062430
-	bl NitroSDK_gx_GX_ResetBankForSubBGExtPltt
-	bl NitroSDK_gx_GX_ResetBankForSubOBJExtPltt
-	bl sub_02062408
+	bl GX_ResetBankForBG
+	bl GX_ResetBankForOBJ
+	bl GX_ResetBankForBGExtPltt
+	bl GX_ResetBankForOBJExtPltt
+	bl GX_ResetBankForTex
+	bl GX_ResetBankForTexPltt
+	bl GX_ResetBankForClearImage
+	bl GX_ResetBankForSubBG
+	bl GX_ResetBankForSubOBJ
+	bl GX_ResetBankForSubBGExtPltt
+	bl GX_ResetBankForSubOBJExtPltt
+	bl GX_ResetBankForARM7
 	mov r0, #2
-	bl NitroSDK_gx_GX_SetBankForTex
+	bl GX_SetBankForTex
 	mov r0, #0x40
-	bl NitroSDK_gx_GX_SetBankForTexPltt
+	bl GX_SetBankForTexPltt
 	mov r0, #1
-	bl sub_020616C4
+	bl GX_SetBankForBG
 	mov r0, #0x30
-	bl sub_02061954
+	bl GX_SetBankForOBJ
 	mov r0, #1
 	mov r1, #0
 	mov r2, r0
-	bl sub_02061500
+	bl GX_SetGraphicsMode
 	mov r0, #4
-	bl sub_02062110
+	bl GX_SetBankForSubBG
 	mov r0, #0x100
-	bl sub_020621B8
+	bl GX_SetBankForSubOBJ
 	ldr r3, _0211CD5C ; =0x04001000
 	ldr r0, _0211CD60 ; =0xFFCFFFEF
 	ldr r2, [r3]
@@ -221,7 +221,7 @@ ov27_0211CBFC: ; 0x0211CBFC
 	str r1, [sp]
 	mov r2, r1
 	mov r3, r1
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	ldr r3, _0211CD64 ; =0x04000060
 	ldr r0, _0211CD68 ; =0xFFFFFDF1
 	ldrh r1, [r3]
@@ -251,7 +251,7 @@ ov27_0211CBFC: ; 0x0211CBFC
 	bic r1, r1, #0x1f00
 	str r1, [r2]
 	bl ov27_0211D0E0
-	bl sub_020614B8
+	bl GX_DispOn
 	ldr r1, _0211CD5C ; =0x04001000
 	ldr r0, [r1]
 	orr r0, r0, #0x10000
@@ -601,7 +601,7 @@ ov27_0211D150: ; 0x0211D150
 	orr r1, r2, r1, lsl #13
 	str r1, [r3]
 	ldr r0, [r0, #0x350]
-	bl sub_02061568
+	bl GXS_SetGraphicsMode
 	ldr r0, _0211D1EC ; =0x04001010
 	mov r1, #0
 	str r1, [r0]
@@ -632,7 +632,7 @@ ov27_0211D1F0: ; 0x0211D1F0
 	orr r3, r3, #0x3000
 	strh r3, [ip]
 	bl MIi_CpuClearFast
-	bl sub_02062724
+	bl G2S_GetBG0ScrPtr
 	mov r1, r0
 	mov r0, #0
 	mov r2, #0x800
@@ -1314,7 +1314,7 @@ _0211DBB0: .word ov27_0211F674
 ov27_0211DBB4: ; 0x0211DBB4
 	stmdb sp!, {r3, lr}
 	mov r0, #0
-	bl sub_02061568
+	bl GXS_SetGraphicsMode
 	ldr r0, _0211DC5C ; =0x0400100A
 	ldr r1, _0211DC60 ; =0x0000110C
 	ldrh r3, [r0]
@@ -2442,7 +2442,7 @@ _0211EAC8: .word 0x04001010
 ov27_0211EACC: ; 0x0211EACC
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r4, r0
-	bl sub_02062914
+	bl G2S_GetBG3ScrPtr
 	mov r6, r0
 	mov r7, #0
 	mov r5, #0x80
@@ -3254,7 +3254,7 @@ ov27_0211F574: ; 0x0211F574
 	str r2, [sp, #0xc]
 	mov r2, #0x20
 	bl sub_0200CDA0
-	bl sub_02062914
+	bl G2S_GetBG3ScrPtr
 	add r1, r0, r5, lsl #7
 	ldr r0, [r4, #4]
 	mov r2, #0x80
@@ -4797,7 +4797,7 @@ ov27_02120870: ; 0x02120870
 	mov r2, #6
 	mov r3, #8
 	str ip, [sp]
-	bl sub_02062C10
+	bl G2x_SetBlendAlpha_
 	mov r0, #0x44
 	bl _Znwm
 	cmp r0, #0
