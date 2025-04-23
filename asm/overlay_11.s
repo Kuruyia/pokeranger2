@@ -2994,7 +2994,7 @@ ov11_0211F26C: ; 0x0211F26C
 	add lr, lr, r2, lsl #16
 	add lr, r1, lr, asr #8
 	mov r2, lr, asr #4
-	ldr r1, _0211F328 ; =DAT_020850ac
+	ldr r1, _0211F328 ; =FX_SinCosTable_
 	mov r2, r2, lsl #2
 	ldrsh ip, [r1, r2]
 	mov r2, #0xa000
@@ -3022,7 +3022,7 @@ ov11_0211F26C: ; 0x0211F26C
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211F324: .word 0xB60B60B7
-_0211F328: .word DAT_020850ac
+_0211F328: .word FX_SinCosTable_
 	arm_func_end ov11_0211F26C
 
 	arm_func_start ov11_0211F32C
@@ -51276,14 +51276,14 @@ ov11_02142674: ; 0x02142674
 	ldr r0, [r0]
 	ldrb r0, [r0, #9]
 	add r0, r0, #1
-	bl sub_02060B50
+	bl FX_ModS32
 	ldr r2, _02142734 ; =OVERLAY11_BSS_0216C284
 	mov r1, #5
 	ldr r3, [r2]
 	strb r0, [r3, #9]
 	ldr r0, [r2]
 	ldrb r0, [r0, #9]
-	bl sub_02060B14
+	bl FX_DivS32
 	ldr r2, _02142734 ; =OVERLAY11_BSS_0216C284
 	add r1, r0, #0x47
 	ldr r2, [r2]
@@ -53814,7 +53814,7 @@ _0214481C:
 _0214485C:
 	add r0, sl, #3
 	mov r1, #4
-	bl sub_02060B50
+	bl FX_ModS32
 	add r3, sp, #0xd
 	ldrb r1, [r3, sl]
 	mov r5, #0
@@ -56448,7 +56448,7 @@ _02146BA0:
 _02146BB0:
 	mov r0, #0
 	bl GX_VBlankIntr
-	bl sub_0206129C
+	bl FX_Init
 	mvn r0, #0
 	bl FS_Init
 	bl TP_Init
@@ -59402,7 +59402,7 @@ ov11_021490C0: ; 0x021490C0
 	ldr r0, _0214913C ; =OVERLAY11_BSS_0216C328
 	ldrb r0, [r0]
 	add r0, r0, #2
-	bl sub_02060B50
+	bl FX_ModS32
 	ldr r1, _0214913C ; =OVERLAY11_BSS_0216C328
 	b _021490FC
 	arm_func_end ov11_021490C0
@@ -59410,7 +59410,7 @@ _021490E8:
 	ldr r0, _0214913C ; =OVERLAY11_BSS_0216C328
 	ldrb r0, [r0]
 	add r0, r0, #1
-	bl sub_02060B50
+	bl FX_ModS32
 	ldr r1, _0214913C ; =OVERLAY11_BSS_0216C328
 _021490FC:
 	strb r0, [r1]
@@ -62234,7 +62234,7 @@ _0214B2D8:
 	ldrb r0, [r1, #0x53]
 	ldrh r1, [r1, #0x40]
 	mul r0, r2, r0
-	bl sub_02060B14
+	bl FX_DivS32
 _0214B2FC:
 	str r0, [sp]
 	mov r0, r4
@@ -62637,7 +62637,7 @@ _0214B824:
 	ldrh r2, [r1, #0x40]
 	ldrb r1, [r1, #0x53]
 	mul r0, r2, r0
-	bl sub_02060B14
+	bl FX_DivS32
 	ldr r1, _0214BA18 ; =OVERLAY11_BSS_0216C358
 	strh r0, [r1, #2]
 	bl ov11_0214BDBC
@@ -62658,7 +62658,7 @@ _0214B878:
 	ldrh r2, [r1, #0x40]
 	ldrb r1, [r1, #0x53]
 	mul r0, r2, r0
-	bl sub_02060B14
+	bl FX_DivS32
 	ldr r1, _0214BA18 ; =OVERLAY11_BSS_0216C358
 	strh r0, [r1, #2]
 	mov r0, #0x13
@@ -62667,7 +62667,7 @@ _0214B878:
 	ldr r0, _0214BA18 ; =OVERLAY11_BSS_0216C358
 	mov r1, #0x1c
 	ldrh r0, [r0, #2]
-	bl sub_02060B50
+	bl FX_ModS32
 	cmp r0, #0
 	bne _0214B8DC
 	bl ov11_0214C2D4
@@ -62800,7 +62800,7 @@ _0214BA68:
 _0214BA94:
 	ldrh r0, [r0, #2]
 	mov r1, #0x1c
-	bl sub_02060B14
+	bl FX_DivS32
 	ldr r2, _0214BB24 ; =OVERLAY11_BSS_0216C358
 	mov r1, #0x2a
 	ldrb lr, [r2]
@@ -63034,7 +63034,7 @@ ov11_0214BDBC: ; 0x0214BDBC
 	ldr r0, _0214BE60 ; =OVERLAY11_BSS_0216C358
 	mov r1, #0x1c
 	ldrh r0, [r0, #2]
-	bl sub_02060B14
+	bl FX_DivS32
 	ldr r1, _0214BE60 ; =OVERLAY11_BSS_0216C358
 	mov r7, r0
 	ldr r0, [r1, #4]
@@ -63228,7 +63228,7 @@ ov11_0214C068: ; 0x0214C068
 	ldr r0, _0214C11C ; =OVERLAY11_BSS_0216C358
 	mov r1, #0x1c
 	ldrh r0, [r0, #2]
-	bl sub_02060B50
+	bl FX_ModS32
 	ldr r1, _0214C11C ; =OVERLAY11_BSS_0216C358
 	rsb r0, r0, #0x36
 	ldr r1, [r1, #4]
@@ -63291,7 +63291,7 @@ ov11_0214C124: ; 0x0214C124
 	ldr r0, _0214C1DC ; =OVERLAY11_BSS_0216C358
 	mov r1, #0x1c
 	ldrh r0, [r0, #2]
-	bl sub_02060B50
+	bl FX_ModS32
 	mov r5, r0
 	cmp r5, #0x18
 	bne _0214C170
@@ -63316,7 +63316,7 @@ _0214C18C:
 	ldrb r0, [r1, #0x53]
 	ldrh r1, [r1, #0x40]
 	mul r0, r2, r0
-	bl sub_02060B14
+	bl FX_DivS32
 	bl thunk_FUN_overlay_11__021550d4
 	bl ov11_02154B94
 	bl ov11_0214C2D4
@@ -63342,7 +63342,7 @@ ov11_0214C1E0: ; 0x0214C1E0
 	add r2, r2, #4
 	strh r2, [r0, #2]
 	ldrh r0, [r0, #2]
-	bl sub_02060B50
+	bl FX_ModS32
 	cmp r0, #4
 	blt _0214C21C
 	bl ov11_0214C068
@@ -63360,7 +63360,7 @@ _0214C21C:
 	ldrb r0, [r1, #0x53]
 	ldrh r1, [r1, #0x40]
 	mul r0, r2, r0
-	bl sub_02060B14
+	bl FX_DivS32
 	bl thunk_FUN_overlay_11__021550d4
 	bl ov11_02154B94
 	bl ov11_0214C2D4
@@ -63384,7 +63384,7 @@ ov11_0214C278: ; 0x0214C278
 	ldmeqia sp!, {r3, pc}
 	ldrh r0, [r0, #2]
 	mov r1, #0x1c
-	bl sub_02060B50
+	bl FX_ModS32
 	ldr r1, _0214C2CC ; =0x01FF0000
 	sub r0, r0, #0x32
 	ldr r2, _0214C2D0 ; =0x04000010
@@ -66732,7 +66732,7 @@ _0214EEE0:
 	ldr r0, _0214F06C ; =OVERLAY11_BSS_0216C36C
 	mov r1, #0x1d
 	ldrh r0, [r0, #4]
-	bl sub_02060B50
+	bl FX_ModS32
 	cmp r0, #0
 	bne _0214EF40
 	bl ov11_021502B4
@@ -67076,7 +67076,7 @@ ov11_0214F3DC: ; 0x0214F3DC
 	ldr r0, _0214F494 ; =OVERLAY11_BSS_0216C36C
 	mov r1, #0x1d
 	ldrh r0, [r0, #4]
-	bl sub_02060B14
+	bl FX_DivS32
 	ldr r1, _0214F494 ; =OVERLAY11_BSS_0216C36C
 	mov r4, r0
 	ldr r0, [r1, #8]
@@ -67605,12 +67605,12 @@ ov11_0214FB00: ; 0x0214FB00
 	ldr r0, _0214FD04 ; =OVERLAY11_BSS_0216C36C
 	mov r1, #0x1d
 	ldrh r0, [r0, #4]
-	bl sub_02060B14
+	bl FX_DivS32
 	ldr r1, _0214FD04 ; =OVERLAY11_BSS_0216C36C
 	mov r4, r0
 	ldrh r0, [r1, #4]
 	mov r1, #0x1d
-	bl sub_02060B50
+	bl FX_ModS32
 	ldr r1, _0214FD04 ; =OVERLAY11_BSS_0216C36C
 	rsb ip, r0, #0x34
 	ldr r1, [r1, #8]
@@ -67754,7 +67754,7 @@ ov11_0214FD10: ; 0x0214FD10
 	ldr r0, _0214FF74 ; =OVERLAY11_BSS_0216C36C
 	mov r1, #0x1d
 	ldrh r0, [r0, #4]
-	bl sub_02060B14
+	bl FX_DivS32
 	ldr r1, _0214FF78 ; =DAT_overlay_11_02165a98
 	mov r5, r0
 	ldrh r3, [r1, #4]
@@ -67790,7 +67790,7 @@ _0214FD98:
 	ldr r0, _0214FF74 ; =OVERLAY11_BSS_0216C36C
 	mov r1, #0x1d
 	ldrh r0, [r0, #4]
-	bl sub_02060B14
+	bl FX_DivS32
 	mov r3, #0
 _0214FDC8:
 	cmp r0, #2
@@ -67841,7 +67841,7 @@ _0214FE74:
 	ldr r0, _0214FF74 ; =OVERLAY11_BSS_0216C36C
 	mov r1, #0x1d
 	ldrh r0, [r0, #4]
-	bl sub_02060B14
+	bl FX_DivS32
 	mov r3, #0
 _0214FE88:
 	cmp r0, #6
@@ -67919,7 +67919,7 @@ ov11_0214FF84: ; 0x0214FF84
 	mov r4, r0
 	ldrh r0, [r1, #4]
 	mov r1, #0x1d
-	bl sub_02060B14
+	bl FX_DivS32
 	mov r1, #0
 	arm_func_end ov11_0214FF84
 _0214FFA0:
@@ -67942,7 +67942,7 @@ ov11_0214FFC8: ; 0x0214FFC8
 	mov r4, r0
 	ldrh r0, [r1, #4]
 	mov r1, #0x1d
-	bl sub_02060B14
+	bl FX_DivS32
 	add r0, r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -67964,7 +67964,7 @@ ov11_0214FFEC: ; 0x0214FFEC
 	ldr r0, _021500AC ; =OVERLAY11_BSS_0216C36C
 	mov r1, #0x1d
 	ldrh r0, [r0, #4]
-	bl sub_02060B50
+	bl FX_ModS32
 	mov r5, r0
 	cmp r5, #0x17
 	bne _02150038
@@ -68018,7 +68018,7 @@ ov11_021500B4: ; 0x021500B4
 	add r2, r2, #6
 	strh r2, [r0, #4]
 	ldrh r0, [r0, #4]
-	bl sub_02060B50
+	bl FX_ModS32
 	cmp r0, #6
 	blt _021500F0
 	bl ov11_0214FB00
@@ -68063,12 +68063,12 @@ ov11_02150158: ; 0x02150158
 	ldmeqia sp!, {r4, pc}
 	ldrh r0, [r0, #4]
 	mov r1, #0x1d
-	bl sub_02060B14
+	bl FX_DivS32
 	ldr r1, _021501CC ; =OVERLAY11_BSS_0216C36C
 	mov r4, r0
 	ldrh r0, [r1, #4]
 	mov r1, #0x1d
-	bl sub_02060B50
+	bl FX_ModS32
 	ldr r2, _021501D0 ; =DAT_overlay_11_02165b84
 	ldr r1, _021501D4 ; =0x01FF0000
 	sub ip, r0, #0x33
@@ -68170,7 +68170,7 @@ _021502D8:
 	mov r4, r0
 	ldrh r0, [r1, #4]
 	mov r1, #0x1d
-	bl sub_02060B14
+	bl FX_DivS32
 	ldr r1, _0215035C ; =OVERLAY11_BSS_0216C36C
 	ldrb r2, [r1, #2]
 	add r2, r2, r0
@@ -74187,7 +74187,7 @@ ov11_02154E18: ; 0x02154E18
 	mov r0, #0x7f
 	bge _02154E50
 	rsb r1, r4, #6
-	bl sub_02060B14
+	bl FX_DivS32
 	arm_func_end ov11_02154E18
 _02154E50:
 	bl ov11_021561EC
@@ -74199,7 +74199,7 @@ _02154E50:
 	bge _02154E7C
 	rsb r1, r4, #6
 	mov r0, #0x200
-	bl sub_02060B14
+	bl FX_DivS32
 	sub r1, r0, #0x100
 _02154E7C:
 	ldr r0, _02154E8C ; =0x0000FFFF
@@ -82346,7 +82346,7 @@ ov11_0215B898: ; 0x0215B898
 	mov r6, r0
 	ldrh r1, [r5]
 	add r0, r2, #1
-	bl sub_02060B50
+	bl FX_ModS32
 	ldrb r1, [r5, #2]
 	mov r7, r0
 	cmp r7, r1
@@ -82377,7 +82377,7 @@ ov11_0215B8F0: ; 0x0215B8F0
 	ldrh r1, [r6]
 	add r0, r2, r1
 	sub r0, r0, #1
-	bl sub_02060B50
+	bl FX_ModS32
 	and r1, r0, #0xff
 	strb r0, [r6, #3]
 	add r0, r6, r1, lsl #2
@@ -82526,7 +82526,7 @@ ov11_0215BAA0: ; 0x0215BAA0
 	strb ip, [sp, #1]
 	strb r3, [sp, #2]
 	strb r2, [sp, #3]
-	bl sub_02060B14
+	bl FX_DivS32
 	ldrb r3, [r4, #8]
 	add r2, sp, #4
 	mov r1, r0
@@ -83806,7 +83806,7 @@ _0215CB98:
 	mov r1, r8
 	add r4, r4, #1
 	add r0, r0, #4
-	bl sub_02060B50
+	bl FX_ModS32
 	cmp r4, #4
 	blt _0215CB54
 _0215CBB0:

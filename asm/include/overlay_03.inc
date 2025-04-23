@@ -125,8 +125,8 @@
 .public sub_02041D98
 .public NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
 .public NitroSystem_g2d_Font_NNSi_G2dFontGetTextWidth
-.public sub_0205FE38
-.public sub_02060988
+.public MTX_RotZ33_
+.public FX_InvSqrt
 .public GX_DispOn
 .public GX_SetGraphicsMode
 .public GXS_SetGraphicsMode
@@ -175,9 +175,7 @@
 .public __cxa_vec_ctor
 .public __cxa_vec_cleanup
 .public __cxa_vec_delete
-.public DAT_020850ac
-.public DAT_020854ac
-.public DAT_020888ac
+.public FX_SinCosTable_
 .public DAT_0208d694
 .public MAIN_BSS_0208F304
 .public MAIN_BSS_0208F31C

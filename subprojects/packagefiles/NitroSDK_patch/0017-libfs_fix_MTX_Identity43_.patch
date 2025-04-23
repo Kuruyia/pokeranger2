@@ -1,0 +1,18 @@
+diff --git a/libraries/fx/src/fx_mtx43.c b/libraries/fx/src/fx_mtx43.c
+index fa4df5c..99327bf 100644
+--- a/libraries/fx/src/fx_mtx43.c
++++ b/libraries/fx/src/fx_mtx43.c
+@@ -13,10 +13,11 @@ asm void MTX_Identity43_ (register MtxFx43 *pDst)
+ 	stmia r0 !, {r2, r3}
+ 	mov r1, #0
+ 	stmia r0 !, {r1, r3}
+-	stmia r0 !, {r2, r3}
++	stmia r0 !, {r1, r2, r3}
+ 	stmia r0 !, {r1, r3}
+-	stmia r0 !, {r2, r3}
++	stmia r0 !, {r1, r2, r3}
+ 	stmia r0 !, {r1, r3}
++	stmia r0 !, {r1, r2}
+ 	bx lr
+ }
+ 

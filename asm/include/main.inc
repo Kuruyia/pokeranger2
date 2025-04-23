@@ -431,3 +431,17 @@
 .public GXS_SetGraphicsMode
 .public GXx_SetMasterBrightness_
 .public GXi_DmaId
+.public MTX_Scale22_
+.public MTX_RotZ33_
+.public FX_Div
+.public FX_DivFx64c
+.public FX_Inv
+.public FX_Sqrt
+.public FX_InvSqrt
+.public FX_SinFx64c
+.public FX_CosFx64c
+.public FX_Atan
+.public FX_Atan2
+.public FX_Atan2Idx
+.public FX_Init
+.public FX_SinCosTable_

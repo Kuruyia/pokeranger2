@@ -52,7 +52,7 @@
 .public NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
 .public NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
 .public NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
-.public sub_0205FDF0
+.public MTX_Identity22_
 .public GX_DispOn
 .public GX_SetGraphicsMode
 .public GXS_SetGraphicsMode

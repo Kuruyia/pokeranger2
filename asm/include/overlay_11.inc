@@ -195,9 +195,9 @@
 .public sub_0205CF4C
 .public sub_0205E214
 .public sub_0205E2F8
-.public sub_02060B14
-.public sub_02060B50
-.public sub_0206129C
+.public FX_DivS32
+.public FX_ModS32
+.public FX_Init
 .public GX_VBlankIntr
 .public GX_DispOff
 .public GX_DispOn
@@ -439,7 +439,7 @@
 .public OS_IRQTable
 .public DAT_02084d78
 .public DAT_02084d80
-.public DAT_020850ac
+.public FX_SinCosTable_
 .public MAIN_BSS_0208F304
 .public MAIN_BSS_020AF598
 .public MAIN_BSS_020AF5E4

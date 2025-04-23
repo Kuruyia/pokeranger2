@@ -40,7 +40,7 @@
 .public sub_0202B5A8
 .public sub_020345D4
 .public sub_02034C44
-.public sub_0205FDF0
+.public MTX_Identity22_
 .public GX_DispOn
 .public GX_SetGraphicsMode
 .public GXS_SetGraphicsMode

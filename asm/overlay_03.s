@@ -11106,7 +11106,7 @@ _021265B4:
 	add r0, r0, #1
 	mov r0, r0, lsl #0x10
 	mov r8, r0, lsr #0x10
-	ldr fp, _02126744 ; =DAT_020850ac
+	ldr fp, _02126744 ; =FX_SinCosTable_
 	mov sb, #0
 	add r0, r4, #0x200
 _021265E0:
@@ -11202,7 +11202,7 @@ _02126728:
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_02126744: .word DAT_020850ac
+_02126744: .word FX_SinCosTable_
 
 	arm_func_start ov3_02126748
 ov3_02126748: ; 0x02126748
@@ -11307,7 +11307,7 @@ ov3_02126814: ; 0x02126814
 	add fp, r1, #0x4000
 	mov r1, r0, lsl #1
 	mov r0, r6, lsl #1
-	ldr r6, _02126A1C ; =DAT_020850ac
+	ldr r6, _02126A1C ; =FX_SinCosTable_
 	ldmib sl, {r2, lr}
 	ldrsh r1, [r6, r1]
 	ldrsh r0, [r6, r0]
@@ -11393,7 +11393,7 @@ ov3_02126814: ; 0x02126814
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_02126A1C: .word DAT_020850ac
+_02126A1C: .word FX_SinCosTable_
 	arm_func_end ov3_02126814
 
 	arm_func_start ov3_02126A20
@@ -11579,7 +11579,7 @@ ov3_02126BE4: ; 0x02126BE4
 	add r1, ip, #1
 	add r0, r3, #0x2000
 	mov r3, ip, lsl #1
-	ldr ip, _02126D58 ; =DAT_020850ac
+	ldr ip, _02126D58 ; =FX_SinCosTable_
 	mov r6, r1, lsl #1
 	ldrsh r6, [ip, r6]
 	ldrsh r3, [ip, r3]
@@ -11618,7 +11618,7 @@ ov3_02126BE4: ; 0x02126BE4
 	str r0, [r4, #0x48]
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
-_02126D58: .word DAT_020850ac
+_02126D58: .word FX_SinCosTable_
 _02126D5C: .word 0x00000444
 	arm_func_end ov3_02126BE4
 
@@ -12681,7 +12681,7 @@ ov3_02127B34: ; 0x02127B34
 	adc r4, r1, r7
 	str r6, [r2, #0x448]
 	ldr r1, [sp, #0x1c]
-	ldr r2, _02127EDC ; =DAT_020888ac
+	ldr r2, _02127EDC ; =FX_SinCosTable_+0x3800
 	str r4, [r1, #4]
 	mov r1, r3, lsl #4
 	orr r1, r1, r4, lsr #28
@@ -12743,7 +12743,7 @@ _02127BEC:
 _02127C8C:
 	mov r0, lr, asr #4
 	mov r2, r0, lsl #1
-	ldr r0, _02127EE0 ; =DAT_020850ac
+	ldr r0, _02127EE0 ; =FX_SinCosTable_
 	mov r1, r2, lsl #1
 	ldrsh r1, [r0, r1]
 	add r0, r0, r2, lsl #1
@@ -12894,8 +12894,8 @@ _02127E94:
 	add sp, sp, #0x30
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 	.align 2, 0
-_02127EDC: .word DAT_020888ac
-_02127EE0: .word DAT_020850ac
+_02127EDC: .word FX_SinCosTable_+0x3800
+_02127EE0: .word FX_SinCosTable_
 _02127EE4: .word 0x00003FFF
 
 	arm_func_start ov3_02127EE8
@@ -13780,7 +13780,7 @@ _02128B3C:
 	mov r2, r0, lsr #0xc
 	mov r0, r3, asr #4
 	mov r3, r0, lsl #1
-	ldr r0, _02128C9C ; =DAT_020850ac
+	ldr r0, _02128C9C ; =FX_SinCosTable_
 	mov r8, r3, lsl #1
 	add r3, r0, r3, lsl #1
 	ldrsh sb, [r0, r8]
@@ -13861,7 +13861,7 @@ _02128C7C:
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
 _02128C98: .word 0x04000450
-_02128C9C: .word DAT_020850ac
+_02128C9C: .word FX_SinCosTable_
 
 	arm_func_start ov3_02128CA0
 ov3_02128CA0: ; 0x02128CA0
@@ -13896,7 +13896,7 @@ ov3_02128CB8: ; 0x02128CB8
 	mov r0, r0, lsl #0x10
 	add ip, r5, r0, lsr #13
 	ldrh r0, [r5]
-	ldr r5, _02128E2C ; =DAT_020850ac
+	ldr r5, _02128E2C ; =FX_SinCosTable_
 	mov r6, r3, lsl #1
 	mov r2, r2, lsl #1
 	mov r0, r0, asr #4
@@ -13969,7 +13969,7 @@ ov3_02128CB8: ; 0x02128CB8
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
 _02128E28: .word 0x66666667
-_02128E2C: .word DAT_020850ac
+_02128E2C: .word FX_SinCosTable_
 	arm_func_end ov3_02128CB8
 
 	arm_func_start ov3_02128E30
@@ -14091,7 +14091,7 @@ ov3_02128F50: ; 0x02128F50
 	mov lr, r2, lsl #1
 	add r2, lr, #1
 	mov r3, r2, lsl #1
-	ldr ip, _0212900C ; =DAT_020850ac
+	ldr ip, _0212900C ; =FX_SinCosTable_
 	mov r2, lr, lsl #1
 	ldrsh r3, [ip, r3]
 	str r0, [r1, #4]
@@ -14104,7 +14104,7 @@ ov3_02128F50: ; 0x02128F50
 	str r0, [r4, #0x14]
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
-_0212900C: .word DAT_020850ac
+_0212900C: .word FX_SinCosTable_
 	arm_func_end ov3_02128F50
 
 	arm_func_start ov3_02129010
@@ -14412,7 +14412,7 @@ _02129334:
 	str r5, [sp, #0x3c]
 	str r4, [sp, #0x60]
 	str r5, [sp, #0x64]
-	bl sub_02060988
+	bl FX_InvSqrt
 	mov r1, r0, asr #0x1f
 	mov r2, r1, lsl #0xe
 	mov r3, r0, lsl #0xe
@@ -14468,7 +14468,7 @@ _02129418:
 	str r5, [sp, #0x2c]
 	str r4, [sp, #0x58]
 	str r5, [sp, #0x5c]
-	bl sub_02060988
+	bl FX_InvSqrt
 	ldr r3, [r6, #-0x10]
 	ldr r2, [r6, #-0xc]
 	ldr r1, [r6, #-8]
@@ -14497,7 +14497,7 @@ _02129418:
 	mov r2, r2, lsr #0xc
 	orr r2, r2, r0, lsl #20
 	add r0, r2, r1
-	bl sub_02060988
+	bl FX_InvSqrt
 	smull r1, r2, r4, r0
 	mov r1, r1, lsr #0xc
 	orr r1, r1, r2, lsl #20
@@ -14582,7 +14582,7 @@ _021295C8:
 	str r1, [sp, #0xc]
 	str r6, [sp, #0x48]
 	str r1, [sp, #0x4c]
-	bl sub_02060988
+	bl FX_InvSqrt
 	mov r1, r0, asr #0x1f
 	mov r2, r1, lsl #0xe
 	mov r3, r0, lsl #0xe
@@ -15287,7 +15287,7 @@ ov3_02129FE0: ; 0x02129FE0
 	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	mov r2, #0x4000000
 	ldr r1, [r2]
-	ldr r0, _0212A0A4 ; =DAT_020854ac
+	ldr r0, _0212A0A4 ; =FX_SinCosTable_+0x400
 	bic r1, r1, #0xe000
 	orr r1, r1, #0x2000
 	str r1, [r2]
@@ -15295,7 +15295,7 @@ ov3_02129FE0: ; 0x02129FE0
 	ldrsh r2, [r0, #0x72]
 	ldrh r4, [sb, #0x28]
 	add r0, sp, #0
-	blx sub_0205FE38
+	blx MTX_RotZ33_
 	rsb r2, r4, #0xc
 	ldr r1, [sl, #0x1cc]
 	ldr r0, [sl, #0x1d0]
@@ -15329,7 +15329,7 @@ _0212A050:
 	add sp, sp, #0x24
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_0212A0A4: .word DAT_020854ac
+_0212A0A4: .word FX_SinCosTable_+0x400
 _0212A0A8: .word 0x04000450
 
     .rodata

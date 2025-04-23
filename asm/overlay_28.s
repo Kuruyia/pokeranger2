@@ -342,7 +342,7 @@ ov28_0211CD9C: ; 0x0211CD9C
 	mov r2, #0
 	add r0, sp, #0x10
 	str r2, [r1]
-	bl sub_0205FDF0
+	bl MTX_Identity22_
 	mov r2, #0
 	str r2, [sp]
 	ldr r0, _0211CE5C ; =0x04001030

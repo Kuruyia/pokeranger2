@@ -305,7 +305,7 @@
 .public NitroSystem_g2d_CellAnimation_NNS_G2dInitCellAnimation
 .public NitroSystem_g2d_CellAnimation_NNS_G2dTickCellAnimation
 .public NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
-.public sub_020610F4
+.public FX_Atan2Idx
 .public GX_DispOn
 .public GX_SetGraphicsMode
 .public GXS_SetGraphicsMode
@@ -350,7 +350,7 @@
 .public __cxa_vec_ctor
 .public __cxa_vec_cleanup
 .public __cxa_vec_delete
-.public DAT_020850ac
+.public FX_SinCosTable_
 .public MAIN_BSS_0208F304
 .public MAIN_BSS_020B26A0
 .public MAIN_BSS_020BA6A0

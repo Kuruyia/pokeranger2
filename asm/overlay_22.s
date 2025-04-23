@@ -3245,7 +3245,7 @@ ov22_0211F594: ; 0x0211F594
 	strh r2, [r3]
 	str r1, [r3, #6]
 	str r1, [r3, #0xa]
-	bl sub_0205FDF0
+	bl MTX_Identity22_
 	mov r2, #0
 	str r2, [sp]
 	ldr r0, _0211F6F4 ; =0x04000030
