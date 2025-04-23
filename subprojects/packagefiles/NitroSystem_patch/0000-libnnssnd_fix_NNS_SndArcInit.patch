@@ -1,0 +1,12 @@
+diff --git a/libraries/snd/src/sndarc.c b/libraries/snd/src/sndarc.c
+index 4cab857..260868d 100644
+--- a/libraries/snd/src/sndarc.c
++++ b/libraries/snd/src/sndarc.c
+@@ -79,7 +79,6 @@ void NNS_SndArcInit (NNSSndArc * arc, const char * filePath, NNSSndHeapHandle he
+     arc->info = NULL;
+     arc->fat = NULL;
+     arc->symbol = NULL;
+-    arc->loadBlockSize = 0;
+ 
+     result = FS_ConvertPathToFileID(&arc->fileId, filePath);
+     NNS_ASSERTMSG(result, "Cannot find file %s\n", filePath);

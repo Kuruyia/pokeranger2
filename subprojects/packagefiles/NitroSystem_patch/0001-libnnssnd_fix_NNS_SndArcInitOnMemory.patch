@@ -1,0 +1,12 @@
+diff --git a/libraries/snd/src/sndarc.c b/libraries/snd/src/sndarc.c
+index 260868d..41eeb4f 100644
+--- a/libraries/snd/src/sndarc.c
++++ b/libraries/snd/src/sndarc.c
+@@ -211,7 +211,6 @@ void NNS_SndArcInitOnMemory (NNSSndArc * arc, void * data)
+     arc->info = (NNSSndArcInfo *)GetPtr(header, arc->header.infoOffset);
+     arc->fat = (NNSSndArcFat *)GetPtr(header, arc->header.fatOffset);
+     arc->symbol = (NNSSndArcSymbol *)GetPtr(header, arc->header.symbolDataOffset);
+-    arc->loadBlockSize = 0;
+ 
+     NNS_NULL_ASSERT(arc->info);
+     NNS_NULL_ASSERT(arc->fat);

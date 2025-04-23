@@ -75680,13 +75680,13 @@ ov11_0215610C: ; 0x0215610C
 	ldr r1, _02156190 ; =OVERLAY11_BSS_0216C3C8
 	ldr r1, [r1]
 	str r0, [r1, #0x94]
-	bl NitroSystem_snd_main_NNS_SndInit
+	bl NNS_SndInit
 	ldr r0, _02156190 ; =OVERLAY11_BSS_0216C3C8
 	ldr r0, [r0]
 	ldr r1, [r0, #0x94]
-	bl sub_0205CF4C
+	bl NNS_SndArcInitOnMemory
 	mov r0, #0
-	bl sub_0205E214
+	bl NNS_SndArcPlayerSetup
 	ldr r0, _02156190 ; =OVERLAY11_BSS_0216C3C8
 	ldr r0, [r0]
 	add r0, r0, #0x90
@@ -75727,13 +75727,13 @@ ov11_021561C8: ; 0x021561C8
 	ldr r1, _021561E4 ; =OVERLAY11_BSS_0216C3C8
 	mov r2, r0
 	ldr r0, [r1]
-	ldr ip, _021561E8 ; =FUN_0205E2F8
+	ldr ip, _021561E8 ; =FUN_NNS_SndArcPlayerStartSeqArc
 	mov r1, #0
 	add r0, r0, #0x90
 	bx ip
 	.align 2, 0
 _021561E4: .word OVERLAY11_BSS_0216C3C8
-_021561E8: .word sub_0205E2F8
+_021561E8: .word NNS_SndArcPlayerStartSeqArc
 	arm_func_end ov11_021561C8
 
 	arm_func_start ov11_021561EC
@@ -75741,18 +75741,18 @@ ov11_021561EC: ; 0x021561EC
 	ldr r2, _02156204 ; =OVERLAY11_BSS_0216C3C8
 	mov r1, r0
 	ldr r0, [r2]
-	ldr ip, _02156208 ; =FUN_0205BD48
+	ldr ip, _02156208 ; =FUN_NNS_SndPlayerSetVolume
 	add r0, r0, #0x90
 	bx ip
 	.align 2, 0
 _02156204: .word OVERLAY11_BSS_0216C3C8
-_02156208: .word sub_0205BD48
+_02156208: .word NNS_SndPlayerSetVolume
 	arm_func_end ov11_021561EC
 
 	arm_func_start ov11_0215620C
 ov11_0215620C: ; 0x0215620C
 	ldr r2, _02156228 ; =OVERLAY11_BSS_0216C3C8
-	ldr ip, _0215622C ; =FUN_0205BDBC
+	ldr ip, _0215622C ; =FUN_NNS_SndPlayerSetTrackPitch
 	ldr r3, [r2]
 	mov r2, r1
 	mov r1, r0
@@ -75760,20 +75760,20 @@ ov11_0215620C: ; 0x0215620C
 	bx ip
 	.align 2, 0
 _02156228: .word OVERLAY11_BSS_0216C3C8
-_0215622C: .word sub_0205BDBC
+_0215622C: .word NNS_SndPlayerSetTrackPitch
 	arm_func_end ov11_0215620C
 
 	arm_func_start ov11_02156230
 ov11_02156230: ; 0x02156230
 	ldr r0, _02156248 ; =OVERLAY11_BSS_0216C3C8
-	ldr ip, _0215624C ; =FUN_0205BC48
+	ldr ip, _0215624C ; =FUN_NNS_SndPlayerStopSeq
 	ldr r0, [r0]
 	mov r1, #0
 	add r0, r0, #0x90
 	bx ip
 	.align 2, 0
 _02156248: .word OVERLAY11_BSS_0216C3C8
-_0215624C: .word sub_0205BC48
+_0215624C: .word NNS_SndPlayerStopSeq
 	arm_func_end ov11_02156230
 
 	arm_func_start ov11_02156250
@@ -75781,7 +75781,7 @@ ov11_02156250: ; 0x02156250
 	ldr ip, _02156258 ; =FUN_0205B9F0
 	bx ip
 	.align 2, 0
-_02156258: .word NitroSystem_snd_main_NNS_SndMain
+_02156258: .word NNS_SndMain
 	arm_func_end ov11_02156250
 
 	arm_func_start ov11_0215625C

@@ -1,0 +1,71 @@
+diff --git a/libraries/snd/src/sndarc.c b/libraries/snd/src/sndarc.c
+index 41eeb4f..e45312a 100644
+--- a/libraries/snd/src/sndarc.c
++++ b/libraries/snd/src/sndarc.c
+@@ -529,16 +529,11 @@ u32 NNS_SndArcGetFileSize (u32 fileId)
+ 
+ s32 NNS_SndArcReadFile (u32 fileId, void * buffer, s32 size, s32 offset)
+ {
+-#ifndef SDK_SMALL_BUILD
+-
+     NNSSndArc * arc = sCurrent;
+     const NNSSndArcFileInfo * file;
+-    s32 totalReadSize;
+-    s32 readSize;
+     s32 blockSize;
+     s32 currentOffset;
+-    s32 requestSize;
+-    u8 * destAddress;
++    s32 requestSize = size;
+ 
+     NNS_ASSERT(FS_IsAvailable());
+     NNS_NULL_ASSERT(arc);
+@@ -552,41 +547,20 @@ s32 NNS_SndArcReadFile (u32 fileId, void * buffer, s32 size, s32 offset)
+     currentOffset = offset;
+ 
+     blockSize = arc->loadBlockSize;
++
+     if (blockSize == 0) {
+         blockSize = size;
+     }
+-    totalReadSize = 0;
+-    destAddress = (u8 *)buffer;
+-
+-    while (totalReadSize < size) {
+-        requestSize = size - totalReadSize;
+-        if (requestSize > blockSize) requestSize = blockSize;
+-        if (requestSize > file->size - currentOffset) {
+-            requestSize = (s32)(file->size - currentOffset);
+-        }
+-        if (requestSize == 0) {
+-            break;
+-        }
+ 
+-        if (!FS_SeekFile(&arc->file, (s32)(file->offset + currentOffset), FS_SEEK_SET)) {
+-            return -1;
+-        }
+-        readSize = FS_ReadFile(&arc->file, destAddress, requestSize);
+-        if (readSize < 0) return readSize;
+-
+-        totalReadSize += readSize;
+-        currentOffset += readSize;
+-        destAddress += readSize;
++    if (requestSize > file->size - currentOffset) {
++        requestSize = (s32)(file->size - currentOffset);
+     }
+ 
+-    return totalReadSize;
+-
+-#else
+-
+-#pragma unused( fileId, buffer, size, offset )
+-    return -1;
++    if (!FS_SeekFile(&arc->file, (s32)(file->offset + currentOffset), FS_SEEK_SET)) {
++        return -1;
++    }
+ 
+-#endif
++    return FS_ReadFile(&arc->file, buffer, requestSize);
+ }
+ 
+ FSFileID NNS_SndArcGetFileID (void)

@@ -63142,7 +63142,7 @@ sub_02034450: ; 0x02034450
 sub_02034478: ; 0x02034478
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSystem_snd_main_NNS_SndInit
+	bl NNS_SndInit
 	mov r0, #0x64000
 	bl Heap_AllocSecondary
 	str r0, [r4]
@@ -63154,15 +63154,15 @@ sub_02034478: ; 0x02034478
 	str r0, [r4, #8]
 	ldr r0, [r4]
 	mov r1, #0x64000
-	bl sub_0205D4A4
+	bl NNS_SndHeapCreate
 	str r0, [r4, #0x9c]
 	ldr r0, [r4, #4]
 	mov r1, #0x30000
-	bl sub_0205D4A4
+	bl NNS_SndHeapCreate
 	str r0, [r4, #0xa0]
 	ldr r0, [r4, #8]
 	mov r1, #0xc000
-	bl sub_0205D4A4
+	bl NNS_SndHeapCreate
 	str r0, [r4, #0xa4]
 	add r0, r4, #0xc
 	ldr r1, _02034598 ; =s_data_Sound_sound_data_sdat_0208d570
@@ -63170,14 +63170,14 @@ sub_02034478: ; 0x02034478
 	mov r3, #0
 	bl NNS_SndArcInit
 	ldr r0, [r4, #0x9c]
-	bl sub_0205E214
+	bl NNS_SndArcPlayerSetup
 	ldr r0, [r4, #0xa0]
-	bl sub_0205E214
+	bl NNS_SndArcPlayerSetup
 	ldr r0, [r4, #0xa4]
-	bl sub_0205E214
+	bl NNS_SndArcPlayerSetup
 	mov r0, #0xa
 	ldr r1, [r4, #0xa4]
-	bl sub_0205E538
+	bl NNS_SndArcStrmInit
 	mov r0, #0x63
 	str r0, [r4, #0xc4]
 	str r0, [r4, #0xd0]
@@ -63191,9 +63191,9 @@ sub_02034478: ; 0x02034478
 	str r1, [r4, #0xfc]
 	str r1, [r4, #0xe4]
 	add r0, r4, #0xa8
-	bl sub_0205E810
+	bl NNS_SndStrmHandleInit
 	add r0, r4, #0xac
-	bl sub_0205E810
+	bl NNS_SndStrmHandleInit
 	add r0, r4, #0xb0
 	bl NNS_SndHandleInit
 	add r0, r4, #0xb4
@@ -63218,19 +63218,19 @@ _02034598: .word s_data_Sound_sound_data_sdat_0208d570
 
 	arm_func_start thunk_FUN_0205b9f0
 thunk_FUN_0205b9f0: ; 0x0203459C
-	ldr ip, _020345A4 ; =NitroSystem_snd_main_NNS_SndMain
+	ldr ip, _020345A4 ; =NNS_SndMain
 	bx ip
 	.align 2, 0
-_020345A4: .word NitroSystem_snd_main_NNS_SndMain
+_020345A4: .word NNS_SndMain
 	arm_func_end thunk_FUN_0205b9f0
 
 	arm_func_start sub_020345A8
 sub_020345A8: ; 0x020345A8
-	ldr ip, _020345B4 ; =sub_0205D52C
+	ldr ip, _020345B4 ; =NNS_SndHeapClear
 	ldr r0, [r0, #0xa0]
 	bx ip
 	.align 2, 0
-_020345B4: .word sub_0205D52C
+_020345B4: .word NNS_SndHeapClear
 	arm_func_end sub_020345A8
 
 	arm_func_start sub_020345B8
@@ -63238,7 +63238,7 @@ sub_020345B8: ; 0x020345B8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	ldr r0, [r4, #0x9c]
-	bl sub_0205D52C
+	bl NNS_SndHeapClear
 	mov r0, #0
 	str r0, [r4, #0xe4]
 	ldmia sp!, {r4, pc}
@@ -63251,9 +63251,9 @@ sub_020345D4: ; 0x020345D4
 	bl sub_020345B8
 	ldr r1, [r4, #0x9c]
 	mov r0, #0
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	ldr r0, [r4, #0x9c]
-	bl sub_0205D650
+	bl NNS_SndHeapSaveState
 	str r0, [r4, #0x1a8]
 	mov r0, r4
 	bl sub_02034EEC
@@ -63307,7 +63307,7 @@ _02034690:
 	bl sub_020345A8
 	ldr r0, [r5, #0xc4]
 	ldr r1, [r5, #0xa0]
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	mov r0, r5
 	bl sub_020345D4
 	mov r0, r5
@@ -63372,13 +63372,13 @@ _0203477C:
 	bl sub_02034B58
 	mov r1, r4
 	add r0, r6, #0xb0
-	bl sub_0205E2B0
+	bl NNS_SndArcPlayerStartSeq
 	cmp r5, #0
 	beq _020347AC
 	mov r2, r5
 	add r0, r6, #0xb0
 	mov r1, #0x7f
-	bl sub_0205BD70
+	bl NNS_SndPlayerMoveVolume
 _020347AC:
 	str r4, [r6, #0xd0]
 	mov r0, #0
@@ -63401,7 +63401,7 @@ sub_020347C4: ; 0x020347C4
 	bl sub_020345B8
 	ldr r1, [r4, #0x9c]
 	mov r0, #0x24
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	mov r2, #0
 	mov r1, #0xff
 	arm_func_end sub_020347C4
@@ -63432,7 +63432,7 @@ sub_0203481C: ; 0x0203481C
 	add r0, sp, #0
 	ldr r1, [r5, #0xa0]
 	ldr r0, [r0, r4, lsl #2]
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	mov r0, r5
 	bl sub_02034EEC
 	add sp, sp, #0x1c
@@ -63457,7 +63457,7 @@ _0203487C:
 	mov r0, r1
 	str r1, [r2, #0x100]
 	ldr r1, [r4, #0x9c]
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	cmp r0, #0
 	bne _020348B4
 	mov r0, r4
@@ -63466,7 +63466,7 @@ _020348B4:
 	mov r0, r4
 	bl sub_02034EEC
 	ldr r0, [r4, #0x9c]
-	bl sub_0205D650
+	bl NNS_SndHeapSaveState
 	str r0, [r4, #0x1a8]
 	ldmia sp!, {r4, pc}
 _020348CC:
@@ -63482,10 +63482,10 @@ sub_020348DC: ; 0x020348DC
 	mov r4, r1
 	ldr r0, [r5, #0x9c]
 	ldr r1, [r5, #0x1a8]
-	bl sub_0205D69C
+	bl NNS_SndHeapLoadState
 	ldr r1, [r5, #0x9c]
 	mov r0, r4
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	cmp r0, #0
 	bne _02034910
 	mov r0, r5
@@ -63505,10 +63505,10 @@ sub_0203491C: ; 0x0203491C
 	bl sub_020345B8
 	ldr r1, [r4, #0xa0]
 	mov r0, #0x25
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	ldr r1, [r4, #0x9c]
 	mov r0, #0x26
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	mov r0, r4
 	bl sub_02034EEC
 	ldmia sp!, {r4, pc}
@@ -63521,7 +63521,7 @@ sub_02034954: ; 0x02034954
 	bl sub_020345A8
 	ldr r0, [r4, #0xc8]
 	ldr r1, [r4, #0xa0]
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	ldr r1, [r4, #0xc8]
 	mov r0, r4
 	str r1, [r4, #0xc4]
@@ -63530,7 +63530,7 @@ sub_02034954: ; 0x02034954
 	bl sub_02034EEC
 	ldr r1, [r4, #0xd4]
 	add r0, r4, #0xb0
-	bl sub_0205E2B0
+	bl NNS_SndArcPlayerStartSeq
 	ldr r0, [r4, #0xd4]
 	str r0, [r4, #0xd0]
 	ldmia sp!, {r4, pc}
@@ -63555,7 +63555,7 @@ _020349C8:
 	bl sub_020345A8
 	ldr r1, [r5, #0xa0]
 	mov r0, r4
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	mov r0, r5
 	bl sub_02034EEC
 	ldmia sp!, {r3, r4, r5, pc}
@@ -63566,7 +63566,7 @@ sub_020349E8: ; 0x020349E8
 	mov r4, r0
 	mov r0, r1
 	ldr r1, [r4, #0x9c]
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	mov r0, r4
 	bl sub_02034EEC
 	ldmia sp!, {r4, pc}
@@ -63579,12 +63579,12 @@ sub_02034A08: ; 0x02034A08
 	mov r4, r1
 	ldr r0, [r5, #0x9c]
 	ldr r1, [r5, #0x1a8]
-	bl sub_0205D69C
+	bl NNS_SndHeapLoadState
 	mov r0, #0
 	str r0, [r5, #0xe4]
 	ldr r1, [r5, #0x9c]
 	mov r0, r4
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	mov r0, r5
 	bl sub_02034EEC
 	ldmia sp!, {r3, r4, r5, pc}
@@ -63600,13 +63600,13 @@ sub_02034A40: ; 0x02034A40
 	bl sub_02034B58
 	mov r1, r5
 	add r0, r6, #0xb0
-	bl sub_0205E2B0
+	bl NNS_SndArcPlayerStartSeq
 	cmp r4, #0
 	beq _02034A7C
 	mov r2, r4
 	add r0, r6, #0xb0
 	mov r1, #0x7f
-	bl sub_0205BD70
+	bl NNS_SndPlayerMoveVolume
 	arm_func_end sub_02034A40
 _02034A7C:
 	str r5, [r6, #0xd0]
@@ -63628,7 +63628,7 @@ sub_02034AA8: ; 0x02034AA8
 	bl sub_020345A8
 	ldr r1, [r4, #0xa0]
 	mov r0, #0x44
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	mov r0, r4
 	bl sub_02034EEC
 	mov r0, r4
@@ -63636,7 +63636,7 @@ sub_02034AA8: ; 0x02034AA8
 	bl sub_02034B58
 	add r0, r4, #0xb0
 	mov r1, #1
-	bl sub_0205E2B0
+	bl NNS_SndArcPlayerStartSeq
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02034AA8
 
@@ -63659,13 +63659,13 @@ sub_02034AE4: ; 0x02034AE4
 	add r1, sp, #0
 	ldr r1, [r1, r5, lsl #2]
 	add r0, r6, #0xb0
-	bl sub_0205E2B0
+	bl NNS_SndArcPlayerStartSeq
 	cmp r4, #0
 	beq _02034B44
 	mov r2, r4
 	add r0, r6, #0xb0
 	mov r1, #0x7f
-	bl sub_0205BD70
+	bl NNS_SndPlayerMoveVolume
 	arm_func_end sub_02034AE4
 _02034B44:
 	mov r0, #0
@@ -63677,11 +63677,11 @@ _02034B54: .word DAT_02084d3c
 
 	arm_func_start sub_02034B58
 sub_02034B58: ; 0x02034B58
-	ldr ip, _02034B64 ; =sub_0205BC48
+	ldr ip, _02034B64 ; =NNS_SndPlayerStopSeq
 	add r0, r0, #0xb0
 	bx ip
 	.align 2, 0
-_02034B64: .word sub_0205BC48
+_02034B64: .word NNS_SndPlayerStopSeq
 	arm_func_end sub_02034B58
 
 	arm_func_start sub_02034B68
@@ -63691,13 +63691,13 @@ sub_02034B68: ; 0x02034B68
 	mov r4, r1
 	ldr r1, [r5, #0xd0]
 	add r0, r5, #0xb0
-	bl sub_0205E2B0
+	bl NNS_SndArcPlayerStartSeq
 	cmp r4, #0
 	ldmeqia sp!, {r3, r4, r5, pc}
 	mov r2, r4
 	add r0, r5, #0xb0
 	mov r1, #0x7f
-	bl sub_0205BD70
+	bl NNS_SndPlayerMoveVolume
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end sub_02034B68
 
@@ -63706,7 +63706,7 @@ sub_02034B9C: ; 0x02034B9C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0xb0
-	bl sub_0205BC48
+	bl NNS_SndPlayerStopSeq
 	mov r0, #0x63
 	str r0, [r4, #0xc4]
 	ldmia sp!, {r4, pc}
@@ -63714,12 +63714,12 @@ sub_02034B9C: ; 0x02034B9C
 
 	arm_func_start sub_02034BB8
 sub_02034BB8: ; 0x02034BB8
-	ldr ip, _02034BC8 ; =sub_0205BDDC
+	ldr ip, _02034BC8 ; =NNS_SndPlayerSetTempoRatio
 	str r1, [r0, #0xf4]
 	add r0, r0, #0xb0
 	bx ip
 	.align 2, 0
-_02034BC8: .word sub_0205BDDC
+_02034BC8: .word NNS_SndPlayerSetTempoRatio
 	arm_func_end sub_02034BB8
 
 	arm_func_start sub_02034BCC
@@ -63731,7 +63731,7 @@ sub_02034BCC: ; 0x02034BCC
 	bl sub_02034C2C
 	ldr r1, [r5, #0xa0]
 	mov r0, r4
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	mov r0, r5
 	bl sub_02034EEC
 	ldmia sp!, {r3, r4, r5, pc}
@@ -63749,7 +63749,7 @@ sub_02034BF8: ; 0x02034BF8
 	mov r2, r4
 	add r0, r5, #0xb8
 	mov r1, #0
-	bl sub_0205E2F8
+	bl NNS_SndArcPlayerStartSeqArc
 	arm_func_end sub_02034BF8
 _02034C24:
 	str r4, [r5, #0xdc]
@@ -63757,51 +63757,51 @@ _02034C24:
 
 	arm_func_start sub_02034C2C
 sub_02034C2C: ; 0x02034C2C
-	ldr ip, _02034C40 ; =sub_0205BC58
+	ldr ip, _02034C40 ; =NNS_SndPlayerStopSeqBySeqArcIdx
 	mov r2, r1
 	ldr r1, [r0, #0xdc]
 	mov r0, #0
 	bx ip
 	.align 2, 0
-_02034C40: .word sub_0205BC58
+_02034C40: .word NNS_SndPlayerStopSeqBySeqArcIdx
 	arm_func_end sub_02034C2C
 
 	arm_func_start sub_02034C44
 sub_02034C44: ; 0x02034C44
-	ldr ip, _02034C58 ; =sub_0205E2F8
+	ldr ip, _02034C58 ; =NNS_SndArcPlayerStartSeqArc
 	mov r2, r1
 	add r0, r0, #0xb4
 	mov r1, #0
 	bx ip
 	.align 2, 0
-_02034C58: .word sub_0205E2F8
+_02034C58: .word NNS_SndArcPlayerStartSeqArc
 	arm_func_end sub_02034C44
 
 	arm_func_start sub_02034C5C
 sub_02034C5C: ; 0x02034C5C
-	ldr ip, _02034C6C ; =sub_0205BC58
+	ldr ip, _02034C6C ; =NNS_SndPlayerStopSeqBySeqArcIdx
 	mov r0, #0
 	mov r2, r0
 	bx ip
 	.align 2, 0
-_02034C6C: .word sub_0205BC58
+_02034C6C: .word NNS_SndPlayerStopSeqBySeqArcIdx
 	arm_func_end sub_02034C5C
 
 	arm_func_start sub_02034C70
 sub_02034C70: ; 0x02034C70
-	ldr ip, _02034C80 ; =sub_0205BC48
+	ldr ip, _02034C80 ; =NNS_SndPlayerStopSeq
 	add r0, r0, #0xb4
 	mov r1, #0
 	bx ip
 	.align 2, 0
-_02034C80: .word sub_0205BC48
+_02034C80: .word NNS_SndPlayerStopSeq
 	arm_func_end sub_02034C70
 
 	arm_func_start sub_02034C84
 sub_02034C84: ; 0x02034C84
 	stmdb sp!, {r3, lr}
 	mov r0, #0
-	bl sub_0205BCE8
+	bl NNS_SndPlayerCountPlayingSeqBySeqArcIdx
 	cmp r0, #0
 	movgt r0, #1
 	movle r0, #0
@@ -63820,10 +63820,10 @@ sub_02034CA0: ; 0x02034CA0
 	str r5, [r6, #0xe4]
 	ldr r0, [r6, #0x9c]
 	ldr r1, [r6, #0x1a8]
-	bl sub_0205D69C
+	bl NNS_SndHeapLoadState
 	ldr r1, [r6, #0x9c]
 	mov r0, r5
-	bl sub_0205D820
+	bl NNS_SndArcLoadGroup
 	mov r0, r6
 	bl sub_02034EEC
 	arm_func_end sub_02034CA0
@@ -63831,7 +63831,7 @@ _02034CE0:
 	mov r2, r4
 	add r0, r6, #0xb4
 	mov r1, #0
-	bl sub_0205E2F8
+	bl NNS_SndArcPlayerStartSeqArc
 	ldmia sp!, {r4, r5, r6, pc}
 
 	arm_func_start sub_02034CF4
@@ -63845,11 +63845,11 @@ sub_02034CF4: ; 0x02034CF4
 	ldr r1, [r5, #0xfc]
 	add r0, r5, #0xa8
 	sub r2, ip, #1
-	bl sub_0205E79C
+	bl NNS_SndArcStrmStartEx
 	mov r2, r4
 	add r0, r5, #0xa8
 	mov r1, #0
-	bl sub_0205E7F4
+	bl NNS_SndArcStrmSetChannelPan
 	ldr r0, [r5, #0xfc]
 	cmp r0, #0
 	moveq r0, #1
@@ -63875,7 +63875,7 @@ sub_02034D54: ; 0x02034D54
 	add r0, r6, #0xa8
 	mov r5, r1
 	mov r4, r2
-	bl sub_0205E834
+	bl NNS_SndArcStrmGetCurrentPlayingPos
 	cmp r0, #0
 	addne sp, sp, #4
 	ldmneia sp!, {r3, r4, r5, r6, pc}
@@ -63885,11 +63885,11 @@ sub_02034D54: ; 0x02034D54
 	mov r3, r5
 	add r0, r6, #0xac
 	sub r2, r2, #1
-	bl sub_0205E79C
+	bl NNS_SndArcStrmStartEx
 	mov r2, r4
 	add r0, r6, #0xac
 	mov r1, #0
-	bl sub_0205E7F4
+	bl NNS_SndArcStrmSetChannelPan
 	ldr r0, [r6, #0xfc]
 	cmp r0, #0
 	moveq r0, #1
@@ -63902,20 +63902,20 @@ sub_02034D54: ; 0x02034D54
 
 	arm_func_start sub_02034DC8
 sub_02034DC8: ; 0x02034DC8
-	ldr ip, _02034DD4 ; =sub_0205E7D8
+	ldr ip, _02034DD4 ; =NNS_SndArcStrmStop
 	add r0, r0, #0xac
 	bx ip
 	.align 2, 0
-_02034DD4: .word sub_0205E7D8
+_02034DD4: .word NNS_SndArcStrmStop
 	arm_func_end sub_02034DC8
 
 	arm_func_start sub_02034DD8
 sub_02034DD8: ; 0x02034DD8
-	ldr ip, _02034DE4 ; =sub_0205E7D8
+	ldr ip, _02034DE4 ; =NNS_SndArcStrmStop
 	add r0, r0, #0xa8
 	bx ip
 	.align 2, 0
-_02034DE4: .word sub_0205E7D8
+_02034DE4: .word NNS_SndArcStrmStop
 	arm_func_end sub_02034DD8
 
 	arm_func_start sub_02034DE8
@@ -63929,26 +63929,26 @@ sub_02034DE8: ; 0x02034DE8
 	bl sub_02034E38
 	mov r1, r6
 	add r0, r7, #0xc0
-	bl sub_0205E2B0
+	bl NNS_SndArcPlayerStartSeq
 	mov r1, r4
 	add r0, r7, #0xc0
-	bl sub_0205BDDC
+	bl NNS_SndPlayerSetTempoRatio
 	cmp r5, #0
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
 	mov r2, r5
 	add r0, r7, #0xc0
 	mov r1, #0x7f
-	bl sub_0205BD70
+	bl NNS_SndPlayerMoveVolume
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	arm_func_end sub_02034DE8
 
 	arm_func_start sub_02034E38
 sub_02034E38: ; 0x02034E38
-	ldr ip, _02034E44 ; =sub_0205BC48
+	ldr ip, _02034E44 ; =NNS_SndPlayerStopSeq
 	add r0, r0, #0xc0
 	bx ip
 	.align 2, 0
-_02034E44: .word sub_0205BC48
+_02034E44: .word NNS_SndPlayerStopSeq
 	arm_func_end sub_02034E38
 
 	arm_func_start sub_02034E48
@@ -63958,11 +63958,11 @@ sub_02034E48: ; 0x02034E48
 	add r0, r4, #0xbc
 	mov r1, #0
 	mov r2, #0x19
-	bl sub_0205E2F8
+	bl NNS_SndArcPlayerStartSeqArc
 	add r0, r4, #0xbc
 	mov r1, #0
 	mov r2, #0xb
-	bl sub_0205E2F8
+	bl NNS_SndArcPlayerStartSeqArc
 	mov r0, r4
 	mov r1, #0
 	bl sub_02034E80
@@ -63988,24 +63988,24 @@ sub_02034E80: ; 0x02034E80
 _02034EB4:
 	str r1, [r0, #0xf8]
 _02034EB8:
-	ldr ip, _02034ED0 ; =sub_0205BDBC
+	ldr ip, _02034ED0 ; =NNS_SndPlayerSetTrackPitch
 	ldr r2, [r0, #0xf8]
 	ldr r1, _02034ED4 ; =0x0000FFFF
 	add r0, r0, #0xbc
 	bx ip
 	.align 2, 0
 _02034ECC: .word 0x000003FF
-_02034ED0: .word sub_0205BDBC
+_02034ED0: .word NNS_SndPlayerSetTrackPitch
 _02034ED4: .word 0x0000FFFF
 
 	arm_func_start sub_02034ED8
 sub_02034ED8: ; 0x02034ED8
-	ldr ip, _02034EE8 ; =sub_0205BC48
+	ldr ip, _02034EE8 ; =NNS_SndPlayerStopSeq
 	add r0, r0, #0xbc
 	mov r1, #0
 	bx ip
 	.align 2, 0
-_02034EE8: .word sub_0205BC48
+_02034EE8: .word NNS_SndPlayerStopSeq
 	arm_func_end sub_02034ED8
 
 	arm_func_start sub_02034EEC
@@ -64013,42 +64013,42 @@ sub_02034EEC: ; 0x02034EEC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	ldr r0, [r4, #0xa0]
-	bl sub_0205D770
+	bl NNS_SndHeapGetSize
 	ldr r0, [r4, #0x9c]
-	bl sub_0205D770
+	bl NNS_SndHeapGetSize
 	ldr r0, [r4, #0xa4]
-	bl sub_0205D770
+	bl NNS_SndHeapGetSize
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02034EEC
 
 	arm_func_start sub_02034F10
 sub_02034F10: ; 0x02034F10
-	ldr ip, _02034F1C ; =sub_0205BD48
+	ldr ip, _02034F1C ; =NNS_SndPlayerSetVolume
 	add r0, r0, #0xb0
 	bx ip
 	.align 2, 0
-_02034F1C: .word sub_0205BD48
+_02034F1C: .word NNS_SndPlayerSetVolume
 	arm_func_end sub_02034F10
 
 	arm_func_start sub_02034F20
 sub_02034F20: ; 0x02034F20
-	ldr ip, _02034F38 ; =sub_0205BD48
+	ldr ip, _02034F38 ; =NNS_SndPlayerSetVolume
 	cmp r1, #0x100
 	strne r1, [r0, #0x1a0]
 	ldr r1, [r0, #0x1a0]
 	add r0, r0, #0xb8
 	bx ip
 	.align 2, 0
-_02034F38: .word sub_0205BD48
+_02034F38: .word NNS_SndPlayerSetVolume
 	arm_func_end sub_02034F20
 
 	arm_func_start sub_02034F3C
 sub_02034F3C: ; 0x02034F3C
-	ldr ip, _02034F48 ; =sub_0205BD48
+	ldr ip, _02034F48 ; =NNS_SndPlayerSetVolume
 	add r0, r0, #0xb4
 	bx ip
 	.align 2, 0
-_02034F48: .word sub_0205BD48
+_02034F48: .word NNS_SndPlayerSetVolume
 	arm_func_end sub_02034F3C
 
 	arm_func_start sub_02034F4C
@@ -103617,15 +103617,15 @@ _020562E4: .word MAIN_BSS_0210EADC
 _020562E8: .word MAIN_BSS_0210EAE0
 	arm_func_end sub_0205628C
 
-	arm_func_start NitroSystem_NNS_FndInitList
-NitroSystem_NNS_FndInitList: ; 0x020562EC
+	arm_func_start NNS_FndInitList
+NNS_FndInitList: ; 0x020562EC
 	mov r2, #0
 	str r2, [r0]
 	str r2, [r0, #4]
 	strh r2, [r0, #8]
 	strh r1, [r0, #0xa]
 	bx lr
-	arm_func_end NitroSystem_NNS_FndInitList
+	arm_func_end NNS_FndInitList
 
 	arm_func_start NitroSystem_SetFirstObject
 NitroSystem_SetFirstObject: ; 0x02056304
@@ -103642,15 +103642,15 @@ NitroSystem_SetFirstObject: ; 0x02056304
 	bx lr
 	arm_func_end NitroSystem_SetFirstObject
 
-	arm_func_start NitroSystem_NNS_FndAppendListObject
-NitroSystem_NNS_FndAppendListObject: ; 0x02056330
+	arm_func_start NNS_FndAppendListObject
+NNS_FndAppendListObject: ; 0x02056330
 	stmdb sp!, {r3, lr}
 	ldr r2, [r0]
 	cmp r2, #0
 	bne _02056348
 	bl NitroSystem_SetFirstObject
 	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_NNS_FndAppendListObject
+	arm_func_end NNS_FndAppendListObject
 _02056348:
 	ldrh ip, [r0, #0xa]
 	ldr r3, [r0, #4]
@@ -103693,15 +103693,15 @@ _0205639C:
 	strh r1, [r0, #8]
 	ldmia sp!, {r3, pc}
 
-	arm_func_start NitroSystem_NNS_FndInsertListObject
-NitroSystem_NNS_FndInsertListObject: ; 0x020563D4
+	arm_func_start NNS_FndInsertListObject
+NNS_FndInsertListObject: ; 0x020563D4
 	stmdb sp!, {r3, lr}
 	cmp r1, #0
 	bne _020563EC
 	mov r1, r2
-	bl NitroSystem_NNS_FndAppendListObject
+	bl NNS_FndAppendListObject
 	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_NNS_FndInsertListObject
+	arm_func_end NNS_FndInsertListObject
 _020563EC:
 	ldr r3, [r0]
 	cmp r1, r3
@@ -103724,8 +103724,8 @@ _02056404:
 	strh r1, [r0, #8]
 	ldmia sp!, {r3, pc}
 
-	arm_func_start NitroSystem_NNS_FndRemoveListObject
-NitroSystem_NNS_FndRemoveListObject: ; 0x02056438
+	arm_func_start NNS_FndRemoveListObject
+NNS_FndRemoveListObject: ; 0x02056438
 	stmdb sp!, {r3, lr}
 	ldrh ip, [r0, #0xa]
 	ldr r3, [r1, ip]
@@ -103750,26 +103750,26 @@ NitroSystem_NNS_FndRemoveListObject: ; 0x02056438
 	sub r1, r1, #1
 	strh r1, [r0, #8]
 	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_NNS_FndRemoveListObject
+	arm_func_end NNS_FndRemoveListObject
 
-	arm_func_start NitroSystem_NNS_FndGetNextListObject
-NitroSystem_NNS_FndGetNextListObject: ; 0x02056498
+	arm_func_start NNS_FndGetNextListObject
+NNS_FndGetNextListObject: ; 0x02056498
 	cmp r1, #0
 	ldreq r0, [r0]
 	ldrneh r0, [r0, #0xa]
 	addne r0, r1, r0
 	ldrne r0, [r0, #4]
 	bx lr
-	arm_func_end NitroSystem_NNS_FndGetNextListObject
+	arm_func_end NNS_FndGetNextListObject
 
-	arm_func_start NitroSystem_NNS_FndGetPrevListObject
-NitroSystem_NNS_FndGetPrevListObject: ; 0x020564B0
+	arm_func_start NNS_FndGetPrevListObject
+NNS_FndGetPrevListObject: ; 0x020564B0
 	cmp r1, #0
 	ldreq r0, [r0, #4]
 	ldrneh r0, [r0, #0xa]
 	ldrne r0, [r1, r0]
 	bx lr
-	arm_func_end NitroSystem_NNS_FndGetPrevListObject
+	arm_func_end NNS_FndGetPrevListObject
 
 	arm_func_start NitroSystem_FindContainHeap
 NitroSystem_FindContainHeap: ; 0x020564C4
@@ -103777,7 +103777,7 @@ NitroSystem_FindContainHeap: ; 0x020564C4
 	mov r5, r1
 	mov r1, #0
 	mov r6, r0
-	bl NitroSystem_NNS_FndGetNextListObject
+	bl NNS_FndGetNextListObject
 	movs r4, r0
 	beq _02056524
 	arm_func_end NitroSystem_FindContainHeap
@@ -103797,7 +103797,7 @@ _020564E0:
 _02056510:
 	mov r0, r6
 	mov r1, r4
-	bl NitroSystem_NNS_FndGetNextListObject
+	bl NNS_FndGetNextListObject
 	movs r4, r0
 	bne _020564E0
 _02056524:
@@ -103834,14 +103834,14 @@ NitroSystem_NNSi_FndInitHeapHead: ; 0x02056554
 	add r0, r4, #0xc
 	mov r1, #4
 	str r2, [r4, #0x20]
-	bl NitroSystem_NNS_FndInitList
+	bl NNS_FndInitList
 	ldr r0, NitroSystem_FND_heapcommon_sRootListInitialized ; =MAIN_BSS_0210EAF0
 	ldr r0, [r0]
 	cmp r0, #0
 	bne _020565B4
 	ldr r0, _020565CC ; =MAIN_BSS_0210EAF4
 	mov r1, #4
-	bl NitroSystem_NNS_FndInitList
+	bl NNS_FndInitList
 	ldr r0, NitroSystem_FND_heapcommon_sRootListInitialized ; =MAIN_BSS_0210EAF0
 	mov r1, #1
 	str r1, [r0]
@@ -103850,21 +103850,21 @@ _020565B4:
 	mov r0, r4
 	bl NitroSystem_FindListContainHeap
 	mov r1, r4
-	bl NitroSystem_NNS_FndAppendListObject
+	bl NNS_FndAppendListObject
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 NitroSystem_FND_heapcommon_sRootListInitialized: .word MAIN_BSS_0210EAF0
 _020565CC: .word MAIN_BSS_0210EAF4
 
-	arm_func_start NitroSystem_NNSi_FndFinalizeHeap
-NitroSystem_NNSi_FndFinalizeHeap: ; 0x020565D0
+	arm_func_start NNSi_FndFinalizeHeap
+NNSi_FndFinalizeHeap: ; 0x020565D0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	bl NitroSystem_FindListContainHeap
 	mov r1, r4
-	bl NitroSystem_NNS_FndRemoveListObject
+	bl NNS_FndRemoveListObject
 	ldmia sp!, {r4, pc}
-	arm_func_end NitroSystem_NNSi_FndFinalizeHeap
+	arm_func_end NNSi_FndFinalizeHeap
 
 	arm_func_start NitroSystem_GetRegionOfMBlock
 NitroSystem_GetRegionOfMBlock: ; 0x020565E8
@@ -104258,10 +104258,10 @@ _02056B10:
 
 	arm_func_start NitroSystem_NNS_FndDestroyExpHeap
 NitroSystem_NNS_FndDestroyExpHeap: ; 0x02056B18
-	ldr ip, _02056B20 ; =NitroSystem_NNSi_FndFinalizeHeap
+	ldr ip, _02056B20 ; =NNSi_FndFinalizeHeap
 	bx ip
 	.align 2, 0
-_02056B20: .word NitroSystem_NNSi_FndFinalizeHeap
+_02056B20: .word NNSi_FndFinalizeHeap
 	arm_func_end NitroSystem_NNS_FndDestroyExpHeap
 
 	arm_func_start NitroSystem_NNS_FndAllocFromExpHeapEx
@@ -104460,8 +104460,8 @@ _02056D6C:
 	str r1, [r0, #0x28]
 	bx lr
 
-	arm_func_start NitroSystem_NNS_FndCreateFrmHeapEx
-NitroSystem_NNS_FndCreateFrmHeapEx: ; 0x02056D78
+	arm_func_start NNS_FndCreateFrmHeapEx
+NNS_FndCreateFrmHeapEx: ; 0x02056D78
 	stmdb sp!, {r3, lr}
 	add r1, r1, r0
 	add r0, r0, #3
@@ -104472,7 +104472,7 @@ NitroSystem_NNS_FndCreateFrmHeapEx: ; 0x02056D78
 	sub r3, r1, r0
 	cmp r3, #0x30
 	bhs _02056DA8
-	arm_func_end NitroSystem_NNS_FndCreateFrmHeapEx
+	arm_func_end NNS_FndCreateFrmHeapEx
 _02056DA0:
 	mov r0, #0
 	ldmia sp!, {r3, pc}
@@ -104480,16 +104480,16 @@ _02056DA8:
 	bl NitroSystem_InitFrameHeap
 	ldmia sp!, {r3, pc}
 
-	arm_func_start NitroSystem_NNS_FndDestroyFrmHeap
-NitroSystem_NNS_FndDestroyFrmHeap: ; 0x02056DB0
-	ldr ip, _02056DB8 ; =NitroSystem_NNSi_FndFinalizeHeap
+	arm_func_start NNS_FndDestroyFrmHeap
+NNS_FndDestroyFrmHeap: ; 0x02056DB0
+	ldr ip, _02056DB8 ; =NNSi_FndFinalizeHeap
 	bx ip
 	.align 2, 0
-_02056DB8: .word NitroSystem_NNSi_FndFinalizeHeap
-	arm_func_end NitroSystem_NNS_FndDestroyFrmHeap
+_02056DB8: .word NNSi_FndFinalizeHeap
+	arm_func_end NNS_FndDestroyFrmHeap
 
-	arm_func_start NitroSystem_NNS_FndAllocFromFrmHeapEx
-NitroSystem_NNS_FndAllocFromFrmHeapEx: ; 0x02056DBC
+	arm_func_start NNS_FndAllocFromFrmHeapEx
+NNS_FndAllocFromFrmHeapEx: ; 0x02056DBC
 	stmdb sp!, {r3, lr}
 	cmp r1, #0
 	moveq r1, #1
@@ -104500,21 +104500,21 @@ NitroSystem_NNS_FndAllocFromFrmHeapEx: ; 0x02056DBC
 	blt _02056DE4
 	bl NitroSystem_FrameHeap_AllocFromHead
 	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_NNS_FndAllocFromFrmHeapEx
+	arm_func_end NNS_FndAllocFromFrmHeapEx
 _02056DE4:
 	rsb r2, r2, #0
 	bl NitroSystem_FrameHeap_AllocFromTail
 	ldmia sp!, {r3, pc}
 
-	arm_func_start NitroSystem_NNS_FndFreeToFrmHeap
-NitroSystem_NNS_FndFreeToFrmHeap: ; 0x02056DF0
+	arm_func_start NNS_FndFreeToFrmHeap
+NNS_FndFreeToFrmHeap: ; 0x02056DF0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r4, r1
 	mov r5, r0
 	tst r4, #1
 	beq _02056E08
 	bl NitroSystem_FrameHeap_FreeHead
-	arm_func_end NitroSystem_NNS_FndFreeToFrmHeap
+	arm_func_end NNS_FndFreeToFrmHeap
 _02056E08:
 	tst r4, #2
 	ldmeqia sp!, {r3, r4, r5, pc}
@@ -104522,8 +104522,8 @@ _02056E08:
 	bl NitroSystem_FrameHeap_FreeTail
 	ldmia sp!, {r3, r4, r5, pc}
 
-	arm_func_start NitroSystem_NNS_FndRecordStateForFrmHeap
-NitroSystem_NNS_FndRecordStateForFrmHeap: ; 0x02056E1C
+	arm_func_start NNS_FndRecordStateForFrmHeap
+NNS_FndRecordStateForFrmHeap: ; 0x02056E1C
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r0
 	ldr r4, [r6, #0x24]
@@ -104544,15 +104544,15 @@ NitroSystem_NNS_FndRecordStateForFrmHeap: ; 0x02056E1C
 	str r0, [r6, #0x2c]
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSystem_NNS_FndRecordStateForFrmHeap
+	arm_func_end NNS_FndRecordStateForFrmHeap
 
-	arm_func_start NitroSystem_NNS_FndFreeByStateToFrmHeap
-NitroSystem_NNS_FndFreeByStateToFrmHeap: ; 0x02056E6C
+	arm_func_start NNS_FndFreeByStateToFrmHeap
+NNS_FndFreeByStateToFrmHeap: ; 0x02056E6C
 	ldr r3, [r0, #0x2c]
 	cmp r1, #0
 	cmpne r3, #0
 	beq _02056E90
-	arm_func_end NitroSystem_NNS_FndFreeByStateToFrmHeap
+	arm_func_end NNS_FndFreeByStateToFrmHeap
 _02056E7C:
 	ldr r2, [r3]
 	cmp r2, r1
@@ -110456,5317 +110456,6 @@ _0205B93C:
 _0205B960: .word DAT_02084fc8
 _0205B964: .word 0x04001000
 
-	arm_func_start NitroSystem_snd_main_NNS_SndInit
-NitroSystem_snd_main_NNS_SndInit: ; 0x0205B968
-	stmdb sp!, {r3, lr}
-	ldr r0, _0205B9DC ; =MAIN_BSS_0210EB60
-	ldr r1, [r0, #0xc]
-	cmp r1, #0
-	ldmneia sp!, {r3, pc}
-	mov r1, #1
-	str r1, [r0, #0xc]
-	bl SND_Init
-	ldr r0, _0205B9E0 ; =NitroSystem_snd_main_BeginSleep
-	ldr r1, _0205B9DC ; =MAIN_BSS_0210EB60
-	mov r2, #0
-	str r0, [r1, #0x10]
-	ldr r0, _0205B9E4 ; =NitroSystem_snd_main_EndSleep
-	str r2, [r1, #0x14]
-	str r0, [r1, #0x1c]
-	ldr r0, _0205B9E8 ; =MAIN_BSS_0210EB70
-	str r2, [r1, #0x20]
-	bl PM_PrependPreSleepCallback
-	ldr r0, _0205B9EC ; =MAIN_BSS_0210EB7C
-	bl PM_AppendPostSleepCallback
-	bl sub_0205BB60
-	bl sub_0205CA84
-	bl sub_0205BE4C
-	ldr r0, _0205B9DC ; =MAIN_BSS_0210EB60
-	mvn r1, #0
-	strb r1, [r0]
-	mov r1, #1
-	str r1, [r0, #4]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0205B9DC: .word MAIN_BSS_0210EB60
-_0205B9E0: .word NitroSystem_snd_main_BeginSleep
-_0205B9E4: .word NitroSystem_snd_main_EndSleep
-_0205B9E8: .word MAIN_BSS_0210EB70
-_0205B9EC: .word MAIN_BSS_0210EB7C
-	arm_func_end NitroSystem_snd_main_NNS_SndInit
-
-	arm_func_start NitroSystem_snd_main_NNS_SndMain
-NitroSystem_snd_main_NNS_SndMain: ; 0x0205B9F0
-	stmdb sp!, {r4, lr}
-	mov r4, #0
-	arm_func_end NitroSystem_snd_main_NNS_SndMain
-_0205B9F8:
-	mov r0, r4
-	bl SND_RecvCommandReply
-	cmp r0, #0
-	bne _0205B9F8
-	bl sub_0205BF00
-	bl sub_0205CA9C
-	bl sub_0205E870
-	mov r0, #0
-	bl SND_FlushCommand
-	ldmia sp!, {r4, pc}
-
-	arm_func_start NitroSystem_snd_main_BeginSleep
-NitroSystem_snd_main_BeginSleep: ; 0x0205BA20
-	stmdb sp!, {r4, lr}
-	bl sub_0205CC14
-	mov r0, #0
-	mov r1, r0
-	mov r2, r0
-	mov r3, r0
-	bl SND_StopTimer
-	bl SND_GetCurrentCommandTag
-	mov r4, r0
-	mov r0, #1
-	bl SND_FlushCommand
-	mov r0, r4
-	bl SND_WaitForCommandProc
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSystem_snd_main_BeginSleep
-
-	arm_func_start NitroSystem_snd_main_EndSleep
-NitroSystem_snd_main_EndSleep: ; 0x0205BA58
-	ldr ip, _0205BA60 ; =sub_0205CC74
-	bx ip
-	.align 2, 0
-_0205BA60: .word sub_0205CC74
-	arm_func_end NitroSystem_snd_main_EndSleep
-
-	arm_func_start sub_0205BA64
-sub_0205BA64: ; 0x0205BA64
-	stmdb sp!, {r4, lr}
-	movs r4, r0
-	moveq r0, #1
-	ldmeqia sp!, {r4, pc}
-	ldr r1, _0205BAA8 ; =MAIN_BSS_02110F60
-	ldr r1, [r1, #8]
-	tst r4, r1
-	movne r0, #0
-	ldmneia sp!, {r4, pc}
-	mov r1, #0
-	bl SND_LockChannel
-	ldr r1, _0205BAA8 ; =MAIN_BSS_02110F60
-	mov r0, #1
-	ldr r2, [r1, #8]
-	orr r2, r2, r4
-	str r2, [r1, #8]
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205BAA8: .word MAIN_BSS_02110F60
-	arm_func_end sub_0205BA64
-
-	arm_func_start sub_0205BAAC
-sub_0205BAAC: ; 0x0205BAAC
-	stmdb sp!, {r4, lr}
-	movs r4, r0
-	ldmeqia sp!, {r4, pc}
-	mov r1, #0
-	bl SND_UnlockChannel
-	ldr r0, _0205BAD8 ; =MAIN_BSS_02110F60
-	mvn r1, r4
-	ldr r2, [r0, #8]
-	and r1, r2, r1
-	str r1, [r0, #8]
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205BAD8: .word MAIN_BSS_02110F60
-	arm_func_end sub_0205BAAC
-
-	arm_func_start sub_0205BADC
-sub_0205BADC: ; 0x0205BADC
-	ldr r1, _0205BAF4 ; =MAIN_BSS_02110F60
-	mvn r0, r0
-	ldr r2, [r1]
-	and r0, r2, r0
-	str r0, [r1]
-	bx lr
-	.align 2, 0
-_0205BAF4: .word MAIN_BSS_02110F60
-	arm_func_end sub_0205BADC
-
-	arm_func_start sub_0205BAF8
-sub_0205BAF8: ; 0x0205BAF8
-	ldr r0, _0205BB3C ; =MAIN_BSS_02110F60
-	mov r3, #1
-	ldr r1, [r0, #4]
-	mov r0, #0
-	arm_func_end sub_0205BAF8
-_0205BB08:
-	tst r1, r3
-	bne _0205BB24
-	ldr r1, _0205BB3C ; =MAIN_BSS_02110F60
-	ldr r2, [r1, #4]
-	orr r2, r2, r3
-	str r2, [r1, #4]
-	bx lr
-_0205BB24:
-	add r0, r0, #1
-	cmp r0, #8
-	mov r3, r3, lsl #1
-	blt _0205BB08
-	mvn r0, #0
-	bx lr
-	.align 2, 0
-_0205BB3C: .word MAIN_BSS_02110F60
-
-	arm_func_start sub_0205BB40
-sub_0205BB40: ; 0x0205BB40
-	ldr r1, _0205BB5C ; =MAIN_BSS_02110F60
-	mov r2, #1
-	mvn r0, r2, lsl r0
-	ldr r2, [r1, #4]
-	and r0, r2, r0
-	str r0, [r1, #4]
-	bx lr
-	.align 2, 0
-_0205BB5C: .word MAIN_BSS_02110F60
-	arm_func_end sub_0205BB40
-
-	arm_func_start sub_0205BB60
-sub_0205BB60: ; 0x0205BB60
-	ldr r0, _0205BB78 ; =MAIN_BSS_02110F60
-	mov r1, #0
-	str r1, [r0, #8]
-	str r1, [r0]
-	str r1, [r0, #4]
-	bx lr
-	.align 2, 0
-_0205BB78: .word MAIN_BSS_02110F60
-	arm_func_end sub_0205BB60
-
-	arm_func_start sub_0205BB7C
-sub_0205BB7C: ; 0x0205BB7C
-	mov r2, #0x24
-	mul r2, r0, r2
-	mov r0, r1, lsl #0x10
-	ldr r1, _0205BB98 ; =MAIN_BSS_021113DC
-	mov r0, r0, lsr #0x10
-	str r0, [r1, r2]
-	bx lr
-	.align 2, 0
-_0205BB98: .word MAIN_BSS_021113DC
-	arm_func_end sub_0205BB7C
-
-	arm_func_start sub_0205BB9C
-sub_0205BB9C: ; 0x0205BB9C
-	mov r2, #0x24
-	mul r2, r0, r2
-	ldr r0, _0205BBB0 ; =MAIN_BSS_021113E0
-	str r1, [r0, r2]
-	bx lr
-	.align 2, 0
-_0205BBB0: .word MAIN_BSS_021113E0
-	arm_func_end sub_0205BB9C
-
-	arm_func_start sub_0205BBB4
-sub_0205BBB4: ; 0x0205BBB4
-	stmdb sp!, {r3, r4, r5, r6, lr}
-	sub sp, sp, #4
-	mov r5, r2
-	mov r6, r0
-	mov r0, r1
-	mov r3, #0
-	ldr r2, _0205BC40 ; =sub_0205C408
-	add r1, r5, #0x14
-	str r3, [sp]
-	bl sub_0205D5E8
-	movs r4, r0
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	mov r2, #0
-	str r2, [r4, #0xc]
-	str r6, [r4, #0x10]
-	mov r1, r5
-	add r0, r4, #0x14
-	str r2, [r4, #8]
-	bl sub_0205D4A4
-	cmp r0, #0
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	ldr r2, _0205BC44 ; =MAIN_BSS_021113C4
-	mov r1, #0x24
-	mla r2, r6, r1, r2
-	str r0, [r4, #8]
-	mov r1, r4
-	add r0, r2, #0xc
-	bl NitroSystem_NNS_FndAppendListObject
-	mov r0, #1
-	add sp, sp, #4
-	ldmia sp!, {r3, r4, r5, r6, pc}
-	.align 2, 0
-_0205BC40: .word sub_0205C408
-_0205BC44: .word MAIN_BSS_021113C4
-	arm_func_end sub_0205BBB4
-
-	arm_func_start sub_0205BC48
-sub_0205BC48: ; 0x0205BC48
-	ldr ip, _0205BC54 ; =sub_0205C158
-	ldr r0, [r0]
-	bx ip
-	.align 2, 0
-_0205BC54: .word sub_0205C158
-	arm_func_end sub_0205BC48
-
-	arm_func_start sub_0205BC58
-sub_0205BC58: ; 0x0205BC58
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	ldr r5, _0205BCB8 ; =MAIN_BSS_02110F84
-	mov r8, r0
-	mov r7, r1
-	mov r6, r2
-	mov r4, #0
-	arm_func_end sub_0205BC58
-_0205BC70:
-	ldrb r0, [r5, #0x2c]
-	cmp r0, #0
-	beq _0205BCA4
-	ldrh r0, [r5, #0x34]
-	cmp r0, #2
-	ldreqh r0, [r5, #0x38]
-	cmpeq r0, r8
-	ldreqh r0, [r5, #0x3a]
-	cmpeq r0, r7
-	bne _0205BCA4
-	mov r0, r5
-	mov r1, r6
-	bl sub_0205C158
-_0205BCA4:
-	add r4, r4, #1
-	cmp r4, #0x10
-	add r5, r5, #0x44
-	blt _0205BC70
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	.align 2, 0
-_0205BCB8: .word MAIN_BSS_02110F84
-
-	arm_func_start NNS_SndHandleInit
-NNS_SndHandleInit: ; 0x0205BCBC
-	mov r1, #0
-	str r1, [r0]
-	bx lr
-	arm_func_end NNS_SndHandleInit
-
-	arm_func_start sub_0205BCC8
-sub_0205BCC8: ; 0x0205BCC8
-	ldr r1, [r0]
-	cmp r1, #0
-	bxeq lr
-	ldr r1, [r0]
-	mov r2, #0
-	str r2, [r1]
-	str r2, [r0]
-	bx lr
-	arm_func_end sub_0205BCC8
-
-	arm_func_start sub_0205BCE8
-sub_0205BCE8: ; 0x0205BCE8
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r5, #0
-	mov r6, r1
-	ldr r0, _0205BD44 ; =MAIN_BSS_02110F78
-	mov r1, r5
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r1, r0
-	beq _0205BD3C
-	ldr r4, _0205BD44 ; =MAIN_BSS_02110F78
-	arm_func_end sub_0205BCE8
-_0205BD10:
-	ldrh r0, [r1, #0x34]
-	cmp r0, #2
-	ldreqh r0, [r1, #0x38]
-	cmpeq r0, r7
-	ldreqh r0, [r1, #0x3a]
-	cmpeq r0, r6
-	mov r0, r4
-	addeq r5, r5, #1
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r1, r0
-	bne _0205BD10
-_0205BD3C:
-	mov r0, r5
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_0205BD44: .word MAIN_BSS_02110F78
-
-	arm_func_start sub_0205BD48
-sub_0205BD48: ; 0x0205BD48
-	ldr r2, [r0]
-	cmp r2, #0
-	ldrne r0, [r0]
-	strneb r1, [r0, #0x41]
-	bx lr
-	arm_func_end sub_0205BD48
-
-	arm_func_start sub_0205BD5C
-sub_0205BD5C: ; 0x0205BD5C
-	ldr r2, [r0]
-	cmp r2, #0
-	ldrne r0, [r0]
-	strneb r1, [r0, #0x40]
-	bx lr
-	arm_func_end sub_0205BD5C
-
-	arm_func_start sub_0205BD70
-sub_0205BD70: ; 0x0205BD70
-	stmdb sp!, {r3, lr}
-	ldr r3, [r0]
-	cmp r3, #0
-	ldrne r3, [r0]
-	ldrneb r0, [r3, #0x2c]
-	cmpne r0, #2
-	ldmeqia sp!, {r3, pc}
-	add r0, r3, #0x1c
-	mov r1, r1, lsl #8
-	bl sub_0205FD64
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205BD70
-
-	arm_func_start sub_0205BD9C
-sub_0205BD9C: ; 0x0205BD9C
-	stmdb sp!, {r3, lr}
-	ldr r2, [r0]
-	cmp r2, #0
-	ldmeqia sp!, {r3, pc}
-	ldr r0, [r0]
-	ldrb r0, [r0, #0x3c]
-	bl SND_SetPlayerChannelPriority
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205BD9C
-
-	arm_func_start sub_0205BDBC
-sub_0205BDBC: ; 0x0205BDBC
-	stmdb sp!, {r3, lr}
-	ldr r3, [r0]
-	cmp r3, #0
-	ldmeqia sp!, {r3, pc}
-	ldr r0, [r0]
-	ldrb r0, [r0, #0x3c]
-	bl SND_SetTrackPitch
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205BDBC
-
-	arm_func_start sub_0205BDDC
-sub_0205BDDC: ; 0x0205BDDC
-	stmdb sp!, {r3, lr}
-	ldr r2, [r0]
-	cmp r2, #0
-	ldmeqia sp!, {r3, pc}
-	ldr r0, [r0]
-	ldrb r0, [r0, #0x3c]
-	bl SND_SetPlayerTempoRatio
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205BDDC
-
-	arm_func_start sub_0205BDFC
-sub_0205BDFC: ; 0x0205BDFC
-	ldr r2, [r0]
-	cmp r2, #0
-	bxeq lr
-	ldr r2, [r0]
-	mov r3, #1
-	strh r3, [r2, #0x34]
-	ldr r0, [r0]
-	strh r1, [r0, #0x38]
-	bx lr
-	arm_func_end sub_0205BDFC
-
-	arm_func_start sub_0205BE20
-sub_0205BE20: ; 0x0205BE20
-	ldr r3, [r0]
-	cmp r3, #0
-	bxeq lr
-	ldr r3, [r0]
-	mov ip, #2
-	strh ip, [r3, #0x34]
-	ldr r3, [r0]
-	strh r1, [r3, #0x38]
-	ldr r0, [r0]
-	strh r2, [r0, #0x3a]
-	bx lr
-	arm_func_end sub_0205BE20
-
-	arm_func_start sub_0205BE4C
-sub_0205BE4C: ; 0x0205BE4C
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
-	ldr r0, _0205BEF0 ; =MAIN_BSS_02110F78
-	mov r1, #0x14
-	bl NitroSystem_NNS_FndInitList
-	ldr r0, _0205BEF4 ; =MAIN_BSS_02110F6C
-	mov r1, #0x14
-	bl NitroSystem_NNS_FndInitList
-	mov r6, #0
-	ldr r7, _0205BEF8 ; =MAIN_BSS_02110F84
-	ldr r4, _0205BEF4 ; =MAIN_BSS_02110F6C
-	mov r5, r6
-	arm_func_end sub_0205BE4C
-_0205BE78:
-	strb r5, [r7, #0x2c]
-	mov r0, r4
-	mov r1, r7
-	strb r6, [r7, #0x3c]
-	bl NitroSystem_NNS_FndAppendListObject
-	add r6, r6, #1
-	cmp r6, #0x10
-	add r7, r7, #0x44
-	blt _0205BE78
-	mov sl, #0
-	ldr sb, _0205BEFC ; =MAIN_BSS_021113C4
-	mov r8, #0xc
-	mov r7, sl
-	mov r6, #0x7f
-	mov r5, #1
-	mov r4, sl
-_0205BEB8:
-	mov r0, sb
-	mov r1, r8
-	bl NitroSystem_NNS_FndInitList
-	mov r1, r7
-	add r0, sb, #0xc
-	bl NitroSystem_NNS_FndInitList
-	strb r6, [sb, #0x20]
-	str r5, [sb, #0x18]
-	add sl, sl, #1
-	str r4, [sb, #0x1c]
-	cmp sl, #0x20
-	add sb, sb, #0x24
-	blt _0205BEB8
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	.align 2, 0
-_0205BEF0: .word MAIN_BSS_02110F78
-_0205BEF4: .word MAIN_BSS_02110F6C
-_0205BEF8: .word MAIN_BSS_02110F84
-_0205BEFC: .word MAIN_BSS_021113C4
-
-	arm_func_start sub_0205BF00
-sub_0205BF00: ; 0x0205BF00
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	bl SND_GetPlayerStatus
-	mov fp, r0
-	ldr r0, _0205C058 ; =MAIN_BSS_02110F78
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r6, r0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	mov r4, #0x8000
-	ldr r5, _0205C05C ; =SNDi_DecibelTable
-	rsb r4, r4, #0
-	arm_func_end sub_0205BF00
-_0205BF2C:
-	ldr r0, _0205C058 ; =MAIN_BSS_02110F78
-	mov r1, r6
-	bl NitroSystem_NNS_FndGetNextListObject
-	ldrb r1, [r6, #0x2d]
-	mov r7, r0
-	cmp r1, #0
-	bne _0205BF5C
-	ldr r0, [r6, #0x30]
-	bl SND_IsFinishedCommandTag
-	cmp r0, #0
-	movne r0, #1
-	strneb r0, [r6, #0x2d]
-_0205BF5C:
-	ldrb r0, [r6, #0x2d]
-	cmp r0, #0
-	beq _0205BF84
-	ldrb r1, [r6, #0x3c]
-	mov r0, #1
-	tst fp, r0, lsl r1
-	bne _0205BF84
-	mov r0, r6
-	bl sub_0205C384
-	b _0205C048
-_0205BF84:
-	add r0, r6, #0x1c
-	bl sub_0205FDC0
-	ldr r0, [r6, #4]
-	ldrb r2, [r6, #0x41]
-	ldrb r0, [r0, #0x20]
-	ldrb r1, [r6, #0x40]
-	mov r2, r2, lsl #1
-	mov r0, r0, lsl #1
-	mov r1, r1, lsl #1
-	ldrsh sl, [r5, r0]
-	add r0, r6, #0x1c
-	ldrsh r8, [r5, r2]
-	ldrsh sb, [r5, r1]
-	bl sub_0205FD8C
-	mov r0, r0, asr #8
-	mov r0, r0, lsl #1
-	add r1, sb, r8
-	ldrsh r0, [r5, r0]
-	add r1, sl, r1
-	add r8, r0, r1
-	cmp r8, r4
-	movlt r8, r4
-	blt _0205BFEC
-	ldr r0, _0205C060 ; =0x00007FFF
-	cmp r8, r0
-	movgt r8, r0
-_0205BFEC:
-	ldrsh r0, [r6, #0x3e]
-	cmp r8, r0
-	beq _0205C008
-	ldrb r0, [r6, #0x3c]
-	mov r1, r8
-	bl SND_SetPlayerVolume
-	strh r8, [r6, #0x3e]
-_0205C008:
-	ldrb r0, [r6, #0x2c]
-	cmp r0, #2
-	bne _0205C02C
-	add r0, r6, #0x1c
-	bl sub_0205FDD8
-	cmp r0, #0
-	beq _0205C02C
-	mov r0, r6
-	bl sub_0205C2E4
-_0205C02C:
-	ldrb r0, [r6, #0x2f]
-	cmp r0, #0
-	beq _0205C048
-	ldrb r0, [r6, #0x3c]
-	bl SND_StartPreparedSeq
-	mov r0, #0
-	strb r0, [r6, #0x2f]
-_0205C048:
-	mov r6, r7
-	cmp r7, #0
-	bne _0205BF2C
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_0205C058: .word MAIN_BSS_02110F78
-_0205C05C: .word SNDi_DecibelTable
-_0205C060: .word 0x00007FFF
-
-	arm_func_start sub_0205C064
-sub_0205C064: ; 0x0205C064
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	ldr ip, _0205C0F8 ; =MAIN_BSS_021113C4
-	mov r3, #0x24
-	mov r4, r0
-	ldr r5, [r4]
-	mla r6, r1, r3, ip
-	mov r7, r2
-	cmp r5, #0
-	beq _0205C08C
-	bl sub_0205BCC8
-	arm_func_end sub_0205C064
-_0205C08C:
-	ldrh r1, [r6, #8]
-	ldr r0, [r6, #0x18]
-	cmp r1, r0
-	blo _0205C0C8
-	mov r0, r6
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetNextListObject
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldrb r1, [r0, #0x3d]
-	cmp r7, r1
-	movlt r0, #0
-	ldmltia sp!, {r3, r4, r5, r6, r7, pc}
-	bl sub_0205C2E4
-_0205C0C8:
-	mov r0, r7
-	bl sub_0205C31C
-	movs r5, r0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r0, r6
-	mov r1, r5
-	bl sub_0205C240
-	str r4, [r5]
-	mov r0, r5
-	str r5, [r4]
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_0205C0F8: .word MAIN_BSS_021113C4
-
-	arm_func_start thunk_FUN_0205c384
-thunk_FUN_0205c384: ; 0x0205C0FC
-	ldr ip, _0205C104 ; =sub_0205C384
-	bx ip
-	.align 2, 0
-_0205C104: .word sub_0205C384
-	arm_func_end thunk_FUN_0205c384
-
-	arm_func_start sub_0205C108
-sub_0205C108: ; 0x0205C108
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	ldrb r0, [r5, #0x3c]
-	ldr r4, [r5, #4]
-	bl SND_PrepareSeq
-	ldr r2, [r4, #0x1c]
-	cmp r2, #0
-	beq _0205C134
-	ldrb r0, [r5, #0x3c]
-	ldr r1, _0205C154 ; =0x0000FFFF
-	bl SND_SetTrackAllocatableChannel
-	arm_func_end sub_0205C108
-_0205C134:
-	mov r0, r5
-	bl sub_0205C1F8
-	bl SND_GetCurrentCommandTag
-	str r0, [r5, #0x30]
-	mov r0, #1
-	strb r0, [r5, #0x2f]
-	strb r0, [r5, #0x2c]
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205C154: .word 0x0000FFFF
-
-	arm_func_start sub_0205C158
-sub_0205C158: ; 0x0205C158
-	stmdb sp!, {r4, lr}
-	movs r4, r0
-	mov r2, r1
-	ldrneb r1, [r4, #0x2c]
-	cmpne r1, #0
-	ldmeqia sp!, {r4, pc}
-	cmp r2, #0
-	bne _0205C180
-	bl sub_0205C2E4
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205C158
-_0205C180:
-	add r0, r4, #0x1c
-	mov r1, #0
-	bl sub_0205FD64
-	mov r0, r4
-	mov r1, #0
-	bl sub_0205C458
-	mov r0, #2
-	strb r0, [r4, #0x2c]
-	ldmia sp!, {r4, pc}
-
-	arm_func_start sub_0205C1A4
-sub_0205C1A4: ; 0x0205C1A4
-	stmdb sp!, {r4, r5, r6, lr}
-	ldr r3, _0205C1F4 ; =MAIN_BSS_021113C4
-	mov r2, #0x24
-	mla r5, r0, r2, r3
-	mov r6, r1
-	add r0, r5, #0xc
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r4, r0
-	moveq r0, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	mov r1, r4
-	add r0, r5, #0xc
-	bl NitroSystem_NNS_FndRemoveListObject
-	str r6, [r4, #0xc]
-	str r4, [r6, #8]
-	ldr r0, [r4, #8]
-	bl sub_0205D52C
-	ldr r0, [r4, #8]
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0205C1F4: .word MAIN_BSS_021113C4
-	arm_func_end sub_0205C1A4
-
-	arm_func_start sub_0205C1F8
-sub_0205C1F8: ; 0x0205C1F8
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, #0
-	strb r0, [r4, #0x2e]
-	strb r0, [r4, #0x2d]
-	strb r0, [r4, #0x2f]
-	strh r0, [r4, #0x34]
-	strh r0, [r4, #0x3e]
-	mov r1, #0x7f
-	strb r1, [r4, #0x40]
-	add r0, r4, #0x1c
-	strb r1, [r4, #0x41]
-	bl sub_0205FD4C
-	add r0, r4, #0x1c
-	mov r1, #0x7f00
-	mov r2, #1
-	bl sub_0205FD64
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205C1F8
-
-	arm_func_start sub_0205C240
-sub_0205C240: ; 0x0205C240
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r4, r1
-	mov r1, #0
-	mov r5, r0
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r1, r0
-	beq _0205C27C
-	arm_func_end sub_0205C240
-_0205C25C:
-	ldrb r2, [r4, #0x3d]
-	ldrb r0, [r1, #0x3d]
-	cmp r2, r0
-	blo _0205C27C
-	mov r0, r5
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r1, r0
-	bne _0205C25C
-_0205C27C:
-	mov r0, r5
-	mov r2, r4
-	bl NitroSystem_NNS_FndInsertListObject
-	str r5, [r4, #4]
-	ldmia sp!, {r3, r4, r5, pc}
-
-	arm_func_start sub_0205C290
-sub_0205C290: ; 0x0205C290
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	ldr r0, _0205C2E0 ; =MAIN_BSS_02110F78
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r1, r0
-	beq _0205C2D0
-	ldr r4, _0205C2E0 ; =MAIN_BSS_02110F78
-	arm_func_end sub_0205C290
-_0205C2B0:
-	ldrb r2, [r5, #0x3d]
-	ldrb r0, [r1, #0x3d]
-	cmp r2, r0
-	blo _0205C2D0
-	mov r0, r4
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r1, r0
-	bne _0205C2B0
-_0205C2D0:
-	ldr r0, _0205C2E0 ; =MAIN_BSS_02110F78
-	mov r2, r5
-	bl NitroSystem_NNS_FndInsertListObject
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205C2E0: .word MAIN_BSS_02110F78
-
-	arm_func_start sub_0205C2E4
-sub_0205C2E4: ; 0x0205C2E4
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldrb r0, [r4, #0x2c]
-	cmp r0, #2
-	bne _0205C304
-	ldrb r0, [r4, #0x3c]
-	ldr r1, _0205C318 ; =0xFFFFFD2D
-	bl SND_SetPlayerVolume
-	arm_func_end sub_0205C2E4
-_0205C304:
-	ldrb r0, [r4, #0x3c]
-	bl SND_StopSeq
-	mov r0, r4
-	bl sub_0205C384
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205C318: .word 0xFFFFFD2D
-
-	arm_func_start sub_0205C31C
-sub_0205C31C: ; 0x0205C31C
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	ldr r0, _0205C37C ; =MAIN_BSS_02110F6C
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r4, r0
-	bne _0205C35C
-	ldr r0, _0205C380 ; =MAIN_BSS_02110F78
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetNextListObject
-	mov r4, r0
-	ldrb r1, [r4, #0x3d]
-	cmp r5, r1
-	movlt r0, #0
-	ldmltia sp!, {r3, r4, r5, pc}
-	bl sub_0205C2E4
-	arm_func_end sub_0205C31C
-_0205C35C:
-	ldr r0, _0205C37C ; =MAIN_BSS_02110F6C
-	mov r1, r4
-	bl NitroSystem_NNS_FndRemoveListObject
-	mov r0, r4
-	strb r5, [r4, #0x3d]
-	bl sub_0205C290
-	mov r0, r4
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205C37C: .word MAIN_BSS_02110F6C
-_0205C380: .word MAIN_BSS_02110F78
-
-	arm_func_start sub_0205C384
-sub_0205C384: ; 0x0205C384
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r4, r0
-	ldr r1, [r4]
-	cmp r1, #0
-	movne r0, #0
-	strne r0, [r1]
-	strne r0, [r4]
-	ldr r5, [r4, #4]
-	mov r1, r4
-	mov r0, r5
-	bl NitroSystem_NNS_FndRemoveListObject
-	mov r0, #0
-	str r0, [r4, #4]
-	ldr r1, [r4, #8]
-	cmp r1, #0
-	beq _0205C3DC
-	add r0, r5, #0xc
-	bl NitroSystem_NNS_FndAppendListObject
-	ldr r0, [r4, #8]
-	mov r1, #0
-	str r1, [r0, #0xc]
-	str r1, [r4, #8]
-	arm_func_end sub_0205C384
-_0205C3DC:
-	ldr r0, _0205C400 ; =MAIN_BSS_02110F78
-	mov r1, r4
-	bl NitroSystem_NNS_FndRemoveListObject
-	ldr r0, _0205C404 ; =MAIN_BSS_02110F6C
-	mov r1, r4
-	bl NitroSystem_NNS_FndAppendListObject
-	mov r0, #0
-	strb r0, [r4, #0x2c]
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205C400: .word MAIN_BSS_02110F78
-_0205C404: .word MAIN_BSS_02110F6C
-
-	arm_func_start sub_0205C408
-sub_0205C408: ; 0x0205C408
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r0, [r4, #8]
-	cmp r0, #0
-	ldmeqia sp!, {r4, pc}
-	bl sub_0205D514
-	ldr r1, [r4, #0xc]
-	cmp r1, #0
-	movne r0, #0
-	strne r0, [r1, #8]
-	ldmneia sp!, {r4, pc}
-	ldr r1, [r4, #0x10]
-	ldr r2, _0205C454 ; =MAIN_BSS_021113C4
-	mov r0, #0x24
-	mla r0, r1, r0, r2
-	mov r1, r4
-	add r0, r0, #0xc
-	bl NitroSystem_NNS_FndRemoveListObject
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205C454: .word MAIN_BSS_021113C4
-	arm_func_end sub_0205C408
-
-	arm_func_start sub_0205C458
-sub_0205C458: ; 0x0205C458
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	ldr r4, [r6, #4]
-	mov r5, r1
-	cmp r4, #0
-	beq _0205C484
-	mov r0, r4
-	mov r1, r6
-	bl NitroSystem_NNS_FndRemoveListObject
-	mov r0, #0
-	str r0, [r6, #4]
-	arm_func_end sub_0205C458
-_0205C484:
-	ldr r0, _0205C4B4 ; =MAIN_BSS_02110F78
-	mov r1, r6
-	bl NitroSystem_NNS_FndRemoveListObject
-	strb r5, [r6, #0x3d]
-	cmp r4, #0
-	beq _0205C4A8
-	mov r0, r4
-	mov r1, r6
-	bl sub_0205C240
-_0205C4A8:
-	mov r0, r6
-	bl sub_0205C290
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0205C4B4: .word MAIN_BSS_02110F78
-
-	arm_func_start sub_0205C4B8
-sub_0205C4B8: ; 0x0205C4B8
-	stmdb sp!, {r4, lr}
-	ldr r1, _0205C520 ; =MAIN_BSS_02111844
-	mov r4, r0
-	ldr r0, [r1]
-	cmp r0, #0
-	bne _0205C4E8
-	ldr r0, _0205C524 ; =MAIN_BSS_02111848
-	mov r1, #0
-	bl NitroSystem_NNS_FndInitList
-	ldr r0, _0205C520 ; =MAIN_BSS_02111844
-	mov r1, #1
-	str r1, [r0]
-	arm_func_end sub_0205C4B8
-_0205C4E8:
-	ldr r1, _0205C528 ; =sub_0205C9C8
-	ldr r0, _0205C52C ; =sub_0205CA14
-	str r1, [r4, #8]
-	str r4, [r4, #0xc]
-	str r0, [r4, #0x14]
-	str r4, [r4, #0x18]
-	mov r0, #0
-	str r0, [r4, #0x44]
-	str r0, [r4, #0x48]
-	ldr r0, [r4, #0x24]
-	bic r0, r0, #1
-	bic r0, r0, #2
-	str r0, [r4, #0x24]
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205C520: .word MAIN_BSS_02111844
-_0205C524: .word MAIN_BSS_02111848
-_0205C528: .word sub_0205C9C8
-_0205C52C: .word sub_0205CA14
-
-	arm_func_start sub_0205C530
-sub_0205C530: ; 0x0205C530
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r4, r1
-	mov r6, #0
-	mov r5, r0
-	mov ip, r6
-	cmp r4, #0
-	ble _0205C570
-	mov r1, #1
-	arm_func_end sub_0205C530
-_0205C550:
-	ldrb r3, [r2, ip]
-	add r0, r5, ip
-	strb r3, [r0, #0x4c]
-	ldrb r0, [r2, ip]
-	add ip, ip, #1
-	cmp ip, r4
-	orr r6, r6, r1, lsl r0
-	blt _0205C550
-_0205C570:
-	mov r0, r6
-	bl sub_0205BA64
-	cmp r0, #0
-	moveq r0, #0
-	strne r4, [r5, #0x48]
-	strne r6, [r5, #0x44]
-	movne r0, #1
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start sub_0205C590
-sub_0205C590: ; 0x0205C590
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r0, [r4, #0x44]
-	cmp r0, #0
-	ldmeqia sp!, {r4, pc}
-	bl sub_0205BAAC
-	mov r0, #0
-	str r0, [r4, #0x44]
-	str r0, [r4, #0x48]
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205C590
-
-	arm_func_start sub_0205C5B8
-sub_0205C5B8: ; 0x0205C5B8
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x1c
-	mov sl, r0
-	ldr r4, [sl, #0x24]
-	mov sb, r1
-	mov r1, r4, lsl #0x1f
-	mov r8, r2
-	mov r4, r3
-	movs r1, r1, asr #0x1f
-	ldr fp, [sp, #0x44]
-	beq _0205C5E8
-	bl sub_0205C7AC
-	arm_func_end sub_0205C5B8
-_0205C5E8:
-	ldr r2, [sl, #0x48]
-	mov r0, fp, lsl #5
-	mul r1, r2, r0
-	mov r0, r4
-	bl _u32_div_f
-	mul r1, r0, fp
-	mov r0, r1, lsl #5
-	ldr r2, [sp, #0x40]
-	str r0, [sl, #0x28]
-	cmp sb, #1
-	moveq r0, r0, lsr #1
-	mul r0, r2, r0
-	mov r1, fp
-	bl _u32_div_f
-	str r0, [sp, #0x18]
-	bl sub_0205BAF8
-	cmp r0, #0
-	str r0, [sl, #0x40]
-	addlt sp, sp, #0x1c
-	movlt r0, #0
-	ldmltia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r0, [sl, #0x48]
-	mov r6, #0
-	cmp r0, #0
-	ble _0205C6C0
-	ldr r0, [sp, #0x40]
-	ldr r5, _0205C74C ; =MAIN_BSS_02111894
-	mov r7, r0, lsl #5
-	mov r4, r6
-_0205C65C:
-	ldr r1, [sl, #0x28]
-	add r0, sl, r6
-	mla r2, r1, r6, r8
-	ldrb r0, [r0, #0x4c]
-	mov r3, #1
-	str r2, [r5, r0, lsl #3]
-	add r1, r5, r0, lsl #3
-	str r4, [r1, #4]
-	str r4, [sp]
-	ldr r2, [sl, #0x28]
-	mov r1, sb
-	mov r2, r2, lsr #2
-	str r2, [sp, #4]
-	mov r2, #0x7f
-	str r2, [sp, #8]
-	str r4, [sp, #0xc]
-	str r7, [sp, #0x10]
-	mov r2, #0x40
-	str r2, [sp, #0x14]
-	ldr r2, [r5, r0, lsl #3]
-	bl SND_SetupChannelPcm
-	ldr r0, [sl, #0x48]
-	add r6, r6, #1
-	cmp r6, r0
-	blt _0205C65C
-_0205C6C0:
-	str sl, [sp]
-	ldr r1, [sp, #0x18]
-	ldr r0, [sl, #0x40]
-	ldr r3, _0205C750 ; =sub_0205C908
-	mov r2, r1
-	bl SND_SetupAlarm
-	ldr r0, _0205C754 ; =MAIN_BSS_02111848
-	mov r1, sl
-	bl NitroSystem_NNS_FndAppendListObject
-	str sb, [sl, #0x20]
-	ldr r1, [sp, #0x48]
-	str fp, [sl, #0x2c]
-	ldr r0, [sp, #0x4c]
-	str r1, [sl, #0x30]
-	str r0, [sl, #0x34]
-	mov r0, #0
-	str r0, [sl, #0x38]
-	str r0, [sl, #0x3c]
-	ldr r0, [sl, #0x24]
-	bic r0, r0, #1
-	orr r0, r0, #1
-	str r0, [sl, #0x24]
-	bl OS_DisableInterrupts
-	mov r4, r0
-	mov r2, #1
-	mov r0, sl
-	mov r1, #0
-	str r2, [sl, #0x2c]
-	bl sub_0205C918
-	mov r0, r4
-	str fp, [sl, #0x2c]
-	bl OS_RestoreInterrupts
-	mov r0, #1
-	add sp, sp, #0x1c
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_0205C74C: .word MAIN_BSS_02111894
-_0205C750: .word sub_0205C908
-_0205C754: .word MAIN_BSS_02111848
-
-	arm_func_start sub_0205C758
-sub_0205C758: ; 0x0205C758
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r0, [r4, #0x40]
-	mov r2, #1
-	mov r1, #0
-	mov r2, r2, lsl r0
-	ldr r0, [r4, #0x44]
-	mov r3, r1
-	bl SND_StartTimer
-	ldr r0, [r4, #0x24]
-	mov r0, r0, lsl #0x1e
-	movs r0, r0, asr #0x1f
-	ldmneia sp!, {r4, pc}
-	add r0, r4, #8
-	bl PM_PrependPreSleepCallback
-	add r0, r4, #0x14
-	bl PM_AppendPostSleepCallback
-	ldr r0, [r4, #0x24]
-	orr r0, r0, #2
-	str r0, [r4, #0x24]
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205C758
-
-	arm_func_start sub_0205C7AC
-sub_0205C7AC: ; 0x0205C7AC
-	stmdb sp!, {r3, lr}
-	ldr r1, [r0, #0x24]
-	mov r1, r1, lsl #0x1f
-	movs r1, r1, asr #0x1f
-	ldmeqia sp!, {r3, pc}
-	bl sub_0205C864
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205C7AC
-
-	arm_func_start sub_0205C7C8
-sub_0205C7C8: ; 0x0205C7C8
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	mov r7, r0
-	str r1, [r7, #0x3c]
-	ldr r0, [r7, #0x48]
-	mov r6, #0
-	cmp r0, #0
-	ldmleia sp!, {r4, r5, r6, r7, r8, pc}
-	ldr r4, _0205C830 ; =MAIN_BSS_02111894
-	mov r8, #1
-	arm_func_end sub_0205C7C8
-_0205C7EC:
-	add r0, r7, r6
-	ldrb r5, [r0, #0x4c]
-	ldr r1, [r7, #0x3c]
-	add r0, r4, r5, lsl #3
-	ldr r0, [r0, #4]
-	add r0, r1, r0
-	bl SND_CalcChannelVolume
-	mov r2, r0
-	mov r0, r8, lsl r5
-	and r1, r2, #0xff
-	mov r2, r2, asr #8
-	bl SND_SetChannelVolume
-	ldr r0, [r7, #0x48]
-	add r6, r6, #1
-	cmp r6, r0
-	blt _0205C7EC
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	.align 2, 0
-_0205C830: .word MAIN_BSS_02111894
-
-	arm_func_start sub_0205C834
-sub_0205C834: ; 0x0205C834
-	stmdb sp!, {r3, lr}
-	ldr r3, [r0, #0x48]
-	sub r3, r3, #1
-	cmp r1, r3
-	ldmgtia sp!, {r3, pc}
-	add r0, r0, r1
-	ldrb r0, [r0, #0x4c]
-	mov r3, #1
-	mov r1, r2
-	mov r0, r3, lsl r0
-	bl SND_SetChannelPan
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205C834
-
-	arm_func_start sub_0205C864
-sub_0205C864: ; 0x0205C864
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r4, r0
-	ldr r0, [r4, #0x24]
-	mov r0, r0, lsl #0x1e
-	movs r0, r0, asr #0x1f
-	beq _0205C8CC
-	ldr r0, [r4, #0x40]
-	mov r2, #1
-	mov r1, #0
-	mov r2, r2, lsl r0
-	ldr r0, [r4, #0x44]
-	mov r3, r1
-	bl SND_StopTimer
-	add r0, r4, #8
-	bl PM_DeletePreSleepCallback
-	add r0, r4, #0x14
-	bl PM_DeletePostSleepCallback
-	ldr r0, [r4, #0x24]
-	bic r0, r0, #2
-	str r0, [r4, #0x24]
-	bl SND_GetCurrentCommandTag
-	mov r5, r0
-	mov r0, #1
-	bl SND_FlushCommand
-	mov r0, r5
-	bl SND_WaitForCommandProc
-	arm_func_end sub_0205C864
-_0205C8CC:
-	mov r0, r4
-	bl sub_0205C8D8
-	ldmia sp!, {r3, r4, r5, pc}
-
-	arm_func_start sub_0205C8D8
-sub_0205C8D8: ; 0x0205C8D8
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r0, [r4, #0x40]
-	bl sub_0205BB40
-	ldr r0, _0205C904 ; =MAIN_BSS_02111848
-	mov r1, r4
-	bl NitroSystem_NNS_FndRemoveListObject
-	ldr r0, [r4, #0x24]
-	bic r0, r0, #1
-	str r0, [r4, #0x24]
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205C904: .word MAIN_BSS_02111848
-	arm_func_end sub_0205C8D8
-
-	arm_func_start sub_0205C908
-sub_0205C908: ; 0x0205C908
-	ldr ip, _0205C914 ; =sub_0205C918
-	mov r1, #1
-	bx ip
-	.align 2, 0
-_0205C914: .word sub_0205C918
-	arm_func_end sub_0205C908
-
-	arm_func_start sub_0205C918
-sub_0205C918: ; 0x0205C918
-	stmdb sp!, {r3, r4, r5, lr}
-	sub sp, sp, #8
-	mov r5, r0
-	mov r4, r1
-	ldr r0, [r5, #0x28]
-	ldr r1, [r5, #0x2c]
-	bl _u32_div_f
-	ldr r1, [r5, #0x48]
-	ldr r2, [r5, #0x38]
-	mov r3, r0
-	mul ip, r3, r2
-	cmp r1, #0
-	mov lr, #0
-	ble _0205C97C
-	ldr r2, _0205C9C0 ; =MAIN_BSS_02111894
-	ldr r0, _0205C9C4 ; =MAIN_BSS_02111854
-	arm_func_end sub_0205C918
-_0205C958:
-	add r1, r5, lr
-	ldrb r1, [r1, #0x4c]
-	ldr r1, [r2, r1, lsl #3]
-	add r1, r1, ip
-	str r1, [r0, lr, lsl #2]
-	ldr r1, [r5, #0x48]
-	add lr, lr, #1
-	cmp lr, r1
-	blt _0205C958
-_0205C97C:
-	ldr r0, [r5, #0x20]
-	ldr r2, _0205C9C4 ; =MAIN_BSS_02111854
-	str r0, [sp]
-	ldr ip, [r5, #0x34]
-	mov r0, r4
-	str ip, [sp, #4]
-	ldr r4, [r5, #0x30]
-	blx r4
-	ldr r0, [r5, #0x38]
-	add r1, r0, #1
-	str r1, [r5, #0x38]
-	ldr r0, [r5, #0x2c]
-	cmp r1, r0
-	movge r0, #0
-	strge r0, [r5, #0x38]
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205C9C0: .word MAIN_BSS_02111894
-_0205C9C4: .word MAIN_BSS_02111854
-
-	arm_func_start sub_0205C9C8
-sub_0205C9C8: ; 0x0205C9C8
-	stmdb sp!, {r4, lr}
-	ldr r1, [r0, #0x24]
-	mov r1, r1, lsl #0x1e
-	movs r1, r1, asr #0x1f
-	ldmeqia sp!, {r4, pc}
-	ldr r2, [r0, #0x40]
-	mov r3, #1
-	mov r1, #0
-	mov r2, r3, lsl r2
-	ldr r0, [r0, #0x44]
-	mov r3, r1
-	bl SND_StopTimer
-	bl SND_GetCurrentCommandTag
-	mov r4, r0
-	mov r0, #1
-	bl SND_FlushCommand
-	mov r0, r4
-	bl SND_WaitForCommandProc
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205C9C8
-
-	arm_func_start sub_0205CA14
-sub_0205CA14: ; 0x0205CA14
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r4, r0
-	ldr r0, [r4, #0x24]
-	mov r0, r0, lsl #0x1e
-	movs r0, r0, asr #0x1f
-	ldmeqia sp!, {r4, r5, r6, pc}
-	ldr r0, [r4, #0x38]
-	cmp r0, #0
-	beq _0205CA64
-	mov r5, #1
-	arm_func_end sub_0205CA14
-_0205CA3C:
-	bl OS_DisableInterrupts
-	mov r6, r0
-	mov r0, r4
-	mov r1, r5
-	bl sub_0205C918
-	mov r0, r6
-	bl OS_RestoreInterrupts
-	ldr r0, [r4, #0x38]
-	cmp r0, #0
-	bne _0205CA3C
-_0205CA64:
-	ldr r0, [r4, #0x40]
-	mov r2, #1
-	mov r1, #0
-	mov r2, r2, lsl r0
-	ldr r0, [r4, #0x44]
-	mov r3, r1
-	bl SND_StartTimer
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start sub_0205CA84
-sub_0205CA84: ; 0x0205CA84
-	ldr r0, _0205CA98 ; =MAIN_BSS_02111914
-	mov r1, #0
-	str r1, [r0]
-	str r1, [r0, #0x48]
-	bx lr
-	.align 2, 0
-_0205CA98: .word MAIN_BSS_02111914
-	arm_func_end sub_0205CA84
-
-	arm_func_start sub_0205CA9C
-sub_0205CA9C: ; 0x0205CA9C
-	stmdb sp!, {r3, r4, r5, lr}
-	ldr r0, _0205CB1C ; =MAIN_BSS_02111914
-	ldr r4, _0205CB20 ; =MAIN_BSS_0211195C
-	ldr r0, [r0, #0x48]
-	cmp r0, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	ldr r0, [r4, #4]
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	add r0, r4, #0x3c
-	bl sub_0205FDC0
-	ldr r0, [r4, #0x4c]
-	cmp r0, #0
-	beq _0205CAEC
-	add r0, r4, #0x3c
-	bl sub_0205FDD8
-	cmp r0, #0
-	beq _0205CAEC
-	bl sub_0205CB24
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0205CA9C
-_0205CAEC:
-	add r0, r4, #0x3c
-	bl sub_0205FD8C
-	ldr r1, [r4, #0x50]
-	mov r5, r0, asr #8
-	cmp r5, r1
-	ldmeqia sp!, {r3, r4, r5, pc}
-	ldr r0, [r4, #0x24]
-	mov r1, r5
-	mov r2, #0
-	bl SND_SetChannelVolume
-	str r5, [r4, #0x50]
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205CB1C: .word MAIN_BSS_02111914
-_0205CB20: .word MAIN_BSS_0211195C
-
-	arm_func_start sub_0205CB24
-sub_0205CB24: ; 0x0205CB24
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	ldr r0, _0205CC08 ; =MAIN_BSS_02111914
-	ldr r4, _0205CC0C ; =MAIN_BSS_0211195C
-	ldr r0, [r0, #0x48]
-	cmp r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldr r1, [r4, #0x2c]
-	mov r3, #0
-	cmp r1, #0
-	movge r7, #1
-	movlt r7, #0
-	cmp r7, #0
-	movne r0, #1
-    movne r2, r0, lsl r1
-	ldr r0, [r4, #0x24]
-	ldr r1, [r4, #0x28]
-	moveq r2, #0
-	bl SND_StopTimer
-	cmp r7, #0
-	beq _0205CBAC
-	bl SND_GetCurrentCommandTag
-	mov r5, r0
-	mov r0, #1
-	bl SND_FlushCommand
-	mov r0, r5
-	bl SND_WaitForCommandProc
-	ldr r6, _0205CC10 ; =MAIN_BSS_0211191C
-	mov r5, #0
-	arm_func_end sub_0205CB24
-_0205CB94:
-	mov r0, r6
-	mov r1, r5
-	mov r2, r5
-	bl OS_ReceiveMessage
-	cmp r0, #0
-	bne _0205CB94
-_0205CBAC:
-	ldr r0, [r4, #0x28]
-	cmp r0, #0
-	beq _0205CBBC
-	bl sub_0205BADC
-_0205CBBC:
-	ldr r0, [r4, #0x20]
-	cmp r0, #0
-	beq _0205CBCC
-	bl sub_0205BAAC
-_0205CBCC:
-	cmp r7, #0
-	beq _0205CBDC
-	ldr r0, [r4, #0x2c]
-	bl sub_0205BB40
-_0205CBDC:
-	ldr r0, [r4, #4]
-	cmp r0, #1
-	bne _0205CBFC
-	mov r0, #0
-	mov r1, r0
-	mov r2, r0
-	mov r3, r0
-	bl SND_SetOutputSelector
-_0205CBFC:
-	mov r0, #0
-	str r0, [r4]
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_0205CC08: .word MAIN_BSS_02111914
-_0205CC0C: .word MAIN_BSS_0211195C
-_0205CC10: .word MAIN_BSS_0211191C
-
-	arm_func_start sub_0205CC14
-sub_0205CC14: ; 0x0205CC14
-	stmdb sp!, {r4, lr}
-	ldr r0, _0205CC6C ; =MAIN_BSS_02111914
-	ldr r3, _0205CC70 ; =MAIN_BSS_0211195C
-	ldr r0, [r0, #0x48]
-	cmp r0, #0
-	ldmeqia sp!, {r4, pc}
-	ldr r1, [r3, #0x2c]
-	cmp r1, #0
-	movge r0, #1
-    movge r2, r0, lsl r1
-	ldr r0, [r3, #0x24]
-	ldr r1, [r3, #0x28]
-	movlt r2, #0
-	mov r3, #0
-	bl SND_StopTimer
-	bl SND_GetCurrentCommandTag
-	mov r4, r0
-	mov r0, #1
-	bl SND_FlushCommand
-	mov r0, r4
-	bl SND_WaitForCommandProc
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205CC6C: .word MAIN_BSS_02111914
-_0205CC70: .word MAIN_BSS_0211195C
-	arm_func_end sub_0205CC14
-
-	arm_func_start sub_0205CC74
-sub_0205CC74: ; 0x0205CC74
-	stmdb sp!, {r4, lr}
-	ldr r0, _0205CCF0 ; =MAIN_BSS_02111914
-	ldr r4, _0205CCF4 ; =MAIN_BSS_0211195C
-	ldr r0, [r0, #0x48]
-	cmp r0, #0
-	ldmeqia sp!, {r4, pc}
-	ldr r1, [r4, #0xc]
-	mov r0, #0
-	ldr r2, [r4, #0x14]
-	str r0, [r4, #0x1c]
-	bl MIi_CpuClear32
-	ldr r1, [r4, #0x10]
-	ldr r2, [r4, #0x14]
-	mov r0, #0
-	bl MIi_CpuClear32
-	ldr r0, [r4, #0xc]
-	ldr r1, [r4, #0x14]
-	bl DC_FlushRange
-	ldr r0, [r4, #0x10]
-	ldr r1, [r4, #0x14]
-	bl DC_FlushRange
-	ldr r1, [r4, #0x2c]
-	mov r3, #0
-	cmp r1, #0
-	movge r0, #1
-    movge r2, r0, lsl r1
-	ldr r0, [r4, #0x24]
-	ldr r1, [r4, #0x28]
-	movlt r2, #0
-	bl SND_StartTimer
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205CCF0: .word MAIN_BSS_02111914
-_0205CCF4: .word MAIN_BSS_0211195C
-	arm_func_end sub_0205CC74
-
-	arm_func_start NNS_SndArcInit
-NNS_SndArcInit: ; 0x0205CCF8
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov ip, #0
-	str ip, [r6, #0x8c]
-	str ip, [r6, #0x84]
-	add r0, r6, #0x7c
-	mov r5, r2
-	mov r4, r3
-	str ip, [r6, #0x88]
-	bl FS_ConvertPathToFileID
-	cmp r0, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	add r0, r6, #0x34
-	bl FS_InitFile
-	add r1, r6, #0x7c
-	add r0, r6, #0x34
-	ldmia r1, {r1, r2}
-	bl FS_OpenFileFast
-	cmp r0, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	mov r3, #1
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	str r3, [r6, #0x30]
-	bl sub_0205CD74
-	cmp r0, #0
-	ldrne r0, _0205CD70 ; =MAIN_BSS_02111F10
-	strne r6, [r0]
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0205CD70: .word MAIN_BSS_02111F10
-	arm_func_end NNS_SndArcInit
-
-	arm_func_start sub_0205CD74
-sub_0205CD74: ; 0x0205CD74
-	stmdb sp!, {r3, r4, r5, r6, lr}
-	sub sp, sp, #4
-	mov r5, r0
-	mov r4, r1
-	mov r1, #0
-	mov r6, r2
-	mov r2, r1
-	add r0, r5, #0x34
-	bl FS_SeekFile
-	cmp r0, #0
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	mov r1, r5
-	add r0, r5, #0x34
-	mov r2, #0x30
-	bl FS_ReadFile
-	cmp r0, #0x30
-	addne sp, sp, #4
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, pc}
-	cmp r4, #0
-	beq _0205CF34
-	mov r0, #0
-	str r0, [sp]
-	ldr r1, [r5, #0x1c]
-	ldr r2, _0205CF40 ; =sub_0205D480
-	mov r0, r4
-	mov r3, r5
-	bl sub_0205D5E8
-	cmp r0, #0
-	str r0, [r5, #0x8c]
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	ldr r1, [r5, #0x18]
-	add r0, r5, #0x34
-	mov r2, #0
-	bl FS_SeekFile
-	cmp r0, #0
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	ldr r1, [r5, #0x8c]
-	ldr r2, [r5, #0x1c]
-	add r0, r5, #0x34
-	bl FS_ReadFile
-	ldr r1, [r5, #0x1c]
-	cmp r0, r1
-	addne sp, sp, #4
-	mov r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, pc}
-	str r0, [sp]
-	ldr r1, [r5, #0x24]
-	ldr r2, _0205CF44 ; =sub_0205D48C
-	mov r0, r4
-	mov r3, r5
-	bl sub_0205D5E8
-	cmp r0, #0
-	str r0, [r5, #0x84]
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	ldr r1, [r5, #0x20]
-	add r0, r5, #0x34
-	mov r2, #0
-	bl FS_SeekFile
-	cmp r0, #0
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	ldr r1, [r5, #0x84]
-	ldr r2, [r5, #0x24]
-	add r0, r5, #0x34
-	bl FS_ReadFile
-	ldr r1, [r5, #0x24]
-	cmp r0, r1
-	addne sp, sp, #4
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, pc}
-	cmp r6, #0
-	ldrne r1, [r5, #0x14]
-	cmpne r1, #0
-	beq _0205CF34
-	ldr r2, _0205CF48 ; =sub_0205D498
-	mov ip, #0
-	mov r0, r4
-	mov r3, r5
-	str ip, [sp]
-	bl sub_0205D5E8
-	cmp r0, #0
-	str r0, [r5, #0x88]
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	ldr r1, [r5, #0x10]
-	add r0, r5, #0x34
-	mov r2, #0
-	bl FS_SeekFile
-	cmp r0, #0
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, pc}
-	ldr r1, [r5, #0x88]
-	ldr r2, [r5, #0x14]
-	add r0, r5, #0x34
-	bl FS_ReadFile
-	ldr r1, [r5, #0x14]
-	cmp r0, r1
-	addne sp, sp, #4
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, pc}
-	arm_func_end sub_0205CD74
-_0205CF34:
-	mov r0, #1
-	add sp, sp, #4
-	ldmia sp!, {r3, r4, r5, r6, pc}
-	.align 2, 0
-_0205CF40: .word sub_0205D480
-_0205CF44: .word sub_0205D48C
-_0205CF48: .word sub_0205D498
-
-	arm_func_start sub_0205CF4C
-sub_0205CF4C: ; 0x0205CF4C
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r1
-	mov r0, r4
-	mov r1, r5
-	mov r2, #0x30
-	bl MIi_CpuCopy32
-	ldr r0, [r5, #0x18]
-	mov r3, #0
-	cmp r0, #0
-	moveq r0, #0
-	addne r0, r4, r0
-	str r0, [r5, #0x8c]
-	ldr r0, [r5, #0x20]
-	cmp r0, #0
-	moveq r0, #0
-	addne r0, r4, r0
-	str r0, [r5, #0x84]
-	ldr r0, [r5, #0x10]
-	cmp r0, #0
-	moveq r0, #0
-	addne r0, r4, r0
-	str r0, [r5, #0x88]
-	ldr r2, [r5, #0x84]
-	ldr r0, [r2, #8]
-	cmp r0, #0
-	bls _0205CFF4
-	mov ip, r3
-	mov r1, r3
-	arm_func_end sub_0205CF4C
-_0205CFC0:
-	add r2, r2, #0xc
-	ldr r0, [r2, ip]
-	add r2, r2, ip
-	cmp r0, #0
-	moveq r0, r1
-	addne r0, r4, r0
-	str r0, [r2, #8]
-	ldr r2, [r5, #0x84]
-	add r3, r3, #1
-	ldr r0, [r2, #8]
-	add ip, ip, #0x10
-	cmp r3, r0
-	blo _0205CFC0
-_0205CFF4:
-	mov r1, #0
-	ldr r0, _0205D008 ; =MAIN_BSS_02111F10
-	str r1, [r5, #0x30]
-	str r5, [r0]
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205D008: .word MAIN_BSS_02111F10
-
-	arm_func_start sub_0205D00C
-sub_0205D00C: ; 0x0205D00C
-	ldr r1, _0205D020 ; =MAIN_BSS_02111F10
-	ldr r2, [r1]
-	str r0, [r1]
-	mov r0, r2
-	bx lr
-	.align 2, 0
-_0205D020: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D00C
-
-	arm_func_start sub_0205D024
-sub_0205D024: ; 0x0205D024
-	ldr r0, _0205D030 ; =MAIN_BSS_02111F10
-	ldr r0, [r0]
-	bx lr
-	.align 2, 0
-_0205D030: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D024
-
-	arm_func_start sub_0205D034
-sub_0205D034: ; 0x0205D034
-	ldr r1, _0205D094 ; =MAIN_BSS_02111F10
-	ldr r3, [r1]
-	ldr r2, [r3, #0x8c]
-	ldr r1, [r2, #8]
-	cmp r1, #0
-	moveq r2, #0
-	addne r2, r2, r1
-	cmp r2, #0
-	moveq r0, #0
-	bxeq lr
-	cmp r0, #0
-	movlt r0, #0
-	bxlt lr
-	ldr r1, [r2]
-	cmp r0, r1
-	movhs r0, #0
-	bxhs lr
-	add r0, r2, r0, lsl #2
-	ldr r1, [r0, #4]
-	ldr r0, [r3, #0x8c]
-	cmp r1, #0
-	moveq r0, #0
-	addne r0, r0, r1
-	bx lr
-	.align 2, 0
-_0205D094: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D034
-
-	arm_func_start sub_0205D098
-sub_0205D098: ; 0x0205D098
-	ldr r1, _0205D0F8 ; =MAIN_BSS_02111F10
-	ldr r3, [r1]
-	ldr r2, [r3, #0x8c]
-	ldr r1, [r2, #0xc]
-	cmp r1, #0
-	moveq r2, #0
-	addne r2, r2, r1
-	cmp r2, #0
-	moveq r0, #0
-	bxeq lr
-	cmp r0, #0
-	movlt r0, #0
-	bxlt lr
-	ldr r1, [r2]
-	cmp r0, r1
-	movhs r0, #0
-	bxhs lr
-	add r0, r2, r0, lsl #2
-	ldr r1, [r0, #4]
-	ldr r0, [r3, #0x8c]
-	cmp r1, #0
-	moveq r0, #0
-	addne r0, r0, r1
-	bx lr
-	.align 2, 0
-_0205D0F8: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D098
-
-	arm_func_start sub_0205D0FC
-sub_0205D0FC: ; 0x0205D0FC
-	ldr r1, _0205D15C ; =MAIN_BSS_02111F10
-	ldr r3, [r1]
-	ldr r2, [r3, #0x8c]
-	ldr r1, [r2, #0x10]
-	cmp r1, #0
-	moveq r2, #0
-	addne r2, r2, r1
-	cmp r2, #0
-	moveq r0, #0
-	bxeq lr
-	cmp r0, #0
-	movlt r0, #0
-	bxlt lr
-	ldr r1, [r2]
-	cmp r0, r1
-	movhs r0, #0
-	bxhs lr
-	add r0, r2, r0, lsl #2
-	ldr r1, [r0, #4]
-	ldr r0, [r3, #0x8c]
-	cmp r1, #0
-	moveq r0, #0
-	addne r0, r0, r1
-	bx lr
-	.align 2, 0
-_0205D15C: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D0FC
-
-	arm_func_start sub_0205D160
-sub_0205D160: ; 0x0205D160
-	ldr r1, _0205D1C0 ; =MAIN_BSS_02111F10
-	ldr r3, [r1]
-	ldr r2, [r3, #0x8c]
-	ldr r1, [r2, #0x14]
-	cmp r1, #0
-	moveq r2, #0
-	addne r2, r2, r1
-	cmp r2, #0
-	moveq r0, #0
-	bxeq lr
-	cmp r0, #0
-	movlt r0, #0
-	bxlt lr
-	ldr r1, [r2]
-	cmp r0, r1
-	movhs r0, #0
-	bxhs lr
-	add r0, r2, r0, lsl #2
-	ldr r1, [r0, #4]
-	ldr r0, [r3, #0x8c]
-	cmp r1, #0
-	moveq r0, #0
-	addne r0, r0, r1
-	bx lr
-	.align 2, 0
-_0205D1C0: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D160
-
-	arm_func_start sub_0205D1C4
-sub_0205D1C4: ; 0x0205D1C4
-	ldr r1, _0205D224 ; =MAIN_BSS_02111F10
-	ldr r3, [r1]
-	ldr r2, [r3, #0x8c]
-	ldr r1, [r2, #0x24]
-	cmp r1, #0
-	moveq r2, #0
-	addne r2, r2, r1
-	cmp r2, #0
-	moveq r0, #0
-	bxeq lr
-	cmp r0, #0
-	movlt r0, #0
-	bxlt lr
-	ldr r1, [r2]
-	cmp r0, r1
-	movhs r0, #0
-	bxhs lr
-	add r0, r2, r0, lsl #2
-	ldr r1, [r0, #4]
-	ldr r0, [r3, #0x8c]
-	cmp r1, #0
-	moveq r0, #0
-	addne r0, r0, r1
-	bx lr
-	.align 2, 0
-_0205D224: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D1C4
-
-	arm_func_start sub_0205D228
-sub_0205D228: ; 0x0205D228
-	ldr r1, _0205D288 ; =MAIN_BSS_02111F10
-	ldr r3, [r1]
-	ldr r2, [r3, #0x8c]
-	ldr r1, [r2, #0x18]
-	cmp r1, #0
-	moveq r2, #0
-	addne r2, r2, r1
-	cmp r2, #0
-	moveq r0, #0
-	bxeq lr
-	cmp r0, #0
-	movlt r0, #0
-	bxlt lr
-	ldr r1, [r2]
-	cmp r0, r1
-	movhs r0, #0
-	bxhs lr
-	add r0, r2, r0, lsl #2
-	ldr r1, [r0, #4]
-	ldr r0, [r3, #0x8c]
-	cmp r1, #0
-	moveq r0, #0
-	addne r0, r0, r1
-	bx lr
-	.align 2, 0
-_0205D288: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D228
-
-	arm_func_start sub_0205D28C
-sub_0205D28C: ; 0x0205D28C
-	ldr r1, _0205D2EC ; =MAIN_BSS_02111F10
-	ldr r3, [r1]
-	ldr r2, [r3, #0x8c]
-	ldr r1, [r2, #0x20]
-	cmp r1, #0
-	moveq r2, #0
-	addne r2, r2, r1
-	cmp r2, #0
-	moveq r0, #0
-	bxeq lr
-	cmp r0, #0
-	movlt r0, #0
-	bxlt lr
-	ldr r1, [r2]
-	cmp r0, r1
-	movhs r0, #0
-	bxhs lr
-	add r0, r2, r0, lsl #2
-	ldr r1, [r0, #4]
-	ldr r0, [r3, #0x8c]
-	cmp r1, #0
-	moveq r0, #0
-	addne r0, r0, r1
-	bx lr
-	.align 2, 0
-_0205D2EC: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D28C
-
-	arm_func_start sub_0205D2F0
-sub_0205D2F0: ; 0x0205D2F0
-	ldr r1, _0205D350 ; =MAIN_BSS_02111F10
-	ldr r3, [r1]
-	ldr r2, [r3, #0x8c]
-	ldr r1, [r2, #0x1c]
-	cmp r1, #0
-	moveq r2, #0
-	addne r2, r2, r1
-	cmp r2, #0
-	moveq r0, #0
-	bxeq lr
-	cmp r0, #0
-	movlt r0, #0
-	bxlt lr
-	ldr r1, [r2]
-	cmp r0, r1
-	movhs r0, #0
-	bxhs lr
-	add r0, r2, r0, lsl #2
-	ldr r1, [r0, #4]
-	ldr r0, [r3, #0x8c]
-	cmp r1, #0
-	moveq r0, #0
-	addne r0, r0, r1
-	bx lr
-	.align 2, 0
-_0205D350: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D2F0
-
-	arm_func_start sub_0205D354
-sub_0205D354: ; 0x0205D354
-	ldr r1, _0205D378 ; =MAIN_BSS_02111F10
-	ldr r1, [r1]
-	ldr r2, [r1, #0x84]
-	ldr r1, [r2, #8]
-	cmp r0, r1
-	movhs r0, #0
-	addlo r0, r2, r0, lsl #4
-	ldrlo r0, [r0, #0xc]
-	bx lr
-	.align 2, 0
-_0205D378: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D354
-
-	arm_func_start sub_0205D37C
-sub_0205D37C: ; 0x0205D37C
-	ldr r1, _0205D3A0 ; =MAIN_BSS_02111F10
-	ldr r1, [r1]
-	ldr r2, [r1, #0x84]
-	ldr r1, [r2, #8]
-	cmp r0, r1
-	movhs r0, #0
-	addlo r0, r2, r0, lsl #4
-	ldrlo r0, [r0, #0x10]
-	bx lr
-	.align 2, 0
-_0205D3A0: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D37C
-
-	arm_func_start sub_0205D3A4
-sub_0205D3A4: ; 0x0205D3A4
-	stmdb sp!, {r4, r5, r6, lr}
-	ldr r4, _0205D418 ; =MAIN_BSS_02111F10
-	mov r5, r2
-	ldr r4, [r4]
-	mov r6, r1
-	ldr r2, [r4, #0x84]
-	ldr r1, [r2, #8]
-	cmp r0, r1
-	mvnhs r0, #0
-	ldmhsia sp!, {r4, r5, r6, pc}
-	add r1, r2, #0xc
-	add r1, r1, r0, lsl #4
-	ldr r0, [r1, #4]
-	ldr r1, [r1]
-	sub r0, r0, r3
-	cmp r5, r0
-	movhi r5, r0
-	add r0, r4, #0x34
-	add r1, r1, r3
-	mov r2, #0
-	bl FS_SeekFile
-	cmp r0, #0
-	mvneq r0, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	mov r1, r6
-	mov r2, r5
-	add r0, r4, #0x34
-	bl FS_ReadFile
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0205D418: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D3A4
-
-	arm_func_start sub_0205D41C
-sub_0205D41C: ; 0x0205D41C
-	ldr r1, _0205D438 ; =MAIN_BSS_02111F10
-	ldr r1, [r1]
-	ldr r2, [r1, #0x7c]
-	ldr r1, [r1, #0x80]
-	str r2, [r0]
-	str r1, [r0, #4]
-	bx lr
-	.align 2, 0
-_0205D438: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D41C
-
-	arm_func_start sub_0205D43C
-sub_0205D43C: ; 0x0205D43C
-	ldr r1, _0205D460 ; =MAIN_BSS_02111F10
-	ldr r1, [r1]
-	ldr r2, [r1, #0x84]
-	ldr r1, [r2, #8]
-	cmp r0, r1
-	movhs r0, #0
-	addlo r0, r2, r0, lsl #4
-	ldrlo r0, [r0, #0x14]
-	bx lr
-	.align 2, 0
-_0205D460: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D43C
-
-	arm_func_start sub_0205D464
-sub_0205D464: ; 0x0205D464
-	ldr r2, _0205D47C ; =MAIN_BSS_02111F10
-	ldr r2, [r2]
-	ldr r2, [r2, #0x84]
-	add r0, r2, r0, lsl #4
-	str r1, [r0, #0x14]
-	bx lr
-	.align 2, 0
-_0205D47C: .word MAIN_BSS_02111F10
-	arm_func_end sub_0205D464
-
-	arm_func_start sub_0205D480
-sub_0205D480: ; 0x0205D480
-	mov r0, #0
-	str r0, [r2, #0x8c]
-	bx lr
-	arm_func_end sub_0205D480
-
-	arm_func_start sub_0205D48C
-sub_0205D48C: ; 0x0205D48C
-	mov r0, #0
-	str r0, [r2, #0x84]
-	bx lr
-	arm_func_end sub_0205D48C
-
-	arm_func_start sub_0205D498
-sub_0205D498: ; 0x0205D498
-	mov r0, #0
-	str r0, [r2, #0x88]
-	bx lr
-	arm_func_end sub_0205D498
-
-	arm_func_start sub_0205D4A4
-sub_0205D4A4: ; 0x0205D4A4
-	stmdb sp!, {r3, r4, r5, lr}
-	add r2, r0, #3
-	add r0, r0, r1
-	bic r5, r2, #3
-	cmp r5, r0
-	movhi r0, #0
-	ldmhiia sp!, {r3, r4, r5, pc}
-	sub r1, r0, r5
-	cmp r1, #0x10
-	movlo r0, #0
-	ldmloia sp!, {r3, r4, r5, pc}
-	add r0, r5, #0x10
-	sub r1, r1, #0x10
-	mov r2, #0
-	bl NitroSystem_NNS_FndCreateFrmHeapEx
-	movs r4, r0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	mov r0, r5
-	mov r1, r4
-	bl sub_0205D790
-	cmp r0, #0
-	movne r0, r5
-	ldmneia sp!, {r3, r4, r5, pc}
-	mov r0, r4
-	bl NitroSystem_NNS_FndDestroyFrmHeap
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0205D4A4
-
-	arm_func_start sub_0205D514
-sub_0205D514: ; 0x0205D514
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl sub_0205D52C
-	ldr r0, [r4]
-	bl NitroSystem_NNS_FndDestroyFrmHeap
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205D514
-
-	arm_func_start sub_0205D52C
-sub_0205D52C: ; 0x0205D52C
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
-	mov r8, r0
-	mov r6, #0
-	mov r1, r6
-	add r0, r8, #4
-	bl NitroSystem_NNS_FndGetPrevListObject
-	movs r5, r0
-	beq _0205D5C4
-	mov sl, #1
-	mov sb, r6
-	mov r4, r6
-	arm_func_end sub_0205D52C
-_0205D558:
-	mov r0, r5
-	mov r1, r4
-	bl NitroSystem_NNS_FndGetPrevListObject
-	movs r7, r0
-	beq _0205D5A4
-_0205D56C:
-	ldr ip, [r7, #0xc]
-	cmp ip, #0
-	beq _0205D590
-	ldr r1, [r7, #8]
-	ldr r2, [r7, #0x10]
-	ldr r3, [r7, #0x14]
-	add r0, r7, #0x20
-	blx ip
-	mov r6, sl
-_0205D590:
-	mov r0, r5
-	mov r1, r7
-	bl NitroSystem_NNS_FndGetPrevListObject
-	movs r7, r0
-	bne _0205D56C
-_0205D5A4:
-	mov r1, r5
-	add r0, r8, #4
-	bl NitroSystem_NNS_FndRemoveListObject
-	mov r1, sb
-	add r0, r8, #4
-	bl NitroSystem_NNS_FndGetPrevListObject
-	movs r5, r0
-	bne _0205D558
-_0205D5C4:
-	ldr r0, [r8]
-	mov r1, #3
-	bl NitroSystem_NNS_FndFreeToFrmHeap
-	cmp r6, #0
-	beq _0205D5DC
-	bl sub_0205D800
-_0205D5DC:
-	mov r0, r8
-	bl sub_0205D7C4
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-
-	arm_func_start sub_0205D5E8
-sub_0205D5E8: ; 0x0205D5E8
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	mov r7, r1
-	mov r8, r0
-	add r0, r7, #0x1f
-	bic r1, r0, #0x1f
-	mov r6, r2
-	ldr r0, [r8]
-	add r1, r1, #0x20
-	mov r2, #0x20
-	mov r5, r3
-	bl NitroSystem_NNS_FndAllocFromFrmHeapEx
-	movs r4, r0
-	moveq r0, #0
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	add r0, r8, #4
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetPrevListObject
-	str r7, [r4, #8]
-	str r6, [r4, #0xc]
-	ldr r2, [sp, #0x18]
-	str r5, [r4, #0x10]
-	mov r1, r4
-	str r2, [r4, #0x14]
-	bl NitroSystem_NNS_FndAppendListObject
-	add r0, r4, #0x20
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	arm_func_end sub_0205D5E8
-
-	arm_func_start sub_0205D650
-sub_0205D650: ; 0x0205D650
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldrh r1, [r4, #0xc]
-	ldr r0, [r4]
-	bl NitroSystem_NNS_FndRecordStateForFrmHeap
-	cmp r0, #0
-	mvneq r0, #0
-	ldmeqia sp!, {r4, pc}
-	mov r0, r4
-	bl sub_0205D7C4
-	cmp r0, #0
-	ldrneh r0, [r4, #0xc]
-	subne r0, r0, #1
-	ldmneia sp!, {r4, pc}
-	ldr r0, [r4]
-	mov r1, #0
-	bl NitroSystem_NNS_FndFreeByStateToFrmHeap
-	mvn r0, #0
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205D650
-
-	arm_func_start sub_0205D69C
-sub_0205D69C: ; 0x0205D69C
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
-	mov r8, #0
-	movs sb, r1
-	mov sl, r0
-	mov r7, r8
-	bne _0205D6BC
-	bl sub_0205D52C
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	arm_func_end sub_0205D69C
-_0205D6BC:
-	ldrh r0, [sl, #0xc]
-	cmp sb, r0
-	bge _0205D740
-	mov r4, #1
-	mov r5, r8
-_0205D6D0:
-	mov r1, r5
-	add r0, sl, #4
-	bl NitroSystem_NNS_FndGetPrevListObject
-	mov r1, r8
-	mov r6, r0
-	bl NitroSystem_NNS_FndGetPrevListObject
-	movs r8, r0
-	beq _0205D728
-_0205D6F0:
-	ldr ip, [r8, #0xc]
-	cmp ip, #0
-	beq _0205D714
-	ldr r1, [r8, #8]
-	ldr r2, [r8, #0x10]
-	ldr r3, [r8, #0x14]
-	add r0, r8, #0x20
-	blx ip
-	mov r7, r4
-_0205D714:
-	mov r0, r6
-	mov r1, r8
-	bl NitroSystem_NNS_FndGetPrevListObject
-	movs r8, r0
-	bne _0205D6F0
-_0205D728:
-	mov r1, r6
-	add r0, sl, #4
-	bl NitroSystem_NNS_FndRemoveListObject
-	ldrh r0, [sl, #0xc]
-	cmp sb, r0
-	blt _0205D6D0
-_0205D740:
-	ldr r0, [sl]
-	mov r1, sb
-	bl NitroSystem_NNS_FndFreeByStateToFrmHeap
-	cmp r7, #0
-	beq _0205D758
-	bl sub_0205D800
-_0205D758:
-	ldrh r1, [sl, #0xc]
-	ldr r0, [sl]
-	bl NitroSystem_NNS_FndRecordStateForFrmHeap
-	mov r0, sl
-	bl sub_0205D7C4
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-
-	arm_func_start sub_0205D770
-sub_0205D770: ; 0x0205D770
-	ldr r1, [r0]
-	ldr r0, [r1, #0x1c]
-	sub r0, r0, r1
-	bx lr
-	arm_func_end sub_0205D770
-
-	arm_func_start sub_0205D780
-sub_0205D780: ; 0x0205D780
-	ldr ip, _0205D78C ; =NitroSystem_NNS_FndInitList
-	mov r1, #0
-	bx ip
-	.align 2, 0
-_0205D78C: .word NitroSystem_NNS_FndInitList
-	arm_func_end sub_0205D780
-
-	arm_func_start sub_0205D790
-sub_0205D790: ; 0x0205D790
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r1
-	add r0, r5, #4
-	mov r1, #0xc
-	bl NitroSystem_NNS_FndInitList
-	mov r0, r5
-	str r4, [r5]
-	bl sub_0205D7C4
-	cmp r0, #0
-	movne r0, #1
-	moveq r0, #0
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0205D790
-
-	arm_func_start sub_0205D7C4
-sub_0205D7C4: ; 0x0205D7C4
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	ldr r0, [r5]
-	mov r1, #0x14
-	mov r2, #4
-	bl NitroSystem_NNS_FndAllocFromFrmHeapEx
-	movs r4, r0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	bl sub_0205D780
-	mov r1, r4
-	add r0, r5, #4
-	bl NitroSystem_NNS_FndAppendListObject
-	mov r0, #1
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0205D7C4
-
-	arm_func_start sub_0205D800
-sub_0205D800: ; 0x0205D800
-	stmdb sp!, {r4, lr}
-	bl SND_GetCurrentCommandTag
-	mov r4, r0
-	mov r0, #1
-	bl SND_FlushCommand
-	mov r0, r4
-	bl SND_WaitForCommandProc
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205D800
-
-	arm_func_start sub_0205D820
-sub_0205D820: ; 0x0205D820
-	stmdb sp!, {r3, lr}
-	bl sub_0205D838
-	cmp r0, #0
-	moveq r0, #1
-	movne r0, #0
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205D820
-
-	arm_func_start sub_0205D838
-sub_0205D838: ; 0x0205D838
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	mov sb, r1
-	bl sub_0205D2F0
-	movs r6, r0
-	moveq r0, #1
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r0, [r6]
-	mov r7, #0
-	cmp r0, #0
-	bls _0205D934
-	add r8, r6, #4
-	mov fp, r7
-	mov sl, r7
-	mov r4, r7
-	mov r5, r7
-	arm_func_end sub_0205D838
-_0205D874:
-	ldrb r0, [r8]
-	cmp r0, #3
-	addls pc, pc, r0, lsl #2
-	b _0205D920
-_0205D884: ; jump table
-	b _0205D894 ; case 0
-	b _0205D8DC ; case 1
-	b _0205D900 ; case 2
-	b _0205D8B8 ; case 3
-_0205D894:
-	str r5, [sp]
-	ldrb r1, [r8, #1]
-	ldr r0, [r8, #4]
-	mov r2, sb
-	mov r3, #1
-	bl sub_0205D93C
-	cmp r0, #0
-	beq _0205D920
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0205D8B8:
-	str r4, [sp]
-	ldrb r1, [r8, #1]
-	ldr r0, [r8, #4]
-	mov r2, sb
-	mov r3, #1
-	bl sub_0205D9C0
-	cmp r0, #0
-	beq _0205D920
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0205D8DC:
-	str sl, [sp]
-	ldrb r1, [r8, #1]
-	ldr r0, [r8, #4]
-	mov r2, sb
-	mov r3, #1
-	bl sub_0205DA20
-	cmp r0, #0
-	beq _0205D920
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0205D900:
-	str fp, [sp]
-	ldrb r1, [r8, #1]
-	ldr r0, [r8, #4]
-	mov r2, sb
-	mov r3, #1
-	bl sub_0205DB60
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0205D920:
-	ldr r0, [r6]
-	add r7, r7, #1
-	cmp r7, r0
-	add r8, r8, #8
-	blo _0205D874
-_0205D934:
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start sub_0205D93C
-sub_0205D93C: ; 0x0205D93C
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r1
-	mov r6, r2
-	mov r5, r3
-	bl sub_0205D034
-	movs r4, r0
-	moveq r0, #2
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r0, #0
-	str r0, [sp]
-	ldrh r0, [r4, #4]
-	mov r1, r7
-	mov r2, r6
-	mov r3, r5
-	bl sub_0205DA20
-	cmp r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
-	tst r7, #1
-	ldr r0, [r4]
-	beq _0205D9A8
-	mov r1, r6
-	mov r2, r5
-	bl sub_0205DC8C
-	cmp r0, #0
-	bne _0205D9AC
-	mov r0, #6
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	arm_func_end sub_0205D93C
-_0205D9A8:
-	bl sub_0205D43C
-_0205D9AC:
-	ldr r1, [sp, #0x18]
-	cmp r1, #0
-	strne r0, [r1]
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start sub_0205D9C0
-sub_0205D9C0: ; 0x0205D9C0
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	bl sub_0205D098
-	cmp r0, #0
-	moveq r0, #3
-	ldmeqia sp!, {r4, r5, r6, pc}
-	tst r6, #8
-	ldr r0, [r0]
-	beq _0205DA08
-	mov r1, r5
-	mov r2, r4
-	bl sub_0205DCF8
-	cmp r0, #0
-	bne _0205DA0C
-	mov r0, #7
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end sub_0205D9C0
-_0205DA08:
-	bl sub_0205D43C
-_0205DA0C:
-	ldr r1, [sp, #0x10]
-	cmp r1, #0
-	strne r0, [r1]
-	mov r0, #0
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start sub_0205DA20
-sub_0205DA20: ; 0x0205DA20
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #8
-	mov sl, r1
-	mov sb, r2
-	mov fp, r3
-	bl sub_0205D0FC
-	movs r5, r0
-	addeq sp, sp, #8
-	moveq r0, #4
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	tst sl, #2
-	ldr r0, [r5]
-	beq _0205DA74
-	mov r1, sb
-	mov r2, fp
-	bl sub_0205DD64
-	movs r6, r0
-	bne _0205DA7C
-	add sp, sp, #8
-	mov r0, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	arm_func_end sub_0205DA20
-_0205DA74:
-	bl sub_0205D43C
-	mov r6, r0
-_0205DA7C:
-	and r8, sl, #4
-	mov r7, #0
-_0205DA84:
-	add r0, r5, r7, lsl #1
-	ldrh r0, [r0, #4]
-	ldr r1, _0205DB5C ; =0x0000FFFF
-	cmp r0, r1
-	beq _0205DB38
-	bl sub_0205D160
-	movs r4, r0
-	addeq sp, sp, #8
-	moveq r0, #5
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	add r0, sp, #4
-	str r0, [sp]
-	add r0, r5, r7, lsl #1
-	ldrh r0, [r0, #4]
-	mov r1, sl
-	mov r2, sb
-	mov r3, fp
-	bl sub_0205DB60
-	cmp r0, #0
-	addne sp, sp, #8
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r0, [r4]
-	mov r0, r0, lsr #0x18
-	tst r0, #1
-	cmpne r8, #0
-	beq _0205DB1C
-	str sb, [sp]
-	ldr r1, [r4]
-	ldr r0, [sp, #4]
-	mov r3, r1, lsl #8
-	mov r1, r6
-	mov r2, r7
-	mov r3, r3, lsr #8
-	bl sub_0205E154
-	cmp r0, #0
-	addeq sp, sp, #8
-	moveq r0, #9
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0205DB1C:
-	cmp r6, #0
-	ldrne r2, [sp, #4]
-	cmpne r2, #0
-	beq _0205DB38
-	mov r0, r6
-	mov r1, r7
-	bl SND_AssignWaveArc
-_0205DB38:
-	add r7, r7, #1
-	cmp r7, #4
-	blt _0205DA84
-	ldr r0, [sp, #0x30]
-	cmp r0, #0
-	strne r6, [r0]
-	mov r0, #0
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_0205DB5C: .word 0x0000FFFF
-
-	arm_func_start sub_0205DB60
-sub_0205DB60: ; 0x0205DB60
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	bl sub_0205D160
-	cmp r0, #0
-	moveq r0, #5
-	ldmeqia sp!, {r4, r5, r6, pc}
-	tst r6, #4
-	ldr r0, [r0]
-	beq _0205DBCC
-	mov r1, r0, lsr #0x18
-	tst r1, #1
-	mov r0, r0, lsl #8
-	mov r1, r5
-	beq _0205DBB0
-	mov r2, r4
-	mov r0, r0, lsr #8
-	bl sub_0205DE3C
-	b _0205DBBC
-	arm_func_end sub_0205DB60
-_0205DBB0:
-	mov r2, r4
-	mov r0, r0, lsr #8
-	bl sub_0205DDD0
-_0205DBBC:
-	cmp r0, #0
-	bne _0205DBD8
-	mov r0, #9
-	ldmia sp!, {r4, r5, r6, pc}
-_0205DBCC:
-	mov r0, r0, lsl #8
-	mov r0, r0, lsr #8
-	bl sub_0205D43C
-_0205DBD8:
-	ldr r1, [sp, #0x10]
-	cmp r1, #0
-	strne r0, [r1]
-	mov r0, #0
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start sub_0205DBEC
-sub_0205DBEC: ; 0x0205DBEC
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #4
-	mov r8, r0
-	mov r7, r1
-	mov r6, r2
-	mov r4, r3
-	bl sub_0205D37C
-	movs r5, r0
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, pc}
-	ldr r0, [sp, #0x20]
-	cmp r0, #0
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, pc}
-	mov r2, r7
-	mov r3, r6
-	add r1, r5, #0x20
-	str r4, [sp]
-	bl sub_0205D5E8
-	movs r4, r0
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, pc}
-	mov r0, r8
-	mov r1, r4
-	mov r2, r5
-	mov r3, #0
-	bl sub_0205D3A4
-	cmp r5, r0
-	addne sp, sp, #4
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, pc}
-	mov r0, r4
-	mov r1, r5
-	bl DC_StoreRange
-	mov r0, r4
-	add sp, sp, #4
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
-	arm_func_end sub_0205DBEC
-
-	arm_func_start sub_0205DC8C
-sub_0205DC8C: ; 0x0205DC8C
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	bl sub_0205D43C
-	movs r4, r0
-	bne _0205DCEC
-	cmp r5, #0
-	moveq r2, #0
-	beq _0205DCBC
-	bl sub_0205D024
-	mov r2, r0
-	arm_func_end sub_0205DC8C
-_0205DCBC:
-	ldr r1, _0205DCF4 ; =sub_0205DF9C
-	mov r0, r7
-	mov r3, r7
-	str r6, [sp]
-	bl sub_0205DBEC
-	mov r4, r0
-	cmp r5, #0
-	cmpne r4, #0
-	beq _0205DCEC
-	mov r0, r7
-	mov r1, r4
-	bl sub_0205D464
-_0205DCEC:
-	mov r0, r4
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_0205DCF4: .word sub_0205DF9C
-
-	arm_func_start sub_0205DCF8
-sub_0205DCF8: ; 0x0205DCF8
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	bl sub_0205D43C
-	movs r4, r0
-	bne _0205DD58
-	cmp r5, #0
-	moveq r2, #0
-	beq _0205DD28
-	bl sub_0205D024
-	mov r2, r0
-	arm_func_end sub_0205DCF8
-_0205DD28:
-	ldr r1, _0205DD60 ; =sub_0205DF9C
-	mov r0, r7
-	mov r3, r7
-	str r6, [sp]
-	bl sub_0205DBEC
-	mov r4, r0
-	cmp r5, #0
-	cmpne r4, #0
-	beq _0205DD58
-	mov r0, r7
-	mov r1, r4
-	bl sub_0205D464
-_0205DD58:
-	mov r0, r4
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_0205DD60: .word sub_0205DF9C
-
-	arm_func_start sub_0205DD64
-sub_0205DD64: ; 0x0205DD64
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	bl sub_0205D43C
-	movs r4, r0
-	bne _0205DDC4
-	cmp r5, #0
-	moveq r2, #0
-	beq _0205DD94
-	bl sub_0205D024
-	mov r2, r0
-	arm_func_end sub_0205DD64
-_0205DD94:
-	ldr r1, _0205DDCC ; =sub_0205DFC4
-	mov r0, r7
-	mov r3, r7
-	str r6, [sp]
-	bl sub_0205DBEC
-	mov r4, r0
-	cmp r5, #0
-	cmpne r4, #0
-	beq _0205DDC4
-	mov r0, r7
-	mov r1, r4
-	bl sub_0205D464
-_0205DDC4:
-	mov r0, r4
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_0205DDCC: .word sub_0205DFC4
-
-	arm_func_start sub_0205DDD0
-sub_0205DDD0: ; 0x0205DDD0
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	bl sub_0205D43C
-	movs r4, r0
-	bne _0205DE30
-	cmp r5, #0
-	moveq r2, #0
-	beq _0205DE00
-	bl sub_0205D024
-	mov r2, r0
-	arm_func_end sub_0205DDD0
-_0205DE00:
-	ldr r1, _0205DE38 ; =sub_0205DFF4
-	mov r0, r7
-	mov r3, r7
-	str r6, [sp]
-	bl sub_0205DBEC
-	mov r4, r0
-	cmp r5, #0
-	cmpne r4, #0
-	beq _0205DE30
-	mov r0, r7
-	mov r1, r4
-	bl sub_0205D464
-_0205DE30:
-	mov r0, r4
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_0205DE38: .word sub_0205DFF4
-
-	arm_func_start sub_0205DE3C
-sub_0205DE3C: ; 0x0205DE3C
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	mov sb, r0
-	mov r8, r1
-	mov r7, r2
-	bl sub_0205D43C
-	movs r5, r0
-	bne _0205DF30
-	ldr r1, _0205DF38 ; =MAIN_BSS_02111F14
-	mov r0, sb
-	mov r2, #0x3c
-	mov r3, #0
-	bl sub_0205D3A4
-	cmp r0, #0x3c
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	ldr r0, _0205DF3C ; =MAIN_BSS_02111F14
-	cmp r8, #0
-	ldr r0, [r0, #0x38]
-	mov r6, r0, lsl #2
-	mov r4, r6, lsl #1
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	cmp r7, #0
-	moveq r3, #0
-	beq _0205DEA8
-	bl sub_0205D024
-	mov r3, r0
-	arm_func_end sub_0205DE3C
-_0205DEA8:
-	ldr r2, _0205DF40 ; =sub_0205E024
-	mov r0, r8
-	add r1, r4, #0x5c
-	str sb, [sp]
-	bl sub_0205D5E8
-	movs r5, r0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	mov r0, sb
-	mov r1, r5
-	add r2, r6, #0x3c
-	mov r3, #0
-	bl sub_0205D3A4
-	add r1, r6, #0x3c
-	cmp r0, r1
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	ldr r1, [r5, #0x38]
-	add r0, r5, #0x3c
-	mov r2, r6
-	add r1, r0, r1, lsl #2
-	bl MI_CpuCopy8
-	mov r2, r6
-	add r0, r5, #0x3c
-	mov r1, #0
-	bl MI_CpuFill8
-	mov r0, r5
-	add r1, r4, #0x3c
-	bl DC_StoreRange
-	cmp r7, #0
-	beq _0205DF30
-	mov r0, sb
-	mov r1, r5
-	bl sub_0205D464
-_0205DF30:
-	mov r0, r5
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	.align 2, 0
-_0205DF38: .word MAIN_BSS_02111F14
-_0205DF3C: .word MAIN_BSS_02111F14
-_0205DF40: .word sub_0205E024
-
-	arm_func_start sub_0205DF44
-sub_0205DF44: ; 0x0205DF44
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	movs r4, r1
-	mov r7, r0
-	mov r6, r2
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	bl OS_DisableInterrupts
-	mov r5, r0
-	mov r0, r4
-	bl sub_0205D00C
-	mov r4, r0
-	mov r0, r6
-	bl sub_0205D43C
-	cmp r7, r0
-	bne _0205DF88
-	mov r0, r6
-	mov r1, #0
-	bl sub_0205D464
-	arm_func_end sub_0205DF44
-_0205DF88:
-	mov r0, r4
-	bl sub_0205D00C
-	mov r0, r5
-	bl OS_RestoreInterrupts
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start sub_0205DF9C
-sub_0205DF9C: ; 0x0205DF9C
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r4, r1
-	mov r1, r2
-	mov r5, r0
-	mov r2, r3
-	bl sub_0205DF44
-	mov r0, r5
-	add r1, r5, r4
-	bl SND_InvalidateSeqData
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0205DF9C
-
-	arm_func_start sub_0205DFC4
-sub_0205DFC4: ; 0x0205DFC4
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r4, r1
-	mov r1, r2
-	mov r5, r0
-	mov r2, r3
-	bl sub_0205DF44
-	mov r0, r5
-	add r1, r5, r4
-	bl SND_InvalidateBankData
-	mov r0, r5
-	bl SND_DestroyBank
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0205DFC4
-
-	arm_func_start sub_0205DFF4
-sub_0205DFF4: ; 0x0205DFF4
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r4, r1
-	mov r1, r2
-	mov r5, r0
-	mov r2, r3
-	bl sub_0205DF44
-	mov r0, r5
-	add r1, r5, r4
-	bl SND_InvalidateWaveData
-	mov r0, r5
-	bl SND_DestroyWaveArc
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0205DFF4
-
-	arm_func_start sub_0205E024
-sub_0205E024: ; 0x0205E024
-	stmdb sp!, {r4, lr}
-	mov r1, r2
-	mov r4, r0
-	mov r2, r3
-	bl sub_0205DF44
-	mov r0, r4
-	bl SND_DestroyWaveArc
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205E024
-
-	arm_func_start sub_0205E044
-sub_0205E044: ; 0x0205E044
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r5, r2
-	mov r7, r0
-	mov r4, r3
-	mov r6, r1
-	mov r0, r5
-	mov r1, r4
-	bl SND_GetWaveDataAddress
-	cmp r7, r0
-	bne _0205E07C
-	mov r0, r5
-	mov r1, r4
-	mov r2, #0
-	bl SND_SetWaveDataAddress
-	arm_func_end sub_0205E044
-_0205E07C:
-	mov r0, r7
-	add r1, r7, r6
-	bl SND_InvalidateWaveData
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start sub_0205E08C
-sub_0205E08C: ; 0x0205E08C
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	mov r8, r0
-	mov r7, r1
-	mov r6, r2
-	mov r5, r3
-	bl SND_GetWaveDataAddress
-	cmp r0, #0
-	movne r0, #1
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	mov r0, r8
-	bl SND_GetWaveDataCount
-	ldr r1, [r8, #0x38]
-	sub r0, r0, #1
-	add r1, r1, r7
-	add r1, r8, r1, lsl #2
-	cmp r7, r0
-	ldrlo r0, [r1, #0x40]
-	ldr r4, [r1, #0x3c]
-	ldrhs r0, [r8, #8]
-	cmp r5, #0
-	sub sb, r0, r4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	ldr r2, _0205E150 ; =sub_0205E044
-	mov r0, r5
-	mov r3, r8
-	add r1, sb, #0x20
-	str r7, [sp]
-	bl sub_0205D5E8
-	movs r5, r0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	mov r0, r6
-	mov r1, r5
-	mov r2, sb
-	mov r3, r4
-	bl sub_0205D3A4
-	cmp sb, r0
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	mov r0, r5
-	mov r1, sb
-	bl DC_StoreRange
-	mov r0, r8
-	mov r1, r7
-	mov r2, r5
-	bl SND_SetWaveDataAddress
-	mov r0, #1
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	.align 2, 0
-_0205E150: .word sub_0205E044
-	arm_func_end sub_0205E08C
-
-	arm_func_start sub_0205E154
-sub_0205E154: ; 0x0205E154
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, lr}
-	sub sp, sp, #0x1c
-	mov r8, r0
-	add r0, sp, #0
-	mov r7, r1
-	mov r6, r2
-	mov r5, r3
-	ldr r4, [sp, #0x40]
-	bl SND_GetFirstInstDataPos
-	ldr r1, [sp]
-	ldr r0, [sp, #4]
-	str r1, [sp, #8]
-	str r0, [sp, #0xc]
-	cmp r7, #0
-	add r2, sp, #8
-	addeq sp, sp, #0x1c
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
-	add r1, sp, #0x10
-	mov r0, r7
-	bl SND_GetNextInstData
-	cmp r0, #0
-	beq _0205E208
-	add sl, sp, #0x10
-	add sb, sp, #8
-	arm_func_end sub_0205E154
-_0205E1B8:
-	ldrb r0, [sp, #0x10]
-	cmp r0, #1
-	ldreqh r0, [sp, #0x14]
-	cmpeq r6, r0
-	bne _0205E1F0
-	ldrh r1, [sp, #0x12]
-	mov r0, r8
-	mov r2, r5
-	mov r3, r4
-	bl sub_0205E08C
-	cmp r0, #0
-	addeq sp, sp, #0x1c
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
-_0205E1F0:
-	mov r0, r7
-	mov r1, sl
-	mov r2, sb
-	bl SND_GetNextInstData
-	cmp r0, #0
-	bne _0205E1B8
-_0205E208:
-	mov r0, #1
-	add sp, sp, #0x1c
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
-
-	arm_func_start sub_0205E214
-sub_0205E214: ; 0x0205E214
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	mov r4, r0
-	bl sub_0205D024
-	mov r6, #0
-	mov r5, r6
-	arm_func_end sub_0205E214
-_0205E228:
-	mov r0, r6
-	bl sub_0205D228
-	movs r7, r0
-	beq _0205E29C
-	ldrb r1, [r7]
-	mov r0, r6
-	bl sub_0205BB7C
-	ldrh r1, [r7, #2]
-	mov r0, r6
-	bl sub_0205BB9C
-	ldr r0, [r7, #4]
-	cmp r0, #0
-	cmpne r4, #0
-	beq _0205E29C
-	ldrb r0, [r7]
-	mov r8, r5
-	cmp r0, #0
-	ble _0205E29C
-_0205E270:
-	ldr r2, [r7, #4]
-	mov r0, r6
-	mov r1, r4
-	bl sub_0205BBB4
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	ldrb r0, [r7]
-	add r8, r8, #1
-	cmp r8, r0
-	blt _0205E270
-_0205E29C:
-	add r6, r6, #1
-	cmp r6, #0x20
-	blt _0205E228
-	mov r0, #1
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start sub_0205E2B0
-sub_0205E2B0: ; 0x0205E2B0
-	stmdb sp!, {r3, r4, r5, lr}
-	sub sp, sp, #8
-	mov r4, r1
-	mov r5, r0
-	mov r0, r4
-	bl sub_0205D034
-	cmp r0, #0
-	addeq sp, sp, #8
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	stmia sp, {r0, r4}
-	ldrb r1, [r0, #9]
-	ldrh r2, [r0, #4]
-	ldrb r3, [r0, #8]
-	mov r0, r5
-	bl sub_0205E378
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0205E2B0
-
-	arm_func_start sub_0205E2F8
-sub_0205E2F8: ; 0x0205E2F8
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #0x10
-	mov r6, r1
-	mov r7, r0
-	mov r0, r6
-	mov r5, r2
-	bl sub_0205D098
-	cmp r0, #0
-	addeq sp, sp, #0x10
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldr r0, [r0]
-	bl sub_0205D43C
-	movs r4, r0
-	addeq sp, sp, #0x10
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r1, r5
-	bl sub_0205FD0C
-	cmp r0, #0
-	addeq sp, sp, #0x10
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	stmia sp, {r0, r4, r6}
-	str r5, [sp, #0xc]
-	ldrb r1, [r0, #9]
-	ldrh r2, [r0, #4]
-	ldrb r3, [r0, #8]
-	mov r0, r7
-	bl sub_0205E474
-	add sp, sp, #0x10
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	arm_func_end sub_0205E2F8
-
-	arm_func_start sub_0205E378
-sub_0205E378: ; 0x0205E378
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0xc
-	mov r8, r2
-	mov r2, r3
-	ldr r5, [sp, #0x28]
-	mov r6, r0
-	mov r7, r1
-	bl sub_0205C064
-	movs r4, r0
-	addeq sp, sp, #0xc
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, pc}
-	mov r0, r7
-	mov r1, r4
-	bl sub_0205C1A4
-	mov r7, r0
-	add ip, sp, #4
-	mov r0, r8
-	mov r2, r7
-	mov r1, #6
-	mov r3, #0
-	str ip, [sp]
-	bl sub_0205DA20
-	cmp r0, #0
-	beq _0205E3F0
-	mov r0, r4
-	bl thunk_FUN_0205c384
-	add sp, sp, #0xc
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
-	arm_func_end sub_0205E378
-_0205E3F0:
-	ldr r0, [sp, #0x2c]
-	add ip, sp, #8
-	mov r2, r7
-	mov r1, #1
-	mov r3, #0
-	str ip, [sp]
-	bl sub_0205D93C
-	cmp r0, #0
-	beq _0205E428
-	mov r0, r4
-	bl thunk_FUN_0205c384
-	add sp, sp, #0xc
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
-_0205E428:
-	ldr r2, [sp, #8]
-	ldr r3, [sp, #4]
-	ldr r1, [r2, #0x18]
-	mov r0, r4
-	add r1, r2, r1
-	mov r2, #0
-	bl sub_0205C108
-	ldrb r1, [r5, #6]
-	mov r0, r6
-	bl sub_0205BD5C
-	ldrb r1, [r5, #7]
-	mov r0, r6
-	bl sub_0205BD9C
-	ldr r1, [sp, #0x2c]
-	mov r0, r6
-	bl sub_0205BDFC
-	mov r0, #1
-	add sp, sp, #0xc
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
-
-	arm_func_start sub_0205E474
-sub_0205E474: ; 0x0205E474
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #8
-	mov r7, r2
-	mov r2, r3
-	ldr r6, [sp, #0x20]
-	mov r4, r0
-	mov r8, r1
-	bl sub_0205C064
-	movs r5, r0
-	addeq sp, sp, #8
-	moveq r0, #0
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	mov r0, r8
-	mov r1, r5
-	bl sub_0205C1A4
-	add ip, sp, #4
-	mov r2, r0
-	mov r0, r7
-	mov r1, #6
-	mov r3, #0
-	str ip, [sp]
-	bl sub_0205DA20
-	cmp r0, #0
-	beq _0205E4E8
-	mov r0, r5
-	bl thunk_FUN_0205c384
-	add sp, sp, #8
-	mov r0, #0
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	arm_func_end sub_0205E474
-_0205E4E8:
-	ldr ip, [sp, #0x24]
-	ldr r2, [r6]
-	ldr r1, [ip, #0x18]
-	ldr r3, [sp, #4]
-	mov r0, r5
-	add r1, ip, r1
-	bl sub_0205C108
-	ldrb r1, [r6, #6]
-	mov r0, r4
-	bl sub_0205BD5C
-	ldrb r1, [r6, #7]
-	mov r0, r4
-	bl sub_0205BD9C
-	ldr r1, [sp, #0x28]
-	ldr r2, [sp, #0x2c]
-	mov r0, r4
-	bl sub_0205BE20
-	mov r0, #1
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start sub_0205E538
-sub_0205E538: ; 0x0205E538
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
-	ldr r2, _0205E620 ; =MAIN_BSS_02111F50
-	mov r8, r0
-	ldr r0, [r2]
-	mov r7, r1
-	cmp r0, #0
-	beq _0205E560
-	mov r0, r7
-	bl sub_0205E63C
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	arm_func_end sub_0205E538
-_0205E560:
-	ldr r0, _0205E624 ; =MAIN_BSS_02111F5C
-	mov r3, #1
-	mov r1, #0
-	str r3, [r2]
-	bl NitroSystem_NNS_FndInitList
-	mov sb, #0
-	ldr r6, _0205E624 ; =MAIN_BSS_02111F5C
-	ldr r5, _0205E628 ; =MAIN_BSS_02111F80
-	mov r4, #0x30
-	b _0205E598
-_0205E588:
-	mla r1, sb, r4, r5
-	mov r0, r6
-	bl NitroSystem_NNS_FndAppendListObject
-	add sb, sb, #1
-_0205E598:
-	cmp sb, #8
-	blt _0205E588
-	ldr r0, _0205E62C ; =MAIN_BSS_02111F68
-	bl OS_InitMutex
-	mov r5, #0
-	ldr r1, _0205E630 ; =MAIN_BSS_02112BC0
-	ldr r0, _0205E620 ; =MAIN_BSS_02111F50
-	ldr r4, _0205E634 ; =MAIN_BSS_021125EC
-	str r1, [r0, #8]
-	mov sl, r5
-	mov sb, #0x174
-	b _0205E600
-_0205E5C8:
-	mla r6, r5, sb, r4
-	ldr r1, [r6, #0x110]
-	add r0, r6, #0x5c
-	bic r1, r1, #1
-	str r1, [r6, #0x110]
-	bl FS_InitFile
-	mov r0, r6
-	bl sub_0205C4B8
-	str r5, [r6, #0x148]
-	strb sl, [r6, #0x124]
-	str sl, [r6, #0x12c]
-	str sl, [r6, #0x130]
-	str sl, [r6, #0x120]
-	add r5, r5, #1
-_0205E600:
-	cmp r5, #4
-	blt _0205E5C8
-	mov r0, r7
-	bl sub_0205E63C
-	ldr r0, _0205E638 ; =MAIN_BSS_02112100
-	mov r1, r8
-	bl sub_0205EE58
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	.align 2, 0
-_0205E620: .word MAIN_BSS_02111F50
-_0205E624: .word MAIN_BSS_02111F5C
-_0205E628: .word MAIN_BSS_02111F80
-_0205E62C: .word MAIN_BSS_02111F68
-_0205E630: .word MAIN_BSS_02112BC0
-_0205E634: .word MAIN_BSS_021125EC
-_0205E638: .word MAIN_BSS_02112100
-
-	arm_func_start sub_0205E63C
-sub_0205E63C: ; 0x0205E63C
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	mov r7, #0
-	ldr sb, _0205E6FC ; =MAIN_BSS_021125EC
-	ldr fp, _0205E700 ; =sub_0205EFE4
-	mov sl, r0
-	mov r6, r7
-	mov r5, r7
-	arm_func_end sub_0205E63C
-_0205E658:
-	mov r0, r7
-	bl sub_0205D28C
-	cmp r0, #0
-	beq _0205E6E4
-	ldrb r2, [r0]
-	mov r1, r6
-	strb r2, [sb, #0x124]
-	ldrb r2, [r0]
-	cmp r2, #0
-	ble _0205E6A0
-_0205E680:
-	add r2, r0, r1
-	ldrb r3, [r2, #1]
-	add r2, sb, r1
-	add r1, r1, #1
-	strb r3, [r2, #0x126]
-	ldrb r2, [r0]
-	cmp r1, r2
-	blt _0205E680
-_0205E6A0:
-	cmp sl, #0
-	beq _0205E6E4
-	ldrb r1, [sb, #0x124]
-	mov r0, sl
-	mov r2, fp
-	mov r8, r1, lsl #0xb
-	mov r1, r8
-	mov r3, sb
-	str r5, [sp]
-	bl sub_0205D5E8
-	movs r4, r0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	mov r0, sb
-	bl sub_0205ED00
-	str r4, [sb, #0x12c]
-	str r8, [sb, #0x130]
-_0205E6E4:
-	add r7, r7, #1
-	cmp r7, #4
-	add sb, sb, #0x174
-	blt _0205E658
-	mov r0, #1
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_0205E6FC: .word MAIN_BSS_021125EC
-_0205E700: .word sub_0205EFE4
-
-	arm_func_start sub_0205E704
-sub_0205E704: ; 0x0205E704
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #0x18
-	mov r4, r3
-	mov r7, r0
-	mov r0, r4
-	mov r6, r1
-	mov r5, r2
-	bl sub_0205D1C4
-	movs r1, r0
-	addeq sp, sp, #0x18
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	cmp r5, #0
-	ldrltb r5, [r1, #5]
-	cmp r6, #0
-	ldrltb r6, [r1, #6]
-	ldr r0, [sp, #0x30]
-	mov ip, #0
-	str r4, [sp]
-	str r0, [sp, #4]
-	str ip, [sp, #8]
-	str ip, [sp, #0xc]
-	str ip, [sp, #0x10]
-	mov r0, r7
-	mov r2, r6
-	mov r3, r5
-	str ip, [sp, #0x14]
-	bl sub_0205EA38
-	add sp, sp, #0x18
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	arm_func_end sub_0205E704
-
-	arm_func_start sub_0205E77C
-sub_0205E77C: ; 0x0205E77C
-	ldr r1, [r0]
-	cmp r1, #0
-	bxeq lr
-	ldr r1, [r0]
-	ldr r0, [r1, #0x110]
-	orr r0, r0, #4
-	str r0, [r1, #0x110]
-	bx lr
-	arm_func_end sub_0205E77C
-
-	arm_func_start sub_0205E79C
-sub_0205E79C: ; 0x0205E79C
-	stmdb sp!, {r3, r4, lr}
-	sub sp, sp, #4
-	ldr ip, [sp, #0x10]
-	mov r4, r0
-	str ip, [sp]
-	bl sub_0205E704
-	cmp r0, #0
-	addeq sp, sp, #4
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, pc}
-	mov r0, r4
-	bl sub_0205E77C
-	mov r0, #1
-	add sp, sp, #4
-	ldmia sp!, {r3, r4, pc}
-	arm_func_end sub_0205E79C
-
-	arm_func_start sub_0205E7D8
-sub_0205E7D8: ; 0x0205E7D8
-	stmdb sp!, {r3, lr}
-	ldr r2, [r0]
-	cmp r2, #0
-	ldmeqia sp!, {r3, pc}
-	ldr r0, [r0]
-	bl sub_0205ECA8
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205E7D8
-
-	arm_func_start sub_0205E7F4
-sub_0205E7F4: ; 0x0205E7F4
-	stmdb sp!, {r3, lr}
-	ldr r3, [r0]
-	cmp r3, #0
-	ldmeqia sp!, {r3, pc}
-	ldr r0, [r0]
-	bl sub_0205C834
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205E7F4
-
-	arm_func_start sub_0205E810
-sub_0205E810: ; 0x0205E810
-	mov r1, #0
-	str r1, [r0]
-	bx lr
-	arm_func_end sub_0205E810
-
-	arm_func_start NNS_SndStrmHandleRelease
-NNS_SndStrmHandleRelease: ; 0x0205E81C
-	ldr r2, [r0]
-	cmp r2, #0
-	movne r1, #0
-	strne r1, [r2, #0x14c]
-	strne r1, [r0]
-	bx lr
-	arm_func_end NNS_SndStrmHandleRelease
-
-	arm_func_start sub_0205E834
-sub_0205E834: ; 0x0205E834
-	stmdb sp!, {r3, lr}
-	ldr r1, [r0]
-	cmp r1, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	ldr lr, [r0]
-	mov r3, #0
-	ldr ip, [lr, #0x160]
-	mov r2, #0x3e8
-	umull r0, r1, ip, r2
-	mla r1, ip, r3, r1
-	mla r1, r3, r2, r1
-	ldrh r2, [lr, #0xc4]
-	bl _ll_udiv
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205E834
-
-	arm_func_start sub_0205E870
-sub_0205E870: ; 0x0205E870
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	ldr r7, _0205E978 ; =MAIN_BSS_021125EC
-	ldr r4, _0205E97C ; =SNDi_DecibelTable
-	mov r5, #0
-	arm_func_end sub_0205E870
-_0205E880:
-	ldr r1, [r7, #0x110]
-	mov r0, r1, lsl #0x1f
-	movs r0, r0, asr #0x1f
-	beq _0205E964
-	ldr r0, [r7, #0x114]
-	cmp r0, #0
-	bne _0205E8A8
-	mov r0, r7
-	bl sub_0205ED00
-	b _0205E964
-_0205E8A8:
-	mov r0, r1, lsl #0x1d
-	movs r0, r0, asr #0x1f
-	ldrne r0, [r7, #0x118]
-	cmpne r0, #0
-	beq _0205E8D4
-	mov r0, r7
-	bl sub_0205C758
-	ldr r0, [r7, #0x110]
-	orr r0, r0, #2
-	bic r0, r0, #4
-	str r0, [r7, #0x110]
-_0205E8D4:
-	ldr r0, [r7, #0x110]
-	mov r0, r0, lsl #0x1e
-	movs r0, r0, asr #0x1f
-	beq _0205E964
-	add r0, r7, #0xe8
-	bl sub_0205FDC0
-	ldr r1, [r7, #0x154]
-	add r0, r7, #0xe8
-	mov r1, r1, lsl #1
-	ldrsh r6, [r4, r1]
-	bl sub_0205FD8C
-	mov r0, r0, asr #8
-	ldr r1, [r7, #0x158]
-	mov r0, r0, lsl #1
-	mov r2, r1, lsl #1
-	ldrsh r1, [r4, r0]
-	ldrsh r2, [r4, r2]
-	ldr r0, [r7, #0x15c]
-	add r1, r1, r6
-	add r6, r2, r1
-	cmp r6, r0
-	beq _0205E93C
-	mov r0, r7
-	mov r1, r6
-	bl sub_0205C7C8
-	str r6, [r7, #0x15c]
-_0205E93C:
-	ldr r0, [r7, #0x110]
-	mov r0, r0, lsl #0x1c
-	movs r0, r0, asr #0x1f
-	beq _0205E964
-	add r0, r7, #0xe8
-	bl sub_0205FDD8
-	cmp r0, #0
-	beq _0205E964
-	mov r0, r7
-	bl sub_0205ED00
-_0205E964:
-	add r5, r5, #1
-	cmp r5, #4
-	add r7, r7, #0x174
-	blt _0205E880
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_0205E978: .word MAIN_BSS_021125EC
-_0205E97C: .word SNDi_DecibelTable
-
-	arm_func_start sub_0205E980
-sub_0205E980: ; 0x0205E980
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r6, r0
-	ldr r3, [r6]
-	mov r7, r1
-	mov r5, r2
-	cmp r3, #0
-	beq _0205E9A0
-	bl NNS_SndStrmHandleRelease
-	arm_func_end sub_0205E980
-_0205E9A0:
-	ldr r1, _0205EA08 ; =MAIN_BSS_021125EC
-	mov r0, #0x174
-	mla r4, r7, r0, r1
-	ldr r0, [r4, #0x12c]
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldr r0, [r4, #0x110]
-	mov r0, r0, lsl #0x1f
-	movs r0, r0, asr #0x1f
-	beq _0205E9E4
-	ldr r0, [r4, #0x150]
-	cmp r5, r0
-	movlt r0, #0
-	ldmltia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r0, r4
-	bl sub_0205ED00
-_0205E9E4:
-	str r5, [r4, #0x150]
-	ldr r1, [r4, #0x110]
-	mov r0, r4
-	bic r1, r1, #1
-	orr r1, r1, #1
-	str r1, [r4, #0x110]
-	str r6, [r4, #0x14c]
-	str r4, [r6]
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_0205EA08: .word MAIN_BSS_021125EC
-
-	arm_func_start sub_0205EA0C
-sub_0205EA0C: ; 0x0205EA0C
-	ldr r2, [r0, #0x14c]
-	cmp r2, #0
-	movne r1, #0
-	strne r1, [r2]
-	strne r1, [r0, #0x14c]
-	ldr r1, [r0, #0x110]
-	bic r2, r1, #1
-	bic r1, r2, #4
-	bic r1, r1, #2
-	str r1, [r0, #0x110]
-	bx lr
-	arm_func_end sub_0205EA0C
-
-	arm_func_start sub_0205EA38
-sub_0205EA38: ; 0x0205EA38
-	stmdb sp!, {r4, r5, r6, lr}
-	sub sp, sp, #0x10
-	mov r6, r1
-	mov r1, r2
-	mov r2, r3
-	bl sub_0205E980
-	movs r4, r0
-	addeq sp, sp, #0x10
-	moveq r0, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	ldr r1, [r6]
-	bl sub_0205FB24
-	ldr r1, [r6]
-	ldr r2, [r4, #0x164]
-	mov r0, r4
-	blx r2
-	cmp r0, #0
-	bne _0205EA94
-	mov r0, r4
-	bl sub_0205EA0C
-	add sp, sp, #0x10
-	mov r0, #0
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end sub_0205EA38
-_0205EA94:
-	ldrh r3, [r4, #0xc4]
-	ldr r0, [sp, #0x24]
-	mov r2, #0x3e8
-	umull r0, r1, r3, r0
-	mov r3, #0
-	bl _ll_udiv
-	str r0, [r4, #0x160]
-	cmp r0, #0
-	beq _0205EAD4
-	ldrb r0, [r4, #0xc0]
-	cmp r0, #2
-	bne _0205EAD4
-	ldr r0, [r4, #0x110]
-	orr r0, r0, #0x10
-	str r0, [r4, #0x110]
-	b _0205EAE0
-_0205EAD4:
-	ldr r0, [r4, #0x110]
-	bic r0, r0, #0x10
-	str r0, [r4, #0x110]
-_0205EAE0:
-	mov r0, #4
-	str r0, [r4, #0x114]
-	ldr r0, [r4, #0x110]
-	mov r2, #0
-	bic r0, r0, #0x20
-	bic r0, r0, #2
-	str r0, [r4, #0x110]
-	str r2, [r4, #0x118]
-	ldr r1, [r4, #0x110]
-	ldr r0, [sp, #0x28]
-	bic r1, r1, #4
-	bic r1, r1, #8
-	str r1, [r4, #0x110]
-	str r2, [r4, #0x11c]
-	str r0, [r4, #0x134]
-	ldr r1, [sp, #0x2c]
-	ldr r0, [sp, #0x30]
-	str r1, [r4, #0x138]
-	str r0, [r4, #0x13c]
-	ldr r1, [sp, #0x34]
-	ldr r0, [sp, #0x20]
-	str r1, [r4, #0x140]
-	str r0, [r4, #0x144]
-	str r2, [r4, #0x15c]
-	ldrb r2, [r6, #4]
-	add r0, r4, #0xe8
-	mov r1, #0x7f
-	str r2, [r4, #0x154]
-	str r1, [r4, #0x158]
-	bl sub_0205FD4C
-	add r0, r4, #0xe8
-	mov r1, #0x7f00
-	mov r2, #1
-	bl sub_0205FD64
-	ldrb r0, [r4, #0xc0]
-	cmp r0, #0
-	beq _0205EB84
-	cmp r0, #1
-	cmpne r0, #2
-	moveq r5, #1
-	b _0205EB88
-_0205EB84:
-	mov r5, #0
-_0205EB88:
-	ldrb r0, [r6, #7]
-	add r2, r4, #0x26
-	ldrb r6, [r4, #0xc2]
-	tst r0, #1
-	ldrb r0, [r4, #0x124]
-	movne r6, #2
-	add r2, r2, #0x100
-	cmp r6, r0
-	movgt r6, r0
-	cmp r6, #1
-	moveq r3, #1
-	ldr r0, [r4, #0x110]
-	movne r3, #0
-	bic r1, r0, #0x40
-	mov r0, r3, lsl #0x1f
-	orr r3, r1, r0, lsr #25
-	mov r0, r4
-	mov r1, r6
-	str r3, [r4, #0x110]
-	bl sub_0205EDFC
-	cmp r0, #0
-	bne _0205EC00
-	ldr r1, [r4, #0x168]
-	mov r0, r4
-	blx r1
-	mov r0, r4
-	bl sub_0205EA0C
-	add sp, sp, #0x10
-	mov r0, #0
-	ldmia sp!, {r4, r5, r6, pc}
-_0205EC00:
-	ldr r2, [r4, #0x130]
-	ldrb r1, [r4, #0x124]
-	mul r0, r2, r6
-	bl _u32_div_f
-	ldrh r3, [r4, #0xc6]
-	mov r2, #4
-	ldr r1, _0205ECA4 ; =sub_0205F080
-	str r3, [sp]
-	str r2, [sp, #4]
-	str r1, [sp, #8]
-	str r4, [sp, #0xc]
-	mov r3, r0
-	ldr r2, [r4, #0x12c]
-	mov r0, r4
-	mov r1, r5
-	bl sub_0205C5B8
-	cmp r0, #0
-	bne _0205EC70
-	mov r0, r4
-	bl sub_0205EE34
-	ldr r1, [r4, #0x168]
-	mov r0, r4
-	blx r1
-	mov r0, r4
-	bl sub_0205EA0C
-	add sp, sp, #0x10
-	mov r0, #0
-	ldmia sp!, {r4, r5, r6, pc}
-_0205EC70:
-	cmp r6, #2
-	bne _0205EC98
-	mov r1, #0
-	mov r0, r4
-	mov r2, r1
-	bl sub_0205C834
-	mov r0, r4
-	mov r1, #1
-	mov r2, #0x7f
-	bl sub_0205C834
-_0205EC98:
-	mov r0, #1
-	add sp, sp, #0x10
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0205ECA4: .word sub_0205F080
-
-	arm_func_start sub_0205ECA8
-sub_0205ECA8: ; 0x0205ECA8
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r3, [r4, #0x110]
-	mov r2, r1
-	mov r1, r3, lsl #0x1e
-	movs r1, r1, asr #0x1f
-	bne _0205ECCC
-	bl sub_0205ED00
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205ECA8
-_0205ECCC:
-	cmp r2, #0
-	bne _0205ECDC
-	bl sub_0205ED00
-	ldmia sp!, {r4, pc}
-_0205ECDC:
-	add r0, r4, #0xe8
-	mov r1, #0
-	bl sub_0205FD64
-	ldr r1, [r4, #0x110]
-	mov r0, #0
-	orr r1, r1, #8
-	str r1, [r4, #0x110]
-	str r0, [r4, #0x150]
-	ldmia sp!, {r4, pc}
-
-	arm_func_start sub_0205ED00
-sub_0205ED00: ; 0x0205ED00
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r0, _0205ED90 ; =MAIN_BSS_021125C8
-	bl OS_LockMutex
-	ldr r0, _0205ED94 ; =MAIN_BSS_02111F50
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	beq _0205ED2C
-	add r0, r0, #0xc8
-	add r0, r0, #0x400
-	bl OS_LockMutex
-	arm_func_end sub_0205ED00
-_0205ED2C:
-	ldr r0, [r4, #0x110]
-	mov r0, r0, lsl #0x1e
-	movs r0, r0, asr #0x1f
-	beq _0205ED44
-	mov r0, r4
-	bl sub_0205C7AC
-_0205ED44:
-	ldr r0, [r4, #0x110]
-	mov r0, r0, lsl #0x1f
-	movs r0, r0, asr #0x1f
-	beq _0205ED60
-	ldr r1, [r4, #0x170]
-	mov r0, r4
-	blx r1
-_0205ED60:
-	mov r0, r4
-	bl sub_0205ED98
-	ldr r0, _0205ED90 ; =MAIN_BSS_021125C8
-	bl OS_UnlockMutex
-	ldr r0, _0205ED94 ; =MAIN_BSS_02111F50
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	ldmeqia sp!, {r4, pc}
-	add r0, r0, #0xc8
-	add r0, r0, #0x400
-	bl OS_UnlockMutex
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205ED90: .word MAIN_BSS_021125C8
-_0205ED94: .word MAIN_BSS_02111F50
-
-	arm_func_start sub_0205ED98
-sub_0205ED98: ; 0x0205ED98
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r1, [r4, #0x110]
-	mov r1, r1, lsl #0x1f
-	movs r1, r1, asr #0x1f
-	ldmeqia sp!, {r4, pc}
-	bl sub_0205EE34
-	ldr r1, [r4, #0x168]
-	mov r0, r4
-	blx r1
-	ldr r0, _0205EDF4 ; =MAIN_BSS_021125E0
-	mov r1, r4
-	bl sub_0205EEB8
-	ldr r0, _0205EDF8 ; =MAIN_BSS_02111F50
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	beq _0205EDE8
-	mov r1, r4
-	add r0, r0, #0x4e0
-	bl sub_0205EEB8
-	arm_func_end sub_0205ED98
-_0205EDE8:
-	mov r0, r4
-	bl sub_0205EA0C
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205EDF4: .word MAIN_BSS_021125E0
-_0205EDF8: .word MAIN_BSS_02111F50
-
-	arm_func_start sub_0205EDFC
-sub_0205EDFC: ; 0x0205EDFC
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r3, [r4, #0x120]
-	cmp r3, #0
-	bne _0205EE20
-	bl sub_0205C530
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r4, pc}
-	arm_func_end sub_0205EDFC
-_0205EE20:
-	ldr r1, [r4, #0x120]
-	mov r0, #1
-	add r1, r1, #1
-	str r1, [r4, #0x120]
-	ldmia sp!, {r4, pc}
-
-	arm_func_start sub_0205EE34
-sub_0205EE34: ; 0x0205EE34
-	stmdb sp!, {r3, lr}
-	ldr r1, [r0, #0x120]
-	cmp r1, #0
-	ldmeqia sp!, {r3, pc}
-	subs r1, r1, #1
-	str r1, [r0, #0x120]
-	ldmneia sp!, {r3, pc}
-	bl sub_0205C590
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0205EE34
-
-	arm_func_start sub_0205EE58
-sub_0205EE58: ; 0x0205EE58
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #8
-	mov r2, #0x400
-	str r2, [sp]
-	mov r4, r0
-	str r1, [sp, #4]
-	ldr r1, _0205EEB4 ; =sub_0205FCBC
-	mov r2, r4
-	add r3, r4, #0x4c0
-	bl OS_CreateThread
-	add r0, r4, #0x4e0
-	mov r1, #0
-	bl NitroSystem_NNS_FndInitList
-	add r0, r4, #0xc8
-	add r0, r0, #0x400
-	bl OS_InitMutex
-	mov r1, #0
-	str r1, [r4, #0x4c4]
-	mov r0, r4
-	str r1, [r4, #0x4c0]
-	bl OS_WakeupThreadDirect
-	add sp, sp, #8
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205EEB4: .word sub_0205FCBC
-	arm_func_end sub_0205EE58
-
-	arm_func_start sub_0205EEB8
-sub_0205EEB8: ; 0x0205EEB8
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	mov r8, r0
-	mov r7, r1
-	bl OS_DisableInterrupts
-	mov r4, r0
-	mov r0, r8
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r5, r0
-	beq _0205EF1C
-	arm_func_end sub_0205EEB8
-_0205EEE0:
-	mov r0, r8
-	mov r1, r5
-	bl NitroSystem_NNS_FndGetNextListObject
-	ldr r1, [r5, #8]
-	mov r6, r0
-	cmp r1, r7
-	bne _0205EF10
-	mov r0, r8
-	mov r1, r5
-	bl NitroSystem_NNS_FndRemoveListObject
-	mov r0, r5
-	bl sub_0205EFB8
-_0205EF10:
-	mov r5, r6
-	cmp r6, #0
-	bne _0205EEE0
-_0205EF1C:
-	mov r0, r4
-	bl OS_RestoreInterrupts
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start sub_0205EF28
-sub_0205EF28: ; 0x0205EF28
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	bl OS_DisableInterrupts
-	mov r4, r0
-	mov r0, r6
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r5, r0
-	beq _0205EF68
-	mov r0, r6
-	mov r1, r5
-	bl NitroSystem_NNS_FndRemoveListObject
-	ldr r1, [r5, #8]
-	ldr r0, [r1, #0x11c]
-	sub r0, r0, #1
-	str r0, [r1, #0x11c]
-	arm_func_end sub_0205EF28
-_0205EF68:
-	mov r0, r4
-	bl OS_RestoreInterrupts
-	mov r0, r5
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start sub_0205EF78
-sub_0205EF78: ; 0x0205EF78
-	stmdb sp!, {r3, r4, r5, lr}
-	bl OS_DisableInterrupts
-	mov r4, r0
-	ldr r0, _0205EFB4 ; =MAIN_BSS_02111F5C
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r5, r0
-	beq _0205EFA4
-	ldr r0, _0205EFB4 ; =MAIN_BSS_02111F5C
-	mov r1, r5
-	bl NitroSystem_NNS_FndRemoveListObject
-	arm_func_end sub_0205EF78
-_0205EFA4:
-	mov r0, r4
-	bl OS_RestoreInterrupts
-	mov r0, r5
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205EFB4: .word MAIN_BSS_02111F5C
-
-	arm_func_start sub_0205EFB8
-sub_0205EFB8: ; 0x0205EFB8
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	bl OS_DisableInterrupts
-	mov r4, r0
-	ldr r0, _0205EFE0 ; =MAIN_BSS_02111F5C
-	mov r1, r5
-	bl NitroSystem_NNS_FndAppendListObject
-	mov r0, r4
-	bl OS_RestoreInterrupts
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205EFE0: .word MAIN_BSS_02111F5C
-	arm_func_end sub_0205EFB8
-
-	arm_func_start sub_0205EFE4
-sub_0205EFE4: ; 0x0205EFE4
-	stmdb sp!, {r4, lr}
-	mov r4, r2
-	ldr r1, [r4, #0x12c]
-	cmp r0, r1
-	ldmneia sp!, {r4, pc}
-	ldr r0, _0205F078 ; =MAIN_BSS_021125C8
-	bl OS_LockMutex
-	ldr r0, _0205F07C ; =MAIN_BSS_02111F50
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	beq _0205F01C
-	add r0, r0, #0xc8
-	add r0, r0, #0x400
-	bl OS_LockMutex
-	arm_func_end sub_0205EFE4
-_0205F01C:
-	mov r0, r4
-	bl sub_0205ED00
-	mov r0, #0
-	str r0, [r4, #0x12c]
-	str r0, [r4, #0x130]
-	strb r0, [r4, #0x124]
-	ldr r0, [r4, #0x120]
-	cmp r0, #0
-	ble _0205F050
-	mov r0, r4
-	bl sub_0205C590
-	mov r0, #0
-	str r0, [r4, #0x120]
-_0205F050:
-	ldr r0, _0205F078 ; =MAIN_BSS_021125C8
-	bl OS_UnlockMutex
-	ldr r0, _0205F07C ; =MAIN_BSS_02111F50
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	ldmeqia sp!, {r4, pc}
-	add r0, r0, #0xc8
-	add r0, r0, #0x400
-	bl OS_UnlockMutex
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205F078: .word MAIN_BSS_021125C8
-_0205F07C: .word MAIN_BSS_02111F50
-
-	arm_func_start sub_0205F080
-sub_0205F080: ; 0x0205F080
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	ldr r5, [sp, #0x2c]
-	mov sl, r0
-	ldr r0, [r5, #0x11c]
-	mov sb, r1
-	mov r8, r2
-	mov fp, r3
-	cmp r0, #2
-	blt _0205F134
-	ldr r0, _0205F1AC ; =MAIN_BSS_021125E0
-	mov r1, #0
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r6, r0
-	beq _0205F0DC
-	ldr r4, _0205F1AC ; =MAIN_BSS_021125E0
-	arm_func_end sub_0205F080
-_0205F0BC:
-	ldr r0, [r6, #8]
-	cmp r0, r5
-	beq _0205F0DC
-	mov r0, r4
-	mov r1, r6
-	bl NitroSystem_NNS_FndGetNextListObject
-	movs r6, r0
-	bne _0205F0BC
-_0205F0DC:
-	ldr r0, [r6, #0x10]
-	mov r7, #0
-	cmp r0, #0
-	ble _0205F114
-	mov r4, r7
-_0205F0F0:
-	add r0, r6, r7, lsl #2
-	ldr r0, [r0, #0x14]
-	ldr r2, [r6, #0x2c]
-	mov r1, r4
-	bl MI_CpuFill8
-	ldr r0, [r6, #0x10]
-	add r7, r7, #1
-	cmp r7, r0
-	blt _0205F0F0
-_0205F114:
-	ldr r0, _0205F1AC ; =MAIN_BSS_021125E0
-	mov r1, r6
-	bl NitroSystem_NNS_FndRemoveListObject
-	ldr r1, [r5, #0x11c]
-	mov r0, r6
-	sub r1, r1, #1
-	str r1, [r5, #0x11c]
-	bl sub_0205EFB8
-_0205F134:
-	bl sub_0205EF78
-	mov r1, r0
-	str r5, [r1, #8]
-	str sl, [r1, #0xc]
-	str sb, [r1, #0x10]
-	cmp sb, #0
-	mov r3, #0
-	ble _0205F16C
-_0205F154:
-	ldr r2, [r8, r3, lsl #2]
-	add r0, r1, r3, lsl #2
-	add r3, r3, #1
-	str r2, [r0, #0x14]
-	cmp r3, sb
-	blt _0205F154
-_0205F16C:
-	str fp, [r1, #0x2c]
-	cmp sl, #0
-	ldr r4, _0205F1B0 ; =MAIN_BSS_02112100
-	bne _0205F18C
-	ldr r0, _0205F1B4 ; =MAIN_BSS_02111F50
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	movne r4, r0
-_0205F18C:
-	ldr r2, [r5, #0x11c]
-	add r0, r4, #0x4e0
-	add r2, r2, #1
-	str r2, [r5, #0x11c]
-	bl NitroSystem_NNS_FndAppendListObject
-	add r0, r4, #0x4c0
-	bl OS_WakeupThread
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_0205F1AC: .word MAIN_BSS_021125E0
-_0205F1B0: .word MAIN_BSS_02112100
-_0205F1B4: .word MAIN_BSS_02111F50
-
-	arm_func_start sub_0205F1B8
-sub_0205F1B8: ; 0x0205F1B8
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #0x10
-	mov r4, r0
-	ldr r1, [r4, #0x148]
-	mov r0, #0
-	str r1, [sp, #8]
-	ldr r2, [r4, #0x144]
-	add r1, sp, #8
-	str r2, [sp, #0xc]
-	ldr r3, [r4, #0x144]
-	add r2, sp, #0
-	str r3, [sp]
-	str r0, [sp, #4]
-	ldr r3, [r4, #0x140]
-	ldr r5, [r4, #0x13c]
-	blx r5
-	cmp r0, #0
-	addeq sp, sp, #0x10
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldr r0, [sp]
-	bl sub_0205D1C4
-	movs r5, r0
-	addeq sp, sp, #0x10
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldr r1, [r4, #0x168]
-	mov r0, r4
-	ldrb r6, [r4, #0xc0]
-	ldrh r7, [r4, #0xc4]
-	blx r1
-	ldr r1, [r5]
-	mov r0, r4
-	bl sub_0205FB24
-	ldr r1, [r5]
-	ldr r2, [r4, #0x164]
-	mov r0, r4
-	blx r2
-	cmp r0, #0
-	addeq sp, sp, #0x10
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldrh r0, [r4, #0xc4]
-	cmp r7, r0
-	addne sp, sp, #0x10
-	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
-	cmp r6, #0
-	bne _0205F27C
-	ldrb r0, [r4, #0xc0]
-	cmp r0, #0
-	addne sp, sp, #0x10
-	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
-	arm_func_end sub_0205F1B8
-_0205F27C:
-	cmp r6, #0
-	beq _0205F294
-	ldrb r0, [r4, #0xc0]
-	cmp r0, #0
-	addeq sp, sp, #0x10
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-_0205F294:
-	ldr r0, [sp]
-	mov r2, #0x3e8
-	str r0, [r4, #0x144]
-	ldrh ip, [r4, #0xc4]
-	ldr r0, [sp, #4]
-	mov r3, #0
-	umull r0, r1, ip, r0
-	bl _ll_udiv
-	str r0, [r4, #0x160]
-	cmp r0, #0
-	beq _0205F2DC
-	ldrb r0, [r4, #0xc0]
-	cmp r0, #2
-	bne _0205F2DC
-	ldr r0, [r4, #0x110]
-	orr r0, r0, #0x10
-	str r0, [r4, #0x110]
-	b _0205F2E8
-_0205F2DC:
-	ldr r0, [r4, #0x110]
-	bic r0, r0, #0x10
-	str r0, [r4, #0x110]
-_0205F2E8:
-	ldr r0, [r4, #0x110]
-	bic r0, r0, #0x20
-	str r0, [r4, #0x110]
-	add sp, sp, #0x10
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start sub_0205F2FC
-sub_0205F2FC: ; 0x0205F2FC
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x40
-	str r0, [sp, #8]
-	ldr r0, [r0, #8]
-	str r0, [sp, #0x3c]
-	ldr r0, [r0, #0x110]
-	mov r0, r0, lsl #0x1a
-	movs r0, r0, asr #0x1f
-	beq _0205F344
-	ldr r0, [sp, #0x3c]
-	ldr r0, [r0, #0x114]
-	cmp r0, #0
-	ble _0205F344
-	ldr r0, [sp, #0x3c]
-	ldr r0, [r0, #0x114]
-	sub r1, r0, #1
-	ldr r0, [sp, #0x3c]
-	str r1, [r0, #0x114]
-	arm_func_end sub_0205F2FC
-_0205F344:
-	ldr r0, [sp, #8]
-	ldr r0, [r0, #0x2c]
-	str r0, [sp, #0x30]
-	mov r0, #0
-	str r0, [sp, #0x34]
-	ldr r0, [sp, #0x30]
-	cmp r0, #0
-	beq _0205FA60
-_0205F364:
-	ldr r0, [sp, #0x3c]
-	ldr r0, [r0, #0x110]
-	mov r0, r0, lsl #0x1a
-	movs r0, r0, asr #0x1f
-	beq _0205F3C8
-	ldr r0, [sp, #8]
-	mov r4, #0
-	ldr r0, [r0, #0x10]
-	cmp r0, #0
-	ble _0205FA60
-	mov r5, r4
-_0205F390:
-	ldr r0, [sp, #8]
-	ldr r2, [sp, #0x30]
-	add r0, r0, r4, lsl #2
-	ldr r3, [r0, #0x14]
-	ldr r0, [sp, #0x34]
-	mov r1, r5
-	add r0, r3, r0
-	bl MI_CpuFill8
-	ldr r0, [sp, #8]
-	add r4, r4, #1
-	ldr r0, [r0, #0x10]
-	cmp r4, r0
-	blt _0205F390
-	b _0205FA60
-_0205F3C8:
-	ldr r0, [sp, #0x3c]
-	ldr r4, [r0, #0xdc]
-	ldr r5, [r0, #0x160]
-	mov r1, r4
-	mov r0, r5
-	bl _u32_div_f
-	ldr r1, [sp, #0x3c]
-	ldr r1, [r1, #0xd4]
-	sub r1, r1, #1
-	cmp r0, r1
-	bhs _0205F408
-	ldr r2, [sp, #0x3c]
-	mov r1, r4
-	ldr r2, [r2, #0xd8]
-	str r2, [sp, #0x2c]
-	b _0205F41C
-_0205F408:
-	ldr r1, [sp, #0x3c]
-	ldr r1, [r1, #0xe0]
-	str r1, [sp, #0x2c]
-	ldr r1, [sp, #0x3c]
-	ldr r1, [r1, #0xe4]
-_0205F41C:
-	mul r4, r0, r4
-	ldr r2, [sp, #0x3c]
-	ldrb r3, [r2, #0xc0]
-	ldr r2, [sp, #0x30]
-	str r2, [sp, #0x20]
-	sub r2, r5, r4
-	str r2, [sp, #0x28]
-	cmp r3, #0
-	ldrne r2, [sp, #0x30]
-	movne r2, r2, lsr #1
-	strne r2, [sp, #0x20]
-	ldr r2, [sp, #0x3c]
-	ldr r3, [r2, #0x110]
-	mov r2, r3, lsl #0x1b
-	movs r2, r2, asr #0x1f
-	beq _0205F480
-	ldr r2, [sp, #0x28]
-	cmp r2, #0
-	strne r2, [sp, #0x20]
-	movne r2, #0
-	strne r2, [sp, #0x28]
-	bne _0205F480
-	ldr r2, [sp, #0x3c]
-	bic r3, r3, #0x10
-	str r3, [r2, #0x110]
-_0205F480:
-	ldr r3, [sp, #0x28]
-	ldr r2, [sp, #0x20]
-	add r2, r3, r2
-	cmp r2, r1
-	mov r2, #0
-	str r2, [sp, #0x38]
-	blo _0205F4E8
-	ldr r2, [sp, #0x3c]
-	ldr r3, [r2, #0xd4]
-	ldr r2, [sp, #0x28]
-	sub r1, r1, r2
-	str r1, [sp, #0x20]
-	sub r1, r3, #1
-	cmp r0, r1
-	blo _0205F4E8
-	ldr r1, [sp, #0x3c]
-	ldrb r1, [r1, #0xc1]
-	cmp r1, #0
-	movne r1, #1
-	strne r1, [sp, #0x38]
-	bne _0205F4E8
-	ldr r1, [sp, #0x3c]
-	ldr r1, [r1, #0x110]
-	orr r2, r1, #0x20
-	ldr r1, [sp, #0x3c]
-	str r2, [r1, #0x110]
-_0205F4E8:
-	ldr r1, [sp, #0x3c]
-	ldr r2, [sp, #0x20]
-	ldrb r3, [r1, #0xc0]
-	ldr r1, [sp, #0x28]
-	str r2, [sp, #0x1c]
-	cmp r3, #0
-	beq _0205F518
-	cmp r3, #1
-	beq _0205F520
-	cmp r3, #2
-	beq _0205F53C
-	b _0205F57C
-_0205F518:
-	str r2, [sp, #0x18]
-	b _0205F57C
-_0205F520:
-	mov r1, r2
-	mov r1, r1, lsl #1
-	str r1, [sp, #0x1c]
-	str r1, [sp, #0x18]
-	ldr r1, [sp, #0x28]
-	mov r1, r1, lsl #1
-	b _0205F57C
-_0205F53C:
-	mov r2, r1
-	ldr r1, [sp, #0x20]
-	add r2, r2, r1
-	ldr r1, [sp, #0x28]
-	add r3, r2, #1
-	ldr r2, [sp, #0x28]
-	mov r1, r1, lsr #1
-	cmp r2, #0
-	rsb r2, r1, r3, lsr #1
-	str r2, [sp, #0x18]
-	addeq r2, r2, #4
-	streq r2, [sp, #0x18]
-	ldr r2, [sp, #0x1c]
-	addne r1, r1, #4
-	mov r2, r2, lsl #1
-	str r2, [sp, #0x1c]
-_0205F57C:
-	ldr r2, [sp, #0x3c]
-	ldr r3, [r2, #0xd8]
-	ldr r2, [sp, #8]
-	mul r3, r0, r3
-	ldr r0, [sp, #0x3c]
-	ldr r2, [r2, #0x10]
-	ldrb r4, [r0, #0xc2]
-	ldr r0, [r0, #0xd0]
-	cmp r2, #0
-	mla r1, r4, r3, r1
-	add r0, r1, r0
-	str r0, [sp, #0x24]
-	mov r0, #0
-	str r0, [sp, #0xc]
-	ble _0205F9BC
-	ldr r0, [sp, #0x3c]
-	mov r8, #0x8000
-	add r5, r0, #0xf8
-	ldr r1, [sp, #0x28]
-	ldr r0, [sp, #0x20]
-	ldr r7, _0205FB10 ; =0x00007FFF
-	add r0, r1, r0
-	str r0, [sp, #0x14]
-	mov r0, r1
-	and r0, r0, #1
-	str r0, [sp, #0x10]
-	ldr r0, [sp, #0x14]
-	ldr fp, _0205FB14 ; =DAT_02084fe8
-	ldr sb, _0205FB18 ; =DAT_02084ff8
-	rsb r8, r8, #0
-	bic r6, r0, #1
-_0205F5F8:
-	ldr r1, [sp, #8]
-	ldr r0, [sp, #0xc]
-	add r0, r1, r0, lsl #2
-	ldr r1, [r0, #0x14]
-	ldr r0, [sp, #0x3c]
-	ldrb r2, [r0, #0xc2]
-	ldr r0, [sp, #0x34]
-	add r1, r1, r0
-	ldr r0, [sp, #0xc]
-	mov r4, r1
-	cmp r0, r2
-	bge _0205F958
-	ldr r0, [sp, #0x3c]
-	ldrb r0, [r0, #0xc0]
-	cmp r0, #2
-	bne _0205F648
-	ldr r0, _0205FB1C ; =MAIN_BSS_02111F68
-	bl OS_LockMutex
-	ldr r0, _0205FB20 ; =MAIN_BSS_02111F50
-	ldr r1, [r0, #8]
-_0205F648:
-	ldr sl, [sp, #0xc]
-	ldr ip, [sp, #0x2c]
-	ldr r3, [sp, #0x24]
-	ldr r0, [sp, #0x3c]
-	mla r3, sl, ip, r3
-	mov sl, r0
-	ldr r2, [sp, #0x18]
-	ldr sl, [sl, #0x16c]
-	blx sl
-	ldr r1, [sp, #0x18]
-	cmp r0, r1
-	beq _0205F6B8
-	ldr r0, [sp, #0x3c]
-	ldr r1, [r0, #0x110]
-	mov r0, #0
-	str r0, [sp, #0x1c]
-	ldr r0, [sp, #0x3c]
-	orr r1, r1, #0x20
-	str r1, [r0, #0x110]
-	ldrb r1, [r0, #0xc0]
-	ldr r0, [sp, #0x1c]
-	str r0, [sp, #0x20]
-	str r0, [sp, #0x38]
-	cmp r1, #2
-	bne _0205F9BC
-	ldr r0, _0205FB1C ; =MAIN_BSS_02111F68
-	bl OS_UnlockMutex
-	b _0205F9BC
-_0205F6B8:
-	ldr r0, [sp, #0x3c]
-	ldrb r0, [r0, #0xc0]
-	cmp r0, #2
-	bne _0205F998
-	ldr r0, [sp, #0x28]
-	cmp r0, #0
-	ldr r0, _0205FB20 ; =MAIN_BSS_02111F50
-	ldr r1, [r0, #8]
-	mov r0, r1
-	bne _0205F6F4
-	add r0, r1, #4
-	ldrh r2, [r1]
-	ldrh r1, [r1, #2]
-	strh r2, [r5]
-	strh r1, [r5, #2]
-_0205F6F4:
-	ldr r1, [sp, #0x10]
-	cmp r1, #0
-	ldr r1, [sp, #0x28]
-	beq _0205F794
-	ldrb sl, [r5, #2]
-	ldrb r2, [r0]
-	ldrsh ip, [r5]
-	mov r3, sl, lsl #1
-	ldrsh lr, [sb, r3]
-	mov r2, r2, asr #4
-	and r2, r2, #0xf
-	mov r3, lr, asr #3
-	tst r2, #4
-	addne r3, r3, lr
-	tst r2, #2
-	addne r3, r3, lr, asr #1
-	tst r2, #1
-	addne r3, r3, lr, asr #2
-	tst r2, #8
-	beq _0205F754
-	sub ip, ip, r3
-	cmp ip, r8
-	movlt ip, r8
-	b _0205F760
-_0205F754:
-	add ip, ip, r3
-	cmp ip, r7
-	movgt ip, r7
-_0205F760:
-	ldrsb r2, [fp, r2]
-	adds sl, sl, r2
-	movmi sl, #0
-	bmi _0205F778
-	cmp sl, #0x58
-	movgt sl, #0x58
-_0205F778:
-	mov r2, ip, lsl #0x10
-	mov r2, r2, asr #0x10
-	strh r2, [r5]
-	strb sl, [r5, #2]
-	strh r2, [r4], #2
-	add r1, r1, #1
-	add r0, r0, #1
-_0205F794:
-	cmp r1, r6
-	bhs _0205F8BC
-_0205F79C:
-	ldrb ip, [r5, #2]
-	ldrb r2, [r0]
-	ldrsh lr, [r5]
-	mov r3, ip, lsl #1
-	ldrsh sl, [sb, r3]
-	and r2, r2, #0xf
-	tst r2, #4
-	mov r3, sl, asr #3
-	addne r3, r3, sl
-	tst r2, #2
-	addne r3, r3, sl, asr #1
-	tst r2, #1
-	addne r3, r3, sl, asr #2
-	tst r2, #8
-	beq _0205F7E8
-	sub lr, lr, r3
-	cmp lr, r8
-	movlt lr, r8
-	b _0205F7F4
-_0205F7E8:
-	add lr, lr, r3
-	cmp lr, r7
-	movgt lr, r7
-_0205F7F4:
-	ldrsb r2, [fp, r2]
-	adds ip, ip, r2
-	movmi ip, #0
-	bmi _0205F80C
-	cmp ip, #0x58
-	movgt ip, #0x58
-_0205F80C:
-	mov r2, lr, lsl #0x10
-	mov r2, r2, asr #0x10
-	strh r2, [r5]
-	strb ip, [r5, #2]
-	strh r2, [r4]
-	ldrb sl, [r5, #2]
-	ldrb r2, [r0]
-	ldrsh ip, [r5]
-	mov r3, sl, lsl #1
-	ldrsh lr, [sb, r3]
-	mov r2, r2, asr #4
-	and r2, r2, #0xf
-	mov r3, lr, asr #3
-	tst r2, #4
-	addne r3, r3, lr
-	tst r2, #2
-	addne r3, r3, lr, asr #1
-	tst r2, #1
-	addne r3, r3, lr, asr #2
-	tst r2, #8
-	beq _0205F870
-	sub ip, ip, r3
-	cmp ip, r8
-	movlt ip, r8
-	b _0205F87C
-_0205F870:
-	add ip, ip, r3
-	cmp ip, r7
-	movgt ip, r7
-_0205F87C:
-	ldrsb r2, [fp, r2]
-	adds sl, sl, r2
-	movmi sl, #0
-	bmi _0205F894
-	cmp sl, #0x58
-	movgt sl, #0x58
-_0205F894:
-	mov r2, ip, lsl #0x10
-	mov r3, r2, asr #0x10
-	strh r3, [r5]
-	strb sl, [r5, #2]
-	add r1, r1, #2
-	strh r3, [r4, #2]
-	add r4, r4, #4
-	cmp r1, r6
-	add r0, r0, #1
-	blo _0205F79C
-_0205F8BC:
-	ldr r2, [sp, #0x14]
-	cmp r1, r2
-	bhs _0205F94C
-	ldrb r2, [r0]
-	ldrb r0, [r5, #2]
-	ldrsh r1, [r5]
-	and r3, r2, #0xf
-	mov r2, r0, lsl #1
-	ldrsh sl, [sb, r2]
-	tst r3, #4
-	mov r2, sl, asr #3
-	addne r2, r2, sl
-	tst r3, #2
-	addne r2, r2, sl, asr #1
-	tst r3, #1
-	addne r2, r2, sl, asr #2
-	tst r3, #8
-	beq _0205F914
-	sub r1, r1, r2
-	cmp r1, r8
-	movlt r1, r8
-	b _0205F920
-_0205F914:
-	add r1, r1, r2
-	cmp r1, r7
-	movgt r1, r7
-_0205F920:
-	ldrsb r2, [fp, r3]
-	adds r0, r0, r2
-	movmi r0, #0
-	bmi _0205F938
-	cmp r0, #0x58
-	movgt r0, #0x58
-_0205F938:
-	mov r1, r1, lsl #0x10
-	mov r1, r1, asr #0x10
-	strh r1, [r5]
-	strb r0, [r5, #2]
-	strh r1, [r4]
-_0205F94C:
-	ldr r0, _0205FB1C ; =MAIN_BSS_02111F68
-	bl OS_UnlockMutex
-	b _0205F998
-_0205F958:
-	ldr r0, [sp, #0x3c]
-	ldr r0, [r0, #0x110]
-	mov r0, r0, lsl #0x19
-	movs r0, r0, asr #0x1f
-	beq _0205F980
-	ldr r2, [sp, #0x1c]
-	mov r0, r1
-	mov r1, #0
-	bl MI_CpuFill8
-	b _0205F998
-_0205F980:
-	ldr r0, [sp, #8]
-	ldr r2, [sp, #0x1c]
-	ldr r3, [r0, #0x14]
-	ldr r0, [sp, #0x34]
-	add r0, r3, r0
-	bl MI_CpuCopy8
-_0205F998:
-	ldr r0, [sp, #0xc]
-	add r5, r5, #4
-	add r0, r0, #1
-	str r0, [sp, #0xc]
-	ldr r0, [sp, #8]
-	ldr r1, [r0, #0x10]
-	ldr r0, [sp, #0xc]
-	cmp r0, r1
-	blt _0205F5F8
-_0205F9BC:
-	ldr r0, [sp, #0x3c]
-	ldr r0, [r0, #0x110]
-	mov r1, r0, lsl #0x1b
-	movs r1, r1, asr #0x1f
-	beq _0205F9E0
-	bic r1, r0, #0x10
-	ldr r0, [sp, #0x3c]
-	str r1, [r0, #0x110]
-	b _0205FA54
-_0205F9E0:
-	ldr r0, [sp, #0x38]
-	cmp r0, #0
-	ldrne r0, [sp, #0x3c]
-	ldrne r1, [r0, #0xc8]
-	bne _0205FA08
-	ldr r0, [sp, #0x3c]
-	ldr r1, [r0, #0x160]
-	ldr r0, [sp, #0x20]
-	add r1, r1, r0
-	ldr r0, [sp, #0x3c]
-_0205FA08:
-	str r1, [r0, #0x160]
-	ldr r0, [sp, #0x3c]
-	ldr r1, [sp, #0x34]
-	ldr r2, [r0, #0x110]
-	ldr r0, [sp, #0x1c]
-	mov r2, r2, lsl #0x1a
-	add r0, r1, r0
-	str r0, [sp, #0x34]
-	ldr r1, [sp, #0x30]
-	ldr r0, [sp, #0x1c]
-	sub r0, r1, r0
-	str r0, [sp, #0x30]
-	movs r0, r2, asr #0x1f
-	ldrne r0, [sp, #0x3c]
-	ldrne r0, [r0, #0x13c]
-	cmpne r0, #0
-	beq _0205FA54
-	ldr r0, [sp, #0x3c]
-	bl sub_0205F1B8
-_0205FA54:
-	ldr r0, [sp, #0x30]
-	cmp r0, #0
-	bne _0205F364
-_0205FA60:
-	ldr r0, [sp, #0x3c]
-	ldr r4, [r0, #0x134]
-	cmp r4, #0
-	beq _0205FAB0
-	ldrb r0, [r0, #0xc0]
-	ldr r3, [sp, #8]
-	cmp r0, #0
-	moveq r0, #0
-	movne r0, #1
-	str r0, [sp]
-	ldr r0, [sp, #0x3c]
-	ldr r1, [r0, #0x138]
-	ldr r0, [sp, #8]
-	str r1, [sp, #4]
-	ldr r1, [sp, #8]
-	add r2, r0, #0x14
-	ldr r0, [r0, #0xc]
-	ldr r1, [r1, #0x10]
-	ldr r3, [r3, #0x2c]
-	blx r4
-_0205FAB0:
-	ldr r0, [sp, #8]
-	mov r4, #0
-	ldr r0, [r0, #0x10]
-	cmp r0, #0
-	ble _0205FAF0
-_0205FAC4:
-	ldr r0, [sp, #8]
-	ldr r1, [sp, #8]
-	add r0, r0, r4, lsl #2
-	ldr r0, [r0, #0x14]
-	ldr r1, [r1, #0x2c]
-	bl DC_FlushRange
-	ldr r0, [sp, #8]
-	add r4, r4, #1
-	ldr r0, [r0, #0x10]
-	cmp r4, r0
-	blt _0205FAC4
-_0205FAF0:
-	ldr r0, [sp, #8]
-	ldr r0, [r0, #0xc]
-	cmp r0, #0
-	ldreq r0, [sp, #0x3c]
-	moveq r1, #1
-	streq r1, [r0, #0x118]
-	add sp, sp, #0x40
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_0205FB10: .word 0x00007FFF
-_0205FB14: .word DAT_02084fe8
-_0205FB18: .word DAT_02084ff8
-_0205FB1C: .word MAIN_BSS_02111F68
-_0205FB20: .word MAIN_BSS_02111F50
-
-	arm_func_start sub_0205FB24
-sub_0205FB24: ; 0x0205FB24
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, r1
-	bl sub_0205D43C
-	cmp r0, #0
-	bne _0205FB60
-	ldr r1, _0205FB84 ; =sub_0205FBA4
-	ldr r0, _0205FB88 ; =sub_0205FC18
-	str r1, [r4, #0x164]
-	str r0, [r4, #0x168]
-	ldr r1, _0205FB8C ; =sub_0205FC28
-	ldr r0, _0205FB90 ; =sub_0205FC60
-	str r1, [r4, #0x16c]
-	str r0, [r4, #0x170]
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205FB24
-_0205FB60:
-	ldr r1, _0205FB94 ; =sub_0205FC70
-	ldr r0, _0205FB98 ; =0x0205FC98
-	str r1, [r4, #0x164]
-	str r0, [r4, #0x168]
-	ldr r1, _0205FB9C ; =sub_0205FC9C
-	ldr r0, _0205FBA0 ; =0x0205FCB8
-	str r1, [r4, #0x16c]
-	str r0, [r4, #0x170]
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205FB84: .word sub_0205FBA4
-_0205FB88: .word sub_0205FC18
-_0205FB8C: .word sub_0205FC28
-_0205FB90: .word sub_0205FC60
-_0205FB94: .word sub_0205FC70
-_0205FB98: .word 0x0205FC98
-_0205FB9C: .word sub_0205FC9C
-_0205FBA0: .word 0x0205FCB8
-
-	arm_func_start sub_0205FBA4
-sub_0205FBA4: ; 0x0205FBA4
-	stmdb sp!, {r3, r4, r5, lr}
-	sub sp, sp, #8
-	mov r5, r0
-	mov r4, r1
-	mov r0, r4
-	add r1, r5, #0xa8
-	mov r2, #0x40
-	mov r3, #0
-	bl sub_0205D3A4
-	cmp r0, #0x40
-	addne sp, sp, #8
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	add r0, sp, #0
-	bl sub_0205D41C
-	add r1, sp, #0
-	add r0, r5, #0x5c
-	ldmia r1, {r1, r2}
-	bl FS_OpenFileFast
-	cmp r0, #0
-	addeq sp, sp, #8
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	mov r0, r4
-	bl sub_0205D354
-	str r0, [r5, #0xa4]
-	mov r0, #1
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0205FBA4
-
-	arm_func_start sub_0205FC18
-sub_0205FC18: ; 0x0205FC18
-	ldr ip, _0205FC24 ; =FS_CloseFile
-	add r0, r0, #0x5c
-	bx ip
-	.align 2, 0
-_0205FC24: .word FS_CloseFile
-	arm_func_end sub_0205FC18
-
-	arm_func_start sub_0205FC28
-sub_0205FC28: ; 0x0205FC28
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	ldr ip, [r6, #0xa4]
-	mov r5, r1
-	mov r4, r2
-	add r0, r6, #0x5c
-	add r1, ip, r3
-	mov r2, #0
-	bl FS_SeekFile
-	mov r1, r5
-	mov r2, r4
-	add r0, r6, #0x5c
-	bl FS_ReadFile
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end sub_0205FC28
-
-	arm_func_start sub_0205FC60
-sub_0205FC60: ; 0x0205FC60
-	ldr ip, _0205FC6C ; =FS_CancelFile
-	add r0, r0, #0x5c
-	bx ip
-	.align 2, 0
-_0205FC6C: .word FS_CancelFile
-	arm_func_end sub_0205FC60
-
-	arm_func_start sub_0205FC70
-sub_0205FC70: ; 0x0205FC70
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, r1
-	bl sub_0205D43C
-	add r1, r4, #0xa8
-	mov r2, #0x40
-	str r0, [r4, #0xa4]
-	bl MI_CpuCopy8
-	mov r0, #1
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205FC70
-_0205FC98:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
-
-	arm_func_start sub_0205FC9C
-sub_0205FC9C: ; 0x0205FC9C
-	stmdb sp!, {r4, lr}
-	ldr r0, [r0, #0xa4]
-	mov r4, r2
-	add r0, r0, r3
-	bl MI_CpuCopy8
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205FC9C
-_0205FCB8:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
-
-	arm_func_start sub_0205FCBC
-sub_0205FCBC: ; 0x0205FCBC
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	add r4, r6, #0xc8
-	arm_func_end sub_0205FCBC
-_0205FCC8:
-	add r0, r6, #0x4c0
-	bl OS_SleepThread
-_0205FCD0:
-	add r0, r4, #0x400
-	bl OS_LockMutex
-	add r0, r6, #0x4e0
-	bl sub_0205EF28
-	movs r5, r0
-	bne _0205FCF4
-	add r0, r4, #0x400
-	bl OS_UnlockMutex
-	b _0205FCC8
-_0205FCF4:
-	bl sub_0205F2FC
-	mov r0, r5
-	bl sub_0205EFB8
-	add r0, r4, #0x400
-	bl OS_UnlockMutex
-	b _0205FCD0
-
-	arm_func_start sub_0205FD0C
-sub_0205FD0C: ; 0x0205FD0C
-	cmp r1, #0
-	movlt r0, #0
-	bxlt lr
-	ldr r2, [r0, #0x1c]
-	cmp r1, r2
-	movhs r0, #0
-	bxhs lr
-	mov r2, #0xc
-	mul r3, r1, r2
-	add ip, r0, #0x20
-	ldr r1, [ip, r3]
-	sub r0, r2, #0xd
-	cmp r1, r0
-	add r0, ip, r3
-	moveq r0, #0
-	bx lr
-	arm_func_end sub_0205FD0C
-
-	arm_func_start sub_0205FD4C
-sub_0205FD4C: ; 0x0205FD4C
-	mov r1, #0
-	str r1, [r0, #4]
-	str r1, [r0]
-	str r1, [r0, #0xc]
-	str r1, [r0, #8]
-	bx lr
-	arm_func_end sub_0205FD4C
-
-	arm_func_start sub_0205FD64
-sub_0205FD64: ; 0x0205FD64
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl sub_0205FD8C
-	stmia r6, {r0, r5}
-	str r4, [r6, #0xc]
-	mov r0, #0
-	str r0, [r6, #8]
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end sub_0205FD64
-
-	arm_func_start sub_0205FD8C
-sub_0205FD8C: ; 0x0205FD8C
-	stmdb sp!, {r4, lr}
-	ldr r1, [r0, #0xc]
-	ldr r2, [r0, #8]
-	cmp r2, r1
-	ldrge r0, [r0, #4]
-	ldmgeia sp!, {r4, pc}
-	ldr r4, [r0]
-	ldr r0, [r0, #4]
-	sub r0, r0, r4
-	mul r0, r2, r0
-	bl _s32_div_f
-	add r0, r4, r0
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_0205FD8C
-
-	arm_func_start sub_0205FDC0
-sub_0205FDC0: ; 0x0205FDC0
-	ldr r2, [r0, #8]
-	ldr r1, [r0, #0xc]
-	cmp r2, r1
-	addlt r1, r2, #1
-	strlt r1, [r0, #8]
-	bx lr
-	arm_func_end sub_0205FDC0
-
-	arm_func_start sub_0205FDD8
-sub_0205FDD8: ; 0x0205FDD8
-	ldr r1, [r0, #8]
-	ldr r0, [r0, #0xc]
-	cmp r1, r0
-	movge r0, #1
-	movlt r0, #0
-	bx lr
-	arm_func_end sub_0205FDD8
-
     .section .init, 4
 
 	arm_func_start sub_02084038
@@ -116945,28 +111634,6 @@ DAT_02084fc8: ; 0x02084FC8
 	.byte 0x08, 0x00, 0x00, 0x04, 0x0A, 0x00, 0x00, 0x04
 	.byte 0x0C, 0x00, 0x00, 0x04, 0x0E, 0x00, 0x00, 0x04, 0x08, 0x10, 0x00, 0x04, 0x0A, 0x10, 0x00, 0x04
 	.byte 0x0C, 0x10, 0x00, 0x04, 0x0E, 0x10, 0x00, 0x04
-
-	.global DAT_02084fe8
-DAT_02084fe8: ; 0x02084FE8
-	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0x02, 0x04, 0x06, 0x08
-	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0x02, 0x04, 0x06, 0x08
-
-	.global DAT_02084ff8
-DAT_02084ff8: ; 0x02084FF8
-	.byte 0x07, 0x00, 0x08, 0x00, 0x09, 0x00, 0x0A, 0x00
-	.byte 0x0B, 0x00, 0x0C, 0x00, 0x0D, 0x00, 0x0E, 0x00, 0x10, 0x00, 0x11, 0x00, 0x13, 0x00, 0x15, 0x00
-	.byte 0x17, 0x00, 0x19, 0x00, 0x1C, 0x00, 0x1F, 0x00, 0x22, 0x00, 0x25, 0x00, 0x29, 0x00, 0x2D, 0x00
-	.byte 0x32, 0x00, 0x37, 0x00, 0x3C, 0x00, 0x42, 0x00, 0x49, 0x00, 0x50, 0x00, 0x58, 0x00, 0x61, 0x00
-	.byte 0x6B, 0x00, 0x76, 0x00, 0x82, 0x00, 0x8F, 0x00, 0x9D, 0x00, 0xAD, 0x00, 0xBE, 0x00, 0xD1, 0x00
-	.byte 0xE6, 0x00, 0xFD, 0x00, 0x17, 0x01, 0x33, 0x01, 0x51, 0x01, 0x73, 0x01, 0x98, 0x01, 0xC1, 0x01
-	.word 0x022001EE
-	.word 0x02920256
-	.byte 0xD4, 0x02, 0x1C, 0x03, 0x6C, 0x03, 0xC3, 0x03
-	.byte 0x24, 0x04, 0x8E, 0x04, 0x02, 0x05, 0x83, 0x05, 0x10, 0x06, 0xAB, 0x06, 0x56, 0x07, 0x12, 0x08
-	.byte 0xE0, 0x08, 0xC3, 0x09, 0xBD, 0x0A, 0xD0, 0x0B, 0xFF, 0x0C, 0x4C, 0x0E, 0xBA, 0x0F, 0x4C, 0x11
-	.byte 0x07, 0x13, 0xEE, 0x14, 0x06, 0x17, 0x54, 0x19, 0xDC, 0x1B, 0xA5, 0x1E, 0xB6, 0x21, 0x15, 0x25
-	.byte 0xCA, 0x28, 0xDF, 0x2C, 0x5B, 0x31, 0x4B, 0x36, 0xB9, 0x3B, 0xB2, 0x41, 0x44, 0x48, 0x7E, 0x4F
-	.byte 0x71, 0x57, 0x2F, 0x60, 0xCE, 0x69, 0x62, 0x74, 0xFF, 0x7F, 0x00, 0x00
 
     .section .sinit,4
 
@@ -124109,115 +118776,3 @@ MAIN_BSS_0210EB44: ; 0x0210EB44
     .global MAIN_BSS_0210EB50
 MAIN_BSS_0210EB50: ; 0x0210EB50
     .space 0x10
-
-    .global MAIN_BSS_0210EB60
-MAIN_BSS_0210EB60: ; 0x0210EB60
-    .space 0x10
-
-    .global MAIN_BSS_0210EB70
-MAIN_BSS_0210EB70: ; 0x0210EB70
-    .space 0xC
-
-    .global MAIN_BSS_0210EB7C
-MAIN_BSS_0210EB7C: ; 0x0210EB7C
-    .space 0x23E4
-
-    .global MAIN_BSS_02110F60
-MAIN_BSS_02110F60: ; 0x02110F60
-    .space 0xC
-
-    .global MAIN_BSS_02110F6C
-MAIN_BSS_02110F6C: ; 0x02110F6C
-    .space 0xC
-
-    .global MAIN_BSS_02110F78
-MAIN_BSS_02110F78: ; 0x02110F78
-    .space 0xC
-
-    .global MAIN_BSS_02110F84
-MAIN_BSS_02110F84: ; 0x02110F84
-    .space 0x440
-
-    .global MAIN_BSS_021113C4
-MAIN_BSS_021113C4: ; 0x021113C4
-    .space 0x18
-
-    .global MAIN_BSS_021113DC
-MAIN_BSS_021113DC: ; 0x021113DC
-    .space 0x4
-
-    .global MAIN_BSS_021113E0
-MAIN_BSS_021113E0: ; 0x021113E0
-    .space 0x464
-
-    .global MAIN_BSS_02111844
-MAIN_BSS_02111844: ; 0x02111844
-    .space 0x4
-
-    .global MAIN_BSS_02111848
-MAIN_BSS_02111848: ; 0x02111848
-    .space 0xC
-
-    .global MAIN_BSS_02111854
-MAIN_BSS_02111854: ; 0x02111854
-    .space 0x40
-
-    .global MAIN_BSS_02111894
-MAIN_BSS_02111894: ; 0x02111894
-    .space 0x80
-
-    .global MAIN_BSS_02111914
-MAIN_BSS_02111914: ; 0x02111914
-    .space 0x8
-
-    .global MAIN_BSS_0211191C
-MAIN_BSS_0211191C: ; 0x0211191C
-    .space 0x40
-
-    .global MAIN_BSS_0211195C
-MAIN_BSS_0211195C: ; 0x0211195C
-    .space 0x5B4
-
-    .global MAIN_BSS_02111F10
-MAIN_BSS_02111F10: ; 0x02111F10
-    .space 0x4
-
-    .global MAIN_BSS_02111F14
-MAIN_BSS_02111F14: ; 0x02111F14
-    .space 0x3C
-
-    .global MAIN_BSS_02111F50
-MAIN_BSS_02111F50: ; 0x02111F50
-    .space 0xC
-
-    .global MAIN_BSS_02111F5C
-MAIN_BSS_02111F5C: ; 0x02111F5C
-    .space 0xC
-
-    .global MAIN_BSS_02111F68
-MAIN_BSS_02111F68: ; 0x02111F68
-    .space 0x18
-
-    .global MAIN_BSS_02111F80
-MAIN_BSS_02111F80: ; 0x02111F80
-    .space 0x180
-
-    .global MAIN_BSS_02112100
-MAIN_BSS_02112100: ; 0x02112100
-    .space 0x4C8
-
-    .global MAIN_BSS_021125C8
-MAIN_BSS_021125C8: ; 0x021125C8
-    .space 0x18
-
-    .global MAIN_BSS_021125E0
-MAIN_BSS_021125E0: ; 0x021125E0
-    .space 0xC
-
-    .global MAIN_BSS_021125EC
-MAIN_BSS_021125EC: ; 0x021125EC
-    .space 0x5D4
-
-    .global MAIN_BSS_02112BC0
-MAIN_BSS_02112BC0: ; 0x02112BC0
-    .space 0x200
