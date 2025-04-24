@@ -26,8 +26,8 @@
 .public sub_0200F64C
 .public sub_0200F71C
 .public sub_02034C44
-.public NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
-.public NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
+.public NNS_GfdResetLnkTexVramState
+.public NNS_GfdResetLnkPlttVramState
 .public NNS_G2dBGSetupEx
 .public GX_DispOn
 .public GX_SetGraphicsMode

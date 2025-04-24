@@ -1,0 +1,65 @@
+diff --git a/libraries/gfd/src/VramManager/gfdi_LinkedListVramMan_Common.c b/libraries/gfd/src/VramManager/gfdi_LinkedListVramMan_Common.c
+index d43d064..6ef2700 100644
+--- a/libraries/gfd/src/VramManager/gfdi_LinkedListVramMan_Common.c
++++ b/libraries/gfd/src/VramManager/gfdi_LinkedListVramMan_Common.c
+@@ -249,26 +249,43 @@ BOOL NNSi_GfdFreeLnkVram (NNSiGfdLnkVramMan * pMan, NNSiGfdLnkVramBlock ** ppBlo
+     NNS_GFD_NULL_ASSERT(pMan);
+     NNS_GFD_NON_ZERO_ASSERT(szByte);
+ 
+-    {
+-        {
+-            NNSiGfdLnkMemRegion region;
++    NNSiGfdLnkMemRegion region;
+ 
+-            region.start = addr;
+-            region.end = addr + szByte;
++    region.start = addr;
++    region.end = addr + szByte;
+ 
+-            NNS_GFD_NULL_ASSERT(pMan);
+-            NNS_GFD_NULL_ASSERT(ppBlockPoolList);
+-            {
+-                NNSiGfdLnkVramBlock * pNewFreeBlk = GetNewBlock_(ppBlockPoolList);
+-                if ( pNewFreeBlk == NULL ) {
+-                    return FALSE;
+-                } else {
+-                    InitBlockFromRegion_(pNewFreeBlk, &region);
+-                    InsertBlock_(&pMan->pFreeList, pNewFreeBlk);
+-                }
++    NNSiGfdLnkMemRegion * pRegion = &region;
++    NNSiGfdLnkMemRegion regionCpy = *pRegion;
+ 
+-                return TRUE;
+-            }
++    NNSiGfdLnkVramBlock * pNext = NULL;
++    NNSiGfdLnkVramBlock * pCursor = pMan->pFreeList;
++
++    while ( pCursor ) {
++        pNext = pCursor->pBlkNext;
++
++        if ( pCursor->addr == pRegion->end ) {
++            regionCpy.end = GetBlockEndAddr_(pCursor);
++            RemoveBlock_(&pMan->pFreeList, pCursor);
++            InsertBlock_(ppBlockPoolList, pCursor);
++        }
++
++        if ( GetBlockEndAddr_(pCursor) == pRegion->start ) {
++            regionCpy.start = pCursor->addr;
++            RemoveBlock_(&pMan->pFreeList, pCursor);
++            InsertBlock_(ppBlockPoolList, pCursor);
+         }
++
++        pCursor = pNext;
+     }
++
++    NNSiGfdLnkVramBlock * pNewFreeBlk = GetNewBlock_(ppBlockPoolList);
++
++    if ( pNewFreeBlk == NULL ) {
++        return FALSE;
++    } else {
++        InitBlockFromRegion_(pNewFreeBlk, &regionCpy);
++        InsertBlock_(&pMan->pFreeList, pNewFreeBlk);
++    }
++
++    return TRUE;
+ }

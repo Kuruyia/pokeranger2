@@ -1999,7 +1999,7 @@ _020026D8:
 	ldr r2, [sl, #0x14]
 	ldr r3, [sl, #0x10]
 	mov r1, fp
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	ldr sl, [r8, #0xb8]
 	mov r0, r5
 	mov r1, r4
@@ -2008,7 +2008,7 @@ _020026D8:
 	ldr r1, [sp, #0x10]
 	ldr r3, [sl, #8]
 	add r2, sl, #0xc
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	mov r0, r5
 	mov r1, r4
 	mov r2, #2
@@ -2017,8 +2017,8 @@ _020026D8:
 	ldr r1, [sp, #0x58]
 	ldr r2, [r2, #0xc]
 	mov r3, #0xc0
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdDoVramTransfer
+	bl NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdDoVramTransfer
 	cmp sb, #0
 	beq _02002760
 	mov r0, sb
@@ -5134,7 +5134,7 @@ sub_020050C8: ; 0x020050C8
 	mov r1, #0
 	mov r2, r1
 	mov r0, #0x20
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	ldr r1, _02005114 ; =MAIN_BSS_020AF320
 	str r0, [r1]
 	ldr r0, _02005118 ; =MAIN_BSS_020AF324
@@ -5162,7 +5162,7 @@ sub_02005120: ; 0x02005120
 	ldr r0, [r0]
 	cmp r0, #0
 	beq _02005144
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
+	bl NNS_GfdFreeLnkPlttVram
 	ldr r0, _0200514C ; =MAIN_BSS_020AF320
 	mov r1, #0
 	str r1, [r0]
@@ -10561,14 +10561,14 @@ _020097BC:
 	ldr r2, [r2, #0xc]
 	mov r3, #0x20
 	add r2, r2, r4, lsl #5
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	add r0, r4, #1
 	mov r0, r0, lsl #8
 	add r2, r0, #0x6000000
 	mov r0, #5
 	mov r1, #0
 	mov r3, #0x100
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	ldmia sp!, {r4, pc}
 
 	arm_func_start sub_020097FC
@@ -10994,7 +10994,7 @@ _02009DE8:
 	mov r0, #9
 	mov r1, #0
 	mov r3, #0x180
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	b _02009E58
 _02009E04:
 	cmp r6, #0
@@ -11004,13 +11004,13 @@ _02009E04:
 	mov r0, #9
 	mov r1, #0x500
 	mov r3, #0xc0
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	bl G2_GetBG1ScrPtr
 	add r2, r0, #0x740
 	mov r0, #9
 	mov r1, #0x5c0
 	mov r3, #0x40
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	b _02009E58
 _02009E40:
 	bl G2_GetBG1ScrPtr
@@ -11018,7 +11018,7 @@ _02009E40:
 	mov r0, #9
 	mov r1, #0x480
 	mov r3, #0x180
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 _02009E58:
 	mov r0, #0x4000000
 	ldr r2, [r0]
@@ -17468,14 +17468,14 @@ sub_0200F3EC: ; 0x0200F3EC
 	sub r1, r0, #0x6400000
 	mov r3, r5
 	mov r0, #0x13
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	b _0200F438
 	arm_func_end sub_0200F3EC
 _0200F428:
 	sub r1, r0, #0x6600000
 	mov r3, r5
 	mov r0, #0x23
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 _0200F438:
 	mov r0, r5, asr #4
 	add r0, r5, r0, lsr #27
@@ -17493,7 +17493,7 @@ _0200F438:
 	add r1, r1, r0
 	mov r3, r5
 	mov r0, #0xe
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	b _0200F498
 _0200F480:
 	ldr r0, _0200F4A4 ; =0xFAFFFA00
@@ -17501,7 +17501,7 @@ _0200F480:
 	add r1, r1, r0
 	mov r3, r5
 	mov r0, #0x1e
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 _0200F498:
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
@@ -18094,9 +18094,9 @@ _0200FBB4:
 	add r0, r0, #0xc00
 	mov r1, #0x80
 	str r3, [r2, #0x4a8]
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdInitVramTransferManager
+	bl NNS_GfdInitVramTransferManager
 	mov r0, #0x20
-	bl NitroSystem_gfd_VramManager_NNS_GfdGetLnkTexVramManagerWorkSize
+	bl NNS_GfdGetLnkTexVramManagerWorkSize
 	mov r5, r0
 	bl Heap_AllocSecondary
 	str r0, [r4, #0xc2c]
@@ -18106,9 +18106,9 @@ _0200FBB4:
 	mov r3, r5
 	mov r0, #0x80000
 	mov r1, #0
-	bl NitroSystem_gfd_VramManager_NNS_GfdInitLnkTexVramManager
+	bl NNS_GfdInitLnkTexVramManager
 	mov r0, #0x20
-	bl NitroSystem_gfd_VramManager_NNS_GfdGetLnkPlttVramManagerWorkSize
+	bl NNS_GfdGetLnkPlttVramManagerWorkSize
 	mov r5, r0
 	bl Heap_AllocSecondary
 	str r0, [r4, #0xc30]
@@ -18116,7 +18116,7 @@ _0200FBB4:
 	mov r2, r5
 	mov r0, #0x4000
 	mov r3, #1
-	bl NitroSystem_gfd_VramManager_NNS_GfdInitLnkPlttVramManager
+	bl NNS_GfdInitLnkPlttVramManager
 	mov r1, #0
 	mov r2, #0x200
 _0200FC40:
@@ -18429,7 +18429,7 @@ _02010080:
 	add r4, r4, #1
 	cmp r4, #0x20
 	blt _02010058
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdDoVramTransfer
+	bl NNS_GfdDoVramTransfer
 	mov r0, r5
 	bl sub_020102E8
 _02010098:
@@ -18555,21 +18555,21 @@ sub_020101F4: ; 0x020101F4
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl NitroSystem_gfd_VramManager_NNS_GfdGetLnkTexVramManagerWorkSize
+	bl NNS_GfdGetLnkTexVramManagerWorkSize
 	mov r1, #1
 	str r1, [sp]
 	mov r3, r0
 	ldr r2, [r7, #0xc2c]
 	mov r0, r6
 	mov r1, r5
-	bl NitroSystem_gfd_VramManager_NNS_GfdInitLnkTexVramManager
+	bl NNS_GfdInitLnkTexVramManager
 	mov r0, #0x20
-	bl NitroSystem_gfd_VramManager_NNS_GfdGetLnkPlttVramManagerWorkSize
+	bl NNS_GfdGetLnkPlttVramManagerWorkSize
 	ldr r1, [r7, #0xc30]
 	mov r2, r0
 	mov r0, r4
 	mov r3, #1
-	bl NitroSystem_gfd_VramManager_NNS_GfdInitLnkPlttVramManager
+	bl NNS_GfdInitLnkPlttVramManager
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	arm_func_end sub_020101F4
 
@@ -18628,7 +18628,7 @@ sub_020102E8: ; 0x020102E8
 	add r0, r4, #0x34
 	add r0, r0, #0xc00
 	mov r1, #0x80
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdInitVramTransferManager
+	bl NNS_GfdInitVramTransferManager
 	mov r2, #0
 	mov r1, r2
 	arm_func_end sub_020102E8
@@ -23661,7 +23661,7 @@ _02014238:
 	ldr r0, [r0, #0x38]
 	mov r1, r4
 	mov r2, r4
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	str r0, [r6, r5, lsl #2]
 	ldr r1, [r7, #0x10]
 	mov r0, r0
@@ -29266,7 +29266,7 @@ _02018BF4:
 	mov r1, #0
 	ldr r0, [r0, #0x38]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	mov r1, r0
 	str r0, [r4, #0xc]
 	mov r1, r1, lsl #0x10
@@ -29289,7 +29289,7 @@ _02018C48:
 	mov r1, #0
 	ldr r0, [r0, #8]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	mov r1, r0
 	str r0, [r4, #0x10]
 	mov r1, r1, lsl #0x10
@@ -29375,9 +29375,9 @@ _02018D78:
 	str r0, [r5, #8]
 _02018D80:
 	ldr r0, [r5, #0xc]
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	ldr r0, [r5, #0x10]
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
+	bl NNS_GfdFreeLnkPlttVram
 	ldmia sp!, {r3, r4, r5, pc}
 
 	arm_func_start sub_02018D94
@@ -31633,7 +31633,7 @@ _0201AB9C:
 	mov r1, #0
 	ldr r0, [r0, #0x38]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	mov r1, r0
 	str r0, [r5, #0x10]
 	mov r1, r1, lsl #0x10
@@ -31656,7 +31656,7 @@ _0201ABF0:
 	mov r1, #0
 	ldr r0, [r0, #8]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	mov r1, r0
 	str r0, [r5, #0x14]
 	mov r1, r1, lsl #0x10
@@ -31755,9 +31755,9 @@ _0201AD44:
 	str r0, [r4]
 _0201AD4C:
 	ldr r0, [r4, #0x10]
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	ldr r0, [r4, #0x14]
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
+	bl NNS_GfdFreeLnkPlttVram
 	ldmia sp!, {r3, r4, r5, pc}
 
 	arm_func_start sub_0201AD60
@@ -48824,7 +48824,7 @@ sub_02029424: ; 0x02029424
 	mov r1, #0
 	ldr r0, [r0, #0x38]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	str r0, [r5, #0xc]
 	cmp r4, #0
 	ldr r1, [r5, #0xc]
@@ -48848,7 +48848,7 @@ sub_02029484: ; 0x02029484
 	ldr r0, [r4, #0xc]
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	mov r0, #0
 	str r0, [r4, #0xc]
 	ldmia sp!, {r4, pc}
@@ -48958,7 +48958,7 @@ sub_020295B0: ; 0x020295B0
 	mov r1, #0
 	ldr r0, [r0, #8]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	str r0, [r5, #0x28]
 	cmp r4, #0
 	ldr r1, [r5, #0x28]
@@ -49017,7 +49017,7 @@ _02029690:
 	ldr r0, [r4, #0x28]
 	cmp r0, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
+	bl NNS_GfdFreeLnkPlttVram
 	mov r0, #0
 	str r0, [r4, #0x28]
 	strb r0, [r4, #0x24]
@@ -65535,13 +65535,13 @@ _02036208:
 	ldr r0, [r4, #0x50]
 	mov r2, r1
 	add r6, r3, #8
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	mov r1, #0
 	mov r6, r6, lsl #1
 	str r0, [r7]
 	mov r0, r6
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	str r0, [r7, #4]
 	ldr r0, [r7]
 	mov r0, r0, lsl #0x10
@@ -65632,7 +65632,7 @@ _0203636C:
 	mov r1, #0
 	ldr r0, [r2, #0x50]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	mov r1, r5, lsr #1
 	add r2, r1, #7
 	mov r1, #0
@@ -65640,7 +65640,7 @@ _0203636C:
 	str r0, [r4]
 	mov r2, r1
 	mov r0, r3, lsl #1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	str r0, [r4, #4]
 	ldr r0, [r4]
 	mov r0, r0, lsl #0x10
@@ -65665,13 +65665,13 @@ _0203636C:
 	mov r0, #1
 	add r3, r3, #3
 	bic r3, r3, #3
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	ldr r3, [r4, #0x14]
 	ldr r1, [r4, #8]
 	ldr r2, [r3, #0x4c]
 	ldr r3, [r3, #0x50]
 	mov r0, #0
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	mov r0, #1
 	add sp, sp, #0xc
 	ldmia sp!, {r3, r4, r5, r6, pc}
@@ -65713,7 +65713,7 @@ sub_02036488: ; 0x02036488
 	ldr r0, [r4]
 	cmp r0, #0
 	beq _020364A8
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	mov r0, #0
 	str r0, [r4]
 	arm_func_end sub_02036488
@@ -65721,7 +65721,7 @@ _020364A8:
 	ldr r0, [r4, #4]
 	cmp r0, #0
 	beq _020364C0
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
+	bl NNS_GfdFreeLnkPlttVram
 	mov r0, #0
 	str r0, [r4, #4]
 _020364C0:
@@ -74577,13 +74577,13 @@ _0203DE6C:
 	mov r1, #0
 	mov r0, r5
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	ldr r2, [sp, #8]
 	mov r1, #0
 	str r0, [r2, #0x188]
 	mov r0, r5
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	ldr r1, [sp, #8]
 	str r0, [r1, #0x18c]
 	b _0203DEB4
@@ -74871,13 +74871,13 @@ _0203E2AC:
 	mov r1, #0
 	mov r0, r5
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	ldr r2, [sp, #0x10]
 	mov r1, #0
 	str r0, [r2, #0x188]
 	mov r0, r5
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	ldr r1, [sp, #0x10]
 	str r0, [r1, #0x18c]
 	b _0203E304
@@ -75056,9 +75056,9 @@ sub_0203E55C: ; 0x0203E55C
 	cmp r0, #0
 	beq _0203E58C
 	ldr r0, [r4, #0x188]
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	ldr r0, [r4, #0x18c]
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	arm_func_end sub_0203E55C
 _0203E58C:
 	ldr r0, [r4, #0x1fc]
@@ -75396,7 +75396,7 @@ sub_0203E934: ; 0x0203E934
 	mov r1, r1, lsl #0x10
 	mov r1, r1, lsr #0xd
 	ldr r3, [r7, #0x10]
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	cmp r0, #0
 	beq _0203EAC4
 	strb r5, [sb, #0x200]
@@ -75411,7 +75411,7 @@ sub_0203E934: ; 0x0203E934
 	ldrb r1, [sb, #0xc0]
 	strb r1, [sb, #0x1c9]
 	strh r4, [r0, #0xca]
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdGetVramTransferTaskTotalSize
+	bl NNS_GfdGetVramTransferTaskTotalSize
 	b _0203EAC4
 	arm_func_end sub_0203E934
 _0203EA80:
@@ -77691,7 +77691,7 @@ _020408C8:
 	bl sub_02014310
 	mov r1, #0
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	mov r1, r0
 	mov r1, r1, lsl #0x10
 	str r0, [sb, #0x2c]
@@ -77705,7 +77705,7 @@ _02040924:
 	bl sub_02014364
 	mov r1, #0
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	str r0, [sb, #0x30]
 	cmp r4, #0
 	beq _02040964
@@ -78000,11 +78000,11 @@ sub_02040D44: ; 0x02040D44
 	cmp r0, #0
 	bne _02040D78
 	ldr r0, [r4, #0x2c]
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	arm_func_end sub_02040D44
 _02040D78:
 	ldr r0, [r4, #0x30]
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
+	bl NNS_GfdFreeLnkPlttVram
 	mov r0, r4
 	bl sub_02014034
 	mvn r0, #0
@@ -78030,13 +78030,13 @@ sub_02040DB8: ; 0x02040DB8
 	ldr r0, [r4, #0x2c]
 	cmp r0, #0
 	beq _02040DDC
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	arm_func_end sub_02040DB8
 _02040DDC:
 	ldr r0, [r4, #0x30]
 	cmp r0, #0
 	beq _02040DEC
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
+	bl NNS_GfdFreeLnkPlttVram
 _02040DEC:
 	mov r0, r4
 	bl sub_02014034
@@ -78070,7 +78070,7 @@ sub_02040E2C: ; 0x02040E2C
 	bl sub_02014310
 	mov r1, #0
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	str r0, [r4, #0x2c]
 	arm_func_end sub_02040E2C
 _02040E64:
@@ -78078,7 +78078,7 @@ _02040E64:
 	bl sub_02014364
 	mov r1, #0
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	str r0, [r4, #0x30]
 	ldmia sp!, {r4, pc}
 
@@ -78089,7 +78089,7 @@ sub_02040E80: ; 0x02040E80
 	ldr r0, [r4, #0x2c]
 	cmp r0, #0
 	beq _02040EA0
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	mov r0, #0
 	str r0, [r4, #0x2c]
 	arm_func_end sub_02040E80
@@ -78097,7 +78097,7 @@ _02040EA0:
 	ldr r0, [r4, #0x30]
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
+	bl NNS_GfdFreeLnkPlttVram
 	mov r0, #0
 	str r0, [r4, #0x30]
 	ldmia sp!, {r4, pc}
@@ -78369,7 +78369,7 @@ sub_020411D8: ; 0x020411D8
 	bl sub_02014310
 	mov r1, #0
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	str r0, [r4, #0x2c]
 	arm_func_end sub_020411D8
 _02041208:
@@ -78380,7 +78380,7 @@ _02041208:
 	bl sub_02014364
 	mov r1, #0
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	str r0, [r4, #0x30]
 	ldmia sp!, {r4, pc}
 
@@ -78615,7 +78615,7 @@ _020414F8:
 	bl sub_02014310
 	mov r1, #0
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	mov r1, r0
 	mov r1, r1, lsl #0x10
 	str r0, [sl, #0x2c]
@@ -78629,7 +78629,7 @@ _02041568:
 	bl sub_02014364
 	mov r1, #0
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	mov r1, r0
 	mov r1, r1, lsl #0x10
 	str r0, [sl, #0x30]
@@ -78787,7 +78787,7 @@ _02041748:
 	mov r1, #0
 	ldr r0, [r0, #0x38]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	mov r1, r0
 	str r0, [r4, #0xc]
 	mov r1, r1, lsl #0x10
@@ -78810,7 +78810,7 @@ _0204179C:
 	mov r1, #0
 	ldr r0, [r0, #8]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	mov r1, r0
 	str r0, [r4, #0x10]
 	mov r1, r1, lsl #0x10
@@ -78904,14 +78904,14 @@ _020418EC:
 	ldr r0, [r4, #0xc]
 	cmp r0, #0
 	beq _02041904
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	mov r0, #0
 	str r0, [r4, #0xc]
 _02041904:
 	ldr r0, [r4, #0x10]
 	cmp r0, #0
 	ldmeqia sp!, {r3, r4, r5, pc}
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
+	bl NNS_GfdFreeLnkPlttVram
 	mov r0, #0
 	str r0, [r4, #0x10]
 	ldmia sp!, {r3, r4, r5, pc}
@@ -79606,7 +79606,7 @@ _020421C0:
 	mov r1, #0
 	ldr r0, [r0, #0x38]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
+	bl NNS_GfdAllocLnkTexVram
 	mov r1, r0
 	str r0, [r5, #0x14]
 	mov r1, r1, lsl #0x10
@@ -79633,7 +79633,7 @@ _02042224:
 	mov r1, #0
 	ldr r0, [r0, #8]
 	mov r2, r1
-	bl NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
+	bl NNS_GfdAllocLnkPlttVram
 	mov r1, r0
 	str r0, [r5, #0x18]
 	mov r1, r1, lsl #0x10
@@ -79713,7 +79713,7 @@ _02042344:
 	cmp r0, #0
 	beq _02042360
 	ldr r0, [r4, #0x14]
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
+	bl NNS_GfdFreeLnkTexVram
 	mov r0, #0
 	str r0, [r4, #0x14]
 _02042360:
@@ -79721,7 +79721,7 @@ _02042360:
 	cmp r0, #0
 	beq _0204237C
 	ldr r0, [r4, #0x18]
-	bl NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
+	bl NNS_GfdFreeLnkPlttVram
 	mov r0, #0
 	str r0, [r4, #0x18]
 _0204237C:
@@ -104762,1272 +104762,6 @@ _02057120:
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 
-	arm_func_start NitroSystem_gfd_VramManager_AllocTexVram_
-NitroSystem_gfd_VramManager_AllocTexVram_: ; 0x0205712C
-	mov r0, #0
-    bx lr
-    arm_func_end NitroSystem_gfd_VramManager_AllocTexVram_
-
-	arm_func_start NitroSystem_gfd_VramManager_FreeTexVram_
-NitroSystem_gfd_VramManager_FreeTexVram_: ; 0x02057134
-	mvn r0, #0
-    bx lr
-    arm_func_end NitroSystem_gfd_VramManager_FreeTexVram_
-
-	arm_func_start sub_0205713C
-sub_0205713C: ; 0x0205713C
-	mov r0, #0
-    bx lr
-    arm_func_end sub_0205713C
-
-	arm_func_start sub_02057144
-sub_02057144: ; 0x02057144
-	mvn r0, #0
-    bx lr
-    arm_func_end sub_02057144
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_GetNextIndex_
-NitroSystem_gfd_VramTransferMan_GetNextIndex_: ; 0x0205714C
-	stmdb sp!, {r3, lr}
-	mov r2, r0
-	add r0, r1, #1
-	ldr r1, [r2, #4]
-	bl _u32_div_f
-	mov r0, r1, lsl #0x10
-	mov r0, r0, lsr #0x10
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_GetNextIndex_
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_IsVramTransferTaskQueueFull_
-NitroSystem_gfd_VramTransferMan_IsVramTransferTaskQueueFull_: ; 0x0205716C
-	ldrh r1, [r0, #0xc]
-	ldr r0, [r0, #4]
-	cmp r1, r0
-	moveq r0, #1
-	movne r0, #0
-	bx lr
-	arm_func_end NitroSystem_gfd_VramTransferMan_IsVramTransferTaskQueueFull_
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_IsVramTransferTaskQueueEmpty_
-NitroSystem_gfd_VramTransferMan_IsVramTransferTaskQueueEmpty_: ; 0x02057184
-	ldrh r0, [r0, #0xc]
-	cmp r0, #0
-	moveq r0, #1
-	movne r0, #0
-	bx lr
-	arm_func_end NitroSystem_gfd_VramTransferMan_IsVramTransferTaskQueueEmpty_
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer3dTex
-NitroSystem_gfd_VramTransferMan_DoTransfer3dTex: ; 0x02057198
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl GX_BeginLoadTex
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl GX_LoadTex
-	bl GX_EndLoadTex
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer3dTex
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer3dTexPltt
-NitroSystem_gfd_VramTransferMan_DoTransfer3dTexPltt: ; 0x020571C4
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl GX_BeginLoadTexPltt
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl GX_LoadTexPltt
-	bl GX_EndLoadTexPltt
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer3dTexPltt
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageColor
-NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageColor: ; 0x020571F0
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r2
-	bl GX_BeginLoadClearImage
-	mov r0, r5
-	mov r1, r4
-	bl GX_LoadClearImageColor
-	bl GX_EndLoadClearImage
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageColor
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageDepth
-NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageDepth: ; 0x02057214
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r2
-	bl GX_BeginLoadClearImage
-	mov r0, r5
-	mov r1, r4
-	bl GX_LoadClearImageDepth
-	bl GX_EndLoadClearImage
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageDepth
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharMain: ; 0x02057238
-	ldr ip, _02057240 ; =GX_LoadBG0Char
-	bx ip
-	.align 2, 0
-_02057240: .word GX_LoadBG0Char
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharMain: ; 0x02057244
-	ldr ip, _0205724C ; =GX_LoadBG1Char
-	bx ip
-	.align 2, 0
-_0205724C: .word GX_LoadBG1Char
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharMain: ; 0x02057250
-	ldr ip, _02057258 ; =GX_LoadBG2Char
-	bx ip
-	.align 2, 0
-_02057258: .word GX_LoadBG2Char
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharMain: ; 0x0205725C
-	ldr ip, _02057264 ; =GX_LoadBG3Char
-	bx ip
-	.align 2, 0
-_02057264: .word GX_LoadBG3Char
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrMain: ; 0x02057268
-	ldr ip, _02057270 ; =GX_LoadBG0Scr
-	bx ip
-	.align 2, 0
-_02057270: .word GX_LoadBG0Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrMain: ; 0x02057274
-	ldr ip, _0205727C ; =GX_LoadBG1Scr
-	bx ip
-	.align 2, 0
-_0205727C: .word GX_LoadBG1Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrMain: ; 0x02057280
-	ldr ip, _02057288 ; =GX_LoadBG2Scr
-	bx ip
-	.align 2, 0
-_02057288: .word GX_LoadBG2Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrMain: ; 0x0205728C
-	ldr ip, _02057294 ; =GX_LoadBG3Scr
-	bx ip
-	.align 2, 0
-_02057294: .word GX_LoadBG3Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpMain: ; 0x02057298
-	ldr ip, _020572A0 ; =GX_LoadBG2Scr
-	bx ip
-	.align 2, 0
-_020572A0: .word GX_LoadBG2Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpMain: ; 0x020572A4
-	ldr ip, _020572AC ; =GX_LoadBG3Scr
-	bx ip
-	.align 2, 0
-_020572AC: .word GX_LoadBG3Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttMain: ; 0x020572B0
-	ldr ip, _020572B8 ; =GX_LoadOBJPltt
-	bx ip
-	.align 2, 0
-_020572B8: .word GX_LoadOBJPltt
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttMain: ; 0x020572BC
-	ldr ip, _020572C4 ; =GX_LoadBGPltt
-	bx ip
-	.align 2, 0
-_020572C4: .word GX_LoadBGPltt
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttMain: ; 0x020572C8
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl GX_BeginLoadOBJExtPltt
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl GX_LoadOBJExtPltt
-	bl GX_EndLoadOBJExtPltt
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttMain: ; 0x020572F4
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl GX_BeginLoadBGExtPltt
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl GX_LoadBGExtPltt
-	bl GX_EndLoadBGExtPltt
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamMain: ; 0x02057320
-	ldr ip, _02057328 ; =GX_LoadOAM
-	bx ip
-	.align 2, 0
-_02057328: .word GX_LoadOAM
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharMain
-NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharMain: ; 0x0205732C
-	ldr ip, _02057334 ; =GX_LoadOBJ
-	bx ip
-	.align 2, 0
-_02057334: .word GX_LoadOBJ
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharMain
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharSub: ; 0x02057338
-	ldr ip, _02057340 ; =GXS_LoadBG0Char
-	bx ip
-	.align 2, 0
-_02057340: .word GXS_LoadBG0Char
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharSub: ; 0x02057344
-	ldr ip, _0205734C ; =GXS_LoadBG1Char
-	bx ip
-	.align 2, 0
-_0205734C: .word GXS_LoadBG1Char
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharSub: ; 0x02057350
-	ldr ip, _02057358 ; =GXS_LoadBG2Char
-	bx ip
-	.align 2, 0
-_02057358: .word GXS_LoadBG2Char
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharSub: ; 0x0205735C
-	ldr ip, _02057364 ; =GXS_LoadBG3Char
-	bx ip
-	.align 2, 0
-_02057364: .word GXS_LoadBG3Char
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrSub: ; 0x02057368
-	ldr ip, _02057370 ; =GXS_LoadBG0Scr
-	bx ip
-	.align 2, 0
-_02057370: .word GXS_LoadBG0Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrSub: ; 0x02057374
-	ldr ip, _0205737C ; =GXS_LoadBG1Scr
-	bx ip
-	.align 2, 0
-_0205737C: .word GXS_LoadBG1Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrSub: ; 0x02057380
-	ldr ip, _02057388 ; =GXS_LoadBG2Scr
-	bx ip
-	.align 2, 0
-_02057388: .word GXS_LoadBG2Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrSub: ; 0x0205738C
-	ldr ip, _02057394 ; =GXS_LoadBG3Scr
-	bx ip
-	.align 2, 0
-_02057394: .word GXS_LoadBG3Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpSub: ; 0x02057398
-	ldr ip, _020573A0 ; =GXS_LoadBG2Scr
-	bx ip
-	.align 2, 0
-_020573A0: .word GXS_LoadBG2Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpSub: ; 0x020573A4
-	ldr ip, _020573AC ; =GXS_LoadBG3Scr
-	bx ip
-	.align 2, 0
-_020573AC: .word GXS_LoadBG3Scr
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttSub: ; 0x020573B0
-	ldr ip, _020573B8 ; =GXS_LoadOBJPltt
-	bx ip
-	.align 2, 0
-_020573B8: .word GXS_LoadOBJPltt
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttSub: ; 0x020573BC
-	ldr ip, _020573C4 ; =GXS_LoadBGPltt
-	bx ip
-	.align 2, 0
-_020573C4: .word GXS_LoadBGPltt
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttSub: ; 0x020573C8
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl GXS_BeginLoadOBJExtPltt
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl GXS_LoadOBJExtPltt
-	bl GXS_EndLoadOBJExtPltt
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttSub: ; 0x020573F4
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl GXS_BeginLoadBGExtPltt
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl GXS_LoadBGExtPltt
-	bl GXS_EndLoadBGExtPltt
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamSub: ; 0x02057420
-	ldr ip, _02057428 ; =GXS_LoadOAM
-	bx ip
-	.align 2, 0
-_02057428: .word GXS_LoadOAM
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharSub
-NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharSub: ; 0x0205742C
-	ldr ip, _02057434 ; =GXS_LoadOBJ
-	bx ip
-	.align 2, 0
-_02057434: .word GXS_LoadOBJ
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharSub
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_DoTransfer_
-NitroSystem_gfd_VramTransferMan_DoTransfer_: ; 0x02057438
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	ldr r3, [r5]
-	ldr r2, _02057464 ; =ptr_FUN_02057198_02084da0
-	ldr r0, [r5, #4]
-	ldr r1, [r5, #0xc]
-	ldr r4, [r2, r3, lsl #2]
-	bl DC_FlushRange
-	ldmib r5, {r0, r1, r2}
-	blx r4
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_02057464: .word ptr_FUN_02057198_02084da0
-	arm_func_end NitroSystem_gfd_VramTransferMan_DoTransfer_
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_ResetTaskQueue_
-NitroSystem_gfd_VramTransferMan_ResetTaskQueue_: ; 0x02057468
-	mov r1, #0
-	strh r1, [r0, #0xa]
-	strh r1, [r0, #8]
-	strh r1, [r0, #0xc]
-	str r1, [r0, #0x10]
-	bx lr
-	arm_func_end NitroSystem_gfd_VramTransferMan_ResetTaskQueue_
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_NNSi_GfdPushVramTransferTaskQueue
-NitroSystem_gfd_VramTransferMan_NNSi_GfdPushVramTransferTaskQueue: ; 0x02057480
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl NitroSystem_gfd_VramTransferMan_IsVramTransferTaskQueueFull_
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r4, pc}
-	ldrh r1, [r4, #0xa]
-	mov r0, r4
-	bl NitroSystem_gfd_VramTransferMan_GetNextIndex_
-	strh r0, [r4, #0xa]
-	ldrh r1, [r4, #0xc]
-	mov r0, #1
-	add r1, r1, #1
-	strh r1, [r4, #0xc]
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_NNSi_GfdPushVramTransferTaskQueue
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_NNSi_GfdGetFrontVramTransferTaskQueue
-NitroSystem_gfd_VramTransferMan_NNSi_GfdGetFrontVramTransferTaskQueue: ; 0x020574BC
-	ldrh r1, [r0, #8]
-	ldr r0, [r0]
-	add r0, r0, r1, lsl #4
-	bx lr
-	arm_func_end NitroSystem_gfd_VramTransferMan_NNSi_GfdGetFrontVramTransferTaskQueue
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_NNSi_GfdGetEndVramTransferTaskQueue
-NitroSystem_gfd_VramTransferMan_NNSi_GfdGetEndVramTransferTaskQueue: ; 0x020574CC
-	ldrh r1, [r0, #0xa]
-	ldr r0, [r0]
-	add r0, r0, r1, lsl #4
-	bx lr
-	arm_func_end NitroSystem_gfd_VramTransferMan_NNSi_GfdGetEndVramTransferTaskQueue
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_NNSi_GfdPopVramTransferTaskQueue
-NitroSystem_gfd_VramTransferMan_NNSi_GfdPopVramTransferTaskQueue: ; 0x020574DC
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl NitroSystem_gfd_VramTransferMan_IsVramTransferTaskQueueEmpty_
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r4, pc}
-	ldrh r1, [r4, #8]
-	mov r0, r4
-	bl NitroSystem_gfd_VramTransferMan_GetNextIndex_
-	strh r0, [r4, #8]
-	ldrh r1, [r4, #0xc]
-	mov r0, #1
-	sub r1, r1, #1
-	strh r1, [r4, #0xc]
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_NNSi_GfdPopVramTransferTaskQueue
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_NNS_GfdInitVramTransferManager
-NitroSystem_gfd_VramTransferMan_NNS_GfdInitVramTransferManager: ; 0x02057518
-	ldr r2, _02057530 ; =MAIN_BSS_0210EB00
-	ldr ip, _02057534 ; =NitroSystem_gfd_VramTransferMan_ResetTaskQueue_
-	str r0, [r2]
-	ldr r0, _02057538 ; =MAIN_BSS_0210EB00
-	str r1, [r2, #4]
-	bx ip
-	.align 2, 0
-_02057530: .word MAIN_BSS_0210EB00
-_02057534: .word NitroSystem_gfd_VramTransferMan_ResetTaskQueue_
-_02057538: .word MAIN_BSS_0210EB00
-	arm_func_end NitroSystem_gfd_VramTransferMan_NNS_GfdInitVramTransferManager
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_NNS_GfdDoVramTransfer
-NitroSystem_gfd_VramTransferMan_NNS_GfdDoVramTransfer: ; 0x0205753C
-	stmdb sp!, {r3, r4, r5, lr}
-	ldr r4, _02057598 ; =MAIN_BSS_0210EB00
-	mov r0, r4
-	bl NitroSystem_gfd_VramTransferMan_NNSi_GfdGetFrontVramTransferTaskQueue
-	mov r5, r0
-	mov r0, r4
-	bl NitroSystem_gfd_VramTransferMan_NNSi_GfdPopVramTransferTaskQueue
-	cmp r0, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSystem_gfd_VramTransferMan_NNS_GfdDoVramTransfer
-_02057560:
-	mov r0, r5
-	bl NitroSystem_gfd_VramTransferMan_DoTransfer_
-	ldr r2, [r4, #0x10]
-	ldr r1, [r5, #0xc]
-	mov r0, r4
-	sub r1, r2, r1
-	str r1, [r4, #0x10]
-	bl NitroSystem_gfd_VramTransferMan_NNSi_GfdGetFrontVramTransferTaskQueue
-	mov r5, r0
-	mov r0, r4
-	bl NitroSystem_gfd_VramTransferMan_NNSi_GfdPopVramTransferTaskQueue
-	cmp r0, #0
-	bne _02057560
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_02057598: .word MAIN_BSS_0210EB00
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
-NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask: ; 0x0205759C
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	ldr r5, _02057600 ; =MAIN_BSS_0210EB00
-	mov sb, r0
-	mov r0, r5
-	mov r8, r1
-	mov r7, r2
-	mov r6, r3
-	bl NitroSystem_gfd_VramTransferMan_IsVramTransferTaskQueueFull_
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	mov r0, r5
-	bl NitroSystem_gfd_VramTransferMan_NNSi_GfdGetEndVramTransferTaskQueue
-	mov r4, r0
-	str sb, [r4]
-	stmib r4, {r7, r8}
-	mov r0, r5
-	str r6, [r4, #0xc]
-	bl NitroSystem_gfd_VramTransferMan_NNSi_GfdPushVramTransferTaskQueue
-	ldr r2, [r5, #0x10]
-	ldr r1, [r4, #0xc]
-	mov r0, #1
-	add r1, r2, r1
-	str r1, [r5, #0x10]
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	.align 2, 0
-_02057600: .word MAIN_BSS_0210EB00
-	arm_func_end NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
-
-	arm_func_start NitroSystem_gfd_VramTransferMan_NNS_GfdGetVramTransferTaskTotalSize
-NitroSystem_gfd_VramTransferMan_NNS_GfdGetVramTransferTaskTotalSize: ; 0x02057604
-	ldr r0, _02057610 ; =MAIN_BSS_0210EB00
-	ldr r0, [r0, #0x10]
-	bx lr
-	.align 2, 0
-_02057610: .word MAIN_BSS_0210EB00
-	arm_func_end NitroSystem_gfd_VramTransferMan_NNS_GfdGetVramTransferTaskTotalSize
-
-	arm_func_start NitroSystem_gfd_VramManager_DefaultDumpCallBack_
-NitroSystem_gfd_VramManager_DefaultDumpCallBack_: ; 0x02057614
-	cmp r1, #0
-	ldrne r0, [r2]
-	addne r0, r0, r1
-	strne r0, [r2]
-	bx lr
-	arm_func_end NitroSystem_gfd_VramManager_DefaultDumpCallBack_
-
-	arm_func_start NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfo
-NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfo: ; 0x02057628
-	stmdb sp!, {r3, lr}
-	ldr r1, _02057644 ; =NitroSystem_gfd_VramManager_DefaultDumpCallBack_
-	mov r3, #0
-	add r2, sp, #0
-	str r3, [sp]
-	bl NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfoEx
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02057644: .word NitroSystem_gfd_VramManager_DefaultDumpCallBack_
-	arm_func_end NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfo
-
-	arm_func_start NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfoEx
-NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfoEx: ; 0x02057648
-	stmdb sp!, {r4, r5, r6, lr}
-	movs r6, r0
-	mov r5, r1
-	mov r4, r2
-	ldmeqia sp!, {r4, r5, r6, pc}
-	arm_func_end NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfoEx
-_0205765C:
-	mov r2, r4
-	ldmia r6, {r0, r1}
-	blx r5
-	ldr r6, [r6, #0xc]
-	cmp r6, #0
-	bne _0205765C
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramMan
-NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramMan: ; 0x02057678
-	mov r1, #0
-	str r1, [r0]
-	bx lr
-	arm_func_end NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramMan
-
-	arm_func_start NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramBlockPool
-NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramBlockPool: ; 0x02057684
-	stmdb sp!, {r4, lr}
-	subs lr, r1, #1
-	mov r2, #0
-	beq _020576BC
-	mov r4, r0
-	arm_func_end NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramBlockPool
-_02057698:
-	add r3, r2, #1
-	add r2, r0, r2, lsl #4
-	add ip, r0, r3, lsl #4
-	str ip, [r2, #0xc]
-	str r4, [r2, #0x18]
-	mov r2, r3
-	cmp r3, lr
-	add r4, r4, #0x10
-	blo _02057698
-_020576BC:
-	mov r2, #0
-	str r2, [r0, #8]
-	add r1, r0, r1, lsl #4
-	str r2, [r1, #-4]
-	ldmia sp!, {r4, pc}
-
-	arm_func_start NitroSystem_gfd_VramManager_NNSi_GfdAddNewFreeBlock
-NitroSystem_gfd_VramManager_NNSi_GfdAddNewFreeBlock: ; 0x020576D0
-	stmdb sp!, {r3, lr}
-	ldr lr, [r1]
-	cmp lr, #0
-	ldrne ip, [lr, #0xc]
-	strne ip, [r1]
-	cmp lr, #0
-	beq _02057724
-	stmia lr, {r2, r3}
-	mov r1, #0
-	str r1, [lr, #8]
-	str r1, [lr, #0xc]
-	ldr r1, [r0]
-	cmp r1, #0
-	strne lr, [r1, #8]
-	ldr r2, [r0]
-	mov r1, #0
-	str r2, [lr, #0xc]
-	str r1, [lr, #8]
-	str lr, [r0]
-	mov r0, #1
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_gfd_VramManager_NNSi_GfdAddNewFreeBlock
-_02057724:
-	mov r0, #0
-	ldmia sp!, {r3, pc}
-
-	arm_func_start NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVram
-NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVram: ; 0x0205772C
-	stmdb sp!, {r3, lr}
-	mov ip, #0
-	str ip, [sp]
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVramAligned
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVram
-
-	arm_func_start NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVramAligned
-NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVramAligned: ; 0x02057740
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	ldr r7, [r0]
-	ldr sb, [sp, #0x28]
-	cmp r7, #0
-	mov r6, #0
-	beq _020577A8
-	sub ip, sb, #1
-	mvn r8, ip
-	mov fp, r6
-	arm_func_end NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVramAligned
-_02057764:
-	cmp sb, #1
-	ldrls lr, [r7]
-	movls r5, fp
-	movls r4, r3
-	bls _0205778C
-	ldr r5, [r7]
-	add r4, r5, ip
-	and lr, r8, r4
-	sub r5, lr, r5
-	add r4, r3, r5
-_0205778C:
-	ldr sl, [r7, #4]
-	cmp sl, r4
-	movhs r6, r7
-	bhs _020577A8
-	ldr r7, [r7, #0xc]
-	cmp r7, #0
-	bne _02057764
-_020577A8:
-	cmp r6, #0
-	beq _02057874
-	cmp r5, #0
-	beq _02057808
-	ldr r8, [r1]
-	cmp r8, #0
-	ldrne r3, [r8, #0xc]
-	strne r3, [r1]
-	cmp r8, #0
-	beq _02057874
-	ldr r7, [r6]
-	mov r3, #0
-	str r7, [r8]
-	str r5, [r8, #4]
-	str r3, [r8, #8]
-	str r3, [r8, #0xc]
-	ldr r3, [r0]
-	cmp r3, #0
-	strne r8, [r3, #8]
-	ldr r5, [r0]
-	mov r3, #0
-	str r5, [r8, #0xc]
-	str r3, [r8, #8]
-	str r8, [r0]
-_02057808:
-	ldr r3, [r6, #4]
-	sub r3, r3, r4
-	str r3, [r6, #4]
-	ldr r3, [r6]
-	add r3, r3, r4
-	str r3, [r6]
-	ldr r3, [r6, #4]
-	cmp r3, #0
-	bne _02057868
-	ldr r4, [r6, #8]
-	ldr r3, [r6, #0xc]
-	cmp r4, #0
-	strne r3, [r4, #0xc]
-	streq r3, [r0]
-	cmp r3, #0
-	strne r4, [r3, #8]
-	ldr r0, [r1]
-	cmp r0, #0
-	strne r6, [r0, #8]
-	ldr r3, [r1]
-	mov r0, #0
-	str r3, [r6, #0xc]
-	str r0, [r6, #8]
-	str r6, [r1]
-_02057868:
-	str lr, [r2]
-	mov r0, #1
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02057874:
-	mov r0, #0
-	str r0, [r2]
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start NitroSystem_gfd_VramManager_NNSi_GfdFreeLnkVram
-NitroSystem_gfd_VramManager_NNSi_GfdFreeLnkVram: ; 0x02057880
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #0x10
-	add r4, r2, r3
-	str r2, [sp, #8]
-	str r4, [sp, #0xc]
-	ldr r3, [r0]
-	str r2, [sp]
-	str r4, [sp, #4]
-	cmp r3, #0
-	add r2, sp, #8
-	beq _02057964
-	mov r7, #0
-	mov lr, r7
-	arm_func_end NitroSystem_gfd_VramManager_NNSi_GfdFreeLnkVram
-_020578B4:
-	ldr r5, [r3]
-	ldr r4, [r2, #4]
-	ldr ip, [r3, #0xc]
-	cmp r5, r4
-	bne _02057904
-	ldmib r3, {r4, r6}
-	cmp r6, #0
-	strne ip, [r6, #0xc]
-	streq ip, [r0]
-	add r4, r5, r4
-	cmp ip, #0
-	strne r6, [ip, #8]
-	str r4, [sp, #4]
-	ldr r4, [r1]
-	cmp r4, #0
-	strne r3, [r4, #8]
-	ldr r4, [r1]
-	str r4, [r3, #0xc]
-	str r7, [r3, #8]
-	str r3, [r1]
-_02057904:
-	ldr r6, [r3]
-	ldr r4, [r3, #4]
-	ldr r5, [r2]
-	add r4, r6, r4
-	cmp r5, r4
-	bne _02057958
-	ldr r5, [r3, #8]
-	ldr r4, [r3, #0xc]
-	cmp r5, #0
-	strne r4, [r5, #0xc]
-	streq r4, [r0]
-	cmp r4, #0
-	strne r5, [r4, #8]
-	ldr r4, [r1]
-	str r6, [sp]
-	cmp r4, #0
-	strne r3, [r4, #8]
-	ldr r4, [r1]
-	str r4, [r3, #0xc]
-	str lr, [r3, #8]
-	str r3, [r1]
-_02057958:
-	mov r3, ip
-	cmp ip, #0
-	bne _020578B4
-_02057964:
-	ldr r3, [r1]
-	cmp r3, #0
-	ldrne r2, [r3, #0xc]
-	strne r2, [r1]
-	cmp r3, #0
-	addeq sp, sp, #0x10
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldr r2, [sp]
-	ldr r1, [sp, #4]
-	str r2, [r3]
-	sub r1, r1, r2
-	str r1, [r3, #4]
-	mov r1, #0
-	str r1, [r3, #8]
-	str r1, [r3, #0xc]
-	ldr r1, [r0]
-	cmp r1, #0
-	strne r3, [r1, #8]
-	ldr r2, [r0]
-	mov r1, #0
-	str r2, [r3, #0xc]
-	str r1, [r3, #8]
-	str r3, [r0]
-	mov r0, #1
-	add sp, sp, #0x10
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdDumpLnkTexVramManager
-NitroSystem_gfd_VramManager_NNS_GfdDumpLnkTexVramManager: ; 0x020579D0
-	stmdb sp!, {r3, lr}
-	ldr r1, _02057A00 ; =MAIN_BSS_0210EB14
-	ldr r0, [r1]
-	ldr r1, [r1, #0xc]
-	bl NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfo
-	ldr r0, _02057A00 ; =MAIN_BSS_0210EB14
-	ldr r1, [r0, #0x10]
-	cmp r1, #0
-	ldmeqia sp!, {r3, pc}
-	ldr r0, [r0, #4]
-	bl NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfo
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02057A00: .word MAIN_BSS_0210EB14
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdDumpLnkTexVramManager
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdGetLnkTexVramManagerWorkSize
-NitroSystem_gfd_VramManager_NNS_GfdGetLnkTexVramManagerWorkSize: ; 0x02057A04
-	mov r0, r0, lsl #4
-	bx lr
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdGetLnkTexVramManagerWorkSize
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdInitLnkTexVramManager
-NitroSystem_gfd_VramManager_NNS_GfdInitLnkTexVramManager: ; 0x02057A0C
-	stmdb sp!, {r3, lr}
-	ldr ip, _02057A50 ; =MAIN_BSS_0210EB14
-	str r0, [ip, #0xc]
-	str r1, [ip, #0x10]
-	str r2, [ip, #0x14]
-	str r3, [ip, #0x18]
-	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
-	ldr r0, [sp, #8]
-	cmp r0, #0
-	ldmeqia sp!, {r3, pc}
-	ldr r3, _02057A54 ; =NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
-	ldr r1, _02057A58 ; =PTR_LAB_0208e7dc
-	ldr r2, _02057A5C ; =NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
-	ldr r0, _02057A60 ; =PTR_LAB_0208e7e0
-	str r3, [r1]
-	str r2, [r0]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02057A50: .word MAIN_BSS_0210EB14
-_02057A54: .word NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
-_02057A58: .word PTR_LAB_0208e7dc
-_02057A5C: .word NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
-_02057A60: .word PTR_LAB_0208e7e0
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdInitLnkTexVramManager
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
-NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram: ; 0x02057A64
-	stmdb sp!, {r3, r4, r5, lr}
-	cmp r0, #0
-	moveq r5, #0x10
-	addne r0, r0, #0xf
-	bicne r5, r0, #0xf
-	ldr r0, _02057AE4 ; =0x0007FFF0
-	mov r4, r1
-	cmp r5, r0
-	movhs r0, #0
-	ldmhsia sp!, {r3, r4, r5, pc}
-	cmp r4, #0
-	add r2, sp, #0
-	beq _02057AAC
-	ldr r0, _02057AE8 ; =MAIN_BSS_0210EB18
-	ldr r1, _02057AEC ; =MAIN_BSS_0210EB1C
-	mov r3, r5
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVram
-	b _02057ABC
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
-_02057AAC:
-	ldr r0, _02057AF0 ; =MAIN_BSS_0210EB14
-	ldr r1, _02057AEC ; =MAIN_BSS_0210EB1C
-	mov r3, r5
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVram
-_02057ABC:
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	ldr r0, [sp]
-	mov r1, r5, lsr #4
-	mov r0, r0, lsl #0xd
-	mov r0, r0, lsr #0x10
-	orr r0, r0, r1, lsl #16
-	orr r0, r0, r4, lsl #31
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_02057AE4: .word 0x0007FFF0
-_02057AE8: .word MAIN_BSS_0210EB18
-_02057AEC: .word MAIN_BSS_0210EB1C
-_02057AF0: .word MAIN_BSS_0210EB14
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
-NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram: ; 0x02057AF4
-	stmdb sp!, {r3, lr}
-	ldr r1, _02057B58 ; =0x7FFF0000
-	mov r2, r0, lsl #0x10
-	and r1, r0, r1
-	mov r1, r1, lsr #0x10
-	and r0, r0, #0x80000000
-	mov r2, r2, lsr #0xd
-	movs r3, r1, lsl #4
-	mov r0, r0, lsr #0x1f
-	beq _02057B50
-	cmp r0, #0
-	beq _02057B34
-	ldr r0, _02057B5C ; =MAIN_BSS_0210EB18
-	ldr r1, _02057B60 ; =MAIN_BSS_0210EB1C
-	bl NitroSystem_gfd_VramManager_NNSi_GfdFreeLnkVram
-	b _02057B40
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
-_02057B34:
-	ldr r0, _02057B64 ; =MAIN_BSS_0210EB14
-	ldr r1, _02057B60 ; =MAIN_BSS_0210EB1C
-	bl NitroSystem_gfd_VramManager_NNSi_GfdFreeLnkVram
-_02057B40:
-	cmp r0, #0
-	movne r0, #0
-	moveq r0, #1
-	ldmia sp!, {r3, pc}
-_02057B50:
-	mov r0, #2
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02057B58: .word 0x7FFF0000
-_02057B5C: .word MAIN_BSS_0210EB18
-_02057B60: .word MAIN_BSS_0210EB1C
-_02057B64: .word MAIN_BSS_0210EB14
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
-NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState: ; 0x02057B68
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #0x30
-	ldr lr, _02057D3C ; =DAT_02084e30
-	add r4, sp, #0
-	ldmia lr!, {r0, r1, r2, r3}
-	mov ip, r4
-	stmia r4!, {r0, r1, r2, r3}
-	ldmia lr!, {r0, r1, r2, r3}
-	stmia r4!, {r0, r1, r2, r3}
-	ldmia lr, {r0, r1, r2, r3}
-	stmia r4, {r0, r1, r2, r3}
-	ldr r0, _02057D40 ; =MAIN_BSS_0210EB14
-	mov r3, #0
-	ldr r2, [r0, #0x10]
-	ldr r1, [r0, #0xc]
-	add r0, r2, r2, lsr #1
-	mov r4, r2, lsr #1
-	sub r1, r1, r0
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
-_02057BB0:
-	cmp r3, #0
-	cmpne r3, #2
-	bne _02057BF0
-	ldr lr, [ip]
-	cmp lr, #0
-	cmpne r2, #0
-	beq _02057BF0
-	ldr r0, [ip, #8]
-	cmp lr, r2
-	movhi lr, r2
-	add r0, r0, lr
-	str r0, [ip, #8]
-	ldr r0, [ip]
-	sub r2, r2, lr
-	sub r0, r0, lr
-	str r0, [ip]
-_02057BF0:
-	add r3, r3, #1
-	cmp r3, #4
-	add ip, ip, #0xc
-	blo _02057BB0
-	ldr r0, [sp, #0xc]
-	add r2, sp, #0
-	sub r0, r0, r4
-	str r0, [sp, #0xc]
-	mov r3, #0
-_02057C14:
-	ldr ip, [r2]
-	cmp ip, #0
-	cmpne r1, #0
-	beq _02057C48
-	ldr r0, [r2, #4]
-	cmp ip, r1
-	movhi ip, r1
-	add r0, r0, ip
-	str r0, [r2, #4]
-	ldr r0, [r2]
-	sub r1, r1, ip
-	sub r0, r0, ip
-	str r0, [r2]
-_02057C48:
-	add r3, r3, #1
-	cmp r3, #4
-	add r2, r2, #0xc
-	blo _02057C14
-	ldr r0, _02057D44 ; =MAIN_BSS_0210EB14
-	bl NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramMan
-	ldr r0, _02057D48 ; =MAIN_BSS_0210EB18
-	bl NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramMan
-	ldr r0, _02057D40 ; =MAIN_BSS_0210EB14
-	ldr r1, [r0, #0x18]
-	ldr r0, [r0, #0x14]
-	mov r1, r1, lsr #4
-	bl NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramBlockPool
-	ldr r3, [sp, #8]
-	ldr r1, _02057D40 ; =MAIN_BSS_0210EB14
-	cmp r3, #0
-	str r0, [r1, #8]
-	beq _02057CA0
-	ldr r0, _02057D48 ; =MAIN_BSS_0210EB18
-	ldr r1, _02057D4C ; =MAIN_BSS_0210EB1C
-	mov r2, #0
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAddNewFreeBlock
-_02057CA0:
-	ldr r3, [sp, #4]
-	ldr r2, [sp, #8]
-	cmp r3, #0
-	beq _02057CBC
-	ldr r0, _02057D44 ; =MAIN_BSS_0210EB14
-	ldr r1, _02057D4C ; =MAIN_BSS_0210EB1C
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAddNewFreeBlock
-_02057CBC:
-	ldr r3, [sp, #0x20]
-	cmp r3, #0
-	beq _02057CD8
-	ldr r0, _02057D48 ; =MAIN_BSS_0210EB18
-	ldr r1, _02057D4C ; =MAIN_BSS_0210EB1C
-	mov r2, #0x40000
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAddNewFreeBlock
-_02057CD8:
-	ldr r3, [sp, #0x1c]
-	ldr r2, [sp, #0x20]
-	cmp r3, #0
-	beq _02057CF8
-	ldr r0, _02057D44 ; =MAIN_BSS_0210EB14
-	ldr r1, _02057D4C ; =MAIN_BSS_0210EB1C
-	add r2, r2, #0x40000
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAddNewFreeBlock
-_02057CF8:
-	ldr r3, [sp, #0x28]
-	cmp r3, #0
-	beq _02057D14
-	ldr r0, _02057D44 ; =MAIN_BSS_0210EB14
-	ldr r1, _02057D4C ; =MAIN_BSS_0210EB1C
-	mov r2, #0x60000
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAddNewFreeBlock
-_02057D14:
-	ldr r3, [sp, #0x10]
-	cmp r3, #0
-	addeq sp, sp, #0x30
-	ldmeqia sp!, {r4, pc}
-	ldr r0, _02057D44 ; =MAIN_BSS_0210EB14
-	ldr r1, _02057D4C ; =MAIN_BSS_0210EB1C
-	add r2, r4, #0x20000
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAddNewFreeBlock
-	add sp, sp, #0x30
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02057D3C: .word DAT_02084e30
-_02057D40: .word MAIN_BSS_0210EB14
-_02057D44: .word MAIN_BSS_0210EB14
-_02057D48: .word MAIN_BSS_0210EB18
-_02057D4C: .word MAIN_BSS_0210EB1C
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdDumpLnkPlttVramManager
-NitroSystem_gfd_VramManager_NNS_GfdDumpLnkPlttVramManager: ; 0x02057D50
-	ldr r1, _02057D64 ; =MAIN_BSS_0210EB30
-	ldr ip, _02057D68 ; =NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfo
-	ldr r0, [r1]
-	ldr r1, [r1, #8]
-	bx ip
-	.align 2, 0
-_02057D64: .word MAIN_BSS_0210EB30
-_02057D68: .word NitroSystem_gfd_VramManager_NNSi_GfdDumpLnkVramManFreeListInfo
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdDumpLnkPlttVramManager
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdGetLnkPlttVramManagerWorkSize
-NitroSystem_gfd_VramManager_NNS_GfdGetLnkPlttVramManagerWorkSize: ; 0x02057D6C
-	mov r0, r0, lsl #4
-	bx lr
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdGetLnkPlttVramManagerWorkSize
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdInitLnkPlttVramManager
-NitroSystem_gfd_VramManager_NNS_GfdInitLnkPlttVramManager: ; 0x02057D74
-	stmdb sp!, {r4, lr}
-	ldr ip, _02057DB4 ; =MAIN_BSS_0210EB30
-	mov r4, r3
-	str r0, [ip, #8]
-	str r1, [ip, #0xc]
-	str r2, [ip, #0x10]
-	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
-	cmp r4, #0
-	ldmeqia sp!, {r4, pc}
-	ldr r3, _02057DB8 ; =NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
-	ldr r1, _02057DBC ; =PTR_LAB_0208e7e4
-	ldr r2, _02057DC0 ; =NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
-	ldr r0, _02057DC4 ; =PTR_LAB_0208e7e8
-	str r3, [r1]
-	str r2, [r0]
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02057DB4: .word MAIN_BSS_0210EB30
-_02057DB8: .word NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
-_02057DBC: .word PTR_LAB_0208e7e4
-_02057DC0: .word NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
-_02057DC4: .word PTR_LAB_0208e7e8
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdInitLnkPlttVramManager
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
-NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram: ; 0x02057DC8
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #8
-	cmp r0, #0
-	moveq r4, #8
-	addne r0, r0, #7
-	bicne r4, r0, #7
-	ldr r0, _02057E88 ; =0x0007FFF8
-	cmp r4, r0
-	addhs sp, sp, #8
-	movhs r0, #0
-	ldmhsia sp!, {r4, pc}
-	cmp r1, #0
-	add r2, sp, #4
-	beq _02057E44
-	mov ip, #8
-	ldr r0, _02057E8C ; =MAIN_BSS_0210EB30
-	ldr r1, _02057E90 ; =MAIN_BSS_0210EB34
-	mov r3, r4
-	str ip, [sp]
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVramAligned
-	ldr r2, [sp, #4]
-	add r1, r2, r4
-	cmp r1, #0x10000
-	bls _02057E5C
-	ldr r0, _02057E8C ; =MAIN_BSS_0210EB30
-	ldr r1, _02057E90 ; =MAIN_BSS_0210EB34
-	mov r3, r4
-	bl NitroSystem_gfd_VramManager_NNSi_GfdFreeLnkVram
-	add sp, sp, #8
-	mov r0, #0
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
-_02057E44:
-	ldr r0, _02057E8C ; =MAIN_BSS_0210EB30
-	mov ip, #0x10
-	ldr r1, _02057E90 ; =MAIN_BSS_0210EB34
-	mov r3, r4
-	str ip, [sp]
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAllocLnkVramAligned
-_02057E5C:
-	cmp r0, #0
-	addeq sp, sp, #8
-	moveq r0, #0
-	ldmeqia sp!, {r4, pc}
-	ldr r0, [sp, #4]
-	mov r1, r4, lsr #3
-	mov r0, r0, lsl #0xd
-	mov r0, r0, lsr #0x10
-	orr r0, r0, r1, lsl #16
-	add sp, sp, #8
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02057E88: .word 0x0007FFF8
-_02057E8C: .word MAIN_BSS_0210EB30
-_02057E90: .word MAIN_BSS_0210EB34
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
-NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram: ; 0x02057E94
-	stmdb sp!, {r3, lr}
-	mov r1, #0x10000
-	rsb r1, r1, #0
-	and r1, r0, r1
-	mov r2, r0, lsl #0x10
-	mov r3, r1, lsr #0x10
-	ldr r0, _02057ED0 ; =MAIN_BSS_0210EB30
-	ldr r1, _02057ED4 ; =MAIN_BSS_0210EB34
-	mov r2, r2, lsr #0xd
-	mov r3, r3, lsl #3
-	bl NitroSystem_gfd_VramManager_NNSi_GfdFreeLnkVram
-	cmp r0, #0
-	moveq r0, #1
-	movne r0, #0
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02057ED0: .word MAIN_BSS_0210EB30
-_02057ED4: .word MAIN_BSS_0210EB34
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
-
-	arm_func_start NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
-NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState: ; 0x02057ED8
-	stmdb sp!, {r3, lr}
-	ldr r0, _02057F1C ; =MAIN_BSS_0210EB30
-	ldr r1, [r0, #0x10]
-	ldr r0, [r0, #0xc]
-	mov r1, r1, lsr #4
-	bl NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramBlockPool
-	ldr r1, _02057F1C ; =MAIN_BSS_0210EB30
-	str r0, [r1, #4]
-	ldr r0, _02057F20 ; =MAIN_BSS_0210EB30
-	bl NitroSystem_gfd_VramManager_NNSi_GfdInitLnkVramMan
-	ldr r1, _02057F1C ; =MAIN_BSS_0210EB30
-	ldr r0, _02057F20 ; =MAIN_BSS_0210EB30
-	ldr r3, [r1, #8]
-	ldr r1, _02057F24 ; =MAIN_BSS_0210EB34
-	mov r2, #0
-	bl NitroSystem_gfd_VramManager_NNSi_GfdAddNewFreeBlock
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02057F1C: .word MAIN_BSS_0210EB30
-_02057F20: .word MAIN_BSS_0210EB30
-_02057F24: .word MAIN_BSS_0210EB34
-	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
-
     .section .init, 4
 
 	arm_func_start sub_02084038
@@ -106983,114 +105717,6 @@ DAT_02084d78: ; 0x02084D78
 DAT_02084d80: ; 0x02084D80
 	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
-
-	.global ptr_FUN_02057198_02084da0
-ptr_FUN_02057198_02084da0: ; 0x02084DA0
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer3dTex
-
-	.global ptr_FUN_020571c4_02084da4
-ptr_FUN_020571c4_02084da4: ; 0x02084DA4
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer3dTexPltt
-
-	.global ptr_FUN_020571f0_02084da8
-ptr_FUN_020571f0_02084da8: ; 0x02084DA8
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageColor
-
-	.global ptr_FUN_02057214_02084dac
-ptr_FUN_02057214_02084dac: ; 0x02084DAC
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer3dClearImageDepth
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttMain
-
-	.global ptr_FUN_020572c8_02084de0
-ptr_FUN_020572c8_02084de0: ; 0x02084DE0
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttMain
-
-	.global ptr_FUN_020572f4_02084de4
-ptr_FUN_020572f4_02084de4: ; 0x02084DE4
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharMain
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0CharSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1CharSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2CharSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3CharSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG0ScrSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG1ScrSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2ScrSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3ScrSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG2BmpSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBG3BmpSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dObjPlttSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBGPlttSub
-
-	.global ptr_FUN_020573c8_02084e20
-ptr_FUN_020573c8_02084e20: ; 0x02084E20
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dObjExtPlttSub
-
-	.global ptr_FUN_020573f4_02084e24
-ptr_FUN_020573f4_02084e24: ; 0x02084E24
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dBGExtPlttSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dObjOamSub
-	.word NitroSystem_gfd_VramTransferMan_DoTransfer2dObjCharSub
-
-	.global DAT_02084e30
-DAT_02084e30: ; 0x02084E30
-	.byte 0x00, 0x00, 0x02, 0x00
-
-	.global DAT_02084e34
-DAT_02084e34: ; 0x02084E34
-	.byte 0x00, 0x00, 0x00, 0x00
-
-	.global DAT_02084e38
-DAT_02084e38: ; 0x02084E38
-	.byte 0x00, 0x00, 0x00, 0x00
-
-	.global DAT_02084e3c
-DAT_02084e3c: ; 0x02084E3C
-	.byte 0x00, 0x00, 0x02, 0x00
-
-	.global DAT_02084e40
-DAT_02084e40: ; 0x02084E40
-	.byte 0x00, 0x00, 0x00, 0x00
-
-	.global DAT_02084e44
-DAT_02084e44: ; 0x02084E44
-	.byte 0x00, 0x00, 0x00, 0x00
-
-	.global DAT_02084e48
-DAT_02084e48: ; 0x02084E48
-	.byte 0x00, 0x00, 0x02, 0x00
-
-	.global DAT_02084e4c
-DAT_02084e4c: ; 0x02084E4C
-	.byte 0x00, 0x00, 0x00, 0x00
-
-	.global DAT_02084e50
-DAT_02084e50: ; 0x02084E50
-	.byte 0x00, 0x00, 0x00, 0x00
-
-	.global DAT_02084e54
-DAT_02084e54: ; 0x02084E54
-	.byte 0x00, 0x00, 0x02, 0x00
-
-	.global DAT_02084e58
-DAT_02084e58: ; 0x02084E58
-	.byte 0x00, 0x00, 0x00, 0x00
-
-	.global DAT_02084e5c
-DAT_02084e5c: ; 0x02084E5C
-	.byte 0x00, 0x00, 0x00, 0x00
 
     .section .sinit,4
 
@@ -113512,22 +112138,6 @@ DAT_0208e79d: ; 0x0208E79D
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 
-	.global PTR_LAB_0208e7dc
-PTR_LAB_0208e7dc: ; 0x0208E7DC
-	.word NitroSystem_gfd_VramManager_AllocTexVram_
-
-	.global PTR_LAB_0208e7e0
-PTR_LAB_0208e7e0: ; 0x0208E7E0
-	.word NitroSystem_gfd_VramManager_FreeTexVram_
-
-	.global PTR_LAB_0208e7e4
-PTR_LAB_0208e7e4: ; 0x0208E7E4
-	.word sub_0205713C
-
-	.global PTR_LAB_0208e7e8
-PTR_LAB_0208e7e8: ; 0x0208E7E8
-	.word sub_02057144
-
     .bss
 
     .global MAIN_BSS_0208F300
@@ -114201,27 +112811,3 @@ MAIN_BSS_0210EAF0: ; 0x0210EAF0
     .global MAIN_BSS_0210EAF4
 MAIN_BSS_0210EAF4: ; 0x0210EAF4
     .space 0xC
-
-    .global MAIN_BSS_0210EB00
-MAIN_BSS_0210EB00: ; 0x0210EB00
-    .space 0x14
-
-    .global MAIN_BSS_0210EB14
-MAIN_BSS_0210EB14: ; 0x0210EB14
-    .space 0x4
-
-    .global MAIN_BSS_0210EB18
-MAIN_BSS_0210EB18: ; 0x0210EB18
-    .space 0x4
-
-    .global MAIN_BSS_0210EB1C
-MAIN_BSS_0210EB1C: ; 0x0210EB1C
-    .space 0x14
-
-    .global MAIN_BSS_0210EB30
-MAIN_BSS_0210EB30: ; 0x0210EB30
-    .space 0x4
-
-    .global MAIN_BSS_0210EB34
-MAIN_BSS_0210EB34: ; 0x0210EB34
-    .space 0x10

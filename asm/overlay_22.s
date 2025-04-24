@@ -1505,7 +1505,7 @@ _0211DE7C:
 	mov r0, #0x1f
 	mov r1, #0
 	mov r3, #0x20
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	ldmia sp!, {r4, pc}
 
 	arm_func_start ov22_0211DE9C
@@ -2128,7 +2128,7 @@ ov22_0211E688: ; 0x0211E688
 	str r4, [r2, #0x12]
 	ldr r2, [ip, #0xc8]
 	add r2, lr, r2, lsl #5
-	bl NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+	bl NNS_GfdRegisterNewVramTransferTask
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 _0211E744: .word 0x0400100A

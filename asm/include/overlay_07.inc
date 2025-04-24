@@ -94,8 +94,8 @@
 .public sub_02042108
 .public sub_02042120
 .public sub_020423F4
-.public NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
-.public NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
+.public NNS_GfdResetLnkTexVramState
+.public NNS_GfdResetLnkPlttVramState
 .public GX_DispOn
 .public GX_SetGraphicsMode
 .public GXS_SetGraphicsMode

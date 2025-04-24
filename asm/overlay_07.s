@@ -214,8 +214,8 @@ ov7_0211CC94: ; 0x0211CC94
 	mov r2, #0
 	mov r3, #0x4000
 	bl sub_020101F4
-	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
-	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
+	bl NNS_GfdResetLnkTexVramState
+	bl NNS_GfdResetLnkPlttVramState
 	ldr r0, [r4, #8]
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
@@ -227,8 +227,8 @@ ov7_0211CC94: ; 0x0211CC94
 ov7_0211CCCC: ; 0x0211CCCC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
-	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
+	bl NNS_GfdResetLnkTexVramState
+	bl NNS_GfdResetLnkPlttVramState
 	ldr r0, [r4, #4]
 	mov r1, #0x80000
 	mov r2, #0

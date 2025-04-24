@@ -46,7 +46,7 @@
 .public sub_02020804
 .public sub_02020FF0
 .public sub_02034C44
-.public NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
+.public NNS_GfdRegisterNewVramTransferTask
 .public NNS_G2dFontFindGlyphIndex
 .public NNS_G2dFontGetCharWidthsFromIndex
 .public NNS_G2dCharCanvasDrawChar

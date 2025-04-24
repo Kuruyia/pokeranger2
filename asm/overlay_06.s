@@ -126,8 +126,8 @@ _0211CB7C:
 	mov r0, #0
 	str r0, [r5, #8]
 _0211CB84:
-	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
-	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
+	bl NNS_GfdResetLnkTexVramState
+	bl NNS_GfdResetLnkPlttVramState
 	ldr r4, [r5, #0x84]
 	cmp r4, #0
 	beq _0211CBB4
@@ -234,8 +234,8 @@ _0211CCEC:
 	mov r0, #0
 	str r0, [r5, #8]
 _0211CCF4:
-	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
-	bl NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
+	bl NNS_GfdResetLnkTexVramState
+	bl NNS_GfdResetLnkPlttVramState
 	ldr r4, [r5, #0x84]
 	cmp r4, #0
 	beq _0211CD24

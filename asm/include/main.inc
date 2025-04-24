@@ -495,3 +495,16 @@
 .public NNSi_G2dSplitCharUTF8
 .public NNSi_objSizeHTbl
 .public NNSi_objSizeWTbl
+.public NNSi_objSizeWTbl
+.public NNS_GfdAllocLnkPlttVram
+.public NNS_GfdAllocLnkTexVram
+.public NNS_GfdDoVramTransfer
+.public NNS_GfdFreeLnkPlttVram
+.public NNS_GfdFreeLnkTexVram
+.public NNS_GfdGetLnkPlttVramManagerWorkSize
+.public NNS_GfdGetLnkTexVramManagerWorkSize
+.public NNS_GfdGetVramTransferTaskTotalSize
+.public NNS_GfdInitLnkPlttVramManager
+.public NNS_GfdInitLnkTexVramManager
+.public NNS_GfdInitVramTransferManager
+.public NNS_GfdRegisterNewVramTransferTask

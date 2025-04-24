@@ -339,12 +339,12 @@
 .public NitroSystem_NNS_FndUnmountArchive
 .public NitroSystem_NNS_FndGetArchiveFileByIndex
 .public NitroSystem_NNS_FndOpenArchiveFileByIndex
-.public NitroSystem_gfd_VramManager_NNS_GfdAllocLnkTexVram
-.public NitroSystem_gfd_VramManager_NNS_GfdFreeLnkTexVram
-.public NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
-.public NitroSystem_gfd_VramManager_NNS_GfdAllocLnkPlttVram
-.public NitroSystem_gfd_VramManager_NNS_GfdFreeLnkPlttVram
-.public NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
+.public NNS_GfdAllocLnkTexVram
+.public NNS_GfdFreeLnkTexVram
+.public NNS_GfdResetLnkTexVramState
+.public NNS_GfdAllocLnkPlttVram
+.public NNS_GfdFreeLnkPlttVram
+.public NNS_GfdResetLnkPlttVramState
 .public NNS_G2dGetCellDataByIdx
 .public NNS_G2dGetUnpackedCharacterData
 .public NNS_G2dGetUnpackedPaletteData
@@ -547,5 +547,5 @@
 .public sub_02040460
 .public sub_02041C14
 .public sub_020420A8
-.public NitroSystem_gfd_VramManager_NNS_GfdDumpLnkTexVramManager
-.public NitroSystem_gfd_VramManager_NNS_GfdDumpLnkPlttVramManager
+.public NNS_GfdDumpLnkTexVramManager
+.public NNS_GfdDumpLnkPlttVramManager

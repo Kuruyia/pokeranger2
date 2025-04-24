@@ -1,0 +1,132 @@
+diff --git a/libraries/gfd/include/gfdi_LinkedListVramMan_Common.h b/libraries/gfd/include/gfdi_LinkedListVramMan_Common.h
+index 5dc0faf..cd2b899 100644
+--- a/libraries/gfd/include/gfdi_LinkedListVramMan_Common.h
++++ b/libraries/gfd/include/gfdi_LinkedListVramMan_Common.h
+@@ -31,8 +31,6 @@ BOOL NNSi_GfdAddNewFreeBlock(NNSiGfdLnkVramMan * pMan, NNSiGfdLnkVramBlock ** pp
+ BOOL NNSi_GfdAllocLnkVram(NNSiGfdLnkVramMan * pMan, NNSiGfdLnkVramBlock ** ppBlockPoolList, u32 * pRetAddr, u32 szByte);
+ BOOL NNSi_GfdAllocLnkVramAligned(NNSiGfdLnkVramMan * pMan, NNSiGfdLnkVramBlock ** ppBlockPoolList, u32 * pRetAddr, u32 szByte, u32 alignment);
+ 
+-void NNSi_GfdMergeAllFreeBlocks(NNSiGfdLnkVramMan * pMan, NNSiGfdLnkVramBlock ** ppBlockPoolList);
+-
+ BOOL NNSi_GfdFreeLnkVram(NNSiGfdLnkVramMan * pMan, NNSiGfdLnkVramBlock ** ppBlockPoolList, u32 addr, u32 szByte);
+ 
+ #endif
+diff --git a/libraries/gfd/src/VramManager/gfd_LinkedListPlttVramMan.c b/libraries/gfd/src/VramManager/gfd_LinkedListPlttVramMan.c
+index e005df6..f0c5971 100644
+--- a/libraries/gfd/src/VramManager/gfd_LinkedListPlttVramMan.c
++++ b/libraries/gfd/src/VramManager/gfd_LinkedListPlttVramMan.c
+@@ -143,6 +143,4 @@ void NNS_GfdResetLnkPlttVramState (void)
+                                          mgr_.szByte);
+         NNS_GFD_ASSERT(result);
+     }
+-
+-    NNSi_GfdMergeAllFreeBlocks(&mgr_.mgr, &mgr_.pBlockPoolList);
+ }
+diff --git a/libraries/gfd/src/VramManager/gfd_LinkedListTexVramMan.c b/libraries/gfd/src/VramManager/gfd_LinkedListTexVramMan.c
+index fcddbf6..c3595af 100644
+--- a/libraries/gfd/src/VramManager/gfd_LinkedListTexVramMan.c
++++ b/libraries/gfd/src/VramManager/gfd_LinkedListTexVramMan.c
+@@ -267,7 +267,4 @@ void NNS_GfdResetLnkTexVramState (void)
+         }
+         NNS_GFD_ASSERT(result);
+     }
+-
+-    NNSi_GfdMergeAllFreeBlocks(&mgr_.mgrNrm, &mgr_.pBlockPoolList);
+-    NNSi_GfdMergeAllFreeBlocks(&mgr_.mgr4x4, &mgr_.pBlockPoolList);
+ }
+diff --git a/libraries/gfd/src/VramManager/gfdi_LinkedListVramMan_Common.c b/libraries/gfd/src/VramManager/gfdi_LinkedListVramMan_Common.c
+index 277dd12..d43d064 100644
+--- a/libraries/gfd/src/VramManager/gfdi_LinkedListVramMan_Common.c
++++ b/libraries/gfd/src/VramManager/gfdi_LinkedListVramMan_Common.c
+@@ -99,41 +99,6 @@ static void DefaultDumpCallBack_ (u32 addr, u32 szByte, void * pUserData)
+     }
+ }
+ 
+-static BOOL TryToMergeBlockRegion_ (NNSiGfdLnkVramMan * pMan, NNSiGfdLnkVramBlock ** ppBlockPoolList, NNSiGfdLnkMemRegion * pRegion)
+-{
+-    NNS_GFD_NULL_ASSERT(pMan);
+-    NNS_GFD_NULL_ASSERT(ppBlockPoolList);
+-    NNS_GFD_NULL_ASSERT(pRegion);
+-
+-    {
+-        NNSiGfdLnkVramBlock * pCursor = pMan->pFreeList;
+-        NNSiGfdLnkVramBlock * pNext = NULL;
+-        BOOL bMerged = FALSE;
+-
+-        while ( pCursor ) {
+-            pNext = pCursor->pBlkNext;
+-
+-            if ( pCursor->addr == pRegion->end ) {
+-                pRegion->end = GetBlockEndAddr_(pCursor);
+-                RemoveBlock_(&pMan->pFreeList, pCursor);
+-                InsertBlock_(ppBlockPoolList, pCursor);
+-                bMerged |= TRUE;
+-            }
+-
+-            if ( GetBlockEndAddr_(pCursor) == pRegion->start ) {
+-                pRegion->start = pCursor->addr;
+-                RemoveBlock_(&pMan->pFreeList, pCursor);
+-                InsertBlock_(ppBlockPoolList, pCursor);
+-                bMerged |= TRUE;
+-            }
+-
+-            pCursor = pNext;
+-        }
+-
+-        return bMerged;
+-    }
+-}
+-
+ void NNSi_GfdDumpLnkVramManFreeListInfo (const NNSiGfdLnkVramBlock * pFreeListHead, u32 szReserved)
+ {
+     u32 szFreeTotal = 0;
+@@ -279,26 +244,6 @@ NG_CASE:
+     }
+ }
+ 
+-void NNSi_GfdMergeAllFreeBlocks (NNSiGfdLnkVramMan * pMan, NNSiGfdLnkVramBlock ** ppBlockPoolList)
+-{
+-    NNSiGfdLnkMemRegion region;
+-
+-    NNSiGfdLnkVramBlock * pCursor = pMan->pFreeList;
+-    while (pCursor) {
+-        region.start = pCursor->addr;
+-        region.end = pCursor->addr + pCursor->szByte;
+-
+-        if ( TryToMergeBlockRegion_(pMan, ppBlockPoolList, &region)) {
+-            pCursor->addr = region.start;
+-            pCursor->szByte = region.end - region.start;
+-
+-            pCursor = pMan->pFreeList;
+-        } else {
+-            pCursor = pCursor->pBlkNext;
+-        }
+-    }
+-}
+-
+ BOOL NNSi_GfdFreeLnkVram (NNSiGfdLnkVramMan * pMan, NNSiGfdLnkVramBlock ** ppBlockPoolList, u32 addr, u32 szByte)
+ {
+     NNS_GFD_NULL_ASSERT(pMan);
+@@ -314,16 +259,12 @@ BOOL NNSi_GfdFreeLnkVram (NNSiGfdLnkVramMan * pMan, NNSiGfdLnkVramBlock ** ppBlo
+             NNS_GFD_NULL_ASSERT(pMan);
+             NNS_GFD_NULL_ASSERT(ppBlockPoolList);
+             {
+-                (void)TryToMergeBlockRegion_(pMan, ppBlockPoolList, &region);
+-
+-                {
+-                    NNSiGfdLnkVramBlock * pNewFreeBlk = GetNewBlock_(ppBlockPoolList);
+-                    if ( pNewFreeBlk == NULL ) {
+-                        return FALSE;
+-                    } else {
+-                        InitBlockFromRegion_(pNewFreeBlk, &region);
+-                        InsertBlock_(&pMan->pFreeList, pNewFreeBlk);
+-                    }
++                NNSiGfdLnkVramBlock * pNewFreeBlk = GetNewBlock_(ppBlockPoolList);
++                if ( pNewFreeBlk == NULL ) {
++                    return FALSE;
++                } else {
++                    InitBlockFromRegion_(pNewFreeBlk, &region);
++                    InsertBlock_(&pMan->pFreeList, pNewFreeBlk);
+                 }
+ 
+                 return TRUE;
