@@ -10047,7 +10047,7 @@ _021255A0:
 	cmp r2, r1
 	bne _021257EC
 	add r1, sp, #0x14
-	bl NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedCharacterData
+	bl NNS_G2dGetUnpackedCharacterData
 	cmp r0, #0
 	beq _021258C4
 	ldr r0, [sp]
@@ -10078,7 +10078,7 @@ _02125620:
 	bl ov0_0213033C
 	add r0, r5, #8
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	b _021258C4
 _0212566C:
 	ldr r6, [sp, #0x14]
@@ -10163,7 +10163,7 @@ _0212575C:
 	bl ov0_0213033C
 	add r0, r8, #8
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r0, [sp, #0x14]
 	add r7, r7, #1
 	ldrh r1, [r0, #2]
@@ -10209,7 +10209,7 @@ _021257EC:
 	bl FS_ReadFile
 	add r1, sp, #0x10
 	mov r0, r5
-	bl NitroSystem_g2d_NCL_load_NNS_G2dGetUnpackedPaletteData
+	bl NNS_G2dGetUnpackedPaletteData
 	cmp r0, #0
 	beq _021258BC
 	mov r0, #0x24
@@ -10237,7 +10237,7 @@ _02125874:
 	bl ov0_02130404
 	add r0, r6, #8
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 _021258BC:
 	add r0, sp, #0x38
 	bl FS_CloseFile
@@ -12097,7 +12097,7 @@ _021271EC:
 	bne _021272C0
 	mov r0, sb
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r1, [sb, #0x10]
 	mov r2, #1
 	str r1, [sp]
@@ -12266,7 +12266,7 @@ _021274F8:
 	ldr r0, [r2, r0, lsl #2]
 	add sb, r0, #8
 	mov r0, sb
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r1, [sb, #0x10]
 	mov r2, #1
 	str r1, [sp]
@@ -12303,7 +12303,7 @@ _02127588:
 	ldrb r0, [sp, #0x56]
 	ldr r0, [r2, r0, lsl #2]
 	add r0, r0, #8
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	mov r3, r0
 	ldrb r1, [sp, #0x55]
 	ldr r2, [sb, #0x14]
@@ -21894,7 +21894,7 @@ _0212FB78:
 _0212FBE4:
 	add r0, r5, #8
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r1, [r5, #0x18]
 	mov r2, #1
 	str r1, [sp]
@@ -21911,7 +21911,7 @@ _0212FBE4:
 	ldr r0, [sp, #0x4c]
 	mov r1, #0
 	add r0, r0, #8
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	mov r3, r0
 	ldrb r1, [fp, #3]
 	ldr r2, [r5, #0x1c]
@@ -22377,12 +22377,12 @@ _02130268:
 	add sb, sb, r0, lsl #5
 _0213028C:
 	add r0, r6, #8
-	bl NitroSystem_g2d_Image_NNS_G2dInitImagePaletteProxy
+	bl NNS_G2dInitImagePaletteProxy
 	add r0, sp, #0
 	mov r1, sb
 	add r3, r6, #8
 	mov r2, #0
-	bl NitroSystem_g2d_Image_NNS_G2dLoadPalette
+	bl NNS_G2dLoadPalette
 _021302A8:
 	mov r0, #0
 	str r0, [r4, #0x10]
@@ -89166,7 +89166,7 @@ ov0_02168FF4: ; 0x02168FF4
 	mov r4, r1
 	ldr r0, [r0, #0xb8]
 	mov r6, r2
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
+	bl NNS_G2dGetCellDataByIdx
 	cmp r0, #0
 	beq _02169028
 	ldrh r1, [r0]
@@ -89199,10 +89199,10 @@ _02169034:
 	mov r2, r2, lsl #0x16
 	mov r2, r2, lsr #0x16
 	mov r6, r2, lsl #0x1b
-	ldr r3, _021691A0 ; =DAT_02084e78
+	ldr r3, _021691A0 ; =NNSi_objSizeWTbl
 	mov r7, ip, asr #0xe
 	mov r0, r0, lsr #0x1e
-	ldr r1, _021691A4 ; =DAT_02084e60
+	ldr r1, _021691A4 ; =NNSi_objSizeHTbl
 	mov ip, r0, lsl #1
 	add r3, r3, r7, lsl #3
 	add r0, r1, r7, lsl #3
@@ -89272,8 +89272,8 @@ _0216911C:
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 _0216919C: .word 0xC000C000
-_021691A0: .word DAT_02084e78
-_021691A4: .word DAT_02084e60
+_021691A0: .word NNSi_objSizeWTbl
+_021691A4: .word NNSi_objSizeHTbl
 
 	arm_func_start ov0_021691A8
 ov0_021691A8: ; 0x021691A8
@@ -89369,7 +89369,7 @@ _021692CC:
 	str r0, [r4, #0x24]
 	ldr r4, [sl, #0x60]
 	add r0, r4, #8
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r1, [r4, #0x1c]
 	ldr r2, [r4, #0x14]
 	mov r1, r1, lsl #0x1a
@@ -89386,7 +89386,7 @@ _021692CC:
 	mov r1, #0
 	add r0, r0, #8
 	ldr r4, [r4, #0x1c]
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	ldrh r1, [sl, #0x3a]
 	cmp r4, #2
 	add r1, r1, r0

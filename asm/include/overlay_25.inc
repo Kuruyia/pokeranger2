@@ -39,10 +39,10 @@
 .public sub_0203499C
 .public sub_02034A40
 .public sub_02034B58
-.public NitroSystem_g2d_Font_NNSi_G2dFontGetTextWidth
-.public NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
-.public NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
-.public NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+.public NNSi_G2dFontGetTextWidth
+.public NNS_G2dCharCanvasDrawChar
+.public NNS_G2dCharCanvasInitForBG
+.public NNS_G2dMapScrToCharText
 .public GX_DispOn
 .public GX_SetGraphicsMode
 .public GX_SetBankForBG

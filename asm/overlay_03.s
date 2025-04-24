@@ -7439,7 +7439,7 @@ _021232AC:
 	ldr r2, [r5, #0xb8]
 	ldr r3, [r6, #0xb8]
 	mov r0, #5
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r7, #0
 	beq _021232F0
 	mov r0, r7
@@ -7538,7 +7538,7 @@ _02123410:
 	ldr r2, [r5, #0xb8]
 	ldr r3, [r6, #0xb8]
 	mov r0, #2
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -7549,7 +7549,7 @@ _02123410:
 	ldr r1, [r8, #0xb8]
 	mov r3, r2
 	mov r0, #3
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r7, #0
 	beq _02123484
 	mov r0, r7
@@ -8334,7 +8334,7 @@ _02123F24:
 	ldr r0, [r0, #0x4ac]
 	mov r1, #0
 	add r0, r0, #0xc
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetTextWidth
+	bl NNSi_G2dFontGetTextWidth
 	ldr r2, [sp, #0x30]
 	add r1, sp, #0x10
 	str r2, [sp]

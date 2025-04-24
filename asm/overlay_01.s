@@ -7900,7 +7900,7 @@ ov1_02123774: ; 0x02123774
 	mov r0, r4
 	str r2, [r1]
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r1, [r4, #0x14]
 	ldr r2, [r4, #0xc]
 	mov r1, r1, lsl #0x1a
@@ -7917,7 +7917,7 @@ ov1_02123774: ; 0x02123774
 	ldr r4, [r4, #0x14]
 	mov r0, r5
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	cmp r4, #2
 	moveq r1, #1
 	movne r1, #0
@@ -11695,7 +11695,7 @@ _02126D04:
 	bl sub_020124BC
 	add r0, r4, #0x198
 	mov r1, #0x1000
-	bl NitroSystem_g2d_CellAnimation_NNS_G2dTickCellAnimation
+	bl NNS_G2dTickCellAnimation
 	ldr r1, [r4, #0x198]
 	mov r0, r4
 	ldr r2, [r1]
@@ -12161,7 +12161,7 @@ ov1_021273A0: ; 0x021273A0
 	ldr r0, [r0, #0x1c]
 	mov r1, r2
 	ldr r0, [r0, #0xb8]
-	bl NitroSystem_g2d_NAN_load_NNS_G2dGetAnimSequenceByIdx
+	bl NNS_G2dGetAnimSequenceByIdx
 	mov r6, r0
 	ldr r0, [r5, #0x184]
 	mov r1, r4
@@ -12174,7 +12174,7 @@ ov1_021273A0: ; 0x021273A0
 	ldrne r2, [r0, #0xb8]
 	add r0, r5, #0x198
 	moveq r2, #0
-	bl NitroSystem_g2d_CellAnimation_NNS_G2dInitCellAnimation
+	bl NNS_G2dInitCellAnimation
 	mov r0, #1
 	str r0, [r5, #0x1a4]
 	strb r4, [r5, #0x18d]
@@ -38475,7 +38475,7 @@ _0213D128:
 	ldr r1, [r7, #0xb8]
 	ldr r2, [r6, #0xb8]
 	ldr r3, [r3, #0xb8]
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r7, #0
 	beq _0213D184
 	mov r0, r7
@@ -38555,7 +38555,7 @@ _0213D264:
 	ldr r1, [r7, #0xb8]
 	ldr r2, [r6, #0xb8]
 	mov r0, #5
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -38566,7 +38566,7 @@ _0213D264:
 	ldr r1, [r8, #0xb8]
 	mov r3, r2
 	mov r0, #6
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r7, #0
 	beq _0213D2D4
 	mov r0, r7

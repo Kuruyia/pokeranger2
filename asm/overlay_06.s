@@ -810,7 +810,7 @@ _0211D540:
 	ldr r2, [r5, #0xb8]
 	ldr r3, [r6, #0xb8]
 	mov r0, #2
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -821,7 +821,7 @@ _0211D540:
 	ldr r1, [r8, #0xb8]
 	mov r3, r2
 	mov r0, #3
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r7, #0
 	beq _0211D5B4
 	mov r0, r7

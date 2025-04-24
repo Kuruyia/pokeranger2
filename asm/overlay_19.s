@@ -400,7 +400,7 @@ _0211CF00:
 	ldr r2, [r6, #0xb8]
 	ldr r3, [r5, #0xb8]
 	mov r0, #3
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r7, #0
 	beq _0211CF48
 	mov r0, r7

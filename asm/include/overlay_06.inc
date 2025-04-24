@@ -47,7 +47,7 @@
 .public sub_02034C44
 .public NitroSystem_gfd_VramManager_NNS_GfdResetLnkTexVramState
 .public NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
-.public NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+.public NNS_G2dBGSetupEx
 .public GX_DispOn
 .public GX_SetGraphicsMode
 .public GX_SetBankForBG

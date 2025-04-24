@@ -82663,7 +82663,7 @@ _0215BCB4:
 	add r0, r2, r7, lsl #2
 	ldr r1, [r0, #0x674]
 	add r0, r2, r8
-	bl NitroSystem_g2d_Font_NNS_G2dFontInitUTF16
+	bl NNS_G2dFontInitUTF16
 	add r7, r7, #1
 	cmp r7, #2
 	add r8, r8, #8
@@ -82687,7 +82687,7 @@ _0215BD0C:
 	add r0, r2, r8, lsl #2
 	ldr r1, [r0, #0x674]
 	add r0, r2, r7
-	bl NitroSystem_g2d_Font_NNS_G2dFontInitUTF16
+	bl NNS_G2dFontInitUTF16
 	add r8, r8, #1
 	cmp r8, #2
 	add r7, r7, #8
@@ -82748,7 +82748,7 @@ ov11_0215BDA8: ; 0x0215BDA8
 	mov r0, r6
 	strh r1, [r4, #0x2c]
 	mov r1, r5
-	bl NitroSystem_g2d_CharCanvas_NNSi_G2dCalcRequiredOBJ
+	bl NNSi_G2dCalcRequiredOBJ
 	ldr r1, [sp, #0x20]
 	cmp r7, #1
 	str r0, [r1]
@@ -82761,7 +82761,7 @@ ov11_0215BDA8: ; 0x0215BDA8
 	mov r2, r6
 	mov r3, r5
 	add r1, ip, r7, lsl #7
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForOBJ1D
+	bl NNS_G2dCharCanvasInitForOBJ1D
 	ldr r1, [r4, #0x14]
 	mov r0, r4
 	ldr r2, [r1, #4]
@@ -82848,7 +82848,7 @@ _0215BF48:
 	mov r0, r4
 	mov r2, r6
 	mov r3, r5
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
+	bl NNS_G2dCharCanvasInitForBG
 	ldr r0, _0215C00C ; =OVERLAY11_BSS_0216C400
 	mov r1, #1
 	ldr r0, [r0]
@@ -82876,7 +82876,7 @@ _0215BF98:
 	str r7, [sp, #8]
 	mov r5, #0xf
 	str r5, [sp, #0xc]
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+	bl NNS_G2dMapScrToCharText
 	mov r0, r4
 	mov r1, #0
 	bl ov11_0215C390
@@ -83039,7 +83039,7 @@ _0215C1B8:
 	add r0, r0, #0x18
 	strb lr, [sp, #8]
 	strb ip, [sp, #9]
-	bl NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawText
+	bl NNSi_G2dTextCanvasDrawText
 	add sp, sp, #0x10
 	ldmia sp!, {r4, pc}
 
@@ -83056,7 +83056,7 @@ ov11_0215C1E8: ; 0x0215C1E8
 	mov r3, r2
 	mov r2, r1
 	add r1, lr, ip, lsl #3
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
+	bl NNS_G2dCharCanvasDrawChar
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -83084,14 +83084,14 @@ _0215C258:
 	ldr r0, [r0]
 	add r4, r0, r5, lsl #3
 	mov r0, r4
-	bl NitroSystem_g2d_Font_NNS_G2dFontFindGlyphIndex
+	bl NNS_G2dFontFindGlyphIndex
 	mov r1, r0
 	ldr r0, _0215C2CC ; =0x0000FFFF
 	cmp r1, r0
 	ldreq r0, [r4]
 	ldreqh r1, [r0, #2]
 	mov r0, r4
-	bl NitroSystem_g2d_Font_NNS_G2dFontGetCharWidthsFromIndex
+	bl NNS_G2dFontGetCharWidthsFromIndex
 	ldrh r1, [r6]
 	mov r2, r0
 	mov r0, sl
@@ -83166,7 +83166,7 @@ _0215C350:
 	add r0, r0, #0x18
 	strb lr, [sp, #0x10]
 	strb ip, [sp, #0x11]
-	bl NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawTextRect
+	bl NNSi_G2dTextCanvasDrawTextRect
 	add sp, sp, #0x18
 	ldmia sp!, {r4, pc}
 
@@ -83216,7 +83216,7 @@ ov11_0215C3A4: ; 0x0215C3A4
 	str r1, [sp, #0xc]
 	ldrb r1, [r4, #0x2e]
 	ldrb r2, [r4, #0x2f]
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dArrangeOBJ1D
+	bl NNS_G2dArrangeOBJ1D
 	add sp, sp, #0x10
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	arm_func_end ov11_0215C3A4

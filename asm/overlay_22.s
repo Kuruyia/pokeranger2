@@ -5224,7 +5224,7 @@ ov22_02121024: ; 0x02121024
 	ldr r3, [sp, #0x30]
 	add r0, r5, #0x10
 	str ip, [sp]
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
+	bl NNS_G2dCharCanvasInitForBG
 	add r0, r5, #0x10
 	str r0, [r5]
 	ldr r0, [sp, #0x34]
@@ -5244,7 +5244,7 @@ ov22_02121024: ; 0x02121024
 	mov r0, #0xe
 	str r0, [sp, #0xc]
 	mov r0, r4
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+	bl NNS_G2dMapScrToCharText
 	mov r0, r5
 	bl ov22_021210B8
 	add sp, sp, #0x10
@@ -5597,14 +5597,14 @@ _02121544:
 _0212155C:
 	mov r0, sl
 	mov r1, r7
-	bl NitroSystem_g2d_Font_NNS_G2dFontFindGlyphIndex
+	bl NNS_G2dFontFindGlyphIndex
 	mov r1, r0
 	ldr r0, _021215C4 ; =0x0000FFFF
 	cmp r1, r0
 	ldreq r0, [sl]
 	ldreqh r1, [r0, #2]
 	mov r0, sl
-	bl NitroSystem_g2d_Font_NNS_G2dFontGetCharWidthsFromIndex
+	bl NNS_G2dFontGetCharWidthsFromIndex
 	ldrsb r0, [r0, #2]
 	add r0, sb, r0
 	add r6, r6, r0
@@ -5685,7 +5685,7 @@ _02121680:
 	ldr r1, [sp, #8]
 	ldr r3, [sp, #0x38]
 	mov r2, sb
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
+	bl NNS_G2dCharCanvasDrawChar
 	add r0, r0, fp
 	add sb, sb, r0
 	b _021216AC

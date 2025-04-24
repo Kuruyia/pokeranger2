@@ -123,8 +123,8 @@
 .public sub_02036488
 .public sub_02041D80
 .public sub_02041D98
-.public NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
-.public NitroSystem_g2d_Font_NNSi_G2dFontGetTextWidth
+.public NNS_G2dBGSetupEx
+.public NNSi_G2dFontGetTextWidth
 .public MTX_RotZ33_
 .public FX_InvSqrt
 .public GX_DispOn

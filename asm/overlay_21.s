@@ -1553,7 +1553,7 @@ _0211DD20:
 	mov r1, #0x1c
 	mov r2, #2
 	mov r3, r2
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+	bl NNS_G2dMapScrToCharText
 	mov r0, #5
 	str r0, [sp]
 	ldr r1, [sl, #0x254]

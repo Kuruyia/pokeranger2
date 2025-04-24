@@ -2886,7 +2886,7 @@ sub_020031E8: ; 0x020031E8
 	ldmeqia sp!, {r4, r5, r6, r7, pc}
 	ldr r0, [r7, #0x4c]
 	add r1, r7, #0xb8
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetUnpackedCellBank
+	bl NNS_G2dGetUnpackedCellBank
 	cmp r0, #0
 	addne sp, sp, #0xc
 	mov r0, r7
@@ -2956,7 +2956,7 @@ sub_020032CC: ; 0x020032CC
 	ldmeqia sp!, {r4, r5, r6, r7, pc}
 	ldr r0, [r7, #0x4c]
 	add r1, r7, #0xb8
-	bl NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedCharacterData
+	bl NNS_G2dGetUnpackedCharacterData
 	cmp r0, #0
 	addne sp, sp, #0xc
 	mov r0, r7
@@ -3026,7 +3026,7 @@ sub_020033B0: ; 0x020033B0
 	ldmeqia sp!, {r4, r5, r6, r7, pc}
 	ldr r0, [r7, #0x4c]
 	add r1, r7, #0xb8
-	bl NitroSystem_g2d_NCL_load_NNS_G2dGetUnpackedPaletteData
+	bl NNS_G2dGetUnpackedPaletteData
 	cmp r0, #0
 	addne sp, sp, #0xc
 	mov r0, r7
@@ -3098,7 +3098,7 @@ sub_02003494: ; 0x02003494
 	ldmeqia sp!, {r4, r5, r6, r7, pc}
 	ldr r0, [r7, #0x4c]
 	add r1, r7, #0xb8
-	bl NitroSystem_g2d_NSC_load_NNS_G2dGetUnpackedScreenData
+	bl NNS_G2dGetUnpackedScreenData
 	cmp r0, #0
 	addne sp, sp, #0xc
 	mov r0, r7
@@ -3168,7 +3168,7 @@ sub_02003578: ; 0x02003578
 	ldmeqia sp!, {r4, r5, r6, r7, pc}
 	ldr r0, [r7, #0x4c]
 	add r1, r7, #0xb8
-	bl NitroSystem_g2d_NAN_load_NNS_G2dGetUnpackedAnimBank
+	bl NNS_G2dGetUnpackedAnimBank
 	cmp r0, #0
 	addne sp, sp, #0xc
 	mov r0, r7
@@ -3240,7 +3240,7 @@ sub_0200365C: ; 0x0200365C
 	ldmeqia sp!, {r4, r5, r6, r7, pc}
 	ldr r0, [r7, #0x4c]
 	add r1, r7, #0xb8
-	bl NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedBGCharacterData
+	bl NNS_G2dGetUnpackedBGCharacterData
 	cmp r0, #0
 	addne sp, sp, #0xc
 	mov r0, r7
@@ -3716,7 +3716,7 @@ sub_02003C4C: ; 0x02003C4C
 	ldr r8, [r5, #0x3c]
 	ldr r7, [r5, #0x20]
 	ldr r6, [r5, #0x24]
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r1, [sb, #0x1c]
 	ldr r2, [sb, #0x14]
 	mov r1, r1, lsl #0x1a
@@ -3732,7 +3732,7 @@ sub_02003C4C: ; 0x02003C4C
 	ldr sb, [sb, #0x1c]
 	add r0, r8, #8
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	cmp sb, #2
 	moveq r1, #1
 	movne r1, #0
@@ -4138,7 +4138,7 @@ sub_02004234: ; 0x02004234
 	add r0, r7, #8
 	mov r1, #0
 	ldr r6, [r5, #0x5c]
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r1, [r7, #0x1c]
 	ldr r2, [r7, #0x14]
 	mov r1, r1, lsl #0x1a
@@ -4154,7 +4154,7 @@ sub_02004234: ; 0x02004234
 	ldr r7, [r7, #0x1c]
 	add r0, r6, #8
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	cmp r7, #2
 	moveq r1, #1
 	movne r1, #0
@@ -4415,7 +4415,7 @@ sub_02004658: ; 0x02004658
 	mov r1, #0
 	mov r7, r2
 	ldr r4, [r8, #0x5c]
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r2, [r5, #0x18]
 	mov r1, #0
 	str r2, [sp]
@@ -4431,7 +4431,7 @@ sub_02004658: ; 0x02004658
 	bl G3C_TexImageParam
 	add r0, r4, #8
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	ldr r2, [r5, #0x1c]
 	mov r1, r0
 	mov r0, r7
@@ -4907,7 +4907,7 @@ sub_02004D58: ; 0x02004D58
 	add r0, r7, #8
 	mov r1, #0
 	ldr r6, [r5, #0x4c]
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r1, [r7, #0x1c]
 	ldr r2, [r7, #0x14]
 	mov r1, r1, lsl #0x1a
@@ -4923,7 +4923,7 @@ sub_02004D58: ; 0x02004D58
 	ldr r7, [r7, #0x1c]
 	add r0, r6, #8
 	mov r1, #0
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	cmp r7, #2
 	moveq r1, #1
 	movne r1, #0
@@ -5138,7 +5138,7 @@ sub_020050C8: ; 0x020050C8
 	ldr r1, _02005114 ; =MAIN_BSS_020AF320
 	str r0, [r1]
 	ldr r0, _02005118 ; =MAIN_BSS_020AF324
-	bl NitroSystem_g2d_Image_NNS_G2dInitImagePaletteProxy
+	bl NNS_G2dInitImagePaletteProxy
 	ldr r1, _02005114 ; =MAIN_BSS_020AF320
 	ldr r0, _0200511C ; =DAT_0208a7a4
 	ldr r1, [r1]
@@ -5146,7 +5146,7 @@ sub_020050C8: ; 0x020050C8
 	mov r1, r1, lsl #0x10
 	mov r1, r1, lsr #0xd
 	mov r2, #0
-	bl NitroSystem_g2d_Image_NNS_G2dLoadPalette
+	bl NNS_G2dLoadPalette
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -5280,7 +5280,7 @@ sub_0200527C: ; 0x0200527C
 	mov r4, r1
 	ldrh r1, [sl, #0x2a]
 	ldr r0, [r0, #0xb8]
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
+	bl NNS_G2dGetCellDataByIdx
 	str r0, [sp, #0x24]
 	cmp r0, #0
 	bne _020052AC
@@ -5336,7 +5336,7 @@ _02005354:
 	mov r1, #0
 	add r0, r0, #8
 	str r2, [sp, #0x2c]
-	bl NitroSystem_g2d_Image_NNS_G2dGetImageLocation
+	bl NNS_G2dGetImageLocation
 	ldr r1, [sp, #0x28]
 	ldr r2, [r1, #0x1c]
 	ldr r3, [r1, #0x14]
@@ -5423,10 +5423,10 @@ _02005424:
 	and r0, r2, #0xc0000000
 	mov r0, r0, lsr #0x1e
 	mov r2, r0, lsl #1
-	ldr r0, _020058AC ; =DAT_02084e78
+	ldr r0, _020058AC ; =NNSi_objSizeWTbl
 	add r0, r0, r3, lsl #3
 	ldrh r7, [r2, r0]
-	ldr r0, _020058B0 ; =DAT_02084e60
+	ldr r0, _020058B0 ; =NNSi_objSizeHTbl
 	add r0, r0, r3, lsl #3
 	ldrh r8, [r2, r0]
 	rsb r0, r1, r5, lsl #27
@@ -5548,7 +5548,7 @@ _02005670:
 	ldr r0, [sp, #0x2c]
 	mov r1, #0
 	add r0, r0, #8
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	ldr r1, [sp, #0x14]
 	add r1, r0, r1, lsl #5
 	ldr r0, [sp, #0x10]
@@ -5566,7 +5566,7 @@ _020056D8:
 	ldr r0, [r0, #0x1c]
 	str r0, [sp, #0xc]
 	ldr r0, _020058B4 ; =MAIN_BSS_020AF324
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	ldr r1, [sp, #0xc]
 	cmp r1, #2
 	moveq r1, #1
@@ -5682,8 +5682,8 @@ _0200589C: .word FX_SinCosTable_
 _020058A0: .word 0x0400046C
 _020058A4: .word 0x040004A8
 _020058A8: .word 0xC000C000
-_020058AC: .word DAT_02084e78
-_020058B0: .word DAT_02084e60
+_020058AC: .word NNSi_objSizeWTbl
+_020058B0: .word NNSi_objSizeHTbl
 _020058B4: .word MAIN_BSS_020AF324
 _020058B8: .word 0x04000504
 
@@ -5696,7 +5696,7 @@ sub_020058BC: ; 0x020058BC
 	mov r4, r1
 	ldrh r1, [sl, #0x2a]
 	ldr r0, [r0, #0xb8]
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
+	bl NNS_G2dGetCellDataByIdx
 	ldrh r1, [r4, #0x28]
 	ldr r4, _02005EE0 ; =0x04000450
 	mov r5, #0
@@ -5808,10 +5808,10 @@ _020059FC:
 	and r0, r1, #0xc0000000
 	mov r0, r0, lsr #0x1e
 	mov r1, r0, lsl #1
-	ldr r0, _02005EF4 ; =DAT_02084e78
+	ldr r0, _02005EF4 ; =NNSi_objSizeWTbl
 	add r0, r0, r3, lsl #3
 	ldrsh r2, [r1, r0]
-	ldr r0, _02005EF8 ; =DAT_02084e60
+	ldr r0, _02005EF8 ; =NNSi_objSizeHTbl
 	add r0, r0, r3, lsl #3
 	ldrsh r1, [r1, r0]
 	mov r0, r2, lsl #0x10
@@ -5972,7 +5972,7 @@ _02005C60:
 	ldr r0, [sp, #0x40]
 	mov r1, #0
 	add r0, r0, #8
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	ldr r1, [sp, #0x1c]
 	add r1, r0, r1, lsl #5
 	ldr r0, [sp, #0x14]
@@ -5989,7 +5989,7 @@ _02005D30:
 	ldr r0, [r0, #0x1c]
 	str r0, [sp, #0x10]
 	ldr r0, _02005EFC ; =MAIN_BSS_020AF324
-	bl NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
+	bl NNS_G2dGetImagePaletteLocation
 	ldr r1, [sp, #0x10]
 	cmp r1, #2
 	moveq r1, #1
@@ -6101,8 +6101,8 @@ _02005EE4: .word FX_SinCosTable_
 _02005EE8: .word 0x0400046C
 _02005EEC: .word 0x04000480
 _02005EF0: .word 0xC000C000
-_02005EF4: .word DAT_02084e78
-_02005EF8: .word DAT_02084e60
+_02005EF4: .word NNSi_objSizeWTbl
+_02005EF8: .word NNSi_objSizeHTbl
 _02005EFC: .word MAIN_BSS_020AF324
 _02005F00: .word 0x04000504
 
@@ -6196,7 +6196,7 @@ sub_02005FDC: ; 0x02005FDC
 	moveq r0, #0
 	ldmeqia sp!, {r3, pc}
 	ldr r0, [r0, #0xb8]
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
+	bl NNS_G2dGetCellDataByIdx
 	ldrh r0, [r0]
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_02005FDC
@@ -7726,7 +7726,7 @@ sub_0200755C: ; 0x0200755C
 	str r1, [r4]
 	add r0, r4, #8
 	str r1, [r4, #4]
-	bl NitroSystem_g2d_Image_NNS_G2dInitImageProxy
+	bl NNS_G2dInitImageProxy
 	mov r0, #0
 	strb r0, [r4, #0x30]
 	strh r0, [r4, #0x32]
@@ -7756,7 +7756,7 @@ sub_02007590: ; 0x02007590
 _020075CC:
 	str r0, [r4]
 	add r0, r4, #8
-	bl NitroSystem_g2d_Image_NNS_G2dInitImageProxy
+	bl NNS_G2dInitImageProxy
 	mov r2, #0
 	strb r2, [r4, #0x30]
 	ldr r1, [r4]
@@ -7790,7 +7790,7 @@ sub_0200763C: ; 0x0200763C
 	mov r5, r1
 	bl sub_020076B0
 	add r0, r4, #8
-	bl NitroSystem_g2d_Image_NNS_G2dInitImageProxy
+	bl NNS_G2dInitImageProxy
 	mov r2, #0
 	strb r2, [r4, #0x30]
 	str r5, [r4, #4]
@@ -7844,7 +7844,7 @@ sub_020076E8: ; 0x020076E8
 	add r3, r5, #8
 	mov r2, #0
 	mov r4, r1
-	bl NitroSystem_g2d_Image_NNS_G2dLoadImage2DMapping
+	bl NNS_G2dLoadImage2DMapping
 	str r4, [r5, #0x2c]
 	mov r0, #1
 	strb r0, [r5, #0x30]
@@ -7877,7 +7877,7 @@ sub_02007744: ; 0x02007744
 	ldr r1, [r4, #0x2c]
 	add r3, r4, #8
 	mov r2, #0
-	bl NitroSystem_g2d_Image_NNS_G2dLoadImage2DMapping
+	bl NNS_G2dLoadImage2DMapping
 	mov r0, #1
 	strb r0, [r4, #0x30]
 	ldmia sp!, {r4, pc}
@@ -7945,7 +7945,7 @@ sub_020077E4: ; 0x020077E4
 _02007800:
 	ldr r0, [r6, #0xb8]
 	mov r1, r5
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
+	bl NNS_G2dGetCellDataByIdx
 	movs r1, r0
 	beq _02007834
 	mov r0, r7
@@ -8029,7 +8029,7 @@ sub_020078E4: ; 0x020078E4
 	moveq r0, #0
 	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 	ldr r0, [r0, #0xb8]
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
+	bl NNS_G2dGetCellDataByIdx
 	movs r4, r0
 	addeq sp, sp, #4
 	moveq r0, #0
@@ -8210,7 +8210,7 @@ sub_02007B3C: ; 0x02007B3C
 	mov r1, #0
 	add r0, r4, #8
 	str r1, [r4]
-	bl NitroSystem_g2d_Image_NNS_G2dInitImagePaletteProxy
+	bl NNS_G2dInitImagePaletteProxy
 	mov r0, #0
 	strb r0, [r4, #0x20]
 	ldmia sp!, {r4, pc}
@@ -8276,12 +8276,12 @@ sub_02007BFC: ; 0x02007BFC
 	mov r5, r0
 	add r0, r5, #8
 	mov r4, r1
-	bl NitroSystem_g2d_Image_NNS_G2dInitImagePaletteProxy
+	bl NNS_G2dInitImagePaletteProxy
 	ldr r0, [r5, #4]
 	mov r1, r4
 	add r3, r5, #8
 	mov r2, #0
-	bl NitroSystem_g2d_Image_NNS_G2dLoadPalette
+	bl NNS_G2dLoadPalette
 	str r4, [r5, #0x1c]
 	mov r0, #1
 	strb r0, [r5, #0x20]
@@ -8311,12 +8311,12 @@ sub_02007C64: ; 0x02007C64
 	movs r4, r0
 	ldmeqia sp!, {r4, pc}
 	add r0, r4, #8
-	bl NitroSystem_g2d_Image_NNS_G2dInitImagePaletteProxy
+	bl NNS_G2dInitImagePaletteProxy
 	ldr r0, [r4, #4]
 	ldr r1, [r4, #0x1c]
 	add r3, r4, #8
 	mov r2, #0
-	bl NitroSystem_g2d_Image_NNS_G2dLoadPalette
+	bl NNS_G2dLoadPalette
 	mov r0, #1
 	strb r0, [r4, #0x20]
 	ldmia sp!, {r4, pc}
@@ -10370,7 +10370,7 @@ _02009520:
 	ldr r2, [r5, #0xb8]
 	ldr r3, [r7, #0xb8]
 	mov r0, #1
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r7, #0
 	beq _02009564
 	mov r0, r7
@@ -10472,7 +10472,7 @@ sub_02009670: ; 0x02009670
 	add r0, r5, #0xf8
 	add r1, r4, #0xc00
 	mov r2, #0x1c
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
+	bl NNS_G2dCharCanvasInitForBG
 	ldr r1, [r5, #0xf4]
 	add r0, r5, #0xf8
 	str r0, [r5, #0x110]
@@ -10493,14 +10493,14 @@ sub_02009670: ; 0x02009670
 	mov r1, #0x1c
 	mov r2, #4
 	mov r3, #2
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+	bl NNS_G2dMapScrToCharText
 	add r1, r4, #0x1c00
 	mov r0, #4
 	str r0, [sp]
 	add r0, r5, #0x120
 	mov r2, #0xe
 	mov r3, #2
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
+	bl NNS_G2dCharCanvasInitForBG
 	ldr r1, [r5, #0xf4]
 	add r0, r5, #0x120
 	str r0, [r5, #0x138]
@@ -10521,7 +10521,7 @@ sub_02009670: ; 0x02009670
 	mov r1, #0xe
 	mov r2, #2
 	mov r3, #0
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+	bl NNS_G2dMapScrToCharText
 	ldr r0, _02009788 ; =0x33333333
 	ldr r1, [r5, #0xf8]
 	mov r2, #0xe00
@@ -11421,7 +11421,7 @@ _0200A3BC:
 	ldr r0, [sp, #0x6c]
 	ldr r1, [sp, #0x68]
 	str r5, [sp, #0x78]
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
+	bl NNS_G2dCharCanvasDrawChar
 	ldr r1, [r4, #0xa4]
 	add r2, r1, r0
 	ldr r0, [sp, #0x64]
@@ -14043,7 +14043,7 @@ sub_0200C6C8: ; 0x0200C6C8
 	ldr r2, [r0, #0x28]
 	add r1, r5, r1, lsl #5
 	ldr r3, [r0, #0x2c]
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
+	bl NNS_G2dCharCanvasInitForBG
 	ldr r3, [r8, #4]
 	ldr r1, [r8, #8]
 	ldr r0, [sp, #0x34]
@@ -14069,7 +14069,7 @@ sub_0200C6C8: ; 0x0200C6C8
 	ldr r1, [r4, #0x28]
 	ldr r2, [r4, #0x2c]
 	ldr r3, [sp, #0x28]
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+	bl NNS_G2dMapScrToCharText
 	mov r0, r8
 	mov r1, r7
 	bl sub_0200C980
@@ -14098,7 +14098,7 @@ sub_0200C7A4: ; 0x0200C7A4
 	ldr r1, [r4, #0x20]
 	ldr r2, [sp, #0x3c]
 	mov r3, #0
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth
+	bl NNSi_G2dFontGetStringWidth
 	rsb r0, r0, r5, lsl #3
 	ldr r1, [sp, #0x44]
 	add r0, r0, r0, lsr #31
@@ -14190,7 +14190,7 @@ _0200C924:
 	ldr r1, [sp, #8]
 	mov r2, r5
 	mov r3, r6
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
+	bl NNS_G2dCharCanvasDrawChar
 	add r1, r5, r0
 	ldr r0, [sp, #0xc]
 	add r5, r1, r0
@@ -14315,7 +14315,7 @@ sub_0200CA80: ; 0x0200CA80
 	ldr r1, [ip, #0x20]
 	ldr r4, [ip, #0x28]
 	mov r3, #0
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth
+	bl NNSi_G2dFontGetStringWidth
 	rsb r0, r0, r4, lsl #3
 	sub r0, r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
@@ -14512,7 +14512,7 @@ sub_0200CCD0: ; 0x0200CCD0
 	ldr r2, [r0, #0x28]
 	add r1, r3, r1, lsl #5
 	ldr r3, [r0, #0x2c]
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
+	bl NNS_G2dCharCanvasInitForBG
 	ldr r2, [r8, #4]
 	ldr r1, [r8, #8]
 	ldr r0, [sp, #0x34]
@@ -14536,7 +14536,7 @@ sub_0200CCD0: ; 0x0200CCD0
 	ldr r1, [r4, #0x28]
 	ldr r2, [r4, #0x2c]
 	ldr r3, [sp, #0x28]
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+	bl NNS_G2dMapScrToCharText
 	mov r0, r8
 	mov r1, r7
 	bl sub_0200CF7C
@@ -14565,7 +14565,7 @@ sub_0200CDA0: ; 0x0200CDA0
 	ldr r1, [r4, #0x20]
 	ldr r2, [sp, #0x3c]
 	mov r3, #0
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth
+	bl NNSi_G2dFontGetStringWidth
 	rsb r0, r0, r5, lsl #3
 	ldr r1, [sp, #0x44]
 	add r0, r0, r0, lsr #31
@@ -14657,7 +14657,7 @@ _0200CF20:
 	ldr r1, [sp, #8]
 	mov r2, r5
 	mov r3, r6
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
+	bl NNS_G2dCharCanvasDrawChar
 	add r1, r5, r0
 	ldr r0, [sp, #0xc]
 	add r5, r1, r0
@@ -14713,7 +14713,7 @@ sub_0200CFC0: ; 0x0200CFC0
 	ldr r1, [ip, #0x20]
 	ldr r4, [ip, #0x28]
 	mov r3, #0
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth
+	bl NNSi_G2dFontGetStringWidth
 	rsb r0, r0, r4, lsl #3
 	sub r0, r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
@@ -14788,11 +14788,11 @@ _0200D0D8:
 	ldr r1, [r5]
 	add r0, r5, #0xc
 	ldr r1, [r1, #0x4c]
-	bl NitroSystem_g2d_Font_NNS_G2dFontInitAuto
+	bl NNS_G2dFontInitAuto
 	ldr r1, [r5, #4]
 	add r0, r5, #0x14
 	ldr r1, [r1, #0x4c]
-	bl NitroSystem_g2d_Font_NNS_G2dFontInitAuto
+	bl NNS_G2dFontInitAuto
 	mov r0, r5
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, pc}
@@ -24076,7 +24076,7 @@ _0201474C:
 	cmp r0, #0
 	beq _020147DC
 	add r1, sp, #0x14
-	bl NitroSystem_g2d_NCL_load_NNS_G2dGetUnpackedPaletteData
+	bl NNS_G2dGetUnpackedPaletteData
 	cmp r0, #0
 	beq _020147DC
 	mov r0, #0x24
@@ -24505,7 +24505,7 @@ _02014DA8:
 	cmp r0, #0
 	beq _02014DE4
 	add r1, sp, #4
-	bl NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedCharacterData
+	bl NNS_G2dGetUnpackedCharacterData
 	cmp r0, #0
 	beq _02014DE4
 	mov r0, #0x3c
@@ -24635,7 +24635,7 @@ _02014F64:
 	cmp r0, #0
 	beq _02014FB0
 	add r1, sp, #4
-	bl NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedCharacterData
+	bl NNS_G2dGetUnpackedCharacterData
 	cmp r0, #0
 	beq _02014FB0
 	mov r0, #0x3c
@@ -33285,7 +33285,7 @@ _0201C22C:
 	ldr r2, [r2, #0xb8]
 	ldr r3, [r0, #0xb8]
 	mov r0, #5
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r0, #0xc
 	str r0, [r4, #0x50]
 	b _0201C304
@@ -33301,7 +33301,7 @@ _0201C274:
 	mov r3, r2
 	ldr r1, [r0, #0xb8]
 	mov r0, #6
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r0, #0xd
 	str r0, [r4, #0x50]
 	b _0201C304
@@ -33317,7 +33317,7 @@ _0201C2B0:
 	mov r3, r2
 	ldr r1, [r0, #0xb8]
 	mov r0, #7
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r0, r4
 	bl sub_0201C558
 	mov r0, #0xf
@@ -35268,7 +35268,7 @@ _0201DE38:
 	ldr r2, [r2, #0xb8]
 	ldr r3, [r0, #0xb8]
 	mov r0, #5
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r0, #0xc
 	str r0, [r4, #0x70]
 	b _0201DF10
@@ -35284,7 +35284,7 @@ _0201DE80:
 	mov r3, r2
 	ldr r1, [r0, #0xb8]
 	mov r0, #6
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r0, #0xd
 	str r0, [r4, #0x70]
 	b _0201DF10
@@ -35300,7 +35300,7 @@ _0201DEBC:
 	mov r3, r2
 	ldr r1, [r0, #0xb8]
 	mov r0, #7
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r0, r4
 	bl sub_0201E9A8
 	mov r0, #0xf
@@ -35788,7 +35788,7 @@ _0201E580:
 	ldr r2, [r5, #0xb8]
 	ldr r3, [r6, #0xb8]
 	mov r0, #5
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -35798,7 +35798,7 @@ _0201E580:
 	ldr r1, [r8, #0xb8]
 	mov r3, r2
 	mov r0, #6
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -35808,7 +35808,7 @@ _0201E580:
 	ldr r1, [sb, #0xb8]
 	mov r0, #7
 	mov r3, r2
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r7, #0
 	beq _0201E614
 	mov r0, r7
@@ -43916,7 +43916,7 @@ sub_02025068: ; 0x02025068
 	ldr r2, [r2, #0xb8]
 	ldr r3, [r0, #0xb8]
 	mov r0, #5
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -43927,7 +43927,7 @@ sub_02025068: ; 0x02025068
 	mov r3, r2
 	ldr r1, [r0, #0xb8]
 	mov r0, #6
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -43938,7 +43938,7 @@ sub_02025068: ; 0x02025068
 	mov r3, r2
 	ldr r1, [r0, #0xb8]
 	mov r0, #7
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	add sp, sp, #0x10
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02025068
@@ -45723,7 +45723,7 @@ _02026A58:
 	ldr r3, [r0, #0xb8]
 	ldr r2, [r2, #0xb8]
 	mov r0, #5
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r6, #0
 	beq _02026BF0
 	mov r0, r6
@@ -45752,7 +45752,7 @@ _02026AD0:
 	ldr r1, [r5, #0xb8]
 	mov r3, r2
 	mov r0, #6
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r5, #0
 	beq _02026BF0
 	mov r0, r5
@@ -45781,7 +45781,7 @@ _02026B3C:
 	ldr r1, [r4, #0xb8]
 	mov r3, r2
 	mov r0, #7
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r4, #0
 	beq _02026B7C
 	mov r0, r4
@@ -45922,7 +45922,7 @@ _02026D20:
 	ldr r2, [r5, #0xb8]
 	ldr r3, [r6, #0xb8]
 	mov r0, #5
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -45932,7 +45932,7 @@ _02026D20:
 	ldr r1, [r8, #0xb8]
 	mov r3, r2
 	mov r0, #6
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	mov r2, #0
 	str r2, [sp]
 	str r2, [sp, #4]
@@ -45942,7 +45942,7 @@ _02026D20:
 	ldr r1, [sb, #0xb8]
 	mov r0, #7
 	mov r3, r2
-	bl NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+	bl NNS_G2dBGSetupEx
 	cmp r7, #0
 	beq _02026DB4
 	mov r0, r7
@@ -74650,7 +74650,7 @@ _0203DF7C:
 	ldr r0, [sp, #0xc]
 	mov r1, r1, lsl #0x10
 	mov r1, r1, lsr #0x10
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
+	bl NNS_G2dGetCellDataByIdx
 	ldrh fp, [r0]
 	mov r3, #0
 	cmp fp, #0
@@ -74684,11 +74684,11 @@ _0203DFA4:
 	and r0, r1, #0xc0000000
 	mov r0, r0, lsr #0x1e
 	mov r1, r0, lsl #1
-	ldr r0, _0203E104 ; =DAT_02084e78
+	ldr r0, _0203E104 ; =NNSi_objSizeWTbl
 	orrgt ip, ip, r8
 	add r0, r0, r2, lsl #3
 	ldrh sb, [r1, r0]
-	ldr r0, _0203E108 ; =DAT_02084e60
+	ldr r0, _0203E108 ; =NNSi_objSizeHTbl
 	cmp lr, #0x7f
 	add r0, r0, r2, lsl #3
 	ldrh r1, [r1, r0]
@@ -74748,8 +74748,8 @@ _0203E0F4: .word sub_02007784
 _0203E0F8: .word sub_02007770
 _0203E0FC: .word 0x01FF0000
 _0203E100: .word 0xC000C000
-_0203E104: .word DAT_02084e78
-_0203E108: .word DAT_02084e60
+_0203E104: .word NNSi_objSizeWTbl
+_0203E108: .word NNSi_objSizeHTbl
 
 	arm_func_start sub_0203E10C
 sub_0203E10C: ; 0x0203E10C
@@ -74944,7 +74944,7 @@ _0203E3CC:
 	ldr r0, [sp, #0x14]
 	mov r1, r1, lsl #0x10
 	mov r1, r1, lsr #0x10
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
+	bl NNS_G2dGetCellDataByIdx
 	ldrh fp, [r0]
 	mov r3, #0
 	cmp fp, #0
@@ -74978,11 +74978,11 @@ _0203E3F4:
 	and r0, r1, #0xc0000000
 	mov r0, r0, lsr #0x1e
 	mov r1, r0, lsl #1
-	ldr r0, _0203E554 ; =DAT_02084e78
+	ldr r0, _0203E554 ; =NNSi_objSizeWTbl
 	orrgt ip, ip, r8
 	add r0, r0, r2, lsl #3
 	ldrh sb, [r1, r0]
-	ldr r0, _0203E558 ; =DAT_02084e60
+	ldr r0, _0203E558 ; =NNSi_objSizeHTbl
 	cmp lr, #0x7f
 	add r0, r0, r2, lsl #3
 	ldrh r1, [r1, r0]
@@ -75042,8 +75042,8 @@ _0203E544: .word sub_02007784
 _0203E548: .word sub_02007770
 _0203E54C: .word 0x01FF0000
 _0203E550: .word 0xC000C000
-_0203E554: .word DAT_02084e78
-_0203E558: .word DAT_02084e60
+_0203E554: .word NNSi_objSizeWTbl
+_0203E558: .word NNSi_objSizeHTbl
 
 	arm_func_start sub_0203E55C
 sub_0203E55C: ; 0x0203E55C
@@ -77829,7 +77829,7 @@ _02040AC0:
 	cmp r0, #0
 	beq _02040B20
 	add r1, sp, #0x10
-	bl NitroSystem_g2d_NCL_load_NNS_G2dGetUnpackedPaletteData
+	bl NNS_G2dGetUnpackedPaletteData
 	cmp r0, #0
 	beq _02040B20
 	mov r0, #0x24
@@ -78554,7 +78554,7 @@ _02041428:
 	cmp r0, #0
 	beq _02041488
 	add r1, sp, #0x10
-	bl NitroSystem_g2d_NCL_load_NNS_G2dGetUnpackedPaletteData
+	bl NNS_G2dGetUnpackedPaletteData
 	cmp r0, #0
 	beq _02041488
 	mov r0, #0x24
@@ -106028,4434 +106028,6 @@ _02057F20: .word MAIN_BSS_0210EB30
 _02057F24: .word MAIN_BSS_0210EB34
 	arm_func_end NitroSystem_gfd_VramManager_NNS_GfdResetLnkPlttVramState
 
-	arm_func_start NitroSystem_g2d_NAN_load_GetUnpackedAnimBankImpl_
-NitroSystem_g2d_NAN_load_GetUnpackedAnimBankImpl_: ; 0x02057F28
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r1
-	ldr r1, _02057F60 ; =0x41424E4B
-	bl NitroSystem_g2d_Load_NNS_G2dFindBinaryBlock
-	movs r4, r0
-	moveq r0, #0
-	streq r0, [r5]
-	ldmeqia sp!, {r3, r4, r5, pc}
-	add r0, r4, #8
-	bl NitroSystem_g2d_NAN_load_NNS_G2dUnpackNAN
-	add r0, r4, #8
-	str r0, [r5]
-	mov r0, #1
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_02057F60: .word 0x41424E4B
-	arm_func_end NitroSystem_g2d_NAN_load_GetUnpackedAnimBankImpl_
-
-	arm_func_start NitroSystem_g2d_NAN_load_NNS_G2dGetUnpackedAnimBank
-NitroSystem_g2d_NAN_load_NNS_G2dGetUnpackedAnimBank: ; 0x02057F64
-	ldr ip, _02057F6C ; =NitroSystem_g2d_NAN_load_GetUnpackedAnimBankImpl_
-	bx ip
-	.align 2, 0
-_02057F6C: .word NitroSystem_g2d_NAN_load_GetUnpackedAnimBankImpl_
-	arm_func_end NitroSystem_g2d_NAN_load_NNS_G2dGetUnpackedAnimBank
-
-	arm_func_start NitroSystem_g2d_NAN_load_NNS_G2dUnpackNAN
-NitroSystem_g2d_NAN_load_NNS_G2dUnpackNAN: ; 0x02057F70
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	ldr r1, [r0, #4]
-	mov ip, #0
-	add r1, r1, r0
-	str r1, [r0, #4]
-	ldr r1, [r0, #8]
-	add r1, r1, r0
-	str r1, [r0, #8]
-	ldr r1, [r0, #0xc]
-	add r6, r1, r0
-	str r6, [r0, #0xc]
-	ldrh r1, [r0]
-	ldmib r0, {r4, r5}
-	cmp r1, #0
-	bls _02058014
-	mov r1, ip
-	arm_func_end NitroSystem_g2d_NAN_load_NNS_G2dUnpackNAN
-_02057FB0:
-	add r2, r4, ip, lsl #4
-	ldr r7, [r2, #0xc]
-	mov r3, ip, lsl #4
-	add r7, r5, r7
-	str r7, [r2, #0xc]
-	ldrh r7, [r4, r3]
-	mov lr, r1
-	cmp r7, #0
-	bls _02057FFC
-_02057FD4:
-	ldr sb, [r2, #0xc]
-	add r7, lr, #1
-	ldr r8, [sb, lr, lsl #3]
-	mov r7, r7, lsl #0x10
-	add r8, r6, r8
-	str r8, [sb, lr, lsl #3]
-	ldrh r8, [r4, r3]
-	mov lr, r7, lsr #0x10
-	cmp r8, r7, lsr #16
-	bhi _02057FD4
-_02057FFC:
-	ldrh r3, [r0]
-	add r2, ip, #1
-	mov r2, r2, lsl #0x10
-	cmp r3, r2, lsr #16
-	mov ip, r2, lsr #0x10
-	bhi _02057FB0
-_02058014:
-	ldr r1, [r0, #0x14]
-	cmp r1, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	add r2, r1, r0
-	str r2, [r0, #0x14]
-	add r4, r2, #8
-	ldr r1, [r4, #4]
-	mov r0, #0
-	add r1, r1, r4
-	str r1, [r4, #4]
-	ldrh r1, [r2, #8]
-	cmp r1, #0
-	ldmlsia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	mov r3, r0
-	mov r7, r0
-_02058050:
-	ldr r6, [r4, #4]
-	mov r1, r7
-	add r2, r6, r3
-	ldr r5, [r2, #4]
-	add r5, r5, r4
-	str r5, [r2, #4]
-	ldr r5, [r2, #8]
-	add r5, r5, r4
-	str r5, [r2, #8]
-	ldrh r5, [r6, r3]
-	cmp r5, #0
-	bls _020580A8
-	mov r8, r7
-_02058084:
-	ldr r6, [r2, #8]
-	add r1, r1, #1
-	ldr r5, [r6, r8]
-	add r5, r5, r4
-	str r5, [r6, r8]
-	ldrh r5, [r2]
-	add r8, r8, #4
-	cmp r1, r5
-	blo _02058084
-_020580A8:
-	ldrh r1, [r4]
-	add r0, r0, #1
-	add r3, r3, #0xc
-	cmp r0, r1
-	blo _02058050
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-
-	arm_func_start NitroSystem_g2d_NAN_load_NNS_G2dGetAnimSequenceByIdx
-NitroSystem_g2d_NAN_load_NNS_G2dGetAnimSequenceByIdx: ; 0x020580C0
-	ldrh r2, [r0]
-	cmp r2, r1
-	ldrhi r0, [r0, #4]
-	addhi r0, r0, r1, lsl #4
-	movls r0, #0
-	bx lr
-	arm_func_end NitroSystem_g2d_NAN_load_NNS_G2dGetAnimSequenceByIdx
-
-	arm_func_start NitroSystem_g2d_NOB_load_GetPtrOamArrayHead_
-NitroSystem_g2d_NOB_load_GetPtrOamArrayHead_: ; 0x020580D8
-	ldrh r1, [r0, #2]
-	tst r1, #1
-	ldrh r1, [r0]
-	ldrne r0, [r0, #4]
-	addne r0, r0, r1, lsl #4
-	ldreq r0, [r0, #4]
-	addeq r0, r0, r1, lsl #3
-	bx lr
-	arm_func_end NitroSystem_g2d_NOB_load_GetPtrOamArrayHead_
-
-	arm_func_start NitroSystem_g2d_NOB_load_UnPackExtendedData_
-NitroSystem_g2d_NOB_load_UnPackExtendedData_: ; 0x020580F8
-	ldr ip, _02058104 ; =NitroSystem_g2d_Load_NNSi_G2dUnpackUserExCellAttrBank
-	add r0, r0, #8
-	bx ip
-	.align 2, 0
-_02058104: .word NitroSystem_g2d_Load_NNSi_G2dUnpackUserExCellAttrBank
-	arm_func_end NitroSystem_g2d_NOB_load_UnPackExtendedData_
-
-	arm_func_start NitroSystem_g2d_NOB_load_NNS_G2dGetUnpackedCellBank
-NitroSystem_g2d_NOB_load_NNS_G2dGetUnpackedCellBank: ; 0x02058108
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r1
-	ldr r1, _02058140 ; =0x4345424B
-	bl NitroSystem_g2d_Load_NNS_G2dFindBinaryBlock
-	movs r4, r0
-	moveq r0, #0
-	streq r0, [r5]
-	ldmeqia sp!, {r3, r4, r5, pc}
-	add r0, r4, #8
-	bl NitroSystem_g2d_NOB_load_NNS_G2dUnpackNCE
-	add r0, r4, #8
-	str r0, [r5]
-	mov r0, #1
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_02058140: .word 0x4345424B
-	arm_func_end NitroSystem_g2d_NOB_load_NNS_G2dGetUnpackedCellBank
-
-	arm_func_start NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
-NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx: ; 0x02058144
-	ldrh r2, [r0]
-	cmp r1, r2
-	movhs r0, #0
-	bxhs lr
-	ldrh r2, [r0, #2]
-	ldr r0, [r0, #4]
-	tst r2, #1
-	addne r0, r0, r1, lsl #4
-	addeq r0, r0, r1, lsl #3
-	bx lr
-	arm_func_end NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
-
-	arm_func_start NitroSystem_g2d_NOB_load_NNS_G2dUnpackNCE
-NitroSystem_g2d_NOB_load_NNS_G2dUnpackNCE: ; 0x0205816C
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r5, r0
-	ldr r1, [r5, #4]
-	add r1, r1, r5
-	str r1, [r5, #4]
-	bl NitroSystem_g2d_NOB_load_GetPtrOamArrayHead_
-	ldrh r1, [r5]
-	mov r4, r0
-	mov r6, #0
-	cmp r1, #0
-	bls _020581C8
-	arm_func_end NitroSystem_g2d_NOB_load_NNS_G2dUnpackNCE
-_02058198:
-	mov r0, r5
-	mov r1, r6
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
-	ldr r2, [r0, #4]
-	add r1, r6, #1
-	add r2, r2, r4
-	str r2, [r0, #4]
-	mov r0, r1, lsl #0x10
-	ldrh r1, [r5]
-	mov r6, r0, lsr #0x10
-	cmp r1, r0, lsr #16
-	bhi _02058198
-_020581C8:
-	ldr r0, [r5, #0xc]
-	cmp r0, #0
-	beq _020581EC
-	add r1, r0, r5
-	str r1, [r5, #0xc]
-	ldr r0, [r1, #4]
-	add r0, r0, r1
-	str r0, [r1, #4]
-	str r1, [r5, #0xc]
-_020581EC:
-	ldr r0, [r5, #0x14]
-	cmp r0, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	add r0, r0, r5
-	str r0, [r5, #0x14]
-	bl NitroSystem_g2d_NOB_load_UnPackExtendedData_
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedCharacterData
-NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedCharacterData: ; 0x02058208
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r1
-	ldr r1, _02058240 ; =0x43484152
-	bl NitroSystem_g2d_Load_NNS_G2dFindBinaryBlock
-	movs r4, r0
-	moveq r0, #0
-	streq r0, [r5]
-	ldmeqia sp!, {r3, r4, r5, pc}
-	add r0, r4, #8
-	bl NitroSystem_g2d_NCG_load_NNS_G2dUnpackNCG
-	add r0, r4, #8
-	str r0, [r5]
-	mov r0, #1
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_02058240: .word 0x43484152
-	arm_func_end NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedCharacterData
-
-	arm_func_start NitroSystem_g2d_NCG_load_NNS_G2dUnpackNCG
-NitroSystem_g2d_NCG_load_NNS_G2dUnpackNCG: ; 0x02058244
-	ldr r1, [r0, #0x14]
-	add r1, r1, r0
-	str r1, [r0, #0x14]
-	bx lr
-	arm_func_end NitroSystem_g2d_NCG_load_NNS_G2dUnpackNCG
-
-	arm_func_start NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedBGCharacterData
-NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedBGCharacterData: ; 0x02058254
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r1
-	ldr r1, _0205828C ; =0x43484152
-	bl NitroSystem_g2d_Load_NNS_G2dFindBinaryBlock
-	movs r4, r0
-	moveq r0, #0
-	streq r0, [r5]
-	ldmeqia sp!, {r3, r4, r5, pc}
-	add r0, r4, #8
-	bl NitroSystem_g2d_NCG_load_NNS_G2dUnpackBGNCG
-	add r0, r4, #8
-	str r0, [r5]
-	mov r0, #1
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205828C: .word 0x43484152
-	arm_func_end NitroSystem_g2d_NCG_load_NNS_G2dGetUnpackedBGCharacterData
-
-	arm_func_start NitroSystem_g2d_NCG_load_NNS_G2dUnpackBGNCG
-NitroSystem_g2d_NCG_load_NNS_G2dUnpackBGNCG: ; 0x02058290
-	ldr r1, [r0, #0x14]
-	add r1, r1, r0
-	str r1, [r0, #0x14]
-	bx lr
-	arm_func_end NitroSystem_g2d_NCG_load_NNS_G2dUnpackBGNCG
-
-	arm_func_start NitroSystem_g2d_NCL_load_NNS_G2dGetUnpackedPaletteData
-NitroSystem_g2d_NCL_load_NNS_G2dGetUnpackedPaletteData: ; 0x020582A0
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r1
-	ldr r1, _020582D8 ; =0x504C5454
-	bl NitroSystem_g2d_Load_NNS_G2dFindBinaryBlock
-	movs r4, r0
-	moveq r0, #0
-	streq r0, [r5]
-	ldmeqia sp!, {r3, r4, r5, pc}
-	add r0, r4, #8
-	bl NitroSystem_g2d_NCL_load_NNS_G2dUnpackNCL
-	add r0, r4, #8
-	str r0, [r5]
-	mov r0, #1
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_020582D8: .word 0x504C5454
-	arm_func_end NitroSystem_g2d_NCL_load_NNS_G2dGetUnpackedPaletteData
-
-	arm_func_start NitroSystem_g2d_NCL_load_NNS_G2dUnpackNCL
-NitroSystem_g2d_NCL_load_NNS_G2dUnpackNCL: ; 0x020582DC
-	ldr r1, [r0, #0xc]
-	add r1, r1, r0
-	str r1, [r0, #0xc]
-	bx lr
-	arm_func_end NitroSystem_g2d_NCL_load_NNS_G2dUnpackNCL
-
-	arm_func_start NitroSystem_g2d_NSC_load_NNS_G2dGetUnpackedScreenData
-NitroSystem_g2d_NSC_load_NNS_G2dGetUnpackedScreenData: ; 0x020582EC
-	stmdb sp!, {r4, lr}
-	mov r4, r1
-	ldr r1, _0205831C ; =0x5343524E
-	bl NitroSystem_g2d_Load_NNS_G2dFindBinaryBlock
-	cmp r0, #0
-	moveq r0, #0
-	streq r0, [r4]
-	ldmeqia sp!, {r4, pc}
-	add r0, r0, #8
-	str r0, [r4]
-	mov r0, #1
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0205831C: .word 0x5343524E
-	arm_func_end NitroSystem_g2d_NSC_load_NNS_G2dGetUnpackedScreenData
-
-	arm_func_start NitroSystem_g2d_Load_NNS_G2dFindBinaryBlock
-NitroSystem_g2d_Load_NNS_G2dFindBinaryBlock: ; 0x02058320
-	ldrh r2, [r0, #0xc]
-	ldrh ip, [r0, #0xe]
-	mov r3, #0
-	add r0, r0, r2
-	cmp ip, #0
-	bls _02058360
-	arm_func_end NitroSystem_g2d_Load_NNS_G2dFindBinaryBlock
-_02058338:
-	ldr r2, [r0]
-	cmp r2, r1
-	bxeq lr
-	add r2, r3, #1
-	mov r2, r2, lsl #0x10
-	ldr r3, [r0, #4]
-	cmp ip, r2, lsr #16
-	add r0, r0, r3
-	mov r3, r2, lsr #0x10
-	bhi _02058338
-_02058360:
-	mov r0, #0
-	bx lr
-
-	arm_func_start NitroSystem_g2d_Load_NNSi_G2dUnpackUserExCellAttrBank
-NitroSystem_g2d_Load_NNSi_G2dUnpackUserExCellAttrBank: ; 0x02058368
-	ldr r1, [r0, #4]
-	mov ip, #0
-	add r1, r1, r0
-	str r1, [r0, #4]
-	ldrh r1, [r0]
-	cmp r1, #0
-	bxls lr
-	arm_func_end NitroSystem_g2d_Load_NNSi_G2dUnpackUserExCellAttrBank
-_02058384:
-	ldr r3, [r0, #4]
-	add r1, ip, #1
-	ldr r2, [r3, ip, lsl #2]
-	mov r1, r1, lsl #0x10
-	add r2, r0, r2
-	str r2, [r3, ip, lsl #2]
-	ldrh r2, [r0]
-	mov ip, r1, lsr #0x10
-	cmp r2, r1, lsr #16
-	bhi _02058384
-	bx lr
-
-	arm_func_start NitroSystem_g2d_Animation_SequenceEdgeHandle_
-NitroSystem_g2d_Animation_SequenceEdgeHandle_: ; 0x020583B0
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r0, [r4, #0x18]
-	cmp r0, #0
-	ldreq r0, [r4, #0x1c]
-	ldreq r0, [r0, #8]
-	cmp r0, #3
-	cmpne r0, #4
-	bne _0205844C
-	ldr r0, [r4, #8]
-	eor r0, r0, #1
-	str r0, [r4, #8]
-	ldr r1, [r4, #0x1c]
-	ldr r2, [r4]
-	ldrh r0, [r1, #2]
-	ldr r1, [r1, #0xc]
-	add r0, r1, r0, lsl #3
-	sub r0, r0, #8
-	cmp r2, r0
-	bhi _02058494
-	ldr r0, [r4, #0x20]
-	cmp r0, #1
-	bne _0205841C
-	ldr r0, [r4, #0x24]
-	ldr r1, [r4, #0x10]
-	ldr r2, [r4, #0x28]
-	blx r2
-	arm_func_end NitroSystem_g2d_Animation_SequenceEdgeHandle_
-_0205841C:
-	ldr r0, [r4, #0x18]
-	cmp r0, #0
-	ldreq r0, [r4, #0x1c]
-	ldreq r0, [r0, #8]
-	cmp r0, #2
-	cmpne r0, #4
-	movne r0, #0
-	strne r0, [r4, #0xc]
-	bne _02058494
-	mov r0, r4
-	bl NitroSystem_g2d_Animation_NNS_G2dResetAnimCtrlState
-	b _02058494
-_0205844C:
-	ldr r0, [r4, #0x20]
-	cmp r0, #1
-	bne _02058468
-	ldr r0, [r4, #0x24]
-	ldr r1, [r4, #0x10]
-	ldr r2, [r4, #0x28]
-	blx r2
-_02058468:
-	ldr r0, [r4, #0x18]
-	cmp r0, #0
-	ldreq r0, [r4, #0x1c]
-	ldreq r0, [r0, #8]
-	cmp r0, #2
-	cmpne r0, #4
-	movne r0, #0
-	strne r0, [r4, #0xc]
-	bne _02058494
-	mov r0, r4
-	bl NitroSystem_g2d_Animation_NNS_G2dResetAnimCtrlState
-_02058494:
-	ldr r1, [r4, #0x1c]
-	ldr r2, [r4]
-	ldrh r0, [r1]
-	ldr r1, [r1, #0xc]
-	add r0, r1, r0, lsl #3
-	sub r0, r0, #8
-	cmp r2, r0
-	strhi r0, [r4]
-	ldmhiia sp!, {r4, pc}
-	cmp r2, r1
-	strlo r1, [r4]
-	ldmia sp!, {r4, pc}
-
-	arm_func_start NitroSystem_g2d_Animation_NNS_G2dGetAnimCtrlCurrentElement
-NitroSystem_g2d_Animation_NNS_G2dGetAnimCtrlCurrentElement: ; 0x020584C4
-	ldr r0, [r0, #4]
-	ldr r0, [r0]
-	bx lr
-	arm_func_end NitroSystem_g2d_Animation_NNS_G2dGetAnimCtrlCurrentElement
-
-	arm_func_start NitroSystem_g2d_Animation_NNS_G2dTickAnimCtrl
-NitroSystem_g2d_Animation_NNS_G2dTickAnimCtrl: ; 0x020584D0
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	mov sl, r0
-	ldr r0, [sl, #0xc]
-	mov sb, #0
-	cmp r0, #1
-	movne r0, sb
-	ldmneia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r0, [sl, #0x14]
-	smull r2, r1, r0, r1
-	adds r0, r2, #0x800
-	adc r1, r1, sb
-	mov r0, r0, lsr #0xc
-	orr r0, r0, r1, lsl #20
-	bl abs
-	mov r4, #1
-	ldr r1, [sl, #0x10]
-	mov fp, sb
-	add r0, r1, r0
-	str r0, [sl, #0x10]
-	mov r8, r4
-	mov r7, sb
-	mov r5, sb
-	mov r6, r4
-	b _0205864C
-	arm_func_end NitroSystem_g2d_Animation_NNS_G2dTickAnimCtrl
-_02058530:
-	ldr r0, [sl]
-	ldr r1, [sl, #0x10]
-	ldrh r0, [r0, #4]
-	mov sb, r8
-	sub r0, r1, r0, lsl #12
-	str r0, [sl, #0x10]
-	ldr r0, [sl, #0x14]
-	cmp r0, #0
-	movgt r1, r8
-	ldr r0, [sl, #8]
-	movle r1, r7
-	teq r1, r0
-	ldr r0, [sl]
-	addne r0, r0, #8
-	subeq r0, r0, #8
-	str r0, [sl]
-	ldr r1, [sl, #0x14]
-	ldr r0, [sl]
-	cmp r1, #0
-	movgt r2, r6
-	ldr r1, [sl, #8]
-	movle r2, r5
-	teq r2, r1
-	ldr r1, [sl, #0x1c]
-	ldr r2, [r1, #0xc]
-	beq _020585B0
-	ldrh r1, [r1]
-	add r1, r2, r1, lsl #3
-	cmp r0, r1
-	movhs r0, r4
-	movlo r0, fp
-	b _020585C8
-_020585B0:
-	ldrh r1, [r1, #2]
-	add r1, r2, r1, lsl #3
-	sub r1, r1, #8
-	cmp r0, r1
-	movls r0, #1
-	movhi r0, #0
-_020585C8:
-	cmp r0, #0
-	beq _020585D8
-	mov r0, sl
-	bl NitroSystem_g2d_Animation_SequenceEdgeHandle_
-_020585D8:
-	ldr r1, [sl]
-	ldrh r0, [r1, #4]
-	cmp r0, #0
-	strne r1, [sl, #4]
-	ldr r0, [sl, #0x20]
-	cmp r0, #0
-	beq _0205864C
-	ldr r0, [sl, #0x1c]
-	ldr r2, [sl, #0x20]
-	ldr r0, [r0, #0xc]
-	cmp r2, #2
-	ldr r1, [sl]
-	sub r0, r1, r0
-	mov r0, r0, lsl #0xd
-	mov r1, r0, lsr #0x10
-	beq _02058624
-	cmp r2, #3
-	beq _02058640
-	b _0205864C
-_02058624:
-	ldrh r0, [sl, #0x2c]
-	cmp r1, r0
-	bne _0205864C
-	ldr r0, [sl, #0x24]
-	ldr r2, [sl, #0x28]
-	blx r2
-	b _0205864C
-_02058640:
-	ldr r0, [sl, #0x24]
-	ldr r2, [sl, #0x28]
-	blx r2
-_0205864C:
-	ldr r0, [sl, #0xc]
-	cmp r0, #0
-	beq _02058670
-	ldr r0, [sl]
-	ldr r1, [sl, #0x10]
-	ldrh r0, [r0, #4]
-	cmp r1, r0, lsl #12
-	movge r0, #1
-	bge _02058674
-_02058670:
-	mov r0, #0
-_02058674:
-	cmp r0, #0
-	bne _02058530
-	mov r0, sb
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start NitroSystem_g2d_Animation_NNS_G2dInitAnimCtrl
-NitroSystem_g2d_Animation_NNS_G2dInitAnimCtrl: ; 0x02058684
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	add r0, r4, #0x20
-	bl NitroSystem_g2d_Animation_NNS_G2dInitAnimCallBackFunctor
-	mov r1, #0
-	str r1, [r4]
-	str r1, [r4, #4]
-	str r1, [r4, #8]
-	mov r0, #1
-	str r0, [r4, #0xc]
-	str r1, [r4, #0x10]
-	mov r0, #0x1000
-	str r0, [r4, #0x14]
-	str r1, [r4, #0x18]
-	str r1, [r4, #0x1c]
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSystem_g2d_Animation_NNS_G2dInitAnimCtrl
-
-	arm_func_start NitroSystem_g2d_Animation_NNS_G2dInitAnimCallBackFunctor
-NitroSystem_g2d_Animation_NNS_G2dInitAnimCallBackFunctor: ; 0x020586C4
-	mov r1, #0
-	str r1, [r0]
-	str r1, [r0, #4]
-	str r1, [r0, #8]
-	strh r1, [r0, #0xc]
-	bx lr
-	arm_func_end NitroSystem_g2d_Animation_NNS_G2dInitAnimCallBackFunctor
-
-	arm_func_start NitroSystem_g2d_Animation_NNS_G2dResetAnimCtrlState
-NitroSystem_g2d_Animation_NNS_G2dResetAnimCtrlState: ; 0x020586DC
-	ldr r1, [r0, #0x14]
-	cmp r1, #0
-	movgt r2, #1
-	ldr r1, [r0, #8]
-	movle r2, #0
-	teq r2, r1
-	ldr r2, [r0, #0x1c]
-	beq _0205870C
-	ldrh r1, [r2, #2]
-	ldr r2, [r2, #0xc]
-	add r1, r2, r1, lsl #3
-	b _0205871C
-	arm_func_end NitroSystem_g2d_Animation_NNS_G2dResetAnimCtrlState
-_0205870C:
-	ldrh r1, [r2]
-	ldr r2, [r2, #0xc]
-	add r1, r2, r1, lsl #3
-	sub r1, r1, #8
-_0205871C:
-	str r1, [r0]
-	ldr r2, [r0]
-	ldr ip, _02058738 ; =NitroSystem_g2d_Animation_NNS_G2dTickAnimCtrl
-	mov r1, #0
-	str r2, [r0, #4]
-	str r1, [r0, #0x10]
-	bx ip
-	.align 2, 0
-_02058738: .word NitroSystem_g2d_Animation_NNS_G2dTickAnimCtrl
-
-	arm_func_start NitroSystem_g2d_Animation_NNS_G2dBindAnimCtrl
-NitroSystem_g2d_Animation_NNS_G2dBindAnimCtrl: ; 0x0205873C
-	ldr ip, _02058748 ; =NitroSystem_g2d_Animation_NNS_G2dResetAnimCtrlState
-	str r1, [r0, #0x1c]
-	bx ip
-	.align 2, 0
-_02058748: .word NitroSystem_g2d_Animation_NNS_G2dResetAnimCtrlState
-	arm_func_end NitroSystem_g2d_Animation_NNS_G2dBindAnimCtrl
-
-	arm_func_start NitroSystem_g2d_Image_NNS_G2dInitImageProxy
-NitroSystem_g2d_Image_NNS_G2dInitImageProxy: ; 0x0205874C
-	mov r2, #0
-	mvn r1, #0
-	arm_func_end NitroSystem_g2d_Image_NNS_G2dInitImageProxy
-_02058754:
-	str r1, [r0, r2, lsl #2]
-	add r2, r2, #1
-	cmp r2, #3
-	blt _02058754
-	bx lr
-
-	arm_func_start NitroSystem_g2d_Image_NNS_G2dSetImageLocation
-NitroSystem_g2d_Image_NNS_G2dSetImageLocation: ; 0x02058768
-	str r2, [r0, r1, lsl #2]
-	bx lr
-	arm_func_end NitroSystem_g2d_Image_NNS_G2dSetImageLocation
-
-	arm_func_start NitroSystem_g2d_Image_NNS_G2dGetImageLocation
-NitroSystem_g2d_Image_NNS_G2dGetImageLocation: ; 0x02058770
-	ldr r0, [r0, r1, lsl #2]
-	bx lr
-	arm_func_end NitroSystem_g2d_Image_NNS_G2dGetImageLocation
-
-	arm_func_start NitroSystem_g2d_Image_NNS_G2dInitImagePaletteProxy
-NitroSystem_g2d_Image_NNS_G2dInitImagePaletteProxy: ; 0x02058778
-	mov r3, #0
-	mvn r2, #0
-	arm_func_end NitroSystem_g2d_Image_NNS_G2dInitImagePaletteProxy
-_02058780:
-	add r1, r0, r3, lsl #2
-	add r3, r3, #1
-	str r2, [r1, #8]
-	cmp r3, #3
-	blt _02058780
-	bx lr
-
-	arm_func_start NitroSystem_g2d_Image_NNS_G2dSetImagePaletteLocation
-NitroSystem_g2d_Image_NNS_G2dSetImagePaletteLocation: ; 0x02058798
-	add r0, r0, r1, lsl #2
-	str r2, [r0, #8]
-	bx lr
-	arm_func_end NitroSystem_g2d_Image_NNS_G2dSetImagePaletteLocation
-
-	arm_func_start NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
-NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation: ; 0x020587A4
-	add r0, r0, r1, lsl #2
-	ldr r0, [r0, #8]
-	bx lr
-	arm_func_end NitroSystem_g2d_Image_NNS_G2dGetImagePaletteLocation
-
-	arm_func_start NitroSystem_g2d_Image_NNS_G2dLoadImage2DMapping
-NitroSystem_g2d_Image_NNS_G2dLoadImage2DMapping: ; 0x020587B0
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	movs r5, r2
-	mov r6, r1
-	mov r4, r3
-	ldr r0, [r7, #8]
-	beq _02058814
-	cmp r5, #1
-	beq _020587E0
-	cmp r5, #2
-	beq _020587FC
-	b _02058814
-	arm_func_end NitroSystem_g2d_Image_NNS_G2dLoadImage2DMapping
-_020587E0:
-	mov r3, #0x4000000
-	ldr r2, [r3]
-	ldr r1, _020589D4 ; =0xFFCFFFEF
-	and r1, r2, r1
-	orr r0, r1, r0
-	str r0, [r3]
-	b _02058814
-_020587FC:
-	ldr r3, _020589D8 ; =0x04001000
-	ldr r1, _020589D4 ; =0xFFCFFFEF
-	ldr r2, [r3]
-	and r1, r2, r1
-	orr r0, r1, r0
-	str r0, [r3]
-_02058814:
-	ldr r0, [r7, #0x14]
-	ldr r1, [r7, #0x10]
-	bl DC_FlushRange
-	cmp r5, #0
-	beq _0205883C
-	cmp r5, #1
-	beq _02058858
-	cmp r5, #2
-	beq _0205886C
-	b _0205887C
-_0205883C:
-	bl GX_BeginLoadTex
-	ldr r0, [r7, #0x14]
-	ldr r2, [r7, #0x10]
-	mov r1, r6
-	bl GX_LoadTex
-	bl GX_EndLoadTex
-	b _0205887C
-_02058858:
-	ldr r0, [r7, #0x14]
-	ldr r2, [r7, #0x10]
-	mov r1, r6
-	bl GX_LoadOBJ
-	b _0205887C
-_0205886C:
-	ldr r0, [r7, #0x14]
-	ldr r2, [r7, #0x10]
-	mov r1, r6
-	bl GXS_LoadOBJ
-_0205887C:
-	ldr r0, [r7, #8]
-	cmp r0, #0
-	ldrh r0, [r7, #2]
-	bne _02058994
-	cmp r0, #0x10
-	bgt _020588C8
-	bge _020588F4
-	cmp r0, #8
-	addls pc, pc, r0, lsl #2
-	b _02058904
-_020588A4: ; jump table
-	b _02058904 ; case 0
-	b _020588D4 ; case 1
-	b _020588DC ; case 2
-	b _02058904 ; case 3
-	b _020588E4 ; case 4
-	b _02058904 ; case 5
-	b _02058904 ; case 6
-	b _02058904 ; case 7
-	b _020588EC ; case 8
-_020588C8:
-	cmp r0, #0x20
-	beq _020588FC
-	b _02058904
-_020588D4:
-	mov r0, #0
-	b _02058908
-_020588DC:
-	mov r0, #1
-	b _02058908
-_020588E4:
-	mov r0, #2
-	b _02058908
-_020588EC:
-	mov r0, #3
-	b _02058908
-_020588F4:
-	mov r0, #4
-	b _02058908
-_020588FC:
-	mov r0, #5
-	b _02058908
-_02058904:
-	mov r0, #0
-_02058908:
-	str r0, [r4, #0xc]
-	ldrh r0, [r7]
-	cmp r0, #0x10
-	bgt _0205894C
-	bge _02058978
-	cmp r0, #8
-	addls pc, pc, r0, lsl #2
-	b _02058988
-_02058928: ; jump table
-	b _02058988 ; case 0
-	b _02058958 ; case 1
-	b _02058960 ; case 2
-	b _02058988 ; case 3
-	b _02058968 ; case 4
-	b _02058988 ; case 5
-	b _02058988 ; case 6
-	b _02058988 ; case 7
-	b _02058970 ; case 8
-_0205894C:
-	cmp r0, #0x20
-	beq _02058980
-	b _02058988
-_02058958:
-	mov r0, #0
-	b _0205898C
-_02058960:
-	mov r0, #1
-	b _0205898C
-_02058968:
-	mov r0, #2
-	b _0205898C
-_02058970:
-	mov r0, #3
-	b _0205898C
-_02058978:
-	mov r0, #4
-	b _0205898C
-_02058980:
-	mov r0, #5
-	b _0205898C
-_02058988:
-	mov r0, #0
-_0205898C:
-	str r0, [r4, #0x10]
-	b _020589A0
-_02058994:
-	str r0, [r4, #0xc]
-	ldrh r0, [r7]
-	str r0, [r4, #0x10]
-_020589A0:
-	ldr r1, [r7, #4]
-	mov r0, #0
-	str r1, [r4, #0x14]
-	str r0, [r4, #0x18]
-	mov r0, #1
-	str r0, [r4, #0x1c]
-	ldr r3, [r7, #8]
-	mov r0, r4
-	mov r1, r5
-	mov r2, r6
-	str r3, [r4, #0x20]
-	bl NitroSystem_g2d_Image_NNS_G2dSetImageLocation
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_020589D4: .word 0xFFCFFFEF
-_020589D8: .word 0x04001000
-
-	arm_func_start NitroSystem_g2d_Image_NNS_G2dLoadPalette
-NitroSystem_g2d_Image_NNS_G2dLoadPalette: ; 0x020589DC
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	mov sb, r0
-	ldr r4, [sb, #0xc]
-	ldr r5, [sb, #8]
-	mov r8, r1
-	mov r7, r2
-	mov r0, r4
-	mov r1, r5
-	mov r6, r3
-	bl DC_FlushRange
-	cmp r7, #0
-	beq _02058A98
-	cmp r7, #1
-	beq _02058A20
-	cmp r7, #2
-	beq _02058A5C
-	b _02058AB0
-	arm_func_end NitroSystem_g2d_Image_NNS_G2dLoadPalette
-_02058A20:
-	ldr r0, [sb, #4]
-	cmp r0, #0
-	beq _02058A48
-	bl GX_BeginLoadOBJExtPltt
-	mov r0, r4
-	mov r1, r8
-	mov r2, r5
-	bl GX_LoadOBJExtPltt
-	bl GX_EndLoadOBJExtPltt
-	b _02058AB0
-_02058A48:
-	mov r0, r4
-	mov r1, r8
-	mov r2, r5
-	bl GX_LoadOBJPltt
-	b _02058AB0
-_02058A5C:
-	ldr r0, [sb, #4]
-	cmp r0, #0
-	beq _02058A84
-	bl GXS_BeginLoadOBJExtPltt
-	mov r0, r4
-	mov r1, r8
-	mov r2, r5
-	bl GXS_LoadOBJExtPltt
-	bl GXS_EndLoadOBJExtPltt
-	b _02058AB0
-_02058A84:
-	mov r0, r4
-	mov r1, r8
-	mov r2, r5
-	bl GXS_LoadOBJPltt
-	b _02058AB0
-_02058A98:
-	bl GX_BeginLoadTexPltt
-	mov r0, r4
-	mov r1, r8
-	mov r2, r5
-	bl GX_LoadTexPltt
-	bl GX_EndLoadTexPltt
-_02058AB0:
-	ldr r1, [sb]
-	mov r0, r6
-	str r1, [r6]
-	ldr r3, [sb, #4]
-	mov r1, r7
-	mov r2, r8
-	str r3, [r6, #4]
-	bl NitroSystem_g2d_Image_NNS_G2dSetImagePaletteLocation
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-
-	arm_func_start NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetTrans
-NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetTrans: ; 0x02058AD4
-	ldr r3, [r0]
-	cmp r3, #1
-	bxne lr
-	ldrh r3, [r0, #0x12]
-	orr r3, r3, #8
-	strh r3, [r0, #0x12]
-	strh r1, [r0, #0xc]
-	strh r2, [r0, #0xe]
-	bx lr
-	arm_func_end NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetTrans
-
-	arm_func_start NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetSRTRotZ
-NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetSRTRotZ: ; 0x02058AF8
-	ldr r2, [r0]
-	cmp r2, #1
-	bxne lr
-	ldrh r2, [r0, #0x12]
-	orr r2, r2, #4
-	strh r2, [r0, #0x12]
-	strh r1, [r0, #0x10]
-	bx lr
-	arm_func_end NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetSRTRotZ
-
-	arm_func_start NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetSRTScale
-NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetSRTScale: ; 0x02058B18
-	ldr r3, [r0]
-	cmp r3, #1
-	bxne lr
-	ldrh r3, [r0, #0x12]
-	orr r3, r3, #2
-	strh r3, [r0, #0x12]
-	stmib r0, {r1, r2}
-	bx lr
-	arm_func_end NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetSRTScale
-
-	arm_func_start NitroSystem_g2d_SRTControl_NNSi_G2dSrtcInitControl
-NitroSystem_g2d_SRTControl_NNSi_G2dSrtcInitControl: ; 0x02058B38
-	ldr ip, _02058B44 ; =NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetInitialValue
-	str r1, [r0]
-	bx ip
-	.align 2, 0
-_02058B44: .word NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetInitialValue
-	arm_func_end NitroSystem_g2d_SRTControl_NNSi_G2dSrtcInitControl
-
-	arm_func_start NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetInitialValue
-NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetInitialValue: ; 0x02058B48
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	add r1, r4, #4
-	mov r0, #0
-	mov r2, #0x18
-	bl MIi_CpuClear16
-	mov r0, #0x1000
-	str r0, [r4, #4]
-	str r0, [r4, #8]
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetInitialValue
-
-	arm_func_start NitroSystem_g2d_CellAnimation_ApplyCurrentAnimResult_
-NitroSystem_g2d_CellAnimation_ApplyCurrentAnimResult_: ; 0x02058B70
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r4, r0
-	ldr r1, [r4, #4]
-	ldrh r1, [r1, #4]
-	cmp r1, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	bl NitroSystem_g2d_Animation_NNS_G2dGetAnimCtrlCurrentElement
-	mov r0, r4
-	bl NitroSystem_g2d_Animation_NNS_G2dGetAnimCtrlCurrentElement
-	mov r5, r0
-	ldr r6, [r4, #0x34]
-	ldrh r1, [r5]
-	mov r0, r6
-	bl NitroSystem_g2d_NOB_load_NNS_G2dGetCellDataByIdx
-	str r0, [r4, #0x30]
-	ldr r1, [r4, #0x1c]
-	add r0, r4, #0x3c
-	ldr r2, [r1, #4]
-	mov r1, #1
-	and r7, r2, #0xff
-	bl NitroSystem_g2d_SRTControl_NNSi_G2dSrtcInitControl
-	cmp r7, #0
-	beq _02058C10
-	cmp r7, #2
-	bne _02058BE8
-	ldrsh r1, [r5, #4]
-	ldrsh r2, [r5, #6]
-	add r0, r4, #0x3c
-	bl NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetTrans
-	b _02058C10
-	arm_func_end NitroSystem_g2d_CellAnimation_ApplyCurrentAnimResult_
-_02058BE8:
-	add r0, r4, #0x3c
-	ldmib r5, {r1, r2}
-	bl NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetSRTScale
-	ldrh r1, [r5, #2]
-	add r0, r4, #0x3c
-	bl NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetSRTRotZ
-	ldrsh r1, [r5, #0xc]
-	ldrsh r2, [r5, #0xe]
-	add r0, r4, #0x3c
-	bl NitroSystem_g2d_SRTControl_NNSi_G2dSrtcSetTrans
-_02058C10:
-	ldr r2, [r6, #0xc]
-	cmp r2, #0
-	movne r0, #1
-	moveq r0, #0
-	cmp r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldr r1, [r4, #0x38]
-	mvn r0, #0
-	cmp r1, r0
-	movne r0, #1
-	moveq r0, #0
-	cmp r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
-	ldrh r1, [r5]
-	ldr r2, [r2, #4]
-	ldr r0, [r4, #0x38]
-	add r3, r2, r1, lsl #3
-	ldmia r3, {r1, r2}
-	bl NitroSystem_g2d_CellTransferManager_NNS_G2dSetCellTransferStateRequested
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start NitroSystem_g2d_CellAnimation_NNS_G2dInitCellAnimation
-NitroSystem_g2d_CellAnimation_NNS_G2dInitCellAnimation: ; 0x02058C60
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r1
-	str r2, [r5, #0x34]
-	mvn r2, #0
-	add r0, r5, #0x3c
-	mov r1, #1
-	str r2, [r5, #0x38]
-	bl NitroSystem_g2d_SRTControl_NNSi_G2dSrtcInitControl
-	mov r0, r5
-	bl NitroSystem_g2d_Animation_NNS_G2dInitAnimCtrl
-	mov r0, r5
-	mov r1, r4
-	bl NitroSystem_g2d_CellAnimation_NNS_G2dSetCellAnimationSequence
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSystem_g2d_CellAnimation_NNS_G2dInitCellAnimation
-
-	arm_func_start NitroSystem_g2d_CellAnimation_NNS_G2dSetCellAnimationSequence
-NitroSystem_g2d_CellAnimation_NNS_G2dSetCellAnimationSequence: ; 0x02058C9C
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl NitroSystem_g2d_Animation_NNS_G2dBindAnimCtrl
-	mov r0, r4
-	bl NitroSystem_g2d_CellAnimation_ApplyCurrentAnimResult_
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSystem_g2d_CellAnimation_NNS_G2dSetCellAnimationSequence
-
-	arm_func_start NitroSystem_g2d_CellAnimation_NNS_G2dTickCellAnimation
-NitroSystem_g2d_CellAnimation_NNS_G2dTickCellAnimation: ; 0x02058CB4
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl NitroSystem_g2d_Animation_NNS_G2dTickAnimCtrl
-	cmp r0, #0
-	ldmeqia sp!, {r4, pc}
-	mov r0, r4
-	bl NitroSystem_g2d_CellAnimation_ApplyCurrentAnimResult_
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSystem_g2d_CellAnimation_NNS_G2dTickCellAnimation
-
-	arm_func_start NitroSystem_g2d_CellTransferManager_NNSi_G2dGetCellTransferState
-NitroSystem_g2d_CellTransferManager_NNSi_G2dGetCellTransferState: ; 0x02058CD4
-	ldr r2, _02058CE8 ; =MAIN_BSS_0210EB44
-	mov r1, #0x30
-	ldr r2, [r2, #8]
-	mla r0, r1, r0, r2
-	bx lr
-	.align 2, 0
-_02058CE8: .word MAIN_BSS_0210EB44
-	arm_func_end NitroSystem_g2d_CellTransferManager_NNSi_G2dGetCellTransferState
-
-	arm_func_start NitroSystem_g2d_CellTransferManager_NNS_G2dSetCellTransferStateRequested
-NitroSystem_g2d_CellTransferManager_NNS_G2dSetCellTransferStateRequested: ; 0x02058CEC
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r1
-	mov r4, r2
-	bl NitroSystem_g2d_CellTransferManager_NNSi_G2dGetCellTransferState
-	mvn r1, #0
-	str r1, [r0, #0x24]
-	str r5, [r0, #0x28]
-	str r4, [r0, #0x2c]
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSystem_g2d_CellTransferManager_NNS_G2dSetCellTransferStateRequested
-
-	arm_func_start NitroSystem_g2d_Screen_SelectScnSize
-NitroSystem_g2d_Screen_SelectScnSize: ; 0x02058D10
-	stmdb sp!, {r3, lr}
-	mov lr, r0
-	mov ip, #0
-	arm_func_end NitroSystem_g2d_Screen_SelectScnSize
-_02058D1C:
-	ldrh r3, [lr]
-	cmp r1, r3
-	ldrleh r3, [lr, #2]
-	cmple r2, r3
-	movle r1, #6
-	mlale r0, ip, r1, r0
-	ldmleia sp!, {r3, pc}
-	add ip, ip, #1
-	cmp ip, #4
-	add lr, lr, #6
-	blt _02058D1C
-	add r0, r0, #0x12
-	ldmia sp!, {r3, pc}
-
-	arm_func_start NitroSystem_g2d_Screen_ChangeBGModeByTableMain
-NitroSystem_g2d_Screen_ChangeBGModeByTableMain: ; 0x02058D50
-	mov r1, #0x4000000
-	ldr r2, [r1]
-	ldr r1, [r1]
-	and r2, r2, #7
-	tst r1, #8
-	ldrb r1, [r0, r2]
-	movne r0, #1
-	moveq r0, #0
-	cmp r0, #0
-	movne r2, #1
-	moveq r2, #0
-	cmp r1, #8
-	ldr ip, _02058D90 ; =GX_SetGraphicsMode
-	subge r1, r1, #8
-	mov r0, #1
-	bx ip
-	.align 2, 0
-_02058D90: .word GX_SetGraphicsMode
-	arm_func_end NitroSystem_g2d_Screen_ChangeBGModeByTableMain
-
-	arm_func_start NitroSystem_g2d_Screen_ChangeBGModeByTableSub
-NitroSystem_g2d_Screen_ChangeBGModeByTableSub: ; 0x02058D94
-	ldr r1, _02058DB4 ; =0x04001000
-	ldr ip, _02058DB8 ; =GXS_SetGraphicsMode
-	ldr r1, [r1]
-	and r1, r1, #7
-	ldrb r0, [r0, r1]
-	cmp r0, #8
-	subge r0, r0, #8
-	bx ip
-	.align 2, 0
-_02058DB4: .word 0x04001000
-_02058DB8: .word GXS_SetGraphicsMode
-	arm_func_end NitroSystem_g2d_Screen_ChangeBGModeByTableSub
-
-	arm_func_start NitroSystem_g2d_Screen_LoadBGPlttToExtendedPltt
-NitroSystem_g2d_Screen_LoadBGPlttToExtendedPltt: ; 0x02058DBC
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0xc
-	mov sl, r1
-	mov r4, r0
-	ldr r0, [sl, #0xc]
-	ldr r1, [sl, #8]
-	mov sb, r2
-	mov r5, r4, lsl #0xd
-	bl DC_FlushRange
-	cmp r4, #3
-	bgt _02058E00
-	ldr r0, _02058ED4 ; =GX_BeginLoadBGExtPltt
-	ldr fp, _02058ED8 ; =GX_LoadBGExtPltt
-	str r0, [sp, #8]
-	ldr r0, _02058EDC ; =GX_EndLoadBGExtPltt
-	str r0, [sp, #4]
-	b _02058E18
-	arm_func_end NitroSystem_g2d_Screen_LoadBGPlttToExtendedPltt
-_02058E00:
-	ldr r0, _02058EE0 ; =GXS_BeginLoadBGExtPltt
-	ldr fp, _02058EE4 ; =GXS_LoadBGExtPltt
-	str r0, [sp, #8]
-	ldr r0, _02058EE8 ; =GXS_EndLoadBGExtPltt
-	sub r5, r5, #0x8000
-	str r0, [sp, #4]
-_02058E18:
-	cmp sb, #0
-	beq _02058EAC
-	ldr r0, [sl]
-	cmp r0, #3
-	beq _02058E38
-	cmp r0, #4
-	beq _02058E40
-	b _02058E48
-_02058E38:
-	mov r8, #0x20
-	b _02058E4C
-_02058E40:
-	mov r8, #0x200
-	b _02058E4C
-_02058E48:
-	mov r8, #0
-_02058E4C:
-	ldrh r0, [sb]
-	mov r6, #0
-	str r0, [sp]
-	cmp r0, #0
-	addle sp, sp, #0xc
-	ldmleia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02058E64:
-	ldr r1, [sb, #4]
-	mov r0, r6, lsl #1
-	ldrh r7, [r1, r0]
-	ldr r4, [sl, #0xc]
-	ldr r0, [sp, #8]
-	blx r0
-	mla r0, r8, r6, r4
-	mla r1, r8, r7, r5
-	mov r2, r8
-	blx fp
-	ldr r0, [sp, #4]
-	blx r0
-	ldr r0, [sp]
-	add r6, r6, #1
-	cmp r6, r0
-	blt _02058E64
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02058EAC:
-	ldr r0, [sp, #8]
-	blx r0
-	ldr r0, [sl, #0xc]
-	ldr r2, [sl, #8]
-	mov r1, r5
-	blx fp
-	ldr r0, [sp, #4]
-	blx r0
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_02058ED4: .word GX_BeginLoadBGExtPltt
-_02058ED8: .word GX_LoadBGExtPltt
-_02058EDC: .word GX_EndLoadBGExtPltt
-_02058EE0: .word GXS_BeginLoadBGExtPltt
-_02058EE4: .word GXS_LoadBGExtPltt
-_02058EE8: .word GXS_EndLoadBGExtPltt
-
-	arm_func_start NitroSystem_g2d_Screen_LoadBGPlttToNormalPltt
-NitroSystem_g2d_Screen_LoadBGPlttToNormalPltt: ; 0x02058EEC
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	mov sb, r1
-	mov r4, r0
-	ldr r0, [sb, #0xc]
-	ldr r1, [sb, #8]
-	mov r8, r2
-	bl DC_FlushRange
-	cmp r4, #3
-	movle r7, #0x5000000
-	ldrgt r7, _02058FF4 ; =0x05000400
-	cmp r8, #0
-	beq _02058FB8
-	ldr r0, [sb]
-	cmp r0, #3
-	beq _02058F34
-	cmp r0, #4
-	beq _02058F3C
-	b _02058F44
-	arm_func_end NitroSystem_g2d_Screen_LoadBGPlttToNormalPltt
-_02058F34:
-	mov r6, #0x20
-	b _02058F48
-_02058F3C:
-	mov r6, #0x200
-	b _02058F48
-_02058F44:
-	mov r6, #0
-_02058F48:
-	ldrh r4, [r8]
-	mov r5, #0
-	cmp r4, #0
-	ldmleia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr fp, _02058FF8 ; =GXi_DmaId
-	mvn sl, #0
-_02058F60:
-	ldr r1, [r8, #4]
-	mov r0, r5, lsl #1
-	ldrh r2, [r1, r0]
-	ldr r0, [fp]
-	mul r1, r6, r5
-	mul ip, r6, r2
-	cmp r0, sl
-	ldr lr, [sb, #0xc]
-	beq _02058F98
-	mov r3, r6
-	add r1, lr, r1
-	add r2, r7, ip
-	bl MI_DmaCopy16
-	b _02058FA8
-_02058F98:
-	mov r2, r6
-	add r0, lr, r1
-	add r1, r7, ip
-	bl MIi_CpuCopy16
-_02058FA8:
-	add r5, r5, #1
-	cmp r5, r4
-	blt _02058F60
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02058FB8:
-	ldr r0, _02058FF8 ; =GXi_DmaId
-	mvn r1, #0
-	ldr r0, [r0]
-	ldr r3, [sb, #8]
-	cmp r0, r1
-	ldr r1, [sb, #0xc]
-	beq _02058FE0
-	mov r2, r7
-	bl MI_DmaCopy16
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02058FE0:
-	mov r0, r1
-	mov r1, r7
-	mov r2, r3
-	bl MIi_CpuCopy16
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_02058FF4: .word 0x05000400
-_02058FF8: .word GXi_DmaId
-
-	arm_func_start NitroSystem_g2d_Screen_GetBGExtPlttSlot
-NitroSystem_g2d_Screen_GetBGExtPlttSlot: ; 0x02058FFC
-	ldr r1, _02059024 ; =DAT_02084ea0
-	mov r2, r0, lsl #1
-	ldrh r1, [r1, r2]
-	cmp r1, #0
-	bxeq lr
-	add r1, r1, #0x4000000
-	ldrh r1, [r1]
-	tst r1, #0x2000
-	addne r0, r0, #2
-	bx lr
-	.align 2, 0
-_02059024: .word DAT_02084ea0
-	arm_func_end NitroSystem_g2d_Screen_GetBGExtPlttSlot
-
-	arm_func_start NitroSystem_g2d_Screen_SetBGnControlToText
-NitroSystem_g2d_Screen_SetBGnControlToText: ; 0x02059028
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	mov sb, r0
-	mov r8, r1
-	mov r7, r2
-	mov r6, r3
-	cmp sb, #3
-	and r5, sb, #3
-	mov r4, #0
-	bgt _02059070
-	bl GX_GetBankForBGExtPltt
-	cmp r0, #0x20
-	cmpne r0, #0x10
-	cmpne r0, #0x60
-	ldr r0, _020590B4 ; =DAT_02084f08
-	movne r4, #1
-	add r0, r0, r5, lsl #3
-	bl NitroSystem_g2d_Screen_ChangeBGModeByTableMain
-	b _0205907C
-	arm_func_end NitroSystem_g2d_Screen_SetBGnControlToText
-_02059070:
-	ldr r0, _020590B4 ; =DAT_02084f08
-	add r0, r0, r5, lsl #3
-	bl NitroSystem_g2d_Screen_ChangeBGModeByTableSub
-_0205907C:
-	ldr r0, _020590B8 ; =DAT_02084fc8
-	mov r1, r6, lsl #8
-	ldr r0, [r0, sb, lsl #2]
-	ldr r2, [sp, #0x20]
-	orr r1, r1, r8, lsl #14
-	orr r1, r1, r2, lsl #2
-	ldrh r2, [r0]
-	orr r1, r1, r4, lsl #13
-	orr r1, r1, r7, lsl #7
-	and r2, r2, #0x43
-	mov r1, r1, lsl #0x10
-	orr r1, r2, r1, lsr #16
-	strh r1, [r0]
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	.align 2, 0
-_020590B4: .word DAT_02084f08
-_020590B8: .word DAT_02084fc8
-
-	arm_func_start NitroSystem_g2d_Screen_SetBGnControlToAffine
-NitroSystem_g2d_Screen_SetBGnControlToAffine: ; 0x020590BC
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	cmp r7, #3
-	bgt _020590EC
-	ldr r1, _02059130 ; =DAT_02084eb0
-	sub r0, r7, #2
-	add r0, r1, r0, lsl #3
-	bl NitroSystem_g2d_Screen_ChangeBGModeByTableMain
-	b _020590FC
-	arm_func_end NitroSystem_g2d_Screen_SetBGnControlToAffine
-_020590EC:
-	ldr r1, _02059130 ; =DAT_02084eb0
-	sub r0, r7, #6
-	add r0, r1, r0, lsl #3
-	bl NitroSystem_g2d_Screen_ChangeBGModeByTableSub
-_020590FC:
-	ldr r1, _02059134 ; =DAT_02084fc8
-	mov r0, r4, lsl #8
-	ldr r3, [r1, r7, lsl #2]
-	ldr r1, [sp, #0x18]
-	orr r0, r0, r6, lsl #14
-	ldrh r2, [r3]
-	orr r0, r0, r1, lsl #2
-	orr r0, r0, r5, lsl #13
-	and r1, r2, #0x43
-	mov r0, r0, lsl #0x10
-	orr r0, r1, r0, lsr #16
-	strh r0, [r3]
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_02059130: .word DAT_02084eb0
-_02059134: .word DAT_02084fc8
-
-	arm_func_start NitroSystem_g2d_Screen_SetBGnControlTo256x16Pltt
-NitroSystem_g2d_Screen_SetBGnControlTo256x16Pltt: ; 0x02059138
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	cmp r7, #3
-	bgt _02059168
-	ldr r1, _020591AC ; =DAT_02084e90
-	sub r0, r7, #2
-	add r0, r1, r0, lsl #3
-	bl NitroSystem_g2d_Screen_ChangeBGModeByTableMain
-	b _02059178
-	arm_func_end NitroSystem_g2d_Screen_SetBGnControlTo256x16Pltt
-_02059168:
-	ldr r1, _020591AC ; =DAT_02084e90
-	sub r0, r7, #6
-	add r0, r1, r0, lsl #3
-	bl NitroSystem_g2d_Screen_ChangeBGModeByTableSub
-_02059178:
-	ldr r1, _020591B0 ; =DAT_02084fc8
-	mov r0, r4, lsl #8
-	ldr r3, [r1, r7, lsl #2]
-	ldr r1, [sp, #0x18]
-	orr r0, r0, r6, lsl #14
-	ldrh r2, [r3]
-	orr r0, r0, r1, lsl #2
-	orr r0, r0, r5, lsl #13
-	and r1, r2, #0x43
-	mov r0, r0, lsl #0x10
-	orr r0, r1, r0, lsr #16
-	strh r0, [r3]
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_020591AC: .word DAT_02084e90
-_020591B0: .word DAT_02084fc8
-
-	arm_func_start NitroSystem_g2d_Screen_SetBGControlText
-NitroSystem_g2d_Screen_SetBGControlText: ; 0x020591B4
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r1
-	mov r1, r2
-	ldr r0, _020591F0 ; =DAT_02084ef0
-	mov r2, r3
-	bl NitroSystem_g2d_Screen_SelectScnSize
-	ldr r1, [sp, #0x14]
-	ldr r3, [sp, #0x10]
-	str r1, [sp]
-	ldrh r1, [r0, #4]
-	mov r0, r5
-	mov r2, r4
-	bl NitroSystem_g2d_Screen_SetBGnControlToText
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_020591F0: .word DAT_02084ef0
-	arm_func_end NitroSystem_g2d_Screen_SetBGControlText
-
-	arm_func_start NitroSystem_g2d_Screen_SetBGControlAffine
-NitroSystem_g2d_Screen_SetBGControlAffine: ; 0x020591F4
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	ldr r0, _0205922C ; =DAT_02084ed8
-	mov r4, r3
-	bl NitroSystem_g2d_Screen_SelectScnSize
-	ldr r1, [sp, #0x10]
-	ldr r2, _02059230 ; =MAIN_BSS_0210EB50
-	str r1, [sp]
-	ldrh r1, [r0, #4]
-	ldr r2, [r2]
-	mov r0, r5
-	mov r3, r4
-	bl NitroSystem_g2d_Screen_SetBGnControlToAffine
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205922C: .word DAT_02084ed8
-_02059230: .word MAIN_BSS_0210EB50
-	arm_func_end NitroSystem_g2d_Screen_SetBGControlAffine
-
-	arm_func_start NitroSystem_g2d_Screen_SetBGControl256x16Pltt
-NitroSystem_g2d_Screen_SetBGControl256x16Pltt: ; 0x02059234
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	ldr r0, _0205926C ; =DAT_02084ec0
-	mov r4, r3
-	bl NitroSystem_g2d_Screen_SelectScnSize
-	ldr r1, [sp, #0x10]
-	ldr r2, _02059270 ; =MAIN_BSS_0210EB50
-	str r1, [sp]
-	ldrh r1, [r0, #4]
-	ldr r2, [r2]
-	mov r0, r5
-	mov r3, r4
-	bl NitroSystem_g2d_Screen_SetBGnControlTo256x16Pltt
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205926C: .word DAT_02084ec0
-_02059270: .word MAIN_BSS_0210EB50
-	arm_func_end NitroSystem_g2d_Screen_SetBGControl256x16Pltt
-
-	arm_func_start NitroSystem_g2d_Screen_LoadBGPaletteSelect
-NitroSystem_g2d_Screen_LoadBGPaletteSelect: ; 0x02059274
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r2
-	mov r4, r3
-	cmp r1, #0
-	beq _0205929C
-	bl NitroSystem_g2d_Screen_GetBGExtPlttSlot
-	mov r1, r5
-	mov r2, r4
-	bl NitroSystem_g2d_Screen_LoadBGPlttToExtendedPltt
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSystem_g2d_Screen_LoadBGPaletteSelect
-_0205929C:
-	mov r1, r5
-	mov r2, r4
-	bl NitroSystem_g2d_Screen_LoadBGPlttToNormalPltt
-	ldmia sp!, {r3, r4, r5, pc}
-
-	arm_func_start NitroSystem_g2d_Screen_LoadBGPalette
-NitroSystem_g2d_Screen_LoadBGPalette: ; 0x020592AC
-	stmdb sp!, {r3, lr}
-	ldrh ip, [r2, #6]
-	mov lr, r1
-	cmp ip, #0
-	ldreqh r1, [r2, #4]
-	cmpeq r1, #1
-	bne _020592FC
-	cmp r0, #3
-	bgt _020592DC
-	mov r1, #0x4000000
-	ldr r1, [r1]
-	b _020592E4
-	arm_func_end NitroSystem_g2d_Screen_LoadBGPalette
-_020592DC:
-	ldr r1, _0205931C ; =0x04001000
-	ldr r1, [r1]
-_020592E4:
-	tst r1, #0x40000000
-	movne r1, #1
-	moveq r1, #0
-	mov r2, lr
-	bl NitroSystem_g2d_Screen_LoadBGPaletteSelect
-	ldmia sp!, {r3, pc}
-_020592FC:
-	ldr r1, [lr]
-	mov r2, lr
-	cmp r1, #3
-	cmpne ip, #1
-	movne r1, #1
-	moveq r1, #0
-	bl NitroSystem_g2d_Screen_LoadBGPaletteSelect
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0205931C: .word 0x04001000
-
-	arm_func_start NitroSystem_g2d_Screen_LoadBGCharacter
-NitroSystem_g2d_Screen_LoadBGCharacter: ; 0x02059320
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	cmp r2, #0
-	mov r4, #0
-	beq _02059358
-	ldrh r3, [r2, #2]
-	ldrh r1, [r2, #4]
-	ldr r0, [r5, #4]
-	mul r1, r3, r1
-	cmp r0, #4
-	moveq r0, #0x40
-	movne r0, #0x20
-	mul r4, r1, r0
-	arm_func_end NitroSystem_g2d_Screen_LoadBGCharacter
-_02059358:
-	ldr r0, [r5, #0x14]
-	ldr r1, [r5, #0x10]
-	bl DC_FlushRange
-	ldr r0, _020593DC ; =DAT_02084fc8
-	cmp r6, #3
-	ldr r0, [r0, r6, lsl #2]
-	ldr r3, [r5, #0x10]
-	ldrh r0, [r0]
-	ldr r1, [r5, #0x14]
-	movgt r6, #0x6200000
-	and r0, r0, #0x3c
-	mov r5, r0, asr #2
-	bgt _020593A4
-	mov r0, #0x4000000
-	ldr r0, [r0]
-	and r0, r0, #0x7000000
-	mov r0, r0, lsr #0x18
-	mov r0, r0, lsl #0x10
-	add r6, r0, #0x6000000
-_020593A4:
-	ldr r0, _020593E0 ; =GXi_DmaId
-	mvn r2, #0
-	ldr r0, [r0]
-	add r5, r6, r5, lsl #14
-	cmp r0, r2
-	beq _020593C8
-	add r2, r5, r4
-	bl MI_DmaCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-_020593C8:
-	mov r0, r1
-	mov r2, r3
-	add r1, r5, r4
-	bl MIi_CpuCopy16
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_020593DC: .word DAT_02084fc8
-_020593E0: .word GXi_DmaId
-
-	arm_func_start NitroSystem_g2d_Screen_LoadBGScreen
-NitroSystem_g2d_Screen_LoadBGScreen: ; 0x020593E4
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0x20
-	ldr r3, _020594AC ; =DAT_02084fc8
-	mov r2, r0
-	ldr r0, [r3, r2, lsl #2]
-	cmp r2, #3
-	ldrh r0, [r0]
-	mov r7, r1
-	movgt r5, #0x6200000
-	and r0, r0, #0x1f00
-	mov r4, r0, asr #8
-	bgt _0205942C
-	mov r0, #0x4000000
-	ldr r0, [r0]
-	and r0, r0, #0x38000000
-	mov r0, r0, lsr #0x1b
-	mov r0, r0, lsl #0x10
-	add r5, r0, #0x6000000
-	arm_func_end NitroSystem_g2d_Screen_LoadBGScreen
-_0205942C:
-	ldrh r3, [r7, #2]
-	ldrh r8, [r7]
-	add r0, sp, #0x1c
-	add r4, r5, r4, lsl #11
-	add r1, sp, #0x18
-	mov r5, r8, lsr #3
-	mov r6, r3, lsr #3
-	bl NitroSystem_g2d_g2di_BGManipulator_NNSi_G2dBGGetCharSize
-	ldr r0, [sp, #0x1c]
-	ldr r1, [r7, #8]
-	cmp r0, r8, lsr #3
-	movle r5, r0
-	ldr r0, [sp, #0x18]
-	cmp r0, r6
-	movle r6, r0
-	add r0, r7, #0xc
-	bl DC_FlushRange
-	mov r2, #0
-	str r2, [sp]
-	str r2, [sp, #4]
-	ldr r1, [sp, #0x1c]
-	mov r0, r4
-	str r1, [sp, #8]
-	ldr r3, [sp, #0x18]
-	mov r1, r7
-	str r3, [sp, #0xc]
-	str r5, [sp, #0x10]
-	mov r3, r2
-	str r6, [sp, #0x14]
-	bl NitroSystem_g2d_Screen_NNS_G2dBGLoadScreenRect
-	add sp, sp, #0x20
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	.align 2, 0
-_020594AC: .word DAT_02084fc8
-
-	arm_func_start NitroSystem_g2d_Screen_SetBGControlAuto
-NitroSystem_g2d_Screen_SetBGControlAuto: ; 0x020594B0
-	stmdb sp!, {r3, lr}
-	sub sp, sp, #8
-	cmp r1, #0
-	beq _020594D8
-	cmp r1, #1
-	beq _02059500
-	cmp r1, #2
-	beq _02059520
-	add sp, sp, #8
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_g2d_Screen_SetBGControlAuto
-_020594D8:
-	ldr lr, [sp, #0x14]
-	mov r1, r2
-	mov r2, r3
-	ldr ip, [sp, #0x18]
-	str lr, [sp]
-	ldr r3, [sp, #0x10]
-	str ip, [sp, #4]
-	bl NitroSystem_g2d_Screen_SetBGControlText
-	add sp, sp, #8
-	ldmia sp!, {r3, pc}
-_02059500:
-	mov r1, r3
-	ldr ip, [sp, #0x18]
-	ldr r2, [sp, #0x10]
-	ldr r3, [sp, #0x14]
-	str ip, [sp]
-	bl NitroSystem_g2d_Screen_SetBGControlAffine
-	add sp, sp, #8
-	ldmia sp!, {r3, pc}
-_02059520:
-	mov r1, r3
-	ldr ip, [sp, #0x18]
-	ldr r2, [sp, #0x10]
-	ldr r3, [sp, #0x14]
-	str ip, [sp]
-	bl NitroSystem_g2d_Screen_SetBGControl256x16Pltt
-	add sp, sp, #8
-	ldmia sp!, {r3, pc}
-
-	arm_func_start NitroSystem_g2d_Screen_LoadScreenPartText
-NitroSystem_g2d_Screen_LoadScreenPartText: ; 0x02059540
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x40
-	ldrh r6, [r1]
-	ldrh r5, [r1, #2]
-	add r1, r1, #0xc
-	str r1, [sp, #0x28]
-	ldr r1, [sp, #0x68]
-	ldr r4, [sp, #0x7c]
-	ldr r7, [sp, #0x78]
-	add r4, r3, r4
-	str r1, [sp, #0x68]
-	ldr r1, [sp, #0x6c]
-	add ip, r2, r7
-	mov r7, r6, lsr #3
-	str r4, [sp, #0x2c]
-	cmp r3, r4
-	str r1, [sp, #0x24]
-	mov r6, r5, lsr #3
-	addge sp, sp, #0x40
-	ldmgeia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	mov r8, r6, asr #4
-	add r8, r6, r8, lsr #27
-	mov sb, r6, lsr #0x1f
-	rsb r6, sb, r6, lsl #27
-	add r6, sb, r6, ror #27
-	ldr r5, [sp, #0x74]
-	str r6, [sp, #0x14]
-	mov r6, r5, asr #4
-	add r6, r5, r6, lsr #27
-	str r6, [sp, #0x38]
-	mov r6, r7, asr #4
-	add r6, r7, r6, lsr #27
-	mov r1, r7, lsr #0x1f
-	str r6, [sp, #0x34]
-	rsb r6, r1, r7, lsl #27
-	add r1, r1, r6, ror #27
-	ldr r4, [sp, #0x70]
-	str r1, [sp, #0x18]
-	mov r1, r7, lsl #5
-	str r1, [sp, #0x10]
-	mov r1, r4, asr #4
-	add r1, r4, r1, lsr #27
-	mov r6, r4, lsr #0x1f
-	str r1, [sp, #0x30]
-	rsb r1, r6, r4, lsl #27
-	add r1, r6, r1, ror #27
-	str r1, [sp, #0xc]
-	mov r1, r4, lsl #5
-	mov r4, r5, lsr #0x1f
-	str r1, [sp, #4]
-	rsb r1, r4, r5, lsl #27
-	add r1, r4, r1, ror #27
-	str r8, [sp, #0x3c]
-	str r1, [sp, #8]
-	arm_func_end NitroSystem_g2d_Screen_LoadScreenPartText
-_02059618:
-	cmp r2, ip
-	mov lr, r2
-	ldr r4, [sp, #0x68]
-	bge _02059744
-	mov r1, r3, asr #4
-	add r1, r3, r1, lsr #27
-	mov r6, r3, lsr #0x1f
-	mov r5, r1, asr #5
-	rsb r1, r6, r3, lsl #27
-	add r1, r6, r1, ror #27
-	str r1, [sp, #0x20]
-	ldr r1, [sp, #0x24]
-	cmp r2, ip
-	mov r6, r1, asr #4
-	add r1, r1, r6, lsr #27
-	mov r7, r1, asr #5
-	ldr r1, [sp, #0x24]
-	mov r6, r1, lsr #0x1f
-	rsb r1, r6, r1, lsl #27
-	add r1, r6, r1, ror #27
-	str r1, [sp, #0x1c]
-	bge _02059744
-	ldr r1, [sp, #0x10]
-	mul r1, r5, r1
-	str r1, [sp]
-	ldr r1, [sp, #4]
-	mul fp, r7, r1
-_02059684:
-	mov r1, lr, asr #4
-	add r1, lr, r1, lsr #27
-	mov sb, r1, asr #5
-	ldr r1, [sp, #0x34]
-	mov r6, lr, lsr #0x1f
-	cmp sb, r1, asr #5
-	rsb r1, r6, lr, lsl #27
-	add r8, r6, r1, ror #27
-	ldreq sl, [sp, #0x18]
-	ldr r1, [sp, #0x3c]
-	movne sl, #0x20
-	cmp r5, r1, asr #5
-	ldreq r1, [sp, #0x14]
-	add lr, lr, #1
-	movne r1, #0x20
-	mov r6, r1, lsl #5
-	ldr r1, [sp]
-	mla r1, sb, r6, r1
-	ldr r6, [sp, #0x20]
-	mov sb, r4, lsr #0x1f
-	mla r1, sl, r6, r1
-	add r6, r8, r1
-	ldr r1, [sp, #0x28]
-	ldr sl, [sp, #0x38]
-	add r1, r1, r6, lsl #1
-	mov r6, r4, asr #4
-	add r6, r4, r6, lsr #27
-	mov r8, r6, asr #5
-	ldr r6, [sp, #0x30]
-	ldrh r1, [r1]
-	cmp r8, r6, asr #5
-	rsb r6, sb, r4, lsl #27
-	add r6, sb, r6, ror #27
-	ldreq sb, [sp, #0xc]
-	add r4, r4, #1
-	movne sb, #0x20
-	cmp r7, sl, asr #5
-	ldreq sl, [sp, #8]
-	movne sl, #0x20
-	mov sl, sl, lsl #5
-	mla sl, r8, sl, fp
-	ldr r8, [sp, #0x1c]
-	cmp lr, ip
-	mla r8, sb, r8, sl
-	add r6, r6, r8
-	mov r6, r6, lsl #1
-	strh r1, [r0, r6]
-	blt _02059684
-_02059744:
-	ldr r1, [sp, #0x2c]
-	add r3, r3, #1
-	cmp r3, r1
-	ldr r1, [sp, #0x24]
-	add r1, r1, #1
-	str r1, [sp, #0x24]
-	blt _02059618
-	add sp, sp, #0x40
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start NitroSystem_g2d_Screen_LoadScreenPartAffine
-NitroSystem_g2d_Screen_LoadScreenPartAffine: ; 0x02059768
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
-	ldrh r4, [r1], #0xc
-	ldr lr, [sp, #0x20]
-	ldr ip, [sp, #0x24]
-	ldr r5, [sp, #0x28]
-	mov r6, r3
-	mla r3, ip, r5, lr
-	mov r4, r4, lsr #3
-	mla r2, r6, r4, r2
-	ldr ip, [sp, #0x30]
-	ldr sl, [sp, #0x2c]
-	add r7, r6, ip
-	add r8, r1, r2
-	add sb, r0, r3
-	cmp r6, r7
-	ldmgeia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	arm_func_end NitroSystem_g2d_Screen_LoadScreenPartAffine
-_020597A8:
-	mov r0, r8
-	mov r1, sb
-	mov r2, sl
-	bl MI_CpuCopy8
-	add r6, r6, #1
-	cmp r6, r7
-	add r8, r8, r4
-	add sb, sb, r5
-	blt _020597A8
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-
-	arm_func_start NitroSystem_g2d_Screen_LoadScreenPart256x16Pltt
-NitroSystem_g2d_Screen_LoadScreenPart256x16Pltt: ; 0x020597D0
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
-	ldrh r4, [r1], #0xc
-	ldr r6, [sp, #0x20]
-	ldr r5, [sp, #0x24]
-	ldr r8, [sp, #0x28]
-	mov r7, r3
-	mla r3, r5, r8, r6
-	mov r4, r4, lsr #3
-	mla r2, r7, r4, r2
-	ldr ip, [sp, #0x2c]
-	ldr r5, [sp, #0x30]
-	mov r6, ip, lsl #1
-	add r5, r7, r5
-	add sb, r1, r2, lsl #1
-	add sl, r0, r3, lsl #1
-	cmp r7, r5
-	ldmgeia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	arm_func_end NitroSystem_g2d_Screen_LoadScreenPart256x16Pltt
-_02059814:
-	mov r0, sb
-	mov r1, sl
-	mov r2, r6
-	bl MIi_CpuCopy16
-	add r7, r7, #1
-	cmp r7, r5
-	add sb, sb, r4, lsl #1
-	add sl, sl, r8, lsl #1
-	blt _02059814
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-
-	arm_func_start NitroSystem_g2d_Screen_NNS_G2dBGLoadElementsEx
-NitroSystem_g2d_Screen_NNS_G2dBGLoadElementsEx: ; 0x0205983C
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r5, r1
-	cmp r3, #0
-	mov r6, r0
-	mov r4, r2
-	cmpne r5, #0
-	beq _02059868
-	mov r1, r3
-	ldr r3, [sp, #0x14]
-	mov r2, r5
-	bl NitroSystem_g2d_Screen_LoadBGPalette
-	arm_func_end NitroSystem_g2d_Screen_NNS_G2dBGLoadElementsEx
-_02059868:
-	cmp r4, #0
-	beq _02059880
-	ldr r2, [sp, #0x10]
-	mov r0, r6
-	mov r1, r4
-	bl NitroSystem_g2d_Screen_LoadBGCharacter
-_02059880:
-	cmp r5, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	mov r0, r6
-	mov r1, r5
-	bl NitroSystem_g2d_Screen_LoadBGScreen
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
-NitroSystem_g2d_Screen_NNS_G2dBGSetupEx: ; 0x02059898
-	stmdb sp!, {r4, r5, r6, r7, lr}
-	sub sp, sp, #0xc
-	mov r6, r1
-	ldrh r1, [r6, #4]
-	mov r4, r3
-	ldrh r3, [r6, #2]
-	cmp r1, #0
-	mov r7, r0
-	ldr r1, [sp, #0x28]
-	str r3, [sp]
-	ldr r0, [sp, #0x2c]
-	str r1, [sp, #4]
-	str r0, [sp, #8]
-	mov r5, r2
-	moveq r2, #0
-	ldrh r1, [r6, #6]
-	ldrh r3, [r6]
-	movne r2, #1
-	mov r0, r7
-	bl NitroSystem_g2d_Screen_SetBGControlAuto
-	ldr r0, [sp, #0x20]
-	ldr ip, [sp, #0x24]
-	str r0, [sp]
-	mov r0, r7
-	mov r1, r6
-	mov r2, r5
-	mov r3, r4
-	str ip, [sp, #4]
-	bl NitroSystem_g2d_Screen_NNS_G2dBGLoadElementsEx
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, pc}
-	arm_func_end NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
-
-	arm_func_start NitroSystem_g2d_Screen_NNS_G2dBGLoadScreenRect
-NitroSystem_g2d_Screen_NNS_G2dBGLoadScreenRect: ; 0x02059914
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0x18
-	ldr r6, [sp, #0x30]
-	ldr r5, [sp, #0x34]
-	cmp r6, #0
-	ldr r4, [sp, #0x38]
-	ldr lr, [sp, #0x40]
-	ldr ip, [sp, #0x44]
-	bge _02059948
-	rsb r6, r6, #0
-	add r2, r2, r6
-	sub lr, lr, r6
-	mov r6, #0
-	arm_func_end NitroSystem_g2d_Screen_NNS_G2dBGLoadScreenRect
-_02059948:
-	cmp r5, #0
-	bge _02059960
-	rsb r5, r5, #0
-	add r3, r3, r5
-	sub ip, ip, r5
-	mov r5, #0
-_02059960:
-	add r7, r6, lr
-	cmp r7, r4
-	subgt r7, r7, r4
-	subgt lr, lr, r7
-	ldr r7, [sp, #0x3c]
-	add r8, r5, ip
-	cmp r8, r7
-	subgt r7, r8, r7
-	subgt ip, ip, r7
-	cmp r2, #0
-	bge _0205999C
-	rsb r2, r2, #0
-	add r6, r6, r2
-	sub lr, lr, r2
-	mov r2, #0
-_0205999C:
-	cmp r3, #0
-	bge _020599B4
-	rsb r3, r3, #0
-	add r5, r5, r3
-	sub ip, ip, r3
-	mov r3, #0
-_020599B4:
-	ldrh r7, [r1]
-	add r8, r2, lr
-	cmp r8, r7, lsr #3
-	subgt r7, r8, r7, lsr #3
-	subgt lr, lr, r7
-	ldrh r7, [r1, #2]
-	add r8, r3, ip
-	cmp r8, r7, lsr #3
-	subgt r7, r8, r7, lsr #3
-	subgt ip, ip, r7
-	cmp lr, #0
-	cmpgt ip, #0
-	addle sp, sp, #0x18
-	ldmleia sp!, {r4, r5, r6, r7, r8, pc}
-	ldrh r7, [r1, #6]
-	cmp r7, #0
-	beq _02059A10
-	cmp r7, #1
-	beq _02059A38
-	cmp r7, #2
-	beq _02059A58
-	add sp, sp, #0x18
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-_02059A10:
-	str r6, [sp]
-	str r5, [sp, #4]
-	ldr r5, [sp, #0x3c]
-	str r4, [sp, #8]
-	str r5, [sp, #0xc]
-	str lr, [sp, #0x10]
-	str ip, [sp, #0x14]
-	bl NitroSystem_g2d_Screen_LoadScreenPartText
-	add sp, sp, #0x18
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-_02059A38:
-	str r6, [sp]
-	str r5, [sp, #4]
-	str r4, [sp, #8]
-	str lr, [sp, #0xc]
-	str ip, [sp, #0x10]
-	bl NitroSystem_g2d_Screen_LoadScreenPartAffine
-	add sp, sp, #0x18
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-_02059A58:
-	str r6, [sp]
-	str r5, [sp, #4]
-	str r4, [sp, #8]
-	str lr, [sp, #0xc]
-	str ip, [sp, #0x10]
-	bl NitroSystem_g2d_Screen_LoadScreenPart256x16Pltt
-	add sp, sp, #0x18
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start NitroSystem_g2d_Font_GetGlyphIndex
-NitroSystem_g2d_Font_GetGlyphIndex: ; 0x02059A78
-	stmdb sp!, {r3, lr}
-	ldrh r3, [r0, #4]
-	ldr r2, _02059B3C ; =0x0000FFFF
-	cmp r3, #0
-	beq _02059AA0
-	cmp r3, #1
-	beq _02059ABC
-	cmp r3, #2
-	beq _02059AD0
-	b _02059B34
-	arm_func_end NitroSystem_g2d_Font_GetGlyphIndex
-_02059AA0:
-	ldrh r2, [r0]
-	ldrh r3, [r0, #0xc]
-	sub r0, r1, r2
-	add r0, r3, r0
-	mov r0, r0, lsl #0x10
-	mov r2, r0, lsr #0x10
-	b _02059B34
-_02059ABC:
-	ldrh r2, [r0]
-	sub r1, r1, r2
-	add r0, r0, r1, lsl #1
-	ldrh r2, [r0, #0xc]
-	b _02059B34
-_02059AD0:
-	ldrh r3, [r0, #0xc]
-	add ip, r0, #0xe
-	sub r0, r3, #1
-	add lr, ip, r0, lsl #2
-	cmp ip, lr
-	bhi _02059B34
-_02059AE8:
-	sub r3, lr, ip
-	mov r0, r3, asr #1
-	add r0, r3, r0, lsr #30
-	mov r0, r0, asr #2
-	add r0, r0, r0, lsr #31
-	mov r3, r0, asr #1
-	mov r0, r3, lsl #2
-	ldrh r0, [ip, r0]
-	add r3, ip, r3, lsl #2
-	cmp r0, r1
-	addlo ip, r3, #4
-	blo _02059B2C
-	cmp r1, r0
-	sublo lr, r3, #4
-	blo _02059B2C
-	ldrh r2, [r3, #2]
-	b _02059B34
-_02059B2C:
-	cmp ip, lr
-	bls _02059AE8
-_02059B34:
-	mov r0, r2
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02059B3C: .word 0x0000FFFF
-
-	arm_func_start NitroSystem_g2d_Font_NNS_G2dFontInitAuto
-NitroSystem_g2d_Font_NNS_G2dFontInitAuto: ; 0x02059B40
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, r1
-	mov r1, r4
-	bl NitroSystem_g2d_NFT_load_NNSi_G2dGetUnpackedFont
-	ldr r1, [r4]
-	ldr r0, _02059B6C ; =PTR_LAB_02084f28
-	ldrb r1, [r1, #7]
-	ldr r0, [r0, r1, lsl #2]
-	str r0, [r4, #4]
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02059B6C: .word PTR_LAB_02084f28
-	arm_func_end NitroSystem_g2d_Font_NNS_G2dFontInitAuto
-
-	arm_func_start NitroSystem_g2d_Font_NNS_G2dFontInitUTF16
-NitroSystem_g2d_Font_NNS_G2dFontInitUTF16: ; 0x02059B70
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	mov r0, r1
-	mov r1, r4
-	bl NitroSystem_g2d_NFT_load_NNSi_G2dGetUnpackedFont
-	ldr r0, _02059B90 ; =NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharUTF16
-	str r0, [r4, #4]
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02059B90: .word NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharUTF16
-	arm_func_end NitroSystem_g2d_Font_NNS_G2dFontInitUTF16
-
-	arm_func_start NitroSystem_g2d_Font_NNS_G2dFontFindGlyphIndex
-NitroSystem_g2d_Font_NNS_G2dFontFindGlyphIndex: ; 0x02059B94
-	stmdb sp!, {r3, lr}
-	ldr r0, [r0]
-	ldr r0, [r0, #0x10]
-	cmp r0, #0
-	beq _02059BD0
-	arm_func_end NitroSystem_g2d_Font_NNS_G2dFontFindGlyphIndex
-_02059BA8:
-	ldrh r2, [r0]
-	cmp r2, r1
-	ldrlsh r2, [r0, #2]
-	cmpls r1, r2
-	bhi _02059BC4
-	bl NitroSystem_g2d_Font_GetGlyphIndex
-	ldmia sp!, {r3, pc}
-_02059BC4:
-	ldr r0, [r0, #8]
-	cmp r0, #0
-	bne _02059BA8
-_02059BD0:
-	ldr r0, _02059BD8 ; =0x0000FFFF
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02059BD8: .word 0x0000FFFF
-
-	arm_func_start NitroSystem_g2d_Font_NNS_G2dFontGetCharWidthsFromIndex
-NitroSystem_g2d_Font_NNS_G2dFontGetCharWidthsFromIndex: ; 0x02059BDC
-	ldr ip, [r0]
-	ldr r3, [ip, #0xc]
-	cmp r3, #0
-	beq _02059C20
-	arm_func_end NitroSystem_g2d_Font_NNS_G2dFontGetCharWidthsFromIndex
-_02059BEC:
-	ldrh r2, [r3]
-	cmp r2, r1
-	ldrlsh r0, [r3, #2]
-	cmpls r1, r0
-	bhi _02059C14
-	sub r0, r1, r2
-	add r1, r3, #8
-	add r0, r0, r0, lsl #1
-	add r0, r1, r0
-	bx lr
-_02059C14:
-	ldr r3, [r3, #4]
-	cmp r3, #0
-	bne _02059BEC
-_02059C20:
-	add r0, ip, #4
-	bx lr
-
-	arm_func_start NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth
-NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth: ; 0x02059C28
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, lr}
-	sub sp, sp, #4
-	mov r8, r0
-	str r2, [sp]
-	ldr r5, [r8, #4]
-	add r0, sp, #0
-	mov r7, r1
-	mov r6, r3
-	mov r4, #0
-	blx r5
-	movs r1, r0
-	beq _02059CA4
-	ldr sb, _02059CD0 ; =0x0000FFFF
-	add sl, sp, #0
-	arm_func_end NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth
-_02059C60:
-	cmp r1, #0xa
-	beq _02059CA4
-	mov r0, r8
-	bl NitroSystem_g2d_Font_NNS_G2dFontFindGlyphIndex
-	mov r1, r0
-	cmp r1, sb
-	ldreq r0, [r8]
-	ldreqh r1, [r0, #2]
-	mov r0, r8
-	bl NitroSystem_g2d_Font_NNS_G2dFontGetCharWidthsFromIndex
-	ldrsb r1, [r0, #2]
-	mov r0, sl
-	add r1, r7, r1
-	add r4, r4, r1
-	blx r5
-	movs r1, r0
-	bne _02059C60
-_02059CA4:
-	cmp r6, #0
-	beq _02059CBC
-	cmp r1, #0xa
-	ldreq r0, [sp]
-	movne r0, #0
-	str r0, [r6]
-_02059CBC:
-	cmp r4, #0
-	subgt r4, r4, r7
-	mov r0, r4
-	add sp, sp, #4
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
-	.align 2, 0
-_02059CD0: .word 0x0000FFFF
-
-	arm_func_start NitroSystem_g2d_Font_NNSi_G2dFontGetTextHeight
-NitroSystem_g2d_Font_NNSi_G2dFontGetTextHeight: ; 0x02059CD4
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0xc
-	add r4, sp, #0
-	mov r3, #0
-	mov r8, r0
-	str r2, [sp, #8]
-	str r3, [r4]
-	str r3, [r4, #4]
-	ldr r7, [r8, #4]
-	add r0, sp, #8
-	mov r4, r1
-	mov r6, #1
-	blx r7
-	cmp r0, #0
-	beq _02059D2C
-	add r5, sp, #8
-	arm_func_end NitroSystem_g2d_Font_NNSi_G2dFontGetTextHeight
-_02059D14:
-	cmp r0, #0xa
-	mov r0, r5
-	addeq r6, r6, #1
-	blx r7
-	cmp r0, #0
-	bne _02059D14
-_02059D2C:
-	ldr r0, [r8]
-	ldrsb r0, [r0, #1]
-	add r0, r4, r0
-	mul r0, r6, r0
-	sub r0, r0, r4
-	add sp, sp, #0xc
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
-
-	arm_func_start NitroSystem_g2d_Font_NNSi_G2dFontGetTextWidth
-NitroSystem_g2d_Font_NNSi_G2dFontGetTextWidth: ; 0x02059D48
-	stmdb sp!, {r0, r1, r2, r3}
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	ldr r2, [sp, #0x20]
-	mov r7, r0
-	mov r6, r1
-	cmp r2, #0
-	mov r5, #0
-	beq _02059D90
-	add r4, sp, #0x20
-	arm_func_end NitroSystem_g2d_Font_NNSi_G2dFontGetTextWidth
-_02059D6C:
-	mov r0, r7
-	mov r1, r6
-	mov r3, r4
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth
-	cmp r0, r5
-	ldr r2, [sp, #0x20]
-	movgt r5, r0
-	cmp r2, #0
-	bne _02059D6C
-_02059D90:
-	mov r0, r5
-	ldmia sp!, {r3, r4, r5, r6, r7, lr}
-	add sp, sp, #0x10
-	bx lr
-
-	arm_func_start NitroSystem_g2d_Font_NNSi_G2dFontGetTextRect
-NitroSystem_g2d_Font_NNSi_G2dFontGetTextRect: ; 0x02059DA0
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	sub sp, sp, #8
-	mov r6, r2
-	ldr r2, [sp, #0x28]
-	add sb, sp, #0
-	mov r4, #0
-	mov r8, r0
-	mov r7, r1
-	mov r5, r3
-	str r4, [sb]
-	str r4, [sb, #4]
-	cmp r2, #0
-	mov r4, #1
-	beq _02059E08
-	add sb, sp, #0x28
-	arm_func_end NitroSystem_g2d_Font_NNSi_G2dFontGetTextRect
-_02059DDC:
-	mov r0, r7
-	mov r1, r6
-	mov r3, sb
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth
-	ldr r1, [sp]
-	ldr r2, [sp, #0x28]
-	cmp r0, r1
-	strgt r0, [sp]
-	add r4, r4, #1
-	cmp r2, #0
-	bne _02059DDC
-_02059E08:
-	ldr r0, [r7]
-	sub r2, r4, #1
-	ldrsb r1, [r0, #1]
-	ldr r0, [sp]
-	add r1, r5, r1
-	mul r1, r2, r1
-	sub r1, r1, r5
-	str r1, [sp, #4]
-	stmia r8, {r0, r1}
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-
-	arm_func_start NitroSystem_g2d_CharCanvas_GetCharIndex1D
-NitroSystem_g2d_CharCanvas_GetCharIndex1D: ; 0x02059E34
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
-	mov sl, #3
-	ldr r7, [sp, #0x20]
-	ldr r6, [sp, #0x24]
-	ldr r8, _02059F28 ; =DAT_02084f68
-	mov r5, #0
-	mov sb, sl
-	mvn r4, #0
-	arm_func_end NitroSystem_g2d_CharCanvas_GetCharIndex1D
-_02059E54:
-	and ip, r3, r4, lsl r6
-	cmp ip, r1
-	and lr, r2, r4, lsl r7
-	bhi _02059E98
-	mla r5, r2, ip, r5
-	cmp lr, r0
-	bhi _02059E88
-	sub r3, r3, ip
-	mla r5, lr, r3, r5
-	sub r0, r0, lr
-	sub r1, r1, ip
-	sub r2, r2, lr
-	b _02059EE0
-_02059E88:
-	mov r2, lr
-	sub r1, r1, ip
-	sub r3, r3, ip
-	b _02059EE0
-_02059E98:
-	cmp lr, r0
-	mvn r3, r4, lsl r6
-	bhi _02059EB8
-	mla r5, lr, ip, r5
-	mov r3, ip
-	sub r0, r0, lr
-	sub r2, r2, lr
-	b _02059EE0
-_02059EB8:
-	and r2, r1, r4, lsl r6
-	mla r5, lr, r2, r5
-	and r2, r0, r4, lsl r7
-	mvn r4, r4, lsl r7
-	add r2, r5, r2, lsl r6
-	and r1, r1, r3
-	add r1, r2, r1, lsl r7
-	and r0, r0, r4
-	add r0, r1, r0
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-_02059EE0:
-	cmp r2, #8
-	movge r6, sl
-	movlt r6, r2
-	clzlt r6, r6
-	rsblt r6, r6, #0x1f
-	cmp r3, #8
-	movge r7, sb
-	movlt r7, r3
-	clzlt r7, r7
-	rsblt r7, r7, #0x1f
-	add r7, r8, r7, lsl #3
-	add ip, r7, r6, lsl #1
-	ldrb r7, [r7, r6, lsl #1]
-	ldrb r6, [ip, #1]
-	str r7, [sp, #0x20]
-	str r6, [sp, #0x24]
-	b _02059E54
-_02059F24:
-	.byte 0xF0, 0x87, 0xBD, 0xE8
-_02059F28: .word DAT_02084f68
-
-	arm_func_start NitroSystem_g2d_CharCanvas_OBJSizeToShape
-NitroSystem_g2d_CharCanvas_OBJSizeToShape: ; 0x02059F2C
-	ldrb r3, [r0, #1]
-	ldr r2, _02059F44 ; =DAT_02084f88
-	ldrb r1, [r0]
-	add r0, r2, r3, lsl #4
-	ldr r0, [r0, r1, lsl #2]
-	bx lr
-	.align 2, 0
-_02059F44: .word DAT_02084f88
-	arm_func_end NitroSystem_g2d_CharCanvas_OBJSizeToShape
-
-	arm_func_start NitroSystem_g2d_CharCanvas_ClearChar
-NitroSystem_g2d_CharCanvas_ClearChar: ; 0x02059F48
-	stmdb sp!, {r3, r4, r5, lr}
-	cmp r3, #8
-	ldreq r4, [sp, #0x10]
-	mov ip, r0
-	ldr r0, [sp, #0x14]
-	cmpeq r4, #8
-	bne _02059F78
-	ldr r2, [sp, #0x18]
-	mov r1, ip
-	mov r2, r2, lsl #3
-	bl MIi_CpuClearFast
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSystem_g2d_CharCanvas_ClearChar
-_02059F78:
-	ldr r4, [sp, #0x18]
-	cmp r4, #4
-	bne _02059FD8
-	mov r5, r1, lsl #2
-	add r4, r5, r3, lsl #2
-	mvn r3, #0
-	rsb r4, r4, #0x20
-	mov r3, r3, lsr r5
-	add r1, r4, r1, lsl #2
-	mov r3, r3, lsl r1
-	ldr r1, [sp, #0x10]
-	add r2, ip, r2, lsl #2
-	add r5, r2, r1, lsl #2
-	and r1, r0, r3, lsr r4
-	mvn r3, r3, lsr r4
-	cmp r2, r5
-	ldmhsia sp!, {r3, r4, r5, pc}
-_02059FBC:
-	ldr r0, [r2]
-	and r0, r0, r3
-	orr r0, r1, r0
-	str r0, [r2], #4
-	cmp r2, r5
-	blo _02059FBC
-	ldmia sp!, {r3, r4, r5, pc}
-_02059FD8:
-	mov r1, r1, lsl #3
-	mvn r4, #0
-	add r3, r1, r3, lsl #3
-	rsb r3, r3, #0x40
-	mov r5, r4, lsr r1
-	cmp r3, #0x20
-    movcc r5, r5, lsl r1
-	blo _0205A008
-	sub lr, r3, #0x20
-	add r4, r1, lr
-	mov r4, r5, lsl r4
-	mov r5, r4, lsr lr
-_0205A008:
-	mvn lr, #0
-	mov r4, lr, lsl r3
-	cmp r1, #0x20
-	movlo r3, r4, lsr r3
-	blo _0205A02C
-	sub lr, r1, #0x20
-	add r1, lr, r3
-	mov r1, r4, lsr r1
-	mov r3, r1, lsl lr
-_0205A02C:
-	ldr r1, [sp, #0x10]
-	add r4, ip, r2, lsl #3
-	add ip, r4, r1, lsl #3
-	and r1, r0, r5
-	and r2, r0, r3
-	mvn r5, r5
-	mvn r3, r3
-	cmp r4, ip
-	ldmhsia sp!, {r3, r4, r5, pc}
-_0205A050:
-	ldr r0, [r4]
-	and r0, r0, r5
-	orr r0, r1, r0
-	str r0, [r4]
-	ldr r0, [r4, #4]
-	and r0, r0, r3
-	orr r0, r2, r0
-	str r0, [r4, #4]
-	add r4, r4, #8
-	cmp r4, ip
-	blo _0205A050
-	ldmia sp!, {r3, r4, r5, pc}
-
-	arm_func_start NitroSystem_g2d_CharCanvas_LetterChar
-NitroSystem_g2d_CharCanvas_LetterChar: ; 0x0205A080
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x28
-	ldr r5, [r0, #8]
-	ldr r4, [r0, #0xc]
-	cmp r5, #0
-	strge r5, [sp]
-	movlt r1, #0
-	strlt r1, [sp]
-	ldr r1, [r0, #0x10]
-	cmp r4, #0
-	add sl, r5, r1
-	ldr r1, [r0, #0x14]
-	movge r2, r4
-	movlt r2, #0
-	cmp sl, #8
-	add r3, r4, r1
-	movge sl, #8
-	cmp r3, #8
-	movge r3, #8
-	cmp r4, #0
-	movgt r4, #0
-	cmp r5, #0
-	ldr r7, [r0, #0x20]
-	movgt r5, #0
-	rsb r1, r4, #0
-	mul r6, sl, r7
-	ldr r8, [r0, #0x1c]
-	rsb r4, r5, #0
-	mul sb, r8, r4
-	ldr r4, [r0, #0x18]
-	mov sl, r6
-	str r4, [sp, #0x10]
-	ldr r4, [sp]
-	cmp r7, #4
-	mul r5, r4, r7
-	ldr r4, [sp, #0x10]
-	str r5, [sp]
-	mla r4, r1, r4, sb
-	ldr r1, [r0, #4]
-	str r1, [sp, #0x14]
-	ldr r1, [r0]
-	bne _0205A1F0
-	ldr r7, [r0, #0x24]
-	add r0, r1, r2, lsl #2
-	str r0, [sp, #0xc]
-	add r0, r1, r3, lsl #2
-	ldr r1, [sp, #0xc]
-	str r0, [sp, #8]
-	cmp r1, r0
-	addhs sp, sp, #0x28
-	ldmhsia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	mov fp, #0xf
-	add r5, sp, #0x20
-	arm_func_end NitroSystem_g2d_CharCanvas_LetterChar
-_0205A154:
-	ldr r0, [sp, #0xc]
-	mov r1, r4, lsr #0x1f
-	ldr sb, [r0]
-	ldr r0, [sp, #0x14]
-	rsb r2, r1, r4, lsl #29
-	add r0, r0, r4, lsr #3
-	str r0, [sp, #0x20]
-	mov r0, #0
-	strb r0, [sp, #0x24]
-	strb r0, [sp, #0x25]
-	mov r0, r5
-	add r1, r1, r2, ror #29
-	bl NitroSystem_g2d_g2di_BitReader_NNSi_G2dBitReaderRead
-	ldr r6, [sp]
-	mov r0, r6
-	cmp r0, sl
-	bhs _0205A1C8
-_0205A198:
-	mov r0, r5
-	mov r1, r8
-	bl NitroSystem_g2d_g2di_BitReader_NNSi_G2dBitReaderRead
-	cmp r0, #0
-	beq _0205A1BC
-	add r0, r7, r0
-	mvn r1, fp, lsl r6
-	and r1, sb, r1
-	orr sb, r1, r0, lsl r6
-_0205A1BC:
-	add r6, r6, #4
-	cmp r6, sl
-	blo _0205A198
-_0205A1C8:
-	ldr r1, [sp, #0xc]
-	ldr r0, [sp, #8]
-	str sb, [r1], #4
-	cmp r1, r0
-	ldr r0, [sp, #0x10]
-	str r1, [sp, #0xc]
-	add r4, r4, r0
-	blo _0205A154
-	add sp, sp, #0x28
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0205A1F0:
-	ldr r5, [r0, #0x24]
-	add r0, r1, r3, lsl #3
-	add fp, r1, r2, lsl #3
-	str r0, [sp, #4]
-	cmp fp, r0
-	addhs sp, sp, #0x28
-	ldmhsia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0205A20C:
-	mov r1, r4, lsr #0x1f
-	rsb r0, r1, r4, lsl #29
-	add r1, r1, r0, ror #29
-	ldr r0, [sp, #0x14]
-	ldmia fp, {r6, r7}
-	mov r2, #0
-	add r0, r0, r4, lsr #3
-	str r0, [sp, #0x18]
-	add r0, sp, #0x18
-	strb r2, [sp, #0x1c]
-	strb r2, [sp, #0x1d]
-	bl NitroSystem_g2d_g2di_BitReader_NNSi_G2dBitReaderRead
-	ldr sb, [sp]
-	mov r0, sb
-	cmp r0, sl
-	bhs _0205A29C
-_0205A24C:
-	add r0, sp, #0x18
-	mov r1, r8
-	bl NitroSystem_g2d_g2di_BitReader_NNSi_G2dBitReaderRead
-	cmp r0, #0
-	beq _0205A290
-	add r1, r5, r0
-	cmp sb, #0x20
-	mov r0, #0xff
-	bhs _0205A280
-	mvn r0, r0, lsl sb
-	and r0, r6, r0
-	orr r6, r0, r1, lsl sb
-	b _0205A290
-_0205A280:
-	sub r2, sb, #0x20
-	mvn r0, r0, lsl r2
-	and r0, r7, r0
-	orr r7, r0, r1, lsl r2
-_0205A290:
-	add sb, sb, #8
-	cmp sb, sl
-	blo _0205A24C
-_0205A29C:
-	ldr r0, [sp, #4]
-	stmia fp, {r6, r7}
-	add fp, fp, #8
-	cmp fp, r0
-	ldr r0, [sp, #0x10]
-	add r4, r4, r0
-	blo _0205A20C
-	add sp, sp, #0x28
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start NitroSystem_g2d_CharCanvas_DrawGlyphLine
-NitroSystem_g2d_CharCanvas_DrawGlyphLine: ; 0x0205A2C0
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x2c
-	ldr r4, [sp, #0x54]
-	ldrb r6, [r0, #0xc]
-	str r4, [sp, #0x54]
-	ldr r4, [r4]
-	ldr r5, [r1]
-	mov r7, r6, lsl #6
-	ldrb r4, [r4, #1]
-	mov r6, r7, asr #2
-	add r6, r7, r6, lsr #29
-	cmp r4, #0
-	ldr r5, [r5, #8]
-	mov sl, r2
-	mov sb, r3
-	mov r8, r6, asr #3
-	addeq sp, sp, #0x2c
-	ldmib r0, {fp, ip}
-	ldr lr, [r0]
-	ldrb r2, [r5, #1]
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	adds r7, sl, r4
-	addmi sp, sp, #0x2c
-	ldmmiia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	adds r3, sb, r2
-	addmi sp, sp, #0x2c
-	ldmmiia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp sl, #0
-	movle r5, #0
-	movgt r5, sl, lsr #3
-	cmp sb, #0
-	movle r6, #0
-	add r7, r7, #7
-	movgt r6, sb, lsr #3
-	cmp fp, r7, lsr #3
-	mov r7, r7, lsr #3
-	add r3, r3, #7
-	movls r7, fp
-	mov fp, r3, lsr #3
-	cmp ip, r3, lsr #3
-	movls fp, ip
-	subs r3, r7, r5
-	sub fp, fp, r6
-	addmi sp, sp, #0x2c
-	ldmmiia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp fp, #0
-	addlt sp, sp, #0x2c
-	ldmltia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r7, [r0, #0x10]
-	cmp sl, #0
-	mla r6, r7, r6, r5
-	sub r5, r7, r3
-	mul r5, r8, r5
-	str r5, [sp]
-	ldr r5, [sp, #0x54]
-	mla r7, r8, r6, lr
-	ldr ip, [r5, #4]
-	ldr r6, [sp, #0x50]
-	str ip, [sp, #8]
-	sub r5, r6, #1
-	str r4, [sp, #0x14]
-	str r5, [sp, #0x28]
-	str r2, [sp, #0x18]
-	ldr r2, [r1]
-	andge sl, sl, #7
-	ldr r2, [r2, #8]
-	cmp sb, #0
-	ldrb r2, [r2, #6]
-	andge sb, sb, #7
-	sub fp, sb, fp, lsl #3
-	str r2, [sp, #0x20]
-	ldrb r0, [r0, #0xc]
-	cmp sb, fp
-	sub r6, sl, r3, lsl #3
-	str r0, [sp, #0x24]
-	ldr r0, [r1]
-	ldr r0, [r0, #8]
-	ldrb r0, [r0]
-	smulbb r0, r2, r0
-	str r0, [sp, #0x1c]
-	addle sp, sp, #0x2c
-	ldmleia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	add r4, sp, #4
-	arm_func_end NitroSystem_g2d_CharCanvas_DrawGlyphLine
-_0205A40C:
-	mov r5, sl
-	str sb, [sp, #0x10]
-	cmp sl, r6
-	ble _0205A43C
-_0205A41C:
-	mov r0, r4
-	str r7, [sp, #4]
-	str r5, [sp, #0xc]
-	bl NitroSystem_g2d_CharCanvas_LetterChar
-	sub r5, r5, #8
-	cmp r5, r6
-	add r7, r7, r8
-	bgt _0205A41C
-_0205A43C:
-	ldr r0, [sp]
-	sub sb, sb, #8
-	cmp sb, fp
-	add r7, r7, r0
-	bgt _0205A40C
-	add sp, sp, #0x2c
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start NitroSystem_g2d_CharCanvas_DrawGlyph1D
-NitroSystem_g2d_CharCanvas_DrawGlyph1D: ; 0x0205A458
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x4c
-	ldr r6, [sp, #0x74]
-	ldrb r5, [r0, #0xc]
-	ldr r4, [r6]
-	ldr r7, [r1]
-	mov r8, r5, lsl #6
-	ldrb r4, [r4, #1]
-	mov r5, r8, asr #2
-	add r5, r8, r5, lsr #29
-	ldr r7, [r7, #8]
-	str r2, [sp, #8]
-	str r3, [sp, #0xc]
-	cmp r4, #0
-	mov sb, r5, asr #3
-	addeq sp, sp, #0x4c
-	ldmib r0, {r3, r5}
-	ldrb r2, [r7, #1]
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r7, [sp, #8]
-	adds r7, r7, r4
-	addmi sp, sp, #0x4c
-	ldmmiia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r8, [sp, #0xc]
-	adds r8, r8, r2
-	addmi sp, sp, #0x4c
-	ldmmiia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr sl, [sp, #8]
-	add r7, r7, #7
-	cmp sl, #0
-	movle sl, #0
-	strle sl, [sp, #0x10]
-	movgt sl, sl, lsr #3
-	strgt sl, [sp, #0x10]
-	ldr sl, [sp, #0xc]
-	cmp sl, #0
-	movle sl, #0
-	movgt sl, sl, lsr #3
-	cmp r3, r7, lsr #3
-	mov r7, r7, lsr #3
-	movls r7, r3
-	add r3, r8, #7
-	cmp r5, r3, lsr #3
-	mov r8, r3, lsr #3
-	ldr r3, [sp, #0x10]
-	movls r8, r5
-	subs r5, r7, r3
-	sub r7, r8, sl
-	addmi sp, sp, #0x4c
-	ldmmiia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp r7, #0
-	addlt sp, sp, #0x4c
-	ldmltia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r3, [sp, #8]
-	ldr fp, [r0]
-	cmp r3, #0
-	andge r3, r3, #7
-	strge r3, [sp, #8]
-	ldr r3, [sp, #0xc]
-	ldr r8, [sp, #8]
-	ldr r6, [r6, #4]
-	cmp r3, #0
-	andge r3, r3, #7
-	strge r3, [sp, #0xc]
-	ldr r3, [sp, #0x70]
-	sub r5, r8, r5, lsl #3
-	ldr r8, [sp, #0xc]
-	sub r3, r3, #1
-	str r3, [sp, #0x48]
-	sub r7, r8, r7, lsl #3
-	str r2, [sp, #0x38]
-	str r6, [sp, #0x28]
-	str r4, [sp, #0x34]
-	ldr r4, [r1]
-	mov r3, r8
-	mov r2, r7
-	cmp r3, r2
-	ldr r2, [r4, #8]
-	str r7, [sp, #0x1c]
-	ldrb r3, [r2, #6]
-	str r3, [sp, #0x40]
-	ldrb r2, [r0, #0xc]
-	str r2, [sp, #0x44]
-	ldr r1, [r1]
-	ldr r1, [r1, #8]
-	ldrb r1, [r1]
-	smulbb r1, r3, r1
-	str r1, [sp, #0x3c]
-	ldr r3, [r0, #0x10]
-	ldr r1, [r0, #4]
-	ldr r0, [r0, #8]
-	str r1, [sp, #0x14]
-	mov r2, r3, lsl #0x18
-	mov r1, r3, lsl #0x10
-	str r3, [sp, #0x20]
-	str r0, [sp, #0x18]
-	mov r8, r2, lsr #0x18
-	mov r7, r1, lsr #0x18
-	addle sp, sp, #0x4c
-	ldmleia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	arm_func_end NitroSystem_g2d_CharCanvas_DrawGlyph1D
-_0205A5E8:
-	ldr r0, [sp, #0xc]
-	ldr r6, [sp, #0x10]
-	str r0, [sp, #0x30]
-	ldr r0, [sp, #8]
-	cmp r0, r5
-	mov r4, r0
-	ble _0205A644
-_0205A604:
-	ldr r2, [sp, #0x14]
-	str r8, [sp]
-	ldr r3, [sp, #0x18]
-	mov r0, r6
-	mov r1, sl
-	str r7, [sp, #4]
-	bl NitroSystem_g2d_CharCanvas_GetCharIndex1D
-	mla r1, r0, sb, fp
-	add r0, sp, #0x24
-	str r4, [sp, #0x2c]
-	str r1, [sp, #0x24]
-	bl NitroSystem_g2d_CharCanvas_LetterChar
-	sub r4, r4, #8
-	add r6, r6, #1
-	cmp r4, r5
-	bgt _0205A604
-_0205A644:
-	ldr r0, [sp, #0xc]
-	add sl, sl, #1
-	sub r1, r0, #8
-	ldr r0, [sp, #0x1c]
-	str r1, [sp, #0xc]
-	cmp r1, r0
-	bgt _0205A5E8
-	add sp, sp, #0x4c
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start NitroSystem_g2d_CharCanvas_ClearContinuous
-NitroSystem_g2d_CharCanvas_ClearContinuous: ; 0x0205A668
-	stmdb sp!, {r3, lr}
-	mov r3, r0
-	ldrb r2, [r3, #0xc]
-	ldr ip, [r3, #4]
-	cmp r2, #4
-	orreq r0, r1, r1, lsl #4
-	orreq r0, r0, r0, lsl #8
-	orrne r0, r1, r1, lsl #8
-	orr r1, r0, r0, lsl #16
-	ldr r0, [r3, #8]
-	mov r2, r2, lsl #6
-	mul lr, ip, r0
-	mov r0, r2, asr #2
-	add r0, r2, r0, lsr #29
-	mov r2, r0, asr #3
-	mov r0, r1
-	mul r2, lr, r2
-	ldr r1, [r3]
-	bl MIi_CpuClearFast
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_g2d_CharCanvas_ClearContinuous
-
-	arm_func_start NitroSystem_g2d_CharCanvas_ClearLine
-NitroSystem_g2d_CharCanvas_ClearLine: ; 0x0205A6B8
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	mov r7, r0
-	ldrb r2, [r7, #0xc]
-	mov r6, r1
-	ldr sb, [r7]
-	cmp r2, #4
-	orreq r0, r6, r6, lsl #4
-	orreq r0, r0, r0, lsl #8
-	orrne r0, r6, r6, lsl #8
-	mov r1, r2, lsl #6
-	orr r6, r0, r0, lsl #16
-	mov r0, r1, asr #2
-	add r0, r1, r0, lsr #29
-	mov r3, r0, asr #3
-	ldr r2, [r7, #0x10]
-	ldr r1, [r7, #4]
-	ldr r0, [r7, #8]
-	mul r5, r3, r2
-	mul r4, r3, r1
-	mov r8, #0
-	cmp r0, #0
-	ldmleia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	arm_func_end NitroSystem_g2d_CharCanvas_ClearLine
-_0205A710:
-	mov r0, r6
-	mov r1, sb
-	mov r2, r4
-	bl MIi_CpuClearFast
-	ldr r0, [r7, #8]
-	add r8, r8, #1
-	cmp r8, r0
-	add sb, sb, r5
-	blt _0205A710
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-
-	arm_func_start NitroSystem_g2d_CharCanvas_ClearAreaLine
-NitroSystem_g2d_CharCanvas_ClearAreaLine: ; 0x0205A738
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x30
-	ldr r4, [sp, #0x58]
-	mov sb, r2
-	ldrb fp, [r0, #0xc]
-	mov sl, r1
-	add r1, sb, r4
-	str r1, [sp, #0x28]
-	ldr r2, [sp, #0x5c]
-	mov r1, r3
-	add r1, r1, r2
-	cmp fp, #4
-	str r1, [sp, #0x24]
-	orreq r1, sl, sl, lsl #4
-	orreq r1, r1, r1, lsl #8
-	orrne r1, sl, sl, lsl #8
-	str r3, [sp, #0xc]
-	orr sl, r1, r1, lsl #16
-	ldr r1, [sp, #0xc]
-	mov r6, fp, lsl #6
-	bic r1, r1, #7
-	mov r4, r6, asr #2
-	mov r2, r1, asr #2
-	str r1, [sp, #0x2c]
-	add r1, r1, r2, lsr #29
-	ldr r2, [r0, #0x10]
-	mov r3, r1, asr #3
-	mul r1, r3, r2
-	bic r3, sb, #7
-	mov r5, r3, asr #2
-	add r4, r6, r4, lsr #29
-	str r3, [sp, #0x18]
-	add r5, r3, r5, lsr #29
-	mov r3, r4, asr #3
-	str r3, [sp, #0x14]
-	add r4, r1, r5, asr #3
-	ldr r3, [sp, #0x24]
-	ldr r5, [r0]
-	ldr r1, [sp, #0x14]
-	ldr r0, [sp, #0x28]
-	mla r4, r1, r4, r5
-	add r3, r3, #7
-	bic r1, r3, #7
-	str r1, [sp, #0x20]
-	ldr r1, [sp, #0x14]
-	add r0, r0, #7
-	mul r1, r2, r1
-	str r1, [sp, #0x10]
-	ldr r2, [sp, #0x2c]
-	ldr r1, [sp, #0x20]
-	str r4, [sp, #0x1c]
-	cmp r2, r1
-	bic r6, r0, #7
-	addge sp, sp, #0x30
-	ldmgeia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	arm_func_end NitroSystem_g2d_CharCanvas_ClearAreaLine
-_0205A814:
-	ldr r1, [sp, #0x2c]
-	ldr r0, [sp, #0xc]
-	cmp r1, r0
-	movge r8, #0
-	bge _0205A834
-	mov r1, r0
-	ldr r0, [sp, #0x2c]
-	sub r8, r1, r0
-_0205A834:
-	ldr r1, [sp, #0x24]
-	ldr r0, [sp, #0x2c]
-	ldr r7, [sp, #0x1c]
-	sub r0, r1, r0
-	cmp r0, #8
-	movgt r0, #8
-	sub r5, r0, r8
-	ldr r0, [sp, #0x18]
-	cmp r0, r6
-	mov r4, r0
-	bge _0205A8A4
-_0205A860:
-	ldr r0, [sp, #0x28]
-	cmp r4, sb
-	sublt r1, sb, r4
-	sub r0, r0, r4
-	movge r1, #0
-	cmp r0, #8
-	movgt r0, #8
-	sub r3, r0, r1
-	mov r0, r7
-	mov r2, r8
-	stmia sp, {r5, sl, fp}
-	bl NitroSystem_g2d_CharCanvas_ClearChar
-	ldr r0, [sp, #0x14]
-	add r4, r4, #8
-	add r7, r7, r0
-	cmp r4, r6
-	blt _0205A860
-_0205A8A4:
-	ldr r1, [sp, #0x1c]
-	ldr r0, [sp, #0x10]
-	add r0, r1, r0
-	str r0, [sp, #0x1c]
-	ldr r0, [sp, #0x2c]
-	add r1, r0, #8
-	ldr r0, [sp, #0x20]
-	str r1, [sp, #0x2c]
-	cmp r1, r0
-	blt _0205A814
-	add sp, sp, #0x30
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start NitroSystem_g2d_CharCanvas_ClearArea1D
-NitroSystem_g2d_CharCanvas_ClearArea1D: ; 0x0205A8D4
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x48
-	ldrb r4, [r0, #0xc]
-	mov sl, r2
-	mov fp, r1
-	str r4, [sp, #0x10]
-	ldr r1, [sp, #0x10]
-	ldr r4, [sp, #0x70]
-	cmp r1, #4
-	add r1, sl, r4
-	str r1, [sp, #0x3c]
-	ldr r2, [sp, #0x74]
-	mov r1, r3
-	add r1, r1, r2
-	bic r2, sl, #7
-	str r1, [sp, #0x38]
-	str r3, [sp, #0xc]
-	str r2, [sp, #0x28]
-	ldr r2, [sp, #0xc]
-	orreq r1, fp, fp, lsl #4
-	bic r2, r2, #7
-	str r2, [sp, #0x40]
-	ldr r2, [sp, #0x10]
-	orreq r1, r1, r1, lsl #8
-	mov r5, r2, lsl #6
-	ldr r2, [sp, #0x38]
-	mov r3, r5, asr #2
-	add r6, r2, #7
-	ldr r2, [sp, #0x28]
-	add r3, r5, r3, lsr #29
-	mov r4, r2, asr #2
-	ldr r2, [sp, #0x40]
-	orrne r1, fp, fp, lsl #8
-	mov r5, r2, asr #2
-	bic r2, r6, #7
-	str r2, [sp, #0x34]
-	mov r2, r3, asr #3
-	str r2, [sp, #0x14]
-	ldr r2, [sp, #0x28]
-	orr fp, r1, r1, lsl #16
-	add r2, r2, r4, lsr #29
-	mov r2, r2, asr #3
-	str r2, [sp, #0x2c]
-	ldr r2, [sp, #0x40]
-	ldr r1, [r0, #0x10]
-	add r2, r2, r5, lsr #29
-	mov r8, r2, asr #3
-	ldr r3, [sp, #0x40]
-	ldr r2, [sp, #0x34]
-	str r1, [sp, #0x44]
-	cmp r3, r2
-	ldr r2, [sp, #0x3c]
-	add r2, r2, #7
-	bic r7, r2, #7
-	ldr r2, [r0, #4]
-	str r2, [sp, #0x18]
-	ldr r2, [r0, #8]
-	ldr r0, [r0]
-	str r2, [sp, #0x1c]
-	str r0, [sp, #0x30]
-	mov r0, r1, lsl #0x18
-	mov r0, r0, lsr #0x18
-	str r0, [sp, #0x20]
-	mov r0, r1, lsl #0x10
-	mov r0, r0, lsr #0x18
-	str r0, [sp, #0x24]
-	addge sp, sp, #0x48
-	ldmgeia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	arm_func_end NitroSystem_g2d_CharCanvas_ClearArea1D
-_0205A9E4:
-	ldr r1, [sp, #0x40]
-	ldr r0, [sp, #0xc]
-	cmp r1, r0
-	movge sb, #0
-	bge _0205AA04
-	mov r1, r0
-	ldr r0, [sp, #0x40]
-	sub sb, r1, r0
-_0205AA04:
-	ldr r1, [sp, #0x38]
-	ldr r0, [sp, #0x40]
-	ldr r6, [sp, #0x2c]
-	sub r0, r1, r0
-	cmp r0, #8
-	movgt r0, #8
-	sub r5, r0, sb
-	ldr r0, [sp, #0x28]
-	cmp r0, r7
-	mov r4, r0
-	bge _0205AAA4
-_0205AA30:
-	ldr r0, [sp, #0x20]
-	ldr r2, [sp, #0x18]
-	str r0, [sp]
-	ldr r0, [sp, #0x24]
-	ldr r3, [sp, #0x1c]
-	str r0, [sp, #4]
-	mov r0, r6
-	mov r1, r8
-	bl NitroSystem_g2d_CharCanvas_GetCharIndex1D
-	ldr r2, [sp, #0x3c]
-	cmp r4, sl
-	sublt r1, sl, r4
-	sub r2, r2, r4
-	movge r1, #0
-	cmp r2, #8
-	movgt r2, #8
-	stmia sp, {r5, fp}
-	sub r3, r2, r1
-	ldr r2, [sp, #0x10]
-	ldr ip, [sp, #0x14]
-	str r2, [sp, #8]
-	ldr r2, [sp, #0x30]
-	mla r0, ip, r0, r2
-	mov r2, sb
-	bl NitroSystem_g2d_CharCanvas_ClearChar
-	add r4, r4, #8
-	add r6, r6, #1
-	cmp r4, r7
-	blt _0205AA30
-_0205AAA4:
-	ldr r0, [sp, #0x40]
-	add r8, r8, #1
-	add r1, r0, #8
-	ldr r0, [sp, #0x34]
-	str r1, [sp, #0x40]
-	cmp r1, r0
-	blt _0205A9E4
-	add sp, sp, #0x48
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start NitroSystem_g2d_CharCanvas_InitCharCanvas
-NitroSystem_g2d_CharCanvas_InitCharCanvas: ; 0x0205AAC8
-	str r2, [r0, #4]
-	ldr r2, [sp]
-	str r3, [r0, #8]
-	strb r2, [r0, #0xc]
-	ldr r2, [sp, #4]
-	str r1, [r0]
-	ldr r1, [sp, #8]
-	str r2, [r0, #0x14]
-	str r1, [r0, #0x10]
-	bx lr
-	arm_func_end NitroSystem_g2d_CharCanvas_InitCharCanvas
-
-	arm_func_start NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
-NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar: ; 0x0205AAF0
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0x10
-	mov r7, r1
-	ldrh r1, [sp, #0x2c]
-	mov r8, r0
-	mov r0, r7
-	mov r6, r2
-	mov r5, r3
-	bl NitroSystem_g2d_Font_NNS_G2dFontFindGlyphIndex
-	ldr r1, _0205AC10 ; =0x0000FFFF
-	mov r4, r0
-	cmp r4, r1
-	ldreq r0, [r7]
-	ldreqh r4, [r0, #2]
-	mov r0, r7
-	mov r1, r4
-	bl NitroSystem_g2d_Font_NNS_G2dFontGetCharWidthsFromIndex
-	str r0, [sp, #8]
-	ldr r1, [r7]
-	ldr r2, [r1, #8]
-	ldrh r1, [r2, #2]
-	add r2, r2, #8
-	mla r1, r4, r1, r2
-	str r1, [sp, #0xc]
-	ldr r1, [r7]
-	ldr r3, [r1, #8]
-	ldrb r1, [r3, #7]
-	cmp r1, #7
-	addls pc, pc, r1, lsl #2
-	b _0205ABD4
-_0205AB68: ; jump table
-	b _0205AB88 ; case 0
-	b _0205AB94 ; case 1
-	b _0205AB94 ; case 2
-	b _0205ABA8 ; case 3
-	b _0205ABA8 ; case 4
-	b _0205ABC4 ; case 5
-	b _0205ABC4 ; case 6
-	b _0205AB88 ; case 7
-	arm_func_end NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
-_0205AB88:
-	ldrsb r0, [r0]
-	add r6, r6, r0
-	b _0205ABD4
-_0205AB94:
-	ldrb r1, [r3]
-	ldrsb r0, [r0]
-	sub r6, r6, r1
-	add r5, r5, r0
-	b _0205ABD4
-_0205ABA8:
-	ldrsb r2, [r0]
-	ldrb r1, [r0, #1]
-	ldrb r0, [r3, #1]
-	add r1, r2, r1
-	sub r6, r6, r1
-	sub r5, r5, r0
-	b _0205ABD4
-_0205ABC4:
-	ldrsb r1, [r0]
-	ldrb r0, [r3, #1]
-	add r0, r1, r0
-	sub r5, r5, r0
-_0205ABD4:
-	ldr r1, [sp, #0x28]
-	add r0, sp, #8
-	str r1, [sp]
-	str r0, [sp, #4]
-	ldr r1, [r8, #0x14]
-	mov r0, r8
-	ldr r4, [r1]
-	mov r1, r7
-	mov r2, r6
-	mov r3, r5
-	blx r4
-	ldr r0, [sp, #8]
-	ldrsb r0, [r0, #2]
-	add sp, sp, #0x10
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	.align 2, 0
-_0205AC10: .word 0x0000FFFF
-
-	arm_func_start NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
-NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG: ; 0x0205AC14
-	stmdb sp!, {lr}
-	sub sp, sp, #0xc
-	ldr lr, [sp, #0x10]
-	ldr ip, _0205AC3C ; =ptr_FUN_0205a2c0_02084f50
-	str lr, [sp]
-	str ip, [sp, #4]
-	str r2, [sp, #8]
-	bl NitroSystem_g2d_CharCanvas_InitCharCanvas
-	add sp, sp, #0xc
-	ldmia sp!, {pc}
-	.align 2, 0
-_0205AC3C: .word ptr_FUN_0205a2c0_02084f50
-	arm_func_end NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
-
-	arm_func_start NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForOBJ1D
-NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForOBJ1D: ; 0x0205AC40
-	stmdb sp!, {r3, r4, r5, lr}
-	sub sp, sp, #0x10
-	cmp r2, #8
-	movlt r4, r2
-	movge ip, #3
-	clzlt r4, r4
-	rsblt ip, r4, #0x1f
-	cmp r3, #8
-	movlt r4, r3
-	movge r5, #3
-	clzlt r4, r4
-	rsblt r5, r4, #0x1f
-	ldr r4, _0205ACC0 ; =DAT_02084f68
-	ldr lr, [sp, #0xc]
-	add r5, r4, r5, lsl #3
-	add r4, r5, ip, lsl #1
-	ldrb ip, [r5, ip, lsl #1]
-	bic r5, lr, #0xff
-	ldrb r4, [r4, #1]
-	ldr lr, [sp, #0x20]
-	orr r5, r5, ip
-	str lr, [sp]
-	ldr ip, _0205ACC4 ; =ptr_FUN_0205a458_02084f5c
-	bic lr, r5, #0xff00
-	mov r4, r4, lsl #0x18
-	orr r4, lr, r4, lsr #16
-	str ip, [sp, #4]
-	str r4, [sp, #0xc]
-	str r4, [sp, #8]
-	bl NitroSystem_g2d_CharCanvas_InitCharCanvas
-	add sp, sp, #0x10
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0205ACC0: .word DAT_02084f68
-_0205ACC4: .word ptr_FUN_0205a458_02084f5c
-	arm_func_end NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForOBJ1D
-
-	arm_func_start NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
-NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText: ; 0x0205ACC8
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #8
-	ldr r5, [sp, #0x24]
-	ldr lr, [sp, #0x20]
-	cmp r5, #0x20
-	ldr ip, [sp, #0x28]
-	bgt _0205AD04
-	mla r4, r5, lr, r3
-	ldr lr, [sp, #0x2c]
-	mov r3, r5
-	add r0, r0, r4, lsl #1
-	stmia sp, {ip, lr}
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToChar256x16Pltt
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	arm_func_end NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
-_0205AD04:
-	add r6, lr, r2
-	ldr r4, [sp, #0x2c]
-	cmp lr, r6
-	add r5, r3, r1
-	addge sp, sp, #8
-	mov r1, r4, lsl #0x1c
-	ldmgeia sp!, {r4, r5, r6, r7, r8, pc}
-_0205AD20:
-	cmp lr, #0x20
-	movlt r2, lr
-	addge r2, lr, #0x20
-	mov r7, r3
-	cmp r3, r5
-	add r8, r0, r2, lsl #6
-	bge _0205AD64
-_0205AD3C:
-	cmp r7, #0x20
-	movlt r2, r7
-	addge r2, r7, #0x3e0
-	orr r4, ip, r1, lsr #16
-	mov r2, r2, lsl #1
-	add r7, r7, #1
-	strh r4, [r8, r2]
-	cmp r7, r5
-	add ip, ip, #1
-	blt _0205AD3C
-_0205AD64:
-	add lr, lr, #1
-	cmp lr, r6
-	blt _0205AD20
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToChar256x16Pltt
-NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToChar256x16Pltt: ; 0x0205AD78
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	ldr r4, [sp, #0x1c]
-	ldr r8, [sp, #0x18]
-	mov r6, #0
-	cmp r2, #0
-	mov ip, r4, lsl #0x1c
-	ldmleia sp!, {r4, r5, r6, r7, r8, pc}
-	mov r4, r6
-	arm_func_end NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToChar256x16Pltt
-_0205AD98:
-	mov r7, r0
-	mov r5, r4
-	cmp r1, #0
-	ble _0205ADC0
-_0205ADA8:
-	orr lr, r8, ip, lsr #16
-	add r5, r5, #1
-	cmp r5, r1
-	add r8, r8, #1
-	strh lr, [r7], #2
-	blt _0205ADA8
-_0205ADC0:
-	add r6, r6, #1
-	cmp r6, r2
-	add r0, r0, r3, lsl #1
-	blt _0205AD98
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start NitroSystem_g2d_CharCanvas_NNSi_G2dCalcRequiredOBJ
-NitroSystem_g2d_CharCanvas_NNSi_G2dCalcRequiredOBJ: ; 0x0205ADD4
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r3, r0, lsr #3
-	mov r5, r1, lsr #3
-	mov r2, #0
-	mla lr, r3, r5, r2
-	and r4, r0, #2
-	and r2, r0, #1
-	add r2, r2, r4, lsr #1
-	and r0, r0, #4
-	mov ip, r2, lsl #1
-	add ip, ip, r0, lsr #2
-	mla ip, r5, ip, lr
-	and r4, r1, #2
-	and lr, r1, #1
-	add r4, lr, r4, lsr #1
-	and lr, r1, #4
-	mov r1, r4, lsl #1
-	add r1, r1, lr, lsr #2
-	mla ip, r3, r1, ip
-	add r1, r2, r0, lsr #2
-	add r0, r4, lr, lsr #2
-	mla r0, r1, r0, ip
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSystem_g2d_CharCanvas_NNSi_G2dCalcRequiredOBJ
-
-	arm_func_start NitroSystem_g2d_CharCanvas_NNS_G2dArrangeOBJ1D
-NitroSystem_g2d_CharCanvas_NNS_G2dArrangeOBJ1D: ; 0x0205AE30
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x38
-	mov r7, r0
-	mov r0, r1
-	cmp r0, #8
-	ldr r0, [sp, #0x60]
-	str r1, [sp, #0x10]
-	str r0, [sp, #0x60]
-	str r2, [sp, #0x14]
-	ldrlt r0, [sp, #0x10]
-	str r3, [sp, #0x34]
-	ldr r6, [sp, #0x64]
-	ldr r5, [sp, #0x68]
-	ldr r4, [sp, #0x6c]
-	movge r2, #3
-	clzlt r0, r0
-	rsblt r2, r0, #0x1f
-	ldr r0, [sp, #0x14]
-	cmp r0, #8
-	ldrlt r0, [sp, #0x14]
-	movge r1, #3
-	clzlt r0, r0
-	rsblt r1, r0, #0x1f
-	ldr r0, _0205B11C ; =DAT_02084f68
-	mvn r3, #0
-	add r1, r0, r1, lsl #3
-	add r0, r1, r2, lsl #1
-	ldrb fp, [r1, r2, lsl #1]
-	ldrb r1, [r0, #1]
-	ldr r2, [sp, #0x14]
-	cmp r6, #0
-	str r1, [sp, #0x30]
-	ldr r1, [sp, #0x10]
-	and r1, r1, r3, lsl fp
-	str r1, [sp, #0x2c]
-	ldr r1, [sp, #0x30]
-	and r1, r2, r3, lsl r1
-	str r1, [sp, #0x28]
-	moveq r1, #1
-	streq r1, [sp, #0x18]
-	movne r1, #2
-	strne r1, [sp, #0x18]
-	mov r1, #0
-	str r1, [sp, #0x24]
-	bl NitroSystem_g2d_CharCanvas_OBJSizeToShape
-	ldr r1, [sp, #0x10]
-	ldr r2, [sp, #0x14]
-	mov sb, r1, asr fp
-	ldr r1, [sp, #0x30]
-	mov r1, r2, asr r1
-	str r1, [sp, #0x20]
-	ldr r1, [sp, #0x18]
-	mov r2, r1, lsl fp
-	ldr r1, [sp, #0x30]
-	mov r8, r2, lsl r1
-	mov r1, #0
-	str r1, [sp, #0x1c]
-	b _0205AFB0
-	arm_func_end NitroSystem_g2d_CharCanvas_NNS_G2dArrangeOBJ1D
-_0205AF18:
-	ldr r2, [sp, #0x1c]
-	ldr r1, [sp, #0x30]
-	mov sl, #0
-	mov r2, r2, lsl r1
-	ldr r1, [sp, #0x60]
-	add r1, r1, r2, lsl #3
-	mov r2, #0x400
-	and r3, r1, #0xff
-	rsb r2, r2, #0
-	b _0205AF9C
-_0205AF40:
-	mov ip, sl, lsl fp
-	ldr r1, [sp, #0x34]
-	add sl, sl, #1
-	add r1, r1, ip, lsl #3
-	mov lr, r1, lsl #0x17
-	ldr ip, [r7]
-	ldr r1, _0205B120 ; =0xFE00FF00
-	and r1, ip, r1
-	orr r1, r1, r3
-	orr ip, r1, lr, lsr #7
-	ldr r1, _0205B124 ; =0x3FFF3FFF
-	and r1, ip, r1
-	orr r1, r1, r0
-	str r1, [r7]
-	ldrh r1, [r7, #4]
-	and r1, r1, r2
-	orr r1, r1, r5
-	strh r1, [r7, #4]
-	ldr r1, [r7]
-	add r5, r5, r8, asr r4
-	bic r1, r1, #0x2000
-	orr r1, r1, r6, lsl #13
-	str r1, [r7], #8
-_0205AF9C:
-	cmp sl, sb
-	blt _0205AF40
-	ldr r1, [sp, #0x1c]
-	add r1, r1, #1
-	str r1, [sp, #0x1c]
-_0205AFB0:
-	ldr r2, [sp, #0x1c]
-	ldr r1, [sp, #0x20]
-	cmp r2, r1
-	blt _0205AF18
-	ldr r0, [sp, #0x24]
-	mla r0, sb, r1, r0
-	str r0, [sp, #0x24]
-	ldr r1, [sp, #0x2c]
-	ldr r0, [sp, #0x10]
-	cmp r1, r0
-	bhs _0205B038
-	ldr r0, [sp, #0x60]
-	ldr r1, [sp, #0x10]
-	stmia sp, {r0, r6}
-	ldr r0, [sp, #0x2c]
-	ldr r2, [sp, #0x2c]
-	sub r8, r1, r0
-	ldr r1, [sp, #0x34]
-	str r5, [sp, #8]
-	add r3, r1, r2, lsl #3
-	ldr r2, [sp, #0x28]
-	mov r0, r7
-	mov r1, r8
-	str r4, [sp, #0xc]
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dArrangeOBJ1D
-	ldr r1, [sp, #0x18]
-	add r7, r7, r0, lsl #3
-	mul r2, r1, r8
-	ldr r1, [sp, #0x28]
-	mul r2, r1, r2
-	ldr r1, [sp, #0x24]
-	add r5, r5, r2, lsr r4
-	add r0, r1, r0
-	str r0, [sp, #0x24]
-_0205B038:
-	ldr r1, [sp, #0x28]
-	ldr r0, [sp, #0x14]
-	cmp r1, r0
-	bhs _0205B0A4
-	ldr r1, [sp, #0x60]
-	ldr r0, [sp, #0x28]
-	ldr r3, [sp, #0x34]
-	add r0, r1, r0, lsl #3
-	stmia sp, {r0, r6}
-	str r5, [sp, #8]
-	ldr r1, [sp, #0x14]
-	ldr r0, [sp, #0x28]
-	str r4, [sp, #0xc]
-	sub r8, r1, r0
-	ldr r1, [sp, #0x2c]
-	mov r0, r7
-	mov r2, r8
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dArrangeOBJ1D
-	ldr r2, [sp, #0x18]
-	ldr r1, [sp, #0x2c]
-	add r7, r7, r0, lsl #3
-	mul r1, r2, r1
-	mul r1, r8, r1
-	add r5, r5, r1, lsr r4
-	ldr r1, [sp, #0x24]
-	add r0, r1, r0
-	str r0, [sp, #0x24]
-_0205B0A4:
-	ldr r1, [sp, #0x2c]
-	ldr r0, [sp, #0x10]
-	cmp r1, r0
-	ldrlo r1, [sp, #0x28]
-	ldrlo r0, [sp, #0x14]
-	cmplo r1, r0
-	bhs _0205B110
-	ldr r1, [sp, #0x60]
-	ldr r0, [sp, #0x28]
-	ldr r2, [sp, #0x10]
-	add r0, r1, r0, lsl #3
-	stmia sp, {r0, r6}
-	str r5, [sp, #8]
-	ldr r1, [sp, #0x2c]
-	ldr r3, [sp, #0x14]
-	sub r1, r2, r1
-	ldr r2, [sp, #0x28]
-	ldr r5, [sp, #0x2c]
-	sub r2, r3, r2
-	ldr r3, [sp, #0x34]
-	mov r0, r7
-	add r3, r3, r5, lsl #3
-	str r4, [sp, #0xc]
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dArrangeOBJ1D
-	ldr r1, [sp, #0x24]
-	add r0, r1, r0
-	str r0, [sp, #0x24]
-_0205B110:
-	ldr r0, [sp, #0x24]
-	add sp, sp, #0x38
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_0205B11C: .word DAT_02084f68
-_0205B120: .word 0xFE00FF00
-_0205B124: .word 0x3FFF3FFF
-
-	arm_func_start NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawString
-NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawString: ; 0x0205B128
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x10
-	mov fp, r0
-	ldr r4, [fp, #8]
-	ldr r5, [fp, #4]
-	ldr r6, [sp, #0x38]
-	add r0, sp, #0xc
-	str r6, [sp, #0xc]
-	ldr r6, [r5, #4]
-	mov sl, r1
-	mov sb, r2
-	str r3, [sp, #8]
-	ldrsb r8, [sp, #0x41]
-	blx r6
-	cmp r0, #0
-	beq _0205B1B0
-	ldrsb r7, [sp, #0x40]
-	arm_func_end NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawString
-_0205B16C:
-	cmp r0, #0xa
-	beq _0205B1B0
-	ldr r1, [sp, #8]
-	mov r2, sl
-	str r1, [sp]
-	str r0, [sp, #4]
-	ldr r0, [fp]
-	mov r1, r5
-	mov r3, sb
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
-	add r0, r4, r0
-	mla sl, r0, r7, sl
-	mla sb, r0, r8, sb
-	add r0, sp, #0xc
-	blx r6
-	cmp r0, #0
-	bne _0205B16C
-_0205B1B0:
-	ldr r1, [sp, #0x3c]
-	cmp r1, #0
-	addeq sp, sp, #0x10
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp r0, #0xa
-	ldreq r1, [sp, #0xc]
-	ldr r0, [sp, #0x3c]
-	movne r1, #0
-	str r1, [r0]
-	add sp, sp, #0x10
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawTextAlign
-NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawTextAlign: ; 0x0205B1DC
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x34
-	mov sl, r0
-	ldr r0, [sl, #4]
-	ldr r4, [sp, #0x60]
-	ldr r0, [r0]
-	ldrsb r8, [sp, #0x65]
-	ldrsb r0, [r0, #1]
-	ldr r5, [sl, #0xc]
-	ldrsb sb, [sp, #0x64]
-	add r5, r5, r0
-	rsb r0, r8, #0
-	mul r0, r5, r0
-	str r0, [sp, #0x20]
-	mul r0, r5, sb
-	str r0, [sp, #0x1c]
-	ldr r0, [sp, #0x58]
-	str r1, [sp, #0xc]
-	str r2, [sp, #0x10]
-	mov fp, r3
-	str r4, [sp, #0x30]
-	cmp r4, #0
-	str r0, [sp, #0x58]
-	addeq sp, sp, #0x34
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r2, [sp, #0x5c]
-	mov r6, #0
-	and r0, r2, #0x800
-	add r1, fp, #1
-	str r0, [sp, #0x18]
-	add r0, r1, r1, lsr #31
-	str r0, [sp, #0x2c]
-	and r0, r2, #0x400
-	str r0, [sp, #0x14]
-	ldrb r0, [sp, #0x64]
-	mov r7, r6
-	str r0, [sp, #0x24]
-	ldrb r0, [sp, #0x65]
-	str r0, [sp, #0x28]
-	arm_func_end NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawTextAlign
-_0205B278:
-	ldr r0, [sp, #0x18]
-	cmp r0, #0
-	ldr r0, [sp, #0xc]
-	add r4, r0, r6
-	ldr r0, [sp, #0x10]
-	add r5, r0, r7
-	beq _0205B2B4
-	ldr r2, [sp, #0x30]
-	mov r3, #0
-	ldmib sl, {r0, r1}
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth
-	sub r0, fp, r0
-	mla r4, r0, sb, r4
-	mla r5, r0, r8, r5
-	b _0205B2EC
-_0205B2B4:
-	ldr r0, [sp, #0x14]
-	cmp r0, #0
-	beq _0205B2EC
-	ldr r2, [sp, #0x30]
-	mov r3, #0
-	ldmib sl, {r0, r1}
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetStringWidth
-	add r0, r0, #1
-	add r0, r0, r0, lsr #31
-	mov r1, r0, asr #1
-	ldr r0, [sp, #0x2c]
-	rsb r0, r1, r0, asr #1
-	mla r4, r0, sb, r4
-	mla r5, r0, r8, r5
-_0205B2EC:
-	ldr r3, [sp, #0x30]
-	mov r1, r4
-	str r3, [sp]
-	add r3, sp, #0x30
-	str r3, [sp, #4]
-	ldr r3, [sp, #0x24]
-	mov r2, r5
-	strb r3, [sp, #8]
-	ldr r3, [sp, #0x28]
-	mov r0, sl
-	strb r3, [sp, #9]
-	ldr r3, [sp, #0x58]
-	bl NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawString
-	ldr r0, [sp, #0x20]
-	add r6, r6, r0
-	ldr r0, [sp, #0x1c]
-	add r7, r7, r0
-	ldr r0, [sp, #0x30]
-	cmp r0, #0
-	bne _0205B278
-	add sp, sp, #0x34
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
-
-	arm_func_start NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawText
-NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawText: ; 0x0205B344
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0x28
-	ldr r4, [sp, #0x44]
-	mov r8, r0
-	str r4, [sp]
-	add r0, sp, #0x18
-	mov r7, r1
-	mov r6, r2
-	mov r5, r3
-	ldmib r8, {r1, r2, r3}
-	ldr r4, [sp, #0x40]
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetTextRect
-	ldr r2, [sp, #0x18]
-	ldr r0, [sp, #0x1c]
-	str r2, [sp, #0x10]
-	str r0, [sp, #0x14]
-	str r2, [sp, #0x20]
-	str r0, [sp, #0x24]
-	tst r4, #0x10
-	beq _0205B3B8
-	add r0, r2, #1
-	rsb r0, r0, #0
-	add r0, r0, r0, lsr #31
-	ldrsb r1, [sp, #0x48]
-	mov r2, r0, asr #1
-	ldrsb r0, [sp, #0x49]
-	mla r7, r2, r1, r7
-	mla r6, r2, r0, r6
-	b _0205B3D4
-	arm_func_end NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawText
-_0205B3B8:
-	tst r4, #0x20
-	beq _0205B3D4
-	ldrsb r1, [sp, #0x48]
-	ldrsb r0, [sp, #0x49]
-	rsb r2, r2, #0
-	mla r7, r2, r1, r7
-	mla r6, r2, r0, r6
-_0205B3D4:
-	tst r4, #2
-	beq _0205B408
-	ldr r0, [sp, #0x24]
-	ldrsb r2, [sp, #0x49]
-	add r0, r0, #1
-	rsb r0, r0, #0
-	add r0, r0, r0, lsr #31
-	ldrsb r1, [sp, #0x48]
-	mov r3, r0, asr #1
-	rsb r0, r2, #0
-	mla r7, r3, r0, r7
-	mla r6, r3, r1, r6
-	b _0205B42C
-_0205B408:
-	tst r4, #4
-	beq _0205B42C
-	ldrsb r1, [sp, #0x49]
-	ldr r2, [sp, #0x24]
-	ldrsb r0, [sp, #0x48]
-	rsb r2, r2, #0
-	rsb r1, r1, #0
-	mla r7, r2, r1, r7
-	mla r6, r2, r0, r6
-_0205B42C:
-	str r5, [sp]
-	ldr r1, [sp, #0x44]
-	str r4, [sp, #4]
-	ldrb r0, [sp, #0x48]
-	str r1, [sp, #8]
-	ldrb r4, [sp, #0x49]
-	strb r0, [sp, #0xc]
-	ldr r3, [sp, #0x20]
-	mov r0, r8
-	mov r1, r7
-	mov r2, r6
-	strb r4, [sp, #0xd]
-	bl NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawTextAlign
-	add sp, sp, #0x28
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-
-	arm_func_start NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawTextRect
-NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawTextRect: ; 0x0205B468
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #0x10
-	ldr ip, [sp, #0x30]
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	tst ip, #0x100
-	beq _0205B4BC
-	ldr r0, [r7, #4]
-	ldr r1, [r7, #0xc]
-	ldr r2, [sp, #0x34]
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetTextHeight
-	ldrsb r2, [sp, #0x39]
-	ldr r3, [sp, #0x28]
-	ldrsb r1, [sp, #0x38]
-	sub r3, r3, r0
-	rsb r0, r2, #0
-	mla r6, r3, r0, r6
-	mla r5, r3, r1, r5
-	b _0205B504
-	arm_func_end NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawTextRect
-_0205B4BC:
-	tst ip, #0x80
-	beq _0205B504
-	ldr r0, [r7, #4]
-	ldr r1, [r7, #0xc]
-	ldr r2, [sp, #0x34]
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetTextHeight
-	ldr r1, [sp, #0x28]
-	add r0, r0, #1
-	ldrsb r3, [sp, #0x39]
-	add ip, r1, #1
-	add r1, r0, r0, lsr #31
-	ldrsb r2, [sp, #0x38]
-	add r0, ip, ip, lsr #31
-	mov r1, r1, asr #1
-	rsb r1, r1, r0, asr #1
-	rsb r0, r3, #0
-	mla r6, r1, r0, r6
-	mla r5, r1, r2, r5
-_0205B504:
-	ldr r1, [sp, #0x2c]
-	ldr r0, [sp, #0x30]
-	str r1, [sp]
-	ldr r1, [sp, #0x34]
-	str r0, [sp, #4]
-	ldrb r0, [sp, #0x38]
-	str r1, [sp, #8]
-	ldrb ip, [sp, #0x39]
-	strb r0, [sp, #0xc]
-	mov r0, r7
-	mov r1, r6
-	mov r2, r5
-	mov r3, r4
-	strb ip, [sp, #0xd]
-	bl NitroSystem_g2d_TextCanvas_NNSi_G2dTextCanvasDrawTextAlign
-	add sp, sp, #0x10
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start NitroSystem_g2d_NFT_load_NNSi_G2dGetUnpackedFont
-NitroSystem_g2d_NFT_load_NNSi_G2dGetUnpackedFont: ; 0x0205B548
-	stmdb sp!, {r4, r5, r6, lr}
-	movs r6, r0
-	mov r5, r1
-	mov r4, #0
-	beq _0205B5C0
-	cmp r6, #0
-	beq _0205B578
-	ldr r1, [r6]
-	ldr r0, _0205B690 ; =0x4E465452
-	cmp r1, r0
-	moveq r0, #1
-	beq _0205B57C
-	arm_func_end NitroSystem_g2d_NFT_load_NNSi_G2dGetUnpackedFont
-_0205B578:
-	mov r0, #0
-_0205B57C:
-	cmp r0, #0
-	movne r0, #1
-	moveq r0, #0
-	cmp r0, #0
-	beq _0205B5C4
-	cmp r6, #0
-	beq _0205B5AC
-	ldrh r1, [r6, #6]
-	ldr r0, _0205B694 ; =0x00000101
-	cmp r1, r0
-	movhs r0, #1
-	bhs _0205B5B0
-_0205B5AC:
-	mov r0, #0
-_0205B5B0:
-	cmp r0, #0
-	movne r0, #1
-	moveq r0, #0
-	b _0205B5C4
-_0205B5C0:
-	mov r0, r4
-_0205B5C4:
-	cmp r0, #0
-	bne _0205B644
-	cmp r6, #0
-	beq _0205B630
-	beq _0205B5EC
-	ldr r1, [r6]
-	ldr r0, _0205B690 ; =0x4E465452
-	cmp r1, r0
-	moveq r0, #1
-	beq _0205B5F0
-_0205B5EC:
-	mov r0, #0
-_0205B5F0:
-	cmp r0, #0
-	movne r0, #1
-	moveq r0, #0
-	cmp r0, #0
-	beq _0205B634
-	cmp r6, #0
-	beq _0205B61C
-	ldrh r0, [r6, #6]
-	cmp r0, #0x100
-	movhs r0, #1
-	bhs _0205B620
-_0205B61C:
-	mov r0, #0
-_0205B620:
-	cmp r0, #0
-	movne r0, #1
-	moveq r0, #0
-	b _0205B634
-_0205B630:
-	mov r0, #0
-_0205B634:
-	cmp r0, #0
-	bne _0205B640
-	bl OS_Terminate
-_0205B640:
-	mov r4, #1
-_0205B644:
-	mov r0, r6
-	bl NitroSystem_g2d_NFT_load_NNSi_G2dUnpackNFT
-	ldr r1, _0205B698 ; =0x46494E46
-	mov r0, r6
-	bl NitroSystem_g2d_Load_NNS_G2dFindBinaryBlock
-	cmp r0, #0
-	moveq r0, #0
-	streq r0, [r5]
-	ldmeqia sp!, {r4, r5, r6, pc}
-	add r0, r0, #8
-	str r0, [r5]
-	cmp r4, #0
-	beq _0205B688
-	ldr r0, [r5]
-	mov r1, #0
-	ldr r0, [r0, #8]
-	strb r1, [r0, #7]
-_0205B688:
-	mov r0, #1
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0205B690: .word 0x4E465452
-_0205B694: .word 0x00000101
-_0205B698: .word 0x46494E46
-
-	arm_func_start NitroSystem_g2d_NFT_load_NNSi_G2dUnpackNFT
-NitroSystem_g2d_NFT_load_NNSi_G2dUnpackNFT: ; 0x0205B69C
-	stmdb sp!, {r4, r5, r6, lr}
-	ldrh r1, [r0, #0xc]
-	ldrh r3, [r0, #0xe]
-	mov r2, #0
-	add r1, r0, r1
-	cmp r3, #0
-	ldmleia sp!, {r4, r5, r6, pc}
-	ldr r3, _0205B768 ; =0x46494E46
-	ldr ip, _0205B76C ; =0x43574448
-	ldr r4, _0205B770 ; =0x434D4150
-	ldr lr, _0205B774 ; =0x43474C50
-	arm_func_end NitroSystem_g2d_NFT_load_NNSi_G2dUnpackNFT
-_0205B6C8:
-	ldr r5, [r1]
-	cmp r5, r4
-	bhi _0205B6E0
-	bhs _0205B73C
-	cmp r5, lr
-	b _0205B74C
-_0205B6E0:
-	cmp r5, ip
-	bhi _0205B6F0
-	beq _0205B728
-	b _0205B74C
-_0205B6F0:
-	cmp r5, r3
-	bne _0205B74C
-	ldr r5, [r1, #0x10]
-	add r5, r5, r0
-	str r5, [r1, #0x10]
-	ldr r5, [r1, #0x14]
-	cmp r5, #0
-	addne r5, r5, r0
-	strne r5, [r1, #0x14]
-	ldr r5, [r1, #0x18]
-	cmp r5, #0
-	addne r5, r5, r0
-	strne r5, [r1, #0x18]
-	b _0205B74C
-_0205B728:
-	ldr r5, [r1, #0xc]
-	cmp r5, #0
-	addne r5, r5, r0
-	strne r5, [r1, #0xc]
-	b _0205B74C
-_0205B73C:
-	ldr r5, [r1, #0x10]
-	cmp r5, #0
-	addne r5, r5, r0
-	strne r5, [r1, #0x10]
-_0205B74C:
-	ldrh r5, [r0, #0xe]
-	ldr r6, [r1, #4]
-	add r2, r2, #1
-	cmp r2, r5
-	add r1, r1, r6
-	blt _0205B6C8
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0205B768: .word 0x46494E46
-_0205B76C: .word 0x43574448
-_0205B770: .word 0x434D4150
-_0205B774: .word 0x43474C50
-
-	arm_func_start NitroSystem_g2d_g2di_BitReader_NNSi_G2dBitReaderRead
-NitroSystem_g2d_g2di_BitReader_NNSi_G2dBitReaderRead: ; 0x0205B778
-	stmdb sp!, {r4, r5, r6, lr}
-	ldrsb r3, [r0, #4]
-	ldrb r4, [r0, #5]
-	mov r5, r1
-	cmp r3, r5
-	subge r1, r3, r5
-	movge r2, r4, lsr r1
-	strgeb r1, [r0, #4]
-	bge _0205B7C8
-	ldr r2, [r0]
-	sub r6, r5, r3
-	add r1, r2, #1
-	str r1, [r0]
-	ldrb r3, [r2]
-	mov r1, r6
-	mov r2, #8
-	strb r3, [r0, #5]
-	strb r2, [r0, #4]
-	bl NitroSystem_g2d_g2di_BitReader_NNSi_G2dBitReaderRead
-	orr r2, r0, r4, lsl r6
-	arm_func_end NitroSystem_g2d_g2di_BitReader_NNSi_G2dBitReaderRead
-_0205B7C8:
-	rsb r0, r5, #8
-	mov r1, #0xff
-	and r0, r2, r1, asr r0
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharUTF16
-NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharUTF16: ; 0x0205B7D8
-	ldr r1, [r0]
-	ldrh r2, [r1], #2
-	str r1, [r0]
-	mov r0, r2
-	bx lr
-	arm_func_end NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharUTF16
-
-	arm_func_start NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharUTF8
-NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharUTF8: ; 0x0205B7EC
-	ldr r2, [r0]
-	ldrb r3, [r2]
-	tst r3, #0x80
-	addeq r1, r2, #1
-	streq r1, [r0]
-	beq _0205B860
-	and r1, r3, #0xe0
-	cmp r1, #0xc0
-	ldrb r1, [r2, #1]
-	bne _0205B834
-	mov r3, r3, lsl #0x1b
-	and r1, r1, #0x3f
-	orr r1, r1, r3, lsr #21
-	add r2, r2, #2
-	mov r1, r1, lsl #0x10
-	str r2, [r0]
-	mov r3, r1, lsr #0x10
-	b _0205B860
-	arm_func_end NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharUTF8
-_0205B834:
-	ldrb ip, [r2, #2]
-	mov r1, r1, lsl #0x1a
-	mov r3, r3, lsl #0x1b
-	mov r1, r1, lsr #0x14
-	and ip, ip, #0x3f
-	orr r1, r1, r3, lsr #15
-	orr r1, ip, r1
-	add r2, r2, #3
-	mov r1, r1, lsl #0x10
-	str r2, [r0]
-	mov r3, r1, lsr #0x10
-_0205B860:
-	mov r0, r3
-	bx lr
-
-	arm_func_start NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharShiftJIS
-NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharShiftJIS: ; 0x0205B868
-	ldr r1, [r0]
-	ldrb r3, [r1]
-	cmp r3, #0x81
-	blo _0205B880
-	cmp r3, #0xa0
-	blo _0205B888
-	arm_func_end NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharShiftJIS
-_0205B880:
-	cmp r3, #0xe0
-	blo _0205B8A8
-_0205B888:
-	ldrb r1, [r1, #1]
-	ldr r2, [r0]
-	orr r1, r1, r3, lsl #8
-	mov r1, r1, lsl #0x10
-	add r2, r2, #2
-	str r2, [r0]
-	mov r3, r1, lsr #0x10
-	b _0205B8B4
-_0205B8A8:
-	ldr r1, [r0]
-	add r1, r1, #1
-	str r1, [r0]
-_0205B8B4:
-	mov r0, r3
-	bx lr
-
-	arm_func_start NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitChar1Byte
-NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitChar1Byte: ; 0x0205B8BC
-	ldr r1, [r0]
-	ldrb r2, [r1], #1
-	str r1, [r0]
-	mov r0, r2
-	bx lr
-	arm_func_end NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitChar1Byte
-
-	arm_func_start NitroSystem_g2d_g2di_BGManipulator_NNSi_G2dBGGetCharSize
-NitroSystem_g2d_g2di_BGManipulator_NNSi_G2dBGGetCharSize: ; 0x0205B8D0
-	ldr r3, _0205B960 ; =DAT_02084fc8
-	cmp r2, #3
-	ldr r3, [r3, r2, lsl #2]
-	and ip, r2, #3
-	ldrh r2, [r3]
-	and r2, r2, #0xc000
-	mov r3, r2, asr #0xe
-	movle r2, #0x4000000
-	ldrle r2, [r2]
-	ldrgt r2, _0205B964 ; =0x04001000
-	ldrgt r2, [r2]
-	and r2, r2, #7
-	cmp ip, #2
-	bne _0205B918
-	cmp r2, #2
-	beq _0205B928
-	cmp r2, #4
-	bge _0205B928
-	arm_func_end NitroSystem_g2d_g2di_BGManipulator_NNSi_G2dBGGetCharSize
-_0205B918:
-	cmp ip, #3
-	bne _0205B93C
-	cmp r2, #1
-	blt _0205B93C
-_0205B928:
-	mov r2, #0x10
-	mov r2, r2, lsl r3
-	str r2, [r0]
-	str r2, [r1]
-	bx lr
-_0205B93C:
-	tst r3, #1
-	movne r2, #0x40
-	moveq r2, #0x20
-	str r2, [r0]
-	tst r3, #2
-	movne r0, #0x40
-	moveq r0, #0x20
-	str r0, [r1]
-	bx lr
-	.align 2, 0
-_0205B960: .word DAT_02084fc8
-_0205B964: .word 0x04001000
-
     .section .init, 4
 
 	arm_func_start sub_02084038
@@ -111519,121 +107091,6 @@ DAT_02084e58: ; 0x02084E58
 	.global DAT_02084e5c
 DAT_02084e5c: ; 0x02084E5C
 	.byte 0x00, 0x00, 0x00, 0x00
-
-	.global DAT_02084e60
-DAT_02084e60: ; 0x02084E60
-	.byte 0x08, 0x00, 0x10, 0x00, 0x20, 0x00, 0x40, 0x00, 0x08, 0x00, 0x08, 0x00, 0x10, 0x00, 0x20, 0x00
-	.byte 0x10, 0x00, 0x20, 0x00, 0x20, 0x00, 0x40, 0x00
-
-	.global DAT_02084e78
-DAT_02084e78: ; 0x02084E78
-	.byte 0x08, 0x00, 0x10, 0x00, 0x20, 0x00, 0x40, 0x00
-	.byte 0x10, 0x00, 0x20, 0x00, 0x20, 0x00, 0x40, 0x00, 0x08, 0x00, 0x08, 0x00, 0x10, 0x00, 0x20, 0x00
-
-	.global DAT_02084e90
-DAT_02084e90: ; 0x02084E90
-	.byte 0x0D, 0x0D, 0x0D, 0x05, 0x05, 0x05, 0x05, 0x0D, 0x03, 0x03, 0x04, 0x03, 0x04, 0x05, 0x0B, 0x0B
-
-	.global DAT_02084ea0
-DAT_02084ea0: ; 0x02084EA0
-	.byte 0x08, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x10, 0x0A, 0x10, 0x00, 0x00, 0x00, 0x00
-
-	.global DAT_02084eb0
-DAT_02084eb0: ; 0x02084EB0
-	.byte 0x0A, 0x02, 0x02, 0x04, 0x04, 0x04, 0x04, 0x0A, 0x01, 0x01, 0x02, 0x01, 0x02, 0x09, 0x09, 0x09
-
-	.global DAT_02084ec0
-DAT_02084ec0: ; 0x02084EC0
-	.byte 0x80, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0x01, 0x00
-	.word 0x02000200
-	.byte 0x02, 0x00, 0x00, 0x04, 0x00, 0x04, 0x03, 0x00
-
-	.global DAT_02084ed8
-DAT_02084ed8: ; 0x02084ED8
-	.byte 0x80, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x01
-	.byte 0x00, 0x01, 0x01, 0x00
-	.word 0x02000200
-	.byte 0x02, 0x00, 0x00, 0x04, 0x00, 0x04, 0x03, 0x00
-
-	.global DAT_02084ef0
-DAT_02084ef0: ; 0x02084EF0
-	.byte 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x02, 0x02, 0x00, 0x00, 0x02, 0x00, 0x01
-	.word 0x02000001
-	.byte 0x00, 0x02, 0x03, 0x00
-
-	.global DAT_02084f08
-DAT_02084f08: ; 0x02084F08
-	.byte 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x08
-	.byte 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x08, 0x00, 0x01, 0x01, 0x03, 0x03, 0x03, 0x00, 0x08
-	.byte 0x00, 0x00, 0x08, 0x00, 0x08, 0x08, 0x08, 0x08
-
-	.global PTR_LAB_02084f28
-PTR_LAB_02084f28: ; 0x02084F28
-	.word NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharUTF8
-	.word NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharUTF16
-	.word NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitCharShiftJIS
-	.word NitroSystem_g2d_g2di_SplitChar_NNSi_G2dSplitChar1Byte
-	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
-	.byte 0xFF, 0xFF, 0xFF, 0xFF
-
-	.global ptr_FUN_0205a2c0_02084f44
-ptr_FUN_0205a2c0_02084f44: ; 0x02084F44
-	.word NitroSystem_g2d_CharCanvas_DrawGlyphLine
-
-	.global ptr_FUN_0205a6b8_02084f48
-ptr_FUN_0205a6b8_02084f48: ; 0x02084F48
-	.word NitroSystem_g2d_CharCanvas_ClearLine
-
-	.global ptr_FUN_0205a738_02084f4c
-ptr_FUN_0205a738_02084f4c: ; 0x02084F4C
-	.word NitroSystem_g2d_CharCanvas_ClearAreaLine
-
-	.global ptr_FUN_0205a2c0_02084f50
-ptr_FUN_0205a2c0_02084f50: ; 0x02084F50
-	.word NitroSystem_g2d_CharCanvas_DrawGlyphLine
-
-	.global ptr_FUN_0205a668_02084f54
-ptr_FUN_0205a668_02084f54: ; 0x02084F54
-	.word NitroSystem_g2d_CharCanvas_ClearContinuous
-
-	.global ptr_FUN_0205a738_02084f58
-ptr_FUN_0205a738_02084f58: ; 0x02084F58
-	.word NitroSystem_g2d_CharCanvas_ClearAreaLine
-
-	.global ptr_FUN_0205a458_02084f5c
-ptr_FUN_0205a458_02084f5c: ; 0x02084F5C
-	.word NitroSystem_g2d_CharCanvas_DrawGlyph1D
-
-	.global ptr_FUN_0205a668_02084f60
-ptr_FUN_0205a668_02084f60: ; 0x02084F60
-	.word NitroSystem_g2d_CharCanvas_ClearContinuous
-
-	.global ptr_FUN_0205a8d4_02084f64
-ptr_FUN_0205a8d4_02084f64: ; 0x02084F64
-	.word NitroSystem_g2d_CharCanvas_ClearArea1D
-
-	.global DAT_02084f68
-DAT_02084f68: ; 0x02084F68
-	.byte 0x00, 0x00, 0x01, 0x00, 0x02, 0x00, 0x02, 0x00
-	.byte 0x00, 0x01, 0x01, 0x01, 0x02, 0x01, 0x02, 0x01
-	.word 0x02010200
-	.word 0x02030202
-	.word 0x02010200
-	.byte 0x02, 0x03, 0x03, 0x03
-
-	.global DAT_02084f88
-DAT_02084f88: ; 0x02084F88
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00
-	.byte 0x00, 0x40, 0x00, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40
-	.byte 0x00, 0x40, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x40, 0x00, 0x80, 0x00, 0x80
-	.byte 0x00, 0x00, 0x00, 0x80, 0x00, 0x40, 0x00, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-	.byte 0x00, 0x80, 0x00, 0xC0, 0x00, 0x00, 0x00, 0xC0
-
-	.global DAT_02084fc8
-DAT_02084fc8: ; 0x02084FC8
-	.byte 0x08, 0x00, 0x00, 0x04, 0x0A, 0x00, 0x00, 0x04
-	.byte 0x0C, 0x00, 0x00, 0x04, 0x0E, 0x00, 0x00, 0x04, 0x08, 0x10, 0x00, 0x04, 0x0A, 0x10, 0x00, 0x04
-	.byte 0x0C, 0x10, 0x00, 0x04, 0x0E, 0x10, 0x00, 0x04
 
     .section .sinit,4
 
@@ -118767,12 +114224,4 @@ MAIN_BSS_0210EB30: ; 0x0210EB30
 
     .global MAIN_BSS_0210EB34
 MAIN_BSS_0210EB34: ; 0x0210EB34
-    .space 0x10
-
-    .global MAIN_BSS_0210EB44
-MAIN_BSS_0210EB44: ; 0x0210EB44
-    .space 0xC
-
-    .global MAIN_BSS_0210EB50
-MAIN_BSS_0210EB50: ; 0x0210EB50
     .space 0x10

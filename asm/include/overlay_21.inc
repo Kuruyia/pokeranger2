@@ -82,7 +82,7 @@
 .public sub_0202B50C
 .public sub_0202BC74
 .public sub_02034C44
-.public NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+.public NNS_G2dMapScrToCharText
 .public GX_HBlankIntr
 .public GX_DispOn
 .public GX_SetGraphicsMode

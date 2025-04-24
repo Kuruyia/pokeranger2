@@ -1257,7 +1257,7 @@ _0211DAE4:
 	ldr r0, [sb, #4]
 	mov r1, sl
 	mov r3, r2
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
+	bl NNS_G2dCharCanvasInitForBG
 	mov r0, r4
 	ldr r5, [sb]
 	ldmib sb, {r2, r3}
@@ -1272,7 +1272,7 @@ _0211DAE4:
 	str r3, [sp]
 	mov r2, r1
 	stmib sp, {r1, r3, r4}
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+	bl NNS_G2dMapScrToCharText
 	mov r0, sb
 	bl ov25_0211DD14
 	mov r0, #0x800
@@ -1335,13 +1335,13 @@ ov25_0211DBBC: ; 0x0211DBBC
 _0211DC20:
 	ldr r2, [sp, #0x30]
 	ldmib r6, {r0, r1}
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetTextWidth
+	bl NNSi_G2dFontGetTextWidth
 	sub sb, sb, r0, asr #1
 	b _0211DC44
 _0211DC34:
 	ldr r2, [sp, #0x30]
 	ldmib r6, {r0, r1}
-	bl NitroSystem_g2d_Font_NNSi_G2dFontGetTextWidth
+	bl NNSi_G2dFontGetTextWidth
 	sub sb, sb, r0
 _0211DC44:
 	ldr r0, [sl, #4]
@@ -1393,7 +1393,7 @@ _0211DCE0:
 	ldr r0, [sl, #4]
 	mov r1, r4
 	mov r3, r8
-	bl NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
+	bl NNS_G2dCharCanvasDrawChar
 	add r0, r6, r0
 	add r6, r0, fp
 	b _0211DC70

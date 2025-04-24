@@ -47,11 +47,11 @@
 .public sub_02020FF0
 .public sub_02034C44
 .public NitroSystem_gfd_VramTransferMan_NNS_GfdRegisterNewVramTransferTask
-.public NitroSystem_g2d_Font_NNS_G2dFontFindGlyphIndex
-.public NitroSystem_g2d_Font_NNS_G2dFontGetCharWidthsFromIndex
-.public NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasDrawChar
-.public NitroSystem_g2d_CharCanvas_NNS_G2dCharCanvasInitForBG
-.public NitroSystem_g2d_CharCanvas_NNS_G2dMapScrToCharText
+.public NNS_G2dFontFindGlyphIndex
+.public NNS_G2dFontGetCharWidthsFromIndex
+.public NNS_G2dCharCanvasDrawChar
+.public NNS_G2dCharCanvasInitForBG
+.public NNS_G2dMapScrToCharText
 .public MTX_Identity22_
 .public GX_DispOn
 .public GX_SetGraphicsMode

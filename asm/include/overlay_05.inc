@@ -58,7 +58,7 @@
 .public sub_0202A47C
 .public sub_020349E8
 .public sub_02034C44
-.public NitroSystem_g2d_Screen_NNS_G2dBGSetupEx
+.public NNS_G2dBGSetupEx
 .public GX_DispOn
 .public GX_SetGraphicsMode
 .public GX_SetBankForBG
