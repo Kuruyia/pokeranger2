@@ -519,3 +519,6 @@
 .public NNS_FndFreeToExpHeap
 .public NNS_FndAllocFromExpHeapEx
 .public NNS_FndFreeToExpHeap
+.public WCM_SendDCFData
+.public WCM_SetRecvDCFCallback
+.public WCM_GetApMacAddress

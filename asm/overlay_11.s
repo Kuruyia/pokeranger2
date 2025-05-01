@@ -26454,7 +26454,7 @@ ov11_02132564: ; 0x02132564
 	ldr r0, _02132704 ; =OVERLAY11_BSS_02169C94
 	mov r1, #0x2300
 	ldr r0, [r0, #4]
-	bl sub_02053798
+	bl WCM_Init
 	cmp r0, #1
 	beq _021326F0
 	cmp r0, #4
@@ -26600,7 +26600,7 @@ ov11_0213288C: ; 0x0213288C
 	blo _02132914
 	cmp r0, #0x10
 	bhi _02132914
-	bl sub_02055E68
+	bl WCM_GetApMacAddress
 	mov r4, r0
 	mov r1, #6
 	bl DC_InvalidateRange
@@ -26615,7 +26615,7 @@ ov11_0213288C: ; 0x0213288C
 	cmp r0, #4
 	bne _0213290C
 	mov r0, #0
-	bl sub_02055EAC
+	bl WCM_GetApEssid
 	mov r4, r0
 	mov r1, #0x20
 	bl DC_InvalidateRange
@@ -27506,7 +27506,7 @@ _02133454:
 ov11_02133468: ; 0x02133468
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r7, r0
-	bl sub_02054368
+	bl WCM_GetPhase
 	ldrb r2, [r7, #0xd13]
 	mov r1, #0xc0
 	cmp r0, #3
@@ -27576,7 +27576,7 @@ _02133554:
 	add r0, r5, r4
 	add r1, r1, #0xc00
 	orr r2, r6, r2
-	bl sub_02053E38
+	bl WCM_ConnectAsync
 	b _0213359C
 _02133578:
 	cmp r0, #9
@@ -27852,7 +27852,7 @@ _021338EC:
 	arm_func_start ov11_021338F4
 ov11_021338F4: ; 0x021338F4
 	stmdb sp!, {r3, lr}
-	bl sub_02054368
+	bl WCM_GetPhase
 	cmp r0, #0xc
 	addls pc, pc, r0, lsl #2
 	b _0213397C
@@ -27875,19 +27875,19 @@ _0213393C:
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 _02133944:
-	bl sub_020538B0
+	bl WCM_Finish
 	b _0213397C
 _0213394C:
-	bl sub_02053B0C
+	bl WCM_CleanupAsync
 	b _0213397C
 _02133954:
-	bl sub_02053D94
+	bl WCM_EndSearchAsync
 	b _0213397C
 _0213395C:
-	bl sub_0205403C
+	bl WCM_DisconnectAsync
 	b _0213397C
 _02133964:
-	bl sub_02054158
+	bl WCM_TerminateAsync
 	b _0213397C
 _0213396C:
 	mov r0, #0
@@ -28418,7 +28418,7 @@ ov11_02133FEC: ; 0x02133FEC
 	bl ov11_02132B1C
 	mov r4, r0
 	mov r5, #9
-	bl sub_02054368
+	bl WCM_GetPhase
 	cmp r0, #0xc
 	addls pc, pc, r0, lsl #2
 	b _021340C0
@@ -28459,13 +28459,13 @@ _02134074:
 	bl ov11_02134228
 	b _021340C0
 _02134090:
-	bl sub_02053D94
+	bl WCM_EndSearchAsync
 	b _021340C0
 _02134098:
-	bl sub_0205403C
+	bl WCM_DisconnectAsync
 	b _021340C0
 _021340A0:
-	bl sub_02054158
+	bl WCM_TerminateAsync
 	mov r0, #4
 	bl ov11_02132BE8
 	mov r5, #0x11
@@ -28486,7 +28486,7 @@ ov11_021340C8: ; 0x021340C8
 	mov r4, r0
 	bl ov11_02132BD4
 	mov r5, r0
-	bl sub_02054368
+	bl WCM_GetPhase
 	cmp r5, #2
 	cmpeq r0, #3
 	bne _02134100
@@ -28606,8 +28606,8 @@ _02134258:
 	str r1, [r4, #0xcb4]
 	add r0, r4, #0xd00
 	ldrsb r2, [r0, #0x11]
-	ldr r0, _02134300 ; =DAT_02084d78
-	ldr r1, _02134304 ; =DAT_02084d80
+	ldr r0, _02134300 ; =WCM_Bssid_Any
+	ldr r1, _02134304 ; =WCM_Essid_Any
 	mov r3, #0x200000
 	bl ov11_02134874
 	ldmia sp!, {r3, r4, r5, pc}
@@ -28641,13 +28641,13 @@ _021342CC:
 	add r2, r4, #0xd00
 	mla r1, r3, r0, r1
 	ldrsb r2, [r2, #0x11]
-	ldr r0, _02134300 ; =DAT_02084d78
+	ldr r0, _02134300 ; =WCM_Bssid_Any
 	mov r3, #0x300000
 	bl ov11_02134874
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
-_02134300: .word DAT_02084d78
-_02134304: .word DAT_02084d80
+_02134300: .word WCM_Bssid_Any
+_02134304: .word WCM_Essid_Any
 
 	arm_func_start ov11_02134308
 ov11_02134308: ; 0x02134308
@@ -28663,15 +28663,15 @@ ov11_02134308: ; 0x02134308
 	str r1, [r4, #0xcb4]
 	add r0, r4, #0xd00
 	ldrsb r2, [r0, #0x11]
-	ldr r0, _02134350 ; =DAT_02084d78
-	ldr r1, _02134354 ; =DAT_02084d80
+	ldr r0, _02134350 ; =WCM_Bssid_Any
+	ldr r1, _02134354 ; =WCM_Essid_Any
 	mov r3, #0x200000
 	bl ov11_02134874
 	mov r0, #3
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02134350: .word DAT_02084d78
-_02134354: .word DAT_02084d80
+_02134350: .word WCM_Bssid_Any
+_02134354: .word WCM_Essid_Any
 	arm_func_end ov11_02134308
 
 	arm_func_start ov11_02134358
@@ -28710,8 +28710,8 @@ _021343C4:
 	str r1, [r4, #0xcb4]
 	add r0, r4, #0xd00
 	ldrsb r2, [r0, #0x11]
-	ldr r0, _021343F4 ; =DAT_02084d78
-	ldr r1, _021343F8 ; =DAT_02084d80
+	ldr r0, _021343F4 ; =WCM_Bssid_Any
+	ldr r1, _021343F8 ; =WCM_Essid_Any
 	mov r3, #0x200000
 	bl ov11_02134874
 _021343E8:
@@ -28719,8 +28719,8 @@ _021343E8:
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _021343F0: .word 0x000082EA
-_021343F4: .word DAT_02084d78
-_021343F8: .word DAT_02084d80
+_021343F4: .word WCM_Bssid_Any
+_021343F8: .word WCM_Essid_Any
 
 	arm_func_start ov11_021343FC
 ov11_021343FC: ; 0x021343FC
@@ -28899,7 +28899,7 @@ _0213464C:
 	add r2, r4, #0xd00
 	mla r1, r3, r0, r1
 	ldrsb r2, [r2, #0x11]
-	ldr r0, _02134688 ; =DAT_02084d78
+	ldr r0, _02134688 ; =WCM_Bssid_Any
 	mov r3, #0x300000
 	bl ov11_02134874
 _0213467C:
@@ -28907,7 +28907,7 @@ _0213467C:
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02134684: .word 0x000082EA
-_02134688: .word DAT_02084d78
+_02134688: .word WCM_Bssid_Any
 
 	arm_func_start ov11_0213468C
 ov11_0213468C: ; 0x0213468C
@@ -29019,7 +29019,7 @@ _021347CC:
 	ldmloia sp!, {r3, r4, r5, pc}
 _021347F8:
 	strb r1, [r5, #0xd13]
-	bl sub_02053D94
+	bl WCM_EndSearchAsync
 	cmp r0, #1
 	strneb r4, [r5, #0xd0e]
 	movne r4, #7
@@ -29063,7 +29063,7 @@ ov11_02134874: ; 0x02134874
 	movgt r2, #0xc
 	ldr r2, [ip, r2, lsl #2]
 	orr r2, r3, r2
-	bl sub_02053BFC
+	bl WCM_SearchAsync
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02134894: .word DAT_overlay_11_02162b34
@@ -29073,7 +29073,7 @@ _02134894: .word DAT_overlay_11_02162b34
 ov11_02134898: ; 0x02134898
 	stmdb sp!, {r4, lr}
 	sub sp, sp, #0x10
-	bl sub_02054368
+	bl WCM_GetPhase
 	mov r4, r0
 	mov r0, #0x10
 	bl ov11_02132B1C
@@ -29088,7 +29088,7 @@ ov11_02134898: ; 0x02134898
 	bl ov11_02133BE4
 	ldr r1, _0213491C ; =ov11_021332A0
 	add r0, sp, #0
-	bl sub_02053908
+	bl WCM_StartupAsync
 	cmp r0, #1
 	beq _021348F0
 	cmp r0, #4
@@ -29119,7 +29119,7 @@ ov11_02134920: ; 0x02134920
 	mov r0, #0x10
 	bl ov11_02132B1C
 	mov r5, r0
-	bl sub_02054368
+	bl WCM_GetPhase
 	cmp r0, #9
 	bne _021349C4
 	sub r0, r4, #0xa
@@ -31065,7 +31065,7 @@ _021362B4:
 	bl STD_TSNPrintf
 	bl OS_DisableInterrupts
 	mov r6, r0
-	bl sub_02055E68
+	bl WCM_GetApMacAddress
 	mov r7, r0
 	mov r1, #6
 	bl DC_InvalidateRange
@@ -31096,7 +31096,7 @@ _021363C4:
 	mov r1, #0xe
 	bl STD_TSNPrintf
 	add r0, sp, #0x14
-	bl sub_02055EAC
+	bl WCM_GetApEssid
 	mov r5, r0
 	mov r1, #0x20
 	bl DC_InvalidateRange
@@ -36890,7 +36890,7 @@ _0213B3A8:
 	ldrh r0, [r1, #6]
 	cmp r0, #0
 	ldmeqia sp!, {r3, pc}
-	bl sub_02054368
+	bl WCM_GetPhase
 	cmp r0, #9
 	ldmeqia sp!, {r3, pc}
 	ldr r0, _0213B3E8 ; =OVERLAY11_BSS_02169DB0
@@ -37043,7 +37043,7 @@ thunk_FUN_02056194: ; 0x0213B598
 	ldr ip, _0213B5A0 ; =FUN_02056194
 	bx ip
 	.align 2, 0
-_0213B5A0: .word sub_02056194
+_0213B5A0: .word WCM_GetLinkLevel
 	arm_func_end thunk_FUN_02056194
 
 	arm_func_start ov11_0213B5A4
@@ -37065,7 +37065,7 @@ ov11_0213B5A4: ; 0x0213B5A4
 	str r0, [r4]
 	bl OS_DisableInterrupts
 	mov r6, r0
-	bl sub_02055E68
+	bl WCM_GetApMacAddress
 	mov r5, r0
 	mov r1, #6
 	bl DC_InvalidateRange
@@ -37088,7 +37088,7 @@ _0213B614:
 	cmp r0, #3
 	bge _0213B678
 	add r0, sp, #0
-	bl sub_02055EAC
+	bl WCM_GetApEssid
 	mov r5, r0
 	mov r1, #0x20
 	bl DC_InvalidateRange
@@ -42819,7 +42819,7 @@ _0213E598:
 	ldr r2, [r7, #0x28]
 	add r0, #0x2c
 	blx MI_CpuCopy8
-	blx sub_02055904
+	blx WCM_ClearApList
 	ldr r2, [r7]
 	ldr r3, _0213E6F0 ; =0x0030BFFE
 	mov r0, #0
@@ -43064,7 +43064,7 @@ _0213E772:
 	ldr r0, [r2, #0x10]
 	ldr r1, [r2, #0x14]
 	ldr r2, [r2, #4]
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	beq _0213E7CA
 	ldr r0, _0213E9D8 ; =OVERLAY11_BSS_0216AD00
@@ -43083,7 +43083,7 @@ _0213E798:
 	ldr r0, [r2, #0x20]
 	ldr r1, [r2, #0x24]
 	ldr r2, [r2, #0xc]
-	blx sub_02053E38
+	blx WCM_ConnectAsync
 	cmp r0, #3
 	beq _0213E7CA
 	ldr r0, _0213E9D8 ; =OVERLAY11_BSS_0216AD00
@@ -43186,7 +43186,7 @@ _0213E856:
 	ldr r0, [r2, #0x10]
 	ldr r1, [r2, #0x14]
 	ldr r2, [r2, #4]
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	beq _0213E8CE
 	ldr r0, _0213E9D8 ; =OVERLAY11_BSS_0216AD00
@@ -43202,7 +43202,7 @@ _0213E856:
 _0213E87C:
 	cmp r0, #2
 	bne _0213E89C
-	blx sub_02053B0C
+	blx WCM_CleanupAsync
 	cmp r0, #3
 	beq _0213E8CE
 	ldr r0, _0213E9D8 ; =OVERLAY11_BSS_0216AD00
@@ -43221,7 +43221,7 @@ _0213E89C:
 	ldr r0, [r2, #0x20]
 	ldr r1, [r2, #0x24]
 	ldr r2, [r2, #0xc]
-	blx sub_02053E38
+	blx WCM_ConnectAsync
 	cmp r0, #3
 	beq _0213E8CE
 	ldr r0, _0213E9D8 ; =OVERLAY11_BSS_0216AD00
@@ -43270,7 +43270,7 @@ _0213E8F6:
 	ldr r0, [r2, #0x10]
 	ldr r1, [r2, #0x14]
 	ldr r2, [r2, #4]
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	beq _0213E9D4
 	ldr r0, _0213E9D8 ; =OVERLAY11_BSS_0216AD00
@@ -43286,7 +43286,7 @@ _0213E8F6:
 _0213E91C:
 	cmp r0, #2
 	bne _0213E93C
-	blx sub_02053B0C
+	blx WCM_CleanupAsync
 	cmp r0, #3
 	beq _0213E9D4
 	ldr r0, _0213E9D8 ; =OVERLAY11_BSS_0216AD00
@@ -43305,7 +43305,7 @@ _0213E93C:
 	ldr r0, [r2, #0x20]
 	ldr r1, [r2, #0x24]
 	ldr r2, [r2, #0xc]
-	blx sub_02053E38
+	blx WCM_ConnectAsync
 	cmp r0, #3
 	beq _0213E9D4
 	ldr r0, _0213E9D8 ; =OVERLAY11_BSS_0216AD00
@@ -43341,7 +43341,7 @@ _0213E97A:
 	ldr r0, [r0, #0x18]
 	cmp r0, #2
 	bne _0213E9D4
-	blx sub_020538B0
+	blx WCM_Finish
 	ldr r0, _0213E9D8 ; =OVERLAY11_BSS_0216AD00
 	mov r1, #0
 	str r1, [r0, #0x18]
@@ -43412,13 +43412,13 @@ _0213EA04:
 	mov r0, #0
 	add r1, r0, #0
 	add r2, r0, #0
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	beq _0213EA36
 	mov r0, #0
 	pop {r3, pc}
 _0213EA16:
-	blx sub_0205403C
+	blx WCM_DisconnectAsync
 	cmp r0, #3
 	beq _0213EA36
 	mov r0, #0
@@ -43426,7 +43426,7 @@ _0213EA16:
 _0213EA22:
 	ldr r0, [r1, #8]
 	ldr r1, _0213EA40 ; =0x0213E725
-	blx sub_02053908
+	blx WCM_StartupAsync
 	cmp r0, #3
 	beq _0213EA36
 	mov r0, #0
@@ -43448,8 +43448,8 @@ ov11_0213EA44: ; 0x0213EA44
 	add r5, r0, #0
 	mov r0, #1
 	add r7, r1, #0
-	blx sub_020559B0
-	blx sub_02055958
+	blx WCM_LockApList
+	blx WCM_CountApList
 	add r6, r0, #0
 	cmp r6, #0
 	ble _0213EA7C
@@ -43462,7 +43462,7 @@ _0213EA60:
 	bge _0213EA7C
 	lsl r0, r4, #0x10
 	lsr r0, r0, #0x10
-	blx sub_02055A2C
+	blx WCM_PointApList
 	add r1, r5, #0
 	mov r2, #0xc0
 	blx MIi_CpuCopy32
@@ -43472,7 +43472,7 @@ _0213EA60:
 	blt _0213EA60
 _0213EA7C:
 	mov r0, #0
-	blx sub_020559B0
+	blx WCM_LockApList
 	add r0, r6, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -43511,7 +43511,7 @@ _0213EABC:
 	mov r1, #0xff
 	mov r2, #6
 	blx MI_CpuFill8
-	ldr r1, _0213EB6C ; =DAT_02084d78
+	ldr r1, _0213EB6C ; =WCM_Bssid_Any
 	ldr r0, _0213EB64 ; =OVERLAY11_BSS_0216AD00
 	str r1, [r0, #0x10]
 _0213EACC:
@@ -43555,7 +43555,7 @@ _0213EB0A:
 	mov r1, #0xff
 	mov r2, #0x20
 	blx MI_CpuFill8
-	ldr r1, _0213EB74 ; =DAT_02084d80
+	ldr r1, _0213EB74 ; =WCM_Essid_Any
 	ldr r0, _0213EB64 ; =OVERLAY11_BSS_0216AD00
 	str r1, [r0, #0x14]
 _0213EB1A:
@@ -43566,7 +43566,7 @@ _0213EB1A:
 	ldr r0, [r2, #0x10]
 	ldr r1, [r2, #0x14]
 	ldr r2, [r2, #4]
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	bne _0213EB58
 	ldr r0, _0213EB64 ; =OVERLAY11_BSS_0216AD00
@@ -43595,9 +43595,9 @@ _0213EB58:
 	nop
 _0213EB64: .word OVERLAY11_BSS_0216AD00
 _0213EB68: .word OVERLAY11_BSS_0216AD28
-_0213EB6C: .word DAT_02084d78
+_0213EB6C: .word WCM_Bssid_Any
 _0213EB70: .word OVERLAY11_BSS_0216AD30
-_0213EB74: .word DAT_02084d80
+_0213EB74: .word WCM_Essid_Any
 
 	thumb_func_start ov11_0213EB78
 ov11_0213EB78: ; 0x0213EB78
@@ -43611,7 +43611,7 @@ ov11_0213EB78: ; 0x0213EB78
 	mov r0, #0
 	add r1, r0, #0
 	add r2, r0, #0
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	bne _0213EBA6
 	ldr r0, _0213EBB0 ; =OVERLAY11_BSS_0216AD00
@@ -43639,7 +43639,7 @@ ov11_0213EBB4: ; 0x0213EBB4
 	ldr r0, [r0, #0x18]
 	cmp r0, #7
 	bne _0213EBDC
-	blx sub_0205403C
+	blx WCM_DisconnectAsync
 	cmp r0, #3
 	bne _0213EBDC
 	ldr r0, _0213EBE8 ; =OVERLAY11_BSS_0216AD00
@@ -43667,7 +43667,7 @@ ov11_0213EBEC: ; 0x0213EBEC
 	ldr r0, [r0, #0x18]
 	cmp r0, #3
 	bne _0213EC1E
-	blx sub_02053B0C
+	blx WCM_CleanupAsync
 	cmp r0, #3
 	beq _0213EC0E
 	add r0, r4, #0
@@ -43749,7 +43749,7 @@ _0213EC94:
 	ldr r0, [r2, #0x20]
 	ldr r1, [r2, #0x24]
 	ldr r2, [r2, #0xc]
-	blx sub_02053E38
+	blx WCM_ConnectAsync
 	cmp r0, #3
 	bne _0213ECBA
 	ldr r0, _0213ECC4 ; =OVERLAY11_BSS_0216AD00
@@ -43813,7 +43813,7 @@ ov11_0213ECC8: ; 0x0213ECC8
 	sub r3, #0x1f
 	ldr r0, [r2]
 	add r1, r3, #0
-	blx sub_02053798
+	blx WCM_Init
 	cmp r0, #0
 	beq _0213ED34
 	add r0, r4, #0
@@ -43832,7 +43832,7 @@ _0213ED3A:
 	bne _0213ED68
 	ldr r0, [r0, #8]
 	ldr r1, _0213ED7C ; =0x0213E725
-	blx sub_02053908
+	blx WCM_StartupAsync
 	cmp r0, #3
 	beq _0213ED58
 	add r0, r4, #0
@@ -43909,7 +43909,7 @@ _0213EDD4:
 	ldr r0, [r2, #0x44]
 	ldr r1, [r2, #0x48]
 	ldr r2, [r2, #0x60]
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	beq _0213EE68
 	ldr r0, _0213F084 ; =OVERLAY11_BSS_0216AD50
@@ -43929,7 +43929,7 @@ _0213EDFC:
 	ldr r0, [r2, #0x4c]
 	ldr r1, [r2, #0x28]
 	ldr r2, [r2, #0x58]
-	blx sub_02053E38
+	blx WCM_ConnectAsync
 	cmp r0, #3
 	beq _0213EE68
 	ldr r0, _0213F084 ; =OVERLAY11_BSS_0216AD50
@@ -44039,7 +44039,7 @@ _0213EEC8:
 	ldr r0, [r2, #0x44]
 	ldr r1, [r2, #0x48]
 	ldr r2, [r2, #0x60]
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	beq _0213EF6A
 	ldr r0, _0213F084 ; =OVERLAY11_BSS_0216AD50
@@ -44056,7 +44056,7 @@ _0213EEC8:
 _0213EEF0:
 	cmp r0, #2
 	bne _0213EF12
-	blx sub_02053B0C
+	blx WCM_CleanupAsync
 	cmp r0, #3
 	beq _0213EF6A
 	ldr r0, _0213F084 ; =OVERLAY11_BSS_0216AD50
@@ -44076,7 +44076,7 @@ _0213EF12:
 	ldr r0, [r2, #0x4c]
 	ldr r1, [r2, #0x28]
 	ldr r2, [r2, #0x58]
-	blx sub_02053E38
+	blx WCM_ConnectAsync
 	cmp r0, #3
 	beq _0213EF6A
 	ldr r0, _0213F084 ; =OVERLAY11_BSS_0216AD50
@@ -44128,7 +44128,7 @@ _0213EF72:
 	ldr r0, [r2, #0x44]
 	ldr r1, [r2, #0x48]
 	ldr r2, [r2, #0x60]
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	beq _0213F082
 	ldr r0, _0213F084 ; =OVERLAY11_BSS_0216AD50
@@ -44145,7 +44145,7 @@ _0213EF72:
 _0213EF9A:
 	cmp r0, #2
 	bne _0213EFBC
-	blx sub_02053B0C
+	blx WCM_CleanupAsync
 	cmp r0, #3
 	beq _0213F082
 	ldr r0, _0213F084 ; =OVERLAY11_BSS_0216AD50
@@ -44165,7 +44165,7 @@ _0213EFBC:
 	ldr r0, [r2, #0x4c]
 	ldr r1, [r2, #0x28]
 	ldr r2, [r2, #0x58]
-	blx sub_02053E38
+	blx WCM_ConnectAsync
 	cmp r0, #3
 	beq _0213F082
 	ldr r0, _0213F084 ; =OVERLAY11_BSS_0216AD50
@@ -44205,7 +44205,7 @@ _0213F002:
 	ldr r0, [r0, #0x2c]
 	cmp r0, #2
 	bne _0213F082
-	blx sub_020538B0
+	blx WCM_Finish
 	ldr r0, _0213F084 ; =OVERLAY11_BSS_0216AD50
 	mov r1, #0
 	str r1, [r0, #0x2c]
@@ -44298,13 +44298,13 @@ _0213F0B4:
 	mov r0, #0
 	add r1, r0, #0
 	add r2, r0, #0
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	beq _0213F0E6
 	mov r0, #0
 	pop {r3, pc}
 _0213F0C6:
-	blx sub_0205403C
+	blx WCM_DisconnectAsync
 	cmp r0, #3
 	beq _0213F0E6
 	mov r0, #0
@@ -44312,7 +44312,7 @@ _0213F0C6:
 _0213F0D2:
 	ldr r0, [r1, #8]
 	ldr r1, _0213F0F0 ; =0x0213ED81
-	blx sub_02053908
+	blx WCM_StartupAsync
 	cmp r0, #3
 	beq _0213F0E6
 	mov r0, #0
@@ -44334,8 +44334,8 @@ ov11_0213F0F4: ; 0x0213F0F4
 	add r5, r0, #0
 	mov r0, #1
 	add r7, r1, #0
-	blx sub_020559B0
-	blx sub_02055958
+	blx WCM_LockApList
+	blx WCM_CountApList
 	add r6, r0, #0
 	cmp r6, #0
 	ble _0213F12C
@@ -44348,7 +44348,7 @@ _0213F110:
 	bge _0213F12C
 	lsl r0, r4, #0x10
 	lsr r0, r0, #0x10
-	blx sub_02055A2C
+	blx WCM_PointApList
 	add r1, r5, #0
 	mov r2, #0xc0
 	blx MIi_CpuCopy32
@@ -44358,7 +44358,7 @@ _0213F110:
 	blt _0213F110
 _0213F12C:
 	mov r0, #0
-	blx sub_020559B0
+	blx WCM_LockApList
 	add r0, r6, #0
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -44394,7 +44394,7 @@ _0213F168:
 	mov r1, #0xff
 	mov r2, #6
 	blx MI_CpuFill8
-	ldr r1, _0213F214 ; =DAT_02084d78
+	ldr r1, _0213F214 ; =WCM_Bssid_Any
 	ldr r0, _0213F20C ; =OVERLAY11_BSS_0216AD50
 	str r1, [r0, #0x44]
 _0213F176:
@@ -44436,7 +44436,7 @@ _0213F1B2:
 	mov r1, #0xff
 	mov r2, #0x20
 	blx MI_CpuFill8
-	ldr r1, _0213F21C ; =DAT_02084d80
+	ldr r1, _0213F21C ; =WCM_Essid_Any
 	ldr r0, _0213F20C ; =OVERLAY11_BSS_0216AD50
 	str r1, [r0, #0x48]
 _0213F1C2:
@@ -44447,7 +44447,7 @@ _0213F1C2:
 	ldr r1, [r2, #0x48]
 	ldr r0, _0213F210 ; =OVERLAY11_BSS_0216B208
 	ldr r2, [r2, #0x60]
-	blx sub_02053BFC
+	blx WCM_SearchAsync
 	cmp r0, #3
 	bne _0213F200
 	ldr r0, _0213F20C ; =OVERLAY11_BSS_0216AD50
@@ -44476,9 +44476,9 @@ _0213F200:
 	nop
 _0213F20C: .word OVERLAY11_BSS_0216AD50
 _0213F210: .word OVERLAY11_BSS_0216B208
-_0213F214: .word DAT_02084d78
+_0213F214: .word WCM_Bssid_Any
 _0213F218: .word OVERLAY11_BSS_0216B240
-_0213F21C: .word DAT_02084d80
+_0213F21C: .word WCM_Essid_Any
 
 	thumb_func_start ov11_0213F220
 ov11_0213F220: ; 0x0213F220
@@ -44489,7 +44489,7 @@ ov11_0213F220: ; 0x0213F220
 	ldr r0, [r0, #0x2c]
 	cmp r0, #7
 	bne _0213F248
-	blx sub_0205403C
+	blx WCM_DisconnectAsync
 	cmp r0, #3
 	bne _0213F248
 	ldr r0, _0213F254 ; =OVERLAY11_BSS_0216AD50
@@ -44517,7 +44517,7 @@ ov11_0213F258: ; 0x0213F258
 	ldr r0, [r0, #0x2c]
 	cmp r0, #3
 	bne _0213F28A
-	blx sub_02053B0C
+	blx WCM_CleanupAsync
 	cmp r0, #3
 	beq _0213F27A
 	add r0, r4, #0
@@ -44599,7 +44599,7 @@ _0213F300:
 	ldr r0, [r2, #0x4c]
 	ldr r1, [r2, #0x28]
 	ldr r2, [r2, #0x58]
-	blx sub_02053E38
+	blx WCM_ConnectAsync
 	cmp r0, #3
 	bne _0213F326
 	ldr r0, _0213F330 ; =OVERLAY11_BSS_0216AD50
@@ -44664,7 +44664,7 @@ ov11_0213F334: ; 0x0213F334
 	sub r3, #0x1f
 	ldr r0, [r2, #0x3c]
 	add r1, r3, #0
-	blx sub_02053798
+	blx WCM_Init
 	cmp r0, #0
 	beq _0213F3A2
 	add r0, r4, #0
@@ -44683,7 +44683,7 @@ _0213F3A8:
 	bne _0213F3D6
 	ldr r0, [r0, #8]
 	ldr r1, _0213F3EC ; =0x0213ED81
-	blx sub_02053908
+	blx WCM_StartupAsync
 	cmp r0, #3
 	beq _0213F3C6
 	add r0, r4, #0
