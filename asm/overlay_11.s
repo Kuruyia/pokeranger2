@@ -8468,7 +8468,7 @@ ov11_02123CEC: ; 0x02123CEC
 	add r0, r0, #0x400
 	bx ip
 	.align 2, 0
-_02123D04: .word NitroSystem_NNS_FndMountArchive
+_02123D04: .word NNS_FndMountArchive
 _02123D08: .word s_RNS_overlay_11_021663f8
 	arm_func_end ov11_02123CEC
 
@@ -8479,7 +8479,7 @@ ov11_02123D0C: ; 0x02123D0C
 	add r0, r0, #0x400
 	bx ip
 	.align 2, 0
-_02123D1C: .word NitroSystem_NNS_FndUnmountArchive
+_02123D1C: .word NNS_FndUnmountArchive
 	arm_func_end ov11_02123D0C
 
 	arm_func_start ov11_02123D20
@@ -83518,7 +83518,7 @@ ov11_0215C7EC: ; 0x0215C7EC
 	mov r0, r4
 	mov r1, #0x40000
 	mov r2, #0
-	bl NitroSystem_NNS_FndCreateExpHeapEx
+	bl NNS_FndCreateExpHeapEx
 	ldr r1, _0215C828 ; =OVERLAY11_BSS_0216C404
 	cmp r0, #0
 	str r0, [r1]
@@ -83534,7 +83534,7 @@ ov11_0215C82C: ; 0x0215C82C
 	stmdb sp!, {r3, lr}
 	ldr r0, _0215C84C ; =OVERLAY11_BSS_0216C404
 	ldr r0, [r0]
-	bl NitroSystem_NNS_FndDestroyExpHeap
+	bl NNS_FndDestroyExpHeap
 	ldr r0, _0215C84C ; =OVERLAY11_BSS_0216C404
 	mov r1, #0
 	str r1, [r0]
@@ -83555,7 +83555,7 @@ ov11_0215C850: ; 0x0215C850
 	ldr r0, [r1]
 	mov r1, r6
 	mov r2, r4
-	bl NitroSystem_NNS_FndAllocFromExpHeapEx
+	bl NNS_FndAllocFromExpHeapEx
 	movs r4, r0
 	bne _0215C888
 	bl OS_Terminate
@@ -83593,7 +83593,7 @@ ov11_0215C8C0: ; 0x0215C8C0
 	ldmeqia sp!, {r3, r4, r5, pc}
 	ldr r0, _0215C900 ; =OVERLAY11_BSS_0216C404
 	ldr r0, [r0]
-	bl NitroSystem_NNS_FndFreeToExpHeap
+	bl NNS_FndFreeToExpHeap
 	mov r0, r4
 	bl OS_EnableIrqMask
 	mov r0, #0
@@ -83615,7 +83615,7 @@ ov11_0215C904: ; 0x0215C904
 	ldr r0, _0215C93C ; =OVERLAY11_BSS_0216C404
 	mov r1, r5
 	ldr r0, [r0]
-	bl NitroSystem_NNS_FndFreeToExpHeap
+	bl NNS_FndFreeToExpHeap
 	mov r0, r4
 	bl OS_EnableIrqMask
 	ldmia sp!, {r3, r4, r5, pc}

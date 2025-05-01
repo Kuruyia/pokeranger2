@@ -508,3 +508,14 @@
 .public NNS_GfdInitLnkTexVramManager
 .public NNS_GfdInitVramTransferManager
 .public NNS_GfdRegisterNewVramTransferTask
+.public NNS_FndGetArchiveFileByName
+.public NNS_FndGetAllocatableSizeForExpHeapEx
+.public NNS_FndGetTotalFreeSizeForExpHeap
+.public NNS_FndGetTotalFreeSizeForExpHeap
+.public NNS_FndUnmountArchive
+.public NNS_FndMountArchive
+.public NNS_FndDestroyExpHeap
+.public NNS_FndCreateExpHeapEx
+.public NNS_FndFreeToExpHeap
+.public NNS_FndAllocFromExpHeapEx
+.public NNS_FndFreeToExpHeap

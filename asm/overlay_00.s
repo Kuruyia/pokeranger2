@@ -10005,7 +10005,7 @@ ov0_0212550C: ; 0x0212550C
 	beq _021258F0
 	add r0, sp, #0x80
 	mov r2, r5
-	bl NitroSystem_NNS_FndMountArchive
+	bl NNS_FndMountArchive
 	cmp r0, #0
 	beq _021258F0
 	ldr r1, [sp, #0xe0]
@@ -10030,7 +10030,7 @@ _02125580:
 _021255A0:
 	ldr r1, [sp, #8]
 	add r0, sp, #0x80
-	bl NitroSystem_NNS_FndGetArchiveFileByIndex
+	bl NNS_FndGetArchiveFileByIndex
 	cmp r0, #0
 	beq _021258C4
 	ldrb r3, [r0]
@@ -10193,7 +10193,7 @@ _021257EC:
 	ldr r2, [sp, #8]
 	add r0, sp, #0x38
 	add r1, sp, #0x80
-	bl NitroSystem_NNS_FndOpenArchiveFileByIndex
+	bl NNS_FndOpenArchiveFileByIndex
 	cmp r0, #0
 	beq _021258C4
 	ldr r2, [sp, #0x60]
@@ -10250,7 +10250,7 @@ _021258C4:
 	blt _021255A0
 _021258DC:
 	add r0, sp, #0x80
-	bl NitroSystem_NNS_FndUnmountArchive
+	bl NNS_FndUnmountArchive
 	add sp, sp, #0xe8
 	mov r0, fp
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
@@ -10666,7 +10666,7 @@ _02125E6C:
 	mov r3, #0
 	add r0, sp, #0x260
 	str r3, [sp, #0x24]
-	bl NitroSystem_NNS_FndMountArchive
+	bl NNS_FndMountArchive
 	cmp r0, #0
 	movne r0, #1
 	strne r0, [sp, #0x24]
@@ -10697,7 +10697,7 @@ _02125E6C:
 _02125EFC:
 	add r0, sp, #0x260
 	mov r1, sl
-	bl NitroSystem_NNS_FndGetArchiveFileByIndex
+	bl NNS_FndGetArchiveFileByIndex
 	cmp r0, #0
 	beq _02125FA0
 	ldrb r2, [r0]
@@ -10859,7 +10859,7 @@ _02126154:
 	ldr r1, _0212663C ; =s_MTX_overlay_0_02173294
 	ldr r2, [sp, #0x20]
 	add r0, sp, #0x1f8
-	bl NitroSystem_NNS_FndMountArchive
+	bl NNS_FndMountArchive
 	cmp r0, #0
 	beq _02126280
 	ldr r1, [sp, #0x258]
@@ -10912,7 +10912,7 @@ _021261F4:
 _02126220:
 	mov r0, r6
 	mov r1, r8
-	bl NitroSystem_NNS_FndGetArchiveFileByIndex
+	bl NNS_FndGetArchiveFileByIndex
 	movs r1, r0
 	beq _0212626C
 	cmp sb, #0
@@ -10935,7 +10935,7 @@ _0212626C:
 	blt _02126220
 _02126278:
 	add r0, sp, #0x1f8
-	bl NitroSystem_NNS_FndUnmountArchive
+	bl NNS_FndUnmountArchive
 _02126280:
 	ldr r0, [sp, #0x18]
 	cmp r0, #0
@@ -10943,7 +10943,7 @@ _02126280:
 	ldr r1, _02126640 ; =s_MCT_overlay_0_02173298
 	ldr r2, [sp, #0x18]
 	add r0, sp, #0x190
-	bl NitroSystem_NNS_FndMountArchive
+	bl NNS_FndMountArchive
 	cmp r0, #0
 	beq _02126304
 	ldr r0, [sp, #0x1f0]
@@ -10959,7 +10959,7 @@ _02126280:
 _021262CC:
 	mov r0, r5
 	mov r1, r7
-	bl NitroSystem_NNS_FndGetArchiveFileByIndex
+	bl NNS_FndGetArchiveFileByIndex
 	mov r1, r0
 	mov r0, r4
 	mov r2, r7
@@ -10971,7 +10971,7 @@ _021262CC:
 	blt _021262CC
 _021262FC:
 	add r0, sp, #0x190
-	bl NitroSystem_NNS_FndUnmountArchive
+	bl NNS_FndUnmountArchive
 _02126304:
 	ldr r0, [sp, #0x14]
 	cmp r0, #0
@@ -10979,7 +10979,7 @@ _02126304:
 	ldr r1, _02126644 ; =s_MPA_overlay_0_0217329c
 	ldr r2, [sp, #0x14]
 	add r0, sp, #0x128
-	bl NitroSystem_NNS_FndMountArchive
+	bl NNS_FndMountArchive
 	cmp r0, #0
 	beq _02126388
 	ldr r0, [sp, #0x188]
@@ -10995,7 +10995,7 @@ _02126304:
 _02126350:
 	mov r0, r5
 	mov r1, r7
-	bl NitroSystem_NNS_FndGetArchiveFileByIndex
+	bl NNS_FndGetArchiveFileByIndex
 	mov r1, r0
 	mov r0, r4
 	mov r2, r7
@@ -11007,7 +11007,7 @@ _02126350:
 	blt _02126350
 _02126380:
 	add r0, sp, #0x128
-	bl NitroSystem_NNS_FndUnmountArchive
+	bl NNS_FndUnmountArchive
 _02126388:
 	ldr r0, [sp, #0x10]
 	cmp r0, #0
@@ -11026,7 +11026,7 @@ _021263AC:
 	ldr r1, _02126648 ; =s_MLY_overlay_0_021732a0
 	ldr r2, [sp, #0x1c]
 	add r0, sp, #0xc0
-	bl NitroSystem_NNS_FndMountArchive
+	bl NNS_FndMountArchive
 	cmp r0, #0
 	beq _021265AC
 	ldr r0, [sp, #0x120]
@@ -11082,11 +11082,11 @@ _02126484:
 _02126490:
 	add r0, sp, #0xc0
 	mov r1, r7
-	bl NitroSystem_NNS_FndGetArchiveFileByIndex
+	bl NNS_FndGetArchiveFileByIndex
 	mov r2, r0
 	ldr r1, _0212664C ; =s_MLG_overlay_0_021732a4
 	add r0, sp, #0x58
-	bl NitroSystem_NNS_FndMountArchive
+	bl NNS_FndMountArchive
 	cmp r0, #0
 	beq _02126598
 	ldr r0, [sp, #0xb8]
@@ -11104,7 +11104,7 @@ _02126490:
 _021264E4:
 	mov r0, r5
 	mov r1, sl
-	bl NitroSystem_NNS_FndGetArchiveFileByIndex
+	bl NNS_FndGetArchiveFileByIndex
 	mov r1, r0
 	mov r0, r4
 	mov r2, r7
@@ -11151,14 +11151,14 @@ _02126584:
 	blt _021264E4
 _02126590:
 	add r0, sp, #0x58
-	bl NitroSystem_NNS_FndUnmountArchive
+	bl NNS_FndUnmountArchive
 _02126598:
 	add r7, r7, #1
 	cmp r7, r6
 	blt _02126490
 _021265A4:
 	add r0, sp, #0xc0
-	bl NitroSystem_NNS_FndUnmountArchive
+	bl NNS_FndUnmountArchive
 _021265AC:
 	mov r0, #1
 	str r0, [r4]
@@ -11171,7 +11171,7 @@ _021265C4:
 	cmp r0, #1
 	bne _021265D8
 	add r0, sp, #0x260
-	bl NitroSystem_NNS_FndUnmountArchive
+	bl NNS_FndUnmountArchive
 _021265D8:
 	ldr r0, [sp, #0x10]
 	cmp r0, #0

@@ -30,11 +30,11 @@ _02000C90:
 	str r1, [r0, #0xb6c]
 	bl Heap_GetMainHandle
 	ldr r0, [r0]
-	bl NitroSystem_NNS_FndGetTotalFreeSizeForExpHeap
+	bl NNS_FndGetTotalFreeSizeForExpHeap
 	bl Heap_GetMainHandle
 	ldr r0, [r0]
 	mov r1, #4
-	bl NitroSystem_NNS_FndGetAllocatableSizeForExpHeapEx
+	bl NNS_FndGetAllocatableSizeForExpHeapEx
 	bl sub_02001184
 	ldr r1, _020010CC ; =MAIN_BSS_0208F300
 	mov r0, #9
@@ -201,11 +201,11 @@ _02000F3C:
 	bl sub_0201044C
 	bl Heap_GetMainHandle
 	ldr r0, [r0]
-	bl NitroSystem_NNS_FndGetTotalFreeSizeForExpHeap
+	bl NNS_FndGetTotalFreeSizeForExpHeap
 	bl Heap_GetMainHandle
 	ldr r0, [r0]
 	mov r1, #4
-	bl NitroSystem_NNS_FndGetAllocatableSizeForExpHeapEx
+	bl NNS_FndGetAllocatableSizeForExpHeapEx
 	ldr r0, [r4, #4]
 	ldr r1, _020010DC ; =s_Create_Scene_0208a390
 	bl sub_020101B4
@@ -1621,13 +1621,13 @@ Heap_Init: ; 0x020021C8
 	mov r4, r0
 	mov r0, r5
 	mov r2, #1
-	bl NitroSystem_NNS_FndCreateExpHeapEx
+	bl NNS_FndCreateExpHeapEx
 	mov r1, r6
 	ldr r3, _02002254 ; =_0208F310
 	mov r2, #1
 	str r0, [r3, #4]
 	mov r0, r4
-	bl NitroSystem_NNS_FndCreateExpHeapEx
+	bl NNS_FndCreateExpHeapEx
 	ldr r1, _02002254 ; =_0208F310
 	str r0, [r1]
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
@@ -1643,7 +1643,7 @@ Heap_Alloc: ; 0x02002258
 	ldr r0, [r1]
 	mov r1, r4
 	mov r2, #4
-	bl NitroSystem_NNS_FndAllocFromExpHeapEx
+	bl NNS_FndAllocFromExpHeapEx
 	cmp r0, #0
 	ldmneia sp!, {r4, pc}
 	ldr r1, _020022A0 ; =_0208F310
@@ -1653,7 +1653,7 @@ Heap_Alloc: ; 0x02002258
 	mov r0, r1
 	mov r1, r4
 	mov r2, #4
-	bl NitroSystem_NNS_FndAllocFromExpHeapEx
+	bl NNS_FndAllocFromExpHeapEx
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _020022A0: .word sHeap_MainHandle
@@ -1668,7 +1668,7 @@ Heap_AllocWithAlignment: ; 0x020022A4
 	ldr r0, [r2]
 	mov r1, r5
 	mov r2, r4
-	bl NitroSystem_NNS_FndAllocFromExpHeapEx
+	bl NNS_FndAllocFromExpHeapEx
 	cmp r0, #0
 	ldmneia sp!, {r3, r4, r5, pc}
 	ldr r1, _020022F0 ; =_0208F310
@@ -1678,7 +1678,7 @@ Heap_AllocWithAlignment: ; 0x020022A4
 	mov r0, r1
 	mov r1, r5
 	mov r2, r4
-	bl NitroSystem_NNS_FndAllocFromExpHeapEx
+	bl NNS_FndAllocFromExpHeapEx
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _020022F0: .word sHeap_MainHandle
@@ -1693,13 +1693,13 @@ Heap_Free: ; 0x020022F4
 	blo _02002318
 	ldr r0, _0200232C ; =_0208F310
 	ldr r0, [r0]
-	bl NitroSystem_NNS_FndFreeToExpHeap
+	bl NNS_FndFreeToExpHeap
 	ldmia sp!, {r3, pc}
 	arm_func_end Heap_Free
 _02002318:
 	ldr r0, _0200232C ; =_0208F310
 	ldr r0, [r0, #8]
-	bl NitroSystem_NNS_FndFreeToExpHeap
+	bl NNS_FndFreeToExpHeap
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02002328: .word 0x0217B3A0
@@ -1716,26 +1716,26 @@ _02002338: .word sHeap_MainHandle
 	arm_func_start Heap_AllocSecondary
 Heap_AllocSecondary: ; 0x0200233C
 	ldr r2, _02002354 ; =_0208F310
-	ldr ip, _02002358 ; =NitroSystem_NNS_FndAllocFromExpHeapEx
+	ldr ip, _02002358 ; =NNS_FndAllocFromExpHeapEx
 	mov r1, r0
 	ldr r0, [r2, #4]
 	mov r2, #4
 	bx ip
 	.align 2, 0
 _02002354: .word sHeap_MainHandle
-_02002358: .word NitroSystem_NNS_FndAllocFromExpHeapEx
+_02002358: .word NNS_FndAllocFromExpHeapEx
 	arm_func_end Heap_AllocSecondary
 
 	arm_func_start Heap_FreeSecondary
 Heap_FreeSecondary: ; 0x0200235C
 	ldr r2, _02002370 ; =_0208F310
-	ldr ip, _02002374 ; =NitroSystem_NNS_FndFreeToExpHeap
+	ldr ip, _02002374 ; =NNS_FndFreeToExpHeap
 	mov r1, r0
 	ldr r0, [r2, #4]
 	bx ip
 	.align 2, 0
 _02002370: .word sHeap_MainHandle
-_02002374: .word NitroSystem_NNS_FndFreeToExpHeap
+_02002374: .word NNS_FndFreeToExpHeap
 	arm_func_end Heap_FreeSecondary
 
 	arm_func_start Heap_GetSecondaryHandle
@@ -1758,7 +1758,7 @@ sub_02002384: ; 0x02002384
 	mov r0, r5
 	mov r1, r4
 	mov r2, #1
-	bl NitroSystem_NNS_FndCreateExpHeapEx
+	bl NNS_FndCreateExpHeapEx
 	ldr r1, _020023BC ; =_0208F310
 	str r0, [r1, #8]
 	ldmia sp!, {r3, r4, r5, pc}
@@ -1773,7 +1773,7 @@ sub_020023C0: ; 0x020023C0
 	ldr r0, [r0, #8]
 	cmp r0, #0
 	beq _020023D8
-	bl NitroSystem_NNS_FndDestroyExpHeap
+	bl NNS_FndDestroyExpHeap
 	arm_func_end sub_020023C0
 _020023D8:
 	ldr r0, _020023E8 ; =_0208F310
@@ -2337,7 +2337,7 @@ _02002B3C:
 	ldmeqia sp!, {r4, r5, r6, r7, pc}
 	mov r0, r7
 	mov r1, r6
-	bl NitroSystem_NNS_FndMountArchive
+	bl NNS_FndMountArchive
 	mov r0, r7
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, pc}
@@ -2346,7 +2346,7 @@ _02002B3C:
 sub_02002B6C: ; 0x02002B6C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl NitroSystem_NNS_FndUnmountArchive
+	bl NNS_FndUnmountArchive
 	ldr r0, [r4, #0x68]
 	cmp r0, #0
 	beq _02002B9C
@@ -2495,7 +2495,7 @@ _02002D20:
 	cmp r6, #2
 	bne _02002D7C
 	mov r0, r7
-	bl NitroSystem_NNS_FndGetArchiveFileByName
+	bl NNS_FndGetArchiveFileByName
 	str r0, [r4, #0x4c]
 	cmp r0, #0
 	beq _02002D70
@@ -2596,9 +2596,9 @@ _02002E4C:
 	mov r4, r0
 	ldr r0, [r4]
 	mov r1, #4
-	bl NitroSystem_NNS_FndGetAllocatableSizeForExpHeapEx
+	bl NNS_FndGetAllocatableSizeForExpHeapEx
 	ldr r0, [r4]
-	bl NitroSystem_NNS_FndGetTotalFreeSizeForExpHeap
+	bl NNS_FndGetTotalFreeSizeForExpHeap
 	add r0, sl, #4
 	bl FS_CloseFile
 	mov r0, #0
@@ -2700,9 +2700,9 @@ _02002FB4:
 	mov r4, r0
 	ldr r0, [r4]
 	mov r1, #4
-	bl NitroSystem_NNS_FndGetAllocatableSizeForExpHeapEx
+	bl NNS_FndGetAllocatableSizeForExpHeapEx
 	ldr r0, [r4]
-	bl NitroSystem_NNS_FndGetTotalFreeSizeForExpHeap
+	bl NNS_FndGetTotalFreeSizeForExpHeap
 	add r0, sl, #4
 	bl FS_CloseFile
 	mov r0, #0
@@ -18533,17 +18533,17 @@ sub_020101B4: ; 0x020101B4
 	bl Heap_GetSecondaryHandle
 	mov r4, r0
 	ldr r0, [r4]
-	bl NitroSystem_NNS_FndGetTotalFreeSizeForExpHeap
+	bl NNS_FndGetTotalFreeSizeForExpHeap
 	ldr r0, [r4]
 	mov r1, #4
-	bl NitroSystem_NNS_FndGetAllocatableSizeForExpHeapEx
+	bl NNS_FndGetAllocatableSizeForExpHeapEx
 	bl Heap_GetMainHandle
 	mov r4, r0
 	ldr r0, [r4]
-	bl NitroSystem_NNS_FndGetTotalFreeSizeForExpHeap
+	bl NNS_FndGetTotalFreeSizeForExpHeap
 	ldr r0, [r4]
 	mov r1, #4
-	bl NitroSystem_NNS_FndGetAllocatableSizeForExpHeapEx
+	bl NNS_FndGetAllocatableSizeForExpHeapEx
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020101B4
 
@@ -24072,7 +24072,7 @@ _0201474C:
 	cmp r4, #0
 	beq _020147B8
 	add r0, sp, #0xdc
-	bl NitroSystem_NNS_FndGetArchiveFileByName
+	bl NNS_FndGetArchiveFileByName
 	cmp r0, #0
 	beq _020147DC
 	add r1, sp, #0x14
@@ -24501,7 +24501,7 @@ _02014DA0:
 	str r0, [r5, #4]
 _02014DA8:
 	add r0, sp, #0xc8
-	bl NitroSystem_NNS_FndGetArchiveFileByName
+	bl NNS_FndGetArchiveFileByName
 	cmp r0, #0
 	beq _02014DE4
 	add r1, sp, #4
@@ -24631,7 +24631,7 @@ _02014F64:
 	strne r0, [r4, #4]
 	bne _02014FB0
 	add r0, sp, #0xc8
-	bl NitroSystem_NNS_FndGetArchiveFileByName
+	bl NNS_FndGetArchiveFileByName
 	cmp r0, #0
 	beq _02014FB0
 	add r1, sp, #4
@@ -77825,7 +77825,7 @@ _02040AC0:
 	add r3, sp, #0x198
 	bl OS_SPrintf
 	add r0, sp, #0xd8
-	bl NitroSystem_NNS_FndGetArchiveFileByName
+	bl NNS_FndGetArchiveFileByName
 	cmp r0, #0
 	beq _02040B20
 	add r1, sp, #0x10
@@ -78550,7 +78550,7 @@ _02041428:
 	add r3, sp, #0x138
 	bl OS_SPrintf
 	add r0, sp, #0x78
-	bl NitroSystem_NNS_FndGetArchiveFileByName
+	bl NNS_FndGetArchiveFileByName
 	cmp r0, #0
 	beq _02041488
 	add r1, sp, #0x10
@@ -103617,1151 +103617,6 @@ _020562E4: .word MAIN_BSS_0210EADC
 _020562E8: .word MAIN_BSS_0210EAE0
 	arm_func_end sub_0205628C
 
-	arm_func_start NNS_FndInitList
-NNS_FndInitList: ; 0x020562EC
-	mov r2, #0
-	str r2, [r0]
-	str r2, [r0, #4]
-	strh r2, [r0, #8]
-	strh r1, [r0, #0xa]
-	bx lr
-	arm_func_end NNS_FndInitList
-
-	arm_func_start NitroSystem_SetFirstObject
-NitroSystem_SetFirstObject: ; 0x02056304
-	ldrh r3, [r0, #0xa]
-	mov r2, #0
-	add ip, r1, r3
-	str r2, [ip, #4]
-	str r2, [r1, r3]
-	str r1, [r0]
-	str r1, [r0, #4]
-	ldrh r1, [r0, #8]
-	add r1, r1, #1
-	strh r1, [r0, #8]
-	bx lr
-	arm_func_end NitroSystem_SetFirstObject
-
-	arm_func_start NNS_FndAppendListObject
-NNS_FndAppendListObject: ; 0x02056330
-	stmdb sp!, {r3, lr}
-	ldr r2, [r0]
-	cmp r2, #0
-	bne _02056348
-	bl NitroSystem_SetFirstObject
-	ldmia sp!, {r3, pc}
-	arm_func_end NNS_FndAppendListObject
-_02056348:
-	ldrh ip, [r0, #0xa]
-	ldr r3, [r0, #4]
-	mov r2, #0
-	str r3, [r1, ip]
-	add r3, r1, ip
-	str r2, [r3, #4]
-	ldrh r2, [r0, #0xa]
-	ldr r3, [r0, #4]
-	add r2, r3, r2
-	str r1, [r2, #4]
-	str r1, [r0, #4]
-	ldrh r1, [r0, #8]
-	add r1, r1, #1
-	strh r1, [r0, #8]
-	ldmia sp!, {r3, pc}
-
-	arm_func_start NitroSystem_NNS_FndPrependListObject
-NitroSystem_NNS_FndPrependListObject: ; 0x02056384
-	stmdb sp!, {r3, lr}
-	ldr r2, [r0]
-	cmp r2, #0
-	bne _0205639C
-	bl NitroSystem_SetFirstObject
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_NNS_FndPrependListObject
-_0205639C:
-	ldrh r3, [r0, #0xa]
-	mov r2, #0
-	str r2, [r1, r3]
-	ldr r2, [r0]
-	add r3, r1, r3
-	str r2, [r3, #4]
-	ldrh r2, [r0, #0xa]
-	ldr r3, [r0]
-	str r1, [r3, r2]
-	str r1, [r0]
-	ldrh r1, [r0, #8]
-	add r1, r1, #1
-	strh r1, [r0, #8]
-	ldmia sp!, {r3, pc}
-
-	arm_func_start NNS_FndInsertListObject
-NNS_FndInsertListObject: ; 0x020563D4
-	stmdb sp!, {r3, lr}
-	cmp r1, #0
-	bne _020563EC
-	mov r1, r2
-	bl NNS_FndAppendListObject
-	ldmia sp!, {r3, pc}
-	arm_func_end NNS_FndInsertListObject
-_020563EC:
-	ldr r3, [r0]
-	cmp r1, r3
-	bne _02056404
-	mov r1, r2
-	bl NitroSystem_NNS_FndPrependListObject
-	ldmia sp!, {r3, pc}
-_02056404:
-	ldrh lr, [r0, #0xa]
-	ldr r3, [r1, lr]
-	add ip, r2, lr
-	str r3, [r2, lr]
-	str r1, [ip, #4]
-	add r3, r3, lr
-	str r2, [r3, #4]
-	ldrh r3, [r0, #0xa]
-	str r2, [r1, r3]
-	ldrh r1, [r0, #8]
-	add r1, r1, #1
-	strh r1, [r0, #8]
-	ldmia sp!, {r3, pc}
-
-	arm_func_start NNS_FndRemoveListObject
-NNS_FndRemoveListObject: ; 0x02056438
-	stmdb sp!, {r3, lr}
-	ldrh ip, [r0, #0xa]
-	ldr r3, [r1, ip]
-	add lr, r1, ip
-	cmp r3, #0
-	ldreq r1, [lr, #4]
-	streq r1, [r0]
-	ldrne r2, [lr, #4]
-	addne r1, r3, ip
-	strne r2, [r1, #4]
-	ldr r3, [lr, #4]
-	cmp r3, #0
-	ldreq r1, [lr]
-	streq r1, [r0, #4]
-	ldrneh r1, [r0, #0xa]
-	ldrne r2, [lr]
-	strne r2, [r3, r1]
-	mov r1, #0
-	str r1, [lr]
-	str r1, [lr, #4]
-	ldrh r1, [r0, #8]
-	sub r1, r1, #1
-	strh r1, [r0, #8]
-	ldmia sp!, {r3, pc}
-	arm_func_end NNS_FndRemoveListObject
-
-	arm_func_start NNS_FndGetNextListObject
-NNS_FndGetNextListObject: ; 0x02056498
-	cmp r1, #0
-	ldreq r0, [r0]
-	ldrneh r0, [r0, #0xa]
-	addne r0, r1, r0
-	ldrne r0, [r0, #4]
-	bx lr
-	arm_func_end NNS_FndGetNextListObject
-
-	arm_func_start NNS_FndGetPrevListObject
-NNS_FndGetPrevListObject: ; 0x020564B0
-	cmp r1, #0
-	ldreq r0, [r0, #4]
-	ldrneh r0, [r0, #0xa]
-	ldrne r0, [r1, r0]
-	bx lr
-	arm_func_end NNS_FndGetPrevListObject
-
-	arm_func_start NitroSystem_FindContainHeap
-NitroSystem_FindContainHeap: ; 0x020564C4
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r5, r1
-	mov r1, #0
-	mov r6, r0
-	bl NNS_FndGetNextListObject
-	movs r4, r0
-	beq _02056524
-	arm_func_end NitroSystem_FindContainHeap
-_020564E0:
-	ldr r0, [r4, #0x18]
-	cmp r0, r5
-	bhi _02056510
-	ldr r0, [r4, #0x1c]
-	cmp r5, r0
-	bhs _02056510
-	mov r1, r5
-	add r0, r4, #0xc
-	bl NitroSystem_FindContainHeap
-	cmp r0, #0
-	moveq r0, r4
-	ldmia sp!, {r4, r5, r6, pc}
-_02056510:
-	mov r0, r6
-	mov r1, r4
-	bl NNS_FndGetNextListObject
-	movs r4, r0
-	bne _020564E0
-_02056524:
-	mov r0, #0
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start NitroSystem_FindListContainHeap
-NitroSystem_FindListContainHeap: ; 0x0205652C
-	stmdb sp!, {r4, lr}
-	ldr r4, NitroSystem_FND_heapcommon_sRootList ; =MAIN_BSS_0210EAF4
-	mov r1, r0
-	mov r0, r4
-	bl NitroSystem_FindContainHeap
-	cmp r0, #0
-	addne r4, r0, #0xc
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-NitroSystem_FND_heapcommon_sRootList: .word MAIN_BSS_0210EAF4
-	arm_func_end NitroSystem_FindListContainHeap
-
-	arm_func_start NitroSystem_NNSi_FndInitHeapHead
-NitroSystem_NNSi_FndInitHeapHead: ; 0x02056554
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldrh r0, [sp, #8]
-	str r1, [r4]
-	mov ip, #0
-	str r2, [r4, #0x18]
-	bic r1, ip, #0xff
-	and r0, r0, #0xff
-	orr r2, r1, r0
-	str r3, [r4, #0x1c]
-	add r0, r4, #0xc
-	mov r1, #4
-	str r2, [r4, #0x20]
-	bl NNS_FndInitList
-	ldr r0, NitroSystem_FND_heapcommon_sRootListInitialized ; =MAIN_BSS_0210EAF0
-	ldr r0, [r0]
-	cmp r0, #0
-	bne _020565B4
-	ldr r0, _020565CC ; =MAIN_BSS_0210EAF4
-	mov r1, #4
-	bl NNS_FndInitList
-	ldr r0, NitroSystem_FND_heapcommon_sRootListInitialized ; =MAIN_BSS_0210EAF0
-	mov r1, #1
-	str r1, [r0]
-	arm_func_end NitroSystem_NNSi_FndInitHeapHead
-_020565B4:
-	mov r0, r4
-	bl NitroSystem_FindListContainHeap
-	mov r1, r4
-	bl NNS_FndAppendListObject
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-NitroSystem_FND_heapcommon_sRootListInitialized: .word MAIN_BSS_0210EAF0
-_020565CC: .word MAIN_BSS_0210EAF4
-
-	arm_func_start NNSi_FndFinalizeHeap
-NNSi_FndFinalizeHeap: ; 0x020565D0
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl NitroSystem_FindListContainHeap
-	mov r1, r4
-	bl NNS_FndRemoveListObject
-	ldmia sp!, {r4, pc}
-	arm_func_end NNSi_FndFinalizeHeap
-
-	arm_func_start NitroSystem_GetRegionOfMBlock
-NitroSystem_GetRegionOfMBlock: ; 0x020565E8
-	ldrh r2, [r1, #2]
-	add r3, r1, #0x10
-	mov r2, r2, asr #8
-	and r2, r2, #0x7f
-	mov r2, r2, lsl #0x10
-	sub r2, r1, r2, lsr #16
-	str r2, [r0]
-	ldr r1, [r1, #4]
-	add r1, r1, r3
-	str r1, [r0, #4]
-	bx lr
-	arm_func_end NitroSystem_GetRegionOfMBlock
-
-	arm_func_start NitroSystem_RemoveMBlock
-NitroSystem_RemoveMBlock: ; 0x02056614
-	ldr r2, [r1, #8]
-	ldr r1, [r1, #0xc]
-	cmp r2, #0
-	strne r1, [r2, #0xc]
-	streq r1, [r0]
-	cmp r1, #0
-	strne r2, [r1, #8]
-	streq r2, [r0, #4]
-	mov r0, r2
-	bx lr
-	arm_func_end NitroSystem_RemoveMBlock
-
-	arm_func_start NitroSystem_InsertMBlock
-NitroSystem_InsertMBlock: ; 0x0205663C
-	str r2, [r1, #8]
-	cmp r2, #0
-	ldrne r3, [r2, #0xc]
-	strne r1, [r2, #0xc]
-	ldreq r3, [r0]
-	streq r1, [r0]
-	str r3, [r1, #0xc]
-	cmp r3, #0
-	strne r1, [r3, #8]
-	streq r1, [r0, #4]
-	mov r0, r1
-	bx lr
-	arm_func_end NitroSystem_InsertMBlock
-
-	arm_func_start NitroSystem_InitMBlock
-NitroSystem_InitMBlock: ; 0x0205666C
-	ldr r3, [r0]
-	mov r2, #0
-	strh r1, [r3]
-	strh r2, [r3, #2]
-	ldr r1, [r0, #4]
-	add r0, r3, #0x10
-	sub r0, r1, r0
-	stmib r3, {r0, r2}
-	mov r0, r3
-	str r2, [r3, #0xc]
-	bx lr
-	arm_func_end NitroSystem_InitMBlock
-
-	arm_func_start NitroSystem_InitExpHeap
-NitroSystem_InitExpHeap: ; 0x02056698
-	stmdb sp!, {r3, r4, lr}
-	sub sp, sp, #0xc
-	mov r3, r1
-	mov r4, r0
-	str r2, [sp]
-	ldr r1, _02056704 ; =0x45585048
-	add r2, r4, #0x38
-	bl NitroSystem_NNSi_FndInitHeapHead
-	mov r0, #0
-	strh r0, [r4, #0x34]
-	bic r0, r0, #1
-	strh r0, [r4, #0x36]
-	ldr r1, [r4, #0x18]
-	add r0, sp, #4
-	str r1, [sp, #4]
-	ldr r2, [r4, #0x1c]
-	ldr r1, _02056708 ; =0x00004652
-	str r2, [sp, #8]
-	bl NitroSystem_InitMBlock
-	str r0, [r4, #0x24]
-	str r0, [r4, #0x28]
-	mov r1, #0
-	str r1, [r4, #0x2c]
-	mov r0, r4
-	str r1, [r4, #0x30]
-	add sp, sp, #0xc
-	ldmia sp!, {r3, r4, pc}
-	.align 2, 0
-_02056704: .word 0x45585048
-_02056708: .word 0x00004652
-	arm_func_end NitroSystem_InitExpHeap
-
-	arm_func_start sub_0205670C
-sub_0205670C: ; 0x0205670C
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0x18
-	mov r7, r0
-	add r0, sp, #0x10
-	mov r8, r1
-	mov r6, r2
-	mov r4, r3
-	bl NitroSystem_GetRegionOfMBlock
-	ldr r3, [sp, #0x14]
-	sub r5, r6, #0x10
-	add r2, r4, r6
-	mov r0, r7
-	mov r1, r8
-	str r5, [sp, #0x14]
-	str r3, [sp, #0xc]
-	str r2, [sp, #8]
-	bl NitroSystem_RemoveMBlock
-	ldr r2, [sp, #0x10]
-	ldr r1, [sp, #0x14]
-	mov r4, r0
-	sub r0, r1, r2
-	cmp r0, #0x14
-	strlo r2, [sp, #0x14]
-	blo _0205678C
-	ldr r1, _02056884 ; =0x00004652
-	add r0, sp, #0x10
-	bl NitroSystem_InitMBlock
-	mov r1, r0
-	mov r0, r7
-	mov r2, r4
-	bl NitroSystem_InsertMBlock
-	mov r4, r0
-	arm_func_end sub_0205670C
-_0205678C:
-	ldr r1, [sp, #0xc]
-	ldr r0, [sp, #8]
-	sub r0, r1, r0
-	cmp r0, #0x14
-	strlo r1, [sp, #8]
-	blo _020567C0
-	ldr r1, _02056884 ; =0x00004652
-	add r0, sp, #8
-	bl NitroSystem_InitMBlock
-	mov r1, r0
-	mov r0, r7
-	mov r2, r4
-	bl NitroSystem_InsertMBlock
-_020567C0:
-	ldr r0, [r7, #-4]
-	ldr r1, [sp, #0x14]
-	ldr r2, [sp, #8]
-	and r0, r0, #0xff
-	tst r0, #1
-	sub r2, r2, r1
-	beq _020567E4
-	mov r0, #0
-	bl MIi_CpuClear32
-_020567E4:
-	ldr r2, [sp, #8]
-	ldr r1, _02056888 ; =0x00005544
-	add r0, sp, #0
-	str r5, [sp]
-	str r2, [sp, #4]
-	bl NitroSystem_InitMBlock
-	mov r1, r0
-	ldrh r3, [r1, #2]
-	ldrh r2, [sp, #0x30]
-	add r0, r7, #8
-	bic r3, r3, #0x8000
-	strh r3, [r1, #2]
-	ldrh r3, [r1, #2]
-	mov r2, r2, lsl #0x1f
-	orr r2, r3, r2, lsr #16
-	strh r2, [r1, #2]
-	ldrh r2, [r1, #2]
-	ldr r3, [sp, #0x14]
-	bic r2, r2, #0x7f00
-	strh r2, [r1, #2]
-	sub r2, r1, r3
-	mov r2, r2, lsl #0x10
-	mov r2, r2, lsr #0x10
-	ldrh r3, [r1, #2]
-	mov r2, r2, lsl #0x19
-	orr r2, r3, r2, lsr #17
-	strh r2, [r1, #2]
-	ldrh r2, [r1, #2]
-	ldrh r3, [r7, #0x10]
-	bic r2, r2, #0xff
-	strh r2, [r1, #2]
-	ldrh r2, [r1, #2]
-	and r3, r3, #0xff
-	orr r2, r2, r3
-	strh r2, [r1, #2]
-	ldr r2, [r7, #0xc]
-	bl NitroSystem_InsertMBlock
-	mov r0, r6
-	add sp, sp, #0x18
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	.align 2, 0
-_02056884: .word 0x00004652
-_02056888: .word 0x00005544
-
-	arm_func_start NitroSystem_ExpHeap_AllocFromHead
-NitroSystem_ExpHeap_AllocFromHead: ; 0x0205688C
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	ldrh r4, [r0, #0x36]
-	mov r3, r1
-	ldr ip, [r0, #0x24]
-	and r1, r4, #1
-	mov r1, r1, lsl #0x10
-	movs r1, r1, lsr #0x10
-	mov r1, #0
-	moveq r6, #1
-	movne r6, #0
-	mov r4, r1
-	cmp ip, #0
-	sub lr, r1, #1
-	beq _0205691C
-	sub r2, r2, #1
-	mvn r5, r2
-	arm_func_end NitroSystem_ExpHeap_AllocFromHead
-_020568CC:
-	add r8, ip, #0x10
-	add r7, r2, r8
-	and sb, r5, r7
-	sub r7, sb, r8
-	ldr r8, [ip, #4]
-	add r7, r3, r7
-	cmp r8, r7
-	blo _02056910
-	cmp lr, r8
-	bls _02056910
-	mov r1, ip
-	mov lr, r8
-	mov r4, sb
-	cmp r6, #0
-	bne _0205691C
-	cmp r8, r3
-	beq _0205691C
-_02056910:
-	ldr ip, [ip, #0xc]
-	cmp ip, #0
-	bne _020568CC
-_0205691C:
-	cmp r1, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	mov r5, #0
-	mov r2, r4
-	add r0, r0, #0x24
-	str r5, [sp]
-	bl sub_0205670C
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-
-	arm_func_start NitroSystem_ExpHeap_AllocFromTail
-NitroSystem_ExpHeap_AllocFromTail: ; 0x02056940
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, lr}
-	ldrh r4, [r0, #0x36]
-	mov r3, r1
-	ldr ip, [r0, #0x28]
-	and r1, r4, #1
-	mov r1, r1, lsl #0x10
-	movs r1, r1, lsr #0x10
-	mov r1, #0
-	moveq r5, #1
-	movne r5, #0
-	mov r4, r1
-	cmp ip, #0
-	sub lr, r1, #1
-	beq _020569CC
-	sub r2, r2, #1
-	mvn r2, r2
-	arm_func_end NitroSystem_ExpHeap_AllocFromTail
-_02056980:
-	ldr r8, [ip, #4]
-	add sb, ip, #0x10
-	add r6, r8, sb
-	sub r6, r6, r3
-	and r7, r2, r6
-	subs r6, r7, sb
-	bmi _020569C0
-	cmp lr, r8
-	bls _020569C0
-	mov r1, ip
-	mov lr, r8
-	mov r4, r7
-	cmp r5, #0
-	bne _020569CC
-	cmp r8, r3
-	beq _020569CC
-_020569C0:
-	ldr ip, [ip, #8]
-	cmp ip, #0
-	bne _02056980
-_020569CC:
-	cmp r1, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-	mov r5, #1
-	mov r2, r4
-	add r0, r0, #0x24
-	str r5, [sp]
-	bl sub_0205670C
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-
-	arm_func_start NitroSystem_RecycleRegion
-NitroSystem_RecycleRegion: ; 0x020569F0
-	stmdb sp!, {r4, r5, r6, lr}
-	sub sp, sp, #8
-	mov r5, r1
-	ldr r2, [r5]
-	ldr r1, [r5, #4]
-	mov r6, r0
-	str r2, [sp]
-	str r1, [sp, #4]
-	ldr r1, [r6]
-	mov r4, #0
-	cmp r1, #0
-	beq _02056A64
-	ldr r0, [r5]
-	arm_func_end NitroSystem_RecycleRegion
-_02056A24:
-	cmp r1, r0
-	movlo r4, r1
-	blo _02056A58
-	ldr r0, [r5, #4]
-	cmp r1, r0
-	bne _02056A64
-	ldr r2, [r1, #4]
-	add r0, r1, #0x10
-	add r2, r2, r0
-	mov r0, r6
-	str r2, [sp, #4]
-	bl NitroSystem_RemoveMBlock
-	b _02056A64
-_02056A58:
-	ldr r1, [r1, #0xc]
-	cmp r1, #0
-	bne _02056A24
-_02056A64:
-	cmp r4, #0
-	beq _02056A98
-	ldr r2, [r4, #4]
-	add r1, r4, #0x10
-	ldr r0, [r5]
-	add r1, r2, r1
-	cmp r1, r0
-	bne _02056A98
-	mov r0, r6
-	mov r1, r4
-	str r4, [sp]
-	bl NitroSystem_RemoveMBlock
-	mov r4, r0
-_02056A98:
-	ldr r1, [sp, #4]
-	ldr r0, [sp]
-	sub r0, r1, r0
-	cmp r0, #0x10
-	addlo sp, sp, #8
-	movlo r0, #0
-	ldmloia sp!, {r4, r5, r6, pc}
-	ldr r1, _02056ADC ; =0x00004652
-	add r0, sp, #0
-	bl NitroSystem_InitMBlock
-	mov r1, r0
-	mov r0, r6
-	mov r2, r4
-	bl NitroSystem_InsertMBlock
-	mov r0, #1
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_02056ADC: .word 0x00004652
-
-	arm_func_start NitroSystem_NNS_FndCreateExpHeapEx
-NitroSystem_NNS_FndCreateExpHeapEx: ; 0x02056AE0
-	stmdb sp!, {r3, lr}
-	add r1, r1, r0
-	add r0, r0, #3
-	bic r1, r1, #3
-	bic r0, r0, #3
-	cmp r0, r1
-	bhi _02056B08
-	sub r3, r1, r0
-	cmp r3, #0x4c
-	bhs _02056B10
-	arm_func_end NitroSystem_NNS_FndCreateExpHeapEx
-_02056B08:
-	mov r0, #0
-	ldmia sp!, {r3, pc}
-_02056B10:
-	bl NitroSystem_InitExpHeap
-	ldmia sp!, {r3, pc}
-
-	arm_func_start NitroSystem_NNS_FndDestroyExpHeap
-NitroSystem_NNS_FndDestroyExpHeap: ; 0x02056B18
-	ldr ip, _02056B20 ; =NNSi_FndFinalizeHeap
-	bx ip
-	.align 2, 0
-_02056B20: .word NNSi_FndFinalizeHeap
-	arm_func_end NitroSystem_NNS_FndDestroyExpHeap
-
-	arm_func_start NitroSystem_NNS_FndAllocFromExpHeapEx
-NitroSystem_NNS_FndAllocFromExpHeapEx: ; 0x02056B24
-	stmdb sp!, {r3, lr}
-	cmp r1, #0
-	moveq r1, #1
-	add r1, r1, #3
-	cmp r2, #0
-	bic r1, r1, #3
-	blt _02056B48
-	bl NitroSystem_ExpHeap_AllocFromHead
-	ldmia sp!, {r3, pc}
-	arm_func_end NitroSystem_NNS_FndAllocFromExpHeapEx
-_02056B48:
-	rsb r2, r2, #0
-	bl NitroSystem_ExpHeap_AllocFromTail
-	ldmia sp!, {r3, pc}
-
-	arm_func_start NitroSystem_NNS_FndFreeToExpHeap
-NitroSystem_NNS_FndFreeToExpHeap: ; 0x02056B54
-	stmdb sp!, {r3, r4, r5, lr}
-	sub sp, sp, #8
-	sub r4, r1, #0x10
-	mov r5, r0
-	add r0, sp, #0
-	mov r1, r4
-	bl NitroSystem_GetRegionOfMBlock
-	mov r1, r4
-	add r0, r5, #0x2c
-	bl NitroSystem_RemoveMBlock
-	add r1, sp, #0
-	add r0, r5, #0x24
-	bl NitroSystem_RecycleRegion
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end NitroSystem_NNS_FndFreeToExpHeap
-
-	arm_func_start NitroSystem_NNS_FndGetTotalFreeSizeForExpHeap
-NitroSystem_NNS_FndGetTotalFreeSizeForExpHeap: ; 0x02056B90
-	ldr r2, [r0, #0x24]
-	mov r0, #0
-	cmp r2, #0
-	bxeq lr
-	arm_func_end NitroSystem_NNS_FndGetTotalFreeSizeForExpHeap
-_02056BA0:
-	ldr r1, [r2, #4]
-	ldr r2, [r2, #0xc]
-	add r0, r0, r1
-	cmp r2, #0
-	bne _02056BA0
-	bx lr
-
-	arm_func_start NitroSystem_NNS_FndGetAllocatableSizeForExpHeapEx
-NitroSystem_NNS_FndGetAllocatableSizeForExpHeapEx: ; 0x02056BB8
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r4, r0
-	mov r0, r1
-	bl abs
-	ldr lr, [r4, #0x24]
-	mov r3, #0
-	cmp lr, #0
-	sub ip, r3, #1
-	beq _02056C34
-	sub r4, r0, #1
-	mvn r5, r4
-	arm_func_end NitroSystem_NNS_FndGetAllocatableSizeForExpHeapEx
-_02056BE4:
-	add r2, lr, #0x10
-	ldr r0, [lr, #4]
-	add r1, r4, r2
-	and r1, r5, r1
-	add r0, r0, r2
-	cmp r1, r0
-	bhs _02056C28
-	sub r0, r0, r1
-	cmp r3, r0
-	sub r1, r1, r2
-	blo _02056C20
-	cmp r3, r0
-	bne _02056C28
-	cmp ip, r1
-	bls _02056C28
-_02056C20:
-	mov r3, r0
-	mov ip, r1
-_02056C28:
-	ldr lr, [lr, #0xc]
-	cmp lr, #0
-	bne _02056BE4
-_02056C34:
-	mov r0, r3
-	ldmia sp!, {r3, r4, r5, pc}
-
-	arm_func_start NitroSystem_InitFrameHeap
-NitroSystem_InitFrameHeap: ; 0x02056C3C
-	stmdb sp!, {r3, r4, lr}
-	sub sp, sp, #4
-	mov r3, r1
-	mov r4, r0
-	str r2, [sp]
-	ldr r1, _02056C80 ; =0x46524D48
-	add r2, r4, #0x30
-	bl NitroSystem_NNSi_FndInitHeapHead
-	ldr r0, [r4, #0x18]
-	mov r1, #0
-	str r0, [r4, #0x24]
-	ldr r2, [r4, #0x1c]
-	mov r0, r4
-	str r2, [r4, #0x28]
-	str r1, [r4, #0x2c]
-	add sp, sp, #4
-	ldmia sp!, {r3, r4, pc}
-	.align 2, 0
-_02056C80: .word 0x46524D48
-	arm_func_end NitroSystem_InitFrameHeap
-
-	arm_func_start NitroSystem_FrameHeap_AllocFromHead
-NitroSystem_FrameHeap_AllocFromHead: ; 0x02056C84
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r4, r0
-	ldr r3, [r4]
-	sub r0, r2, #1
-	mvn r2, r0
-	add r0, r0, r3
-	and r5, r2, r0
-	ldr r0, [r4, #4]
-	add r6, r1, r5
-	cmp r6, r0
-	movhi r0, #0
-	ldmhiia sp!, {r4, r5, r6, pc}
-	ldr r0, [r4, #-4]
-	sub r2, r6, r3
-	and r0, r0, #0xff
-	tst r0, #1
-	beq _02056CD4
-	mov r1, r3
-	mov r0, #0
-	bl MIi_CpuClear32
-	arm_func_end NitroSystem_FrameHeap_AllocFromHead
-_02056CD4:
-	mov r0, r5
-	str r6, [r4]
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start NitroSystem_FrameHeap_AllocFromTail
-NitroSystem_FrameHeap_AllocFromTail: ; 0x02056CE0
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r4, r0
-	ldr r3, [r4, #4]
-	sub r0, r2, #1
-	mvn r2, r0
-	sub r1, r3, r1
-	ldr r0, [r4]
-	and r5, r2, r1
-	cmp r5, r0
-	movlo r0, #0
-	ldmloia sp!, {r3, r4, r5, pc}
-	ldr r0, [r4, #-4]
-	sub r2, r3, r5
-	and r0, r0, #0xff
-	tst r0, #1
-	beq _02056D2C
-	mov r1, r5
-	mov r0, #0
-	bl MIi_CpuClear32
-	arm_func_end NitroSystem_FrameHeap_AllocFromTail
-_02056D2C:
-	mov r0, r5
-	str r5, [r4, #4]
-	ldmia sp!, {r3, r4, r5, pc}
-
-	arm_func_start NitroSystem_FrameHeap_FreeHead
-NitroSystem_FrameHeap_FreeHead: ; 0x02056D38
-	ldr r2, [r0, #0x18]
-	mov r1, #0
-	str r2, [r0, #0x24]
-	str r1, [r0, #0x2c]
-	bx lr
-	arm_func_end NitroSystem_FrameHeap_FreeHead
-
-	arm_func_start NitroSystem_FrameHeap_FreeTail
-NitroSystem_FrameHeap_FreeTail: ; 0x02056D4C
-	ldr r2, [r0, #0x2c]
-	cmp r2, #0
-	beq _02056D6C
-	arm_func_end NitroSystem_FrameHeap_FreeTail
-_02056D58:
-	ldr r1, [r0, #0x1c]
-	str r1, [r2, #8]
-	ldr r2, [r2, #0xc]
-	cmp r2, #0
-	bne _02056D58
-_02056D6C:
-	ldr r1, [r0, #0x1c]
-	str r1, [r0, #0x28]
-	bx lr
-
-	arm_func_start NNS_FndCreateFrmHeapEx
-NNS_FndCreateFrmHeapEx: ; 0x02056D78
-	stmdb sp!, {r3, lr}
-	add r1, r1, r0
-	add r0, r0, #3
-	bic r1, r1, #3
-	bic r0, r0, #3
-	cmp r0, r1
-	bhi _02056DA0
-	sub r3, r1, r0
-	cmp r3, #0x30
-	bhs _02056DA8
-	arm_func_end NNS_FndCreateFrmHeapEx
-_02056DA0:
-	mov r0, #0
-	ldmia sp!, {r3, pc}
-_02056DA8:
-	bl NitroSystem_InitFrameHeap
-	ldmia sp!, {r3, pc}
-
-	arm_func_start NNS_FndDestroyFrmHeap
-NNS_FndDestroyFrmHeap: ; 0x02056DB0
-	ldr ip, _02056DB8 ; =NNSi_FndFinalizeHeap
-	bx ip
-	.align 2, 0
-_02056DB8: .word NNSi_FndFinalizeHeap
-	arm_func_end NNS_FndDestroyFrmHeap
-
-	arm_func_start NNS_FndAllocFromFrmHeapEx
-NNS_FndAllocFromFrmHeapEx: ; 0x02056DBC
-	stmdb sp!, {r3, lr}
-	cmp r1, #0
-	moveq r1, #1
-	add r1, r1, #3
-	cmp r2, #0
-	bic r1, r1, #3
-	add r0, r0, #0x24
-	blt _02056DE4
-	bl NitroSystem_FrameHeap_AllocFromHead
-	ldmia sp!, {r3, pc}
-	arm_func_end NNS_FndAllocFromFrmHeapEx
-_02056DE4:
-	rsb r2, r2, #0
-	bl NitroSystem_FrameHeap_AllocFromTail
-	ldmia sp!, {r3, pc}
-
-	arm_func_start NNS_FndFreeToFrmHeap
-NNS_FndFreeToFrmHeap: ; 0x02056DF0
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r4, r1
-	mov r5, r0
-	tst r4, #1
-	beq _02056E08
-	bl NitroSystem_FrameHeap_FreeHead
-	arm_func_end NNS_FndFreeToFrmHeap
-_02056E08:
-	tst r4, #2
-	ldmeqia sp!, {r3, r4, r5, pc}
-	mov r0, r5
-	bl NitroSystem_FrameHeap_FreeTail
-	ldmia sp!, {r3, r4, r5, pc}
-
-	arm_func_start NNS_FndRecordStateForFrmHeap
-NNS_FndRecordStateForFrmHeap: ; 0x02056E1C
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	ldr r4, [r6, #0x24]
-	mov r5, r1
-	add r0, r6, #0x24
-	mov r1, #0x10
-	mov r2, #4
-	bl NitroSystem_FrameHeap_AllocFromHead
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	str r5, [r0]
-	str r4, [r0, #4]
-	ldr r1, [r6, #0x28]
-	str r1, [r0, #8]
-	ldr r1, [r6, #0x2c]
-	str r1, [r0, #0xc]
-	str r0, [r6, #0x2c]
-	mov r0, #1
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end NNS_FndRecordStateForFrmHeap
-
-	arm_func_start NNS_FndFreeByStateToFrmHeap
-NNS_FndFreeByStateToFrmHeap: ; 0x02056E6C
-	ldr r3, [r0, #0x2c]
-	cmp r1, #0
-	cmpne r3, #0
-	beq _02056E90
-	arm_func_end NNS_FndFreeByStateToFrmHeap
-_02056E7C:
-	ldr r2, [r3]
-	cmp r2, r1
-	ldrne r3, [r3, #0xc]
-	cmpne r3, #0
-	bne _02056E7C
-_02056E90:
-	cmp r3, #0
-	moveq r0, #0
-	bxeq lr
-	ldr r1, [r3, #4]
-	str r1, [r0, #0x24]
-	ldr r1, [r3, #8]
-	str r1, [r0, #0x28]
-	ldr r1, [r3, #0xc]
-	str r1, [r0, #0x2c]
-	mov r0, #1
-	bx lr
-
-	arm_func_start NitroSystem_IsValidArchiveBinary
-NitroSystem_IsValidArchiveBinary: ; 0x02056EBC
-	ldr r2, [r0]
-	ldr r1, _02056EF8 ; =0x4352414E
-	cmp r2, r1
-	movne r0, #0
-	bxne lr
-	ldrh r2, [r0, #4]
-	ldr r1, _02056EFC ; =0x0000FFFE
-	cmp r2, r1
-	movne r0, #0
-	bxne lr
-	ldrh r0, [r0, #6]
-	cmp r0, #0x100
-	moveq r0, #1
-	movne r0, #0
-	bx lr
-	.align 2, 0
-_02056EF8: .word 0x4352414E
-_02056EFC: .word 0x0000FFFE
-	arm_func_end NitroSystem_IsValidArchiveBinary
-
-	arm_func_start NitroSystem_NNS_FndMountArchive
-NitroSystem_NNS_FndMountArchive: ; 0x02056F00
-	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
-	sub sp, sp, #0x10
-	mov r4, r2
-	mov r7, #0
-	mov r6, r0
-	mov r0, r4
-	mov r5, r1
-	mov r8, r7
-	mov sb, r7
-	bl NitroSystem_IsValidArchiveBinary
-	cmp r0, #0
-	addeq sp, sp, #0x10
-	moveq r0, r7
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	ldrh r1, [r4, #0xc]
-	ldrh r2, [r4, #0xe]
-	mov r0, r7
-	add r1, r4, r1
-	cmp r2, #0
-	ble _02056F9C
-	ldr r3, _02057040 ; =0x464E5442
-	ldr ip, _02057044 ; =0x46494D47
-	sub lr, r3, #0xd0000
-	arm_func_end NitroSystem_NNS_FndMountArchive
-_02056F5C:
-	ldr sl, [r1]
-	cmp sl, lr
-	beq _02056F7C
-	cmp sl, ip
-	beq _02056F84
-	cmp sl, r3
-	moveq r8, r1
-	b _02056F88
-_02056F7C:
-	mov r7, r1
-	b _02056F88
-_02056F84:
-	mov sb, r1
-_02056F88:
-	ldr sl, [r1, #4]
-	add r0, r0, #1
-	add r1, r1, sl
-	cmp r0, r2
-	blt _02056F5C
-_02056F9C:
-	mov r0, r6
-	bl FS_InitArchive
-	str r4, [r6, #0x5c]
-	mov r0, r5
-	str r7, [r6, #0x60]
-	add r4, sb, #8
-	str r4, [r6, #0x64]
-	bl strlen
-	mov r2, r0
-	mov r0, r6
-	mov r1, r5
-	bl FS_RegisterArchiveName
-	cmp r0, #0
-	addeq sp, sp, #0x10
-	moveq r0, #0
-	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	add r0, r8, #8
-	sub r0, r0, r4
-	str r0, [sp]
-	ldr r0, [r8, #4]
-	add r2, r7, #0xc
-	sub r0, r0, #8
-	str r0, [sp, #4]
-	mov r0, #0
-	str r0, [sp, #8]
-	str r0, [sp, #0xc]
-	ldr r3, [r7, #4]
-	mov r0, r6
-	mov r1, r4
-	sub r2, r2, r4
-	sub r3, r3, #0xc
-	bl FS_LoadArchive
-	cmp r0, #0
-	addne sp, sp, #0x10
-	movne r0, #1
-	ldmneia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	mov r0, r6
-	bl FS_ReleaseArchiveName
-	mov r0, #0
-	add sp, sp, #0x10
-	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
-	.align 2, 0
-_02057040: .word 0x464E5442
-_02057044: .word 0x46494D47
-
-	arm_func_start NitroSystem_NNS_FndUnmountArchive
-NitroSystem_NNS_FndUnmountArchive: ; 0x02057048
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl FS_UnloadArchive
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r4, pc}
-	mov r0, r4
-	bl FS_ReleaseArchiveName
-	mov r0, #1
-	ldmia sp!, {r4, pc}
-	arm_func_end NitroSystem_NNS_FndUnmountArchive
-
-	arm_func_start NitroSystem_NNS_FndGetArchiveFileByName
-NitroSystem_NNS_FndGetArchiveFileByName: ; 0x02057070
-	stmdb sp!, {r3, r4, r5, lr}
-	sub sp, sp, #0x48
-	mov r5, r0
-	add r0, sp, #0
-	mov r4, #0
-	bl FS_InitFile
-	add r0, sp, #0
-	mov r1, r5
-	bl FS_OpenFile
-	cmp r0, #0
-	beq _020570B4
-	ldr r0, [sp, #8]
-	ldr r1, [sp, #0x24]
-	ldr r2, [r0, #0x64]
-	add r0, sp, #0
-	add r4, r2, r1
-	bl FS_CloseFile
-	arm_func_end NitroSystem_NNS_FndGetArchiveFileByName
-_020570B4:
-	mov r0, r4
-	add sp, sp, #0x48
-	ldmia sp!, {r3, r4, r5, pc}
-
-	arm_func_start NitroSystem_NNS_FndGetArchiveFileByIndex
-NitroSystem_NNS_FndGetArchiveFileByIndex: ; 0x020570C0
-	ldr r3, [r0, #0x60]
-	mov ip, #0
-	ldrh r2, [r3, #8]
-	cmp r1, r2
-	bhs _020570E4
-	add r1, r3, r1, lsl #3
-	ldr r2, [r0, #0x64]
-	ldr r0, [r1, #0xc]
-	add ip, r2, r0
-	arm_func_end NitroSystem_NNS_FndGetArchiveFileByIndex
-_020570E4:
-	mov r0, ip
-	bx lr
-
-	arm_func_start NitroSystem_NNS_FndOpenArchiveFileByIndex
-NitroSystem_NNS_FndOpenArchiveFileByIndex: ; 0x020570EC
-	stmdb sp!, {r3, lr}
-	sub sp, sp, #8
-	ldr r3, [r1, #0x60]
-	mov ip, #0
-	ldrh r3, [r3, #8]
-	cmp r2, r3
-	bhs _02057120
-	add r3, sp, #0
-	str r1, [sp]
-	str r2, [sp, #4]
-	ldmia r3, {r1, r2}
-	bl FS_OpenFileFast
-	mov ip, r0
-	arm_func_end NitroSystem_NNS_FndOpenArchiveFileByIndex
-_02057120:
-	mov r0, ip
-	add sp, sp, #8
-	ldmia sp!, {r3, pc}
-
     .section .init, 4
 
 	arm_func_start sub_02084038
@@ -112803,11 +111658,3 @@ MAIN_BSS_0210EADC: ; 0x0210EADC
     .global MAIN_BSS_0210EAE0
 MAIN_BSS_0210EAE0: ; 0x0210EAE0
     .space 0x10
-
-    .global MAIN_BSS_0210EAF0
-MAIN_BSS_0210EAF0: ; 0x0210EAF0
-    .space 0x4
-
-    .global MAIN_BSS_0210EAF4
-MAIN_BSS_0210EAF4: ; 0x0210EAF4
-    .space 0xC

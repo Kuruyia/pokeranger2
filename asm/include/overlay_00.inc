@@ -335,10 +335,10 @@
 .public sub_02044C9C
 .public sub_02045A18
 .public sub_02046040
-.public NitroSystem_NNS_FndMountArchive
-.public NitroSystem_NNS_FndUnmountArchive
-.public NitroSystem_NNS_FndGetArchiveFileByIndex
-.public NitroSystem_NNS_FndOpenArchiveFileByIndex
+.public NNS_FndMountArchive
+.public NNS_FndUnmountArchive
+.public NNS_FndGetArchiveFileByIndex
+.public NNS_FndOpenArchiveFileByIndex
 .public NNS_GfdAllocLnkTexVram
 .public NNS_GfdFreeLnkTexVram
 .public NNS_GfdResetLnkTexVramState
