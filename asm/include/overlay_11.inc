@@ -148,10 +148,10 @@
 .public sub_0204D5A8
 .public sub_0204D618
 .public sub_0204E710
-.public sub_0204EB08
-.public sub_0204EB88
-.public sub_02050C50
-.public sub_02051890
+.public CPS_SetSslHandshakePriority
+.public CPS_SetRootCa
+.public CPS_SslAddRandomSeed
+.public CPS_SetSsl
 .public WCM_Init
 .public WCM_Finish
 .public WCM_StartupAsync

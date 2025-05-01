@@ -31561,7 +31561,7 @@ ov11_02136A8C: ; 0x02136A8C
 	add r0, r4, #0x1d4
 	add r0, r0, #0x1800
 	mov r1, #0x20
-	bl sub_02050C50
+	bl CPS_SslAddRandomSeed
 	arm_func_end ov11_02136A8C
 _02136AC0:
 	add r0, r4, #0x3f8
@@ -31727,9 +31727,9 @@ ov11_02136C58: ; 0x02136C58
 	str r1, [r5, #0x800]
 	mov r1, #0xc
 	str r5, [r4, #0xc]
-	bl sub_0204EB88
+	bl CPS_SetRootCa
 	mov r0, #1
-	bl sub_02051890
+	bl CPS_SetSsl
 	arm_func_end ov11_02136C58
 _02136D0C:
 	add r0, sl, #0x1100
@@ -36752,7 +36752,7 @@ ov11_0213B1BC: ; 0x0213B1BC
 	str r6, [r1]
 	bl ov11_0213B234
 	mov r0, r4
-	bl sub_0204EB08
+	bl CPS_SetSslHandshakePriority
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _0213B218: .word OVERLAY11_BSS_02169DB0
@@ -86820,7 +86820,7 @@ ov11_0215F200: ; 0x0215F200
 	bl OS_GetLowEntropyData
 	ldr r0, _0215F21C ; =OVERLAY11_BSS_0216CE48
 	mov r1, #0x20
-	bl sub_02050C50
+	bl CPS_SslAddRandomSeed
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0215F21C: .word OVERLAY11_BSS_0216CE48

@@ -522,3 +522,13 @@
 .public WCM_SendDCFData
 .public WCM_SetRecvDCFCallback
 .public WCM_GetApMacAddress
+.public CPSi_SslConnect
+.public CPSi_SslRead
+.public CPSi_SslConsume
+.public CPSi_SslGetLength
+.public CPSi_SslWrite2
+.public CPSi_SslShutdown
+.public CPSi_SslClose
+.public CPS_SetSsl
+.public CPSi_SslPeriodical
+.public CPSi_SslCleanup
