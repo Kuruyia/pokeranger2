@@ -31603,7 +31603,7 @@ ov11_02136B04: ; 0x02136B04
 	ldr r2, [r1, #0x9d0]
 	add r0, r0, #0x1000
 	str r2, [r1, #0x184]
-	bl sub_0204CBF0
+	bl CPS_SocRegister
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02136B54: .word 0x00000B68
@@ -31617,7 +31617,7 @@ ov11_02136B5C: ; 0x02136B5C
 	ldr r0, [r0, #0x124]
 	bx ip
 	.align 2, 0
-_02136B6C: .word sub_0204E710
+_02136B6C: .word CPS_Resolve
 	arm_func_end ov11_02136B5C
 
 	arm_func_start ov11_02136B70
@@ -31710,7 +31710,7 @@ ov11_02136C58: ; 0x02136C58
 	addeq sp, sp, #0x14
 	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	str r6, [r0, #0x12c]
-	bl sub_0204CCA8
+	bl CPS_SocUse
 	add r0, sl, #0x1000
 	ldr r0, [r0, #0x130]
 	cmp r0, #1
@@ -31736,15 +31736,15 @@ _02136D0C:
 	ldrh r1, [r0, #0x34]
 	mov r2, r6
 	mov r0, #0
-	bl sub_0204CC48
-	bl sub_0204CDE4
+	bl CPS_SocBind
+	bl CPS_TcpConnect
 	cmp r0, #0
 	add r0, sl, #0x1000
 	beq _02136D48
 	mov r1, #3
 	str r1, [r0, #0x20]
-	bl sub_0204CCDC
-	bl sub_0204CC04
+	bl CPS_SocRelease
+	bl CPS_SocUnRegister
 	add sp, sp, #0x14
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _02136D48:
@@ -31753,7 +31753,7 @@ _02136D48:
 	bl strlen
 	mov r1, r0
 	mov r0, r4
-	bl sub_0204D510
+	bl CPS_SocWrite
 	str r0, [sp, #0x10]
 	cmp r0, #0
 	bgt _02136D7C
@@ -31762,7 +31762,7 @@ _02136D48:
 	str r1, [r0, #0x20]
 	b _02136F48
 _02136D7C:
-	bl sub_0204D618
+	bl CPS_SocFlush
 	mov r0, sl
 	bl ov11_02136A8C
 	cmp r0, #0
@@ -31786,7 +31786,7 @@ _02136DA0:
 	add r6, r0, #0x1800
 	add r4, sl, #0x1000
 _02136DD4:
-	ldr r0, _02136F6C ; =MAIN_BSS_0210D128
+	ldr r0, _02136F6C ; =CPSMyIp
 	ldr r0, [r0]
 	cmp r0, #0
 	bne _02136DF4
@@ -31795,7 +31795,7 @@ _02136DD4:
 	str r1, [r0, #0x20]
 	b _02136F48
 _02136DF4:
-	bl sub_0204D5A8
+	bl CPS_SocGetLength
 	str r0, [sp, #0x10]
 	cmp r0, #0
 	blt _02136F24
@@ -31804,7 +31804,7 @@ _02136DF4:
 	str r0, [sp, #8]
 	add r0, sp, #0x10
 	str r1, [sp, #4]
-	bl sub_0204D008
+	bl CPS_SocRead
 	cmp r0, #0
 	beq _02136F24
 	ldmib r7, {r1, r2}
@@ -31838,11 +31838,11 @@ _02136E8C:
 	ldr r0, [sp, #0x10]
 	cmp r0, sb
 	bls _02136EA0
-	bl sub_0204D0FC
+	bl CPS_SocConsume
 	b _02136F24
 _02136EA0:
 	mov r0, sb
-	bl sub_0204D0FC
+	bl CPS_SocConsume
 _02136EA8:
 	ldr r1, [r4, #0xa30]
 	cmp r1, #0
@@ -31877,27 +31877,27 @@ _02136F04:
 	str r1, [r0, #0x20]
 	b _02136F48
 _02136F24:
-	bl sub_0204CE74
-	bl sub_0204CEB0
-	bl sub_0204CCDC
-	bl sub_0204CC04
+	bl CPS_TcpShutdown
+	bl CPS_TcpClose
+	bl CPS_SocRelease
+	bl CPS_SocUnRegister
 	add r0, sl, #0x1000
 	mov r1, #8
 	str r1, [r0, #0x20]
 	add sp, sp, #0x14
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 _02136F48:
-	bl sub_0204CE74
-	bl sub_0204CEB0
-	bl sub_0204CCDC
-	bl sub_0204CC04
+	bl CPS_TcpShutdown
+	bl CPS_TcpClose
+	bl CPS_SocRelease
+	bl CPS_SocUnRegister
 	add sp, sp, #0x14
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
 _02136F60: .word 0x0000EA60
 _02136F64: .word ov11_02137358
 _02136F68: .word PTR_ptr_null_overlay_11_02167838_overlay_11_02166a00
-_02136F6C: .word MAIN_BSS_0210D128
+_02136F6C: .word CPSMyIp
 _02136F70: .word 0x000082EA
 
 	arm_func_start ov11_02136F74
@@ -41872,7 +41872,7 @@ ov11_0213DEDC: ; 0x0213DEDC
 	pop {r3, r4, r5, pc}
 	thumb_func_end ov11_0213DEDC
 _0213DF0E:
-	ldr r5, _0213DF30 ; =MAIN_BSS_0210D128
+	ldr r5, _0213DF30 ; =CPSMyIp
 	ldr r0, [r5]
 	cmp r0, #0
 	bne _0213DF24
@@ -41889,7 +41889,7 @@ _0213DF24:
 	.align 2, 0
 _0213DF28: .word DAT_overlay_11_02167d94
 _0213DF2C: .word DAT_overlay_11_02167d9c
-_0213DF30: .word MAIN_BSS_0210D128
+_0213DF30: .word CPSMyIp
 
 	thumb_func_start ov11_0213DF34
 ov11_0213DF34: ; 0x0213DF34
