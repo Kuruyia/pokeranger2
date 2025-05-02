@@ -27901,11 +27901,11 @@ _0213397C:
 	arm_func_start ov11_02133984
 ov11_02133984: ; 0x02133984
 	stmdb sp!, {r3, lr}
-	bl sub_020490AC
+	bl SOCL_CalmDown
 	cmp r0, #0
 	movne r0, #0
 	ldmneia sp!, {r3, pc}
-	bl sub_0204998C
+	bl SOC_Cleanup
 	cmp r0, #0
 	mvnne r1, #0x26
 	cmpne r0, r1
@@ -29204,11 +29204,11 @@ ov11_02134A1C: ; 0x02134A1C
 	mov r1, r6
 	mov r2, r4
 	bl ov11_02134BEC
-	ldr r1, _02134A7C ; =MAIN_BSS_0210CFEC
+	ldr r1, _02134A7C ; =SOCLiYieldWait
 	mov r2, #4
 	mov r0, r4
 	str r2, [r1]
-	bl sub_02049818
+	bl SOC_Startup
 	cmp r0, #0
 	moveq r0, #0xc
 	ldmeqia sp!, {r4, r5, r6, pc}
@@ -29217,14 +29217,14 @@ ov11_02134A1C: ; 0x02134A1C
 	mov r0, #0x11
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
-_02134A7C: .word MAIN_BSS_0210CFEC
+_02134A7C: .word SOCLiYieldWait
 	arm_func_end ov11_02134A1C
 
 	arm_func_start ov11_02134A80
 ov11_02134A80: ; 0x02134A80
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_0204971C
+	bl SOC_GetHostID
 	cmp r0, #0
 	beq _02134AB8
 	mov r0, r4
@@ -29322,11 +29322,11 @@ ov11_02134BA8: ; 0x02134BA8
 	arm_func_start ov11_02134BBC
 ov11_02134BBC: ; 0x02134BBC
 	stmdb sp!, {r3, lr}
-	bl sub_020490AC
+	bl SOCL_CalmDown
 	cmp r0, #0
 	movne r0, #0xb
 	ldmneia sp!, {r3, pc}
-	bl sub_0204998C
+	bl SOC_Cleanup
 	cmp r0, #0
 	mvnne r1, #0x26
 	cmpne r0, r1
@@ -29474,7 +29474,7 @@ ov11_02134D54: ; 0x02134D54
 	str r0, [sp]
 	add r0, sp, #4
 	add r1, sp, #0
-	bl sub_02049754
+	bl SOC_SetResolver
 	add sp, sp, #8
 	ldmia sp!, {r4, pc}
 	arm_func_end ov11_02134D54
@@ -41864,7 +41864,7 @@ ov11_0213DEDC: ; 0x0213DEDC
 	ldr r1, _0213DF28 ; =DAT_overlay_11_02167d94
 	str r0, [r1, #0x20]
 	ldr r0, _0213DF2C ; =DAT_overlay_11_02167d9c
-	blx sub_02049818
+	blx SOC_Startup
 	cmp r0, #0
 	bge _0213DF0E
 	mov r0, #0
@@ -41894,7 +41894,7 @@ _0213DF30: .word CPSMyIp
 	thumb_func_start ov11_0213DF34
 ov11_0213DF34: ; 0x0213DF34
 	push {r3, lr}
-	blx sub_0204998C
+	blx SOC_Cleanup
 	cmp r0, #0
 	bge _0213DF44
 	mov r0, #0
@@ -41966,7 +41966,7 @@ ov11_0213DF94: ; 0x0213DF94
 	ldr r4, [sp, #0x10]
 	strb r5, [r4]
 	str r4, [sp]
-	blx sub_020495CC
+	blx SOC_RecvFrom
 	pop {r3, r4, r5, pc}
 	.align 2, 0
 	thumb_func_end ov11_0213DF94
@@ -42006,7 +42006,7 @@ ov11_0213DFA8: ; 0x0213DFA8
 	add r0, sp, #0
 	mov r1, #1
 	add r3, r4, #0
-	blx sub_02049A08
+	blx SOC_Poll
 	add sp, #8
 	pop {r4, r5, r6, pc}
 	nop
@@ -42020,7 +42020,7 @@ ov11_0213DFFC: ; 0x0213DFFC
 	ldr r4, [sp, #0x10]
 	strb r5, [r4]
 	str r4, [sp]
-	blx sub_02049680
+	blx SOC_SendTo
 	pop {r3, r4, r5, pc}
 	thumb_func_end ov11_0213DFFC
 
@@ -42035,7 +42035,7 @@ thunk_FUN_020494f4: ; 0x0213E010
 	ldr r3, _0213E014 ; =FUN_020494F4
 	bx r3
 	.align 2, 0
-_0213E014: .word sub_020494F4
+_0213E014: .word SOC_Socket
 	thumb_func_end thunk_FUN_020494f4
 
 	thumb_func_start ov11_0213E018
@@ -42044,7 +42044,7 @@ ov11_0213E018: ; 0x0213E018
 	strb r2, [r1]
 	bx r3
 	nop
-_0213E020: .word sub_02049520
+_0213E020: .word SOC_Bind
 	thumb_func_end ov11_0213E018
 
 	thumb_func_start ov11_0213E024
@@ -42052,7 +42052,7 @@ ov11_0213E024: ; 0x0213E024
 	ldr r3, _0213E028 ; =FUN_02049710
 	bx r3
 	.align 2, 0
-_0213E028: .word sub_02049710
+_0213E028: .word SOC_Close
 	thumb_func_end ov11_0213E024
 
 	thumb_func_start ov11_0213E02C
@@ -45115,7 +45115,7 @@ _0213F6CE:
 	mov r1, #1
 	str r1, [r0, #0x20]
 	ldr r0, _0213F70C ; =DAT_overlay_11_02167e4c
-	blx sub_02049818
+	blx SOC_Startup
 	cmp r0, #0
 	bge _0213F6F0
 	mov r5, #1
@@ -45186,7 +45186,7 @@ _0213F75C:
 	beq _0213F76C
 	mov r1, #0
 	str r1, [r0, #0x24]
-	blx sub_0204998C
+	blx SOC_Cleanup
 _0213F76C:
 	pop {r3, r4, r5, r6, r7, pc}
 	nop
@@ -45771,7 +45771,7 @@ ov11_0213FBD4: ; 0x0213FBD4
 	str r1, [sp]
 	add r1, r3, #0
 	mov r3, #0
-	blx sub_02049680
+	blx SOC_SendTo
 	cmp r0, #0
 	bge _0213FBEA
 	mov r0, #3
@@ -45796,9 +45796,9 @@ ov11_0213FBEC: ; 0x0213FBEC
 	ldr r1, _0213FC24 ; =0x000001E6
 	add r4, r2, #0
 	strh r1, [r0, #6]
-	blx sub_02049258
+	blx SOCL_GetHostID
 	add r1, sp, #4
-	blx sub_020499E8
+	blx SOC_U32to4U8
 	add r0, r5, #0
 	add r1, sp, #8
 	add r2, sp, #4
@@ -47142,7 +47142,7 @@ _021405CE:
 	mov r0, #2
 	add r1, r0, #0
 	mov r2, #0
-	blx sub_020494F4
+	blx SOC_Socket
 	add r4, r0, #0
 	bpl _021405E6
 	mov r0, #1
@@ -47164,7 +47164,7 @@ _021405E6:
 	strh r3, [r2, #0x16]
 	str r1, [sp, #0x28]
 	add r1, r5, #0
-	blx sub_02049520
+	blx SOC_Bind
 	str r0, [sp, #8]
 	cmp r0, #0
 	bge _02140614
@@ -47185,7 +47185,7 @@ _0214061C:
 	cmp r0, r1
 	blo _02140638
 	add r0, r4, #0
-	blx sub_02049710
+	blx SOC_Close
 	mov r0, #2
 	mvn r0, r0
 	str r0, [sp, #8]
@@ -47205,7 +47205,7 @@ _02140638:
 	add r0, r4, #0
 	lsl r2, r2, #0xa
 	mov r3, #4
-	blx sub_020495CC
+	blx SOC_RecvFrom
 	cmp r0, #0
 	ble _02140736
 	ldr r0, _021408A4 ; =OVERLAY11_BSS_0216BA84
@@ -47248,7 +47248,7 @@ _021406A8:
 	cmp r0, r1
 	blo _021406C4
 	add r0, r4, #0
-	blx sub_02049710
+	blx SOC_Close
 	mov r0, #3
 	mvn r0, r0
 	str r0, [sp, #8]
@@ -47262,7 +47262,7 @@ _021406C4:
 	add r0, r4, #0
 	lsl r2, r2, #0xa
 	mov r3, #4
-	blx sub_020495CC
+	blx SOC_RecvFrom
 	cmp r0, #0
 	ble _02140738
 	ldr r0, _021408A4 ; =OVERLAY11_BSS_0216BA84
@@ -47375,7 +47375,7 @@ _021407AE:
 	add r0, r4, #0
 	lsl r2, r2, #0xa
 	mov r3, #4
-	blx sub_020495CC
+	blx SOC_RecvFrom
 	cmp r0, #0
 	ble _02140804
 	ldr r0, _021408A4 ; =OVERLAY11_BSS_0216BA84
@@ -47424,7 +47424,7 @@ _02140804:
 	cmp r0, #0xa
 	blt _0214082E
 	add r0, r4, #0
-	blx sub_02049710
+	blx SOC_Close
 	mov r0, #1
 	mvn r0, r0
 	str r0, [sp, #8]
@@ -47528,7 +47528,7 @@ _0214090C:
 	cmp r4, #0
 	beq _02140916
 	add r0, r4, #0
-	blx sub_02049710
+	blx SOC_Close
 _02140916:
 	ldr r0, _0214092C ; =OVERLAY11_BSS_0216AD50
 	ldr r0, [r0, #0x10]
@@ -86579,12 +86579,12 @@ ov11_0215EEB0: ; 0x0215EEB0
 	moveq r7, #7
 	add r1, sp, #0
 	add r0, r6, r7
-	bl sub_02049998
+	bl SOC_InetAtoN
 	cmp r0, #0
 	ldrne r0, [sp]
 	bne _0215EF38
 	add r0, r6, r7
-	bl sub_02049128
+	bl SOCL_Resolve
 	cmp r0, #0
 	moveq r0, #0
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
@@ -86833,7 +86833,7 @@ ov11_0215F220: ; 0x0215F220
 	mov r0, #2
 	mov r1, #1
 	mov r2, #0
-	bl sub_020494F4
+	bl SOC_Socket
 	movs r4, r0
 	bmi _0215F294
 	ldr r0, [r5, #8]
@@ -86851,11 +86851,11 @@ ov11_0215F220: ; 0x0215F220
 	ldr r1, [r5, #0x20]
 	str r2, [r1, #0x810]
 	ldr r1, [r5, #0x20]
-	bl sub_02049ABC
+	bl SOCL_EnableSsl
 	cmp r0, #0
 	bge _0215F294
 	mov r0, r4
-	bl sub_02049710
+	bl SOC_Close
 	mvn r4, #0
 	arm_func_end ov11_0215F220
 _0215F294:
@@ -86870,7 +86870,7 @@ ov11_0215F2A0: ; 0x0215F2A0
 	mov r0, r1
 	bx ip
 	.align 2, 0
-_0215F2AC: .word sub_02049710
+_0215F2AC: .word SOC_Close
 	arm_func_end ov11_0215F2A0
 
 	arm_func_start ov11_0215F2B0
@@ -86878,7 +86878,7 @@ ov11_0215F2B0: ; 0x0215F2B0
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r1
 	mov r0, r6
-	bl sub_02049710
+	bl SOC_Close
 	mvn r4, #0x19
 	cmp r0, r4
 	ldmneia sp!, {r4, r5, r6, pc}
@@ -86888,7 +86888,7 @@ _0215F2D0:
 	mov r0, r5
 	bl OS_Sleep
 	mov r0, r6
-	bl sub_02049710
+	bl SOC_Close
 	cmp r0, r4
 	beq _0215F2D0
 	ldmia sp!, {r4, r5, r6, pc}
@@ -86913,7 +86913,7 @@ ov11_0215F2EC: ; 0x0215F2EC
 	strb lr, [sp, #1]
 	strh r3, [sp, #2]
 	str r2, [sp, #4]
-	bl sub_0204954C
+	bl SOC_Connect
 	cmp r0, #0
 	bge _0215F358
 	ldr r0, [r4, #4]
@@ -86938,7 +86938,7 @@ ov11_0215F368: ; 0x0215F368
 	mov r1, r2
 	mov r2, r3
 	ldr r3, [sp, #8]
-	bl sub_020495A8
+	bl SOC_Recv
 	cmp r0, #0
 	ldmgeia sp!, {r4, pc}
 	ldr r1, [r4, #4]
@@ -86962,7 +86962,7 @@ ov11_0215F3B4: ; 0x0215F3B4
 	mov r1, r2
 	mov r2, r3
 	ldr r3, [sp, #8]
-	bl sub_0204965C
+	bl SOC_Send
 	cmp r0, #0
 	ldmgeia sp!, {r4, pc}
 	ldr r1, [r4, #4]
@@ -86985,7 +86985,7 @@ ov11_0215F400: ; 0x0215F400
 	ldmltia sp!, {r3, pc}
 	mov r0, r1
 	mov r1, #2
-	bl sub_02049704
+	bl SOC_Shutdown
 	ldmia sp!, {r3, pc}
 	arm_func_end ov11_0215F400
 
@@ -87384,7 +87384,7 @@ _0215F8EC:
 	mov r1, #1
 	mov r3, #0
 	str r6, [sp, #0x28]
-	bl sub_02049A08
+	bl SOC_Poll
 	cmp r0, #0
 	movle r0, #0
 	strle r0, [sp, #8]
