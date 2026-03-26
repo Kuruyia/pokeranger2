@@ -4,6 +4,8 @@ revision = 8220c8bdec2e8b5252ee710cf3cc0c148228a03a
 depth = 1
 directory = NitroDWC-2.2.30008
 
+diff_files = NitroDWC_patch/0000-downgrade_version.patch
+
 [provide]
 dependency_names = NitroDWC
 

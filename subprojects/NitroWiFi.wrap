@@ -4,6 +4,9 @@ revision = 0bb999007564dbe913cb8f6df8bfb27ac775221f
 depth = 1
 directory = NitroWiFi-2.1.30003
 
+patch_directory = NitroWiFi_overlay
+diff_files = NitroWiFi_patch/0000-downgrade_version.patch
+
 [provide]
 dependency_names = NitroWiFi
 

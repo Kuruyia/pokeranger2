@@ -4,6 +4,8 @@ revision = 507acff1585505bdac3f996551ca5123f8408073
 depth = 1
 directory = NitroSystem-071126.1
 
+diff_files = NitroSystem_patch/0000-libnnssnd_fix_NNS_SndArcInit.patch, NitroSystem_patch/0001-libnnssnd_fix_NNS_SndArcInitOnMemory.patch, NitroSystem_patch/0002-libnnssnd_fix_NNS_SndArcReadFile.patch, NitroSystem_patch/0003-libnnsgfd_remove_NNSi_GfdMergeAllFreeBlocks.patch, NitroSystem_patch/0004-libnnsgfd_fix_NNSi_GfdFreeLnkVram.patch
+
 [provide]
 dependency_names = NitroSystem
 
