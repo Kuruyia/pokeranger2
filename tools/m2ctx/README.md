@@ -16,8 +16,8 @@ Your file may look like this:
 #include "pokemon.h"
 ```
 
-Run `./tools/m2ctx/m2ctx.sh src/npc_trade.c` to generate a context file, which will be output as `ctx.c`.
-Copy the contents of `ctx.c` into the "Context" section of the scratch.
+Run `./tools/m2ctx/m2ctx.sh src/npc_trade.c` to generate a context file, which will be output as `ctx.cpp`.
+Copy the contents of `ctx.cpp` into the "Context" section of the scratch.
 
 ### Adding imports
 

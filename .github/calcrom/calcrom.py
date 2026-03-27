@@ -71,8 +71,8 @@ class CLI(argparse.Namespace):
                             sizes['pointers']['properly-linked'] += section.num_relocations()
             except ELFError:
                 pass
-    
-        print('Analysis of platinum.us binary:')
+
+        print('Analysis of ranger2.us binary:')
         for key in 'code', 'data':
             total = sum(sizes[cmd][key] for cmd in ('src', 'asm'))
             print(f'  {total} total bytes of {key}')

@@ -11,8 +11,7 @@ on:
 
 env:
   LM_LICENSE_FILE: "${{ github.workspace }}/tools/cw/license.dat"
-  BUILD: /var/tmp/pokeplatinum
-  WINEARCH: win32
+  BUILD: /var/tmp/pokeranger2
 
 jobs:
   build:
@@ -22,16 +21,14 @@ jobs:
     steps:
       - name: Install Software
         run: |
-          sudo dpkg --add-architecture i386
-          sudo mkdir -pm755 /etc/apt/keyrings
-          sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
-          sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/$(lsb_release -cs)/winehq-$(lsb_release -cs).sources
           sudo apt-get update -y
-          sudo apt-get install -y bison flex g++ gcc-arm-none-eabi git make ninja-build pkg-config python3
-          sudo apt-get install -y --install-recommends winehq-stable
+          sudo apt-get install -y --no-install-recommends bison flex g++ gcc-arm-none-eabi git make ninja-build pkg-config python3 wget xz-utils
 
       - name: Checkout Repo
         uses: actions/checkout@v2
+
+      - name: Install Metroskrew
+        run: sudo make skrew
 
       - name: Configure Repo
         run: make configure
@@ -50,7 +47,7 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         run: |
           mkdir -p xmap
-          cp "$BUILD"/*.xMAP xmap/platinumus.xMAP
+          cp "$BUILD"/*.xMAP xmap/ranger2.us.xMAP
           echo "XMAP_COMMIT_MSG=$( git log --format=%s ${GITHUB_SHA} )" >> $GITHUB_ENV
 
       - name: Update xMAP
@@ -70,6 +67,6 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: pokeplatinum-failure-${{ github.run_id }}
+          name: pokeranger2-failure-${{ github.run_id }}
           path: failure.tar.gz
           retention-days: 1

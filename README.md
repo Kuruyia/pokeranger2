@@ -1,11 +1,9 @@
-# Pokémon Platinum
+# Pokémon Ranger: Shadows of Almia
 
-This is a WIP decompilation of Pokémon Platinum. For instructions on how to set up the repository, please read [`INSTALL.md`](INSTALL.md).
-
-If you are interested in contributing, please read [`CONTRIBUTING.md`](/CONTRIBUTING.md).
+This is a WIP decompilation of Pokémon Ranger: Shadows of Almia.
 
 This repository builds the following ROMs:
 
-* [**pokeplatinum.us.nds**](https://datomatic.no-intro.org/index.php?page=show_record&s=28&n=3541) `sha1: ce81046eda7d232513069519cb2085349896dec7`
+* [**pokeranger2.us.nds**](https://datomatic.no-intro.org/index.php?page=show_record&s=28&n=2904) `sha1: ca9c27752547e4d31fe5560265d9b7e09f9f83eb`
 
-For contacts and other pret projects, see [pret.github.io](https://pret.github.io/). In addition to the pret Discord, also see the [VoidMatrix Discord (#decomp)](https://discord.gg/prUAgd5).
+This repository has been bootstrapped from [pret/pokeplatinum](https://github.com/pret/pokeplatinum). Huge thanks to the team over there for the repository structure and awesome build system.

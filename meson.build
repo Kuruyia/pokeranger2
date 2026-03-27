@@ -137,12 +137,6 @@ subdir('ranger2.us')
 
 
 ############################################################
-###                  INTERNAL LIBRARIES                  ###
-############################################################
-subdir('lib')
-
-
-############################################################
 ###                     FILE SYSTEM                      ###
 ############################################################
 subdir('res')
@@ -164,19 +158,14 @@ main = executable('main',
     c_args: pokeranger2_args,
     cpp_args: pokeranger2_args,
     nasm_args: asm_args,
-    include_directories: [
-        public_includes,
-        libgds_public_includes,
-    ],
+    cpp_pch: 'include/pch/global_pch.hpp',
+    include_directories: public_includes,
     dependencies: [
         nitrosdk_dep,
         nitrosystem_dep,
         nitrowifi_dep,
         nitrodwc_dep,
         libsyscall_dep,
-    ],
-    link_with: [
-        libgds,
     ],
     link_args: [
         link_args,

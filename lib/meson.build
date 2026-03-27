@@ -1,2 +1,0 @@
-subdir('gds')
-# subdir('spl')

@@ -37,8 +37,8 @@ def pch_order_only_deps(fileString: str) -> str:
     dependencies on generated sources and headers.
     '''
     return re.sub(
-        r"build main.nef.p/global_pch.h.mch: c_PCH ../include/pch/global_pch.h \| ([\w\s\/\.]+)",
-        r"build main.nef.p/global_pch.h.mch: c_PCH ../include/pch/global_pch.h || \1",
+        r"build main.nef.p/global_pch.hpp.mch: c_PCH ../include/pch/global_pch.hpp \| ([\w\s\/\.]+)",
+        r"build main.nef.p/global_pch.hpp.mch: c_PCH ../include/pch/global_pch.hpp || \1",
         fileString
     )
 

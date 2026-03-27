@@ -11,7 +11,7 @@ indent_style = tab
 tab_width = 4
 
 # This file must remain in UTF-16LE for compatibility with makebanner.exe
-[platinum.us/banner.bsf]
+[ranger2.us/banner.bsf]
 charset = utf-16le
 
 [*.{clang-format,yaml}]

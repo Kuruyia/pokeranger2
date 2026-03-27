@@ -8,7 +8,7 @@ if [[ "$GITHUB_REF" != "refs/heads/main" || "$GITHUB_EVENT_NAME" != "push" ]]; t
 fi
 
 url="$1"
-build_name="platinum.us"
+build_name="ranger2.us"
 build_dir="$2"
 
 output=$("${GITHUB_WORKSPACE}"/.github/calcrom/calcrom.py "$build_dir" | sed -E ':a;N;$!ba;s/\r{0,1}\n/\\n/g')

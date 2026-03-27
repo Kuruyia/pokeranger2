@@ -77,7 +77,7 @@ usage () {
     echo "  -a AUTOLOAD   Diff the indicated autoload module (default: static module)"
     echo "  -m OVERLAY    Diff the indicated overlay module (default: static module)"
     echo "  -r BASEROM    Use the indicated baserom (default: baserom.nds)"
-    echo "  -d BUILDDIR   Look for compiled binaries in this directory (default: build/platinum.us)"
+    echo "  -d BUILDDIR   Look for compiled binaries in this directory (default: build/ranger2.us)"
     echo "  -f FILE       Dump the indicated file, and use hexdump instead"
     echo "  -F FSDIR      Filesystem path on the home system"
     echo "  -t            Force THUMB instructions (default: ARM)"
