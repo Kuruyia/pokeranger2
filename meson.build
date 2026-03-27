@@ -19,10 +19,9 @@ toplevel_includes = include_directories('.')
 ############################################################
 ###                    COMPILER FLAGS                    ###
 ############################################################
-c_args = [
+cpp_args = [
     '-proc', 'arm946e',
     '-enum', 'int',
-    '-lang', 'c99',
     '-Cpp_exceptions', 'off',
     '-gccext,on',
     '-msgstyle', 'gcc',
@@ -33,26 +32,39 @@ c_args = [
     '-nosyspath',
     '-stdinc',
     '-sym', 'on',
-    '-DPOKERANGER2_GENERATED_ENUM',
 ]
 
 if get_option('gdb_debugging')
-    c_args += [
+    cpp_args += [
         '-O1,p',
         '-inline', 'off'
     ]
 else
-    c_args += '-O4,p'
+    cpp_args += '-O4,p'
 endif
+
+c_args = [
+    cpp_args,
+    '-lang', 'c99',
+]
+
+cxx_args = [
+    cpp_args,
+    '-lang', 'c++',
+]
 
 add_global_arguments(c_args,
     language: 'c',
     native: false
 )
 
+add_global_arguments(cxx_args,
+    language: 'cpp',
+    native: false
+)
+
 pokeranger2_args = [
     '-DPM_KEEP_ASSERTS',
-    '-DGAME_VERSION=VERSION_RANGER',
     '-DGAME_LANGUAGE=ENGLISH'
 ]
 
@@ -105,15 +117,11 @@ nitrowifi_dep = dependency('NitroWiFi',
 
 nitrodwc_dep = dependency('NitroDWC',
     default_options: {
-        'mwrap_ver': '2.0/sp2p2',
-        'link_ppwlobby': true
+        'mwrap_ver': '2.0/sp2p2'
     }
 )
 
-libvct_dep = dependency('libvct')
-libcrypto_dep = dependency('libcrypto')
 libsyscall_dep = dependency('libsyscall')
-ppwlobby_dep = dependency('ppwlobby')
 
 
 ############################################################
@@ -150,35 +158,25 @@ subdir('asm')
 
 main = executable('main',
     sources: [
-        pokeranger2_c,
+        pokeranger2_cxx,
         pokeranger2_asm,
     ],
-    c_args: [
-        pokeranger2_args,
-        '-thumb'
-    ],
+    c_args: pokeranger2_args,
+    cpp_args: pokeranger2_args,
     nasm_args: asm_args,
     include_directories: [
         public_includes,
         libgds_public_includes,
-        # TODO: Remove me
-        # libspl_public_includes,
     ],
     dependencies: [
-        # TODO: Check this
         nitrosdk_dep,
-        # nitrosystem_dep,
+        nitrosystem_dep,
         nitrowifi_dep,
         nitrodwc_dep,
-        # libvct_dep,
-        # libcrypto_dep,
         libsyscall_dep,
-        # ppwlobby_dep
     ],
     link_with: [
         libgds,
-        # TODO: Remove me
-        # libspl
     ],
     link_args: [
         link_args,
