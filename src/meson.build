@@ -1,1 +1,3 @@
-pokeranger2_cxx = files()
+pokeranger2_cxx = files(
+    'main.cpp',
+)

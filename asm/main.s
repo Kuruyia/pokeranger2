@@ -3,305 +3,6 @@
 
     .text
 
-	arm_func_start NitroMain
-NitroMain: ; 0x02000C6C
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #8
-	bl sub_02001248
-	bl InitBlankInterrupts
-	ldr r0, _020010C8 ; =0x000015E4
-	bl sub_020101A8
-	cmp r0, #0
-	beq _02000C90
-	bl CGame_ctor
-	arm_func_end NitroMain
-_02000C90:
-	ldr r1, _020010CC ; =MAIN_BSS_0208F300
-	str r0, [r1, #4]
-	bl sub_0202B80C
-	ldr r0, _020010CC ; =MAIN_BSS_0208F300
-	mov r2, #1
-	ldr r0, [r0, #4]
-	mov r1, #0
-	add r0, r0, #0x1000
-	ldr r0, [r0, #0x4a4]
-	add r0, r0, #0x8000
-	str r2, [r0, #0xb68]
-	str r1, [r0, #0xb6c]
-	bl Heap_GetMainHandle
-	ldr r0, [r0]
-	bl NNS_FndGetTotalFreeSizeForExpHeap
-	bl Heap_GetMainHandle
-	ldr r0, [r0]
-	mov r1, #4
-	bl NNS_FndGetAllocatableSizeForExpHeapEx
-	bl sub_02001184
-	ldr r1, _020010CC ; =MAIN_BSS_0208F300
-	mov r0, #9
-	ldr r1, [r1, #4]
-	bl Scene_LoadByID
-	mov r6, r0
-	mvn r7, #0
-	bl sub_0200F9E0
-	mov r0, #0
-	bl sub_0200FA48
-	ldr r4, _020010CC ; =MAIN_BSS_0208F300
-	mov r5, r7
-	ldr r0, [r4, #4]
-	add r0, r0, #0x1000
-	ldr r8, [r0, #0x4bc]
-	ldr sb, [r0, #0x4c0]
-	ldr fp, [r0, #0x4c4]
-	ldr sl, [r0, #0x4c8]
-_02000D24:
-	mov r0, r8
-	bl sub_0200E310
-	cmp r0, #0
-	bne _02000DD4
-	mov r0, r8
-	bl sub_0200E324
-	cmp r0, #2
-	beq _02000DD4
-	mov r0, r8
-	bl sub_0200E324
-	cmp r0, #4
-	beq _02000DD4
-	mov r0, sb
-	bl sub_0200E310
-	cmp r0, #0
-	bne _02000DD4
-	mov r0, sb
-	bl sub_0200E324
-	cmp r0, #2
-	beq _02000DD4
-	mov r0, sb
-	bl sub_0200E324
-	cmp r0, #4
-	beq _02000DD4
-	ldrh r0, [fp]
-	tst r0, #8
-	movne r0, #1
-	moveq r0, #0
-	cmp r0, #0
-	bne _02000DD4
-	mov r0, fp
-	bl sub_0200E91C
-	cmp r0, #0
-	bne _02000DD4
-	ldrh r0, [sl]
-	tst r0, #8
-	movne r0, #1
-	moveq r0, #0
-	cmp r0, #0
-	bne _02000DD4
-	mov r0, sl
-	bl sub_0200E91C
-	cmp r0, #0
-	beq _02000DE0
-_02000DD4:
-	mov r0, #1
-	bl sub_0200FA2C
-	b _02000DE8
-_02000DE0:
-	mov r0, #1
-	bl sub_0200FA0C
-_02000DE8:
-	bl sub_0200F9F8
-	ldr r0, [r4, #4]
-	ldr r0, [r0, #0x14]
-	bl sub_02001C20
-	ldr r0, [r4, #4]
-	ldr r0, [r0, #0x18]
-	ldr r1, [r0]
-	ldr r1, [r1, #8]
-	blx r1
-	ldr r0, [r4, #4]
-	ldr r0, [r0, #0x1c]
-	ldr r1, [r0]
-	ldr r1, [r1, #8]
-	blx r1
-	ldr r0, [r4, #4]
-	mov r3, #0x400
-	str r0, [sp, #4]
-	ldr r1, [sp, #4]
-	mov r0, #3
-	add r2, r1, #0x24
-	add r1, r2, #0x800
-	bl MI_DmaCopy32
-	ldr r0, [sp, #4]
-	mov r3, #0x400
-	add r2, r0, #0x24
-	add r1, r2, #0x800
-	mov r0, #3
-	add r2, r2, #0x400
-	bl MI_DmaCopy32
-	mov r0, #0x18
-	str r0, [sp]
-	ldr r0, [r4, #4]
-	mov r1, #0
-	ldr r0, [r0, #0xc24]
-	mov r2, r1
-	mov r3, #0x20
-	bl sub_02002A78
-	mov r0, #0x18
-	str r0, [sp]
-	ldr r0, [r4, #4]
-	mov r1, #0
-	ldr r0, [r0, #0xc28]
-	mov r2, r1
-	mov r3, #0x20
-	bl sub_02002A78
-	bl G3X_Reset
-	ldr r0, _020010D0 ; =0x04000454
-	mov r1, #0
-	str r1, [r0]
-	ldr r0, [r4]
-	cmp r0, #0
-	beq _02000EC8
-	bl sub_020010F8
-	mov r6, r0
-	mov r0, #0
-	str r0, [r4]
-_02000EC8:
-	cmp r7, r5
-	beq _02000FA8
-	bl OS_GetTick
-	mov r0, #1
-	bl OS_DisableIrqMask
-	ldr r0, [r4, #4]
-	ldr r1, _020010D4 ; =s_Delete_Scene_0208a380
-	bl sub_020101B4
-	ldr r0, _020010D8 ; =DAT_0208aaf8
-	mov r1, #0
-	strb r1, [r0]
-	mov r0, r6
-	ldr r1, [r0]
-	ldr r1, [r1, #0x28]
-	blx r1
-	ldr r1, [r4, #4]
-	str r0, [r1, #8]
-	ldr r1, [r4, #4]
-	mov r0, r6
-	str r7, [r1, #0x10]
-	ldr r1, [r0]
-	ldr r1, [r1, #0x24]
-	blx r1
-	cmp r6, #0
-	beq _02000F3C
-	mov r0, r6
-	ldr r1, [r0]
-	ldr r1, [r1, #4]
-	blx r1
-_02000F3C:
-	ldr r0, [r4, #4]
-	str r5, [r0, #0x10]
-	ldr r0, [r4, #4]
-	bl sub_020102E8
-	ldr r0, [r4, #4]
-	bl sub_0201044C
-	bl Heap_GetMainHandle
-	ldr r0, [r0]
-	bl NNS_FndGetTotalFreeSizeForExpHeap
-	bl Heap_GetMainHandle
-	ldr r0, [r0]
-	mov r1, #4
-	bl NNS_FndGetAllocatableSizeForExpHeapEx
-	ldr r0, [r4, #4]
-	ldr r1, _020010DC ; =s_Create_Scene_0208a390
-	bl sub_020101B4
-	bl sub_02001184
-	ldr r1, [r4, #4]
-	mov r0, r7
-	bl Scene_LoadByID
-	mov r6, r0
-	bl OS_GetTick
-	ldr r0, [r4, #4]
-	ldr r1, _020010E0 ; =s_Scene_Create_Finished_0208a3a0
-	bl sub_020101B4
-	mov r0, #1
-	bl OS_EnableIrqMask
-_02000FA8:
-	bl OS_GetTick
-	str r0, [r4, #8]
-	str r1, [r4, #0xc]
-	ldr r1, [r4, #4]
-	mov r0, r6
-	add r2, r1, #0x1000
-	mov r1, #0
-	str r1, [r2, #0x5e0]
-	ldr r1, [r0]
-	ldr r1, [r1, #8]
-	blx r1
-	mov r7, r0
-	mov r0, r6
-	ldr r1, [r0]
-	ldr r1, [r1, #0xc]
-	blx r1
-	ldr r0, [r4, #4]
-	add r1, r0, #0x1000
-	mov r0, #1
-	str r0, [r1, #0x5e0]
-	bl OS_GetTick
-	ldr r3, [r4, #8]
-	ldr r2, [r4, #0xc]
-	subs r3, r0, r3
-	sbc r0, r1, r2
-	str r3, [r4, #8]
-	str r0, [r4, #0xc]
-	bl OS_GetTick
-	ldr r0, _020010D8 ; =DAT_0208aaf8
-	mov r1, #1
-	strb r1, [r0]
-	ldr r1, [r4, #4]
-	mov r0, r6
-	add r2, r1, #0x1000
-	mov r1, #0
-	str r1, [r2, #0x5e0]
-	ldr r1, [r0]
-	ldr r1, [r1, #0x18]
-	blx r1
-	ldr r0, [r4, #4]
-	add r1, r0, #0x1000
-	mov r0, #1
-	str r0, [r1, #0x5e0]
-	mov r1, r0
-	ldr r0, _020010D0 ; =0x04000454
-	str r1, [r0, #0xec]
-	bl OS_GetTick
-	bl OS_GetTick
-	ldr r0, [r4, #4]
-	add r0, r0, #0x6c
-	add r0, r0, #0x1400
-	bl sub_02008D7C
-	bl OS_GetTick
-	bl OS_GetTick
-	mov r0, r6
-	ldr r1, [r0]
-	ldr r1, [r1, #0x10]
-	blx r1
-	bl OS_GetTick
-	ldr r1, [r4, #4]
-	ldr r0, [r1]
-	add r0, r0, #1
-	str r0, [r1]
-	bl OS_GetTick
-	mov r0, r6
-	ldr r1, [r0]
-	ldr r1, [r1, #0x14]
-	blx r1
-	ldr r0, [r4, #4]
-	bl sub_0201028C
-	bl OS_GetTick
-	b _02000D24
-	.align 2, 0
-_020010C8: .word 0x000015E4
-_020010CC: .word MAIN_BSS_0208F300
-_020010D0: .word 0x04000454
-_020010D4: .word s_Delete_Scene_0208a380
-_020010D8: .word DAT_0208aaf8
-_020010DC: .word s_Create_Scene_0208a390
-_020010E0: .word s_Scene_Create_Finished_0208a3a0
-
 	arm_func_start sub_020010E4
 sub_020010E4: ; 0x020010E4
 	ldr r0, _020010F4 ; =MAIN_BSS_0208F300
@@ -1141,6 +842,7 @@ sub_02001C04: ; 0x02001C04
 	bx lr
 	arm_func_end sub_02001C04
 
+    arm_func_start sub_02001C20
 sub_02001C20: ; 0x02001C20
 	stmdb sp!, {r4, r5, r6, lr}
 	ldr r2, _02001D1C ; =0x04000130
@@ -1173,6 +875,7 @@ sub_02001C20: ; 0x02001C20
 	strh r4, [r6]
 	strh r1, [r6, #6]
 	mov r0, #1
+    arm_func_end sub_02001C20
 _02001C9C:
 	ldrh r3, [r6]
 	and r2, r5, r0, lsl r1
@@ -18051,8 +17754,8 @@ sub_0200FB28: ; 0x0200FB28
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_0200FB28
 
-	arm_func_start CGame_ctor
-CGame_ctor: ; 0x0200FB50
+	arm_func_start _ZN5CGameC1Ev
+_ZN5CGameC1Ev: ; 0x0200FB50
 	stmdb sp!, {r3, r4, r5, r6, lr}
 	sub sp, sp, #4
 	mov r4, r0
@@ -18066,7 +17769,7 @@ CGame_ctor: ; 0x0200FB50
 	cmp r0, #0
 	beq _0200FB84
 	bl sub_02001C04
-	arm_func_end CGame_ctor
+	arm_func_end _ZN5CGameC1Ev
 _0200FB84:
 	str r0, [r4, #0x14]
 	mov r0, #0x30
@@ -86495,30 +86198,6 @@ ptr_FUN_020841e4_0208a36c: ; 0x0208A36C
 	.word sub_02084260
 
     .data
-
-	.global s_Delete_Scene_0208a380
-s_Delete_Scene_0208a380: ; 0x0208A380
-	.asciz "Delete Scene"
-
-	.global _0208A38D
-_0208A38D:
-	.byte 0x00, 0x00, 0x00
-
-	.global s_Create_Scene_0208a390
-s_Create_Scene_0208a390: ; 0x0208A390
-	.asciz "Create Scene"
-
-	.global _0208A39D
-_0208A39D:
-	.byte 0x00, 0x00, 0x00
-
-	.global s_Scene_Create_Finished_0208a3a0
-s_Scene_Create_Finished_0208a3a0: ; 0x0208A3A0
-	.asciz "Scene Create Finished"
-
-	.global _0208A3B6
-_0208A3B6:
-	.byte 0x00, 0x00
 
 	.global currentOverlayID
 currentOverlayID: ; 0x0208A3B8
