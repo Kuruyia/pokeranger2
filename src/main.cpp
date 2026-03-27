@@ -6,47 +6,48 @@
 #include "UnkClass_Scene_LoadByID.hpp"
 
 extern "C" {
-    void sub_02001248(void);
-    void InitBlankInterrupts(void);
-    void* sub_020101A8(u32);
-    void sub_0202B80C(void);
-    NNSFndHeapHandle* Heap_GetMainHandle(void);
-    void sub_02001184(void);
-    UnkClass_Scene_LoadByID* Scene_LoadByID(u32, CGame*);
-    void sub_0200F9E0(void);
-    void sub_0200FA48(u32);
-    u32 sub_0200E310(u32);
-    u32 sub_0200E324(u32);
-    u32 sub_0200E91C(u16*);
-    void sub_0200FA2C(u32);
-    void sub_0200FA0C(u32);
-    void sub_0200F9F8(void);
-    void sub_02001C20(u32);
-    void sub_02002A78(u32, u32, u32, u32, u32);
-    UnkClass_Scene_LoadByID* sub_020010F8(void);
-    void sub_020101B4(CGame*, char*);
-    void sub_020102E8(CGame*);
-    void sub_0201044C(CGame*);
-    void sub_02001184(void);
-    void sub_02008D7C(u32*);
-    void sub_0201028C(CGame*);
-    void _ZN5CGameC1Ev(CGame*);
+void sub_02001248(void);
+void InitBlankInterrupts(void);
+void *sub_020101A8(u32);
+void sub_0202B80C(void);
+NNSFndHeapHandle *Heap_GetMainHandle(void);
+void sub_02001184(void);
+UnkClass_Scene_LoadByID *Scene_LoadByID(u32, CGame *);
+void sub_0200F9E0(void);
+void sub_0200FA48(u32);
+u32 sub_0200E310(u32);
+u32 sub_0200E324(u32);
+u32 sub_0200E91C(u16 *);
+void sub_0200FA2C(u32);
+void sub_0200FA0C(u32);
+void sub_0200F9F8(void);
+void sub_02001C20(u32);
+void sub_02002A78(u32, u32, u32, u32, u32);
+UnkClass_Scene_LoadByID *sub_020010F8(void);
+void sub_020101B4(CGame *, char *);
+void sub_020102E8(CGame *);
+void sub_0201044C(CGame *);
+void sub_02001184(void);
+void sub_02008D7C(u32 *);
+void sub_0201028C(CGame *);
+void _ZN5CGameC1Ev(CGame *);
 
-    extern UnkClass_0208F300 MAIN_BSS_0208F300;
-    extern u32 DAT_04000454;
-    extern u8 DAT_0208aaf8;
+extern UnkClass_0208F300 MAIN_BSS_0208F300;
+extern u32 DAT_04000454;
+extern u8 DAT_0208aaf8;
 }
 
-void NitroMain(void) {
-    UnkClass_CGame_14A4* game_unk_14A4;
-    NNSFndHeapHandle* handle;
-    UnkClass_Scene_LoadByID* v3;
+void NitroMain(void)
+{
+    UnkClass_CGame_14A4 *game_unk_14A4;
+    NNSFndHeapHandle *handle;
+    UnkClass_Scene_LoadByID *v3;
     u32 v6;
     u32 v4;
     u32 v7;
     u32 v8;
-    u16* v9;
-    u16* v10;
+    u16 *v9;
+    u16 *v10;
     u32 v11;
     u32 v12;
     u32 v13;
@@ -91,8 +92,7 @@ void NitroMain(void) {
             || ((v11 = (*v9 & 8) ? 1 : 0), v11 != 0)
             || (sub_0200E91C(v9) != 0)
             || ((v12 = (*v10 & 8) ? 1 : 0), v12 != 0)
-            || (sub_0200E91C(v10) != 0)
-        ) {
+            || (sub_0200E91C(v10) != 0)) {
             sub_0200FA2C(1);
         } else {
             sub_0200FA0C(1);
