@@ -21,7 +21,6 @@ u32 sub_0200E91C(u16 *);
 void sub_0200FA2C(u32);
 void sub_0200FA0C(u32);
 void sub_0200F9F8(void);
-void sub_02001C20(u32);
 void sub_02002A78(u32, u32, u32, u32, u32);
 UnkClass_Scene_LoadByID *sub_020010F8(void);
 void sub_020101B4(CGame *, char *);
@@ -99,7 +98,7 @@ void NitroMain(void)
         }
 
         sub_0200F9F8();
-        sub_02001C20(MAIN_BSS_0208F300.game->unk_0014);
+        MAIN_BSS_0208F300.game->unk_0014->sub_02001C20();
         MAIN_BSS_0208F300.game->unk_0018->func2();
         MAIN_BSS_0208F300.game->unk_001C->func2();
 

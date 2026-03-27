@@ -15,7 +15,9 @@ Static main
 	Library libcard.a (.version)
 	Library libdwcaccount.a (.version)
 	Object main.nef.p/src_main.cpp.o
-	Object main.nef.p/asm_main.s.o
+	Object main.nef.p/asm_arm9_020010E4.s.o
+    Object main.nef.p/src_UnkClass_02001C20.cpp.o
+	Object main.nef.p/asm_arm9_02001D28.s.o
 	Library libsoc.a
     Library libcps.a
     Library libssl.a
