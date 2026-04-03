@@ -186,32 +186,25 @@ subdir('sub')
 ###                        DS ROM                        ###
 ############################################################
 pokeranger2_nds = custom_target('pokeranger2.us.nds',
-    output: [
-        'pokeranger2.us.nds',
-        'pokeranger2.us.nlf'
-    ],
+    output: 'pokeranger2.us.nds',
     input: [
         main,
-        banner_bnr,
         rom_header_template,
-        rom_rsf,
+        icon_png,
         arm7_bin,
         arm7_defs_bin,
-        fixrom_exe,
-        nitrofs_files # Make sure this is always listed last
+        nitrofs_files
     ],
     command : [
-        makerom_exe,
-        '-DTITLE_NAME=POKE RANGER2',
-        '-DBNR=@INPUT1@',
-        '-DHEADER_TEMPLATE=@INPUT2@',
-        '-DARM7=@INPUT4@',
-        '-DARM7_DEFS=@INPUT5@',
-        '@INPUT3@',
-        '@OUTPUT0@',
-        '@OUTPUT1@',
-        '&&','sh', '-c',
-        '@INPUT6@ @OUTPUT0@ --secure-crc 0x4A05 --game-code YP2E'
+        nitrorom_exe,
+        'pack',
+        '-DHEADER_TEMPLATE=@INPUT1@', # rom_header_template
+        '-DICON_PNG=@INPUT2@',        # icon_png
+        '-DARM7_STATIC=@INPUT3@',     # ichneumon_sub
+        '-DARM7_DEFINE=@INPUT4@',     # ichneumon_sub_defs
+        '--output=@OUTPUT0@',         # pokeplatinum.us.nds
+        rom_ini,
+        filesys_csv,
     ],
     build_by_default: true
 )
