@@ -2,7 +2,6 @@
 .public currentOverlayID
 .public Heap_Alloc
 .public Heap_Free
-.public Heap_Init
 .public MAIN_BSS_0208F300
 .public ptr_FUN_02043134_0208e154
 .public ptr_FUN_020439d4_0208e1b0
@@ -10,10 +9,4 @@
 .public sub_02002384
 .public sub_020023C0
 .public sub_02007C98
-.public sub_0200FB28
 .public sub_0201002C
-.public sub_02010448
-.public sub_0204436C
-.public sub_02044440
-.public sub_02046D40
-.public Scene_LoadByID

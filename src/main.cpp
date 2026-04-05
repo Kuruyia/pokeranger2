@@ -4,9 +4,9 @@
 #include "CGame.hpp"
 #include "UnkClass_0208F300.hpp"
 #include "UnkClass_Scene_LoadByID.hpp"
+#include "sub_02001248.hpp"
 
 extern "C" {
-void sub_02001248(void);
 void InitBlankInterrupts(void);
 void *sub_020101A8(u32);
 void sub_0202B80C(void);
