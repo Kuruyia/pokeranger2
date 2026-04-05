@@ -4,6 +4,7 @@
 #include <nitro.h>
 
 #include "UnkClass_02001C20.hpp"
+#include "UnkClass_020023EC.hpp"
 
 extern "C" void *sub_020101A8(u32 size);
 
@@ -49,8 +50,8 @@ public:
     u8 unk_0024[0x400];
     u8 unk_0424[0x400];
     u8 unk_0824[0x400];
-    u32 unk_0C24;
-    u32 unk_0C28;
+    UnkClass_020023EC *unk_0C24;
+    UnkClass_020023EC *unk_0C28;
     u8 unk_0C2C[0x840];
     u32 unk_146C;
     u8 unk_1470[0x34];

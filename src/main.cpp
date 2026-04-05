@@ -21,7 +21,6 @@ u32 sub_0200E91C(u16 *);
 void sub_0200FA2C(u32);
 void sub_0200FA0C(u32);
 void sub_0200F9F8(void);
-void sub_02002A78(u32, u32, u32, u32, u32);
 UnkClass_Scene_LoadByID *sub_020010F8(void);
 void sub_020101B4(CGame *, char *);
 void sub_020102E8(CGame *);
@@ -104,8 +103,8 @@ void NitroMain(void)
 
         MAIN_BSS_0208F300.game->func0();
 
-        sub_02002A78(MAIN_BSS_0208F300.game->unk_0C24, 0, 0, 0x20, 0x18);
-        sub_02002A78(MAIN_BSS_0208F300.game->unk_0C28, 0, 0, 0x20, 0x18);
+        MAIN_BSS_0208F300.game->unk_0C24->sub_02002A78(0, 0, 0x20, 0x18);
+        MAIN_BSS_0208F300.game->unk_0C28->sub_02002A78(0, 0, 0x20, 0x18);
         G3X_Reset();
 
         G3_Identity();
