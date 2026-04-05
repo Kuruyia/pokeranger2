@@ -1,5 +1,5 @@
-    .include "asm/macros.inc"
-    .include "asm/include/crt0.inc"
+    .include "macros.inc"
+    .include "include/crt0.inc"
 
     .text
 

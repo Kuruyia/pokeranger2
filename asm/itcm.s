@@ -1,5 +1,5 @@
-    .include "asm/macros.inc"
-    .include "asm/include/itcm.inc"
+    .include "macros.inc"
+    .include "include/itcm.inc"
 
 	.section .itcm,4,1,4
 

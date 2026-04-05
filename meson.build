@@ -32,6 +32,7 @@ cpp_args = [
     '-nosyspath',
     '-stdinc',
     '-sym', 'on',
+    '-D_MSL_RESTRICT=',
 ]
 
 if get_option('gdb_debugging')
@@ -97,27 +98,27 @@ link_args = [
 ############################################################
 nitrosdk_dep = dependency('NitroSDK',
     default_options: {
-        'mwrap_ver': '2.0/sp1p2',
+        'mwrap_sdk': '2.0/sp1p2',
         'sp1p3_conditionals': true
     }
 )
 
 nitrosystem_dep = dependency('NitroSystem',
     default_options: {
-        'mwrap_ver': '2.0/sp2'
+        'mwrap_sdk': '2.0/sp2'
     }
 )
 
 nitrowifi_dep = dependency('NitroWiFi',
     default_options: {
-        'mwrap_ver': '2.0/sp1p2',
+        'mwrap_sdk': '2.0/sp1p2',
         'sp1p3_conditionals': true
     }
 )
 
 nitrodwc_dep = dependency('NitroDWC',
     default_options: {
-        'mwrap_ver': '2.0/sp2p2'
+        'mwrap_sdk': '2.0/sp2p2'
     }
 )
 

@@ -104,15 +104,15 @@ nitrosdk_c_commands = [
             f"-I{cwextrasdir}",
             f"-I{cwlibcarmdir}",
             f"-I{cwextrasarmdir}",
-            f"-I{homedir}/subprojects/NitroSDK-4.2.30001/include",
-            f"-I{builddir}/subprojects/NitroSDK-4.2.30001/gen",
+            f"-I{homedir}/subprojects/NitroSDK-4.1.30001/include",
+            f"-I{builddir}/subprojects/NitroSDK-4.1.30001/gen",
             "-o",
             file.with_suffix(".o"),
             file.resolve(),
         ],
         "file": file.resolve(),
     }
-    for file in (homedir / "subprojects/NitroSDK-4.2.30001").rglob("*.c")
+    for file in (homedir / "subprojects/NitroSDK-4.1.30001").rglob("*.c")
 ]
 
 nitrosystem_c_commands = [
@@ -124,8 +124,8 @@ nitrosystem_c_commands = [
             f"-I{cwextrasdir}",
             f"-I{cwlibcarmdir}",
             f"-I{cwextrasarmdir}",
-            f"-I{homedir}/subprojects/NitroSDK-4.2.30001/include",
-            f"-I{builddir}/subprojects/NitroSDK-4.2.30001/gen",
+            f"-I{homedir}/subprojects/NitroSDK-4.1.30001/include",
+            f"-I{builddir}/subprojects/NitroSDK-4.1.30001/gen",
             f"-I{homedir}/subprojects/NitroSystem-071126.1/include",
             "-o",
             file.with_suffix(".o"),
@@ -145,17 +145,17 @@ nitrowifi_c_commands = [
             f"-I{cwextrasdir}",
             f"-I{cwlibcarmdir}",
             f"-I{cwextrasarmdir}",
-            f"-I{homedir}/subprojects/NitroSDK-4.2.30001/include",
-            f"-I{builddir}/subprojects/NitroSDK-4.2.30001/gen",
+            f"-I{homedir}/subprojects/NitroSDK-4.1.30001/include",
+            f"-I{builddir}/subprojects/NitroSDK-4.1.30001/gen",
             f"-I{homedir}/subprojects/NitroSystem-071126.1/include",
-            f"-I{homedir}/subprojects/NitroWiFi-2.1.30003/include",
+            f"-I{homedir}/subprojects/NitroWiFi-2.1.30002/include",
             "-o",
             file.with_suffix(".o"),
             file.resolve(),
         ],
         "file": file.resolve(),
     }
-    for file in (homedir / "subprojects/NitroWiFi-2.1.30003").rglob("*.c")
+    for file in (homedir / "subprojects/NitroWiFi-2.1.30002").rglob("*.c")
 ]
 
 nitrodwc_c_commands = [
@@ -167,20 +167,20 @@ nitrodwc_c_commands = [
             f"-I{cwextrasdir}",
             f"-I{cwlibcarmdir}",
             f"-I{cwextrasarmdir}",
-            f"-I{homedir}/subprojects/NitroSDK-4.2.30001/include",
-            f"-I{builddir}/subprojects/NitroSDK-4.2.30001/gen",
+            f"-I{homedir}/subprojects/NitroSDK-4.1.30001/include",
+            f"-I{builddir}/subprojects/NitroSDK-4.1.30001/gen",
             f"-I{homedir}/subprojects/NitroSystem-071126.1/include",
-            f"-I{homedir}/subprojects/NitroWiFi-2.1.30003/include",
-            f"-I{homedir}/subprojects/NitroDWC-2.2.30008/include",
-            f"-I{homedir}/subprojects/NitroDWC-2.2.30008/include/gs",
-            f"-I{homedir}/subprojects/NitroDWC-2.2.30008/include/base",
+            f"-I{homedir}/subprojects/NitroWiFi-2.1.30002/include",
+            f"-I{homedir}/subprojects/NitroDWC-2.2.30000/include",
+            f"-I{homedir}/subprojects/NitroDWC-2.2.30000/include/gs",
+            f"-I{homedir}/subprojects/NitroDWC-2.2.30000/include/base",
             "-o",
             file.with_suffix(".o"),
             file.resolve(),
         ],
         "file": file.resolve(),
     }
-    for file in (homedir / "subprojects/NitroDWC-2.2.30008").rglob("*.c")
+    for file in (homedir / "subprojects/NitroDWC-2.2.30000").rglob("*.c")
 ]
 
 c_commands = [
@@ -193,13 +193,13 @@ c_commands = [
             f"-I{cwlibcarmdir}",
             f"-I{cwextrasarmdir}",
             f"-I{generateddir}",
-            f"-I{homedir}/subprojects/NitroSDK-4.2.30001/include",
-            f"-I{builddir}/subprojects/NitroSDK-4.2.30001/gen",
+            f"-I{homedir}/subprojects/NitroSDK-4.1.30001/include",
+            f"-I{builddir}/subprojects/NitroSDK-4.1.30001/gen",
             f"-I{homedir}/subprojects/NitroSystem-071126.1/include",
-            f"-I{homedir}/subprojects/NitroWiFi-2.1.30003/include",
-            f"-I{homedir}/subprojects/NitroDWC-2.2.30008/include",
-            f"-I{homedir}/subprojects/NitroDWC-2.2.30008/include/gs",
-            f"-I{homedir}/subprojects/NitroDWC-2.2.30008/include/base",
+            f"-I{homedir}/subprojects/NitroWiFi-2.1.30002/include",
+            f"-I{homedir}/subprojects/NitroDWC-2.2.30000/include",
+            f"-I{homedir}/subprojects/NitroDWC-2.2.30000/include/gs",
+            f"-I{homedir}/subprojects/NitroDWC-2.2.30000/include/base",
             f"-iquote{homedir}",
             f"-iquote{homedir}/include",
             f"-iquote{homedir}/build",  # Meson includes this implicitly
@@ -226,13 +226,13 @@ cxx_commands = [
             f"-I{cwlibcarmdir}",
             f"-I{cwextrasarmdir}",
             f"-I{generateddir}",
-            f"-I{homedir}/subprojects/NitroSDK-4.2.30001/include",
-            f"-I{builddir}/subprojects/NitroSDK-4.2.30001/gen",
+            f"-I{homedir}/subprojects/NitroSDK-4.1.30001/include",
+            f"-I{builddir}/subprojects/NitroSDK-4.1.30001/gen",
             f"-I{homedir}/subprojects/NitroSystem-071126.1/include",
-            f"-I{homedir}/subprojects/NitroWiFi-2.1.30003/include",
-            f"-I{homedir}/subprojects/NitroDWC-2.2.30008/include",
-            f"-I{homedir}/subprojects/NitroDWC-2.2.30008/include/gs",
-            f"-I{homedir}/subprojects/NitroDWC-2.2.30008/include/base",
+            f"-I{homedir}/subprojects/NitroWiFi-2.1.30002/include",
+            f"-I{homedir}/subprojects/NitroDWC-2.2.30000/include",
+            f"-I{homedir}/subprojects/NitroDWC-2.2.30000/include/gs",
+            f"-I{homedir}/subprojects/NitroDWC-2.2.30000/include/base",
             f"-iquote{homedir}",
             f"-iquote{homedir}/include",
             f"-iquote{homedir}/build",  # Meson includes this implicitly

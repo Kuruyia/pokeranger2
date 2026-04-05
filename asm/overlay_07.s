@@ -1,5 +1,5 @@
-    .include "asm/macros.inc"
-    .include "asm/include/overlay_07.inc"
+    .include "macros.inc"
+    .include "include/overlay_07.inc"
 
     .text
 

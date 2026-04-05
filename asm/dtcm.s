@@ -1,5 +1,5 @@
-    .include "asm/macros.inc"
-    .include "asm/include/dtcm.inc"
+    .include "macros.inc"
+    .include "include/dtcm.inc"
 
 	.bss
 	.global DTCM_BSS

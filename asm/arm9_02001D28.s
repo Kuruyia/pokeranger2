@@ -1,6 +1,6 @@
-    .include "asm/macros.inc"
-    .include "asm/include/arm9.inc"
-    .include "asm/include/arm9_02001D28.inc"
+    .include "macros.inc"
+    .include "include/arm9.inc"
+    .include "include/arm9_02001D28.inc"
 
     .text
 
