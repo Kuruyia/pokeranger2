@@ -4,9 +4,9 @@
 .public _Znam
 .public _ZdlPv
 .public _ZdaPv
-.public Heap_Alloc
-.public Heap_AllocWithAlignment
-.public Heap_Free
+.public _Z10Heap_Allocm
+.public _Z23Heap_AllocWithAlignmentmm
+.public _Z9Heap_FreePv
 .public sub_020027E8
 .public sub_020028A4
 .public sub_02002AEC

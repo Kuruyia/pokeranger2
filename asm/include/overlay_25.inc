@@ -1,8 +1,8 @@
 #pragma once
 .public _Znwm
 .public _ZdlPv
-.public Heap_AllocWithAlignment
-.public Heap_Free
+.public _Z23Heap_AllocWithAlignmentmm
+.public _Z9Heap_FreePv
 .public sub_020033B0
 .public sub_02007C98
 .public sub_02007CC0

@@ -899,7 +899,7 @@ _0211D618:
 	ldr r0, [r0, #0x10]
 	cmp r0, #0
 	beq _0211D634
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	add r0, r4, r7, lsl #3
 	str r6, [r0, #0x10]
 _0211D634:

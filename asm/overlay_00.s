@@ -9373,7 +9373,7 @@ ov0_02124CDC: ; 0x02124CDC
 	str r0, [r4, #0x78]
 	mov r0, #0x200
 	mov r1, #4
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r4, #0x7c]
 	mov r0, #2
 	str r0, [r4, #0x50]
@@ -9395,7 +9395,7 @@ ov0_02124D5C: ; 0x02124D5C
 	ldr r0, [r4, #0x7c]
 	cmp r0, #0
 	beq _02124D80
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x7c]
 	arm_func_end ov0_02124D5C
@@ -9543,7 +9543,7 @@ _02124F40:
 	ldr r0, [r7, #4]
 	cmp r0, #0
 	beq _02124F58
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r7, #4]
 _02124F58:
@@ -10095,7 +10095,7 @@ _0212566C:
 	str r0, [sp, #0x30]
 	sub r1, r0, #0xa0
 	ldr r5, [r6, #0x14]
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	mov r6, r0
 	mov r1, #0
 	ldr r0, [sp, #0x14]
@@ -10182,7 +10182,7 @@ _021257D8:
 	cmp r6, #0
 	beq _021258C4
 	mov r0, r6
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	b _021258C4
 _021257EC:
 	add r0, r1, #0x500
@@ -10201,7 +10201,7 @@ _021257EC:
 	mov r1, #4
 	sub r4, r2, r0
 	mov r0, r4
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	mov r5, r0
 	add r0, sp, #0x38
 	mov r1, r5
@@ -10809,7 +10809,7 @@ _02126088:
 	ldrh r0, [sp, #0x2c]
 	add r5, r8, #2
 	mov r0, r0, lsl #1
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldrh r1, [sp, #0x2c]
 	mov sb, r0
 	mov r3, #0
@@ -10894,13 +10894,13 @@ _021261DC:
 	ldr r0, [r4, #4]
 	cmp r0, #0
 	beq _021261F4
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #4]
 _021261F4:
 	mov r0, r7, lsl #2
 	mov r1, #4
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r4, #4]
 	str r7, [r4, #0xc]
 	mov r8, #0
@@ -11165,7 +11165,7 @@ _021265AC:
 	cmp sb, #0
 	beq _021265C4
 	mov r0, sb
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 _021265C4:
 	ldr r0, [sp, #0x24]
 	cmp r0, #1
@@ -11843,7 +11843,7 @@ _02126EA0:
 	ldr r0, [r0, #0x10]
 	cmp r0, #0
 	beq _02126EC4
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	ldr r0, [r6, #0x30]
 	add r0, r0, r5
 	str r7, [r0, #0x10]
@@ -11857,7 +11857,7 @@ _02126ED8:
 	ldr r0, [r6, #0x30]
 	cmp r0, #0
 	beq _02126EF0
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r6, #0x30]
 _02126EF0:
@@ -11963,7 +11963,7 @@ _02127020:
 	strb r2, [r4, #3]
 	ldr r2, [sp, #0x7c]
 	mul r0, r2, r0
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r1, [sp, #0x14]
 	str r0, [r1, #0x30]
 	mov r0, #0
@@ -12395,7 +12395,7 @@ _021276C8:
 	ldr r0, [sp, #0x1c]
 	add r0, r2, r0
 	ldr r0, [r0, #0x14]
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r1, [sp, #0x14]
 	ldr r2, [sp, #0x1c]
 	ldr r3, [r1, #0x30]
@@ -18580,7 +18580,7 @@ ov0_0212CE1C: ; 0x0212CE1C
 	add r4, r4, #0x10
 	strb r3, [ip]
 	strb r2, [ip, #1]
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r5, #0x20]
 	ldr r1, [sp, #4]
 	mov r0, #0
@@ -18637,7 +18637,7 @@ ov0_0212CF88: ; 0x0212CF88
 	ldr r0, [r4, #0x20]
 	cmp r0, #0
 	beq _0212CFA8
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x20]
 	arm_func_end ov0_0212CF88
@@ -18762,7 +18762,7 @@ ov0_0212D0B0: ; 0x0212D0B0
 	ldr r3, [sp]
 	add r4, r4, #4
 	mul r0, r3, r2
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r5, #0x10]
 	ldr r1, [sp]
 	mov r0, #0
@@ -18978,7 +18978,7 @@ ov0_0212D3F4: ; 0x0212D3F4
 	ldr r0, [r4, #0x10]
 	cmp r0, #0
 	beq _0212D414
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x10]
 	arm_func_end ov0_0212D3F4
@@ -19197,7 +19197,7 @@ ov0_0212D6BC: ; 0x0212D6BC
 	ldr r3, [sp]
 	add r4, r4, #4
 	mul r0, r3, r2
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r5, #0x10]
 	ldr r1, [sp]
 	mov r0, #0
@@ -19358,7 +19358,7 @@ ov0_0212D8A8: ; 0x0212D8A8
 	ldr r3, [sp, #0x10]
 	add r4, r4, #4
 	mul r0, r3, r2
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [sl, #0x10]
 	ldr r1, [sp, #0x10]
 	mov r0, #0
@@ -19562,7 +19562,7 @@ ov0_0212DBC4: ; 0x0212DBC4
 	ldr r0, [r4, #0x10]
 	cmp r0, #0
 	beq _0212DBE4
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x10]
 	arm_func_end ov0_0212DBC4
@@ -19657,7 +19657,7 @@ ov0_0212DC8C: ; 0x0212DC8C
 	ldr r3, [sp]
 	add r4, r4, #4
 	mul r0, r3, r2
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r8, #0x10]
 	ldr r1, [sp]
 	mov r0, #0
@@ -19794,7 +19794,7 @@ ov0_0212DEA8: ; 0x0212DEA8
 	ldr r0, [r4, #0x10]
 	cmp r0, #0
 	beq _0212DEC8
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x10]
 	arm_func_end ov0_0212DEA8
@@ -21467,7 +21467,7 @@ ov0_0212F554: ; 0x0212F554
 	strb r0, [r6, #0x2f]
 	ldr r0, [r6, #0x2c]
 	mov r0, r0, lsl #3
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r6, #0x28]
 	ldr r1, [r6, #0x2c]
 	mov r0, #0
@@ -21521,7 +21521,7 @@ ov0_0212F678: ; 0x0212F678
 	ldr r0, [r4, #0x28]
 	cmp r0, #0
 	beq _0212F698
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x28]
 	arm_func_end ov0_0212F678
@@ -21709,7 +21709,7 @@ ov0_0212F86C: ; 0x0212F86C
 	strb r2, [r0, #0x17]
 	ldr r0, [r0, #0x14]
 	mov r0, r0, lsl #3
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r1, [sp, #0x14]
 	str r0, [r1, #4]
 	mov r0, r1
@@ -21865,7 +21865,7 @@ _0212F960:
 	add r4, sp, #0x70
 _0212FB78:
 	mov r0, #0x80
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	add r1, r6, r7, lsl #2
 	str r0, [r1, #0x10]
 	mov r1, r0
@@ -22010,7 +22010,7 @@ ov0_0212FD94: ; 0x0212FD94
 	ldr r0, [sb, #4]
 	cmp r0, #0
 	beq _0212FDB4
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [sb, #4]
 	arm_func_end ov0_0212FD94
@@ -22031,7 +22031,7 @@ _0212FDD4:
 	ldr r0, [r0, #0x10]
 	cmp r0, #0
 	beq _0212FE00
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	ldr r0, [sb, #8]
 	add r0, r8, r0
 	add r0, r0, r7, lsl #2
@@ -22154,7 +22154,7 @@ ov0_0212FF30: ; 0x0212FF30
 	add r4, r4, #6
 	strb r0, [r5, #0xd]
 	add r0, r0, r0, lsl #1
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r5, #4]
 	ldrb r0, [r5, #0xd]
 	mov r2, #0
@@ -22193,7 +22193,7 @@ ov0_0212FFE8: ; 0x0212FFE8
 	ldr r0, [r4, #4]
 	cmp r0, #0
 	beq _02130008
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #4]
 	arm_func_end ov0_0212FFE8
@@ -22660,7 +22660,7 @@ _02130638:
 	ldr r0, [r0, r6, lsl #2]
 	cmp r0, #0
 	beq _02130654
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	ldr r0, [r4, #0x30]
 	str r5, [r0, r6, lsl #2]
 _02130654:
@@ -38146,7 +38146,7 @@ _0213DB28:
 	ldr r0, [r4, #0x90]
 	cmp r0, #0
 	beq _0213DB48
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x90]
 _0213DB48:
@@ -38154,7 +38154,7 @@ _0213DB48:
 	mov r0, #0x100
 	mov r1, #4
 	str r2, [r4, #0x64]
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r4, #0x90]
 	add sp, sp, #0x10
 	ldmia sp!, {r4, pc}
@@ -38237,7 +38237,7 @@ _0213DC60:
 	ldr r0, [r4, #0x90]
 	cmp r0, #0
 	beq _0213DC80
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x90]
 _0213DC80:

@@ -10230,7 +10230,7 @@ _02125878:
 	sub r1, r4, #0x30
 	mla r2, r3, r4, r5
 	ldr r6, [r2, #0xc]
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	mov r4, r0
 	mov r0, #0
 	strh r0, [r4]
@@ -10244,7 +10244,7 @@ _02125878:
 	bl GX_LoadTexPltt
 	bl GX_EndLoadTexPltt
 	mov r0, r4
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	ldr r0, _02125C94 ; =DAT_overlay_3_0212a680
 	ldmia r0, {r1, r4}
 	ldr r0, [sp, #4]
@@ -12428,7 +12428,7 @@ _02127744:
 	mov r0, #4
 	sub r1, r0, #8
 	ldr r7, [r2, #0xc]
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r1, _02127B1C ; =0x00007FFF
 	mov r6, r0
 	strh r1, [r6]
@@ -12442,7 +12442,7 @@ _02127744:
 	bl GX_LoadTexPltt
 	bl GX_EndLoadTexPltt
 	mov r0, r6
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x160]
 	add r0, r5, #0x1e4

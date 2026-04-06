@@ -298,11 +298,11 @@ _02002E4C:
 	mov r0, #1
 	str r0, [sl, #0x54]
 	ldr r0, [sl, #0x50]
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [sl, #0x4c]
 	cmp r0, #0
 	bne _02002ED4
-	bl Heap_GetMainHandle
+	bl _Z18Heap_GetMainHandlev
 	mov r4, r0
 	ldr r0, [r4]
 	mov r1, #4
@@ -343,7 +343,7 @@ _02002ED4:
 	bne _02002F28
 	cmp r0, #0
 	beq _02002F28
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [sl, #0x4c]
 _02002F28:
@@ -371,7 +371,7 @@ _02002F4C:
 	bne _02002F8C
 	cmp r0, #0
 	beq _02002F8C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [sl, #0x4c]
 _02002F8C:
@@ -403,10 +403,10 @@ _02002FB4:
 	moveq r1, #4
 	ldr r0, [sl, #0x50]
 	mvnne r1, #3
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	movs r8, r0
 	bne _02003048
-	bl Heap_GetMainHandle
+	bl _Z18Heap_GetMainHandlev
 	mov r4, r0
 	ldr r0, [r4]
 	mov r1, #4
@@ -481,7 +481,7 @@ sub_020030D4: ; 0x020030D4
 	ldrne r0, [r4, #0x4c]
 	cmpne r0, #0
 	beq _020030FC
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x4c]
 	arm_func_end sub_020030D4
@@ -5669,7 +5669,7 @@ _02007800:
 _02007834:
 	mov r0, r4, lsl #5
 	str r0, [r7, #0x10]
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	str r0, [r7, #0x14]
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
@@ -5687,7 +5687,7 @@ sub_02007854: ; 0x02007854
 	ldr r0, [r4, #0x14]
 	cmp r0, #0
 	beq _02007874
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x14]
 	arm_func_end sub_02007854
@@ -6959,7 +6959,7 @@ _020087E0:
 	ldr r0, [r5, #4]
 	cmp r0, #0
 	beq _020087F8
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r5, #4]
 _020087F8:
@@ -7056,7 +7056,7 @@ _020088E4:
 	ldrb r2, [r4, #6]
 	mov r0, r0, lsl #2
 	mul r0, r2, r0
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r6, #4]
 	ldrh r0, [r6]
 	ldrb r3, [r4, #6]
@@ -15808,7 +15808,7 @@ _0200FBB4:
 	mov r0, #0x20
 	bl NNS_GfdGetLnkTexVramManagerWorkSize
 	mov r5, r0
-	bl Heap_AllocSecondary
+	bl _Z19Heap_AllocSecondarym
 	str r0, [r4, #0xc2c]
 	mov r0, #1
 	str r0, [sp]
@@ -15820,7 +15820,7 @@ _0200FBB4:
 	mov r0, #0x20
 	bl NNS_GfdGetLnkPlttVramManagerWorkSize
 	mov r5, r0
-	bl Heap_AllocSecondary
+	bl _Z19Heap_AllocSecondarym
 	str r0, [r4, #0xc30]
 	ldr r1, [r4, #0xc30]
 	mov r2, r5
@@ -16231,23 +16231,23 @@ _020101A0:
 
 	arm_func_start sub_020101A8
 sub_020101A8: ; 0x020101A8
-	ldr ip, _020101B0 ; =Heap_AllocSecondary
+	ldr ip, _020101B0 ; =_Z19Heap_AllocSecondarym
 	bx ip
 	.align 2, 0
-_020101B0: .word Heap_AllocSecondary
+_020101B0: .word _Z19Heap_AllocSecondarym
 	arm_func_end sub_020101A8
 
 	arm_func_start sub_020101B4
 sub_020101B4: ; 0x020101B4
 	stmdb sp!, {r4, lr}
-	bl Heap_GetSecondaryHandle
+	bl _Z23Heap_GetSecondaryHandlev
 	mov r4, r0
 	ldr r0, [r4]
 	bl NNS_FndGetTotalFreeSizeForExpHeap
 	ldr r0, [r4]
 	mov r1, #4
 	bl NNS_FndGetAllocatableSizeForExpHeapEx
-	bl Heap_GetMainHandle
+	bl _Z18Heap_GetMainHandlev
 	mov r4, r0
 	ldr r0, [r4]
 	bl NNS_FndGetTotalFreeSizeForExpHeap
@@ -20196,7 +20196,7 @@ _020131C4:
 	mov fp, r7, lsl #4
 	mov r0, fp
 	mov r1, #4
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r5, #0x10]
 	mov r1, r0
 	mov r2, fp
@@ -20728,7 +20728,7 @@ _02013948:
 	mov r7, r6, lsl #4
 	mov r0, r7
 	mov r1, #4
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [sl, #0x10]
 	mov r1, r0
 	mov r2, r7
@@ -21296,7 +21296,7 @@ _02014158:
 	ldr r0, [r4, #0x10]
 	cmp r0, #0
 	beq _02014170
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x10]
 _02014170:
@@ -21650,7 +21650,7 @@ _02014588:
 	mov r0, r8, lsl #4
 	str r0, [sp, #0x10]
 	mov r1, #4
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r2, [sp, #0x10]
 	str r0, [r6, #0x10]
 	mov r1, r0
@@ -35771,7 +35771,7 @@ sub_020204DC: ; 0x020204DC
 	mov r5, r3
 	cmp r0, #0
 	beq _0202050C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #8]
 	arm_func_end sub_020204DC
@@ -35809,7 +35809,7 @@ sub_0202055C: ; 0x0202055C
 	mov r5, r3
 	cmp r0, #0
 	beq _0202058C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x14]
 	arm_func_end sub_0202055C
@@ -35847,7 +35847,7 @@ sub_020205DC: ; 0x020205DC
 	mov r6, r3
 	cmp r0, #0
 	beq _0202060C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r5, #0x20]
 	arm_func_end sub_020205DC
@@ -35893,7 +35893,7 @@ sub_0202067C: ; 0x0202067C
 	mov r5, r3
 	cmp r0, #0
 	beq _020206AC
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x20]
 	arm_func_end sub_0202067C
@@ -35930,7 +35930,7 @@ sub_02020708: ; 0x02020708
 	ldr r0, [r4, #8]
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #8]
 	ldmia sp!, {r4, pc}
@@ -35943,7 +35943,7 @@ sub_0202072C: ; 0x0202072C
 	ldr r0, [r4, #0x14]
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x14]
 	ldmia sp!, {r4, pc}
@@ -35956,7 +35956,7 @@ sub_02020750: ; 0x02020750
 	ldr r0, [r4, #0x20]
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x20]
 	ldmia sp!, {r4, pc}
@@ -36020,7 +36020,7 @@ sub_02020804: ; 0x02020804
 	mov r6, r0
 	mov r0, #0x40
 	sub r1, r0, #0x44
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	mov r7, r0
 	cmp r8, #0
 	moveq r8, r5
@@ -36052,7 +36052,7 @@ sub_02020804: ; 0x02020804
 	arm_func_end sub_02020804
 _0202089C:
 	mov r0, r7
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	add sp, sp, #8
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
@@ -36068,7 +36068,7 @@ sub_020208B4: ; 0x020208B4
 	sub r1, r0, #0x44
 	mov r5, r2
 	mov r4, r3
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r1, _02020918 ; =s_BGS_s_NCGR_0208bd94
 	mov r2, r5
 	mov r5, r0
@@ -36082,7 +36082,7 @@ sub_020208B4: ; 0x020208B4
 	bl sub_0202091C
 	mov r4, r0
 	mov r0, r5
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, r4
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, pc}
@@ -36130,7 +36130,7 @@ _0202096C:
 	movne r4, r1
 	bne _020209B4
 	mov r0, r5
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	mov r4, r0
 _020209B4:
 	mov r0, r6
@@ -36441,7 +36441,7 @@ sub_02020DA0: ; 0x02020DA0
 	sub r1, r0, #0x44
 	mov r5, r2
 	mov r4, r3
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r1, _02020E04 ; =s_BGS_s_NCLR_0208bda0
 	mov r2, r5
 	mov r5, r0
@@ -36455,7 +36455,7 @@ sub_02020DA0: ; 0x02020DA0
 	bl sub_02020E08
 	mov r4, r0
 	mov r0, r5
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, r4
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, pc}
@@ -36503,7 +36503,7 @@ _02020E58:
 	movne r4, r1
 	bne _02020EA0
 	mov r0, r5
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	mov r4, r0
 _02020EA0:
 	mov r0, r6
@@ -36621,7 +36621,7 @@ sub_02020FF0: ; 0x02020FF0
 	mov r4, r0
 	mov r0, #0x40
 	sub r1, r0, #0x44
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r1, [sp, #0x2c]
 	mov r5, r0
 	str r1, [sp]
@@ -36648,7 +36648,7 @@ sub_02020FF0: ; 0x02020FF0
 	arm_func_end sub_02020FF0
 _02021074:
 	mov r0, r5
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, r6
 	add sp, sp, #0x10
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
@@ -36665,7 +36665,7 @@ sub_0202108C: ; 0x0202108C
 	sub r1, r0, #0x44
 	mov r5, r2
 	mov r4, r3
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r1, _02021108 ; =s_s_s_NSCR_0208bdac
 	mov r2, r7
 	mov r3, r5
@@ -36684,7 +36684,7 @@ sub_0202108C: ; 0x0202108C
 	bl sub_0202110C
 	mov r4, r0
 	mov r0, r5
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, r4
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, pc}
@@ -36806,7 +36806,7 @@ _02021278:
 	movne r6, r1
 	bne _020212B4
 	mov r0, r7
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	mov r6, r0
 _020212B4:
 	mov r1, r6
@@ -45012,7 +45012,7 @@ sub_02028054: ; 0x02028054
 	ldr r0, [r4, #0x58]
 	cmp r0, #0
 	beq _02028074
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x58]
 	arm_func_end sub_02028054
@@ -45150,13 +45150,13 @@ sub_020281B0: ; 0x020281B0
 	ldr r0, [r6, #0x58]
 	cmp r0, #0
 	beq _020281F4
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r6, #0x58]
 	arm_func_end sub_020281B0
 _020281F4:
 	mov r0, r4
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	str r0, [r6, #0x58]
 	mov r0, r6
 	mov r1, r5
@@ -60854,13 +60854,13 @@ sub_02034478: ; 0x02034478
 	mov r4, r0
 	bl NNS_SndInit
 	mov r0, #0x64000
-	bl Heap_AllocSecondary
+	bl _Z19Heap_AllocSecondarym
 	str r0, [r4]
 	mov r0, #0x30000
-	bl Heap_AllocSecondary
+	bl _Z19Heap_AllocSecondarym
 	str r0, [r4, #4]
 	mov r0, #0xc000
-	bl Heap_AllocSecondary
+	bl _Z19Heap_AllocSecondarym
 	str r0, [r4, #8]
 	ldr r0, [r4]
 	mov r1, #0x64000
@@ -69779,7 +69779,7 @@ sub_0203BD14: ; 0x0203BD14
 	mov r0, r4, lsl #2
 	mov r1, #4
 	str r2, [r5, #4]
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r5, #0x30]
 	mov r0, r5
 	str r4, [r5, #0x34]
@@ -69802,7 +69802,7 @@ sub_0203BD5C: ; 0x0203BD5C
 	mov r0, r4, lsl #2
 	mov r1, #4
 	str r2, [r5, #4]
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r5, #0x30]
 	mov r0, r5
 	str r4, [r5, #0x34]
@@ -69820,7 +69820,7 @@ sub_0203BDA4: ; 0x0203BDA4
 	ldr r0, [r4, #0x30]
 	cmp r0, #0
 	beq _0203BDCC
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x30]
 	arm_func_end sub_0203BDA4
@@ -69839,7 +69839,7 @@ sub_0203BDD8: ; 0x0203BDD8
 	ldr r0, [r4, #0x30]
 	cmp r0, #0
 	beq _0203BE00
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x30]
 	arm_func_end sub_0203BDD8
@@ -69860,7 +69860,7 @@ sub_0203BE14: ; 0x0203BE14
 	ldr r0, [r4, #0x30]
 	cmp r0, #0
 	beq _0203BE3C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x30]
 	arm_func_end sub_0203BE14
@@ -75479,7 +75479,7 @@ _020409E8:
 	mov sl, sb, lsl #4
 	mov r0, sl
 	mov r1, #4
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r8, #0x10]
 	mov r1, r0
 	mov r2, sl
@@ -76204,7 +76204,7 @@ sub_02041344: ; 0x02041344
 	blx r1
 	mov r0, #0x1d0
 	mov r1, #4
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [sl, #0x10]
 	mov r1, r0
 	mov r0, #0
@@ -90269,8 +90269,8 @@ MAIN_BSS_0208F300: ; 0x0208F300
 MAIN_BSS_0208F304: ; 0x0208F304
     .space 0xC
 
-    .global sHeap_MainHandle
-sHeap_MainHandle: ; 0x0208F310
+    .global sHeapHandles
+sHeapHandles: ; 0x0208F310
     .space 0x4
 
     .global sHeap_SecondaryHandle

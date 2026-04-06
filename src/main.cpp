@@ -4,13 +4,13 @@
 #include "CGame.hpp"
 #include "UnkClass_0208F300.hpp"
 #include "UnkClass_Scene_LoadByID.hpp"
+#include "heap.hpp"
 #include "sub_02001248.hpp"
 
 extern "C" {
 void InitBlankInterrupts(void);
 void *sub_020101A8(u32);
 void sub_0202B80C(void);
-NNSFndHeapHandle *Heap_GetMainHandle(void);
 void sub_02001184(void);
 UnkClass_Scene_LoadByID *Scene_LoadByID(u32, CGame *);
 void sub_0200F9E0(void);

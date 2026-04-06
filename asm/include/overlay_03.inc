@@ -3,8 +3,8 @@
 .public _Znam
 .public _ZdlPv
 .public _ZdaPv
-.public Heap_AllocWithAlignment
-.public Heap_Free
+.public _Z23Heap_AllocWithAlignmentmm
+.public _Z9Heap_FreePv
 .public sub_02002AEC
 .public sub_02002B6C
 .public CBinaryFileMes_ctor

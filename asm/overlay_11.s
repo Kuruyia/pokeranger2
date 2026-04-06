@@ -2019,7 +2019,7 @@ ov11_0211E464: ; 0x0211E464
 	ldr r0, [sl, #0x10]
 	cmp r0, #0
 	beq _0211E4B0
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [sl, #0x10]
 	arm_func_end ov11_0211E464
@@ -2140,7 +2140,7 @@ _0211E654:
 	ldr r0, [sl, #0xc]
 	cmp r0, #0
 	beq _0211E67C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [sl, #0xc]
 _0211E67C:
@@ -2337,7 +2337,7 @@ _0211E92C:
 	ldr r0, [sl, #0xa8]
 	cmp r0, #0
 	beq _0211E97C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [sl, #0xa8]
 _0211E97C:
@@ -2414,7 +2414,7 @@ _0211E9B8:
 	ldr r0, [sl, #0xac]
 	cmp r0, #0
 	beq _0211EAA8
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [sl, #0xac]
 _0211EAA8:
@@ -2533,7 +2533,7 @@ _0211EC40:
 	cmp r0, #0
 	ldr r5, [sl, #0x40]
 	beq _0211EC74
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [sl, #0xb0]
 _0211EC74:
@@ -2570,7 +2570,7 @@ _0211ECAC:
 	cmp r0, #0
 	and r4, r1, #0xff
 	beq _0211ED00
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [sl, #0xb4]
 _0211ED00:
@@ -2615,7 +2615,7 @@ _0211ED7C:
 	ldr r0, [r0, #0xc4]
 	cmp r0, #0
 	beq _0211EDA8
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	add r0, sl, sb, lsl #2
 	str r6, [r0, #0xc4]
 _0211EDA8:
@@ -2659,7 +2659,7 @@ _0211EDE0:
 	ldr r0, [sl, #0x724]
 	cmp r0, #0
 	beq _0211EE50
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [sl, #0x724]
 _0211EE50:
@@ -3437,7 +3437,7 @@ _0211F88C:
 	ldr r0, [r4, #0x700]
 	cmp r0, #0
 	beq _0211F8B0
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x700]
 _0211F8B0:
@@ -13848,7 +13848,7 @@ ov11_02127ED0: ; 0x02127ED0
 	stmdb sp!, {r3, lr}
 	ldr r0, _02127F9C ; =0x00001364
 	mov r1, #0x20
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r1, _02127FA0 ; =OVERLAY11_BSS_02169C44
 	add r2, r0, #0x1000
 	str r0, [r1]
@@ -14324,7 +14324,7 @@ ov11_02128478: ; 0x02128478
 	ldmneia sp!, {r4, pc}
 	bl ov11_0212CDF4
 	mov r0, #0x3d0
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r3, _021284D8 ; =OVERLAY11_BSS_02169C4C
 	mov r1, #0
 	mov r2, #0x3d0
@@ -14511,7 +14511,7 @@ ov11_0212868C: ; 0x0212868C
 	ldr r0, [r0]
 	cmp r0, #0
 	beq _021286A4
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	arm_func_end ov11_0212868C
 _021286A4:
 	ldr r0, _021286B8 ; =OVERLAY11_BSS_02169C4C
@@ -14530,7 +14530,7 @@ ov11_021286BC: ; 0x021286BC
 	cmp r0, #0
 	ldmneia sp!, {r4, r5, r6, pc}
 	mov r0, #0x39c
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r3, _02128748 ; =OVERLAY11_BSS_02169C50
 	mov r1, #0
 	mov r2, #0x39c
@@ -14585,7 +14585,7 @@ _02128768:
 	ldr r0, [r0]
 	cmp r0, #0
 	beq _02128794
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 _02128794:
 	ldr r0, _021287A4 ; =OVERLAY11_BSS_02169C50
 	mov r1, #0
@@ -14750,7 +14750,7 @@ ov11_02128A94: ; 0x02128A94
 	cmp r0, #0
 	ldmneia sp!, {r4, pc}
 	mov r0, #0x44
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r3, _02128B38 ; =OVERLAY11_BSS_02169C54
 	mov r1, #0
 	mov r2, #0x44
@@ -14801,7 +14801,7 @@ ov11_02128B40: ; 0x02128B40
 	ldr r0, [r0]
 	cmp r0, #0
 	beq _02128B6C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	arm_func_end ov11_02128B40
 _02128B6C:
 	ldr r0, _02128B7C ; =OVERLAY11_BSS_02169C54
@@ -15135,7 +15135,7 @@ ov11_02128F1C: ; 0x02128F1C
 	ldmneia sp!, {r4, pc}
 	ldr r0, _02128FAC ; =0x00000DA4
 	mov r1, #0x20
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r3, _02128FA8 ; =OVERLAY11_BSS_02169C58
 	ldr r2, _02128FAC ; =0x00000DA4
 	mov r1, #0
@@ -15143,7 +15143,7 @@ ov11_02128F1C: ; 0x02128F1C
 	bl MI_CpuFill8
 	bl ov11_02127FA4
 	mov r1, #0x20
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r1, _02128FA8 ; =OVERLAY11_BSS_02169C58
 	ldr r1, [r1, #8]
 	str r0, [r1, #0xd84]
@@ -15448,7 +15448,7 @@ ov11_021292F8: ; 0x021292F8
 	ldr r0, [r0, #0xd84]
 	cmp r0, #0
 	beq _02129324
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	ldr r0, _02129348 ; =OVERLAY11_BSS_02169C58
 	mov r1, #0
 	ldr r0, [r0, #8]
@@ -15459,7 +15459,7 @@ _02129324:
 	ldr r0, [r0, #8]
 	cmp r0, #0
 	beq _02129338
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 _02129338:
 	ldr r0, _02129348 ; =OVERLAY11_BSS_02169C58
 	mov r1, #0
@@ -15914,7 +15914,7 @@ ov11_021298C4: ; 0x021298C4
 	cmp r0, #0
 	bne _021298F4
 	ldr r0, _02129940 ; =0x00000253
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r3, _0212993C ; =OVERLAY11_BSS_02169C64
 	ldr r2, _02129940 ; =0x00000253
 	mov r1, #0
@@ -15952,7 +15952,7 @@ ov11_02129944: ; 0x02129944
 	ldr r0, [r0]
 	cmp r0, #0
 	beq _0212995C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	arm_func_end ov11_02129944
 _0212995C:
 	ldr r0, _0212996C ; =OVERLAY11_BSS_02169C64
@@ -16123,7 +16123,7 @@ ov11_02129B60: ; 0x02129B60
 	mov r0, r4
 	bl ov11_021298C4
 	ldr r0, _02129D60 ; =0x00000688
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r3, _02129D5C ; =OVERLAY11_BSS_02169C68
 	ldr r2, _02129D60 ; =0x00000688
 	mov r1, r4
@@ -16142,27 +16142,27 @@ ov11_02129B60: ; 0x02129B60
 	ldr r0, [r0, #4]
 	ldr r0, [r0, #0x654]
 	mov r0, r0, lsl #1
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r1, _02129D5C ; =OVERLAY11_BSS_02169C68
 	ldr r2, [r1, #4]
 	str r0, [r2, #0x45c]
 	ldr r0, [r1, #4]
 	ldr r0, [r0, #0x654]
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r1, _02129D5C ; =OVERLAY11_BSS_02169C68
 	ldr r2, [r1, #4]
 	str r0, [r2, #0x460]
 	ldr r0, [r1, #4]
 	ldr r0, [r0, #0x654]
 	mul r0, r5, r0
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r1, _02129D5C ; =OVERLAY11_BSS_02169C68
 	ldr r2, [r1, #4]
 	str r0, [r2, #0x458]
 	ldr r0, [r1, #4]
 	ldr r0, [r0, #0x654]
 	mul r0, r5, r0
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r1, _02129D5C ; =OVERLAY11_BSS_02169C68
 	ldr r1, [r1, #4]
 	str r0, [r1, #0x454]
@@ -16909,7 +16909,7 @@ _0212A69C:
 	ldr r0, [r0, #0x45c]
 	cmp r0, #0
 	beq _0212A6DC
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	ldr r0, _0212A7A0 ; =OVERLAY11_BSS_02169C68
 	mov r1, #0
 	ldr r0, [r0, #4]
@@ -16920,7 +16920,7 @@ _0212A6DC:
 	ldr r0, [r0, #0x460]
 	cmp r0, #0
 	beq _0212A704
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	ldr r0, _0212A7A0 ; =OVERLAY11_BSS_02169C68
 	mov r1, #0
 	ldr r0, [r0, #4]
@@ -16931,7 +16931,7 @@ _0212A704:
 	ldr r0, [r0, #0x458]
 	cmp r0, #0
 	beq _0212A72C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	ldr r0, _0212A7A0 ; =OVERLAY11_BSS_02169C68
 	mov r1, #0
 	ldr r0, [r0, #4]
@@ -16942,7 +16942,7 @@ _0212A72C:
 	ldr r0, [r0, #0x454]
 	cmp r0, #0
 	beq _0212A754
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	ldr r0, _0212A7A0 ; =OVERLAY11_BSS_02169C68
 	mov r1, #0
 	ldr r0, [r0, #4]
@@ -16962,7 +16962,7 @@ _0212A754:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _0212A790
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 _0212A790:
 	ldr r0, _0212A7A0 ; =OVERLAY11_BSS_02169C68
 	mov r1, #0
@@ -19426,7 +19426,7 @@ ov11_0212C7FC: ; 0x0212C7FC
 	bl MI_CpuFill8
 	mov r4, r6, lsl #4
 	mov r0, r4
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	mov r2, r4
 	mov r1, #0
 	str r0, [r7, #0x18]
@@ -19461,7 +19461,7 @@ ov11_0212C878: ; 0x0212C878
 	ldr r0, [r4, #0x18]
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x18]
 	ldmia sp!, {r4, pc}
@@ -19632,7 +19632,7 @@ ov11_0212CA60: ; 0x0212CA60
 	cmp r0, #0
 	bne _0212CA90
 	mov r0, #0x18
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r1, _0212CADC ; =OVERLAY11_BSS_02169C70
 	str r0, [r1]
 	arm_func_end ov11_0212CA60
@@ -19668,7 +19668,7 @@ ov11_0212CAE0: ; 0x0212CAE0
 	cmp r0, #0
 	ldmeqia sp!, {r3, pc}
 	beq _0212CAFC
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	arm_func_end ov11_0212CAE0
 _0212CAFC:
 	ldr r0, _0212CB0C ; =OVERLAY11_BSS_02169C70
@@ -20067,7 +20067,7 @@ ov11_0212CFD4: ; 0x0212CFD4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	ldr r0, _0212D014 ; =0x00001E24
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r2, _0212D014 ; =0x00001E24
 	str r0, [r4]
 	mov r1, #0
@@ -20690,7 +20690,7 @@ ov11_0212D8A0: ; 0x0212D8A0
 	mov r0, #0x200
 	mov r5, r1
 	mov r4, r2
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	ldr r1, _0212D970 ; =0x0000A001
 	mov r6, r0
 	bl MATHi_CRC16InitTableRev
@@ -20702,7 +20702,7 @@ ov11_0212D8A0: ; 0x0212D8A0
 	cmp r6, #0
 	beq _0212D8E8
 	mov r0, r6
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	arm_func_end ov11_0212D8A0
 _0212D8E8:
 	add r0, sp, #0
@@ -20723,7 +20723,7 @@ _0212D908:
 	ldrh r3, [r1, r2]
 	blt _0212D908
 	mov r0, #0x104
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	add r1, sp, #0
 	mov r6, r0
 	mov r2, #8
@@ -20737,7 +20737,7 @@ _0212D908:
 	addeq sp, sp, #8
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
 	mov r0, r6
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -23848,7 +23848,7 @@ ov11_021302F0: ; 0x021302F0
 	ldr r0, [r4, #0x14]
 	cmp r0, #0
 	beq _02130308
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	arm_func_end ov11_021302F0
 _02130308:
 	mov r0, r4
@@ -23868,14 +23868,14 @@ ov11_0213031C: ; 0x0213031C
 	ldr r0, [r5, #0x14]
 	cmp r0, #0
 	beq _0213033C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r5, #0x14]
 	arm_func_end ov11_0213031C
 _0213033C:
 	mov r0, #0x700
 	mov r1, #0x20
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r5, #0x14]
 	bl ov11_0215DB58
 	mov r4, r0
@@ -23883,7 +23883,7 @@ _0213033C:
 	ldr r0, [r5, #0x14]
 	cmp r0, #0
 	beq _02130370
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r5, #0x14]
 _02130370:
@@ -23977,7 +23977,7 @@ ov11_02130470: ; 0x02130470
 	mov r5, r0
 	mov r0, r6
 	mov r1, r4
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	mov r4, r0
 	mov r0, r5
 	bl OS_RestoreInterrupts
@@ -23991,20 +23991,20 @@ ov11_021304A4: ; 0x021304A4
 	mov r0, r1
 	bx ip
 	.align 2, 0
-_021304B0: .word Heap_Free
+_021304B0: .word _Z9Heap_FreePv
 	arm_func_end ov11_021304A4
 
 	arm_func_start ov11_021304B4
 ov11_021304B4: ; 0x021304B4
 	stmdb sp!, {r4, lr}
 	mov r0, #0x40000
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	mov r4, r0
 	mov r1, #1
 	mov r2, #0
 	bl ov11_02146A40
 	mov r0, r4
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	ldmia sp!, {r4, pc}
 	arm_func_end ov11_021304B4
 
@@ -24027,7 +24027,7 @@ ov11_021304FC: ; 0x021304FC
 	ldr r0, [r4, #0x4c0]
 	cmp r0, #0
 	beq _02130514
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	arm_func_end ov11_021304FC
 _02130514:
 	mov r0, r4
@@ -24890,7 +24890,7 @@ _0213110C:
 	ldr r0, [r4, #0x4c0]
 	cmp r0, #0
 	beq _0213113C
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x4c0]
 _0213113C:
@@ -24898,7 +24898,7 @@ _0213113C:
 	mov r0, #0xb0
 	mla r0, r1, r0, r4
 	ldr r0, [r0, #0xe4]
-	bl Heap_Alloc
+	bl _Z10Heap_Allocm
 	cmp r0, #0
 	str r0, [r4, #0x4c0]
 	addeq sp, sp, #0x34

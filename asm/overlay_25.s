@@ -1002,7 +1002,7 @@ _0211D73C:
 	ldr r0, [r4, #0x1c]
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
-	bl Heap_Free
+	bl _Z9Heap_FreePv
 	mov r0, #0
 	str r0, [r4, #0x1c]
 	ldmia sp!, {r4, pc}
@@ -1277,7 +1277,7 @@ _0211DAE4:
 	bl ov25_0211DD14
 	mov r0, #0x800
 	mov r1, #4
-	bl Heap_AllocWithAlignment
+	bl _Z23Heap_AllocWithAlignmentmm
 	ldr r3, [sp, #0x30]
 	str r0, [sb, #0x1c]
 	mov r4, #0
