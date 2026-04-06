@@ -45,9 +45,9 @@ class CLI(argparse.Namespace):
             )
         for command in commands:
             cmdstr = command['command']
-            if 'mwrap mwasmarm' in cmdstr:
+            if 'mwasmarm' in cmdstr:
                 cmdtype = 'asm'
-            elif 'mwrap mwccarm' in cmdstr:
+            elif 'mwccarm' in cmdstr:
                 cmdtype = 'src'
             else:
                 continue
