@@ -77,173 +77,173 @@ Autoload DTCM
 
 Overlay overlay0
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_00_0211C9E0.s.o
 }
 
 Overlay overlay1
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_01_0211C9E0.s.o
 }
 
 Overlay overlay2
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_02_0211C9E0.s.o
 }
 
 Overlay overlay3
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_03_0211C9E0.s.o
 }
 
 Overlay overlay4
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_04_0211C9E0.s.o
 }
 
 Overlay overlay5
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_05_0211C9E0.s.o
 }
 
 Overlay overlay6
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_06_0211C9E0.s.o
 }
 
 Overlay overlay7
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_07_0211C9E0.s.o
 }
 
 Overlay overlay8
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_08_0211C9E0.s.o
 }
 
 Overlay overlay9
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_09_0211C9E0.s.o
 }
 
 Overlay overlay10
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_10_0211C9E0.s.o
 }
 
 Overlay overlay11
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_11_0211C9E0.s.o
 }
 
 Overlay overlay12
 {
-    Address 0x0211C9E0
+    After main
 }
 
 Overlay overlay13
 {
-    Address 0x0211C9E0
+    After main
 }
 
 Overlay overlay14
 {
-    Address 0x0211C9E0
+    After main
 }
 
 Overlay overlay15
 {
-    Address 0x0211C9E0
+    After main
 }
 
 Overlay overlay16
 {
-    Address 0x0211C9E0
+    After main
 }
 
 Overlay overlay17
 {
-    Address 0x0211C9E0
+    After main
 }
 
 Overlay overlay18
 {
-    Address 0x0211C9E0
+    After main
 }
 
 Overlay overlay19
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_19_0211C9E0.s.o
 }
 
 Overlay overlay20
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_20_0211C9E0.s.o
 }
 
 Overlay overlay21
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_21_0211C9E0.s.o
 }
 
 Overlay overlay22
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_22_0211C9E0.s.o
 }
 
 Overlay overlay23
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_23_0211C9E0.s.o
 }
 
 Overlay overlay24
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_24_0211C9E0.s.o
 }
 
 Overlay overlay25
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_25_0211C9E0.s.o
 }
 
 Overlay overlay26
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_26_0211C9E0.s.o
 }
 
 Overlay overlay27
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_27_0211C9E0.s.o
 }
 
 Overlay overlay28
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_28_0211C9E0.s.o
 }
 
 Overlay overlay29
 {
-    Address 0x0211C9E0
+    After main
     Object main.nef.p/asm_overlay_29_0211C9E0.s.o
 }
