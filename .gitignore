@@ -108,6 +108,7 @@ __pycache__
 .cache
 .venv/
 .python-version
+.ruff_cache
 
 compile_commands.json
 

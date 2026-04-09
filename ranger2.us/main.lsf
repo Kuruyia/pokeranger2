@@ -7,244 +7,244 @@
 
 Static main
 {
-	Address 0x02000000
-	StackSize 0 2048
-	Library libsoc.a (.version)
-	Library libcps.a (.version)
-	Library libssl.a (.version)
-	Library libcard.a (.version)
-	Library libdwcaccount.a (.version)
-	Object main.nef.p/src_main.cpp.o
-	Object main.nef.p/asm_arm9_020010E4.s.o
-	Object main.nef.p/src_sub_02001248.cpp.o
-	Object main.nef.p/asm_arm9_02001294.s.o
+    Address 0x02000000
+    StackSize 0 2048
+    Library libsoc.a (.version)
+    Library libcps.a (.version)
+    Library libssl.a (.version)
+    Library libcard.a (.version)
+    Library libdwcaccount.a (.version)
+    Object main.nef.p/src_main.cpp.o
+    Object main.nef.p/asm_arm9_020010E4.s.o
+    Object main.nef.p/src_sub_02001248.cpp.o
+    Object main.nef.p/asm_arm9_02001294.s.o
     Object main.nef.p/src_UnkClass_02001C20.cpp.o
-	Object main.nef.p/asm_arm9_02001D28.s.o
-	Object main.nef.p/src_heap.cpp.o
+    Object main.nef.p/asm_arm9_02001D28.s.o
+    Object main.nef.p/src_heap.cpp.o
     Object main.nef.p/asm_arm9_020023EC.s.o
-	Object main.nef.p/src_UnkClass_020023EC.cpp.o
+    Object main.nef.p/src_UnkClass_020023EC.cpp.o
     Object main.nef.p/asm_arm9_02002AD4.s.o
-	Library libsoc.a
+    Library libsoc.a
     Library libcps.a
     Library libssl.a
-	Library libwcm.a
+    Library libwcm.a
     Library libnnsfnd.a
     Library libnnsgfd.a
     Library libnnsg2d.a
-	Library libnnssnd.a
+    Library libnnssnd.a
     Library libfx.a
     Library libgx.a
     Library libos.a
     Library libmi.a
     Library libsnd.a
-	Library libpxi.a
-	Library libfs.a
-	Library libdgt.a
-	Library libcp.a
+    Library libpxi.a
+    Library libfs.a
+    Library libdgt.a
+    Library libcp.a
     Library libspi.a
     Library librtc.a
     Library libcard.a
-	Library libwm.a
+    Library libwm.a
     Library libmb.a
-	Library libctrdg.a
-	Library libmath.a
-	Library libstd.a
-	Library MSL_C_NITRO_Ai_LE.a
-	Library MSL_Extras_NITRO_Ai_LE.a
-	Library MSL_CPP_NITRO_Ai_LE.a
-	Library FP_fastI_v5t_LE.a
-	Library NITRO_Runtime_Ai_LE.a
+    Library libctrdg.a
+    Library libmath.a
+    Library libstd.a
+    Library MSL_C_NITRO_Ai_LE.a
+    Library MSL_Extras_NITRO_Ai_LE.a
+    Library MSL_CPP_NITRO_Ai_LE.a
+    Library FP_fastI_v5t_LE.a
+    Library NITRO_Runtime_Ai_LE.a
 }
 
 Autoload ITCM
 {
-	Address 0x01FF8000
-	Library libos.a (.itcm)
-	Library libmi.a (.itcm)
+    Address 0x01FF8000
+    Library libos.a (.itcm)
+    Library libmi.a (.itcm)
 }
 
 Autoload DTCM
 {
-	Address 0x027E0000
-	Library libos.a (.dtcm)
+    Address 0x027E0000
+    Library libos.a (.dtcm)
 }
 
 Overlay overlay0
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_00.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_00_0211C9E0.s.o
 }
 
 Overlay overlay1
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_01.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_01_0211C9E0.s.o
 }
 
 Overlay overlay2
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_02.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_02_0211C9E0.s.o
 }
 
 Overlay overlay3
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_03.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_03_0211C9E0.s.o
 }
 
 Overlay overlay4
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_04.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_04_0211C9E0.s.o
 }
 
 Overlay overlay5
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_05.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_05_0211C9E0.s.o
 }
 
 Overlay overlay6
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_06.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_06_0211C9E0.s.o
 }
 
 Overlay overlay7
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_07.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_07_0211C9E0.s.o
 }
 
 Overlay overlay8
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_08.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_08_0211C9E0.s.o
 }
 
 Overlay overlay9
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_09.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_09_0211C9E0.s.o
 }
 
 Overlay overlay10
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_10.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_10_0211C9E0.s.o
 }
 
 Overlay overlay11
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_11.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_11_0211C9E0.s.o
 }
 
 Overlay overlay12
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_12.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_12.s.o
 }
 
 Overlay overlay13
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_13.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_13.s.o
 }
 
 Overlay overlay14
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_14.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_14.s.o
 }
 
 Overlay overlay15
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_15.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_15.s.o
 }
 
 Overlay overlay16
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_16.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_16.s.o
 }
 
 Overlay overlay17
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_17.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_17.s.o
 }
 
 Overlay overlay18
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_18.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_18.s.o
 }
 
 Overlay overlay19
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_19.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_19_0211C9E0.s.o
 }
 
 Overlay overlay20
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_20.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_20_0211C9E0.s.o
 }
 
 Overlay overlay21
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_21.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_21_0211C9E0.s.o
 }
 
 Overlay overlay22
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_22.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_22_0211C9E0.s.o
 }
 
 Overlay overlay23
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_23.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_23_0211C9E0.s.o
 }
 
 Overlay overlay24
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_24.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_24_0211C9E0.s.o
 }
 
 Overlay overlay25
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_25.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_25_0211C9E0.s.o
 }
 
 Overlay overlay26
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_26.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_26_0211C9E0.s.o
 }
 
 Overlay overlay27
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_27.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_27_0211C9E0.s.o
 }
 
 Overlay overlay28
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_28.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_28_0211C9E0.s.o
 }
 
 Overlay overlay29
 {
-	Address 0x0211C9E0
-	Object main.nef.p/asm_overlay_29.s.o
+    Address 0x0211C9E0
+    Object main.nef.p/asm_overlay_29_0211C9E0.s.o
 }
