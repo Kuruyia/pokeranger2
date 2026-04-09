@@ -24,6 +24,8 @@ Static main
     Object main.nef.p/asm_arm9_020023EC.s.o
     Object main.nef.p/src_UnkClass_020023EC.cpp.o
     Object main.nef.p/asm_arm9_02002AD4.s.o
+    Object main.nef.p/src_sub_0204436C.cpp.o
+    Object main.nef.p/asm_arm9_0204439C.s.o
     Library libsoc.a
     Library libcps.a
     Library libssl.a
