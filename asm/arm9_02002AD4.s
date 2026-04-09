@@ -60401,7 +60401,7 @@ sub_02033F04: ; 0x02033F04
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r4, r1
-	bl sub_02044440
+	bl _Z12sub_02044440v
 	ldr r1, _02033F8C ; =PTR_LAB_0208ce10
 	mov r0, #2
 	str r4, [r5]

@@ -28564,7 +28564,7 @@ _02135888: .word MAIN_BSS_0208F304
 ov0_0213588C: ; 0x0213588C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02044440
+	bl _Z12sub_02044440v
 	mov r1, #0
 	mov r0, r1
 	arm_func_end ov0_0213588C
@@ -32895,7 +32895,7 @@ _02139480:
 ov0_0213949C: ; 0x0213949C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02044440
+	bl _Z12sub_02044440v
 	mov r2, #0
 	mov r1, r2
 	arm_func_end ov0_0213949C
@@ -43097,7 +43097,7 @@ _02142024: .word MAIN_BSS_0208F304
 ov0_02142028: ; 0x02142028
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02044440
+	bl _Z12sub_02044440v
 	mov r1, #0
 	mov r0, r1
 	arm_func_end ov0_02142028

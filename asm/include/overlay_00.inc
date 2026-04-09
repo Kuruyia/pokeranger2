@@ -326,7 +326,7 @@
 .public sub_02041D6C
 .public sub_02041D80
 .public sub_02041D98
-.public sub_02044440
+.public _Z12sub_02044440v
 .public sub_02044AC8
 .public sub_02044B38
 .public sub_02044B48

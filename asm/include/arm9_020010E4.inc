@@ -14,6 +14,6 @@
 .public sub_0201002C
 .public sub_02010448
 .public sub_0204436C
-.public sub_02044440
+.public _Z12sub_02044440v
 .public sub_02046D40
 .public Scene_LoadByID

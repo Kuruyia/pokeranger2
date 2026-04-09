@@ -756,7 +756,7 @@
 .public sub_02002434
 .public sub_020027E8
 .public sub_020028A4
-.public sub_02044440
+.public _Z12sub_02044440v
 .public sub_02044AC8
 .public sub_02044B38
 .public sub_02044B48
