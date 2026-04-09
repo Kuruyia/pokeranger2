@@ -144,43 +144,36 @@ Overlay overlay11
 Overlay overlay12
 {
     Address 0x0211C9E0
-    Object main.nef.p/asm_overlay_12.s.o
 }
 
 Overlay overlay13
 {
     Address 0x0211C9E0
-    Object main.nef.p/asm_overlay_13.s.o
 }
 
 Overlay overlay14
 {
     Address 0x0211C9E0
-    Object main.nef.p/asm_overlay_14.s.o
 }
 
 Overlay overlay15
 {
     Address 0x0211C9E0
-    Object main.nef.p/asm_overlay_15.s.o
 }
 
 Overlay overlay16
 {
     Address 0x0211C9E0
-    Object main.nef.p/asm_overlay_16.s.o
 }
 
 Overlay overlay17
 {
     Address 0x0211C9E0
-    Object main.nef.p/asm_overlay_17.s.o
 }
 
 Overlay overlay18
 {
     Address 0x0211C9E0
-    Object main.nef.p/asm_overlay_18.s.o
 }
 
 Overlay overlay19
