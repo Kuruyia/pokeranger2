@@ -5,13 +5,7 @@
 #include "heap.hpp"
 #include "sub_0204436C.hpp"
 #include "sub_02044440.hpp"
-
-typedef void *(*HeapAllocFunc)(u32);
-typedef void (*HeapFreeFunc)(void *);
-
-extern "C" {
-extern void sub_02046D40(HeapAllocFunc, HeapFreeFunc);
-}
+#include "sub_02046D40.hpp"
 
 void sub_02001248(void)
 {

@@ -1,0 +1,7764 @@
+    .include "macros.inc"
+    .include "include/arm9.inc"
+    .include "include/arm9_02046D5C.inc"
+
+    .text
+
+	arm_func_start sub_02046D5C
+sub_02046D5C: ; 0x02046D5C
+	stmdb sp!, {r4, r5, r6, lr}
+	mov r3, #0
+	str r3, [r0]
+	cmp r2, #0x10
+	str r3, [r0, #4]
+	movhi r2, #0x10
+	add r0, r0, #8
+	arm_func_end sub_02046D5C
+_02046D78:
+	str r3, [r0, r3, lsl #2]
+	add r3, r3, #1
+	cmp r3, #0x100
+	blt _02046D78
+	mov r5, #0
+	mov r6, r5
+	mov lr, r5
+	mov ip, r5
+_02046D98:
+	ldrb r3, [r1, r6]
+	ldr r4, [r0, lr, lsl #2]
+	add r6, r6, #1
+	add r3, r4, r3
+	add r3, r5, r3
+	and r5, r3, #0xff
+	ldr r3, [r0, r5, lsl #2]
+	cmp r6, r2
+	str r3, [r0, lr, lsl #2]
+	add lr, lr, #1
+	moveq r6, ip
+	str r4, [r0, r5, lsl #2]
+	cmp lr, #0x100
+	blt _02046D98
+	mov r2, #0
+_02046DD4:
+	ldr r1, [r0, r2, lsl #2]
+	mov r1, r1, lsl #0x18
+	str r1, [r0, r2, lsl #2]
+	add r2, r2, #1
+	cmp r2, #0x100
+	blt _02046DD4
+	ldmia sp!, {r4, r5, r6, lr}
+	bx lr
+
+	arm_func_start sub_02046DF4
+sub_02046DF4: ; 0x02046DF4
+	stmdb sp!, {r4, r5, r6, r7, lr}
+	sub sp, sp, #4
+	mov r3, #0
+	strb r3, [r0]
+	cmp r2, #0x10
+	strb r3, [r0, #1]
+	movhi r2, #0x10
+	add r0, r0, #4
+	arm_func_end sub_02046DF4
+_02046E14:
+	strb r3, [r0, r3]
+	add r3, r3, #1
+	cmp r3, #0x100
+	blt _02046E14
+	mov r6, #0
+	mov r7, r6
+	mov r4, r6
+	mov r3, r6
+	and ip, r2, #0xff
+_02046E38:
+	ldrb r5, [r0, r4]
+	ldrb lr, [r1, r7]
+	add r2, r7, #1
+	and r7, r2, #0xff
+	add r2, r5, lr
+	add r2, r6, r2
+	and r6, r2, #0xff
+	ldrb r2, [r0, r6]
+	add lr, r0, r4
+	add r4, r4, #1
+	strb r2, [lr]
+	cmp r7, ip
+	moveq r7, r3
+	cmp r4, #0x100
+	strb r5, [r0, r6]
+	blt _02046E38
+	add sp, sp, #4
+	ldmia sp!, {r4, r5, r6, r7, lr}
+	bx lr
+
+	arm_func_start sub_02046E84
+sub_02046E84: ; 0x02046E84
+	stmdb sp!, {r4, r5, r6, r7, r8, sb, lr}
+	ldr r7, [r0]
+	ldr r6, [r0, #4]
+	add r0, r0, #8
+	mov lr, #0x1000000
+	add r7, r7, lr
+	subs r2, r2, #8
+	ldr sb, [r0, r7, lsr #22]
+	bmi _02047010
+	arm_func_end sub_02046E84
+_02046EA8:
+	add r6, r6, sb
+	ldr r8, [r0, r6, lsr #22]
+	ldrb r5, [r1], #1
+	str r8, [r0, r7, lsr #22]
+	str sb, [r0, r6, lsr #22]
+	add r4, sb, r8
+	add r7, r7, lr
+	ldr r4, [r0, r4, lsr #22]
+	ldr sb, [r0, r7, lsr #22]
+	eor r5, r5, r4, lsr #24
+	strb r5, [r3], #1
+	add r6, r6, sb
+	ldr r8, [r0, r6, lsr #22]
+	ldrb r5, [r1], #1
+	str r8, [r0, r7, lsr #22]
+	str sb, [r0, r6, lsr #22]
+	add r4, sb, r8
+	add r7, r7, lr
+	ldr r4, [r0, r4, lsr #22]
+	ldr sb, [r0, r7, lsr #22]
+	eor r5, r5, r4, lsr #24
+	strb r5, [r3], #1
+	add r6, r6, sb
+	ldr r8, [r0, r6, lsr #22]
+	ldrb r5, [r1], #1
+	str r8, [r0, r7, lsr #22]
+	str sb, [r0, r6, lsr #22]
+	add r4, sb, r8
+	add r7, r7, lr
+	ldr r4, [r0, r4, lsr #22]
+	ldr sb, [r0, r7, lsr #22]
+	eor r5, r5, r4, lsr #24
+	strb r5, [r3], #1
+	add r6, r6, sb
+	ldr r8, [r0, r6, lsr #22]
+	ldrb r5, [r1], #1
+	str r8, [r0, r7, lsr #22]
+	str sb, [r0, r6, lsr #22]
+	add r4, sb, r8
+	add r7, r7, lr
+	ldr r4, [r0, r4, lsr #22]
+	ldr sb, [r0, r7, lsr #22]
+	eor r5, r5, r4, lsr #24
+	strb r5, [r3], #1
+	add r6, r6, sb
+	ldr r8, [r0, r6, lsr #22]
+	ldrb r5, [r1], #1
+	str r8, [r0, r7, lsr #22]
+	str sb, [r0, r6, lsr #22]
+	add r4, sb, r8
+	add r7, r7, lr
+	ldr r4, [r0, r4, lsr #22]
+	ldr sb, [r0, r7, lsr #22]
+	eor r5, r5, r4, lsr #24
+	strb r5, [r3], #1
+	add r6, r6, sb
+	ldr r8, [r0, r6, lsr #22]
+	ldrb r5, [r1], #1
+	str r8, [r0, r7, lsr #22]
+	str sb, [r0, r6, lsr #22]
+	add r4, sb, r8
+	add r7, r7, lr
+	ldr r4, [r0, r4, lsr #22]
+	ldr sb, [r0, r7, lsr #22]
+	eor r5, r5, r4, lsr #24
+	strb r5, [r3], #1
+	add r6, r6, sb
+	ldr r8, [r0, r6, lsr #22]
+	ldrb r5, [r1], #1
+	str r8, [r0, r7, lsr #22]
+	str sb, [r0, r6, lsr #22]
+	add r4, sb, r8
+	add r7, r7, lr
+	ldr r4, [r0, r4, lsr #22]
+	ldr sb, [r0, r7, lsr #22]
+	eor r5, r5, r4, lsr #24
+	strb r5, [r3], #1
+	add r6, r6, sb
+	subs r2, r2, #8
+	ldr r8, [r0, r6, lsr #22]
+	ldrb r5, [r1], #1
+	str r8, [r0, r7, lsr #22]
+	str sb, [r0, r6, lsr #22]
+	add r4, sb, r8
+	add r7, r7, lr
+	ldr r4, [r0, r4, lsr #22]
+	ldr sb, [r0, r7, lsr #22]
+	eor r5, r5, r4, lsr #24
+	strb r5, [r3], #1
+	bpl _02046EA8
+_02047010:
+	adds r2, r2, #8
+	ble _0204704C
+_02047018:
+	add r6, r6, sb
+	subs r2, r2, #1
+	ldr r8, [r0, r6, lsr #22]
+	ldrb r5, [r1], #1
+	str r8, [r0, r7, lsr #22]
+	str sb, [r0, r6, lsr #22]
+	add r4, sb, r8
+	add r7, r7, lr
+	ldr r4, [r0, r4, lsr #22]
+	ldr sb, [r0, r7, lsr #22]
+	eor r5, r5, r4, lsr #24
+	strb r5, [r3], #1
+	bgt _02047018
+_0204704C:
+	sub r7, r7, lr
+	and r7, r7, #0xff000000
+	str r6, [r0, #-4]
+	str r7, [r0, #-8]
+	ldmia sp!, {r4, r5, r6, r7, r8, sb, pc}
+
+	arm_func_start sub_02047060
+sub_02047060: ; 0x02047060
+	stmdb sp!, {r4, r5, r6, r7, r8, sb, lr}
+	ldrb r7, [r0]
+	ldrb r6, [r0, #1]
+	add r0, r0, #4
+	mov lr, #0x1000000
+	add r7, lr, r7, lsl #24
+	mov r6, r6, lsl #0x18
+	ldrb sb, [r0, r7, lsr #24]
+	subs r2, r2, #1
+	bmi _020470C0
+	arm_func_end sub_02047060
+_02047088:
+	add r6, r6, sb, lsl #24
+	subs r2, r2, #1
+	ldrb r8, [r0, r6, lsr #24]
+	ldrb r5, [r1], #1
+	strb r8, [r0, r7, lsr #24]
+	strb sb, [r0, r6, lsr #24]
+	add r4, sb, r8
+	and r4, r4, #0xff
+	add r7, r7, lr
+	ldrb r4, [r0, r4]
+	ldrb sb, [r0, r7, lsr #24]
+	eor r5, r5, r4
+	strb r5, [r3], #1
+	bge _02047088
+_020470C0:
+	sub r7, r7, lr
+	mov r7, r7, lsr #0x18
+	mov r6, r6, lsr #0x18
+	strb r7, [r0, #-4]
+	strb r6, [r0, #-3]
+	ldmia sp!, {r4, r5, r6, r7, r8, sb, pc}
+
+    .section .init, 4
+
+	arm_func_start sub_02084038
+sub_02084038: ; 0x02084038
+	stmdb sp!, {r3, lr}
+	ldr r1, _02084064 ; =DAT_0208aaf8
+	mov r0, #0x3c000000
+	ldrh r2, [r1, #2]
+	mov r1, #0
+	mov r2, r2, lsl #0xc
+	mov r3, r2, asr #0x1f
+	bl _ll_div
+	ldr r1, _02084068 ; =MAIN_BSS_020AF338
+	str r0, [r1]
+	ldmia sp!, {r3, pc}
+	.align 2, 0
+_02084064: .word DAT_0208aaf8
+_02084068: .word MAIN_BSS_020AF338
+	arm_func_end sub_02084038
+
+	arm_func_start sub_0208406C
+sub_0208406C: ; 0x0208406C
+	stmdb sp!, {r3, lr}
+	ldr r0, _0208409C ; =ptr_FUN_0200f8ac_0208ab60
+	ldr r3, _020840A0 ; =MAIN_BSS_020AF33C
+	mov ip, #0
+	str r0, [r3, #0xc]
+	str ip, [r3, #0x10]
+	ldr r0, _020840A4 ; =MAIN_BSS_020AF348
+	ldr r1, _020840A8 ; =0x0200FA58
+	ldr r2, _020840AC ; =MAIN_BSS_020AF33C
+	str ip, [r3, #0x14]
+	bl __register_global_object
+	ldmia sp!, {r3, pc}
+	.align 2, 0
+_0208409C: .word ptr_FUN_0200f8ac_0208ab60
+_020840A0: .word MAIN_BSS_020AF33C
+_020840A4: .word MAIN_BSS_020AF348
+_020840A8: .word 0x0200FA58
+_020840AC: .word MAIN_BSS_020AF33C
+	arm_func_end sub_0208406C
+
+	arm_func_start sub_020840B0
+sub_020840B0: ; 0x020840B0
+	stmdb sp!, {r3, lr}
+	ldr r0, _0208412C ; =MAIN_BSS_020AF5D0
+	bl sub_02010EC8
+	ldr r0, _0208412C ; =MAIN_BSS_020AF5D0
+	ldr r1, _02084130 ; =sub_02010ED4
+	ldr r2, _02084134 ; =MAIN_BSS_020AF5B8
+	bl __register_global_object
+	ldr ip, _02084130 ; =sub_02010ED4
+	ldr r0, _02084138 ; =MAIN_BSS_020AF5E4
+	ldr r3, _0208413C ; =sub_02010EC8
+	mov r1, #3
+	mov r2, #0x14
+	str ip, [sp]
+	bl __cxa_vec_ctor
+	ldr r1, _02084140 ; =sub_02011338
+	ldr r2, _02084144 ; =MAIN_BSS_020AF5C4
+	mov r0, #0
+	bl __register_global_object
+	ldr r0, _02084148 ; =MAIN_BSS_020AF620
+	bl sub_0201100C
+	ldr r0, _02084148 ; =MAIN_BSS_020AF620
+	ldr r1, _0208414C ; =sub_0201101C
+	ldr r2, _02084150 ; =MAIN_BSS_020AF5AC
+	bl __register_global_object
+	ldr r0, _02084154 ; =MAIN_BSS_020AF598
+	bl sub_02011248
+	ldr r0, _02084154 ; =MAIN_BSS_020AF598
+	ldr r1, _02084158 ; =sub_02011254
+	ldr r2, _0208415C ; =MAIN_BSS_020AF5A0
+	bl __register_global_object
+	ldmia sp!, {r3, pc}
+	.align 2, 0
+_0208412C: .word MAIN_BSS_020AF5D0
+_02084130: .word sub_02010ED4
+_02084134: .word MAIN_BSS_020AF5B8
+_02084138: .word MAIN_BSS_020AF5E4
+_0208413C: .word sub_02010EC8
+_02084140: .word sub_02011338
+_02084144: .word MAIN_BSS_020AF5C4
+_02084148: .word MAIN_BSS_020AF620
+_0208414C: .word sub_0201101C
+_02084150: .word MAIN_BSS_020AF5AC
+_02084154: .word MAIN_BSS_020AF598
+_02084158: .word sub_02011254
+_0208415C: .word MAIN_BSS_020AF5A0
+	arm_func_end sub_020840B0
+
+	arm_func_start sub_02084160
+sub_02084160: ; 0x02084160
+	stmdb sp!, {r3, lr}
+	ldr r0, _02084180 ; =MAIN_BSS_020B2638
+	bl sub_02011370
+	ldr r0, _02084180 ; =MAIN_BSS_020B2638
+	ldr r1, _02084184 ; =sub_02011384
+	ldr r2, _02084188 ; =MAIN_BSS_020B262C
+	bl __register_global_object
+	ldmia sp!, {r3, pc}
+	.align 2, 0
+_02084180: .word MAIN_BSS_020B2638
+_02084184: .word sub_02011384
+_02084188: .word MAIN_BSS_020B262C
+	arm_func_end sub_02084160
+
+	arm_func_start sub_0208418C
+sub_0208418C: ; 0x0208418C
+	stmdb sp!, {r3, lr}
+	ldr r0, _020841AC ; =MAIN_BSS_020B26A0
+	bl sub_020152D0
+	ldr r0, _020841AC ; =MAIN_BSS_020B26A0
+	ldr r1, _020841B0 ; =sub_020153AC
+	ldr r2, _020841B4 ; =MAIN_BSS_020B2694
+	bl __register_global_object
+	ldmia sp!, {r3, pc}
+	.align 2, 0
+_020841AC: .word MAIN_BSS_020B26A0
+_020841B0: .word sub_020153AC
+_020841B4: .word MAIN_BSS_020B2694
+	arm_func_end sub_0208418C
+
+	arm_func_start sub_020841B8
+sub_020841B8: ; 0x020841B8
+	stmdb sp!, {r3, lr}
+	ldr r0, _020841D8 ; =MAIN_BSS_0210C0B0
+	bl sub_02018DF4
+	ldr r0, _020841D8 ; =MAIN_BSS_0210C0B0
+	ldr r1, _020841DC ; =sub_02018E08
+	ldr r2, _020841E0 ; =MAIN_BSS_0210C0A4
+	bl __register_global_object
+	ldmia sp!, {r3, pc}
+	.align 2, 0
+_020841D8: .word MAIN_BSS_0210C0B0
+_020841DC: .word sub_02018E08
+_020841E0: .word MAIN_BSS_0210C0A4
+	arm_func_end sub_020841B8
+
+	arm_func_start sub_020841E4
+sub_020841E4: ; 0x020841E4
+	stmdb sp!, {r3, lr}
+	ldr ip, _0208422C ; =MAIN_BSS_0210C1C0
+	ldr r0, _02084230 ; =PTR_LAB_0208c1c0
+	mov r3, #0x60
+	str ip, [r0, #0x12c]
+	ldr r2, _02084234 ; =MAIN_BSS_0210C228
+	str r3, [r0, #0x130]
+	str r2, [r0, #0x134]
+	mov r1, #0x800
+	str r1, [r0, #0x138]
+	str ip, [r0, #0x254]
+	str r3, [r0, #0x258]
+	str r2, [r0, #0x25c]
+	str r1, [r0, #0x260]
+	bl sub_02010CC0
+	ldr r1, _02084230 ; =PTR_LAB_0208c1c0
+	str r0, [r1, #0x14]
+	ldmia sp!, {r3, pc}
+	.align 2, 0
+_0208422C: .word MAIN_BSS_0210C1C0
+_02084230: .word PTR_LAB_0208c1c0
+_02084234: .word MAIN_BSS_0210C228
+	arm_func_end sub_020841E4
+
+	arm_func_start sub_02084238
+sub_02084238: ; 0x02084238
+	ldr r3, _02084254 ; =MAIN_BSS_0210C1C0
+	mov r1, #0
+	ldr ip, _02084258 ; =MI_CpuFill8
+	ldr r0, _0208425C ; =MAIN_BSS_0210C1C0
+	mov r2, #0x60
+	str r1, [r3, #0x64]
+	bx ip
+	.align 2, 0
+_02084254: .word MAIN_BSS_0210C1C0
+_02084258: .word MI_CpuFill8
+_0208425C: .word MAIN_BSS_0210C1C0
+	arm_func_end sub_02084238
+
+	arm_func_start sub_02084260
+sub_02084260: ; 0x02084260
+	ldr r3, _0208427C ; =MAIN_BSS_0210C228
+	mov r1, #0
+	ldr ip, _02084280 ; =MI_CpuFill8
+	ldr r0, _02084284 ; =MAIN_BSS_0210C228
+	mov r2, #0x800
+	str r1, [r3, #0x804]
+	bx ip
+	.align 2, 0
+_0208427C: .word MAIN_BSS_0210C228
+_02084280: .word MI_CpuFill8
+_02084284: .word MAIN_BSS_0210C228
+	arm_func_end sub_02084260
+
+    .rodata
+	.global DAT_02084288
+DAT_02084288: ; 0x02084288
+	.byte 0x04, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00
+	.byte 0x0F, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x09, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00
+	.byte 0x06, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00
+	.byte 0x0B, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00, 0x14, 0x00, 0x00, 0x00, 0x18, 0x00, 0x00, 0x00
+	.byte 0x1F, 0x00, 0x00, 0x00, 0x15, 0x00, 0x00, 0x00, 0x19, 0x00, 0x00, 0x00, 0x1F, 0x00, 0x00, 0x00
+	.byte 0x16, 0x00, 0x00, 0x00, 0x1A, 0x00, 0x00, 0x00, 0x1F, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00
+	.byte 0x1B, 0x00, 0x00, 0x00, 0x1F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x10, 0x00, 0x00, 0x00, 0x0C, 0x00
+
+	.global DAT_020842f8
+DAT_020842f8: ; 0x020842F8
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020842fc
+DAT_020842fc: ; 0x020842FC
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084300
+DAT_02084300: ; 0x02084300
+	.byte 0x00, 0x00, 0x10, 0x00
+
+	.global DAT_02084304
+DAT_02084304: ; 0x02084304
+	.byte 0x00, 0x00, 0x0C, 0x00
+
+	.global DAT_02084308
+DAT_02084308: ; 0x02084308
+	.byte 0x01, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084348
+DAT_02084348: ; 0x02084348
+	.byte 0x01, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x10, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x08, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x08, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084388
+DAT_02084388: ; 0x02084388
+	.byte 0x01, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020843c8
+DAT_020843c8: ; 0x020843C8
+	.byte 0xE3, 0x80, 0x80, 0x20, 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020843d0
+DAT_020843d0: ; 0x020843D0
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020843d4
+DAT_020843d4: ; 0x020843D4
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_020843d8
+DAT_020843d8: ; 0x020843D8
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_020843dc
+DAT_020843dc: ; 0x020843DC
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_020843e0
+DAT_020843e0: ; 0x020843E0
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020843e4
+DAT_020843e4: ; 0x020843E4
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_020843e8
+DAT_020843e8: ; 0x020843E8
+	.byte 0x04, 0x00, 0x00, 0x00
+
+	.global DAT_020843ec
+DAT_020843ec: ; 0x020843EC
+	.byte 0x07, 0x00, 0x00, 0x00
+
+	.global DAT_020843f0
+DAT_020843f0: ; 0x020843F0
+	.byte 0x0A, 0x00, 0x00, 0x00
+
+	.global DAT_020843f4
+DAT_020843f4: ; 0x020843F4
+	.byte 0x0D, 0x00, 0x00, 0x00
+
+	.global DAT_020843f8
+DAT_020843f8: ; 0x020843F8
+	.byte 0x00, 0xF0, 0xFF, 0xFF, 0x00, 0x10, 0x00, 0x00
+	.byte 0x00, 0xF0, 0xFF, 0xFF, 0x00, 0x10, 0x00, 0x00, 0x00, 0xF0, 0xFF, 0xFF, 0x00, 0x10, 0x00, 0x00
+
+	.global DAT_02084410
+DAT_02084410: ; 0x02084410
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0xFF, 0xFF, 0x00, 0x10, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00
+	.byte 0x00, 0xF0, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084428
+DAT_02084428: ; 0x02084428
+	.byte 0x63, 0x00, 0x00, 0x00
+
+	.global DAT_0208442c
+DAT_0208442c: ; 0x0208442C
+	.byte 0x63, 0x00, 0x00, 0x00
+
+	.global DAT_02084430
+DAT_02084430: ; 0x02084430
+	.byte 0x1E, 0x00, 0x00, 0x00
+
+	.global DAT_02084434
+DAT_02084434: ; 0x02084434
+	.byte 0x1C, 0x00, 0x00, 0x00
+
+	.global DAT_02084438
+DAT_02084438: ; 0x02084438
+	.byte 0x1D, 0x00, 0x00, 0x00
+
+	.global DAT_0208443c
+DAT_0208443c: ; 0x0208443C
+	.byte 0x20, 0x00, 0x00, 0x00
+
+	.global DAT_02084440
+DAT_02084440: ; 0x02084440
+	.byte 0x22, 0x00, 0x00, 0x00
+
+	.global DAT_02084444
+DAT_02084444: ; 0x02084444
+	.byte 0x22, 0x00, 0x00, 0x00, 0x1F, 0x00, 0x00, 0x00, 0x22, 0x00, 0x00, 0x00
+	.byte 0x2C, 0x00, 0x00, 0x00, 0x1C, 0x00, 0x00, 0x00, 0x2C, 0x00, 0x00, 0x00, 0x2C, 0x00, 0x00, 0x00
+	.byte 0x2C, 0x00, 0x00, 0x00, 0x2F, 0x00, 0x00, 0x00, 0x2F, 0x00, 0x00, 0x00, 0x31, 0x00, 0x00, 0x00
+	.byte 0x31, 0x00, 0x00, 0x00, 0x31, 0x00, 0x00, 0x00, 0x34, 0x00, 0x00, 0x00, 0x34, 0x00, 0x00, 0x00
+	.byte 0x34, 0x00, 0x00, 0x00, 0x3B, 0x00, 0x00, 0x00, 0x38, 0x00, 0x00, 0x00, 0x38, 0x00, 0x00, 0x00
+	.byte 0x3B, 0x00, 0x00, 0x00, 0x3B, 0x00, 0x00, 0x00, 0x3B, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00
+	.byte 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00
+	.byte 0x45, 0x00, 0x00, 0x00, 0x1E, 0x00, 0x00, 0x00, 0x2C, 0x00, 0x00, 0x00, 0x2F, 0x00, 0x00, 0x00
+	.byte 0x38, 0x00, 0x00, 0x00, 0x34, 0x00, 0x00, 0x00, 0x38, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00
+	.byte 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00, 0x31, 0x00, 0x00, 0x00
+	.byte 0x22, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00, 0x1A, 0x00, 0x00, 0x00
+	.byte 0x1C, 0x00, 0x00, 0x00, 0x1F, 0x00, 0x00, 0x00, 0x2C, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00
+	.byte 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00
+	.byte 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00, 0x45, 0x00, 0x00, 0x00
+
+	.global u_02084520
+u_02084520: ; 0x02084520
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084524
+DAT_02084524: ; 0x02084524
+	.byte 0x03, 0x00, 0x00, 0x00
+
+	.global DAT_02084528
+DAT_02084528: ; 0x02084528
+	.byte 0x06, 0x00, 0x00, 0x00
+
+	.global DAT_0208452c
+DAT_0208452c: ; 0x0208452C
+	.byte 0x07, 0x00, 0x00, 0x00
+
+	.global ptr_s_GONBE_0208b5d4_02084530
+ptr_s_GONBE_0208b5d4_02084530: ; 0x02084530
+	.word s_GONBE_0208b5d4
+
+	.global ptr_s_HIKOZARU_0208b61c_02084534
+ptr_s_HIKOZARU_0208b61c_02084534: ; 0x02084534
+	.word s_HIKOZARU_0208b61c
+
+	.global ptr_s_POCHAMA_0208b5ec_02084538
+ptr_s_POCHAMA_0208b5ec_02084538: ; 0x02084538
+	.word s_POCHAMA_0208b5ec
+
+	.global ptr_s_NAETLE_0208b5e4_0208453c
+ptr_s_NAETLE_0208b5e4_0208453c: ; 0x0208453C
+	.word s_NAETLE_0208b5e4
+
+	.global ptr_s_PACHIRISU_0208b640_02084540
+ptr_s_PACHIRISU_0208b640_02084540: ; 0x02084540
+	.word s_PACHIRISU_0208b640
+
+	.global ptr_s_YUKIKABURI_0208b64c_02084544
+ptr_s_YUKIKABURI_0208b64c_02084544: ; 0x02084544
+	.word s_YUKIKABURI_0208b64c
+
+	.global ptr_s_WANRIKY_0208b5fc_02084548
+ptr_s_WANRIKY_0208b5fc_02084548: ; 0x02084548
+	.word s_WANRIKY_0208b5fc
+
+	.global ptr_s_GUREGGRU_0208b604_0208454c
+ptr_s_GUREGGRU_0208b604_0208454c: ; 0x0208454C
+	.word s_GUREGGRU_0208b604
+	.word s_HIPPOPOTAS_0208b658
+	.word s_MUKKURU_0208b5f4
+	.word s_MANENE_0208b5dc
+	.word s_KOROBOHSHI_0208b670
+	.word s_ZUGAIDOS_0208b628
+	.word DAT_0208b5c4
+	.word s_FUKAMARU_0208b610
+	.word s_NYULA_0208b5cc
+	.word s_TATETOPSU_0208b634
+
+	.global DAT_02084574
+DAT_02084574: ; 0x02084574
+	.byte 0x11, 0x00, 0x00, 0x00
+
+	.global DAT_02084578
+DAT_02084578: ; 0x02084578
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_0208457c
+DAT_0208457c: ; 0x0208457C
+	.byte 0x0F, 0x00, 0x00, 0x00
+
+	.global DAT_02084580
+DAT_02084580: ; 0x02084580
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_02084584
+DAT_02084584: ; 0x02084584
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084588
+DAT_02084588: ; 0x02084588
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208458c
+DAT_0208458c: ; 0x0208458C
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_02084590
+DAT_02084590: ; 0x02084590
+	.byte 0x0E, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x16, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x0E, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x1C, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_0208461c
+DAT_0208461c: ; 0x0208461C
+	.byte 0x0E, 0x00, 0x00, 0x00
+
+	.global DAT_02084620
+DAT_02084620: ; 0x02084620
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_02084624
+DAT_02084624: ; 0x02084624
+	.byte 0x12, 0x00, 0x00, 0x00
+
+	.global DAT_02084628
+DAT_02084628: ; 0x02084628
+	.byte 0x06, 0x00, 0x00, 0x00
+
+	.global DAT_0208462c
+DAT_0208462c: ; 0x0208462C
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084630
+DAT_02084630: ; 0x02084630
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084634
+DAT_02084634: ; 0x02084634
+	.byte 0x03, 0x00, 0x00, 0x00
+
+	.global DAT_02084638
+DAT_02084638: ; 0x02084638
+	.byte 0x0C, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x14, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x14, 0x00, 0x00, 0x00
+	.byte 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+
+	.global DAT_02084670
+DAT_02084670: ; 0x02084670
+	.byte 0x0E, 0x00, 0x00, 0x00
+
+	.global DAT_02084674
+DAT_02084674: ; 0x02084674
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_02084678
+DAT_02084678: ; 0x02084678
+	.byte 0x12, 0x00, 0x00, 0x00
+
+	.global DAT_0208467c
+DAT_0208467c: ; 0x0208467C
+	.byte 0x04, 0x00, 0x00, 0x00
+
+	.global DAT_02084680
+DAT_02084680: ; 0x02084680
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_02084684
+DAT_02084684: ; 0x02084684
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084688
+DAT_02084688: ; 0x02084688
+	.byte 0x05, 0x00, 0x00, 0x00
+
+	.global DAT_0208468c
+DAT_0208468c: ; 0x0208468C
+	.byte 0x0E, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x12, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x05, 0x00, 0x00, 0x00
+
+	.global DAT_020846c4
+DAT_020846c4: ; 0x020846C4
+	.byte 0x0E, 0x00, 0x00, 0x00
+
+	.global DAT_020846c8
+DAT_020846c8: ; 0x020846C8
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_020846cc
+DAT_020846cc: ; 0x020846CC
+	.byte 0x12, 0x00, 0x00, 0x00
+
+	.global DAT_020846d0
+DAT_020846d0: ; 0x020846D0
+	.byte 0x04, 0x00, 0x00, 0x00
+
+	.global DAT_020846d4
+DAT_020846d4: ; 0x020846D4
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_020846d8
+DAT_020846d8: ; 0x020846D8
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020846dc
+DAT_020846dc: ; 0x020846DC
+	.byte 0x05, 0x00, 0x00, 0x00
+
+	.global DAT_020846e0
+DAT_020846e0: ; 0x020846E0
+	.byte 0x0E, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00
+
+	.global DAT_02084718
+DAT_02084718: ; 0x02084718
+	.byte 0x0E, 0x00, 0x00, 0x00
+
+	.global DAT_0208471c
+DAT_0208471c: ; 0x0208471C
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_02084720
+DAT_02084720: ; 0x02084720
+	.byte 0x12, 0x00, 0x00, 0x00
+
+	.global DAT_02084724
+DAT_02084724: ; 0x02084724
+	.byte 0x06, 0x00, 0x00, 0x00
+
+	.global DAT_02084728
+DAT_02084728: ; 0x02084728
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208472c
+DAT_0208472c: ; 0x0208472C
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084730
+DAT_02084730: ; 0x02084730
+	.byte 0x03, 0x00, 0x00, 0x00
+
+	.global DAT_02084734
+DAT_02084734: ; 0x02084734
+	.byte 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x15, 0x00, 0x00, 0x00
+	.byte 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x15, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00
+
+	.global DAT_02084788
+DAT_02084788: ; 0x02084788
+	.byte 0x10, 0x00, 0x00, 0x00
+
+	.global DAT_0208478c
+DAT_0208478c: ; 0x0208478C
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_02084790
+DAT_02084790: ; 0x02084790
+	.byte 0x10, 0x00, 0x00, 0x00
+
+	.global DAT_02084794
+DAT_02084794: ; 0x02084794
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_02084798
+DAT_02084798: ; 0x02084798
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208479c
+DAT_0208479c: ; 0x0208479C
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020847a0
+DAT_020847a0: ; 0x020847A0
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_020847a4
+DAT_020847a4: ; 0x020847A4
+	.byte 0x0E, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00
+	.byte 0x0E, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x01, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x09, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x05, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00
+	.byte 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x15, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0B, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x15, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x01, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x1C, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x13, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_020848a0
+DAT_020848a0: ; 0x020848A0
+	.byte 0x10, 0x00, 0x00, 0x00
+
+	.global DAT_020848a4
+DAT_020848a4: ; 0x020848A4
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_020848a8
+DAT_020848a8: ; 0x020848A8
+	.byte 0x10, 0x00, 0x00, 0x00
+
+	.global DAT_020848ac
+DAT_020848ac: ; 0x020848AC
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_020848b0
+DAT_020848b0: ; 0x020848B0
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020848b4
+DAT_020848b4: ; 0x020848B4
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020848b8
+DAT_020848b8: ; 0x020848B8
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_020848bc
+DAT_020848bc: ; 0x020848BC
+	.byte 0x0E, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x12, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x05, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00
+	.byte 0x0D, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00
+	.byte 0x09, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x08, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x14, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x14, 0x00, 0x00, 0x00
+	.byte 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x0C, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x1C, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_020849b8
+DAT_020849b8: ; 0x020849B8
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020849bc
+DAT_020849bc: ; 0x020849BC
+	.byte 0x01, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00
+	.byte 0x06, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00
+
+	.global DAT_020849dc
+DAT_020849dc: ; 0x020849DC
+	.byte 0x10, 0x00, 0x00, 0x00
+
+	.global DAT_020849e0
+DAT_020849e0: ; 0x020849E0
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_020849e4
+DAT_020849e4: ; 0x020849E4
+	.byte 0x08, 0x00, 0x00, 0x00
+
+	.global DAT_020849e8
+DAT_020849e8: ; 0x020849E8
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_020849ec
+DAT_020849ec: ; 0x020849EC
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020849f0
+DAT_020849f0: ; 0x020849F0
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_020849f4
+DAT_020849f4: ; 0x020849F4
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_020849f8
+DAT_020849f8: ; 0x020849F8
+	.byte 0x0A, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x14, 0x00, 0x00, 0x00, 0x15, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x0D, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x09, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x09, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x0D, 0x00, 0x00, 0x00, 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x0D, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x0D, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x11, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x11, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x0D, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00
+
+	.global DAT_02084bd4
+DAT_02084bd4: ; 0x02084BD4
+	.byte 0x10, 0x00, 0x00, 0x00
+
+	.global DAT_02084bd8
+DAT_02084bd8: ; 0x02084BD8
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_02084bdc
+DAT_02084bdc: ; 0x02084BDC
+	.byte 0x08, 0x00, 0x00, 0x00
+
+	.global DAT_02084be0
+DAT_02084be0: ; 0x02084BE0
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_02084be4
+DAT_02084be4: ; 0x02084BE4
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084be8
+DAT_02084be8: ; 0x02084BE8
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084bec
+DAT_02084bec: ; 0x02084BEC
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_02084bf0
+DAT_02084bf0: ; 0x02084BF0
+	.byte 0x0C, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x14, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x14, 0x00, 0x00, 0x00
+	.byte 0x14, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x10, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00
+	.byte 0x3C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+
+	.global DAT_02084c80
+DAT_02084c80: ; 0x02084C80
+	.byte 0x1F, 0x00, 0x00, 0x00
+
+	.global DAT_02084c84
+DAT_02084c84: ; 0x02084C84
+	.byte 0x5C, 0x00, 0x00, 0x00
+
+	.global DAT_02084c88
+DAT_02084c88: ; 0x02084C88
+	.byte 0x63, 0x00, 0x00, 0x00
+
+	.global DAT_02084c8c
+DAT_02084c8c: ; 0x02084C8C
+	.byte 0xA7, 0x00, 0x00, 0x00
+
+	.global DAT_02084c90
+DAT_02084c90: ; 0x02084C90
+	.byte 0xA1, 0x00, 0x00, 0x00
+
+	.global DAT_02084c94
+DAT_02084c94: ; 0x02084C94
+	.byte 0xA4, 0x00, 0x00, 0x00
+
+	.global DAT_02084c98
+DAT_02084c98: ; 0x02084C98
+	.byte 0xAA, 0x00, 0x00, 0x00
+
+	.global DAT_02084c9c
+DAT_02084c9c: ; 0x02084C9C
+	.byte 0xAF, 0x00, 0x00, 0x00
+	.byte 0xB6, 0x00, 0x00, 0x00, 0xB7, 0x00, 0x00, 0x00, 0xBC, 0x00, 0x00, 0x00, 0xD2, 0x00, 0x00, 0x00
+	.byte 0xD5, 0x00, 0x00, 0x00, 0xD7, 0x00, 0x00, 0x00, 0xD9, 0x00, 0x00, 0x00, 0xDC, 0x00, 0x00, 0x00
+	.byte 0xE2, 0x00, 0x00, 0x00, 0x01, 0x01, 0x00, 0x00, 0x02, 0x01, 0x00, 0x00, 0x03, 0x01, 0x00, 0x00
+
+	.global DAT_02084cd0
+DAT_02084cd0: ; 0x02084CD0
+	.byte 0x42, 0x00, 0x00, 0x00
+
+	.global DAT_02084cd4
+DAT_02084cd4: ; 0x02084CD4
+	.byte 0xC8, 0x00, 0x00, 0x00
+
+	.global DAT_02084cd8
+DAT_02084cd8: ; 0x02084CD8
+	.byte 0xD7, 0x00, 0x00, 0x00
+
+	.global DAT_02084cdc
+DAT_02084cdc: ; 0x02084CDC
+	.byte 0x89, 0x01, 0x00, 0x00
+
+	.global DAT_02084ce0
+DAT_02084ce0: ; 0x02084CE0
+	.byte 0x83, 0x01, 0x00, 0x00
+
+	.global DAT_02084ce4
+DAT_02084ce4: ; 0x02084CE4
+	.byte 0x86, 0x01, 0x00, 0x00
+
+	.global DAT_02084ce8
+DAT_02084ce8: ; 0x02084CE8
+	.byte 0x8C, 0x01, 0x00, 0x00
+
+	.global DAT_02084cec
+DAT_02084cec: ; 0x02084CEC
+	.byte 0x91, 0x01, 0x00, 0x00
+	.byte 0x98, 0x01, 0x00, 0x00, 0x9A, 0x01, 0x00, 0x00, 0xA1, 0x01, 0x00, 0x00, 0xB7, 0x01, 0x00, 0x00
+	.byte 0xBB, 0x01, 0x00, 0x00, 0xBE, 0x01, 0x00, 0x00, 0xC1, 0x01, 0x00, 0x00, 0xC5, 0x01, 0x00, 0x00
+	.byte 0xCB, 0x01, 0x00, 0x00, 0x8C, 0x01, 0x00, 0x00, 0xA1, 0x01, 0x00, 0x00, 0xBE, 0x01, 0x00, 0x00
+
+	.global DAT_02084d20
+DAT_02084d20: ; 0x02084D20
+	.byte 0x1F, 0x00, 0x00, 0x00
+
+	.global DAT_02084d24
+DAT_02084d24: ; 0x02084D24
+	.byte 0x20, 0x00, 0x00, 0x00
+
+	.global DAT_02084d28
+DAT_02084d28: ; 0x02084D28
+	.byte 0x21, 0x00, 0x00, 0x00
+
+	.global DAT_02084d2c
+DAT_02084d2c: ; 0x02084D2C
+	.byte 0x22, 0x00, 0x00, 0x00
+
+	.global DAT_02084d30
+DAT_02084d30: ; 0x02084D30
+	.byte 0x23, 0x00, 0x00, 0x00
+
+	.global DAT_02084d34
+DAT_02084d34: ; 0x02084D34
+	.byte 0x40, 0x00, 0x00, 0x00
+
+	.global DAT_02084d38
+DAT_02084d38: ; 0x02084D38
+	.byte 0x31, 0x00, 0x00, 0x00
+
+	.global DAT_02084d3c
+DAT_02084d3c: ; 0x02084D3C
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_02084d40
+DAT_02084d40: ; 0x02084D40
+	.byte 0x20, 0x00, 0x00, 0x00
+
+	.global DAT_02084d44
+DAT_02084d44: ; 0x02084D44
+	.byte 0x23, 0x00, 0x00, 0x00
+
+	.global DAT_02084d48
+DAT_02084d48: ; 0x02084D48
+	.byte 0x24, 0x00, 0x00, 0x00
+
+	.global DAT_02084d4c
+DAT_02084d4c: ; 0x02084D4C
+	.byte 0x25, 0x00, 0x00, 0x00
+
+	.global DAT_02084d50
+DAT_02084d50: ; 0x02084D50
+	.byte 0x4C, 0x00, 0x00, 0x00
+
+	.global DAT_02084d54
+DAT_02084d54: ; 0x02084D54
+	.byte 0x26, 0x00, 0x00, 0x00
+
+	.global DAT_02084d58
+DAT_02084d58: ; 0x02084D58
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084d5c
+DAT_02084d5c: ; 0x02084D5C
+	.byte 0x00, 0x00, 0xFE, 0xFF
+
+	.global DAT_02084d60
+DAT_02084d60: ; 0x02084D60
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084d64
+DAT_02084d64: ; 0x02084D64
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_02084d68
+DAT_02084d68: ; 0x02084D68
+	.byte 0x00, 0x00, 0x04, 0x00
+
+	.global DAT_02084d6c
+DAT_02084d6c: ; 0x02084D6C
+	.byte 0x00, 0x00, 0x04, 0x00
+
+    .section .sinit,4
+
+	.global DAT_0208a354
+DAT_0208a354: ; 0x0208A354
+	.word sub_02084038
+
+	.global ptr_FUN_0208406c_0208a358
+ptr_FUN_0208406c_0208a358: ; 0x0208A358
+	.word sub_0208406C
+
+	.global ptr_FUN_020840b0_0208a35c
+ptr_FUN_020840b0_0208a35c: ; 0x0208A35C
+	.word sub_020840B0
+	.word sub_02084160
+	.word sub_0208418C
+	.word sub_020841B8
+
+	.global ptr_FUN_020841e4_0208a36c
+ptr_FUN_020841e4_0208a36c: ; 0x0208A36C
+	.word sub_020841E4
+	.word sub_02084238
+	.word sub_02084260
+
+    .data
+
+	.global currentOverlayID
+currentOverlayID: ; 0x0208A3B8
+	.byte 0xFF, 0xFF, 0xFF, 0xFF
+
+	.global PTR_ptr_FUN_02083578_0208a3bc
+PTR_ptr_FUN_02083578_0208a3bc: ; 0x0208A3BC
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_11CTouchPanel_0208a3c4
+
+	.global s_11CTouchPanel_0208a3c4
+s_11CTouchPanel_0208a3c4: ; 0x0208A3C4
+	.asciz "11CTouchPanel"
+
+	.global _0208A3D2
+_0208A3D2:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xBC, 0xA3, 0x08, 0x02
+
+	.global PTR_LAB_0208a3dc
+PTR_LAB_0208a3dc: ; 0x0208A3DC
+	.word CTouchPanel_complete_obj_dtor
+
+	.global ptr_FUN_02001eb8_0208a3e0
+ptr_FUN_02001eb8_0208a3e0: ; 0x0208A3E0
+	.word CTouchPanel_deleting_obj_dtor
+
+	.global ptr_FUN_02001ed0_0208a3e4
+ptr_FUN_02001ed0_0208a3e4: ; 0x0208A3E4
+	.word sub_02001ED0
+
+	.global PTR_ptr_FUN_020835bc_0208a3e8
+PTR_ptr_FUN_020835bc_0208a3e8: ; 0x0208A3E8
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_11CTPEmulator_0208a3f4
+	.word PTR_ptr_FUN_02083578_0208a3bc
+
+	.global s_11CTPEmulator_0208a3f4
+s_11CTPEmulator_0208a3f4: ; 0x0208A3F4
+	.asciz "11CTPEmulator"
+
+	.global _0208A402
+_0208A402:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xE8, 0xA3, 0x08, 0x02
+
+	.global PTR_LAB_0208a40c
+PTR_LAB_0208a40c: ; 0x0208A40C
+	.word CTPEmulator_complete_obj_dtor
+
+	.global ptr_FUN_02002088_0208a410
+ptr_FUN_02002088_0208a410: ; 0x0208A410
+	.word CTPEmulator_deleting_obj_dtor
+
+	.global ptr_FUN_020020a4_0208a414
+ptr_FUN_020020a4_0208a414: ; 0x0208A414
+	.word sub_020020A4
+
+	.global s_BGF_0208a418
+s_BGF_0208a418: ; 0x0208A418
+	.asciz "BGF"
+
+	.global s_data_system_BGFontLZ_bin_0208a41c
+s_data_system_BGFontLZ_bin_0208a41c: ; 0x0208A41C
+	.asciz "data/system/BGFontLZ.bin"
+
+	.global _0208A435
+_0208A435:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_BGF_BGFontNCGRLZ_bin_0208a438
+s_BGF_BGFontNCGRLZ_bin_0208a438: ; 0x0208A438
+	.asciz "BGF:BGFontNCGRLZ.bin"
+
+	.global _0208A44D
+_0208A44D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_BGF_BGFontNSCRLZ_bin_0208a450
+s_BGF_BGFontNSCRLZ_bin_0208a450: ; 0x0208A450
+	.asciz "BGF:BGFontNSCRLZ.bin"
+
+	.global _0208A465
+_0208A465:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_BGF_BGFontNCLRLZ_bin_0208a468
+s_BGF_BGFontNCLRLZ_bin_0208a468: ; 0x0208A468
+	.asciz "BGF:BGFontNCLRLZ.bin"
+
+	.global _0208A47D
+_0208A47D:
+	.byte 0x00, 0x00, 0x00
+
+	.global DAT_0208a480
+DAT_0208a480: ; 0x0208A480
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global s_spa_0208a484
+s_spa_0208a484: ; 0x0208A484
+	.asciz ".spa"
+
+	.global _0208A489
+_0208A489:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ger_0208a48c
+s_ger_0208a48c: ; 0x0208A48C
+	.asciz ".ger"
+
+	.global _0208A491
+_0208A491:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ita_0208a494
+s_ita_0208a494: ; 0x0208A494
+	.asciz ".ita"
+
+	.global _0208A499
+_0208A499:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_fre_0208a49c
+s_fre_0208a49c: ; 0x0208A49C
+	.asciz ".fre"
+
+	.global _0208A4A1
+_0208A4A1:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_eng_0208a4a4
+s_eng_0208a4a4: ; 0x0208A4A4
+	.asciz ".eng"
+
+	.global _0208A4A9
+_0208A4A9:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_fr_mes_0208a4ac
+s_fr_mes_0208a4ac: ; 0x0208A4AC
+	.asciz "_fr.mes"
+
+	.global s_ge_mes_0208a4b4
+s_ge_mes_0208a4b4: ; 0x0208A4B4
+	.asciz "_ge.mes"
+
+	.global PTR_ptr_FUN_02083578_0208a4bc
+PTR_ptr_FUN_02083578_0208a4bc: ; 0x0208A4BC
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_11CBinaryFile_0208a4f0
+
+	.global s_sp_mes_0208a4c4
+s_sp_mes_0208a4c4: ; 0x0208A4C4
+	.asciz "_sp.mes"
+
+	.global s_it_mes_0208a4cc
+s_it_mes_0208a4cc: ; 0x0208A4CC
+	.asciz "_it.mes"
+
+	.global s_jp_mes_0208a4d4
+s_jp_mes_0208a4d4: ; 0x0208A4D4
+	.asciz "_jp.mes"
+
+	.global s_us_mes_0208a4dc
+s_us_mes_0208a4dc: ; 0x0208A4DC
+	.asciz "_us.mes"
+
+	.global PTR_ptr_FUN_020835bc_0208a4e4
+PTR_ptr_FUN_020835bc_0208a4e4: ; 0x0208A4E4
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_14CBinaryFileMes_0208a520
+	.word PTR_ptr_FUN_02083578_0208a4bc
+
+	.global s_11CBinaryFile_0208a4f0
+s_11CBinaryFile_0208a4f0: ; 0x0208A4F0
+	.asciz "11CBinaryFile"
+
+	.global _0208A4FE
+_0208A4FE:
+	.byte 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208a4e4
+
+	.global PTR_LAB_0208a508
+PTR_LAB_0208a508: ; 0x0208A508
+	.word CBinaryFileMes_complete_obj_dtor
+
+	.global ptr_FUN_020031cc_0208a50c
+ptr_FUN_020031cc_0208a50c: ; 0x0208A50C
+	.word CBinaryFileMes_deleting_obj_dtor
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_02083578_0208a4bc
+
+	.global ptr_FUN_02002c34_0208a518
+ptr_FUN_02002c34_0208a518: ; 0x0208A518
+	.word CBinaryFile_complete_obj_dtor
+	.word CBinaryFile_deleting_obj_dtor
+
+	.global s_14CBinaryFileMes_0208a520
+s_14CBinaryFileMes_0208a520: ; 0x0208A520
+	.asciz "14CBinaryFileMes"
+
+	.global _0208A531
+_0208A531:
+	.byte 0x00, 0x00, 0x00
+
+	.global ptr_s_jp_mes_0208a4d4_0208a534
+ptr_s_jp_mes_0208a4d4_0208a534: ; 0x0208A534
+	.word s_jp_mes_0208a4d4
+
+	.global ptr_s_us_mes_0208a4dc_0208a538
+ptr_s_us_mes_0208a4dc_0208a538: ; 0x0208A538
+	.word s_us_mes_0208a4dc
+	.word s_fr_mes_0208a4ac
+	.word s_ge_mes_0208a4b4
+	.word s_it_mes_0208a4cc
+	.word s_sp_mes_0208a4c4
+	.word DAT_0208a480
+	.word s_eng_0208a4a4
+	.word s_fre_0208a49c
+	.word s_ger_0208a48c
+	.word s_ita_0208a494
+	.word s_spa_0208a484
+
+	.global DAT_0208a564
+DAT_0208a564: ; 0x0208A564
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global s_s_s_0208a568
+s_s_s_0208a568: ; 0x0208A568
+	.asciz "%s%s"
+
+	.global _0208A56D
+_0208A56D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_9CNCERFile_0208a570
+s_9CNCERFile_0208a570: ; 0x0208A570
+	.asciz "9CNCERFile"
+
+	.global _0208A57B
+_0208A57B:
+	.byte 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208a57c
+PTR_ptr_FUN_020835bc_0208a57c: ; 0x0208A57C
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_9CNCERFile_0208a570
+	.word PTR_ptr_FUN_02083578_0208a4bc
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208a57c
+
+	.global PTR_LAB_0208a590
+PTR_LAB_0208a590: ; 0x0208A590
+	.word CNCERFile_complete_obj_dtor
+
+	.global ptr_FUN_0200329c_0208a594
+ptr_FUN_0200329c_0208a594: ; 0x0208A594
+	.word CNCERFile_deleting_obj_dtor
+
+	.global s_9CNCGRFile_0208a598
+s_9CNCGRFile_0208a598: ; 0x0208A598
+	.asciz "9CNCGRFile"
+
+	.global _0208A5A3
+_0208A5A3:
+	.byte 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208a5a4
+PTR_ptr_FUN_020835bc_0208a5a4: ; 0x0208A5A4
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_9CNCGRFile_0208a598
+	.word PTR_ptr_FUN_02083578_0208a4bc
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208a5a4
+
+	.global PTR_LAB_0208a5b8
+PTR_LAB_0208a5b8: ; 0x0208A5B8
+	.word CNCGRFile_complete_obj_dtor
+
+	.global ptr_FUN_02003380_0208a5bc
+ptr_FUN_02003380_0208a5bc: ; 0x0208A5BC
+	.word CNCGRFile_deleting_obj_dtor
+
+	.global s_9CNCLRFile_0208a5c0
+s_9CNCLRFile_0208a5c0: ; 0x0208A5C0
+	.asciz "9CNCLRFile"
+
+	.global _0208A5CB
+_0208A5CB:
+	.byte 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208a5cc
+PTR_ptr_FUN_020835bc_0208a5cc: ; 0x0208A5CC
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_9CNCLRFile_0208a5c0
+	.word PTR_ptr_FUN_02083578_0208a4bc
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208a5cc
+
+	.global ptr_FUN_0200343c_0208a5e0
+ptr_FUN_0200343c_0208a5e0: ; 0x0208A5E0
+	.word CNCLRFile_complete_obj_dtor
+
+	.global ptr_FUN_02003464_0208a5e4
+ptr_FUN_02003464_0208a5e4: ; 0x0208A5E4
+	.word CNCLRFile_deleting_obj_dtor
+
+	.global s_9CNSCRFile_0208a5e8
+s_9CNSCRFile_0208a5e8: ; 0x0208A5E8
+	.asciz "9CNSCRFile"
+
+	.global _0208A5F3
+_0208A5F3:
+	.byte 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208a5f4
+PTR_ptr_FUN_020835bc_0208a5f4: ; 0x0208A5F4
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_9CNSCRFile_0208a5e8
+	.word PTR_ptr_FUN_02083578_0208a4bc
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208a5f4
+
+	.global PTR_LAB_0208a608
+PTR_LAB_0208a608: ; 0x0208A608
+	.word CNSCRFile_complete_obj_dtor
+
+	.global ptr_FUN_02003548_0208a60c
+ptr_FUN_02003548_0208a60c: ; 0x0208A60C
+	.word CNSCRFile_deleting_obj_dtor
+
+	.global s_9CNANRFile_0208a610
+s_9CNANRFile_0208a610: ; 0x0208A610
+	.asciz "9CNANRFile"
+
+	.global _0208A61B
+_0208A61B:
+	.byte 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208a61c
+PTR_ptr_FUN_020835bc_0208a61c: ; 0x0208A61C
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_9CNANRFile_0208a610
+	.word PTR_ptr_FUN_02083578_0208a4bc
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208a61c
+
+	.global PTR_LAB_0208a630
+PTR_LAB_0208a630: ; 0x0208A630
+	.word CNANRFile_complete_obj_dtor
+
+	.global ptr_FUN_0200362c_0208a634
+ptr_FUN_0200362c_0208a634: ; 0x0208A634
+	.word CNANRFile_deleting_obj_dtor
+
+	.global PTR_ptr_FUN_020835bc_0208a638
+PTR_ptr_FUN_020835bc_0208a638: ; 0x0208A638
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_11CBGNCGRFile_0208a644
+	.word PTR_ptr_FUN_02083578_0208a4bc
+
+	.global s_11CBGNCGRFile_0208a644
+s_11CBGNCGRFile_0208a644: ; 0x0208A644
+	.asciz "11CBGNCGRFile"
+
+	.global _0208A652
+_0208A652:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x38, 0xA6, 0x08, 0x02
+
+	.global PTR_LAB_0208a65c
+PTR_LAB_0208a65c: ; 0x0208A65C
+	.word CBGNCGRFile_complete_obj_dtor
+
+	.global ptr_FUN_020036fc_0208a660
+ptr_FUN_020036fc_0208a660: ; 0x0208A660
+	.word CBGNCGRFile_deleting_obj_dtor
+
+	.global PTR_ptr_FUN_02083578_0208a664
+PTR_ptr_FUN_02083578_0208a664: ; 0x0208A664
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_10CPrimitive_0208a66c
+
+	.global s_10CPrimitive_0208a66c
+s_10CPrimitive_0208a66c: ; 0x0208A66C
+	.asciz "10CPrimitive"
+
+	.global _0208A679
+_0208A679:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_02083578_0208a664
+
+	.global PTR_LAB_0208a684
+PTR_LAB_0208a684: ; 0x0208A684
+	.word 0x0200396C
+
+	.global ptr_FUN_02003970_0208a688
+ptr_FUN_02003970_0208a688: ; 0x0208A688
+	.word sub_02003970
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208a690
+PTR_ptr_FUN_020835bc_0208a690: ; 0x0208A690
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_14CPrimitiveLINE_0208a69c
+	.word PTR_ptr_FUN_02083578_0208a664
+
+	.global s_14CPrimitiveLINE_0208a69c
+s_14CPrimitiveLINE_0208a69c: ; 0x0208A69C
+	.asciz "14CPrimitiveLINE"
+
+	.global _0208A6AD
+_0208A6AD:
+	.byte 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208a690
+
+	.global ptr_FUN_020039e8_0208a6b8
+ptr_FUN_020039e8_0208a6b8: ; 0x0208A6B8
+	.word sub_020039E8
+
+	.global ptr_FUN_020039fc_0208a6bc
+ptr_FUN_020039fc_0208a6bc: ; 0x0208A6BC
+	.word sub_020039FC
+
+	.global ptr_FUN_02003a2c_0208a6c0
+ptr_FUN_02003a2c_0208a6c0: ; 0x0208A6C0
+	.word sub_02003A2C
+
+	.global PTR_ptr_FUN_020835bc_0208a6c4
+PTR_ptr_FUN_020835bc_0208a6c4: ; 0x0208A6C4
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_14CPrimitiveRECT_0208a6d0
+	.word PTR_ptr_FUN_02083578_0208a664
+
+	.global s_14CPrimitiveRECT_0208a6d0
+s_14CPrimitiveRECT_0208a6d0: ; 0x0208A6D0
+	.asciz "14CPrimitiveRECT"
+
+	.global _0208A6E1
+_0208A6E1:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC4, 0xA6, 0x08, 0x02
+
+	.global ptr_FUN_02003bb0_0208a6ec
+ptr_FUN_02003bb0_0208a6ec: ; 0x0208A6EC
+	.word sub_02003BB0
+
+	.global ptr_FUN_02003bc4_0208a6f0
+ptr_FUN_02003bc4_0208a6f0: ; 0x0208A6F0
+	.word sub_02003BC4
+
+	.global ptr_FUN_02003c24_0208a6f4
+ptr_FUN_02003c24_0208a6f4: ; 0x0208A6F4
+	.word sub_02003C24
+
+	.global PTR_ptr_FUN_020835bc_0208a6f8
+PTR_ptr_FUN_020835bc_0208a6f8: ; 0x0208A6F8
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_14CPrimitiveQUAD_0208a704
+	.word PTR_ptr_FUN_02083578_0208a664
+
+	.global s_14CPrimitiveQUAD_0208a704
+s_14CPrimitiveQUAD_0208a704: ; 0x0208A704
+	.asciz "14CPrimitiveQUAD"
+
+	.global _0208A715
+_0208A715:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0xA6, 0x08, 0x02
+
+	.global ptr_FUN_02004160_0208a720
+ptr_FUN_02004160_0208a720: ; 0x0208A720
+	.word sub_02004160
+
+	.global ptr_FUN_02004174_0208a724
+ptr_FUN_02004174_0208a724: ; 0x0208A724
+	.word sub_02004174
+
+	.global ptr_FUN_020041e4_0208a728
+ptr_FUN_020041e4_0208a728: ; 0x0208A728
+	.word sub_020041E4
+
+	.global PTR_ptr_FUN_020835bc_0208a72c
+PTR_ptr_FUN_020835bc_0208a72c: ; 0x0208A72C
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_16CPrimitiveSPHERE_0208a738
+	.word PTR_ptr_FUN_02083578_0208a664
+
+	.global s_16CPrimitiveSPHERE_0208a738
+s_16CPrimitiveSPHERE_0208a738: ; 0x0208A738
+	.asciz "16CPrimitiveSPHERE"
+
+	.global _0208A74B
+_0208A74B:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208a72c
+
+	.global ptr_FUN_020049d4_0208a754
+ptr_FUN_020049d4_0208a754: ; 0x0208A754
+	.word sub_020049D4
+
+	.global ptr_FUN_020049e8_0208a758
+ptr_FUN_020049e8_0208a758: ; 0x0208A758
+	.word sub_020049E8
+
+	.global ptr_FUN_02004a04_0208a75c
+ptr_FUN_02004a04_0208a75c: ; 0x0208A75C
+	.word sub_02004A04
+
+	.global PTR_ptr_FUN_020835bc_0208a760
+PTR_ptr_FUN_020835bc_0208a760: ; 0x0208A760
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_18CPrimitiveTRIANGLE_0208a780
+	.word PTR_ptr_FUN_02083578_0208a664
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208a760
+
+	.global PTR_LAB_0208a774
+PTR_LAB_0208a774: ; 0x0208A774
+	.word sub_02004D00
+
+	.global ptr_FUN_02004d14_0208a778
+ptr_FUN_02004d14_0208a778: ; 0x0208A778
+	.word sub_02004D14
+
+	.global ptr_FUN_02004d30_0208a77c
+ptr_FUN_02004d30_0208a77c: ; 0x0208A77C
+	.word sub_02004D30
+
+	.global s_18CPrimitiveTRIANGLE_0208a780
+s_18CPrimitiveTRIANGLE_0208a780: ; 0x0208A780
+	.asciz "18CPrimitiveTRIANGLE"
+
+	.global _0208A795
+_0208A795:
+	.byte 0x00, 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208a798
+PTR_ptr_FUN_020835bc_0208a798: ; 0x0208A798
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_15CSoftwareSprite_0208a7d4
+	.word PTR_ptr_FUN_02083578_0208a664
+
+	.global DAT_0208a7a4
+DAT_0208a7a4: ; 0x0208A7A4
+	.byte 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00
+	.word DAT_0208a7b4
+
+	.global DAT_0208a7b4
+DAT_0208a7b4: ; 0x0208A7B4
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF
+
+	.global s_15CSoftwareSprite_0208a7d4
+s_15CSoftwareSprite_0208a7d4: ; 0x0208A7D4
+	.asciz "15CSoftwareSprite"
+
+	.global _0208A7E6
+_0208A7E6:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x98, 0xA7, 0x08, 0x02
+
+	.global ptr_FUN_020051c8_0208a7f0
+ptr_FUN_020051c8_0208a7f0: ; 0x0208A7F0
+	.word sub_020051C8
+
+	.global ptr_FUN_020051dc_0208a7f4
+ptr_FUN_020051dc_0208a7f4: ; 0x0208A7F4
+	.word sub_020051DC
+
+	.global ptr_FUN_02005220_0208a7f8
+ptr_FUN_02005220_0208a7f8: ; 0x0208A7F8
+	.word sub_02005220
+
+	.global s_6CScene_0208a7fc
+s_6CScene_0208a7fc: ; 0x0208A7FC
+	.asciz "6CScene"
+
+	.global PTR_ptr_FUN_02083578_0208a804
+PTR_ptr_FUN_02083578_0208a804: ; 0x0208A804
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_6CScene_0208a7fc
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_02083578_0208a804
+
+	.global PTR_LAB_0208a814
+PTR_LAB_0208a814: ; 0x0208A814
+	.word 0x02007CA8
+
+	.global ptr_FUN_02007cac_0208a818
+ptr_FUN_02007cac_0208a818: ; 0x0208A818
+	.word sub_02007CAC
+	.byte 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global ptr_thunk_FUN_02001210_0208a824
+ptr_thunk_FUN_02001210_0208a824: ; 0x0208A824
+	.word sub_02007CD4
+
+	.global ptr_FUN_02007ce0_0208a828
+ptr_FUN_02007ce0_0208a828: ; 0x0208A828
+	.word sub_02007CE0
+
+	.global ptr_FUN_02007cc4_0208a82c
+ptr_FUN_02007cc4_0208a82c: ; 0x0208A82C
+	.word sub_02007CC4
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208a840
+DAT_0208a840: ; 0x0208A840
+	.byte 0x3C, 0x00, 0x00, 0x00
+
+	.global DAT_0208a844
+DAT_0208a844: ; 0x0208A844
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global s_BGT_0208a848
+s_BGT_0208a848: ; 0x0208A848
+	.asciz "BGT"
+
+	.global s_data_interface_i059_LZ_bin_0208a84c
+s_data_interface_i059_LZ_bin_0208a84c: ; 0x0208A84C
+	.asciz "data/interface/i059_LZ.bin"
+
+	.global _0208A867
+_0208A867:
+	.byte 0x00
+
+	.global s_BGT_i059_00_NCGR_0208a868
+s_BGT_i059_00_NCGR_0208a868: ; 0x0208A868
+	.asciz "BGT:i059_00.NCGR"
+
+	.global _0208A879
+_0208A879:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_BGT_i059_00_NSCR_0208a87c
+s_BGT_i059_00_NSCR_0208a87c: ; 0x0208A87C
+	.asciz "BGT:i059_00.NSCR"
+
+	.global _0208A88D
+_0208A88D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_BGT_i059_NCLR_0208a890
+s_BGT_i059_NCLR_0208a890: ; 0x0208A890
+	.asciz "BGT:i059.NCLR"
+
+	.global _0208A89E
+_0208A89E:
+	.byte 0x00, 0x00
+
+	.global s_BGT_i059_00_NCLR_0208a8a0
+s_BGT_i059_00_NCLR_0208a8a0: ; 0x0208A8A0
+	.asciz "BGT:i059_00.NCLR"
+
+	.global _0208A8B1
+_0208A8B1:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_font_prs_jp_NCLR_0208a8b4
+s_data_font_prs_jp_NCLR_0208a8b4: ; 0x0208A8B4
+	.asciz "data/font/prs_jp.NCLR"
+
+	.global _0208A8CA
+_0208A8CA:
+	.byte 0x00, 0x00
+
+	.global s_d_0208a8cc
+s_d_0208a8cc: ; 0x0208A8CC
+	.asciz "%d"
+
+	.global _0208A8CF
+_0208A8CF:
+	.byte 0x00
+
+	.global s_data_message_system_system_mes_0208a8d0
+s_data_message_system_system_mes_0208a8d0: ; 0x0208A8D0
+	.asciz "data/message/system/system_mes"
+
+	.global _0208A8EF
+_0208A8EF:
+	.byte 0x00
+
+	.global s_data_message_system_system_03d_m_0208a8f0
+s_data_message_system_system_03d_m_0208a8f0: ; 0x0208A8F0
+	.asciz "data/message/system/system%03d_mes"
+
+	.global _0208A913
+_0208A913:
+	.byte 0x00
+
+	.global s_data_message_area_m_03d_mes_0208a914
+s_data_message_area_m_03d_mes_0208a914: ; 0x0208A914
+	.asciz "data/message/area/m%03d_mes"
+
+	.global s_data_message_chapter_chapter_03d_0208a930
+s_data_message_chapter_chapter_03d_0208a930: ; 0x0208A930
+	.asciz "data/message/chapter/chapter%03d_mes"
+
+	.global _0208A955
+_0208A955:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_message_chapter_chapterx_02_0208a958
+s_data_message_chapter_chapterx_02_0208a958: ; 0x0208A958
+	.asciz "data/message/chapter/chapterx%02d_mes"
+
+	.global _0208A97E
+_0208A97E:
+	.byte 0x00, 0x00
+
+	.global s_data_message_quest_quest_03d_mes_0208a980
+s_data_message_quest_quest_03d_mes_0208a980: ; 0x0208A980
+	.asciz "data/message/quest/quest%03d_mes"
+
+	.global _0208A9A1
+_0208A9A1:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_message_battle_battle_02d_m_0208a9a4
+s_data_message_battle_battle_02d_m_0208a9a4: ; 0x0208A9A4
+	.asciz "data/message/battle/battle%02d_mes"
+
+	.global _0208A9C7
+_0208A9C7:
+	.byte 0x00
+
+	.global s_ICN_0208a9c8
+s_ICN_0208a9c8: ; 0x0208A9C8
+	.asciz "ICN"
+
+	.global s_data_interface_i058_LZ_bin_0208a9cc
+s_data_interface_i058_LZ_bin_0208a9cc: ; 0x0208A9CC
+	.asciz "data/interface/i058_LZ.bin"
+
+	.global _0208A9E7
+_0208A9E7:
+	.byte 0x00
+
+	.global s_ICN_i058_00_NCGR_0208a9e8
+s_ICN_i058_00_NCGR_0208a9e8: ; 0x0208A9E8
+	.asciz "ICN:i058_00.NCGR"
+
+	.global _0208A9F9
+_0208A9F9:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ICN_i058_NCLR_0208a9fc
+s_ICN_i058_NCLR_0208a9fc: ; 0x0208A9FC
+	.asciz "ICN:i058.NCLR"
+
+	.global _0208AA0A
+_0208AA0A:
+	.byte 0x00, 0x00
+
+	.global s_data_font_prs_lc_jp_NCLR_0208aa0c
+s_data_font_prs_lc_jp_NCLR_0208aa0c: ; 0x0208AA0C
+	.asciz "data/font/prs_lc_jp.NCLR"
+
+	.global _0208AA25
+_0208AA25:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_font_prs_jp_NCLR_0208aa28
+s_data_font_prs_jp_NCLR_0208aa28: ; 0x0208AA28
+	.asciz "data/font/prs_jp.NCLR"
+
+	.global _0208AA3E
+_0208AA3E:
+	.byte 0x00, 0x00
+
+	.global s_data_font_prs_lc_jp_NCLR_0208aa40
+s_data_font_prs_lc_jp_NCLR_0208aa40: ; 0x0208AA40
+	.asciz "data/font/prs_lc_jp.NCLR"
+
+	.global _0208AA59
+_0208AA59:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_font_prs_jp_NCLR_0208aa5c
+s_data_font_prs_jp_NCLR_0208aa5c: ; 0x0208AA5C
+	.asciz "data/font/prs_jp.NCLR"
+
+	.global _0208AA72
+_0208AA72:
+	.byte 0x00, 0x00
+
+	.global s_data_font_font_jp_utf8_NFTR_0208aa74
+s_data_font_font_jp_utf8_NFTR_0208aa74: ; 0x0208AA74
+	.asciz "/data/font/font_jp_utf8.NFTR"
+
+	.global _0208AA91
+_0208AA91:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_font_font_jp_lc_utf8_NFTR_0208aa94
+s_data_font_font_jp_lc_utf8_NFTR_0208aa94: ; 0x0208AA94
+	.asciz "/data/font/font_jp_lc_utf8.NFTR"
+
+	.global s_data_font_font_us_utf8_NFTR_0208aab4
+s_data_font_font_us_utf8_NFTR_0208aab4: ; 0x0208AAB4
+	.asciz "/data/font/font_us_utf8.NFTR"
+
+	.global _0208AAD1
+_0208AAD1:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_font_font_us_lc_utf8_NFTR_0208aad4
+s_data_font_font_us_lc_utf8_NFTR_0208aad4: ; 0x0208AAD4
+	.asciz "/data/font/font_us_lc_utf8.NFTR"
+
+	.global DAT_0208aaf4
+DAT_0208aaf4: ; 0x0208AAF4
+	.byte 0x3C, 0x00, 0x00, 0x00
+
+	.global DAT_0208aaf8
+DAT_0208aaf8: ; 0x0208AAF8
+	.byte 0x01, 0x00
+
+	.global DAT_0208aafa
+DAT_0208aafa: ; 0x0208AAFA
+	.byte 0x3C, 0x00
+
+	.global s_COM_0208aafc
+s_COM_0208aafc: ; 0x0208AAFC
+	.asciz "COM"
+
+	.global s_s_s_LZ_bin_0208ab00
+s_s_s_LZ_bin_0208ab00: ; 0x0208AB00
+	.asciz "%s/%s_LZ.bin"
+
+	.global _0208AB0D
+_0208AB0D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_s_s_NCGR_0208ab10
+s_s_s_NCGR_0208ab10: ; 0x0208AB10
+	.asciz "%s:%s.NCGR"
+
+	.global _0208AB1B
+_0208AB1B:
+	.byte 0x00
+
+	.global s_s_s_NCLR_0208ab1c
+s_s_s_NCLR_0208ab1c: ; 0x0208AB1C
+	.asciz "%s:%s.NCLR"
+
+	.global _0208AB27
+_0208AB27:
+	.byte 0x00
+
+	.global s_s_s_NCER_0208ab28
+s_s_s_NCER_0208ab28: ; 0x0208AB28
+	.asciz "%s:%s.NCER"
+
+	.global _0208AB33
+_0208AB33:
+	.byte 0x00
+
+	.global s_s_s_cac_0208ab34
+s_s_s_cac_0208ab34: ; 0x0208AB34
+	.asciz "%s:%s.cac"
+
+	.global _0208AB3E
+_0208AB3E:
+	.byte 0x00, 0x00
+
+	.global PTR_ptr_FUN_02083578_0208ab40
+PTR_ptr_FUN_02083578_0208ab40: ; 0x0208AB40
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_12CPowerManage_0208ab48
+
+	.global s_12CPowerManage_0208ab48
+s_12CPowerManage_0208ab48: ; 0x0208AB48
+	.asciz "12CPowerManage"
+
+	.global _0208AB57
+_0208AB57:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0xAB, 0x08, 0x02
+
+	.global ptr_FUN_0200f8ac_0208ab60
+ptr_FUN_0200f8ac_0208ab60: ; 0x0208AB60
+	.word sub_0200F8AC
+	.word sub_0200F8BC
+
+	.global s_data_field_fielddata_bin_0208ab68
+s_data_field_fielddata_bin_0208ab68: ; 0x0208AB68
+	.asciz "data/field/fielddata.bin"
+
+	.global _0208AB81
+_0208AB81:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_param_PokeID_bin_0208ab84
+s_data_param_PokeID_bin_0208ab84: ; 0x0208AB84
+	.asciz "data/param/PokeID.bin"
+
+	.global _0208AB9A
+_0208AB9A:
+	.byte 0x00, 0x00
+
+	.global PTR_ptr_FUN_02083578_0208ab9c
+PTR_ptr_FUN_02083578_0208ab9c: ; 0x0208AB9C
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_24strBattleResultParameter_0208abe8
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835ec_0208abb4
+
+	.global PTR_LAB_0208abac
+PTR_LAB_0208abac: ; 0x0208ABAC
+	.word CBattleResultParameter_complete_obj_dtor
+
+	.global ptr_FUN_02010cf0_0208abb0
+ptr_FUN_02010cf0_0208abb0: ; 0x0208ABB0
+	.word CBattleResultParameter_deleting_obj_dtor
+
+	.global PTR_ptr_FUN_020835ec_0208abb4
+PTR_ptr_FUN_020835ec_0208abb4: ; 0x0208ABB4
+	.word _ZTVN10__cxxabiv121__vmi_class_type_infoE+8
+	.word s_22CBattleResultParameter_0208abcc
+	.byte 0x00, 0x00, 0x00, 0x00
+	.byte 0x01, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_02083578_0208ab9c
+	.byte 0x00, 0x04, 0x00, 0x00
+
+	.global s_22CBattleResultParameter_0208abcc
+s_22CBattleResultParameter_0208abcc: ; 0x0208ABCC
+	.asciz "22CBattleResultParameter"
+
+	.global _0208ABE5
+_0208ABE5:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_24strBattleResultParameter_0208abe8
+s_24strBattleResultParameter_0208abe8: ; 0x0208ABE8
+	.asciz "24strBattleResultParameter"
+
+	.global _0208AC03
+_0208AC03:
+	.byte 0x00
+
+	.global s_data_param_DiskHP_bin_0208ac04
+s_data_param_DiskHP_bin_0208ac04: ; 0x0208AC04
+	.asciz "data/param/DiskHP.bin"
+
+	.global _0208AC1A
+_0208AC1A:
+	.byte 0x00, 0x00
+
+	.global s_c000First_0208ac1c
+s_c000First_0208ac1c: ; 0x0208AC1C
+	.asciz "c000First"
+
+	.global _0208AC26
+_0208AC26:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208ac2c
+DAT_0208ac2c: ; 0x0208AC2C
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208ac30
+DAT_0208ac30: ; 0x0208AC30
+	.byte 0x68, 0x01, 0x00, 0x00
+
+	.global DAT_0208ac34
+DAT_0208ac34: ; 0x0208AC34
+	.byte 0x68, 0x01, 0x00, 0x00, 0x63, 0x30, 0x30, 0x31, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x30, 0x32, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x2F, 0x00, 0x00, 0x00, 0xD8, 0x00, 0x00, 0x00, 0xA8, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x30, 0x33, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x14, 0x00, 0x00, 0x00, 0xB0, 0x00, 0x00, 0x00, 0xC0, 0x00, 0x00, 0x00
+
+	.global s_c004First_0208ac8c
+s_c004First_0208ac8c: ; 0x0208AC8C
+	.asciz "c004First"
+
+	.global _0208AC96
+_0208AC96:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x30, 0x35, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0xE0, 0xFF, 0xFF, 0xFF
+	.byte 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x30, 0x36, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x30, 0x37, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x08, 0x00, 0x00, 0x00, 0x50, 0x01, 0x00, 0x00, 0x87, 0x00, 0x00, 0x00, 0x63, 0x30, 0x30, 0x38
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x30, 0x39, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0B, 0x00, 0x00, 0x00, 0x04, 0x01, 0x00, 0x00
+	.byte 0xA0, 0x00, 0x00, 0x00, 0x63, 0x30, 0x31, 0x30, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x31, 0x31, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x08, 0x00, 0x00, 0x00, 0x70, 0x01, 0x00, 0x00, 0xB4, 0x00, 0x00, 0x00, 0x63, 0x30, 0x31, 0x32
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x31, 0x33, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x70, 0x01, 0x00, 0x00
+	.byte 0xB4, 0x00, 0x00, 0x00, 0x63, 0x30, 0x31, 0x34, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x31, 0x35, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x08, 0x00, 0x00, 0x00, 0x70, 0x01, 0x00, 0x00, 0xB4, 0x00, 0x00, 0x00, 0x63, 0x30, 0x31, 0x36
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00
+	.byte 0x20, 0x01, 0x00, 0x00, 0xD9, 0x00, 0x00, 0x00, 0x63, 0x30, 0x31, 0x37, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x31, 0x38, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x70, 0x01, 0x00, 0x00, 0xB4, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x31, 0x39, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x32, 0x30
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x2F, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x32, 0x31, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x2F, 0x00, 0x00, 0x00, 0xD8, 0x00, 0x00, 0x00
+	.byte 0xA8, 0x00, 0x00, 0x00, 0x63, 0x30, 0x32, 0x32, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x32, 0x33, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x17, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00, 0x70, 0x00, 0x00, 0x00, 0x63, 0x30, 0x32, 0x34
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00
+	.byte 0x40, 0x01, 0x00, 0x00, 0x18, 0x01, 0x00, 0x00, 0x63, 0x30, 0x32, 0x35, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x32, 0x36, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00, 0x64, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x32, 0x37, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x17, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00, 0x18, 0x01, 0x00, 0x00, 0x63, 0x30, 0x32, 0x38
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00
+	.byte 0x40, 0x01, 0x00, 0x00, 0x18, 0x01, 0x00, 0x00, 0x63, 0x30, 0x32, 0x39, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00
+	.byte 0x70, 0x00, 0x00, 0x00, 0x63, 0x30, 0x33, 0x30, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x67, 0x00, 0x00, 0x00, 0xFE, 0x00, 0x00, 0x00, 0xF0, 0x01, 0x00, 0x00
+	.byte 0x63, 0x30, 0x33, 0x31, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x78, 0x00, 0x00, 0x00, 0x60, 0x01, 0x00, 0x00, 0xA0, 0x01, 0x00, 0x00, 0x63, 0x30, 0x33, 0x32
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x33, 0x33, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79, 0x00, 0x00, 0x00, 0xF8, 0x00, 0x00, 0x00
+	.byte 0x68, 0x00, 0x00, 0x00, 0x63, 0x30, 0x33, 0x34, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x33, 0x35, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x17, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00, 0x64, 0x00, 0x00, 0x00, 0x63, 0x30, 0x33, 0x36
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00
+	.byte 0x40, 0x01, 0x00, 0x00, 0x64, 0x00, 0x00, 0x00, 0x63, 0x30, 0x33, 0x37, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x33, 0x38, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00, 0x70, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x33, 0x39, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x9E, 0x00, 0x00, 0x00, 0xA8, 0x01, 0x00, 0x00, 0xE0, 0x01, 0x00, 0x00, 0x63, 0x30, 0x34, 0x30
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x34, 0x31, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00
+	.byte 0xE1, 0x00, 0x00, 0x00, 0x63, 0x30, 0x34, 0x32, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x7B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x34, 0x33, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x7B, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x90, 0x01, 0x00, 0x00, 0x63, 0x30, 0x34, 0x34
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7E, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x34, 0x35, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7E, 0x00, 0x00, 0x00, 0x50, 0x01, 0x00, 0x00
+	.byte 0x40, 0x01, 0x00, 0x00, 0x63, 0x30, 0x34, 0x36, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x77, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x34, 0x37, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0xD0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x34, 0x38
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xD0, 0x00, 0x00, 0x00
+	.byte 0xE0, 0x00, 0x00, 0x00, 0xB0, 0x00, 0x00, 0x00, 0x63, 0x30, 0x34, 0x39, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x35, 0x30, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x7E, 0x00, 0x00, 0x00, 0xF0, 0x01, 0x00, 0x00, 0x7C, 0x01, 0x00, 0x00
+	.byte 0x63, 0x30, 0x35, 0x31, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x77, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00, 0x63, 0x30, 0x35, 0x32
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7E, 0x00, 0x00, 0x00
+	.byte 0x60, 0x01, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00, 0x63, 0x30, 0x35, 0x33, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x77, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00
+	.byte 0xA0, 0x00, 0x00, 0x00, 0x63, 0x30, 0x35, 0x34, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x0A, 0x01, 0x00, 0x00, 0x50, 0x00, 0x00, 0x00, 0x98, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x35, 0x35, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0xB5, 0x01, 0x00, 0x00, 0xF6, 0xFF, 0xFF, 0xFF, 0xF6, 0xFF, 0xFF, 0xFF, 0x63, 0x30, 0x35, 0x36
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x31, 0x01, 0x00, 0x00
+	.byte 0x40, 0x01, 0x00, 0x00, 0x20, 0x03, 0x00, 0x00, 0x63, 0x30, 0x35, 0x37, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x35, 0x38, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x7E, 0x00, 0x00, 0x00, 0xF0, 0x01, 0x00, 0x00, 0x78, 0x01, 0x00, 0x00
+	.byte 0x63, 0x30, 0x35, 0x39, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x79, 0x00, 0x00, 0x00, 0xEA, 0x01, 0x00, 0x00, 0x78, 0x01, 0x00, 0x00, 0x63, 0x30, 0x36, 0x30
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x77, 0x00, 0x00, 0x00
+	.byte 0x40, 0x01, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00, 0x63, 0x30, 0x36, 0x31, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x48, 0x01, 0x00, 0x00, 0x90, 0x01, 0x00, 0x00
+	.byte 0xB8, 0x01, 0x00, 0x00, 0x63, 0x30, 0x36, 0x32, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x5C, 0x01, 0x00, 0x00, 0x50, 0x01, 0x00, 0x00, 0xB8, 0x00, 0x00, 0x00
+	.byte 0x63, 0x30, 0x36, 0x33, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x67, 0x01, 0x00, 0x00, 0x60, 0x01, 0x00, 0x00, 0x68, 0x01, 0x00, 0x00, 0x63, 0x30, 0x36, 0x34
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x67, 0x01, 0x00, 0x00
+	.byte 0x60, 0x01, 0x00, 0x00, 0x68, 0x01, 0x00, 0x00, 0x63, 0x30, 0x36, 0x35, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x6E, 0x01, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00
+	.byte 0x50, 0x00, 0x00, 0x00, 0x63, 0x30, 0x36, 0x36, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x6C, 0x01, 0x00, 0x00, 0x20, 0x01, 0x00, 0x00, 0x50, 0x02, 0x00, 0x00
+	.byte 0x63, 0x30, 0x36, 0x37, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x5B, 0x00, 0x00, 0x00, 0xE0, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x63, 0x30, 0x36, 0x38
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x2F, 0x00, 0x00, 0x00
+	.byte 0xB0, 0x00, 0x00, 0x00, 0xA0, 0x00, 0x00, 0x00, 0x63, 0x30, 0x36, 0x39, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208b3b8
+DAT_0208b3b8: ; 0x0208B3B8
+	.byte 0x2F, 0x00, 0x00, 0x00
+
+	.global DAT_0208b3bc
+DAT_0208b3bc: ; 0x0208B3BC
+	.byte 0xB0, 0x00, 0x00, 0x00
+
+	.global DAT_0208b3c0
+DAT_0208b3c0: ; 0x0208B3C0
+	.byte 0xA0, 0x00, 0x00, 0x00, 0x63, 0x78, 0x30, 0x31, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x1E, 0x00, 0x00, 0x00, 0x40, 0x01, 0x00, 0x00, 0x14, 0x01, 0x00, 0x00
+	.byte 0x63, 0x78, 0x30, 0x32, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x16, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x63, 0x78, 0x30, 0x33
+	.byte 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x83, 0x00, 0x00, 0x00
+	.byte 0xE0, 0x01, 0x00, 0x00, 0x78, 0x01, 0x00, 0x00, 0x63, 0x78, 0x30, 0x34, 0x46, 0x69, 0x72, 0x73
+	.byte 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x37, 0x00, 0x00, 0x00, 0xD0, 0x00, 0x00, 0x00
+	.byte 0x88, 0x00, 0x00, 0x00, 0x63, 0x78, 0x30, 0x35, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x84, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x63, 0x78, 0x30, 0x36, 0x46, 0x69, 0x72, 0x73, 0x74, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x7E, 0x00, 0x00, 0x00, 0x60, 0x01, 0x00, 0x00, 0x28, 0x01, 0x00, 0x00
+
+	.global DAT_0208b46c
+DAT_0208b46c: ; 0x0208B46C
+	.byte 0x3C, 0x00, 0x00, 0x00
+
+	.global s_6CActor_0208b470
+s_6CActor_0208b470: ; 0x0208B470
+	.asciz "6CActor"
+
+	.global PTR_ptr_FUN_02083578_0208b478
+PTR_ptr_FUN_02083578_0208b478: ; 0x0208B478
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_6CActor_0208b470
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_02083578_0208b478
+
+	.global ptr_FUN_02011e54_0208b488
+ptr_FUN_02011e54_0208b488: ; 0x0208B488
+	.word sub_02011E54
+
+	.global ptr_FUN_02011edc_0208b48c
+ptr_FUN_02011edc_0208b48c: ; 0x0208B48C
+	.word sub_02011EDC
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global PTR_ptr_FUN_02083578_0208b49c
+PTR_ptr_FUN_02083578_0208b49c: ; 0x0208B49C
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_10CActorData_0208b4a4
+
+	.global s_10CActorData_0208b4a4
+s_10CActorData_0208b4a4: ; 0x0208B4A4
+	.asciz "10CActorData"
+
+	.global _0208B4B1
+_0208B4B1:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x9C, 0xB4, 0x08, 0x02
+
+	.global PTR_LAB_0208b4bc
+PTR_LAB_0208b4bc: ; 0x0208B4BC
+	.word 0x020130B8
+
+	.global ptr_FUN_020130e0_0208b4c0
+ptr_FUN_020130e0_0208b4c0: ; 0x0208B4C0
+	.word 0x020130E0
+
+	.global ptr_FUN_02014034_0208b4c4
+ptr_FUN_02014034_0208b4c4: ; 0x0208B4C4
+	.word sub_02014034
+
+	.global ptr_FUN_0201437c_0208b4c8
+ptr_FUN_0201437c_0208b4c8: ; 0x0208B4C8
+	.word sub_0201437C
+
+	.global ptr_FUN_020143b8_0208b4cc
+ptr_FUN_020143b8_0208b4cc: ; 0x0208B4CC
+	.word sub_020143B8
+	.word sub_02014414
+	.word sub_020150AC
+
+	.global s_p_03d_02d_0208b4d8
+s_p_03d_02d_0208b4d8: ; 0x0208B4D8
+	.asciz "p%03d_%02d"
+
+	.global _0208B4E3
+_0208B4E3:
+	.byte 0x00
+
+	.global s_npc_03d_0208b4e4
+s_npc_03d_0208b4e4: ; 0x0208B4E4
+	.asciz "npc%03d"
+
+	.global s_t_03d_02d_0208b4ec
+s_t_03d_02d_0208b4ec: ; 0x0208B4EC
+	.asciz "t%03d_%02d"
+
+	.global _0208B4F7
+_0208B4F7:
+	.byte 0x00
+
+	.global s_e_03d_0208b4f8
+s_e_03d_0208b4f8: ; 0x0208B4F8
+	.asciz "e%03d"
+
+	.global _0208B4FE
+_0208B4FE:
+	.byte 0x00, 0x00
+
+	.global s_ACT_0208b500
+s_ACT_0208b500: ; 0x0208B500
+	.asciz "ACT"
+
+	.global s_data_poke_s_LZ_bin_0208b504
+s_data_poke_s_LZ_bin_0208b504: ; 0x0208B504
+	.asciz "data/poke/%s_LZ.bin"
+
+	.global s_data_npc_s_LZ_bin_0208b518
+s_data_npc_s_LZ_bin_0208b518: ; 0x0208B518
+	.asciz "data/npc/%s_LZ.bin"
+
+	.global _0208B52B
+_0208B52B:
+	.byte 0x00
+
+	.global s_data_target_s_LZ_bin_0208b52c
+s_data_target_s_LZ_bin_0208b52c: ; 0x0208B52C
+	.asciz "data/target/%s_LZ.bin"
+
+	.global _0208B542
+_0208B542:
+	.byte 0x00, 0x00
+
+	.global s_data_effect_s_LZ_bin_0208b544
+s_data_effect_s_LZ_bin_0208b544: ; 0x0208B544
+	.asciz "data/effect/%s_LZ.bin"
+
+	.global _0208B55A
+_0208B55A:
+	.byte 0x00, 0x00
+
+	.global s_s_s_NCLR_0208b55c
+s_s_s_NCLR_0208b55c: ; 0x0208B55C
+	.asciz "%s:%s.NCLR"
+
+	.global _0208B567
+_0208B567:
+	.byte 0x00
+
+	.global s_s_s_0208b568
+s_s_s_0208b568: ; 0x0208B568
+	.asciz "%s:%s"
+
+	.global _0208B56E
+_0208B56E:
+	.byte 0x00, 0x00
+
+	.global s_s_s_s_0208b570
+s_s_s_s_0208b570: ; 0x0208B570
+	.asciz "%s:%s_s"
+
+	.global s_s_s_w_0208b578
+s_s_s_w_0208b578: ; 0x0208B578
+	.asciz "%s:%s_w"
+
+	.global s_s_s_t_0208b580
+s_s_s_t_0208b580: ; 0x0208B580
+	.asciz "%s:%s_t"
+
+	.global s_s_s_p_02d_0208b588
+s_s_s_p_02d_0208b588: ; 0x0208B588
+	.asciz "%s:%s_p%02d"
+
+	.global s_s_s_p_0208b594
+s_s_s_p_0208b594: ; 0x0208B594
+	.asciz "%s:%s_p"
+
+	.global s_s_s_a_02d_0208b59c
+s_s_s_a_02d_0208b59c: ; 0x0208B59C
+	.asciz "%s:%s_a%02d"
+
+	.global s_s_NCBR_0208b5a8
+s_s_NCBR_0208b5a8: ; 0x0208B5A8
+	.asciz "%s.NCBR"
+
+	.global s_s_NCER_0208b5b0
+s_s_NCER_0208b5b0: ; 0x0208B5B0
+	.asciz "%s.NCER"
+
+	.global s_s_cac_0208b5b8
+s_s_cac_0208b5b8: ; 0x0208B5B8
+	.asciz "%s.cac"
+
+	.global _0208B5BF
+_0208B5BF:
+	.byte 0x00
+
+	.global DAT_0208b5c0
+DAT_0208b5c0: ; 0x0208B5C0
+	.byte 0x4C, 0x3D, 0x2E, 0x1F
+
+	.global DAT_0208b5c4
+DAT_0208b5c4: ; 0x0208B5C4
+	.byte 0x4D, 0x55, 0x4D, 0x41, 0x00, 0x00, 0x00, 0x00
+
+	.global s_NYULA_0208b5cc
+s_NYULA_0208b5cc: ; 0x0208B5CC
+	.asciz "NYULA"
+
+	.global _0208B5D2
+_0208B5D2:
+	.byte 0x00, 0x00
+
+	.global s_GONBE_0208b5d4
+s_GONBE_0208b5d4: ; 0x0208B5D4
+	.asciz "GONBE"
+
+	.global _0208B5DA
+_0208B5DA:
+	.byte 0x00, 0x00
+
+	.global s_MANENE_0208b5dc
+s_MANENE_0208b5dc: ; 0x0208B5DC
+	.asciz "MANENE"
+
+	.global _0208B5E3
+_0208B5E3:
+	.byte 0x00
+
+	.global s_NAETLE_0208b5e4
+s_NAETLE_0208b5e4: ; 0x0208B5E4
+	.asciz "NAETLE"
+
+	.global _0208B5EB
+_0208B5EB:
+	.byte 0x00
+
+	.global s_POCHAMA_0208b5ec
+s_POCHAMA_0208b5ec: ; 0x0208B5EC
+	.asciz "POCHAMA"
+
+	.global s_MUKKURU_0208b5f4
+s_MUKKURU_0208b5f4: ; 0x0208B5F4
+	.asciz "MUKKURU"
+
+	.global s_WANRIKY_0208b5fc
+s_WANRIKY_0208b5fc: ; 0x0208B5FC
+	.asciz "WANRIKY"
+
+	.global s_GUREGGRU_0208b604
+s_GUREGGRU_0208b604: ; 0x0208B604
+	.asciz "GUREGGRU"
+
+	.global _0208B60D
+_0208B60D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_FUKAMARU_0208b610
+s_FUKAMARU_0208b610: ; 0x0208B610
+	.asciz "FUKAMARU"
+
+	.global _0208B619
+_0208B619:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_HIKOZARU_0208b61c
+s_HIKOZARU_0208b61c: ; 0x0208B61C
+	.asciz "HIKOZARU"
+
+	.global _0208B625
+_0208B625:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ZUGAIDOS_0208b628
+s_ZUGAIDOS_0208b628: ; 0x0208B628
+	.asciz "ZUGAIDOS"
+
+	.global _0208B631
+_0208B631:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_TATETOPSU_0208b634
+s_TATETOPSU_0208b634: ; 0x0208B634
+	.asciz "TATETOPSU"
+
+	.global _0208B63E
+_0208B63E:
+	.byte 0x00, 0x00
+
+	.global s_PACHIRISU_0208b640
+s_PACHIRISU_0208b640: ; 0x0208B640
+	.asciz "PACHIRISU"
+
+	.global _0208B64A
+_0208B64A:
+	.byte 0x00, 0x00
+
+	.global s_YUKIKABURI_0208b64c
+s_YUKIKABURI_0208b64c: ; 0x0208B64C
+	.asciz "YUKIKABURI"
+
+	.global _0208B657
+_0208B657:
+	.byte 0x00
+
+	.global s_HIPPOPOTAS_0208b658
+s_HIPPOPOTAS_0208b658: ; 0x0208B658
+	.asciz "HIPPOPOTAS"
+
+	.global _0208B663
+_0208B663:
+	.byte 0x00
+
+	.global DAT_0208b664
+DAT_0208b664: ; 0x0208B664
+	.byte 0x03, 0x03, 0x03, 0x04, 0x04, 0x05, 0x05, 0x06, 0x06, 0x07, 0x07, 0x00
+
+	.global s_KOROBOHSHI_0208b670
+s_KOROBOHSHI_0208b670: ; 0x0208B670
+	.asciz "KOROBOHSHI"
+
+	.global _0208B67B
+_0208B67B:
+	.byte 0x00
+
+	.global s_0208b67c
+s_0208b67c: ; 0x0208B67C
+	.asciz "************"
+
+	.global _0208B689
+_0208B689:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_LotTimeCheck_0208b68c
+s_LotTimeCheck_0208b68c: ; 0x0208B68C
+	.asciz "LotTimeCheck"
+
+	.global _0208B699
+_0208B699:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PlayTime_d_d_0208b69c
+s_PlayTime_d_d_0208b69c: ; 0x0208B69C
+	.asciz "PlayTime %d:%d"
+
+	.global _0208B6AB
+_0208B6AB:
+	.byte 0x00
+
+	.global s_LastTime_d_d_0208b6ac
+s_LastTime_d_d_0208b6ac: ; 0x0208B6AC
+	.asciz "LastTime %d:%d"
+
+	.global _0208B6BB
+_0208B6BB:
+	.byte 0x00
+
+	.global s_DivTime_d_0208b6bc
+s_DivTime_d_0208b6bc: ; 0x0208B6BC
+	.asciz "DivTime %d"
+
+	.global _0208B6C7
+_0208B6C7:
+	.byte 0x00
+
+	.global s_0208b6c8
+s_0208b6c8: ; 0x0208B6C8
+	.asciz "/*********************"
+
+	.global _0208B6DF
+_0208B6DF:
+	.byte 0x00
+
+	.global s_LotGokigenParameter_0208b6e0
+s_LotGokigenParameter_0208b6e0: ; 0x0208B6E0
+	.asciz "LotGokigenParameter()"
+
+	.global _0208B6F6
+_0208B6F6:
+	.byte 0x00, 0x00
+
+	.global DAT_0208b6f8
+DAT_0208b6f8: ; 0x0208B6F8
+	.byte 0x25, 0x73, 0x00, 0x00
+
+	.global s_GetpartnerNum_d_0208b6fc
+s_GetpartnerNum_d_0208b6fc: ; 0x0208B6FC
+	.asciz "GetpartnerNum= %d"
+
+	.global _0208B70E
+_0208B70E:
+	.byte 0x00, 0x00
+
+	.global s_0208b710
+s_0208b710: ; 0x0208B710
+	.asciz "*********************/"
+
+	.global _0208B727
+_0208B727:
+	.byte 0x00
+
+	.global s_SetVeryGood_s_0208b728
+s_SetVeryGood_s_0208b728: ; 0x0208B728
+	.asciz "SetVeryGood= %s"
+
+	.global s_SetGood_s_0208b738
+s_SetGood_s_0208b738: ; 0x0208B738
+	.asciz "SetGood= %s"
+
+	.global s_SetNormal_s_0208b744
+s_SetNormal_s_0208b744: ; 0x0208B744
+	.asciz "SetNormal= %s"
+
+	.global _0208B752
+_0208B752:
+	.byte 0x00, 0x00
+
+	.global s_Probability_d_0208b754
+s_Probability_d_0208b754: ; 0x0208B754
+	.asciz "Probability= %d"
+
+	.global s_Probability2_d_0208b764
+s_Probability2_d_0208b764: ; 0x0208B764
+	.asciz "Probability2= %d"
+
+	.global _0208B775
+_0208B775:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_message_etc_pokemon_name_0208b778
+s_data_message_etc_pokemon_name_0208b778: ; 0x0208B778
+	.asciz "/data/message/etc/pokemon_name"
+
+	.global _0208B797
+_0208B797:
+	.byte 0x00
+
+	.global s_data_message_etc_item_name_0208b798
+s_data_message_etc_item_name_0208b798: ; 0x0208B798
+	.asciz "/data/message/etc/item_name"
+
+	.global s_data_message_etc_yakumono_name_0208b7b4
+s_data_message_etc_yakumono_name_0208b7b4: ; 0x0208B7B4
+	.asciz "/data/message/etc/yakumono_name"
+
+	.global s_data_message_etc_npc_name_0208b7d4
+s_data_message_etc_npc_name_0208b7d4: ; 0x0208B7D4
+	.asciz "/data/message/etc/npc_name"
+
+	.global _0208B7EF
+_0208B7EF:
+	.byte 0x00
+
+	.global s_data_message_etc_fieldwaza_name_0208b7f0
+s_data_message_etc_fieldwaza_name_0208b7f0: ; 0x0208B7F0
+	.asciz "/data/message/etc/fieldwaza_name"
+
+	.global _0208B811
+_0208B811:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_shadow_NCBR_0208b814
+s_data_shadow_NCBR_0208b814: ; 0x0208B814
+	.asciz "data/shadow.NCBR"
+
+	.global _0208B825
+_0208B825:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_shadow_NCLR_0208b828
+s_data_shadow_NCLR_0208b828: ; 0x0208B828
+	.asciz "data/shadow.NCLR"
+
+	.global _0208B839
+_0208B839:
+	.byte 0x00, 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208b83c
+PTR_ptr_FUN_020835bc_0208b83c: ; 0x0208B83C
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_14CPlayerHPGauge_0208b848
+	.word PTR_ptr_FUN_02083578_0208b478
+
+	.global s_14CPlayerHPGauge_0208b848
+s_14CPlayerHPGauge_0208b848: ; 0x0208B848
+	.asciz "14CPlayerHPGauge"
+
+	.global _0208B859
+_0208B859:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208b83c
+
+	.global ptr_FUN_0201933c_0208b864
+ptr_FUN_0201933c_0208b864: ; 0x0208B864
+	.word sub_0201933C
+
+	.global ptr_FUN_020193c4_0208b868
+ptr_FUN_020193c4_0208b868: ; 0x0208B868
+	.word sub_020193C4
+
+	.global ptr_FUN_020199ac_0208b86c
+ptr_FUN_020199ac_0208b86c: ; 0x0208B86C
+	.word sub_020199AC
+
+	.global ptr_FUN_0201a388_0208b870
+ptr_FUN_0201a388_0208b870: ; 0x0208B870
+	.word sub_0201A388
+	.word sub_0201A40C
+
+	.global s_PGM_0208b878
+s_PGM_0208b878: ; 0x0208B878
+	.asciz "PGM"
+
+	.global s_data_interface_i021_LZ_bin_0208b87c
+s_data_interface_i021_LZ_bin_0208b87c: ; 0x0208B87C
+	.asciz "data/interface/i021_LZ.bin"
+
+	.global _0208B897
+_0208B897:
+	.byte 0x00
+
+	.global s_PGM_i021_00_NCBR_0208b898
+s_PGM_i021_00_NCBR_0208b898: ; 0x0208B898
+	.asciz "PGM:i021_00.NCBR"
+
+	.global _0208B8A9
+_0208B8A9:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PGM_i021_NCLR_0208b8ac
+s_PGM_i021_NCLR_0208b8ac: ; 0x0208B8AC
+	.asciz "PGM:i021.NCLR"
+
+	.global _0208B8BA
+_0208B8BA:
+	.byte 0x00, 0x00
+
+	.global s_PGM_i021_00_NCER_0208b8bc
+s_PGM_i021_00_NCER_0208b8bc: ; 0x0208B8BC
+	.asciz "PGM:i021_00.NCER"
+
+	.global _0208B8CD
+_0208B8CD:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PGM_i021_00_cac_0208b8d0
+s_PGM_i021_00_cac_0208b8d0: ; 0x0208B8D0
+	.asciz "PGM:i021_00.cac"
+
+	.global DAT_0208b8e0
+DAT_0208b8e0: ; 0x0208B8E0
+	.byte 0x50, 0x47, 0x41, 0x00
+
+	.global s_data_interface_i024_LZ_bin_0208b8e4
+s_data_interface_i024_LZ_bin_0208b8e4: ; 0x0208B8E4
+	.asciz "data/interface/i024_LZ.bin"
+
+	.global _0208B8FF
+_0208B8FF:
+	.byte 0x00
+
+	.global s_PGA_i024_00_NCBR_0208b900
+s_PGA_i024_00_NCBR_0208b900: ; 0x0208B900
+	.asciz "PGA:i024_00.NCBR"
+
+	.global _0208B911
+_0208B911:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PGA_i024_NCLR_0208b914
+s_PGA_i024_NCLR_0208b914: ; 0x0208B914
+	.asciz "PGA:i024.NCLR"
+
+	.global _0208B922
+_0208B922:
+	.byte 0x00, 0x00
+
+	.global s_PGB_0208b924
+s_PGB_0208b924: ; 0x0208B924
+	.asciz "PGB"
+
+	.global s_data_interface_i023_LZ_bin_0208b928
+s_data_interface_i023_LZ_bin_0208b928: ; 0x0208B928
+	.asciz "data/interface/i023_LZ.bin"
+
+	.global _0208B943
+_0208B943:
+	.byte 0x00
+
+	.global s_PGB_i023_00_NCBR_0208b944
+s_PGB_i023_00_NCBR_0208b944: ; 0x0208B944
+	.asciz "PGB:i023_00.NCBR"
+
+	.global _0208B955
+_0208B955:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PGB_i023_NCLR_0208b958
+s_PGB_i023_NCLR_0208b958: ; 0x0208B958
+	.asciz "PGB:i023.NCLR"
+
+	.global _0208B966
+_0208B966:
+	.byte 0x00, 0x00
+
+	.global s_PGF_0208b968
+s_PGF_0208b968: ; 0x0208B968
+	.asciz "PGF"
+
+	.global s_data_interface_i020_LZ_bin_0208b96c
+s_data_interface_i020_LZ_bin_0208b96c: ; 0x0208B96C
+	.asciz "data/interface/i020_LZ.bin"
+
+	.global _0208B987
+_0208B987:
+	.byte 0x00
+
+	.global s_PGF_i020_00_NCBR_0208b988
+s_PGF_i020_00_NCBR_0208b988: ; 0x0208B988
+	.asciz "PGF:i020_00.NCBR"
+
+	.global _0208B999
+_0208B999:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PGF_i020_NCLR_0208b99c
+s_PGF_i020_NCLR_0208b99c: ; 0x0208B99C
+	.asciz "PGF:i020.NCLR"
+
+	.global _0208B9AA
+_0208B9AA:
+	.byte 0x00, 0x00
+
+	.global s_PGF_i020_00_NCER_0208b9ac
+s_PGF_i020_00_NCER_0208b9ac: ; 0x0208B9AC
+	.asciz "PGF:i020_00.NCER"
+
+	.global _0208B9BD
+_0208B9BD:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PGF_i020_00_cac_0208b9c0
+s_PGF_i020_00_cac_0208b9c0: ; 0x0208B9C0
+	.asciz "PGF:i020_00.cac"
+
+	.global s_PGP_0208b9d0
+s_PGP_0208b9d0: ; 0x0208B9D0
+	.asciz "PGP"
+
+	.global s_data_interface_i022_LZ_bin_0208b9d4
+s_data_interface_i022_LZ_bin_0208b9d4: ; 0x0208B9D4
+	.asciz "data/interface/i022_LZ.bin"
+
+	.global _0208B9EF
+_0208B9EF:
+	.byte 0x00
+
+	.global s_PGP_i022_00_NCBR_0208b9f0
+s_PGP_i022_00_NCBR_0208b9f0: ; 0x0208B9F0
+	.asciz "PGP:i022_00.NCBR"
+
+	.global _0208BA01
+_0208BA01:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PGP_i022_NCLR_0208ba04
+s_PGP_i022_NCLR_0208ba04: ; 0x0208BA04
+	.asciz "PGP:i022.NCLR"
+
+	.global _0208BA12
+_0208BA12:
+	.byte 0x00, 0x00
+
+	.global s_PGG_0208ba14
+s_PGG_0208ba14: ; 0x0208BA14
+	.asciz "PGG"
+
+	.global s_data_interface_i057_LZ_bin_0208ba18
+s_data_interface_i057_LZ_bin_0208ba18: ; 0x0208BA18
+	.asciz "data/interface/i057_LZ.bin"
+
+	.global _0208BA33
+_0208BA33:
+	.byte 0x00
+
+	.global s_PGG_i057_00_NCBR_0208ba34
+s_PGG_i057_00_NCBR_0208ba34: ; 0x0208BA34
+	.asciz "PGG:i057_00.NCBR"
+
+	.global _0208BA45
+_0208BA45:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PGG_i057_NCLR_0208ba48
+s_PGG_i057_NCLR_0208ba48: ; 0x0208BA48
+	.asciz "PGG:i057.NCLR"
+
+	.global _0208BA56
+_0208BA56:
+	.byte 0x00, 0x00
+
+	.global s_PGC_0208ba58
+s_PGC_0208ba58: ; 0x0208BA58
+	.asciz "PGC"
+
+	.global s_PGC_i020_01_NCBR_0208ba5c
+s_PGC_i020_01_NCBR_0208ba5c: ; 0x0208BA5C
+	.asciz "PGC:i020_01.NCBR"
+
+	.global _0208BA6D
+_0208BA6D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PGC_i020_NCLR_0208ba70
+s_PGC_i020_NCLR_0208ba70: ; 0x0208BA70
+	.asciz "PGC:i020.NCLR"
+
+	.global _0208BA7E
+_0208BA7E:
+	.byte 0x00, 0x00
+
+	.global s_PGC_i020_01_NCER_0208ba80
+s_PGC_i020_01_NCER_0208ba80: ; 0x0208BA80
+	.asciz "PGC:i020_01.NCER"
+
+	.global _0208BA91
+_0208BA91:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_PGC_i020_01_cac_0208ba94
+s_PGC_i020_01_cac_0208ba94: ; 0x0208BA94
+	.asciz "PGC:i020_01.cac"
+
+	.global s_data_message_etc_place_name_0208baa4
+s_data_message_etc_place_name_0208baa4: ; 0x0208BAA4
+	.asciz "/data/message/etc/place_name"
+
+	.global _0208BAC1
+_0208BAC1:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_message_etc_yakumono_info_0208bac4
+s_data_message_etc_yakumono_info_0208bac4: ; 0x0208BAC4
+	.asciz "/data/message/etc/yakumono_info"
+
+	.global s_data_message_etc_menu_mes_0208bae4
+s_data_message_etc_menu_mes_0208bae4: ; 0x0208BAE4
+	.asciz "/data/message/etc/menu_mes"
+
+	.global _0208BAFF
+_0208BAFF:
+	.byte 0x00
+
+	.global s_bt_03d_02d_0208bb00
+s_bt_03d_02d_0208bb00: ; 0x0208BB00
+	.asciz "bt%03d_%02d"
+
+	.global s_data_targetOBJ_0208bb0c
+s_data_targetOBJ_0208bb0c: ; 0x0208BB0C
+	.asciz "data/targetOBJ"
+
+	.global _0208BB1B
+_0208BB1B:
+	.byte 0x00
+
+	.global s_data_menu_0208bb1c
+s_data_menu_0208bb1c: ; 0x0208BB1C
+	.asciz "data/menu"
+
+	.global _0208BB26
+_0208BB26:
+	.byte 0x00, 0x00
+
+	.global s_mt000_00_0208bb28
+s_mt000_00_0208bb28: ; 0x0208BB28
+	.asciz "mt000_00"
+
+	.global _0208BB31
+_0208BB31:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma004_00_0208bb34
+s_ma004_00_0208bb34: ; 0x0208BB34
+	.asciz "ma004_00"
+
+	.global _0208BB3D
+_0208BB3D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma000_00_0208bb40
+s_ma000_00_0208bb40: ; 0x0208BB40
+	.asciz "ma000_00"
+
+	.global _0208BB49
+_0208BB49:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma001_00_0208bb4c
+s_ma001_00_0208bb4c: ; 0x0208BB4C
+	.asciz "ma001_00"
+
+	.global _0208BB55
+_0208BB55:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_menu_mt000_bg_LZ_bin_0208bb58
+s_data_menu_mt000_bg_LZ_bin_0208bb58: ; 0x0208BB58
+	.asciz "data/menu/mt000_bg_LZ.bin"
+
+	.global _0208BB72
+_0208BB72:
+	.byte 0x00, 0x00
+
+	.global s_TGT_0208bb74
+s_TGT_0208bb74: ; 0x0208BB74
+	.asciz "TGT"
+
+	.global s_TGT_mt000_NCGR_0208bb78
+s_TGT_mt000_NCGR_0208bb78: ; 0x0208BB78
+	.asciz "TGT:mt000.NCGR"
+
+	.global _0208BB87
+_0208BB87:
+	.byte 0x00
+
+	.global s_TGT_mt000_NCLR_0208bb88
+s_TGT_mt000_NCLR_0208bb88: ; 0x0208BB88
+	.asciz "TGT:mt000.NCLR"
+
+	.global _0208BB97
+_0208BB97:
+	.byte 0x00
+
+	.global s_TGT_mt000_01_2_NSCR_0208bb98
+s_TGT_mt000_01_2_NSCR_0208bb98: ; 0x0208BB98
+	.asciz "TGT:mt000_01_2.NSCR"
+
+	.global s_TGT_mt000_02_NSCR_0208bbac
+s_TGT_mt000_02_NSCR_0208bbac: ; 0x0208BBAC
+	.asciz "TGT:mt000_02.NSCR"
+
+	.global _0208BBBE
+_0208BBBE:
+	.byte 0x00, 0x00
+
+	.global s_TGT_mt000_03_NSCR_0208bbc0
+s_TGT_mt000_03_NSCR_0208bbc0: ; 0x0208BBC0
+	.asciz "TGT:mt000_03.NSCR"
+
+	.global _0208BBD2
+_0208BBD2:
+	.byte 0x00, 0x00
+
+	.global s_data_message_etc_pokemon_info_0208bbd4
+s_data_message_etc_pokemon_info_0208bbd4: ; 0x0208BBD4
+	.asciz "/data/message/etc/pokemon_info"
+
+	.global _0208BBF3
+_0208BBF3:
+	.byte 0x00
+
+	.global s_data_message_etc_menu_mes_0208bbf4
+s_data_message_etc_menu_mes_0208bbf4: ; 0x0208BBF4
+	.asciz "/data/message/etc/menu_mes"
+
+	.global _0208BC0F
+_0208BC0F:
+	.byte 0x00
+
+	.global s_data_message_etc_assist_mes_0208bc10
+s_data_message_etc_assist_mes_0208bc10: ; 0x0208BC10
+	.asciz "/data/message/etc/assist_mes"
+
+	.global _0208BC2D
+_0208BC2D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_menu_0208bc30
+s_data_menu_0208bc30: ; 0x0208BC30
+	.asciz "data/menu"
+
+	.global _0208BC3A
+_0208BC3A:
+	.byte 0x00, 0x00
+
+	.global s_mt000_00_0208bc3c
+s_mt000_00_0208bc3c: ; 0x0208BC3C
+	.asciz "mt000_00"
+
+	.global _0208BC45
+_0208BC45:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma004_00_0208bc48
+s_ma004_00_0208bc48: ; 0x0208BC48
+	.asciz "ma004_00"
+
+	.global _0208BC51
+_0208BC51:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma000_00_0208bc54
+s_ma000_00_0208bc54: ; 0x0208BC54
+	.asciz "ma000_00"
+
+	.global _0208BC5D
+_0208BC5D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma001_00_0208bc60
+s_ma001_00_0208bc60: ; 0x0208BC60
+	.asciz "ma001_00"
+
+	.global _0208BC69
+_0208BC69:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma002_00_0208bc6c
+s_ma002_00_0208bc6c: ; 0x0208BC6C
+	.asciz "ma002_00"
+
+	.global _0208BC75
+_0208BC75:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma000_01_0208bc78
+s_ma000_01_0208bc78: ; 0x0208BC78
+	.asciz "ma000_01"
+
+	.global _0208BC81
+_0208BC81:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_bp000_0208bc84
+s_bp000_0208bc84: ; 0x0208BC84
+	.asciz "bp000"
+
+	.global _0208BC8A
+_0208BC8A:
+	.byte 0x00, 0x00
+
+	.global s_bp_03d_0208bc8c
+s_bp_03d_0208bc8c: ; 0x0208BC8C
+	.asciz "bp%03d"
+
+	.global _0208BC93
+_0208BC93:
+	.byte 0x00
+
+	.global s_data_pokeOBJ_0208bc94
+s_data_pokeOBJ_0208bc94: ; 0x0208BC94
+	.asciz "data/pokeOBJ"
+
+	.global _0208BCA1
+_0208BCA1:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_BGS_0208bca4
+s_BGS_0208bca4: ; 0x0208BCA4
+	.asciz "BGS"
+
+	.global s_data_menu_mt000_bg_LZ_bin_0208bca8
+s_data_menu_mt000_bg_LZ_bin_0208bca8: ; 0x0208BCA8
+	.asciz "data/menu/mt000_bg_LZ.bin"
+
+	.global _0208BCC2
+_0208BCC2:
+	.byte 0x00, 0x00
+
+	.global s_BGS_mt000_NCGR_0208bcc4
+s_BGS_mt000_NCGR_0208bcc4: ; 0x0208BCC4
+	.asciz "BGS:mt000.NCGR"
+
+	.global _0208BCD3
+_0208BCD3:
+	.byte 0x00
+
+	.global s_BGS_mt000_NCLR_0208bcd4
+s_BGS_mt000_NCLR_0208bcd4: ; 0x0208BCD4
+	.asciz "BGS:mt000.NCLR"
+
+	.global _0208BCE3
+_0208BCE3:
+	.byte 0x00
+
+	.global s_BGS_mt000_01_1_NSCR_0208bce4
+s_BGS_mt000_01_1_NSCR_0208bce4: ; 0x0208BCE4
+	.asciz "BGS:mt000_01_1.NSCR"
+
+	.global s_BGS_mt000_02_NSCR_0208bcf8
+s_BGS_mt000_02_NSCR_0208bcf8: ; 0x0208BCF8
+	.asciz "BGS:mt000_02.NSCR"
+
+	.global _0208BD0A
+_0208BD0A:
+	.byte 0x00, 0x00
+
+	.global s_BGS_mt000_03_NSCR_0208bd0c
+s_BGS_mt000_03_NSCR_0208bd0c: ; 0x0208BD0C
+	.asciz "BGS:mt000_03.NSCR"
+
+	.global _0208BD1E
+_0208BD1E:
+	.byte 0x00, 0x00
+
+	.global s_PTC_0208bd20
+s_PTC_0208bd20: ; 0x0208BD20
+	.asciz "PTC"
+
+	.global s_PTC_mt000_NCGR_0208bd24
+s_PTC_mt000_NCGR_0208bd24: ; 0x0208BD24
+	.asciz "PTC:mt000.NCGR"
+
+	.global _0208BD33
+_0208BD33:
+	.byte 0x00
+
+	.global s_PTC_mt000_NCLR_0208bd34
+s_PTC_mt000_NCLR_0208bd34: ; 0x0208BD34
+	.asciz "PTC:mt000.NCLR"
+
+	.global _0208BD43
+_0208BD43:
+	.byte 0x00
+
+	.global s_PTC_mt000_01_1_NSCR_0208bd44
+s_PTC_mt000_01_1_NSCR_0208bd44: ; 0x0208BD44
+	.asciz "PTC:mt000_01_1.NSCR"
+
+	.global s_PTC_mt000_02_NSCR_0208bd58
+s_PTC_mt000_02_NSCR_0208bd58: ; 0x0208BD58
+	.asciz "PTC:mt000_02.NSCR"
+
+	.global _0208BD6A
+_0208BD6A:
+	.byte 0x00, 0x00
+
+	.global s_PTC_mt000_03_NSCR_0208bd6c
+s_PTC_mt000_03_NSCR_0208bd6c: ; 0x0208BD6C
+	.asciz "PTC:mt000_03.NSCR"
+
+	.global _0208BD7E
+_0208BD7E:
+	.byte 0x00, 0x00
+
+	.global s_BGS_0208bd80
+s_BGS_0208bd80: ; 0x0208BD80
+	.asciz "BGS"
+
+	.global s_data_s_sLZ_bin_0208bd84
+s_data_s_sLZ_bin_0208bd84: ; 0x0208BD84
+	.asciz "data/%s%sLZ.bin"
+
+	.global s_BGS_s_NCGR_0208bd94
+s_BGS_s_NCGR_0208bd94: ; 0x0208BD94
+	.asciz "BGS:%s.NCGR"
+
+	.global s_BGS_s_NCLR_0208bda0
+s_BGS_s_NCLR_0208bda0: ; 0x0208BDA0
+	.asciz "BGS:%s.NCLR"
+
+	.global s_s_s_NSCR_0208bdac
+s_s_s_NSCR_0208bdac: ; 0x0208BDAC
+	.asciz "%s:%s.NSCR"
+
+	.global _0208BDB7
+_0208BDB7:
+	.byte 0x00
+
+	.global DAT_0208bdb8
+DAT_0208bdb8: ; 0x0208BDB8
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global s_data_message_etc_place_name_0208bdbc
+s_data_message_etc_place_name_0208bdbc: ; 0x0208BDBC
+	.asciz "/data/message/etc/place_name"
+
+	.global _0208BDD9
+_0208BDD9:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_menu_0208bddc
+s_menu_0208bddc: ; 0x0208BDDC
+	.asciz "menu/"
+
+	.global _0208BDE2
+_0208BDE2:
+	.byte 0x00, 0x00
+
+	.global s_mm000_0208bde4
+s_mm000_0208bde4: ; 0x0208BDE4
+	.asciz "mm000_"
+
+	.global _0208BDEB
+_0208BDEB:
+	.byte 0x00
+
+	.global s_mm000_00_0208bdec
+s_mm000_00_0208bdec: ; 0x0208BDEC
+	.asciz "mm000_00"
+
+	.global _0208BDF5
+_0208BDF5:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_mm000_0208bdf8
+s_mm000_0208bdf8: ; 0x0208BDF8
+	.asciz "mm000"
+
+	.global _0208BDFE
+_0208BDFE:
+	.byte 0x00, 0x00
+
+	.global s_mm000_01_0208be00
+s_mm000_01_0208be00: ; 0x0208BE00
+	.asciz "mm000_01"
+
+	.global _0208BE09
+_0208BE09:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_um_0208be0c
+s_um_0208be0c: ; 0x0208BE0C
+	.asciz "um_"
+
+	.global s_um000_00_0208be10
+s_um000_00_0208be10: ; 0x0208BE10
+	.asciz "um000_00"
+
+	.global _0208BE19
+_0208BE19:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_um000_0208be1c
+s_um000_0208be1c: ; 0x0208BE1C
+	.asciz "um000"
+
+	.global _0208BE22
+_0208BE22:
+	.byte 0x00, 0x00
+
+	.global s_data_menu_0208be24
+s_data_menu_0208be24: ; 0x0208BE24
+	.asciz "data/menu"
+
+	.global _0208BE2E
+_0208BE2E:
+	.byte 0x00, 0x00
+
+	.global s_mm001_00_0208be30
+s_mm001_00_0208be30: ; 0x0208BE30
+	.asciz "mm001_00"
+
+	.global _0208BE39
+_0208BE39:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma004_00_0208be3c
+s_ma004_00_0208be3c: ; 0x0208BE3C
+	.asciz "ma004_00"
+
+	.global _0208BE45
+_0208BE45:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_mm001_03_0208be48
+s_mm001_03_0208be48: ; 0x0208BE48
+	.asciz "mm001_03"
+
+	.global _0208BE51
+_0208BE51:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_menu_um_03d_03d_LZ_bin_0208be54
+s_data_menu_um_03d_03d_LZ_bin_0208be54: ; 0x0208BE54
+	.asciz "data/menu/um%03d_%03d_LZ.bin"
+
+	.global _0208BE71
+_0208BE71:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_menu_um_03d_03d_c_LZ_bin_0208be74
+s_data_menu_um_03d_03d_c_LZ_bin_0208be74: ; 0x0208BE74
+	.asciz "data/menu/um%03d_%03d%c_LZ.bin"
+
+	.global _0208BE93
+_0208BE93:
+	.byte 0x00
+
+	.global s_data_menu_um004_001_LZ_bin_0208be94
+s_data_menu_um004_001_LZ_bin_0208be94: ; 0x0208BE94
+	.asciz "data/menu/um004_001_LZ.bin"
+
+	.global _0208BEAF
+_0208BEAF:
+	.byte 0x00
+
+	.global s_uppict_03d_0208beb0
+s_uppict_03d_0208beb0: ; 0x0208BEB0
+	.asciz "uppict%03d_"
+
+	.global s_uppict_03d_00_0208bebc
+s_uppict_03d_00_0208bebc: ; 0x0208BEBC
+	.asciz "uppict%03d_00"
+
+	.global _0208BECA
+_0208BECA:
+	.byte 0x00, 0x00
+
+	.global s_uppict_0208becc
+s_uppict_0208becc: ; 0x0208BECC
+	.asciz "uppict/"
+
+	.global DAT_0208bed4
+DAT_0208bed4: ; 0x0208BED4
+	.byte 0x05, 0x00
+
+	.global DAT_0208bed6
+DAT_0208bed6: ; 0x0208BED6
+	.byte 0x02, 0x00, 0x01, 0x00, 0x07, 0x00, 0x04, 0x00, 0x06, 0x00
+	.byte 0x08, 0x00, 0x09, 0x00, 0x03, 0x00, 0x00, 0x00
+
+	.global s_data_menu_0208bee8
+s_data_menu_0208bee8: ; 0x0208BEE8
+	.asciz "data/menu"
+
+	.global _0208BEF2
+_0208BEF2:
+	.byte 0x00, 0x00
+
+	.global s_cm000_00_0208bef4
+s_cm000_00_0208bef4: ; 0x0208BEF4
+	.asciz "cm000_00"
+
+	.global _0208BEFD
+_0208BEFD:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma005_00_0208bf00
+s_ma005_00_0208bf00: ; 0x0208BF00
+	.asciz "ma005_00"
+
+	.global _0208BF09
+_0208BF09:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_bp_03d_0208bf0c
+s_bp_03d_0208bf0c: ; 0x0208BF0C
+	.asciz "bp%03d"
+
+	.global _0208BF13
+_0208BF13:
+	.byte 0x00
+
+	.global s_data_message_etc_menu_mes_0208bf14
+s_data_message_etc_menu_mes_0208bf14: ; 0x0208BF14
+	.asciz "/data/message/etc/menu_mes"
+
+	.global _0208BF2F
+_0208BF2F:
+	.byte 0x00
+
+	.global s_BGS_0208bf30
+s_BGS_0208bf30: ; 0x0208BF30
+	.asciz "BGS"
+
+	.global s_data_menu_mc000_bg_LZ_bin_0208bf34
+s_data_menu_mc000_bg_LZ_bin_0208bf34: ; 0x0208BF34
+	.asciz "data/menu/mc000_bg_LZ.bin"
+
+	.global _0208BF4E
+_0208BF4E:
+	.byte 0x00, 0x00
+
+	.global s_BGS_mc000_NCGR_0208bf50
+s_BGS_mc000_NCGR_0208bf50: ; 0x0208BF50
+	.asciz "BGS:mc000.NCGR"
+
+	.global _0208BF5F
+_0208BF5F:
+	.byte 0x00
+
+	.global s_BGS_mc000_NCLR_0208bf60
+s_BGS_mc000_NCLR_0208bf60: ; 0x0208BF60
+	.asciz "BGS:mc000.NCLR"
+
+	.global _0208BF6F
+_0208BF6F:
+	.byte 0x00
+
+	.global s_BGS_mc000_01_NSCR_0208bf70
+s_BGS_mc000_01_NSCR_0208bf70: ; 0x0208BF70
+	.asciz "BGS:mc000_01.NSCR"
+
+	.global _0208BF82
+_0208BF82:
+	.byte 0x00, 0x00
+
+	.global s_BGS_mc000_02_NSCR_0208bf84
+s_BGS_mc000_02_NSCR_0208bf84: ; 0x0208BF84
+	.asciz "BGS:mc000_02.NSCR"
+
+	.global _0208BF96
+_0208BF96:
+	.byte 0x00, 0x00
+
+	.global s_BGS_mc000_03_NSCR_0208bf98
+s_BGS_mc000_03_NSCR_0208bf98: ; 0x0208BF98
+	.asciz "BGS:mc000_03.NSCR"
+
+	.global _0208BFAA
+_0208BFAA:
+	.byte 0x00, 0x00
+
+	.global s_data_menu_0208bfac
+s_data_menu_0208bfac: ; 0x0208BFAC
+	.asciz "data/menu"
+
+	.global _0208BFB6
+_0208BFB6:
+	.byte 0x00, 0x00
+
+	.global s_ma000_00_0208bfb8
+s_ma000_00_0208bfb8: ; 0x0208BFB8
+	.asciz "ma000_00"
+
+	.global _0208BFC1
+_0208BFC1:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma001_00_0208bfc4
+s_ma001_00_0208bfc4: ; 0x0208BFC4
+	.asciz "ma001_00"
+
+	.global _0208BFCD
+_0208BFCD:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma004_00_0208bfd0
+s_ma004_00_0208bfd0: ; 0x0208BFD0
+	.asciz "ma004_00"
+
+	.global _0208BFD9
+_0208BFD9:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_message_etc_menu_mes_0208bfdc
+s_data_message_etc_menu_mes_0208bfdc: ; 0x0208BFDC
+	.asciz "/data/message/etc/menu_mes"
+
+	.global _0208BFF7
+_0208BFF7:
+	.byte 0x00
+
+	.global s_data_menu_0208bff8
+s_data_menu_0208bff8: ; 0x0208BFF8
+	.asciz "data/menu"
+
+	.global _0208C002
+_0208C002:
+	.byte 0x00, 0x00
+
+	.global s_mp003_00_0208c004
+s_mp003_00_0208c004: ; 0x0208C004
+	.asciz "mp003_00"
+
+	.global _0208C00D
+_0208C00D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_mp004_00_0208c010
+s_mp004_00_0208c010: ; 0x0208C010
+	.asciz "mp004_00"
+
+	.global _0208C019
+_0208C019:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_mp005_00_0208c01c
+s_mp005_00_0208c01c: ; 0x0208C01C
+	.asciz "mp005_00"
+
+	.global _0208C025
+_0208C025:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_mp006_00_0208c028
+s_mp006_00_0208c028: ; 0x0208C028
+	.asciz "mp006_00"
+
+	.global _0208C031
+_0208C031:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_mp007_00_0208c034
+s_mp007_00_0208c034: ; 0x0208C034
+	.asciz "mp007_00"
+
+	.global _0208C03D
+_0208C03D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_mp008_00_0208c040
+s_mp008_00_0208c040: ; 0x0208C040
+	.asciz "mp008_00"
+
+	.global _0208C049
+_0208C049:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_mp001_00_0208c04c
+s_mp001_00_0208c04c: ; 0x0208C04C
+	.asciz "mp001_00"
+
+	.global _0208C055
+_0208C055:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma003_00_0208c058
+s_ma003_00_0208c058: ; 0x0208C058
+	.asciz "ma003_00"
+
+	.global _0208C061
+_0208C061:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_ma004_00_0208c064
+s_ma004_00_0208c064: ; 0x0208C064
+	.asciz "ma004_00"
+
+	.global _0208C06D
+_0208C06D:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_BGS_0208c070
+s_BGS_0208c070: ; 0x0208C070
+	.asciz "BGS"
+
+	.global s_data_menu_mp000_bg_LZ_bin_0208c074
+s_data_menu_mp000_bg_LZ_bin_0208c074: ; 0x0208C074
+	.asciz "data/menu/mp000_bg_LZ.bin"
+
+	.global _0208C08E
+_0208C08E:
+	.byte 0x00, 0x00
+
+	.global s_BGS_mp000_NCGR_0208c090
+s_BGS_mp000_NCGR_0208c090: ; 0x0208C090
+	.asciz "BGS:mp000.NCGR"
+
+	.global _0208C09F
+_0208C09F:
+	.byte 0x00
+
+	.global s_BGS_mp000_NCLR_0208c0a0
+s_BGS_mp000_NCLR_0208c0a0: ; 0x0208C0A0
+	.asciz "BGS:mp000.NCLR"
+
+	.global _0208C0AF
+_0208C0AF:
+	.byte 0x00
+
+	.global s_BGS_mp000_00_NSCR_0208c0b0
+s_BGS_mp000_00_NSCR_0208c0b0: ; 0x0208C0B0
+	.asciz "BGS:mp000_00.NSCR"
+
+	.global _0208C0C2
+_0208C0C2:
+	.byte 0x00, 0x00
+
+	.global s_BGS_mp000_01_NSCR_0208c0c4
+s_BGS_mp000_01_NSCR_0208c0c4: ; 0x0208C0C4
+	.asciz "BGS:mp000_01.NSCR"
+
+	.global _0208C0D6
+_0208C0D6:
+	.byte 0x00, 0x00
+
+	.global s_BGS_mp000_02_NSCR_0208c0d8
+s_BGS_mp000_02_NSCR_0208c0d8: ; 0x0208C0D8
+	.asciz "BGS:mp000_02.NSCR"
+
+	.global _0208C0EA
+_0208C0EA:
+	.byte 0x00, 0x00
+
+	.global DAT_0208c0ec
+DAT_0208c0ec: ; 0x0208C0EC
+	.byte 0x56, 0x00, 0x00, 0x00
+	.byte 0x06, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0xFE, 0xFF, 0xFF, 0xFF
+
+	.global DAT_0208c0fc
+DAT_0208c0fc: ; 0x0208C0FC
+	.byte 0x1E, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x42, 0x00, 0x00, 0x00, 0x21, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0x05, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208c12c
+DAT_0208c12c: ; 0x0208C12C
+	.byte 0x1D, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7C, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x42, 0x00, 0x00, 0x00, 0x1F, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0xFE, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0x05, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global PTR_ptr_FUN_02083578_0208c16c
+PTR_ptr_FUN_02083578_0208c16c: ; 0x0208C16C
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_11CBackupBase_0208c18c
+
+	.global s_7CBackup_0208c174
+s_7CBackup_0208c174: ; 0x0208C174
+	.asciz "7CBackup"
+
+	.global _0208C17D
+_0208C17D:
+	.byte 0x00, 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208c180
+PTR_ptr_FUN_020835bc_0208c180: ; 0x0208C180
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_7CBackup_0208c174
+	.word PTR_ptr_FUN_02083578_0208c16c
+
+	.global s_11CBackupBase_0208c18c
+s_11CBackupBase_0208c18c: ; 0x0208C18C
+	.asciz "11CBackupBase"
+
+	.global _0208C19A
+_0208C19A:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208c180
+
+	.global ptr_FUN_02027cf0_0208c1a4
+ptr_FUN_02027cf0_0208c1a4: ; 0x0208C1A4
+	.word sub_02027CF0
+
+	.global ptr_FUN_02027d04_0208c1a8
+ptr_FUN_02027d04_0208c1a8: ; 0x0208C1A8
+	.word sub_02027D04
+
+	.global ptr_FUN_0202b674_0208c1ac
+ptr_FUN_0202b674_0208c1ac: ; 0x0208C1AC
+	.word sub_0202B674
+
+	.global ptr_FUN_0202b6f0_0208c1b0
+ptr_FUN_0202b6f0_0208c1b0: ; 0x0208C1B0
+	.word sub_0202B6F0
+
+	.global ptr_FUN_02027d20_0208c1b4
+ptr_FUN_02027d20_0208c1b4: ; 0x0208C1B4
+	.word sub_02027D20
+
+	.global ptr_FUN_02027e54_0208c1b8
+ptr_FUN_02027e54_0208c1b8: ; 0x0208C1B8
+	.word sub_02027E54
+
+	.global ptr_FUN_02027f70_0208c1bc
+ptr_FUN_02027f70_0208c1bc: ; 0x0208C1BC
+	.word sub_02027F70
+
+	.global PTR_LAB_0208c1c0
+PTR_LAB_0208c1c0: ; 0x0208C1C0
+	.word DAT_0208c454
+
+	.global PTR_LAB_0208c1c4
+PTR_LAB_0208c1c4: ; 0x0208C1C4
+	.word MAIN_BSS_020AF620
+	.byte 0x04, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_0208c1d4
+DAT_0208c1d4: ; 0x0208C1D4
+	.byte 0x00, 0x00, 0x00, 0x00, 0xC8, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global PTR_PTR_LAB_0208c1e4
+PTR_PTR_LAB_0208c1e4: ; 0x0208C1E4
+	.word PTR_LAB_0208c204
+	.word DAT_0208c32c
+	.word PTR_LAB_0208c1c4
+	.word PTR_LAB_0208c1c4
+	.word PTR_LAB_0208c1c4
+	.word PTR_LAB_0208c1c4
+	.word PTR_LAB_0208c1c4
+	.word PTR_LAB_0208c1c4
+
+	.global PTR_LAB_0208c204
+PTR_LAB_0208c204: ; 0x0208C204
+	.word MAIN_BSS_020B26A0
+	.byte 0x04, 0x88, 0x00, 0x00
+	.word MAIN_BSS_020BAEA4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAEBC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAED4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAEEC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAF04
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAF1C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAF34
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAF4C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAF94
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAFAC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAFC4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAFDC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAFF4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB00C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB024
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB03C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB084
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB09C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB0B4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB0CC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB0E4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB0FC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB114
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB12C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB174
+	.byte 0x38, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB1AC
+	.byte 0x38, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020B2638
+	.byte 0x54, 0x00, 0x00, 0x00
+	.word MAIN_BSS_0210C0B0
+	.byte 0xFC, 0x00, 0x00, 0x00
+
+	.global DAT_0208c2ec
+DAT_0208c2ec: ; 0x0208C2EC
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208c2f0
+DAT_0208c2f0: ; 0x0208C2F0
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208c2f4
+DAT_0208c2f4: ; 0x0208C2F4
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208c2f8
+DAT_0208c2f8: ; 0x0208C2F8
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word DAT_0208b5c0
+	.byte 0x04, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020AF5E4
+	.byte 0x08, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020AF5F8
+	.byte 0x08, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020AF60C
+	.byte 0x08, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020AF598
+	.byte 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_0208c32c
+DAT_0208c32c: ; 0x0208C32C
+	.word MAIN_BSS_020B26A0
+	.byte 0x04, 0x88, 0x00, 0x00
+	.word MAIN_BSS_020BAEA4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAEBC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAED4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAEEC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAF04
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAF1C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAF34
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAF4C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAF94
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAFAC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAFC4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAFDC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BAFF4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB00C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB024
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB03C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB084
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB09C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB0B4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB0CC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB0E4
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB0FC
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB114
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB12C
+	.byte 0x18, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB174
+	.byte 0x38, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020BB1AC
+	.byte 0x38, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020B2638
+	.byte 0x54, 0x00, 0x00, 0x00
+	.word MAIN_BSS_0210C0B0
+	.byte 0xFC, 0x00, 0x00, 0x00
+
+	.global DAT_0208c414
+DAT_0208c414: ; 0x0208C414
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208c418
+DAT_0208c418: ; 0x0208C418
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208c41c
+DAT_0208c41c: ; 0x0208C41C
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208c420
+DAT_0208c420: ; 0x0208C420
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word DAT_0208b5c0
+	.byte 0x04, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020AF5E4
+	.byte 0x08, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020AF5F8
+	.byte 0x08, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020AF60C
+	.byte 0x08, 0x00, 0x00, 0x00
+	.word MAIN_BSS_020AF598
+	.byte 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x01, 0x00, 0x00, 0x00
+
+	.global DAT_0208c454
+DAT_0208c454: ; 0x0208C454
+	.byte 0x44
+
+	.global DAT_0208c455
+DAT_0208c455: ; 0x0208C455
+	.byte 0x53, 0x50, 0x52, 0x53, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global PTR_ptr_FUN_02083578_0208c460
+PTR_ptr_FUN_02083578_0208c460: ; 0x0208C460
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_15CEffectResource_0208c474
+
+	.global PTR_ptr_FUN_020835bc_0208c468
+PTR_ptr_FUN_020835bc_0208c468: ; 0x0208C468
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_16CEffectActorData_0208c488
+	.word PTR_ptr_FUN_02083578_0208c460
+
+	.global s_15CEffectResource_0208c474
+s_15CEffectResource_0208c474: ; 0x0208C474
+	.asciz "15CEffectResource"
+
+	.global _0208C486
+_0208C486:
+	.byte 0x00, 0x00
+
+	.global s_16CEffectActorData_0208c488
+s_16CEffectActorData_0208c488: ; 0x0208C488
+	.asciz "16CEffectActorData"
+
+	.global _0208C49B
+_0208C49B:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208c468
+
+	.global ptr_FUN_020294c0_0208c4a4
+ptr_FUN_020294c0_0208c4a4: ; 0x0208C4A4
+	.word sub_020294C0
+
+	.global ptr_FUN_020294e8_0208c4a8
+ptr_FUN_020294e8_0208c4a8: ; 0x0208C4A8
+	.word sub_020294E8
+
+	.global ptr_FUN_020297dc_0208c4ac
+ptr_FUN_020297dc_0208c4ac: ; 0x0208C4AC
+	.word sub_020297DC
+
+	.global ptr_FUN_020297b0_0208c4b0
+ptr_FUN_020297b0_0208c4b0: ; 0x0208C4B0
+	.word sub_020297B0
+
+	.global ptr_FUN_02029784_0208c4b4
+ptr_FUN_02029784_0208c4b4: ; 0x0208C4B4
+	.word sub_02029784
+
+	.global ptr_FUN_0202977c_0208c4b8
+ptr_FUN_0202977c_0208c4b8: ; 0x0208C4B8
+	.word sub_0202977C
+	.word sub_02029778
+	.word sub_02029770
+	.word sub_02029704
+
+	.global s_data_menu_0208c4c8
+s_data_menu_0208c4c8: ; 0x0208C4C8
+	.asciz "data/menu"
+
+	.global _0208C4D2
+_0208C4D2:
+	.byte 0x00, 0x00
+
+	.global s_title100_01_0208c4d4
+s_title100_01_0208c4d4: ; 0x0208C4D4
+	.asciz "title100_01"
+
+	.global s_title100_00_0208c4e0
+s_title100_00_0208c4e0: ; 0x0208C4E0
+	.asciz "title100_00"
+
+	.global s_title100_02_0208c4ec
+s_title100_02_0208c4ec: ; 0x0208C4EC
+	.asciz "title100_02"
+
+	.global s_mit_03d_0208c4f8
+s_mit_03d_0208c4f8: ; 0x0208C4F8
+	.asciz "mit%03d"
+
+	.global s_mit104_0208c500
+s_mit104_0208c500: ; 0x0208C500
+	.asciz "mit104"
+
+	.global _0208C507
+_0208C507:
+	.byte 0x00
+
+	.global s_title101_00_0208c508
+s_title101_00_0208c508: ; 0x0208C508
+	.asciz "title101_00"
+
+	.global s_title101_02_0208c514
+s_title101_02_0208c514: ; 0x0208C514
+	.asciz "title101_02"
+
+	.global s_title101_03_0208c520
+s_title101_03_0208c520: ; 0x0208C520
+	.asciz "title101_03"
+
+	.global s_title101_04_0208c52c
+s_title101_04_0208c52c: ; 0x0208C52C
+	.asciz "title101_04"
+
+	.global s_title101_01_0208c538
+s_title101_01_0208c538: ; 0x0208C538
+	.asciz "title101_01"
+
+	.global s_data_menu_0208c544
+s_data_menu_0208c544: ; 0x0208C544
+	.asciz "data/menu"
+
+	.global _0208C54E
+_0208C54E:
+	.byte 0x00, 0x00
+
+	.global s_ma005_00_0208c550
+s_ma005_00_0208c550: ; 0x0208C550
+	.asciz "ma005_00"
+
+	.global _0208C559
+_0208C559:
+	.byte 0x00, 0x00, 0x00
+
+	.global DAT_0208c55c
+DAT_0208c55c: ; 0x0208C55C
+	.byte 0x00, 0x00, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0x89, 0x00, 0x8A, 0x00, 0x8B, 0x00, 0x0B, 0x00, 0x0C, 0x00, 0x0D, 0x00
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x39, 0x00, 0xFF, 0xFF, 0x3A, 0x00, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0x43, 0x00, 0x44, 0x00, 0x70, 0x00, 0x71, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x02, 0x00
+	.byte 0x03, 0x00, 0xC2, 0x00, 0xC3, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xAB, 0x00, 0xAC, 0x00, 0xCB, 0x00, 0xCC, 0x00, 0x0E, 0x00
+	.byte 0x0F, 0x00, 0x72, 0x00, 0x73, 0x00, 0x74, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7E, 0x00, 0x7F, 0x00
+	.byte 0x41, 0x00, 0x42, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xB7, 0x00, 0xFF, 0xFF, 0xB8, 0x00
+	.byte 0xA1, 0x00, 0xA2, 0x00, 0xA3, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xF2, 0x00, 0xFF, 0xFF, 0xEA, 0x00
+	.byte 0x29, 0x00, 0x2A, 0x00, 0x2B, 0x00, 0xB0, 0x00, 0xB1, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x3E, 0x00
+	.byte 0x3F, 0x00, 0xFF, 0xFF, 0x86, 0x00, 0x87, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x98, 0x00
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0x11, 0x00, 0x12, 0x00, 0x13, 0x00, 0xFF, 0xFF, 0xA6, 0x00, 0xA7, 0x00
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0x4C, 0x00, 0x4D, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xBB, 0x00, 0xBC, 0x00, 0x95, 0x00, 0x96, 0x00, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0x92, 0x00, 0xE5, 0x00, 0xE6, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x5E, 0x00, 0x5F, 0x00
+	.byte 0xA5, 0x00, 0xD8, 0x00, 0xD2, 0x00, 0x47, 0x00, 0x4A, 0x00, 0x7B, 0x00, 0xB3, 0x00, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x61, 0x00, 0x62, 0x00, 0x63, 0x00, 0x64, 0x00, 0xFF, 0xFF
+	.byte 0xEB, 0x00, 0xEC, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x02, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xDA, 0x00, 0xDB, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x9B, 0x00, 0x9C, 0x00, 0x10, 0x00
+	.byte 0x58, 0x00, 0x59, 0x00, 0x01, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0x69, 0x00, 0x6A, 0x00, 0x6B, 0x00, 0x75, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x1F, 0x00
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x6C, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x76, 0x00
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0x65, 0x00, 0x66, 0x00, 0xB9, 0x00, 0xFF, 0xFF, 0xDC, 0x00, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xB2, 0x00, 0x6E, 0x00, 0x6F, 0x00, 0xFF, 0xFF, 0x80, 0x00, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0x5C, 0x00, 0xD9, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xF4, 0x00, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0x8C, 0x00, 0x8D, 0x00, 0xC8, 0x00, 0xC9, 0x00, 0x5D, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xD1, 0x00
+	.byte 0x5B, 0x00, 0xBD, 0x00, 0x99, 0x00, 0x9A, 0x00, 0xE7, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0x3D, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x46, 0x00, 0x49, 0x00, 0x2E, 0x00
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x78, 0x00, 0x79, 0x00, 0x7A, 0x00, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0x07, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xF3, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x21, 0x00
+	.byte 0x22, 0x00, 0x23, 0x00, 0x06, 0x00, 0x07, 0x00, 0x4E, 0x00, 0x4F, 0x00, 0x9D, 0x00, 0x9E, 0x00
+	.byte 0x9F, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x20, 0x00, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xB4, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x1C, 0x00, 0x1D, 0x00
+	.byte 0xFF, 0xFF, 0x2C, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xC1, 0x00, 0x82, 0x00, 0x83, 0x00, 0x84, 0x00
+	.byte 0x85, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0x09, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x60, 0x00, 0xED, 0x00, 0xEE, 0x00
+	.byte 0x7C, 0x00, 0x7D, 0x00, 0xE0, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0x03, 0x01, 0xEF, 0x00, 0xF0, 0x00, 0xFF, 0xFF, 0x04, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFA, 0x00, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x93, 0x00
+	.byte 0x94, 0x00, 0xBE, 0x00, 0xBF, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x01, 0xFF, 0xFF, 0xD5, 0x00
+	.byte 0xD6, 0x00, 0xC5, 0x00, 0xC6, 0x00, 0xC7, 0x00, 0xFF, 0xFF, 0xE8, 0x00, 0xE9, 0x00, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xE1, 0x00, 0xE2, 0x00, 0xE3, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x08, 0x01
+	.byte 0x09, 0x01, 0x0A, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0x34, 0x00, 0x35, 0x00, 0x36, 0x00, 0xA8, 0x00, 0xA9, 0x00, 0xAA, 0x00, 0xCE, 0x00
+	.byte 0xCF, 0x00, 0xD0, 0x00, 0x17, 0x00, 0x18, 0x00, 0x19, 0x00, 0x04, 0x00, 0x05, 0x00, 0x52, 0x00
+	.byte 0x53, 0x00, 0x31, 0x00, 0x32, 0x00, 0x33, 0x00, 0x08, 0x00, 0x0A, 0x00, 0x54, 0x00, 0x55, 0x00
+	.byte 0xB5, 0x00, 0xB6, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xF1, 0x00, 0x3B, 0x00, 0x3C, 0x00, 0x1A, 0x00
+	.byte 0x37, 0x00, 0x38, 0x00, 0x2F, 0x00, 0x30, 0x00, 0x25, 0x00, 0x26, 0x00, 0x6D, 0x00, 0x8E, 0x00
+	.byte 0x8F, 0x00, 0x14, 0x00, 0x15, 0x00, 0xDD, 0x00, 0xBA, 0x00, 0x27, 0x00, 0x28, 0x00, 0xCD, 0x00
+	.byte 0x90, 0x00, 0x91, 0x00, 0xF8, 0x00, 0xF9, 0x00, 0x1E, 0x00, 0xA4, 0x00, 0x16, 0x00, 0x45, 0x00
+	.byte 0xC4, 0x00, 0xFB, 0x00, 0xFC, 0x00, 0xFD, 0x00, 0x1B, 0x00, 0xDE, 0x00, 0xDF, 0x00, 0xF6, 0x00
+	.byte 0xF7, 0x00, 0xAD, 0x00, 0xAE, 0x00, 0x50, 0x00, 0x51, 0x00, 0x88, 0x00, 0x56, 0x00, 0x57, 0x00
+	.byte 0x5A, 0x00, 0xD3, 0x00, 0xD4, 0x00, 0xF5, 0x00, 0x40, 0x00, 0xAF, 0x00, 0x97, 0x00, 0x24, 0x00
+	.byte 0x48, 0x00, 0x4B, 0x00, 0x05, 0x01, 0x77, 0x00, 0x67, 0x00, 0x68, 0x00, 0x81, 0x00, 0xCA, 0x00
+	.byte 0x06, 0x01, 0xA0, 0x00, 0x2D, 0x00, 0xC0, 0x00, 0xD7, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0xE9, 0x03, 0xEA, 0x03, 0xE4, 0x00, 0x0B, 0x01, 0xFF, 0xFF, 0xFE, 0x00, 0xFF, 0xFF
+	.byte 0xFF, 0xFF, 0x01, 0x01, 0xEB, 0x03, 0x00, 0x00
+
+	.global DAT_0208c938
+DAT_0208c938: ; 0x0208C938
+	.byte 0x08, 0x00, 0x00, 0x00
+
+	.global DAT_0208c93c
+DAT_0208c93c: ; 0x0208C93C
+	.byte 0x00, 0x01, 0x00, 0x00
+
+	.global DAT_0208c940
+DAT_0208c940: ; 0x0208C940
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208c944
+DAT_0208c944: ; 0x0208C944
+	.byte 0x00, 0x00
+
+	.global DAT_0208c946
+DAT_0208c946: ; 0x0208C946
+	.byte 0x00, 0x00
+
+	.global DAT_0208c948
+DAT_0208c948: ; 0x0208C948
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208c94c
+DAT_0208c94c: ; 0x0208C94C
+	.byte 0x07, 0x00, 0x00, 0x00
+	.byte 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x04, 0x00, 0x08, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x08, 0x00, 0x04, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00
+	.byte 0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x09, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x04, 0x00
+	.byte 0x0C, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC9, 0x00, 0x00, 0x00
+	.byte 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x0B, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x04, 0x00, 0x10, 0x00, 0x00, 0x00, 0x11, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0xCA, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x14, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x15, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x04, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x18, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x04, 0x00
+	.byte 0x16, 0x00, 0x00, 0x00, 0x1A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x09, 0x00, 0x04, 0x00, 0x00, 0x00, 0x19, 0x00, 0x00, 0x00
+	.word 0x02000000
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1B, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x04, 0x00, 0x09, 0x00, 0x00, 0x00
+	.byte 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0xCB, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20
+	.byte 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1E, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x40, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0xCC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x21, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x22, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x0C, 0x00, 0x00, 0x00, 0x02, 0x00, 0x04, 0x00, 0x08, 0x00, 0x00, 0x00, 0x24, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x26, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x27, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00
+	.byte 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x29, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x1F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global s_menu_0208cc1c
+s_menu_0208cc1c: ; 0x0208CC1C
+	.asciz "menu/"
+
+	.global _0208CC22
+_0208CC22:
+	.byte 0x00, 0x00
+
+	.global s_map000_0208cc24
+s_map000_0208cc24: ; 0x0208CC24
+	.asciz "map000_"
+
+	.global s_map000_0208cc2c
+s_map000_0208cc2c: ; 0x0208CC2C
+	.asciz "map000"
+
+	.global _0208CC33
+_0208CC33:
+	.byte 0x00
+
+	.global s_data_menu_0208cc34
+s_data_menu_0208cc34: ; 0x0208CC34
+	.asciz "data/menu"
+
+	.global _0208CC3E
+_0208CC3E:
+	.byte 0x00, 0x00
+
+	.global s_map000_00_0208cc40
+s_map000_00_0208cc40: ; 0x0208CC40
+	.asciz "map000_00"
+
+	.global _0208CC4A
+_0208CC4A:
+	.byte 0x00, 0x00
+
+	.global s_map000_01_0208cc4c
+s_map000_01_0208cc4c: ; 0x0208CC4C
+	.asciz "map000_01"
+
+	.global _0208CC56
+_0208CC56:
+	.byte 0x00, 0x00
+
+	.global s_map000_02_0208cc58
+s_map000_02_0208cc58: ; 0x0208CC58
+	.asciz "map000_02"
+
+	.global _0208CC62
+_0208CC62:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x6C, 0xC1, 0x08, 0x02
+
+	.global PTR_LAB_0208cc6c
+PTR_LAB_0208cc6c: ; 0x0208CC6C
+	.word sub_0202B5F4
+
+	.global ptr_FUN_0202b61c_0208cc70
+ptr_FUN_0202b61c_0208cc70: ; 0x0208CC70
+	.word sub_0202B61C
+
+	.global ptr_FUN_0202b674_0208cc74
+ptr_FUN_0202b674_0208cc74: ; 0x0208CC74
+	.word sub_0202B674
+
+	.global ptr_FUN_0202b6f0_0208cc78
+ptr_FUN_0202b6f0_0208cc78: ; 0x0208CC78
+	.word sub_0202B6F0
+	.byte 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208cc88
+PTR_ptr_FUN_020835bc_0208cc88: ; 0x0208CC88
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_11CBackupSync_0208cc94
+	.word PTR_ptr_FUN_02083578_0208c16c
+
+	.global s_11CBackupSync_0208cc94
+s_11CBackupSync_0208cc94: ; 0x0208CC94
+	.asciz "11CBackupSync"
+
+	.global _0208CCA2
+_0208CCA2:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x88, 0xCC, 0x08, 0x02
+
+	.global ptr_FUN_0202b8d8_0208ccac
+ptr_FUN_0202b8d8_0208ccac: ; 0x0208CCAC
+	.word sub_0202B8D8
+
+	.global ptr_FUN_0202b8ec_0208ccb0
+ptr_FUN_0202b8ec_0208ccb0: ; 0x0208CCB0
+	.word sub_0202B8EC
+	.word sub_0202B908
+
+	.global ptr_FUN_0202b6f0_0208ccb8
+ptr_FUN_0202b6f0_0208ccb8: ; 0x0208CCB8
+	.word sub_0202B6F0
+
+	.global ptr_FUN_0202b928_0208ccbc
+ptr_FUN_0202b928_0208ccbc: ; 0x0208CCBC
+	.word sub_0202B928
+
+	.global ptr_FUN_0202b98c_0208ccc0
+ptr_FUN_0202b98c_0208ccc0: ; 0x0208CCC0
+	.word sub_0202B98C
+
+	.global ptr_FUN_0202b9ec_0208ccc4
+ptr_FUN_0202b9ec_0208ccc4: ; 0x0208CCC4
+	.word sub_0202B9EC
+
+	.global DAT_0208ccc8
+DAT_0208ccc8: ; 0x0208CCC8
+	.byte 0x02, 0x00, 0x00, 0x00
+
+	.global DAT_0208cccc
+DAT_0208cccc: ; 0x0208CCCC
+	.byte 0x1E, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x2B, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x4F, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x56, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x2E, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x2F, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x30, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x31, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00, 0x22, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x35, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x34, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x3F, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x47, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x14, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x18, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x37, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x3C, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x09, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x1B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x43, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x4D, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x32, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x21, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x39, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x19, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x3D, 0x00, 0x00, 0x00
+	.byte 0x04, 0x00, 0x00, 0x00, 0x3D, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x51, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x36, 0x00, 0x00, 0x00
+	.byte 0x07, 0x00, 0x00, 0x00, 0x5B, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x3B, 0x00, 0x00, 0x00
+	.byte 0x05, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00
+
+	.global PTR_LAB_0208ce10
+PTR_LAB_0208ce10: ; 0x0208CE10
+	.word sub_0202BDBC
+	.word sub_0202BDE4
+	.word sub_0202BE0C
+
+	.global ptr_FUN_0202be34_0208ce1c
+ptr_FUN_0202be34_0208ce1c: ; 0x0208CE1C
+	.word sub_0202BE34
+	.word sub_0202BE78
+
+	.global ptr_FUN_0202bea8_0208ce24
+ptr_FUN_0202bea8_0208ce24: ; 0x0208CE24
+	.word sub_0202BEA8
+	.word sub_0202BEF0
+	.word sub_0202BF40
+	.word sub_0202BF68
+	.word sub_0202BFB8
+	.word sub_0202BFE0
+	.word sub_0202C008
+	.word sub_0202C030
+	.word sub_0202C058
+
+	.global ptr_FUN_0202c0a8_0208ce48
+ptr_FUN_0202c0a8_0208ce48: ; 0x0208CE48
+	.word sub_0202C0A8
+	.word sub_0202C0D8
+
+	.global ptr_FUN_0202c100_0208ce50
+ptr_FUN_0202c100_0208ce50: ; 0x0208CE50
+	.word sub_0202C100
+
+	.global ptr_FUN_0202c12c_0208ce54
+ptr_FUN_0202c12c_0208ce54: ; 0x0208CE54
+	.word sub_0202C12C
+	.word sub_0202C158
+
+	.global ptr_FUN_0202c478_0208ce5c
+ptr_FUN_0202c478_0208ce5c: ; 0x0208CE5C
+	.word sub_0202C478
+
+	.global ptr_FUN_0202c510_0208ce60
+ptr_FUN_0202c510_0208ce60: ; 0x0208CE60
+	.word sub_0202C510
+	.word sub_0202C5A8
+
+	.global ptr_FUN_0202c5f0_0208ce68
+ptr_FUN_0202c5f0_0208ce68: ; 0x0208CE68
+	.word sub_0202C5F0
+	.word sub_0202C658
+
+	.global ptr_FUN_0202c86c_0208ce70
+ptr_FUN_0202c86c_0208ce70: ; 0x0208CE70
+	.word sub_0202C86C
+	.word sub_0202C8B0
+
+	.global ptr_FUN_0202c8d0_0208ce78
+ptr_FUN_0202c8d0_0208ce78: ; 0x0208CE78
+	.word sub_0202C8D0
+
+	.global ptr_FUN_0202c8fc_0208ce7c
+ptr_FUN_0202c8fc_0208ce7c: ; 0x0208CE7C
+	.word sub_0202C8FC
+	.word sub_0202C928
+	.word sub_0202C950
+	.word sub_0202C974
+	.word sub_0202C99C
+	.word sub_0202C9C0
+	.word sub_0202C9E8
+	.word sub_0202CA0C
+	.word sub_0202CA30
+	.word sub_0202CA54
+
+	.global ptr_FUN_0202cab8_0208cea4
+ptr_FUN_0202cab8_0208cea4: ; 0x0208CEA4
+	.word sub_0202CAB8
+	.word sub_0202CB18
+
+	.global ptr_FUN_0202cb38_0208ceac
+ptr_FUN_0202cb38_0208ceac: ; 0x0208CEAC
+	.word sub_0202CB38
+
+	.global ptr_FUN_0202cc58_0208ceb0
+ptr_FUN_0202cc58_0208ceb0: ; 0x0208CEB0
+	.word sub_0202CC58
+	.word sub_0202CC84
+
+	.global ptr_FUN_0202cd2c_0208ceb8
+ptr_FUN_0202cd2c_0208ceb8: ; 0x0208CEB8
+	.word sub_0202CD2C
+
+	.global ptr_FUN_0202cd5c_0208cebc
+ptr_FUN_0202cd5c_0208cebc: ; 0x0208CEBC
+	.word sub_0202CD5C
+
+	.global ptr_FUN_0202cd8c_0208cec0
+ptr_FUN_0202cd8c_0208cec0: ; 0x0208CEC0
+	.word sub_0202CD8C
+
+	.global ptr_FUN_0202ce70_0208cec4
+ptr_FUN_0202ce70_0208cec4: ; 0x0208CEC4
+	.word sub_0202CE70
+
+	.global ptr_FUN_0202cea0_0208cec8
+ptr_FUN_0202cea0_0208cec8: ; 0x0208CEC8
+	.word sub_0202CEA0
+
+	.global ptr_FUN_0202cedc_0208cecc
+ptr_FUN_0202cedc_0208cecc: ; 0x0208CECC
+	.word sub_0202CEDC
+
+	.global ptr_FUN_0202d074_0208ced0
+ptr_FUN_0202d074_0208ced0: ; 0x0208CED0
+	.word sub_0202D074
+
+	.global ptr_FUN_0202d0d0_0208ced4
+ptr_FUN_0202d0d0_0208ced4: ; 0x0208CED4
+	.word sub_0202D0D0
+
+	.global ptr_FUN_0202d148_0208ced8
+ptr_FUN_0202d148_0208ced8: ; 0x0208CED8
+	.word sub_0202D148
+
+	.global ptr_FUN_0202d190_0208cedc
+ptr_FUN_0202d190_0208cedc: ; 0x0208CEDC
+	.word sub_0202D190
+
+	.global ptr_FUN_0202d1d8_0208cee0
+ptr_FUN_0202d1d8_0208cee0: ; 0x0208CEE0
+	.word sub_0202D1D8
+
+	.global ptr_FUN_0202d234_0208cee4
+ptr_FUN_0202d234_0208cee4: ; 0x0208CEE4
+	.word sub_0202D234
+
+	.global ptr_FUN_0202d2e0_0208cee8
+ptr_FUN_0202d2e0_0208cee8: ; 0x0208CEE8
+	.word sub_0202D2E0
+
+	.global ptr_FUN_0202d398_0208ceec
+ptr_FUN_0202d398_0208ceec: ; 0x0208CEEC
+	.word sub_0202D398
+
+	.global ptr_FUN_0202d448_0208cef0
+ptr_FUN_0202d448_0208cef0: ; 0x0208CEF0
+	.word sub_0202D448
+
+	.global ptr_FUN_0202d4fc_0208cef4
+ptr_FUN_0202d4fc_0208cef4: ; 0x0208CEF4
+	.word sub_0202D4FC
+	.word sub_0202D5D4
+
+	.global ptr_FUN_0202d5f0_0208cefc
+ptr_FUN_0202d5f0_0208cefc: ; 0x0208CEFC
+	.word sub_0202D5F0
+
+	.global ptr_FUN_0202d6f0_0208cf00
+ptr_FUN_0202d6f0_0208cf00: ; 0x0208CF00
+	.word sub_0202D6F0
+
+	.global ptr_FUN_0202d754_0208cf04
+ptr_FUN_0202d754_0208cf04: ; 0x0208CF04
+	.word sub_0202D754
+
+	.global ptr_FUN_0202d7b8_0208cf08
+ptr_FUN_0202d7b8_0208cf08: ; 0x0208CF08
+	.word sub_0202D7B8
+
+	.global ptr_FUN_0202d85c_0208cf0c
+ptr_FUN_0202d85c_0208cf0c: ; 0x0208CF0C
+	.word sub_0202D85C
+
+	.global ptr_FUN_0202d8bc_0208cf10
+ptr_FUN_0202d8bc_0208cf10: ; 0x0208CF10
+	.word sub_0202D8BC
+
+	.global ptr_FUN_0202d928_0208cf14
+ptr_FUN_0202d928_0208cf14: ; 0x0208CF14
+	.word sub_0202D928
+
+	.global ptr_FUN_0202d964_0208cf18
+ptr_FUN_0202d964_0208cf18: ; 0x0208CF18
+	.word sub_0202D964
+
+	.global ptr_FUN_0202d9c0_0208cf1c
+ptr_FUN_0202d9c0_0208cf1c: ; 0x0208CF1C
+	.word sub_0202D9C0
+
+	.global ptr_FUN_0202da18_0208cf20
+ptr_FUN_0202da18_0208cf20: ; 0x0208CF20
+	.word sub_0202DA18
+
+	.global ptr_FUN_0202db00_0208cf24
+ptr_FUN_0202db00_0208cf24: ; 0x0208CF24
+	.word sub_0202DB00
+
+	.global ptr_FUN_0202db70_0208cf28
+ptr_FUN_0202db70_0208cf28: ; 0x0208CF28
+	.word sub_0202DB70
+
+	.global ptr_FUN_0202dbe8_0208cf2c
+ptr_FUN_0202dbe8_0208cf2c: ; 0x0208CF2C
+	.word sub_0202DBE8
+
+	.global ptr_FUN_0202dc74_0208cf30
+ptr_FUN_0202dc74_0208cf30: ; 0x0208CF30
+	.word sub_0202DC74
+
+	.global ptr_FUN_0202dccc_0208cf34
+ptr_FUN_0202dccc_0208cf34: ; 0x0208CF34
+	.word sub_0202DCCC
+
+	.global ptr_FUN_0202dd14_0208cf38
+ptr_FUN_0202dd14_0208cf38: ; 0x0208CF38
+	.word sub_0202DD14
+
+	.global ptr_FUN_0202dd48_0208cf3c
+ptr_FUN_0202dd48_0208cf3c: ; 0x0208CF3C
+	.word sub_0202DD48
+
+	.global ptr_FUN_0202dd88_0208cf40
+ptr_FUN_0202dd88_0208cf40: ; 0x0208CF40
+	.word sub_0202DD88
+	.word sub_0202E060
+	.word sub_0202E068
+
+	.global ptr_FUN_0202e070_0208cf4c
+ptr_FUN_0202e070_0208cf4c: ; 0x0208CF4C
+	.word sub_0202E070
+
+	.global ptr_FUN_0202e330_0208cf50
+ptr_FUN_0202e330_0208cf50: ; 0x0208CF50
+	.word sub_0202E330
+	.word sub_0202E548
+	.word sub_0202E550
+
+	.global ptr_FUN_0202e558_0208cf5c
+ptr_FUN_0202e558_0208cf5c: ; 0x0208CF5C
+	.word sub_0202E558
+
+	.global ptr_FUN_0202e61c_0208cf60
+ptr_FUN_0202e61c_0208cf60: ; 0x0208CF60
+	.word sub_0202E61C
+
+	.global ptr_FUN_0202f13c_0208cf64
+ptr_FUN_0202f13c_0208cf64: ; 0x0208CF64
+	.word sub_0202F13C
+
+	.global ptr_FUN_0202f174_0208cf68
+ptr_FUN_0202f174_0208cf68: ; 0x0208CF68
+	.word sub_0202F174
+	.word sub_0202F1AC
+	.word sub_0202F1C0
+
+	.global ptr_FUN_0202f208_0208cf74
+ptr_FUN_0202f208_0208cf74: ; 0x0208CF74
+	.word sub_0202F208
+
+	.global ptr_FUN_0202f23c_0208cf78
+ptr_FUN_0202f23c_0208cf78: ; 0x0208CF78
+	.word sub_0202F23C
+
+	.global ptr_FUN_0202f268_0208cf7c
+ptr_FUN_0202f268_0208cf7c: ; 0x0208CF7C
+	.word sub_0202F268
+	.word sub_0202F294
+	.word sub_0202F29C
+	.word sub_0202F2A4
+	.word sub_0202F2AC
+
+	.global ptr_FUN_0202f764_0208cf90
+ptr_FUN_0202f764_0208cf90: ; 0x0208CF90
+	.word sub_0202F764
+	.word sub_0202F784
+	.word sub_0202F78C
+	.word sub_0202F794
+	.word sub_0202F79C
+	.word sub_0202F7A4
+
+	.global ptr_FUN_0202f7ac_0208cfa8
+ptr_FUN_0202f7ac_0208cfa8: ; 0x0208CFA8
+	.word sub_0202F7AC
+
+	.global ptr_FUN_0202f980_0208cfac
+ptr_FUN_0202f980_0208cfac: ; 0x0208CFAC
+	.word sub_0202F980
+	.word sub_0202F9FC
+
+	.global ptr_FUN_02030754_0208cfb4
+ptr_FUN_02030754_0208cfb4: ; 0x0208CFB4
+	.word sub_02030754
+
+	.global ptr_FUN_020307e4_0208cfb8
+ptr_FUN_020307e4_0208cfb8: ; 0x0208CFB8
+	.word sub_020307E4
+
+	.global ptr_FUN_02030858_0208cfbc
+ptr_FUN_02030858_0208cfbc: ; 0x0208CFBC
+	.word sub_02030858
+
+	.global ptr_FUN_020308fc_0208cfc0
+ptr_FUN_020308fc_0208cfc0: ; 0x0208CFC0
+	.word sub_020308FC
+
+	.global ptr_FUN_02030958_0208cfc4
+ptr_FUN_02030958_0208cfc4: ; 0x0208CFC4
+	.word sub_02030958
+
+	.global ptr_FUN_020309b4_0208cfc8
+ptr_FUN_020309b4_0208cfc8: ; 0x0208CFC8
+	.word sub_020309B4
+
+	.global ptr_FUN_02030a40_0208cfcc
+ptr_FUN_02030a40_0208cfcc: ; 0x0208CFCC
+	.word sub_02030A40
+	.word sub_02030AD0
+
+	.global ptr_FUN_02030ad8_0208cfd4
+ptr_FUN_02030ad8_0208cfd4: ; 0x0208CFD4
+	.word sub_02030AD8
+	.word sub_02030B1C
+
+	.global ptr_FUN_02030b40_0208cfdc
+ptr_FUN_02030b40_0208cfdc: ; 0x0208CFDC
+	.word sub_02030B40
+
+	.global ptr_FUN_02030bb8_0208cfe0
+ptr_FUN_02030bb8_0208cfe0: ; 0x0208CFE0
+	.word sub_02030BB8
+	.word sub_02030BF0
+
+	.global ptr_FUN_02030c1c_0208cfe8
+ptr_FUN_02030c1c_0208cfe8: ; 0x0208CFE8
+	.word sub_02030C1C
+
+	.global ptr_FUN_02030ca0_0208cfec
+ptr_FUN_02030ca0_0208cfec: ; 0x0208CFEC
+	.word sub_02030CA0
+
+	.global ptr_FUN_02030d24_0208cff0
+ptr_FUN_02030d24_0208cff0: ; 0x0208CFF0
+	.word sub_02030D24
+
+	.global ptr_FUN_02030da8_0208cff4
+ptr_FUN_02030da8_0208cff4: ; 0x0208CFF4
+	.word sub_02030DA8
+
+	.global ptr_FUN_02030f8c_0208cff8
+ptr_FUN_02030f8c_0208cff8: ; 0x0208CFF8
+	.word sub_02030F8C
+
+	.global ptr_FUN_0203117c_0208cffc
+ptr_FUN_0203117c_0208cffc: ; 0x0208CFFC
+	.word sub_0203117C
+
+	.global ptr_FUN_02031244_0208d000
+ptr_FUN_02031244_0208d000: ; 0x0208D000
+	.word sub_02031244
+
+	.global ptr_FUN_020312c4_0208d004
+ptr_FUN_020312c4_0208d004: ; 0x0208D004
+	.word sub_020312C4
+
+	.global ptr_FUN_02031374_0208d008
+ptr_FUN_02031374_0208d008: ; 0x0208D008
+	.word sub_02031374
+
+	.global ptr_FUN_02031474_0208d00c
+ptr_FUN_02031474_0208d00c: ; 0x0208D00C
+	.word sub_02031474
+
+	.global ptr_FUN_02031574_0208d010
+ptr_FUN_02031574_0208d010: ; 0x0208D010
+	.word sub_02031574
+
+	.global ptr_FUN_020318b4_0208d014
+ptr_FUN_020318b4_0208d014: ; 0x0208D014
+	.word sub_020318B4
+	.word sub_020319C4
+	.word sub_02031B60
+
+	.global ptr_FUN_02031b84_0208d020
+ptr_FUN_02031b84_0208d020: ; 0x0208D020
+	.word sub_02031B84
+	.word sub_02031BB0
+
+	.global ptr_FUN_02031bd4_0208d028
+ptr_FUN_02031bd4_0208d028: ; 0x0208D028
+	.word sub_02031BD4
+
+	.global ptr_FUN_02031c50_0208d02c
+ptr_FUN_02031c50_0208d02c: ; 0x0208D02C
+	.word sub_02031C50
+
+	.global ptr_FUN_02031cb4_0208d030
+ptr_FUN_02031cb4_0208d030: ; 0x0208D030
+	.word sub_02031CB4
+
+	.global ptr_FUN_02031e00_0208d034
+ptr_FUN_02031e00_0208d034: ; 0x0208D034
+	.word sub_02031E00
+	.word sub_02031E30
+
+	.global ptr_FUN_02031e78_0208d03c
+ptr_FUN_02031e78_0208d03c: ; 0x0208D03C
+	.word sub_02031E78
+	.word sub_02031F50
+
+	.global ptr_FUN_02031f64_0208d044
+ptr_FUN_02031f64_0208d044: ; 0x0208D044
+	.word sub_02031F64
+
+	.global ptr_FUN_02031fd4_0208d048
+ptr_FUN_02031fd4_0208d048: ; 0x0208D048
+	.word sub_02031FD4
+	.word sub_0202FA24
+
+	.global ptr_FUN_02030e40_0208d050
+ptr_FUN_02030e40_0208d050: ; 0x0208D050
+	.word sub_02030E40
+	.word sub_02030E90
+	.word sub_02030EB8
+	.word sub_02030EE0
+
+	.global ptr_FUN_020324dc_0208d060
+ptr_FUN_020324dc_0208d060: ; 0x0208D060
+	.word sub_020324DC
+
+	.global ptr_FUN_02032538_0208d064
+ptr_FUN_02032538_0208d064: ; 0x0208D064
+	.word sub_02032538
+
+	.global ptr_FUN_02032584_0208d068
+ptr_FUN_02032584_0208d068: ; 0x0208D068
+	.word sub_02032584
+
+	.global ptr_FUN_0203120c_0208d06c
+ptr_FUN_0203120c_0208d06c: ; 0x0208D06C
+	.word sub_0203120C
+
+	.global ptr_FUN_0203133c_0208d070
+ptr_FUN_0203133c_0208d070: ; 0x0208D070
+	.word sub_0203133C
+
+	.global ptr_FUN_0202c180_0208d074
+ptr_FUN_0202c180_0208d074: ; 0x0208D074
+	.word sub_0202C180
+
+	.global ptr_FUN_0202c1c4_0208d078
+ptr_FUN_0202c1c4_0208d078: ; 0x0208D078
+	.word sub_0202C1C4
+	.word sub_020319CC
+	.word sub_0202D5AC
+
+	.global ptr_FUN_020325c0_0208d084
+ptr_FUN_020325c0_0208d084: ; 0x0208D084
+	.word sub_020325C0
+
+	.global ptr_FUN_020319e8_0208d088
+ptr_FUN_020319e8_0208d088: ; 0x0208D088
+	.word sub_020319E8
+	.word sub_020316A8
+	.word sub_020316CC
+	.word sub_0202FA44
+	.word sub_0202FA54
+
+	.global ptr_FUN_0202fa80_0208d09c
+ptr_FUN_0202fa80_0208d09c: ; 0x0208D09C
+	.word sub_0202FA80
+
+	.global ptr_FUN_0202fb38_0208d0a0
+ptr_FUN_0202fb38_0208d0a0: ; 0x0208D0A0
+	.word sub_0202FB38
+
+	.global ptr_FUN_0202fc74_0208d0a4
+ptr_FUN_0202fc74_0208d0a4: ; 0x0208D0A4
+	.word sub_0202FC74
+	.word sub_0202FE28
+	.word sub_020316E8
+
+	.global ptr_FUN_0202e64c_0208d0b0
+ptr_FUN_0202e64c_0208d0b0: ; 0x0208D0B0
+	.word sub_0202E64C
+
+	.global ptr_FUN_0202e694_0208d0b4
+ptr_FUN_0202e694_0208d0b4: ; 0x0208D0B4
+	.word sub_0202E694
+
+	.global ptr_FUN_0202e6b8_0208d0b8
+ptr_FUN_0202e6b8_0208d0b8: ; 0x0208D0B8
+	.word sub_0202E6B8
+
+	.global ptr_FUN_0202e6dc_0208d0bc
+ptr_FUN_0202e6dc_0208d0bc: ; 0x0208D0BC
+	.word sub_0202E6DC
+	.word sub_02032080
+	.word sub_020327B8
+	.word sub_020327DC
+	.word sub_020320A8
+
+	.global ptr_FUN_0202fe30_0208d0d0
+ptr_FUN_0202fe30_0208d0d0: ; 0x0208D0D0
+	.word sub_0202FE30
+	.word sub_0202FEA4
+
+	.global ptr_FUN_0202e740_0208d0d8
+ptr_FUN_0202e740_0208d0d8: ; 0x0208D0D8
+	.word sub_0202E740
+
+	.global ptr_FUN_0202e7d8_0208d0dc
+ptr_FUN_0202e7d8_0208d0dc: ; 0x0208D0DC
+	.word sub_0202E7D8
+
+	.global ptr_FUN_0202fec0_0208d0e0
+ptr_FUN_0202fec0_0208d0e0: ; 0x0208D0E0
+	.word sub_0202FEC0
+	.word sub_0202FF08
+	.word sub_0202FF20
+	.word sub_0202FF38
+
+	.global ptr_FUN_0202ff48_0208d0f0
+ptr_FUN_0202ff48_0208d0f0: ; 0x0208D0F0
+	.word sub_0202FF48
+
+	.global ptr_FUN_0202ffe4_0208d0f4
+ptr_FUN_0202ffe4_0208d0f4: ; 0x0208D0F4
+	.word sub_0202FFE4
+
+	.global ptr_FUN_020320c4_0208d0f8
+ptr_FUN_020320c4_0208d0f8: ; 0x0208D0F8
+	.word sub_020320C4
+	.word sub_0202C080
+	.word sub_02030040
+	.word sub_02030068
+
+	.global ptr_FUN_0202ca74_0208d108
+ptr_FUN_0202ca74_0208d108: ; 0x0208D108
+	.word sub_0202CA74
+
+	.global ptr_FUN_0202e81c_0208d10c
+ptr_FUN_0202e81c_0208d10c: ; 0x0208D10C
+	.word sub_0202E81C
+
+	.global ptr_FUN_0202ec08_0208d110
+ptr_FUN_0202ec08_0208d110: ; 0x0208D110
+	.word sub_0202EC08
+
+	.global ptr_FUN_0202edc8_0208d114
+ptr_FUN_0202edc8_0208d114: ; 0x0208D114
+	.word sub_0202EDC8
+
+	.global ptr_FUN_0202edfc_0208d118
+ptr_FUN_0202edfc_0208d118: ; 0x0208D118
+	.word sub_0202EDFC
+	.word sub_0202EE20
+
+	.global ptr_FUN_0202ee44_0208d120
+ptr_FUN_0202ee44_0208d120: ; 0x0208D120
+	.word sub_0202EE44
+
+	.global ptr_FUN_020320ec_0208d124
+ptr_FUN_020320ec_0208d124: ; 0x0208D124
+	.word sub_020320EC
+
+	.global ptr_FUN_020315d8_0208d128
+ptr_FUN_020315d8_0208d128: ; 0x0208D128
+	.word sub_020315D8
+
+	.global ptr_FUN_02031610_0208d12c
+ptr_FUN_02031610_0208d12c: ; 0x0208D12C
+	.word sub_02031610
+	.word sub_02031684
+	.word sub_020313E8
+
+	.global ptr_FUN_020325f0_0208d138
+ptr_FUN_020325f0_0208d138: ; 0x0208D138
+	.word sub_020325F0
+
+	.global ptr_FUN_02032624_0208d13c
+ptr_FUN_02032624_0208d13c: ; 0x0208D13C
+	.word sub_02032624
+
+	.global ptr_FUN_020326cc_0208d140
+ptr_FUN_020326cc_0208d140: ; 0x0208D140
+	.word sub_020326CC
+
+	.global ptr_FUN_02032708_0208d144
+ptr_FUN_02032708_0208d144: ; 0x0208D144
+	.word sub_02032708
+	.word sub_0202F2B4
+
+	.global ptr_FUN_0202ee68_0208d14c
+ptr_FUN_0202ee68_0208d14c: ; 0x0208D14C
+	.word sub_0202EE68
+
+	.global ptr_FUN_0202eea0_0208d150
+ptr_FUN_0202eea0_0208d150: ; 0x0208D150
+	.word sub_0202EEA0
+
+	.global ptr_FUN_0202ef00_0208d154
+ptr_FUN_0202ef00_0208d154: ; 0x0208D154
+	.word sub_0202EF00
+	.word sub_02032850
+	.word sub_0202C208
+	.word sub_0202C22C
+
+	.global ptr_FUN_02032bac_0208d164
+ptr_FUN_02032bac_0208d164: ; 0x0208D164
+	.word sub_02032BAC
+
+	.global ptr_FUN_02032f5c_0208d168
+ptr_FUN_02032f5c_0208d168: ; 0x0208D168
+	.word sub_02032F5C
+
+	.global ptr_FUN_02032f8c_0208d16c
+ptr_FUN_02032f8c_0208d16c: ; 0x0208D16C
+	.word sub_02032F8C
+
+	.global ptr_FUN_02033030_0208d170
+ptr_FUN_02033030_0208d170: ; 0x0208D170
+	.word sub_02033030
+
+	.global ptr_FUN_0203307c_0208d174
+ptr_FUN_0203307c_0208d174: ; 0x0208D174
+	.word sub_0203307C
+
+	.global ptr_FUN_020330bc_0208d178
+ptr_FUN_020330bc_0208d178: ; 0x0208D178
+	.word sub_020330BC
+
+	.global ptr_FUN_02033134_0208d17c
+ptr_FUN_02033134_0208d17c: ; 0x0208D17C
+	.word sub_02033134
+
+	.global ptr_FUN_020331a4_0208d180
+ptr_FUN_020331a4_0208d180: ; 0x0208D180
+	.word sub_020331A4
+
+	.global ptr_FUN_0202ef48_0208d184
+ptr_FUN_0202ef48_0208d184: ; 0x0208D184
+	.word sub_0202EF48
+
+	.global ptr_FUN_0202ef6c_0208d188
+ptr_FUN_0202ef6c_0208d188: ; 0x0208D188
+	.word sub_0202EF6C
+
+	.global ptr_FUN_0203324c_0208d18c
+ptr_FUN_0203324c_0208d18c: ; 0x0208D18C
+	.word sub_0203324C
+
+	.global ptr_FUN_020335b8_0208d190
+ptr_FUN_020335b8_0208d190: ; 0x0208D190
+	.word sub_020335B8
+
+	.global ptr_FUN_02031078_0208d194
+ptr_FUN_02031078_0208d194: ; 0x0208D194
+	.word sub_02031078
+
+	.global ptr_FUN_0202ef90_0208d198
+ptr_FUN_0202ef90_0208d198: ; 0x0208D198
+	.word sub_0202EF90
+
+	.global ptr_FUN_0202efcc_0208d19c
+ptr_FUN_0202efcc_0208d19c: ; 0x0208D19C
+	.word sub_0202EFCC
+
+	.global ptr_FUN_0202f030_0208d1a0
+ptr_FUN_0202f030_0208d1a0: ; 0x0208D1A0
+	.word sub_0202F030
+
+	.global ptr_FUN_02030f08_0208d1a4
+ptr_FUN_02030f08_0208d1a4: ; 0x0208D1A4
+	.word sub_02030F08
+
+	.global ptr_FUN_02030f38_0208d1a8
+ptr_FUN_02030f38_0208d1a8: ; 0x0208D1A8
+	.word sub_02030F38
+
+	.global ptr_FUN_0202f068_0208d1ac
+ptr_FUN_0202f068_0208d1ac: ; 0x0208D1AC
+	.word sub_0202F068
+
+	.global ptr_FUN_0202f088_0208d1b0
+ptr_FUN_0202f088_0208d1b0: ; 0x0208D1B0
+	.word sub_0202F088
+
+	.global ptr_FUN_02033444_0208d1b4
+ptr_FUN_02033444_0208d1b4: ; 0x0208D1B4
+	.word sub_02033444
+
+	.global ptr_FUN_020334b4_0208d1b8
+ptr_FUN_020334b4_0208d1b8: ; 0x0208D1B8
+	.word sub_020334B4
+
+	.global ptr_FUN_0203351c_0208d1bc
+ptr_FUN_0203351c_0208d1bc: ; 0x0208D1BC
+	.word sub_0203351C
+
+	.global ptr_FUN_0203356c_0208d1c0
+ptr_FUN_0203356c_0208d1c0: ; 0x0208D1C0
+	.word sub_0203356C
+
+	.global ptr_FUN_02033660_0208d1c4
+ptr_FUN_02033660_0208d1c4: ; 0x0208D1C4
+	.word sub_02033660
+
+	.global ptr_FUN_020336e4_0208d1c8
+ptr_FUN_020336e4_0208d1c8: ; 0x0208D1C8
+	.word sub_020336E4
+
+	.global ptr_FUN_0202f0e4_0208d1cc
+ptr_FUN_0202f0e4_0208d1cc: ; 0x0208D1CC
+	.word sub_0202F0E4
+	.word sub_0202CCA4
+	.word sub_02030094
+	.word sub_02030E2C
+
+	.global ptr_FUN_02032148_0208d1dc
+ptr_FUN_02032148_0208d1dc: ; 0x0208D1DC
+	.word sub_02032148
+
+	.global ptr_FUN_02032174_0208d1e0
+ptr_FUN_02032174_0208d1e0: ; 0x0208D1E0
+	.word sub_02032174
+
+	.global ptr_FUN_020321a0_0208d1e4
+ptr_FUN_020321a0_0208d1e4: ; 0x0208D1E4
+	.word sub_020321A0
+
+	.global ptr_FUN_020321cc_0208d1e8
+ptr_FUN_020321cc_0208d1e8: ; 0x0208D1E8
+	.word sub_020321CC
+
+	.global ptr_FUN_0202ed10_0208d1ec
+ptr_FUN_0202ed10_0208d1ec: ; 0x0208D1EC
+	.word sub_0202ED10
+	.word sub_020300FC
+	.word sub_02030120
+	.word sub_02030144
+	.word sub_02030168
+
+	.global ptr_FUN_020300b8_0208d200
+ptr_FUN_020300b8_0208d200: ; 0x0208D200
+	.word sub_020300B8
+	.word sub_0202C248
+
+	.global ptr_FUN_02032a74_0208d208
+ptr_FUN_02032a74_0208d208: ; 0x0208D208
+	.word sub_02032A74
+
+	.global ptr_FUN_02032858_0208d20c
+ptr_FUN_02032858_0208d20c: ; 0x0208D20C
+	.word sub_02032858
+	.word sub_0203018C
+	.word sub_020301B0
+	.word sub_020301D4
+	.word sub_0203020C
+	.word sub_020329E0
+	.word sub_020329FC
+
+	.global ptr_FUN_0202dee8_0208d228
+ptr_FUN_0202dee8_0208d228: ; 0x0208D228
+	.word sub_0202DEE8
+
+	.global ptr_FUN_0203289c_0208d22c
+ptr_FUN_0203289c_0208d22c: ; 0x0208D22C
+	.word sub_0203289C
+
+	.global ptr_FUN_02030468_0208d230
+ptr_FUN_02030468_0208d230: ; 0x0208D230
+	.word sub_02030468
+
+	.global ptr_FUN_02030494_0208d234
+ptr_FUN_02030494_0208d234: ; 0x0208D234
+	.word sub_02030494
+	.word sub_020304CC
+
+	.global ptr_FUN_0202fcd4_0208d23c
+ptr_FUN_0202fcd4_0208d23c: ; 0x0208D23C
+	.word sub_0202FCD4
+	.word sub_0202FA68
+	.word sub_0202F2D8
+	.word sub_0202BF18
+
+	.global ptr_FUN_0202c26c_0208d24c
+ptr_FUN_0202c26c_0208d24c: ; 0x0208D24C
+	.word sub_0202C26C
+
+	.global ptr_FUN_020304f4_0208d250
+ptr_FUN_020304f4_0208d250: ; 0x0208D250
+	.word sub_020304F4
+
+	.global ptr_FUN_0202e210_0208d254
+ptr_FUN_0202e210_0208d254: ; 0x0208D254
+	.word sub_0202E210
+	.word sub_02031F00
+	.word sub_02032804
+
+	.global ptr_FUN_02030230_0208d260
+ptr_FUN_02030230_0208d260: ; 0x0208D260
+	.word sub_02030230
+	.word sub_02030F68
+
+	.global ptr_FUN_0202d608_0208d268
+ptr_FUN_0202d608_0208d268: ; 0x0208D268
+	.word sub_0202D608
+
+	.global ptr_FUN_0202d680_0208d26c
+ptr_FUN_0202d680_0208d26c: ; 0x0208D26C
+	.word sub_0202D680
+	.word sub_02031428
+
+	.global ptr_FUN_0202c374_0208d274
+ptr_FUN_0202c374_0208d274: ; 0x0208D274
+	.word sub_0202C374
+
+	.global ptr_FUN_020328d0_0208d278
+ptr_FUN_020328d0_0208d278: ; 0x0208D278
+	.word sub_020328D0
+
+	.global ptr_FUN_02032918_0208d27c
+ptr_FUN_02032918_0208d27c: ; 0x0208D27C
+	.word sub_02032918
+
+	.global ptr_FUN_0203297c_0208d280
+ptr_FUN_0203297c_0208d280: ; 0x0208D280
+	.word sub_0203297C
+	.word sub_02031C00
+
+	.global ptr_FUN_02031c24_0208d288
+ptr_FUN_02031c24_0208d288: ; 0x0208D288
+	.word sub_02031C24
+	.word sub_02031450
+
+	.global ptr_FUN_020332ac_0208d290
+ptr_FUN_020332ac_0208d290: ; 0x0208D290
+	.word sub_020332AC
+
+	.global ptr_FUN_02033320_0208d294
+ptr_FUN_02033320_0208d294: ; 0x0208D294
+	.word sub_02033320
+
+	.global ptr_FUN_0203338c_0208d298
+ptr_FUN_0203338c_0208d298: ; 0x0208D298
+	.word sub_0203338C
+
+	.global ptr_FUN_020333dc_0208d29c
+ptr_FUN_020333dc_0208d29c: ; 0x0208D29C
+	.word sub_020333DC
+	.word sub_0202F300
+
+	.global ptr_FUN_0202e9c0_0208d2a4
+ptr_FUN_0202e9c0_0208d2a4: ; 0x0208D2A4
+	.word sub_0202E9C0
+
+	.global ptr_FUN_02033610_0208d2a8
+ptr_FUN_02033610_0208d2a8: ; 0x0208D2A8
+	.word sub_02033610
+	.word sub_02030428
+	.word sub_0203044C
+
+	.global ptr_FUN_02033718_0208d2b4
+ptr_FUN_02033718_0208d2b4: ; 0x0208D2B4
+	.word sub_02033718
+	.word sub_020337EC
+	.word sub_0203381C
+	.word sub_02033844
+	.word sub_0203386C
+	.word sub_02033884
+	.word sub_020338A0
+	.word sub_020338BC
+	.word sub_020338DC
+	.word sub_020338FC
+	.word sub_02033918
+	.word sub_02033934
+	.word sub_0203170C
+	.word sub_02031734
+
+	.global ptr_FUN_020321f8_0208d2ec
+ptr_FUN_020321f8_0208d2ec: ; 0x0208D2EC
+	.word sub_020321F8
+
+	.global ptr_FUN_0202ea5c_0208d2f0
+ptr_FUN_0202ea5c_0208d2f0: ; 0x0208D2F0
+	.word sub_0202EA5C
+
+	.global ptr_FUN_020331f4_0208d2f4
+ptr_FUN_020331f4_0208d2f4: ; 0x0208D2F4
+	.word sub_020331F4
+	.word sub_02030528
+
+	.global ptr_FUN_0203054c_0208d2fc
+ptr_FUN_0203054c_0208d2fc: ; 0x0208D2FC
+	.word sub_0203054C
+
+	.global ptr_FUN_02033968_0208d300
+ptr_FUN_02033968_0208d300: ; 0x0208D300
+	.word sub_02033968
+
+	.global ptr_FUN_02033994_0208d304
+ptr_FUN_02033994_0208d304: ; 0x0208D304
+	.word sub_02033994
+
+	.global ptr_FUN_020339d8_0208d308
+ptr_FUN_020339d8_0208d308: ; 0x0208D308
+	.word sub_020339D8
+
+	.global ptr_FUN_02033a38_0208d30c
+ptr_FUN_02033a38_0208d30c: ; 0x0208D30C
+	.word sub_02033A38
+
+	.global ptr_FUN_02033a7c_0208d310
+ptr_FUN_02033a7c_0208d310: ; 0x0208D310
+	.word sub_02033A7C
+
+	.global ptr_FUN_02033ad4_0208d314
+ptr_FUN_02033ad4_0208d314: ; 0x0208D314
+	.word sub_02033AD4
+
+	.global ptr_FUN_0202f348_0208d318
+ptr_FUN_0202f348_0208d318: ; 0x0208D318
+	.word sub_0202F348
+
+	.global ptr_FUN_0202f374_0208d31c
+ptr_FUN_0202f374_0208d31c: ; 0x0208D31C
+	.word sub_0202F374
+
+	.global ptr_FUN_0202f3a0_0208d320
+ptr_FUN_0202f3a0_0208d320: ; 0x0208D320
+	.word sub_0202F3A0
+
+	.global ptr_FUN_0202f3cc_0208d324
+ptr_FUN_0202f3cc_0208d324: ; 0x0208D324
+	.word sub_0202F3CC
+
+	.global ptr_FUN_0202f3f8_0208d328
+ptr_FUN_0202f3f8_0208d328: ; 0x0208D328
+	.word sub_0202F3F8
+
+	.global ptr_FUN_0202f424_0208d32c
+ptr_FUN_0202f424_0208d32c: ; 0x0208D32C
+	.word sub_0202F424
+
+	.global ptr_FUN_0202f458_0208d330
+ptr_FUN_0202f458_0208d330: ; 0x0208D330
+	.word sub_0202F458
+
+	.global ptr_FUN_0202f4bc_0208d334
+ptr_FUN_0202f4bc_0208d334: ; 0x0208D334
+	.word sub_0202F4BC
+	.word sub_0202F4E8
+	.word sub_02031F28
+
+	.global ptr_FUN_020322b0_0208d340
+ptr_FUN_020322b0_0208d340: ; 0x0208D340
+	.word sub_020322B0
+
+	.global ptr_FUN_02030570_0208d344
+ptr_FUN_02030570_0208d344: ; 0x0208D344
+	.word sub_02030570
+
+	.global ptr_FUN_0203059c_0208d348
+ptr_FUN_0203059c_0208d348: ; 0x0208D348
+	.word sub_0203059C
+
+	.global ptr_FUN_020305c4_0208d34c
+ptr_FUN_020305c4_0208d34c: ; 0x0208D34C
+	.word sub_020305C4
+	.word sub_020305F0
+
+	.global ptr_FUN_02030610_0208d354
+ptr_FUN_02030610_0208d354: ; 0x0208D354
+	.word sub_02030610
+	.word sub_0203064C
+
+	.global ptr_FUN_02030664_0208d35c
+ptr_FUN_02030664_0208d35c: ; 0x0208D35C
+	.word sub_02030664
+
+	.global ptr_FUN_020306e0_0208d360
+ptr_FUN_020306e0_0208d360: ; 0x0208D360
+	.word sub_020306E0
+	.word sub_0203238C
+
+	.global ptr_FUN_02032768_0208d368
+ptr_FUN_02032768_0208d368: ; 0x0208D368
+	.word sub_02032768
+	.word sub_02032794
+
+	.global ptr_FUN_02032a18_0208d370
+ptr_FUN_02032a18_0208d370: ; 0x0208D370
+	.word sub_02032A18
+
+	.global ptr_FUN_02032a48_0208d374
+ptr_FUN_02032a48_0208d374: ; 0x0208D374
+	.word sub_02032A48
+	.word sub_0202F510
+
+	.global ptr_FUN_0202f528_0208d37c
+ptr_FUN_0202f528_0208d37c: ; 0x0208D37C
+	.word sub_0202F528
+	.word sub_02031B38
+
+	.global ptr_FUN_02030328_0208d384
+ptr_FUN_02030328_0208d384: ; 0x0208D384
+	.word sub_02030328
+
+	.global ptr_FUN_020317a4_0208d388
+ptr_FUN_020317a4_0208d388: ; 0x0208D388
+	.word sub_020317A4
+
+	.global ptr_FUN_02031808_0208d38c
+ptr_FUN_02031808_0208d38c: ; 0x0208D38C
+	.word sub_02031808
+
+	.global ptr_FUN_02031840_0208d390
+ptr_FUN_02031840_0208d390: ; 0x0208D390
+	.word sub_02031840
+	.word sub_0202BEA0
+	.word sub_0202BF90
+	.word sub_02031404
+
+	.global ptr_FUN_0203071c_0208d3a0
+ptr_FUN_0203071c_0208d3a0: ; 0x0208D3A0
+	.word sub_0203071C
+	.word sub_02032828
+
+	.global ptr_FUN_0202c6a4_0208d3a8
+ptr_FUN_0202c6a4_0208d3a8: ; 0x0208D3A8
+	.word sub_0202C6A4
+
+	.global ptr_FUN_0202c44c_0208d3ac
+ptr_FUN_0202c44c_0208d3ac: ; 0x0208D3AC
+	.word sub_0202C44C
+
+	.global ptr_FUN_0202c768_0208d3b0
+ptr_FUN_0202c768_0208d3b0: ; 0x0208D3B0
+	.word sub_0202C768
+	.word sub_020323B4
+
+	.global ptr_FUN_020324a8_0208d3b8
+ptr_FUN_020324a8_0208d3b8: ; 0x0208D3B8
+	.word sub_020324A8
+	.word sub_02031758
+	.word sub_02031780
+
+	.global ptr_FUN_02031ea8_0208d3c4
+ptr_FUN_02031ea8_0208d3c4: ; 0x0208D3C4
+	.word sub_02031EA8
+	.word sub_02031E54
+
+	.global ptr_FUN_020323c8_0208d3cc
+ptr_FUN_020323c8_0208d3cc: ; 0x0208D3CC
+	.word sub_020323C8
+
+	.global ptr_FUN_0202f0a8_0208d3d0
+ptr_FUN_0202f0a8_0208d3d0: ; 0x0208D3D0
+	.word sub_0202F0A8
+	.word sub_02031ED8
+	.word sub_02033B50
+
+	.global ptr_FUN_0202e43c_0208d3dc
+ptr_FUN_0202e43c_0208d3dc: ; 0x0208D3DC
+	.word sub_0202E43C
+	.word sub_0202CCC4
+	.word sub_0202CCF8
+
+	.global ptr_FUN_02033b6c_0208d3e8
+ptr_FUN_02033b6c_0208d3e8: ; 0x0208D3E8
+	.word sub_02033B6C
+
+	.global ptr_FUN_02033bbc_0208d3ec
+ptr_FUN_02033bbc_0208d3ec: ; 0x0208D3EC
+	.word sub_02033BBC
+	.word sub_02033C30
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global s_syscall_actor_party_add_error_0208d3f8
+s_syscall_actor_party_add_error_0208d3f8: ; 0x0208D3F8
+	.asciz "_syscall_actor_party_add error"
+
+	.global _0208D417
+_0208D417:
+	.byte 0x00
+
+	.global s_0208d418
+s_0208d418: ; 0x0208D418
+	.asciz "*************"
+
+	.global _0208D426
+_0208D426:
+	.byte 0x00, 0x00
+
+	.global s_NPC_d_0208d428
+s_NPC_d_0208d428: ; 0x0208D428
+	.asciz "NPC= %d"
+
+	.global s_Id_x_0208d430
+s_Id_x_0208d430: ; 0x0208D430
+	.asciz "Id= %x"
+
+	.global _0208D437
+_0208D437:
+	.byte 0x00
+
+	.global s_partnertype_d_0208d438
+s_partnertype_d_0208d438: ; 0x0208D438
+	.asciz "partnertype= %d"
+
+	.global s_linenumber_d_0208d448
+s_linenumber_d_0208d448: ; 0x0208D448
+	.asciz "linenumber= %d"
+
+	.global _0208D457
+_0208D457:
+	.byte 0x00
+
+	.global s_party_leave_x_0208d458
+s_party_leave_x_0208d458: ; 0x0208D458
+	.asciz "party leave : %x"
+
+	.global _0208D469
+_0208D469:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_error_actor_party_add_id_x_0208d46c
+s_error_actor_party_add_id_x_0208d46c: ; 0x0208D46C
+	.asciz "error actor_party_add id= %x"
+
+	.global _0208D489
+_0208D489:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_error_actorid_x_is_not_enemy_o_0208d48c
+s_error_actorid_x_is_not_enemy_o_0208d48c: ; 0x0208D48C
+	.asciz "error actorid= %x is not enemy or npc"
+
+	.global _0208D4B2
+_0208D4B2:
+	.byte 0x00, 0x00
+
+	.global s_data_Script_system_system_03d_fs_0208d4b4
+s_data_Script_system_system_03d_fs_0208d4b4: ; 0x0208D4B4
+	.asciz "data/Script/system/system%03d.fsb"
+
+	.global _0208D4D6
+_0208D4D6:
+	.byte 0x00, 0x00
+
+	.global s_data_Script_system_system_fsb_0208d4d8
+s_data_Script_system_system_fsb_0208d4d8: ; 0x0208D4D8
+	.asciz "data/Script/system/system.fsb"
+
+	.global _0208D4F6
+_0208D4F6:
+	.byte 0x00, 0x00
+
+	.global s_data_Script_area_m_03d_fsb_0208d4f8
+s_data_Script_area_m_03d_fsb_0208d4f8: ; 0x0208D4F8
+	.asciz "data/Script/area/m%03d.fsb"
+
+	.global _0208D513
+_0208D513:
+	.byte 0x00
+
+	.global s_data_Script_chapter_c_03d_fsb_0208d514
+s_data_Script_chapter_c_03d_fsb_0208d514: ; 0x0208D514
+	.asciz "data/Script/chapter/c%03d.fsb"
+
+	.global _0208D532
+_0208D532:
+	.byte 0x00, 0x00
+
+	.global s_data_Script_chapter_cx_02d_fsb_0208d534
+s_data_Script_chapter_cx_02d_fsb_0208d534: ; 0x0208D534
+	.asciz "data/Script/chapter/cx%02d.fsb"
+
+	.global _0208D553
+_0208D553:
+	.byte 0x00
+
+	.global s_data_Script_quest_q_03d_fsb_0208d554
+s_data_Script_quest_q_03d_fsb_0208d554: ; 0x0208D554
+	.asciz "data/Script/quest/q%03d.fsb"
+
+	.global s_data_Sound_sound_data_sdat_0208d570
+s_data_Sound_sound_data_sdat_0208d570: ; 0x0208D570
+	.asciz "/data/Sound/sound_data.sdat"
+
+	.global DAT_0208d58c
+DAT_0208d58c: ; 0x0208D58C
+	.byte 0x3C, 0x00, 0x00, 0x00
+
+	.global s_GetEnemyLabel2PartnerIndex_index_0208d590
+s_GetEnemyLabel2PartnerIndex_index_0208d590: ; 0x0208D590
+	.asciz "GetEnemyLabel2PartnerIndex(index= %d)"
+
+	.global _0208D5B6
+_0208D5B6:
+	.byte 0x00, 0x00
+
+	.global s_GetPartnerIndex2EnemyLabel_index_0208d5b8
+s_GetPartnerIndex2EnemyLabel_index_0208d5b8: ; 0x0208D5B8
+	.asciz "GetPartnerIndex2EnemyLabel(index= %d)"
+
+	.global _0208D5DE
+_0208D5DE:
+	.byte 0x00, 0x00
+
+	.global PTR_ptr_FUN_02083578_0208d5e0
+PTR_ptr_FUN_02083578_0208d5e0: ; 0x0208D5E0
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_28CFieldScreenEffectObjectBase_0208d5e8
+
+	.global s_28CFieldScreenEffectObjectBase_0208d5e8
+s_28CFieldScreenEffectObjectBase_0208d5e8: ; 0x0208D5E8
+	.asciz "28CFieldScreenEffectObjectBase"
+
+	.global _0208D607
+_0208D607:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0xE0, 0xD5, 0x08, 0x02
+
+	.global PTR_LAB_0208d610
+PTR_LAB_0208d610: ; 0x0208D610
+	.word sub_02035FE4
+
+	.global ptr_FUN_020357f8_0208d614
+ptr_FUN_020357f8_0208d614: ; 0x0208D614
+	.word sub_020357F8
+	.word sub_02035D30
+
+	.global ptr_FUN_02035334_0208d61c
+ptr_FUN_02035334_0208d61c: ; 0x0208D61C
+	.word sub_02035334
+	.word sub_020358FC
+
+	.global ptr_FUN_020354e0_0208d624
+ptr_FUN_020354e0_0208d624: ; 0x0208D624
+	.word sub_020354E0
+	.word sub_02035590
+
+	.global PTR_ptr_FUN_020835bc_0208d62c
+PTR_ptr_FUN_020835bc_0208d62c: ; 0x0208D62C
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_17CPrimitiveQuadNTF_0208d644
+	.word PTR_ptr_FUN_02083578_0208a664
+
+	.global PTR_ptr_FUN_020835bc_0208d638
+PTR_ptr_FUN_020835bc_0208d638: ; 0x0208D638
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_17CPrimitiveRectNTF_0208d66c
+	.word PTR_ptr_FUN_02083578_0208a664
+
+	.global s_17CPrimitiveQuadNTF_0208d644
+s_17CPrimitiveQuadNTF_0208d644: ; 0x0208D644
+	.asciz "17CPrimitiveQuadNTF"
+
+	.global _0208D658
+_0208D658:
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208d638
+
+	.global ptr_FUN_02036908_0208d660
+ptr_FUN_02036908_0208d660: ; 0x0208D660
+	.word sub_02036908
+
+	.global ptr_FUN_020368ec_0208d664
+ptr_FUN_020368ec_0208d664: ; 0x0208D664
+	.word sub_020368EC
+
+	.global ptr_FUN_02036558_0208d668
+ptr_FUN_02036558_0208d668: ; 0x0208D668
+	.word sub_02036558
+
+	.global s_17CPrimitiveRectNTF_0208d66c
+s_17CPrimitiveRectNTF_0208d66c: ; 0x0208D66C
+	.asciz "17CPrimitiveRectNTF"
+
+	.global _0208D680
+_0208D680:
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208d62c
+
+	.global ptr_FUN_020368d8_0208d688
+ptr_FUN_020368d8_0208d688: ; 0x0208D688
+	.word sub_020368D8
+	.word sub_020368BC
+
+	.global ptr_FUN_020367b8_0208d690
+ptr_FUN_020367b8_0208d690: ; 0x0208D690
+	.word sub_020367B8
+
+	.global DAT_0208d694
+DAT_0208d694: ; 0x0208D694
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x06, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00
+	.byte 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00
+	.byte 0x01, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x01, 0x00, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00
+	.byte 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+	.global s_data_Field_Effect_ew_03d_LZ_bin_0208d73c
+s_data_Field_Effect_ew_03d_LZ_bin_0208d73c: ; 0x0208D73C
+	.asciz "data/Field/Effect/ew%03d_LZ.bin"
+
+	.global DAT_0208d75c
+DAT_0208d75c: ; 0x0208D75C
+	.byte 0x4D, 0x45, 0x46, 0x00
+
+	.global s_MEF_ew_03d_NCLR_0208d760
+s_MEF_ew_03d_NCLR_0208d760: ; 0x0208D760
+	.asciz "MEF:ew%03d.NCLR"
+
+	.global s_MEF_ew_03d_NCBR_0208d770
+s_MEF_ew_03d_NCBR_0208d770: ; 0x0208D770
+	.asciz "MEF:ew%03d.NCBR"
+
+	.global s_MEF_ew_03d_NCER_0208d780
+s_MEF_ew_03d_NCER_0208d780: ; 0x0208D780
+	.asciz "MEF:ew%03d.NCER"
+
+	.global s_MEF_ew_03d_cac_0208d790
+s_MEF_ew_03d_cac_0208d790: ; 0x0208D790
+	.asciz "MEF:ew%03d.cac"
+
+	.global _0208D79F
+_0208D79F:
+	.byte 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208d7a0
+PTR_ptr_FUN_020835bc_0208d7a0: ; 0x0208D7A0
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_17CFieldSEFKomorebi_0208d7ac
+	.word PTR_ptr_FUN_02083578_0208d5e0
+
+	.global s_17CFieldSEFKomorebi_0208d7ac
+s_17CFieldSEFKomorebi_0208d7ac: ; 0x0208D7AC
+	.asciz "17CFieldSEFKomorebi"
+
+	.global _0208D7C0
+_0208D7C0:
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208d7a0
+
+	.global ptr_FUN_020369b4_0208d7c8
+ptr_FUN_020369b4_0208d7c8: ; 0x0208D7C8
+	.word sub_020369B4
+
+	.global ptr_FUN_020369e4_0208d7cc
+ptr_FUN_020369e4_0208d7cc: ; 0x0208D7CC
+	.word sub_020369E4
+	.word sub_02037354
+
+	.global ptr_FUN_02036a1c_0208d7d4
+ptr_FUN_02036a1c_0208d7d4: ; 0x0208D7D4
+	.word sub_02036A1C
+
+	.global ptr_FUN_02036b1c_0208d7d8
+ptr_FUN_02036b1c_0208d7d8: ; 0x0208D7D8
+	.word sub_02036B1C
+
+	.global ptr_FUN_0203733c_0208d7dc
+ptr_FUN_0203733c_0208d7dc: ; 0x0208D7DC
+	.word sub_0203733C
+	.word sub_02035590
+
+	.global s_data_field_effect_komorebi_ntft_0208d7e4
+s_data_field_effect_komorebi_ntft_0208d7e4: ; 0x0208D7E4
+	.asciz "data/field/effect/komorebi.ntft"
+
+	.global s_data_field_effect_komorebi_ntfp_0208d804
+s_data_field_effect_komorebi_ntfp_0208d804: ; 0x0208D804
+	.asciz "data/field/effect/komorebi.ntfp"
+
+	.global PTR_ptr_FUN_020835bc_0208d824
+PTR_ptr_FUN_020835bc_0208d824: ; 0x0208D824
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_12CFieldSEFFog_0208d830
+	.word PTR_ptr_FUN_02083578_0208d5e0
+
+	.global s_12CFieldSEFFog_0208d830
+s_12CFieldSEFFog_0208d830: ; 0x0208D830
+	.asciz "12CFieldSEFFog"
+
+	.global _0208D83F
+_0208D83F:
+	.byte 0x00
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208d824
+
+	.global ptr_FUN_02037988_0208d848
+ptr_FUN_02037988_0208d848: ; 0x0208D848
+	.word sub_02037988
+
+	.global ptr_FUN_02037938_0208d84c
+ptr_FUN_02037938_0208d84c: ; 0x0208D84C
+	.word sub_02037938
+	.word sub_02037980
+
+	.global ptr_FUN_02037540_0208d854
+ptr_FUN_02037540_0208d854: ; 0x0208D854
+	.word sub_02037540
+
+	.global ptr_FUN_020377c0_0208d858
+ptr_FUN_020377c0_0208d858: ; 0x0208D858
+	.word sub_020377C0
+
+	.global ptr_FUN_02037914_0208d85c
+ptr_FUN_02037914_0208d85c: ; 0x0208D85C
+	.word sub_02037914
+	.word sub_02035590
+
+	.global DAT_0208d864
+DAT_0208d864: ; 0x0208D864
+	.byte 0xDE, 0x7B, 0x00, 0x00
+
+	.global DAT_0208d868
+DAT_0208d868: ; 0x0208D868
+	.byte 0x18, 0x00, 0x00, 0x00
+
+	.global DAT_0208d86c
+DAT_0208d86c: ; 0x0208D86C
+	.byte 0x08, 0x21, 0x00, 0x00
+
+	.global DAT_0208d870
+DAT_0208d870: ; 0x0208D870
+	.byte 0x0E, 0x00, 0x00, 0x00
+
+	.global DAT_0208d874
+DAT_0208d874: ; 0x0208D874
+	.byte 0x1E, 0x78, 0x00, 0x00
+
+	.global DAT_0208d878
+DAT_0208d878: ; 0x0208D878
+	.byte 0x10, 0x00, 0x00, 0x00
+
+	.global DAT_0208d87c
+DAT_0208d87c: ; 0x0208D87C
+	.byte 0xDE, 0x03, 0x00, 0x00
+
+	.global DAT_0208d880
+DAT_0208d880: ; 0x0208D880
+	.byte 0x18, 0x00, 0x00, 0x00
+
+	.global DAT_0208d884
+DAT_0208d884: ; 0x0208D884
+	.byte 0xDE, 0x7B, 0x00, 0x00
+
+	.global DAT_0208d888
+DAT_0208d888: ; 0x0208D888
+	.byte 0x08, 0x00, 0x00, 0x00
+
+	.global s_data_field_effect_kiri02_ntft_0208d88c
+s_data_field_effect_kiri02_ntft_0208d88c: ; 0x0208D88C
+	.asciz "data/field/effect/kiri02.ntft"
+
+	.global _0208D8AA
+_0208D8AA:
+	.byte 0x00, 0x00
+
+	.global s_data_field_effect_kiri02_ntfp_0208d8ac
+s_data_field_effect_kiri02_ntfp_0208d8ac: ; 0x0208D8AC
+	.asciz "data/field/effect/kiri02.ntfp"
+
+	.global _0208D8CA
+_0208D8CA:
+	.byte 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208d8cc
+PTR_ptr_FUN_020835bc_0208d8cc: ; 0x0208D8CC
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_18CFieldSEFSandStorm_0208d8d8
+	.word PTR_ptr_FUN_02083578_0208d5e0
+
+	.global s_18CFieldSEFSandStorm_0208d8d8
+s_18CFieldSEFSandStorm_0208d8d8: ; 0x0208D8D8
+	.asciz "18CFieldSEFSandStorm"
+
+	.global _0208D8ED
+_0208D8ED:
+	.byte 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208d8cc
+
+	.global ptr_FUN_02037fb0_0208d8f8
+ptr_FUN_02037fb0_0208d8f8: ; 0x0208D8F8
+	.word sub_02037FB0
+
+	.global ptr_FUN_02037f60_0208d8fc
+ptr_FUN_02037f60_0208d8fc: ; 0x0208D8FC
+	.word sub_02037F60
+	.word sub_02037FA8
+
+	.global ptr_FUN_02037af4_0208d904
+ptr_FUN_02037af4_0208d904: ; 0x0208D904
+	.word sub_02037AF4
+
+	.global ptr_FUN_02037de8_0208d908
+ptr_FUN_02037de8_0208d908: ; 0x0208D908
+	.word sub_02037DE8
+
+	.global ptr_FUN_02037f3c_0208d90c
+ptr_FUN_02037f3c_0208d90c: ; 0x0208D90C
+	.word sub_02037F3C
+	.word sub_02035590
+
+	.global s_data_field_effect_suna01_ntft_0208d914
+s_data_field_effect_suna01_ntft_0208d914: ; 0x0208D914
+	.asciz "data/field/effect/suna01.ntft"
+
+	.global _0208D932
+_0208D932:
+	.byte 0x00, 0x00
+
+	.global s_data_field_effect_suna01_ntfp_0208d934
+s_data_field_effect_suna01_ntfp_0208d934: ; 0x0208D934
+	.asciz "data/field/effect/suna01.ntfp"
+
+	.global _0208D952
+_0208D952:
+	.byte 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208d954
+PTR_ptr_FUN_020835bc_0208d954: ; 0x0208D954
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_17CFieldSEFDokarimo_0208d960
+	.word PTR_ptr_FUN_02083578_0208d5e0
+
+	.global s_17CFieldSEFDokarimo_0208d960
+s_17CFieldSEFDokarimo_0208d960: ; 0x0208D960
+	.asciz "17CFieldSEFDokarimo"
+
+	.global _0208D974
+_0208D974:
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208d954
+
+	.global ptr_FUN_02038998_0208d97c
+ptr_FUN_02038998_0208d97c: ; 0x0208D97C
+	.word sub_02038998
+
+	.global ptr_FUN_02038938_0208d980
+ptr_FUN_02038938_0208d980: ; 0x0208D980
+	.word sub_02038938
+	.word sub_02038990
+
+	.global ptr_FUN_02038178_0208d988
+ptr_FUN_02038178_0208d988: ; 0x0208D988
+	.word sub_02038178
+
+	.global ptr_FUN_020382e0_0208d98c
+ptr_FUN_020382e0_0208d98c: ; 0x0208D98C
+	.word sub_020382E0
+
+	.global ptr_FUN_020388e8_0208d990
+ptr_FUN_020388e8_0208d990: ; 0x0208D990
+	.word sub_020388E8
+	.word sub_02035590
+
+	.global s_data_field_effect_dokarimo03_ntf_0208d998
+s_data_field_effect_dokarimo03_ntf_0208d998: ; 0x0208D998
+	.asciz "data/field/effect/dokarimo03.ntft"
+
+	.global _0208D9BA
+_0208D9BA:
+	.byte 0x00, 0x00
+
+	.global s_data_field_effect_dokarimo03_ntf_0208d9bc
+s_data_field_effect_dokarimo03_ntf_0208d9bc: ; 0x0208D9BC
+	.asciz "data/field/effect/dokarimo03.ntfp"
+
+	.global _0208D9DE
+_0208D9DE:
+	.byte 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208d9e0
+PTR_ptr_FUN_020835bc_0208d9e0: ; 0x0208D9E0
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_17CFieldSEFTheWater_0208d9ec
+	.word PTR_ptr_FUN_02083578_0208d5e0
+
+	.global s_17CFieldSEFTheWater_0208d9ec
+s_17CFieldSEFTheWater_0208d9ec: ; 0x0208D9EC
+	.asciz "17CFieldSEFTheWater"
+
+	.global _0208DA00
+_0208DA00:
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208d9e0
+
+	.global ptr_FUN_02038cd4_0208da08
+ptr_FUN_02038cd4_0208da08: ; 0x0208DA08
+	.word sub_02038CD4
+
+	.global ptr_FUN_02038c94_0208da0c
+ptr_FUN_02038c94_0208da0c: ; 0x0208DA0C
+	.word sub_02038C94
+	.word sub_02038CCC
+
+	.global ptr_FUN_02038b04_0208da14
+ptr_FUN_02038b04_0208da14: ; 0x0208DA14
+	.word sub_02038B04
+
+	.global ptr_FUN_02038bc4_0208da18
+ptr_FUN_02038bc4_0208da18: ; 0x0208DA18
+	.word sub_02038BC4
+
+	.global ptr_FUN_02038c70_0208da1c
+ptr_FUN_02038c70_0208da1c: ; 0x0208DA1C
+	.word sub_02038C70
+	.word sub_02035590
+
+	.global PTR_ptr_FUN_020835bc_0208da24
+PTR_ptr_FUN_020835bc_0208da24: ; 0x0208DA24
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_15CFieldSEFHinoko_0208da3c
+	.word PTR_ptr_FUN_02083578_0208d5e0
+
+	.global PTR_ptr_FUN_020835bc_0208da30
+PTR_ptr_FUN_020835bc_0208da30: ; 0x0208DA30
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_27CFieldScreenEffectActorData_0208da50
+	.word PTR_ptr_FUN_020835bc_0208c468
+
+	.global s_15CFieldSEFHinoko_0208da3c
+s_15CFieldSEFHinoko_0208da3c: ; 0x0208DA3C
+	.asciz "15CFieldSEFHinoko"
+
+	.global _0208DA4E
+_0208DA4E:
+	.byte 0x00, 0x00
+
+	.global s_27CFieldScreenEffectActorData_0208da50
+s_27CFieldScreenEffectActorData_0208da50: ; 0x0208DA50
+	.asciz "27CFieldScreenEffectActorData"
+
+	.global _0208DA6E
+_0208DA6E:
+	.byte 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208da24
+
+	.global ptr_FUN_02039ddc_0208da78
+ptr_FUN_02039ddc_0208da78: ; 0x0208DA78
+	.word sub_02039DDC
+
+	.global ptr_FUN_02039d90_0208da7c
+ptr_FUN_02039d90_0208da7c: ; 0x0208DA7C
+	.word sub_02039D90
+	.word sub_02039DC8
+
+	.global ptr_FUN_02038dec_0208da84
+ptr_FUN_02038dec_0208da84: ; 0x0208DA84
+	.word sub_02038DEC
+
+	.global ptr_FUN_02039510_0208da88
+ptr_FUN_02039510_0208da88: ; 0x0208DA88
+	.word sub_02039510
+
+	.global ptr_FUN_02039d6c_0208da8c
+ptr_FUN_02039d6c_0208da8c: ; 0x0208DA8C
+	.word sub_02039D6C
+	.word sub_02035590
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208da30
+
+	.global PTR_LAB_0208da9c
+PTR_LAB_0208da9c: ; 0x0208DA9C
+	.word 0x02039E0C
+
+	.global ptr_FUN_02039d50_0208daa0
+ptr_FUN_02039d50_0208daa0: ; 0x0208DAA0
+	.word sub_02039D50
+
+	.global ptr_FUN_020297dc_0208daa4
+ptr_FUN_020297dc_0208daa4: ; 0x0208DAA4
+	.word sub_020297DC
+
+	.global ptr_FUN_020297b0_0208daa8
+ptr_FUN_020297b0_0208daa8: ; 0x0208DAA8
+	.word sub_020297B0
+
+	.global ptr_FUN_02029784_0208daac
+ptr_FUN_02029784_0208daac: ; 0x0208DAAC
+	.word sub_02029784
+
+	.global ptr_FUN_0202977c_0208dab0
+ptr_FUN_0202977c_0208dab0: ; 0x0208DAB0
+	.word sub_0202977C
+
+	.global ptr_FUN_020394d4_0208dab4
+ptr_FUN_020394d4_0208dab4: ; 0x0208DAB4
+	.word sub_020394D4
+	.word sub_02029770
+	.word sub_02029704
+
+	.global s_data_field_effect_kiri02_ntft_0208dac0
+s_data_field_effect_kiri02_ntft_0208dac0: ; 0x0208DAC0
+	.asciz "data/field/effect/kiri02.ntft"
+
+	.global _0208DADE
+_0208DADE:
+	.byte 0x00, 0x00
+
+	.global s_data_field_effect_kiri02_ntfp_0208dae0
+s_data_field_effect_kiri02_ntfp_0208dae0: ; 0x0208DAE0
+	.asciz "data/field/effect/kiri02.ntfp"
+
+	.global _0208DAFE
+_0208DAFE:
+	.byte 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208db00
+PTR_ptr_FUN_020835bc_0208db00: ; 0x0208DB00
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_13CFieldSEFRain_0208db0c
+	.word PTR_ptr_FUN_02083578_0208d5e0
+
+	.global s_13CFieldSEFRain_0208db0c
+s_13CFieldSEFRain_0208db0c: ; 0x0208DB0C
+	.asciz "13CFieldSEFRain"
+
+	.global _0208DB1C
+_0208DB1C:
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208db00
+
+	.global ptr_FUN_0203a734_0208db24
+ptr_FUN_0203a734_0208db24: ; 0x0208DB24
+	.word sub_0203A734
+
+	.global ptr_FUN_0203a6cc_0208db28
+ptr_FUN_0203a6cc_0208db28: ; 0x0208DB28
+	.word sub_0203A6CC
+	.word sub_0203A72C
+
+	.global ptr_FUN_0203a068_0208db30
+ptr_FUN_0203a068_0208db30: ; 0x0208DB30
+	.word sub_0203A068
+
+	.global ptr_FUN_0203a3cc_0208db34
+ptr_FUN_0203a3cc_0208db34: ; 0x0208DB34
+	.word sub_0203A3CC
+	.word sub_0203A70C
+	.word sub_02035590
+
+	.global PTR_ptr_FUN_020835bc_0208db40
+PTR_ptr_FUN_020835bc_0208db40: ; 0x0208DB40
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_16CFieldSEFWarning_0208db4c
+	.word PTR_ptr_FUN_02083578_0208d5e0
+
+	.global s_16CFieldSEFWarning_0208db4c
+s_16CFieldSEFWarning_0208db4c: ; 0x0208DB4C
+	.asciz "16CFieldSEFWarning"
+
+	.global _0208DB5F
+_0208DB5F:
+	.byte 0x00
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208db40
+
+	.global ptr_FUN_0203aa14_0208db68
+ptr_FUN_0203aa14_0208db68: ; 0x0208DB68
+	.word sub_0203AA14
+
+	.global ptr_FUN_0203a9d4_0208db6c
+ptr_FUN_0203a9d4_0208db6c: ; 0x0208DB6C
+	.word sub_0203A9D4
+	.word sub_0203AA0C
+
+	.global ptr_FUN_0203a854_0208db74
+ptr_FUN_0203a854_0208db74: ; 0x0208DB74
+	.word sub_0203A854
+
+	.global ptr_FUN_0203a934_0208db78
+ptr_FUN_0203a934_0208db78: ; 0x0208DB78
+	.word sub_0203A934
+
+	.global ptr_FUN_020354e0_0208db7c
+ptr_FUN_020354e0_0208db7c: ; 0x0208DB7C
+	.word sub_020354E0
+	.word sub_02035590
+
+	.global DAT_0208db84
+DAT_0208db84: ; 0x0208DB84
+	.byte 0xCC, 0x04, 0x00, 0x00
+
+	.global DAT_0208db88
+DAT_0208db88: ; 0x0208DB88
+	.byte 0x00, 0x08, 0x00, 0x00
+
+	.global DAT_0208db8c
+DAT_0208db8c: ; 0x0208DB8C
+	.byte 0x33, 0x0B, 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208db90
+PTR_ptr_FUN_020835bc_0208db90: ; 0x0208DB90
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_13CFieldSEFSnow_0208db9c
+	.word PTR_ptr_FUN_02083578_0208d5e0
+
+	.global s_13CFieldSEFSnow_0208db9c
+s_13CFieldSEFSnow_0208db9c: ; 0x0208DB9C
+	.asciz "13CFieldSEFSnow"
+
+	.global _0208DBAC
+_0208DBAC:
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208db90
+
+	.global ptr_FUN_0203b314_0208dbb4
+ptr_FUN_0203b314_0208dbb4: ; 0x0208DBB4
+	.word sub_0203B314
+
+	.global ptr_FUN_0203b2cc_0208dbb8
+ptr_FUN_0203b2cc_0208dbb8: ; 0x0208DBB8
+	.word sub_0203B2CC
+	.word sub_0203B30C
+
+	.global ptr_FUN_0203ab28_0208dbc0
+ptr_FUN_0203ab28_0208dbc0: ; 0x0208DBC0
+	.word sub_0203AB28
+
+	.global ptr_FUN_0203add8_0208dbc4
+ptr_FUN_0203add8_0208dbc4: ; 0x0208DBC4
+	.word sub_0203ADD8
+
+	.global ptr_FUN_0203b2a8_0208dbc8
+ptr_FUN_0203b2a8_0208dbc8: ; 0x0208DBC8
+	.word sub_0203B2A8
+	.word sub_02035590
+
+	.global PTR_ptr_FUN_020835bc_0208dbd0
+PTR_ptr_FUN_020835bc_0208dbd0: ; 0x0208DBD0
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_17CFieldSEFDarkness_0208dbdc
+	.word PTR_ptr_FUN_02083578_0208d5e0
+
+	.global s_17CFieldSEFDarkness_0208dbdc
+s_17CFieldSEFDarkness_0208dbdc: ; 0x0208DBDC
+	.asciz "17CFieldSEFDarkness"
+
+	.global _0208DBF0
+_0208DBF0:
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208dbd0
+
+	.global ptr_FUN_0203bcc4_0208dbf8
+ptr_FUN_0203bcc4_0208dbf8: ; 0x0208DBF8
+	.word sub_0203BCC4
+
+	.global ptr_FUN_0203bc64_0208dbfc
+ptr_FUN_0203bc64_0208dbfc: ; 0x0208DBFC
+	.word sub_0203BC64
+	.word sub_0203BCBC
+
+	.global ptr_FUN_0203b4a0_0208dc04
+ptr_FUN_0203b4a0_0208dc04: ; 0x0208DC04
+	.word sub_0203B4A0
+
+	.global ptr_FUN_0203b608_0208dc08
+ptr_FUN_0203b608_0208dc08: ; 0x0208DC08
+	.word sub_0203B608
+
+	.global ptr_FUN_0203bc14_0208dc0c
+ptr_FUN_0203bc14_0208dc0c: ; 0x0208DC0C
+	.word sub_0203BC14
+	.word sub_02035590
+
+	.global s_data_field_effect_dokarimo03_ntf_0208dc14
+s_data_field_effect_dokarimo03_ntf_0208dc14: ; 0x0208DC14
+	.asciz "data/field/effect/dokarimo03.ntft"
+
+	.global _0208DC36
+_0208DC36:
+	.byte 0x00, 0x00
+
+	.global s_data_field_effect_dokarimo03_ntf_0208dc38
+s_data_field_effect_dokarimo03_ntf_0208dc38: ; 0x0208DC38
+	.asciz "data/field/effect/dokarimo03.ntfp"
+
+	.global _0208DC5A
+_0208DC5A:
+	.byte 0x00, 0x00
+
+	.global PTR_ptr_FUN_02083578_0208dc5c
+PTR_ptr_FUN_02083578_0208dc5c: ; 0x0208DC5C
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_17CFieldActorScript_0208dc7c
+
+	.global PTR_ptr_FUN_02083578_0208dc64
+PTR_ptr_FUN_02083578_0208dc64: ; 0x0208DC64
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_11CFieldActor_0208dc6c
+
+	.global s_11CFieldActor_0208dc6c
+s_11CFieldActor_0208dc6c: ; 0x0208DC6C
+	.asciz "11CFieldActor"
+
+	.global _0208DC7A
+_0208DC7A:
+	.byte 0x00, 0x00
+
+	.global s_17CFieldActorScript_0208dc7c
+s_17CFieldActorScript_0208dc7c: ; 0x0208DC7C
+	.asciz "17CFieldActorScript"
+
+	.global _0208DC90
+_0208DC90:
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_02083578_0208dc5c
+
+	.global ptr_FUN_0203bda4_0208dc98
+ptr_FUN_0203bda4_0208dc98: ; 0x0208DC98
+	.word sub_0203BDA4
+
+	.global ptr_FUN_0203bdd8_0208dc9c
+ptr_FUN_0203bdd8_0208dc9c: ; 0x0208DC9C
+	.word sub_0203BDD8
+
+	.global ptr_FUN_0203be48_0208dca0
+ptr_FUN_0203be48_0208dca0: ; 0x0208DCA0
+	.word sub_0203BE48
+	.word sub_0203BF00
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_02083578_0208dc64
+
+	.global ptr_FUN_0203c068_0208dcb0
+ptr_FUN_0203c068_0208dcb0: ; 0x0208DCB0
+	.word sub_0203C068
+
+	.global ptr_FUN_0203c0d4_0208dcb4
+ptr_FUN_0203c0d4_0208dcb4: ; 0x0208DCB4
+	.word sub_0203C0D4
+
+	.global ptr_FUN_0203c1b4_0208dcb8
+ptr_FUN_0203c1b4_0208dcb8: ; 0x0208DCB8
+	.word sub_0203C1B4
+	.word sub_0203C1FC
+
+	.global ptr_FUN_0203c22c_0208dcc0
+ptr_FUN_0203c22c_0208dcc0: ; 0x0208DCC0
+	.word sub_0203C22C
+
+	.global ptr_FUN_0203c288_0208dcc4
+ptr_FUN_0203c288_0208dcc4: ; 0x0208DCC4
+	.word sub_0203C288
+
+	.global ptr_FUN_0203c2d8_0208dcc8
+ptr_FUN_0203c2d8_0208dcc8: ; 0x0208DCC8
+	.word sub_0203C2D8
+	.word sub_0202D394
+	.word sub_0203DA60
+
+	.global ptr_FUN_0203da40_0208dcd4
+ptr_FUN_0203da40_0208dcd4: ; 0x0208DCD4
+	.word sub_0203DA40
+
+	.global ptr_FUN_0203d578_0208dcd8
+ptr_FUN_0203d578_0208dcd8: ; 0x0208DCD8
+	.word sub_0203D578
+	.word sub_0203DA38
+	.word sub_0202E68C
+
+	.global ptr_FUN_0202d7e0_0208dce4
+ptr_FUN_0202d7e0_0208dce4: ; 0x0208DCE4
+	.word sub_0202D7E0
+
+	.global ptr_FUN_0202dc54_0208dce8
+ptr_FUN_0202dc54_0208dce8: ; 0x0208DCE8
+	.word sub_0202DC54
+	.word sub_02032A44
+
+	.global s_not_found_func_FieldActor_cpp_0208dcf0
+s_not_found_func_FieldActor_cpp_0208dcf0: ; 0x0208DCF0
+	.asciz "not found func FieldActor.cpp"
+
+	.global _0208DD0E
+_0208DD0E:
+	.byte 0x00, 0x00
+
+	.global s_null_func_name_FieldActor_cpp_0208dd10
+s_null_func_name_FieldActor_cpp_0208dd10: ; 0x0208DD10
+	.asciz "null func name FieldActor.cpp"
+
+	.global _0208DD2E
+_0208DD2E:
+	.byte 0x00, 0x00
+
+	.global s_m_pScriptBlock_NULL_by_FieldA_0208dd30
+s_m_pScriptBlock_NULL_by_FieldA_0208dd30: ; 0x0208DD30
+	.asciz "m_pScriptBlock ==  NULL by FieldActor.cpp"
+
+	.global _0208DD5A
+_0208DD5A:
+	.byte 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208dd5c
+PTR_ptr_FUN_020835bc_0208dd5c: ; 0x0208DD5C
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_15CFieldDrawActor_0208dd68
+	.word PTR_ptr_FUN_02083578_0208b478
+
+	.global s_15CFieldDrawActor_0208dd68
+s_15CFieldDrawActor_0208dd68: ; 0x0208DD68
+	.asciz "15CFieldDrawActor"
+
+	.global _0208DD7A
+_0208DD7A:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208dd5c
+
+	.global PTR_LAB_0208dd84
+PTR_LAB_0208dd84: ; 0x0208DD84
+	.word sub_0203DB60
+
+	.global ptr_FUN_0203db88_0208dd88
+ptr_FUN_0203db88_0208dd88: ; 0x0208DD88
+	.word sub_0203DB88
+
+	.global ptr_FUN_0203e66c_0208dd8c
+ptr_FUN_0203e66c_0208dd8c: ; 0x0208DD8C
+	.word sub_0203E66C
+	.word sub_0203E920
+	.word sub_0203E930
+
+	.global DAT_0208dd98
+DAT_0208dd98: ; 0x0208DD98
+	.byte 0x50, 0x44, 0x52, 0x00
+
+	.global PTR_ptr_FUN_02083578_0208dd9c
+PTR_ptr_FUN_02083578_0208dd9c: ; 0x0208DD9C
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_17CFieldActorManage_0208dda4
+
+	.global s_17CFieldActorManage_0208dda4
+s_17CFieldActorManage_0208dda4: ; 0x0208DDA4
+	.asciz "17CFieldActorManage"
+
+	.global _0208DDB8
+_0208DDB8:
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_02083578_0208dd9c
+
+	.global PTR_LAB_0208ddc0
+PTR_LAB_0208ddc0: ; 0x0208DDC0
+	.word sub_0203EF64
+
+	.global ptr_FUN_0203ef8c_0208ddc4
+ptr_FUN_0203ef8c_0208ddc4: ; 0x0208DDC4
+	.word sub_0203EF8C
+
+	.global ptr_FUN_0203efe4_0208ddc8
+ptr_FUN_0203efe4_0208ddc8: ; 0x0208DDC8
+	.word sub_0203EFE4
+
+	.global ptr_FUN_0203f034_0208ddcc
+ptr_FUN_0203f034_0208ddcc: ; 0x0208DDCC
+	.word sub_0203F034
+
+	.global ptr_FUN_0203f0c0_0208ddd0
+ptr_FUN_0203f0c0_0208ddd0: ; 0x0208DDD0
+	.word sub_0203F0C0
+
+	.global ptr_FUN_0203f144_0208ddd4
+ptr_FUN_0203f144_0208ddd4: ; 0x0208DDD4
+	.word sub_0203F144
+
+	.global ptr_FUN_0203f190_0208ddd8
+ptr_FUN_0203f190_0208ddd8: ; 0x0208DDD8
+	.word sub_0203F190
+
+	.global ptr_FUN_0203f2b0_0208dddc
+ptr_FUN_0203f2b0_0208dddc: ; 0x0208DDDC
+	.word sub_0203F2B0
+
+	.global ptr_FUN_0203f1fc_0208dde0
+ptr_FUN_0203f1fc_0208dde0: ; 0x0208DDE0
+	.word sub_0203F1FC
+	.word sub_0203F278
+
+	.global ptr_FUN_02040460_0208dde8
+ptr_FUN_02040460_0208dde8: ; 0x0208DDE8
+	.word sub_02040460
+	.word sub_02040428
+	.word sub_02040384
+
+	.global ptr_FUN_0203f348_0208ddf4
+ptr_FUN_0203f348_0208ddf4: ; 0x0208DDF4
+	.word sub_0203F348
+
+	.global ptr_FUN_0203f4b8_0208ddf8
+ptr_FUN_0203f4b8_0208ddf8: ; 0x0208DDF8
+	.word sub_0203F4B8
+
+	.global ptr_FUN_0203f58c_0208ddfc
+ptr_FUN_0203f58c_0208ddfc: ; 0x0208DDFC
+	.word sub_0203F58C
+
+	.global ptr_FUN_0203f604_0208de00
+ptr_FUN_0203f604_0208de00: ; 0x0208DE00
+	.word sub_0203F604
+
+	.global ptr_FUN_0203f688_0208de04
+ptr_FUN_0203f688_0208de04: ; 0x0208DE04
+	.word sub_0203F688
+	.word sub_0203F700
+	.word sub_0203F754
+	.word sub_0203F7AC
+
+	.global PTR_ptr_FUN_02083578_0208de14
+PTR_ptr_FUN_02083578_0208de14: ; 0x0208DE14
+	.word _ZTVN10__cxxabiv117__class_type_infoE+8
+	.word s_11CDrawObject_0208de28
+
+	.global PTR_ptr_FUN_020835bc_0208de1c
+PTR_ptr_FUN_020835bc_0208de1c: ; 0x0208DE1C
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_16CFieldDrawObject_0208de38
+	.word PTR_ptr_FUN_02083578_0208de14
+
+	.global s_11CDrawObject_0208de28
+s_11CDrawObject_0208de28: ; 0x0208DE28
+	.asciz "11CDrawObject"
+
+	.global _0208DE36
+_0208DE36:
+	.byte 0x00, 0x00
+
+	.global s_16CFieldDrawObject_0208de38
+s_16CFieldDrawObject_0208de38: ; 0x0208DE38
+	.asciz "16CFieldDrawObject"
+
+	.global _0208DE4B
+_0208DE4B:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208de1c
+
+	.global PTR_LAB_0208de54
+PTR_LAB_0208de54: ; 0x0208DE54
+	.word sub_020404E8
+	.word sub_02040508
+
+	.global ptr_FUN_02040668_0208de5c
+ptr_FUN_02040668_0208de5c: ; 0x0208DE5C
+	.word sub_02040668
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_02083578_0208de14
+
+	.global PTR_LAB_0208de68
+PTR_LAB_0208de68: ; 0x0208DE68
+	.word sub_0204078C
+
+	.global ptr_FUN_02040778_0208de6c
+ptr_FUN_02040778_0208de6c: ; 0x0208DE6C
+	.word sub_02040778
+	.word sub_020091D4
+
+	.global PTR_ptr_FUN_020835bc_0208de74
+PTR_ptr_FUN_020835bc_0208de74: ; 0x0208DE74
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_17CActorDataPartner_0208de8c
+	.word PTR_ptr_FUN_020835bc_0208de80
+
+	.global PTR_ptr_FUN_020835bc_0208de80
+PTR_ptr_FUN_020835bc_0208de80: ; 0x0208DE80
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_19CFieldDrawActorData_0208dea0
+	.word PTR_ptr_FUN_02083578_0208b49c
+
+	.global s_17CActorDataPartner_0208de8c
+s_17CActorDataPartner_0208de8c: ; 0x0208DE8C
+	.asciz "17CActorDataPartner"
+
+	.global s_19CFieldDrawActorData_0208dea0
+s_19CFieldDrawActorData_0208dea0: ; 0x0208DEA0
+	.asciz "19CFieldDrawActorData"
+
+	.global _0208DEB6
+_0208DEB6:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xDE, 0x08, 0x02
+
+	.global ptr_FUN_02040f20_0208dec0
+ptr_FUN_02040f20_0208dec0: ; 0x0208DEC0
+	.word sub_02040F20
+	.word sub_0203E650
+
+	.global ptr_FUN_02040d44_0208dec8
+ptr_FUN_02040d44_0208dec8: ; 0x0208DEC8
+	.word sub_02040D44
+
+	.global ptr_FUN_0201437c_0208decc
+ptr_FUN_0201437c_0208decc: ; 0x0208DECC
+	.word sub_0201437C
+
+	.global ptr_FUN_020143b8_0208ded0
+ptr_FUN_020143b8_0208ded0: ; 0x0208DED0
+	.word sub_020143B8
+	.word sub_02014414
+	.word sub_020150AC
+
+	.global ptr_FUN_02040e2c_0208dedc
+ptr_FUN_02040e2c_0208dedc: ; 0x0208DEDC
+	.word sub_02040E2C
+
+	.global ptr_FUN_02040e80_0208dee0
+ptr_FUN_02040e80_0208dee0: ; 0x0208DEE0
+	.word sub_02040E80
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208de74
+
+	.global ptr_FUN_0204114c_0208deec
+ptr_FUN_0204114c_0208deec: ; 0x0208DEEC
+	.word sub_0204114C
+
+	.global ptr_FUN_0204117c_0208def0
+ptr_FUN_0204117c_0208def0: ; 0x0208DEF0
+	.word sub_0204117C
+
+	.global ptr_FUN_020411b4_0208def4
+ptr_FUN_020411b4_0208def4: ; 0x0208DEF4
+	.word sub_020411B4
+
+	.global ptr_FUN_0201437c_0208def8
+ptr_FUN_0201437c_0208def8: ; 0x0208DEF8
+	.word sub_0201437C
+
+	.global ptr_FUN_020143b8_0208defc
+ptr_FUN_020143b8_0208defc: ; 0x0208DEFC
+	.word sub_020143B8
+	.word sub_02014414
+	.word sub_020150AC
+
+	.global ptr_FUN_020411d8_0208df08
+ptr_FUN_020411d8_0208df08: ; 0x0208DF08
+	.word sub_020411D8
+	.word sub_0204129C
+
+	.global s_t_03d_02d_0208df10
+s_t_03d_02d_0208df10: ; 0x0208DF10
+	.asciz "t%03d_%02d"
+
+	.global _0208DF1B
+_0208DF1B:
+	.byte 0x00
+
+	.global DAT_0208df1c
+DAT_0208df1c: ; 0x0208DF1C
+	.byte 0x41, 0x43, 0x54, 0x00
+
+	.global s_data_target_s_LZ_bin_0208df20
+s_data_target_s_LZ_bin_0208df20: ; 0x0208DF20
+	.asciz "data/target/%s_LZ.bin"
+
+	.global _0208DF36
+_0208DF36:
+	.byte 0x00, 0x00
+
+	.global s_s_s_NCLR_0208df38
+s_s_s_NCLR_0208df38: ; 0x0208DF38
+	.asciz "%s:%s.NCLR"
+
+	.global _0208DF43
+_0208DF43:
+	.byte 0x00
+
+	.global s_s_s_0208df44
+s_s_s_0208df44: ; 0x0208DF44
+	.asciz "%s:%s"
+
+	.global _0208DF4A
+_0208DF4A:
+	.byte 0x00, 0x00
+
+	.global s_s_s_s_0208df4c
+s_s_s_s_0208df4c: ; 0x0208DF4C
+	.asciz "%s:%s_s"
+
+	.global s_s_s_a_0208df54
+s_s_s_a_0208df54: ; 0x0208DF54
+	.asciz "%s:%s_a"
+
+	.global s_s_s_c_0208df5c
+s_s_s_c_0208df5c: ; 0x0208DF5C
+	.asciz "%s:%s_c"
+
+	.global s_F_02d_0208df64
+s_F_02d_0208df64: ; 0x0208DF64
+	.asciz "F%02d"
+
+	.global _0208DF6A
+_0208DF6A:
+	.byte 0x00, 0x00
+
+	.global s_NO_EMPTY_m_nActorDataMax_d_0208df6c
+s_NO_EMPTY_m_nActorDataMax_d_0208df6c: ; 0x0208DF6C
+	.asciz "NO EMPTY!! m_nActorDataMax = %d"
+
+	.global PTR_ptr_FUN_020835bc_0208df8c
+PTR_ptr_FUN_020835bc_0208df8c: ; 0x0208DF8C
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_16CActorDataPlayer_0208df98
+	.word PTR_ptr_FUN_020835bc_0208de80
+
+	.global s_16CActorDataPlayer_0208df98
+s_16CActorDataPlayer_0208df98: ; 0x0208DF98
+	.asciz "16CActorDataPlayer"
+
+	.global _0208DFAB
+_0208DFAB:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208df8c
+
+	.global ptr_FUN_020412dc_0208dfb4
+ptr_FUN_020412dc_0208dfb4: ; 0x0208DFB4
+	.word sub_020412DC
+
+	.global ptr_FUN_0204130c_0208dfb8
+ptr_FUN_0204130c_0208dfb8: ; 0x0208DFB8
+	.word sub_0204130C
+
+	.global ptr_FUN_02041688_0208dfbc
+ptr_FUN_02041688_0208dfbc: ; 0x0208DFBC
+	.word sub_02041688
+
+	.global ptr_FUN_020415c8_0208dfc0
+ptr_FUN_020415c8_0208dfc0: ; 0x0208DFC0
+	.word sub_020415C8
+
+	.global ptr_FUN_02041604_0208dfc4
+ptr_FUN_02041604_0208dfc4: ; 0x0208DFC4
+	.word sub_02041604
+	.word sub_02041660
+	.word sub_020150AC
+
+	.global ptr_FUN_02040e2c_0208dfd0
+ptr_FUN_02040e2c_0208dfd0: ; 0x0208DFD0
+	.word sub_02040E2C
+
+	.global ptr_FUN_02040e80_0208dfd4
+ptr_FUN_02040e80_0208dfd4: ; 0x0208DFD4
+	.word sub_02040E80
+
+	.global s_player_1d_0208dfd8
+s_player_1d_0208dfd8: ; 0x0208DFD8
+	.asciz "player%1d"
+
+	.global _0208DFE2
+_0208DFE2:
+	.byte 0x00, 0x00
+
+	.global DAT_0208dfe4
+DAT_0208dfe4: ; 0x0208DFE4
+	.byte 0x50, 0x4C, 0x52, 0x00
+
+	.global s_data_player_s_LZ_bin_0208dfe8
+s_data_player_s_LZ_bin_0208dfe8: ; 0x0208DFE8
+	.asciz "data/player/%s_LZ.bin"
+
+	.global _0208DFFE
+_0208DFFE:
+	.byte 0x00, 0x00
+
+	.global s_s_s_NCLR_0208e000
+s_s_s_NCLR_0208e000: ; 0x0208E000
+	.asciz "%s:%s.NCLR"
+
+	.global _0208E00B
+_0208E00B:
+	.byte 0x00
+
+	.global s_s_s_02d_0208e00c
+s_s_s_02d_0208e00c: ; 0x0208E00C
+	.asciz "%s:%s_%02d"
+
+	.global _0208E017
+_0208E017:
+	.byte 0x00
+
+	.global s_data_shadow_NCBR_0208e018
+s_data_shadow_NCBR_0208e018: ; 0x0208E018
+	.asciz "data/shadow.NCBR"
+
+	.global _0208E029
+_0208E029:
+	.byte 0x00, 0x00, 0x00
+
+	.global s_data_shadow_NCLR_0208e02c
+s_data_shadow_NCLR_0208e02c: ; 0x0208E02C
+	.asciz "data/shadow.NCLR"
+
+	.global _0208E03D
+_0208E03D:
+	.byte 0x00, 0x00, 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208e040
+PTR_ptr_FUN_020835bc_0208e040: ; 0x0208E040
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_23CSimplePrimitiveQuadNTF_0208e094
+	.word PTR_ptr_FUN_02083578_0208a664
+
+	.global PTR_ptr_FUN_020835bc_0208e04c
+PTR_ptr_FUN_020835bc_0208e04c: ; 0x0208E04C
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_16CSimpleSpriteNTF_0208e058
+	.word PTR_ptr_FUN_020835bc_0208d638
+
+	.global s_16CSimpleSpriteNTF_0208e058
+s_16CSimpleSpriteNTF_0208e058: ; 0x0208E058
+	.asciz "16CSimpleSpriteNTF"
+
+	.global _0208E06B
+_0208E06B:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208e04c
+
+	.global PTR_LAB_0208e074
+PTR_LAB_0208e074: ; 0x0208E074
+	.word sub_020420A8
+
+	.global ptr_FUN_020420bc_0208e078
+ptr_FUN_020420bc_0208e078: ; 0x0208E078
+	.word sub_020420BC
+
+	.global ptr_FUN_02041df8_0208e07c
+ptr_FUN_02041df8_0208e07c: ; 0x0208E07C
+	.word sub_02041DF8
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208e040
+
+	.global ptr_FUN_020420d8_0208e088
+ptr_FUN_020420d8_0208e088: ; 0x0208E088
+	.word sub_020420D8
+
+	.global ptr_FUN_020420ec_0208e08c
+ptr_FUN_020420ec_0208e08c: ; 0x0208E08C
+	.word sub_020420EC
+
+	.global ptr_FUN_02041f74_0208e090
+ptr_FUN_02041f74_0208e090: ; 0x0208E090
+	.word sub_02041F74
+
+	.global s_23CSimplePrimitiveQuadNTF_0208e094
+s_23CSimplePrimitiveQuadNTF_0208e094: ; 0x0208E094
+	.asciz "23CSimplePrimitiveQuadNTF"
+
+	.global _0208E0AE
+_0208E0AE:
+	.byte 0x00, 0x00
+
+	.global s_data_battle_bg_capbg_03d_LZ_bin_0208e0b0
+s_data_battle_bg_capbg_03d_LZ_bin_0208e0b0: ; 0x0208E0B0
+	.asciz "data/battle/bg/capbg%03d_LZ.bin"
+
+	.global DAT_0208e0d0
+DAT_0208e0d0: ; 0x0208E0D0
+	.byte 0x42, 0x42, 0x47, 0x00
+
+	.global s_BBG_capbg_03d_NCBR_0208e0d4
+s_BBG_capbg_03d_NCBR_0208e0d4: ; 0x0208E0D4
+	.asciz "BBG:capbg%03d.NCBR"
+
+	.global _0208E0E7
+_0208E0E7:
+	.byte 0x00
+
+	.global s_BBG_capbg_03d_NCLR_0208e0e8
+s_BBG_capbg_03d_NCLR_0208e0e8: ; 0x0208E0E8
+	.asciz "BBG:capbg%03d.NCLR"
+
+	.global _0208E0FB
+_0208E0FB:
+	.byte 0x00
+
+	.global s_BBG_capbg_03d_NCER_0208e0fc
+s_BBG_capbg_03d_NCER_0208e0fc: ; 0x0208E0FC
+	.asciz "BBG:capbg%03d.NCER"
+
+	.global _0208E10F
+_0208E10F:
+	.byte 0x00
+
+	.global PTR_ptr_FUN_020835bc_0208e110
+PTR_ptr_FUN_020835bc_0208e110: ; 0x0208E110
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_26CDownloadMissionStartScene_0208e12c
+	.word PTR_ptr_FUN_02083578_0208a804
+
+	.global DAT_0208e11c
+DAT_0208e11c: ; 0x0208E11C
+	.byte 0x00, 0x01, 0x02, 0x03
+	.byte 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
+
+	.global s_26CDownloadMissionStartScene_0208e12c
+s_26CDownloadMissionStartScene_0208e12c: ; 0x0208E12C
+	.asciz "26CDownloadMissionStartScene"
+
+	.global _0208E149
+_0208E149:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.word PTR_ptr_FUN_020835bc_0208e110
+
+	.global ptr_FUN_02043134_0208e154
+ptr_FUN_02043134_0208e154: ; 0x0208E154
+	.word sub_02043134
+
+	.global ptr_FUN_020430d0_0208e158
+ptr_FUN_020430d0_0208e158: ; 0x0208E158
+	.word sub_020430D0
+
+	.global ptr_FUN_02042548_0208e15c
+ptr_FUN_02042548_0208e15c: ; 0x0208E15C
+	.word sub_02042548
+	.word sub_02043128
+	.word sub_02043124
+
+	.global ptr_FUN_02007ce0_0208e168
+ptr_FUN_02007ce0_0208e168: ; 0x0208E168
+	.word sub_02007CE0
+
+	.global ptr_FUN_02007cc4_0208e16c
+ptr_FUN_02007cc4_0208e16c: ; 0x0208E16C
+	.word sub_02007CC4
+
+	.global ptr_FUN_02042f84_0208e170
+ptr_FUN_02042f84_0208e170: ; 0x0208E170
+	.word sub_02042F84
+
+	.global ptr_FUN_02042434_0208e174
+ptr_FUN_02042434_0208e174: ; 0x0208E174
+	.word sub_02042434
+
+	.global ptr_FUN_020424f4_0208e178
+ptr_FUN_020424f4_0208e178: ; 0x0208E178
+	.word sub_020424F4
+	.word sub_0204312C
+
+	.global PTR_ptr_FUN_020835bc_0208e180
+PTR_ptr_FUN_020835bc_0208e180: ; 0x0208E180
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_24CDownloadMissionEndScene_0208e18c
+	.word PTR_ptr_FUN_02083578_0208a804
+
+	.global s_24CDownloadMissionEndScene_0208e18c
+s_24CDownloadMissionEndScene_0208e18c: ; 0x0208E18C
+	.asciz "24CDownloadMissionEndScene"
+
+	.global _0208E1A7
+_0208E1A7:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xE1, 0x08, 0x02
+
+	.global ptr_FUN_020439d4_0208e1b0
+ptr_FUN_020439d4_0208e1b0: ; 0x0208E1B0
+	.word sub_020439D4
+	.word sub_020439A8
+
+	.global ptr_FUN_0204338c_0208e1b8
+ptr_FUN_0204338c_0208e1b8: ; 0x0208E1B8
+	.word sub_0204338C
+	.word sub_020439C8
+	.word sub_020439C4
+
+	.global ptr_FUN_02007ce0_0208e1c4
+ptr_FUN_02007ce0_0208e1c4: ; 0x0208E1C4
+	.word sub_02007CE0
+
+	.global ptr_FUN_02007cc4_0208e1c8
+ptr_FUN_02007cc4_0208e1c8: ; 0x0208E1C8
+	.word sub_02007CC4
+
+	.global ptr_FUN_02043880_0208e1cc
+ptr_FUN_02043880_0208e1cc: ; 0x0208E1CC
+	.word sub_02043880
+
+	.global ptr_FUN_02043180_0208e1d0
+ptr_FUN_02043180_0208e1d0: ; 0x0208E1D0
+	.word sub_02043180
+
+	.global ptr_FUN_02043338_0208e1d4
+ptr_FUN_02043338_0208e1d4: ; 0x0208E1D4
+	.word sub_02043338
+	.word sub_020439CC
+
+	.global PTR_ptr_FUN_020835bc_0208e1dc
+PTR_ptr_FUN_020835bc_0208e1dc: ; 0x0208E1DC
+	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
+	.word s_28CDownloadMissionRestartScene_0208e1e8
+	.word PTR_ptr_FUN_02083578_0208a804
+
+	.global s_28CDownloadMissionRestartScene_0208e1e8
+s_28CDownloadMissionRestartScene_0208e1e8: ; 0x0208E1E8
+	.asciz "28CDownloadMissionRestartScene"
+
+	.global _0208E207
+_0208E207:
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0xDC, 0xE1, 0x08, 0x02
+
+	.global ptr_FUN_02044154_0208e210
+ptr_FUN_02044154_0208e210: ; 0x0208E210
+	.word sub_02044154
+
+	.global ptr_FUN_020440f0_0208e214
+ptr_FUN_020440f0_0208e214: ; 0x0208E214
+	.word sub_020440F0
+
+	.global ptr_FUN_02043afc_0208e218
+ptr_FUN_02043afc_0208e218: ; 0x0208E218
+	.word sub_02043AFC
+	.word sub_02044148
+	.word sub_02044144
+
+	.global ptr_FUN_02007ce0_0208e224
+ptr_FUN_02007ce0_0208e224: ; 0x0208E224
+	.word sub_02007CE0
+
+	.global ptr_FUN_02007cc4_0208e228
+ptr_FUN_02007cc4_0208e228: ; 0x0208E228
+	.word sub_02007CC4
+
+	.global ptr_FUN_02043fc8_0208e22c
+ptr_FUN_02043fc8_0208e22c: ; 0x0208E22C
+	.word sub_02043FC8
+
+	.global ptr_FUN_020439e8_0208e230
+ptr_FUN_020439e8_0208e230: ; 0x0208E230
+	.word sub_020439E8
+
+	.global ptr_FUN_02043aa8_0208e234
+ptr_FUN_02043aa8_0208e234: ; 0x0208E234
+	.word sub_02043AA8
+	.word sub_0204414C
+
+	.global DAT_0208e23c
+DAT_0208e23c: ; 0x0208E23C
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208e240
+DAT_0208e240: ; 0x0208E240
+	.byte 0x03, 0x00, 0x00, 0x00
+
+	.global DAT_0208e244
+DAT_0208e244: ; 0x0208E244
+	.byte 0x0A, 0x00, 0x00, 0x00
+
+	.global DAT_0208e248
+DAT_0208e248: ; 0x0208E248
+	.byte 0x00, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36
+	.byte 0x37, 0x38, 0x39, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46, 0x47, 0x48, 0x49, 0x4A, 0x4B, 0x4C, 0x4D
+	.byte 0x4E, 0x4F, 0x50, 0x51, 0x52, 0x53, 0x54, 0x55, 0x56, 0x57, 0x58, 0x59, 0x5A, 0x5F, 0x2D, 0x2F
+
+	.global s_fsc_symbol_not_found_s_0208e270
+s_fsc_symbol_not_found_s_0208e270: ; 0x0208E270
+	.byte 0x66, 0x73, 0x63, 0x3A, 0x73, 0x79, 0x6D, 0x62, 0x6F, 0x6C, 0x20, 0x6E, 0x6F, 0x74, 0x20, 0x66
+	.byte 0x6F, 0x75, 0x6E, 0x64, 0x20, 0x25, 0x73, 0x0A, 0x00, 0x00, 0x00, 0x00
+
+	.global s_fsc_undef_syscall_page_d_0208e28c
+s_fsc_undef_syscall_page_d_0208e28c: ; 0x0208E28C
+	.asciz "fsc:undef syscall page=%d\n"
+
+	.global _0208E2A7
+_0208E2A7:
+	.byte 0x00
+
+	.global s_fsc_undef_syscall_function_page_0208e2a8
+s_fsc_undef_syscall_function_page_0208e2a8: ; 0x0208E2A8
+	.asciz "fsc:undef syscall function page=%d id=%x\n"
+
+	.global _0208E2D2
+_0208E2D2:
+	.byte 0x00, 0x00
+
+	.global s_fsc_float_operator_not_imprement_0208e2d4
+s_fsc_float_operator_not_imprement_0208e2d4: ; 0x0208E2D4
+	.asciz "fsc:float operator not imprement\n"
+
+	.global _0208E2F6
+_0208E2F6:
+	.byte 0x00, 0x00
+
+	.global s_fsc_unknown_opcode_x_0208e2f8
+s_fsc_unknown_opcode_x_0208e2f8: ; 0x0208E2F8
+	.asciz "fsc:unknown opcode %x\n"
+
+	.global _0208E30F
+_0208E30F:
+	.byte 0x00
+
+	.global s_fsc_stack_overflow_stacksize_d_0208e310
+s_fsc_stack_overflow_stacksize_d_0208e310: ; 0x0208E310
+	.asciz "fsc:stack overflow stacksize=%d\n"
+
+	.global _0208E331
+_0208E331:
+	.byte 0x00, 0x00, 0x00
+
+	.global PTR_LAB_0208e334
+PTR_LAB_0208e334: ; 0x0208E334
+	.word sub_02046618
+
+	.global ptr_FUN_02046620_0208e338
+ptr_FUN_02046620_0208e338: ; 0x0208E338
+	.word sub_02046620
+	.word sub_0204663C
+
+	.global ptr_FUN_02046654_0208e340
+ptr_FUN_02046654_0208e340: ; 0x0208E340
+	.word sub_02046654
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00
+	.word sub_0204666C
+	.word sub_0204668C
+	.word sub_020466F0
+
+	.global ptr_FUN_02046708_0208e3c0
+ptr_FUN_02046708_0208e3c0: ; 0x0208E3C0
+	.word sub_02046708
+	.word sub_02046720
+	.word sub_020467F4
+	.word sub_02046804
+	.word sub_02046814
+	.word sub_020466A0
+	.word sub_020466C4
+
+	.global ptr_FUN_02046758_0208e3dc
+ptr_FUN_02046758_0208e3dc: ; 0x0208E3DC
+	.word sub_02046758
+
+	.global ptr_FUN_020467a4_0208e3e0
+ptr_FUN_020467a4_0208e3e0: ; 0x0208E3E0
+	.word sub_020467A4
+	.word sub_02046824
+	.word sub_02046840
+	.word sub_02046874
+	.word sub_0204688C
+	.word sub_02046894
+	.word sub_0204689C
+	.word sub_020468A4
+	.word sub_020468AC
+	.word sub_020468B4
+	.word sub_020468C4
+	.word sub_020468D8
+	.word sub_020468E0
+	.word sub_020468E8
+	.word sub_020468F0
+	.word sub_02046904
+	.word sub_02046914
+	.word sub_02046920
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global ptr_FUN_0204692c_0208e4f4
+ptr_FUN_0204692c_0208e4f4: ; 0x0208E4F4
+	.word sub_0204692C
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00, 0x00
+
+	.global DAT_0208e534
+DAT_0208e534: ; 0x0208E534
+	.byte 0x25, 0x73, 0x00, 0x00
+
+    .bss
+
+    .global MAIN_BSS_0208F300
+MAIN_BSS_0208F300: ; 0x0208F300
+    .space 0x4
+
+    .global MAIN_BSS_0208F304
+MAIN_BSS_0208F304: ; 0x0208F304
+    .space 0xC
+
+    .global sHeapHandles
+sHeapHandles: ; 0x0208F310
+    .space 0x4
+
+    .global sHeap_SecondaryHandle
+sHeap_SecondaryHandle: ; 0x0208F314
+    .space 0x8
+
+    .global MAIN_BSS_0208F31C
+MAIN_BSS_0208F31C: ; 0x0208F31C
+    .space 0x4
+
+    .global MAIN_BSS_0208F320
+MAIN_BSS_0208F320: ; 0x0208F320
+    .space 0xD04
+
+    .global MAIN_BSS_02090024
+MAIN_BSS_02090024: ; 0x02090024
+    .space 0x10003
+
+    .global MAIN_BSS_020A0027
+MAIN_BSS_020A0027: ; 0x020A0027
+    .space 0xF2F9
+
+    .global MAIN_BSS_020AF320
+MAIN_BSS_020AF320: ; 0x020AF320
+    .space 0x4
+
+    .global MAIN_BSS_020AF324
+MAIN_BSS_020AF324: ; 0x020AF324
+    .space 0x14
+
+    .global MAIN_BSS_020AF338
+MAIN_BSS_020AF338: ; 0x020AF338
+    .space 0x4
+
+    .global MAIN_BSS_020AF33C
+MAIN_BSS_020AF33C: ; 0x020AF33C
+    .space 0xC
+
+    .global MAIN_BSS_020AF348
+MAIN_BSS_020AF348: ; 0x020AF348
+    .space 0xC
+
+    .global MAIN_BSS_020AF354
+MAIN_BSS_020AF354: ; 0x020AF354
+    .space 0x4
+
+    .global MAIN_BSS_020AF358
+MAIN_BSS_020AF358: ; 0x020AF358
+    .space 0x4
+
+    .global MAIN_BSS_020AF35C
+MAIN_BSS_020AF35C: ; 0x020AF35C
+    .space 0x72
+
+    .global MAIN_BSS_020AF3CE
+MAIN_BSS_020AF3CE: ; 0x020AF3CE
+    .space 0x1CA
+
+    .global MAIN_BSS_020AF598
+MAIN_BSS_020AF598: ; 0x020AF598
+    .space 0x8
+
+    .global MAIN_BSS_020AF5A0
+MAIN_BSS_020AF5A0: ; 0x020AF5A0
+    .space 0xC
+
+    .global MAIN_BSS_020AF5AC
+MAIN_BSS_020AF5AC: ; 0x020AF5AC
+    .space 0xC
+
+    .global MAIN_BSS_020AF5B8
+MAIN_BSS_020AF5B8: ; 0x020AF5B8
+    .space 0xC
+
+    .global MAIN_BSS_020AF5C4
+MAIN_BSS_020AF5C4: ; 0x020AF5C4
+    .space 0xC
+
+    .global MAIN_BSS_020AF5D0
+MAIN_BSS_020AF5D0: ; 0x020AF5D0
+    .space 0x14
+
+    .global MAIN_BSS_020AF5E4
+MAIN_BSS_020AF5E4: ; 0x020AF5E4
+    .space 0x14
+
+    .global MAIN_BSS_020AF5F8
+MAIN_BSS_020AF5F8: ; 0x020AF5F8
+    .space 0x14
+
+    .global MAIN_BSS_020AF60C
+MAIN_BSS_020AF60C: ; 0x020AF60C
+    .space 0x14
+
+    .global MAIN_BSS_020AF620
+MAIN_BSS_020AF620: ; 0x020AF620
+    .space 0x4
+
+    .global MAIN_BSS_020AF624
+MAIN_BSS_020AF624: ; 0x020AF624
+    .space 0xA05
+
+    .global MAIN_BSS_020B0029
+MAIN_BSS_020B0029: ; 0x020B0029
+    .space 0x1
+
+    .global MAIN_BSS_020B002A
+MAIN_BSS_020B002A: ; 0x020B002A
+    .space 0x1
+
+    .global MAIN_BSS_020B002B
+MAIN_BSS_020B002B: ; 0x020B002B
+    .space 0x1
+
+    .global MAIN_BSS_020B002C
+MAIN_BSS_020B002C: ; 0x020B002C
+    .space 0x2600
+
+    .global MAIN_BSS_020B262C
+MAIN_BSS_020B262C: ; 0x020B262C
+    .space 0xC
+
+    .global MAIN_BSS_020B2638
+MAIN_BSS_020B2638: ; 0x020B2638
+    .space 0x5C
+
+    .global MAIN_BSS_020B2694
+MAIN_BSS_020B2694: ; 0x020B2694
+    .space 0xC
+
+    .global MAIN_BSS_020B26A0
+MAIN_BSS_020B26A0: ; 0x020B26A0
+    .space 0x7C3C
+
+    .global MAIN_BSS_020BA2DC
+MAIN_BSS_020BA2DC: ; 0x020BA2DC
+    .space 0x80
+
+    .global MAIN_BSS_020BA35C
+MAIN_BSS_020BA35C: ; 0x020BA35C
+    .space 0x1F4
+
+    .global MAIN_BSS_020BA550
+MAIN_BSS_020BA550: ; 0x020BA550
+    .space 0xB4
+
+    .global MAIN_BSS_020BA604
+MAIN_BSS_020BA604: ; 0x020BA604
+    .space 0x9C
+
+    .global MAIN_BSS_020BA6A0
+MAIN_BSS_020BA6A0: ; 0x020BA6A0
+    .space 0x1B4
+
+    .global MAIN_BSS_020BA854
+MAIN_BSS_020BA854: ; 0x020BA854
+    .space 0x140
+
+    .global MAIN_BSS_020BA994
+MAIN_BSS_020BA994: ; 0x020BA994
+    .space 0x40C
+
+    .global MAIN_BSS_020BADA0
+MAIN_BSS_020BADA0: ; 0x020BADA0
+    .space 0x6C
+
+    .global MAIN_BSS_020BAE0C
+MAIN_BSS_020BAE0C: ; 0x020BAE0C
+    .space 0x6F
+
+    .global MAIN_BSS_020BAE7B
+MAIN_BSS_020BAE7B: ; 0x020BAE7B
+    .space 0x8
+
+    .global MAIN_BSS_020BAE83
+MAIN_BSS_020BAE83: ; 0x020BAE83
+    .space 0x21
+
+    .global MAIN_BSS_020BAEA4
+MAIN_BSS_020BAEA4: ; 0x020BAEA4
+    .space 0x18
+
+    .global MAIN_BSS_020BAEBC
+MAIN_BSS_020BAEBC: ; 0x020BAEBC
+    .space 0x18
+
+    .global MAIN_BSS_020BAED4
+MAIN_BSS_020BAED4: ; 0x020BAED4
+    .space 0x18
+
+    .global MAIN_BSS_020BAEEC
+MAIN_BSS_020BAEEC: ; 0x020BAEEC
+    .space 0x18
+
+    .global MAIN_BSS_020BAF04
+MAIN_BSS_020BAF04: ; 0x020BAF04
+    .space 0x18
+
+    .global MAIN_BSS_020BAF1C
+MAIN_BSS_020BAF1C: ; 0x020BAF1C
+    .space 0x18
+
+    .global MAIN_BSS_020BAF34
+MAIN_BSS_020BAF34: ; 0x020BAF34
+    .space 0x18
+
+    .global MAIN_BSS_020BAF4C
+MAIN_BSS_020BAF4C: ; 0x020BAF4C
+    .space 0x48
+
+    .global MAIN_BSS_020BAF94
+MAIN_BSS_020BAF94: ; 0x020BAF94
+    .space 0x18
+
+    .global MAIN_BSS_020BAFAC
+MAIN_BSS_020BAFAC: ; 0x020BAFAC
+    .space 0x18
+
+    .global MAIN_BSS_020BAFC4
+MAIN_BSS_020BAFC4: ; 0x020BAFC4
+    .space 0x18
+
+    .global MAIN_BSS_020BAFDC
+MAIN_BSS_020BAFDC: ; 0x020BAFDC
+    .space 0x18
+
+    .global MAIN_BSS_020BAFF4
+MAIN_BSS_020BAFF4: ; 0x020BAFF4
+    .space 0x18
+
+    .global MAIN_BSS_020BB00C
+MAIN_BSS_020BB00C: ; 0x020BB00C
+    .space 0x18
+
+    .global MAIN_BSS_020BB024
+MAIN_BSS_020BB024: ; 0x020BB024
+    .space 0x18
+
+    .global MAIN_BSS_020BB03C
+MAIN_BSS_020BB03C: ; 0x020BB03C
+    .space 0x48
+
+    .global MAIN_BSS_020BB084
+MAIN_BSS_020BB084: ; 0x020BB084
+    .space 0x18
+
+    .global MAIN_BSS_020BB09C
+MAIN_BSS_020BB09C: ; 0x020BB09C
+    .space 0x18
+
+    .global MAIN_BSS_020BB0B4
+MAIN_BSS_020BB0B4: ; 0x020BB0B4
+    .space 0x18
+
+    .global MAIN_BSS_020BB0CC
+MAIN_BSS_020BB0CC: ; 0x020BB0CC
+    .space 0x18
+
+    .global MAIN_BSS_020BB0E4
+MAIN_BSS_020BB0E4: ; 0x020BB0E4
+    .space 0x18
+
+    .global MAIN_BSS_020BB0FC
+MAIN_BSS_020BB0FC: ; 0x020BB0FC
+    .space 0x18
+
+    .global MAIN_BSS_020BB114
+MAIN_BSS_020BB114: ; 0x020BB114
+    .space 0x18
+
+    .global MAIN_BSS_020BB12C
+MAIN_BSS_020BB12C: ; 0x020BB12C
+    .space 0x48
+
+    .global MAIN_BSS_020BB174
+MAIN_BSS_020BB174: ; 0x020BB174
+    .space 0x2C
+
+    .global MAIN_BSS_020BB1A0
+MAIN_BSS_020BB1A0: ; 0x020BB1A0
+    .space 0xC
+
+    .global MAIN_BSS_020BB1AC
+MAIN_BSS_020BB1AC: ; 0x020BB1AC
+    .space 0x64
+
+    .global MAIN_BSS_020BB210
+MAIN_BSS_020BB210: ; 0x020BB210
+    .space 0x25DCE
+
+    .global MAIN_BSS_020E0FDE
+MAIN_BSS_020E0FDE: ; 0x020E0FDE
+    .space 0xE044
+
+    .global MAIN_BSS_020EF022
+MAIN_BSS_020EF022: ; 0x020EF022
+    .space 0x1BE7
+
+    .global MAIN_BSS_020F0C09
+MAIN_BSS_020F0C09: ; 0x020F0C09
+    .space 0x1B49B
+
+    .global MAIN_BSS_0210C0A4
+MAIN_BSS_0210C0A4: ; 0x0210C0A4
+    .space 0xC
+
+    .global MAIN_BSS_0210C0B0
+MAIN_BSS_0210C0B0: ; 0x0210C0B0
+    .space 0xFC
+
+    .global MAIN_BSS_0210C1AC
+MAIN_BSS_0210C1AC: ; 0x0210C1AC
+    .space 0x4
+
+    .global MAIN_BSS_0210C1B0
+MAIN_BSS_0210C1B0: ; 0x0210C1B0
+    .space 0x8
+
+    .global MAIN_BSS_0210C1B8
+MAIN_BSS_0210C1B8: ; 0x0210C1B8
+    .space 0x4
+
+    .global MAIN_BSS_0210C1BC
+MAIN_BSS_0210C1BC: ; 0x0210C1BC
+    .space 0x4
+
+    .global MAIN_BSS_0210C1C0
+MAIN_BSS_0210C1C0: ; 0x0210C1C0
+    .space 0x60
+
+    .global MAIN_BSS_0210C220
+MAIN_BSS_0210C220: ; 0x0210C220
+    .space 0x8
+
+    .global MAIN_BSS_0210C228
+MAIN_BSS_0210C228: ; 0x0210C228
+    .space 0x800
+
+    .global MAIN_BSS_0210CA28
+MAIN_BSS_0210CA28: ; 0x0210CA28
+    .space 0x8
+
+    .global MAIN_BSS_0210CA30
+MAIN_BSS_0210CA30: ; 0x0210CA30
+    .space 0x8
+
+    .global MAIN_BSS_0210CA38
+MAIN_BSS_0210CA38: ; 0x0210CA38
+    .space 0x4
+
+    .global MAIN_BSS_0210CA3C
+MAIN_BSS_0210CA3C: ; 0x0210CA3C
+    .space 0x4
+
+    .global MAIN_BSS_0210CA40
+MAIN_BSS_0210CA40: ; 0x0210CA40
+    .space 0x4
+
+    .global MAIN_BSS_0210CA44
+MAIN_BSS_0210CA44: ; 0x0210CA44
+    .space 0x4
+
+    .global MAIN_BSS_0210CA48
+MAIN_BSS_0210CA48: ; 0x0210CA48
+    .space 0x4
+
+    .global MAIN_BSS_0210CA4C
+MAIN_BSS_0210CA4C: ; 0x0210CA4C
+    .space 0x4
+
+    .global MAIN_BSS_0210CA50
+MAIN_BSS_0210CA50: ; 0x0210CA50
+    .space 0x4
+
+    .global MAIN_BSS_0210CA54
+MAIN_BSS_0210CA54: ; 0x0210CA54
+    .space 0x4
+
+    .global MAIN_BSS_0210CA58
+MAIN_BSS_0210CA58: ; 0x0210CA58
+    .space 0x4
+
+    .global MAIN_BSS_0210CA5C
+MAIN_BSS_0210CA5C: ; 0x0210CA5C
+    .space 0x4
+
+    .global MAIN_BSS_0210CA60
+MAIN_BSS_0210CA60: ; 0x0210CA60
+    .space 0x4
+
+    .global MAIN_BSS_0210CA64
+MAIN_BSS_0210CA64: ; 0x0210CA64
+    .space 0x4
+
+    .global MAIN_BSS_0210CA68
+MAIN_BSS_0210CA68: ; 0x0210CA68
+    .space 0x4
+
+    .global MAIN_BSS_0210CA6C
+MAIN_BSS_0210CA6C: ; 0x0210CA6C
+    .space 0x4
+
+    .global MAIN_BSS_0210CA70
+MAIN_BSS_0210CA70: ; 0x0210CA70
+    .space 0x4
+
+    .global MAIN_BSS_0210CA74
+MAIN_BSS_0210CA74: ; 0x0210CA74
+    .space 0x4
+
+    .global MAIN_BSS_0210CA78
+MAIN_BSS_0210CA78: ; 0x0210CA78
+    .space 0x4
+
+    .global MAIN_BSS_0210CA7C
+MAIN_BSS_0210CA7C: ; 0x0210CA7C
+    .space 0x4
+
+    .global MAIN_BSS_0210CA80
+MAIN_BSS_0210CA80: ; 0x0210CA80
+    .space 0x4
+
+    .global MAIN_BSS_0210CA84
+MAIN_BSS_0210CA84: ; 0x0210CA84
+    .space 0x8
+
+    .global MAIN_BSS_0210CA8C
+MAIN_BSS_0210CA8C: ; 0x0210CA8C
+    .space 0x4
+
+    .global MAIN_BSS_0210CA90
+MAIN_BSS_0210CA90: ; 0x0210CA90
+    .space 0xC
+
+    .global MAIN_BSS_0210CA9C
+MAIN_BSS_0210CA9C: ; 0x0210CA9C
+    .space 0x8
+
+    .global MAIN_BSS_0210CAA4
+MAIN_BSS_0210CAA4: ; 0x0210CAA4
+    .space 0xC
+
+    .global MAIN_BSS_0210CAB0
+MAIN_BSS_0210CAB0: ; 0x0210CAB0
+    .space 0x4
+
+    .global MAIN_BSS_0210CAB4
+MAIN_BSS_0210CAB4: ; 0x0210CAB4
+    .space 0x14
+
+    .global MAIN_BSS_0210CAC8
+MAIN_BSS_0210CAC8: ; 0x0210CAC8
+    .space 0x400
+
+    .global MAIN_BSS_0210CEC8
+MAIN_BSS_0210CEC8: ; 0x0210CEC8
+    .space 0xC
+
+    .global MAIN_BSS_0210CED4
+MAIN_BSS_0210CED4: ; 0x0210CED4
+    .space 0x4
+
+    .global MAIN_BSS_0210CED8
+MAIN_BSS_0210CED8: ; 0x0210CED8
+    .space 0x100
+
+    .global MAIN_BSS_0210CFD8
+MAIN_BSS_0210CFD8: ; 0x0210CFD8
+    .space 0xC
+
+    .global sHeapAllocFunc
+sHeapAllocFunc: ; 0x0210CFE4
+    .space 0x4
+
+    .global sHeapFreeFunc
+sHeapFreeFunc: ; 0x0210CFE8
+    .space 0x4
