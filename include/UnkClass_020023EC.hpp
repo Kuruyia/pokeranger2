@@ -3,6 +3,8 @@
 
 #include <nitro.h>
 
+#include "common.hpp"
+
 class UnkClass_020023EC {
 public:
     void sub_02002A78(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
@@ -70,5 +72,7 @@ public:
     u8 unk_4A;
     u8 unk_4B;
 };
+
+STATIC_SIZE_ASSERT(UnkClass_020023EC, 0x4C);
 
 #endif // POKERANGER2_UNKCLASS_020023EC_HPP

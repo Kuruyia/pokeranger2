@@ -3,7 +3,8 @@
 
 #include <nitro.h>
 
-// Size: 0xC7C
+#include "common.hpp"
+
 class UnkClass_0200E330 {
 public:
     inline BOOL func0()
@@ -21,5 +22,7 @@ public:
     u8 unk_0024[0x83C];
     u16 unk_0860[2][0x107];
 };
+
+STATIC_SIZE_ASSERT(UnkClass_0200E330, 0xC7C);
 
 #endif // POKERANGER2_UNKCLASS_0200E330_HPP

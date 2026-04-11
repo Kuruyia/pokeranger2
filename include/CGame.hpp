@@ -3,9 +3,10 @@
 
 #include <nitro.h>
 
-#include "UnkClass_02001C20.hpp"
+#include "UnkClass_02001C04.hpp"
 #include "UnkClass_020023EC.hpp"
 #include "UnkClass_0200E330.hpp"
+#include "common.hpp"
 
 extern "C" void *sub_020101A8(u32 size);
 
@@ -44,7 +45,7 @@ public:
     u32 unk_0008;
     u32 unk_000C;
     u32 unk_0010;
-    UnkClass_02001C20 *unk_0014;
+    UnkClass_02001C04 *unk_0014;
     UnkClass_CGame_0018 *unk_0018;
     UnkClass_CGame_0018 *unk_001C;
     u32 unk_0020;
@@ -65,5 +66,7 @@ public:
     u8 unk_14CC[0x114];
     u32 unk_15E0;
 };
+
+STATIC_SIZE_ASSERT(CGame, 0x15E4);
 
 #endif // POKERANGER2_CGAME_HPP

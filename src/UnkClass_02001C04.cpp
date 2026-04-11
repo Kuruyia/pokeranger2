@@ -1,6 +1,6 @@
-#include "UnkClass_02001C20.hpp"
+#include "UnkClass_02001C04.hpp"
 
-void UnkClass_02001C20::sub_02001C20()
+void UnkClass_02001C04::sub_02001C20()
 {
     u16 v0;
     u16 v1;
