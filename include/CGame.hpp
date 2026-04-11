@@ -5,6 +5,7 @@
 
 #include "UnkClass_02001C20.hpp"
 #include "UnkClass_020023EC.hpp"
+#include "UnkClass_0200E330.hpp"
 
 extern "C" void *sub_020101A8(u32 size);
 
@@ -59,8 +60,8 @@ public:
     u8 unk_14A8[0x14];
     u32 unk_14BC;
     u32 unk_14C0;
-    u16 *unk_14C4;
-    u16 *unk_14C8;
+    UnkClass_0200E330 *unk_14C4;
+    UnkClass_0200E330 *unk_14C8;
     u8 unk_14CC[0x114];
     u32 unk_15E0;
 };

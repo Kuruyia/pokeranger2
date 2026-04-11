@@ -8,7 +8,6 @@
 #include "sub_02001248.hpp"
 
 extern "C" {
-void InitBlankInterrupts(void);
 void *sub_020101A8(u32);
 void sub_0202B80C(void);
 void sub_02001184(void);
@@ -17,7 +16,7 @@ void sub_0200F9E0(void);
 void sub_0200FA48(u32);
 u32 sub_0200E310(u32);
 u32 sub_0200E324(u32);
-u32 sub_0200E91C(u16 *);
+u32 sub_0200E91C(UnkClass_0200E330 *);
 void sub_0200FA2C(u32);
 void sub_0200FA0C(u32);
 void sub_0200F9F8(void);
@@ -44,15 +43,15 @@ void NitroMain(void)
     u32 v4;
     u32 v7;
     u32 v8;
-    u16 *v9;
-    u16 *v10;
+    UnkClass_0200E330 *v9;
+    UnkClass_0200E330 *v10;
     u32 v11;
     u32 v12;
     u32 v13;
     OSTick v14;
 
     sub_02001248();
-    InitBlankInterrupts();
+    SetupInterrupts();
 
     MAIN_BSS_0208F300.game = new CGame();
     sub_0202B80C();
@@ -87,9 +86,9 @@ void NitroMain(void)
             || (sub_0200E310(v8) != 0)
             || (sub_0200E324(v8) == 2)
             || (sub_0200E324(v8) == 4)
-            || ((v11 = (*v9 & 8) ? 1 : 0), v11 != 0)
+            || (v9->func0() != FALSE)
             || (sub_0200E91C(v9) != 0)
-            || ((v12 = (*v10 & 8) ? 1 : 0), v12 != 0)
+            || (v10->func0() != FALSE)
             || (sub_0200E91C(v10) != 0)) {
             sub_0200FA2C(1);
         } else {

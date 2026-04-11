@@ -23923,7 +23923,7 @@ _021303C4:
 	addeq sp, sp, #0x3c
 	moveq r0, #1
 	ldmeqia sp!, {r3, r4, pc}
-	bl InitBlankInterrupts
+	bl _Z15SetupInterruptsv
 	add r0, r4, #4
 	bl ov11_0213B21C
 	mov r0, #2

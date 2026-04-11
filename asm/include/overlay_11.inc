@@ -2,7 +2,7 @@
 .public SVC_WaitByLoop
 .public sub_0200071A
 .public OSi_ReferSymbol
-.public InitBlankInterrupts
+.public _Z15SetupInterruptsv
 .public _Znwm
 .public _Znam
 .public _ZdlPv
