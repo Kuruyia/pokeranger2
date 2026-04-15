@@ -11,13 +11,13 @@ struct HeapHandles {
 };
 
 void Heap_Init(u32 secondarySize);
-void *Heap_Alloc(u32 size);
+void *Heap_Alloc(size_t size);
 void Heap_Free(void *ptr);
 NNSFndHeapHandle *Heap_GetMainHandle(void);
-void *Heap_AllocSecondary(u32 size);
+void *Heap_AllocSecondary(size_t size);
 void Heap_FreeSecondary(void *ptr);
 NNSFndHeapHandle *Heap_GetSecondaryHandle(void);
-void Heap_InitTemporary(void *ptr, u32 size);
+void Heap_InitTemporary(void *ptr, size_t size);
 void Heap_DestroyTemporary(void);
 
 #endif // POKERANGER2_HEAP_HPP

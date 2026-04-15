@@ -10,3 +10,7 @@
 .public _Z21Heap_DestroyTemporaryv
 .public sub_02007C98
 .public sub_0201002C
+.public _Znwm
+.public _Znam
+.public _ZdlPv
+.public _ZdaPv

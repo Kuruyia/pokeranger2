@@ -1,40 +1,8 @@
     .include "macros.inc"
     .include "include/arm9.inc"
-    .include "include/arm9_02001458.inc"
+    .include "include/arm9_02001488.inc"
 
     .text
-
-	arm_func_start _Znwm
-_Znwm: ; 0x02001458
-	ldr ip, _02001460 ; =_Z10Heap_Allocm
-	bx ip
-	.align 2, 0
-_02001460: .word _Z10Heap_Allocm
-	arm_func_end _Znwm
-
-	arm_func_start _Znam
-_Znam: ; 0x02001464
-	ldr ip, _0200146C ; =_Z10Heap_Allocm
-	bx ip
-	.align 2, 0
-_0200146C: .word _Z10Heap_Allocm
-	arm_func_end _Znam
-
-	arm_func_start _ZdlPv
-_ZdlPv: ; 0x02001470
-	ldr ip, _02001478 ; =_Z9Heap_FreePv
-	bx ip
-	.align 2, 0
-_02001478: .word _Z9Heap_FreePv
-	arm_func_end _ZdlPv
-
-	arm_func_start _ZdaPv
-_ZdaPv: ; 0x0200147C
-	ldr ip, _02001484 ; =_Z9Heap_FreePv
-	bx ip
-	.align 2, 0
-_02001484: .word _Z9Heap_FreePv
-	arm_func_end _ZdaPv
 
 	arm_func_start Overlay_LoadByID
 Overlay_LoadByID: ; 0x02001488

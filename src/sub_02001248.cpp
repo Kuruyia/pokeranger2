@@ -86,3 +86,23 @@ void HBlankIntr(void)
 
     OS_SetIrqCheckFlag(OS_IE_H_BLANK);
 }
+
+void *operator new(size_t size)
+{
+    return Heap_Alloc(size);
+}
+
+void *operator new[](size_t size)
+{
+    return Heap_Alloc(size);
+}
+
+void operator delete(void *ptr)
+{
+    Heap_Free(ptr);
+}
+
+void operator delete[](void *ptr)
+{
+    Heap_Free(ptr);
+}

@@ -21,7 +21,7 @@ void Heap_Init(u32 secondarySize)
     sHeapHandles.main = NNS_FndCreateExpHeapEx(mainPtr, mainArenaSize, NNS_FND_HEAP_OPT_0_CLEAR);
 }
 
-void *Heap_Alloc(u32 size)
+void *Heap_Alloc(size_t size)
 {
     void *ptr = NNS_FndAllocFromExpHeapEx(sHeapHandles.main, size, ALLOC_ALIGNMENT);
 
@@ -36,7 +36,7 @@ void *Heap_Alloc(u32 size)
     return NNS_FndAllocFromExpHeapEx(sHeapHandles.temporary, size, ALLOC_ALIGNMENT);
 }
 
-void *Heap_AllocWithAlignment(u32 size, u32 alignment)
+void *Heap_AllocWithAlignment(size_t size, u32 alignment)
 {
     void *ptr = NNS_FndAllocFromExpHeapEx(sHeapHandles.main, size, alignment);
 
@@ -65,7 +65,7 @@ NNSFndHeapHandle *Heap_GetMainHandle(void)
     return &sHeapHandles.main;
 }
 
-void *Heap_AllocSecondary(u32 size)
+void *Heap_AllocSecondary(size_t size)
 {
     return NNS_FndAllocFromExpHeapEx(sHeapHandles.secondary, size, ALLOC_ALIGNMENT);
 }
@@ -80,7 +80,7 @@ NNSFndHeapHandle *Heap_GetSecondaryHandle(void)
     return &sHeapHandles.secondary;
 }
 
-void Heap_InitTemporary(void *ptr, u32 size)
+void Heap_InitTemporary(void *ptr, size_t size)
 {
     Heap_DestroyTemporary();
 
