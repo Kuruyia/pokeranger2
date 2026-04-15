@@ -3,12 +3,12 @@
 
     .text
 
-	arm_func_start ov11_0211C9E0
-ov11_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN15CRangerNetSceneC1EP5CGame
+_ZN15CRangerNetSceneC1EP5CGame: ; 0x0211C9E0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r4, r1
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r1, _0211CA08 ; =ptr_FUN_overlay_11_0211ca0c_overlay_11_021660e8
 	mov r0, r5
 	stmia r5, {r1, r4}
@@ -17,7 +17,7 @@ ov11_0211C9E0: ; 0x0211C9E0
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0211CA08: .word ptr_FUN_overlay_11_0211ca0c_overlay_11_021660e8
-	arm_func_end ov11_0211C9E0
+	arm_func_end _ZN15CRangerNetSceneC1EP5CGame
 
 	arm_func_start ov11_0211CA0C
 ov11_0211CA0C: ; 0x0211CA0C
@@ -1531,18 +1531,18 @@ _0211DED8:
 	blt _0211DED8
 	bx lr
 
-	arm_func_start ov11_0211DEF8
-ov11_0211DEF8: ; 0x0211DEF8
+	arm_func_start _ZN18CRangerNetAGBSceneC1EP5CGame
+_ZN18CRangerNetAGBSceneC1EP5CGame: ; 0x0211DEF8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r1, _0211DF14 ; =PTR_LAB_overlay_11_0211df18_overlay_11_021661c8
 	mov r0, r4
 	str r1, [r4]
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211DF14: .word PTR_LAB_overlay_11_0211df18_overlay_11_021661c8
-	arm_func_end ov11_0211DEF8
+	arm_func_end _ZN18CRangerNetAGBSceneC1EP5CGame
 
 	arm_func_start ov11_0211DF18
 ov11_0211DF18: ; 0x0211DF18
@@ -25523,11 +25523,11 @@ ov11_02131980: ; 0x02131980
 _021319E8: .word OVERLAY11_BSS_02169C88
 	arm_func_end ov11_02131980
 
-	arm_func_start ov11_021319EC
-ov11_021319EC: ; 0x021319EC
+	arm_func_start _ZN17CCompanyLogoSceneC1Ev
+_ZN17CCompanyLogoSceneC1Ev: ; 0x021319EC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	mov r2, #0
 	ldr r0, _02131A38 ; =ptr_FUN_overlay_11_02131a3c_overlay_11_021666a4
 	mov r1, r2
@@ -25537,7 +25537,7 @@ ov11_021319EC: ; 0x021319EC
 	str r2, [r4, #0x24]
 	str r2, [r4, #0x1c]
 	str r2, [r4, #0x20]
-	arm_func_end ov11_021319EC
+	arm_func_end _ZN17CCompanyLogoSceneC1Ev
 _02131A1C:
 	add r0, r4, r2, lsl #2
 	add r2, r2, #1

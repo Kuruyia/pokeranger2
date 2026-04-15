@@ -9,11 +9,11 @@
 .public ptr_FUN_02044154_0208e210
 .public _Z16Heap_InitOverlayPvm
 .public _Z19Heap_DestroyOverlayv
-.public sub_02007C98
+.public _ZN6CSceneC2Ev
 .public sub_0200FB28
 .public sub_0201002C
 .public sub_02010448
 .public sub_0204436C
 .public _Z12sub_02044440v
 .public sub_02046D40
-.public Scene_LoadByID
+.public _Z14Scene_LoadByIDmP5CGame

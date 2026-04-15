@@ -50,7 +50,7 @@ _02001138:
 	ldr r1, _02001180 ; =MAIN_BSS_0208F300
 	mov r0, #9
 	ldr r1, [r1, #4]
-	bl Scene_LoadByID
+	bl _Z14Scene_LoadByIDmP5CGame
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02001180: .word MAIN_BSS_0208F300

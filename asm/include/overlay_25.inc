@@ -4,7 +4,7 @@
 .public _Z23Heap_AllocWithAlignmentmm
 .public _Z9Heap_FreePv
 .public sub_020033B0
-.public sub_02007C98
+.public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02007D98
 .public sub_02008DB4

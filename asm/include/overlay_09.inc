@@ -2,7 +2,7 @@
 .public _Znwm
 .public _ZdlPv
 .public _ZdaPv
-.public sub_02007C98
+.public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02008DB4
 .public sub_020092D4

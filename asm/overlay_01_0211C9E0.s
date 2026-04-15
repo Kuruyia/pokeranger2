@@ -3,13 +3,13 @@
 
     .text
 
-	arm_func_start ov1_0211C9E0
-ov1_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN12CBattleSceneC1EP5CGame
+_ZN12CBattleSceneC1EP5CGame: ; 0x0211C9E0
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	sub sp, sp, #0x18
 	mov r5, r0
 	mov r4, r1
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r1, _0211CD70 ; =ptr_FUN_overlay_1_0211cd80_overlay_1_02140764
 	add r0, r4, #0x1000
 	stmia r5, {r1, r4}
@@ -26,7 +26,7 @@ ov1_0211C9E0: ; 0x0211C9E0
 	bl sub_02010B90
 	cmp r0, #0
 	bls _0211CA60
-	arm_func_end ov1_0211C9E0
+	arm_func_end _ZN12CBattleSceneC1EP5CGame
 _0211CA34:
 	ldr r0, [r5, #0x1c]
 	mov r1, r6

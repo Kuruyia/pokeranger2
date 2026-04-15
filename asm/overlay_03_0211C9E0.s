@@ -3,12 +3,12 @@
 
     .text
 
-	arm_func_start ov3_0211C9E0
-ov3_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN11CTitleSceneC1EP5CGame
+_ZN11CTitleSceneC1EP5CGame: ; 0x0211C9E0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r4, r0
 	mov r5, r1
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r1, _0211CA78 ; =ptr_FUN_overlay_3_0211ca7c_overlay_3_0212a820
 	mov r0, #1
 	str r1, [r4]
@@ -19,7 +19,7 @@ ov3_0211C9E0: ; 0x0211C9E0
 	str r2, [r4, #0x14]
 	str r2, [r4, #0x40]
 	mov r1, r2
-	arm_func_end ov3_0211C9E0
+	arm_func_end _ZN11CTitleSceneC1EP5CGame
 _0211CA18:
 	add r0, r4, r2, lsl #2
 	add r2, r2, #1
@@ -4545,12 +4545,12 @@ _02120AC0: .word 0x04000014
 _02120AC4: .word 0x04000018
 _02120AC8: .word 0x0400001C
 
-	arm_func_start ov3_02120ACC
-ov3_02120ACC: ; 0x02120ACC
+	arm_func_start _ZN14CContinueSceneC1EP5CGame
+_ZN14CContinueSceneC1EP5CGame: ; 0x02120ACC
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r4, r1
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r0, _02120B14 ; =PTR_LAB_overlay_3_02120b18_overlay_3_0212a954
 	str r0, [r5]
 	str r4, [r5, #8]
@@ -4567,7 +4567,7 @@ ov3_02120ACC: ; 0x02120ACC
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _02120B14: .word PTR_LAB_overlay_3_02120b18_overlay_3_0212a954
-	arm_func_end ov3_02120ACC
+	arm_func_end _ZN14CContinueSceneC1EP5CGame
 
 	arm_func_start ov3_02120B18
 ov3_02120B18: ; 0x02120B18
@@ -5243,12 +5243,12 @@ ov3_02121444: ; 0x02121444
 	bx lr
 	arm_func_end ov3_02121444
 
-	arm_func_start ov3_0212144C
-ov3_0212144C: ; 0x0212144C
+	arm_func_start _ZN10CConfSceneC1EP5CGame
+_ZN10CConfSceneC1EP5CGame: ; 0x0212144C
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r4, r1
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r0, _02121494 ; =PTR_LAB_overlay_3_02121498_overlay_3_0212aa08
 	str r0, [r5]
 	str r4, [r5, #8]
@@ -5265,7 +5265,7 @@ ov3_0212144C: ; 0x0212144C
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _02121494: .word PTR_LAB_overlay_3_02121498_overlay_3_0212aa08
-	arm_func_end ov3_0212144C
+	arm_func_end _ZN10CConfSceneC1EP5CGame
 
 	arm_func_start ov3_02121498
 ov3_02121498: ; 0x02121498
@@ -5897,11 +5897,11 @@ ov3_02121D20: ; 0x02121D20
 	bx lr
 	arm_func_end ov3_02121D20
 
-	arm_func_start ov3_02121D28
-ov3_02121D28: ; 0x02121D28
+	arm_func_start _ZN15CNameInputSceneC1Ev
+_ZN15CNameInputSceneC1Ev: ; 0x02121D28
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r0, _02121DB8 ; =ptr_FUN_overlay_3_02121dbc_overlay_3_0212aac0
 	str r0, [r4]
 	bl sub_0201001C
@@ -5922,7 +5922,7 @@ ov3_02121D28: ; 0x02121D28
 	strb r1, [r4, #7]
 	strb r1, [r4, #8]
 	mov r2, r1
-	arm_func_end ov3_02121D28
+	arm_func_end _ZN15CNameInputSceneC1Ev
 _02121D84:
 	add r0, r4, r1, lsl #2
 	add r1, r1, #1
@@ -8414,12 +8414,12 @@ ov3_02124010: ; 0x02124010
 _02124048: .word DAT_0208d694
 	arm_func_end ov3_02124010
 
-	arm_func_start ov3_0212404C
-ov3_0212404C: ; 0x0212404C
+	arm_func_start _ZN17COpeningDemoSceneC1Ev
+_ZN17COpeningDemoSceneC1Ev: ; 0x0212404C
 	stmdb sp!, {r3, r4, lr}
 	sub sp, sp, #4
 	mov r4, r0
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r1, _021240C8 ; =ptr_FUN_overlay_3_021240e8_overlay_3_0212ac34
 	mov r0, #0
 	str r1, [r4]
@@ -8451,7 +8451,7 @@ ov3_0212404C: ; 0x0212404C
 _021240C8: .word ptr_FUN_overlay_3_021240e8_overlay_3_0212ac34
 _021240CC: .word ov3_021240D4
 _021240D0: .word ov3_02124010
-	arm_func_end ov3_0212404C
+	arm_func_end _ZN17COpeningDemoSceneC1Ev
 
 	arm_func_start ov3_021240D4
 ov3_021240D4: ; 0x021240D4

@@ -3,11 +3,11 @@
 
     .text
 
-	arm_func_start ov26_0211C9E0
-ov26_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN18CSuitePictureSceneC1Ev
+_ZN18CSuitePictureSceneC1Ev: ; 0x0211C9E0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r0, _0211CA18 ; =ptr_FUN_overlay_20_0211ca1c_overlay_26_0211dac8
 	mov r1, #0
 	stmia r4, {r0, r1}
@@ -21,7 +21,7 @@ ov26_0211C9E0: ; 0x0211C9E0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211CA18: .word ptr_FUN_overlay_20_0211ca1c_overlay_26_0211dac8
-	arm_func_end ov26_0211C9E0
+	arm_func_end _ZN18CSuitePictureSceneC1Ev
 
 	arm_func_start ov26_0211CA1C
 ov26_0211CA1C: ; 0x0211CA1C

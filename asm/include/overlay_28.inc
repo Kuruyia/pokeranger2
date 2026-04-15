@@ -5,7 +5,7 @@
 .public sub_02002B6C
 .public sub_02002BC4
 .public CBinaryFile_complete_obj_dtor
-.public sub_02007C98
+.public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02008DB4
 .public sub_0200C3D0

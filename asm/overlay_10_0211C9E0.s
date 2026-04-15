@@ -82,6 +82,8 @@ ptr_FUN_overlay_26_0211ca4c_overlay_10_0211ca44: ; 0x0211CA44
 s_17CFieldToMenuScene_overlay_10_0211ca4c: ; 0x0211CA4C
 	.asciz "17CFieldToMenuScene"
 _0211CA60:
+    .global _ZTV17CFieldToMenuScene
+_ZTV17CFieldToMenuScene: ; 0x0211CA60
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_overlay_10_0211ca40
     .global CFieldToMenuScene_vtable

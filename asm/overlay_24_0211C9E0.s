@@ -3,11 +3,11 @@
 
     .text
 
-	arm_func_start ov24_0211C9E0
-ov24_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN11CRetrySceneC1Ev
+_ZN11CRetrySceneC1Ev: ; 0x0211C9E0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r1, _0211CA14 ; =PTR_LAB_overlay_24_0211ca18_overlay_24_0211d2e4
 	mov r0, #0
 	str r1, [r4]
@@ -20,7 +20,7 @@ ov24_0211C9E0: ; 0x0211C9E0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211CA14: .word PTR_LAB_overlay_24_0211ca18_overlay_24_0211d2e4
-	arm_func_end ov24_0211C9E0
+	arm_func_end _ZN11CRetrySceneC1Ev
 
 	arm_func_start ov24_0211CA18
 ov24_0211CA18: ; 0x0211CA18

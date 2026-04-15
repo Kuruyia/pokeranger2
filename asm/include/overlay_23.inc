@@ -11,7 +11,7 @@
 .public sub_0200365C
 .public sub_02003B64
 .public sub_02006000
-.public sub_02007C98
+.public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_020092D4
 .public sub_02009328

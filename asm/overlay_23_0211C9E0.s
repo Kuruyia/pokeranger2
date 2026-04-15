@@ -3,11 +3,11 @@
 
     .text
 
-	arm_func_start ov23_0211C9E0
-ov23_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN12CRecordSceneC1Ev
+_ZN12CRecordSceneC1Ev: ; 0x0211C9E0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r0, _0211CA30 ; =ptr_FUN_overlay_23_0211ca3c_overlay_23_0211f1c4
 	mov r1, #0
 	str r0, [r4]
@@ -29,7 +29,7 @@ ov23_0211C9E0: ; 0x0211C9E0
 _0211CA30: .word ptr_FUN_overlay_23_0211ca3c_overlay_23_0211f1c4
 _0211CA34: .word MAIN_BSS_0208F304
 _0211CA38: .word MAIN_BSS_020B26A0
-	arm_func_end ov23_0211C9E0
+	arm_func_end _ZN12CRecordSceneC1Ev
 
 	arm_func_start ov23_0211CA3C
 ov23_0211CA3C: ; 0x0211CA3C

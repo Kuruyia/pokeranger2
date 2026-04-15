@@ -37,11 +37,11 @@ _0211CA40: .word OVERLAY21_BSS_021242C0
 _0211CA44: .word 0x000001FF
 _0211CA48: .word 0x04000014
 _0211CA4C: .word OS_IRQTable
-    arm_func_start ov21_0211CA50
-ov21_0211CA50: ; 0x0211CA50
+    arm_func_start _ZN13CBrowserSceneC1Ev
+_ZN13CBrowserSceneC1Ev: ; 0x0211CA50
     stmdb sp!, {r4, lr}
     mov r4, r0
-    bl sub_02007C98
+    bl _ZN6CSceneC2Ev
     ldr r0, _0211CAA4 ; =ptr_FUN_overlay_28_0211caac_overlay_21_02122be4
     mov r1, #0
     str r0, [r4]
@@ -63,7 +63,7 @@ ov21_0211CA50: ; 0x0211CA50
     .align 2, 0
 _0211CAA4: .word ptr_FUN_overlay_28_0211caac_overlay_21_02122be4
 _0211CAA8: .word ov21_0211C9E0
-    arm_func_end ov21_0211CA50
+    arm_func_end _ZN13CBrowserSceneC1Ev
 
 	arm_func_start ov21_0211CAAC
 ov21_0211CAAC: ; 0x0211CAAC

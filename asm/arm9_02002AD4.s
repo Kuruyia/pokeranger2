@@ -6032,14 +6032,14 @@ sub_02007C64: ; 0x02007C64
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02007C64
 
-	arm_func_start sub_02007C98
-sub_02007C98: ; 0x02007C98
+	arm_func_start _ZN6CSceneC2Ev
+_ZN6CSceneC2Ev: ; 0x02007C98
 	ldr r1, _02007CA4 ; =PTR_LAB_0208a814
 	str r1, [r0]
 	bx lr
 	.align 2, 0
 _02007CA4: .word PTR_LAB_0208a814
-	arm_func_end sub_02007C98
+	arm_func_end _ZN6CSceneC2Ev
 _02007CA8:
 	.byte 0x1E, 0xFF, 0x2F, 0xE1
 

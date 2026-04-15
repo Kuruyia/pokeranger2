@@ -234,7 +234,10 @@ _0211CCE0: ; 0x0211CCE0
 
 _0211CCEC: ; 0x0211CCEC
     .string "21CCardAccessErrorScene"
-    .byte 0x00, 0x00, 0x00
+
+    .global _ZTV21CCardAccessErrorScene
+_ZTV21CCardAccessErrorScene: ; 0x0211CD04
+    .byte 0x00, 0x00, 0x00, 0x00
     .word _0211CCE0
 
     .global CCardAccessErrorScene_vtable

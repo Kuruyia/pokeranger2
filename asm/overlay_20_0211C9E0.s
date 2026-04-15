@@ -3,11 +3,11 @@
 
     .text
 
-    arm_func_start ov20_0211C9E0
-ov20_0211C9E0: ; 0x0211C9E0
+    arm_func_start _ZN14CAutoSaveSceneC1Ev
+_ZN14CAutoSaveSceneC1Ev: ; 0x0211C9E0
     stmdb sp!, {r4, lr}
     mov r4, r0
-    bl sub_02007C98
+    bl _ZN6CSceneC2Ev
     ldr r0, _0211CA04 ; =CAutoSaveSceneVtable
     mov r1, #0
     stmia r4, {r0, r1}
@@ -16,7 +16,7 @@ ov20_0211C9E0: ; 0x0211C9E0
     ldmia sp!, {r4, pc}
     .align 2, 0
 _0211CA04: .word CAutoSaveSceneVtable
-    arm_func_end ov20_0211C9E0
+    arm_func_end _ZN14CAutoSaveSceneC1Ev
 
     arm_func_start ov20_0211CA08
 ov20_0211CA08: ; 0x0211CA08

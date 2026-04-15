@@ -3,11 +3,11 @@
 
     .text
 
-	arm_func_start ov19_0211C9E0
-ov19_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN15CSexSelectSceneC1Ev
+_ZN15CSexSelectSceneC1Ev: ; 0x0211C9E0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r0, _0211CA54 ; =ptr_FUN_overlay_19_0211ca58_overlay_19_0211e3e8
 	str r0, [r4]
 	bl sub_0201001C
@@ -36,7 +36,7 @@ ov19_0211C9E0: ; 0x0211C9E0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211CA54: .word ptr_FUN_overlay_19_0211ca58_overlay_19_0211e3e8
-	arm_func_end ov19_0211C9E0
+	arm_func_end _ZN15CSexSelectSceneC1Ev
 
 	arm_func_start ov19_0211CA58
 ov19_0211CA58: ; 0x0211CA58

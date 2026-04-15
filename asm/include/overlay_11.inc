@@ -16,7 +16,7 @@
 .public sub_02003788
 .public sub_020037B4
 .public sub_0200381C
-.public sub_02007C98
+.public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02008DB4
 .public sub_02008E50

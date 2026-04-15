@@ -6991,7 +6991,11 @@ s_26CDownloadMissionStartScene_0208e12c: ; 0x0208E12C
 
 	.global _0208E149
 _0208E149:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00, 0x00
+
+	.global _ZTV26CDownloadMissionStartScene
+_ZTV26CDownloadMissionStartScene: ; 0x0208E14C
+    .byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_0208e110
 
 	.global ptr_FUN_02043134_0208e154
@@ -7041,7 +7045,11 @@ s_24CDownloadMissionEndScene_0208e18c: ; 0x0208E18C
 
 	.global _0208E1A7
 _0208E1A7:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xE1, 0x08, 0x02
+	.byte 0x00
+
+	.global _ZTV24CDownloadMissionEndScene
+_ZTV24CDownloadMissionEndScene: ; 0x0208E1A8
+    .byte 0x00, 0x00, 0x00, 0x00, 0x80, 0xE1, 0x08, 0x02
 
 	.global ptr_FUN_020439d4_0208e1b0
 ptr_FUN_020439d4_0208e1b0: ; 0x0208E1B0
@@ -7087,7 +7095,11 @@ s_28CDownloadMissionRestartScene_0208e1e8: ; 0x0208E1E8
 
 	.global _0208E207
 _0208E207:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0xDC, 0xE1, 0x08, 0x02
+	.byte 0x00
+
+	.global _ZTV28CDownloadMissionRestartScene
+_ZTV28CDownloadMissionRestartScene: ; 0x0208E208
+    .byte 0x00, 0x00, 0x00, 0x00, 0xDC, 0xE1, 0x08, 0x02
 
 	.global ptr_FUN_02044154_0208e210
 ptr_FUN_02044154_0208e210: ; 0x0208E210

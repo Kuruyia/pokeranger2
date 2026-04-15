@@ -3,12 +3,12 @@
 
     .text
 
-	arm_func_start ov5_0211C9E0
-ov5_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN12CStylerSceneC1EP5CGame
+_ZN12CStylerSceneC1EP5CGame: ; 0x0211C9E0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r4, r1
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r0, _0211CA14 ; =PTR_LAB_overlay_5_0211ca18_overlay_5_02120424
 	mov r1, #0
 	str r0, [r5]
@@ -20,7 +20,7 @@ ov5_0211C9E0: ; 0x0211C9E0
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0211CA14: .word PTR_LAB_overlay_5_0211ca18_overlay_5_02120424
-	arm_func_end ov5_0211C9E0
+	arm_func_end _ZN12CStylerSceneC1EP5CGame
 
 	arm_func_start ov5_0211CA18
     ov5_0211CA18: ; 0x0211CA18

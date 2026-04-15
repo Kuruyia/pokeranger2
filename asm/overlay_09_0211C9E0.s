@@ -3,12 +3,12 @@
 
     .text
 
-	arm_func_start ov9_0211C9E0
-ov9_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN12CFlyingSceneC1EP5CGame
+_ZN12CFlyingSceneC1EP5CGame: ; 0x0211C9E0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r4, r1
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r1, _0211CA08 ; =ptr_FUN_overlay_11_0211ca0c_overlay_9_0211db24
 	mov r0, r5
 	stmia r5, {r1, r4}
@@ -17,7 +17,7 @@ ov9_0211C9E0: ; 0x0211C9E0
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0211CA08: .word ptr_FUN_overlay_11_0211ca0c_overlay_9_0211db24
-	arm_func_end ov9_0211C9E0
+	arm_func_end _ZN12CFlyingSceneC1EP5CGame
 
 	arm_func_start ov9_0211CA0C
 ov9_0211CA0C: ; 0x0211CA0C

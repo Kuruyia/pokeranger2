@@ -58,7 +58,7 @@
 .public sub_02007B28
 .public sub_02007BC4
 .public sub_02007BFC
-.public sub_02007C98
+.public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02008788
 .public sub_020087C8

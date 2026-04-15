@@ -3,15 +3,15 @@
 
 #include "CGame.hpp"
 #include "UnkClass_0208F300.hpp"
-#include "UnkClass_Scene_LoadByID.hpp"
+#include "constants/scene.hpp"
 #include "heap.hpp"
+#include "overlay_manager.hpp"
 #include "sub_02001248.hpp"
 
 extern "C" {
 void *sub_020101A8(u32);
 void sub_0202B80C(void);
 void sub_02001184(void);
-UnkClass_Scene_LoadByID *Scene_LoadByID(u32, CGame *);
 void sub_0200F9E0(void);
 void sub_0200FA48(u32);
 u32 sub_0200E310(u32);
@@ -20,7 +20,7 @@ u32 sub_0200E91C(UnkClass_0200E330 *);
 void sub_0200FA2C(u32);
 void sub_0200FA0C(u32);
 void sub_0200F9F8(void);
-UnkClass_Scene_LoadByID *sub_020010F8(void);
+CScene *sub_020010F8(void);
 void sub_020101B4(CGame *, char *);
 void sub_020102E8(CGame *);
 void sub_0201044C(CGame *);
@@ -38,7 +38,7 @@ void NitroMain(void)
 {
     UnkClass_CGame_14A4 *game_unk_14A4;
     NNSFndHeapHandle *handle;
-    UnkClass_Scene_LoadByID *v3;
+    CScene *v3;
     u32 v6;
     u32 v4;
     u32 v7;
@@ -67,8 +67,8 @@ void NitroMain(void)
     NNS_FndGetAllocatableSizeForExpHeapEx(*handle, 4);
 
     sub_02001184();
-    v3 = Scene_LoadByID(9, MAIN_BSS_0208F300.game);
-    v4 = 0xFFFFFFFF;
+    v3 = Scene_LoadByID(SCENE_RANGER_NET_AGB, MAIN_BSS_0208F300.game);
+    v4 = SCENE_NONE;
     sub_0200F9E0();
     sub_0200FA48(0);
 
@@ -120,15 +120,12 @@ void NitroMain(void)
 
             DAT_0208aaf8 = 0;
 
-            v13 = v3->func10();
+            v13 = v3->func8();
             MAIN_BSS_0208F300.game->unk_0008 = v13;
             MAIN_BSS_0208F300.game->unk_0010 = v4;
 
-            v3->func9();
-
-            if (v3 != 0) {
-                v3->func1();
-            }
+            v3->func7();
+            delete v3;
 
             MAIN_BSS_0208F300.game->unk_0010 = v6;
             sub_020102E8(MAIN_BSS_0208F300.game);
@@ -152,8 +149,8 @@ void NitroMain(void)
 
         MAIN_BSS_0208F300.unk_08 = OS_GetTick();
         MAIN_BSS_0208F300.game->unk_15E0 = 0;
-        v4 = v3->func2();
-        v3->func3();
+        v4 = v3->func0();
+        v3->func1();
         MAIN_BSS_0208F300.game->unk_15E0 = 1;
 
         v14 = OS_GetTick();
@@ -163,7 +160,7 @@ void NitroMain(void)
         DAT_0208aaf8 = 1;
 
         MAIN_BSS_0208F300.game->unk_15E0 = 0;
-        v3->func6();
+        v3->func4();
         MAIN_BSS_0208F300.game->unk_15E0 = 1;
         G3_SwapBuffers(GX_SORTMODE_MANUAL, GX_BUFFERMODE_Z);
 
@@ -175,13 +172,13 @@ void NitroMain(void)
         OS_GetTick();
         OS_GetTick();
 
-        v3->func4();
+        v3->func2();
 
         OS_GetTick();
         ++MAIN_BSS_0208F300.game->unk_0000;
 
         OS_GetTick();
-        v3->func5();
+        v3->func3();
 
         sub_0201028C(MAIN_BSS_0208F300.game);
         OS_GetTick();

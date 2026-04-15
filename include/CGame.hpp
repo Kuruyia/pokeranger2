@@ -7,6 +7,7 @@
 #include "UnkClass_020023EC.hpp"
 #include "UnkClass_0200E330.hpp"
 #include "common.hpp"
+#include "scene/CScene.hpp"
 
 extern "C" void *sub_020101A8(u32 size);
 
@@ -43,7 +44,7 @@ public:
     u32 unk_0000;
     u32 unk_0004;
     u32 unk_0008;
-    u32 unk_000C;
+    CScene *currentScene;
     u32 unk_0010;
     UnkClass_02001C04 *unk_0014;
     UnkClass_CGame_0018 *unk_0018;

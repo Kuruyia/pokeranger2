@@ -3,11 +3,11 @@
 
     .text
 
-	arm_func_start ov22_0211C9E0
-ov22_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN18CEncyclopediaSceneC1Ev
+_ZN18CEncyclopediaSceneC1Ev: ; 0x0211C9E0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r0, _0211CAB8 ; =DAT_overlay_22_02121710
 	ldr r1, _0211CABC ; =ptr_FUN_overlay_22_0211cac4_overlay_22_02121770
 	str r0, [r4, #4]
@@ -45,7 +45,7 @@ ov22_0211C9E0: ; 0x0211C9E0
 	beq _0211CA80
 	add r1, r4, #0x2c
 	bl ov22_0211D31C
-	arm_func_end ov22_0211C9E0
+	arm_func_end _ZN18CEncyclopediaSceneC1Ev
 _0211CA80:
 	str r0, [r4, #0x14]
 	mov r0, #0xd0

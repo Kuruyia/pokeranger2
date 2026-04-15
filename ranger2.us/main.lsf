@@ -17,7 +17,7 @@ Static main
     Object main.nef.p/src_main.cpp.o
     Object main.nef.p/asm_arm9_020010E4.s.o
     Object main.nef.p/src_sub_02001248.cpp.o
-    Object main.nef.p/asm_arm9_02001488.s.o
+    Object main.nef.p/src_overlay_manager.cpp.o
     Object main.nef.p/src_UnkClass_02001C04.cpp.o
     Object main.nef.p/asm_arm9_02001D28.s.o
     Object main.nef.p/src_heap.cpp.o

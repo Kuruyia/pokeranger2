@@ -3,11 +3,11 @@
 
     .text
 
-	arm_func_start ov27_0211C9E0
-ov27_0211C9E0: ; 0x0211C9E0
+	arm_func_start _ZN15CQuestListSceneC1Ev
+_ZN15CQuestListSceneC1Ev: ; 0x0211C9E0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r1, _0211CA30 ; =ptr_FUN_overlay_27_0211ca34_overlay_27_02121168
 	add r0, r4, #0x10
 	str r1, [r4]
@@ -27,7 +27,7 @@ ov27_0211C9E0: ; 0x0211C9E0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211CA30: .word ptr_FUN_overlay_27_0211ca34_overlay_27_02121168
-	arm_func_end ov27_0211C9E0
+	arm_func_end _ZN15CQuestListSceneC1Ev
 
 	arm_func_start ov27_0211CA34
 ov27_0211CA34: ; 0x0211CA34

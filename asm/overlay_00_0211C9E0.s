@@ -3,13 +3,13 @@
 
     .text
 
-	arm_func_start CFieldScene_ctor
-CFieldScene_ctor: ; 0x0211C9E0
+	arm_func_start _ZN11CFieldSceneC1EP5CGame
+_ZN11CFieldSceneC1EP5CGame: ; 0x0211C9E0
 	stmdb sp!, {r3, r4, r5, lr}
 	sub sp, sp, #8
 	mov r4, r0
 	mov r5, r1
-	bl sub_02007C98
+	bl _ZN6CSceneC2Ev
 	ldr r1, _0211CAC4 ; =ptr_FUN_overlay_0_0211cad0_overlay_0_02172fd4
 	add r0, r4, #0xfc
 	str r1, [r4]
@@ -66,7 +66,7 @@ CFieldScene_ctor: ; 0x0211C9E0
 _0211CAC4: .word ptr_FUN_overlay_0_0211cad0_overlay_0_02172fd4
 _0211CAC8: .word MAIN_BSS_0210CA40
 _0211CACC: .word DAT_0208d58c
-	arm_func_end CFieldScene_ctor
+	arm_func_end _ZN11CFieldSceneC1EP5CGame
 
 	arm_func_start CFieldScene_complete_obj_dtor
 CFieldScene_complete_obj_dtor: ; 0x0211CAD0

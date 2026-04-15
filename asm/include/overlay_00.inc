@@ -55,7 +55,7 @@
 .public sub_02007BC4
 .public sub_02007BFC
 .public sub_02007C34
-.public sub_02007C98
+.public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02007CC4
 .public sub_02007D68
