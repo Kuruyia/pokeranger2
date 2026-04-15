@@ -9,8 +9,14 @@
 #include "sub_02044440.hpp"
 #include "sub_02046D40.hpp"
 
+#define ALIGN_MASK(a)    ((a) - 1)
+#define ALIGN_BYTE(n, a) (((u32)(n) + ALIGN_MASK(a)) & ~ALIGN_MASK(a))
+
 extern "C" {
 void sub_0201002C(void);
+
+extern void SDK_MAIN_ARENA_LO(void);
+extern u32 currentOverlayID;
 
 extern UnkClass_0208F300 MAIN_BSS_0208F300;
 }
@@ -105,4 +111,48 @@ void operator delete(void *ptr)
 void operator delete[](void *ptr)
 {
     Heap_Free(ptr);
+}
+
+void Overlay_LoadByID(u32 id, BOOL arg1)
+{
+    BOOL res = TRUE;
+
+    if (id != currentOverlayID) {
+        if (currentOverlayID != -1) {
+            FS_UnloadOverlay(MI_PROCESSOR_ARM9, currentOverlayID);
+            currentOverlayID = -1;
+        }
+
+        FS_SetDefaultDMA(FS_DMA_NOT_USE);
+        res = FS_LoadOverlay(MI_PROCESSOR_ARM9, id);
+
+        if (res) {
+            currentOverlayID = id;
+        }
+    }
+
+    if (!res) {
+        return;
+    }
+
+    FSOverlayInfo overlayInfo;
+    res = FS_LoadOverlayInfo(&overlayInfo, MI_PROCESSOR_ARM9, id);
+
+    if (!res) {
+        return;
+    }
+
+    u8 *v0 = (u8 *)ALIGN_BYTE((u32)FS_GetOverlayAddress(&overlayInfo) + FS_GetOverlayTotalSize(&overlayInfo), 16);
+
+    if (!arg1) {
+        return;
+    }
+
+    s32 v1 = ((u32)SDK_MAIN_ARENA_LO - (u32)v0) & ~0x7F;
+
+    if (v1 <= 0) {
+        return;
+    }
+
+    Heap_InitOverlay(v0, v1);
 }

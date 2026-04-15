@@ -29,11 +29,11 @@ void *Heap_Alloc(size_t size)
         return ptr;
     }
 
-    if (sHeapHandles.temporary == NULL) {
+    if (sHeapHandles.overlay == NULL) {
         return ptr;
     }
 
-    return NNS_FndAllocFromExpHeapEx(sHeapHandles.temporary, size, ALLOC_ALIGNMENT);
+    return NNS_FndAllocFromExpHeapEx(sHeapHandles.overlay, size, ALLOC_ALIGNMENT);
 }
 
 void *Heap_AllocWithAlignment(size_t size, u32 alignment)
@@ -44,11 +44,11 @@ void *Heap_AllocWithAlignment(size_t size, u32 alignment)
         return ptr;
     }
 
-    if (sHeapHandles.temporary == NULL) {
+    if (sHeapHandles.overlay == NULL) {
         return ptr;
     }
 
-    return NNS_FndAllocFromExpHeapEx(sHeapHandles.temporary, size, alignment);
+    return NNS_FndAllocFromExpHeapEx(sHeapHandles.overlay, size, alignment);
 }
 
 void Heap_Free(void *ptr)
@@ -56,7 +56,7 @@ void Heap_Free(void *ptr)
     if ((u32)ptr >= (u32)SDK_MAIN_ARENA_LO) {
         NNS_FndFreeToExpHeap(sHeapHandles.main, ptr);
     } else {
-        NNS_FndFreeToExpHeap(sHeapHandles.temporary, ptr);
+        NNS_FndFreeToExpHeap(sHeapHandles.overlay, ptr);
     }
 }
 
@@ -80,22 +80,22 @@ NNSFndHeapHandle *Heap_GetSecondaryHandle(void)
     return &sHeapHandles.secondary;
 }
 
-void Heap_InitTemporary(void *ptr, size_t size)
+void Heap_InitOverlay(void *ptr, size_t size)
 {
-    Heap_DestroyTemporary();
+    Heap_DestroyOverlay();
 
     if (ptr == NULL || size == 0) {
         return;
     }
 
-    sHeapHandles.temporary = NNS_FndCreateExpHeapEx(ptr, size, NNS_FND_HEAP_OPT_0_CLEAR);
+    sHeapHandles.overlay = NNS_FndCreateExpHeapEx(ptr, size, NNS_FND_HEAP_OPT_0_CLEAR);
 }
 
-void Heap_DestroyTemporary(void)
+void Heap_DestroyOverlay(void)
 {
-    if (sHeapHandles.temporary != NULL) {
-        NNS_FndDestroyExpHeap(sHeapHandles.temporary);
+    if (sHeapHandles.overlay != NULL) {
+        NNS_FndDestroyExpHeap(sHeapHandles.overlay);
     }
 
-    sHeapHandles.temporary = NULL;
+    sHeapHandles.overlay = NULL;
 }

@@ -7,7 +7,7 @@
 struct HeapHandles {
     NNSFndHeapHandle main;
     NNSFndHeapHandle secondary;
-    NNSFndHeapHandle temporary;
+    NNSFndHeapHandle overlay;
 };
 
 void Heap_Init(u32 secondarySize);
@@ -17,7 +17,7 @@ NNSFndHeapHandle *Heap_GetMainHandle(void);
 void *Heap_AllocSecondary(size_t size);
 void Heap_FreeSecondary(void *ptr);
 NNSFndHeapHandle *Heap_GetSecondaryHandle(void);
-void Heap_InitTemporary(void *ptr, size_t size);
-void Heap_DestroyTemporary(void);
+void Heap_InitOverlay(void *ptr, size_t size);
+void Heap_DestroyOverlay(void);
 
 #endif // POKERANGER2_HEAP_HPP

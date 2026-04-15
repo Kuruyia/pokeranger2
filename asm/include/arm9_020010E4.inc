@@ -7,8 +7,8 @@
 .public ptr_FUN_02043134_0208e154
 .public ptr_FUN_020439d4_0208e1b0
 .public ptr_FUN_02044154_0208e210
-.public _Z18Heap_InitTemporaryPvm
-.public _Z21Heap_DestroyTemporaryv
+.public _Z16Heap_InitOverlayPvm
+.public _Z19Heap_DestroyOverlayv
 .public sub_02007C98
 .public sub_0200FB28
 .public sub_0201002C

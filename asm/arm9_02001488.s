@@ -4,75 +4,12 @@
 
     .text
 
-	arm_func_start Overlay_LoadByID
-Overlay_LoadByID: ; 0x02001488
-	stmdb sp!, {r4, r5, lr}
-	sub sp, sp, #0x2c
-	ldr r2, _02001560 ; =currentOverlayID
-	mov r4, r1
-	ldr r1, [r2]
-	mov r5, r0
-	cmp r5, r1
-	mov r0, #1
-	beq _020014EC
-	sub r0, r0, #2
-	cmp r1, r0
-	beq _020014CC
-	mov r0, #0
-	bl FS_UnloadOverlay
-	ldr r0, _02001560 ; =currentOverlayID
-	mvn r1, #0
-	str r1, [r0]
-	arm_func_end Overlay_LoadByID
-_020014CC:
-	mvn r0, #0
-	bl FS_SetDefaultDMA
-	mov r1, r5
-	mov r0, #0
-	bl FS_LoadOverlay
-	cmp r0, #0
-	ldrne r1, _02001560 ; =currentOverlayID
-	strne r5, [r1]
-_020014EC:
-	cmp r0, #0
-	addeq sp, sp, #0x2c
-	ldmeqia sp!, {r4, r5, pc}
-	add r0, sp, #0
-	mov r2, r5
-	mov r1, #0
-	bl FS_LoadOverlayInfo
-	cmp r0, #0
-	addeq sp, sp, #0x2c
-	ldmeqia sp!, {r4, r5, pc}
-	ldr r1, [sp, #8]
-	ldr r0, [sp, #0xc]
-	ldr r2, [sp, #4]
-	add r0, r1, r0
-	add r0, r2, r0
-	add r0, r0, #0xf
-	cmp r4, #0
-	addeq sp, sp, #0x2c
-	bic r0, r0, #0xf
-	ldmeqia sp!, {r4, r5, pc}
-	ldr r1, _02001564 ; =0x0217B3A0
-	sub r1, r1, r0
-	bic r1, r1, #0x7f
-	cmp r1, #0
-	addle sp, sp, #0x2c
-	ldmleia sp!, {r4, r5, pc}
-	bl _Z18Heap_InitTemporaryPvm
-	add sp, sp, #0x2c
-	ldmia sp!, {r4, r5, pc}
-	.align 2, 0
-_02001560: .word currentOverlayID
-_02001564: .word 0x0217B3A0
-
 	arm_func_start Scene_LoadByID
 Scene_LoadByID: ; 0x02001568
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r4, r0
 	mov r5, r1
-	bl _Z21Heap_DestroyTemporaryv
+	bl _Z19Heap_DestroyOverlayv
 	cmp r4, #0x21
 	addls pc, pc, r4, lsl #2
 	b _02001B54
@@ -115,7 +52,7 @@ _02001584: ; jump table
 _0200160C:
 	ldr r0, _02001B84 ; =0x00000001
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	ldr r0, _02001B88 ; =0x000012E8
 	bl _Znwm
 	movs r4, r0
@@ -127,7 +64,7 @@ _0200160C:
 _02001638:
 	ldr r0, _02001B8C ; =0x00000000
 	mov r1, #0
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	bl ov0_02124BD4
 	mov r0, #0x154
 	bl _Znwm
@@ -140,7 +77,7 @@ _02001638:
 _02001668:
 	ldr r0, _02001B90 ; =0x00000004
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x30
 	bl _Znwm
 	movs r4, r0
@@ -152,7 +89,7 @@ _02001668:
 _02001694:
 	ldr r0, _02001B94 ; =0x00000007
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0xc
 	bl _Znwm
 	movs r4, r0
@@ -164,7 +101,7 @@ _02001694:
 _020016C0:
 	ldr r0, _02001B98 ; =0x00000008
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0xc
 	bl _Znwm
 	movs r4, r0
@@ -176,7 +113,7 @@ _020016C0:
 _020016EC:
 	ldr r0, _02001B9C ; =0x00000009
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0xc
 	bl _Znwm
 	movs r4, r0
@@ -188,7 +125,7 @@ _020016EC:
 _02001718:
 	ldr r0, _02001BA0 ; =0x00000003
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x100
 	bl _Znwm
 	movs r4, r0
@@ -200,7 +137,7 @@ _02001718:
 _02001744:
 	ldr r0, _02001BA0 ; =0x00000003
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x3c
 	bl _Znwm
 	movs r4, r0
@@ -212,7 +149,7 @@ _02001744:
 _02001770:
 	ldr r0, _02001BA0 ; =0x00000003
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x38
 	bl _Znwm
 	movs r4, r0
@@ -224,7 +161,7 @@ _02001770:
 _0200179C:
 	ldr r0, _02001BA4 ; =0x0000000B
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0xc
 	bl _Znwm
 	movs r4, r0
@@ -236,7 +173,7 @@ _0200179C:
 _020017C8:
 	ldr r0, _02001BA4 ; =0x0000000B
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0xc
 	bl _Znwm
 	movs r4, r0
@@ -248,7 +185,7 @@ _020017C8:
 _020017F4:
 	ldr r0, _02001BA8 ; =0x00000005
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x24
 	bl _Znwm
 	movs r4, r0
@@ -260,7 +197,7 @@ _020017F4:
 _02001820:
 	ldr r0, _02001BAC ; =0x00000006
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x8c
 	bl _Znwm
 	movs r4, r0
@@ -272,7 +209,7 @@ _02001820:
 _0200184C:
 	ldr r0, _02001BB0 ; =0x00000002
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #8
 	bl _Znwm
 	movs r4, r0
@@ -284,7 +221,7 @@ _0200184C:
 _02001878:
 	ldr r0, _02001BB8 ; =0x0000000A
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #8
 	bl _Znwm
 	movs r4, r0
@@ -296,7 +233,7 @@ _02001878:
 _020018A4:
 	ldr r0, _02001BA4 ; =0x0000000B
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x28
 	bl _Znwm
 	movs r4, r0
@@ -307,7 +244,7 @@ _020018A4:
 _020018CC:
 	ldr r0, _02001BA0 ; =0x00000003
 	mov r1, #0
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	ldr r0, _02001BC0 ; =0x000014D4
 	bl _Znwm
 	movs r4, r0
@@ -318,7 +255,7 @@ _020018CC:
 _020018F4:
 	ldr r0, _02001BC4 ; =0x00000013
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x7c
 	bl _Znwm
 	movs r4, r0
@@ -329,7 +266,7 @@ _020018F4:
 _0200191C:
 	ldr r0, _02001BA0 ; =0x00000003
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x1e0
 	bl _Znwm
 	movs r4, r0
@@ -340,7 +277,7 @@ _0200191C:
 _02001944:
 	ldr r0, _02001BC8 ; =0x00000014
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x10
 	bl _Znwm
 	movs r4, r0
@@ -351,7 +288,7 @@ _02001944:
 _0200196C:
 	ldr r0, _02001BCC ; =0x00000015
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x20
 	bl _Znwm
 	movs r4, r0
@@ -362,7 +299,7 @@ _0200196C:
 _02001994:
 	ldr r0, _02001BD0 ; =0x00000016
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x3b0
 	bl _Znwm
 	movs r4, r0
@@ -373,7 +310,7 @@ _02001994:
 _020019BC:
 	ldr r0, _02001BD4 ; =0x00000017
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x68
 	bl _Znwm
 	movs r4, r0
@@ -384,7 +321,7 @@ _020019BC:
 _020019E4:
 	ldr r0, _02001BD8 ; =0x00000018
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x14
 	bl _Znwm
 	movs r4, r0
@@ -395,7 +332,7 @@ _020019E4:
 _02001A0C:
 	ldr r0, _02001BDC ; =0x00000019
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x34
 	bl _Znwm
 	movs r4, r0
@@ -406,7 +343,7 @@ _02001A0C:
 _02001A34:
 	ldr r0, _02001BE0 ; =0x0000001A
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0x24
 	bl _Znwm
 	movs r4, r0
@@ -450,7 +387,7 @@ _02001AAC:
 _02001AD4:
 	ldr r0, _02001BF0 ; =0x0000001B
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	ldr r0, _02001BF4 ; =0x00001664
 	bl _Znwm
 	movs r4, r0
@@ -461,7 +398,7 @@ _02001AD4:
 _02001AFC:
 	ldr r0, _02001BF8 ; =0x0000001C
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #0xc
 	bl _Znwm
 	movs r4, r0
@@ -473,7 +410,7 @@ _02001AFC:
 _02001B28:
 	ldr r0, _02001BFC ; =0x0000001D
 	mov r1, #1
-	bl Overlay_LoadByID
+	bl _Z16Overlay_LoadByIDmi
 	mov r0, #4
 	bl _Znwm
 	movs r4, r0
