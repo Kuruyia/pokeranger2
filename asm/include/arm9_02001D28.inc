@@ -4,7 +4,7 @@
 .public _Znwm
 .public sub_020010E4
 .public sub_02001210
-.public sub_02001C04
+.public _ZN17UnkClass_02001C04C1Ev
 .public PTR_LAB_0208a3dc
 .public PTR_LAB_0208a40c
 .public s_BGF_0208a418

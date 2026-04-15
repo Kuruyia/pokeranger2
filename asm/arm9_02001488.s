@@ -466,14 +466,3 @@ _02001BF4: .word 0x00001664
 _02001BF8: .word 0x0000001C
 _02001BFC: .word 0x0000001D
 CCardAccessErrorScene_vtable_ptr: .word CCardAccessErrorScene_vtable
-
-	arm_func_start sub_02001C04
-sub_02001C04: ; 0x02001C04
-	mov r1, #0x18
-	strb r1, [r0, #8]
-	mov r1, #4
-	strb r1, [r0, #9]
-	mov r1, #0
-	strb r1, [r0, #0x2a]
-	bx lr
-	arm_func_end sub_02001C04

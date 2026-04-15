@@ -1,5 +1,12 @@
 #include "UnkClass_02001C04.hpp"
 
+UnkClass_02001C04::UnkClass_02001C04()
+    : unk_0008(24)
+    , unk_0009(4)
+    , unk_002A(0)
+{
+}
+
 void UnkClass_02001C04::sub_02001C20()
 {
     u16 v0;

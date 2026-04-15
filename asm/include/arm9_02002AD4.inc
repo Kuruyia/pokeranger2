@@ -746,7 +746,7 @@
 .public strlen
 .public sub_020010E4
 .public sub_02001210
-.public sub_02001C04
+.public _ZN17UnkClass_02001C04C1Ev
 .public sub_02001D28
 .public sub_0200203C
 .public sub_0200215C

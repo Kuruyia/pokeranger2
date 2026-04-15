@@ -15777,7 +15777,7 @@ _ZN5CGameC1Ev: ; 0x0200FB50
 	bl sub_02001D28
 	cmp r0, #0
 	beq _0200FB84
-	bl sub_02001C04
+	bl _ZN17UnkClass_02001C04C1Ev
 	arm_func_end _ZN5CGameC1Ev
 _0200FB84:
 	str r0, [r4, #0x14]

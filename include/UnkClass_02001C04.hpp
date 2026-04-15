@@ -7,6 +7,7 @@
 
 class UnkClass_02001C04 {
 public:
+    UnkClass_02001C04();
     void sub_02001C20();
 
 public:
