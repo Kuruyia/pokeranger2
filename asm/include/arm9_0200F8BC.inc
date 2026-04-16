@@ -1,0 +1,9 @@
+#pragma once
+.public MAIN_BSS_020B26A0
+.public MAIN_BSS_020BA6A0
+.public PM_GetLCDPower
+.public PM_GoSleepMode
+.public PM_SetLCDPower
+.public RTC_GetDate
+.public RTC_GetTime
+.public sub_0201630C

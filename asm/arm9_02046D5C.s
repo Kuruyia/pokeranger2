@@ -282,7 +282,7 @@ sub_0208406C: ; 0x0208406C
 	mov ip, #0
 	str r0, [r3, #0xc]
 	str ip, [r3, #0x10]
-	ldr r0, _020840A4 ; =MAIN_BSS_020AF348
+	ldr r0, _020840A4 ; =sPowerManage
 	ldr r1, _020840A8 ; =0x0200FA58
 	ldr r2, _020840AC ; =MAIN_BSS_020AF33C
 	str ip, [r3, #0x14]
@@ -291,7 +291,7 @@ sub_0208406C: ; 0x0208406C
 	.align 2, 0
 _0208409C: .word ptr_FUN_0200f8ac_0208ab60
 _020840A0: .word MAIN_BSS_020AF33C
-_020840A4: .word MAIN_BSS_020AF348
+_020840A4: .word sPowerManage
 _020840A8: .word 0x0200FA58
 _020840AC: .word MAIN_BSS_020AF33C
 	arm_func_end sub_0208406C
@@ -2101,8 +2101,8 @@ _0208AB57:
 
 	.global ptr_FUN_0200f8ac_0208ab60
 ptr_FUN_0200f8ac_0208ab60: ; 0x0208AB60
-	.word sub_0200F8AC
-	.word sub_0200F8BC
+	.word _ZN12CPowerManage4InitEv
+	.word _ZN12CPowerManage12sub_0200F8BCEv
 
 	.global s_data_field_fielddata_bin_0208ab68
 s_data_field_fielddata_bin_0208ab68: ; 0x0208AB68
@@ -7335,8 +7335,8 @@ MAIN_BSS_020AF338: ; 0x020AF338
 MAIN_BSS_020AF33C: ; 0x020AF33C
     .space 0xC
 
-    .global MAIN_BSS_020AF348
-MAIN_BSS_020AF348: ; 0x020AF348
+    .global sPowerManage
+sPowerManage: ; 0x020AF348
     .space 0xC
 
     .global MAIN_BSS_020AF354

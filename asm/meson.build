@@ -4,6 +4,8 @@ pokeranger2_asm = files(
     'arm9_02001D28.s',
     'arm9_020023EC.s',
     'arm9_02002AD4.s',
+    'arm9_0200F8BC.s',
+    'arm9_0200FA0C.s',
     'arm9_0201044C.s',
     'arm9_0202B8A4.s',
     'arm9_0204439C.s',

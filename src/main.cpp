@@ -2,6 +2,7 @@
 #include <nnsys.h>
 
 #include "CGame.hpp"
+#include "CPowerManage.hpp"
 #include "UnkClass_0208F300.hpp"
 #include "constants/scene.hpp"
 #include "heap.hpp"
@@ -11,14 +12,12 @@
 #include "sub_0202B80C.hpp"
 
 extern "C" {
-void sub_0200F9E0(void);
 void sub_0200FA48(u32);
 u32 sub_0200E310(u32);
 u32 sub_0200E324(u32);
 u32 sub_0200E91C(UnkClass_0200E330 *);
 void sub_0200FA2C(u32);
 void sub_0200FA0C(u32);
-void sub_0200F9F8(void);
 CScene *sub_020010F8(void);
 void sub_020101B4(CGame *, char *);
 void sub_020102E8(CGame *);
@@ -67,7 +66,7 @@ void NitroMain(void)
     sub_02001184();
     v3 = Scene_LoadByID(SCENE_RANGER_NET_AGB, MAIN_BSS_0208F300.game);
     v4 = SCENE_NONE;
-    sub_0200F9E0();
+    CPowerManage::sub_0200F9E0();
     sub_0200FA48(0);
 
     v6 = v4;
@@ -93,7 +92,7 @@ void NitroMain(void)
             sub_0200FA0C(1);
         }
 
-        sub_0200F9F8();
+        CPowerManage::sub_0200F9F8();
         MAIN_BSS_0208F300.game->unk_0014->sub_02001C20();
         MAIN_BSS_0208F300.game->unk_0018->func2();
         MAIN_BSS_0208F300.game->unk_001C->func2();

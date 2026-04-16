@@ -54,8 +54,8 @@
 .public sub_02007CD4
 .public sub_02007CE0
 .public sub_020091D4
-.public sub_0200F8AC
-.public sub_0200F8BC
+.public _ZN12CPowerManage4InitEv
+.public _ZN12CPowerManage12sub_0200F8BCEv
 .public sub_02010CC0
 .public sub_02010EC8
 .public sub_02010ED4
