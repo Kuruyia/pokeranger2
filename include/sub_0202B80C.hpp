@@ -1,0 +1,8 @@
+#ifndef POKERANGER2_SUB_0202B80C_HPP
+#define POKERANGER2_SUB_0202B80C_HPP
+
+#include <nitro.h>
+
+BOOL sub_0202B80C(void);
+
+#endif // POKERANGER2_SUB_0202B80C_HPP

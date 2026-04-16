@@ -7,10 +7,9 @@
 #include "heap.hpp"
 #include "overlay_manager.hpp"
 #include "sub_02001248.hpp"
+#include "sub_0202B80C.hpp"
 
 extern "C" {
-void *sub_020101A8(u32);
-void sub_0202B80C(void);
 void sub_02001184(void);
 void sub_0200F9E0(void);
 void sub_0200FA48(u32);

@@ -7639,8 +7639,8 @@ MAIN_BSS_0210C228: ; 0x0210C228
 MAIN_BSS_0210CA28: ; 0x0210CA28
     .space 0x8
 
-    .global MAIN_BSS_0210CA30
-MAIN_BSS_0210CA30: ; 0x0210CA30
+    .global sCardBackupInfo
+sCardBackupInfo: ; 0x0210CA30
     .space 0x8
 
     .global MAIN_BSS_0210CA38
