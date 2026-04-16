@@ -26,7 +26,7 @@ jobs:
           pip install --user pyelftools
 
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Install Metroskrew
         run: sudo make skrew
@@ -46,7 +46,7 @@ jobs:
 
       - name: Checkout xMAP
         if: ${{ github.event_name == 'push' }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: 'xmap'
           ref: 'xmap'
@@ -60,7 +60,7 @@ jobs:
 
       - name: Update xMAP
         if: ${{ github.event_name == 'push' }}
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           cwd: "./xmap"
           add: "*.xMAP"
@@ -73,7 +73,7 @@ jobs:
 
       - name: Post error upload
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: pokeranger2-failure-${{ github.run_id }}
           path: failure.tar.gz
