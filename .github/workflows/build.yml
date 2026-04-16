@@ -23,6 +23,7 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y --no-install-recommends bison flex g++ gcc-arm-none-eabi git make ninja-build pkg-config python3 wget xz-utils
+          pip install --user pyelftools
 
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -35,6 +36,13 @@ jobs:
 
       - name: Build Repo
         run: make check
+
+      - name: Generate job summary
+        run: |
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          .github/calcrom/calcrom.py "$BUILD" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+        continue-on-error: true
 
       - name: Checkout xMAP
         if: ${{ github.event_name == 'push' }}
