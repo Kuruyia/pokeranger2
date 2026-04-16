@@ -16,6 +16,8 @@ Static main
     Library libdwcaccount.a (.version)
     Object main.nef.p/src_main.cpp.o
     Object main.nef.p/asm_arm9_020010E4.s.o
+    Object main.nef.p/src_sub_02001184.cpp.o
+    Object main.nef.p/asm_arm9_0200120C.s.o
     Object main.nef.p/src_sub_02001248.cpp.o
     Object main.nef.p/src_overlay_manager.cpp.o
     Object main.nef.p/src_UnkClass_02001C04.cpp.o
@@ -24,6 +26,8 @@ Static main
     Object main.nef.p/asm_arm9_020023EC.s.o
     Object main.nef.p/src_UnkClass_020023EC.cpp.o
     Object main.nef.p/asm_arm9_02002AD4.s.o
+    Object main.nef.p/src_sub_02010448.cpp.o
+    Object main.nef.p/asm_arm9_0201044C.s.o
     Object main.nef.p/src_sub_0202B80C.cpp.o
     Object main.nef.p/asm_arm9_0202B8A4.s.o
     Object main.nef.p/src_sub_0204436C.cpp.o

@@ -6,11 +6,11 @@
 #include "constants/scene.hpp"
 #include "heap.hpp"
 #include "overlay_manager.hpp"
+#include "sub_02001184.hpp"
 #include "sub_02001248.hpp"
 #include "sub_0202B80C.hpp"
 
 extern "C" {
-void sub_02001184(void);
 void sub_0200F9E0(void);
 void sub_0200FA48(u32);
 u32 sub_0200E310(u32);
@@ -23,7 +23,6 @@ CScene *sub_020010F8(void);
 void sub_020101B4(CGame *, char *);
 void sub_020102E8(CGame *);
 void sub_0201044C(CGame *);
-void sub_02001184(void);
 void sub_02008D7C(u32 *);
 void sub_0201028C(CGame *);
 void _ZN5CGameC1Ev(CGame *);

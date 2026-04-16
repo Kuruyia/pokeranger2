@@ -1,0 +1,8 @@
+#ifndef POKERANGER2_SUB_02010448_HPP
+#define POKERANGER2_SUB_02010448_HPP
+
+#include "CGame.hpp"
+
+void sub_02010448(CGame *game);
+
+#endif // POKERANGER2_SUB_02010448_HPP

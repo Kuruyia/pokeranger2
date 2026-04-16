@@ -1,6 +1,8 @@
 pokeranger2_cxx = files(
     'heap.cpp',
     'main.cpp',
+    'sub_02010448.cpp',
+    'sub_02001184.cpp',
     'sub_0202B80C.cpp',
     'overlay_manager.cpp',
     'sub_02046D40.cpp',
