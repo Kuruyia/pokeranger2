@@ -32,11 +32,6 @@
 .idea/
 cmake-build-debug/
 
-# Generated files
-*.4bpp
-*.lz
-*.gbapal
-
 # For asmdiff
 */baserom.*
 *.dump
