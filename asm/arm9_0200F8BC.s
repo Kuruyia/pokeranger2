@@ -37,7 +37,7 @@ _0200F910:
 	ldr r0, _0200F9D8 ; =MAIN_BSS_020B26A0
 	add r1, sp, #0x10
 	add r2, sp, #0
-	bl sub_0201630C
+	bl _ZN17UnkClass_020B26A012sub_0201630CEP7RTCTimeP7RTCDate
 	mov r1, #0
 	mov r2, r1
 	mov r0, #0xc

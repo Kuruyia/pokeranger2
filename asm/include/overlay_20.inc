@@ -17,7 +17,7 @@
 .public sub_0200E0E0
 .public sub_0200E310
 .public sub_02010400
-.public sub_0201630C
+.public _ZN17UnkClass_020B26A012sub_0201630CEP7RTCTimeP7RTCDate
 .public sub_02027FE8
 .public sub_02028054
 .public sub_02028220

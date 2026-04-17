@@ -1,6 +1,7 @@
 pokeranger2_cxx = files(
     'heap.cpp',
     'main.cpp',
+    'UnkClass_020B26A0.cpp',
     'CPowerManage.cpp',
     'CPowerManage_2.cpp',
     'sub_02010448.cpp',

@@ -117,7 +117,7 @@ void NitroMain(void)
 
             DAT_0208aaf8 = 0;
 
-            v13 = v3->func8();
+            v13 = v3->getSceneId();
             MAIN_BSS_0208F300.game->unk_0008 = v13;
             MAIN_BSS_0208F300.game->unk_0010 = v4;
 

@@ -17,7 +17,7 @@ public:
     virtual void func5();
     virtual void func6();
     virtual void func7();
-    virtual u32 func8();
+    virtual u32 getSceneId();
 };
 
 STATIC_SIZE_ASSERT(CCardAccessErrorScene, 0x4);

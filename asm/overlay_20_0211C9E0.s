@@ -90,7 +90,7 @@ _0211CA68:
 	ldr r0, _0211CCF8 ; =MAIN_BSS_020B26A0
 	add r1, sp, #0x18
 	add r2, sp, #8
-	bl sub_0201630C
+	bl _ZN17UnkClass_020B26A012sub_0201630CEP7RTCTimeP7RTCDate
 	ldr r0, _0211CCF4 ; =MAIN_BSS_0208F304
 	ldr r0, [r0]
 	bl sub_02010400

@@ -2214,7 +2214,7 @@ _0211E8F4:
 	ldr r0, _0211E954 ; =MAIN_BSS_020B26A0
 	add r1, sp, #0x10
 	add r2, sp, #0
-	bl sub_0201630C
+	bl _ZN17UnkClass_020B26A012sub_0201630CEP7RTCTimeP7RTCDate
 	ldr r0, [r4, #4]
 	ldr r0, [r0, #0x10]
 	cmp r0, #0
@@ -2355,7 +2355,7 @@ CFieldScene_ov0_0211EA94: ; 0x0211EA94
 	ldr r0, _0211FA7C ; =MAIN_BSS_020B26A0
 	add r1, sp, #0x20c
 	add r2, sp, #0x1fc
-	bl sub_0201630C
+	bl _ZN17UnkClass_020B26A012sub_0201630CEP7RTCTimeP7RTCDate
 	add sp, sp, #0x218
 	mov r0, #0x22
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}

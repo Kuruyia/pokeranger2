@@ -179,7 +179,7 @@
 .public sub_0201621C
 .public sub_02016268
 .public sub_020162BC
-.public sub_0201630C
+.public _ZN17UnkClass_020B26A012sub_0201630CEP7RTCTimeP7RTCDate
 .public sub_0201668C
 .public LogInfo
 .public sub_02016DA4

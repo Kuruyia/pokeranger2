@@ -17,7 +17,7 @@ public:
     virtual void func5();
     virtual void func6();
     virtual void func7();
-    virtual u32 func8();
+    virtual u32 getSceneId();
 
 public:
     u8 unk_0004[0x1C];

@@ -32,6 +32,8 @@ Static main
     Object main.nef.p/asm_arm9_0200FA0C.s.o
     Object main.nef.p/src_sub_02010448.cpp.o
     Object main.nef.p/asm_arm9_0201044C.s.o
+    Object main.nef.p/src_UnkClass_020B26A0.cpp.o
+    Object main.nef.p/asm_arm9_0201668C.s.o
     Object main.nef.p/src_sub_0202B80C.cpp.o
     Object main.nef.p/asm_arm9_0202B8A4.s.o
     Object main.nef.p/src_sub_0204436C.cpp.o

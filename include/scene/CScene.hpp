@@ -16,7 +16,7 @@ public:
     virtual void func5();
     virtual void func6();
     virtual void func7();
-    virtual u32 func8();
+    virtual u32 getSceneId();
 };
 
 #endif // POKERANGER2_SCENE_CSCENE_HPP

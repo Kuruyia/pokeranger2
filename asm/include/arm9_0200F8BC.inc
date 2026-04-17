@@ -6,4 +6,4 @@
 .public PM_SetLCDPower
 .public RTC_GetDate
 .public RTC_GetTime
-.public sub_0201630C
+.public _ZN17UnkClass_020B26A012sub_0201630CEP7RTCTimeP7RTCDate
