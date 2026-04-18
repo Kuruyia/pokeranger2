@@ -91,6 +91,8 @@ Overlay overlay0
 {
     After main
     Object main.nef.p/asm_overlay_00_0211C9E0.s.o
+    Object main.nef.p/src_ov0_0214F830.cpp.o
+    Object main.nef.p/asm_overlay_00_0214F904.s.o
 }
 
 Overlay overlay1
