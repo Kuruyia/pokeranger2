@@ -495,7 +495,7 @@ ov4_0211D060: ; 0x0211D060
 	ldr r1, _0211D368 ; =s_BGM_overlay_4_0211d858
 	ldr r2, _0211D36C ; =s_data_menu_ml000_bg_LZ_bin_overlay_4_0211d85c
 	str r3, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 	arm_func_end ov4_0211D060
 _0211D0A4:
@@ -507,7 +507,7 @@ _0211D0A4:
 	ldr r1, _0211D370 ; =s_BGM_ml000_NCGR_overlay_4_0211d878
 	mov r3, r2
 	str r2, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r5, r0
 _0211D0CC:
 	mov r0, #0xbc
@@ -518,7 +518,7 @@ _0211D0CC:
 	ldr r1, _0211D374 ; =s_BGM_ml000_NCLR_overlay_4_0211d888
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r6, r0
 _0211D0F4:
 	ldr r0, [r8, #0x14]
@@ -538,7 +538,7 @@ _0211D114:
 	ldr r1, _0211D378 ; =s_BGM_ml000_00_2_NSCR_overlay_4_0211d898
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 	b _0211D194
 _0211D140:
@@ -550,7 +550,7 @@ _0211D140:
 	ldr r1, _0211D37C ; =s_BGM_ml000_00_1_NSCR_overlay_4_0211d8ac
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 	b _0211D194
 _0211D16C:
@@ -562,7 +562,7 @@ _0211D16C:
 	ldr r1, _0211D380 ; =s_BGM_ml000_00_0_NSCR_overlay_4_0211d8c0
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 _0211D194:
 	mov r1, #0
@@ -600,7 +600,7 @@ _0211D208:
 	cmp r4, #0
 	beq _0211D220
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 _0211D220:
@@ -616,7 +616,7 @@ _0211D220:
 	ldr r1, _0211D368 ; =s_BGM_overlay_4_0211d858
 	ldr r2, _0211D384 ; =s_data_menu_mnd000_bg_LZ_bin_overlay_4_0211d8d4
 	str r3, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 _0211D258:
 	mov r0, #0xbc
@@ -627,7 +627,7 @@ _0211D258:
 	ldr r1, _0211D388 ; =s_BGM_mnd000_NCGR_overlay_4_0211d8f0
 	mov r3, r2
 	str r2, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r5, r0
 _0211D280:
 	mov r0, #0xbc
@@ -638,7 +638,7 @@ _0211D280:
 	ldr r1, _0211D38C ; =s_BGM_mnd000_NCLR_overlay_4_0211d900
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r6, r0
 _0211D2A8:
 	mov r0, #0xbc
@@ -649,7 +649,7 @@ _0211D2A8:
 	ldr r1, _0211D390 ; =s_BGM_mnd000_00_NSCR_overlay_4_0211d910
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 _0211D2D0:
 	mov r1, #0
@@ -688,7 +688,7 @@ _0211D344:
 	addeq sp, sp, #0x10
 	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	add sp, sp, #0x10

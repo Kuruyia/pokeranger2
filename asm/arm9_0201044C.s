@@ -1605,7 +1605,7 @@ _020115C0:
 	ldr r0, [r4, #0x58]
 	bl sub_020342C0
 	ldr r0, [r4, #0x54]
-	bl sub_0200B36C
+	bl _ZN17UnkClass_020091E812sub_0200B36CEv
 	ldmia sp!, {r4, pc}
 
 	arm_func_start sub_020115F8
@@ -1624,7 +1624,7 @@ _02011610:
 	ldr r0, [r4, #0x58]
 	bl sub_020342C0
 	ldr r0, [r4, #0x54]
-	bl sub_0200B36C
+	bl _ZN17UnkClass_020091E812sub_0200B36CEv
 	ldmia sp!, {r4, pc}
 
 	arm_func_start sub_02011630
@@ -3879,7 +3879,7 @@ _02013350:
 	add r1, sp, #0x10
 	add r2, sp, #0x134
 	str r7, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 _02013390:
 	cmp r0, #0
 	addeq sp, sp, #0x1f4
@@ -4222,7 +4222,7 @@ _02013864:
 	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	beq _02013890
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 _02013890:
@@ -4329,7 +4329,7 @@ _020139BC:
 	add r1, sp, #0x10
 	add r2, sp, #0xd4
 	str r4, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 _02013A00:
 	cmp r0, #0
 	addeq sp, sp, #0x194
@@ -4506,7 +4506,7 @@ _02013C78:
 	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	beq _02013CA4
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 _02013CA4:
@@ -4870,7 +4870,7 @@ _02014170:
 	beq _020141A0
 	beq _02014198
 	mov r0, r5
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r5
 	bl _ZdlPv
 _02014198:
@@ -5331,7 +5331,7 @@ _02014714:
 	add r1, sp, #0x18
 	add r2, sp, #0x13c
 	str r8, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 _0201474C:
 	cmp r0, #0
 	addeq sp, sp, #0x1fc

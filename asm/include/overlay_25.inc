@@ -3,13 +3,13 @@
 .public _ZdlPv
 .public _Z23Heap_AllocWithAlignmentmm
 .public _Z9Heap_FreePv
-.public sub_020033B0
+.public _ZN9CNCLRFileC1EPcmmm
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02007D98
 .public sub_02008DB4
 .public sub_0200AB28
-.public sub_0200AC90
+.public _ZN17UnkClass_020091E812sub_0200AC90Ev
 .public sub_0200E0E0
 .public sub_0200E310
 .public sub_0200EB28

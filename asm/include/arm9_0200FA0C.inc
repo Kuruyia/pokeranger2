@@ -35,7 +35,7 @@
 .public sub_02008E50
 .public sub_02008E58
 .public sub_02008E68
-.public sub_020091E8
+.public _ZN17UnkClass_020091E8C1Ev
 .public sub_0200A118
 .public sub_0200C38C
 .public sub_0200CAB4

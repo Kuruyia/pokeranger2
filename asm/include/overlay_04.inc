@@ -3,12 +3,12 @@
 .public _Znam
 .public _ZdlPv
 .public _ZdaPv
-.public sub_02002AEC
-.public sub_02002B6C
+.public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+.public _ZN19CSmartNNSFndArchiveD1Ev
 .public CBinaryFileMes_ctor
-.public sub_020033B0
-.public sub_02003494
-.public sub_0200365C
+.public _ZN9CNCLRFileC1EPcmmm
+.public _ZN9CNSCRFileC1EPcmmm
+.public _ZN11CBGNCGRFileC1EPcmmm
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02008DB4

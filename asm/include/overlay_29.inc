@@ -5,11 +5,11 @@
 .public sub_02007CD4
 .public sub_02007CE0
 .public sub_02008DB4
-.public sub_020092D4
-.public sub_02009328
+.public _ZN17UnkClass_020091E812sub_020092D4Ev
+.public _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 .public sub_0200AA84
 .public sub_0200AB28
-.public sub_0200AC90
+.public _ZN17UnkClass_020091E812sub_0200AC90Ev
 .public sub_0200E0E0
 .public sub_020345D4
 .public GX_DispOn

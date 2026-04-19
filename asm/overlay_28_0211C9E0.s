@@ -444,14 +444,14 @@ ov28_0211CEDC: ; 0x0211CEDC
 	add r0, sp, #0x10
 	add r2, sp, #0x1f4
 	str ip, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	ldr r0, [sp, #0x78]
 	cmp r0, #0
 	ldrne r0, [r0, #0x4c]
 	cmpne r0, #0
 	bne _0211CF8C
 	add r0, sp, #0x10
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, #0
 	b _0211D00C
 	arm_func_end ov28_0211CEDC
@@ -474,7 +474,7 @@ _0211CF8C:
 	add r0, sp, #0xdc
 	bl CBinaryFile_complete_obj_dtor
 	add r0, sp, #0x10
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, #0
 	b _0211D00C
 _0211CFE0:
@@ -487,7 +487,7 @@ _0211CFE0:
 	add r0, sp, #0xdc
 	bl CBinaryFile_complete_obj_dtor
 	add r0, sp, #0x10
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, #1
 _0211D00C:
 	cmp r0, #0

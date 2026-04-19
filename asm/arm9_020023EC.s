@@ -46,7 +46,7 @@ sub_02002434: ; 0x02002434
 	ldr r1, _020027B4 ; =s_BGF_0208a418
 	ldr r2, _020027B8 ; =s_data_system_BGFontLZ_bin_0208a41c
 	str r6, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r6, r0
 	arm_func_end sub_02002434
 _02002484:
@@ -59,7 +59,7 @@ _02002484:
 	ldr r1, _020027BC ; =s_BGF_BGFontNCGRLZ_bin_0208a438
 	mov r3, r2
 	str r7, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r7, r0
 _020024B0:
 	mov r0, #0xbc
@@ -71,7 +71,7 @@ _020024B0:
 	ldr r1, _020027C0 ; =s_BGF_BGFontNSCRLZ_bin_0208a450
 	mov r3, r2
 	str r8, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r8, r0
 _020024DC:
 	mov r0, #0xbc
@@ -83,7 +83,7 @@ _020024DC:
 	ldr r1, _020027C4 ; =s_BGF_BGFontNCLRLZ_bin_0208a468
 	mov r3, r2
 	str sb, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov sb, r0
 _02002508:
 	ldr r0, [sb, #0xb8]
@@ -265,7 +265,7 @@ _02002790:
 	addeq sp, sp, #0x34
 	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	mov r0, r6
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r6
 	bl _ZdlPv
 	add sp, sp, #0x34

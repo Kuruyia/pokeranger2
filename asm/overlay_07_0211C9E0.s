@@ -954,11 +954,11 @@ ov7_0211D62C: ; 0x0211D62C
 	ldr r0, [r4, #0x27c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AC90
+	bl _ZN17UnkClass_020091E812sub_0200AC90Ev
 	ldr r0, [r4, #0x27c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_020092D4
+	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	ldmia sp!, {r4, pc}
 	arm_func_end ov7_0211D62C
 
@@ -1205,7 +1205,7 @@ _0211D9A0:
 	ldr r1, [r4, #0x14]
 	ldr r2, [r4, #0x18]
 	add r3, r3, #0xc
-	bl sub_02009328
+	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 	ldr r0, [sl, #0x27c]
 	mov r1, #0
 	add r0, r0, #0x1000

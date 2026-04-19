@@ -3380,14 +3380,14 @@ ov22_0211F7B8: ; 0x0211F7B8
 	add r0, sp, #0x10
 	mov r2, r5
 	str ip, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	ldr r0, [sp, #0x78]
 	cmp r0, #0
 	ldrne r0, [r0, #0x4c]
 	cmpne r0, #0
 	bne _0211F81C
 	add r0, sp, #0x10
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	add sp, sp, #0x194
 	ldmia sp!, {r4, r5, pc}
 	arm_func_end ov22_0211F7B8
@@ -3410,7 +3410,7 @@ _0211F81C:
 	add r0, sp, #0xdc
 	bl CBinaryFile_complete_obj_dtor
 	add r0, sp, #0x10
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	add sp, sp, #0x194
 	ldmia sp!, {r4, r5, pc}
 _0211F870:
@@ -3423,7 +3423,7 @@ _0211F870:
 	add r0, sp, #0xdc
 	bl CBinaryFile_complete_obj_dtor
 	add r0, sp, #0x10
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	add sp, sp, #0x194
 	ldmia sp!, {r4, r5, pc}
 	.align 2, 0
@@ -5260,7 +5260,7 @@ ov22_021210B8: ; 0x021210B8
 	add r0, sp, #4
 	str r3, [sp]
 	mov r2, #1
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	ldr r0, [sp, #0xbc]
 	mov r1, #0x20
 	ldr r0, [r0, #0xc]

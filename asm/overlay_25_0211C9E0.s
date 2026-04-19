@@ -567,7 +567,7 @@ _0211D19C:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r4, r0
 _0211D1C8:
 	ldr r0, [r4, #0xb8]
@@ -761,7 +761,7 @@ _0211D470:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AC90
+	bl _ZN17UnkClass_020091E812sub_0200AC90Ev
 	ldr r5, [r4, #0x18]
 	cmp r5, #0
 	beq _0211D4AC

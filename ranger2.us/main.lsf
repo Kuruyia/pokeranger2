@@ -26,6 +26,8 @@ Static main
     Object main.nef.p/asm_arm9_020023EC.s.o
     Object main.nef.p/src_UnkClass_020023EC.cpp.o
     Object main.nef.p/asm_arm9_02002AD4.s.o
+    Object main.nef.p/src_UnkClass_020091E8.cpp.o
+    Object main.nef.p/asm_arm9_0200978C.s.o
     Object main.nef.p/src_CPowerManage.cpp.o
     Object main.nef.p/asm_arm9_0200F8BC.s.o
     Object main.nef.p/src_CPowerManage_2.cpp.o

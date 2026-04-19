@@ -314,12 +314,12 @@
 .public s_uppict_03d_00_0208bebc
 .public s_uppict_03d_0208beb0
 .public sub_02001210
-.public sub_02002AEC
-.public sub_02002B6C
+.public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+.public _ZN19CSmartNNSFndArchiveD1Ev
 .public sub_020031E8
-.public sub_020033B0
-.public sub_02003494
-.public sub_0200365C
+.public _ZN9CNCLRFileC1EPcmmm
+.public _ZN9CNSCRFileC1EPcmmm
+.public _ZN11CBGNCGRFileC1EPcmmm
 .public sub_02003718
 .public sub_0200372C
 .public sub_02003788

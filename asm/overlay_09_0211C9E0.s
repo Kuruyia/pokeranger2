@@ -542,11 +542,11 @@ _0211D054:
 	ldr r0, [r4, #0x54]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AC90
+	bl _ZN17UnkClass_020091E812sub_0200AC90Ev
 	ldr r0, [r4, #0x54]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_020092D4
+	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	ldmia sp!, {r3, r4, r5, pc}
 
 	arm_func_start ov9_0211D0A0
@@ -622,7 +622,7 @@ ov9_0211D0CC: ; 0x0211D0CC
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl sub_02009328
+	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 	ldr r0, [r4, #0x54]
 	mov r1, #0
 	add r0, r0, #0x1000

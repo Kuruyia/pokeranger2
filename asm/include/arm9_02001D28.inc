@@ -15,11 +15,11 @@
 .public sHeapHandles
 .public sHeap_SecondaryHandle
 .public sub_02002AD4
-.public sub_02002AEC
-.public sub_02002B6C
-.public sub_020033B0
-.public sub_02003494
-.public sub_0200365C
+.public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+.public _ZN19CSmartNNSFndArchiveD1Ev
+.public _ZN9CNCLRFileC1EPcmmm
+.public _ZN9CNSCRFileC1EPcmmm
+.public _ZN11CBGNCGRFileC1EPcmmm
 .public sub_02007068
 .public _Z19Heap_AllocSecondarym
 .public _Z18Heap_FreeSecondaryPv

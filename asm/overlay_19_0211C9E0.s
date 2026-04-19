@@ -264,7 +264,7 @@ _0211CD34:
 	ldr r0, [r4, #0x1c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_020092D4
+	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start ov19_0211CD54
@@ -353,7 +353,7 @@ _0211CDC4:
 	ldr r1, _0211CFAC ; =s_BGD_overlay_19_0211e43c
 	ldr r2, _0211CFB0 ; =s_data_menu_mps000_bg_LZ_bin_overlay_19_0211e440
 	str r4, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 _0211CE88:
 	mov r0, #0xbc
@@ -364,7 +364,7 @@ _0211CE88:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r6, r0
 _0211CEB0:
 	mov r0, #0xbc
@@ -375,7 +375,7 @@ _0211CEB0:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r5, r0
 _0211CED8:
 	mov r0, #0xbc
@@ -386,7 +386,7 @@ _0211CED8:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 _0211CF00:
 	mov r0, #0
@@ -426,7 +426,7 @@ _0211CF78:
 	addeq sp, sp, #0x10
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	add sp, sp, #0x10
@@ -466,7 +466,7 @@ ov19_0211CFC0: ; 0x0211CFC0
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl sub_02009328
+	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 	ldr r0, [r4, #0x1c]
 	mov r1, #2
 	add r0, r0, #0x1000

@@ -59,7 +59,7 @@ ov6_0211CA6C: ; 0x0211CA6C
 	ldr r0, [r5, #0x70]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_020092D4
+	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	ldr r1, [r5, #0x88]
 	cmp r1, #0
 	beq _0211CB34
@@ -167,7 +167,7 @@ ov6_0211CBDC: ; 0x0211CBDC
 	ldr r0, [r5, #0x70]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_020092D4
+	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	ldr r1, [r5, #0x88]
 	cmp r1, #0
 	beq _0211CCA4
@@ -342,7 +342,7 @@ ov6_0211CE24: ; 0x0211CE24
 	ldr r1, [r4, #0x14]
 	ldr r2, [r4, #0x18]
 	add r3, r3, #0xc
-	bl sub_02009328
+	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 	ldr r0, [r7, #0x70]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -751,7 +751,7 @@ ov6_0211D460: ; 0x0211D460
 	ldr r1, _0211D620 ; =s_BGS_overlay_6_0211dcf0
 	ldr r2, _0211D624 ; =s_data_menu_mo000_bg_LZ_bin_overlay_6_0211dcf4
 	str r4, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 	arm_func_end ov6_0211D460
 _0211D4A0:
@@ -763,7 +763,7 @@ _0211D4A0:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r5, r0
 _0211D4C8:
 	mov r0, #0xbc
@@ -774,7 +774,7 @@ _0211D4C8:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r6, r0
 _0211D4F0:
 	mov r0, #0xbc
@@ -785,7 +785,7 @@ _0211D4F0:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 _0211D518:
 	mov r0, #0xbc
@@ -796,7 +796,7 @@ _0211D518:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r8, r0
 _0211D540:
 	mov r0, #0
@@ -854,7 +854,7 @@ _0211D5FC:
 	addeq sp, sp, #0x10
 	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	add sp, sp, #0x10
@@ -1033,7 +1033,7 @@ ov6_0211D884: ; 0x0211D884
 	ldr r0, [r0, #0x490]
 	bx ip
 	.align 2, 0
-_0211D898: .word sub_020092D4
+_0211D898: .word _ZN17UnkClass_020091E812sub_020092D4Ev
 	arm_func_end ov6_0211D884
 
 	arm_func_start ov6_0211D89C

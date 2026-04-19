@@ -5234,7 +5234,7 @@ sub_0201AB28: ; 0x0201AB28
 	mov r1, r8
 	mov r2, r7
 	str r4, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 	arm_func_end sub_0201AB28
 _0201AB78:
@@ -5315,7 +5315,7 @@ _0201AC84:
 	addeq sp, sp, #0x10
 	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	add sp, sp, #0x10
@@ -6982,7 +6982,7 @@ sub_0201C340: ; 0x0201C340
 	ldr r1, _0201C454 ; =s_TGT_0208bb74
 	ldr r2, _0201C458 ; =s_data_menu_mt000_bg_LZ_bin_0208bb58
 	str ip, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	arm_func_end sub_0201C340
 _0201C380:
 	str r0, [r4, #0x38]
@@ -6994,7 +6994,7 @@ _0201C380:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 _0201C3A8:
 	str r0, [r4, #0x3c]
 	mov r0, #0xbc
@@ -7005,7 +7005,7 @@ _0201C3A8:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 _0201C3D0:
 	str r0, [r4, #0x40]
 	mov r0, #0xbc
@@ -7016,7 +7016,7 @@ _0201C3D0:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 _0201C3F8:
 	str r0, [r4, #0x44]
 	mov r0, #0xbc
@@ -7027,7 +7027,7 @@ _0201C3F8:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 _0201C420:
 	str r0, [r4, #0x48]
 	mov r0, #0xbc
@@ -7038,7 +7038,7 @@ _0201C420:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 _0201C448:
 	str r0, [r4, #0x4c]
 	add sp, sp, #0x10
@@ -7117,7 +7117,7 @@ _0201C52C:
 	ldmeqia sp!, {r3, r4, r5, pc}
 	beq _0201C54C
 	mov r0, r5
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r5
 	bl _ZdlPv
 _0201C54C:
@@ -9338,7 +9338,7 @@ sub_0201E478: ; 0x0201E478
 	ldr r1, _0201E698 ; =s_BGS_0208bca4
 	ldr r2, _0201E69C ; =s_data_menu_mt000_bg_LZ_bin_0208bca8
 	str r4, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 	arm_func_end sub_0201E478
 _0201E4B8:
@@ -9350,7 +9350,7 @@ _0201E4B8:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r5, r0
 _0201E4E0:
 	mov r0, #0xbc
@@ -9361,7 +9361,7 @@ _0201E4E0:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r6, r0
 _0201E508:
 	mov r0, #0xbc
@@ -9372,7 +9372,7 @@ _0201E508:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 _0201E530:
 	mov r0, #0xbc
@@ -9383,7 +9383,7 @@ _0201E530:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r8, r0
 _0201E558:
 	mov r0, #0xbc
@@ -9394,7 +9394,7 @@ _0201E558:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov sb, r0
 _0201E580:
 	mov r1, #0
@@ -9467,7 +9467,7 @@ _0201E674:
 	addeq sp, sp, #0x10
 	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	add sp, sp, #0x10
@@ -9491,7 +9491,7 @@ sub_0201E6B4: ; 0x0201E6B4
 	beq _0201E6E8
 	beq _0201E6E0
 	mov r0, r5
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r5
 	bl _ZdlPv
 	arm_func_end sub_0201E6B4
@@ -9511,7 +9511,7 @@ _0201E6E8:
 	ldr r1, _0201E8A4 ; =s_PTC_0208bd20
 	ldr r2, _0201E8A8 ; =s_data_menu_mt000_bg_LZ_bin_0208bca8
 	str ip, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 _0201E71C:
 	str r0, [r4, #0x58]
 	ldr r0, [r4, #0x5c]
@@ -9533,7 +9533,7 @@ _0201E744:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 _0201E768:
 	str r0, [r4, #0x5c]
 	ldr r0, [r4, #0x60]
@@ -9555,7 +9555,7 @@ _0201E790:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 _0201E7B4:
 	str r0, [r4, #0x60]
 	ldr r0, [r4, #0x64]
@@ -9577,7 +9577,7 @@ _0201E7DC:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 _0201E800:
 	str r0, [r4, #0x64]
 	ldr r0, [r4, #0x68]
@@ -9599,7 +9599,7 @@ _0201E828:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 _0201E84C:
 	str r0, [r4, #0x68]
 	ldr r0, [r4, #0x6c]
@@ -9621,7 +9621,7 @@ _0201E874:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 _0201E898:
 	str r0, [r4, #0x6c]
 	add sp, sp, #0x10
@@ -9700,7 +9700,7 @@ _0201E97C:
 	ldmeqia sp!, {r3, r4, r5, pc}
 	beq _0201E99C
 	mov r0, r5
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r5
 	bl _ZdlPv
 _0201E99C:
@@ -11660,7 +11660,7 @@ sub_020204A8: ; 0x020204A8
 	ldmeqia sp!, {r3, r4, r5, pc}
 	beq _020204D0
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	arm_func_end sub_020204A8
@@ -11891,7 +11891,7 @@ sub_02020774: ; 0x02020774
 	mov r0, r4
 	mov r2, r5
 	str ip, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 	arm_func_end sub_02020774
 _020207C4:
@@ -11955,7 +11955,7 @@ sub_02020804: ; 0x02020804
 	cmp r6, #0
 	beq _0202089C
 	mov r0, r6
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r6
 	bl _ZdlPv
 	arm_func_end sub_02020804
@@ -12019,7 +12019,7 @@ sub_0202091C: ; 0x0202091C
 	mov r3, r5
 	mov r2, #1
 	str ip, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r7, r0
 	arm_func_end sub_0202091C
 _0202096C:
@@ -12392,7 +12392,7 @@ sub_02020E08: ; 0x02020E08
 	mov r3, r5
 	mov r2, #1
 	str ip, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r7, r0
 	arm_func_end sub_02020E08
 _02020E58:
@@ -12551,7 +12551,7 @@ sub_02020FF0: ; 0x02020FF0
 	cmp r4, #0
 	beq _02021074
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	arm_func_end sub_02020FF0
@@ -12621,7 +12621,7 @@ sub_0202110C: ; 0x0202110C
 	mov r3, r5
 	mov r2, #1
 	str sb, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r4, r0
 	arm_func_end sub_0202110C
 _0202115C:
@@ -17366,7 +17366,7 @@ _02024E0C:
 	ldr r1, _0202503C ; =s_BGS_0208bf30
 	ldr r2, _02025040 ; =s_data_menu_mc000_bg_LZ_bin_0208bf34
 	str r4, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 _02024E44:
 	mov r0, #0xbc
@@ -17377,7 +17377,7 @@ _02024E44:
 	ldr r1, _02025044 ; =s_BGS_mc000_NCGR_0208bf50
 	mov r3, r2
 	str r2, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 _02024E68:
 	str r0, [r7, #0x60]
 	mov r0, #0xbc
@@ -17388,7 +17388,7 @@ _02024E68:
 	ldr r1, _02025048 ; =s_BGS_mc000_NCLR_0208bf60
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 _02024E90:
 	str r0, [r7, #0x64]
 	mov r0, #0xbc
@@ -17399,7 +17399,7 @@ _02024E90:
 	ldr r1, _0202504C ; =s_BGS_mc000_01_NSCR_0208bf70
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 _02024EB8:
 	str r0, [r7, #0x68]
 	mov r0, #0xbc
@@ -17410,7 +17410,7 @@ _02024EB8:
 	ldr r1, _02025050 ; =s_BGS_mc000_02_NSCR_0208bf84
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 _02024EE0:
 	str r0, [r7, #0x6c]
 	mov r0, #0xbc
@@ -17421,13 +17421,13 @@ _02024EE0:
 	ldr r1, _02025054 ; =s_BGS_mc000_03_NSCR_0208bf98
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 _02024F08:
 	str r0, [r7, #0x70]
 	cmp r4, #0
 	beq _02024F24
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 _02024F24:
@@ -19288,7 +19288,7 @@ _0202699C:
 	ldr r1, _02026BFC ; =s_BGS_0208c070
 	ldr r2, _02026C00 ; =s_data_menu_mp000_bg_LZ_bin_0208c074
 	str r3, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 _020269D0:
 	str r0, [r5, #0x48]
 	b _02026BF0
@@ -19301,7 +19301,7 @@ _020269D8:
 	ldr r1, _02026C04 ; =s_BGS_mp000_NCGR_0208c090
 	mov r3, r2
 	str r2, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 _020269FC:
 	str r0, [r5, #0x4c]
 	b _02026BF0
@@ -19314,7 +19314,7 @@ _02026A04:
 	ldr r1, _02026C08 ; =s_BGS_mp000_NCLR_0208c0a0
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 _02026A28:
 	str r0, [r5, #0x50]
 	b _02026BF0
@@ -19327,7 +19327,7 @@ _02026A30:
 	ldr r1, _02026C0C ; =s_BGS_mp000_00_NSCR_0208c0b0
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r6, r0
 _02026A58:
 	mov r1, #0
@@ -19359,7 +19359,7 @@ _02026AA8:
 	ldr r1, _02026C10 ; =s_BGS_mp000_01_NSCR_0208c0c4
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r5, r0
 _02026AD0:
 	mov r2, #0
@@ -19388,7 +19388,7 @@ _02026B14:
 	ldr r1, _02026C14 ; =s_BGS_mp000_02_NSCR_0208c0d8
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r4, r0
 _02026B3C:
 	mov r2, #0
@@ -19435,7 +19435,7 @@ _02026BC4:
 	beq _02026BEC
 	beq _02026BE4
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 _02026BE4:
@@ -19472,7 +19472,7 @@ sub_02026C18: ; 0x02026C18
 	ldr r1, _02026E38 ; =s_BGS_0208c070
 	ldr r2, _02026E3C ; =s_data_menu_mp000_bg_LZ_bin_0208c074
 	str r3, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 	arm_func_end sub_02026C18
 _02026C58:
@@ -19484,7 +19484,7 @@ _02026C58:
 	ldr r1, _02026E40 ; =s_BGS_mp000_NCGR_0208c090
 	mov r3, r2
 	str r2, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r5, r0
 _02026C80:
 	mov r0, #0xbc
@@ -19495,7 +19495,7 @@ _02026C80:
 	ldr r1, _02026E44 ; =s_BGS_mp000_NCLR_0208c0a0
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r6, r0
 _02026CA8:
 	mov r0, #0xbc
@@ -19506,7 +19506,7 @@ _02026CA8:
 	ldr r1, _02026E48 ; =s_BGS_mp000_00_NSCR_0208c0b0
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 _02026CD0:
 	mov r0, #0xbc
@@ -19517,7 +19517,7 @@ _02026CD0:
 	ldr r1, _02026E4C ; =s_BGS_mp000_01_NSCR_0208c0c4
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r8, r0
 _02026CF8:
 	mov r0, #0xbc
@@ -19528,7 +19528,7 @@ _02026CF8:
 	ldr r1, _02026E50 ; =s_BGS_mp000_02_NSCR_0208c0d8
 	mov r3, r2
 	str r2, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov sb, r0
 _02026D20:
 	mov r1, #0
@@ -19601,7 +19601,7 @@ _02026E14:
 	addeq sp, sp, #0x10
 	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	add sp, sp, #0x10

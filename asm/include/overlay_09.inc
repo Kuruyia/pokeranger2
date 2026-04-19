@@ -5,14 +5,14 @@
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02008DB4
-.public sub_020092D4
-.public sub_02009328
+.public _ZN17UnkClass_020091E812sub_020092D4Ev
+.public _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 .public sub_02009ECC
 .public sub_02009FB0
 .public sub_0200AA04
 .public sub_0200AA14
 .public sub_0200AB28
-.public sub_0200AC90
+.public _ZN17UnkClass_020091E812sub_0200AC90Ev
 .public sub_0200AD34
 .public sub_0200B6A4
 .public sub_0200B6D4

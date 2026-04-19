@@ -319,7 +319,7 @@ _0200FDF8:
 	bl _Znwm
 	cmp r0, #0
 	beq _0200FE14
-	bl sub_020091E8
+	bl _ZN17UnkClass_020091E8C1Ev
 _0200FE14:
 	add r1, r4, #0x1000
 	str r0, [r1, #0x490]

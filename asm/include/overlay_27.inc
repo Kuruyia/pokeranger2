@@ -4,8 +4,8 @@
 .public _ZdlPv
 .public _ZdaPv
 .public _Z9Heap_FreePv
-.public sub_02002AEC
-.public sub_02002B6C
+.public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+.public _ZN19CSmartNNSFndArchiveD1Ev
 .public CBinaryFileMes_ctor
 .public sub_02003718
 .public sub_0200372C

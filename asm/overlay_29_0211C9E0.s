@@ -139,7 +139,7 @@ ov29_0211CB54: ; 0x0211CB54
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl sub_02009328
+	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 	ldr r0, _0211CC40 ; =MAIN_BSS_0208F304
 	mov r1, #0
 	ldr r0, [r0]
@@ -187,12 +187,12 @@ ov29_0211CC44: ; 0x0211CC44
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AC90
+	bl _ZN17UnkClass_020091E812sub_0200AC90Ev
 	ldr r0, _0211CC8C ; =MAIN_BSS_0208F304
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_020092D4
+	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0211CC8C: .word MAIN_BSS_0208F304

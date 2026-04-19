@@ -58,8 +58,8 @@
 .public s_s_s_w_0208b578
 .public s_t_03d_02d_0208b4ec
 .public strcpy
-.public sub_02002AEC
-.public sub_02002B6C
+.public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+.public _ZN19CSmartNNSFndArchiveD1Ev
 .public sub_02003108
 .public sub_020031E8
 .public sub_02005150
@@ -93,7 +93,7 @@
 .public sub_02008D38
 .public sub_0200AFC0
 .public sub_0200B21C
-.public sub_0200B36C
+.public _ZN17UnkClass_020091E812sub_0200B36CEv
 .public sub_0200C3D0
 .public sub_0200CAE0
 .public sub_0200D114

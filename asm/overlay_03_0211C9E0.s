@@ -1004,7 +1004,7 @@ _0211D7E8:
 	ldr r1, [r5, #0x14]
 	ldr r2, [r5, #0x18]
 	add r3, r3, #0x14
-	bl sub_02009328
+	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 	bl sub_02007D68
 	mov r1, #0x400
 	mov r0, sl
@@ -1678,7 +1678,7 @@ _0211E1B4:
 	ldr r0, [r5, #8]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_020092D4
+	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	ldr r0, [r5, #8]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x49c]
@@ -6979,7 +6979,7 @@ ov3_02122BCC: ; 0x02122BCC
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl sub_02009328
+	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 	mov r0, r4
 	bl ov3_021231F4
 	mov r0, r4
@@ -7287,7 +7287,7 @@ _02123030:
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl sub_02009328
+	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 	ldr r0, [r4, #0x80]
 	mov r1, #2
 	add r0, r0, #0x1000
@@ -7336,7 +7336,7 @@ ov3_02123100: ; 0x02123100
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl sub_02009328
+	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 	mov r0, r4
 	bl ov3_021231F4
 	mov r0, r4
@@ -7392,7 +7392,7 @@ ov3_021231F4: ; 0x021231F4
 	ldr r1, _021234F0 ; =s_BGU_overlay_3_0212aaf8
 	ldr r2, _021234F4 ; =s_data_menu_mnd000_bg_LZ_bin_overlay_3_0212aafc
 	str r4, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 	arm_func_end ov3_021231F4
 _02123234:
@@ -7404,7 +7404,7 @@ _02123234:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r5, r0
 _0212325C:
 	mov r0, #0xbc
@@ -7415,7 +7415,7 @@ _0212325C:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r6, r0
 _02123284:
 	mov r0, #0xbc
@@ -7426,7 +7426,7 @@ _02123284:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 _021232AC:
 	mov r1, #0
@@ -7464,7 +7464,7 @@ _02123320:
 	cmp r4, #0
 	beq _02123338
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 _02123338:
@@ -7480,7 +7480,7 @@ _02123338:
 	ldr r1, _02123504 ; =s_BGD_overlay_3_0212ab4c
 	ldr r2, _02123508 ; =s_data_menu_mni000_bg_LZ_bin_overlay_3_0212ab50
 	str r4, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 _02123370:
 	mov r0, #0xbc
@@ -7491,7 +7491,7 @@ _02123370:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r5, r0
 _02123398:
 	mov r0, #0xbc
@@ -7502,7 +7502,7 @@ _02123398:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r6, r0
 _021233C0:
 	mov r0, #0xbc
@@ -7513,7 +7513,7 @@ _021233C0:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 _021233E8:
 	mov r0, #0xbc
@@ -7524,7 +7524,7 @@ _021233E8:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r8, r0
 _02123410:
 	mov r0, #0
@@ -7582,7 +7582,7 @@ _021234CC:
 	addeq sp, sp, #0x10
 	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	add sp, sp, #0x10
@@ -8113,7 +8113,7 @@ ov3_02123C44: ; 0x02123C44
 	ldr r0, [r5, #0x80]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_020092D4
+	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	mov r6, #0
 	mov r4, r6
 	arm_func_end ov3_02123C44
@@ -8818,7 +8818,7 @@ _02124544:
 	ldr r1, _02124C38 ; =s_OPD_overlay_3_0212ad14
 	ldr r2, _02124C3C ; =s_data_opening_opdm_LZ_bin_overlay_3_0212ad18
 	add r0, sp, #0x130
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	add r0, sl, #0x22c
 	ldr r7, _02124C40 ; =DAT_overlay_3_0212ac60
 	ldr fp, _02124C44 ; =s_OPD_opdm_02d_ntft_overlay_3_0212ad34
@@ -8857,7 +8857,7 @@ _02124644:
 	add sb, sb, #0x2c
 	blt _021245F0
 	add r0, sp, #0x130
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	ldr r0, _02124C34 ; =MAIN_BSS_0208F304
 	mov r1, #1
 	ldr r0, [r0]

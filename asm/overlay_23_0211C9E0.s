@@ -1500,7 +1500,7 @@ ov23_0211DF20: ; 0x0211DF20
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl sub_02009328
+	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
 	mov r0, r4
 	bl ov23_0211E19C
 	mov r0, r4
@@ -1652,7 +1652,7 @@ _0211E180:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_020092D4
+	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _0211E198: .word MAIN_BSS_0208F304
@@ -1673,7 +1673,7 @@ ov23_0211E19C: ; 0x0211E19C
 	ldr r1, _0211E42C ; =s_BGU_overlay_23_0211f1f0
 	ldr r2, _0211E430 ; =s_data_menu_mre000_bg_LZ_bin_overlay_23_0211f1f4
 	str r4, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 	arm_func_end ov23_0211E19C
 _0211E1DC:
@@ -1685,7 +1685,7 @@ _0211E1DC:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r5, r0
 _0211E204:
 	mov r0, #0xbc
@@ -1696,7 +1696,7 @@ _0211E204:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r6, r0
 _0211E22C:
 	mov r0, #0xbc
@@ -1707,7 +1707,7 @@ _0211E22C:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 _0211E254:
 	mov r1, #0
@@ -1745,7 +1745,7 @@ _0211E2C8:
 	cmp r4, #0
 	beq _0211E2E0
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 _0211E2E0:
@@ -1761,7 +1761,7 @@ _0211E2E0:
 	ldr r1, _0211E440 ; =s_BGD_overlay_23_0211f244
 	ldr r2, _0211E444 ; =s_data_menu_mre001_bg_LZ_bin_overlay_23_0211f248
 	str r4, [sp, #0xc]
-	bl sub_02002AEC
+	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 	mov r4, r0
 _0211E318:
 	mov r0, #0xbc
@@ -1772,7 +1772,7 @@ _0211E318:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_0200365C
+	bl _ZN11CBGNCGRFileC1EPcmmm
 	mov r6, r0
 _0211E340:
 	mov r0, #0xbc
@@ -1783,7 +1783,7 @@ _0211E340:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_020033B0
+	bl _ZN9CNCLRFileC1EPcmmm
 	mov r5, r0
 _0211E368:
 	mov r0, #0xbc
@@ -1794,7 +1794,7 @@ _0211E368:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_02003494
+	bl _ZN9CNSCRFileC1EPcmmm
 	mov r7, r0
 _0211E390:
 	mov r0, #0
@@ -1834,7 +1834,7 @@ _0211E408:
 	addeq sp, sp, #0x10
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
 	mov r0, r4
-	bl sub_02002B6C
+	bl _ZN19CSmartNNSFndArchiveD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	add sp, sp, #0x10
