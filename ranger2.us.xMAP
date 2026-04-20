@@ -2248,7 +2248,7 @@
         7](_Z12sub_02001184v,func) found in global src_sub_02001184.cpp.o
          8](_Z12sub_02010448P5CGame,func) found in global src_sub_02010448.cpp.o
       5](sub_02044404,func) found in global asm_arm9_0204439C.s.o
-     4](_ZN12CPowerManage12sub_0200F8BCEv,func) found in global asm_arm9_0200F8BC.s.o
+     4](_ZN12CPowerManage12sub_0200F8BCEv,func) found in global src_CPowerManage.cpp.o
       5](PM_GoSleepMode,func) found in global libspi.a
        6](PMi_ExecuteList,func) found in global libspi.a
        6](PMi_SendSleepStart,func) found in global libspi.a
@@ -2351,8 +2351,8 @@
     3](_Z12sub_0202B80Cv,func) found in global src_sub_0202B80C.cpp.o
      4](CARD_IdentifyBackup,func) found in global libcard.a
       5](CARDi_IdentifyBackupCore,func) found in global libcard.a
-    3](_ZN12CPowerManage12sub_0200F9E0Ev,func) found in global src_CPowerManage_2.cpp.o
-    3](_ZN12CPowerManage12sub_0200F9F8Ev,func) found in global src_CPowerManage_2.cpp.o
+    3](_ZN12CPowerManage12sub_0200F9E0Ev,func) found in global src_CPowerManage.cpp.o
+    3](_ZN12CPowerManage12sub_0200F9F8Ev,func) found in global src_CPowerManage.cpp.o
     3](_ZN17UnkClass_02001C0412sub_02001C20Ev,func) found in global src_UnkClass_02001C04.cpp.o
     3](_ZN17UnkClass_020023EC12sub_02002A78Ellll,func) found in global src_UnkClass_020023EC.cpp.o
      4](MI_DmaFill16,func) found in global libmi.a
@@ -3186,16 +3186,15 @@
   0200F8A4 00000000 .text   $d	(asm_arm9_0200978C.s.o)
   0200F8AC 00000010 .text   CPowerManage::Init()	(src_CPowerManage.cpp.o)
   0200F8AC 00000000 .text   $a	(src_CPowerManage.cpp.o)
-  0200F8BC 00000000 .text   $a	(asm_arm9_0200F8BC.s.o)
-  0200F8BC 00000124 .text   .text	(asm_arm9_0200F8BC.s.o)
-  0200F8BC 00000054 .text   CPowerManage::sub_0200F8BC()	(asm_arm9_0200F8BC.s.o)
-  0200F9D4 00000000 .text   $d	(asm_arm9_0200F8BC.s.o)
-  0200F9E0 00000000 .text   $a	(src_CPowerManage_2.cpp.o)
-  0200F9E0 00000018 .text   CPowerManage::sub_0200F9E0()	(src_CPowerManage_2.cpp.o)
-  0200F9F4 00000000 .text   $d	(src_CPowerManage_2.cpp.o)
-  0200F9F8 00000000 .text   $a	(src_CPowerManage_2.cpp.o)
-  0200F9F8 00000014 .text   CPowerManage::sub_0200F9F8()	(src_CPowerManage_2.cpp.o)
-  0200FA04 00000000 .text   $d	(src_CPowerManage_2.cpp.o)
+  0200F8BC 00000000 .text   $a	(src_CPowerManage.cpp.o)
+  0200F8BC 00000124 .text   CPowerManage::sub_0200F8BC()	(src_CPowerManage.cpp.o)
+  0200F9D4 00000000 .text   $d	(src_CPowerManage.cpp.o)
+  0200F9E0 00000000 .text   $a	(src_CPowerManage.cpp.o)
+  0200F9E0 00000018 .text   CPowerManage::sub_0200F9E0()	(src_CPowerManage.cpp.o)
+  0200F9F4 00000000 .text   $d	(src_CPowerManage.cpp.o)
+  0200F9F8 00000000 .text   $a	(src_CPowerManage.cpp.o)
+  0200F9F8 00000014 .text   CPowerManage::sub_0200F9F8()	(src_CPowerManage.cpp.o)
+  0200FA04 00000000 .text   $d	(src_CPowerManage.cpp.o)
   0200FA0C 00000A3C .text   .text	(asm_arm9_0200FA0C.s.o)
   0200FA0C 00000000 .text   $a	(asm_arm9_0200FA0C.s.o)
   0200FA0C 00000020 .text   sub_0200FA0C	(asm_arm9_0200FA0C.s.o)
