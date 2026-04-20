@@ -5,9 +5,8 @@
 #include "UnkClass_020B26A0.hpp"
 
 extern "C" {
-void sub_0201630C(UnkClass_020B26A0 *, RTCTime *, RTCDate *);
-
 extern UnkClass_020B26A0 MAIN_BSS_020B26A0;
+extern CPowerManage sPowerManage;
 }
 
 void CPowerManage::Init()
@@ -16,7 +15,6 @@ void CPowerManage::Init()
     unk_8 = 0;
 }
 
-#if 0
 void CPowerManage::sub_0200F8BC()
 {
     if ((!unk_4) == FALSE) {
@@ -32,7 +30,7 @@ void CPowerManage::sub_0200F8BC()
             RTC_GetTime(&time);
             RTC_GetDate(&date);
 
-            sub_0201630C(&MAIN_BSS_020B26A0, &time, &date);
+            MAIN_BSS_020B26A0.sub_0201630C(&time, &date);
             PM_GoSleepMode(PM_TRIGGER_COVER_OPEN | PM_TRIGGER_CARD, 0, 0);
 
             RTC_GetTime(&time);
@@ -63,4 +61,14 @@ void CPowerManage::sub_0200F8BC()
 
     PM_SetLCDPower(PM_LCD_POWER_ON);
 }
-#endif
+
+BOOL CPowerManage::sub_0200F9E0()
+{
+    sPowerManage.Init();
+    return TRUE;
+}
+
+void CPowerManage::sub_0200F9F8()
+{
+    sPowerManage.sub_0200F8BC();
+}
