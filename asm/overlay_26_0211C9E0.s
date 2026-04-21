@@ -515,7 +515,7 @@ ov26_0211D094: ; 0x0211D094
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 	bl sub_02007D68
 	ldr r0, _0211D330 ; =MAIN_BSS_0208F304
 	mov r1, #0

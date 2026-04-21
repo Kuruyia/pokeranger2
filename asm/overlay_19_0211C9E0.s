@@ -466,7 +466,7 @@ ov19_0211CFC0: ; 0x0211CFC0
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 	ldr r0, [r4, #0x1c]
 	mov r1, #2
 	add r0, r0, #0x1000

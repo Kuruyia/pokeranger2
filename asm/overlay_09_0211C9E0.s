@@ -622,7 +622,7 @@ ov9_0211D0CC: ; 0x0211D0CC
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 	ldr r0, [r4, #0x54]
 	mov r1, #0
 	add r0, r0, #0x1000

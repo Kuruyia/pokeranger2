@@ -44,12 +44,16 @@ public:
     void sub_02009274();
     void sub_020092A4();
     void sub_020092D4();
-    void sub_02009328(u32 arg0, u32 arg1, u32 arg2, u32 arg3, u32 arg4, u32 arg5, u32 arg6, u32 arg7, u32 arg8);
+    void sub_02009328(u32 arg0, u32 arg1, u32 arg2, void *arg3, u32 arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8);
+    void sub_020093B4();
     void sub_02009430();
     void sub_020095D0();
     void sub_020095F4();
     void sub_02009670();
-    void sub_020093B4();
+    void sub_0200978C(u32 arg0);
+    void sub_020097FC(size_t arg0, u32 arg1);
+    u32 sub_02009808(size_t arg0);
+    BOOL sub_02009814(u32 arg0);
     void sub_0200AC90();
     void sub_0200AED0();
     void sub_0200B12C();
@@ -57,7 +61,8 @@ public:
     void sub_0200B59C();
 
 public:
-    u32 unk_000;
+    // TODO: What is this?
+    void *unk_000;
     u32 unk_004;
     u32 unk_008;
     u32 unk_00C;
@@ -69,8 +74,9 @@ public:
     u32 unk_024;
     u32 unk_028;
     CNCLRFile *unk_02C;
-    u8 unk_030[0x18];
-    u32 unk_048;
+    // TODO: Size not definitive
+    char unk_030[0x18];
+    u8 *unk_048;
     u32 unk_04C;
     u32 unk_050;
     u32 unk_054;
@@ -83,16 +89,23 @@ public:
     u32 unk_070;
     u32 unk_074;
     u32 unk_078;
-    u32 unk_07C;
+    u8 *unk_07C;
     u32 unk_080;
     UnkClass_0200BBC8_084 *unk_084;
     u32 unk_088;
     u32 unk_08C;
-    u32 unk_090;
-    u8 unk_094[0x8];
+    // TODO: What is this?
+    void *unk_090;
+    u32 unk_094;
+    u32 unk_098;
     u32 unk_09C;
     u32 unk_0A0;
-    u8 unk_0A4[0x50];
+    u32 unk_0A4;
+    u32 unk_0A8;
+    u32 unk_0AC;
+    u32 unk_0B0;
+    // TODO: Size not definitive
+    u32 unk_0B4[0x10];
     u32 unk_0F4;
     UnkClass_020091E8_0F8 unk_0F8;
     UnkClass_020091E8_0F8 unk_120;

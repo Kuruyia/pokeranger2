@@ -14,8 +14,8 @@
 .public sub_02007D98
 .public sub_02008DB4
 .public _ZN17UnkClass_020091E812sub_020092D4Ev
-.public _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
-.public sub_0200978C
+.public _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+.public _ZN17UnkClass_020091E812sub_0200978CEm
 .public sub_02009FB0
 .public sub_0200A088
 .public sub_0200AA04

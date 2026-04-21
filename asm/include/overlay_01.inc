@@ -80,8 +80,8 @@
 .public sub_020090F4
 .public sub_02009108
 .public _ZN17UnkClass_020091E812sub_020092D4Ev
-.public _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
-.public sub_020097FC
+.public _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+.public _ZN17UnkClass_020091E812sub_020097FCEmm
 .public sub_02009ECC
 .public sub_02009FB0
 .public sub_0200A088

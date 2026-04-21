@@ -13,7 +13,9 @@ public:
     u8 unk_87D8;
     u8 unk_87D9;
     u8 unk_87DA;
-    u8 unk_87DB[0x3A9];
+    u8 unk_87DB[0x8];
+    u8 unk_87E3;
+    u8 unk_87E7[0x39D];
     RTCDate unk_8B84;
     RTCTime unk_8B94;
     // TODO: Confirm this class is that big.

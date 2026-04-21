@@ -642,7 +642,7 @@ ov5_0211D1E0: ; 0x0211D1E0
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 	ldr r0, _0211D254 ; =s_data_message_etc_menu_mes_overlay_5_02120450
 	bl ov5_0211D588
 	str r0, [r4, #8]

@@ -109,3 +109,6 @@
 .public sub_02018B80
 .public sub_02034C44
 .public sub_02034CF4
+.public _ZN17UnkClass_020091E812sub_0200978CEm
+.public _ZN17UnkClass_020091E812sub_02009808Em
+.public _ZN17UnkClass_020091E812sub_02009814Em

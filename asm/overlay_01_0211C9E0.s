@@ -180,7 +180,7 @@ _0211CBDC:
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 	ldr r0, [r5, #4]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -205,13 +205,13 @@ _0211CBDC:
 	ldrh r2, [r0]
 	ldr r0, [r1, #0x490]
 	mov r1, #0
-	bl sub_020097FC
+	bl _ZN17UnkClass_020091E812sub_020097FCEmm
 	b _0211CCEC
 _0211CCDC:
 	add r0, r4, #0x1000
 	ldr r0, [r0, #0x490]
 	ldr r2, _0211CD7C ; =0x000001EF
-	bl sub_020097FC
+	bl _ZN17UnkClass_020091E812sub_020097FCEmm
 _0211CCEC:
 	add r0, r4, #0x1000
 	ldr r6, [r0, #0x490]
@@ -220,7 +220,7 @@ _0211CCEC:
 	mov r2, r0
 	mov r0, r6
 	mov r1, #1
-	bl sub_020097FC
+	bl _ZN17UnkClass_020091E812sub_020097FCEmm
 	ldr r0, [r5, #0x1c]
 	bl sub_02010B7C
 	cmp r0, #1
@@ -229,11 +229,11 @@ _0211CCEC:
 	ldr r0, [r0, #0x490]
 	bne _0211CD34
 	mov r2, #9
-	bl sub_020097FC
+	bl _ZN17UnkClass_020091E812sub_020097FCEmm
 	b _0211CD3C
 _0211CD34:
 	mov r2, #0xa
-	bl sub_020097FC
+	bl _ZN17UnkClass_020091E812sub_020097FCEmm
 _0211CD3C:
 	add r0, r4, #0x1000
 	ldr r0, [r0, #0x4bc]
@@ -4414,7 +4414,7 @@ _02120740:
 	add r0, r0, #0x1000
 	ldrh r2, [r2, #0x5e]
 	ldr r0, [r0, #0x490]
-	bl sub_020097FC
+	bl _ZN17UnkClass_020091E812sub_020097FCEmm
 	mov r0, #0
 	str r0, [sp]
 	ldr r0, [r7, #4]

@@ -21,7 +21,7 @@
 .public sub_02008DB4
 .public sub_02008E50
 .public _ZN17UnkClass_020091E812sub_020092D4Ev
-.public _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+.public _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 .public sub_0200AA84
 .public sub_0200AB28
 .public _ZN17UnkClass_020091E812sub_0200AC90Ev

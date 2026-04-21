@@ -342,7 +342,7 @@ ov6_0211CE24: ; 0x0211CE24
 	ldr r1, [r4, #0x14]
 	ldr r2, [r4, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 	ldr r0, [r7, #0x70]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -1241,7 +1241,7 @@ _0211DB20:
 	ldr r0, [r4, #0x70]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200978C
+	bl _ZN17UnkClass_020091E812sub_0200978CEm
 	ldr r0, [r4, #0x70]
 	mov r1, #0xfa
 	add r0, r0, #0x1000

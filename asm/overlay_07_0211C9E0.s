@@ -1205,7 +1205,7 @@ _0211D9A0:
 	ldr r1, [r4, #0x14]
 	ldr r2, [r4, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 	ldr r0, [sl, #0x27c]
 	mov r1, #0
 	add r0, r0, #0x1000
@@ -2485,7 +2485,7 @@ _0211EBCC:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r1, fp
-	bl sub_020097FC
+	bl _ZN17UnkClass_020091E812sub_020097FCEmm
 	strh r5, [sl]
 	strh r4, [r8, #0xc2]
 	add sb, sb, #0x14

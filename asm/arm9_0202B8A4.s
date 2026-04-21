@@ -1363,7 +1363,7 @@ sub_0202C8FC: ; 0x0202C8FC
 	ldmia r2, {r1, r2}
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_020097FC
+	bl _ZN17UnkClass_020091E812sub_020097FCEmm
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -28211,7 +28211,7 @@ _02042464:
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 	bl sub_02007D68
 	ldr r0, [r4, #4]
 	mov r1, #0
@@ -29207,7 +29207,7 @@ sub_02043180: ; 0x02043180
 	ldr r1, [r5, #0x14]
 	ldr r2, [r5, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 	ldr r0, [r4, #4]
 	mov r1, #0
 	add r0, r0, #0x1000
@@ -29753,7 +29753,7 @@ _02043A18:
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328Emmmmmmmmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
 	bl sub_02007D68
 	ldr r0, [r4, #4]
 	mov r1, #0
