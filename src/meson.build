@@ -14,4 +14,5 @@ pokeranger2_cxx = files(
     'sub_02001248.cpp',
     'UnkClass_02001C04.cpp',
     'UnkClass_020023EC.cpp',
+    'debug.cpp',
 )

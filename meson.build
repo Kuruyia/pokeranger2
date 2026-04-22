@@ -73,6 +73,10 @@ if get_option('gdb_debugging')
     pokeranger2_args += '-DGDB_DEBUGGING'
 endif
 
+if get_option('logging_enabled')
+    pokeranger2_args += '-DLOGGING_ENABLED'
+endif
+
 asm_args = [
     '-proc', 'arm5TE',
     '-16',
