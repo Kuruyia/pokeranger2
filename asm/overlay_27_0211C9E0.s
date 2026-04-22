@@ -1703,9 +1703,14 @@ _0211E104:
 ov27_0211E128: ; 0x0211E128
 	bx lr
 	arm_func_end ov27_0211E128
-_0211E12C:
+
+	arm_func_start ov27_0211E12C
+ov27_0211E12C: ; 0x0211E12C
 	bx lr
-_0211E130:
+	arm_func_end ov27_0211E12C
+
+	arm_func_start ov27_0211E130
+ov27_0211E130: ; 0x0211E130
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r5, r0
 	mov r4, r3
@@ -1760,8 +1765,12 @@ _0211E1B8:
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 _0211E1FC: .word MAIN_BSS_020B2638
-_0211E200:
+	arm_func_end ov27_0211E130
+
+	arm_func_start ov27_0211E200
+ov27_0211E200: ; 0x0211E200
 	bx lr
+	arm_func_end ov27_0211E200
 
 	arm_func_start ov27_0211E204
 ov27_0211E204: ; 0x0211E204
@@ -1790,16 +1799,35 @@ ov27_0211E23C: ; 0x0211E23C
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov27_0211E23C
-_0211E250:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1, 0x04, 0xC0, 0x9F, 0xE5, 0x0C, 0x00, 0x80, 0xE0, 0xB1, 0xFF, 0xFF, 0xEA
-	.byte 0xF8, 0xFF, 0xFF, 0xFF, 0x04, 0xC0, 0x9F, 0xE5, 0x0C, 0x00, 0x80, 0xE0, 0x80, 0xFF, 0xFF, 0xEA
-	.byte 0xF8, 0xFF, 0xFF, 0xFF
+
+	arm_func_start ov27_0211E250
+ov27_0211E250: ; 0x0211E250
+	bx lr
+	arm_func_end ov27_0211E250
+
+	arm_func_start ov27_0211E254
+ov27_0211E254: ; 0x0211E254
+	ldr ip, _0211E260 ; =0xFFFFFFF8
+	add r0, r0, ip
+	b ov27_0211E128
+	.align 2, 0
+	arm_func_end ov27_0211E254
+_0211E260: .word 0xFFFFFFF8
+
+	arm_func_start ov27_0211E264
+ov27_0211E264: ; 0x0211E264
+	ldr ip, _0211E270 ; =0xFFFFFFF8
+	add r0, r0, ip
+	b ov27_0211E074
+	.align 2, 0
+	arm_func_end ov27_0211E264
+_0211E270: .word 0xFFFFFFF8
 
 	arm_func_start ov27_0211E274
 ov27_0211E274: ; 0x0211E274
 	ldr ip, _0211E280 ; =0xFFFFFFF4
 	add r0, r0, ip
-	b _0211E200
+	b ov27_0211E200
 	.align 2, 0
 _0211E280: .word 0xFFFFFFF4
 	arm_func_end ov27_0211E274
@@ -1808,7 +1836,7 @@ _0211E280: .word 0xFFFFFFF4
 ov27_0211E284: ; 0x0211E284
 	ldr ip, _0211E290 ; =0xFFFFFFF4
 	add r0, r0, ip
-	b _0211E130
+	b ov27_0211E130
 	.align 2, 0
 _0211E290: .word 0xFFFFFFF4
 	arm_func_end ov27_0211E284
@@ -1817,7 +1845,7 @@ _0211E290: .word 0xFFFFFFF4
 ov27_0211E294: ; 0x0211E294
 	ldr ip, _0211E2A0 ; =0xFFFFFFF4
 	add r0, r0, ip
-	b _0211E12C
+	b ov27_0211E12C
 	.align 2, 0
 _0211E2A0: .word 0xFFFFFFF4
 	arm_func_end ov27_0211E294
@@ -5433,7 +5461,7 @@ PTR_ptr_FUN_020835ec_overlay_27_02121230: ; 0x02121230
 	.byte 0x02, 0x0C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_02083578_overlay_27_02121194
 ptr_FUN_overlay_3_0211e250_overlay_27_02121260: ; 0x02121260
-	.word 0x0211E250
+	.word ov27_0211E250
 ptr_FUN_overlay_27_0211e23c_overlay_27_02121264: ; 0x02121264
 	.word ov27_0211E23C
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
@@ -5461,16 +5489,16 @@ ptr_FUN_overlay_27_0211db20_overlay_27_021212ac: ; 0x021212AC
 	.word ov27_0211DBA4
 	.word ov27_0211E074
 	.word ov27_0211E128
-	.word 0x0211E12C
+	.word ov27_0211E12C
 ptr_FUN_overlay_27_0211e130_overlay_27_021212c4: ; 0x021212C4
-	.word 0x0211E130
+	.word ov27_0211E130
 ptr_FUN_overlay_19_0211e200_overlay_27_021212c8: ; 0x021212C8
-	.word 0x0211E200
+	.word ov27_0211E200
 	.byte 0xF8, 0xFF, 0xFF, 0xFF
 	.word PTR_ptr_FUN_020835ec_overlay_27_02121230
 PTR_LAB_overlay_27_0211e264_overlay_27_021212d4: ; 0x021212D4
-	.word 0x0211E264
-	.word 0x0211E254
+	.word ov27_0211E264
+	.word ov27_0211E254
 	.byte 0xF4, 0xFF, 0xFF, 0xFF
 	.word PTR_ptr_FUN_020835ec_overlay_27_02121230
 PTR_LAB_overlay_27_0211e294_overlay_27_021212e4: ; 0x021212E4
@@ -5526,7 +5554,8 @@ _02121399:
 ptr_FUN_overlay_27_0211e8d8_overlay_27_021213a4: ; 0x021213A4
 	.word ov27_0211E8D8
 ptr_FUN_overlay_27_0211e914_overlay_27_021213a8: ; 0x021213A8
-	.byte 0x14, 0xE9, 0x11, 0x02, 0x39, 0x00
+    .word ov27_0211E914
+	.byte 0x39, 0x00
 DAT_overlay_27_021213ae: ; 0x021213AE
 	.byte 0x04, 0x00
 	.byte 0x2B, 0x00, 0x04, 0x00, 0x2E, 0x00, 0x04, 0x00, 0x58, 0x00, 0x09, 0x00, 0x54, 0x00, 0x0A, 0x00
@@ -5612,7 +5641,8 @@ PTR_ptr_FUN_020835bc_overlay_27_02121624: ; 0x02121624
 s_19CQuestListMapScreen_overlay_27_02121630: ; 0x02121630
 	.asciz "19CQuestListMapScreen"
 _02121646:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x24, 0x16, 0x12, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_27_02121624
 ptr_FUN_overlay_27_02120f50_overlay_27_02121650: ; 0x02121650
 	.word ov27_02120F50
 ptr_FUN_overlay_27_02120f94_overlay_27_02121654: ; 0x02121654

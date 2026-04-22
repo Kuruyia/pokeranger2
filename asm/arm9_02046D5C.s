@@ -292,7 +292,7 @@ sub_0208406C: ; 0x0208406C
 _0208409C: .word ptr_FUN_0200f8ac_0208ab60
 _020840A0: .word MAIN_BSS_020AF33C
 _020840A4: .word sPowerManage
-_020840A8: .word 0x0200FA58
+_020840A8: .word sub_0200FA58
 _020840AC: .word MAIN_BSS_020AF33C
 	arm_func_end sub_0208406C
 
@@ -1237,7 +1237,8 @@ s_11CTouchPanel_0208a3c4: ; 0x0208A3C4
 
 	.global _0208A3D2
 _0208A3D2:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xBC, 0xA3, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_02083578_0208a3bc
 
 	.global PTR_LAB_0208a3dc
 PTR_LAB_0208a3dc: ; 0x0208A3DC
@@ -1263,7 +1264,8 @@ s_11CTPEmulator_0208a3f4: ; 0x0208A3F4
 
 	.global _0208A402
 _0208A402:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xE8, 0xA3, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_0208a3e8
 
 	.global PTR_LAB_0208a40c
 PTR_LAB_0208a40c: ; 0x0208A40C
@@ -1587,7 +1589,8 @@ s_11CBGNCGRFile_0208a644: ; 0x0208A644
 
 	.global _0208A652
 _0208A652:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x38, 0xA6, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_0208a638
 
 	.global PTR_LAB_0208a65c
 PTR_LAB_0208a65c: ; 0x0208A65C
@@ -1613,7 +1616,7 @@ _0208A679:
 
 	.global PTR_LAB_0208a684
 PTR_LAB_0208a684: ; 0x0208A684
-	.word 0x0200396C
+	.word sub_0200396C
 
 	.global ptr_FUN_02003970_0208a688
 ptr_FUN_02003970_0208a688: ; 0x0208A688
@@ -1660,7 +1663,8 @@ s_14CPrimitiveRECT_0208a6d0: ; 0x0208A6D0
 
 	.global _0208A6E1
 _0208A6E1:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC4, 0xA6, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_0208a6c4
 
 	.global ptr_FUN_02003bb0_0208a6ec
 ptr_FUN_02003bb0_0208a6ec: ; 0x0208A6EC
@@ -1686,7 +1690,8 @@ s_14CPrimitiveQUAD_0208a704: ; 0x0208A704
 
 	.global _0208A715
 _0208A715:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0xA6, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_0208a6f8
 
 	.global ptr_FUN_02004160_0208a720
 ptr_FUN_02004160_0208a720: ; 0x0208A720
@@ -1778,7 +1783,8 @@ s_15CSoftwareSprite_0208a7d4: ; 0x0208A7D4
 
 	.global _0208A7E6
 _0208A7E6:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x98, 0xA7, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_0208a798
 
 	.global ptr_FUN_020051c8_0208a7f0
 ptr_FUN_020051c8_0208a7f0: ; 0x0208A7F0
@@ -1805,7 +1811,7 @@ PTR_ptr_FUN_02083578_0208a804: ; 0x0208A804
 
 	.global PTR_LAB_0208a814
 PTR_LAB_0208a814: ; 0x0208A814
-	.word 0x02007CA8
+	.word sub_02007CA8
 
 	.global ptr_FUN_02007cac_0208a818
 ptr_FUN_02007cac_0208a818: ; 0x0208A818
@@ -2097,7 +2103,8 @@ s_12CPowerManage_0208ab48: ; 0x0208AB48
 
 	.global _0208AB57
 _0208AB57:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0xAB, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_02083578_0208ab40
 
 	.global ptr_FUN_0200f8ac_0208ab60
 ptr_FUN_0200f8ac_0208ab60: ; 0x0208AB60
@@ -2372,15 +2379,16 @@ s_10CActorData_0208b4a4: ; 0x0208B4A4
 
 	.global _0208B4B1
 _0208B4B1:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x9C, 0xB4, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_02083578_0208b49c
 
 	.global PTR_LAB_0208b4bc
 PTR_LAB_0208b4bc: ; 0x0208B4BC
-	.word 0x020130B8
+	.word sub_020130B8
 
 	.global ptr_FUN_020130e0_0208b4c0
 ptr_FUN_020130e0_0208b4c0: ; 0x0208B4C0
-	.word 0x020130E0
+	.word sub_020130E0
 
 	.global ptr_FUN_02014034_0208b4c4
 ptr_FUN_02014034_0208b4c4: ; 0x0208B4C4
@@ -4399,7 +4407,8 @@ s_map000_02_0208cc58: ; 0x0208CC58
 
 	.global _0208CC62
 _0208CC62:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x6C, 0xC1, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_02083578_0208c16c
 
 	.global PTR_LAB_0208cc6c
 PTR_LAB_0208cc6c: ; 0x0208CC6C
@@ -4431,7 +4440,8 @@ s_11CBackupSync_0208cc94: ; 0x0208CC94
 
 	.global _0208CCA2
 _0208CCA2:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x88, 0xCC, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_0208cc88
 
 	.global ptr_FUN_0202b8d8_0208ccac
 ptr_FUN_0202b8d8_0208ccac: ; 0x0208CCAC
@@ -5706,7 +5716,8 @@ s_28CFieldScreenEffectObjectBase_0208d5e8: ; 0x0208D5E8
 
 	.global _0208D607
 _0208D607:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0xE0, 0xD5, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_02083578_0208d5e0
 
 	.global PTR_LAB_0208d610
 PTR_LAB_0208d610: ; 0x0208D610
@@ -6159,7 +6170,7 @@ ptr_FUN_02039d6c_0208da8c: ; 0x0208DA8C
 
 	.global PTR_LAB_0208da9c
 PTR_LAB_0208da9c: ; 0x0208DA9C
-	.word 0x02039E0C
+	.word sub_02039E0C
 
 	.global ptr_FUN_02039d50_0208daa0
 ptr_FUN_02039d50_0208daa0: ; 0x0208DAA0
@@ -6672,7 +6683,8 @@ s_19CFieldDrawActorData_0208dea0: ; 0x0208DEA0
 
 	.global _0208DEB6
 _0208DEB6:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xDE, 0x08, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_0208de80
 
 	.global ptr_FUN_02040f20_0208dec0
 ptr_FUN_02040f20_0208dec0: ; 0x0208DEC0
@@ -7049,7 +7061,8 @@ _0208E1A7:
 
 	.global _ZTV24CDownloadMissionEndScene
 _ZTV24CDownloadMissionEndScene: ; 0x0208E1A8
-    .byte 0x00, 0x00, 0x00, 0x00, 0x80, 0xE1, 0x08, 0x02
+    .byte 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_0208e180
 
 	.global ptr_FUN_020439d4_0208e1b0
 ptr_FUN_020439d4_0208e1b0: ; 0x0208E1B0
@@ -7099,7 +7112,8 @@ _0208E207:
 
 	.global _ZTV28CDownloadMissionRestartScene
 _ZTV28CDownloadMissionRestartScene: ; 0x0208E208
-    .byte 0x00, 0x00, 0x00, 0x00, 0xDC, 0xE1, 0x08, 0x02
+    .byte 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_0208e1dc
 
 	.global ptr_FUN_02044154_0208e210
 ptr_FUN_02044154_0208e210: ; 0x0208E210

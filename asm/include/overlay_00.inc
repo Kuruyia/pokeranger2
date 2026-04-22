@@ -549,3 +549,6 @@
 .public sub_020420A8
 .public NNS_GfdDumpLnkTexVramManager
 .public NNS_GfdDumpLnkPlttVramManager
+.public sub_020160B8
+.public sub_02018E94
+.public sub_02022D04

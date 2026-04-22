@@ -582,7 +582,8 @@ _0211D182:
 
             .global _ZTV19CBattleToFieldScene
 _ZTV19CBattleToFieldScene: ; 0x0211D184
-    .byte 0x00, 0x00, 0x00, 0x00, 0x60, 0xD1, 0x11, 0x02
+    .byte 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_2_0211d160
     .global CBattleToFieldScene_vtable
 CBattleToFieldScene_vtable: ; 0x0211D18C
     .word ov2_0211D144

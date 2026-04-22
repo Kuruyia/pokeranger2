@@ -4253,8 +4253,12 @@ ov3_021206E8: ; 0x021206E8
 	strh r1, [r2, #0x1e]
 	bx lr
 	arm_func_end ov3_021206E8
-_02120714:
-	.byte 0x0E, 0x00, 0xA0, 0xE3, 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start ov3_02120714
+ov3_02120714: ; 0x02120714
+    mov r0, #0xe
+    bx lr
+    arm_func_end ov3_02120714
 
 	arm_func_start ov3_0212071C
 ov3_0212071C: ; 0x0212071C
@@ -8391,8 +8395,12 @@ _02123FE4:
 	bne _02123FC4
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, pc}
-_02124008:
-	.byte 0x14, 0x00, 0xA0, 0xE3, 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start ov3_02124008
+ov3_02124008: ; 0x02124008
+    mov r0, #0x14
+    bx lr
+    arm_func_end ov3_02124008
 
 	arm_func_start ov3_02124010
 ov3_02124010: ; 0x02124010
@@ -15648,7 +15656,8 @@ _0212A805:
 s_11CTitleScene_overlay_3_0212a808: ; 0x0212A808
 	.asciz "11CTitleScene"
 _0212A816:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x94, 0xA7, 0x12, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_3_0212a794
 ptr_FUN_overlay_3_0211ca7c_overlay_3_0212a820: ; 0x0212A820
 	.word ov3_0211CA7C
 ptr_FUN_overlay_28_0211caac_overlay_3_0212a824: ; 0x0212A824
@@ -15668,7 +15677,7 @@ ptr_FUN_overlay_3_0211d360_overlay_3_0212a840: ; 0x0212A840
 	.word ov3_0211D360
 ptr_FUN_overlay_3_0211df68_overlay_3_0212a844: ; 0x0212A844
 	.word ov3_0211DF68
-	.word 0x02120714
+	.word ov3_02120714
 s_data_message_etc_menu_mes_overlay_3_0212a84c: ; 0x0212A84C
 	.asciz "/data/message/etc/menu_mes"
 _0212A867:
@@ -15812,7 +15821,8 @@ PTR_ptr_FUN_020835bc_overlay_3_0212aa98: ; 0x0212AA98
 s_15CNameInputScene_overlay_3_0212aaa4: ; 0x0212AAA4
 	.asciz "15CNameInputScene"
 _0212AAB6:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x98, 0xAA, 0x12, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_3_0212aa98
 ptr_FUN_overlay_3_02121dbc_overlay_3_0212aac0: ; 0x0212AAC0
 	.word ov3_02121DBC
 ptr_FUN_overlay_3_02121dfc_overlay_3_0212aac4: ; 0x0212AAC4
@@ -15832,7 +15842,7 @@ ptr_FUN_overlay_3_02123100_overlay_3_0212aae0: ; 0x0212AAE0
 	.word ov3_02123100
 ptr_FUN_overlay_3_02123c44_overlay_3_0212aae4: ; 0x0212AAE4
 	.word ov3_02123C44
-	.word 0x02124008
+	.word ov3_02124008
 s_overlay_3_0212aaec: ; 0x0212AAEC
 	.asciz "[...]"
 _0212AAF2:
@@ -15992,7 +16002,8 @@ _0212ADBD:
 s_15COPDTitleScreen_overlay_3_0212adc0: ; 0x0212ADC0
 	.asciz "15COPDTitleScreen"
 _0212ADD2:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x98, 0xAD, 0x12, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_3_0212ad98
 PTR_LAB_overlay_3_021255ac_overlay_3_0212addc: ; 0x0212ADDC
 	.word ov3_021255AC
 ptr_FUN_overlay_11_02126e44_overlay_3_0212ade0: ; 0x0212ADE0

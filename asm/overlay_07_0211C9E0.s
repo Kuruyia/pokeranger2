@@ -465,9 +465,12 @@ _0211CF94:
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
-_0211CFAC: .word 0x0211CFB0
-_0211CFB0:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+_0211CFAC: .word ov7_0211CFB0
+
+    arm_func_start ov7_0211CFB0
+ov7_0211CFB0: ; 0x0211CFB0
+    bx lr
+    arm_func_end ov7_0211CFB0
 
 	arm_func_start ov7_0211CFB4
 ov7_0211CFB4: ; 0x0211CFB4
@@ -1614,7 +1617,7 @@ _0211DFEC: .word s_mr000_overlay_7_0211f7d0
 _0211DFF0: .word s_menu_overlay_7_0211f7bc
 _0211DFF4: .word s_mr000_bg_overlay_7_0211f7c4
 _0211DFF8: .word MAIN_BSS_020B26A0
-_0211DFFC: .word 0x0211CFB0
+_0211DFFC: .word ov7_0211CFB0
 _0211E000: .word ov7_0211E018
 _0211E004: .word 0x00000918
 _0211E008: .word DAT_overlay_7_0211f690

@@ -1873,11 +1873,11 @@ ov19_0211E308: ; 0x0211E308
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end ov19_0211E308
 
-    arm_func_start ov19_0211E1E8
-ov19_0211E1E8:
+    arm_func_start ov19_0211E3A0
+ov19_0211E3A0: ; 0x0211E3A0
     mov r0, #0x13
     bx lr
-	arm_func_end ov19_0211E1E8
+	arm_func_end ov19_0211E3A0
 	; 0x0211E3A8
 
     .rodata
@@ -1919,7 +1919,7 @@ ptr_FUN_overlay_19_0211cae0_overlay_19_0211e408: ; 0x0211E408
 ptr_FUN_overlay_19_0211cbcc_overlay_19_0211e40c: ; 0x0211E40C
 	.word ov19_0211CBCC
 ptr_FUN_overlay_19_0211e3a0_overlay_19_0211e410: ; 0x0211E410
-	.word 0x0211E3A0
+	.word ov19_0211E3A0
 s_menu_overlay_19_0211e414: ; 0x0211E414
 	.asciz "menu/"
 _0211E41A:

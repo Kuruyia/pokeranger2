@@ -37,8 +37,11 @@ sub_0200FA48: ; 0x0200FA48
 	.align 2, 0
 _0200FA54: .word MAIN_BSS_020AF33C
 	arm_func_end sub_0200FA48
-_0200FA58:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+	arm_func_start sub_0200FA58
+sub_0200FA58: ; 0x0200FA58
+	bx lr
+	arm_func_end sub_0200FA58
 
 	arm_func_start sub_0200FA5C
 sub_0200FA5C: ; 0x0200FA5C

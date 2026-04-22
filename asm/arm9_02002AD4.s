@@ -1168,8 +1168,11 @@ sub_02003938: ; 0x02003938
 _02003964: .word PTR_LAB_0208a684
 _02003968: .word 0x00007FFF
 	arm_func_end sub_02003938
-_0200396C:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start sub_0200396C
+sub_0200396C: ; 0x0200396C
+    bx lr
+    arm_func_end sub_0200396C
 
 	arm_func_start sub_02003970
 sub_02003970: ; 0x02003970
@@ -6040,8 +6043,11 @@ _ZN6CSceneC2Ev: ; 0x02007C98
 	.align 2, 0
 _02007CA4: .word PTR_LAB_0208a814
 	arm_func_end _ZN6CSceneC2Ev
-_02007CA8:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start sub_02007CA8
+sub_02007CA8: ; 0x02007CA8
+    bx lr
+    arm_func_end sub_02007CA8
 
 	arm_func_start sub_02007CAC
 sub_02007CAC: ; 0x02007CAC

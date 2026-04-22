@@ -1706,7 +1706,7 @@ _0211E0A8:
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, pc}
 	.align 2, 0
-_0211E0B4: .word 0x021245A4
+_0211E0B4: .word ov11_021245A4
 _0211E0B8: .word ov11_02124578
 
 	arm_func_start ov11_0211E0BC
@@ -1722,7 +1722,7 @@ ov11_0211E0BC: ; 0x0211E0BC
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0211E0E4: .word 0x021245A4
+_0211E0E4: .word ov11_021245A4
 	arm_func_end ov11_0211E0BC
 
 	arm_func_start ov11_0211E0E8
@@ -9181,8 +9181,11 @@ ov11_02124578: ; 0x02124578
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov11_02124578
-_021245A4:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start ov11_021245A4
+ov11_021245A4: ; 0x021245A4
+    bx lr
+    arm_func_end ov11_021245A4
 
 	arm_func_start ov11_021245A8
 ov11_021245A8: ; 0x021245A8
@@ -14615,36 +14618,126 @@ ov11_021287A8: ; 0x021287A8
 	.align 2, 0
 _021287E8: .word OVERLAY11_BSS_02169C50
 	arm_func_end ov11_021287A8
-_021287EC:
-	.byte 0x68, 0x00, 0xA0, 0xE3
-	.byte 0x1E, 0xFF, 0x2F, 0xE1, 0x10, 0x00, 0x9F, 0xE5, 0x00, 0x10, 0x90, 0xE5, 0x00, 0x00, 0x51, 0xE3
-	.byte 0x01, 0x00, 0xA0, 0x13, 0x98, 0x03, 0xC1, 0x15, 0x1E, 0xFF, 0x2F, 0xE1
-	.word OVERLAY11_BSS_02169C50
-	.byte 0x10, 0x40, 0x2D, 0xE9, 0x9C, 0x10, 0x9F, 0xE5, 0x02, 0x40, 0xA0, 0xE1, 0x00, 0xC0, 0x91, 0xE5
-	.byte 0x00, 0x00, 0x5C, 0xE3, 0x10, 0x80, 0xBD, 0x08, 0x39, 0x10, 0xD4, 0xE5, 0x02, 0x00, 0x51, 0xE3
-	.byte 0x04, 0x00, 0x00, 0x0A, 0x00, 0x08, 0xA0, 0xE1, 0x20, 0x18, 0xA0, 0xE1, 0x00, 0x00, 0xA0, 0xE3
-	.byte 0x5A, 0x24, 0xFD, 0xEB, 0x10, 0x80, 0xBD, 0xE8, 0x62, 0x30, 0xD4, 0xE5, 0x68, 0x20, 0xA0, 0xE3
-	.byte 0x04, 0x00, 0xA0, 0xE1, 0x93, 0xC2, 0x21, 0xE0, 0xDC, 0xFD, 0xFC, 0xEB, 0x54, 0x00, 0x9F, 0xE5
-	.byte 0x62, 0x20, 0xD4, 0xE5, 0x00, 0x10, 0x90, 0xE5, 0x9A, 0x23, 0xC1, 0xE5, 0x00, 0x10, 0x90, 0xE5
-	.byte 0x9A, 0x23, 0xD1, 0xE5, 0x39, 0x3E, 0x81, 0xE2, 0x02, 0x10, 0xD3, 0xE7, 0x02, 0x00, 0x51, 0xE3
-	.byte 0x10, 0x80, 0xBD, 0x28, 0x01, 0x10, 0xA0, 0xE3, 0x02, 0x10, 0xC3, 0xE7, 0x00, 0x00, 0x90, 0xE5
-	.byte 0x9A, 0x43, 0xD0, 0xE5, 0x2E, 0x0E, 0x00, 0xEB, 0x00, 0x00, 0x54, 0xE1, 0x10, 0x80, 0xBD, 0x18
-	.byte 0x10, 0x00, 0x9F, 0xE5, 0x03, 0x10, 0xA0, 0xE3, 0x00, 0x00, 0x90, 0xE5, 0x04, 0x00, 0x80, 0xE0
-	.byte 0x90, 0x13, 0xC0, 0xE5, 0x10, 0x80, 0xBD, 0xE8
-	.word OVERLAY11_BSS_02169C50
-	.byte 0x38, 0x40, 0x2D, 0xE9
-	.byte 0xA8, 0x10, 0x9F, 0xE5, 0x00, 0x40, 0xA0, 0xE1, 0x00, 0x30, 0x91, 0xE5, 0x00, 0x00, 0x53, 0xE3
-	.byte 0x38, 0x80, 0xBD, 0x08, 0x39, 0x00, 0xD2, 0xE5, 0x02, 0x00, 0x50, 0xE3, 0x04, 0x00, 0x00, 0x0A
-	.byte 0x04, 0x08, 0xA0, 0xE1, 0x20, 0x18, 0xA0, 0xE1, 0x00, 0x00, 0xA0, 0xE3, 0x2F, 0x24, 0xFD, 0xEB
-	.byte 0x38, 0x80, 0xBD, 0xE8, 0x68, 0x10, 0xA0, 0xE3, 0x94, 0x01, 0x05, 0xE0, 0x02, 0x00, 0xA0, 0xE1
-	.byte 0x01, 0x20, 0xA0, 0xE1, 0x05, 0x10, 0x83, 0xE0, 0xB0, 0xFD, 0xFC, 0xEB, 0x5C, 0x00, 0x9F, 0xE5
-	.byte 0x04, 0x10, 0xA0, 0xE1, 0x00, 0x00, 0x90, 0xE5, 0x05, 0x00, 0x80, 0xE0, 0x5C, 0x00, 0x80, 0xE2
-	.byte 0xB6, 0x03, 0x00, 0xEB, 0x44, 0x00, 0x9F, 0xE5, 0x01, 0x10, 0xA0, 0xE3, 0x00, 0x00, 0x90, 0xE5
-	.byte 0x04, 0x00, 0x80, 0xE0, 0x90, 0x13, 0xC0, 0xE5, 0x05, 0x0E, 0x00, 0xEB, 0x00, 0x00, 0x54, 0xE1
-	.byte 0x05, 0x00, 0x00, 0x1A, 0x24, 0x00, 0x9F, 0xE5, 0x03, 0x10, 0xA0, 0xE3, 0x00, 0x00, 0x90, 0xE5
-	.byte 0x04, 0x00, 0x80, 0xE0, 0x90, 0x13, 0xC0, 0xE5, 0x38, 0x80, 0xBD, 0xE8, 0x0C, 0x00, 0x9F, 0xE5
-	.byte 0x01, 0x10, 0xA0, 0xE3, 0x00, 0x00, 0x90, 0xE5, 0x99, 0x13, 0xC0, 0xE5, 0x38, 0x80, 0xBD, 0xE8
-	.word OVERLAY11_BSS_02169C50
+
+	arm_func_start ov11_021287EC
+ov11_021287EC: ; 0x021287EC
+	mov r0, #0x68
+	bx lr
+	arm_func_end ov11_021287EC
+
+	arm_func_start ov11_021287F4
+ov11_021287F4: ; 0x021287F4
+	ldr r0, _0212880C ; =0x02169C50
+	ldr r1, [r0]
+	cmp r1, #0
+	movne r0, #1
+	strneb r0, [r1, #0x398]
+	bx lr
+	.align 2, 0
+	arm_func_end ov11_021287F4
+_0212880C: .word OVERLAY11_BSS_02169C50
+
+	arm_func_start ov11_02128810
+ov11_02128810: ; 0x02128810
+	stmdb sp!, {r4, lr}
+	ldr r1, _021288B8 ; =0x02169C50
+	mov r4, r2
+	ldr ip, [r1]
+	cmp ip, #0
+	ldmeqia sp!, {r4, pc}
+	ldrb r1, [r4, #0x39]
+	cmp r1, #2
+	beq _02128848
+    mov r0, r0, lsl #0x10
+    mov r1, r0, lsr #0x10
+	mov r0, #0
+	bl WM_Disconnect
+	ldmia sp!, {r4, pc}
+	arm_func_end ov11_02128810
+_02128848:
+	ldrb r3, [r4, #0x62]
+	mov r2, #0x68
+	mov r0, r4
+	mla r1, r3, r2, ip
+	bl MI_CpuCopy8
+	ldr r0, _021288B8 ; =0x02169C50
+	ldrb r2, [r4, #0x62]
+	ldr r1, [r0]
+	strb r2, [r1, #0x39a]
+	ldr r1, [r0]
+	ldrb r2, [r1, #0x39a]
+	add r3, r1, #0x390
+	ldrb r1, [r3, r2]
+	cmp r1, #2
+	ldmhsia sp!, {r4, pc}
+	mov r1, #1
+	strb r1, [r3, r2]
+	ldr r0, [r0]
+	ldrb r4, [r0, #0x39a]
+	bl ov11_0212C154
+	cmp r4, r0
+	ldmneia sp!, {r4, pc}
+	ldr r0, _021288B8 ; =0x02169C50
+	mov r1, #3
+	ldr r0, [r0]
+	add r0, r0, r4
+	strb r1, [r0, #0x390]
+	ldmia sp!, {r4, pc}
+	.align 2, 0
+_021288B8: .word OVERLAY11_BSS_02169C50
+
+	arm_func_start ov11_021288BC
+ov11_021288BC: ; 0x021288BC
+	stmdb sp!, {r3, r4, r5, lr}
+	ldr r1, _02128970 ; =0x02169C50
+	mov r4, r0
+	ldr r3, [r1]
+	cmp r3, #0
+	ldmeqia sp!, {r3, r4, r5, pc}
+	ldrb r0, [r2, #0x39]
+	cmp r0, #2
+	beq _021288F4
+    mov r0, r4, lsl #0x10
+    mov r1, r0, lsr #0x10
+	mov r0, #0
+	bl WM_Disconnect
+	ldmia sp!, {r3, r4, r5, pc}
+	arm_func_end ov11_021288BC
+_021288F4:
+	mov r1, #0x68
+	mul r5, r4, r1
+	mov r0, r2
+	mov r2, r1
+	add r1, r3, r5
+	bl MI_CpuCopy8
+	ldr r0, _02128970 ; =0x02169C50
+	mov r1, r4
+	ldr r0, [r0]
+	add r0, r0, r5
+	add r0, r0, #0x5c
+	bl ov11_02129800
+	ldr r0, _02128970 ; =0x02169C50
+	mov r1, #1
+	ldr r0, [r0]
+	add r0, r0, r4
+	strb r1, [r0, #0x390]
+	bl ov11_0212C154
+	cmp r4, r0
+	bne _0212895C
+	ldr r0, _02128970 ; =0x02169C50
+	mov r1, #3
+	ldr r0, [r0]
+	add r0, r0, r4
+	strb r1, [r0, #0x390]
+	ldmia sp!, {r3, r4, r5, pc}
+_0212895C:
+	ldr r0, _02128970 ; =0x02169C50
+	mov r1, #1
+	ldr r0, [r0]
+	strb r1, [r0, #0x399]
+	ldmia sp!, {r3, r4, r5, pc}
+	.align 2, 0
+_02128970: .word OVERLAY11_BSS_02169C50
 
 	arm_func_start ov11_02128974
 ov11_02128974: ; 0x02128974
@@ -15036,11 +15129,15 @@ _02128DF4:
 	strb r1, [r0, #0x31]
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02128E24: .word 0x0216648D
+_02128E24: .word s_GAME_overlay_11_0216648c+1
 _02128E28: .word OVERLAY11_BSS_02169C54
-_02128E2C: .word 0x02166495
-_02128E30:
-	.byte 0x06, 0x00, 0xA0, 0xE3, 0x1E, 0xFF, 0x2F, 0xE1
+_02128E2C: .word s_FULL_overlay_11_02166494+1
+
+    arm_func_start ov11_02128E30
+ov11_02128E30: ; 0x02128E30
+    mov r0, #6
+    bx lr
+    arm_func_end ov11_02128E30
 
 	arm_func_start ov11_02128E38
 ov11_02128E38: ; 0x02128E38
@@ -15182,10 +15279,16 @@ _02128FC4:
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02128FD4: .word OVERLAY11_BSS_02169C58
-_02128FD8:
-	.byte 0x08, 0x00, 0x9F, 0xE5, 0x00, 0x10, 0xA0, 0xE3
-	.byte 0x04, 0x10, 0x80, 0xE5, 0x1E, 0xFF, 0x2F, 0xE1
-	.word OVERLAY11_BSS_02169C58
+
+    arm_func_start ov11_02128FD8
+ov11_02128FD8: ; 0x02128FD8
+	ldr r0, _02128FE8 ; =0x02169C58
+	mov r1, #0
+	str r1, [r0, #4]
+	bx lr
+	.align 2, 0
+	arm_func_end ov11_02128FD8
+_02128FE8: .word OVERLAY11_BSS_02169C58
 
 	arm_func_start ov11_02128FEC
 ov11_02128FEC: ; 0x02128FEC
@@ -15226,7 +15329,7 @@ ov11_02129040: ; 0x02129040
 	bx ip
 	.align 2, 0
 _02129050: .word sub_02046B84
-_02129054: .word 0x02128FD8
+_02129054: .word ov11_02128FD8
 	arm_func_end ov11_02129040
 
 	arm_func_start ov11_02129058
@@ -16011,14 +16114,30 @@ _021299F0:
 	ldmia sp!, {r3, r4, r5, r6, pc}
 	.align 2, 0
 _02129A18: .word OVERLAY11_BSS_02169C64
-_02129A1C:
-	.byte 0x14, 0x00, 0x9F, 0xE5
-	.byte 0x00, 0x10, 0xD2, 0xE5, 0x00, 0x00, 0x90, 0xE5, 0x01, 0x20, 0xD2, 0xE5, 0x01, 0x00, 0x80, 0xE0
-	.byte 0x10, 0x20, 0xC0, 0xE5, 0x1E, 0xFF, 0x2F, 0xE1
-	.word OVERLAY11_BSS_02169C64
-	.byte 0x0C, 0x00, 0x9F, 0xE5
-	.byte 0x00, 0x10, 0xD2, 0xE5, 0x00, 0x00, 0x90, 0xE5, 0x50, 0x12, 0xC0, 0xE5, 0x1E, 0xFF, 0x2F, 0xE1
-	.word OVERLAY11_BSS_02169C64
+
+	arm_func_start ov11_02129A1C
+ov11_02129A1C: ; 0x02129A1C
+	ldr r0, _02129A38 ; =0x02169C64
+	ldrb r1, [r2]
+	ldr r0, [r0]
+	ldrb r2, [r2, #1]
+	add r0, r0, r1
+	strb r2, [r0, #0x10]
+	bx lr
+	.align 2, 0
+	arm_func_end ov11_02129A1C
+_02129A38: .word OVERLAY11_BSS_02169C64
+
+	arm_func_start ov11_02129A3C
+ov11_02129A3C: ; 0x02129A3C
+	ldr r0, _02129A50 ; =0x02169C64
+	ldrb r1, [r2]
+	ldr r0, [r0]
+	strb r1, [r0, #0x250]
+	bx lr
+	.align 2, 0
+	arm_func_end ov11_02129A3C
+_02129A50: .word OVERLAY11_BSS_02169C64
 
 	arm_func_start ov11_02129A54
 ov11_02129A54: ; 0x02129A54
@@ -16072,12 +16191,27 @@ ov11_02129AC0: ; 0x02129AC0
 	.align 2, 0
 _02129AE8: .word OVERLAY11_BSS_02169C64
 	arm_func_end ov11_02129AC0
-_02129AEC:
-	.byte 0x1C, 0x10, 0x9F, 0xE5
-	.byte 0x00, 0xC0, 0xD2, 0xE5, 0x00, 0x30, 0x91, 0xE5, 0x80, 0xC0, 0xC3, 0xE7, 0x00, 0x10, 0x91, 0xE5
-	.byte 0x01, 0x20, 0xD2, 0xE5, 0x80, 0x00, 0x81, 0xE0, 0x01, 0x20, 0xC0, 0xE5, 0x1E, 0xFF, 0x2F, 0xE1
-	.word OVERLAY11_BSS_02169C64
-	.byte 0x02, 0x00, 0xA0, 0xE3, 0x1E, 0xFF, 0x2F, 0xE1
+
+	arm_func_start ov11_02129AEC
+ov11_02129AEC: ; 0x02129AEC
+	ldr r1, _02129B10 ; =0x02169C64
+	ldrb ip, [r2]
+	ldr r3, [r1]
+	strb ip, [r3, r0, lsl #1]
+	ldr r1, [r1]
+	ldrb r2, [r2, #1]
+	add r0, r1, r0, lsl #1
+	strb r2, [r0, #1]
+	bx lr
+	.align 2, 0
+	arm_func_end ov11_02129AEC
+_02129B10: .word OVERLAY11_BSS_02169C64
+
+	arm_func_start ov11_02129B14
+ov11_02129B14: ; 0x02129B14
+	mov r0, #2
+	bx lr
+	arm_func_end ov11_02129B14
 
 	arm_func_start ov11_02129B1C
 ov11_02129B1C: ; 0x02129B1C
@@ -16098,8 +16232,12 @@ ov11_02129B1C: ; 0x02129B1C
 	.align 2, 0
 _02129B54: .word OVERLAY11_BSS_02169C64
 	arm_func_end ov11_02129B1C
-_02129B58:
-	.byte 0x46, 0x00, 0xA0, 0xE3, 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start ov11_02129B58
+ov11_02129B58: ; 0x02129B58
+    mov r0, #0x46
+    bx lr
+    arm_func_end ov11_02129B58
 
 	arm_func_start ov11_02129B60
 ov11_02129B60: ; 0x02129B60
@@ -19834,9 +19972,18 @@ ov11_0212CCF0: ; 0x0212CCF0
 	mov r0, #0
 	bx lr
 	arm_func_end ov11_0212CCF0
-_0212CCF8:
-	.byte 0x01, 0x00, 0xA0, 0xE3, 0x1E, 0xFF, 0x2F, 0xE1
-	.byte 0x02, 0x00, 0xA0, 0xE3, 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start ov11_0212CCF8
+ov11_0212CCF8: ; 0x0212CCF8
+	mov r0, #1
+	bx lr
+    arm_func_end ov11_0212CCF8
+
+    arm_func_start ov11_0212CD00
+ov11_0212CD00: ; 0x0212CD00
+	mov r0, #2
+	bx lr
+    arm_func_end ov11_0212CD00
 
 	arm_func_start ov11_0212CD08
 ov11_0212CD08: ; 0x0212CD08
@@ -28167,7 +28314,7 @@ _02133CB8:
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02133CC0: .word 0x02162B20
+_02133CC0: .word s_FREESPOT_overlay_11_02162b20
 
 	arm_func_start ov11_02133CC4
 ov11_02133CC4: ; 0x02133CC4
@@ -28197,7 +28344,7 @@ _02133D18:
 	mov r0, r5
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
-_02133D20: .word 0x02162B20
+_02133D20: .word s_FREESPOT_overlay_11_02162b20
 
 	arm_func_start ov11_02133D24
 ov11_02133D24: ; 0x02133D24
@@ -28263,8 +28410,8 @@ _02133DFC:
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02133E04: .word s_NWCUSBAP_overlay_11_02166738
-_02133E08: .word s_Wayport2FREESPOTNINTENDOWFC_overlay_11_02162b18
-_02133E0C: .word 0x02162B28
+_02133E08: .word s_Wayport2_overlay_11_02162b18
+_02133E0C: .word s_NINTENDOWFC_overlay_11_02162b28
 
 	arm_func_start ov11_02133E10
 ov11_02133E10: ; 0x02133E10
@@ -35132,7 +35279,7 @@ _02139C7C: .word OVERLAY11_BSS_02169D60
 
 	arm_func_start ov11_02139C80
 ov11_02139C80: ; 0x02139C80
-	ldr ip, _02139C90 ; =FUN_02067FD0
+	ldr ip, _02139C90 ; =MI_CpuCopy8
 	ldr r1, _02139C94 ; =OVERLAY11_BSS_02169D6C
 	mov r2, #0xe
 	bx ip
@@ -41842,10 +41989,33 @@ ov11_0213DE84: ; 0x0213DE84
 	pop {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
 	thumb_func_end ov11_0213DE84
-_0213DEB2:
-	.byte 0x00, 0x00, 0x08, 0xB5, 0x00, 0x29, 0x04, 0xDD, 0x08, 0x1C, 0x02, 0x49, 0x09, 0x68, 0x88, 0x47
-    .byte 0x08, 0xBD, 0x00, 0x20, 0x08, 0xBD, 0xA0, 0xAB, 0x16, 0x02, 0x08, 0xB5, 0x08, 0x1C, 0x01, 0x49
-    .byte 0x09, 0x68, 0x88, 0x47, 0x08, 0xBD, 0xAC, 0xAB, 0x16, 0x02
+
+    thumb_func_start ov11_0213DEB4
+ov11_0213DEB4: ; 0x0213DEB4
+    push {r3, lr}
+    cmp r1, #0
+    ble _0213DEC4
+    add r0, r1, #0
+    ldr r1, _0213DEC8 ; =OVERLAY11_BSS_0216ABA0
+    ldr r1, [r1]
+    blx r1
+    pop {r3, pc}
+_0213DEC4:
+    mov r0, #0
+    pop {r3, pc}
+_0213DEC8: .word OVERLAY11_BSS_0216ABA0
+    thumb_func_end ov11_0213DEB4
+
+    thumb_func_start ov11_0213DECC
+ov11_0213DECC: ; 0x0213DECC
+    push {r3, lr}
+    add r0, r1, #0
+    ldr r1, _0213DED8 ; =OVERLAY11_BSS_0216ABAC
+    ldr r1, [r1]
+    blx r1
+    pop {r3, pc}
+_0213DED8: .word OVERLAY11_BSS_0216ABAC
+    thumb_func_end ov11_0213DECC
 
 	thumb_func_start ov11_0213DEDC
 ov11_0213DEDC: ; 0x0213DEDC
@@ -41942,7 +42112,7 @@ ov11_0213DF78: ; 0x0213DF78
 	add r3, r0, #0
 	add r0, r1, #0
 	add r1, r3, #0
-	ldr r3, _0213DF84 ; =FUN_02067FD0
+	ldr r3, _0213DF84 ; =MI_CpuCopy8
 	bx r3
 	nop
 _0213DF84: .word MI_CpuCopy8
@@ -42331,16 +42501,34 @@ ov11_0213E1F4: ; 0x0213E1F4
 	ldr r3, _0213E200 ; =0x0213E145
 	bx r3
 	.align 2, 0
-_0213E200: .word 0x0213E145
+_0213E200: .word ov11_0213E144+1
 	thumb_func_end ov11_0213E1F4
-_0213E204:
-	.byte 0x02, 0x4B, 0x01, 0x1C, 0x02, 0x48, 0x00, 0x22, 0x18, 0x47, 0xC0, 0x46
-	.word OS_SendMessage
-	.word OVERLAY11_BSS_0216ABC0
-	.byte 0x02, 0x4B, 0x01, 0x1C, 0x02, 0x48, 0x00, 0x22
-	.byte 0x18, 0x47, 0xC0, 0x46
-	.word OS_SendMessage
-	.word OVERLAY11_BSS_0216ABC0
+
+    thumb_func_start ov11_0213E204
+ov11_0213E204: ; 0x0213E204
+    ldr r3, _0213E210 ; =OS_SendMessage
+    add r1, r0, #0
+    ldr r0, _0213E214 ; =OVERLAY11_BSS_0216ABC0
+    mov r2, #0
+    bx r3
+    nop
+	.align 2, 0
+_0213E210: .word OS_SendMessage
+_0213E214: .word OVERLAY11_BSS_0216ABC0
+    thumb_func_end ov11_0213E204
+
+    thumb_func_start ov11_0213E218
+ov11_0213E218: ; 0x0213E218
+    ldr r3, _0213E224 ; =OS_SendMessage
+    add r1, r0, #0
+    ldr r0, _0213E228 ; =OVERLAY11_BSS_0216ABC0
+    mov r2, #0
+    bx r3
+    nop
+	.align 2, 0
+_0213E224: .word OS_SendMessage
+_0213E228: .word OVERLAY11_BSS_0216ABC0
+    thumb_func_end ov11_0213E218
 
 	thumb_func_start ov11_0213E22C
 ov11_0213E22C: ; 0x0213E22C
@@ -42442,7 +42630,7 @@ _0213E2DC: .word OVERLAY11_BSS_0216ABC0
 _0213E2E0: .word OVERLAY11_BSS_0216ABB0
 _0213E2E4: .word OVERLAY11_BSS_0216ABA0
 _0213E2E8: .word 0x00005890
-_0213E2EC: .word 0x0213E205
+_0213E2EC: .word ov11_0213E204+1
 
 	thumb_func_start ov11_0213E2F0
 ov11_0213E2F0: ; 0x0213E2F0
@@ -42750,7 +42938,7 @@ _0213E514:
 _0213E524: .word OVERLAY11_BSS_0216ABA0
 _0213E528: .word 0x0030BFFE
 _0213E52C: .word 0x003FEC42
-_0213E530: .word 0x0213E219
+_0213E530: .word ov11_0213E218+1
 _0213E534: .word OVERLAY11_BSS_0216ABC0
 
 	thumb_func_start ov11_0213E538
@@ -42987,7 +43175,7 @@ _0213E6DE:
 _0213E6EC: .word OVERLAY11_BSS_0216ACA0
 _0213E6F0: .word 0x0030BFFE
 _0213E6F4: .word 0x003FEC42
-_0213E6F8: .word 0x0213E219
+_0213E6F8: .word ov11_0213E218+1
 _0213E6FC: .word OVERLAY11_BSS_0216ABC0
 _0213E700: .word OVERLAY11_BSS_0216ABE0
 _0213E704: .word OVERLAY11_BSS_0216ABE0
@@ -43014,17 +43202,20 @@ _0213E71C:
 	pop {r3, pc}
 	.align 2, 0
 _0213E720: .word OVERLAY11_BSS_0216ABA0
-_0213E724:
-	.byte 0x08, 0xB5, 0x00, 0x28, 0x00, 0xD1, 0x53, 0xE1
 
-	thumb_func_start ov11_0213E72C
-ov11_0213E72C: ; 0x0213E72C
+    thumb_func_start ov11_0213E724
+ov11_0213E724: ; 0x0213E724
+    push {r3, lr}
+    cmp r0, #0
+    bne _0213E72C
+    b _0213E9D4
+    thumb_func_end ov11_0213E724
+_0213E72C:
 	mov r1, #0
 	ldrsh r2, [r0, r1]
 	cmp r2, #7
 	bls _0213E736
 	b _0213E9C6
-	thumb_func_end ov11_0213E72C
 _0213E736:
 	add r2, r2, r2
 	add r2, pc
@@ -43384,6 +43575,7 @@ _0213E9D4:
 	pop {r3, pc}
 	nop
 _0213E9D8: .word OVERLAY11_BSS_0216AD00
+    thumb_func_end ov11_0213E724
 
 	thumb_func_start ov11_0213E9DC
 ov11_0213E9DC: ; 0x0213E9DC
@@ -43440,7 +43632,7 @@ _0213EA36:
 	pop {r3, pc}
 	nop
 _0213EA3C: .word OVERLAY11_BSS_0216AD00
-_0213EA40: .word 0x0213E725
+_0213EA40: .word ov11_0213E724+1
 
 	thumb_func_start ov11_0213EA44
 ov11_0213EA44: ; 0x0213EA44
@@ -43855,18 +44047,20 @@ _0213ED68:
 	nop
 _0213ED74: .word OVERLAY11_BSS_0216AD00
 _0213ED78: .word 0x0000231F
-_0213ED7C: .word 0x0213E725
-_0213ED80:
-	.byte 0x08, 0xB5, 0x00, 0x28, 0x00, 0xD1, 0x7C, 0xE1
+_0213ED7C: .word ov11_0213E724+1
 
-	thumb_func_start ov11_0213ED88
-ov11_0213ED88: ; 0x0213ED88
+	thumb_func_start ov11_0213ED80
+ov11_0213ED80: ; 0x0213ED80
+	push {r3, lr}
+    cmp r0, #0
+    bne _0213ED88
+    b _0213F082
+_0213ED88:
 	mov r1, #0
 	ldrsh r2, [r0, r1]
 	cmp r2, #9
 	bls _0213ED92
 	b _0213F074
-	thumb_func_end ov11_0213ED88
 _0213ED92:
 	add r2, r2, r2
 	add r2, pc
@@ -44270,6 +44464,7 @@ _0213F082:
 	.align 2, 0
 _0213F084: .word OVERLAY11_BSS_0216AD50
 _0213F088: .word OVERLAY11_BSS_0216ADD0
+	thumb_func_end ov11_0213ED80
 
 	thumb_func_start ov11_0213F08C
 ov11_0213F08C: ; 0x0213F08C
@@ -44326,7 +44521,7 @@ _0213F0E6:
 	pop {r3, pc}
 	nop
 _0213F0EC: .word OVERLAY11_BSS_0216AD50
-_0213F0F0: .word 0x0213ED81
+_0213F0F0: .word ov11_0213ED80+1
 
 	thumb_func_start ov11_0213F0F4
 ov11_0213F0F4: ; 0x0213F0F4
@@ -44707,7 +44902,7 @@ _0213F3D6:
 _0213F3E0: .word OVERLAY11_BSS_0216AD50
 _0213F3E4: .word 0x0000231F
 _0213F3E8: .word OVERLAY11_BSS_0216ADD0
-_0213F3EC: .word 0x0213ED81
+_0213F3EC: .word ov11_0213ED80+1
 
 	thumb_func_start ov11_0213F3F0
 ov11_0213F3F0: ; 0x0213F3F0
@@ -44844,9 +45039,16 @@ _0213F4D8:
 	.align 2, 0
 _0213F4DC: .word OVERLAY11_BSS_0216AD50
 _0213F4E0: .word OVERLAY11_BSS_0216ADD4
-_0213F4E4:
-	.byte 0x01, 0x4B, 0x00, 0x21, 0x18, 0x47, 0xC0, 0x46
-	.word 0x0213F4B5
+
+    thumb_func_start ov11_0213F4E4
+ov11_0213F4E4: ; 0x0213F4E4
+    ldr r3, _0213F4EC ; =0x0213F4B5
+    mov r1, #0
+    bx r3
+    nop
+	.align 2, 0
+_0213F4EC: .word ov11_0213F4B4+1
+    thumb_func_end ov11_0213F4E4
 
 	thumb_func_start ov11_0213F4F0
 ov11_0213F4F0: ; 0x0213F4F0
@@ -44931,7 +45133,7 @@ _0213F57C:
 _0213F584: .word OVERLAY11_BSS_0216AD50
 _0213F588: .word 0x000024D0
 _0213F58C: .word 0x00002490
-_0213F590: .word 0x0213F4B5
+_0213F590: .word ov11_0213F4B4+1
 
 	thumb_func_start ov11_0213F594
 ov11_0213F594: ; 0x0213F594
@@ -45132,7 +45334,7 @@ _0213F6F6:
 	.align 2, 0
 _0213F6FC: .word OVERLAY11_BSS_0216AD50
 _0213F700: .word 0x003FEC42
-_0213F704: .word 0x0213F4E5
+_0213F704: .word ov11_0213F4E4+1
 _0213F708: .word PTR_DAT_overlay_11_02167e38
 _0213F70C: .word DAT_overlay_11_02167e4c
 
@@ -45760,7 +45962,7 @@ _0213FBB8: .word OVERLAY11_BSS_0216AD50
 _0213FBBC: .word PTR_DAT_overlay_11_02167e38
 _0213FBC0: .word 0x0030BFFE
 _0213FBC4: .word 0x000FFB10
-_0213FBC8: .word 0x0213F4E5
+_0213FBC8: .word ov11_0213F4E4+1
 _0213FBCC: .word OVERLAY11_BSS_0216B260
 _0213FBD0: .word OVERLAY11_BSS_0216B200
 
@@ -45818,7 +46020,7 @@ ov11_0213FC28: ; 0x0213FC28
 	ldr r3, _0213FC30 ; =0x0213FBED
 	bx r3
 	.align 2, 0
-_0213FC30: .word 0x0213FBED
+_0213FC30: .word ov11_0213FBEC+1
 	thumb_func_end ov11_0213FC28
 
 	thumb_func_start ov11_0213FC34
@@ -47543,18 +47745,24 @@ _02140924:
 	pop {r4, r5, r6, r7, pc}
 	nop
 _0214092C: .word OVERLAY11_BSS_0216AD50
-_02140930:
-	.byte 0x10, 0xB5, 0xFF, 0xF7, 0x0B, 0xFE, 0x04, 0x1C, 0x09, 0x48, 0x84, 0x67, 0xFE, 0xF7, 0xE8, 0xFE
-	.byte 0x01, 0x2C, 0x02, 0xD1, 0x06, 0x21, 0x06, 0x48, 0x01, 0xE0
 
-	non_word_aligned_thumb_func_start ov11_0214094A
-ov11_0214094A: ; 0x0214094A
+    thumb_func_start ov11_02140930
+ov11_02140930: ; 0x02140930
+	push {r4, lr}
+    bl ov11_0214054C
+    add r4, r0, #0
+    ldr r0, _02140960 ; =OVERLAY11_BSS_0216AD50
+    str r4, [r0, #0x78]
+    bl ov11_0213F710
+    cmp r4, #1
+    bne _0214094A
+    mov r1, #6
+    ldr r0, _02140960 ; =OVERLAY11_BSS_0216AD50
+    b _0214094E
+_0214094A:
 	ldr r0, _02140960 ; =OVERLAY11_BSS_0216AD50
 	mov r1, #7
-	thumb_func_end ov11_0214094A
-
-	non_word_aligned_thumb_func_start ov11_0214094E
-ov11_0214094E: ; 0x0214094E
+_0214094E:
 	str r1, [r0, #0x38]
 	mov r1, #0
 	ldr r0, _02140964 ; =PTR_DAT_overlay_11_02167e38
@@ -47565,7 +47773,7 @@ ov11_0214094E: ; 0x0214094E
 	nop
 _02140960: .word OVERLAY11_BSS_0216AD50
 _02140964: .word PTR_DAT_overlay_11_02167e38
-	thumb_func_end ov11_0214094E
+	thumb_func_end ov11_02140930
 
 	thumb_func_start ov11_02140968
 ov11_02140968: ; 0x02140968
@@ -51052,7 +51260,7 @@ _02142436:
 _02142454: .word OVERLAY11_BSS_0216AD50
 _02142458: .word PTR_DAT_overlay_11_02167e38
 _0214245C: .word OVERLAY11_BSS_0216ADFC
-_02142460: .word 0x02140931
+_02142460: .word ov11_02140930+1
 _02142464: .word 0x0000EA60
 _02142468: .word OVERLAY11_BSS_0216AEBC
 
@@ -72336,13 +72544,25 @@ _02153798:
 	.align 2, 0
 _021537B0: .word OVERLAY11_BSS_0216C39C
 _021537B4: .word ov11_0215366C
-_021537B8:
-	.byte 0x08, 0xC0, 0x9F, 0xE5, 0x01, 0x00, 0xA0, 0xE1
-	.byte 0x20, 0x10, 0xA0, 0xE3, 0x1C, 0xFF, 0x2F, 0xE1
-	.word ov11_0215C89C
-	.byte 0x04, 0xC0, 0x9F, 0xE5
-	.byte 0x01, 0x00, 0xA0, 0xE1, 0x1C, 0xFF, 0x2F, 0xE1
-	.word ov11_0215C904
+
+    arm_func_start ov11_021537B8
+ov11_021537B8: ; 0x021537B8
+	ldr ip, _021537C8 ; =ov11_0215C89C
+	mov r0, r1
+	mov r1, #0x20
+	bx ip
+	.align 2, 0
+	arm_func_end ov11_021537B8
+_021537C8: .word ov11_0215C89C
+
+	arm_func_start ov11_021537CC
+ov11_021537CC: ; 0x021537CC
+	ldr ip, _021537D8 ; =ov11_0215C904
+	mov r0, r1
+	bx ip
+	.align 2, 0
+	arm_func_end ov11_021537CC
+_021537D8: .word ov11_0215C904
 
 	arm_func_start ov11_021537DC
 ov11_021537DC: ; 0x021537DC
@@ -75022,7 +75242,7 @@ ov11_0215589C: ; 0x0215589C
 	ldr r2, _021558B8 ; =OVERLAY11_BSS_0216C3C4
 	mov r1, r0
 	ldr r0, [r2]
-	ldr ip, _021558BC ; =FUN_02067FD0
+	ldr ip, _021558BC ; =MI_CpuCopy8
 	mov r2, #0x20
 	add r0, r0, #0x440
 	bx ip
@@ -87052,7 +87272,7 @@ _0215F4AC: .word MI_CpuFill8
 
 	arm_func_start ov11_0215F4B0
 ov11_0215F4B0: ; 0x0215F4B0
-	ldr ip, _0215F4C4 ; =FUN_02067FD0
+	ldr ip, _0215F4C4 ; =MI_CpuCopy8
 	mov r3, r0
 	mov r0, r1
 	mov r1, r3
@@ -90853,7 +91073,7 @@ _02162848: .word MI_CpuFill8
 
 	arm_func_start ov11_0216284C
 ov11_0216284C: ; 0x0216284C
-	ldr ip, _02162860 ; =FUN_02067FD0
+	ldr ip, _02162860 ; =MI_CpuCopy8
 	mov r3, r0
 	mov r0, r1
 	mov r1, r3
@@ -90987,38 +91207,38 @@ ptr_FUN_overlay_11_0212c1ec_overlay_11_021629cc: ; 0x021629CC
 	.word ov11_0212CCF0
 	.byte 0x00, 0x00, 0x00, 0x00
 ptr_FUN_overlay_11_021288bc_overlay_11_021629d8: ; 0x021629D8
-	.word 0x021288BC
-	.word 0x021287EC
+	.word ov11_021288BC
+	.word ov11_021287EC
 	.byte 0x00, 0x00, 0x00, 0x00
 ptr_FUN_overlay_11_02128810_overlay_11_021629e4: ; 0x021629E4
-	.word 0x02128810
-	.word 0x021287EC
+	.word ov11_02128810
+	.word ov11_021287EC
 	.byte 0x00, 0x00, 0x00, 0x00
-	.word 0x021287F4
+	.word ov11_021287F4
 	.word ov11_0212CCF0
 	.byte 0x00, 0x00, 0x00, 0x00
 ptr_FUN_overlay_11_02128cc8_overlay_11_021629fc: ; 0x021629FC
 	.word ov11_02128CC8
 ptr_FUN_overlay_3_02128e30_overlay_11_02162a00: ; 0x02162A00
-	.word 0x02128E30
+	.word ov11_02128E30
 	.byte 0x00, 0x00, 0x00, 0x00
 ptr_FUN_overlay_11_02128d64_overlay_11_02162a08: ; 0x02162A08
 	.word ov11_02128D64
 ptr_FUN_overlay_3_02128e30_overlay_11_02162a0c: ; 0x02162A0C
-	.word 0x02128E30
+	.word ov11_02128E30
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 ptr_FUN_overlay_11_0212c09c_overlay_11_02162a2c: ; 0x02162A2C
 	.word ov11_0212C09C
-	.word 0x0212CCF8
+	.word ov11_0212CCF8
 	.byte 0x00, 0x00, 0x00, 0x00
 ptr_FUN_overlay_11_0212c0d4_overlay_11_02162a38: ; 0x02162A38
 	.word ov11_0212C0D4
-	.word 0x0212CCF8
+	.word ov11_0212CCF8
 	.byte 0x00, 0x00, 0x00, 0x00
 ptr_FUN_overlay_11_0212c10c_overlay_11_02162a44: ; 0x02162A44
 	.word ov11_0212C10C
-	.word 0x0212CCF8
+	.word ov11_0212CCF8
 	.byte 0x00, 0x00, 0x00, 0x00
 ptr_FUN_overlay_11_0212cd08_overlay_11_02162a50: ; 0x02162A50
 	.word ov11_0212CD08
@@ -91034,20 +91254,20 @@ ptr_FUN_overlay_11_0212cdc4_overlay_11_02162a68: ; 0x02162A68
 	.byte 0x00, 0x00, 0x00, 0x00
 ptr_FUN_overlay_11_02129970_overlay_11_02162a74: ; 0x02162A74
 	.word ov11_02129970
-	.word 0x0212CCF8
+	.word ov11_0212CCF8
 	.byte 0x00, 0x00, 0x00, 0x00
-	.word 0x02129A3C
-	.word 0x0212CCF8
+	.word ov11_02129A3C
+	.word ov11_0212CCF8
 	.byte 0x00, 0x00, 0x00, 0x00
-	.word 0x02129A1C
-	.word 0x0212CD00
+	.word ov11_02129A1C
+	.word ov11_0212CD00
 	.byte 0x00, 0x00, 0x00, 0x00
-	.word 0x02129AEC
-	.word 0x02129B14
+	.word ov11_02129AEC
+	.word ov11_02129B14
 	.byte 0x00, 0x00, 0x00, 0x00
 ptr_FUN_overlay_11_02129b1c_overlay_11_02162aa4: ; 0x02162AA4
 	.word ov11_02129B1C
-	.word 0x02129B58
+	.word ov11_02129B58
 	.byte 0x00, 0x00, 0x00, 0x00
 PTR_LAB_overlay_11_02128634_overlay_11_02162ab0: ; 0x02162AB0
 	.word ov11_02128634
@@ -91082,8 +91302,12 @@ DAT_overlay_11_02162b10: ; 0x02162B10
 	.byte 0x00, 0x00, 0x00, 0x00
 DAT_overlay_11_02162b14: ; 0x02162B14
 	.byte 0x00, 0x00, 0x00, 0x00
-s_Wayport2FREESPOTNINTENDOWFC_overlay_11_02162b18: ; 0x02162B18
-	.asciz "Wayport2FREESPOTNINTENDOWFC"
+s_Wayport2_overlay_11_02162b18: ; 0x02162B18
+	.ascii "Wayport2"
+s_FREESPOT_overlay_11_02162b20: ; 0x02162B20
+    .ascii "FREESPOT"
+s_NINTENDOWFC_overlay_11_02162b28: ; 0x02162B28
+    .asciz "NINTENDOWFC"
 DAT_overlay_11_02162b34: ; 0x02162B34
 	.byte 0x02, 0x80, 0x00, 0x00, 0x04, 0x80, 0x00, 0x00, 0x08, 0x80, 0x00, 0x00
 	.byte 0x10, 0x80, 0x00, 0x00, 0x20, 0x80, 0x00, 0x00, 0x40, 0x80, 0x00, 0x00, 0x80, 0x80, 0x00, 0x00
@@ -92393,8 +92617,8 @@ DAT_overlay_11_02165d0c: ; 0x02165D0C
 	.byte 0x03, 0xFF, 0xFF, 0xFF
 	.byte 0xFF, 0xFF, 0x06, 0x00
 PTR_LAB_overlay_11_021537b8_overlay_11_02165d14: ; 0x02165D14
-	.word 0x021537B8
-	.word 0x021537CC
+	.word ov11_021537B8
+	.word ov11_021537CC
 	.byte 0x03, 0x01, 0x00, 0x00
 DAT_overlay_11_02165d20: ; 0x02165D20
 	.byte 0x2B, 0x00, 0x00, 0x00
@@ -93909,8 +94133,8 @@ DAT_overlay_11_02167d98: ; 0x02167D98
 	.byte 0xFF, 0xFF, 0xFF, 0xFF
 DAT_overlay_11_02167d9c: ; 0x02167D9C
 	.byte 0x00, 0x00, 0x00, 0x01
-	.word 0x0213DEB5
-	.word 0x0213DECD
+	.word ov11_0213DEB4+1
+	.word ov11_0213DECC+1
 	.byte 0x00, 0x00, 0x00, 0x00
 DAT_overlay_11_02167dac: ; 0x02167DAC
 	.byte 0x00, 0x00, 0x00, 0x00
@@ -93951,8 +94175,8 @@ DAT_overlay_11_02167e48: ; 0x02167E48
 	.byte 0x40, 0x00, 0x00, 0x00
 DAT_overlay_11_02167e4c: ; 0x02167E4C
 	.byte 0x00, 0x00, 0x00, 0x01
-	.word 0x0213F3FD
-	.word 0x0213F42D
+	.word ov11_0213F3FC+1
+	.word ov11_0213F42C+1
 	.byte 0x00, 0x00, 0x00, 0x00, 0xC0, 0xA8, 0x00, 0xB0
 	.byte 0xFF, 0xFF, 0xFF, 0x00, 0xC0, 0xA8, 0x00, 0xC8, 0xC0, 0xA8, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x10, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00

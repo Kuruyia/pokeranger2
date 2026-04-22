@@ -3535,7 +3535,8 @@ PTR_ptr_FUN_020835bc_overlay_25_0211fc48: ; 0x0211FC48
 s_15CStaffrollScene_overlay_25_0211fc54: ; 0x0211FC54
 	.asciz "15CStaffrollScene"
 _0211FC66:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x48, 0xFC, 0x11, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_25_0211fc48
 PTR_LAB_overlay_25_0211ca24_overlay_25_0211fc70: ; 0x0211FC70
 	.word ov25_0211CA24
 ptr_FUN_overlay_20_0211ca38_overlay_25_0211fc74: ; 0x0211FC74

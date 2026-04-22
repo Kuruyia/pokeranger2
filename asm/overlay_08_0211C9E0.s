@@ -1984,7 +1984,8 @@ PTR_ptr_FUN_020835bc_overlay_8_0211e3e0: ; 0x0211E3E0
 s_18CMissionQuestScene_overlay_8_0211e3ec: ; 0x0211E3EC
 	.asciz "18CMissionQuestScene"
 _0211E401:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xE0, 0xE3, 0x11, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_8_0211e3e0
 ptr_FUN_overlay_11_0211ca0c_overlay_8_0211e40c: ; 0x0211E40C
 	.word ov8_0211CA0C
 ptr_FUN_overlay_23_0211ca6c_overlay_8_0211e410: ; 0x0211E410

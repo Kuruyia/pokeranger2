@@ -21598,8 +21598,11 @@ ov1_0212EDE0: ; 0x0212EDE0
 	.align 2, 0
 _0212EE1C: .word PTR_LAB_overlay_1_0212ee20_overlay_1_0214143c
 	arm_func_end ov1_0212EDE0
-_0212EE20:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start ov1_0212EE20
+ov1_0212EE20: ; 0x0212EE20
+    bx lr
+    arm_func_end ov1_0212EE20
 
 	arm_func_start ov1_0212EE24
 ov1_0212EE24: ; 0x0212EE24
@@ -42034,7 +42037,8 @@ PTR_ptr_FUN_020835bc_overlay_1_02140a2c: ; 0x02140A2C
 s_12CBattleEnemy_overlay_1_02140a38: ; 0x02140A38
 	.asciz "12CBattleEnemy"
 _02140A47:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x2C, 0x0A, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_02140a2c
 ptr_FUN_overlay_0_0212546c_overlay_1_02140a50: ; 0x02140A50
 	.word ov1_0212546C
 ptr_FUN_overlay_1_02125604_overlay_1_02140a54: ; 0x02140A54
@@ -42629,7 +42633,8 @@ PTR_ptr_FUN_020835bc_overlay_1_021413c8: ; 0x021413C8
 s_11CLineEffect_overlay_1_021413d4: ; 0x021413D4
 	.asciz "11CLineEffect"
 _021413E2:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC8, 0x13, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_021413c8
 PTR_LAB_overlay_1_0212e5c8_overlay_1_021413ec: ; 0x021413EC
 	.word ov1_0212E5C8
 ptr_FUN_overlay_1_0212e5f0_overlay_1_021413f0: ; 0x021413F0
@@ -42656,7 +42661,7 @@ _02141434:
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_02083578_overlay_1_0214141c
 PTR_LAB_overlay_1_0212ee20_overlay_1_0214143c: ; 0x0214143C
-	.word 0x0212EE20
+	.word ov1_0212EE20
 ptr_FUN_overlay_1_0212ee24_overlay_1_02141440: ; 0x02141440
 	.word ov1_0212EE24
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
@@ -42667,7 +42672,8 @@ PTR_ptr_FUN_020835bc_overlay_1_02141450: ; 0x02141450
 s_19CBattleAssistDragon_overlay_1_0214145c: ; 0x0214145C
 	.asciz "19CBattleAssistDragon"
 _02141472:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x50, 0x14, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_02141450
 ptr_FUN_overlay_1_0212f460_overlay_1_0214147c: ; 0x0214147C
 	.word ov1_0212F460
 ptr_FUN_overlay_1_0212f48c_overlay_1_02141480: ; 0x02141480
@@ -42702,7 +42708,8 @@ PTR_ptr_FUN_020835bc_overlay_1_021414d0: ; 0x021414D0
 s_18CBattleAssistEsper_overlay_1_021414dc: ; 0x021414DC
 	.asciz "18CBattleAssistEsper"
 _021414F1:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xD0, 0x14, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_021414d0
 PTR_LAB_overlay_1_0213014c_overlay_1_021414fc: ; 0x021414FC
 	.word ov1_0213014C
 ptr_FUN_overlay_1_02130160_overlay_1_02141500: ; 0x02141500
@@ -42753,7 +42760,8 @@ PTR_ptr_FUN_020835bc_overlay_1_02141588: ; 0x02141588
 s_16CBattleAssistFly_overlay_1_02141594: ; 0x02141594
 	.asciz "16CBattleAssistFly"
 _021415A7:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x88, 0x15, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_02141588
 PTR_LAB_overlay_1_02130e84_overlay_1_021415b0: ; 0x021415B0
 	.word ov1_02130E84
 ptr_FUN_overlay_1_02130e98_overlay_1_021415b4: ; 0x021415B4
@@ -42770,7 +42778,8 @@ PTR_ptr_FUN_020835bc_overlay_1_021415c4: ; 0x021415C4
 s_18CBattleAssistGhost_overlay_1_021415d0: ; 0x021415D0
 	.asciz "18CBattleAssistGhost"
 _021415E5:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC4, 0x15, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_021415c4
 PTR_LAB_overlay_1_02131548_overlay_1_021415f0: ; 0x021415F0
 	.word ov1_02131548
 ptr_FUN_overlay_1_0213155c_overlay_1_021415f4: ; 0x021415F4
@@ -42787,7 +42796,8 @@ PTR_ptr_FUN_020835bc_overlay_1_02141604: ; 0x02141604
 s_20CBattleAssistGrapple_overlay_1_02141610: ; 0x02141610
 	.asciz "20CBattleAssistGrapple"
 _02141627:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x16, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_02141604
 PTR_LAB_overlay_1_02131ab4_overlay_1_02141630: ; 0x02141630
 	.word ov1_02131AB4
 ptr_FUN_overlay_1_02131ac8_overlay_1_02141634: ; 0x02141634
@@ -42803,7 +42813,8 @@ PTR_ptr_FUN_020835bc_overlay_1_02141644: ; 0x02141644
 s_18CBattleAssistGrass_overlay_1_02141650: ; 0x02141650
 	.asciz "18CBattleAssistGrass"
 _02141665:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x44, 0x16, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_02141644
 PTR_LAB_overlay_1_02131b90_overlay_1_02141670: ; 0x02141670
 	.word ov1_02131B90
 ptr_FUN_overlay_1_02131ba4_overlay_1_02141674: ; 0x02141674
@@ -42820,7 +42831,8 @@ PTR_ptr_FUN_020835bc_overlay_1_02141684: ; 0x02141684
 s_19CBattleAssistGround_overlay_1_02141690: ; 0x02141690
 	.asciz "19CBattleAssistGround"
 _021416A6:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x84, 0x16, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_02141684
 ptr_FUN_overlay_1_0213213c_overlay_1_021416b0: ; 0x021416B0
 	.word ov1_0213213C
 ptr_FUN_overlay_1_02132168_overlay_1_021416b4: ; 0x021416B4
@@ -42837,7 +42849,8 @@ PTR_ptr_FUN_020835bc_overlay_1_021416c4: ; 0x021416C4
 s_16CBattleAssistIce_overlay_1_021416d0: ; 0x021416D0
 	.asciz "16CBattleAssistIce"
 _021416E3:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0xC4, 0x16, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_021416c4
 ptr_FUN_overlay_11_02132564_overlay_1_021416ec: ; 0x021416EC
 	.word ov1_02132564
 ptr_FUN_overlay_1_02132578_overlay_1_021416f0: ; 0x021416F0
@@ -42854,7 +42867,8 @@ PTR_ptr_FUN_020835bc_overlay_1_02141700: ; 0x02141700
 s_19CBattleAssistInsect_overlay_1_0214170c: ; 0x0214170C
 	.asciz "19CBattleAssistInsect"
 _02141722:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x17, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_02141700
 PTR_LAB_overlay_1_02133148_overlay_1_0214172c: ; 0x0214172C
 	.word ov1_02133148
 ptr_FUN_overlay_1_0213315c_overlay_1_02141730: ; 0x02141730
@@ -42871,7 +42885,8 @@ PTR_ptr_FUN_020835bc_overlay_1_02141740: ; 0x02141740
 s_19CBattleAssistNormal_overlay_1_0214174c: ; 0x0214174C
 	.asciz "19CBattleAssistNormal"
 _02141762:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x17, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_02141740
 PTR_LAB_overlay_1_02133b74_overlay_1_0214176c: ; 0x0214176C
 	.word ov1_02133B74
 ptr_FUN_overlay_1_02133b88_overlay_1_02141770: ; 0x02141770
@@ -42887,7 +42902,8 @@ PTR_ptr_FUN_020835bc_overlay_1_02141780: ; 0x02141780
 s_19CBattleAssistPoison_overlay_1_0214178c: ; 0x0214178C
 	.asciz "19CBattleAssistPoison"
 _021417A2:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x17, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_02141780
 PTR_LAB_overlay_1_02133c38_overlay_1_021417ac: ; 0x021417AC
 	.word ov1_02133C38
 ptr_FUN_overlay_1_02133c4c_overlay_1_021417b0: ; 0x021417B0
@@ -42905,7 +42921,8 @@ PTR_ptr_FUN_020835bc_overlay_1_021417c0: ; 0x021417C0
 s_20CBattleAssistRecover_overlay_1_021417cc: ; 0x021417CC
 	.asciz "20CBattleAssistRecover"
 _021417E3:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0x17, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_021417c0
 PTR_LAB_overlay_1_02134274_overlay_1_021417ec: ; 0x021417EC
 	.word ov1_02134274
 ptr_FUN_overlay_1_02134288_overlay_1_021417f0: ; 0x021417F0
@@ -43180,7 +43197,8 @@ PTR_ptr_FUN_020835bc_overlay_1_02141c44: ; 0x02141C44
 s_15CBattleGameOver_overlay_1_02141c50: ; 0x02141C50
 	.asciz "15CBattleGameOver"
 _02141C62:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x44, 0x1C, 0x14, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_1_02141c44
 ptr_FUN_overlay_1_0213a540_overlay_1_02141c6c: ; 0x02141C6C
 	.word ov1_0213A540
 ptr_FUN_overlay_1_0213a5dc_overlay_1_02141c70: ; 0x02141C70

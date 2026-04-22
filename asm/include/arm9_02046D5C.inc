@@ -691,3 +691,9 @@
 .public sub_02046914
 .public sub_02046920
 .public sub_0204692C
+.public sub_0200FA58
+.public sub_0200396C
+.public sub_02007CA8
+.public sub_020130B8
+.public sub_020130E0
+.public sub_02039E0C

@@ -2993,7 +2993,7 @@ _02046B70: .word MAIN_BSS_0210CFD8
 _02046B74: .word 0x04000242
 _02046B78: .word 0x04000243
 _02046B7C: .word sub_02046C64
-_02046B80: .word 0x02046D3C
+_02046B80: .word WvrDummyAsyncCallback
 
 	arm_func_start sub_02046B84
 sub_02046B84: ; 0x02046B84
@@ -3058,7 +3058,7 @@ _02046C48:
 	.align 2, 0
 _02046C58: .word MAIN_BSS_0210CFD8
 _02046C5C: .word sub_02046C64
-_02046C60: .word 0x02046D3C
+_02046C60: .word WvrDummyAsyncCallback
 
 	arm_func_start sub_02046C64
 sub_02046C64: ; 0x02046C64
@@ -3122,5 +3122,8 @@ _02046D10:
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
 _02046D38: .word MAIN_BSS_0210CFD8
-_02046D3C:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start WvrDummyAsyncCallback
+WvrDummyAsyncCallback: ; 0x02046D3C
+    bx lr
+    arm_func_end WvrDummyAsyncCallback

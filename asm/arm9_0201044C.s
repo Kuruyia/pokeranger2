@@ -3678,15 +3678,38 @@ sub_02013060: ; 0x02013060
 	.align 2, 0
 _020130B4: .word PTR_LAB_0208b4bc
 	arm_func_end sub_02013060
-_020130B8:
-	.byte 0x10, 0x40, 0x2D, 0xE9, 0x18, 0x10, 0x9F, 0xE5
-	.byte 0x00, 0x40, 0xA0, 0xE1, 0x00, 0x10, 0x84, 0xE5, 0x00, 0x10, 0x90, 0xE5, 0x08, 0x10, 0x91, 0xE5
-	.byte 0x31, 0xFF, 0x2F, 0xE1, 0x04, 0x00, 0xA0, 0xE1, 0x10, 0x80, 0xBD, 0xE8
-	.word PTR_LAB_0208b4bc
-	.byte 0x10, 0x40, 0x2D, 0xE9, 0x20, 0x10, 0x9F, 0xE5, 0x00, 0x40, 0xA0, 0xE1, 0x00, 0x10, 0x84, 0xE5
-	.byte 0x00, 0x10, 0x90, 0xE5, 0x08, 0x10, 0x91, 0xE5, 0x31, 0xFF, 0x2F, 0xE1, 0x04, 0x00, 0xA0, 0xE1
-	.byte 0xDA, 0xB8, 0xFF, 0xEB, 0x04, 0x00, 0xA0, 0xE1, 0x10, 0x80, 0xBD, 0xE8
-	.word PTR_LAB_0208b4bc
+
+    arm_func_start sub_020130B8
+sub_020130B8: ; 0x020130B8
+    stmdb sp!, {r4, lr}
+    ldr r1, _020130DC ; =PTR_LAB_0208b4bc
+    mov r4, r0
+    str r1, [r4]
+    ldr r1, [r0]
+    ldr r1, [r1, #8]
+    blx r1
+    mov r0, r4
+    ldmia sp!, {r4, pc}
+	.align 2, 0
+_020130DC: .word PTR_LAB_0208b4bc
+    arm_func_end sub_020130B8
+
+    arm_func_start sub_020130E0
+sub_020130E0: ; 0x020130E0
+    stmdb sp!, {r4, lr}
+    ldr r1, _0201310C ; =PTR_LAB_0208b4bc
+    mov r4, r0
+    str r1, [r4]
+    ldr r1, [r0]
+    ldr r1, [r1, #8]
+    blx r1
+    mov r0, r4
+    bl _ZdlPv
+    mov r0, r4
+    ldmia sp!, {r4, pc}
+	.align 2, 0
+_0201310C: .word PTR_LAB_0208b4bc
+    arm_func_end sub_020130E0
 
 	arm_func_start sub_02013110
 sub_02013110: ; 0x02013110
@@ -6031,8 +6054,11 @@ sub_020150F4: ; 0x020150F4
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020150F4
-_02015108:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start sub_02015108
+sub_02015108: ; 0x02015108
+    bx lr
+	arm_func_end sub_02015108
 
 	arm_func_start sub_0201510C
 sub_0201510C: ; 0x0201510C
@@ -6042,8 +6068,11 @@ sub_0201510C: ; 0x0201510C
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_0201510C
-_02015120:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start sub_02015120
+sub_02015120: ; 0x02015120
+    bx lr
+	arm_func_end sub_02015120
 
 	arm_func_start sub_02015124
 sub_02015124: ; 0x02015124
@@ -6225,9 +6254,9 @@ sub_020152D0: ; 0x020152D0
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
-_02015394: .word 0x02015108
+_02015394: .word sub_02015108
 _02015398: .word sub_020150F4
-_0201539C: .word 0x02015120
+_0201539C: .word sub_02015120
 _020153A0: .word sub_0201510C
 _020153A4: .word sub_0204114C
 _020153A8: .word sub_02041124
@@ -6268,8 +6297,8 @@ sub_020153AC: ; 0x020153AC
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02015428: .word sub_0204114C
-_0201542C: .word 0x02015120
-_02015430: .word 0x02015108
+_0201542C: .word sub_02015120
+_02015430: .word sub_02015108
 	arm_func_end sub_020153AC
 
 	arm_func_start sub_02015434
@@ -7043,7 +7072,7 @@ _02015E2C:
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
 _02015E48: .word 0x00000FFF
-_02015E4C: .word 0x02015108
+_02015E4C: .word sub_02015108
 _02015E50: .word sub_020150F4
 
 	arm_func_start sub_02015E54

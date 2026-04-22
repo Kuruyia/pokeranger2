@@ -7426,7 +7426,8 @@ PTR_ptr_FUN_02083578_overlay_21_02122e38: ; 0x02122E38
 s_19CBrowserMenuManager_overlay_21_02122e40: ; 0x02122E40
 	.asciz "19CBrowserMenuManager"
 _02122E56:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x38, 0x2E, 0x12, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_02083578_overlay_21_02122e38
 ptr_FUN_overlay_21_02120c18_overlay_21_02122e60: ; 0x02122E60
 	.word ov21_02120C18
 ptr_FUN_overlay_21_02120828_overlay_21_02122e64: ; 0x02122E64
@@ -7607,7 +7608,8 @@ _021230D7:
 s_23CBrowserMenuManagerType_overlay_21_021230d8: ; 0x021230D8
 	.asciz "23CBrowserMenuManagerType"
 _021230F2:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xB4, 0x30, 0x12, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_020835bc_overlay_21_021230b4
 ptr_FUN_overlay_21_02120c18_overlay_21_021230fc: ; 0x021230FC
 	.word ov21_02120C18
 	.word ov21_02121FDC

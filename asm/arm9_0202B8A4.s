@@ -3458,11 +3458,11 @@ _0202E2CC:
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0202E308: .word 0x02032003
-_0202E30C: .word sub_02032004
+_0202E30C: .word 0x02032004
 _0202E310: .word 0x02032005
 _0202E314: .word 0x02032006
 _0202E318: .word 0x02032007
-_0202E31C: .word sub_02032008
+_0202E31C: .word 0x02032008
 _0202E320: .word 0x02032009
 _0202E324: .word 0x0203200A
 _0202E328: .word 0x0203200B
@@ -18210,9 +18210,15 @@ sub_02039DDC: ; 0x02039DDC
 	.align 2, 0
 _02039E08: .word ptr_FUN_02039ddc_0208da78
 	arm_func_end sub_02039DDC
-_02039E0C:
-	.byte 0x10, 0x40, 0x2D, 0xE9
-	.byte 0x00, 0x40, 0xA0, 0xE1, 0xBF, 0xBD, 0xFF, 0xEB, 0x04, 0x00, 0xA0, 0xE1, 0x10, 0x80, 0xBD, 0xE8
+
+	arm_func_start sub_02039E0C
+sub_02039E0C: ; 0x02039E0C
+    stmdb sp!, {r4, lr}
+    mov r4, r0
+    bl sub_02029518
+    mov r0, r4
+    ldmia sp!, {r4, pc}
+    arm_func_end sub_02039E0C
 
 	arm_func_start sub_02039E20
 sub_02039E20: ; 0x02039E20

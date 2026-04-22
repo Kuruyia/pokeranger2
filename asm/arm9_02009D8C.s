@@ -2234,8 +2234,16 @@ _0200BB90:
 	.align 2, 0
 _0200BBB8: .word 0x00100010
 _0200BBBC: .word 0x40004000
-_0200BBC0:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1, 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start sub_0200BBC0
+sub_0200BBC0: ; 0x0200BBC0
+    bx lr
+    arm_func_end sub_0200BBC0
+
+    arm_func_start sub_0200BBC4
+sub_0200BBC4: ; 0x0200BBC4
+    bx lr
+    arm_func_end sub_0200BBC4
 
 	arm_func_start _ZN17UnkClass_0200BBC8C1Ev
 _ZN17UnkClass_0200BBC8C1Ev: ; 0x0200BBC8
@@ -2279,8 +2287,8 @@ _0200BC10:
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
-_0200BC5C: .word 0x0200BBC4
-_0200BC60: .word 0x0200BBC0
+_0200BC5C: .word sub_0200BBC4
+_0200BC60: .word sub_0200BBC0
 
 	arm_func_start sub_0200BC64
 sub_0200BC64: ; 0x0200BC64
@@ -2856,10 +2864,13 @@ sub_0200C3D0: ; 0x0200C3D0
 	str r0, [r4, #8]
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0200C400: .word 0x0200C404
+_0200C400: .word sub_0200C404
 	arm_func_end sub_0200C3D0
-_0200C404:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start sub_0200C404
+sub_0200C404: ; 0x0200C404
+	bx lr
+    arm_func_end sub_0200C404
 
 	arm_func_start sub_0200C408
 sub_0200C408: ; 0x0200C408
@@ -3399,7 +3410,7 @@ sub_0200CAE0: ; 0x0200CAE0
 	str r0, [r4, #8]
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0200CB10: .word 0x0200C404
+_0200CB10: .word sub_0200C404
 	arm_func_end sub_0200CAE0
 
 	arm_func_start sub_0200CB14
@@ -6066,9 +6077,12 @@ _0200EE04:
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
-_0200EE0C: .word 0x0200EE10
-_0200EE10:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+_0200EE0C: .word sub_0200EE10
+
+    arm_func_start sub_0200EE10
+sub_0200EE10: ; 0x0200EE10
+	bx lr
+    arm_func_end sub_0200EE10
 
 	arm_func_start sub_0200EE14
 sub_0200EE14: ; 0x0200EE14

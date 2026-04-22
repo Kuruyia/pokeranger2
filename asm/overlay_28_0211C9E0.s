@@ -1396,13 +1396,13 @@ DAT_overlay_28_0211db14: ; 0x0211DB14
 	.word 0x02080021
 	.byte 0x22, 0x00, 0xF4, 0x01
 	.byte 0x23, 0x00, 0xF4, 0x01
-	.word MAIN_BSS_02090024
+	.word 0x02090024
 	.byte 0x26, 0x00, 0xFC, 0x01
-	.word MAIN_BSS_020A0027
-	.word MAIN_BSS_020B0029
-	.word MAIN_BSS_020B002A
-	.word MAIN_BSS_020B002B
-	.word MAIN_BSS_020B002C
+	.word 0x020A0027
+	.word 0x020B0029
+	.word 0x020B002A
+	.word 0x020B002B
+	.word 0x020B002C
 
     .section .sinit,4 ; 0x0211DBC0
 

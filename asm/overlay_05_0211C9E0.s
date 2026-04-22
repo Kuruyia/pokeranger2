@@ -300,9 +300,14 @@ _0211CD80:
 _0211CDC0:
 	mvn r0, #0
 	ldmia sp!, {r4, pc}
-_0211CDC8:
-	.byte 0x00, 0x10, 0xA0, 0xE3, 0x04, 0x10, 0x80, 0xE5
-	.byte 0x08, 0x10, 0x80, 0xE5, 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start ov5_0211CDC8
+ov5_0211CDC8: ; 0x0211CDC8
+    mov r1, #0
+    str r1, [r0, #0x4]
+    str r1, [r0, #0x8]
+    bx lr
+    arm_func_end ov5_0211CDC8
 
 	arm_func_start ov5_0211CDD8
 ov5_0211CDD8: ; 0x0211CDD8
@@ -2395,8 +2400,11 @@ ov5_0211EAD8: ; 0x0211EAD8
 ov5_0211EADC: ; 0x0211EADC
 	bx lr
 	arm_func_end ov5_0211EADC
-_0211EAE0:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+    arm_func_start ov5_0211EAE0
+ov5_0211EAE0: ; 0x0211EAE0
+    bx lr
+    arm_func_end ov5_0211EAE0
 
 	arm_func_start ov5_0211EAE4
 ov5_0211EAE4: ; 0x0211EAE4
@@ -4322,11 +4330,11 @@ ptr_FUN_overlay_27_0211e958_overlay_5_021204e0: ; 0x021204E0
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_02083578_overlay_5_02120488
 PTR_LAB_overlay_5_0211eae0_overlay_5_021204f8: ; 0x021204F8
-	.word 0x0211EAE0
+	.word ov5_0211EAE0
 ptr_FUN_overlay_5_0211cd1c_overlay_5_021204fc: ; 0x021204FC
 	.word ov5_0211CD1C
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-	.word 0x0211CDC8
+	.word ov5_0211CDC8
 	.byte 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 s_data_menu_overlay_5_0212051c: ; 0x0212051C

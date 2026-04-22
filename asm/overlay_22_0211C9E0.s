@@ -122,9 +122,15 @@ _0211CB3C:
 	.align 2, 0
 _0211CB74: .word ptr_FUN_overlay_22_0211cac4_overlay_22_02121770
 _0211CB78: .word PTR_LAB_overlay_22_0211d30c_overlay_22_021217a8
-_0211CB7C:
-	.byte 0x10, 0x40, 0x2D, 0xE9
-	.byte 0x00, 0x40, 0xA0, 0xE1, 0x39, 0x92, 0xFB, 0xEB, 0x04, 0x00, 0xA0, 0xE1, 0x10, 0x80, 0xBD, 0xE8
+
+	arm_func_start ov22_0211CB7C
+ov22_0211CB7C: ; 0x0211CB7C
+	stmdb sp!, {r4, lr}
+	mov r4, r0
+	bl _ZdlPv
+	mov r0, r4
+	ldmia sp!, {r4, pc}
+	arm_func_end ov22_0211CB7C
 
 	arm_func_start ov22_0211CB90
 ov22_0211CB90: ; 0x0211CB90
@@ -690,9 +696,15 @@ ov22_0211D304: ; 0x0211D304
 	mov r0, #0x17
 	bx lr
 	arm_func_end ov22_0211D304
-_0211D30C:
-	.byte 0x04, 0xC0, 0x9F, 0xE5
-	.byte 0x0C, 0x00, 0x80, 0xE0, 0xEE, 0xFF, 0xFF, 0xEA, 0xFC, 0xFF, 0xFF, 0xFF
+
+    arm_func_start ov22_0211D30C
+ov22_0211D30C: ; 0x0211D30C
+	ldr ip, _0211D318 ; =0xFFFFFFFC
+	add r0, r0, ip
+	b ov22_0211D2D4
+	.align 2, 0
+	arm_func_end ov22_0211D30C
+_0211D318: .word 0xFFFFFFFC
 
 	arm_func_start ov22_0211D31C
 ov22_0211D31C: ; 0x0211D31C
@@ -1715,8 +1727,11 @@ ov22_0211E138: ; 0x0211E138
 	bl ov22_0211DE40
 	ldmia sp!, {r3, pc}
 	arm_func_end ov22_0211E138
-_0211E158:
-	.byte 0x1E, 0xFF, 0x2F, 0xE1
+
+	arm_func_start ov22_0211E158
+ov22_0211E158: ; 0x0211E158
+	bx lr
+	arm_func_end ov22_0211E158
 
 	arm_func_start ov22_0211E15C
 ov22_0211E15C: ; 0x0211E15C
@@ -1751,12 +1766,42 @@ ov22_0211E18C: ; 0x0211E18C
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov22_0211E18C
-_0211E1C4:
-	.byte 0x04, 0xC0, 0x9F, 0xE5, 0x0C, 0x00, 0x80, 0xE0, 0x34, 0xFF, 0xFF, 0xEA
-	.byte 0xF8, 0xFF, 0xFF, 0xFF, 0x04, 0xC0, 0x9F, 0xE5, 0x0C, 0x00, 0x80, 0xE0, 0xBD, 0xFF, 0xFF, 0xEA
-	.byte 0xF4, 0xFF, 0xFF, 0xFF, 0x04, 0xC0, 0x9F, 0xE5, 0x0C, 0x00, 0x80, 0xE0, 0x40, 0xFF, 0xFF, 0xEA
-	.byte 0xF4, 0xFF, 0xFF, 0xFF, 0x04, 0xC0, 0x9F, 0xE5, 0x0C, 0x00, 0x80, 0xE0, 0xCD, 0xFF, 0xFF, 0xEA
-	.byte 0xF0, 0xFF, 0xFF, 0xFF
+
+	arm_func_start ov22_0211E1C4
+ov22_0211E1C4: ; 0x0211E1C4
+	ldr ip, _0211E1D0 ; =0xFFFFFFF8
+	add r0, r0, ip
+	b ov22_0211DEA4
+	.align 2, 0
+	arm_func_end ov22_0211E1C4
+_0211E1D0: .word 0xFFFFFFF8
+
+	arm_func_start ov22_0211E1D4
+ov22_0211E1D4: ; 0x0211E1D4
+	ldr ip, _0211E1E0 ; =0xFFFFFFF4
+	add r0, r0, ip
+	b ov22_0211E0D8
+	.align 2, 0
+	arm_func_end ov22_0211E1D4
+_0211E1E0: .word 0xFFFFFFF4
+
+	arm_func_start ov22_0211E1E4
+ov22_0211E1E4: ; 0x0211E1E4
+	ldr ip, _0211E1F0 ; =0xFFFFFFF4
+	add r0, r0, ip
+	b ov22_0211DEF4
+	.align 2, 0
+	arm_func_end ov22_0211E1E4
+_0211E1F0: .word 0xFFFFFFF4
+
+	arm_func_start ov22_0211E1F4
+ov22_0211E1F4: ; 0x0211E1F4
+	ldr ip, _0211E200 ; =0xFFFFFFF0
+	add r0, r0, ip
+	b ov22_0211E138
+	.align 2, 0
+	arm_func_end ov22_0211E1F4
+_0211E200: .word 0xFFFFFFF0
 
 	arm_func_start ov22_0211E204
 ov22_0211E204: ; 0x0211E204
@@ -2859,9 +2904,15 @@ ov22_0211F110: ; 0x0211F110
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov22_0211F110
-_0211F124:
-	.byte 0x04, 0xC0, 0x9F, 0xE5, 0x0C, 0x00, 0x80, 0xE0, 0xE2, 0xFF, 0xFF, 0xEA
-	.byte 0xF8, 0xFF, 0xFF, 0xFF
+
+    arm_func_start ov22_0211F124
+ov22_0211F124: ; 0x0211F124
+	ldr ip, _0211F130 ; =0xFFFFFFF8
+	add r0, r0, ip
+	b ov22_0211F0BC
+	.align 2, 0
+	arm_func_end ov22_0211F124
+_0211F130: .word 0xFFFFFFF8
 
 	arm_func_start ov22_0211F134
 ov22_0211F134: ; 0x0211F134
@@ -5769,7 +5820,7 @@ ptr_FUN_overlay_22_0211d2d4_overlay_22_0212179c: ; 0x0212179C
 	.byte 0xFC, 0xFF, 0xFF, 0xFF
 	.word PTR_ptr_FUN_020835ec_overlay_22_02121748
 PTR_LAB_overlay_22_0211d30c_overlay_22_021217a8: ; 0x021217A8
-	.word 0x0211D30C
+	.word ov22_0211D30C
 s_data_message_etc_dictionary03_m_overlay_22_021217ac: ; 0x021217AC
 	.asciz "/data/message/etc/dictionary03_mes"
 _021217CF:
@@ -5817,10 +5868,11 @@ s_25IEncycRadioButtonListener_overlay_22_0212186c: ; 0x0212186C
 s_26IEncycListBoxEventListener_overlay_22_02121888: ; 0x02121888
 	.asciz "26IEncycListBoxEventListener"
 _021218A5:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0C, 0x18, 0x12, 0x02
+	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    .word PTR_ptr_FUN_02083578_overlay_22_0212180c
 PTR_LAB_overlay_22_0211e158_overlay_22_021218b0: ; 0x021218B0
-	.word 0x0211E158
-	.word 0x0211CB7C
+	.word ov22_0211E158
+	.word ov22_0211CB7C
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0x00, 0x00
@@ -5868,16 +5920,16 @@ ptr_FUN_overlay_22_0211e138_overlay_22_02121944: ; 0x02121944
 	.byte 0xF8, 0xFF, 0xFF, 0xFF
 	.word PTR_ptr_FUN_020835ec_overlay_22_021218d8
 PTR_LAB_overlay_22_0211e1c4_overlay_22_02121950: ; 0x02121950
-	.word 0x0211E1C4
+	.word ov22_0211E1C4
 	.byte 0xF4, 0xFF, 0xFF, 0xFF
 	.word PTR_ptr_FUN_020835ec_overlay_22_021218d8
 PTR_LAB_overlay_22_0211e1e4_overlay_22_0212195c: ; 0x0212195C
-	.word 0x0211E1E4
-	.word 0x0211E1D4
+	.word ov22_0211E1E4
+	.word ov22_0211E1D4
 	.byte 0xF0, 0xFF, 0xFF, 0xFF
 	.word PTR_ptr_FUN_020835ec_overlay_22_021218d8
 PTR_LAB_overlay_22_0211e1f4_overlay_22_0212196c: ; 0x0212196C
-	.word 0x0211E1F4
+	.word ov22_0211E1F4
 s_data_message_etc_dictionary02_m_overlay_22_02121970: ; 0x02121970
 	.asciz "/data/message/etc/dictionary02_mes"
 _02121993:
@@ -5967,7 +6019,7 @@ ptr_FUN_overlay_11_0211f0bc_overlay_22_02121abc: ; 0x02121ABC
 	.byte 0xF8, 0xFF, 0xFF, 0xFF
 	.word PTR_ptr_FUN_020835ec_overlay_22_02121a6c
 PTR_LAB_overlay_22_0211f124_overlay_22_02121ac8: ; 0x02121AC8
-	.word 0x0211F124
+	.word ov22_0211F124
 s_menu_overlay_22_02121acc: ; 0x02121ACC
 	.asciz "menu/"
 _02121AD2:
