@@ -3,6 +3,8 @@
 
 #include <nitro.h>
 
+#include "CTPEmulator.hpp"
+#include "CTouchPanel.hpp"
 #include "UnkClass_02001C04.hpp"
 #include "UnkClass_020023EC.hpp"
 #include "UnkClass_0200E330.hpp"
@@ -10,13 +12,6 @@
 #include "scene/CScene.hpp"
 
 extern "C" void *sub_020101A8(u32 size);
-
-class UnkClass_CGame_0018 {
-public:
-    virtual void func0();
-    virtual void func1();
-    virtual void func2();
-};
 
 class UnkClass_CGame_14A4 {
 public:
@@ -47,9 +42,9 @@ public:
     CScene *currentScene;
     u32 unk_0010;
     UnkClass_02001C04 *unk_0014;
-    UnkClass_CGame_0018 *unk_0018;
-    UnkClass_CGame_0018 *unk_001C;
-    u32 unk_0020;
+    CTouchPanel *touchPanel;
+    CTPEmulator *touchPanelEmulator;
+    CTouchPanel *activeTouchPanel;
     u8 unk_0024[0x400];
     u8 unk_0424[0x400];
     u8 unk_0824[0x400];

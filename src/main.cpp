@@ -94,8 +94,8 @@ void NitroMain(void)
 
         CPowerManage::sub_0200F9F8();
         MAIN_BSS_0208F300.game->unk_0014->sub_02001C20();
-        MAIN_BSS_0208F300.game->unk_0018->func2();
-        MAIN_BSS_0208F300.game->unk_001C->func2();
+        MAIN_BSS_0208F300.game->touchPanel->func0();
+        MAIN_BSS_0208F300.game->touchPanelEmulator->func0();
 
         MAIN_BSS_0208F300.game->func0();
 
