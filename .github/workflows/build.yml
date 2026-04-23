@@ -12,6 +12,9 @@ on:
 env:
   LM_LICENSE_FILE: "${{ github.workspace }}/tools/cw/license.dat"
   BUILD: /var/tmp/pokeranger2
+  CALCROM_DISCORD_WEBHOOK_AVATAR_URL: "https://i.imgur.com/38BQHdd.png"
+  CALCROM_DISCORD_WEBHOOK_USERNAME: OK
+  CALCROM_WEBHOOK_URL: ${{ secrets.CALCROM_WEBHOOK_URL }}
 
 jobs:
   build:
@@ -37,11 +40,9 @@ jobs:
       - name: Build Repo
         run: make check
 
-      - name: Generate job summary
+      - name: Calcrom
         run: |
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          .github/calcrom/calcrom.py "$BUILD" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
+          .github/calcrom/calcrom.sh "$CALCROM_WEBHOOK_URL" "$BUILD"
         continue-on-error: true
 
       - name: Checkout xMAP
