@@ -17,3 +17,8 @@ repos:
       - id: check-illegal-windows-names
       - id: check-shebang-scripts-are-executable
       - id: check-yaml
+  - repo: https://github.com/hukkin/mdformat
+    rev: 1.0.0
+    hooks:
+    - id: mdformat
+      args: [--number, --wrap, "80"]
