@@ -1977,54 +1977,100 @@ ov8_0211E3A4: ; 0x0211E3A4
     .section .sinit,4 ; 0x0211E3C8
 
     .data
+
+    .global PTR_ptr_FUN_020835bc_overlay_8_0211e3e0
 PTR_ptr_FUN_020835bc_overlay_8_0211e3e0: ; 0x0211E3E0
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_18CMissionQuestScene_overlay_8_0211e3ec
 	.word PTR_ptr_FUN_02083578_0208a804
+
+    .global s_18CMissionQuestScene_overlay_8_0211e3ec
 s_18CMissionQuestScene_overlay_8_0211e3ec: ; 0x0211E3EC
 	.asciz "18CMissionQuestScene"
-_0211E401:
+
+    .global DAT_overlay_8_0211E401
+DAT_overlay_8_0211E401:
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
     .word PTR_ptr_FUN_020835bc_overlay_8_0211e3e0
+
+    .global ptr_FUN_overlay_11_0211ca0c_overlay_8_0211e40c
 ptr_FUN_overlay_11_0211ca0c_overlay_8_0211e40c: ; 0x0211E40C
 	.word ov8_0211CA0C
+
+    .global ptr_FUN_overlay_23_0211ca6c_overlay_8_0211e410
 ptr_FUN_overlay_23_0211ca6c_overlay_8_0211e410: ; 0x0211E410
 	.word ov8_0211CA6C
+
+    .global ptr_FUN_overlay_29_0211cc90_overlay_8_0211e414
 ptr_FUN_overlay_29_0211cc90_overlay_8_0211e414: ; 0x0211E414
 	.word ov8_0211CC90
+
+    .global ptr_FUN_overlay_11_0211ccc8_overlay_8_0211e418
 ptr_FUN_overlay_11_0211ccc8_overlay_8_0211e418: ; 0x0211E418
 	.word ov8_0211CCC8
+
+    .global ptr_FUN_overlay_8_0211cce0_overlay_8_0211e41c
 ptr_FUN_overlay_8_0211cce0_overlay_8_0211e41c: ; 0x0211E41C
 	.word ov8_0211CCE0
+
+    .global ptr_FUN_02007ce0_overlay_8_0211e420
 ptr_FUN_02007ce0_overlay_8_0211e420: ; 0x0211E420
 	.word sub_02007CE0
+
+    .global ptr_FUN_02007cc4_overlay_8_0211e424
 ptr_FUN_02007cc4_overlay_8_0211e424: ; 0x0211E424
 	.word sub_02007CC4
+
+    .global ptr_FUN_overlay_8_0211cafc_overlay_8_0211e428
 ptr_FUN_overlay_8_0211cafc_overlay_8_0211e428: ; 0x0211E428
 	.word ov8_0211CAFC
+
+    .global ptr_FUN_overlay_8_0211cc3c_overlay_8_0211e42c
 ptr_FUN_overlay_8_0211cc3c_overlay_8_0211e42c: ; 0x0211E42C
 	.word ov8_0211CC3C
+
+    .global ptr_FUN_overlay_5_0211cc74_overlay_8_0211e430
 ptr_FUN_overlay_5_0211cc74_overlay_8_0211e430: ; 0x0211E430
 	.word ov8_0211CC74
 	.word ov8_0211CCF8
+
+    .global s_data_menu_overlay_8_0211e438
 s_data_menu_overlay_8_0211e438: ; 0x0211E438
 	.asciz "data/menu"
-_0211E442:
+
+    .global DAT_overlay_8_0211E442
+DAT_overlay_8_0211E442:
 	.byte 0x00, 0x00
+
+    .global s_ma005_00_overlay_8_0211e444
 s_ma005_00_overlay_8_0211e444: ; 0x0211E444
 	.asciz "ma005_00"
-_0211E44D:
+
+    .global DAT_overlay_8_0211E44D
+DAT_overlay_8_0211E44D:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_mam000_00_overlay_8_0211e450
 s_mam000_00_overlay_8_0211e450: ; 0x0211E450
 	.asciz "mam000_00"
-_0211E45A:
+
+    .global DAT_overlay_8_0211E45A
+DAT_overlay_8_0211E45A:
 	.byte 0x00, 0x00
+
+    .global s_data_message_etc_place_name_overlay_8_0211e45c
 s_data_message_etc_place_name_overlay_8_0211e45c: ; 0x0211E45C
 	.asciz "/data/message/etc/place_name"
-_0211E479:
+
+    .global DAT_overlay_8_0211E479
+DAT_overlay_8_0211E479:
 	.byte 0x00, 0x00, 0x00
+
+    .global DAT_overlay_8_0211e47c
 DAT_overlay_8_0211e47c: ; 0x0211E47C
 	.byte 0x12, 0x00
+
+    .global DAT_overlay_8_0211e47e
 DAT_overlay_8_0211e47e: ; 0x0211E47E
 	.byte 0x04, 0x00
 	.byte 0x12, 0x00, 0x06, 0x00, 0x12, 0x00, 0x09, 0x00, 0x12, 0x00, 0x0A, 0x00, 0x12, 0x00, 0x0B, 0x00
@@ -2034,6 +2080,8 @@ DAT_overlay_8_0211e47e: ; 0x0211E47E
 	.byte 0x12, 0x00, 0x08, 0x00, 0x1A, 0x00, 0x26, 0x00, 0x12, 0x00, 0x08, 0x00, 0x12, 0x00, 0x04, 0x00
 	.byte 0x12, 0x00, 0x1E, 0x00, 0x1D, 0x00, 0x27, 0x00, 0x1A, 0x00, 0x1C, 0x00, 0x1A, 0x00, 0x24, 0x00
 	.byte 0x1A, 0x00, 0x0A, 0x00
+
+    .global DAT_overlay_8_0211e4e4
 DAT_overlay_8_0211e4e4: ; 0x0211E4E4
 	.byte 0x39, 0x00, 0x04, 0x00, 0x2B, 0x00, 0x04, 0x00, 0x2E, 0x00, 0x04, 0x00
 	.byte 0x58, 0x00, 0x09, 0x00, 0x54, 0x00, 0x0A, 0x00, 0x2B, 0x00, 0x0A, 0x00, 0x2B, 0x00, 0x09, 0x00
@@ -2051,38 +2099,72 @@ DAT_overlay_8_0211e4e4: ; 0x0211E4E4
 	.byte 0x01, 0x00, 0x08, 0x00, 0x2E, 0x00, 0x21, 0x00, 0x2C, 0x00, 0x08, 0x00, 0x05, 0x00, 0x01, 0x00
 	.byte 0x57, 0x00, 0x12, 0x00, 0x38, 0x00, 0x04, 0x00, 0x66, 0x00, 0x19, 0x00, 0x1F, 0x00, 0x11, 0x00
 	.byte 0x3A, 0x00, 0x0A, 0x00, 0x3E, 0x00, 0x16, 0x00
+
+    .global s_menu_overlay_8_0211e5d8
 s_menu_overlay_8_0211e5d8: ; 0x0211E5D8
 	.asciz "menu/"
-_0211E5DE:
+
+    .global DAT_overlay_8_0211E5DE
+DAT_overlay_8_0211E5DE:
 	.byte 0x00, 0x00
+
+    .global s_mmq000_bg_overlay_8_0211e5e0
 s_mmq000_bg_overlay_8_0211e5e0: ; 0x0211E5E0
 	.asciz "mmq000_bg_"
-_0211E5EB:
+
+    .global DAT_overlay_8_0211E5EB
+DAT_overlay_8_0211E5EB:
 	.byte 0x00
+
+    .global s_mmq000_overlay_8_0211e5ec
 s_mmq000_overlay_8_0211e5ec: ; 0x0211E5EC
 	.asciz "mmq000"
-_0211E5F3:
+
+    .global DAT_overlay_8_0211E5F3
+DAT_overlay_8_0211E5F3:
 	.byte 0x00
+
+    .global s_mmq000_02_overlay_8_0211e5f4
 s_mmq000_02_overlay_8_0211e5f4: ; 0x0211E5F4
 	.asciz "mmq000_02"
-_0211E5FE:
+
+    .global DAT_overlay_8_0211E5FE
+DAT_overlay_8_0211E5FE:
 	.byte 0x00, 0x00
+
+    .global s_mmq000_01_overlay_8_0211e600
 s_mmq000_01_overlay_8_0211e600: ; 0x0211E600
 	.asciz "mmq000_01"
-_0211E60A:
+
+    .global DAT_overlay_8_0211E60A
+DAT_overlay_8_0211E60A:
 	.byte 0x00, 0x00
+
+    .global s_data_menu_overlay_8_0211e60c
 s_data_menu_overlay_8_0211e60c: ; 0x0211E60C
 	.asciz "data/menu"
-_0211E616:
+
+    .global DAT_overlay_8_0211E616
+DAT_overlay_8_0211E616:
 	.byte 0x00, 0x00
+
+    .global s_mmq000_00_overlay_8_0211e618
 s_mmq000_00_overlay_8_0211e618: ; 0x0211E618
 	.asciz "mmq000_00"
-_0211E622:
+
+    .global DAT_overlay_8_0211E622
+DAT_overlay_8_0211E622:
 	.byte 0x00, 0x00
+
+    .global s_data_message_etc_mission_info_0_overlay_8_0211e624
 s_data_message_etc_mission_info_0_overlay_8_0211e624: ; 0x0211E624
 	.asciz "data/message/etc/mission_info_%02d"
-_0211E647:
+
+    .global DAT_overlay_8_0211E647
+DAT_overlay_8_0211E647:
 	.byte 0x00
+
+    .global s_data_message_etc_quest_info_02d_overlay_8_0211e648
 s_data_message_etc_quest_info_02d_overlay_8_0211e648: ; 0x0211E648
 	.asciz "data/message/etc/quest_info_%02d"
 	; 0x0211E669

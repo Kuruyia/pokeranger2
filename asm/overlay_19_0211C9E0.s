@@ -1881,155 +1881,297 @@ ov19_0211E3A0: ; 0x0211E3A0
 	; 0x0211E3A8
 
     .rodata
+
+    .global DAT_overlay_19_0211e3a8
 DAT_overlay_19_0211e3a8: ; 0x0211E3A8
     .byte 0x00, 0x00, 0x00, 0x00
+
+    .global DAT_overlay_19_0211e3ac
 DAT_overlay_19_0211e3ac: ; 0x0211E3AC
     .byte 0x00, 0x00, 0x00, 0x00
 
     .section .sinit,4 ; 0x0211E3B0
 
     .data
+
+    .global PTR_ptr_FUN_020835bc_overlay_19_0211e3c0
 PTR_ptr_FUN_020835bc_overlay_19_0211e3c0: ; 0x0211E3C0
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_15CSexSelectScene_overlay_19_0211e3cc
 	.word PTR_ptr_FUN_02083578_0208a804
+
+    .global s_15CSexSelectScene_overlay_19_0211e3cc
 s_15CSexSelectScene_overlay_19_0211e3cc: ; 0x0211E3CC
 	.asciz "15CSexSelectScene"
-_0211E3DE:
+
+    .global DAT_overlay_19_0211E3DE
+DAT_overlay_19_0211E3DE:
 	.byte 0x00, 0x00
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_overlay_19_0211e3c0
+
+    .global ptr_FUN_overlay_19_0211ca58_overlay_19_0211e3e8
 ptr_FUN_overlay_19_0211ca58_overlay_19_0211e3e8: ; 0x0211E3E8
 	.word ov19_0211CA58
+
+    .global ptr_FUN_overlay_19_0211ca98_overlay_19_0211e3ec
 ptr_FUN_overlay_19_0211ca98_overlay_19_0211e3ec: ; 0x0211E3EC
 	.word ov19_0211CA98
 	.word ov19_0211D7A4
+
+    .global ptr_FUN_overlay_19_0211e064_overlay_19_0211e3f4
 ptr_FUN_overlay_19_0211e064_overlay_19_0211e3f4: ; 0x0211E3F4
 	.word ov19_0211E064
+
+    .global ptr_thunk_FUN_02001210_overlay_19_0211e3f8
 ptr_thunk_FUN_02001210_overlay_19_0211e3f8: ; 0x0211E3F8
 	.word sub_02007CD4
+
+    .global ptr_FUN_02007ce0_overlay_19_0211e3fc
 ptr_FUN_02007ce0_overlay_19_0211e3fc: ; 0x0211E3FC
 	.word sub_02007CE0
+
+    .global ptr_FUN_02007cc4_overlay_19_0211e400
 ptr_FUN_02007cc4_overlay_19_0211e400: ; 0x0211E400
 	.word sub_02007CC4
+
+    .global ptr_FUN_overlay_19_0211d5e0_overlay_19_0211e404
 ptr_FUN_overlay_19_0211d5e0_overlay_19_0211e404: ; 0x0211E404
 	.word ov19_0211D5E0
+
+    .global ptr_FUN_overlay_19_0211cae0_overlay_19_0211e408
 ptr_FUN_overlay_19_0211cae0_overlay_19_0211e408: ; 0x0211E408
 	.word ov19_0211CAE0
+
+    .global ptr_FUN_overlay_19_0211cbcc_overlay_19_0211e40c
 ptr_FUN_overlay_19_0211cbcc_overlay_19_0211e40c: ; 0x0211E40C
 	.word ov19_0211CBCC
+
+    .global ptr_FUN_overlay_19_0211e3a0_overlay_19_0211e410
 ptr_FUN_overlay_19_0211e3a0_overlay_19_0211e410: ; 0x0211E410
 	.word ov19_0211E3A0
+
+    .global s_menu_overlay_19_0211e414
 s_menu_overlay_19_0211e414: ; 0x0211E414
 	.asciz "menu/"
-_0211E41A:
+
+    .global DAT_overlay_19_0211E41A
+DAT_overlay_19_0211E41A:
 	.byte 0x00, 0x00
+
+    .global s_mnd000_bg_overlay_19_0211e41c
 s_mnd000_bg_overlay_19_0211e41c: ; 0x0211E41C
 	.asciz "mnd000_bg_"
-_0211E427:
+
+    .global DAT_overlay_19_0211E427
+DAT_overlay_19_0211E427:
 	.byte 0x00
+
+    .global s_mnd000_overlay_19_0211e428
 s_mnd000_overlay_19_0211e428: ; 0x0211E428
 	.asciz "mnd000"
-_0211E42F:
+
+    .global DAT_overlay_19_0211E42F
+DAT_overlay_19_0211E42F:
 	.byte 0x00
+
+    .global s_mnd000_00_overlay_19_0211e430
 s_mnd000_00_overlay_19_0211e430: ; 0x0211E430
 	.asciz "mnd000_00"
-_0211E43A:
+
+    .global DAT_overlay_19_0211E43A
+DAT_overlay_19_0211E43A:
 	.byte 0x00, 0x00
+
+    .global s_BGD_overlay_19_0211e43c
 s_BGD_overlay_19_0211e43c: ; 0x0211E43C
 	.asciz "BGD"
+
+    .global s_data_menu_mps000_bg_LZ_bin_overlay_19_0211e440
 s_data_menu_mps000_bg_LZ_bin_overlay_19_0211e440: ; 0x0211E440
 	.asciz "data/menu/mps000_bg_LZ.bin"
-_0211E45B:
+
+    .global DAT_overlay_19_0211E45B
+DAT_overlay_19_0211E45B:
 	.byte 0x00
+
+    .global s_BGD_mps000_NCGR_overlay_19_0211e45c
 s_BGD_mps000_NCGR_overlay_19_0211e45c: ; 0x0211E45C
 	.asciz "BGD:mps000.NCGR"
+
+    .global s_BGD_mps000_NCLR_overlay_19_0211e46c
 s_BGD_mps000_NCLR_overlay_19_0211e46c: ; 0x0211E46C
 	.asciz "BGD:mps000.NCLR"
+
+    .global s_BGD_mps000_00_NSCR_overlay_19_0211e47c
 s_BGD_mps000_00_NSCR_overlay_19_0211e47c: ; 0x0211E47C
 	.asciz "BGD:mps000_00.NSCR"
-_0211E48F:
+
+    .global DAT_overlay_19_0211E48F
+DAT_overlay_19_0211E48F:
 	.byte 0x00
+
+    .global s_SS6_overlay_19_0211e490
 s_SS6_overlay_19_0211e490: ; 0x0211E490
 	.asciz "SS6"
+
+    .global s_data_player_player3_LZ_bin_overlay_19_0211e494
 s_data_player_player3_LZ_bin_overlay_19_0211e494: ; 0x0211E494
 	.asciz "/data/player/player3_LZ.bin"
+
+    .global s_SS6_player3_00_NCBR_overlay_19_0211e4b0
 s_SS6_player3_00_NCBR_overlay_19_0211e4b0: ; 0x0211E4B0
 	.asciz "SS6:player3_00.NCBR"
+
+    .global s_SS6_player3_NCLR_overlay_19_0211e4c4
 s_SS6_player3_NCLR_overlay_19_0211e4c4: ; 0x0211E4C4
 	.asciz "SS6:player3.NCLR"
-_0211E4D5:
+
+    .global DAT_overlay_19_0211E4D5
+DAT_overlay_19_0211E4D5:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_SS6_player3_00_NCER_overlay_19_0211e4d8
 s_SS6_player3_00_NCER_overlay_19_0211e4d8: ; 0x0211E4D8
 	.asciz "SS6:player3_00.NCER"
+
+    .global s_SS6_player3_00_cac_overlay_19_0211e4ec
 s_SS6_player3_00_cac_overlay_19_0211e4ec: ; 0x0211E4EC
 	.asciz "SS6:player3_00.cac"
-_0211E4FF:
+
+    .global DAT_overlay_19_0211E4FF
+DAT_overlay_19_0211E4FF:
 	.byte 0x00
+
+    .global s_SS7_overlay_19_0211e500
 s_SS7_overlay_19_0211e500: ; 0x0211E500
 	.asciz "SS7"
+
+    .global s_data_player_player4_LZ_bin_overlay_19_0211e504
 s_data_player_player4_LZ_bin_overlay_19_0211e504: ; 0x0211E504
 	.asciz "/data/player/player4_LZ.bin"
+
+    .global s_SS7_player4_00_NCBR_overlay_19_0211e520
 s_SS7_player4_00_NCBR_overlay_19_0211e520: ; 0x0211E520
 	.asciz "SS7:player4_00.NCBR"
+
+    .global s_SS7_player4_NCLR_overlay_19_0211e534
 s_SS7_player4_NCLR_overlay_19_0211e534: ; 0x0211E534
 	.asciz "SS7:player4.NCLR"
-_0211E545:
+
+    .global DAT_overlay_19_0211E545
+DAT_overlay_19_0211E545:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_SS7_player4_00_NCER_overlay_19_0211e548
 s_SS7_player4_00_NCER_overlay_19_0211e548: ; 0x0211E548
 	.asciz "SS7:player4_00.NCER"
+
+    .global s_SS7_player4_00_cac_overlay_19_0211e55c
 s_SS7_player4_00_cac_overlay_19_0211e55c: ; 0x0211E55C
 	.asciz "SS7:player4_00.cac"
-_0211E56F:
+
+    .global DAT_overlay_19_0211E56F
+DAT_overlay_19_0211E56F:
 	.byte 0x00
+
+    .global s_SS8_overlay_19_0211e570
 s_SS8_overlay_19_0211e570: ; 0x0211E570
 	.asciz "SS8"
+
+    .global s_SS8_player3_02_NCBR_overlay_19_0211e574
 s_SS8_player3_02_NCBR_overlay_19_0211e574: ; 0x0211E574
 	.asciz "SS8:player3_02.NCBR"
+
+    .global s_SS8_player3_NCLR_overlay_19_0211e588
 s_SS8_player3_NCLR_overlay_19_0211e588: ; 0x0211E588
 	.asciz "SS8:player3.NCLR"
-_0211E599:
+
+    .global DAT_overlay_19_0211E599
+DAT_overlay_19_0211E599:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_SS8_player3_02_NCER_overlay_19_0211e59c
 s_SS8_player3_02_NCER_overlay_19_0211e59c: ; 0x0211E59C
 	.asciz "SS8:player3_02.NCER"
+
+    .global s_SS8_player3_02_cac_overlay_19_0211e5b0
 s_SS8_player3_02_cac_overlay_19_0211e5b0: ; 0x0211E5B0
 	.asciz "SS8:player3_02.cac"
-_0211E5C3:
+
+    .global DAT_overlay_19_0211E5C3
+DAT_overlay_19_0211E5C3:
 	.byte 0x00
+
+    .global s_SS9_overlay_19_0211e5c4
 s_SS9_overlay_19_0211e5c4: ; 0x0211E5C4
 	.asciz "SS9"
+
+    .global s_SS9_player4_02_NCBR_overlay_19_0211e5c8
 s_SS9_player4_02_NCBR_overlay_19_0211e5c8: ; 0x0211E5C8
 	.asciz "SS9:player4_02.NCBR"
+
+    .global s_SS9_player4_NCLR_overlay_19_0211e5dc
 s_SS9_player4_NCLR_overlay_19_0211e5dc: ; 0x0211E5DC
 	.asciz "SS9:player4.NCLR"
-_0211E5ED:
+
+    .global DAT_overlay_19_0211E5ED
+DAT_overlay_19_0211E5ED:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_SS9_player4_02_NCER_overlay_19_0211e5f0
 s_SS9_player4_02_NCER_overlay_19_0211e5f0: ; 0x0211E5F0
 	.asciz "SS9:player4_02.NCER"
+
+    .global s_SS9_player4_02_cac_overlay_19_0211e604
 s_SS9_player4_02_cac_overlay_19_0211e604: ; 0x0211E604
 	.asciz "SS9:player4_02.cac"
-_0211E617:
+
+    .global DAT_overlay_19_0211E617
+DAT_overlay_19_0211E617:
 	.byte 0x00
+
+    .global s_data_menu_overlay_19_0211e618
 s_data_menu_overlay_19_0211e618: ; 0x0211E618
 	.asciz "data/menu"
-_0211E622:
+
+    .global DAT_overlay_19_0211E622
+DAT_overlay_19_0211E622:
 	.byte 0x00, 0x00
+
+    .global s_mp005_00_overlay_19_0211e624
 s_mp005_00_overlay_19_0211e624: ; 0x0211E624
 	.asciz "mp005_00"
-_0211E62D:
+
+    .global DAT_overlay_19_0211E62D
+DAT_overlay_19_0211E62D:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_mp006_00_overlay_19_0211e630
 s_mp006_00_overlay_19_0211e630: ; 0x0211E630
 	.asciz "mp006_00"
-_0211E639:
+
+    .global DAT_overlay_19_0211E639
+DAT_overlay_19_0211E639:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_mps000_00_overlay_19_0211e63c
 s_mps000_00_overlay_19_0211e63c: ; 0x0211E63C
 	.asciz "mps000_00"
-_0211E646:
+
+    .global DAT_overlay_19_0211E646
+DAT_overlay_19_0211E646:
 	.byte 0x00, 0x00
+
+    .global s_mps001_00_overlay_19_0211e648
 s_mps001_00_overlay_19_0211e648: ; 0x0211E648
 	.asciz "mps001_00"
-_0211E652:
+
+    .global DAT_overlay_19_0211E652
+DAT_overlay_19_0211E652:
 	.byte 0x00, 0x00
+
+    .global s_mps002_00_overlay_19_0211e654
 s_mps002_00_overlay_19_0211e654: ; 0x0211E654
 	.asciz "mps002_00"
 	; 0x0211E65E

@@ -3480,31 +3480,49 @@ ov25_0211FA54: ; 0x0211FA54
     .section .sinit,4 ; 0x0211FA64
 
     .data
+
+    .global PTR_DAT_overlay_25_0211fa88_overlay_25_0211fa80
 PTR_DAT_overlay_25_0211fa88_overlay_25_0211fa80: ; 0x0211FA80
 	.word DAT_overlay_25_0211fa88
 	.word DAT_overlay_25_0211fac8
+
+    .global DAT_overlay_25_0211fa88
 DAT_overlay_25_0211fa88: ; 0x0211FA88
 	.byte 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
 	.byte 0x02, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0x00
 	.byte 0x06, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x09, 0x00, 0x00, 0x00
 	.byte 0x0A, 0x00, 0x00, 0x00, 0x0B, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00, 0x00
 	.byte 0x0E, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x00
+
+    .global DAT_overlay_25_0211fac8
 DAT_overlay_25_0211fac8: ; 0x0211FAC8
 	.byte 0x00, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00, 0x00
 	.byte 0x11, 0x00, 0x00, 0x00, 0x12, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x14, 0x00, 0x00, 0x00
 	.byte 0x15, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00, 0x17, 0x00, 0x00, 0x00, 0x18, 0x00, 0x00, 0x00
 	.byte 0x19, 0x00, 0x00, 0x00, 0x1A, 0x00, 0x00, 0x00, 0x1B, 0x00, 0x00, 0x00, 0x1C, 0x00, 0x00, 0x00
 	.byte 0x1D, 0x00, 0x00, 0x00, 0x1E, 0x00, 0x00, 0x00
+
+    .global DAT_overlay_25_0211fb08
 DAT_overlay_25_0211fb08: ; 0x0211FB08
 	.byte 0x3C, 0x00
+
+    .global DAT_overlay_25_0211fb0a
 DAT_overlay_25_0211fb0a: ; 0x0211FB0A
 	.byte 0x02
+
+    .global DAT_overlay_25_0211fb0b
 DAT_overlay_25_0211fb0b: ; 0x0211FB0B
 	.byte 0x00
+
+    .global DAT_overlay_25_0211fb0c
 DAT_overlay_25_0211fb0c: ; 0x0211FB0C
 	.byte 0x07, 0x0C, 0x00, 0x00
+
+    .global DAT_overlay_25_0211fb10
 DAT_overlay_25_0211fb10: ; 0x0211FB10
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+    .global DAT_overlay_25_0211fb18
 DAT_overlay_25_0211fb18: ; 0x0211FB18
 	.byte 0x78, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00
 	.byte 0x3C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
@@ -3528,53 +3546,97 @@ DAT_overlay_25_0211fb18: ; 0x0211FB18
 	.byte 0x5A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x1C, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1E, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00
 	.byte 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+
+    .global PTR_ptr_FUN_020835bc_overlay_25_0211fc48
 PTR_ptr_FUN_020835bc_overlay_25_0211fc48: ; 0x0211FC48
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_15CStaffrollScene_overlay_25_0211fc54
 	.word PTR_ptr_FUN_02083578_0208a804
+
+    .global s_15CStaffrollScene_overlay_25_0211fc54
 s_15CStaffrollScene_overlay_25_0211fc54: ; 0x0211FC54
 	.asciz "15CStaffrollScene"
-_0211FC66:
+
+    .global DAT_overlay_25_0211FC66
+DAT_overlay_25_0211FC66:
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
     .word PTR_ptr_FUN_020835bc_overlay_25_0211fc48
+
+    .global PTR_LAB_overlay_25_0211ca24_overlay_25_0211fc70
 PTR_LAB_overlay_25_0211ca24_overlay_25_0211fc70: ; 0x0211FC70
 	.word ov25_0211CA24
+
+    .global ptr_FUN_overlay_20_0211ca38_overlay_25_0211fc74
 ptr_FUN_overlay_20_0211ca38_overlay_25_0211fc74: ; 0x0211FC74
 	.word ov25_0211CA38
+
+    .global ptr_FUN_overlay_25_0211ca54_overlay_25_0211fc78
 ptr_FUN_overlay_25_0211ca54_overlay_25_0211fc78: ; 0x0211FC78
 	.word ov25_0211CA54
+
+    .global ptr_FUN_overlay_28_0211cedc_overlay_25_0211fc7c
 ptr_FUN_overlay_28_0211cedc_overlay_25_0211fc7c: ; 0x0211FC7C
 	.word ov25_0211CEDC
 	.word ov25_0211CEEC
+
+    .global ptr_FUN_overlay_9_0211cef0_overlay_25_0211fc84
 ptr_FUN_overlay_9_0211cef0_overlay_25_0211fc84: ; 0x0211FC84
 	.word ov25_0211CEF0
+
+    .global ptr_FUN_02007cc4_overlay_25_0211fc88
 ptr_FUN_02007cc4_overlay_25_0211fc88: ; 0x0211FC88
 	.word sub_02007CC4
+
+    .global ptr_FUN_overlay_25_0211cefc_overlay_25_0211fc8c
 ptr_FUN_overlay_25_0211cefc_overlay_25_0211fc8c: ; 0x0211FC8C
 	.word ov25_0211CEFC
+
+    .global ptr_FUN_overlay_25_0211d098_overlay_25_0211fc90
 ptr_FUN_overlay_25_0211d098_overlay_25_0211fc90: ; 0x0211FC90
 	.word ov25_0211D098
+
+    .global ptr_FUN_overlay_25_0211d3b0_overlay_25_0211fc94
 ptr_FUN_overlay_25_0211d3b0_overlay_25_0211fc94: ; 0x0211FC94
 	.word ov25_0211D3B0
 	.word ov25_0211D4DC
+
+    .global DAT_overlay_25_0211fc9c
 DAT_overlay_25_0211fc9c: ; 0x0211FC9C
 	.byte 0x00, 0x00, 0x00, 0x00
+
+    .global s_data_message_etc_staffroll_overlay_25_0211fca0
 s_data_message_etc_staffroll_overlay_25_0211fca0: ; 0x0211FCA0
 	.asciz "/data/message/etc/staffroll"
+
+    .global s_data_font_prs_lc_jp_NCLR_overlay_25_0211fcbc
 s_data_font_prs_lc_jp_NCLR_overlay_25_0211fcbc: ; 0x0211FCBC
 	.asciz "data/font/prs_lc_jp.NCLR"
-_0211FCD5:
+
+    .global DAT_overlay_25_0211FCD5
+DAT_overlay_25_0211FCD5:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_edu_03d_overlay_25_0211fcd8
 s_edu_03d_overlay_25_0211fcd8: ; 0x0211FCD8
 	.asciz "edu%03d_"
-_0211FCE1:
+
+    .global DAT_overlay_25_0211FCE1
+DAT_overlay_25_0211FCE1:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_edu_03d_overlay_25_0211fce4
 s_edu_03d_overlay_25_0211fce4: ; 0x0211FCE4
 	.asciz "edu%03d"
+
+    .global s_ending_overlay_25_0211fcec
 s_ending_overlay_25_0211fcec: ; 0x0211FCEC
 	.asciz "ending/"
+
+    .global s_data_ending_overlay_25_0211fcf4
 s_data_ending_overlay_25_0211fcf4: ; 0x0211FCF4
 	.asciz "data/ending"
+
+    .global s_edobj000_overlay_25_0211fd00
 s_edobj000_overlay_25_0211fd00: ; 0x0211FD00
 	.asciz "edobj000"
 	; 0x0211FD09

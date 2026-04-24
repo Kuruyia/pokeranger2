@@ -227,18 +227,21 @@ ov29_0211CCB4: ; 0x0211CCB4
     .section .sinit,4 ; 0x0211CCC8
 
     .data
-_0211CCE0: ; 0x0211CCE0
+
+    .global DAT_overlay_29_0211CCE0
+DAT_overlay_29_0211CCE0: ; 0x0211CCE0
     .word _ZTVN10__cxxabiv120__si_class_type_infoE+8
-    .word _0211CCEC
+    .word DAT_overlay_29_0211CCEC
     .word PTR_ptr_FUN_02083578_0208a804
 
-_0211CCEC: ; 0x0211CCEC
+    .global DAT_overlay_29_0211CCEC
+DAT_overlay_29_0211CCEC: ; 0x0211CCEC
     .string "21CCardAccessErrorScene"
 
     .global _ZTV21CCardAccessErrorScene
 _ZTV21CCardAccessErrorScene: ; 0x0211CD04
     .byte 0x00, 0x00, 0x00, 0x00
-    .word _0211CCE0
+    .word DAT_overlay_29_0211CCE0
 
     .global CCardAccessErrorScene_vtable
 CCardAccessErrorScene_vtable: ; 0x0211CD0C

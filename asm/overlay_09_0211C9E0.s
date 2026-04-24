@@ -1326,33 +1326,57 @@ _0211DAE0:
     .section .sinit,4 ; 0x0211DAE8
 
     .data
+
+    .global PTR_ptr_FUN_020835bc_overlay_9_0211db00
 PTR_ptr_FUN_020835bc_overlay_9_0211db00: ; 0x0211DB00
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_12CFlyingScene_overlay_9_0211db0c
 	.word PTR_ptr_FUN_02083578_0208a804
+
+    .global s_12CFlyingScene_overlay_9_0211db0c
 s_12CFlyingScene_overlay_9_0211db0c: ; 0x0211DB0C
 	.asciz "12CFlyingScene"
-_0211DB1B:
+
+    .global DAT_overlay_9_0211DB1B
+DAT_overlay_9_0211DB1B:
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_overlay_9_0211db00
+
+    .global ptr_FUN_overlay_11_0211ca0c_overlay_9_0211db24
 ptr_FUN_overlay_11_0211ca0c_overlay_9_0211db24: ; 0x0211DB24
 	.word ov9_0211CA0C
+
+    .global ptr_FUN_overlay_19_0211ca58_overlay_9_0211db28
 ptr_FUN_overlay_19_0211ca58_overlay_9_0211db28: ; 0x0211DB28
 	.word ov9_0211CA58
+
+    .global ptr_FUN_overlay_9_0211cc30_overlay_9_0211db2c
 ptr_FUN_overlay_9_0211cc30_overlay_9_0211db2c: ; 0x0211DB2C
 	.word ov9_0211CC30
+
+    .global ptr_FUN_overlay_9_0211cc68_overlay_9_0211db30
 ptr_FUN_overlay_9_0211cc68_overlay_9_0211db30: ; 0x0211DB30
 	.word ov9_0211CC68
+
+    .global ptr_FUN_overlay_9_0211cc80_overlay_9_0211db34
 ptr_FUN_overlay_9_0211cc80_overlay_9_0211db34: ; 0x0211DB34
 	.word ov9_0211CC80
+
+    .global ptr_FUN_02007ce0_overlay_9_0211db38
 ptr_FUN_02007ce0_overlay_9_0211db38: ; 0x0211DB38
 	.word sub_02007CE0
+
+    .global ptr_FUN_02007cc4_overlay_9_0211db3c
 ptr_FUN_02007cc4_overlay_9_0211db3c: ; 0x0211DB3C
 	.word sub_02007CC4
+
+    .global ptr_FUN_overlay_28_0211cad4_overlay_9_0211db40
 ptr_FUN_overlay_28_0211cad4_overlay_9_0211db40: ; 0x0211DB40
 	.word ov9_0211CAD4
 	.word ov9_0211CC08
 	.word ov9_0211CC2C
+
+    .global ptr_FUN_overlay_28_0211cc98_overlay_9_0211db4c
 ptr_FUN_overlay_28_0211cc98_overlay_9_0211db4c: ; 0x0211DB4C
 	.word ov9_0211CC98
 	.byte 0x12, 0x00, 0x04, 0x00, 0x12, 0x00, 0x06, 0x00, 0x12, 0x00, 0x09, 0x00, 0x12, 0x00, 0x0A, 0x00
@@ -1377,21 +1401,37 @@ ptr_FUN_overlay_28_0211cc98_overlay_9_0211db4c: ; 0x0211DB4C
 	.byte 0x64, 0x00, 0x0E, 0x00, 0x01, 0x00, 0x08, 0x00, 0x2E, 0x00, 0x21, 0x00, 0x2C, 0x00, 0x08, 0x00
 	.byte 0x05, 0x00, 0x01, 0x00, 0x57, 0x00, 0x12, 0x00, 0x38, 0x00, 0x04, 0x00, 0x66, 0x00, 0x19, 0x00
 	.byte 0x1F, 0x00, 0x11, 0x00, 0x3A, 0x00, 0x0A, 0x00, 0x3E, 0x00, 0x16, 0x00
+
+    .global DAT_overlay_9_0211dcac
 DAT_overlay_9_0211dcac: ; 0x0211DCAC
 	.byte 0x01, 0x00
+
+    .global DAT_overlay_9_0211dcae
 DAT_overlay_9_0211dcae: ; 0x0211DCAE
 	.byte 0xF0, 0x01
+
+    .global DAT_overlay_9_0211dcb0
 DAT_overlay_9_0211dcb0: ; 0x0211DCB0
 	.byte 0x60, 0x01, 0x7C, 0x00, 0x98, 0x00, 0x01
+
+    .global DAT_overlay_9_0211dcb7
 DAT_overlay_9_0211dcb7: ; 0x0211DCB7
 	.byte 0x01
+
+    .global DAT_overlay_9_0211dcb8
 DAT_overlay_9_0211dcb8: ; 0x0211DCB8
 	.byte 0x00, 0x00
+
+    .global DAT_overlay_9_0211dcba
 DAT_overlay_9_0211dcba: ; 0x0211DCBA
 	.byte 0x32, 0x00
+
+    .global DAT_overlay_9_0211dcbc
 DAT_overlay_9_0211dcbc: ; 0x0211DCBC
 	.byte 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0x6D, 0x00, 0x94, 0x00, 0x00
+
+    .global DAT_overlay_9_0211dcc7
 DAT_overlay_9_0211dcc7: ; 0x0211DCC7
 	.byte 0x02, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0x6D, 0x00, 0x94, 0x00, 0x00, 0x03, 0x02, 0x00, 0x00, 0x00
@@ -1436,22 +1476,40 @@ DAT_overlay_9_0211dcc7: ; 0x0211DCC7
 	.byte 0x00, 0x00, 0xD6, 0x00, 0x5C, 0x00, 0x00, 0x2B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0xD6, 0x00, 0x5C, 0x00, 0x00, 0x2C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0x88, 0x00, 0x68, 0x00, 0x00, 0x0E, 0x02, 0x00, 0x00, 0x00
+
+    .global s_data_menu_overlay_9_0211df2c
 s_data_menu_overlay_9_0211df2c: ; 0x0211DF2C
 	.asciz "data/menu"
-_0211DF36:
+
+    .global DAT_overlay_9_0211DF36
+DAT_overlay_9_0211DF36:
 	.byte 0x00, 0x00
+
+    .global s_ma005_00_overlay_9_0211df38
 s_ma005_00_overlay_9_0211df38: ; 0x0211DF38
 	.asciz "ma005_00"
-_0211DF41:
+
+    .global DAT_overlay_9_0211DF41
+DAT_overlay_9_0211DF41:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_mam000_01_overlay_9_0211df44
 s_mam000_01_overlay_9_0211df44: ; 0x0211DF44
 	.asciz "mam000_01"
-_0211DF4E:
+
+    .global DAT_overlay_9_0211DF4E
+DAT_overlay_9_0211DF4E:
 	.byte 0x00, 0x00
+
+    .global s_data_message_etc_place_name_overlay_9_0211df50
 s_data_message_etc_place_name_overlay_9_0211df50: ; 0x0211DF50
 	.asciz "/data/message/etc/place_name"
-_0211DF6D:
+
+    .global DAT_overlay_9_0211DF6D
+DAT_overlay_9_0211DF6D:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_sFlying_overlay_9_0211df70
 s_sFlying_overlay_9_0211df70: ; 0x0211DF70
 	.asciz "sFlying"
 	; 0x0211DF78

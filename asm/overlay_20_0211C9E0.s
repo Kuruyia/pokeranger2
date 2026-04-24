@@ -430,16 +430,24 @@ ov20_0211CF90: ; 0x0211CF90
     .section .sinit,4 ; 0x0211CF98
 
     .data
+
+    .global PTR_ptr_FUN_020835bc_overlay_20_0211cfa0
 PTR_ptr_FUN_020835bc_overlay_20_0211cfa0: ; 0x0211CFA0
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_14CAutoSaveScene_overlay_20_0211cfac
 	.word PTR_ptr_FUN_02083578_0208a804
+
+    .global s_14CAutoSaveScene_overlay_20_0211cfac
 s_14CAutoSaveScene_overlay_20_0211cfac: ; 0x0211CFAC
 	.asciz "14CAutoSaveScene"
-_0211CFBD:
+
+    .global DAT_overlay_20_0211CFBD
+DAT_overlay_20_0211CFBD:
 	.byte 0x00, 0x00, 0x00
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_overlay_20_0211cfa0
+
+    .global CAutoSaveSceneVtable
 CAutoSaveSceneVtable: ; 0x0211CFC8
 	.word ov20_0211CA08
 	.word ov20_0211CA1C
@@ -452,6 +460,8 @@ CAutoSaveSceneVtable: ; 0x0211CFC8
 	.word ov20_0211CE54
 	.word ov20_0211CF30
 	.word ov20_0211CF90
+
+    .global s_Auto_Save_overlay_20_0211cff4
 s_Auto_Save_overlay_20_0211cff4: ; 0x0211CFF4
 	.asciz "Auto Save"
 	; 0x0211CFFE

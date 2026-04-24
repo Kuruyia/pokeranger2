@@ -1008,74 +1008,138 @@ ov4_0211D7A4: ; 0x0211D7A4
     .section .sinit,4 ; 0x0211D7AC
 
     .data
+
+    .global PTR_ptr_FUN_020835bc_overlay_4_0211d7c0
 PTR_ptr_FUN_020835bc_overlay_4_0211d7c0: ; 0x0211D7C0
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_12CLetterScene_overlay_4_0211d7cc
 	.word PTR_ptr_FUN_02083578_0208a804
+
+    .global s_12CLetterScene_overlay_4_0211d7cc
 s_12CLetterScene_overlay_4_0211d7cc: ; 0x0211D7CC
 	.asciz "12CLetterScene"
-_0211D7DB:
+
+    .global DAT_overlay_4_0211D7DB
+DAT_overlay_4_0211D7DB:
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_overlay_4_0211d7c0
+
+    .global ptr_FUN_overlay_4_0211ca30_overlay_4_0211d7e4
 ptr_FUN_overlay_4_0211ca30_overlay_4_0211d7e4: ; 0x0211D7E4
 	.word ov4_0211CA30
+
+    .global ptr_FUN_overlay_0_0211cb28_overlay_4_0211d7e8
 ptr_FUN_overlay_0_0211cb28_overlay_4_0211d7e8: ; 0x0211D7E8
 	.word ov4_0211CB28
+
+    .global ptr_FUN_overlay_4_0211d564_overlay_4_0211d7ec
 ptr_FUN_overlay_4_0211d564_overlay_4_0211d7ec: ; 0x0211D7EC
 	.word ov4_0211D564
 	.word ov4_0211D788
+
+    .global ptr_thunk_FUN_02001210_overlay_4_0211d7f4
 ptr_thunk_FUN_02001210_overlay_4_0211d7f4: ; 0x0211D7F4
 	.word sub_02007CD4
+
+    .global ptr_FUN_02007ce0_overlay_4_0211d7f8
 ptr_FUN_02007ce0_overlay_4_0211d7f8: ; 0x0211D7F8
 	.word sub_02007CE0
+
+    .global ptr_FUN_02007cc4_overlay_4_0211d7fc
 ptr_FUN_02007cc4_overlay_4_0211d7fc: ; 0x0211D7FC
 	.word sub_02007CC4
+
+    .global ptr_FUN_overlay_4_0211cc28_overlay_4_0211d800
 ptr_FUN_overlay_4_0211cc28_overlay_4_0211d800: ; 0x0211D800
 	.word ov4_0211CC28
+
+    .global ptr_FUN_overlay_4_0211ccd8_overlay_4_0211d804
 ptr_FUN_overlay_4_0211ccd8_overlay_4_0211d804: ; 0x0211D804
 	.word ov4_0211CCD8
 	.word ov4_0211D560
 	.word ov4_0211D7A4
+
+    .global s_data_eventicon_overlay_4_0211d810
 s_data_eventicon_overlay_4_0211d810: ; 0x0211D810
 	.asciz "data/eventicon"
-_0211D81F:
+
+    .global DAT_overlay_4_0211D81F
+DAT_overlay_4_0211D81F:
 	.byte 0x00
+
+    .global s_eventicon000_overlay_4_0211d820
 s_eventicon000_overlay_4_0211d820: ; 0x0211D820
 	.asciz "eventicon000"
-_0211D82D:
+
+    .global DAT_overlay_4_0211D82D
+DAT_overlay_4_0211D82D:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_data_message_chapter_chapter_03d_overlay_4_0211d830
 s_data_message_chapter_chapter_03d_overlay_4_0211d830: ; 0x0211D830
 	.asciz "data/message/chapter/chapter%03d_mes"
-_0211D855:
+
+    .global DAT_overlay_4_0211D855
+DAT_overlay_4_0211D855:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_BGM_overlay_4_0211d858
 s_BGM_overlay_4_0211d858: ; 0x0211D858
 	.asciz "BGM"
+
+    .global s_data_menu_ml000_bg_LZ_bin_overlay_4_0211d85c
 s_data_menu_ml000_bg_LZ_bin_overlay_4_0211d85c: ; 0x0211D85C
 	.asciz "data/menu/ml000_bg_LZ.bin"
-_0211D876:
+
+    .global DAT_overlay_4_0211D876
+DAT_overlay_4_0211D876:
 	.byte 0x00, 0x00
+
+    .global s_BGM_ml000_NCGR_overlay_4_0211d878
 s_BGM_ml000_NCGR_overlay_4_0211d878: ; 0x0211D878
 	.asciz "BGM:ml000.NCGR"
-_0211D887:
+
+    .global DAT_overlay_4_0211D887
+DAT_overlay_4_0211D887:
 	.byte 0x00
+
+    .global s_BGM_ml000_NCLR_overlay_4_0211d888
 s_BGM_ml000_NCLR_overlay_4_0211d888: ; 0x0211D888
 	.asciz "BGM:ml000.NCLR"
-_0211D897:
+
+    .global DAT_overlay_4_0211D897
+DAT_overlay_4_0211D897:
 	.byte 0x00
+
+    .global s_BGM_ml000_00_2_NSCR_overlay_4_0211d898
 s_BGM_ml000_00_2_NSCR_overlay_4_0211d898: ; 0x0211D898
 	.asciz "BGM:ml000_00_2.NSCR"
+
+    .global s_BGM_ml000_00_1_NSCR_overlay_4_0211d8ac
 s_BGM_ml000_00_1_NSCR_overlay_4_0211d8ac: ; 0x0211D8AC
 	.asciz "BGM:ml000_00_1.NSCR"
+
+    .global s_BGM_ml000_00_0_NSCR_overlay_4_0211d8c0
 s_BGM_ml000_00_0_NSCR_overlay_4_0211d8c0: ; 0x0211D8C0
 	.asciz "BGM:ml000_00_0.NSCR"
+
+    .global s_data_menu_mnd000_bg_LZ_bin_overlay_4_0211d8d4
 s_data_menu_mnd000_bg_LZ_bin_overlay_4_0211d8d4: ; 0x0211D8D4
 	.asciz "data/menu/mnd000_bg_LZ.bin"
-_0211D8EF:
+
+    .global DAT_overlay_4_0211D8EF
+DAT_overlay_4_0211D8EF:
 	.byte 0x00
+
+    .global s_BGM_mnd000_NCGR_overlay_4_0211d8f0
 s_BGM_mnd000_NCGR_overlay_4_0211d8f0: ; 0x0211D8F0
 	.asciz "BGM:mnd000.NCGR"
+
+    .global s_BGM_mnd000_NCLR_overlay_4_0211d900
 s_BGM_mnd000_NCLR_overlay_4_0211d900: ; 0x0211D900
 	.asciz "BGM:mnd000.NCLR"
+
+    .global s_BGM_mnd000_00_NSCR_overlay_4_0211d910
 s_BGM_mnd000_00_NSCR_overlay_4_0211d910: ; 0x0211D910
 	.asciz "BGM:mnd000_00.NSCR"
 	; 0x0211D923

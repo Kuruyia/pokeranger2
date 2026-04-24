@@ -637,31 +637,53 @@ ov24_0211D29C: ; 0x0211D29C
     .section .sinit,4 ; 0x0211D2A4
 
     .data
+
+    .global PTR_ptr_FUN_020835bc_overlay_24_0211d2c0
 PTR_ptr_FUN_020835bc_overlay_24_0211d2c0: ; 0x0211D2C0
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_11CRetryScene_overlay_24_0211d2cc
 	.word PTR_ptr_FUN_02083578_0208a804
+
+    .global s_11CRetryScene_overlay_24_0211d2cc
 s_11CRetryScene_overlay_24_0211d2cc: ; 0x0211D2CC
 	.asciz "11CRetryScene"
-_0211D2DA:
+
+    .global DAT_overlay_24_0211D2DA
+DAT_overlay_24_0211D2DA:
 	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_overlay_24_0211d2c0
+
+    .global PTR_LAB_overlay_24_0211ca18_overlay_24_0211d2e4
 PTR_LAB_overlay_24_0211ca18_overlay_24_0211d2e4: ; 0x0211D2E4
 	.word ov24_0211CA18
+
+    .global ptr_FUN_overlay_24_0211ca2c_overlay_24_0211d2e8
 ptr_FUN_overlay_24_0211ca2c_overlay_24_0211d2e8: ; 0x0211D2E8
 	.word ov24_0211CA2C
+
+    .global ptr_FUN_overlay_24_0211ca48_overlay_24_0211d2ec
 ptr_FUN_overlay_24_0211ca48_overlay_24_0211d2ec: ; 0x0211D2EC
 	.word ov24_0211CA48
 	.word ov24_0211D008
 	.word ov24_0211D00C
+
+    .global ptr_FUN_02007ce0_overlay_24_0211d2f8
 ptr_FUN_02007ce0_overlay_24_0211d2f8: ; 0x0211D2F8
 	.word sub_02007CE0
+
+    .global ptr_FUN_02007cc4_overlay_24_0211d2fc
 ptr_FUN_02007cc4_overlay_24_0211d2fc: ; 0x0211D2FC
 	.word sub_02007CC4
+
+    .global ptr_FUN_overlay_24_0211d010_overlay_24_0211d300
 ptr_FUN_overlay_24_0211d010_overlay_24_0211d300: ; 0x0211D300
 	.word ov24_0211D010
+
+    .global ptr_FUN_overlay_24_0211d134_overlay_24_0211d304
 ptr_FUN_overlay_24_0211d134_overlay_24_0211d304: ; 0x0211D304
 	.word ov24_0211D134
+
+    .global ptr_FUN_overlay_24_0211d224_overlay_24_0211d308
 ptr_FUN_overlay_24_0211d224_overlay_24_0211d308: ; 0x0211D308
 	.word ov24_0211D224
 	.word ov24_0211D29C

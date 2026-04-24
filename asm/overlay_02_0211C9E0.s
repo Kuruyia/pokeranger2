@@ -571,24 +571,35 @@ ov2_0211D144: ; 0x0211D144
     .section .sinit,4 ; 0x0211D158
 
     .data
+
+    .global PTR_ptr_FUN_020835bc_overlay_2_0211d160
 PTR_ptr_FUN_020835bc_overlay_2_0211d160: ; 0x0211D160
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_19CBattleToFieldScene_overlay_2_0211d16c
 	.word PTR_ptr_FUN_02083578_0208a804
+
+    .global s_19CBattleToFieldScene_overlay_2_0211d16c
 s_19CBattleToFieldScene_overlay_2_0211d16c: ; 0x0211D16C
 	.asciz "19CBattleToFieldScene"
-_0211D182:
+
+    .global DAT_overlay_2_0211D182
+DAT_overlay_2_0211D182:
 	.byte 0x00, 0x00
 
             .global _ZTV19CBattleToFieldScene
 _ZTV19CBattleToFieldScene: ; 0x0211D184
     .byte 0x00, 0x00, 0x00, 0x00
     .word PTR_ptr_FUN_020835bc_overlay_2_0211d160
+
     .global CBattleToFieldScene_vtable
 CBattleToFieldScene_vtable: ; 0x0211D18C
     .word ov2_0211D144
+
+    .global ptr_FUN_overlay_28_0211d108_overlay_2_0211d190
 ptr_FUN_overlay_28_0211d108_overlay_2_0211d190: ; 0x0211D190
     .word ov2_0211D108
+
+    .global ptr_FUN_overlay_2_0211d08c_overlay_2_0211d194
 ptr_FUN_overlay_2_0211d08c_overlay_2_0211d194: ; 0x0211D194
 	.word ov2_0211D08C
 	.word ov2_0211D130
@@ -596,15 +607,25 @@ ptr_FUN_overlay_2_0211d08c_overlay_2_0211d194: ; 0x0211D194
 	.word ov2_0211D128
 	.word ov2_0211D124
 	.word ov2_0211D138
+
+    .global ptr_FUN_overlay_0_0211c9e0_overlay_2_0211d1ac
 ptr_FUN_overlay_0_0211c9e0_overlay_2_0211d1ac: ; 0x0211D1AC
 	.word ov2_0211C9E0
+
+    .global ptr_FUN_overlay_24_0211d134_overlay_2_0211d1b0
 ptr_FUN_overlay_24_0211d134_overlay_2_0211d1b0: ; 0x0211D1B0
 	.word ov2_0211D134
 	.word ov2_0211D13C
+
+    .global s_aBattleLose_overlay_2_0211d1b8
 s_aBattleLose_overlay_2_0211d1b8: ; 0x0211D1B8
 	.asciz "aBattleLose"
+
+    .global s_sGameOverBS_overlay_2_0211d1c4
 s_sGameOverBS_overlay_2_0211d1c4: ; 0x0211D1C4
 	.asciz "sGameOverBS"
+
+    .global s_sGameOverB_overlay_2_0211d1d0
 s_sGameOverB_overlay_2_0211d1d0: ; 0x0211D1D0
 	.asciz "sGameOverB"
 	; 0x0211D1DB

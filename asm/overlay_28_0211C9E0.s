@@ -1370,8 +1370,12 @@ _0211DB0C: .word s_rd_03d_nbfs_overlay_28_0211dcf0
 	; 0x0211DB10
 
     .rodata
+
+    .global DAT_overlay_28_0211db10
 DAT_overlay_28_0211db10: ; 0x0211DB10
 	.byte 0x08, 0x00, 0xF8, 0x01
+
+    .global DAT_overlay_28_0211db14
 DAT_overlay_28_0211db14: ; 0x0211DB14
 	.byte 0x07, 0x00, 0xF4, 0x01, 0x04, 0x00, 0xF6, 0x01, 0x05, 0x00, 0xF6, 0x01
 	.byte 0x02, 0x00, 0xF4, 0x01, 0x03, 0x00, 0xF4, 0x01, 0x01, 0x00, 0xF5, 0x01, 0x06, 0x00, 0xF7, 0x01
@@ -1407,77 +1411,141 @@ DAT_overlay_28_0211db14: ; 0x0211DB14
     .section .sinit,4 ; 0x0211DBC0
 
     .data
+
+    .global PTR_ptr_FUN_020835bc_overlay_28_0211dbe0
 PTR_ptr_FUN_020835bc_overlay_28_0211dbe0: ; 0x0211DBE0
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_13CMapDispScene_overlay_28_0211dbec
 	.word PTR_ptr_FUN_02083578_0208a804
+
+    .global s_13CMapDispScene_overlay_28_0211dbec
 s_13CMapDispScene_overlay_28_0211dbec: ; 0x0211DBEC
 	.asciz "13CMapDispScene"
-_0211DBFC:
+
+    .global DAT_overlay_28_0211DBFC
+DAT_overlay_28_0211DBFC:
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_overlay_28_0211dbe0
+
+    .global ptr_FUN_overlay_11_0211ca0c_overlay_28_0211dc04
 ptr_FUN_overlay_11_0211ca0c_overlay_28_0211dc04: ; 0x0211DC04
 	.word ov28_0211CA0C
+
+    .global ptr_FUN_overlay_19_0211ca58_overlay_28_0211dc08
 ptr_FUN_overlay_19_0211ca58_overlay_28_0211dc08: ; 0x0211DC08
 	.word ov28_0211CA58
+
+    .global ptr_FUN_overlay_28_0211cad4_overlay_28_0211dc0c
 ptr_FUN_overlay_28_0211cad4_overlay_28_0211dc0c: ; 0x0211DC0C
 	.word ov28_0211CAD4
+
+    .global ptr_FUN_overlay_28_0211cb0c_overlay_28_0211dc10
 ptr_FUN_overlay_28_0211cb0c_overlay_28_0211dc10: ; 0x0211DC10
 	.word ov28_0211CB0C
+
+    .global ptr_FUN_overlay_28_0211cb24_overlay_28_0211dc14
 ptr_FUN_overlay_28_0211cb24_overlay_28_0211dc14: ; 0x0211DC14
 	.word ov28_0211CB24
+
+    .global ptr_FUN_02007ce0_overlay_28_0211dc18
 ptr_FUN_02007ce0_overlay_28_0211dc18: ; 0x0211DC18
 	.word sub_02007CE0
+
+    .global ptr_FUN_02007cc4_overlay_28_0211dc1c
 ptr_FUN_02007cc4_overlay_28_0211dc1c: ; 0x0211DC1C
 	.word sub_02007CC4
+
+    .global ptr_FUN_overlay_28_0211cb3c_overlay_28_0211dc20
 ptr_FUN_overlay_28_0211cb3c_overlay_28_0211dc20: ; 0x0211DC20
 	.word ov28_0211CB3C
+
+    .global ptr_FUN_overlay_9_0211cc68_overlay_28_0211dc24
 ptr_FUN_overlay_9_0211cc68_overlay_28_0211dc24: ; 0x0211DC24
 	.word ov28_0211CC68
 	.word ov28_0211CC8C
+
+    .global ptr_FUN_overlay_29_0211cc90_overlay_28_0211dc2c
 ptr_FUN_overlay_29_0211cc90_overlay_28_0211dc2c: ; 0x0211DC2C
 	.word ov28_0211CC90
+
+    .global s_DCB_overlay_28_0211dc30
 s_DCB_overlay_28_0211dc30: ; 0x0211DC30
 	.asciz "DCB"
+
+    .global s_DCB_s_overlay_28_0211dc34
 s_DCB_s_overlay_28_0211dc34: ; 0x0211DC34
 	.asciz "DCB:%s"
-_0211DC3B:
+
+    .global DAT_overlay_28_0211DC3B
+DAT_overlay_28_0211DC3B:
 	.byte 0x00
+
+    .global PTR_ptr_FUN_02083578_overlay_28_0211dc3c
 PTR_ptr_FUN_02083578_overlay_28_0211dc3c: ; 0x0211DC3C
 	.word _ZTVN10__cxxabiv117__class_type_infoE+8
 	.word s_22IMapDispRscPathBuilder_overlay_28_0211dc60
+
+    .global PTR_ptr_FUN_020835bc_overlay_28_0211dc44
 PTR_ptr_FUN_020835bc_overlay_28_0211dc44: ; 0x0211DC44
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_N14CMapDispScreen12CPathBuilderE_overlay_28_0211dc7c
 	.word PTR_ptr_FUN_02083578_overlay_28_0211dc3c
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_overlay_28_0211dc44
+
+    .global ptr_FUN_overlay_28_0211dac8_overlay_28_0211dc58
 ptr_FUN_overlay_28_0211dac8_overlay_28_0211dc58: ; 0x0211DC58
 	.word ov28_0211DAC8
+
+    .global ptr_FUN_overlay_28_0211daec_overlay_28_0211dc5c
 ptr_FUN_overlay_28_0211daec_overlay_28_0211dc5c: ; 0x0211DC5C
 	.word ov28_0211DAEC
+
+    .global s_22IMapDispRscPathBuilder_overlay_28_0211dc60
 s_22IMapDispRscPathBuilder_overlay_28_0211dc60: ; 0x0211DC60
 	.asciz "22IMapDispRscPathBuilder"
-_0211DC79:
+
+    .global DAT_overlay_28_0211DC79
+DAT_overlay_28_0211DC79:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_N14CMapDispScreen12CPathBuilderE_overlay_28_0211dc7c
 s_N14CMapDispScreen12CPathBuilderE_overlay_28_0211dc7c: ; 0x0211DC7C
 	.asciz "N14CMapDispScreen12CPathBuilderE"
-_0211DC9D:
+
+    .global DAT_overlay_28_0211DC9D
+DAT_overlay_28_0211DC9D:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_data_menu_overlay_28_0211dca0
 s_data_menu_overlay_28_0211dca0: ; 0x0211DCA0
 	.asciz "data/menu"
-_0211DCAA:
+
+    .global DAT_overlay_28_0211DCAA
+DAT_overlay_28_0211DCAA:
 	.byte 0x00, 0x00
+
+    .global s_ma005_00_overlay_28_0211dcac
 s_ma005_00_overlay_28_0211dcac: ; 0x0211DCAC
 	.asciz "ma005_00"
-_0211DCB5:
+
+    .global DAT_overlay_28_0211DCB5
+DAT_overlay_28_0211DCB5:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_data_message_etc_place_name_overlay_28_0211dcb8
 s_data_message_etc_place_name_overlay_28_0211dcb8: ; 0x0211DCB8
 	.asciz "/data/message/etc/place_name"
-_0211DCD5:
+
+    .global DAT_overlay_28_0211DCD5
+DAT_overlay_28_0211DCD5:
 	.byte 0x00, 0x00, 0x00
+
+    .global s_data_menu_rd_03d_LZ_bin_overlay_28_0211dcd8
 s_data_menu_rd_03d_LZ_bin_overlay_28_0211dcd8: ; 0x0211DCD8
 	.asciz "data/menu/rd%03d_LZ.bin"
+
+    .global s_rd_03d_nbfs_overlay_28_0211dcf0
 s_rd_03d_nbfs_overlay_28_0211dcf0: ; 0x0211DCF0
 	.asciz "rd%03d.nbfs"
 	; 0x0211DCFC
