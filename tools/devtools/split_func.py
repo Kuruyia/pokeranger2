@@ -164,7 +164,6 @@ def create_tail_asm_file(filename_prefix: str, lines: List[str], dry_run: bool) 
     if not dry_run:
         with tail_file.open("w") as f:
             f.write('    .include "macros.inc"\n')
-            f.write('    .include "include/arm9.inc"\n')
             f.write(
                 '    .include "include/{}.inc"\n'.format(
                     os.path.splitext(tail_file.name)[0]

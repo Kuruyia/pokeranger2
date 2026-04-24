@@ -1,5 +1,4 @@
     .include "macros.inc"
-    .include "include/arm9.inc"
     .include "include/arm9_0201668C.inc"
 
     .text

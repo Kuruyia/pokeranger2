@@ -12,3 +12,12 @@
 .public _ZN9CNCLRFileC1EPcmmm
 .public _ZN9CNSCRFileC1EPcmmm
 .public _ZN11CBGNCGRFileC1EPcmmm
+.public MI_CpuFill8
+.public NNS_GfdRegisterNewVramTransferTask
+.public NNS_GfdRegisterNewVramTransferTask
+.public NNS_GfdRegisterNewVramTransferTask
+.public NNS_GfdDoVramTransfer
+.public _ZdlPv
+.public DC_FlushRange
+.public MI_DmaCopy32
+.public OS_VSNPrintf

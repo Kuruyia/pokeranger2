@@ -23,3 +23,15 @@
 .public sub_02007068
 .public _Z19Heap_AllocSecondarym
 .public _Z18Heap_FreeSecondaryPv
+.public TP_Init
+.public TP_GetUserInfo
+.public OS_Terminate
+.public TP_SetCalibrateParam
+.public TP_Init
+.public TP_GetUserInfo
+.public OS_Terminate
+.public TP_SetCalibrateParam
+.public TP_RequestSamplingAsync
+.public TP_WaitRawResult
+.public TP_GetCalibratedPoint
+.public PM_GetLCDPower
