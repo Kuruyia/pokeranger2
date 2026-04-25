@@ -97,7 +97,7 @@ _0211CAFC:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211CFE4
 	ldr r0, _0211CFF0 ; =MAIN_BSS_0208F304
@@ -345,7 +345,7 @@ _0211CE9C:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211CFE4
 	mov r3, #1
@@ -366,7 +366,7 @@ _0211CEEC:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211CFE4
 	ldr r0, _0211CFF0 ; =MAIN_BSS_0208F304
@@ -562,7 +562,7 @@ ov24_0211D134: ; 0x0211D134
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
 	ldr r0, _0211D21C ; =MAIN_BSS_0208F304
 	mov r1, #0
 	ldr r0, [r0]

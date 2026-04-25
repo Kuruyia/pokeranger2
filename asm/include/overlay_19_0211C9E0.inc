@@ -23,8 +23,8 @@
 .public sub_020089EC
 .public sub_02008A80
 .public _ZN17UnkClass_020091E812sub_020092D4Ev
-.public _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
-.public sub_02009FB0
+.public _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+.public _ZN17UnkClass_020091E812sub_02009FB0Emm
 .public sub_0200AA04
 .public sub_0200AB28
 .public sub_0200AD34

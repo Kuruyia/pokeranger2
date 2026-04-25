@@ -9,6 +9,9 @@ class UnkClass_0200BBC8 {
 public:
     UnkClass_0200BBC8();
 
+    void sub_0200BEBC();
+    void sub_0200BF58();
+
 public:
     u8 unk_0000[0x163C];
 };

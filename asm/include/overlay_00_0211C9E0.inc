@@ -85,10 +85,10 @@
 .public sub_02009188
 .public sub_020091DC
 .public _ZN17UnkClass_020091E812sub_020092D4Ev
-.public _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+.public _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
 .public _ZN17UnkClass_020091E812sub_020097FCEmm
-.public sub_02009ECC
-.public sub_02009FB0
+.public _ZN17UnkClass_020091E812sub_02009ECCEv
+.public _ZN17UnkClass_020091E812sub_02009FB0Emm
 .public sub_0200AA04
 .public sub_0200AA14
 .public sub_0200AA84
@@ -111,7 +111,7 @@
 .public sub_0200E324
 .public sub_0200E91C
 .public sub_0201001C
-.public sub_020100E4
+.public _ZN5CGame12sub_020100E4EPFvvEm
 .public sub_02010378
 .public sub_020107A8
 .public sub_020107C4

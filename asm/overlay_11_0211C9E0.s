@@ -26015,7 +26015,7 @@ _02131E70:
 	ldr r0, _0213200C ; =MAIN_BSS_0208F304
 	ldr r1, _02132018 ; =ov11_0213251C
 	ldr r0, [r0]
-	bl sub_020100E4
+	bl _ZN5CGame12sub_020100E4EPFvvEm
 	b _02132000
 _02131E84:
 	ldr r0, [r4, #4]
@@ -26042,7 +26042,7 @@ _02131ED0:
 	ldr r0, _0213200C ; =MAIN_BSS_0208F304
 	ldr r1, _02132018 ; =ov11_0213251C
 	ldr r0, [r0]
-	bl sub_020100E4
+	bl _ZN5CGame12sub_020100E4EPFvvEm
 	b _02132000
 _02131EE4:
 	ldr r0, [r4, #4]
@@ -26276,7 +26276,7 @@ _021321D0:
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
 	ldr r0, _0213245C ; =MAIN_BSS_0208F304
 	mov r1, #0
 	ldr r0, [r0]

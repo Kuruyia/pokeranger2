@@ -466,7 +466,7 @@ ov19_0211CFC0: ; 0x0211CFC0
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
 	ldr r0, [r4, #0x1c]
 	mov r1, #2
 	add r0, r0, #0x1000
@@ -1294,7 +1294,7 @@ _0211DB2C:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [r6, #0x1c]
 	mov r1, #0
 	add r0, r0, #0x1000
@@ -1433,7 +1433,7 @@ ov19_0211DD7C: ; 0x0211DD7C
 	mov r0, r6
 	mov r2, r1
 	str ip, [r3, #0x14]
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	mov r0, #5
 	strh r0, [r4, #4]
 	arm_func_end ov19_0211DD7C
@@ -1443,7 +1443,7 @@ _0211DDE0:
 	mov r1, #1
 	mov r0, r6
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	mov r0, #3
 	strh r0, [r4, #4]
 	ldmia sp!, {r4, r5, r6, pc}

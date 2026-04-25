@@ -109,5 +109,5 @@
 .public sub_020027E8
 .public sub_020028A4
 .public sub_0201001C
-.public sub_020100E4
+.public _ZN5CGame12sub_020100E4EPFvvEm
 .public sub_02010124

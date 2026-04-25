@@ -55,7 +55,7 @@ ov6_0211CA6C: ; 0x0211CA6C
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [r5, #0x70]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -163,7 +163,7 @@ ov6_0211CBDC: ; 0x0211CBDC
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [r5, #0x70]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -342,7 +342,7 @@ ov6_0211CE24: ; 0x0211CE24
 	ldr r1, [r4, #0x14]
 	ldr r2, [r4, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
 	ldr r0, [r7, #0x70]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -1188,7 +1188,7 @@ _0211DAAC:
 	mov r1, #1
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200A088
+	bl _ZN17UnkClass_020091E812sub_0200A088Em
 	ldr r0, [r4, #0x70]
 	ldr r1, [r4, #0x80]
 	add r0, r0, #0x1000

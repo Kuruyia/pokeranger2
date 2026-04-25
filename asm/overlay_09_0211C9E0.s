@@ -340,7 +340,7 @@ _0211CDE0:
 	ldr r0, [r4, #0x54]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	ldmneia sp!, {r4, pc}
 	ldr r0, [r4, #0x54]
@@ -538,7 +538,7 @@ _0211D054:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [r4, #0x54]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -622,7 +622,7 @@ ov9_0211D0CC: ; 0x0211D0CC
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
 	ldr r0, [r4, #0x54]
 	mov r1, #0
 	add r0, r0, #0x1000

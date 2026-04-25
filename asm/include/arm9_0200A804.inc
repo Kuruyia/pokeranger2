@@ -101,7 +101,7 @@
 .public sub_02008BF0
 .public sub_02008C6C
 .public sub_0201001C
-.public sub_020100E4
+.public _ZN5CGame12sub_020100E4EPFvvEm
 .public sub_02018B10
 .public sub_02018B2C
 .public sub_02018B48
@@ -112,3 +112,5 @@
 .public _ZN17UnkClass_020091E812sub_0200978CEm
 .public _ZN17UnkClass_020091E812sub_02009808Em
 .public _ZN17UnkClass_020091E812sub_02009814Em
+.public _ZN17UnkClass_020091E812sub_02009D8CEPhmmm
+.public _ZN17UnkClass_020091E812sub_02009FB0Emm

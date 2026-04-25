@@ -279,7 +279,7 @@ CFieldScene_ov0_0211CD5C: ; 0x0211CD5C
 	ldr r2, [r6, #0x18]
 	add r3, r3, #0xc
 	ldr r4, _0211DBB0 ; =MAIN_BSS_020B26A0
-	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
 	mov r5, r7
 	ldr r0, _0211DBB4 ; =MAIN_BSS_020BA6A0
 	str r5, [sp, #0x20]
@@ -2851,7 +2851,7 @@ _0211F21C:
 	ldr r8, [sb, #0x7c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211F2C0
 	ldr r0, [sb, #4]
@@ -2868,7 +2868,7 @@ _0211F21C:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -2900,7 +2900,7 @@ _0211F2D4:
 	ldr r8, [sb, #0x7c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211F3BC
 	ldr r0, [sb, #4]
@@ -2917,7 +2917,7 @@ _0211F2D4:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -2966,7 +2966,7 @@ _0211F3D0:
 	ldr r8, [sb, #0x7c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211F480
 	ldr r0, [sb, #4]
@@ -2983,7 +2983,7 @@ _0211F3D0:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -3023,7 +3023,7 @@ _0211F494:
 	ldr r8, [sb, #0x7c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211F508
 	mov r0, sb
@@ -3033,7 +3033,7 @@ _0211F494:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -3054,7 +3054,7 @@ _0211F51C:
 	ldr r8, [sb, #0x7c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211F5C4
 	ldr r0, [sb, #4]
@@ -3071,7 +3071,7 @@ _0211F51C:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -3103,7 +3103,7 @@ _0211F5D8:
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211F974
 	ldr r0, [sb, #4]
@@ -3118,7 +3118,7 @@ _0211F5D8:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -3142,7 +3142,7 @@ _0211F66C:
 	ldr r8, [sb, #0x7c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211F750
 	ldr r0, [sb, #4]
@@ -3159,7 +3159,7 @@ _0211F66C:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -3225,7 +3225,7 @@ _0211F7A8:
 	ldr r8, [sb, #0x7c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211F858
 	ldr r0, [sb, #4]
@@ -3242,7 +3242,7 @@ _0211F7A8:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -3276,7 +3276,7 @@ _0211F86C:
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211F974
 	ldr r0, [sb, #4]
@@ -3284,7 +3284,7 @@ _0211F86C:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -3316,7 +3316,7 @@ _0211F904:
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _0211F960
 	ldr r0, [sb, #4]
@@ -3324,7 +3324,7 @@ _0211F904:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -3580,7 +3580,7 @@ _0211FCC8:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [sb, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -5374,7 +5374,7 @@ _02121630:
 _02121650:
 	ldr r0, [sb, #4]
 	ldr r1, _02121754 ; =ov0_021220AC
-	bl sub_020100E4
+	bl _ZN5CGame12sub_020100E4EPFvvEm
 _0212165C:
 	ldr r0, [sb, #0x54]
 	bl sub_0202251C

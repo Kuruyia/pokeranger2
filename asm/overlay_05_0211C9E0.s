@@ -503,7 +503,7 @@ _0211D01C:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [r5, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -647,7 +647,7 @@ ov5_0211D1E0: ; 0x0211D1E0
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
 	ldr r0, _0211D254 ; =s_data_message_etc_menu_mes_overlay_5_02120450
 	bl ov5_0211D588
 	str r0, [r4, #8]
@@ -3480,7 +3480,7 @@ _0211F91C:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [r4, #0x21c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
@@ -3726,7 +3726,7 @@ _0211FC74:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r3, r2
-	bl sub_02009D8C
+	bl _ZN17UnkClass_020091E812sub_02009D8CEPhmmm
 	add sp, sp, #0x14
 	ldmia sp!, {r4, r5, pc}
 	.align 2, 0
@@ -3867,7 +3867,7 @@ ov5_0211FE34: ; 0x0211FE34
 	mov r1, #1
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200A088
+	bl _ZN17UnkClass_020091E812sub_0200A088Em
 	ldr r0, [r4, #0x21c]
 	mov r1, #0
 	add r0, r0, #0x1000

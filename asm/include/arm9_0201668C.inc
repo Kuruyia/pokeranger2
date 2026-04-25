@@ -353,8 +353,8 @@
 .public sub_020089EC
 .public sub_02008A80
 .public sub_02008E50
-.public sub_02009ECC
-.public sub_02009FB0
+.public _ZN17UnkClass_020091E812sub_02009ECCEv
+.public _ZN17UnkClass_020091E812sub_02009FB0Emm
 .public sub_0200AA04
 .public sub_0200AA14
 .public sub_0200AD34

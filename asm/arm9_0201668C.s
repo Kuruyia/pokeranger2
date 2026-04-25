@@ -20276,7 +20276,7 @@ sub_020277AC: ; 0x020277AC
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r4, [r5, #8]
 	cmp r4, #0
 	beq _02027804
@@ -20315,7 +20315,7 @@ _02027844:
 	ldr r0, [r4, #0x14]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	bne _02027978
 	ldr r0, [r4, #0x14]
@@ -20347,7 +20347,7 @@ _020278C0:
 	ldr r0, [r4, #0x14]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009ECC
+	bl _ZN17UnkClass_020091E812sub_02009ECCEv
 	cmp r0, #0
 	moveq r0, #1
 	streqh r0, [r4]
@@ -20504,7 +20504,7 @@ sub_02027A94: ; 0x02027A94
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	arm_func_end sub_02027A94
 _02027AE8:
@@ -20512,7 +20512,7 @@ _02027AE8:
 	mov r1, #1
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [r7, #0x14]
 	mov r1, #0
 	add r0, r0, #0x1000

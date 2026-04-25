@@ -5570,13 +5570,13 @@ sub_02007714: ; 0x02007714
 	strb r0, [r2, #0x30]
 	str r1, [r2, #0x2c]
 	ldr r0, _02007738 ; =_0208F304
-	ldr ip, _0200773C ; =sub_020100E4
+	ldr ip, _0200773C ; =_ZN5CGame12sub_020100E4EPFvvEm
 	ldr r1, _02007740 ; =sub_02007744
 	ldr r0, [r0]
 	bx ip
 	.align 2, 0
 _02007738: .word MAIN_BSS_0208F304
-_0200773C: .word sub_020100E4
+_0200773C: .word _ZN5CGame12sub_020100E4EPFvvEm
 _02007740: .word sub_02007744
 	arm_func_end sub_02007714
 
@@ -6007,13 +6007,13 @@ sub_02007C34: ; 0x02007C34
 	mov r1, #0
 	strb r1, [r2, #0x20]
 	ldr r0, _02007C58 ; =_0208F304
-	ldr ip, _02007C5C ; =sub_020100E4
+	ldr ip, _02007C5C ; =_ZN5CGame12sub_020100E4EPFvvEm
 	ldr r0, [r0]
 	ldr r1, _02007C60 ; =sub_02007C64
 	bx ip
 	.align 2, 0
 _02007C58: .word MAIN_BSS_0208F304
-_02007C5C: .word sub_020100E4
+_02007C5C: .word _ZN5CGame12sub_020100E4EPFvvEm
 _02007C60: .word sub_02007C64
 	arm_func_end sub_02007C34
 

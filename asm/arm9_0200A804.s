@@ -1,742 +1,10 @@
     .include "macros.inc"
-    .include "include/arm9_02009D8C.inc"
+    .include "include/arm9_0200A804.inc"
 
     .text
 
-	arm_func_start sub_02009D8C
-sub_02009D8C: ; 0x02009D8C
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	mov r5, r0
-	ldr ip, [r5, #0x50]
-	mov r4, r1
-	mov r7, r2
-	mov r6, r3
-	cmp ip, #0
-	beq _02009DB0
-	bl sub_02009F28
-	arm_func_end sub_02009D8C
-_02009DB0:
-	ldr r1, [sp, #0x18]
-	mov r0, r5
-	bl _ZN17UnkClass_020091E812sub_0200978CEm
-	str r7, [r5, #0x94]
-	str r6, [r5, #0x98]
-	ldr r0, [r5, #0x74]
-	cmp r0, #0
-	moveq r0, #2
-	streq r0, [r5, #0x74]
-	cmp r7, #0
-	beq _02009DE8
-	cmp r7, #1
-	beq _02009E04
-	b _02009E58
-_02009DE8:
-	bl G2_GetBG1ScrPtr
-	add r2, r0, #0x600
-	mov r0, #9
-	mov r1, #0
-	mov r3, #0x180
-	bl NNS_GfdRegisterNewVramTransferTask
-	b _02009E58
-_02009E04:
-	cmp r6, #0
-	bne _02009E40
-	bl G2_GetBG1ScrPtr
-	add r2, r0, #0x600
-	mov r0, #9
-	mov r1, #0x500
-	mov r3, #0xc0
-	bl NNS_GfdRegisterNewVramTransferTask
-	bl G2_GetBG1ScrPtr
-	add r2, r0, #0x740
-	mov r0, #9
-	mov r1, #0x5c0
-	mov r3, #0x40
-	bl NNS_GfdRegisterNewVramTransferTask
-	b _02009E58
-_02009E40:
-	bl G2_GetBG1ScrPtr
-	add r2, r0, #0x600
-	mov r0, #9
-	mov r1, #0x480
-	mov r3, #0x180
-	bl NNS_GfdRegisterNewVramTransferTask
-_02009E58:
-	mov r0, #0x4000000
-	ldr r2, [r0]
-	ldr r1, [r0]
-	and r2, r2, #0x1f00
-	mov r3, r2, lsr #8
-	bic r2, r1, #0x1f00
-	orr r1, r3, #2
-	orr r1, r2, r1, lsl #8
-	str r1, [r0]
-	ldr r2, [r0]
-	ldr r1, [r0]
-	and r2, r2, #0x1f00
-	mov r3, r2, lsr #8
-	bic r2, r1, #0x1f00
-	orr r1, r3, #0x10
-	orr r1, r2, r1, lsl #8
-	str r1, [r0]
-	str r4, [r5, #0x7c]
-	mov r0, #4
-	str r0, [r5, #0xac]
-	mov r2, #0
-	str r2, [r5, #0xa4]
-	mov r0, r5
-	mov r1, #2
-	str r2, [r5, #0xa8]
-	bl sub_0200AA68
-	mov r0, #1
-	str r0, [r5, #0x50]
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-
-	arm_func_start sub_02009ECC
-sub_02009ECC: ; 0x02009ECC
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl sub_0200A110
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r4, pc}
-	mov r0, r4
-	bl sub_0200A110
-	cmp r0, #5
-	ldreq r0, [r4, #0x64]
-	cmpeq r0, #0
-	bne _02009F10
-	mov r0, r4
-	bl sub_0200A97C
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r4, pc}
-	arm_func_end sub_02009ECC
-_02009F10:
-	mov r0, r4
-	bl sub_0200A110
-	cmp r0, #9
-	movne r0, #1
-	moveq r0, #0
-	ldmia sp!, {r4, pc}
-
-	arm_func_start sub_02009F28
-sub_02009F28: ; 0x02009F28
-	stmdb sp!, {r4, lr}
-	mov r3, #0x4000000
-	ldr r2, [r3]
-	ldr r1, [r3]
-	and r2, r2, #0x1f00
-	mov ip, r2, lsr #8
-	bic r2, r1, #0x1f00
-	eor r1, ip, #0x12
-	orr r1, r2, r1, lsl #8
-	mov r4, r0
-	str r1, [r3]
-	ldr r0, [r4, #0x14c]
-	bl sub_0200BF58
-	ldr r0, _02009FA4 ; =_0208F304
-	ldr r1, _02009FA8 ; =sub_0200B6E4
-	ldr r0, [r0]
-	mov r2, #0
-	bl sub_020100E4
-	ldr r1, [r4, #0xf8]
-	ldr r0, _02009FAC ; =0x33333333
-	mov r2, #0xe00
-	bl MIi_CpuClearFast
-	ldr r1, [r4, #0x120]
-	ldr r0, _02009FAC ; =0x33333333
-	mov r2, #0x380
-	bl MIi_CpuClearFast
-	mov r0, #0
-	str r0, [r4, #0x50]
-	str r0, [r4, #0x4c]
-	str r0, [r4, #0x78]
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02009FA4: .word MAIN_BSS_0208F304
-_02009FA8: .word sub_0200B6E4
-_02009FAC: .word 0x33333333
-	arm_func_end sub_02009F28
-
-	arm_func_start sub_02009FB0
-sub_02009FB0: ; 0x02009FB0
-	stmdb sp!, {r3, r4, r5, lr}
-	cmp r2, #0
-	mov r2, #0x4000000
-	mov r4, r1
-	ldr r1, [r2]
-	mov r5, r0
-	mov ip, #2
-	ldr r0, [r2]
-	and r3, r1, #0x1f00
-	orrne ip, ip, #0x10
-	bic r1, r0, #0x1f00
-	eor r0, ip, r3, lsr #8
-	orr r0, r1, r0, lsl #8
-	str r0, [r2]
-	ldr r0, [r5, #0x14c]
-	bl sub_0200BF58
-	ldr r0, _0200A07C ; =_0208F304
-	ldr r1, _0200A080 ; =sub_0200B6E4
-	ldr r0, [r0]
-	mov r2, #0
-	bl sub_020100E4
-	ldr r1, [r5, #0xf8]
-	ldr r0, _0200A084 ; =0x33333333
-	mov r2, #0xe00
-	bl MIi_CpuClearFast
-	ldr r1, [r5, #0x120]
-	ldr r0, _0200A084 ; =0x33333333
-	mov r2, #0x380
-	bl MIi_CpuClearFast
-	mov r1, #0
-	str r1, [r5, #0x50]
-	str r1, [r5, #0x54]
-	str r1, [r5, #0x58]
-	str r1, [r5, #0x5c]
-	mov r0, #0x1e
-	str r0, [r5, #0x60]
-	str r1, [r5, #0x64]
-	str r1, [r5, #0x68]
-	mov r0, #0x3c
-	str r0, [r5, #0x6c]
-	ldr r0, [r5, #0x74]
-	cmp r4, #0
-	str r0, [r5, #0x9c]
-	str r1, [r5, #0xa0]
-	str r1, [r5, #0x78]
-	str r1, [r5, #0x4c]
-	ldmeqia sp!, {r3, r4, r5, pc}
-	mov r0, r5
-	mov r1, #3
-	bl sub_0200AA68
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0200A07C: .word MAIN_BSS_0208F304
-_0200A080: .word sub_0200B6E4
-_0200A084: .word 0x33333333
-	arm_func_end sub_02009FB0
-
-	arm_func_start sub_0200A088
-sub_0200A088: ; 0x0200A088
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r1
-	ldr r1, [r5, #0xf8]
-	ldr r0, _0200A10C ; =0x33333333
-	mov r2, #0xe00
-	bl MIi_CpuClearFast
-	ldr r1, [r5, #0x120]
-	ldr r0, _0200A10C ; =0x33333333
-	mov r2, #0x380
-	bl MIi_CpuClearFast
-	mov r1, #0
-	str r1, [r5, #0x50]
-	str r1, [r5, #0x54]
-	str r1, [r5, #0x58]
-	str r1, [r5, #0x5c]
-	mov r0, #0x1e
-	str r0, [r5, #0x60]
-	str r1, [r5, #0x64]
-	str r1, [r5, #0x68]
-	mov r0, #0x3c
-	str r0, [r5, #0x6c]
-	ldr r0, [r5, #0x74]
-	cmp r4, #0
-	str r0, [r5, #0x9c]
-	str r1, [r5, #0xa0]
-	str r1, [r5, #0x78]
-	str r1, [r5, #0x4c]
-	ldmeqia sp!, {r3, r4, r5, pc}
-	mov r0, r5
-	mov r1, #3
-	bl sub_0200AA68
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0200A10C: .word 0x33333333
-	arm_func_end sub_0200A088
-
-	arm_func_start sub_0200A110
-sub_0200A110: ; 0x0200A110
-	ldr r0, [r0, #0x50]
-	bx lr
-	arm_func_end sub_0200A110
-
-	arm_func_start sub_0200A118
-sub_0200A118: ; 0x0200A118
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	sub sp, sp, #0x80
-	mov r4, r0
-	ldr r1, [r4, #0x50]
-	cmp r1, #0
-	addeq sp, sp, #0x80
-	moveq r0, r1
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	cmp r1, #0xa
-	beq _0200A144
-	bl sub_0200A84C
-	arm_func_end sub_0200A118
-_0200A144:
-	ldr r0, [r4, #0x14c]
-	bl sub_0200BEBC
-	ldr r0, [r4, #0x50]
-	cmp r0, #0xa
-	addls pc, pc, r0, lsl #2
-	b _0200A2F4
-_0200A15C: ; jump table
-	b _0200A188 ; case 0
-	b _0200A2F4 ; case 1
-	b _0200A2F4 ; case 2
-	b _0200A188 ; case 3
-	b _0200A188 ; case 4
-	b _0200A188 ; case 5
-	b _0200A190 ; case 6
-	b _0200A224 ; case 7
-	b _0200A25C ; case 8
-	b _0200A2EC ; case 9
-	b _0200A2EC ; case 10
-_0200A188:
-	add sp, sp, #0x80
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0200A190:
-	ldr r0, [r4, #0x58]
-	cmp r0, #1
-	bne _0200A1BC
-	ldr r0, [r4, #0x60]
-	cmp r0, #0
-	beq _0200A1BC
-	sub r0, r0, #1
-	str r0, [r4, #0x60]
-	add sp, sp, #0x80
-	ldr r0, [r4, #0x50]
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0200A1BC:
-	ldr r0, [r4, #0xb0]
-	add r0, r0, #1
-	str r0, [r4, #0xb0]
-	cmp r0, #3
-	bge _0200A200
-	ldr r1, [r4, #0xf8]
-	mov r2, #0xa80
-	add r0, r1, #0x380
-	bl MIi_CpuCopyFast
-	ldr r1, [r4, #0xf8]
-	ldr r0, _0200A7FC ; =0x33333333
-	add r1, r1, #0xa80
-	mov r2, #0x380
-	bl MIi_CpuClearFast
-	add sp, sp, #0x80
-	ldr r0, [r4, #0x50]
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0200A200:
-	mov r0, #2
-	str r0, [r4, #0x50]
-	mov r0, #0
-	str r0, [r4, #0xb0]
-	ldr r1, [r4, #0x120]
-	ldr r0, _0200A7FC ; =0x33333333
-	mov r2, #0x380
-	bl MIi_CpuClearFast
-	b _0200A2F4
-_0200A224:
-	ldr r0, [r4, #0x58]
-	cmp r0, #1
-	bne _0200A25C
-	ldr r0, [r4, #0x60]
-	cmp r0, #0
-	beq _0200A25C
-	subs r0, r0, #1
-	str r0, [r4, #0x60]
-	bne _0200A250
-	ldr r0, [r4, #0x14c]
-	bl sub_0200BF58
-_0200A250:
-	add sp, sp, #0x80
-	ldr r0, [r4, #0x50]
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0200A25C:
-	ldr r0, [r4, #0xb0]
-	add r0, r0, #1
-	str r0, [r4, #0xb0]
-	cmp r0, #3
-	bge _0200A2C4
-	ldr r1, [r4, #0xf8]
-	mov r2, #0xa80
-	add r0, r1, #0x380
-	bl MIi_CpuCopyFast
-	ldr r1, [r4, #0xf8]
-	ldr r0, _0200A7FC ; =0x33333333
-	add r1, r1, #0xa80
-	mov r2, #0x380
-	bl MIi_CpuClearFast
-	ldr r0, [r4, #0xb0]
-	cmp r0, #2
-	ldreq r0, [r4, #0x50]
-	cmpeq r0, #7
-	bne _0200A2B8
-	mov r0, #8
-	str r0, [r4, #0x50]
-	mov r0, #0
-	str r0, [r4, #0xb0]
-_0200A2B8:
-	add sp, sp, #0x80
-	ldr r0, [r4, #0x50]
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0200A2C4:
-	mov r0, #0
-	str r0, [r4, #0xa4]
-	str r0, [r4, #0xa8]
-	mov r0, #2
-	str r0, [r4, #0x50]
-	ldr r1, [r4, #0x120]
-	ldr r0, _0200A800 ; =0x11111111
-	mov r2, #0x380
-	bl MIi_CpuClearFast
-	b _0200A2F4
-_0200A2EC:
-	add sp, sp, #0x80
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_0200A2F4:
-	ldr r0, [r4, #0xa0]
-	add r1, r0, #1
-	str r1, [r4, #0xa0]
-	ldr r0, [r4, #0x9c]
-	cmp r1, r0
-	addlt sp, sp, #0x80
-	ldrlt r0, [r4, #0x50]
-	ldmltia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	mov r0, #0
-	str r0, [r4, #0xa0]
-	ldr r0, [r4, #0x78]
-	cmp r0, #0
-	bne _0200A348
-	ldr r0, [r4, #0x110]
-	ldr r2, [r4, #0x11c]
-	str r0, [sp, #0x6c]
-	ldr r0, [r4, #0x114]
-	str r0, [sp, #0x68]
-	ldr r0, [r4, #0x118]
-	str r0, [sp, #0x64]
-	b _0200A364
-_0200A348:
-	ldr r0, [r4, #0x138]
-	ldr r2, [r4, #0x144]
-	str r0, [sp, #0x6c]
-	ldr r0, [r4, #0x13c]
-	str r0, [sp, #0x68]
-	ldr r0, [r4, #0x140]
-	str r0, [sp, #0x64]
-_0200A364:
-	ldr r0, [sp, #0x68]
-	ldr r1, [r0]
-	ldr r0, [r0, #4]
-	str r0, [sp, #0x70]
-	ldrsb r0, [r1, #1]
-	add r0, r2, r0
-	str r0, [r4, #0x80]
-_0200A380:
-	ldr r1, [sp, #0x70]
-	add r0, r4, #0x7c
-	blx r1
-	cmp r0, #0
-	cmpne r0, #0xa
-	beq _0200A790
-	cmp r0, #0x5b
-	bne _0200A3BC
-	ldr r1, [sp, #0x70]
-	add r0, r4, #0x7c
-	blx r1
-	mov r1, r0
-	mov r0, r4
-	bl _ZN17UnkClass_020091E812sub_02009814Em
-	b _0200A7CC
-_0200A3BC:
-	ldr r2, [r4, #0xa4]
-	ldr r3, [r4, #0xac]
-	mov r1, r2, asr #2
-	str r3, [sp]
-	str r0, [sp, #4]
-	add r5, r2, r1, lsr #29
-	mov r5, r5, asr #3
-	ldr r3, [r4, #0xa8]
-	ldr r0, [sp, #0x6c]
-	ldr r1, [sp, #0x68]
-	str r5, [sp, #0x78]
-	bl NNS_G2dCharCanvasDrawChar
-	ldr r1, [r4, #0xa4]
-	add r2, r1, r0
-	ldr r0, [sp, #0x64]
-	add r1, r2, r0
-	mov r0, r1, asr #2
-	add r0, r1, r0, lsr #29
-	str r1, [r4, #0xa4]
-	ldr r1, [r4, #0x78]
-	mov r0, r0, asr #3
-	add r0, r0, #1
-	cmp r1, #1
-	str r0, [sp, #0x7c]
-	bne _0200A7D4
-	mov r1, r5
-	cmp r1, r0
-	bge _0200A7D4
-	mov r0, r5
-	mov r0, r0, lsl #5
-	str r0, [sp, #0x60]
-	mov r0, r5
-	mov r0, r0, lsl #6
-	str r0, [sp, #0x5c]
-	ldr r0, [sp, #0x60]
-	add r1, r0, #0xc2
-	add r2, r0, #0xd2
-	ldr r0, [sp, #0x5c]
-	add r0, r0, #0x20
-	str r0, [sp, #0x58]
-	ldr r0, [sp, #0x60]
-	add r0, r0, #0x10
-	str r0, [sp, #0x54]
-	ldr r0, [sp, #0x5c]
-	add r0, r0, #0x380
-	str r0, [sp, #0x50]
-	add r0, r1, #0x100
-	str r0, [sp, #0x3c]
-	add r0, r2, #0x100
-	str r0, [sp, #0x2c]
-	ldr r0, [sp, #0x60]
-	add r0, r0, #0x12
-	str r0, [sp, #0x4c]
-	ldr r0, [sp, #0x5c]
-	add r0, r0, #0x3a0
-	str r0, [sp, #0x48]
-	ldr r0, [sp, #0x60]
-	add r0, r0, #0x1c0
-	str r0, [sp, #0x44]
-	ldr r0, [sp, #0x5c]
-	add r0, r0, #0x700
-	str r0, [sp, #0x40]
-	ldr r0, [sp, #0x5c]
-	add r0, r0, #0x720
-	str r0, [sp, #0x38]
-	ldr r0, [sp, #0x60]
-	add r0, r0, #0x1d0
-	str r0, [sp, #0x34]
-	ldr r0, [sp, #0x5c]
-	add r0, r0, #0xa80
-	str r0, [sp, #0x30]
-	ldr r0, [sp, #0x5c]
-	add r0, r0, #0xaa0
-	str r0, [sp, #0x28]
-_0200A4E4:
-	mov r0, #0
-	str r0, [sp, #0x74]
-	ldr r0, [sp, #0x5c]
-	ldr r5, [sp, #0x60]
-	str r0, [sp, #0x24]
-	ldr r0, [sp, #0x58]
-	ldr fp, [sp, #0x50]
-	str r0, [sp, #0x20]
-	ldr r0, [sp, #0x54]
-	ldr r6, [sp, #0x48]
-	str r0, [sp, #0x1c]
-	ldr r0, [sp, #0x4c]
-	ldr r7, [sp, #0x40]
-	str r0, [sp, #0x18]
-	ldr r0, [sp, #0x44]
-	ldr r8, [sp, #0x38]
-	str r0, [sp, #0x14]
-	ldr r0, [sp, #0x3c]
-	ldr sb, [sp, #0x30]
-	str r0, [sp, #0x10]
-	ldr r0, [sp, #0x34]
-	ldr sl, [sp, #0x28]
-	str r0, [sp, #0xc]
-	ldr r0, [sp, #0x2c]
-	str r0, [sp, #8]
-_0200A548:
-	mov r0, r4
-	mov r1, r5
-	bl sub_0200A804
-	ldr r3, [r4, #0xf8]
-	ldr r1, [sp, #0x24]
-	mov r2, #8
-	add r1, r3, r1
-	bl MIi_CpuClearFast
-	mov r0, r4
-	add r1, r5, #2
-	bl sub_0200A804
-	ldr r3, [r4, #0xf8]
-	ldr r1, [sp, #0x20]
-	mov r2, #8
-	add r1, r3, r1
-	bl MIi_CpuClearFast
-	ldr r1, [sp, #0x1c]
-	mov r0, r4
-	bl sub_0200A804
-	ldr r1, [r4, #0xf8]
-	mov r2, #8
-	add r1, r1, fp
-	bl MIi_CpuClearFast
-	ldr r1, [sp, #0x18]
-	mov r0, r4
-	bl sub_0200A804
-	ldr r1, [r4, #0xf8]
-	mov r2, #8
-	add r1, r1, r6
-	bl MIi_CpuClearFast
-	ldr r1, [sp, #0x14]
-	mov r0, r4
-	bl sub_0200A804
-	ldr r1, [r4, #0xf8]
-	mov r2, #8
-	add r1, r1, r7
-	bl MIi_CpuClearFast
-	ldr r1, [sp, #0x10]
-	mov r0, r4
-	bl sub_0200A804
-	ldr r1, [r4, #0xf8]
-	mov r2, #8
-	add r1, r1, r8
-	bl MIi_CpuClearFast
-	ldr r1, [sp, #0xc]
-	mov r0, r4
-	bl sub_0200A804
-	ldr r1, [r4, #0xf8]
-	mov r2, #8
-	add r1, r1, sb
-	bl MIi_CpuClearFast
-	ldr r1, [sp, #8]
-	mov r0, r4
-	bl sub_0200A804
-	ldr r1, [r4, #0xf8]
-	mov r2, #8
-	add r1, r1, sl
-	bl MIi_CpuClearFast
-	ldr r0, [sp, #0x24]
-	add r5, r5, #4
-	add r0, r0, #8
-	str r0, [sp, #0x24]
-	ldr r0, [sp, #0x20]
-	add fp, fp, #8
-	add r0, r0, #8
-	str r0, [sp, #0x20]
-	ldr r0, [sp, #0x1c]
-	add r6, r6, #8
-	add r0, r0, #4
-	str r0, [sp, #0x1c]
-	ldr r0, [sp, #0x18]
-	add r7, r7, #8
-	add r0, r0, #4
-	str r0, [sp, #0x18]
-	ldr r0, [sp, #0x14]
-	add r8, r8, #8
-	add r0, r0, #4
-	str r0, [sp, #0x14]
-	ldr r0, [sp, #0x10]
-	add sb, sb, #8
-	add r0, r0, #4
-	str r0, [sp, #0x10]
-	ldr r0, [sp, #0xc]
-	add sl, sl, #8
-	add r0, r0, #4
-	str r0, [sp, #0xc]
-	ldr r0, [sp, #8]
-	add r0, r0, #4
-	str r0, [sp, #8]
-	ldr r0, [sp, #0x74]
-	add r0, r0, #1
-	str r0, [sp, #0x74]
-	cmp r0, #4
-	blt _0200A548
-	ldr r0, [sp, #0x60]
-	add r0, r0, #0x20
-	str r0, [sp, #0x60]
-	ldr r0, [sp, #0x5c]
-	add r0, r0, #0x40
-	str r0, [sp, #0x5c]
-	ldr r0, [sp, #0x58]
-	add r0, r0, #0x40
-	str r0, [sp, #0x58]
-	ldr r0, [sp, #0x54]
-	add r0, r0, #0x20
-	str r0, [sp, #0x54]
-	ldr r0, [sp, #0x50]
-	add r0, r0, #0x40
-	str r0, [sp, #0x50]
-	ldr r0, [sp, #0x4c]
-	add r0, r0, #0x20
-	str r0, [sp, #0x4c]
-	ldr r0, [sp, #0x48]
-	add r0, r0, #0x40
-	str r0, [sp, #0x48]
-	ldr r0, [sp, #0x44]
-	add r0, r0, #0x20
-	str r0, [sp, #0x44]
-	ldr r0, [sp, #0x40]
-	add r0, r0, #0x40
-	str r0, [sp, #0x40]
-	ldr r0, [sp, #0x3c]
-	add r0, r0, #0x20
-	str r0, [sp, #0x3c]
-	ldr r0, [sp, #0x38]
-	add r0, r0, #0x40
-	str r0, [sp, #0x38]
-	ldr r0, [sp, #0x34]
-	add r0, r0, #0x20
-	str r0, [sp, #0x34]
-	ldr r0, [sp, #0x30]
-	add r0, r0, #0x40
-	str r0, [sp, #0x30]
-	ldr r0, [sp, #0x2c]
-	add r0, r0, #0x20
-	str r0, [sp, #0x2c]
-	ldr r0, [sp, #0x28]
-	add r0, r0, #0x40
-	str r0, [sp, #0x28]
-	ldr r0, [sp, #0x78]
-	add r1, r0, #1
-	ldr r0, [sp, #0x7c]
-	str r1, [sp, #0x78]
-	cmp r1, r0
-	blt _0200A4E4
-	b _0200A7D4
-_0200A790:
-	ldr r0, [r4, #0x4c]
-	cmp r0, #0
-	beq _0200A7B0
-	mov r0, #0
-	str r0, [r4, #0x4c]
-	ldr r0, [r4, #0x48]
-	str r0, [r4, #0x7c]
-	b _0200A7D4
-_0200A7B0:
-	mov r0, #5
-	str r0, [r4, #0x50]
-	ldr r0, [r4, #0x64]
-	cmp r0, #1
-	ldreq r0, [r4, #0x68]
-	streq r0, [r4, #0x6c]
-	b _0200A7D4
-_0200A7CC:
-	cmp r0, #0
-	bne _0200A380
-_0200A7D4:
-	ldr r0, [r4, #0x9c]
-	cmp r0, #0
-	bne _0200A7F0
-	ldr r0, [r4, #0x50]
-	cmp r0, #1
-	cmpne r0, #2
-	beq _0200A380
-_0200A7F0:
-	ldr r0, [r4, #0x50]
-	add sp, sp, #0x80
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_0200A7FC: .word 0x33333333
-_0200A800: .word 0x11111111
-
-	arm_func_start sub_0200A804
-sub_0200A804: ; 0x0200A804
+	arm_func_start _ZN17UnkClass_020091E812sub_0200A804Em
+_ZN17UnkClass_020091E812sub_0200A804Em: ; 0x0200A804
 	ldr r2, [r0, #0x120]
 	add r0, r1, #1
 	ldrb r3, [r2, r1]
@@ -755,10 +23,10 @@ sub_0200A804: ; 0x0200A804
 	orr r0, r0, r1, lsr #8
 	orr r0, r0, r1, lsr #12
 	bx lr
-	arm_func_end sub_0200A804
+	arm_func_end _ZN17UnkClass_020091E812sub_0200A804Em
 
-	arm_func_start sub_0200A84C
-sub_0200A84C: ; 0x0200A84C
+	arm_func_start _ZN17UnkClass_020091E812sub_0200A84CEv
+_ZN17UnkClass_020091E812sub_0200A84CEv: ; 0x0200A84C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	ldr r1, [r4, #0x54]
@@ -770,7 +38,7 @@ sub_0200A84C: ; 0x0200A84C
 	strne r0, [r4, #0x9c]
 	ldreq r0, [r4, #0x74]
 	streq r0, [r4, #0x9c]
-	arm_func_end sub_0200A84C
+	arm_func_end _ZN17UnkClass_020091E812sub_0200A84CEv
 _0200A878:
 	ldr r0, [r4, #0x50]
 	cmp r0, #3
@@ -782,7 +50,7 @@ _0200A878:
 	ldmia sp!, {r4, pc}
 _0200A898:
 	mov r0, r4
-	bl sub_0200A97C
+	bl _ZN17UnkClass_020091E812sub_0200A97CEv
 	cmp r0, #0
 	bne _0200A8B4
 	ldr r0, [r4, #0x58]
@@ -797,7 +65,7 @@ _0200A8B4:
 	mov r0, r4
 	str r1, [r4, #0x60]
 	mov r1, #5
-	bl sub_0200AA68
+	bl _ZN17UnkClass_020091E812sub_0200AA68Em
 	ldr r0, [r4, #0x58]
 	cmp r0, #0
 	ldmneia sp!, {r4, pc}
@@ -806,7 +74,7 @@ _0200A8B4:
 	ldmia sp!, {r4, pc}
 _0200A8F0:
 	mov r0, r4
-	bl sub_0200A97C
+	bl _ZN17UnkClass_020091E812sub_0200A97CEv
 	cmp r0, #0
 	bne _0200A90C
 	ldr r0, [r4, #0x58]
@@ -821,12 +89,12 @@ _0200A90C:
 	mov r0, r4
 	str r1, [r4, #0x60]
 	mov r1, #5
-	bl sub_0200AA68
+	bl _ZN17UnkClass_020091E812sub_0200AA68Em
 	ldr r0, [r4, #0x58]
 	cmp r0, #0
 	ldmneia sp!, {r4, pc}
 	ldr r0, [r4, #0x14c]
-	bl sub_0200BF58
+	bl _ZN17UnkClass_0200BBC812sub_0200BF58Ev
 	ldmia sp!, {r4, pc}
 _0200A948:
 	ldr r0, [r4, #0x64]
@@ -840,11 +108,11 @@ _0200A948:
 	mov r1, #1
 	mov r0, r4
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldmia sp!, {r4, pc}
 
-	arm_func_start sub_0200A97C
-sub_0200A97C: ; 0x0200A97C
+	arm_func_start _ZN17UnkClass_020091E812sub_0200A97CEv
+_ZN17UnkClass_020091E812sub_0200A97CEv: ; 0x0200A97C
 	ldr r1, [r0, #0x88]
 	ldrh r2, [r1, #2]
 	and r1, r2, #1
@@ -858,7 +126,7 @@ sub_0200A97C: ; 0x0200A97C
 	ldreqb r0, [r0, #4]
 	cmpeq r0, #0
 	beq _0200A9B8
-	arm_func_end sub_0200A97C
+	arm_func_end _ZN17UnkClass_020091E812sub_0200A97CEv
 _0200A9B0:
 	mov r0, #1
 	bx lr
@@ -938,8 +206,8 @@ sub_0200AA58: ; 0x0200AA58
 	bx lr
 	arm_func_end sub_0200AA58
 
-	arm_func_start sub_0200AA68
-sub_0200AA68: ; 0x0200AA68
+	arm_func_start _ZN17UnkClass_020091E812sub_0200AA68Em
+_ZN17UnkClass_020091E812sub_0200AA68Em: ; 0x0200AA68
 	stmdb sp!, {r3, lr}
 	ldr r0, [r0, #0x90]
 	cmp r0, #0
@@ -947,7 +215,7 @@ sub_0200AA68: ; 0x0200AA68
 	ldmeqia sp!, {r3, pc}
 	bl sub_02034C44
 	ldmia sp!, {r3, pc}
-	arm_func_end sub_0200AA68
+	arm_func_end _ZN17UnkClass_020091E812sub_0200AA68Em
 
 	arm_func_start sub_0200AA84
 sub_0200AA84: ; 0x0200AA84
@@ -1167,7 +435,7 @@ sub_0200AD34: ; 0x0200AD34
 	ldr r1, [ip, #8]
 	add r1, r1, r4, lsl #3
 	ldr r1, [r1, #4]
-	bl sub_02009D8C
+	bl _ZN17UnkClass_020091E812sub_02009D8CEPhmmm
 	mov r0, #0
 	str r0, [r5, #0x150]
 	str r4, [r5, #0x154]
@@ -1333,7 +601,7 @@ sub_0200AF74: ; 0x0200AF74
 	ldr r1, [ip, #8]
 	add r1, r1, r4, lsl #3
 	ldr r1, [r1, #4]
-	bl sub_02009D8C
+	bl _ZN17UnkClass_020091E812sub_02009D8CEPhmmm
 	mov r0, #1
 	str r0, [r5, #0x150]
 	str r4, [r5, #0x154]
@@ -1508,7 +776,7 @@ sub_0200B1D0: ; 0x0200B1D0
 	ldr r1, [ip, #8]
 	add r1, r1, r4, lsl #3
 	ldr r1, [r1, #4]
-	bl sub_02009D8C
+	bl _ZN17UnkClass_020091E812sub_02009D8CEPhmmm
 	mov r0, #2
 	str r0, [r5, #0x150]
 	str r4, [r5, #0x154]
@@ -1674,7 +942,7 @@ sub_0200B410: ; 0x0200B410
 	ldr r1, [ip, #8]
 	add r1, r1, r4, lsl #3
 	ldr r1, [r1, #4]
-	bl sub_02009D8C
+	bl _ZN17UnkClass_020091E812sub_02009D8CEPhmmm
 	mov r0, #3
 	str r0, [r5, #0x150]
 	str r4, [r5, #0x154]
@@ -1836,7 +1104,7 @@ sub_0200B640: ; 0x0200B640
 	ldr r1, [ip, #8]
 	add r1, r1, r4, lsl #3
 	ldr r1, [r1, #4]
-	bl sub_02009D8C
+	bl _ZN17UnkClass_020091E812sub_02009D8CEPhmmm
 	mov r0, #4
 	str r0, [r5, #0x150]
 	str r4, [r5, #0x154]
@@ -1865,7 +1133,7 @@ sub_0200B6A4: ; 0x0200B6A4
 	movne r0, #1
 	ldmneia sp!, {r3, pc}
 	mov r1, #0
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_0200B6A4
@@ -2460,14 +1728,14 @@ _0200BEA4:
 	add sp, sp, #0x10
 	ldmia sp!, {r3, r4, r5, pc}
 
-	arm_func_start sub_0200BEBC
-sub_0200BEBC: ; 0x0200BEBC
+	arm_func_start _ZN17UnkClass_0200BBC812sub_0200BEBCEv
+_ZN17UnkClass_0200BBC812sub_0200BEBCEv: ; 0x0200BEBC
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r3, #0
 	mov r4, r0
 	mov r5, r3
 	mov r1, r3
-	arm_func_end sub_0200BEBC
+	arm_func_end _ZN17UnkClass_0200BBC812sub_0200BEBCEv
 _0200BED0:
 	add r0, r4, r3, lsl #2
 	add r0, r0, #0x1000
@@ -2507,14 +1775,14 @@ _0200BF40:
 	blt _0200BF2C
 	ldmia sp!, {r4, r5, r6, pc}
 
-	arm_func_start sub_0200BF58
-sub_0200BF58: ; 0x0200BF58
+	arm_func_start _ZN17UnkClass_0200BBC812sub_0200BF58Ev
+_ZN17UnkClass_0200BBC812sub_0200BF58Ev: ; 0x0200BF58
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r4, r0
 	mov r5, #0
 	mov r6, r5
 	add r7, r4, #4
-	arm_func_end sub_0200BF58
+	arm_func_end _ZN17UnkClass_0200BBC812sub_0200BF58Ev
 _0200BF6C:
 	ldr r1, [r4]
 	mov r0, r7

@@ -16,11 +16,11 @@ public:
 
 class UnkClass_020091E8_0F8 {
 public:
-    inline void func0(void *charBase, int areaWidth, int areaHeight, int areaLeft, int areaTop, int charNo, u32 *arg6)
+    inline void func0(void *charBase, int areaWidth, int areaHeight, int areaLeft, int areaTop, int charNo, NNSG2dFont **arg6)
     {
         NNS_G2dCharCanvasInitForBG(&unk_00, charBase, areaWidth, areaHeight, NNS_G2D_CHARA_COLORMODE_16);
 
-        u32 v0 = *arg6;
+        NNSG2dFont *v0 = *arg6;
         unk_18 = &unk_00;
         unk_1C = v0;
         unk_20 = 0;
@@ -32,7 +32,7 @@ public:
 public:
     NNSG2dCharCanvas unk_00;
     NNSG2dCharCanvas *unk_18;
-    u32 unk_1C;
+    NNSG2dFont *unk_1C;
     u32 unk_20;
     u32 unk_24;
 };
@@ -44,7 +44,7 @@ public:
     void sub_02009274();
     void sub_020092A4();
     void sub_020092D4();
-    void sub_02009328(u32 arg0, u32 arg1, u32 arg2, void *arg3, u32 arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8);
+    void sub_02009328(u32 arg0, u32 arg1, NNSG2dFont *arg2, void *arg3, u32 arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8);
     void sub_020093B4();
     void sub_02009430();
     void sub_020095D0();
@@ -54,6 +54,17 @@ public:
     void sub_020097FC(size_t arg0, u32 arg1);
     u32 sub_02009808(size_t arg0);
     BOOL sub_02009814(u32 arg0);
+    void sub_02009D8C(u8 *arg0, u32 arg1, u32 arg2, u32 arg3);
+    BOOL sub_02009ECC();
+    void sub_02009F28();
+    void sub_02009FB0(u32 arg0, u32 arg1);
+    void sub_0200A088(u32 arg0);
+    u32 sub_0200A110();
+    u32 sub_0200A118();
+    u32 sub_0200A804(u32 arg0);
+    BOOL sub_0200A84C();
+    BOOL sub_0200A97C();
+    void sub_0200AA68(u32 arg0);
     void sub_0200AC90();
     void sub_0200AED0();
     void sub_0200B12C();
@@ -98,15 +109,15 @@ public:
     void *unk_090;
     u32 unk_094;
     u32 unk_098;
-    u32 unk_09C;
-    u32 unk_0A0;
-    u32 unk_0A4;
-    u32 unk_0A8;
-    u32 unk_0AC;
-    u32 unk_0B0;
+    s32 unk_09C;
+    s32 unk_0A0;
+    s32 unk_0A4;
+    s32 unk_0A8;
+    s32 unk_0AC;
+    s32 unk_0B0;
     // TODO: Size not definitive
     u32 unk_0B4[0x10];
-    u32 unk_0F4;
+    NNSG2dFont *unk_0F4;
     UnkClass_020091E8_0F8 unk_0F8;
     UnkClass_020091E8_0F8 unk_120;
     u32 unk_148;

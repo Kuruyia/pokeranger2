@@ -180,7 +180,7 @@ _0211CBDC:
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmmPvmS0_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
 	ldr r0, [r5, #4]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -4372,7 +4372,7 @@ _021206D4:
 	mov r1, #1
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	ldr r0, [r7, #0xbb8]
 	ldr r1, [r7, #0xd8]
 	ldr r2, [r7, #0xbb0]
@@ -17093,7 +17093,7 @@ ov1_0212B1E4: ; 0x0212B1E4
 	bx ip
 	.align 2, 0
 _0212B1FC: .word MAIN_BSS_0208F304
-_0212B200: .word sub_02009ECC
+_0212B200: .word _ZN17UnkClass_020091E812sub_02009ECCEv
 	arm_func_end ov1_0212B1E4
 
 	arm_func_start ov1_0212B204
@@ -17105,7 +17105,7 @@ ov1_0212B204: ; 0x0212B204
 	mov r2, r1
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -36875,7 +36875,7 @@ _0213BB8C:
 	add r0, r4, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r1, #1
-	bl sub_0200A088
+	bl _ZN17UnkClass_020091E812sub_0200A088Em
 	add r0, r4, #0x1000
 	ldr r0, [r0, #0x49c]
 	ldr r1, _0213BC00 ; =s_sPokeSelect_overlay_1_02141f5c
@@ -37976,7 +37976,7 @@ ov1_0213CA78: ; 0x0213CA78
 	add r0, r4, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r1, #1
-	bl sub_0200A088
+	bl _ZN17UnkClass_020091E812sub_0200A088Em
 	add r0, r4, #0x1000
 	ldr r0, [r0, #0x49c]
 	add r1, sp, #0
@@ -39850,7 +39850,7 @@ ov1_0213E44C: ; 0x0213E44C
 	orr r3, r3, #0x80
 	strh r3, [r0, #0x2c]
 	ldr r0, [r0]
-	bl sub_020100E4
+	bl _ZN5CGame12sub_020100E4EPFvvEm
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0213E4C0: .word 0x0000FFFF
@@ -41259,7 +41259,7 @@ ov1_0213F688: ; 0x0213F688
 	mov r1, #1
 	ldr r0, [r0, #0x490]
 	mov r2, r1
-	bl sub_02009FB0
+	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
 	mov r0, r4
 	mov r1, #9
 	bl ov1_0213F960

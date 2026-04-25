@@ -20,6 +20,8 @@ public:
     u32 unk_8B6C;
 };
 
+typedef void (*CGame_020100E4_arg0)();
+
 class CGame {
 public:
     CGame();
@@ -34,6 +36,8 @@ public:
         MI_DmaCopy32(3, unk_0824, unk_0024, 0x400);
         MI_DmaCopy32(3, unk_0824, unk_0424, 0x400);
     }
+
+    BOOL sub_020100E4(CGame_020100E4_arg0 arg0, u32 arg1);
 
 public:
     u32 unk_0000;
