@@ -8,7 +8,6 @@
 #include "constants/scene.hpp"
 #include "heap.hpp"
 #include "overlay_manager.hpp"
-#include "sub_02010448.hpp"
 #include "sub_0202B80C.hpp"
 #include "sub_0204436C.hpp"
 #include "sub_02044440.hpp"
@@ -23,10 +22,6 @@ u32 sub_0200E91C(UnkClass_0200E330 *);
 void sub_0200FA2C(u32);
 void sub_0200FA0C(u32);
 void sub_0201002C(void);
-void sub_020101B4(CGame *, char *);
-void sub_020102E8(CGame *);
-void sub_0201044C(CGame *);
-void sub_0201028C(CGame *);
 
 extern u32 DAT_04000454;
 extern u8 DAT_0208aaf8;
@@ -126,7 +121,7 @@ void NitroMain(void)
         if (v4 != v6) {
             OS_GetTick();
             OS_DisableIrqMask(1);
-            sub_020101B4(s_game, "Delete Scene");
+            s_game->sub_020101B4("Delete Scene");
 
             DAT_0208aaf8 = 0;
 
@@ -138,8 +133,8 @@ void NitroMain(void)
             delete v3;
 
             s_game->unk_0010 = v6;
-            sub_020102E8(s_game);
-            sub_0201044C(s_game);
+            s_game->sub_020102E8();
+            s_game->sub_0201044C();
 
             handle = Heap_GetMainHandle();
             NNS_FndGetTotalFreeSizeForExpHeap(*handle);
@@ -147,12 +142,12 @@ void NitroMain(void)
             handle = Heap_GetMainHandle();
             NNS_FndGetAllocatableSizeForExpHeapEx(*handle, 4);
 
-            sub_020101B4(s_game, "Create Scene");
+            s_game->sub_020101B4("Create Scene");
             sub_02001184();
 
             v3 = Scene_LoadByID(v4, s_game);
             OS_GetTick();
-            sub_020101B4(s_game, "Scene Create Finished");
+            s_game->sub_020101B4("Scene Create Finished");
 
             OS_EnableIrqMask(1);
         }
@@ -190,7 +185,7 @@ void NitroMain(void)
         OS_GetTick();
         v3->func3();
 
-        sub_0201028C(s_game);
+        s_game->sub_0201028C();
         OS_GetTick();
     }
 }
@@ -226,7 +221,7 @@ void sub_02001184(void)
     GX_SetVisiblePlane(GX_GetVisiblePlane() | GX_PLANEMASK_OBJ);
     GXS_SetVisiblePlane(GXS_GetVisiblePlane() | GX_PLANEMASK_OBJ);
 
-    sub_02010448(s_game);
+    s_game->sub_02010448();
 }
 
 void sub_0200120C(u64 arg0)

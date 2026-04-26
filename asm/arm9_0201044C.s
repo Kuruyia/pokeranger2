@@ -3,8 +3,8 @@
 
     .text
 
-	arm_func_start sub_0201044C
-sub_0201044C: ; 0x0201044C
+	arm_func_start _ZN5CGame12sub_0201044CEv
+_ZN5CGame12sub_0201044CEv: ; 0x0201044C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x1000
@@ -14,7 +14,7 @@ sub_0201044C: ; 0x0201044C
 	ldr r0, [r0, #0x498]
 	bl sub_0200CAE0
 	ldmia sp!, {r4, pc}
-	arm_func_end sub_0201044C
+	arm_func_end _ZN5CGame12sub_0201044CEv
 
 	arm_func_start sub_02010470
 sub_02010470: ; 0x02010470

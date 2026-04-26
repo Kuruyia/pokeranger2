@@ -4,7 +4,7 @@ pokeranger2_cxx = files(
     'UnkClass_020091E8.cpp',
     'UnkClass_020B26A0.cpp',
     'CPowerManage.cpp',
-    'sub_02010448.cpp',
+    'CGame.cpp',
     'sub_0202B80C.cpp',
     'overlay_manager.cpp',
     'sub_02046D40.cpp',

@@ -505,7 +505,7 @@ _02010080:
 	blt _02010058
 	bl NNS_GfdDoVramTransfer
 	mov r0, r5
-	bl sub_020102E8
+	bl _ZN5CGame12sub_020102E8Ev
 _02010098:
 	add r0, r5, #0x1000
 	ldr r0, [r0, #0x4bc]
@@ -601,8 +601,8 @@ sub_020101A8: ; 0x020101A8
 _020101B0: .word _Z19Heap_AllocSecondarym
 	arm_func_end sub_020101A8
 
-	arm_func_start sub_020101B4
-sub_020101B4: ; 0x020101B4
+	arm_func_start _ZN5CGame12sub_020101B4EPc
+_ZN5CGame12sub_020101B4EPc: ; 0x020101B4
 	stmdb sp!, {r4, lr}
 	bl _Z23Heap_GetSecondaryHandlev
 	mov r4, r0
@@ -619,7 +619,7 @@ sub_020101B4: ; 0x020101B4
 	mov r1, #4
 	bl NNS_FndGetAllocatableSizeForExpHeapEx
 	ldmia sp!, {r4, pc}
-	arm_func_end sub_020101B4
+	arm_func_end _ZN5CGame12sub_020101B4EPc
 
 	arm_func_start sub_020101F4
 sub_020101F4: ; 0x020101F4
@@ -667,8 +667,8 @@ sub_0201024C: ; 0x0201024C
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_0201024C
 
-	arm_func_start sub_0201028C
-sub_0201028C: ; 0x0201028C
+	arm_func_start _ZN5CGame12sub_0201028CEv
+_ZN5CGame12sub_0201028CEv: ; 0x0201028C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x6c
@@ -687,7 +687,7 @@ sub_0201028C: ; 0x0201028C
 	rsb r0, r0, #0
 	cmp r2, r0
 	ldmgeia sp!, {r4, pc}
-	arm_func_end sub_0201028C
+	arm_func_end _ZN5CGame12sub_0201028CEv
 _020102D4:
 	mov r1, #0x10000
 	rsb r1, r1, #0
@@ -695,8 +695,8 @@ _020102D4:
 	str r1, [r0, #0x5d0]
 	ldmia sp!, {r4, pc}
 
-	arm_func_start sub_020102E8
-sub_020102E8: ; 0x020102E8
+	arm_func_start _ZN5CGame12sub_020102E8Ev
+_ZN5CGame12sub_020102E8Ev: ; 0x020102E8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x34
@@ -705,7 +705,7 @@ sub_020102E8: ; 0x020102E8
 	bl NNS_GfdInitVramTransferManager
 	mov r2, #0
 	mov r1, r2
-	arm_func_end sub_020102E8
+	arm_func_end _ZN5CGame12sub_020102E8Ev
 _02010308:
 	add r0, r4, r2, lsl #2
 	add r0, r0, #0x1000

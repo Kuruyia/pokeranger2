@@ -33,6 +33,11 @@ public:
 
     void sub_0200FB28();
     BOOL sub_020100E4(CGame_020100E4_arg0 arg0, u32 arg1);
+    void sub_020101B4(char *arg0);
+    void sub_0201028C();
+    void sub_020102E8();
+    void sub_02010448();
+    void sub_0201044C();
 
 public:
     u32 unk_0000;
