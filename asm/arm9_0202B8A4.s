@@ -5742,7 +5742,7 @@ _0202FF34: .word MAIN_BSS_020B26A0
 	arm_func_start sub_0202FF38
 sub_0202FF38: ; 0x0202FF38
 	stmdb sp!, {r3, lr}
-	bl sub_020010E4
+	bl _Z12sub_020010E4v
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_0202FF38

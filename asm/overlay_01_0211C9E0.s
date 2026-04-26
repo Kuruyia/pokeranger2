@@ -40052,7 +40052,7 @@ ov1_0213E728: ; 0x0213E728
 	ldrh r1, [r4, #0x2c]
 	tst r1, #1
 	beq _0213E744
-	bl sub_02001210
+	bl _Z12sub_02001210v
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_0213E728
 _0213E744:

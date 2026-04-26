@@ -1,5 +1,5 @@
 #pragma once
-.public sub_02001210
+.public _Z12sub_02001210v
 .public _Znwm
 .public _Znam
 .public _ZdlPv

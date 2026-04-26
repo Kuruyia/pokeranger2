@@ -104,7 +104,7 @@
 .public ptr_FUN_020051c8_0208a7f0
 .public ptr_s_jp_mes_0208a4d4_0208a534
 .public s_s_s_0208a568
-.public sub_02001210
+.public _Z12sub_02001210v
 .public sub_02002434
 .public sub_020027E8
 .public sub_020028A4

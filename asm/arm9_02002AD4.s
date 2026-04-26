@@ -6072,10 +6072,10 @@ sub_02007CC4: ; 0x02007CC4
 
 	arm_func_start sub_02007CD4
 sub_02007CD4: ; 0x02007CD4
-	ldr ip, _02007CDC ; =sub_02001210
+	ldr ip, _02007CDC ; =_Z12sub_02001210v
 	bx ip
 	.align 2, 0
-_02007CDC: .word sub_02001210
+_02007CDC: .word _Z12sub_02001210v
 	arm_func_end sub_02007CD4
 
 	arm_func_start sub_02007CE0

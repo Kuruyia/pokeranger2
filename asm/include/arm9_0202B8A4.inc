@@ -306,7 +306,7 @@
 .public strcat
 .public strcpy
 .public strlen
-.public sub_020010E4
+.public _Z12sub_020010E4v
 .public sub_0200215C
 .public sub_02002178
 .public sub_02002198

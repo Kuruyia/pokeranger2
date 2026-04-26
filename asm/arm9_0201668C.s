@@ -14337,7 +14337,7 @@ _0202279C:
 	bl sub_02022914
 	ldmia sp!, {r3, pc}
 _020227A4:
-	bl sub_02001210
+	bl _Z12sub_02001210v
 	ldmia sp!, {r3, pc}
 
 	arm_func_start sub_020227AC

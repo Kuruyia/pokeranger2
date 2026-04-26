@@ -8,17 +8,11 @@
 #include "UnkClass_02001C04.hpp"
 #include "UnkClass_020023EC.hpp"
 #include "UnkClass_0200E330.hpp"
+#include "UnkClass_020B26A0.hpp"
 #include "common.hpp"
 #include "scene/CScene.hpp"
 
 extern "C" void *sub_020101A8(u32 size);
-
-class UnkClass_CGame_14A4 {
-public:
-    u8 unk_0000[0x8B68];
-    u32 unk_8B68;
-    u32 unk_8B6C;
-};
 
 typedef void (*CGame_020100E4_arg0)();
 
@@ -37,6 +31,7 @@ public:
         MI_DmaCopy32(3, unk_0824, unk_0424, 0x400);
     }
 
+    void sub_0200FB28();
     BOOL sub_020100E4(CGame_020100E4_arg0 arg0, u32 arg1);
 
 public:
@@ -57,7 +52,7 @@ public:
     u8 unk_0C2C[0x840];
     u32 unk_146C;
     u8 unk_1470[0x34];
-    UnkClass_CGame_14A4 *unk_14A4;
+    UnkClass_020B26A0 *unk_14A4;
     u8 unk_14A8[0x14];
     u32 unk_14BC;
     u32 unk_14C0;

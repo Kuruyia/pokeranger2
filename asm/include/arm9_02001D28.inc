@@ -2,8 +2,8 @@
 .public _ZdaPv
 .public _Znam
 .public _Znwm
-.public sub_020010E4
-.public sub_02001210
+.public _Z12sub_020010E4v
+.public _Z12sub_02001210v
 .public _ZN17UnkClass_02001C04C1Ev
 .public PTR_LAB_0208a3dc
 .public PTR_LAB_0208a40c

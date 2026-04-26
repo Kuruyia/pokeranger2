@@ -113,8 +113,8 @@ _0200FB00:
 	str r1, [r0, #0x5e0]
 	ldmia sp!, {r4, pc}
 
-	arm_func_start sub_0200FB28
-sub_0200FB28: ; 0x0200FB28
+	arm_func_start _ZN5CGame12sub_0200FB28Ev
+_ZN5CGame12sub_0200FB28Ev: ; 0x0200FB28
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	bl sub_0200FAEC
@@ -125,7 +125,7 @@ sub_0200FB28: ; 0x0200FB28
 	mov r1, #0
 	bl sub_02034B9C
 	ldmia sp!, {r4, pc}
-	arm_func_end sub_0200FB28
+	arm_func_end _ZN5CGame12sub_0200FB28Ev
 
 	arm_func_start _ZN5CGameC1Ev
 _ZN5CGameC1Ev: ; 0x0200FB50

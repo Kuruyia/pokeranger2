@@ -1,3 +1,5 @@
+#include "main.hpp"
+
 #include <nitro.h>
 #include <nnsys.h>
 
@@ -7,33 +9,42 @@
 #include "constants/scene.hpp"
 #include "heap.hpp"
 #include "overlay_manager.hpp"
-#include "sub_02001184.hpp"
-#include "sub_02001248.hpp"
+#include "sub_02010448.hpp"
 #include "sub_0202B80C.hpp"
+#include "sub_0204436C.hpp"
+#include "sub_02044440.hpp"
+#include "sub_02046D40.hpp"
 
 extern "C" {
+void sub_02008D7C(u32 *);
 void sub_0200FA48(u32);
 u32 sub_0200E310(u32);
 u32 sub_0200E324(u32);
 u32 sub_0200E91C(UnkClass_0200E330 *);
 void sub_0200FA2C(u32);
 void sub_0200FA0C(u32);
-CScene *sub_020010F8(void);
+void sub_0201002C(void);
 void sub_020101B4(CGame *, char *);
 void sub_020102E8(CGame *);
 void sub_0201044C(CGame *);
-void sub_02008D7C(u32 *);
 void sub_0201028C(CGame *);
-void _ZN5CGameC1Ev(CGame *);
 
 extern UnkClass_0208F300 MAIN_BSS_0208F300;
 extern u32 DAT_04000454;
 extern u8 DAT_0208aaf8;
 }
 
+static CScene *sub_020010F8(void);
+static void sub_02001184(void);
+static void sub_0200120C(u64 arg0);
+static void sub_02001248(void);
+static void VBlankIntr(void);
+static void HBlankIntr_1(s32 vcount, UnkClass_0200E330 *arg1);
+static void HBlankIntr(void);
+
 void NitroMain(void)
 {
-    UnkClass_CGame_14A4 *game_unk_14A4;
+    UnkClass_020B26A0 *game_unk_14A4;
     NNSFndHeapHandle *handle;
     CScene *v3;
     u32 v6;
@@ -180,4 +191,116 @@ void NitroMain(void)
         sub_0201028C(MAIN_BSS_0208F300.game);
         OS_GetTick();
     }
+}
+
+void sub_020010E4(void)
+{
+    MAIN_BSS_0208F300.unk_00 = 1;
+}
+
+CScene *sub_020010F8(void)
+{
+    CScene *currentScene = MAIN_BSS_0208F300.game->currentScene;
+    if (currentScene != NULL) {
+        currentScene->func7();
+        delete currentScene;
+    }
+
+    MAIN_BSS_0208F300.game->sub_0200FB28();
+
+    UnkClass_020B26A0 *game_unk_14A4 = MAIN_BSS_0208F300.game->unk_14A4;
+    game_unk_14A4->unk_8B68 = 1;
+    game_unk_14A4->unk_8B6C = 0;
+
+    sub_02001184();
+    Scene_LoadByID(SCENE_RANGER_NET_AGB, MAIN_BSS_0208F300.game);
+}
+
+void sub_02001184(void)
+{
+    GX_SetOBJVRamModeChar(GX_OBJVRAMMODE_CHAR_1D_32K);
+    GXS_SetOBJVRamModeChar(GX_OBJVRAMMODE_CHAR_1D_32K);
+
+    GX_SetVisiblePlane(GX_GetVisiblePlane() | GX_PLANEMASK_OBJ);
+    GXS_SetVisiblePlane(GXS_GetVisiblePlane() | GX_PLANEMASK_OBJ);
+
+    sub_02010448(MAIN_BSS_0208F300.game);
+}
+
+void sub_0200120C(u64 arg0)
+{
+}
+
+void sub_02001210(void)
+{
+    sub_0200120C(OS_TicksToMicroSeconds(MAIN_BSS_0208F300.unk_08));
+}
+
+void sub_02001248(void)
+{
+    OS_Init();
+    FX_Init();
+    OS_InitTick();
+    FS_Init(2);
+    GX_Init();
+    G3X_Init();
+    RTC_Init();
+    Heap_Init(0xB0000);
+    sub_0204436C();
+    sub_02044440();
+    sub_02046D40(Heap_Alloc, Heap_Free);
+}
+
+void SetupInterrupts(void)
+{
+    OS_SetIrqFunction(OS_IE_V_BLANK, VBlankIntr);
+    OS_EnableIrqMask(OS_IE_V_BLANK);
+    GX_VBlankIntr(TRUE);
+
+    OS_SetIrqFunction(OS_IE_H_BLANK, HBlankIntr);
+    OS_EnableIrqMask(OS_IE_H_BLANK);
+    GX_HBlankIntr(TRUE);
+
+    OS_EnableIrq();
+}
+
+void VBlankIntr(void)
+{
+    u16 wasIrqEnabled = OS_EnableIrq();
+
+    if (MAIN_BSS_0208F300.game != NULL) {
+        sub_0201002C();
+    }
+
+    if (wasIrqEnabled) {
+        OS_EnableIrq();
+    } else {
+        OS_DisableIrq();
+    }
+
+    OS_SetIrqCheckFlag(OS_IE_V_BLANK);
+}
+
+void inline HBlankIntr_1(s32 vcount, UnkClass_0200E330 *arg1)
+{
+    if (arg1->func0()) {
+        u32 idx = vcount + 1;
+        u16 v13 = arg1->unk_0860[arg1->unk_001C][idx];
+
+        if (GX_IsHBlank()) {
+            *arg1->unk_0020 = v13;
+        }
+    }
+}
+
+void HBlankIntr(void)
+{
+    s32 vcount = GX_GetVCount();
+
+    if (vcount < GX_LCD_SIZE_Y - 1 && MAIN_BSS_0208F300.game != NULL) {
+        HBlankIntr_1(vcount, MAIN_BSS_0208F300.game->unk_14C4);
+        HBlankIntr_1(vcount, MAIN_BSS_0208F300.game->unk_14C8);
+    }
+
+    OS_SetIrqCheckFlag(OS_IE_H_BLANK);
 }
