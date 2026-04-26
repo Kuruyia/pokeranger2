@@ -14,7 +14,7 @@ _ZN12CRecordSceneC1Ev: ; 0x0211C9E0
 	str r1, [r4, #0x10]
 	str r1, [r4, #0x14]
 	str r1, [r4, #4]
-	ldr r0, _0211CA34 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CA34 ; =s_game
 	str r1, [r4, #8]
 	ldr r0, [r0]
 	add r0, r0, #0x1000
@@ -27,7 +27,7 @@ _ZN12CRecordSceneC1Ev: ; 0x0211C9E0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211CA30: .word ptr_FUN_overlay_23_0211ca3c_overlay_23_0211f1c4
-_0211CA34: .word MAIN_BSS_0208F304
+_0211CA34: .word s_game
 _0211CA38: .word MAIN_BSS_020B26A0
 	arm_func_end _ZN12CRecordSceneC1Ev
 
@@ -74,7 +74,7 @@ ov23_0211CAA4: ; 0x0211CAA4
 	mov r4, r0
 	ldr r0, [r4, #0x4c]
 	bl sub_0200F64C
-	ldr r0, _0211CBD8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CBD8 ; =s_game
 	ldr r0, [r0]
 	ldr r1, [r0, #0x18]
 	add r0, r0, #0x1000
@@ -90,7 +90,7 @@ ov23_0211CAA4: ; 0x0211CAA4
 	bl sub_0200E310
 	cmp r0, #0
 	bne _0211CB14
-	ldr r0, _0211CBD8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CBD8 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x4bc]
@@ -136,7 +136,7 @@ _0211CB78:
 	bl ov23_0211CDD4
 	b _0211CBCC
 _0211CB8C:
-	ldr r0, _0211CBD8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CBD8 ; =s_game
 	ldr r0, [r0]
 	ldr r0, [r0, #8]
 	cmp r0, #1
@@ -159,7 +159,7 @@ _0211CBCC:
 	add sp, sp, #8
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0211CBD8: .word MAIN_BSS_0208F304
+_0211CBD8: .word s_game
 
 	arm_func_start ov23_0211CBDC
 ov23_0211CBDC: ; 0x0211CBDC
@@ -170,7 +170,7 @@ ov23_0211CBDC: ; 0x0211CBDC
 	str r0, [r4, #8]
 	str r1, [r4, #4]
 	str r1, [r4, #0x10]
-	ldr r0, _0211CC40 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC40 ; =s_game
 	str r1, [r4, #0x14]
 	ldr r0, [r0]
 	mov r1, #3
@@ -178,7 +178,7 @@ ov23_0211CBDC: ; 0x0211CBDC
 	ldr r0, [r0, #0x4bc]
 	mov r2, #0xa
 	bl sub_0200E0E0
-	ldr r0, _0211CC40 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC40 ; =s_game
 	mov r1, #3
 	ldr r0, [r0]
 	mov r2, #0xa
@@ -189,7 +189,7 @@ ov23_0211CBDC: ; 0x0211CBDC
 	bl ov23_0211D214
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0211CC40: .word MAIN_BSS_0208F304
+_0211CC40: .word s_game
 	arm_func_end ov23_0211CBDC
 
 	arm_func_start ov23_0211CC44
@@ -224,14 +224,14 @@ _0211CC6C:
 	ldr r1, [r4, #0x1c]
 	mov r2, #4
 	bl sub_0200F628
-	ldr r0, _0211CDD0 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CDD0 ; =s_game
 	mov r1, #4
 	ldr r0, [r0]
 	mov r2, #0xa
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x4bc]
 	bl sub_0200E0E0
-	ldr r0, _0211CDD0 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CDD0 ; =s_game
 	mov r1, #4
 	ldr r0, [r0]
 	mov r2, #0xa
@@ -246,7 +246,7 @@ _0211CC6C:
 	add sp, sp, #0x10
 	bx lr
 _0211CD08:
-	ldr r0, _0211CDD0 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CDD0 ; =s_game
 	ldr r0, [r0]
 	ldr r0, [r0, #0x14]
 	ldrh r0, [r0, #2]
@@ -261,7 +261,7 @@ _0211CD08:
 	mov r2, #5
 	bl sub_0200F628
 _0211CD40:
-	ldr r0, _0211CDD0 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CDD0 ; =s_game
 	ldr r0, [r0]
 	ldr r0, [r0, #0x18]
 	ldrb r0, [r0, #4]
@@ -298,14 +298,14 @@ _0211CD40:
 	add sp, sp, #0x10
 	bx lr
 	.align 2, 0
-_0211CDD0: .word MAIN_BSS_0208F304
+_0211CDD0: .word s_game
 
 	arm_func_start ov23_0211CDD4
 ov23_0211CDD4: ; 0x0211CDD4
 	stmdb sp!, {r0, r1, r2, r3}
 	stmdb sp!, {r3, r4, r5, r6, lr}
 	sub sp, sp, #0xc
-	ldr r1, _0211D0A4 ; =MAIN_BSS_0208F304
+	ldr r1, _0211D0A4 ; =s_game
 	mov r6, r0
 	ldr r0, [r1]
 	ldr r1, [r6, #0x10]
@@ -330,14 +330,14 @@ _0211CE0C:
 	ldr r0, [r6, #0x4c]
 	ldr r1, [r6, #0x18]
 	bl sub_0200F628
-	ldr r0, _0211D0A4 ; =MAIN_BSS_0208F304
+	ldr r0, _0211D0A4 ; =s_game
 	mov r1, #4
 	ldr r0, [r0]
 	mov r2, #0x3c
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x4bc]
 	bl sub_0200E0E0
-	ldr r0, _0211D0A4 ; =MAIN_BSS_0208F304
+	ldr r0, _0211D0A4 ; =s_game
 	mov r1, #4
 	ldr r0, [r0]
 	mov r2, #0x3c
@@ -413,14 +413,14 @@ _0211CF34:
 	ldr r0, [r6, #0x4c]
 	ldr r1, [r6, #0x20]
 	bl sub_0200F628
-	ldr r0, _0211D0A4 ; =MAIN_BSS_0208F304
+	ldr r0, _0211D0A4 ; =s_game
 	mov r1, #4
 	ldr r0, [r0]
 	mov r2, #0xa
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x4bc]
 	bl sub_0200E0E0
-	ldr r0, _0211D0A4 ; =MAIN_BSS_0208F304
+	ldr r0, _0211D0A4 ; =s_game
 	mov r1, #4
 	ldr r0, [r0]
 	mov r2, #0xa
@@ -491,7 +491,7 @@ _0211D020:
 	add sp, sp, #0x10
 	bx lr
 	.align 2, 0
-_0211D0A4: .word MAIN_BSS_0208F304
+_0211D0A4: .word s_game
 _0211D0A8: .word 0x00000103
 
 	arm_func_start ov23_0211D0AC
@@ -642,7 +642,7 @@ _0211D288:
 	stmia r6!, {r0, r1, r2, r3}
 	subs r5, r5, #1
 	bne _0211D288
-	ldr r0, _0211D868 ; =MAIN_BSS_0208F304
+	ldr r0, _0211D868 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r7, [r0, #0x498]
@@ -827,7 +827,7 @@ _0211D564:
 	stmia r6!, {r0, r1, r2, r3}
 	subs r5, r5, #1
 	bne _0211D564
-	ldr r0, _0211D868 ; =MAIN_BSS_0208F304
+	ldr r0, _0211D868 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r7, [r0, #0x494]
@@ -1018,7 +1018,7 @@ _0211D5B8:
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, pc}
 	.align 2, 0
 _0211D864: .word DAT_overlay_23_0211eb64
-_0211D868: .word MAIN_BSS_0208F304
+_0211D868: .word s_game
 _0211D86C: .word DAT_overlay_23_0211ec84
 
 	arm_func_start ov23_0211D870
@@ -1037,7 +1037,7 @@ ov23_0211D870: ; 0x0211D870
 	b _0211D8B8
 	arm_func_end ov23_0211D870
 _0211D8A0:
-	ldr r0, _0211DEA8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211DEA8 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x4b0]
@@ -1053,7 +1053,7 @@ _0211D8C8:
 	stmia r6!, {r0, r1, r2, r3}
 	subs r5, r5, #1
 	bne _0211D8C8
-	ldr r0, _0211DEA8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211DEA8 ; =s_game
 	mov r2, #0x18
 	ldr r0, [r0]
 	mov r1, #4
@@ -1238,7 +1238,7 @@ _0211DBA4:
 	stmia r6!, {r0, r1, r2, r3}
 	subs r5, r5, #1
 	bne _0211DBA4
-	ldr r0, _0211DEA8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211DEA8 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r7, [r0, #0x494]
@@ -1429,7 +1429,7 @@ _0211DBF8:
 	add sp, sp, #0x400
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, pc}
 	.align 2, 0
-_0211DEA8: .word MAIN_BSS_0208F304
+_0211DEA8: .word s_game
 _0211DEAC: .word DAT_overlay_23_0211ea44
 _0211DEB0: .word DAT_overlay_23_0211eda4
 _0211DEB4: .word 0x88888889
@@ -1480,7 +1480,7 @@ ov23_0211DF20: ; 0x0211DF20
 	mov r4, r0
 	mov lr, #0
 	str lr, [r4, #4]
-	ldr r0, _0211DFF0 ; =MAIN_BSS_0208F304
+	ldr r0, _0211DFF0 ; =s_game
 	str lr, [r4, #8]
 	ldr ip, [r0]
 	mov r2, #0x10
@@ -1511,14 +1511,14 @@ ov23_0211DF20: ; 0x0211DF20
 	bl ov23_0211E75C
 	mov r0, r4
 	bl ov23_0211D214
-	ldr r0, _0211DFF0 ; =MAIN_BSS_0208F304
+	ldr r0, _0211DFF0 ; =s_game
 	mov r1, #3
 	ldr r0, [r0]
 	mov r2, #0x3c
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x4bc]
 	bl sub_0200E0E0
-	ldr r0, _0211DFF0 ; =MAIN_BSS_0208F304
+	ldr r0, _0211DFF0 ; =s_game
 	mov r1, #3
 	ldr r0, [r0]
 	mov r2, #0x3c
@@ -1528,7 +1528,7 @@ ov23_0211DF20: ; 0x0211DF20
 	add sp, sp, #0x18
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0211DFF0: .word MAIN_BSS_0208F304
+_0211DFF0: .word s_game
 	arm_func_end ov23_0211DF20
 
 	arm_func_start ov23_0211DFF4
@@ -1648,14 +1648,14 @@ _0211E168:
 	mov r0, #0
 	str r0, [r5, #0x64]
 _0211E180:
-	ldr r0, _0211E198 ; =MAIN_BSS_0208F304
+	ldr r0, _0211E198 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
-_0211E198: .word MAIN_BSS_0208F304
+_0211E198: .word s_game
 
 	arm_func_start ov23_0211E19C
 ov23_0211E19C: ; 0x0211E19C
@@ -2005,7 +2005,7 @@ ov23_0211E668: ; 0x0211E668
 	bl _Znwm
 	cmp r0, #0
 	beq _0211E6A8
-	ldr r1, _0211E750 ; =MAIN_BSS_0208F304
+	ldr r1, _0211E750 ; =s_game
 	mov r2, #0x40
 	ldr ip, [r1]
 	mov r3, #0
@@ -2059,7 +2059,7 @@ _0211E6A8:
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
-_0211E750: .word MAIN_BSS_0208F304
+_0211E750: .word s_game
 _0211E754: .word s_data_menu_overlay_23_0211f2d4
 _0211E758: .word s_mre000_00_overlay_23_0211f2e0
 

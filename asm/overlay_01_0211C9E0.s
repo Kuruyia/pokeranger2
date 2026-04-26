@@ -15683,24 +15683,24 @@ ov1_0212A0D8: ; 0x0212A0D8
 
 	arm_func_start ov1_0212A124
 ov1_0212A124: ; 0x0212A124
-	ldr r0, _0212A138 ; =MAIN_BSS_0208F304
+	ldr r0, _0212A138 ; =s_game
 	ldr r0, [r0]
 	ldr r0, [r0, #0xc]
 	ldr r0, [r0, #0xd8]
 	bx lr
 	.align 2, 0
-_0212A138: .word MAIN_BSS_0208F304
+_0212A138: .word s_game
 	arm_func_end ov1_0212A124
 
 	arm_func_start ov1_0212A13C
 ov1_0212A13C: ; 0x0212A13C
-	ldr r0, _0212A150 ; =MAIN_BSS_0208F304
+	ldr r0, _0212A150 ; =s_game
 	ldr r0, [r0]
 	ldr r0, [r0, #0xc]
 	ldr r0, [r0, #0x384]
 	bx lr
 	.align 2, 0
-_0212A150: .word MAIN_BSS_0208F304
+_0212A150: .word s_game
 	arm_func_end ov1_0212A13C
 
 	arm_func_start ov1_0212A154
@@ -15736,27 +15736,27 @@ _0212A1A8:
 
 	arm_func_start ov1_0212A1B0
 ov1_0212A1B0: ; 0x0212A1B0
-	ldr r2, _0212A1C8 ; =MAIN_BSS_0208F304
+	ldr r2, _0212A1C8 ; =s_game
 	mov r1, r0
 	ldr r0, [r2]
 	ldr ip, _0212A1CC ; =ov1_02122760
 	ldr r0, [r0, #0xc]
 	bx ip
 	.align 2, 0
-_0212A1C8: .word MAIN_BSS_0208F304
+_0212A1C8: .word s_game
 _0212A1CC: .word ov1_02122760
 	arm_func_end ov1_0212A1B0
 
 	arm_func_start ov1_0212A1D0
 ov1_0212A1D0: ; 0x0212A1D0
-	ldr r2, _0212A1E8 ; =MAIN_BSS_0208F304
+	ldr r2, _0212A1E8 ; =s_game
 	mov r1, r0
 	ldr r0, [r2]
 	ldr ip, _0212A1EC ; =ov1_02122788
 	ldr r0, [r0, #0xc]
 	bx ip
 	.align 2, 0
-_0212A1E8: .word MAIN_BSS_0208F304
+_0212A1E8: .word s_game
 _0212A1EC: .word ov1_02122788
 	arm_func_end ov1_0212A1D0
 
@@ -15788,7 +15788,7 @@ _0212A200:
 	arm_func_start ov1_0212A240
 ov1_0212A240: ; 0x0212A240
 	stmdb sp!, {r4, r5, r6, lr}
-	ldr r1, _0212A294 ; =MAIN_BSS_0208F304
+	ldr r1, _0212A294 ; =s_game
 	mov r4, r0
 	ldr r0, [r1]
 	mov r6, #0
@@ -15812,12 +15812,12 @@ _0212A27C:
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
-_0212A294: .word MAIN_BSS_0208F304
+_0212A294: .word s_game
 
 	arm_func_start ov1_0212A298
 ov1_0212A298: ; 0x0212A298
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212A2C8 ; =MAIN_BSS_0208F304
+	ldr r1, _0212A2C8 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	ldr r0, [r2, #0xc]
@@ -15829,13 +15829,13 @@ ov1_0212A298: ; 0x0212A298
 	moveq r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212A2C8: .word MAIN_BSS_0208F304
+_0212A2C8: .word s_game
 	arm_func_end ov1_0212A298
 
 	arm_func_start ov1_0212A2CC
 ov1_0212A2CC: ; 0x0212A2CC
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212A2F0 ; =MAIN_BSS_0208F304
+	ldr r1, _0212A2F0 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -15844,13 +15844,13 @@ ov1_0212A2CC: ; 0x0212A2CC
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212A2F0: .word MAIN_BSS_0208F304
+_0212A2F0: .word s_game
 	arm_func_end ov1_0212A2CC
 
 	arm_func_start ov1_0212A2F4
 ov1_0212A2F4: ; 0x0212A2F4
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212A318 ; =MAIN_BSS_0208F304
+	ldr r1, _0212A318 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -15859,13 +15859,13 @@ ov1_0212A2F4: ; 0x0212A2F4
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212A318: .word MAIN_BSS_0208F304
+_0212A318: .word s_game
 	arm_func_end ov1_0212A2F4
 
 	arm_func_start ov1_0212A31C
 ov1_0212A31C: ; 0x0212A31C
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212A340 ; =MAIN_BSS_0208F304
+	ldr r1, _0212A340 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -15874,13 +15874,13 @@ ov1_0212A31C: ; 0x0212A31C
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212A340: .word MAIN_BSS_0208F304
+_0212A340: .word s_game
 	arm_func_end ov1_0212A31C
 
 	arm_func_start ov1_0212A344
 ov1_0212A344: ; 0x0212A344
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212A368 ; =MAIN_BSS_0208F304
+	ldr r1, _0212A368 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	ldr r0, [r2, #0xc]
@@ -15889,7 +15889,7 @@ ov1_0212A344: ; 0x0212A344
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212A368: .word MAIN_BSS_0208F304
+_0212A368: .word s_game
 	arm_func_end ov1_0212A344
 
 	arm_func_start ov1_0212A36C
@@ -16661,7 +16661,7 @@ ov1_0212ACDC: ; 0x0212ACDC
 
 	arm_func_start ov1_0212AD08
 ov1_0212AD08: ; 0x0212AD08
-	ldr r1, _0212AD24 ; =MAIN_BSS_0208F304
+	ldr r1, _0212AD24 ; =s_game
 	ldr r2, [r0]
 	ldr r1, [r1]
 	mov r0, #1
@@ -16669,7 +16669,7 @@ ov1_0212AD08: ; 0x0212AD08
 	str r2, [r1, #0x7c]
 	bx lr
 	.align 2, 0
-_0212AD24: .word MAIN_BSS_0208F304
+_0212AD24: .word s_game
 	arm_func_end ov1_0212AD08
 
 	arm_func_start ov1_0212AD28
@@ -16720,14 +16720,14 @@ ov1_0212AD88: ; 0x0212AD88
 	b _0212AE28
 	arm_func_end ov1_0212AD88
 _0212ADB8:
-	ldr r0, _0212AE3C ; =MAIN_BSS_0208F304
+	ldr r0, _0212AE3C ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x43c]
 	bl sub_02010B34
 	mov r5, r0
 	bl ov1_0212A124
-	ldr r1, _0212AE3C ; =MAIN_BSS_0208F304
+	ldr r1, _0212AE3C ; =s_game
 	ldrb r4, [r0, #0x19c]
 	ldr r0, [r1]
 	mov r1, r5
@@ -16757,7 +16757,7 @@ _0212AE28:
 	bl _s32_div_f
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0
-_0212AE3C: .word MAIN_BSS_0208F304
+_0212AE3C: .word s_game
 
 	arm_func_start ov1_0212AE40
 ov1_0212AE40: ; 0x0212AE40
@@ -16979,7 +16979,7 @@ ov1_0212B0A8: ; 0x0212B0A8
 	bl ov1_0212A124
 	mov r1, #0
 	bl ov1_0212C514
-	ldr r0, _0212B0F0 ; =MAIN_BSS_0208F304
+	ldr r0, _0212B0F0 ; =s_game
 	mov r1, #0
 	ldr r0, [r0]
 	add r0, r0, #0x1000
@@ -16996,7 +16996,7 @@ _0212B0E8:
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B0F0: .word MAIN_BSS_0208F304
+_0212B0F0: .word s_game
 
 	arm_func_start ov1_0212B0F4
 ov1_0212B0F4: ; 0x0212B0F4
@@ -17008,13 +17008,13 @@ ov1_0212B0F4: ; 0x0212B0F4
 
 	arm_func_start ov1_0212B104
 ov1_0212B104: ; 0x0212B104
-	ldr r0, _0212B118 ; =MAIN_BSS_0208F304
+	ldr r0, _0212B118 ; =s_game
 	ldr r0, [r0]
 	ldr r0, [r0, #0xc]
 	ldr r0, [r0, #0x28]
 	bx lr
 	.align 2, 0
-_0212B118: .word MAIN_BSS_0208F304
+_0212B118: .word s_game
 	arm_func_end ov1_0212B104
 
 	arm_func_start ov1_0212B11C
@@ -17048,7 +17048,7 @@ _0212B15C:
 ov1_0212B170: ; 0x0212B170
 	stmdb sp!, {r3, lr}
 	mov r2, #0
-	ldr r1, _0212B1A8 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B1A8 ; =s_game
 	str r2, [sp]
 	ldr r1, [r1]
 	mov r3, r0
@@ -17061,14 +17061,14 @@ ov1_0212B170: ; 0x0212B170
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B1A8: .word MAIN_BSS_0208F304
+_0212B1A8: .word s_game
 	arm_func_end ov1_0212B170
 
 	arm_func_start ov1_0212B1AC
 ov1_0212B1AC: ; 0x0212B1AC
 	stmdb sp!, {r3, lr}
 	mov r2, #0
-	ldr r1, _0212B1E0 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B1E0 ; =s_game
 	str r2, [sp]
 	ldr r1, [r1]
 	mov r3, r0
@@ -17080,26 +17080,26 @@ ov1_0212B1AC: ; 0x0212B1AC
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B1E0: .word MAIN_BSS_0208F304
+_0212B1E0: .word s_game
 	arm_func_end ov1_0212B1AC
 
 	arm_func_start ov1_0212B1E4
 ov1_0212B1E4: ; 0x0212B1E4
-	ldr r0, _0212B1FC ; =MAIN_BSS_0208F304
+	ldr r0, _0212B1FC ; =s_game
 	ldr ip, _0212B200 ; =FUN_02009ECC
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	bx ip
 	.align 2, 0
-_0212B1FC: .word MAIN_BSS_0208F304
+_0212B1FC: .word s_game
 _0212B200: .word _ZN17UnkClass_020091E812sub_02009ECCEv
 	arm_func_end ov1_0212B1E4
 
 	arm_func_start ov1_0212B204
 ov1_0212B204: ; 0x0212B204
 	stmdb sp!, {r3, lr}
-	ldr r0, _0212B22C ; =MAIN_BSS_0208F304
+	ldr r0, _0212B22C ; =s_game
 	mov r1, #1
 	ldr r0, [r0]
 	mov r2, r1
@@ -17109,12 +17109,12 @@ ov1_0212B204: ; 0x0212B204
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B22C: .word MAIN_BSS_0208F304
+_0212B22C: .word s_game
 	arm_func_end ov1_0212B204
 
 	arm_func_start ov1_0212B230
 ov1_0212B230: ; 0x0212B230
-	ldr r1, _0212B250 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B250 ; =s_game
 	mov r0, #1
 	ldr r1, [r1]
 	ldr r2, [r1, #0xc]
@@ -17123,12 +17123,12 @@ ov1_0212B230: ; 0x0212B230
 	strh r1, [r2, #8]
 	bx lr
 	.align 2, 0
-_0212B250: .word MAIN_BSS_0208F304
+_0212B250: .word s_game
 	arm_func_end ov1_0212B230
 
 	arm_func_start ov1_0212B254
 ov1_0212B254: ; 0x0212B254
-	ldr r1, _0212B274 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B274 ; =s_game
 	mov r0, #1
 	ldr r1, [r1]
 	ldr r2, [r1, #0xc]
@@ -17137,24 +17137,24 @@ ov1_0212B254: ; 0x0212B254
 	strh r1, [r2, #8]
 	bx lr
 	.align 2, 0
-_0212B274: .word MAIN_BSS_0208F304
+_0212B274: .word s_game
 	arm_func_end ov1_0212B254
 
 	arm_func_start ov1_0212B278
 ov1_0212B278: ; 0x0212B278
-	ldr r1, _0212B290 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B290 ; =s_game
 	mov r0, #1
 	ldr r1, [r1]
 	ldr r1, [r1, #0xc]
 	str r0, [r1, #0x70]
 	bx lr
 	.align 2, 0
-_0212B290: .word MAIN_BSS_0208F304
+_0212B290: .word s_game
 	arm_func_end ov1_0212B278
 
 	arm_func_start ov1_0212B294
 ov1_0212B294: ; 0x0212B294
-	ldr r0, _0212B2B0 ; =MAIN_BSS_0208F304
+	ldr r0, _0212B2B0 ; =s_game
 	mov r2, #0
 	ldr r1, [r0]
 	mov r0, #1
@@ -17162,13 +17162,13 @@ ov1_0212B294: ; 0x0212B294
 	str r2, [r1, #0x70]
 	bx lr
 	.align 2, 0
-_0212B2B0: .word MAIN_BSS_0208F304
+_0212B2B0: .word s_game
 	arm_func_end ov1_0212B294
 
 	arm_func_start ov1_0212B2B4
 ov1_0212B2B4: ; 0x0212B2B4
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212B2D4 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B2D4 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	ldr r0, [r2, #0xc]
@@ -17176,13 +17176,13 @@ ov1_0212B2B4: ; 0x0212B2B4
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B2D4: .word MAIN_BSS_0208F304
+_0212B2D4: .word s_game
 	arm_func_end ov1_0212B2B4
 
 	arm_func_start ov1_0212B2D8
 ov1_0212B2D8: ; 0x0212B2D8
 	stmdb sp!, {r3, lr}
-	ldr r0, _0212B2F8 ; =MAIN_BSS_0208F304
+	ldr r0, _0212B2F8 ; =s_game
 	mov r1, #0
 	ldr r0, [r0]
 	ldr r0, [r0, #0xc]
@@ -17190,13 +17190,13 @@ ov1_0212B2D8: ; 0x0212B2D8
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B2F8: .word MAIN_BSS_0208F304
+_0212B2F8: .word s_game
 	arm_func_end ov1_0212B2D8
 
 	arm_func_start ov1_0212B2FC
 ov1_0212B2FC: ; 0x0212B2FC
 	stmdb sp!, {r3, lr}
-	ldr r0, _0212B31C ; =MAIN_BSS_0208F304
+	ldr r0, _0212B31C ; =s_game
 	mov r1, #1
 	ldr r0, [r0]
 	ldr r0, [r0, #0xc]
@@ -17204,13 +17204,13 @@ ov1_0212B2FC: ; 0x0212B2FC
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B31C: .word MAIN_BSS_0208F304
+_0212B31C: .word s_game
 	arm_func_end ov1_0212B2FC
 
 	arm_func_start ov1_0212B320
 ov1_0212B320: ; 0x0212B320
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212B350 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B350 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -17222,13 +17222,13 @@ ov1_0212B320: ; 0x0212B320
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B350: .word MAIN_BSS_0208F304
+_0212B350: .word s_game
 	arm_func_end ov1_0212B320
 
 	arm_func_start ov1_0212B354
 ov1_0212B354: ; 0x0212B354
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212B384 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B384 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -17240,13 +17240,13 @@ ov1_0212B354: ; 0x0212B354
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B384: .word MAIN_BSS_0208F304
+_0212B384: .word s_game
 	arm_func_end ov1_0212B354
 
 	arm_func_start ov1_0212B388
 ov1_0212B388: ; 0x0212B388
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212B3B8 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B3B8 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -17258,13 +17258,13 @@ ov1_0212B388: ; 0x0212B388
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B3B8: .word MAIN_BSS_0208F304
+_0212B3B8: .word s_game
 	arm_func_end ov1_0212B388
 
 	arm_func_start ov1_0212B3BC
 ov1_0212B3BC: ; 0x0212B3BC
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212B3EC ; =MAIN_BSS_0208F304
+	ldr r1, _0212B3EC ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -17276,13 +17276,13 @@ ov1_0212B3BC: ; 0x0212B3BC
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B3EC: .word MAIN_BSS_0208F304
+_0212B3EC: .word s_game
 	arm_func_end ov1_0212B3BC
 
 	arm_func_start ov1_0212B3F0
 ov1_0212B3F0: ; 0x0212B3F0
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212B414 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B414 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -17291,13 +17291,13 @@ ov1_0212B3F0: ; 0x0212B3F0
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B414: .word MAIN_BSS_0208F304
+_0212B414: .word s_game
 	arm_func_end ov1_0212B3F0
 
 	arm_func_start ov1_0212B418
 ov1_0212B418: ; 0x0212B418
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212B43C ; =MAIN_BSS_0208F304
+	ldr r1, _0212B43C ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -17306,13 +17306,13 @@ ov1_0212B418: ; 0x0212B418
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B43C: .word MAIN_BSS_0208F304
+_0212B43C: .word s_game
 	arm_func_end ov1_0212B418
 
 	arm_func_start ov1_0212B440
 ov1_0212B440: ; 0x0212B440
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212B468 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B468 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -17322,13 +17322,13 @@ ov1_0212B440: ; 0x0212B440
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B468: .word MAIN_BSS_0208F304
+_0212B468: .word s_game
 	arm_func_end ov1_0212B440
 
 	arm_func_start ov1_0212B46C
 ov1_0212B46C: ; 0x0212B46C
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212B494 ; =MAIN_BSS_0208F304
+	ldr r1, _0212B494 ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -17338,13 +17338,13 @@ ov1_0212B46C: ; 0x0212B46C
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B494: .word MAIN_BSS_0208F304
+_0212B494: .word s_game
 	arm_func_end ov1_0212B46C
 
 	arm_func_start ov1_0212B498
 ov1_0212B498: ; 0x0212B498
 	stmdb sp!, {r3, lr}
-	ldr r1, _0212B4BC ; =MAIN_BSS_0208F304
+	ldr r1, _0212B4BC ; =s_game
 	ldr r2, [r1]
 	ldr r1, [r0]
 	add r0, r2, #0x1000
@@ -17353,7 +17353,7 @@ ov1_0212B498: ; 0x0212B498
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0212B4BC: .word MAIN_BSS_0208F304
+_0212B4BC: .word s_game
 	arm_func_end ov1_0212B498
 
 	arm_func_start ov1_0212B4C0
@@ -17447,13 +17447,13 @@ ov1_0212B580: ; 0x0212B580
 
 	arm_func_start ov1_0212B5BC
 ov1_0212B5BC: ; 0x0212B5BC
-	ldr r0, _0212B5D0 ; =MAIN_BSS_0208F304
+	ldr r0, _0212B5D0 ; =s_game
 	ldr ip, _0212B5D4 ; =ov1_021227C4
 	ldr r0, [r0]
 	ldr r0, [r0, #0xc]
 	bx ip
 	.align 2, 0
-_0212B5D0: .word MAIN_BSS_0208F304
+_0212B5D0: .word s_game
 _0212B5D4: .word ov1_021227C4
 	arm_func_end ov1_0212B5BC
 

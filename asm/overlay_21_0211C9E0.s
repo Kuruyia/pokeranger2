@@ -220,7 +220,7 @@ ov21_0211CCA8: ; 0x0211CCA8
 	mov r3, #0
 	strb r0, [sp, #1]
 	ldrb lr, [sp, #1]
-	ldr r0, _0211CD80 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CD80 ; =s_game
 	mov r1, #0x3c
 	strb lr, [r4, #0x18]
 	ldrb ip, [ip, #0x4a]
@@ -240,12 +240,12 @@ ov21_0211CCA8: ; 0x0211CCA8
 	bl _Znwm
 	cmp r0, #0
 	beq _0211CD38
-	ldr r1, _0211CD80 ; =MAIN_BSS_0208F304
+	ldr r1, _0211CD80 ; =s_game
 	ldr r1, [r1]
 	bl ov21_0211D330
 	arm_func_end ov21_0211CCA8
 _0211CD38:
-	ldr r1, _0211CD80 ; =MAIN_BSS_0208F304
+	ldr r1, _0211CD80 ; =s_game
 	str r0, [r4, #8]
 	ldr r0, [r1]
 	mov r1, #3
@@ -253,7 +253,7 @@ _0211CD38:
 	ldr r0, [r0, #0x4bc]
 	mov r2, #0x1e
 	bl sub_0200E0E0
-	ldr r0, _0211CD80 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CD80 ; =s_game
 	mov r1, #3
 	ldr r0, [r0]
 	mov r2, #0x1e
@@ -264,7 +264,7 @@ _0211CD38:
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
 _0211CD7C: .word OVERLAY21_BSS_021242C0
-_0211CD80: .word MAIN_BSS_0208F304
+_0211CD80: .word s_game
 
 	arm_func_start ov21_0211CD84
 ov21_0211CD84: ; 0x0211CD84
@@ -283,7 +283,7 @@ _0211CDAC:
 	mov r0, #0
 	str r0, [r4, #8]
 _0211CDB4:
-	ldr r0, _0211CE58 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CE58 ; =s_game
 	mov r1, #0x1e
 	ldr r0, [r0]
 	add r0, r0, #0x6c
@@ -325,7 +325,7 @@ _0211CDB4:
 	bl GX_HBlankIntr
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
-_0211CE58: .word MAIN_BSS_0208F304
+_0211CE58: .word s_game
 _0211CE5C: .word 0x04000048
 _0211CE60: .word 0x0400004A
 
@@ -354,14 +354,14 @@ ov21_0211CE64: ; 0x0211CE64
 	b _0211CF98
 	arm_func_end ov21_0211CE64
 _0211CEB8:
-	ldr r0, _0211CFA8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CFA8 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x4bc]
 	bl sub_0200E310
 	cmp r0, #0
 	bne _0211CF98
-	ldr r0, _0211CFA8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CFA8 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x4c0]
@@ -379,7 +379,7 @@ _0211CF04:
 	cmp r0, #3
 	bne _0211CF98
 	mov r1, #2
-	ldr r0, _0211CFA8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CFA8 ; =s_game
 	str r1, [r4, #0x10]
 	ldr r0, [r0]
 	mov r1, #4
@@ -387,7 +387,7 @@ _0211CF04:
 	ldr r0, [r0, #0x4bc]
 	mov r2, #0x14
 	bl sub_0200E0E0
-	ldr r0, _0211CFA8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CFA8 ; =s_game
 	mov r1, #4
 	ldr r0, [r0]
 	mov r2, #0x14
@@ -396,14 +396,14 @@ _0211CF04:
 	bl sub_0200E0E0
 	b _0211CF98
 _0211CF58:
-	ldr r0, _0211CFA8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CFA8 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x4bc]
 	bl sub_0200E310
 	cmp r0, #0
 	bne _0211CF98
-	ldr r0, _0211CFA8 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CFA8 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x4c0]
@@ -418,7 +418,7 @@ _0211CF98:
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211CFA4: .word OVERLAY21_BSS_021242C0
-_0211CFA8: .word MAIN_BSS_0208F304
+_0211CFA8: .word s_game
 
 	arm_func_start ov21_0211CFAC
 ov21_0211CFAC: ; 0x0211CFAC

@@ -34,7 +34,7 @@
 .public G3i_OrthoW_
 .public GXS_LoadOAM
 .public GX_LoadOAM
-.public MAIN_BSS_0208F304
+.public s_game
 .public MAIN_BSS_0208F31C
 .public MAIN_BSS_0208F320
 .public MAIN_BSS_020AF320

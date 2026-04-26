@@ -123,7 +123,7 @@
 .public _ll_udiv
 .public OS_IRQTable
 .public DAT_0208c55c
-.public MAIN_BSS_0208F304
+.public s_game
 .public MAIN_BSS_020B26A0
 .public PTR_ptr_FUN_02083578_0208a804
 .public _ZTVN10__cxxabiv117__class_type_infoE

@@ -26,7 +26,7 @@
 .public GX_GetBankForSubOBJ
 .public GX_LoadBGPltt
 .public GXx_SetMasterBrightness_
-.public MAIN_BSS_0208F304
+.public s_game
 .public MAIN_BSS_020AF338
 .public MAIN_BSS_020BAE83
 .public MIi_CpuClearFast

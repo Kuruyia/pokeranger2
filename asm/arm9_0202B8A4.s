@@ -413,7 +413,7 @@ sub_0202BDBC: ; 0x0202BDBC
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202BDE0: .word MAIN_BSS_0208F304
+_0202BDE0: .word s_game
 	arm_func_end sub_0202BDBC
 
 	arm_func_start sub_0202BDE4
@@ -428,7 +428,7 @@ sub_0202BDE4: ; 0x0202BDE4
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202BE08: .word MAIN_BSS_0208F304
+_0202BE08: .word s_game
 	arm_func_end sub_0202BDE4
 
 	arm_func_start sub_0202BE0C
@@ -443,7 +443,7 @@ sub_0202BE0C: ; 0x0202BE0C
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202BE30: .word MAIN_BSS_0208F304
+_0202BE30: .word s_game
 	arm_func_end sub_0202BE0C
 
 	arm_func_start sub_0202BE34
@@ -465,7 +465,7 @@ sub_0202BE34: ; 0x0202BE34
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0202BE70: .word MAIN_BSS_020B26A0
-_0202BE74: .word MAIN_BSS_0208F304
+_0202BE74: .word s_game
 	arm_func_end sub_0202BE34
 
 	arm_func_start sub_0202BE78
@@ -480,7 +480,7 @@ sub_0202BE78: ; 0x0202BE78
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202BE9C: .word MAIN_BSS_0208F304
+_0202BE9C: .word s_game
 	arm_func_end sub_0202BE78
 
 	arm_func_start sub_0202BEA0
@@ -509,7 +509,7 @@ sub_0202BEA8: ; 0x0202BEA8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0202BEE8: .word MAIN_BSS_020B26A0
-_0202BEEC: .word MAIN_BSS_0208F304
+_0202BEEC: .word s_game
 	arm_func_end sub_0202BEA8
 
 	arm_func_start sub_0202BEF0
@@ -524,7 +524,7 @@ sub_0202BEF0: ; 0x0202BEF0
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202BF14: .word MAIN_BSS_0208F304
+_0202BF14: .word s_game
 	arm_func_end sub_0202BEF0
 
 	arm_func_start sub_0202BF18
@@ -539,7 +539,7 @@ sub_0202BF18: ; 0x0202BF18
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202BF3C: .word MAIN_BSS_0208F304
+_0202BF3C: .word s_game
 	arm_func_end sub_0202BF18
 
 	arm_func_start sub_0202BF40
@@ -554,7 +554,7 @@ sub_0202BF40: ; 0x0202BF40
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202BF64: .word MAIN_BSS_0208F304
+_0202BF64: .word s_game
 	arm_func_end sub_0202BF40
 
 	arm_func_start sub_0202BF68
@@ -569,7 +569,7 @@ sub_0202BF68: ; 0x0202BF68
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202BF8C: .word MAIN_BSS_0208F304
+_0202BF8C: .word s_game
 	arm_func_end sub_0202BF68
 
 	arm_func_start sub_0202BF90
@@ -584,7 +584,7 @@ sub_0202BF90: ; 0x0202BF90
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202BFB4: .word MAIN_BSS_0208F304
+_0202BFB4: .word s_game
 	arm_func_end sub_0202BF90
 
 	arm_func_start sub_0202BFB8
@@ -599,7 +599,7 @@ sub_0202BFB8: ; 0x0202BFB8
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202BFDC: .word MAIN_BSS_0208F304
+_0202BFDC: .word s_game
 	arm_func_end sub_0202BFB8
 
 	arm_func_start sub_0202BFE0
@@ -614,7 +614,7 @@ sub_0202BFE0: ; 0x0202BFE0
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C004: .word MAIN_BSS_0208F304
+_0202C004: .word s_game
 	arm_func_end sub_0202BFE0
 
 	arm_func_start sub_0202C008
@@ -629,7 +629,7 @@ sub_0202C008: ; 0x0202C008
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C02C: .word MAIN_BSS_0208F304
+_0202C02C: .word s_game
 	arm_func_end sub_0202C008
 
 	arm_func_start sub_0202C030
@@ -644,7 +644,7 @@ sub_0202C030: ; 0x0202C030
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C054: .word MAIN_BSS_0208F304
+_0202C054: .word s_game
 	arm_func_end sub_0202C030
 
 	arm_func_start sub_0202C058
@@ -659,7 +659,7 @@ sub_0202C058: ; 0x0202C058
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C07C: .word MAIN_BSS_0208F304
+_0202C07C: .word s_game
 	arm_func_end sub_0202C058
 
 	arm_func_start sub_0202C080
@@ -674,7 +674,7 @@ sub_0202C080: ; 0x0202C080
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C0A4: .word MAIN_BSS_0208F304
+_0202C0A4: .word s_game
 	arm_func_end sub_0202C080
 
 	arm_func_start sub_0202C0A8
@@ -691,7 +691,7 @@ sub_0202C0A8: ; 0x0202C0A8
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C0D4: .word MAIN_BSS_0208F304
+_0202C0D4: .word s_game
 	arm_func_end sub_0202C0A8
 
 	arm_func_start sub_0202C0D8
@@ -706,7 +706,7 @@ sub_0202C0D8: ; 0x0202C0D8
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C0FC: .word MAIN_BSS_0208F304
+_0202C0FC: .word s_game
 	arm_func_end sub_0202C0D8
 
 	arm_func_start sub_0202C100
@@ -722,7 +722,7 @@ sub_0202C100: ; 0x0202C100
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C128: .word MAIN_BSS_0208F304
+_0202C128: .word s_game
 	arm_func_end sub_0202C100
 
 	arm_func_start sub_0202C12C
@@ -738,7 +738,7 @@ sub_0202C12C: ; 0x0202C12C
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C154: .word MAIN_BSS_0208F304
+_0202C154: .word s_game
 	arm_func_end sub_0202C12C
 
 	arm_func_start sub_0202C158
@@ -753,7 +753,7 @@ sub_0202C158: ; 0x0202C158
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C17C: .word MAIN_BSS_0208F304
+_0202C17C: .word s_game
 	arm_func_end sub_0202C158
 
 	arm_func_start sub_0202C180
@@ -775,7 +775,7 @@ sub_0202C180: ; 0x0202C180
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C1C0: .word MAIN_BSS_0208F304
+_0202C1C0: .word s_game
 	arm_func_end sub_0202C180
 
 	arm_func_start sub_0202C1C4
@@ -797,7 +797,7 @@ sub_0202C1C4: ; 0x0202C1C4
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C204: .word MAIN_BSS_0208F304
+_0202C204: .word s_game
 	arm_func_end sub_0202C1C4
 
 	arm_func_start sub_0202C208
@@ -811,7 +811,7 @@ sub_0202C208: ; 0x0202C208
 	str r2, [r1, #0x1a4]
 	bx lr
 	.align 2, 0
-_0202C228: .word MAIN_BSS_0208F304
+_0202C228: .word s_game
 	arm_func_end sub_0202C208
 
 	arm_func_start sub_0202C22C
@@ -823,7 +823,7 @@ sub_0202C22C: ; 0x0202C22C
 	ldr r0, [r0, #0x1a4]
 	bx lr
 	.align 2, 0
-_0202C244: .word MAIN_BSS_0208F304
+_0202C244: .word s_game
 	arm_func_end sub_0202C22C
 
 	arm_func_start sub_0202C248
@@ -837,7 +837,7 @@ sub_0202C248: ; 0x0202C248
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C268: .word MAIN_BSS_0208F304
+_0202C268: .word s_game
 	arm_func_end sub_0202C248
 
 	arm_func_start sub_0202C26C
@@ -910,7 +910,7 @@ _0202C35C:
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0202C364: .word MAIN_BSS_0210CA78
-_0202C368: .word MAIN_BSS_0208F304
+_0202C368: .word s_game
 _0202C36C: .word MAIN_BSS_0210CA6C
 _0202C370: .word MAIN_BSS_020B26A0
 
@@ -976,7 +976,7 @@ _0202C430:
 _0202C43C: .word MAIN_BSS_0210CA4C
 _0202C440: .word DAT_02084c80
 _0202C444: .word DAT_02084cd0
-_0202C448: .word MAIN_BSS_0208F304
+_0202C448: .word s_game
 
 	arm_func_start sub_0202C44C
 sub_0202C44C: ; 0x0202C44C
@@ -991,7 +991,7 @@ sub_0202C44C: ; 0x0202C44C
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C474: .word MAIN_BSS_0208F304
+_0202C474: .word s_game
 	arm_func_end sub_0202C44C
 
 	arm_func_start sub_0202C478
@@ -1321,7 +1321,7 @@ sub_0202C86C: ; 0x0202C86C
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C8AC: .word MAIN_BSS_0208F304
+_0202C8AC: .word s_game
 	arm_func_end sub_0202C86C
 
 	arm_func_start sub_0202C8B0
@@ -1333,7 +1333,7 @@ sub_0202C8B0: ; 0x0202C8B0
 	ldr r0, [r0, #0x490]
 	bx ip
 	.align 2, 0
-_0202C8C8: .word MAIN_BSS_0208F304
+_0202C8C8: .word s_game
 _0202C8CC: .word _ZN17UnkClass_020091E812sub_02009ECCEv
 	arm_func_end sub_0202C8B0
 
@@ -1350,7 +1350,7 @@ sub_0202C8D0: ; 0x0202C8D0
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C8F8: .word MAIN_BSS_0208F304
+_0202C8F8: .word s_game
 	arm_func_end sub_0202C8D0
 
 	arm_func_start sub_0202C8FC
@@ -1366,7 +1366,7 @@ sub_0202C8FC: ; 0x0202C8FC
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C924: .word MAIN_BSS_0208F304
+_0202C924: .word s_game
 	arm_func_end sub_0202C8FC
 
 	arm_func_start sub_0202C928
@@ -1381,7 +1381,7 @@ sub_0202C928: ; 0x0202C928
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C94C: .word MAIN_BSS_0208F304
+_0202C94C: .word s_game
 	arm_func_end sub_0202C928
 
 	arm_func_start sub_0202C950
@@ -1395,7 +1395,7 @@ sub_0202C950: ; 0x0202C950
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C970: .word MAIN_BSS_0208F304
+_0202C970: .word s_game
 	arm_func_end sub_0202C950
 
 	arm_func_start sub_0202C974
@@ -1410,7 +1410,7 @@ sub_0202C974: ; 0x0202C974
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C998: .word MAIN_BSS_0208F304
+_0202C998: .word s_game
 	arm_func_end sub_0202C974
 
 	arm_func_start sub_0202C99C
@@ -1424,7 +1424,7 @@ sub_0202C99C: ; 0x0202C99C
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C9BC: .word MAIN_BSS_0208F304
+_0202C9BC: .word s_game
 	arm_func_end sub_0202C99C
 
 	arm_func_start sub_0202C9C0
@@ -1439,7 +1439,7 @@ sub_0202C9C0: ; 0x0202C9C0
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202C9E4: .word MAIN_BSS_0208F304
+_0202C9E4: .word s_game
 	arm_func_end sub_0202C9C0
 
 	arm_func_start sub_0202C9E8
@@ -1453,7 +1453,7 @@ sub_0202C9E8: ; 0x0202C9E8
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202CA08: .word MAIN_BSS_0208F304
+_0202CA08: .word s_game
 	arm_func_end sub_0202C9E8
 
 	arm_func_start sub_0202CA0C
@@ -1467,7 +1467,7 @@ sub_0202CA0C: ; 0x0202CA0C
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202CA2C: .word MAIN_BSS_0208F304
+_0202CA2C: .word s_game
 	arm_func_end sub_0202CA0C
 
 	arm_func_start sub_0202CA30
@@ -1480,7 +1480,7 @@ sub_0202CA30: ; 0x0202CA30
 	ldr r0, [r0, #0x490]
 	bx ip
 	.align 2, 0
-_0202CA4C: .word MAIN_BSS_0208F304
+_0202CA4C: .word s_game
 _0202CA50: .word sub_0200B6A4
 	arm_func_end sub_0202CA30
 
@@ -1493,7 +1493,7 @@ sub_0202CA54: ; 0x0202CA54
 	ldr r0, [r0, #0x490]
 	bx ip
 	.align 2, 0
-_0202CA6C: .word MAIN_BSS_0208F304
+_0202CA6C: .word s_game
 _0202CA70: .word sub_0200B6D4
 	arm_func_end sub_0202CA54
 
@@ -1516,7 +1516,7 @@ sub_0202CA74: ; 0x0202CA74
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202CAB4: .word MAIN_BSS_0208F304
+_0202CAB4: .word s_game
 	arm_func_end sub_0202CA74
 
 	arm_func_start sub_0202CAB8
@@ -1545,7 +1545,7 @@ sub_0202CAB8: ; 0x0202CAB8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0202CB10: .word MAIN_BSS_0210CA40
-_0202CB14: .word MAIN_BSS_0208F304
+_0202CB14: .word s_game
 	arm_func_end sub_0202CAB8
 
 	arm_func_start sub_0202CB18
@@ -1644,7 +1644,7 @@ _0202CC18:
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0202CC50: .word MAIN_BSS_0210CA40
-_0202CC54: .word MAIN_BSS_0208F304
+_0202CC54: .word s_game
 
 	arm_func_start sub_0202CC58
 sub_0202CC58: ; 0x0202CC58
@@ -1659,7 +1659,7 @@ sub_0202CC58: ; 0x0202CC58
 	movne r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202CC80: .word MAIN_BSS_0208F304
+_0202CC80: .word s_game
 	arm_func_end sub_0202CC58
 
 	arm_func_start sub_0202CC84
@@ -1703,7 +1703,7 @@ sub_0202CCC4: ; 0x0202CCC4
 	rsb r0, r0, #0
 	bx lr
 	.align 2, 0
-_0202CCF4: .word MAIN_BSS_0208F304
+_0202CCF4: .word s_game
 	arm_func_end sub_0202CCC4
 
 	arm_func_start sub_0202CCF8
@@ -1721,7 +1721,7 @@ sub_0202CCF8: ; 0x0202CCF8
 	rsb r0, r0, #0
 	bx lr
 	.align 2, 0
-_0202CD28: .word MAIN_BSS_0208F304
+_0202CD28: .word s_game
 	arm_func_end sub_0202CCF8
 
 	arm_func_start sub_0202CD2C
@@ -3690,7 +3690,7 @@ _0202E60C:
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202E618: .word MAIN_BSS_0208F304
+_0202E618: .word s_game
 
 	arm_func_start sub_0202E61C
 sub_0202E61C: ; 0x0202E61C
@@ -4569,7 +4569,7 @@ _0202F130:
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F138: .word MAIN_BSS_0208F304
+_0202F138: .word s_game
 
 	arm_func_start sub_0202F13C
 sub_0202F13C: ; 0x0202F13C
@@ -4587,7 +4587,7 @@ sub_0202F13C: ; 0x0202F13C
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F170: .word MAIN_BSS_0208F304
+_0202F170: .word s_game
 	arm_func_end sub_0202F13C
 
 	arm_func_start sub_0202F174
@@ -4641,7 +4641,7 @@ _0202F1F8:
 	mov r0, #0
 	bx lr
 	.align 2, 0
-_0202F200: .word MAIN_BSS_0208F304
+_0202F200: .word s_game
 _0202F204: .word MAIN_BSS_0210CA40
 
 	arm_func_start sub_0202F208
@@ -4676,7 +4676,7 @@ sub_0202F23C: ; 0x0202F23C
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F264: .word MAIN_BSS_0208F304
+_0202F264: .word s_game
 	arm_func_end sub_0202F23C
 
 	arm_func_start sub_0202F268
@@ -4692,7 +4692,7 @@ sub_0202F268: ; 0x0202F268
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F290: .word MAIN_BSS_0208F304
+_0202F290: .word s_game
 	arm_func_end sub_0202F268
 
 	arm_func_start sub_0202F294
@@ -4730,7 +4730,7 @@ sub_0202F2B4: ; 0x0202F2B4
 	moveq r0, #0
 	bx lr
 	.align 2, 0
-_0202F2D4: .word MAIN_BSS_0208F304
+_0202F2D4: .word s_game
 	arm_func_end sub_0202F2B4
 
 	arm_func_start sub_0202F2D8
@@ -4745,7 +4745,7 @@ sub_0202F2D8: ; 0x0202F2D8
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F2FC: .word MAIN_BSS_0208F304
+_0202F2FC: .word s_game
 	arm_func_end sub_0202F2D8
 
 	arm_func_start sub_0202F300
@@ -4769,7 +4769,7 @@ _0202F338:
 	mov r0, #0
 	bx lr
 	.align 2, 0
-_0202F340: .word MAIN_BSS_0208F304
+_0202F340: .word s_game
 _0202F344: .word MAIN_BSS_0210CA40
 
 	arm_func_start sub_0202F348
@@ -4785,7 +4785,7 @@ sub_0202F348: ; 0x0202F348
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F370: .word MAIN_BSS_0208F304
+_0202F370: .word s_game
 	arm_func_end sub_0202F348
 
 	arm_func_start sub_0202F374
@@ -4801,7 +4801,7 @@ sub_0202F374: ; 0x0202F374
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F39C: .word MAIN_BSS_0208F304
+_0202F39C: .word s_game
 	arm_func_end sub_0202F374
 
 	arm_func_start sub_0202F3A0
@@ -4817,7 +4817,7 @@ sub_0202F3A0: ; 0x0202F3A0
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F3C8: .word MAIN_BSS_0208F304
+_0202F3C8: .word s_game
 	arm_func_end sub_0202F3A0
 
 	arm_func_start sub_0202F3CC
@@ -4833,7 +4833,7 @@ sub_0202F3CC: ; 0x0202F3CC
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F3F4: .word MAIN_BSS_0208F304
+_0202F3F4: .word s_game
 	arm_func_end sub_0202F3CC
 
 	arm_func_start sub_0202F3F8
@@ -4849,7 +4849,7 @@ sub_0202F3F8: ; 0x0202F3F8
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F420: .word MAIN_BSS_0208F304
+_0202F420: .word s_game
 	arm_func_end sub_0202F3F8
 
 	arm_func_start sub_0202F424
@@ -4867,7 +4867,7 @@ sub_0202F424: ; 0x0202F424
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F454: .word MAIN_BSS_0208F304
+_0202F454: .word s_game
 	arm_func_end sub_0202F424
 
 	arm_func_start sub_0202F458
@@ -4897,7 +4897,7 @@ sub_0202F458: ; 0x0202F458
 	str r1, [r2, #0x38]
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0202F4B8: .word MAIN_BSS_0208F304
+_0202F4B8: .word s_game
 	arm_func_end sub_0202F458
 
 	arm_func_start sub_0202F4BC
@@ -4913,7 +4913,7 @@ sub_0202F4BC: ; 0x0202F4BC
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F4E4: .word MAIN_BSS_0208F304
+_0202F4E4: .word s_game
 	arm_func_end sub_0202F4BC
 
 	arm_func_start sub_0202F4E8
@@ -4928,7 +4928,7 @@ sub_0202F4E8: ; 0x0202F4E8
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202F50C: .word MAIN_BSS_0208F304
+_0202F50C: .word s_game
 	arm_func_end sub_0202F4E8
 
 	arm_func_start sub_0202F510
@@ -5111,7 +5111,7 @@ sub_0202F764: ; 0x0202F764
 	ldr r0, [r0, #0x49c]
 	bx ip
 	.align 2, 0
-_0202F77C: .word MAIN_BSS_0208F304
+_0202F77C: .word s_game
 _0202F780: .word sub_0203437C
 	arm_func_end sub_0202F764
 
@@ -5327,7 +5327,7 @@ sub_0202F9FC: ; 0x0202F9FC
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202FA20: .word MAIN_BSS_0208F304
+_0202FA20: .word s_game
 	arm_func_end sub_0202F9FC
 
 	arm_func_start sub_0202FA24
@@ -5421,7 +5421,7 @@ _0202FAE0:
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0202FB2C: .word MAIN_BSS_0208F304
+_0202FB2C: .word s_game
 _0202FB30: .word MAIN_BSS_020B26A0
 _0202FB34: .word MAIN_BSS_0210CA40
 
@@ -5792,7 +5792,7 @@ _0202FFD8:
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0202FFE0: .word MAIN_BSS_0208F304
+_0202FFE0: .word s_game
 
 	arm_func_start sub_0202FFE4
 sub_0202FFE4: ; 0x0202FFE4
@@ -5837,7 +5837,7 @@ sub_02030040: ; 0x02030040
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02030064: .word MAIN_BSS_0208F304
+_02030064: .word s_game
 	arm_func_end sub_02030040
 
 	arm_func_start sub_02030068
@@ -5853,7 +5853,7 @@ sub_02030068: ; 0x02030068
 	subhi r0, r0, #1
 	bx lr
 	.align 2, 0
-_02030090: .word MAIN_BSS_0208F304
+_02030090: .word s_game
 	arm_func_end sub_02030068
 
 	arm_func_start sub_02030094
@@ -5889,7 +5889,7 @@ sub_020300B8: ; 0x020300B8
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_020300F8: .word MAIN_BSS_0208F304
+_020300F8: .word s_game
 	arm_func_end sub_020300B8
 
 	arm_func_start sub_020300FC
@@ -6073,7 +6073,7 @@ _020302E0:
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02030318: .word MAIN_BSS_0208F304
+_02030318: .word s_game
 _0203031C: .word s_c000First_0208ac1c
 _02030320: .word MAIN_BSS_020B26A0
 _02030324: .word MAIN_BSS_0210CA40
@@ -6143,7 +6143,7 @@ _020303E0:
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02030418: .word MAIN_BSS_0208F304
+_02030418: .word s_game
 _0203041C: .word s_c004First_0208ac8c
 _02030420: .word MAIN_BSS_020B26A0
 _02030424: .word MAIN_BSS_0210CA40
@@ -6302,7 +6302,7 @@ sub_0203059C: ; 0x0203059C
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_020305C0: .word MAIN_BSS_0208F304
+_020305C0: .word s_game
 	arm_func_end sub_0203059C
 
 	arm_func_start sub_020305C4
@@ -6318,7 +6318,7 @@ sub_020305C4: ; 0x020305C4
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_020305EC: .word MAIN_BSS_0208F304
+_020305EC: .word s_game
 	arm_func_end sub_020305C4
 
 	arm_func_start sub_020305F0
@@ -6331,7 +6331,7 @@ sub_020305F0: ; 0x020305F0
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0203060C: .word MAIN_BSS_0208F304
+_0203060C: .word s_game
 	arm_func_end sub_020305F0
 
 	arm_func_start sub_02030610
@@ -6351,7 +6351,7 @@ sub_02030610: ; 0x02030610
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02030648: .word MAIN_BSS_0208F304
+_02030648: .word s_game
 	arm_func_end sub_02030610
 
 	arm_func_start sub_0203064C
@@ -6362,7 +6362,7 @@ sub_0203064C: ; 0x0203064C
 	ldr r0, [r0, #0x30]
 	bx lr
 	.align 2, 0
-_02030660: .word MAIN_BSS_0208F304
+_02030660: .word s_game
 	arm_func_end sub_0203064C
 
 	arm_func_start sub_02030664
@@ -6401,7 +6401,7 @@ _020306A8:
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_020306DC: .word MAIN_BSS_0208F304
+_020306DC: .word s_game
 
 	arm_func_start sub_020306E0
 sub_020306E0: ; 0x020306E0
@@ -6484,7 +6484,7 @@ _020307D4:
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _020307DC: .word MAIN_BSS_0210CA40
-_020307E0: .word MAIN_BSS_0208F304
+_020307E0: .word s_game
 
 	arm_func_start sub_020307E4
 sub_020307E4: ; 0x020307E4
@@ -6517,7 +6517,7 @@ sub_020307E4: ; 0x020307E4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02030850: .word MAIN_BSS_0210CA40
-_02030854: .word MAIN_BSS_0208F304
+_02030854: .word s_game
 	arm_func_end sub_020307E4
 
 	arm_func_start sub_02030858
@@ -6565,7 +6565,7 @@ _020308B8:
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
 _020308F4: .word MAIN_BSS_0210CA40
-_020308F8: .word MAIN_BSS_0208F304
+_020308F8: .word s_game
 
 	arm_func_start sub_020308FC
 sub_020308FC: ; 0x020308FC
@@ -6592,7 +6592,7 @@ sub_020308FC: ; 0x020308FC
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02030954: .word MAIN_BSS_0208F304
+_02030954: .word s_game
 	arm_func_end sub_020308FC
 
 	arm_func_start sub_02030958
@@ -6620,7 +6620,7 @@ sub_02030958: ; 0x02030958
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_020309B0: .word MAIN_BSS_0208F304
+_020309B0: .word s_game
 	arm_func_end sub_02030958
 
 	arm_func_start sub_020309B4
@@ -6660,7 +6660,7 @@ sub_020309B4: ; 0x020309B4
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
-_02030A3C: .word MAIN_BSS_0208F304
+_02030A3C: .word s_game
 	arm_func_end sub_020309B4
 
 	arm_func_start sub_02030A40
@@ -6704,7 +6704,7 @@ _02030AC4:
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02030ACC: .word MAIN_BSS_0208F304
+_02030ACC: .word s_game
 
 	arm_func_start sub_02030AD0
 sub_02030AD0: ; 0x02030AD0
@@ -6731,7 +6731,7 @@ sub_02030AD8: ; 0x02030AD8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02030B14: .word MAIN_BSS_0210CA40
-_02030B18: .word MAIN_BSS_0208F304
+_02030B18: .word s_game
 	arm_func_end sub_02030AD8
 
 	arm_func_start sub_02030B1C
@@ -6745,7 +6745,7 @@ sub_02030B1C: ; 0x02030B1C
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02030B3C: .word MAIN_BSS_0208F304
+_02030B3C: .word s_game
 	arm_func_end sub_02030B1C
 
 	arm_func_start sub_02030B40
@@ -7169,7 +7169,7 @@ sub_02030F8C: ; 0x02030F8C
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02031074: .word MAIN_BSS_0208F304
+_02031074: .word s_game
 	arm_func_end sub_02030F8C
 
 	arm_func_start sub_02031078
@@ -7241,7 +7241,7 @@ _02031164:
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0203116C: .word MAIN_BSS_0210CA78
-_02031170: .word MAIN_BSS_0208F304
+_02031170: .word s_game
 _02031174: .word MAIN_BSS_0210CA6C
 _02031178: .word MAIN_BSS_020B26A0
 
@@ -7285,7 +7285,7 @@ _020311A0:
 	.align 2, 0
 _02031200: .word MAIN_BSS_0210CA40
 _02031204: .word 0x04000050
-_02031208: .word MAIN_BSS_0208F304
+_02031208: .word s_game
 
 	arm_func_start sub_0203120C
 sub_0203120C: ; 0x0203120C
@@ -7342,7 +7342,7 @@ _02031260:
 	.align 2, 0
 _020312B4: .word MAIN_BSS_0210CA40
 _020312B8: .word 0x04000050
-_020312BC: .word MAIN_BSS_0208F304
+_020312BC: .word s_game
 _020312C0: .word MAIN_BSS_020B26A0
 
 	arm_func_start sub_020312C4
@@ -7379,7 +7379,7 @@ _020312E4:
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02031334: .word MAIN_BSS_0210CA40
-_02031338: .word MAIN_BSS_0208F304
+_02031338: .word s_game
 
 	arm_func_start sub_0203133C
 sub_0203133C: ; 0x0203133C
@@ -7446,7 +7446,7 @@ sub_020313E8: ; 0x020313E8
 	ldrb r0, [r0, #2]
 	bx lr
 	.align 2, 0
-_02031400: .word MAIN_BSS_0208F304
+_02031400: .word s_game
 	arm_func_end sub_020313E8
 
 	arm_func_start sub_02031404
@@ -7460,7 +7460,7 @@ sub_02031404: ; 0x02031404
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02031424: .word MAIN_BSS_0208F304
+_02031424: .word s_game
 	arm_func_end sub_02031404
 
 	arm_func_start sub_02031428
@@ -7475,7 +7475,7 @@ sub_02031428: ; 0x02031428
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0203144C: .word MAIN_BSS_0208F304
+_0203144C: .word s_game
 	arm_func_end sub_02031428
 
 	arm_func_start sub_02031450
@@ -7489,7 +7489,7 @@ sub_02031450: ; 0x02031450
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02031470: .word MAIN_BSS_0208F304
+_02031470: .word s_game
 	arm_func_end sub_02031450
 
 	arm_func_start sub_02031474
@@ -7558,7 +7558,7 @@ sub_02031474: ; 0x02031474
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02031570: .word MAIN_BSS_0208F304
+_02031570: .word s_game
 	arm_func_end sub_02031474
 
 	arm_func_start sub_02031574
@@ -7590,7 +7590,7 @@ _02031594:
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _020315D0: .word MAIN_BSS_0210CA40
-_020315D4: .word MAIN_BSS_0208F304
+_020315D4: .word s_game
 
 	arm_func_start sub_020315D8
 sub_020315D8: ; 0x020315D8
@@ -7659,7 +7659,7 @@ sub_02031684: ; 0x02031684
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_020316A4: .word MAIN_BSS_0208F304
+_020316A4: .word s_game
 	arm_func_end sub_02031684
 
 	arm_func_start sub_020316A8
@@ -7672,7 +7672,7 @@ sub_020316A8: ; 0x020316A8
 	ldr r0, [r0, #0x4a0]
 	bx ip
 	.align 2, 0
-_020316C4: .word MAIN_BSS_0208F304
+_020316C4: .word s_game
 _020316C8: .word sub_02011630
 	arm_func_end sub_020316A8
 
@@ -7685,7 +7685,7 @@ sub_020316CC: ; 0x020316CC
 	ldrb r0, [r0, #3]
 	bx lr
 	.align 2, 0
-_020316E4: .word MAIN_BSS_0208F304
+_020316E4: .word s_game
 	arm_func_end sub_020316CC
 
 	arm_func_start sub_020316E8
@@ -7699,7 +7699,7 @@ sub_020316E8: ; 0x020316E8
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02031708: .word MAIN_BSS_0208F304
+_02031708: .word s_game
 	arm_func_end sub_020316E8
 
 	arm_func_start sub_0203170C
@@ -7714,7 +7714,7 @@ sub_0203170C: ; 0x0203170C
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02031730: .word MAIN_BSS_0208F304
+_02031730: .word s_game
 	arm_func_end sub_0203170C
 
 	arm_func_start sub_02031734
@@ -7727,7 +7727,7 @@ sub_02031734: ; 0x02031734
 	ldr r0, [r0, #0x4a0]
 	bx ip
 	.align 2, 0
-_02031750: .word MAIN_BSS_0208F304
+_02031750: .word s_game
 _02031754: .word sub_020114F8
 	arm_func_end sub_02031734
 
@@ -7743,7 +7743,7 @@ sub_02031758: ; 0x02031758
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0203177C: .word MAIN_BSS_0208F304
+_0203177C: .word s_game
 	arm_func_end sub_02031758
 
 	arm_func_start sub_02031780
@@ -7756,7 +7756,7 @@ sub_02031780: ; 0x02031780
 	ldr r0, [r0, #0x4a0]
 	bx ip
 	.align 2, 0
-_0203179C: .word MAIN_BSS_0208F304
+_0203179C: .word s_game
 _020317A0: .word sub_02011528
 	arm_func_end sub_02031780
 
@@ -7789,7 +7789,7 @@ _020317C4:
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02031800: .word MAIN_BSS_0210CA40
-_02031804: .word MAIN_BSS_0208F304
+_02031804: .word s_game
 
 	arm_func_start sub_02031808
 sub_02031808: ; 0x02031808
@@ -7916,7 +7916,7 @@ _0203195C:
 	.align 2, 0
 _020319A8: .word s_c000First_0208ac1c
 _020319AC: .word MAIN_BSS_020B26A0
-_020319B0: .word MAIN_BSS_0208F304
+_020319B0: .word s_game
 _020319B4: .word MAIN_BSS_0210CA40
 _020319B8: .word DAT_0208ac2c
 _020319BC: .word DAT_0208ac30
@@ -7937,7 +7937,7 @@ sub_020319CC: ; 0x020319CC
 	ldr r0, [r0, #8]
 	bx lr
 	.align 2, 0
-_020319E4: .word MAIN_BSS_0208F304
+_020319E4: .word s_game
 	arm_func_end sub_020319CC
 
 	arm_func_start sub_020319E8
@@ -8026,7 +8026,7 @@ _02031ADC:
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02031B28: .word MAIN_BSS_0208F304
+_02031B28: .word s_game
 _02031B2C: .word MAIN_BSS_020B26A0
 _02031B30: .word MAIN_BSS_0210CA40
 _02031B34: .word s_c000First_0208ac1c
@@ -8043,7 +8043,7 @@ sub_02031B38: ; 0x02031B38
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02031B5C: .word MAIN_BSS_0208F304
+_02031B5C: .word s_game
 	arm_func_end sub_02031B38
 
 	arm_func_start sub_02031B60
@@ -8056,7 +8056,7 @@ sub_02031B60: ; 0x02031B60
 	ldr r0, [r0, #0x4b4]
 	bx ip
 	.align 2, 0
-_02031B7C: .word MAIN_BSS_0208F304
+_02031B7C: .word s_game
 _02031B80: .word sub_02018E54
 	arm_func_end sub_02031B60
 
@@ -8073,7 +8073,7 @@ sub_02031B84: ; 0x02031B84
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02031BAC: .word MAIN_BSS_0208F304
+_02031BAC: .word s_game
 	arm_func_end sub_02031B84
 
 	arm_func_start sub_02031BB0
@@ -8086,7 +8086,7 @@ sub_02031BB0: ; 0x02031BB0
 	ldr r0, [r0, #0x4b4]
 	bx ip
 	.align 2, 0
-_02031BCC: .word MAIN_BSS_0208F304
+_02031BCC: .word s_game
 _02031BD0: .word sub_02019278
 	arm_func_end sub_02031BB0
 
@@ -8103,7 +8103,7 @@ sub_02031BD4: ; 0x02031BD4
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02031BFC: .word MAIN_BSS_0208F304
+_02031BFC: .word s_game
 	arm_func_end sub_02031BD4
 
 	arm_func_start sub_02031C00
@@ -8116,7 +8116,7 @@ sub_02031C00: ; 0x02031C00
 	ldr r0, [r0, #0x4b4]
 	bx ip
 	.align 2, 0
-_02031C1C: .word MAIN_BSS_0208F304
+_02031C1C: .word s_game
 _02031C20: .word sub_02018E88
 	arm_func_end sub_02031C00
 
@@ -8133,7 +8133,7 @@ sub_02031C24: ; 0x02031C24
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02031C4C: .word MAIN_BSS_0208F304
+_02031C4C: .word s_game
 	arm_func_end sub_02031C24
 
 	arm_func_start sub_02031C50
@@ -8755,7 +8755,7 @@ _02032354:
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 	.align 2, 0
 _02032384: .word MAIN_BSS_0210CA4C
-_02032388: .word MAIN_BSS_0208F304
+_02032388: .word s_game
 
 	arm_func_start sub_0203238C
 sub_0203238C: ; 0x0203238C
@@ -9166,7 +9166,7 @@ sub_02032828: ; 0x02032828
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0203284C: .word MAIN_BSS_0208F304
+_0203284C: .word s_game
 	arm_func_end sub_02032828
 
 	arm_func_start sub_02032850
@@ -10620,7 +10620,7 @@ sub_02033968: ; 0x02033968
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02033990: .word MAIN_BSS_0208F304
+_02033990: .word s_game
 	arm_func_end sub_02033968
 
 	arm_func_start sub_02033994
@@ -10642,7 +10642,7 @@ sub_02033994: ; 0x02033994
 	and r0, r0, #1
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_020339D4: .word MAIN_BSS_0208F304
+_020339D4: .word s_game
 	arm_func_end sub_02033994
 
 	arm_func_start sub_020339D8
@@ -10671,7 +10671,7 @@ sub_020339D8: ; 0x020339D8
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02033A34: .word MAIN_BSS_0208F304
+_02033A34: .word s_game
 	arm_func_end sub_020339D8
 
 	arm_func_start sub_02033A38
@@ -10696,7 +10696,7 @@ _02033A70:
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_02033A78: .word MAIN_BSS_0208F304
+_02033A78: .word s_game
 
 	arm_func_start sub_02033A7C
 sub_02033A7C: ; 0x02033A7C
@@ -10724,7 +10724,7 @@ _02033AC8:
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02033AD0: .word MAIN_BSS_0208F304
+_02033AD0: .word s_game
 
 	arm_func_start sub_02033AD4
 sub_02033AD4: ; 0x02033AD4
@@ -10762,7 +10762,7 @@ _02033B44:
 	mov r0, #0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02033B4C: .word MAIN_BSS_0208F304
+_02033B4C: .word s_game
 
 	arm_func_start sub_02033B50
 sub_02033B50: ; 0x02033B50
@@ -21663,7 +21663,7 @@ _0203CCC0: .word DAT_0208d58c
 _0203CCC4: .word MAIN_BSS_0210CA60
 _0203CCC8: .word MAIN_BSS_0210CA74
 _0203CCCC: .word 0x00000109
-_0203CCD0: .word MAIN_BSS_0208F304
+_0203CCD0: .word s_game
 
 	arm_func_start sub_0203CCD4
 sub_0203CCD4: ; 0x0203CCD4
@@ -23136,7 +23136,7 @@ _0203E084:
 	.align 2, 0
 _0203E0E4: .word MAIN_BSS_020B26A0
 _0203E0E8: .word 0x04000210
-_0203E0EC: .word MAIN_BSS_0208F304
+_0203E0EC: .word s_game
 _0203E0F0: .word MAIN_BSS_0210CA64
 _0203E0F4: .word sub_02007784
 _0203E0F8: .word sub_02007770
@@ -23706,7 +23706,7 @@ _0203E860:
 	streq r0, [r4, #0x1a8]
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0203E91C: .word MAIN_BSS_0208F304
+_0203E91C: .word s_game
 
 	arm_func_start sub_0203E920
 sub_0203E920: ; 0x0203E920

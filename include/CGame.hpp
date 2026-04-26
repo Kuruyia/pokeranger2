@@ -64,4 +64,6 @@ public:
 
 STATIC_SIZE_ASSERT(CGame, 0x15E4);
 
+extern CGame *s_game;
+
 #endif // POKERANGER2_CGAME_HPP

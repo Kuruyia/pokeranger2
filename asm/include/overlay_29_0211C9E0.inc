@@ -34,6 +34,6 @@
 .public GX_ResetBankForSubOBJExtPltt
 .public GX_DisableBankForSubBG
 .public G2x_SetBlendAlpha_
-.public MAIN_BSS_0208F304
+.public s_game
 .public PTR_ptr_FUN_02083578_0208a804
 .public _ZTVN10__cxxabiv120__si_class_type_infoE

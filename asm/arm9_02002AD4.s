@@ -5575,7 +5575,7 @@ sub_02007714: ; 0x02007714
 	ldr r0, [r0]
 	bx ip
 	.align 2, 0
-_02007738: .word MAIN_BSS_0208F304
+_02007738: .word s_game
 _0200773C: .word _ZN5CGame12sub_020100E4EPFvvEm
 _02007740: .word sub_02007744
 	arm_func_end sub_02007714
@@ -6012,7 +6012,7 @@ sub_02007C34: ; 0x02007C34
 	ldr r1, _02007C60 ; =sub_02007C64
 	bx ip
 	.align 2, 0
-_02007C58: .word MAIN_BSS_0208F304
+_02007C58: .word s_game
 _02007C5C: .word _ZN5CGame12sub_020100E4EPFvvEm
 _02007C60: .word sub_02007C64
 	arm_func_end sub_02007C34

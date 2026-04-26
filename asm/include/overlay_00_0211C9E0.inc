@@ -430,7 +430,7 @@
 .public DAT_0208c55c
 .public DAT_0208d58c
 .public DAT_0208d694
-.public MAIN_BSS_0208F304
+.public s_game
 .public MAIN_BSS_020B2638
 .public MAIN_BSS_020B26A0
 .public MAIN_BSS_020BA604

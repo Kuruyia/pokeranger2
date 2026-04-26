@@ -113,13 +113,13 @@ _0211CB50: .word 0x04000008
 ov29_0211CB54: ; 0x0211CB54
 	stmdb sp!, {r3, lr}
 	sub sp, sp, #0x18
-	ldr r0, _0211CC40 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC40 ; =s_game
 	mov r1, #0x3c
 	ldr r0, [r0]
 	add r0, r0, #0x6c
 	add r0, r0, #0x1400
 	bl sub_02008DB4
-	ldr r0, _0211CC40 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC40 ; =s_game
 	mov r3, #0x10
 	ldr lr, [r0]
 	mov r2, #0x4000
@@ -140,18 +140,18 @@ ov29_0211CB54: ; 0x0211CB54
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
 	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
-	ldr r0, _0211CC40 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC40 ; =s_game
 	mov r1, #0
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	bl sub_0200AB28
-	ldr r0, _0211CC40 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC40 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x48c]
 	bl sub_020345D4
-	ldr r0, _0211CC40 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC40 ; =s_game
 	mov r1, #3
 	ldr r0, [r0]
 	mov r2, #0
@@ -162,7 +162,7 @@ ov29_0211CB54: ; 0x0211CB54
 	str r3, [sp]
 	mov r1, #0
 	str r1, [sp, #4]
-	ldr r0, _0211CC40 ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC40 ; =s_game
 	mov r2, #0x45
 	ldr r0, [r0]
 	add r0, r0, #0x1000
@@ -171,31 +171,31 @@ ov29_0211CB54: ; 0x0211CB54
 	add sp, sp, #0x18
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0211CC40: .word MAIN_BSS_0208F304
+_0211CC40: .word s_game
 	arm_func_end ov29_0211CB54
 
 	arm_func_start ov29_0211CC44
 ov29_0211CC44: ; 0x0211CC44
 	stmdb sp!, {r3, lr}
-	ldr r0, _0211CC8C ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC8C ; =s_game
 	mov r1, #0x1e
 	ldr r0, [r0]
 	add r0, r0, #0x6c
 	add r0, r0, #0x1400
 	bl sub_02008DB4
-	ldr r0, _0211CC8C ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC8C ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	bl _ZN17UnkClass_020091E812sub_0200AC90Ev
-	ldr r0, _0211CC8C ; =MAIN_BSS_0208F304
+	ldr r0, _0211CC8C ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	bl _ZN17UnkClass_020091E812sub_020092D4Ev
 	ldmia sp!, {r3, pc}
 	.align 2, 0
-_0211CC8C: .word MAIN_BSS_0208F304
+_0211CC8C: .word s_game
 	arm_func_end ov29_0211CC44
 
 	arm_func_start ov29_0211CC90

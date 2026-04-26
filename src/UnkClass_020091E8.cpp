@@ -34,7 +34,6 @@ extern char s_BGT_i059_NCLR_0208a890;
 extern char s_BGT_i059_00_NCLR_0208a8a0;
 extern char s_data_font_prs_jp_NCLR_0208a8b4;
 extern char s_d_0208a8cc;
-extern CGame *MAIN_BSS_0208F304;
 extern UnkClass_020B26A0 MAIN_BSS_020B26A0;
 }
 
@@ -498,7 +497,7 @@ void UnkClass_020091E8::sub_02009F28()
 {
     GX_SetVisiblePlane(GX_GetVisiblePlane() ^ (GX_PLANEMASK_OBJ | GX_PLANEMASK_BG1));
     unk_14C->sub_0200BF58();
-    MAIN_BSS_0208F304->sub_020100E4(sub_0200B6E4, 0);
+    s_game->sub_020100E4(sub_0200B6E4, 0);
 
     MIi_CpuClearFast(0x33333333, unk_0F8.unk_00.charBase, 0xE00);
     MIi_CpuClearFast(0x33333333, unk_120.unk_00.charBase, 0x380);
@@ -518,7 +517,7 @@ void UnkClass_020091E8::sub_02009FB0(u32 arg0, u32 arg1)
 
     GX_SetVisiblePlane(GX_GetVisiblePlane() ^ planeMask);
     unk_14C->sub_0200BF58();
-    MAIN_BSS_0208F304->sub_020100E4(sub_0200B6E4, 0);
+    s_game->sub_020100E4(sub_0200B6E4, 0);
 
     MIi_CpuClearFast(0x33333333, unk_0F8.unk_00.charBase, 0xE00);
     MIi_CpuClearFast(0x33333333, unk_120.unk_00.charBase, 0x380);

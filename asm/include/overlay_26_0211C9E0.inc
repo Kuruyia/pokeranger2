@@ -59,7 +59,7 @@
 .public GX_ResetBankForSubOBJExtPltt
 .public G2x_SetBlendAlpha_
 .public OS_SPrintf
-.public MAIN_BSS_0208F304
+.public s_game
 .public MAIN_BSS_0210CAB0
 .public PTR_ptr_FUN_02083578_0208a804
 .public _ZTVN10__cxxabiv120__si_class_type_infoE

@@ -7300,14 +7300,6 @@ DAT_0208e534: ; 0x0208E534
 
     .bss
 
-    .global MAIN_BSS_0208F300
-MAIN_BSS_0208F300: ; 0x0208F300
-    .space 0x4
-
-    .global MAIN_BSS_0208F304
-MAIN_BSS_0208F304: ; 0x0208F304
-    .space 0xC
-
     .global sHeapHandles
 sHeapHandles: ; 0x0208F310
     .space 0x4

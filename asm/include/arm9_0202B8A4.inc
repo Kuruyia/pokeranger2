@@ -59,7 +59,7 @@
 .public GX_SetBankForTexPltt
 .public GX_SetGraphicsMode
 .public LogInfo
-.public MAIN_BSS_0208F304
+.public s_game
 .public MAIN_BSS_020AF598
 .public MAIN_BSS_020AF5E4
 .public MAIN_BSS_020AF624

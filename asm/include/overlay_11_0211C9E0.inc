@@ -440,7 +440,7 @@
 .public WCM_Bssid_Any
 .public WCM_Essid_Any
 .public FX_SinCosTable_
-.public MAIN_BSS_0208F304
+.public s_game
 .public MAIN_BSS_020AF598
 .public MAIN_BSS_020AF5E4
 .public MAIN_BSS_020AF5F8

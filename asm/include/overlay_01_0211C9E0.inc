@@ -351,7 +351,7 @@
 .public __cxa_vec_cleanup
 .public __cxa_vec_delete
 .public FX_SinCosTable_
-.public MAIN_BSS_0208F304
+.public s_game
 .public MAIN_BSS_020B26A0
 .public MAIN_BSS_020BA6A0
 .public MAIN_BSS_020BAE7B

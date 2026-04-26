@@ -177,7 +177,7 @@
 .public __cxa_vec_delete
 .public FX_SinCosTable_
 .public DAT_0208d694
-.public MAIN_BSS_0208F304
+.public s_game
 .public MAIN_BSS_0208F31C
 .public MAIN_BSS_020B26A0
 .public MAIN_BSS_020BA6A0

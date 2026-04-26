@@ -46,7 +46,7 @@
 .public G2x_SetBlendAlpha_
 .public RTC_GetDate
 .public RTC_GetTime
-.public MAIN_BSS_0208F304
+.public s_game
 .public MAIN_BSS_020B26A0
 .public MAIN_BSS_020BA6A0
 .public MAIN_BSS_0210C1C0
