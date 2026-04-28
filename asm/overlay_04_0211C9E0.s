@@ -401,7 +401,7 @@ _0211CF1C:
 	beq _0211CF4C
 	add r1, sp, #4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0211CF4C:
 	mov r0, #0xc

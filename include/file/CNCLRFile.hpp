@@ -4,16 +4,15 @@
 #include <nitro.h>
 #include <nnsys.h>
 
+#include "CBinaryFile.hpp"
 #include "common.hpp"
 
-// TODO: This inherits from CBinaryFile
-class CNCLRFile {
+class CNCLRFile : public CBinaryFile {
 public:
     CNCLRFile(char *path, u32 arg1, u32 arg2, u32 arg3);
     virtual ~CNCLRFile();
 
 public:
-    u8 unk_00[0xB4];
     NNSG2dPaletteData *unk_B8;
 };
 

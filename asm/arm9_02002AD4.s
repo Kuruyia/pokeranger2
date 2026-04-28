@@ -511,8 +511,8 @@ sub_02003124: ; 0x02003124
 _02003138: .word ptr_s_jp_mes_0208a4d4_0208a534
 	arm_func_end sub_02003124
 
-	arm_func_start CBinaryFileMes_ctor
-CBinaryFileMes_ctor: ; 0x0200313C
+	arm_func_start _ZN14CBinaryFileMesC1EPcm
+_ZN14CBinaryFileMesC1EPcm: ; 0x0200313C
 	stmdb sp!, {r3, r4, r5, r6, lr}
 	sub sp, sp, #0x4c
 	mov r6, r0
@@ -539,7 +539,7 @@ CBinaryFileMes_ctor: ; 0x0200313C
 	bne _020031A4
 	mov r0, r6
 	bl sub_02002C9C
-	arm_func_end CBinaryFileMes_ctor
+	arm_func_end _ZN14CBinaryFileMesC1EPcm
 _020031A4:
 	mov r0, r6
 	add sp, sp, #0x4c

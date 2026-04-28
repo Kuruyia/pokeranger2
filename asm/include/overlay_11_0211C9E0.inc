@@ -21,9 +21,9 @@
 .public sub_02008DB4
 .public sub_02008E50
 .public _ZN17UnkClass_020091E812sub_020092D4Ev
-.public _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
-.public sub_0200AA84
-.public sub_0200AB28
+.public _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
+.public _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
+.public _ZN17UnkClass_020091E812sub_0200AB28Emm
 .public _ZN17UnkClass_020091E812sub_0200AC90Ev
 .public sub_0200C3D0
 .public sub_0200C408

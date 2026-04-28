@@ -1993,7 +1993,7 @@ ov22_0211E4AC: ; 0x0211E4AC
 	ldr r1, [r1, #4]
 	add r0, sp, #0
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r0, #0xc
 	bl _Znwm
 	str r0, [r7, #0xcc]
@@ -4805,7 +4805,7 @@ ov22_02120A24: ; 0x02120A24
 	beq _02120A58
 	mov r1, r5
 	mov r2, #0
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	arm_func_end ov22_02120A24
 _02120A58:
 	str r0, [r4]

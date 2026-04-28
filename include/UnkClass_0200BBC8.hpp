@@ -10,7 +10,8 @@ public:
     UnkClass_0200BBC8();
 
     void sub_0200BEBC();
-    void sub_0200BF58();
+    BOOL sub_0200BF58();
+    BOOL sub_0200BFB4();
 
 public:
     u8 unk_0000[0x163C];

@@ -532,7 +532,7 @@ _0211D054:
 	ldr r0, [r4, #0x54]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA14
+	bl _ZN17UnkClass_020091E812sub_0200AA14Ev
 	ldr r0, [r4, #0x54]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -622,12 +622,12 @@ ov9_0211D0CC: ; 0x0211D0CC
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	ldr r0, [r4, #0x54]
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AB28
+	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
 	ldr r0, [r4, #0x54]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x494]
@@ -1059,7 +1059,7 @@ ov9_0211D790: ; 0x0211D790
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA04
+	bl _ZN17UnkClass_020091E812sub_0200AA04El
 	ldr r0, [r4, #0x54]
 	ldrh r1, [r4, #0x48]
 	add r2, r0, #0x1000
@@ -1075,7 +1075,7 @@ ov9_0211D790: ; 0x0211D790
 	mov r2, #1
 	mov r0, r4
 	mov r3, r2
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0

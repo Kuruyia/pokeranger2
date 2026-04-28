@@ -3,424 +3,8 @@
 
     .text
 
-	arm_func_start _ZN17UnkClass_020091E812sub_0200A804Em
-_ZN17UnkClass_020091E812sub_0200A804Em: ; 0x0200A804
-	ldr r2, [r0, #0x120]
-	add r0, r1, #1
-	ldrb r3, [r2, r1]
-	ldrb r2, [r2, r0]
-	and r1, r3, #0xf0
-	mov r0, r1, lsl #4
-	orr r0, r0, r1, lsl #8
-	and r1, r3, #0xf
-	orr r0, r0, r1
-	mov r1, r3, lsl #0x1c
-	orr r0, r0, r1, lsr #24
-	and r1, r2, #0xf0
-	orr r0, r0, r1, lsl #24
-	orr r0, r0, r1, lsl #20
-	mov r1, r2, lsl #0x1c
-	orr r0, r0, r1, lsr #8
-	orr r0, r0, r1, lsr #12
-	bx lr
-	arm_func_end _ZN17UnkClass_020091E812sub_0200A804Em
-
-	arm_func_start _ZN17UnkClass_020091E812sub_0200A84CEv
-_ZN17UnkClass_020091E812sub_0200A84CEv: ; 0x0200A84C
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r1, [r4, #0x54]
-	cmp r1, #0
-	bne _0200A878
-	bl sub_0200A9C0
-	cmp r0, #0
-	movne r0, #1
-	strne r0, [r4, #0x9c]
-	ldreq r0, [r4, #0x74]
-	streq r0, [r4, #0x9c]
-	arm_func_end _ZN17UnkClass_020091E812sub_0200A84CEv
-_0200A878:
-	ldr r0, [r4, #0x50]
-	cmp r0, #3
-	beq _0200A898
-	cmp r0, #4
-	beq _0200A8F0
-	cmp r0, #5
-	beq _0200A948
-	ldmia sp!, {r4, pc}
-_0200A898:
-	mov r0, r4
-	bl _ZN17UnkClass_020091E812sub_0200A97CEv
-	cmp r0, #0
-	bne _0200A8B4
-	ldr r0, [r4, #0x58]
-	cmp r0, #1
-	ldmneia sp!, {r4, pc}
-_0200A8B4:
-	mov r0, #6
-	str r0, [r4, #0x50]
-	mov r0, #0
-	str r0, [r4, #0xb0]
-	ldr r1, [r4, #0x5c]
-	mov r0, r4
-	str r1, [r4, #0x60]
-	mov r1, #5
-	bl _ZN17UnkClass_020091E812sub_0200AA68Em
-	ldr r0, [r4, #0x58]
-	cmp r0, #0
-	ldmneia sp!, {r4, pc}
-	ldr r0, [r4, #0x14c]
-	bl sub_0200BFB4
-	ldmia sp!, {r4, pc}
-_0200A8F0:
-	mov r0, r4
-	bl _ZN17UnkClass_020091E812sub_0200A97CEv
-	cmp r0, #0
-	bne _0200A90C
-	ldr r0, [r4, #0x58]
-	cmp r0, #1
-	ldmneia sp!, {r4, pc}
-_0200A90C:
-	mov r0, #7
-	str r0, [r4, #0x50]
-	mov r0, #0
-	str r0, [r4, #0xb0]
-	ldr r1, [r4, #0x5c]
-	mov r0, r4
-	str r1, [r4, #0x60]
-	mov r1, #5
-	bl _ZN17UnkClass_020091E812sub_0200AA68Em
-	ldr r0, [r4, #0x58]
-	cmp r0, #0
-	ldmneia sp!, {r4, pc}
-	ldr r0, [r4, #0x14c]
-	bl _ZN17UnkClass_0200BBC812sub_0200BF58Ev
-	ldmia sp!, {r4, pc}
-_0200A948:
-	ldr r0, [r4, #0x64]
-	cmp r0, #1
-	ldmneia sp!, {r4, pc}
-	ldr r0, [r4, #0x6c]
-	cmp r0, #0
-	subne r0, r0, #1
-	strne r0, [r4, #0x6c]
-	ldmneia sp!, {r4, pc}
-	mov r1, #1
-	mov r0, r4
-	mov r2, r1
-	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
-	ldmia sp!, {r4, pc}
-
-	arm_func_start _ZN17UnkClass_020091E812sub_0200A97CEv
-_ZN17UnkClass_020091E812sub_0200A97CEv: ; 0x0200A97C
-	ldr r1, [r0, #0x88]
-	ldrh r2, [r1, #2]
-	and r1, r2, #1
-	mov r1, r1, lsl #0x10
-	movs r1, r1, lsr #0x10
-	bne _0200A9B0
-	and r1, r2, #2
-	mov r1, r1, lsl #0x10
-	movs r1, r1, lsr #0x10
-	ldreq r0, [r0, #0x8c]
-	ldreqb r0, [r0, #4]
-	cmpeq r0, #0
-	beq _0200A9B8
-	arm_func_end _ZN17UnkClass_020091E812sub_0200A97CEv
-_0200A9B0:
-	mov r0, #1
-	bx lr
-_0200A9B8:
-	mov r0, #0
-	bx lr
-
-	arm_func_start sub_0200A9C0
-sub_0200A9C0: ; 0x0200A9C0
-	ldr r1, [r0, #0x88]
-	ldrh r2, [r1]
-	and r1, r2, #1
-	mov r1, r1, lsl #0x10
-	movs r1, r1, lsr #0x10
-	bne _0200A9F4
-	and r1, r2, #2
-	mov r1, r1, lsl #0x10
-	movs r1, r1, lsr #0x10
-	ldreq r0, [r0, #0x8c]
-	ldreqb r0, [r0, #5]
-	cmpeq r0, #0
-	beq _0200A9FC
-	arm_func_end sub_0200A9C0
-_0200A9F4:
-	mov r0, #1
-	bx lr
-_0200A9FC:
-	mov r0, #0
-	bx lr
-
-	arm_func_start sub_0200AA04
-sub_0200AA04: ; 0x0200AA04
-	mov r2, #1
-	str r2, [r0, #0x54]
-	str r1, [r0, #0x9c]
-	bx lr
-	arm_func_end sub_0200AA04
-
-	arm_func_start sub_0200AA14
-sub_0200AA14: ; 0x0200AA14
-	mov r1, #0
-	str r1, [r0, #0x54]
-	ldr r1, [r0, #0x74]
-	str r1, [r0, #0x9c]
-	bx lr
-	arm_func_end sub_0200AA14
-
-	arm_func_start sub_0200AA28
-sub_0200AA28: ; 0x0200AA28
-	mov r2, #1
-	str r2, [r0, #0x58]
-	str r1, [r0, #0x5c]
-	bx lr
-	arm_func_end sub_0200AA28
-
-	arm_func_start sub_0200AA38
-sub_0200AA38: ; 0x0200AA38
-	mov r1, #0
-	str r1, [r0, #0x58]
-	str r1, [r0, #0x5c]
-	bx lr
-	arm_func_end sub_0200AA38
-
-	arm_func_start sub_0200AA48
-sub_0200AA48: ; 0x0200AA48
-	mov r2, #1
-	str r2, [r0, #0x64]
-	str r1, [r0, #0x68]
-	bx lr
-	arm_func_end sub_0200AA48
-
-	arm_func_start sub_0200AA58
-sub_0200AA58: ; 0x0200AA58
-	mov r1, #0
-	str r1, [r0, #0x64]
-	str r1, [r0, #0x68]
-	bx lr
-	arm_func_end sub_0200AA58
-
-	arm_func_start _ZN17UnkClass_020091E812sub_0200AA68Em
-_ZN17UnkClass_020091E812sub_0200AA68Em: ; 0x0200AA68
-	stmdb sp!, {r3, lr}
-	ldr r0, [r0, #0x90]
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	bl sub_02034C44
-	ldmia sp!, {r3, pc}
-	arm_func_end _ZN17UnkClass_020091E812sub_0200AA68Em
-
-	arm_func_start sub_0200AA84
-sub_0200AA84: ; 0x0200AA84
-	stmdb sp!, {r3, lr}
-	ldr lr, [sp, #8]
-	ldr ip, [sp, #0xc]
-	cmp r1, #4
-	addls pc, pc, r1, lsl #2
-	ldmia sp!, {r3, pc}
-_0200AA9C: ; jump table
-	b _0200AAB0 ; case 0
-	b _0200AAC8 ; case 1
-	b _0200AAE0 ; case 2
-	b _0200AAF8 ; case 3
-	b _0200AB10 ; case 4
-	arm_func_end sub_0200AA84
-_0200AAB0:
-	mov r1, r2
-	mov r2, r3
-	mov r3, lr
-	str ip, [sp]
-	bl sub_0200AD34
-	ldmia sp!, {r3, pc}
-_0200AAC8:
-	mov r1, r2
-	mov r2, r3
-	mov r3, lr
-	str ip, [sp]
-	bl sub_0200AF74
-	ldmia sp!, {r3, pc}
-_0200AAE0:
-	mov r1, r2
-	mov r2, r3
-	mov r3, lr
-	str ip, [sp]
-	bl sub_0200B1D0
-	ldmia sp!, {r3, pc}
-_0200AAF8:
-	mov r1, r2
-	mov r2, r3
-	mov r3, lr
-	str ip, [sp]
-	bl sub_0200B410
-	ldmia sp!, {r3, pc}
-_0200AB10:
-	mov r1, r2
-	mov r2, r3
-	mov r3, lr
-	str ip, [sp]
-	bl sub_0200B640
-	ldmia sp!, {r3, pc}
-
-	arm_func_start sub_0200AB28
-sub_0200AB28: ; 0x0200AB28
-	stmdb sp!, {r4, r5, r6, r7, r8, lr}
-	sub sp, sp, #0x40
-	mov r8, r0
-	ldr r2, [r8, #4]
-	mov r7, r1
-	cmp r2, #0
-	beq _0200AB58
-	ldr r1, [r8, #0x18]
-	cmp r1, r7
-	addeq sp, sp, #0x40
-	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
-	bl _ZN17UnkClass_020091E812sub_0200AC90Ev
-	arm_func_end sub_0200AB28
-_0200AB58:
-	cmp r7, #0
-	add r0, sp, #0
-	bne _0200AB70
-	ldr r1, _0200AC88 ; =s_data_message_system_system_mes_0208a8d0
-	bl OS_SPrintf
-	b _0200AB7C
-_0200AB70:
-	ldr r1, _0200AC8C ; =s_data_message_system_system_03d_m_0208a8f0
-	mov r2, r7
-	bl OS_SPrintf
-_0200AB7C:
-	mov r0, #0xb8
-	bl _Znwm
-	movs r6, r0
-	beq _0200AB9C
-	add r1, sp, #0
-	mov r2, #1
-	bl CBinaryFileMes_ctor
-	mov r6, r0
-_0200AB9C:
-	mov r0, #0xc
-	bl _Znwm
-	str r0, [r8, #4]
-	ldr r1, [r6, #0x4c]
-	mov r4, #2
-	ldr r1, [r1]
-	str r1, [r0]
-	ldr r1, [r6, #0x4c]
-	ldr r0, [r8, #4]
-	ldr r1, [r1, #4]
-	str r1, [r0, #4]
-	ldr r0, [r8, #4]
-	ldr r0, [r0, #4]
-	mov r0, r0, lsl #3
-	bl _Znam
-	ldr r1, [r8, #4]
-	mov r5, #0
-	str r0, [r1, #8]
-	ldr r2, [r8, #4]
-	ldr r0, [r2, #4]
-	cmp r0, #0
-	bls _0200AC64
-_0200ABF4:
-	ldr r1, [r6, #0x4c]
-	ldr r0, [r2, #8]
-	ldr r1, [r1, r4, lsl #2]
-	add r4, r4, #1
-	str r1, [r0, r5, lsl #3]
-	ldr r0, [r8, #4]
-	ldr r0, [r0, #8]
-	ldr r0, [r0, r5, lsl #3]
-	bl _Znam
-	ldr r1, [r8, #4]
-	ldr r1, [r1, #8]
-	add r1, r1, r5, lsl #3
-	str r0, [r1, #4]
-	ldr r1, [r8, #4]
-	ldr r0, [r6, #0x4c]
-	ldr r2, [r1, #8]
-	add r0, r0, r4, lsl #2
-	add r1, r2, r5, lsl #3
-	ldr r1, [r1, #4]
-	ldr r2, [r2, r5, lsl #3]
-	bl MIi_CpuCopyFast
-	ldr r2, [r8, #4]
-	ldmib r2, {r0, r1}
-	ldr r1, [r1, r5, lsl #3]
-	add r5, r5, #1
-	cmp r5, r0
-	add r4, r4, r1, lsr #2
-	blo _0200ABF4
-_0200AC64:
-	cmp r6, #0
-	beq _0200AC7C
-	mov r0, r6
-	ldr r1, [r0]
-	ldr r1, [r1, #4]
-	blx r1
-_0200AC7C:
-	str r7, [r8, #0x18]
-	add sp, sp, #0x40
-	ldmia sp!, {r4, r5, r6, r7, r8, pc}
-	.align 2, 0
-_0200AC88: .word s_data_message_system_system_mes_0208a8d0
-_0200AC8C: .word s_data_message_system_system_03d_m_0208a8f0
-
-	arm_func_start _ZN17UnkClass_020091E812sub_0200AC90Ev
-_ZN17UnkClass_020091E812sub_0200AC90Ev: ; 0x0200AC90
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r5, r0
-	mvn r0, #0
-	str r0, [r5, #0x18]
-	ldr r1, [r5, #4]
-	cmp r1, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	ldr r0, [r1, #4]
-	mov r4, #0
-	cmp r0, #0
-	bls _0200ACFC
-	mov r6, r4
-	arm_func_end _ZN17UnkClass_020091E812sub_0200AC90Ev
-_0200ACC0:
-	ldr r0, [r1, #8]
-	add r0, r0, r4, lsl #3
-	ldr r0, [r0, #4]
-	cmp r0, #0
-	beq _0200ACE8
-	bl _ZdaPv
-	ldr r0, [r5, #4]
-	ldr r0, [r0, #8]
-	add r0, r0, r4, lsl #3
-	str r6, [r0, #4]
-_0200ACE8:
-	ldr r1, [r5, #4]
-	add r4, r4, #1
-	ldr r0, [r1, #4]
-	cmp r4, r0
-	blo _0200ACC0
-_0200ACFC:
-	ldr r0, [r1, #8]
-	cmp r0, #0
-	beq _0200AD18
-	bl _ZdaPv
-	ldr r0, [r5, #4]
-	mov r1, #0
-	str r1, [r0, #8]
-_0200AD18:
-	ldr r0, [r5, #4]
-	cmp r0, #0
-	ldmeqia sp!, {r4, r5, r6, pc}
-	bl _ZdlPv
-	mov r0, #0
-	str r0, [r5, #4]
-	ldmia sp!, {r4, r5, r6, pc}
-
-	arm_func_start sub_0200AD34
-sub_0200AD34: ; 0x0200AD34
+	arm_func_start _ZN17UnkClass_020091E812sub_0200AD34Emmmm
+_ZN17UnkClass_020091E812sub_0200AD34Emmmm: ; 0x0200AD34
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	ldr ip, [r5, #4]
@@ -440,7 +24,7 @@ sub_0200AD34: ; 0x0200AD34
 	str r0, [r5, #0x150]
 	str r4, [r5, #0x154]
 	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0200AD34
+	arm_func_end _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 
 	arm_func_start sub_0200AD80
 sub_0200AD80: ; 0x0200AD80
@@ -468,7 +52,7 @@ _0200ADB0:
 	beq _0200ADE0
 	add r1, sp, #0
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0200ADE0:
 	mov r0, #0xc
@@ -585,8 +169,8 @@ _0200AF58:
 	str r0, [r5, #8]
 	ldmia sp!, {r4, r5, r6, pc}
 
-	arm_func_start sub_0200AF74
-sub_0200AF74: ; 0x0200AF74
+	arm_func_start _ZN17UnkClass_020091E812sub_0200AF74Emmmm
+_ZN17UnkClass_020091E812sub_0200AF74Emmmm: ; 0x0200AF74
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	ldr ip, [r5, #8]
@@ -606,7 +190,7 @@ sub_0200AF74: ; 0x0200AF74
 	str r0, [r5, #0x150]
 	str r4, [r5, #0x154]
 	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0200AF74
+	arm_func_end _ZN17UnkClass_020091E812sub_0200AF74Emmmm
 
 	arm_func_start sub_0200AFC0
 sub_0200AFC0: ; 0x0200AFC0
@@ -642,7 +226,7 @@ _0200B018:
 	beq _0200B038
 	add r1, sp, #0
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0200B038:
 	mov r0, #0xc
@@ -760,8 +344,8 @@ _0200B1B4:
 	str r0, [r5, #0xc]
 	ldmia sp!, {r4, r5, r6, pc}
 
-	arm_func_start sub_0200B1D0
-sub_0200B1D0: ; 0x0200B1D0
+	arm_func_start _ZN17UnkClass_020091E812sub_0200B1D0Emmmm
+_ZN17UnkClass_020091E812sub_0200B1D0Emmmm: ; 0x0200B1D0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	ldr ip, [r5, #0xc]
@@ -781,7 +365,7 @@ sub_0200B1D0: ; 0x0200B1D0
 	str r0, [r5, #0x150]
 	str r4, [r5, #0x154]
 	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0200B1D0
+	arm_func_end _ZN17UnkClass_020091E812sub_0200B1D0Emmmm
 
 	arm_func_start sub_0200B21C
 sub_0200B21C: ; 0x0200B21C
@@ -809,7 +393,7 @@ _0200B24C:
 	beq _0200B27C
 	add r1, sp, #0
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0200B27C:
 	mov r0, #0xc
@@ -926,8 +510,8 @@ _0200B3F4:
 	str r0, [r5, #0x10]
 	ldmia sp!, {r4, r5, r6, pc}
 
-	arm_func_start sub_0200B410
-sub_0200B410: ; 0x0200B410
+	arm_func_start _ZN17UnkClass_020091E812sub_0200B410Emmmm
+_ZN17UnkClass_020091E812sub_0200B410Emmmm: ; 0x0200B410
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	ldr ip, [r5, #0x10]
@@ -947,7 +531,7 @@ sub_0200B410: ; 0x0200B410
 	str r0, [r5, #0x150]
 	str r4, [r5, #0x154]
 	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0200B410
+	arm_func_end _ZN17UnkClass_020091E812sub_0200B410Emmmm
 
 	arm_func_start sub_0200B45C
 sub_0200B45C: ; 0x0200B45C
@@ -971,7 +555,7 @@ _0200B47C:
 	beq _0200B4AC
 	add r1, sp, #0
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0200B4AC:
 	mov r0, #0xc
@@ -1088,8 +672,8 @@ _0200B624:
 	str r0, [r5, #0x14]
 	ldmia sp!, {r4, r5, r6, pc}
 
-	arm_func_start sub_0200B640
-sub_0200B640: ; 0x0200B640
+	arm_func_start _ZN17UnkClass_020091E812sub_0200B640Emmmm
+_ZN17UnkClass_020091E812sub_0200B640Emmmm: ; 0x0200B640
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	ldr ip, [r5, #0x14]
@@ -1109,7 +693,7 @@ sub_0200B640: ; 0x0200B640
 	str r0, [r5, #0x150]
 	str r4, [r5, #0x154]
 	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end sub_0200B640
+	arm_func_end _ZN17UnkClass_020091E812sub_0200B640Emmmm
 
 	arm_func_start sub_0200B68C
 sub_0200B68C: ; 0x0200B68C
@@ -1804,15 +1388,15 @@ _0200BF98:
 	blt _0200BF98
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
-	arm_func_start sub_0200BFB4
-sub_0200BFB4: ; 0x0200BFB4
+	arm_func_start _ZN17UnkClass_0200BBC812sub_0200BFB4Ev
+_ZN17UnkClass_0200BBC812sub_0200BFB4Ev: ; 0x0200BFB4
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	mov r8, r0
 	mov r4, #0
 	mov r5, r8
 	mov r6, r4
 	add r7, r8, #4
-	arm_func_end sub_0200BFB4
+	arm_func_end _ZN17UnkClass_0200BBC812sub_0200BFB4Ev
 _0200BFCC:
 	ldr r0, [r5, #8]
 	cmp r0, #0xf

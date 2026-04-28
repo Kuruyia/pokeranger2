@@ -5,7 +5,7 @@
 .public _ZdaPv
 .public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 .public _ZN19CSmartNNSFndArchiveD1Ev
-.public CBinaryFileMes_ctor
+.public _ZN14CBinaryFileMesC1EPcm
 .public _ZN9CNCLRFileC1EPcmmm
 .public _ZN9CNSCRFileC1EPcmmm
 .public _ZN11CBGNCGRFileC1EPcmmm

@@ -2157,7 +2157,7 @@ _02018268:
 	beq _02018288
 	ldr r1, _02018370 ; =s_data_message_etc_pokemon_name_0208b778
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _02018288:
 	mov r0, #0xc
@@ -2287,7 +2287,7 @@ _02018428:
 	beq _02018448
 	ldr r1, _02018530 ; =s_data_message_etc_item_name_0208b798
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _02018448:
 	mov r0, #0xc
@@ -2417,7 +2417,7 @@ _020185E8:
 	beq _02018608
 	ldr r1, _020186F0 ; =s_data_message_etc_yakumono_name_0208b7b4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _02018608:
 	mov r0, #0xc
@@ -2547,7 +2547,7 @@ _020187A8:
 	beq _020187C8
 	ldr r1, _020188B0 ; =s_data_message_etc_npc_name_0208b7d4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _020187C8:
 	mov r0, #0xc
@@ -2677,7 +2677,7 @@ _02018968:
 	beq _02018988
 	ldr r1, _02018A70 ; =s_data_message_etc_fieldwaza_name_0208b7f0
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _02018988:
 	mov r0, #0xc
@@ -6438,7 +6438,7 @@ _0201BB6C:
 	beq _0201BB8C
 	ldr r1, _0201C318 ; =s_data_message_etc_place_name_0208baa4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r7, r0
 _0201BB8C:
 	mov r0, #0xc
@@ -6510,7 +6510,7 @@ _0201BC78:
 	beq _0201BC98
 	ldr r1, _0201C31C ; =s_data_message_etc_yakumono_info_0208bac4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0201BC98:
 	mov r0, #0xc
@@ -6582,7 +6582,7 @@ _0201BD84:
 	beq _0201BDA4
 	ldr r1, _0201C320 ; =s_data_message_etc_menu_mes_0208bae4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0201BDA4:
 	mov r0, #0xc
@@ -7825,7 +7825,7 @@ _0201CED0:
 	beq _0201CEF0
 	ldr r1, _0201D57C ; =s_data_message_etc_pokemon_info_0208bbd4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r8, r0
 _0201CEF0:
 	mov r0, #0xc
@@ -7893,7 +7893,7 @@ _0201CFD0:
 	beq _0201CFF0
 	ldr r1, _0201D580 ; =s_data_message_etc_menu_mes_0208bbf4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r7, r0
 _0201CFF0:
 	mov r0, #0xc
@@ -7961,7 +7961,7 @@ _0201D0D0:
 	beq _0201D0F0
 	ldr r1, _0201D584 ; =s_data_message_etc_assist_mes_0208bc10
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r7, r0
 _0201D0F0:
 	mov r0, #0xc
@@ -8380,7 +8380,7 @@ _0201D6E4:
 	beq _0201D704
 	ldr r1, _0201DF2C ; =s_data_message_etc_pokemon_info_0208bbd4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r7, r0
 _0201D704:
 	mov r0, #0xc
@@ -8452,7 +8452,7 @@ _0201D7F0:
 	beq _0201D810
 	ldr r1, _0201DF30 ; =s_data_message_etc_menu_mes_0208bbf4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0201D810:
 	mov r0, #0xc
@@ -8524,7 +8524,7 @@ _0201D8FC:
 	beq _0201D91C
 	ldr r1, _0201DF34 ; =s_data_message_etc_assist_mes_0208bc10
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0201D91C:
 	mov r0, #0xc
@@ -12907,7 +12907,7 @@ sub_020214E4: ; 0x020214E4
 	beq _02021514
 	mov r1, r4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 	arm_func_end sub_020214E4
 _02021514:
@@ -17290,7 +17290,7 @@ sub_02024D00: ; 0x02024D00
 	beq _02024D2C
 	ldr r1, _02025038 ; =s_data_message_etc_menu_mes_0208bf14
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 	arm_func_end sub_02024D00
 _02024D2C:
@@ -18163,7 +18163,7 @@ _020258F8:
 	beq _02025994
 	ldr r1, _02026120 ; =s_data_message_etc_menu_mes_0208bfdc
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _02025994:
 	mov r0, #0xc
@@ -18793,7 +18793,7 @@ _0202621C:
 	beq _020262B8
 	ldr r1, _02026938 ; =s_data_message_etc_menu_mes_0208bfdc
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r7, r0
 _020262B8:
 	mov r0, #0xc
@@ -20270,7 +20270,7 @@ sub_020277AC: ; 0x020277AC
 	ldr r0, [r5, #0x14]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA14
+	bl _ZN17UnkClass_020091E812sub_0200AA14Ev
 	ldr r0, [r5, #0x14]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -20498,7 +20498,7 @@ sub_02027A94: ; 0x02027A94
 	bge _02027AE8
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA14
+	bl _ZN17UnkClass_020091E812sub_0200AA14Ev
 	ldr r0, [r7, #0x14]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -20517,7 +20517,7 @@ _02027AE8:
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA04
+	bl _ZN17UnkClass_020091E812sub_0200AA04El
 	str r4, [sp]
 	ldr r0, [r7, #0x14]
 	ldr r1, [r6]
@@ -20525,7 +20525,7 @@ _02027AE8:
 	ldr r0, [r0, #0x490]
 	ldr r3, [r6, #8]
 	mov r2, r5
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
 	arm_func_start sub_02027B34

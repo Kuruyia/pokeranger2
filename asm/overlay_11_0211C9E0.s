@@ -26116,7 +26116,7 @@ _02131FA4:
 	mov r2, #0x45
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #0xe
 	str r0, [r4, #8]
 _02132000:
@@ -26276,13 +26276,13 @@ _021321D0:
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	ldr r0, _0213245C ; =s_game
 	mov r1, #0
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AB28
+	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
 	mov r0, #0x64
 	bl _Znwm
 	cmp r0, #0

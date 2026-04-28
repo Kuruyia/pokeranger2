@@ -3647,7 +3647,7 @@ ov27_0211FA84: ; 0x0211FA84
 	beq _0211FAB8
 	mov r1, r5
 	mov r2, #0
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	arm_func_end ov27_0211FA84
 _0211FAB8:
 	str r0, [r4]

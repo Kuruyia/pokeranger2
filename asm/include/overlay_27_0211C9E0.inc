@@ -6,7 +6,7 @@
 .public _Z9Heap_FreePv
 .public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 .public _ZN19CSmartNNSFndArchiveD1Ev
-.public CBinaryFileMes_ctor
+.public _ZN14CBinaryFileMesC1EPcm
 .public sub_02003718
 .public sub_0200372C
 .public sub_02003788

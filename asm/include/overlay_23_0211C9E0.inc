@@ -5,7 +5,7 @@
 .public _ZdaPv
 .public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 .public _ZN19CSmartNNSFndArchiveD1Ev
-.public CBinaryFileMes_ctor
+.public _ZN14CBinaryFileMesC1EPcm
 .public _ZN9CNCLRFileC1EPcmmm
 .public _ZN9CNSCRFileC1EPcmmm
 .public _ZN11CBGNCGRFileC1EPcmmm
@@ -14,7 +14,7 @@
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public _ZN17UnkClass_020091E812sub_020092D4Ev
-.public _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+.public _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 .public sub_0200C3D0
 .public sub_0200C408
 .public sub_0200C680

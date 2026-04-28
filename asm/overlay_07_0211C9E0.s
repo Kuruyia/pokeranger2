@@ -602,7 +602,7 @@ _0211D14C:
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA04
+	bl _ZN17UnkClass_020091E812sub_0200AA04El
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}
 _0211D184:
@@ -941,7 +941,7 @@ ov7_0211D62C: ; 0x0211D62C
 	ldr r0, [r4, #0x27c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA14
+	bl _ZN17UnkClass_020091E812sub_0200AA14Ev
 	ldr r0, [r4, #0x27c]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -1208,12 +1208,12 @@ _0211D9A0:
 	ldr r1, [r4, #0x14]
 	ldr r2, [r4, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	ldr r0, [sl, #0x27c]
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AB28
+	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
 	mov r0, #0x100
 	str r0, [sp]
 	ldr r3, _0211DFEC ; =s_mr000_overlay_7_0211f7d0
@@ -2974,7 +2974,7 @@ ov7_0211F1FC: ; 0x0211F1FC
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA04
+	bl _ZN17UnkClass_020091E812sub_0200AA04El
 	ldr r0, [sp, #0x1c]
 	ldr r2, [sp, #0x18]
 	str r0, [sp]
@@ -2983,7 +2983,7 @@ ov7_0211F1FC: ; 0x0211F1FC
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r3, r7
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 	cmp r4, #0
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
 	cmp r4, #1

@@ -342,7 +342,7 @@ ov6_0211CE24: ; 0x0211CE24
 	ldr r1, [r4, #0x14]
 	ldr r2, [r4, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	ldr r0, [r7, #0x70]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -361,7 +361,7 @@ ov6_0211CE24: ; 0x0211CE24
 	beq _0211CEC8
 	ldr r1, _0211D450 ; =s_data_message_etc_menu_mes_overlay_6_0211dcb0
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 	arm_func_end ov6_0211CE24
 _0211CEC8:
@@ -713,12 +713,12 @@ _0211D3C0:
 	mov r1, #2
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AB28
+	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
 	ldr r0, [r7, #0x70]
 	ldr r1, [r7, #0x80]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA04
+	bl _ZN17UnkClass_020091E812sub_0200AA04El
 	mov r3, #0
 	str r3, [sp]
 	ldr r0, [r7, #0x70]
@@ -726,7 +726,7 @@ _0211D3C0:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, #1
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 	add sp, sp, #0x18
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 	.align 2, 0
@@ -1193,7 +1193,7 @@ _0211DAAC:
 	ldr r1, [r4, #0x80]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA04
+	bl _ZN17UnkClass_020091E812sub_0200AA04El
 	mov r3, #0
 	str r3, [sp]
 	ldr r0, [r4, #0x70]
@@ -1201,7 +1201,7 @@ _0211DAAC:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r2, #1
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 	mvn r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
 _0211DB10:

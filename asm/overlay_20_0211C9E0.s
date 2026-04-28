@@ -108,7 +108,7 @@ _0211CB1C:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA14
+	bl _ZN17UnkClass_020091E812sub_0200AA14Ev
 	mov r3, #1
 	str r3, [sp]
 	mov r1, #0
@@ -118,7 +118,7 @@ _0211CB1C:
 	mov r2, #0x1e
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #1
 	str r0, [r4, #8]
 	b _0211CCE8
@@ -133,7 +133,7 @@ _0211CB70:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA14
+	bl _ZN17UnkClass_020091E812sub_0200AA14Ev
 	mov r3, #1
 	str r3, [sp]
 	mov r1, #0
@@ -143,7 +143,7 @@ _0211CB70:
 	mov r2, #0x21
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #3
 	b _0211CC0C
 _0211CBCC:
@@ -151,7 +151,7 @@ _0211CBCC:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA14
+	bl _ZN17UnkClass_020091E812sub_0200AA14Ev
 	mov r3, #1
 	str r3, [sp]
 	mov r1, #0
@@ -161,7 +161,7 @@ _0211CBCC:
 	mov r2, #0x56
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #2
 _0211CC0C:
 	str r0, [r4, #8]
@@ -355,14 +355,14 @@ ov20_0211CE54: ; 0x0211CE54
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	bl sub_02007D68
 	ldr r0, _0211CF2C ; =s_game
 	mov r1, #0
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AB28
+	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
 	ldr r0, _0211CF2C ; =s_game
 	mov r1, #3
 	ldr r0, [r0]

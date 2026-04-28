@@ -9,7 +9,7 @@
 .public CARD_UnlockBackup
 .public CARD_WaitBackupAsync
 .public CARDi_RequestStreamCommand
-.public CBinaryFileMes_ctor
+.public _ZN14CBinaryFileMesC1EPcm
 .public DAT_02084574
 .public DAT_0208461c
 .public DAT_02084670
@@ -355,9 +355,9 @@
 .public sub_02008E50
 .public _ZN17UnkClass_020091E812sub_02009ECCEv
 .public _ZN17UnkClass_020091E812sub_02009FB0Emm
-.public sub_0200AA04
-.public sub_0200AA14
-.public sub_0200AD34
+.public _ZN17UnkClass_020091E812sub_0200AA04El
+.public _ZN17UnkClass_020091E812sub_0200AA14Ev
+.public _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 .public sub_0200B6A4
 .public sub_0200B6D4
 .public sub_0200CAE0

@@ -5,16 +5,19 @@
 #include <string.h>
 
 #include "CGame.hpp"
+#include "CTouchPanel.hpp"
+#include "UnkClass_02001C04.hpp"
 #include "UnkClass_020B26A0.hpp"
 #include "UnkUnion_020843E0.hpp"
 #include "file/CBGNCGRFile.hpp"
+#include "file/CBinaryFileMes.hpp"
 #include "file/CNCLRFile.hpp"
 #include "file/CNSCRFile.hpp"
 #include "file/CSmartNNSFndArchive.hpp"
 
 extern "C" {
 void sub_0200B6E4(void);
-void sub_0200BC64(UnkClass_0200BBC8 *, u32, u32, u32, void *, u32, u32, u32);
+void sub_0200BC64(UnkClass_0200BBC8 *, u32, UnkClass_02001C04 *, CTouchPanel *, void *, u32, u32, u32);
 void sub_0200BE28(UnkClass_0200BBC8 *, u32, u32, u32, u32);
 void sub_0200C060(UnkClass_0200BBC8 *);
 u8 *sub_02018B10(void *, u32);
@@ -22,6 +25,7 @@ u8 *sub_02018B2C(void *, u32);
 u8 *sub_02018B48(void *, u32);
 u8 *sub_02018B64(void *, u32);
 u8 *sub_02018B80(void *, u32);
+BOOL sub_02034C44(void *, u32);
 void sub_02034CF4(void *, u32, u32);
 
 extern u8 DAT_020843c8;
@@ -34,6 +38,8 @@ extern char s_BGT_i059_NCLR_0208a890;
 extern char s_BGT_i059_00_NCLR_0208a8a0;
 extern char s_data_font_prs_jp_NCLR_0208a8b4;
 extern char s_d_0208a8cc;
+extern char s_data_message_system_system_mes_0208a8d0;
+extern char s_data_message_system_system_03d_m_0208a8f0;
 extern UnkClass_020B26A0 MAIN_BSS_020B26A0;
 }
 
@@ -104,7 +110,7 @@ void UnkClass_020091E8::sub_020092D4()
     unk_02C = NULL;
 }
 
-void UnkClass_020091E8::sub_02009328(u32 arg0, u32 arg1, NNSG2dFont *arg2, void *arg3, u32 arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8)
+void UnkClass_020091E8::sub_02009328(UnkClass_02001C04 *arg0, CTouchPanel *arg1, NNSG2dFont *arg2, void *arg3, u32 arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8)
 {
     sub_020092D4();
 
@@ -507,7 +513,7 @@ void UnkClass_020091E8::sub_02009F28()
     unk_078 = 0;
 }
 
-void UnkClass_020091E8::sub_02009FB0(u32 arg0, u32 arg1)
+BOOL UnkClass_020091E8::sub_02009FB0(u32 arg0, u32 arg1)
 {
     u32 planeMask = GX_PLANEMASK_BG1;
 
@@ -530,16 +536,18 @@ void UnkClass_020091E8::sub_02009FB0(u32 arg0, u32 arg1)
     unk_064 = 0;
     unk_068 = 0;
     unk_06C = 0x3C;
-    unk_09C = unk_074;
+
+    BOOL v0 = unk_074;
+    unk_09C = v0;
     unk_0A0 = 0;
     unk_078 = 0;
     unk_04C = 0;
 
     if (arg0 == 0) {
-        return;
+        return v0;
     }
 
-    sub_0200AA68(3);
+    return sub_0200AA68(3);
 }
 
 void UnkClass_020091E8::sub_0200A088(u32 arg0)
@@ -817,4 +825,241 @@ LOOP:
     }
 
     return unk_050;
+}
+
+u32 UnkClass_020091E8::sub_0200A804(int arg0)
+{
+    u8 v0 = unk_120.unk_00.charBase[arg0];
+    u8 v1 = unk_120.unk_00.charBase[arg0 + 1];
+    u32 res;
+
+    res = (v0 & 0xF0) << 8;
+    res |= (v0 & 0xF0) << 4;
+    res |= (v0 & 0x0F);
+    res |= (v0 & 0x0F) << 4;
+
+    res |= (v1 & 0xF0) << 0x18;
+    res |= (v1 & 0xF0) << 0x14;
+    res |= (v1 & 0x0F) << 0x14;
+    res |= (v1 & 0x0F) << 0x10;
+
+    return res;
+}
+
+BOOL UnkClass_020091E8::sub_0200A84C()
+{
+    if (unk_054 == 0) {
+        if (sub_0200A9C0()) {
+            unk_09C = 1;
+        } else {
+            unk_09C = unk_074;
+        }
+    }
+
+    switch (unk_050) {
+    case 3:
+        if (!sub_0200A97C() && unk_058 != 1) {
+            return unk_058;
+        }
+
+        unk_050 = 6;
+        unk_0B0 = 0;
+        unk_060 = unk_05C;
+
+        sub_0200AA68(5);
+
+        if (unk_058 != 0) {
+            return unk_058;
+        }
+
+        return unk_14C->sub_0200BFB4();
+
+    case 4:
+        if (!sub_0200A97C() && unk_058 != 1) {
+            return unk_058;
+        }
+
+        unk_050 = 7;
+        unk_0B0 = 0;
+        unk_060 = unk_05C;
+
+        sub_0200AA68(5);
+
+        if (unk_058 != 0) {
+            return unk_058;
+        }
+
+        return unk_14C->sub_0200BF58();
+
+    case 5:
+        if (unk_064 != 1) {
+            return unk_064;
+        }
+
+        if (unk_06C != 0) {
+            --unk_06C;
+            return unk_06C;
+        }
+
+        return sub_02009FB0(1, 1);
+
+    default:
+        return unk_050;
+    }
+
+    return unk_050;
+}
+
+BOOL UnkClass_020091E8::sub_0200A97C()
+{
+    if ((u16)(unk_088->unk_0002 & 0x1) != 0 || (u16)(unk_088->unk_0002 & 0x2) != 0 || unk_08C->unk_00 != 0) {
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+BOOL UnkClass_020091E8::sub_0200A9C0()
+{
+    if ((u16)(unk_088->unk_0000 & 0x1) != 0 || (u16)(unk_088->unk_0000 & 0x2) != 0 || unk_08C->unk_01 != 0) {
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+void UnkClass_020091E8::sub_0200AA04(s32 arg0)
+{
+    unk_054 = 1;
+    unk_09C = arg0;
+}
+
+void UnkClass_020091E8::sub_0200AA14()
+{
+    unk_054 = 0;
+    unk_09C = unk_074;
+}
+
+void UnkClass_020091E8::sub_0200AA28(s32 arg0)
+{
+    unk_058 = 1;
+    unk_05C = arg0;
+}
+
+void UnkClass_020091E8::sub_0200AA38()
+{
+    unk_058 = 0;
+    unk_05C = 0;
+}
+
+void UnkClass_020091E8::sub_0200AA48(s32 arg0)
+{
+    unk_064 = 1;
+    unk_068 = arg0;
+}
+
+void UnkClass_020091E8::sub_0200AA58()
+{
+    unk_064 = 0;
+    unk_068 = 0;
+}
+
+BOOL UnkClass_020091E8::sub_0200AA68(u32 arg0)
+{
+    if (unk_090 != NULL) {
+        return sub_02034C44(unk_090, arg0);
+    }
+
+    return FALSE;
+}
+
+void UnkClass_020091E8::sub_0200AA84(u32 arg0, u32 arg1, u32 arg2, u32 arg3, u32 arg4)
+{
+    switch (arg0) {
+    case 0:
+        sub_0200AD34(arg1, arg2, arg3, arg4);
+        break;
+
+    case 1:
+        sub_0200AF74(arg1, arg2, arg3, arg4);
+        break;
+
+    case 2:
+        sub_0200B1D0(arg1, arg2, arg3, arg4);
+        break;
+
+    case 3:
+        sub_0200B410(arg1, arg2, arg3, arg4);
+        break;
+
+    case 4:
+        sub_0200B640(arg1, arg2, arg3, arg4);
+        break;
+    }
+}
+
+void UnkClass_020091E8::sub_0200AB28(u32 arg0, u32 arg1)
+{
+    if (unk_004 != NULL) {
+        if (unk_018 == arg0) {
+            return;
+        }
+
+        sub_0200AC90();
+    }
+
+    char v0[0x40];
+
+    if (arg0 == 0) {
+        OS_SPrintf(v0, &s_data_message_system_system_mes_0208a8d0);
+    } else {
+        OS_SPrintf(v0, &s_data_message_system_system_03d_m_0208a8f0, arg0);
+    }
+
+    CBinaryFileMes *file = new CBinaryFileMes(v0, 1);
+
+    unk_004 = new UnkClass_020091E8_004();
+    u32 v1 = 2;
+    unk_004->unk_00 = ((u32 *)file->unk_4C)[0];
+    unk_004->unk_04 = ((u32 *)file->unk_4C)[1];
+    unk_004->unk_08 = new UnkClass_020091E8_004_08[unk_004->unk_04];
+
+    for (u32 i = 0; i < unk_004->unk_04; ++i) {
+        unk_004->unk_08[i].unk_00 = ((u32 *)file->unk_4C)[v1];
+        ++v1;
+
+        unk_004->unk_08[i].unk_04 = new u8[unk_004->unk_08[i].unk_00];
+        MI_CpuCopyFast(&((u32 *)file->unk_4C)[v1], unk_004->unk_08[i].unk_04, unk_004->unk_08[i].unk_00);
+
+        v1 += unk_004->unk_08[i].unk_00 / 4;
+    }
+
+    delete file;
+    unk_018 = arg0;
+}
+
+void UnkClass_020091E8::sub_0200AC90()
+{
+    unk_018 = -1;
+
+    if (unk_004 == NULL) {
+        return;
+    }
+
+    for (u32 i = 0; i < unk_004->unk_04; ++i) {
+        if (unk_004->unk_08[i].unk_04 != NULL) {
+            delete[] unk_004->unk_08[i].unk_04;
+            unk_004->unk_08[i].unk_04 = NULL;
+        }
+    }
+
+    if (unk_004->unk_08 != NULL) {
+        delete[] unk_004->unk_08;
+        unk_004->unk_08 = NULL;
+    }
+
+    if (unk_004 != NULL) {
+        delete unk_004;
+        unk_004 = NULL;
+    }
 }

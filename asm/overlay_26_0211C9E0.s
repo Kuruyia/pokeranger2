@@ -101,7 +101,7 @@ _0211CAB8:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA14
+	bl _ZN17UnkClass_020091E812sub_0200AA14Ev
 	ldr r3, [r4, #0x14]
 	mov r0, #1
 	str r0, [sp]
@@ -112,7 +112,7 @@ _0211CAB8:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	ldr r1, [r4, #0x14]
 	mov r0, #1
 	add r1, r1, #0xc
@@ -153,7 +153,7 @@ _0211CB7C:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA14
+	bl _ZN17UnkClass_020091E812sub_0200AA14Ev
 	ldr r3, [r4, #0x14]
 	mov r0, #1
 	str r0, [sp]
@@ -164,7 +164,7 @@ _0211CB7C:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	ldr r1, [r4, #0x14]
 	mov r0, #1
 	add r1, r1, #0xc
@@ -515,14 +515,14 @@ ov26_0211D094: ; 0x0211D094
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	bl sub_02007D68
 	ldr r0, _0211D330 ; =s_game
 	mov r1, #0
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AB28
+	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
 	mov r0, #0x44
 	bl _Znwm
 	cmp r0, #0

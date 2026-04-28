@@ -3,7 +3,7 @@
 .public _Znam
 .public _ZdlPv
 .public _ZdaPv
-.public CBinaryFileMes_ctor
+.public _ZN14CBinaryFileMesC1EPcm
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02007D98

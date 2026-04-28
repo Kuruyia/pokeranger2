@@ -1,5 +1,5 @@
 #pragma once
-.public CBinaryFileMes_ctor
+.public _ZN14CBinaryFileMesC1EPcm
 .public DAT_020843c8
 .public DAT_020843d0
 .public DAT_020843e0

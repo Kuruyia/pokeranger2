@@ -647,7 +647,7 @@ ov5_0211D1E0: ; 0x0211D1E0
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	ldr r0, _0211D254 ; =s_data_message_etc_menu_mes_overlay_5_02120450
 	bl ov5_0211D588
 	str r0, [r4, #8]
@@ -915,7 +915,7 @@ ov5_0211D588: ; 0x0211D588
 	beq _0211D5BC
 	mov r1, r5
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r7, r0
 	arm_func_end ov5_0211D588
 _0211D5BC:
@@ -3700,12 +3700,12 @@ _0211FC14:
 	mov r1, #3
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AB28
+	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
 	ldr r0, [r5, #0x21c]
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA04
+	bl _ZN17UnkClass_020091E812sub_0200AA04El
 	ldr r0, [r5, #0xc]
 	mov r2, #1
 	cmp r0, #0
@@ -3717,7 +3717,7 @@ _0211FC14:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	mov r1, #0x18
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 	add sp, sp, #0x14
 	ldmia sp!, {r4, r5, pc}
 _0211FC74:
@@ -3872,7 +3872,7 @@ ov5_0211FE34: ; 0x0211FE34
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA04
+	bl _ZN17UnkClass_020091E812sub_0200AA04El
 	mov r0, #0
 	str r0, [sp]
 	ldr r0, [r4, #0x21c]
@@ -3881,7 +3881,7 @@ ov5_0211FE34: ; 0x0211FE34
 	ldr r0, [r0, #0x490]
 	mov r3, r2
 	mov r1, #0x72
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 	arm_func_end ov5_0211FE34
 _0211FEB0:
 	ldr r0, [r4, #0x2ec]
@@ -3956,7 +3956,7 @@ _0211FEF8:
 	ldr r0, [r0, #0x490]
 	mov r3, r2
 	add r1, ip, r1
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 	b _0211FFE4
 _0211FFCC:
 	ldr r0, [r4, #0x21c]
@@ -3964,7 +3964,7 @@ _0211FFCC:
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	add r1, ip, #0x18
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 _0211FFE4:
 	mov r0, #1
 	str r0, [r4, #4]
@@ -4108,7 +4108,7 @@ _0212014C:
 	ldr r0, [r0, #0x490]
 	mov r3, r2
 	add r1, r4, #0x77
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 	ldmia sp!, {r3, r4, r5, pc}
 _021201EC:
 	add r4, r4, #1

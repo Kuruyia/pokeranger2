@@ -23,11 +23,11 @@
 .public sub_020089EC
 .public sub_02008A80
 .public _ZN17UnkClass_020091E812sub_020092D4Ev
-.public _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+.public _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 .public _ZN17UnkClass_020091E812sub_02009FB0Emm
-.public sub_0200AA04
-.public sub_0200AB28
-.public sub_0200AD34
+.public _ZN17UnkClass_020091E812sub_0200AA04El
+.public _ZN17UnkClass_020091E812sub_0200AB28Emm
+.public _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 .public sub_0200B6A4
 .public sub_0200B6D4
 .public sub_0200E0E0

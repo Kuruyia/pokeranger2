@@ -8,7 +8,7 @@
 .public sub_02002BC4
 .public CBinaryFile_complete_obj_dtor
 .public sub_02002C7C
-.public CBinaryFileMes_ctor
+.public _ZN14CBinaryFileMesC1EPcm
 .public _ZN9CNCLRFileC1EPcmmm
 .public CNCLRFile_complete_obj_dtor
 .public sub_02003718

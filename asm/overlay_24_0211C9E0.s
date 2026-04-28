@@ -88,7 +88,7 @@ _0211CA90:
 	mov r2, #0x4f
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #1
 	str r0, [r4, #8]
 	b _0211CFE4
@@ -126,7 +126,7 @@ _0211CAFC:
 	mov r2, #0x51
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #8
 	str r0, [r4, #8]
 	b _0211CFE4
@@ -215,7 +215,7 @@ _0211CCA8:
 	mov r2, #0x45
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #7
 	str r0, [r4, #8]
 	b _0211CFE4
@@ -229,7 +229,7 @@ _0211CCDC:
 	mov r2, #0x50
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #4
 	str r0, [r4, #8]
 	b _0211CFE4
@@ -322,7 +322,7 @@ _0211CE34:
 	mov r2, #0x45
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #7
 	str r0, [r4, #8]
 	b _0211CFE4
@@ -336,7 +336,7 @@ _0211CE68:
 	mov r2, #0x47
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #4
 	str r0, [r4, #8]
 	b _0211CFE4
@@ -357,7 +357,7 @@ _0211CE9C:
 	mov r2, #0x51
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA84
+	bl _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 	mov r0, #8
 	str r0, [r4, #8]
 	b _0211CFE4
@@ -562,13 +562,13 @@ ov24_0211D134: ; 0x0211D134
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	ldr r0, _0211D21C ; =s_game
 	mov r1, #0
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AB28
+	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
 	ldr r0, _0211D21C ; =s_game
 	mov r1, #3
 	ldr r0, [r0]

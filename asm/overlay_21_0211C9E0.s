@@ -1268,7 +1268,7 @@ ov21_0211DAB4: ; 0x0211DAB4
 	beq _0211DAE8
 	mov r1, r5
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r7, r0
 	arm_func_end ov21_0211DAB4
 _0211DAE8:

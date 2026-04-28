@@ -3,12 +3,29 @@
 
 #include <nitro.h>
 
+#include "CTouchPanel.hpp"
+#include "UnkClass_02001C04.hpp"
 #include "UnkClass_0200BBC8.hpp"
 #include "common.hpp"
 #include "file/CNCLRFile.hpp"
 
 // TODO: Figure out what this really is
-class UnkClass_0200BBC8_084 {
+class UnkClass_020091E8_004_08 {
+public:
+    u32 unk_00;
+    u8 *unk_04;
+};
+
+// TODO: Figure out what this really is
+class UnkClass_020091E8_004 {
+public:
+    u32 unk_00;
+    u32 unk_04;
+    UnkClass_020091E8_004_08 *unk_08;
+};
+
+// TODO: Figure out what this really is
+class UnkClass_020091E8_084 {
 public:
     virtual void func0();
     virtual void func1();
@@ -44,7 +61,7 @@ public:
     void sub_02009274();
     void sub_020092A4();
     void sub_020092D4();
-    void sub_02009328(u32 arg0, u32 arg1, NNSG2dFont *arg2, void *arg3, u32 arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8);
+    void sub_02009328(UnkClass_02001C04 *arg0, CTouchPanel *arg1, NNSG2dFont *arg2, void *arg3, u32 arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8);
     void sub_020093B4();
     void sub_02009430();
     void sub_020095D0();
@@ -57,24 +74,38 @@ public:
     void sub_02009D8C(u8 *arg0, u32 arg1, u32 arg2, u32 arg3);
     BOOL sub_02009ECC();
     void sub_02009F28();
-    void sub_02009FB0(u32 arg0, u32 arg1);
+    BOOL sub_02009FB0(u32 arg0, u32 arg1);
     void sub_0200A088(u32 arg0);
     u32 sub_0200A110();
     u32 sub_0200A118();
-    u32 sub_0200A804(u32 arg0);
+    u32 sub_0200A804(int arg0);
     BOOL sub_0200A84C();
     BOOL sub_0200A97C();
-    void sub_0200AA68(u32 arg0);
+    BOOL sub_0200A9C0();
+    void sub_0200AA04(s32 arg0);
+    void sub_0200AA14();
+    void sub_0200AA28(s32 arg0);
+    void sub_0200AA38();
+    void sub_0200AA48(s32 arg0);
+    void sub_0200AA58();
+    BOOL sub_0200AA68(u32 arg0);
+    void sub_0200AA84(u32 arg0, u32 arg1, u32 arg2, u32 arg3, u32 arg4);
+    void sub_0200AB28(u32 arg0, u32 arg1);
     void sub_0200AC90();
+    void sub_0200AD34(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
     void sub_0200AED0();
+    void sub_0200AF74(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
     void sub_0200B12C();
+    void sub_0200B1D0(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
     void sub_0200B36C();
+    void sub_0200B410(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
     void sub_0200B59C();
+    void sub_0200B640(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
 
 public:
     // TODO: What is this?
     void *unk_000;
-    u32 unk_004;
+    UnkClass_020091E8_004 *unk_004;
     u32 unk_008;
     u32 unk_00C;
     u32 unk_010;
@@ -102,9 +133,9 @@ public:
     u32 unk_078;
     u8 *unk_07C;
     u32 unk_080;
-    UnkClass_0200BBC8_084 *unk_084;
-    u32 unk_088;
-    u32 unk_08C;
+    UnkClass_020091E8_084 *unk_084;
+    UnkClass_02001C04 *unk_088;
+    CTouchPanel *unk_08C;
     // TODO: What is this?
     void *unk_090;
     u32 unk_094;

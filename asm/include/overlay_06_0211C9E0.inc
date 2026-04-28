@@ -5,7 +5,7 @@
 .public _ZdaPv
 .public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 .public _ZN19CSmartNNSFndArchiveD1Ev
-.public CBinaryFileMes_ctor
+.public _ZN14CBinaryFileMesC1EPcm
 .public _ZN9CNCLRFileC1EPcmmm
 .public _ZN9CNSCRFileC1EPcmmm
 .public _ZN11CBGNCGRFileC1EPcmmm
@@ -14,13 +14,13 @@
 .public sub_02007D98
 .public sub_02008DB4
 .public _ZN17UnkClass_020091E812sub_020092D4Ev
-.public _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+.public _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 .public _ZN17UnkClass_020091E812sub_0200978CEm
 .public _ZN17UnkClass_020091E812sub_02009FB0Emm
 .public _ZN17UnkClass_020091E812sub_0200A088Em
-.public sub_0200AA04
-.public sub_0200AB28
-.public sub_0200AD34
+.public _ZN17UnkClass_020091E812sub_0200AA04El
+.public _ZN17UnkClass_020091E812sub_0200AB28Emm
+.public _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 .public sub_0200C3D0
 .public sub_0200C408
 .public sub_0200C680

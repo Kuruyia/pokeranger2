@@ -521,7 +521,7 @@ ov25_0211D098: ; 0x0211D098
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AB28
+	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
 	mov r0, #0x28
 	bl _Znwm
 	cmp r0, #0

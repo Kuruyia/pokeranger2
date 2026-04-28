@@ -12,7 +12,9 @@ public:
     virtual void func0();
 
 public:
-    u8 unk_00[0x2C];
+    u8 unk_00;
+    u8 unk_01;
+    u8 unk_02[0x2A];
 };
 
 STATIC_SIZE_ASSERT(CTouchPanel, 0x30);

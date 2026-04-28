@@ -1500,7 +1500,7 @@ ov23_0211DF20: ; 0x0211DF20
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	mov r0, r4
 	bl ov23_0211E19C
 	mov r0, r4
@@ -1861,7 +1861,7 @@ ov23_0211E454: ; 0x0211E454
 	beq _0211E47C
 	ldr r1, _0211E660 ; =s_data_message_etc_recode_mes_overlay_23_0211f298
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 	arm_func_end ov23_0211E454
 _0211E47C:
@@ -1930,7 +1930,7 @@ _0211E55C:
 	beq _0211E57C
 	ldr r1, _0211E664 ; =s_data_message_etc_menu_mes_overlay_23_0211f2b8
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0211E57C:
 	mov r0, #0xc

@@ -1004,7 +1004,7 @@ _0211D7E8:
 	ldr r1, [r5, #0x14]
 	ldr r2, [r5, #0x18]
 	add r3, r3, #0x14
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	bl sub_02007D68
 	mov r1, #0x400
 	mov r0, sl
@@ -1039,7 +1039,7 @@ _0211D8C4:
 	beq _0211D8FC
 	ldr r1, _0211DD84 ; =s_data_message_etc_menu_mes_overlay_3_0212a84c
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _0211D8FC:
 	mov r0, #0xc
@@ -1107,7 +1107,7 @@ _0211D9DC:
 	beq _0211D9FC
 	ldr r1, _0211DD88 ; =s_data_message_system_system_mes_overlay_3_0212a868
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r5, r0
 _0211D9FC:
 	mov r0, #0xc
@@ -4859,7 +4859,7 @@ _02120E7C:
 	beq _02120F28
 	ldr r1, _021210A0 ; =s_data_message_etc_menu_mes_overlay_3_0212a9b0
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _02120F28:
 	mov r0, #0xc
@@ -5530,7 +5530,7 @@ _02121794:
 	beq _02121840
 	ldr r1, _021219B8 ; =s_data_message_etc_menu_mes_overlay_3_0212aa64
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 _02121840:
 	mov r0, #0xc
@@ -6983,7 +6983,7 @@ ov3_02122BCC: ; 0x02122BCC
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	mov r0, r4
 	bl ov3_021231F4
 	mov r0, r4
@@ -7291,17 +7291,17 @@ _02123030:
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	ldr r0, [r4, #0x80]
 	mov r1, #2
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AB28
+	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
 	ldr r0, [r4, #0x80]
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AA04
+	bl _ZN17UnkClass_020091E812sub_0200AA04El
 	mov r0, #0
 	str r0, [sp]
 	ldr r0, [r4, #0x80]
@@ -7310,7 +7310,7 @@ _02123030:
 	ldr r0, [r0, #0x490]
 	mov r1, #5
 	mov r3, r2
-	bl sub_0200AD34
+	bl _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 	add sp, sp, #0x18
 	ldmia sp!, {r4, r5, r6, pc}
 
@@ -7340,7 +7340,7 @@ ov3_02123100: ; 0x02123100
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EmmP10NNSG2dFontPvmS2_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
 	mov r0, r4
 	bl ov3_021231F4
 	mov r0, r4
@@ -7614,7 +7614,7 @@ ov3_0212351C: ; 0x0212351C
 	beq _02123544
 	ldr r1, _02123628 ; =s_data_message_etc_name_entry_overlay_3_0212abb4
 	mov r2, #1
-	bl CBinaryFileMes_ctor
+	bl _ZN14CBinaryFileMesC1EPcm
 	mov r6, r0
 	arm_func_end ov3_0212351C
 _02123544:
