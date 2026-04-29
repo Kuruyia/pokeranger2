@@ -1,0 +1,41 @@
+diff --git a/libraries/base/src/dwc_connectinet.c b/libraries/base/src/dwc_connectinet.c
+index 4caf906..65160f7 100644
+--- a/libraries/base/src/dwc_connectinet.c
++++ b/libraries/base/src/dwc_connectinet.c
+@@ -290,7 +290,7 @@ BOOL DWC_GetApInfo (DWCApInfo * apinfo)
+     unsigned char * wcmapbssid;
+     unsigned char * wcmapessid;
+     unsigned short essidlen;
+-    u8 apSpotInfo[10];
++    u8 apSpotInfo[16];
+ 
+     MI_CpuClear8(apinfo, sizeof(DWCApInfo));
+     apinfo->area = DWC_APINFO_AREA_UNKNOWN;
+@@ -299,10 +299,6 @@ BOOL DWC_GetApInfo (DWCApInfo * apinfo)
+         return FALSE;
+ 
+     apinfo->aptype = (DWCApInfoType)DWC_AC_GetApType();
+-    if (apinfo->aptype == DWC_AC_AP_TYPE_FALSE || apinfo->aptype > DWC_AC_AP_TYPE_UNKNOWN) {
+-        apinfo->aptype = (DWCApInfoType)DWC_AC_AP_TYPE_UNKNOWN;
+-        return FALSE;
+-    }
+ 
+     preirq = OS_DisableInterrupts();
+     wcmapbssid = WCM_GetApMacAddress();
+@@ -329,11 +325,11 @@ BOOL DWC_GetApInfo (DWCApInfo * apinfo)
+ 
+     preirq = OS_RestoreInterrupts(preirq);
+ 
+-    if (DWC_AC_GetApSpotInfo(apSpotInfo)) {
+-        apinfo->area = (apSpotInfo[0] >= '0' && apSpotInfo[0] <= '9') ? (DWCApInfoArea)(apSpotInfo[0] - '0') : DWC_APINFO_AREA_UNKNOWN;
+-        MI_CpuCopy8(&apSpotInfo[1], apinfo->spotinfo, DWC_SIZE_SPOTINFO);
+-    } else {
+-        apinfo->area = DWC_APINFO_AREA_UNKNOWN;
++    MI_CpuFill8(&apSpotInfo[0], 0, 0x10);
++
++    if (DWC_AC_GetApSpotInfo(&apSpotInfo[0]) == TRUE && apSpotInfo[6] != 0) {
++        apinfo->area = apSpotInfo[6] - 0x30;
++        MI_CpuCopy8(&apSpotInfo[7], apinfo->spotinfo, DWC_SIZE_SPOTINFO);
+     }
+ 
+     return TRUE;

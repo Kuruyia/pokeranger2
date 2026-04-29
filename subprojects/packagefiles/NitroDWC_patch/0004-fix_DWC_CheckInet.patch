@@ -1,0 +1,13 @@
+diff --git a/libraries/base/src/dwc_connectinet.c b/libraries/base/src/dwc_connectinet.c
+index dff6c73..6c91cdc 100644
+--- a/libraries/base/src/dwc_connectinet.c
++++ b/libraries/base/src/dwc_connectinet.c
+@@ -134,8 +134,6 @@ void DWC_DebugConnectInetExAsync (const void * ssid, const void * wep, int wepMo
+ BOOL DWC_CheckInet (void)
+ {
+     if (stpInetCntl == NULL) {
+-        DWC_Printf(DWC_REPORTFLAG_CONNECTINET, "ConnectInet library is not initialized.\n");
+-
+         return FALSE;
+     }
+ 

@@ -3657,7 +3657,7 @@ _0211FB5C:
 	ldr r0, [r0, #0x20]
 	str r1, [r0, #0x14]
 	bge _0211FB8C
-	bl thunk_FUN_02056194
+	bl DWC_GetLinkLevel
 	mov r2, r0
 _0211FB8C:
 	ldr r0, [r4, #0xc]
@@ -24026,7 +24026,7 @@ _0213033C:
 	str r0, [r5, #0x14]
 	bl DWC_Init
 	mov r4, r0
-	bl ov11_0213B0B4
+	bl DWC_ClearError
 	ldr r0, [r5, #0x14]
 	cmp r0, #0
 	beq _02130370
@@ -24036,7 +24036,7 @@ _0213033C:
 _02130370:
 	ldr r0, _02130384 ; =ov11_02130470
 	ldr r1, _02130388 ; =ov11_021304A4
-	bl ov11_0213B128
+	bl DWC_SetMemFunc
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -24072,23 +24072,23 @@ _021303C4:
 	ldmeqia sp!, {r3, r4, pc}
 	bl _Z15SetupInterruptsv
 	add r0, r4, #4
-	bl ov11_0213B21C
+	bl DWC_InitInet
 	mov r0, #2
-	bl ov11_0213B234
-	bl ov11_0213B284
+	bl DWC_SetAuthServer
+	bl DWC_ConnectInetAsync
 	mov r0, #1
 	strh r0, [r4]
 	b _02130464
 _021303FC:
-	bl ov11_0213B374
-	bl ov11_0213B3EC
-	bl ov11_0213B334
+	bl DWC_ProcessInet
+	bl DWC_GetInetStatus
+	bl DWC_CheckInet
 	cmp r0, #0
 	beq _02130464
 	mov r0, #2
 	strh r0, [r4]
 _02130418:
-	bl ov11_0213B3EC
+	bl DWC_GetInetStatus
 	cmp r0, #4
 	beq _02130450
 	cmp r0, #7
@@ -24106,7 +24106,7 @@ _02130444:
 	ldmia sp!, {r3, r4, pc}
 _02130450:
 	add r0, sp, #0
-	bl ov11_0213B5A4
+	bl DWC_GetApInfo
 	add sp, sp, #0x3c
 	mov r0, #0
 	ldmia sp!, {r3, r4, pc}
@@ -24400,12 +24400,12 @@ _02130818:
 	mov r2, #0
 	ldr r0, _02130B10 ; =ov11_021316C4
 	str r2, [r1, #4]
-	bl ov11_0213BDAC
+	bl DWC_NdCleanupAsync
 	cmp r0, #0
 	movne r0, #9
 	strneh r0, [r4, #0x2c]
 	bne _02130AF8
-	bl ov11_0213B49C
+	bl DWC_CleanupInet
 	mov r0, #0xa
 	strh r0, [r4, #0x2c]
 	b _02130AF8
@@ -24417,7 +24417,7 @@ _02130854:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _02130AF8
-	bl ov11_0213B49C
+	bl DWC_CleanupInet
 	mov r0, #0xa
 	strh r0, [r4, #0x2c]
 _0213087C:
@@ -24712,7 +24712,7 @@ _02130C64:
 	strh r2, [r0, #0xb6]
 	str r3, [r1]
 	str r3, [r1, #8]
-	bl ov11_0213B7B4
+	bl DWC_NASLoginAsync
 	cmp r0, #0
 	addeq sp, sp, #0x34
 	moveq r0, #8
@@ -24724,7 +24724,7 @@ _02130C64:
 	str r1, [r4, #0x4c8]
 	b _02131668
 _02130CAC:
-	bl ov11_0213B878
+	bl DWC_NASLoginProcess
 	cmp r0, #2
 	beq _02130CC4
 	cmp r0, #3
@@ -24751,7 +24751,7 @@ _02130CEC:
 	ldr r1, _02131690 ; =s_YP2E_overlay_11_02166644
 	ldr r2, _02131694 ; =s_griUBMRWtExs4ZNS_overlay_11_0216664c
 	str r5, [r3, #8]
-	bl ov11_0213BC94
+	bl DWC_NdInitAsync
 	cmp r0, #0
 	addeq sp, sp, #0x34
 	moveq r0, #8
@@ -24761,7 +24761,7 @@ _02130CEC:
 	strh r1, [r0, #0xb4]
 	b _02131668
 _02130D2C:
-	bl ov11_0213B6D0
+	bl DWC_UpdateConnection
 	cmp r0, #0
 	addne sp, sp, #0x34
 	movne r0, #8
@@ -24803,7 +24803,7 @@ _02130D9C:
 	str r2, [r1]
 	add r0, r4, #0x4b0
 	str r2, [r1, #8]
-	bl ov11_0213BE2C
+	bl DWC_NdGetFileListNumAsync
 	cmp r0, #0
 	addeq sp, sp, #0x34
 	moveq r0, #8
@@ -24862,7 +24862,7 @@ _02130E80:
 	add r0, r4, #0x38
 	mov r2, #6
 	str r1, [r3, #8]
-	bl ov11_0213BE50
+	bl DWC_NdGetFileListAsync
 	cmp r0, #0
 	addeq sp, sp, #0x34
 	moveq r0, #8
@@ -25063,7 +25063,7 @@ _0213113C:
 	ldr r2, [r0, #0xe4]
 	ldr r1, [r4, #0x4c0]
 	add r0, r3, r5
-	bl ov11_0213BE98
+	bl DWC_NdGetFileAsync
 	cmp r0, #0
 	addeq sp, sp, #0x34
 	moveq r0, #8
@@ -25106,7 +25106,7 @@ _02131200:
 	bne _02131288
 	add r0, sp, #8
 	add r1, sp, #4
-	bl ov11_0213BECC
+	bl DWC_NdGetProgress
 	cmp r0, #1
 	bne _02131264
 	ldr r1, [sp, #8]
@@ -25166,7 +25166,7 @@ _021312C4:
 	mov r2, #0
 	ldr r0, _021316A0 ; =ov11_021316C4
 	str r2, [r1, #4]
-	bl ov11_0213BDAC
+	bl DWC_NdCleanupAsync
 	cmp r0, #0
 	ldreq r0, _02131684 ; =OVERLAY11_BSS_02169C88
 	moveq r1, #1
@@ -25186,7 +25186,7 @@ _02131340:
 	cmp r0, #0
 	subgt r0, r0, #1
 	strgt r0, [r4, #0x4c4]
-	bl ov11_0213B4FC
+	bl DWC_CleanupInetAsync
 	cmp r0, #0
 	beq _02131668
 	add r0, r4, #0x400
@@ -25449,7 +25449,7 @@ ov11_021316E8: ; 0x021316E8
 	ldr r0, _0213170C ; =DAT_overlay_11_02166678
 	mov r1, r0
 	mov r2, r0
-	bl ov11_0213BDF8
+	bl DWC_NdSetAttr
 	cmp r0, #0
 	ldmneia sp!, {r3, pc}
 	bl OS_Terminate
@@ -25465,7 +25465,7 @@ ov11_02131710: ; 0x02131710
 	mov r5, r0
 	add r0, sp, #4
 	mov r4, #0x1a
-	bl ov11_0213AFA0
+	bl DWC_GetLastError
 	ldr r1, [sp, #4]
 	mvn r0, #0
 	mul r2, r1, r0
@@ -25648,14 +25648,14 @@ ov11_02131980: ; 0x02131980
 	addne sp, sp, #8
 	movne r0, #1
 	ldmneia sp!, {r3, pc}
-	bl ov11_0213B6D0
+	bl DWC_UpdateConnection
 	cmp r0, #0
 	addne sp, sp, #8
 	movne r0, #1
 	ldmneia sp!, {r3, pc}
 	add r0, sp, #4
 	add r1, sp, #0
-	bl ov11_0213AFC0
+	bl DWC_GetLastErrorEx
 	cmp r0, #0
 	addne sp, sp, #8
 	movne r0, #1
@@ -26505,8 +26505,8 @@ ov11_0213255C: ; 0x0213255C
 	bx lr
 	arm_func_end ov11_0213255C
 
-	arm_func_start ov11_02132564
-ov11_02132564: ; 0x02132564
+	arm_func_start DWC_AC_Create
+DWC_AC_Create: ; 0x02132564
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	ldr r2, [r4]
@@ -26606,7 +26606,7 @@ ov11_02132564: ; 0x02132564
 	beq _021326F0
 	cmp r0, #4
 	blt _021326FC
-	arm_func_end ov11_02132564
+	arm_func_end DWC_AC_Create
 _021326F0:
 	bl ov11_02132A0C
 	mov r0, #0
@@ -26618,8 +26618,8 @@ _021326FC:
 _02132704: .word OVERLAY11_BSS_02169C94
 _02132708: .word 0x00000D18
 
-	arm_func_start ov11_0213270C
-ov11_0213270C: ; 0x0213270C
+	arm_func_start DWC_AC_Process
+DWC_AC_Process: ; 0x0213270C
 	stmdb sp!, {r3, r4, r5, lr}
 	bl ov11_02132BD4
 	mov r5, r0
@@ -26628,7 +26628,7 @@ ov11_0213270C: ; 0x0213270C
 	bl ov11_02134898
 	mov r5, r0
 	b _021327A0
-	arm_func_end ov11_0213270C
+	arm_func_end DWC_AC_Process
 _0213272C:
 	cmp r5, #7
 	bhs _02132754
@@ -26681,8 +26681,8 @@ _021327C4:
 	mvn r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
 
-	arm_func_start ov11_021327DC
-ov11_021327DC: ; 0x021327DC
+	arm_func_start DWC_AC_GetStatus
+DWC_AC_GetStatus: ; 0x021327DC
 	stmdb sp!, {r3, lr}
 	bl ov11_02132BD4
 	cmp r0, #1
@@ -26710,10 +26710,10 @@ ov11_021327DC: ; 0x021327DC
 	ldmeqia sp!, {r3, pc}
 	bl ov11_021339D8
 	ldmia sp!, {r3, pc}
-	arm_func_end ov11_021327DC
+	arm_func_end DWC_AC_GetStatus
 
-	arm_func_start ov11_02132848
-ov11_02132848: ; 0x02132848
+	arm_func_start DWC_AC_GetApType
+DWC_AC_GetApType: ; 0x02132848
 	stmdb sp!, {r4, lr}
 	ldr r0, _02132888 ; =OVERLAY11_BSS_02169C94
 	mov r4, #0xff
@@ -26728,15 +26728,15 @@ ov11_02132848: ; 0x02132848
 	ldrls r0, _02132888 ; =OVERLAY11_BSS_02169C94
 	ldrls r0, [r0, #0x10]
 	ldrlsb r4, [r0, #0x17]
-	arm_func_end ov11_02132848
+	arm_func_end DWC_AC_GetApType
 _02132880:
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02132888: .word OVERLAY11_BSS_02169C94
 
-	arm_func_start ov11_0213288C
-ov11_0213288C: ; 0x0213288C
+	arm_func_start DWC_AC_GetApSpotInfo
+DWC_AC_GetApSpotInfo: ; 0x0213288C
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r6, r0
 	mov r0, #1
@@ -26769,7 +26769,7 @@ ov11_0213288C: ; 0x0213288C
 	mov r0, r4
 	add r1, r6, #6
 	bl ov11_02134E3C
-	arm_func_end ov11_0213288C
+	arm_func_end DWC_AC_GetApSpotInfo
 _0213290C:
 	mov r0, #1
 	ldmia sp!, {r4, r5, r6, pc}
@@ -26777,8 +26777,8 @@ _02132914:
 	mov r0, #0
 	ldmia sp!, {r4, r5, r6, pc}
 
-	arm_func_start ov11_0213291C
-ov11_0213291C: ; 0x0213291C
+	arm_func_start DWC_AC_Destroy
+DWC_AC_Destroy: ; 0x0213291C
 	stmdb sp!, {r3, lr}
 	bl ov11_02132BD4
 	strb r0, [sp]
@@ -26788,7 +26788,7 @@ ov11_0213291C: ; 0x0213291C
 	bl ov11_02132A0C
 	mov r0, #1
 	ldmia sp!, {r3, pc}
-	arm_func_end ov11_0213291C
+	arm_func_end DWC_AC_Destroy
 _02132940:
 	add r0, sp, #0
 	bl ov11_0213386C
@@ -30063,17 +30063,17 @@ _02135384:
 	add sp, sp, #0x18
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 
-	arm_func_start ov11_02135390
-ov11_02135390: ; 0x02135390
+	arm_func_start DWC_Auth_SetCustomNas
+DWC_Auth_SetCustomNas: ; 0x02135390
 	ldr r1, _0213539C ; =ptr_s_https_nas_test_nintendowifi_ne_overlay_11_021667ec_overlay_11_021667d0
 	str r0, [r1]
 	bx lr
 	.align 2, 0
 _0213539C: .word ptr_s_https_nas_test_nintendowifi_ne_overlay_11_021667ec_overlay_11_021667d0
-	arm_func_end ov11_02135390
+	arm_func_end DWC_Auth_SetCustomNas
 
-	arm_func_start ov11_021353A0
-ov11_021353A0: ; 0x021353A0
+	arm_func_start DWC_Auth_Create
+DWC_Auth_Create: ; 0x021353A0
 	stmdb sp!, {r3, r4, r5, lr}
 	ldr r2, _021354B4 ; =OVERLAY11_BSS_02169CA8
 	mov r5, r0
@@ -30114,7 +30114,7 @@ ov11_021353A0: ; 0x021353A0
 	ldr lr, [r1, #8]
 	add r0, lr, #0x1cc
 	add ip, r0, #0x1000
-	arm_func_end ov11_021353A0
+	arm_func_end DWC_Auth_Create
 _02135440:
 	ldmia r5!, {r0, r1, r2, r3}
 	stmia ip!, {r0, r1, r2, r3}
@@ -30243,8 +30243,8 @@ _021355D8:
 	.align 2, 0
 _02135600: .word OVERLAY11_BSS_02169CA8
 
-	arm_func_start ov11_02135604
-ov11_02135604: ; 0x02135604
+	arm_func_start DWC_Auth_Destroy
+DWC_Auth_Destroy: ; 0x02135604
 	stmdb sp!, {r4, lr}
 	ldr r0, _02135654 ; =OVERLAY11_BSS_02169CA8
 	ldr r0, [r0, #8]
@@ -30256,7 +30256,7 @@ ov11_02135604: ; 0x02135604
 	cmp r0, #0
 	beq _02135630
 	bl ov11_02136F74
-	arm_func_end ov11_02135604
+	arm_func_end DWC_Auth_Destroy
 _02135630:
 	ldr r1, _02135654 ; =OVERLAY11_BSS_02169CA8
 	ldr r0, _02135658 ; =s_FREE_DWCauth_overlay_11_02166824
@@ -30288,8 +30288,8 @@ ov11_0213565C: ; 0x0213565C
 _02135688: .word OVERLAY11_BSS_02169CA8
 	arm_func_end ov11_0213565C
 
-	arm_func_start ov11_0213568C
-ov11_0213568C: ; 0x0213568C
+	arm_func_start DWC_Auth_GetError
+DWC_Auth_GetError: ; 0x0213568C
 	stmdb sp!, {r4, lr}
 	ldr r0, _021356D4 ; =OVERLAY11_BSS_02169CA8
 	ldr r0, [r0, #8]
@@ -30310,10 +30310,10 @@ ov11_0213568C: ; 0x0213568C
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _021356D4: .word OVERLAY11_BSS_02169CA8
-	arm_func_end ov11_0213568C
+	arm_func_end DWC_Auth_GetError
 
-	arm_func_start ov11_021356D8
-ov11_021356D8: ; 0x021356D8
+	arm_func_start DWC_Auth_GetResult
+DWC_Auth_GetResult: ; 0x021356D8
 	stmdb sp!, {r4, lr}
 	ldr r1, _02135754 ; =OVERLAY11_BSS_02169CA8
 	mov r4, r0
@@ -30323,7 +30323,7 @@ ov11_021356D8: ; 0x021356D8
 	mov r1, #0
 	mov r2, #0x1c4
 	bl MI_CpuFill8
-	arm_func_end ov11_021356D8
+	arm_func_end DWC_Auth_GetResult
 _021356FC:
 	ldr r0, _02135754 ; =OVERLAY11_BSS_02169CA8
 	mov r1, r4
@@ -31113,7 +31113,7 @@ ov11_021361DC: ; 0x021361DC
 	ldr r2, _0213645C ; =s_013llu_overlay_11_02166900
 	mov r0, r4
 	str r5, [sp]
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	b _02136238
 	arm_func_end ov11_021361DC
 _02136220:
@@ -31122,13 +31122,13 @@ _02136220:
 	ldr r2, _0213645C ; =s_013llu_overlay_11_02166900
 	mov r0, r4
 	str r5, [sp]
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 _02136238:
 	ldrh r3, [r6, #0x10]
 	ldr r2, _02136460 ; =s_03u_overlay_11_02166908
 	add r0, r4, #0xe
 	mov r1, #7
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	ldr r0, _02136464 ; =0x027FFE0C
 	ldrb r0, [r0]
 	cmp r0, #0
@@ -31176,7 +31176,7 @@ _021362B4:
 	strcsb r0, [sp, #0x38]
 	ldrb r3, [sp, #0x38]
 	add r0, r4, #0x2c
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	add r0, sp, #0x3c
 	add r1, r4, #0x7e
 	mov r2, #0x14
@@ -31187,7 +31187,7 @@ _021362B4:
 	str r1, [sp]
 	ldrb r3, [sp, #0x3a]
 	mov r1, #5
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	add r0, sp, #0x28
 	add r1, sp, #0x1c
 	bl RTC_GetDateTime
@@ -31209,7 +31209,7 @@ _021362B4:
 	ldr r3, [sp, #0x24]
 	str r3, [sp, #0x10]
 	ldr r3, [sp, #0x28]
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	bl OS_DisableInterrupts
 	mov r6, r0
 	bl WCM_GetApMacAddress
@@ -31236,12 +31236,12 @@ _021363C4:
 	cmp sb, #6
 	add r8, r8, #2
 	blt _021363C4
-	bl ov11_02132848
+	bl DWC_AC_GetApType
 	mov r3, r0
 	ldr r2, _02136478 ; =s_02d_0000000_00_overlay_11_02166940
 	add r0, r4, #0x6f
 	mov r1, #0xe
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	add r0, sp, #0x14
 	bl WCM_GetApEssid
 	mov r5, r0
@@ -31289,7 +31289,7 @@ ov11_0213647C: ; 0x0213647C
 	add r0, sp, #4
 	mov r1, #0x21
 	str r3, [sp]
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	add r0, sp, #4
 	bl strlen
 	mov r3, r0
@@ -31454,7 +31454,7 @@ _0213671C:
 	add r0, sp, #4
 	mov r1, #0x21
 	str r3, [sp]
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	ldr r1, _021367B8 ; =s_User_Agent_overlay_11_021669e4
 	add r2, sp, #4
 	mov r0, r6
@@ -31593,7 +31593,7 @@ ov11_021368DC: ; 0x021368DC
 	ldr r2, _0213696C ; =s_d_overlay_11_02166a7c
 	add r0, sp, #0
 	mov r1, #7
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	ldr r1, _02136970 ; =s_Content_Length_overlay_11_02166a80
 	add r2, sp, #0
 	mov r0, r4
@@ -32140,7 +32140,7 @@ ov11_02137028: ; 0x02137028
 	ldr r0, [r5, #4]
 	ldr r1, [r5, #0xc]
 	ldr r3, [r3, #0x128]
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	ldr r1, [r5, #4]
 	add r0, r1, r0
 	str r0, [r5, #4]
@@ -32202,7 +32202,7 @@ _02137160:
 	mov r3, r7
 	mov r0, sb
 	add r1, r4, #1
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	strb r8, [sb, r0]
 	ldr r1, [r5, #4]
 	mov r0, #0
@@ -32235,7 +32235,7 @@ ov11_021371C4: ; 0x021371C4
 	mov r1, fp
 	mov r3, r2
 	str r5, [r4, #0x9f4]
-	bl ov11_02139620
+	bl DWC_Auth_Base64Encode
 	mov r5, r0
 	mov r0, r7
 	bl strlen
@@ -32263,7 +32263,7 @@ ov11_021371C4: ; 0x021371C4
 _02137274:
 	mov r2, r7
 	mov r3, sb
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	ldr r2, [r6, #4]
 	mov r1, fp
 	add r2, r2, r0
@@ -32272,7 +32272,7 @@ _02137274:
 	sub r3, r0, r2
 	mov r0, r8
 	sub r3, r3, #1
-	bl ov11_02139620
+	bl DWC_Auth_Base64Encode
 	cmp r0, #0
 	movlt r0, #1
 	ldmltia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
@@ -32314,7 +32314,7 @@ ov11_021372D0: ; 0x021372D0
 _02137328:
 	ldr r2, _02137354 ; =s_s_overlay_11_02166b64
 	mov r3, r6
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	cmp r0, r4
 	movne r0, #1
 	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
@@ -32996,7 +32996,7 @@ ov11_02137C40: ; 0x02137C40
 	str r1, [r0, #0x14]
 	arm_func_end ov11_02137C40
 _02137C84:
-	bl ov11_02135604
+	bl DWC_Auth_Destroy
 	ldr r0, _02137D24 ; =OVERLAY11_BSS_02169CCC
 	ldr r0, [r0]
 	cmp r0, #0
@@ -33521,7 +33521,7 @@ _02138374:
 	ldr r1, [r1, #0x10c]
 	str r1, [r5, #0x78]
 	ldr r1, [r5, #0x14]
-	bl ov11_021353A0
+	bl DWC_Auth_Create
 	cmp r0, #0
 	beq _021383F0
 	mov r0, #5
@@ -33529,10 +33529,10 @@ _02138374:
 	b _02138CA8
 _021383F0:
 	bl ov11_0213565C
-	bl ov11_0213568C
+	bl DWC_Auth_GetError
 	cmp r0, #0x15
 	beq _021384A0
-	bl ov11_0213568C
+	bl DWC_Auth_GetError
 	cmp r0, #9
 	bne _02138424
 	ldr r0, _02138CFC ; =OVERLAY11_BSS_02169CCC
@@ -33543,7 +33543,7 @@ _021383F0:
 	b _02138490
 _02138424:
 	add r0, sp, #0xd8
-	bl ov11_021356D8
+	bl DWC_Auth_GetResult
 	ldr r0, _02138CFC ; =OVERLAY11_BSS_02169CCC
 	ldr r0, [r0, #0xc]
 	cmp r0, #1
@@ -33552,7 +33552,7 @@ _02138424:
 	ldr r0, _02138D40 ; =0xFFFFA4FA
 	cmp r1, r0
 	beq _02138458
-	bl ov11_0213568C
+	bl DWC_Auth_GetError
 	cmp r0, #0xb
 	bne _0213847C
 _02138458:
@@ -33561,7 +33561,7 @@ _02138458:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	str r1, [r0, #4]
-	bl ov11_02135604
+	bl DWC_Auth_Destroy
 	mov r0, #0xb
 	bl ov11_02138D84
 	b _02138CA8
@@ -33572,12 +33572,12 @@ _0213847C:
 	add r0, r0, #0x1000
 	str r1, [r0, #4]
 _02138490:
-	bl ov11_02135604
+	bl DWC_Auth_Destroy
 	mov r0, #6
 	bl ov11_02138D84
 	b _02138CA8
 _021384A0:
-	bl ov11_02135604
+	bl DWC_Auth_Destroy
 _021384A4:
 	cmp r6, #0xc8
 	bne _021384CC
@@ -34358,8 +34358,8 @@ _02138FD8: .word errno
 _02138FDC: .word ptr_s_Jan_overlay_11_02166e6c_overlay_11_02166e70
 _02138FE0: .word OVERLAY11_BSS_02169D48
 
-	arm_func_start ov11_02138FE4
-ov11_02138FE4: ; 0x02138FE4
+	arm_func_start DWC_Svl_Init
+DWC_Svl_Init: ; 0x02138FE4
 	stmdb sp!, {r3, r4, r5, lr}
 	ldr r2, _0213906C ; =OVERLAY11_BSS_02169D5C
 	mov r5, r0
@@ -34369,10 +34369,10 @@ ov11_02138FE4: ; 0x02138FE4
 	beq _02139014
 	ldr r1, _02139070 ; =0xFFFFA1DC
 	mov r0, #9
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end ov11_02138FE4
+	arm_func_end DWC_Svl_Init
 _02139014:
 	ldr r0, _02139074 ; =s_ALLOC_intwork_overlay_11_02166ec0
 	ldr r1, _02139078 ; =0x00001C20
@@ -34383,7 +34383,7 @@ _02139014:
 	bne _02139044
 	ldr r1, _02139070 ; =0xFFFFA1DC
 	mov r0, #9
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
 _02139044:
@@ -34403,8 +34403,8 @@ _02139070: .word 0xFFFFA1DC
 _02139074: .word s_ALLOC_intwork_overlay_11_02166ec0
 _02139078: .word 0x00001C20
 
-	arm_func_start ov11_0213907C
-ov11_0213907C: ; 0x0213907C
+	arm_func_start DWC_Svl_Cleanup
+DWC_Svl_Cleanup: ; 0x0213907C
 	stmdb sp!, {r3, lr}
 	ldr r0, _021390C0 ; =OVERLAY11_BSS_02169D5C
 	ldr r0, [r0]
@@ -34425,10 +34425,10 @@ ov11_0213907C: ; 0x0213907C
 	.align 2, 0
 _021390C0: .word OVERLAY11_BSS_02169D5C
 _021390C4: .word s_FREE_intwork_overlay_11_02166ed0
-	arm_func_end ov11_0213907C
+	arm_func_end DWC_Svl_Cleanup
 
-	arm_func_start ov11_021390C8
-ov11_021390C8: ; 0x021390C8
+	arm_func_start DWC_Svl_GetTokenAsync
+DWC_Svl_GetTokenAsync: ; 0x021390C8
 	stmdb sp!, {r3, r4, r5, lr}
 	sub sp, sp, #0xb0
 	ldr r2, _0213930C ; =OVERLAY11_BSS_02169D5C
@@ -34451,7 +34451,7 @@ ov11_021390C8: ; 0x021390C8
 	cmp r0, #0
 	bne _02139120
 	bl OS_Terminate
-	arm_func_end ov11_021390C8
+	arm_func_end DWC_Svl_GetTokenAsync
 _02139120:
 	ldr r0, _02139310 ; =ptr_s_https_nas_test_nintendowifi_ne_overlay_11_021667ec_overlay_11_021667d0
 	ldr r1, _0213930C ; =OVERLAY11_BSS_02169D5C
@@ -34482,7 +34482,7 @@ _02139120:
 	beq _021391A4
 	ldr r1, _0213931C ; =0xFFFFA1DC
 	mov r0, #9
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #0xb0
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
@@ -34506,7 +34506,7 @@ _021391D4:
 	bl ov11_02136F74
 	ldr r1, _0213931C ; =0xFFFFA1DC
 	mov r0, #9
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #0xb0
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
@@ -34536,7 +34536,7 @@ _02139244:
 	bl ov11_02136F74
 	ldr r1, _0213931C ; =0xFFFFA1DC
 	mov r0, #9
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #0xb0
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
@@ -34553,7 +34553,7 @@ _0213926C:
 	bl ov11_02136F74
 	ldr r1, _0213931C ; =0xFFFFA1DC
 	mov r0, #9
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #0xb0
 	mov r0, #0
 	ldmia sp!, {r3, r4, r5, pc}
@@ -34578,7 +34578,7 @@ _021392AC:
 	bl ov11_02136F74
 	ldr r1, _0213931C ; =0xFFFFA1DC
 	mov r0, #9
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	mov r0, #0
 	add sp, sp, #0xb0
 	ldmia sp!, {r3, r4, r5, pc}
@@ -34593,8 +34593,8 @@ _02139324: .word s_SVCLOC_overlay_11_02166f08
 _02139328: .word s_svc_overlay_11_02166f10
 _0213932C: .word OSi_ThreadInfo
 
-	arm_func_start ov11_02139330
-ov11_02139330: ; 0x02139330
+	arm_func_start DWC_Svl_Process
+DWC_Svl_Process: ; 0x02139330
 	stmdb sp!, {r3, lr}
 	ldr r0, _021393FC ; =OVERLAY11_BSS_02169D5C
 	ldr r1, [r0]
@@ -34627,7 +34627,7 @@ ov11_02139330: ; 0x02139330
 	bl ov11_02136F74
 	mov r0, #4
 	ldmia sp!, {r3, pc}
-	arm_func_end ov11_02139330
+	arm_func_end DWC_Svl_Process
 _021393B0:
 	ldr r0, _021393FC ; =OVERLAY11_BSS_02169D5C
 	ldr r0, [r0]
@@ -34645,7 +34645,7 @@ _021393D8:
 	bl ov11_02136F74
 	ldr r1, _02139400 ; =0xFFFFA1DB
 	mov r0, #0x11
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	mov r0, #4
 	ldmia sp!, {r3, pc}
 _021393F4:
@@ -34668,7 +34668,7 @@ ov11_02139404: ; 0x02139404
 	bne _02139440
 	ldr r1, _021395F8 ; =0xFFFF9DF3
 	mov r0, #0x10
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #4
 	mov r0, #0
 	ldmia sp!, {r3, r4, pc}
@@ -34688,7 +34688,7 @@ _02139458:
 	bne _02139484
 	ldr r1, _021395F8 ; =0xFFFF9DF3
 	mov r0, #0x10
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #4
 	mov r0, #0
 	ldmia sp!, {r3, r4, pc}
@@ -34701,7 +34701,7 @@ _02139484:
 	bne _021394B4
 	ldr r1, _021395F8 ; =0xFFFF9DF3
 	mov r0, #0x10
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #4
 	mov r0, #0
 	ldmia sp!, {r3, r4, pc}
@@ -34711,7 +34711,7 @@ _021394B4:
 	ldr r1, _02139608 ; =0xFFFF9E58
 	mov r0, #0x10
 	sub r1, r1, r2
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #4
 	mov r0, #0
 	ldmia sp!, {r3, r4, pc}
@@ -34725,7 +34725,7 @@ _021394D8:
 	bgt _0213950C
 	ldr r1, _021395F8 ; =0xFFFF9DF3
 	mov r0, #0x10
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #4
 	mov r0, #0
 	ldmia sp!, {r3, r4, pc}
@@ -34739,7 +34739,7 @@ _0213950C:
 	bne _02139540
 	ldr r1, _021395F8 ; =0xFFFF9DF3
 	mov r0, #0x10
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #4
 	mov r0, #0
 	ldmia sp!, {r3, r4, pc}
@@ -34749,7 +34749,7 @@ _02139540:
 	ldr r1, _02139610 ; =0xFFFFA240
 	mov r0, #0x10
 	sub r1, r1, r2
-	bl ov11_0213B0F0
+	bl DWCi_SetError
 	add sp, sp, #4
 	mov r0, #0
 	ldmia sp!, {r3, r4, pc}
@@ -34803,8 +34803,8 @@ _02139614: .word s_svchost_overlay_11_02166f34
 _02139618: .word s_servicetoken_overlay_11_02166f3c
 _0213961C: .word s_statusdata_overlay_11_02166f4c
 
-	arm_func_start ov11_02139620
-ov11_02139620: ; 0x02139620
+	arm_func_start DWC_Auth_Base64Encode
+DWC_Auth_Base64Encode: ; 0x02139620
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #8
 	ldr r4, _021397A0 ; =0xAAAAAAAB
@@ -34836,7 +34836,7 @@ ov11_02139620: ; 0x02139620
 	sub fp, r2, #0x80000000
 	ldr r5, _021397A4 ; =ptr_s_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef_overlay_11_02166f5c_overlay_11_02166f58
 	mov r4, fp
-	arm_func_end ov11_02139620
+	arm_func_end DWC_Auth_Base64Encode
 _0213969C:
 	sub sb, r7, sl
 	mov r0, sb, lsl #3
@@ -36675,1237 +36675,6 @@ _0213AF94:
 	mov r0, #0
 	add sp, sp, #0x14
 	ldmia sp!, {pc}
-
-	arm_func_start ov11_0213AFA0
-ov11_0213AFA0: ; 0x0213AFA0
-	cmp r0, #0
-	ldrne r1, _0213AFBC ; =OVERLAY11_BSS_02169DA0
-	ldrne r1, [r1, #4]
-	strne r1, [r0]
-	ldr r0, _0213AFBC ; =OVERLAY11_BSS_02169DA0
-	ldr r0, [r0]
-	bx lr
-	.align 2, 0
-_0213AFBC: .word OVERLAY11_BSS_02169DA0
-	arm_func_end ov11_0213AFA0
-
-	arm_func_start ov11_0213AFC0
-ov11_0213AFC0: ; 0x0213AFC0
-	cmp r0, #0
-	ldrne r2, _0213B0B0 ; =OVERLAY11_BSS_02169DA0
-	ldrne r2, [r2, #4]
-	strne r2, [r0]
-	cmp r1, #0
-	beq _0213B0A4
-	ldr r0, _0213B0B0 ; =OVERLAY11_BSS_02169DA0
-	ldr r0, [r0]
-	cmp r0, #0x13
-	addls pc, pc, r0, lsl #2
-	b _0213B09C
-_0213AFEC: ; jump table
-	b _0213B09C ; case 0
-	b _0213B06C ; case 1
-	b _0213B03C ; case 2
-	b _0213B03C ; case 3
-	b _0213B03C ; case 4
-	b _0213B03C ; case 5
-	b _0213B048 ; case 6
-	b _0213B054 ; case 7
-	b _0213B03C ; case 8
-	b _0213B06C ; case 9
-	b _0213B060 ; case 10
-	b _0213B060 ; case 11
-	b _0213B060 ; case 12
-	b _0213B060 ; case 13
-	b _0213B078 ; case 14
-	b _0213B084 ; case 15
-	b _0213B090 ; case 16
-	b _0213B084 ; case 17
-	b _0213B090 ; case 18
-	b _0213B084 ; case 19
-	arm_func_end ov11_0213AFC0
-_0213B03C:
-	mov r0, #6
-	str r0, [r1]
-	b _0213B0A4
-_0213B048:
-	mov r0, #3
-	str r0, [r1]
-	b _0213B0A4
-_0213B054:
-	mov r0, #4
-	str r0, [r1]
-	b _0213B0A4
-_0213B060:
-	mov r0, #1
-	str r0, [r1]
-	b _0213B0A4
-_0213B06C:
-	mov r0, #7
-	str r0, [r1]
-	b _0213B0A4
-_0213B078:
-	mov r0, #5
-	str r0, [r1]
-	b _0213B0A4
-_0213B084:
-	mov r0, #6
-	str r0, [r1]
-	b _0213B0A4
-_0213B090:
-	mov r0, #2
-	str r0, [r1]
-	b _0213B0A4
-_0213B09C:
-	mov r0, #0
-	str r0, [r1]
-_0213B0A4:
-	ldr r0, _0213B0B0 ; =OVERLAY11_BSS_02169DA0
-	ldr r0, [r0]
-	bx lr
-	.align 2, 0
-_0213B0B0: .word OVERLAY11_BSS_02169DA0
-
-	arm_func_start ov11_0213B0B4
-ov11_0213B0B4: ; 0x0213B0B4
-	ldr r0, _0213B0D0 ; =OVERLAY11_BSS_02169DA0
-	ldr r1, [r0]
-	cmp r1, #9
-	movne r1, #0
-	strne r1, [r0]
-	strne r1, [r0, #4]
-	bx lr
-	.align 2, 0
-_0213B0D0: .word OVERLAY11_BSS_02169DA0
-	arm_func_end ov11_0213B0B4
-
-	arm_func_start ov11_0213B0D4
-ov11_0213B0D4: ; 0x0213B0D4
-	ldr r0, _0213B0EC ; =OVERLAY11_BSS_02169DA0
-	ldr r0, [r0]
-	cmp r0, #0
-	movne r0, #1
-	moveq r0, #0
-	bx lr
-	.align 2, 0
-_0213B0EC: .word OVERLAY11_BSS_02169DA0
-	arm_func_end ov11_0213B0D4
-
-	arm_func_start ov11_0213B0F0
-ov11_0213B0F0: ; 0x0213B0F0
-	ldr r2, _0213B104 ; =OVERLAY11_BSS_02169DA0
-	ldr r3, [r2]
-	cmp r3, #9
-	stmneia r2, {r0, r1}
-	bx lr
-	.align 2, 0
-_0213B104: .word OVERLAY11_BSS_02169DA0
-	arm_func_end ov11_0213B0F0
-
-	arm_func_start ov11_0213B108
-ov11_0213B108: ; 0x0213B108
-	sub r0, r0, #0x20
-	bx lr
-	arm_func_end ov11_0213B108
-
-	arm_func_start ov11_0213B110
-ov11_0213B110: ; 0x0213B110
-	ldr r2, _0213B124 ; =0x4457434D
-	str r2, [r0]
-	str r1, [r0, #4]
-	add r0, r0, #0x20
-	bx lr
-	.align 2, 0
-_0213B124: .word 0x4457434D
-	arm_func_end ov11_0213B110
-
-	arm_func_start ov11_0213B128
-ov11_0213B128: ; 0x0213B128
-	ldr r2, _0213B138 ; =OVERLAY11_BSS_02169DA8
-	str r0, [r2, #4]
-	str r1, [r2]
-	bx lr
-	.align 2, 0
-_0213B138: .word OVERLAY11_BSS_02169DA8
-	arm_func_end ov11_0213B128
-
-	arm_func_start ov11_0213B13C
-ov11_0213B13C: ; 0x0213B13C
-	ldr ip, _0213B148 ; =ov11_0213B14C
-	mov r2, #0x20
-	bx ip
-	.align 2, 0
-_0213B148: .word ov11_0213B14C
-	arm_func_end ov11_0213B13C
-
-	arm_func_start ov11_0213B14C
-ov11_0213B14C: ; 0x0213B14C
-	stmdb sp!, {r4, lr}
-	ldr r3, _0213B17C ; =OVERLAY11_BSS_02169DA8
-	mov r4, r1
-	ldr r3, [r3, #4]
-	add r1, r4, #0x20
-	blx r3
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r4, pc}
-	mov r1, r4
-	bl ov11_0213B110
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0213B17C: .word OVERLAY11_BSS_02169DA8
-	arm_func_end ov11_0213B14C
-
-	arm_func_start ov11_0213B180
-ov11_0213B180: ; 0x0213B180
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r2
-	cmp r1, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	mov r0, r1
-	bl ov11_0213B108
-	ldr r2, _0213B1B8 ; =OVERLAY11_BSS_02169DA8
-	mov r1, r0
-	ldr r3, [r2]
-	mov r0, r5
-	mov r2, r4
-	blx r3
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0213B1B8: .word OVERLAY11_BSS_02169DA8
-	arm_func_end ov11_0213B180
-
-	arm_func_start ov11_0213B1BC
-ov11_0213B1BC: ; 0x0213B1BC
-	stmdb sp!, {r4, r5, r6, lr}
-	ldr r2, _0213B218 ; =OVERLAY11_BSS_02169DB0
-	mov r6, r0
-	ldr r2, [r2]
-	mov r5, r1
-	mov r4, r3
-	cmp r2, #0
-	ldmneia sp!, {r4, r5, r6, pc}
-	mov r1, #0
-	mov r2, #0xc
-	bl MI_CpuFill8
-	strh r5, [r6, #8]
-	mov r0, #1
-	strh r0, [r6, #0xa]
-	strh r0, [r6, #4]
-	mov r0, #0
-	ldr r1, _0213B218 ; =OVERLAY11_BSS_02169DB0
-	strh r0, [r6, #6]
-	str r6, [r1]
-	bl ov11_0213B234
-	mov r0, r4
-	bl CPS_SetSslHandshakePriority
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0213B218: .word OVERLAY11_BSS_02169DB0
-	arm_func_end ov11_0213B1BC
-
-	arm_func_start ov11_0213B21C
-ov11_0213B21C: ; 0x0213B21C
-	ldr ip, _0213B230 ; =ov11_0213B1BC
-	mov r1, #3
-	mov r2, #1
-	mov r3, #0x14
-	bx ip
-	.align 2, 0
-_0213B230: .word ov11_0213B1BC
-	arm_func_end ov11_0213B21C
-
-	arm_func_start ov11_0213B234
-ov11_0213B234: ; 0x0213B234
-	stmdb sp!, {r3, lr}
-	cmp r0, #0
-	beq _0213B254
-	cmp r0, #1
-	beq _0213B260
-	cmp r0, #2
-	beq _0213B26C
-	ldmia sp!, {r3, pc}
-	arm_func_end ov11_0213B234
-_0213B254:
-	ldr r0, _0213B278 ; =s_https_nas_test_nintendowifi_ne_overlay_11_02167ce8
-	bl ov11_02135390
-	ldmia sp!, {r3, pc}
-_0213B260:
-	ldr r0, _0213B27C ; =s_https_nas_dev_nintendowifi_net_overlay_11_02167d10
-	bl ov11_02135390
-	ldmia sp!, {r3, pc}
-_0213B26C:
-	ldr r0, _0213B280 ; =s_https_nas_nintendowifi_net_ac_overlay_11_02167d34
-	bl ov11_02135390
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0213B278: .word s_https_nas_test_nintendowifi_ne_overlay_11_02167ce8
-_0213B27C: .word s_https_nas_dev_nintendowifi_net_overlay_11_02167d10
-_0213B280: .word s_https_nas_nintendowifi_net_ac_overlay_11_02167d34
-
-	arm_func_start ov11_0213B284
-ov11_0213B284: ; 0x0213B284
-	stmdb sp!, {lr}
-	sub sp, sp, #0xc
-	ldr r0, _0213B328 ; =OVERLAY11_BSS_02169DB0
-	ldr r0, [r0]
-	cmp r0, #0
-	beq _0213B314
-	ldrh r0, [r0, #4]
-	cmp r0, #1
-	addne sp, sp, #0xc
-	ldmneia sp!, {pc}
-	add r0, sp, #0
-	mov r1, #0
-	mov r2, #0xc
-	bl MI_CpuFill8
-	ldr r0, _0213B328 ; =OVERLAY11_BSS_02169DB0
-	ldr r3, _0213B32C ; =ov11_0213B13C
-	ldr lr, [r0]
-	ldr r2, _0213B330 ; =ov11_0213B180
-	ldrh ip, [lr, #8]
-	add r0, sp, #0
-	mov r1, #2
-	strb ip, [sp, #8]
-	ldrh ip, [lr, #0xa]
-	strb ip, [sp, #9]
-	str r3, [sp]
-	str r2, [sp, #4]
-	strh r1, [lr, #4]
-	bl ov11_02132564
-	cmp r0, #0
-	addne sp, sp, #0xc
-	ldmneia sp!, {pc}
-	mov r0, #9
-	sub r1, r0, #0xf
-	bl ov11_0213B0F0
-	add sp, sp, #0xc
-	ldmia sp!, {pc}
-	arm_func_end ov11_0213B284
-_0213B314:
-	mov r0, #9
-	sub r1, r0, #0xd
-	bl ov11_0213B0F0
-	add sp, sp, #0xc
-	ldmia sp!, {pc}
-	.align 2, 0
-_0213B328: .word OVERLAY11_BSS_02169DB0
-_0213B32C: .word ov11_0213B13C
-_0213B330: .word ov11_0213B180
-
-	arm_func_start ov11_0213B334
-ov11_0213B334: ; 0x0213B334
-	stmdb sp!, {r3, lr}
-	ldr r0, _0213B370 ; =OVERLAY11_BSS_02169DB0
-	ldr r1, [r0]
-	cmp r1, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	ldr r0, [r1]
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	mov r0, #3
-	strh r0, [r1, #4]
-	bl ov11_0213B3EC
-	mov r0, #1
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0213B370: .word OVERLAY11_BSS_02169DB0
-	arm_func_end ov11_0213B334
-
-	arm_func_start ov11_0213B374
-ov11_0213B374: ; 0x0213B374
-	stmdb sp!, {r3, lr}
-	ldr r0, _0213B3E8 ; =OVERLAY11_BSS_02169DB0
-	ldr r1, [r0]
-	cmp r1, #0
-	ldmeqia sp!, {r3, pc}
-	ldrh r0, [r1, #4]
-	cmp r0, #2
-	bne _0213B3A8
-	bl ov11_0213270C
-	ldr r1, _0213B3E8 ; =OVERLAY11_BSS_02169DB0
-	ldr r1, [r1]
-	str r0, [r1]
-	ldmia sp!, {r3, pc}
-	arm_func_end ov11_0213B374
-_0213B3A8:
-	cmp r0, #4
-	ldmneia sp!, {r3, pc}
-	ldrh r0, [r1, #6]
-	cmp r0, #0
-	ldmeqia sp!, {r3, pc}
-	bl WCM_GetPhase
-	cmp r0, #9
-	ldmeqia sp!, {r3, pc}
-	ldr r0, _0213B3E8 ; =OVERLAY11_BSS_02169DB0
-	mov r3, #0
-	ldr r2, [r0]
-	mov r1, #6
-	strh r3, [r2, #6]
-	ldr r0, [r0]
-	strh r1, [r0, #4]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0213B3E8: .word OVERLAY11_BSS_02169DB0
-
-	arm_func_start ov11_0213B3EC
-ov11_0213B3EC: ; 0x0213B3EC
-	stmdb sp!, {r3, lr}
-	ldr r0, _0213B498 ; =OVERLAY11_BSS_02169DB0
-	ldr r0, [r0]
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	ldrh r0, [r0, #4]
-	cmp r0, #1
-	ldmeqia sp!, {r3, pc}
-	bl ov11_021327DC
-	mov r1, r0
-	cmp r1, #5
-	bne _0213B440
-	ldr r1, _0213B498 ; =OVERLAY11_BSS_02169DB0
-	mov r0, #4
-	ldr r3, [r1]
-	mov r2, #1
-	strh r0, [r3, #4]
-	ldr r1, [r1]
-	strh r2, [r1, #6]
-	ldmia sp!, {r3, pc}
-	arm_func_end ov11_0213B3EC
-_0213B440:
-	cmp r1, #0
-	bge _0213B490
-	mvn r0, #9
-	cmp r1, r0
-	blt _0213B474
-	sub r1, r1, #0x2bc
-	mov r0, #9
-	bl ov11_0213B0F0
-	ldr r1, _0213B498 ; =OVERLAY11_BSS_02169DB0
-	mov r0, #8
-	ldr r1, [r1]
-	strh r0, [r1, #4]
-	ldmia sp!, {r3, pc}
-_0213B474:
-	mov r0, #5
-	bl ov11_0213B0F0
-	ldr r1, _0213B498 ; =OVERLAY11_BSS_02169DB0
-	mov r0, #7
-	ldr r1, [r1]
-	strh r0, [r1, #4]
-	ldmia sp!, {r3, pc}
-_0213B490:
-	mov r0, #2
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0213B498: .word OVERLAY11_BSS_02169DB0
-
-	arm_func_start ov11_0213B49C
-ov11_0213B49C: ; 0x0213B49C
-	stmdb sp!, {r4, lr}
-	ldr r0, _0213B4F8 ; =OVERLAY11_BSS_02169DB0
-	ldr r1, [r0]
-	cmp r1, #0
-	ldmeqia sp!, {r4, pc}
-	ldrh r1, [r1, #4]
-	cmp r1, #1
-	moveq r1, #0
-	streq r1, [r0]
-	ldmeqia sp!, {r4, pc}
-	bl ov11_0213291C
-	cmp r0, #0
-	bne _0213B4E8
-	mov r4, #0xa
-	arm_func_end ov11_0213B49C
-_0213B4D4:
-	mov r0, r4
-	bl OS_Sleep
-	bl ov11_0213291C
-	cmp r0, #0
-	beq _0213B4D4
-_0213B4E8:
-	ldr r0, _0213B4F8 ; =OVERLAY11_BSS_02169DB0
-	mov r1, #0
-	str r1, [r0]
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0213B4F8: .word OVERLAY11_BSS_02169DB0
-
-	arm_func_start ov11_0213B4FC
-ov11_0213B4FC: ; 0x0213B4FC
-	stmdb sp!, {r3, lr}
-	ldr r0, _0213B568 ; =OVERLAY11_BSS_02169DB0
-	ldr r2, [r0]
-	cmp r2, #0
-	moveq r0, #1
-	ldmeqia sp!, {r3, pc}
-	ldrh r1, [r2, #4]
-	cmp r1, #8
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	cmp r1, #1
-	bne _0213B53C
-	mov r1, #0
-	str r1, [r0]
-	mov r0, #1
-	ldmia sp!, {r3, pc}
-	arm_func_end ov11_0213B4FC
-_0213B53C:
-	mov r0, #5
-	strh r0, [r2, #4]
-	bl ov11_0213291C
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	ldr r0, _0213B568 ; =OVERLAY11_BSS_02169DB0
-	mov r1, #0
-	str r1, [r0]
-	mov r0, #1
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0213B568: .word OVERLAY11_BSS_02169DB0
-
-	arm_func_start ov11_0213B56C
-ov11_0213B56C: ; 0x0213B56C
-	ldr r0, _0213B594 ; =OVERLAY11_BSS_02169DB0
-	ldr r0, [r0]
-	cmp r0, #0
-	beq _0213B58C
-	ldrh r0, [r0, #4]
-	cmp r0, #6
-	moveq r0, #1
-	bxeq lr
-	arm_func_end ov11_0213B56C
-_0213B58C:
-	mov r0, #0
-	bx lr
-	.align 2, 0
-_0213B594: .word OVERLAY11_BSS_02169DB0
-
-	arm_func_start thunk_FUN_02056194
-thunk_FUN_02056194: ; 0x0213B598
-	ldr ip, _0213B5A0 ; =FUN_02056194
-	bx ip
-	.align 2, 0
-_0213B5A0: .word WCM_GetLinkLevel
-	arm_func_end thunk_FUN_02056194
-
-	arm_func_start ov11_0213B5A4
-ov11_0213B5A4: ; 0x0213B5A4
-	stmdb sp!, {r3, r4, r5, r6, lr}
-	sub sp, sp, #0x14
-	mov r1, #0
-	mov r2, #0x3c
-	mov r4, r0
-	bl MI_CpuFill8
-	mov r0, #0xff
-	str r0, [r4, #4]
-	bl ov11_0213B3EC
-	cmp r0, #4
-	addne sp, sp, #0x14
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, r6, pc}
-	bl ov11_02132848
-	str r0, [r4]
-	bl OS_DisableInterrupts
-	mov r6, r0
-	bl WCM_GetApMacAddress
-	mov r5, r0
-	mov r1, #6
-	bl DC_InvalidateRange
-	cmp r5, #0
-	bne _0213B614
-	mov r0, r6
-	bl OS_RestoreInterrupts
-	add sp, sp, #0x14
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, pc}
-	arm_func_end ov11_0213B5A4
-_0213B614:
-	mov r0, r5
-	add r1, r4, #0x33
-	mov r2, #6
-	bl MI_CpuCopy8
-	ldr r0, [r4]
-	cmp r0, #0
-	blt _0213B678
-	cmp r0, #3
-	bge _0213B678
-	add r0, sp, #0
-	bl WCM_GetApEssid
-	mov r5, r0
-	mov r1, #0x20
-	bl DC_InvalidateRange
-	cmp r5, #0
-	bne _0213B668
-	mov r0, r6
-	bl OS_RestoreInterrupts
-	add sp, sp, #0x14
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, pc}
-_0213B668:
-	ldrh r2, [sp]
-	mov r0, r5
-	add r1, r4, #0x12
-	bl MI_CpuCopy8
-_0213B678:
-	mov r0, r6
-	bl OS_RestoreInterrupts
-	add r0, sp, #2
-	mov r1, #0
-	mov r2, #0x10
-	bl MI_CpuFill8
-	add r0, sp, #2
-	bl ov11_0213288C
-	cmp r0, #1
-	bne _0213B6C4
-	ldrb r1, [sp, #8]
-	cmp r1, #0
-	beq _0213B6C4
-	sub r3, r1, #0x30
-	add r0, sp, #9
-	add r1, r4, #8
-	mov r2, #9
-	str r3, [r4, #4]
-	bl MI_CpuCopy8
-_0213B6C4:
-	mov r0, #1
-	add sp, sp, #0x14
-	ldmia sp!, {r3, r4, r5, r6, pc}
-
-	arm_func_start ov11_0213B6D0
-ov11_0213B6D0: ; 0x0213B6D0
-	stmdb sp!, {r3, lr}
-	bl ov11_0213B374
-	bl ov11_0213B56C
-	cmp r0, #0
-	beq _0213B710
-	bl ov11_02132848
-	mov r2, r0
-	cmp r2, #0x63
-	ldr r1, _0213B718 ; =0xFFFF2D10
-	movhi r2, #0x63
-	mov r0, #8
-	sub r1, r1, r2
-	bl ov11_0213B0F0
-	bl ov11_0213B49C
-	mov r0, #1
-	ldmia sp!, {r3, pc}
-	arm_func_end ov11_0213B6D0
-_0213B710:
-	mov r0, #0
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0213B718: .word 0xFFFF2D10
-
-	arm_func_start ov11_0213B71C
-ov11_0213B71C: ; 0x0213B71C
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r1
-	ldr r0, _0213B784 ; =ov11_0213B13C
-	ldr r1, _0213B788 ; =ov11_0213B180
-	bl ov11_02138FE4
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, pc}
-	mov r0, r5
-	bl strlen
-	cmp r0, #0
-	bne _0213B760
-	ldr r0, _0213B78C ; =DAT_overlay_11_02167d54
-	mov r1, r4
-	bl ov11_021390C8
-	b _0213B76C
-	arm_func_end ov11_0213B71C
-_0213B760:
-	mov r0, r5
-	mov r1, r4
-	bl ov11_021390C8
-_0213B76C:
-	cmp r0, #0
-	movne r0, #1
-	ldmneia sp!, {r3, r4, r5, pc}
-	bl ov11_0213907C
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, pc}
-	.align 2, 0
-_0213B784: .word ov11_0213B13C
-_0213B788: .word ov11_0213B180
-_0213B78C: .word DAT_overlay_11_02167d54
-
-	arm_func_start ov11_0213B790
-ov11_0213B790: ; 0x0213B790
-	stmdb sp!, {r4, lr}
-	bl ov11_02139330
-	mov r4, r0
-	sub r0, r4, #3
-	cmp r0, #2
-	bhi _0213B7AC
-	bl ov11_0213907C
-	arm_func_end ov11_0213B790
-_0213B7AC:
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-
-	arm_func_start ov11_0213B7B4
-ov11_0213B7B4: ; 0x0213B7B4
-	stmdb sp!, {r3, lr}
-	ldr r0, _0213B860 ; =OVERLAY11_BSS_02169DB4
-	ldr r0, [r0]
-	cmp r0, #0
-	beq _0213B7CC
-	bl OS_Terminate
-	arm_func_end ov11_0213B7B4
-_0213B7CC:
-	ldr r1, _0213B864 ; =0x00001E20
-	mov r0, #4
-	bl ov11_0213B13C
-	ldr r1, _0213B860 ; =OVERLAY11_BSS_02169DB4
-	cmp r0, #0
-	str r0, [r1]
-	bne _0213B7FC
-	ldr r1, _0213B868 ; =0xFFFFB17C
-	mov r0, #9
-	bl ov11_0213B0F0
-	mov r0, #0
-	ldmia sp!, {r3, pc}
-_0213B7FC:
-	ldr r2, _0213B864 ; =0x00001E20
-	mov r1, #0
-	bl MI_CpuFill8
-	ldr r1, _0213B860 ; =OVERLAY11_BSS_02169DB4
-	ldr r0, _0213B86C ; =DAT_overlay_11_02167d5c
-	ldr r1, [r1]
-	mov r2, #9
-	add r1, r1, #0x48
-	add r1, r1, #0x1c00
-	bl MI_CpuCopy8
-	ldr r1, _0213B860 ; =OVERLAY11_BSS_02169DB4
-	ldr r3, _0213B870 ; =ov11_0213B13C
-	ldr r0, [r1]
-	ldr r2, _0213B874 ; =ov11_0213B180
-	add r0, r0, #0x1000
-	str r3, [r0, #0xc54]
-	ldr r0, [r1]
-	add r0, r0, #0x1000
-	str r2, [r0, #0xc58]
-	ldr r1, [r1]
-	add r0, r1, #0x14
-	add r0, r0, #0x1c00
-	bl ov11_021353A0
-	mov r0, #1
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0213B860: .word OVERLAY11_BSS_02169DB4
-_0213B864: .word 0x00001E20
-_0213B868: .word 0xFFFFB17C
-_0213B86C: .word DAT_overlay_11_02167d5c
-_0213B870: .word ov11_0213B13C
-_0213B874: .word ov11_0213B180
-
-	arm_func_start ov11_0213B878
-ov11_0213B878: ; 0x0213B878
-	stmdb sp!, {lr}
-	sub sp, sp, #0x1c4
-	ldr r0, _0213B968 ; =OVERLAY11_BSS_02169DB4
-	ldr r0, [r0]
-	cmp r0, #0
-	addeq sp, sp, #0x1c4
-	moveq r0, #0
-	ldmeqia sp!, {pc}
-	bl ov11_0213568C
-	cmp r0, #0
-	beq _0213B8B8
-	cmp r0, #0x14
-	beq _0213B8F4
-	cmp r0, #0x15
-	beq _0213B8C4
-	b _0213B924
-	arm_func_end ov11_0213B878
-_0213B8B8:
-	add sp, sp, #0x1c4
-	mov r0, #2
-	ldmia sp!, {pc}
-_0213B8C4:
-	bl ov11_02135604
-	ldr r0, _0213B968 ; =OVERLAY11_BSS_02169DB4
-	ldr r2, _0213B96C ; =0x00001E20
-	ldr r1, [r0]
-	mov r0, #4
-	bl ov11_0213B180
-	ldr r0, _0213B968 ; =OVERLAY11_BSS_02169DB4
-	mov r1, #0
-	str r1, [r0]
-	add sp, sp, #0x1c4
-	mov r0, #3
-	ldmia sp!, {pc}
-_0213B8F4:
-	bl ov11_02135604
-	ldr r0, _0213B968 ; =OVERLAY11_BSS_02169DB4
-	ldr r2, _0213B96C ; =0x00001E20
-	ldr r1, [r0]
-	mov r0, #4
-	bl ov11_0213B180
-	ldr r0, _0213B968 ; =OVERLAY11_BSS_02169DB4
-	mov r1, #0
-	str r1, [r0]
-	add sp, sp, #0x1c4
-	mov r0, #5
-	ldmia sp!, {pc}
-_0213B924:
-	add r0, sp, #0
-	bl ov11_021356D8
-	bl ov11_02135604
-	ldr r0, _0213B968 ; =OVERLAY11_BSS_02169DB4
-	ldr r2, _0213B96C ; =0x00001E20
-	ldr r1, [r0]
-	mov r0, #4
-	bl ov11_0213B180
-	ldr r1, [sp]
-	ldr r2, _0213B968 ; =OVERLAY11_BSS_02169DB4
-	mov r3, #0
-	mov r0, #2
-	str r3, [r2]
-	bl ov11_0213B0F0
-	mov r0, #4
-	add sp, sp, #0x1c4
-	ldmia sp!, {pc}
-	.align 2, 0
-_0213B968: .word OVERLAY11_BSS_02169DB4
-_0213B96C: .word 0x00001E20
-
-	arm_func_start ov11_0213B970
-ov11_0213B970: ; 0x0213B970
-	ldr ip, _0213B984 ; =ov11_0213B14C
-	mov r2, r1
-	mov r1, r0
-	mov r0, #6
-	bx ip
-	.align 2, 0
-_0213B984: .word ov11_0213B14C
-	arm_func_end ov11_0213B970
-
-	arm_func_start ov11_0213B988
-ov11_0213B988: ; 0x0213B988
-	ldr ip, _0213B99C ; =ov11_0213B180
-	mov r1, r0
-	mov r0, #6
-	mov r2, #0
-	bx ip
-	.align 2, 0
-_0213B99C: .word ov11_0213B180
-	arm_func_end ov11_0213B988
-
-	arm_func_start ov11_0213B9A0
-ov11_0213B9A0: ; 0x0213B9A0
-	stmdb sp!, {r4, r5, r6, lr}
-	movs r5, r1
-	mov r6, r0
-	mov r4, r2
-	bne _0213B9C8
-	ldr r3, _0213BA80 ; =OVERLAY11_BSS_02169DB8
-	ldr r3, [r3]
-	ldr r3, [r3]
-	blx r3
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end ov11_0213B9A0
-_0213B9C8:
-	cmp r5, #8
-	addls pc, pc, r5, lsl #2
-	b _0213BA5C
-_0213B9D4: ; jump table
-	b _0213BA5C ; case 0
-	b _0213B9F8 ; case 1
-	b _0213BA08 ; case 2
-	b _0213BA10 ; case 3
-	b _0213BA20 ; case 4
-	b _0213BA30 ; case 5
-	b _0213BA60 ; case 6
-	b _0213BA44 ; case 7
-	b _0213BA4C ; case 8
-_0213B9F8:
-	ldr r1, _0213BA84 ; =0xFFFF86E7
-	mov r0, #9
-	bl ov11_0213B0F0
-	b _0213BA60
-_0213BA08:
-	bl OS_Terminate
-	b _0213BA60
-_0213BA10:
-	ldr r1, _0213BA88 ; =0xFFFF86D4
-	mov r0, #0xf
-	bl ov11_0213B0F0
-	b _0213BA60
-_0213BA20:
-	ldr r1, _0213BA8C ; =0xFFFF86CA
-	mov r0, #0xe
-	bl ov11_0213B0F0
-	b _0213BA60
-_0213BA30:
-	ldr r1, _0213BA90 ; =0xFFFF86E8
-	mov r0, #0xe
-	sub r1, r1, r4
-	bl ov11_0213B0F0
-	b _0213BA60
-_0213BA44:
-	bl OS_Terminate
-	b _0213BA60
-_0213BA4C:
-	ldr r1, _0213BA94 ; =0xFFFF86DF
-	mov r0, #9
-	bl ov11_0213B0F0
-	b _0213BA60
-_0213BA5C:
-	bl OS_Terminate
-_0213BA60:
-	ldr r1, _0213BA80 ; =OVERLAY11_BSS_02169DB8
-	mov r0, r6
-	ldr r2, [r1]
-	mov r1, r5
-	ldr r3, [r2]
-	mov r2, r4
-	blx r3
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0213BA80: .word OVERLAY11_BSS_02169DB8
-_0213BA84: .word 0xFFFF86E7
-_0213BA88: .word 0xFFFF86D4
-_0213BA8C: .word 0xFFFF86CA
-_0213BA90: .word 0xFFFF86E8
-_0213BA94: .word 0xFFFF86DF
-
-	arm_func_start ov11_0213BA98
-ov11_0213BA98: ; 0x0213BA98
-	stmdb sp!, {r4, lr}
-	ldr r0, _0213BAD8 ; =OVERLAY11_BSS_02169DB8
-	ldr r0, [r0]
-	add r0, r0, #0x9c0
-	bl OS_JoinThread
-	ldr r0, _0213BAD8 ; =OVERLAY11_BSS_02169DB8
-	ldr r0, [r0]
-	ldr r4, [r0, #4]
-	bl ov11_0213B988
-	ldr r0, _0213BAD8 ; =OVERLAY11_BSS_02169DB8
-	mov r1, #0
-	str r1, [r0]
-	cmp r4, #0
-	ldmeqia sp!, {r4, pc}
-	blx r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_0213BAD8: .word OVERLAY11_BSS_02169DB8
-	arm_func_end ov11_0213BA98
-
-	arm_func_start ov11_0213BADC
-ov11_0213BADC: ; 0x0213BADC
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #0x2a0
-	mov r7, #0
-	mov r6, #6
-	mvn r5, #0
-	mov r4, #0x64
-	arm_func_end ov11_0213BADC
-_0213BAF4:
-	bl ov11_0213B790
-	cmp r0, #3
-	bne _0213BC10
-	ldr r0, _0213BC7C ; =OVERLAY11_BSS_02169DB8
-	ldr r5, [r0]
-	add r0, r5, #0x50
-	bl strlen
-	mov r4, r0
-	ldr r0, _0213BC80 ; =s_https_download_overlay_11_02167d60
-	bl strlen
-	add r0, r4, r0
-	cmp r0, #0xff
-	bls _0213BB40
-	mov r1, #8
-	sub r2, r1, #9
-	mov r0, #0
-	bl ov11_0213B9A0
-	add sp, sp, #0x2a0
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-_0213BB40:
-	ldr r2, _0213BC84 ; =s_https_s_download_overlay_11_02167d74
-	add r0, sp, #0x1a0
-	add r3, r5, #0x50
-	mov r1, #0x100
-	bl STD_TSNPrintf
-	ldr r0, _0213BC7C ; =OVERLAY11_BSS_02169DB8
-	ldr r4, [r0]
-	add r0, r4, #0x91
-	bl strlen
-	mov r1, r0
-	add r2, sp, #0x10
-	add r0, r4, #0x91
-	mov r3, #0x190
-	bl ov11_02139620
-	cmp r0, #0
-	bge _0213BB98
-	mov r1, #8
-	sub r2, r1, #9
-	mov r0, #0
-	bl ov11_0213B9A0
-	add sp, sp, #0x2a0
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-_0213BB98:
-	ldr r0, _0213BC7C ; =OVERLAY11_BSS_02169DB8
-	ldr r4, _0213BC88 ; =ov11_0213B9A0
-	ldr r2, [r0]
-	ldr r0, _0213BC8C ; =ov11_0213B970
-	add r1, r2, #8
-	str r1, [sp]
-	add r1, r2, #0x28
-	str r1, [sp, #4]
-	ldr r1, _0213BC90 ; =ov11_0213B988
-	add r2, sp, #0x1a0
-	add r3, sp, #0x10
-	str r4, [sp, #8]
-	bl DWCi_NdStartup
-	cmp r0, #0
-	mov r0, #0
-	bne _0213BBEC
-	mov r1, #8
-	sub r2, r1, #9
-	bl ov11_0213B9A0
-	add sp, sp, #0x2a0
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-_0213BBEC:
-	ldr r1, _0213BC7C ; =OVERLAY11_BSS_02169DB8
-	mov r4, #1
-	ldr r3, [r1]
-	mov r1, r0
-	sub r2, r0, #1
-	str r4, [r3, #0x48]
-	bl ov11_0213B9A0
-	add sp, sp, #0x2a0
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-_0213BC10:
-	cmp r0, #4
-	bne _0213BC50
-	add r0, sp, #0xc
-	bl ov11_0213AFA0
-	ldr r1, [sp, #0xc]
-	mov r0, #0xe
-	bl ov11_0213B0F0
-	ldr r0, _0213BC7C ; =OVERLAY11_BSS_02169DB8
-	mov r1, #3
-	ldr r0, [r0]
-	sub r2, r1, #4
-	ldr r3, [r0]
-	mov r0, #0
-	blx r3
-	add sp, sp, #0x2a0
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-_0213BC50:
-	cmp r0, #5
-	bne _0213BC68
-	mov r0, r7
-	mov r1, r6
-	mov r2, r5
-	bl ov11_0213B9A0
-_0213BC68:
-	mov r0, r4
-	bl OS_Sleep
-	b _0213BAF4
-_0213BC74:
-	.byte 0x2A, 0xDE, 0x8D, 0xE2, 0xF8, 0x80, 0xBD, 0xE8
-_0213BC7C: .word OVERLAY11_BSS_02169DB8
-_0213BC80: .word s_https_download_overlay_11_02167d60
-_0213BC84: .word s_https_s_download_overlay_11_02167d74
-_0213BC88: .word ov11_0213B9A0
-_0213BC8C: .word ov11_0213B970
-_0213BC90: .word ov11_0213B988
-
-	arm_func_start ov11_0213BC94
-ov11_0213BC94: ; 0x0213BC94
-	stmdb sp!, {r4, r5, r6, lr}
-	sub sp, sp, #8
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl ov11_0213B0D4
-	cmp r0, #0
-	addne sp, sp, #8
-	movne r0, #0
-	ldmneia sp!, {r4, r5, r6, pc}
-	mov r0, #0xa80
-	mov r1, #0x20
-	bl ov11_0213B970
-	ldr r2, _0213BDA0 ; =OVERLAY11_BSS_02169DB8
-	mov r1, #0
-	str r0, [r2]
-	str r1, [r0, #0x48]
-	ldr r0, [r2]
-	mov r2, #0xa80
-	bl MI_CpuFill8
-	ldr r0, _0213BDA0 ; =OVERLAY11_BSS_02169DB8
-	mov r1, r5
-	ldr r3, [r0]
-	mov r2, #0x1f
-	str r6, [r3]
-	ldr r0, [r0]
-	add r0, r0, #8
-	bl strncpy
-	ldr r0, _0213BDA0 ; =OVERLAY11_BSS_02169DB8
-	mov r1, r4
-	ldr r0, [r0]
-	mov r2, #0x1f
-	add r0, r0, #0x28
-	bl strncpy
-	ldr r1, _0213BDA0 ; =OVERLAY11_BSS_02169DB8
-	ldr r0, _0213BDA4 ; =DAT_overlay_11_02167d88
-	ldr r1, [r1]
-	add r1, r1, #0x4c
-	bl ov11_0213B71C
-	cmp r0, #0
-	bne _0213BD58
-	ldr r0, _0213BDA0 ; =OVERLAY11_BSS_02169DB8
-	ldr r0, [r0]
-	bl ov11_0213B988
-	ldr r1, _0213BDA0 ; =OVERLAY11_BSS_02169DB8
-	mov r0, #0
-	str r0, [r1]
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end ov11_0213BC94
-_0213BD58:
-	ldr r0, _0213BDA0 ; =OVERLAY11_BSS_02169DB8
-	mov r2, #0x800
-	ldr r3, [r0]
-	ldr r1, _0213BDA8 ; =ov11_0213BADC
-	str r2, [sp]
-	mov ip, #0x10
-	add r0, r3, #0x9c0
-	add r3, r3, #0x9c0
-	mov r2, #0
-	str ip, [sp, #4]
-	bl OS_CreateThread
-	ldr r0, _0213BDA0 ; =OVERLAY11_BSS_02169DB8
-	ldr r0, [r0]
-	add r0, r0, #0x9c0
-	bl OS_WakeupThreadDirect
-	mov r0, #1
-	add sp, sp, #8
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0213BDA0: .word OVERLAY11_BSS_02169DB8
-_0213BDA4: .word DAT_overlay_11_02167d88
-_0213BDA8: .word ov11_0213BADC
-
-	arm_func_start ov11_0213BDAC
-ov11_0213BDAC: ; 0x0213BDAC
-	stmdb sp!, {r3, lr}
-	ldr r1, _0213BDF0 ; =OVERLAY11_BSS_02169DB8
-	ldr r2, [r1]
-	cmp r2, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, pc}
-	str r0, [r2, #4]
-	ldr r0, [r1]
-	ldr r0, [r0, #0x48]
-	cmp r0, #0
-	bne _0213BDE0
-	bl ov11_0213BA98
-	b _0213BDE8
-	arm_func_end ov11_0213BDAC
-_0213BDE0:
-	ldr r0, _0213BDF4 ; =ov11_0213BA98
-	bl DWCi_NdCleanupAsync
-_0213BDE8:
-	mov r0, #1
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0213BDF0: .word OVERLAY11_BSS_02169DB8
-_0213BDF4: .word ov11_0213BA98
-
-	arm_func_start ov11_0213BDF8
-ov11_0213BDF8: ; 0x0213BDF8
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl ov11_0213B0D4
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r4, r5, r6, pc}
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl DWCi_NdSetAttr
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end ov11_0213BDF8
-
-	arm_func_start ov11_0213BE2C
-ov11_0213BE2C: ; 0x0213BE2C
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl ov11_0213B0D4
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r4, pc}
-	mov r0, r4
-	bl DWCi_NdGetFileListNumAsync
-	ldmia sp!, {r4, pc}
-	arm_func_end ov11_0213BE2C
-
-	arm_func_start ov11_0213BE50
-ov11_0213BE50: ; 0x0213BE50
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl ov11_0213B0D4
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r4, r5, r6, pc}
-	mov r0, #0xb0
-	mul r2, r4, r0
-	mov r0, r6
-	mov r1, #0
-	bl MI_CpuFill8
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl DWCi_NdGetFileListAsync
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end ov11_0213BE50
-
-	arm_func_start ov11_0213BE98
-ov11_0213BE98: ; 0x0213BE98
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl ov11_0213B0D4
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r4, r5, r6, pc}
-	mov r0, r6
-	mov r1, r5
-	mov r2, r4
-	bl DWCi_NdGetFileAsync
-	ldmia sp!, {r4, r5, r6, pc}
-	arm_func_end ov11_0213BE98
-
-	arm_func_start ov11_0213BECC
-ov11_0213BECC: ; 0x0213BECC
-	stmdb sp!, {r3, r4, r5, lr}
-	mov r5, r0
-	mov r4, r1
-	bl ov11_0213B0D4
-	cmp r0, #0
-	movne r0, #0
-	ldmneia sp!, {r3, r4, r5, pc}
-	mov r0, r5
-	mov r1, r4
-	bl DWCi_NdGetProgress
-	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end ov11_0213BECC
 
     .rodata
 
@@ -40381,46 +39150,6 @@ DAT_overlay_11_02167be8: ; 0x02167BE8
 	.byte 0x72, 0xA9, 0x60, 0x13, 0x5E, 0x00, 0x01, 0xC9, 0x4A, 0xFA, 0x3F, 0xA4, 0xEA, 0x07, 0x03, 0x21
 	.byte 0x02, 0x8E, 0x82, 0xCA, 0x03, 0xC2, 0x9B, 0x8F
 
-    .global s_https_nas_test_nintendowifi_ne_overlay_11_02167ce8
-s_https_nas_test_nintendowifi_ne_overlay_11_02167ce8: ; 0x02167CE8
-	.asciz "https://nas.test.nintendowifi.net/ac"
-
-    .global DAT_overlay_11_02167D0D
-DAT_overlay_11_02167D0D:
-	.byte 0x00, 0x00, 0x00
-
-    .global s_https_nas_dev_nintendowifi_net_overlay_11_02167d10
-s_https_nas_dev_nintendowifi_net_overlay_11_02167d10: ; 0x02167D10
-	.asciz "https://nas.dev.nintendowifi.net/ac"
-
-    .global s_https_nas_nintendowifi_net_ac_overlay_11_02167d34
-s_https_nas_nintendowifi_net_ac_overlay_11_02167d34: ; 0x02167D34
-	.asciz "https://nas.nintendowifi.net/ac"
-
-    .global DAT_overlay_11_02167d54
-DAT_overlay_11_02167d54: ; 0x02167D54
-	.byte 0x30, 0x30, 0x30, 0x30, 0x00, 0x00, 0x00, 0x00
-
-    .global DAT_overlay_11_02167d5c
-DAT_overlay_11_02167d5c: ; 0x02167D5C
-	.byte 0x00, 0x00, 0x00, 0x00
-
-    .global s_https_download_overlay_11_02167d60
-s_https_download_overlay_11_02167d60: ; 0x02167D60
-	.asciz "https:///download"
-
-    .global DAT_overlay_11_02167D72
-DAT_overlay_11_02167D72:
-	.byte 0x00, 0x00
-
-    .global s_https_s_download_overlay_11_02167d74
-s_https_s_download_overlay_11_02167d74: ; 0x02167D74
-	.asciz "https://%s/download"
-
-    .global DAT_overlay_11_02167d88
-DAT_overlay_11_02167d88: ; 0x02167D88
-	.byte 0x39, 0x30, 0x30, 0x30, 0x00, 0x00, 0x00, 0x00
-
     .bss
 
     .global OVERLAY11_BSS_02169B40
@@ -40546,23 +39275,3 @@ OVERLAY11_BSS_02169D78: ; 0x02169D78
     .global OVERLAY11_BSS_02169D80
 OVERLAY11_BSS_02169D80: ; 0x02169D80
     .space 0x20
-
-    .global OVERLAY11_BSS_02169DA0
-OVERLAY11_BSS_02169DA0: ; 0x02169DA0
-    .space 0x8
-
-    .global OVERLAY11_BSS_02169DA8
-OVERLAY11_BSS_02169DA8: ; 0x02169DA8
-    .space 0x8
-
-    .global OVERLAY11_BSS_02169DB0
-OVERLAY11_BSS_02169DB0: ; 0x02169DB0
-    .space 0x4
-
-    .global OVERLAY11_BSS_02169DB4
-OVERLAY11_BSS_02169DB4: ; 0x02169DB4
-    .space 0x4
-
-    .global OVERLAY11_BSS_02169DB8
-OVERLAY11_BSS_02169DB8: ; 0x02169DB8
-    .space 0x4

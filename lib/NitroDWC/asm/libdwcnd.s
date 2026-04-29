@@ -548,7 +548,7 @@ _02161658:
 	ldrb r1, [ip]
 	ldr r0, _0216172C ; =OVERLAY11_BSS_0216D35C
 	strb r1, [r3]
-	bl ov11_0213B5A4
+	bl DWC_GetApInfo
 	cmp r0, #0
 	beq _0216171C
 	ldr r0, _02161730 ; =OVERLAY11_BSS_0216D35C
@@ -647,7 +647,7 @@ ov11_021617C4: ; 0x021617C4
 	mov r3, #2
 	mov r1, #0x21
 	str r3, [sp]
-	bl STD_TSNPrintf
+	bl OS_SNPrintf
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _021617E0: .word s_Nitro_WiFi_SDK_d_d_overlay_11_02169a6c

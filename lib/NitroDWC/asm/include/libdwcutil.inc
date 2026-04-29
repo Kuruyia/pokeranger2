@@ -333,10 +333,10 @@
 .public OS_UnlockMutex
 .public OS_WaitVBlankIntr
 .public OS_WakeupThreadDirect
-.public ov11_02132564
-.public ov11_0213270C
-.public ov11_021327DC
-.public ov11_0213291C
+.public DWC_AC_Create
+.public DWC_AC_Process
+.public DWC_AC_GetStatus
+.public DWC_AC_Destroy
 .public ov11_02132958
 .public ov11_02139940
 .public ov11_02139B38

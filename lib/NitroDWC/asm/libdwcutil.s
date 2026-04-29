@@ -34436,7 +34436,7 @@ ov11_02153514: ; 0x02153514
 	addne r0, r0, #1
 	strneb r0, [sp, #0xe]
 	add r0, sp, #4
-	bl ov11_02132564
+	bl DWC_AC_Create
 	cmp r0, #0
 	bne _02153570
 	bl OS_Terminate
@@ -34569,7 +34569,7 @@ ov11_021536B8: ; 0x021536B8
 	stmdb sp!, {r4, lr}
 	bl ov11_02155E04
 	mov r4, r0
-	bl ov11_0213291C
+	bl DWC_AC_Destroy
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
 	bl ov11_0213A4FC
@@ -34611,7 +34611,7 @@ _02153748: .word ov11_021537DC-1
 ov11_0215374C: ; 0x0215374C
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
-	bl ov11_0213270C
+	bl DWC_AC_Process
 	movs r4, r0
 	ldmeqia sp!, {r3, r4, r5, pc}
 	bl ov11_02143578
@@ -34626,7 +34626,7 @@ ov11_0215374C: ; 0x0215374C
 	b _02153798
 	arm_func_end ov11_0215374C
 _02153788:
-	bl ov11_021327DC
+	bl DWC_AC_GetStatus
 	bl ov11_0214E404
 	mov r0, #0x12
 	bl ov11_021561C8

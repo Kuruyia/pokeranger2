@@ -1,0 +1,20 @@
+diff --git a/libraries/base/src/dwc_memfunc.c b/libraries/base/src/dwc_memfunc.c
+index cd17de7..e7152f7 100644
+--- a/libraries/base/src/dwc_memfunc.c
++++ b/libraries/base/src/dwc_memfunc.c
+@@ -79,7 +79,7 @@ void DWC_Free (DWCAllocType name, void * ptr, u32 size)
+     }
+ 
+     ptr = DWCi_GetAllocateHeader(ptr);
+-    s_free(name, ptr, ((DWCiAllocHeader *)ptr)->size + sizeof(DWCiAllocHeader));
++    s_free(name, ptr, size);
+ }
+ 
+ void * DWC_Realloc (DWCAllocType name, void * ptr, u32 oldsize, u32 newsize)
+@@ -125,4 +125,4 @@ void DWCi_GsFree (void * ptr)
+ void * DWCi_GsMemalign (size_t boundary, size_t size)
+ {
+     return DWC_AllocEx(DWC_ALLOCTYPE_GS, (u32)size, (int)boundary);
+-}
+\ No newline at end of file
++}
