@@ -4,7 +4,7 @@ revision = 4d29f686ae4c2af03f7132571e1481620df3ade1
 depth = 1
 directory = NitroDWC-2.2.30000
 
-diff_files = NitroDWC_patch/0000-downgrade_version.patch
+diff_files = NitroDWC_patch/0000-downgrade_version.patch, NitroDWC_patch/0001-fix_DWC_Free.patch, NitroDWC_patch/0002-fix_DWC_InitInetEx.patch, NitroDWC_patch/0003-fix_DWC_ConnectInetAsync.patch, NitroDWC_patch/0004-fix_DWC_CheckInet.patch, NitroDWC_patch/0005-fix_DWC_GetInetStatus.patch, NitroDWC_patch/0006-fix_DWC_GetApInfo.patch, NitroDWC_patch/0007-fix_DWC_UpdateConnection.patch
 
 [provide]
 dependency_names = NitroDWC

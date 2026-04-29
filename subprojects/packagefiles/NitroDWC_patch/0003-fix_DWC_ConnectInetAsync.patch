@@ -1,0 +1,21 @@
+diff --git a/libraries/base/src/dwc_connectinet.c b/libraries/base/src/dwc_connectinet.c
+index a24b4c1..dff6c73 100644
+--- a/libraries/base/src/dwc_connectinet.c
++++ b/libraries/base/src/dwc_connectinet.c
+@@ -107,14 +107,13 @@ void DWC_ConnectInetAsync (void)
+         inp.option.connectType = (u8)stpInetCntl->connectType;
+ #endif
+ 
+-        DWC_Printf(DWC_REPORTFLAG_CONNECTINET, "ConnectInet Async\n");
+         stpInetCntl->state = DWC_CONNECTINET_STATE_OPERATING;
+ 
+         if (!DWC_AC_Create(&inp)) {
+-            DWCi_SetError(DWC_ERROR_FATAL, -50199);
++            DWCi_SetError(DWC_ERROR_FATAL, -6);
+         }
+     } else {
+-        DWCi_SetError(DWC_ERROR_FATAL, -50199);
++        DWCi_SetError(DWC_ERROR_FATAL, -4);
+     }
+ }
+ 

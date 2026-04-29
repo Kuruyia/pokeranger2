@@ -1,0 +1,156 @@
+diff --git a/include/base/dwc_connectinet.h b/include/base/dwc_connectinet.h
+index fb54395..be40235 100644
+--- a/include/base/dwc_connectinet.h
++++ b/include/base/dwc_connectinet.h
+@@ -13,9 +13,6 @@ typedef struct DWCstInetControl {
+     u16 online;
+     u16 dmaNo;
+     u16 powerMode;
+-    u8 wontExecuteWDS;
+-    DWCWDSState processWDSstate;
+-    DWCWDSData nspotInfo;
+ #ifndef SDK_FINALROM
+     int connectType;
+ #endif
+diff --git a/libraries/base/src/dwc_connectinet.c b/libraries/base/src/dwc_connectinet.c
+index e6e55e0..e0e400e 100644
+--- a/libraries/base/src/dwc_connectinet.c
++++ b/libraries/base/src/dwc_connectinet.c
+@@ -26,7 +26,6 @@ void DWC_InitInetEx (DWCInetControl * inetCntl, u16 dmaNo, u16 powerMode, u16 ss
+     SDK_ASSERT(powerMode == DWC_CONNECTINET_POWERMODE_ACTIVE);
+ 
+     if (stpInetCntl == NULL) {
+-        DWC_Printf(DWC_REPORTFLAG_CONNECTINET, "InitInet dma : %d, powerMode: %d\n", dmaNo, powerMode);
+         SDK_ASSERT(inetCntl);
+         MI_CpuClear8(inetCntl, sizeof(DWCInetControl));
+ 
+@@ -36,13 +35,13 @@ void DWC_InitInetEx (DWCInetControl * inetCntl, u16 dmaNo, u16 powerMode, u16 ss
+         inetCntl->state = DWC_CONNECTINET_STATE_IDLE;
+         inetCntl->online = FALSE;
+ 
+-        inetCntl->wontExecuteWDS = FALSE;
+-        inetCntl->processWDSstate = DWC_WDS_STATE_IDLE;
+ #ifndef SDK_FINALROM
+         inetCntl->connectType = 0;
+ #endif
+         stpInetCntl = inetCntl;
+ 
++        DWC_SetAuthServer(DWC_CONNECTINET_AUTH_TEST);
++
+ #if SDK_WIFI_VERSION_DATE >= 20051005
+         CPS_SetSslLowThreadPriority(ssl_priority);
+ #else
+@@ -129,10 +128,6 @@ void DWC_DebugConnectInetExAsync (const void * ssid, const void * wep, int wepMo
+ {
+     DWC_ConnectInetAsync();
+ 
+-    if (stpInetCntl != NULL) {
+-        stpInetCntl->wontExecuteWDS = TRUE;
+-    }
+-
+     if (DWC_GetInetStatus() == DWC_CONNECTINET_STATE_OPERATING) {
+         DWC_AC_SetSpecifyApEx(ssid, wep, wepMode, apSpotInfo, overrideType);
+     }
+@@ -151,10 +146,7 @@ BOOL DWC_CheckInet (void)
+ 
+         (void)DWC_GetInetStatus();
+ 
+-        if (stpInetCntl->wontExecuteWDS)
+-            return TRUE;
+-        else
+-            return FALSE;
++        return TRUE;
+     }
+ 
+     return FALSE;
+@@ -166,35 +158,6 @@ void DWC_ProcessInet (void)
+         return;
+     }
+ 
+-    switch (stpInetCntl->processWDSstate) {
+-    case DWC_WDS_STATE_IDLE:
+-        break;
+-    case DWC_WDS_STATE_PROCESS:
+-        stpInetCntl->ac_state = 0;
+-        stpInetCntl->processWDSstate = DWC_AC_ProcessGetWDSInfo();
+-        return;
+-    case DWC_WDS_STATE_COMPLETED:
+-        DWC_AC_CleanupGetWDSInfo();
+-        DWC_DebugConnectInetExAsync(
+-            stpInetCntl->nspotInfo.ssid,
+-            stpInetCntl->nspotInfo.wep,
+-            stpInetCntl->nspotInfo.wepMode,
+-            stpInetCntl->nspotInfo.apnum,
+-            DWC_AC_AP_TYPE_NINTENDOSPOT
+-        );
+-        stpInetCntl->processWDSstate = DWC_WDS_STATE_IDLE;
+-        return;
+-    case DWC_WDS_STATE_FAILED:
+-        DWC_AC_CleanupGetWDSInfo();
+-        stpInetCntl->ac_state = -1;
+-        stpInetCntl->wontExecuteWDS = TRUE;
+-        return;
+-    case DWC_WDS_STATE_ERROR:
+-        return;
+-    default:
+-        break;
+-    }
+-
+     if (stpInetCntl->state == DWC_CONNECTINET_STATE_OPERATING) {
+         stpInetCntl->ac_state = DWC_AC_Process();
+     } else if (stpInetCntl->state == DWC_CONNECTINET_STATE_CONNECTED) {
+@@ -217,27 +180,6 @@ DWCInetResult DWC_GetInetStatus (void)
+         return (result);
+     }
+ 
+-    switch (stpInetCntl->processWDSstate) {
+-    case DWC_WDS_STATE_IDLE:
+-        break;
+-    case DWC_WDS_STATE_PROCESS:
+-        return DWC_CONNECTINET_STATE_OPERATING;
+-    case DWC_WDS_STATE_COMPLETED:
+-        return DWC_CONNECTINET_STATE_OPERATING;
+-    case DWC_WDS_STATE_FAILED:
+-        DWC_ProcessInet();
+-        DWCi_SetError(DWC_ERROR_AC_ANY, stateOld);
+-        result = DWC_CONNECTINET_STATE_ERROR;
+-        stpInetCntl->state = result;
+-        stpInetCntl->processWDSstate = DWC_WDS_STATE_ERROR;
+-        return result;
+-    case DWC_WDS_STATE_ERROR:
+-        result = DWC_CONNECTINET_STATE_ERROR;
+-        return result;
+-    default:
+-        break;
+-    }
+-
+     result = (DWCInetResult)stpInetCntl->state;
+ 
+     if (result == DWC_CONNECTINET_STATE_IDLE) {
+@@ -250,26 +192,11 @@ DWCInetResult DWC_GetInetStatus (void)
+         result = DWC_CONNECTINET_STATE_CONNECTED;
+         stpInetCntl->state = result;
+         stpInetCntl->online = TRUE;
+-        stpInetCntl->wontExecuteWDS = TRUE;
+     } else if (state < 0) {
+         if (state >= -10) {
+             DWCi_SetError(DWC_ERROR_FATAL, -50199);
+             result = DWC_CONNECTINET_STATE_FATAL_ERROR;
+             stpInetCntl->state = result;
+-        } else if (!stpInetCntl->wontExecuteWDS) {
+-            DWCInetControl * stepInetCntlTemp = stpInetCntl;
+-            u16 dmaNoTemp = stpInetCntl->dmaNo;
+-            u32 ssl_priority_Temp = CPS_GetSslLowThreadPriority();
+-
+-            stateOld = state;
+-
+-            DWC_CleanupInet();
+-            DWC_InitInetEx(stepInetCntlTemp, dmaNoTemp, DWC_CONNECTINET_POWERMODE_ACTIVE, (u16)ssl_priority_Temp);
+-            DWC_AC_StartupGetWDSInfo(&(stpInetCntl->nspotInfo));
+-
+-            stpInetCntl->processWDSstate = DWC_WDS_STATE_PROCESS;
+-            result = DWC_CONNECTINET_STATE_OPERATING;
+-            stpInetCntl->ac_state = 0;
+         } else {
+             if (stateOld < state) {
+                 state = stateOld;
