@@ -374,11 +374,11 @@
 .public _ZN17UnkClass_020091E812sub_0200AA48El
 .public _ZN17UnkClass_020091E812sub_0200AA58Ev
 .public _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
-.public _ZN17UnkClass_020091E812sub_0200AB28Emm
+.public _ZN17UnkClass_020091E812sub_0200AB28Elm
 .public _ZN17UnkClass_020091E812sub_0200AC90Ev
-.public sub_0200B68C
-.public sub_0200B6A4
-.public sub_0200B6D4
+.public _ZN17UnkClass_020091E812sub_0200B68CEv
+.public _ZN17UnkClass_020091E812sub_0200B6A4Em
+.public _ZN17UnkClass_020091E812sub_0200B6D4Ev
 .public sub_0200D5FC
 .public sub_0200D8C8
 .public sub_0200D980

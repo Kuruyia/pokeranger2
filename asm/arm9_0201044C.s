@@ -1579,7 +1579,7 @@ _02011574:
 	bl sub_02034120
 	ldr r0, [r5, #0x54]
 	mov r1, r4
-	bl sub_0200B21C
+	bl _ZN17UnkClass_020091E812sub_0200B21CElm
 	ldmia sp!, {r3, r4, r5, pc}
 
 	arm_func_start sub_020115A8
@@ -1648,7 +1648,7 @@ sub_0201164C: ; 0x0201164C
 	bl sub_02034084
 	ldr r0, [r4, #0x54]
 	ldr r1, [r4, #8]
-	bl sub_0200AFC0
+	bl _ZN17UnkClass_020091E812sub_0200AFC0Elm
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_0201164C
 
@@ -1675,7 +1675,7 @@ sub_020116A8: ; 0x020116A8
 	cmp r1, #0x4c
 	ldmgtia sp!, {r3, pc}
 	ldr r0, [r0, #0x54]
-	bl sub_0200AFC0
+	bl _ZN17UnkClass_020091E812sub_0200AFC0Elm
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_020116A8
 

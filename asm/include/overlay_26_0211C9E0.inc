@@ -11,9 +11,9 @@
 .public _ZN17UnkClass_020091E812sub_02009FB0Emm
 .public _ZN17UnkClass_020091E812sub_0200AA14Ev
 .public _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
-.public _ZN17UnkClass_020091E812sub_0200AB28Emm
+.public _ZN17UnkClass_020091E812sub_0200AB28Elm
 .public _ZN17UnkClass_020091E812sub_0200AC90Ev
-.public sub_0200AFC0
+.public _ZN17UnkClass_020091E812sub_0200AFC0Elm
 .public sub_0200E0E0
 .public sub_0200E310
 .public sub_0200ECD0

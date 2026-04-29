@@ -90,26 +90,33 @@ public:
     void sub_0200AA58();
     BOOL sub_0200AA68(u32 arg0);
     void sub_0200AA84(u32 arg0, u32 arg1, u32 arg2, u32 arg3, u32 arg4);
-    void sub_0200AB28(u32 arg0, u32 arg1);
+    void sub_0200AB28(s32 arg0, u32 arg1);
     void sub_0200AC90();
     void sub_0200AD34(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
+    void sub_0200AD80(s32 arg0, u32 arg1);
     void sub_0200AED0();
     void sub_0200AF74(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
+    void sub_0200AFC0(s32 arg0, u32 arg1);
     void sub_0200B12C();
     void sub_0200B1D0(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
+    void sub_0200B21C(s32 arg0, u32 arg1);
     void sub_0200B36C();
     void sub_0200B410(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
+    void sub_0200B45C(s32 arg0, u32 arg1);
     void sub_0200B59C();
     void sub_0200B640(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
+    void sub_0200B68C();
+    BOOL sub_0200B6A4(u32 arg0);
+    u32 sub_0200B6D4();
 
 public:
     // TODO: What is this?
     void *unk_000;
     UnkClass_020091E8_004 *unk_004;
-    u32 unk_008;
-    u32 unk_00C;
-    u32 unk_010;
-    u32 unk_014;
+    UnkClass_020091E8_004 *unk_008;
+    UnkClass_020091E8_004 *unk_00C;
+    UnkClass_020091E8_004 *unk_010;
+    UnkClass_020091E8_004 *unk_014;
     u32 unk_018;
     u32 unk_01C;
     u32 unk_020;

@@ -7,6 +7,7 @@
 #include "CTouchPanel.hpp"
 #include "UnkClass_02001C04.hpp"
 #include "UnkClass_020023EC.hpp"
+#include "UnkClass_020091E8.hpp"
 #include "UnkClass_0200E330.hpp"
 #include "UnkClass_020B26A0.hpp"
 #include "common.hpp"
@@ -56,7 +57,9 @@ public:
     UnkClass_020023EC *unk_0C28;
     u8 unk_0C2C[0x840];
     u32 unk_146C;
-    u8 unk_1470[0x34];
+    u8 unk_1470[0x20];
+    UnkClass_020091E8 *unk_1490;
+    u8 unk_1494[0x10];
     UnkClass_020B26A0 *unk_14A4;
     u8 unk_14A8[0x14];
     u32 unk_14BC;

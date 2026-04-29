@@ -1463,7 +1463,7 @@ sub_0202CA0C: ; 0x0202CA0C
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200B68C
+	bl _ZN17UnkClass_020091E812sub_0200B68CEv
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -1473,7 +1473,7 @@ _0202CA2C: .word s_game
 	arm_func_start sub_0202CA30
 sub_0202CA30: ; 0x0202CA30
 	ldr r0, _0202CA4C ; =_0208F304
-	ldr ip, _0202CA50 ; =sub_0200B6A4
+	ldr ip, _0202CA50 ; =_ZN17UnkClass_020091E812sub_0200B6A4Em
 	ldr r0, [r0]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -1481,20 +1481,20 @@ sub_0202CA30: ; 0x0202CA30
 	bx ip
 	.align 2, 0
 _0202CA4C: .word s_game
-_0202CA50: .word sub_0200B6A4
+_0202CA50: .word _ZN17UnkClass_020091E812sub_0200B6A4Em
 	arm_func_end sub_0202CA30
 
 	arm_func_start sub_0202CA54
 sub_0202CA54: ; 0x0202CA54
 	ldr r0, _0202CA6C ; =_0208F304
-	ldr ip, _0202CA70 ; =sub_0200B6D4
+	ldr ip, _0202CA70 ; =_ZN17UnkClass_020091E812sub_0200B6D4Ev
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
 	bx ip
 	.align 2, 0
 _0202CA6C: .word s_game
-_0202CA70: .word sub_0200B6D4
+_0202CA70: .word _ZN17UnkClass_020091E812sub_0200B6D4Ev
 	arm_func_end sub_0202CA54
 
 	arm_func_start sub_0202CA74
@@ -5885,7 +5885,7 @@ sub_020300B8: ; 0x020300B8
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -28222,7 +28222,7 @@ _02042464:
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	ldr r0, [r4, #4]
 	mov r1, #0x3c
 	add r0, r0, #0x6c
@@ -29217,7 +29217,7 @@ sub_02043180: ; 0x02043180
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	mov r0, #0
 	str r0, [r4, #8]
 	ldr r0, [r4, #4]
@@ -29764,7 +29764,7 @@ _02043A18:
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	ldr r0, [r4, #4]
 	mov r1, #0x3c
 	add r0, r0, #0x6c

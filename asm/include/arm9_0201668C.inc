@@ -358,8 +358,8 @@
 .public _ZN17UnkClass_020091E812sub_0200AA04El
 .public _ZN17UnkClass_020091E812sub_0200AA14Ev
 .public _ZN17UnkClass_020091E812sub_0200AD34Emmmm
-.public sub_0200B6A4
-.public sub_0200B6D4
+.public _ZN17UnkClass_020091E812sub_0200B6A4Em
+.public _ZN17UnkClass_020091E812sub_0200B6D4Ev
 .public sub_0200CAE0
 .public sub_0200CB14
 .public sub_0200CC88

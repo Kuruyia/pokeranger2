@@ -713,7 +713,7 @@ _0211D3C0:
 	mov r1, #2
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	ldr r0, [r7, #0x70]
 	ldr r1, [r7, #0x80]
 	add r0, r0, #0x1000

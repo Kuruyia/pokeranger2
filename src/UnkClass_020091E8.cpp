@@ -19,7 +19,6 @@ extern "C" {
 void sub_0200B6E4(void);
 void sub_0200BC64(UnkClass_0200BBC8 *, u32, UnkClass_02001C04 *, CTouchPanel *, void *, u32, u32, u32);
 void sub_0200BE28(UnkClass_0200BBC8 *, u32, u32, u32, u32);
-void sub_0200C060(UnkClass_0200BBC8 *);
 u8 *sub_02018B10(void *, u32);
 u8 *sub_02018B2C(void *, u32);
 u8 *sub_02018B48(void *, u32);
@@ -40,6 +39,11 @@ extern char s_data_font_prs_jp_NCLR_0208a8b4;
 extern char s_d_0208a8cc;
 extern char s_data_message_system_system_mes_0208a8d0;
 extern char s_data_message_system_system_03d_m_0208a8f0;
+extern char s_data_message_area_m_03d_mes_0208a914;
+extern char s_data_message_chapter_chapter_03d_0208a930;
+extern char s_data_message_chapter_chapterx_02_0208a958;
+extern char s_data_message_quest_quest_03d_mes_0208a980;
+extern char s_data_message_battle_battle_02d_m_0208a9a4;
 extern UnkClass_020B26A0 MAIN_BSS_020B26A0;
 }
 
@@ -55,11 +59,11 @@ UnkClass_020091E8::UnkClass_020091E8()
     unk_070 = 0;
     unk_074 = 2;
     unk_084 = NULL;
-    unk_004 = 0;
-    unk_008 = 0;
-    unk_00C = 0;
-    unk_010 = 0;
-    unk_014 = 0;
+    unk_004 = NULL;
+    unk_008 = NULL;
+    unk_00C = NULL;
+    unk_010 = NULL;
+    unk_014 = NULL;
     unk_018 = -1;
     unk_01C = -1;
     unk_020 = -1;
@@ -272,7 +276,7 @@ BOOL UnkClass_020091E8::sub_02009814(u32 arg0)
 
     case 15:
         unk_050 = 9;
-        sub_0200C060(unk_14C);
+        unk_14C->sub_0200C060();
 
         return FALSE;
 
@@ -998,7 +1002,7 @@ void UnkClass_020091E8::sub_0200AA84(u32 arg0, u32 arg1, u32 arg2, u32 arg3, u32
     }
 }
 
-void UnkClass_020091E8::sub_0200AB28(u32 arg0, u32 arg1)
+void UnkClass_020091E8::sub_0200AB28(s32 arg0, u32 arg1)
 {
     if (unk_004 != NULL) {
         if (unk_018 == arg0) {
@@ -1062,4 +1066,355 @@ void UnkClass_020091E8::sub_0200AC90()
         delete unk_004;
         unk_004 = NULL;
     }
+}
+
+void UnkClass_020091E8::sub_0200AD34(u32 arg0, u32 arg1, u32 arg2, u32 arg3)
+{
+    if (unk_004 == NULL) {
+        return;
+    }
+
+    if (arg0 >= unk_004->unk_04) {
+        return;
+    }
+
+    u8 *v0 = unk_004->unk_08[arg0].unk_04;
+    sub_02009D8C(v0, arg1, arg2, arg3);
+
+    unk_150 = 0;
+    unk_154 = arg0;
+}
+
+void UnkClass_020091E8::sub_0200AD80(s32 arg0, u32 arg1)
+{
+    if (unk_008 != NULL) {
+        if (unk_01C == arg0) {
+            return;
+        }
+
+        sub_0200AED0();
+    }
+
+    char v0[0x40];
+    OS_SPrintf(v0, &s_data_message_area_m_03d_mes_0208a914, arg0);
+
+    CBinaryFileMes *file = new CBinaryFileMes(v0, 1);
+
+    unk_008 = new UnkClass_020091E8_004();
+    u32 v1 = 2;
+    unk_008->unk_00 = ((u32 *)file->unk_4C)[0];
+    unk_008->unk_04 = ((u32 *)file->unk_4C)[1];
+    unk_008->unk_08 = new UnkClass_020091E8_004_08[unk_008->unk_04];
+
+    for (u32 i = 0; i < unk_008->unk_04; ++i) {
+        unk_008->unk_08[i].unk_00 = ((u32 *)file->unk_4C)[v1];
+        ++v1;
+
+        unk_008->unk_08[i].unk_04 = new u8[unk_008->unk_08[i].unk_00];
+        MI_CpuCopyFast(&((u32 *)file->unk_4C)[v1], unk_008->unk_08[i].unk_04, unk_008->unk_08[i].unk_00);
+
+        v1 += unk_008->unk_08[i].unk_00 / 4;
+    }
+
+    delete file;
+    unk_01C = arg0;
+}
+
+void UnkClass_020091E8::sub_0200AED0()
+{
+    unk_01C = -1;
+
+    if (unk_008 == NULL) {
+        return;
+    }
+
+    for (u32 i = 0; i < unk_008->unk_04; ++i) {
+        if (unk_008->unk_08[i].unk_04 != NULL) {
+            delete[] unk_008->unk_08[i].unk_04;
+            unk_008->unk_08[i].unk_04 = NULL;
+        }
+    }
+
+    if (unk_008->unk_08 != NULL) {
+        delete[] unk_008->unk_08;
+        unk_008->unk_08 = NULL;
+    }
+
+    if (unk_008 != NULL) {
+        delete unk_008;
+        unk_008 = NULL;
+    }
+}
+
+void UnkClass_020091E8::sub_0200AF74(u32 arg0, u32 arg1, u32 arg2, u32 arg3)
+{
+    if (unk_008 == NULL) {
+        return;
+    }
+
+    if (arg0 >= unk_008->unk_04) {
+        return;
+    }
+
+    u8 *v0 = unk_008->unk_08[arg0].unk_04;
+    sub_02009D8C(v0, arg1, arg2, arg3);
+
+    unk_150 = 1;
+    unk_154 = arg0;
+}
+
+void UnkClass_020091E8::sub_0200AFC0(s32 arg0, u32 arg1)
+{
+    if (unk_00C != NULL) {
+        if (unk_020 == arg0) {
+            return;
+        }
+
+        sub_0200B12C();
+    }
+
+    char v0[0x40];
+
+    if (arg0 < 0x46) {
+        OS_SPrintf(v0, &s_data_message_chapter_chapter_03d_0208a930, arg0);
+    } else {
+        OS_SPrintf(v0, &s_data_message_chapter_chapterx_02_0208a958, arg0 - 0x45);
+    }
+
+    CBinaryFileMes *file = new CBinaryFileMes(v0, 1);
+
+    unk_00C = new UnkClass_020091E8_004();
+    u32 v1 = 2;
+    unk_00C->unk_00 = ((u32 *)file->unk_4C)[0];
+    unk_00C->unk_04 = ((u32 *)file->unk_4C)[1];
+    unk_00C->unk_08 = new UnkClass_020091E8_004_08[unk_00C->unk_04];
+
+    for (u32 i = 0; i < unk_00C->unk_04; ++i) {
+        unk_00C->unk_08[i].unk_00 = ((u32 *)file->unk_4C)[v1];
+        ++v1;
+
+        unk_00C->unk_08[i].unk_04 = new u8[unk_00C->unk_08[i].unk_00];
+        MI_CpuCopyFast(&((u32 *)file->unk_4C)[v1], unk_00C->unk_08[i].unk_04, unk_00C->unk_08[i].unk_00);
+
+        v1 += unk_00C->unk_08[i].unk_00 / 4;
+    }
+
+    delete file;
+    unk_020 = arg0;
+}
+
+void UnkClass_020091E8::sub_0200B12C()
+{
+    unk_020 = -1;
+
+    if (unk_00C == NULL) {
+        return;
+    }
+
+    for (u32 i = 0; i < unk_00C->unk_04; ++i) {
+        if (unk_00C->unk_08[i].unk_04 != NULL) {
+            delete[] unk_00C->unk_08[i].unk_04;
+            unk_00C->unk_08[i].unk_04 = NULL;
+        }
+    }
+
+    if (unk_00C->unk_08 != NULL) {
+        delete[] unk_00C->unk_08;
+        unk_00C->unk_08 = NULL;
+    }
+
+    if (unk_00C != NULL) {
+        delete unk_00C;
+        unk_00C = NULL;
+    }
+}
+
+void UnkClass_020091E8::sub_0200B1D0(u32 arg0, u32 arg1, u32 arg2, u32 arg3)
+{
+    if (unk_00C == NULL) {
+        return;
+    }
+
+    if (arg0 >= unk_00C->unk_04) {
+        return;
+    }
+
+    u8 *v0 = unk_00C->unk_08[arg0].unk_04;
+    sub_02009D8C(v0, arg1, arg2, arg3);
+
+    unk_150 = 2;
+    unk_154 = arg0;
+}
+
+void UnkClass_020091E8::sub_0200B21C(s32 arg0, u32 arg1)
+{
+    if (unk_010 != NULL) {
+        if (unk_024 == arg0) {
+            return;
+        }
+
+        sub_0200B36C();
+    }
+
+    char v0[0x40];
+    OS_SPrintf(v0, &s_data_message_quest_quest_03d_mes_0208a980, arg0);
+
+    CBinaryFileMes *file = new CBinaryFileMes(v0, 1);
+
+    unk_010 = new UnkClass_020091E8_004();
+    u32 v1 = 2;
+    unk_010->unk_00 = ((u32 *)file->unk_4C)[0];
+    unk_010->unk_04 = ((u32 *)file->unk_4C)[1];
+    unk_010->unk_08 = new UnkClass_020091E8_004_08[unk_010->unk_04];
+
+    for (u32 i = 0; i < unk_010->unk_04; ++i) {
+        unk_010->unk_08[i].unk_00 = ((u32 *)file->unk_4C)[v1];
+        ++v1;
+
+        unk_010->unk_08[i].unk_04 = new u8[unk_010->unk_08[i].unk_00];
+        MI_CpuCopyFast(&((u32 *)file->unk_4C)[v1], unk_010->unk_08[i].unk_04, unk_010->unk_08[i].unk_00);
+
+        v1 += unk_010->unk_08[i].unk_00 / 4;
+    }
+
+    delete file;
+    unk_024 = arg0;
+}
+
+void UnkClass_020091E8::sub_0200B36C()
+{
+    unk_024 = -1;
+
+    if (unk_010 == NULL) {
+        return;
+    }
+
+    for (u32 i = 0; i < unk_010->unk_04; ++i) {
+        if (unk_010->unk_08[i].unk_04 != NULL) {
+            delete[] unk_010->unk_08[i].unk_04;
+            unk_010->unk_08[i].unk_04 = NULL;
+        }
+    }
+
+    if (unk_010->unk_08 != NULL) {
+        delete[] unk_010->unk_08;
+        unk_010->unk_08 = NULL;
+    }
+
+    if (unk_010 != NULL) {
+        delete unk_010;
+        unk_010 = NULL;
+    }
+}
+
+void UnkClass_020091E8::sub_0200B410(u32 arg0, u32 arg1, u32 arg2, u32 arg3)
+{
+    if (unk_010 == NULL) {
+        return;
+    }
+
+    if (arg0 >= unk_010->unk_04) {
+        return;
+    }
+
+    u8 *v0 = unk_010->unk_08[arg0].unk_04;
+    sub_02009D8C(v0, arg1, arg2, arg3);
+
+    unk_150 = 3;
+    unk_154 = arg0;
+}
+
+void UnkClass_020091E8::sub_0200B45C(s32 arg0, u32 arg1)
+{
+    if (unk_014 != NULL) {
+        sub_0200B59C();
+    }
+
+    char v0[0x40];
+    OS_SPrintf(v0, &s_data_message_battle_battle_02d_m_0208a9a4, arg0);
+
+    CBinaryFileMes *file = new CBinaryFileMes(v0, 1);
+
+    unk_014 = new UnkClass_020091E8_004();
+    u32 v1 = 2;
+    unk_014->unk_00 = ((u32 *)file->unk_4C)[0];
+    unk_014->unk_04 = ((u32 *)file->unk_4C)[1];
+    unk_014->unk_08 = new UnkClass_020091E8_004_08[unk_014->unk_04];
+
+    for (u32 i = 0; i < unk_014->unk_04; ++i) {
+        unk_014->unk_08[i].unk_00 = ((u32 *)file->unk_4C)[v1];
+        ++v1;
+
+        unk_014->unk_08[i].unk_04 = new u8[unk_014->unk_08[i].unk_00];
+        MI_CpuCopyFast(&((u32 *)file->unk_4C)[v1], unk_014->unk_08[i].unk_04, unk_014->unk_08[i].unk_00);
+
+        v1 += unk_014->unk_08[i].unk_00 / 4;
+    }
+
+    delete file;
+    unk_028 = arg0;
+}
+
+void UnkClass_020091E8::sub_0200B59C()
+{
+    unk_028 = -1;
+
+    if (unk_014 == NULL) {
+        return;
+    }
+
+    for (u32 i = 0; i < unk_014->unk_04; ++i) {
+        if (unk_014->unk_08[i].unk_04 != NULL) {
+            delete[] unk_014->unk_08[i].unk_04;
+            unk_014->unk_08[i].unk_04 = NULL;
+        }
+    }
+
+    if (unk_014->unk_08 != NULL) {
+        delete[] unk_014->unk_08;
+        unk_014->unk_08 = NULL;
+    }
+
+    if (unk_014 != NULL) {
+        delete unk_014;
+        unk_014 = NULL;
+    }
+}
+
+void UnkClass_020091E8::sub_0200B640(u32 arg0, u32 arg1, u32 arg2, u32 arg3)
+{
+    if (unk_014 == NULL) {
+        return;
+    }
+
+    if (arg0 >= unk_014->unk_04) {
+        return;
+    }
+
+    u8 *v0 = unk_014->unk_08[arg0].unk_04;
+    sub_02009D8C(v0, arg1, arg2, arg3);
+
+    unk_150 = 4;
+    unk_154 = arg0;
+}
+
+void UnkClass_020091E8::sub_0200B68C()
+{
+    unk_050 = 9;
+    unk_14C->sub_0200C060();
+}
+
+BOOL UnkClass_020091E8::sub_0200B6A4(u32 arg0)
+{
+    if (unk_14C->unk_1608 == 0) {
+        sub_02009FB0(0, arg0);
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
+u32 UnkClass_020091E8::sub_0200B6D4()
+{
+    return unk_14C->unk_160C;
 }

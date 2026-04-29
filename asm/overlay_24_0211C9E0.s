@@ -105,14 +105,14 @@ _0211CAFC:
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200B6A4
+	bl _ZN17UnkClass_020091E812sub_0200B6A4Em
 	cmp r0, #0
 	bne _0211CFE4
 	ldr r0, _0211CFF0 ; =s_game
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200B6D4
+	bl _ZN17UnkClass_020091E812sub_0200B6D4Ev
 	cmp r0, #0
 	moveq r0, #2
 	streq r0, [r4, #8]
@@ -568,7 +568,7 @@ ov24_0211D134: ; 0x0211D134
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	ldr r0, _0211D21C ; =s_game
 	mov r1, #3
 	ldr r0, [r0]

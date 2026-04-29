@@ -19,7 +19,7 @@
 .public _ZN17UnkClass_020091E812sub_02009FB0Emm
 .public _ZN17UnkClass_020091E812sub_0200A088Em
 .public _ZN17UnkClass_020091E812sub_0200AA04El
-.public _ZN17UnkClass_020091E812sub_0200AB28Emm
+.public _ZN17UnkClass_020091E812sub_0200AB28Elm
 .public _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 .public sub_0200C3D0
 .public sub_0200C408

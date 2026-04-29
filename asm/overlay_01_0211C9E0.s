@@ -185,7 +185,7 @@ _0211CBDC:
 	mov r1, #1
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	ldr r0, [r5, #4]
 	mov r1, #1
 	add r0, r0, #0x1000
@@ -3478,13 +3478,13 @@ _0211F9FC:
 	mov r1, #1
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200B6A4
+	bl _ZN17UnkClass_020091E812sub_0200B6A4Em
 	cmp r0, #0
 	bne _0211FA84
 	ldr r0, [r4, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200B6D4
+	bl _ZN17UnkClass_020091E812sub_0200B6D4Ev
 	cmp r0, #0
 	bne _0211FA60
 	mov r0, r4
@@ -15840,7 +15840,7 @@ ov1_0212A2CC: ; 0x0212A2CC
 	ldr r1, [r0]
 	add r0, r2, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200B45C
+	bl _ZN17UnkClass_020091E812sub_0200B45CElm
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	.align 2, 0

@@ -313,7 +313,7 @@ _0211CD9C:
 	ldr r1, [r1, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AFC0
+	bl _ZN17UnkClass_020091E812sub_0200AFC0Elm
 	ldr r0, [r4, #0x18]
 	mov r2, #0x14
 	add r0, r0, #0x14
@@ -522,7 +522,7 @@ ov26_0211D094: ; 0x0211D094
 	ldr r0, [r0]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	mov r0, #0x44
 	bl _Znwm
 	cmp r0, #0
@@ -616,7 +616,7 @@ _0211D224:
 	ldr r1, [r1, #4]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200AFC0
+	bl _ZN17UnkClass_020091E812sub_0200AFC0Elm
 	ldr r0, [r4, #0x18]
 	add r0, r0, #0x14
 	str r0, [r4, #0x18]

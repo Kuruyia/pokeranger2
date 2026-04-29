@@ -683,14 +683,14 @@ _0211D27C:
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200B6A4
+	bl _ZN17UnkClass_020091E812sub_0200B6A4Em
 	cmp r0, #0
 	addne sp, sp, #8
 	ldmneia sp!, {r3, r4, r5, pc}
 	ldr r0, [r4, #0x27c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200B6D4
+	bl _ZN17UnkClass_020091E812sub_0200B6D4Ev
 	cmp r0, #0
 	bne _0211D2FC
 	add r0, r4, #0x200
@@ -1213,7 +1213,7 @@ _0211D9A0:
 	mov r1, #0
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	mov r0, #0x100
 	str r0, [sp]
 	ldr r3, _0211DFEC ; =s_mr000_overlay_7_0211f7d0

@@ -8,7 +8,7 @@
 .public sub_02007CC0
 .public sub_02007D98
 .public sub_02008DB4
-.public _ZN17UnkClass_020091E812sub_0200AB28Emm
+.public _ZN17UnkClass_020091E812sub_0200AB28Elm
 .public _ZN17UnkClass_020091E812sub_0200AC90Ev
 .public sub_0200E0E0
 .public sub_0200E310

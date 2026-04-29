@@ -91,8 +91,8 @@
 .public sub_02008B80
 .public sub_02008D20
 .public sub_02008D38
-.public sub_0200AFC0
-.public sub_0200B21C
+.public _ZN17UnkClass_020091E812sub_0200AFC0Elm
+.public _ZN17UnkClass_020091E812sub_0200B21CElm
 .public _ZN17UnkClass_020091E812sub_0200B36CEv
 .public sub_0200C3D0
 .public sub_0200CAE0

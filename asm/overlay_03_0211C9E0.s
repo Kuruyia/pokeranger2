@@ -6866,11 +6866,11 @@ ov3_02122A8C: ; 0x02122A8C
 	add r0, r0, #0x1000
 	ldr r5, [r0, #0x490]
 	mov r0, r5
-	bl sub_0200B6A4
+	bl _ZN17UnkClass_020091E812sub_0200B6A4Em
 	cmp r0, #0
 	ldmneia sp!, {r4, r5, r6, pc}
 	mov r0, r5
-	bl sub_0200B6D4
+	bl _ZN17UnkClass_020091E812sub_0200B6D4Ev
 	movs r4, r0
 	bne _02122B14
 	mov r1, #1
@@ -7296,7 +7296,7 @@ _02123030:
 	mov r1, #2
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	ldr r0, [r4, #0x80]
 	mov r1, #0
 	add r0, r0, #0x1000

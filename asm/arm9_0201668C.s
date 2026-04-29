@@ -20322,13 +20322,13 @@ _02027844:
 	mov r1, #1
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200B6A4
+	bl _ZN17UnkClass_020091E812sub_0200B6A4Em
 	cmp r0, #0
 	bne _02027978
 	ldr r0, [r4, #0x14]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl sub_0200B6D4
+	bl _ZN17UnkClass_020091E812sub_0200B6D4Ev
 	cmp r0, #0
 	moveq r0, #1
 	streqh r0, [r4]

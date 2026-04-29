@@ -471,7 +471,7 @@ ov19_0211CFC0: ; 0x0211CFC0
 	mov r1, #2
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x490]
-	bl _ZN17UnkClass_020091E812sub_0200AB28Emm
+	bl _ZN17UnkClass_020091E812sub_0200AB28Elm
 	ldr r0, [r4, #0x1c]
 	mov r1, #0
 	add r0, r0, #0x1000
@@ -1418,11 +1418,11 @@ ov19_0211DD7C: ; 0x0211DD7C
 	add r0, r0, #0x1000
 	ldr r6, [r0, #0x490]
 	mov r0, r6
-	bl sub_0200B6A4
+	bl _ZN17UnkClass_020091E812sub_0200B6A4Em
 	cmp r0, #0
 	ldmneia sp!, {r4, r5, r6, pc}
 	mov r0, r6
-	bl sub_0200B6D4
+	bl _ZN17UnkClass_020091E812sub_0200B6D4Ev
 	movs r5, r0
 	bne _0211DDE0
 	ldr r0, [r4, #0x50]
