@@ -993,7 +993,7 @@
         7](MI_UncompressRL8,func) found in global libmi.a
         7](MI_UncompressHuffman,func) found in global libmi.a
         7](MI_UncompressLZ8,func) found in global libmi.a
-       6](sub_02046E84,func) found in global asm_arm9_02046D5C.s.o
+       6](CRYPTO_RC4FastEncrypt,func) found in global asm_arm9_02046D5C.s.o
        6](NNS_GfdGetVramTransferTaskTotalSize,func) found in global libnnsgfd.a
        6](NNS_SndPlayerSetVolume,func) found in global libnnssnd.a
        6](NNS_SndHeapGetSize,func) found in global libnnssnd.a
@@ -1471,7 +1471,7 @@
       5](NNS_FndCreateExpHeapEx,func) found in global libnnsfnd.a
        6](InitExpHeap,func) found in local libnnsfnd.a
      4](_Z12sub_0204436Cv,func) found in global src_sub_0204436C.cpp.o
-     4](_Z12sub_02046D40PFPvmEPFvS_E,func) found in global src_sub_02046D40.cpp.o
+     4](_Z19CRYPTO_SetAllocatorPFPvmEPFvS_E,func) found in global src_sub_02046D40.cpp.o
     3](_Z15SetupInterruptsv,func) found in global src_main.cpp.o
      4](GX_VBlankIntr,func) found in global libgx.a
      4](GX_HBlankIntr,func) found in global libgx.a
@@ -6441,14 +6441,14 @@
   02046D3C 00000004 .text   WvrDummyAsyncCallback	(asm_arm9_02044464.s.o)
   02046D3C 00000000 .text   $a	(asm_arm9_02044464.s.o)
   02046D40 00000000 .text   $a	(src_sub_02046D40.cpp.o)
-  02046D40 0000001C .text   sub_02046D40(void*(*)(unsigned long), void(*)(void*))	(src_sub_02046D40.cpp.o)
+  02046D40 0000001C .text   CRYPTO_SetAllocator(void*(*)(unsigned long), void(*)(void*))	(src_sub_02046D40.cpp.o)
   02046D54 00000000 .text   $d	(src_sub_02046D40.cpp.o)
   02046D5C 0000037C .text   .text	(asm_arm9_02046D5C.s.o)
   02046D5C 00000000 .text   $a	(asm_arm9_02046D5C.s.o)
-  02046D5C 0000001C .text   sub_02046D5C	(asm_arm9_02046D5C.s.o)
-  02046DF4 00000020 .text   sub_02046DF4	(asm_arm9_02046D5C.s.o)
-  02046E84 00000024 .text   sub_02046E84	(asm_arm9_02046D5C.s.o)
-  02047060 00000028 .text   sub_02047060	(asm_arm9_02046D5C.s.o)
+  02046D5C 0000001C .text   CRYPTO_RC4FastInit	(asm_arm9_02046D5C.s.o)
+  02046DF4 00000020 .text   CRYPTO_RC4Init	(asm_arm9_02046D5C.s.o)
+  02046E84 00000024 .text   CRYPTO_RC4FastEncrypt	(asm_arm9_02046D5C.s.o)
+  02047060 00000028 .text   CRYPTO_RC4Encrypt	(asm_arm9_02046D5C.s.o)
   020470D8 00000000 .text   $a	(libsoc.a src_socl_startu)
   020470D8 0000003C .text   SOCL_Startup	(libsoc.a src_socl_startu)
   0204710C 00000000 .text   $d	(libsoc.a src_socl_startu)
