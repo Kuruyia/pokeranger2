@@ -478,3 +478,4 @@
 .public DWCi_NdGetFileListAsync
 .public DWCi_NdGetFileAsync
 .public DWCi_NdGetProgress
+.public DWC_Init

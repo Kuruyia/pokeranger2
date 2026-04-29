@@ -24024,7 +24024,7 @@ _0213033C:
 	mov r1, #0x20
 	bl _Z23Heap_AllocWithAlignmentmm
 	str r0, [r5, #0x14]
-	bl ov11_0215DB58
+	bl DWC_Init
 	mov r4, r0
 	bl ov11_0213B0B4
 	ldr r0, [r5, #0x14]
@@ -30732,7 +30732,7 @@ _02135C74:
 _02135CA4:
 	add r0, r4, #0x1f
 	bic r0, r0, #0x1f
-	bl ov11_0213AD1C
+	bl DWCi_AUTH_MakeWiFiID
 	ldr r0, _02135CF8 ; =s_FREE_bmwork_overlay_11_02166864
 	mov r1, r4
 	mov r2, #0
@@ -35920,8 +35920,8 @@ ov11_0213A4FC: ; 0x0213A4FC
 _0213A504: .word OVERLAY11_BSS_02169D6C
 	arm_func_end ov11_0213A4FC
 
-	arm_func_start ov11_0213A508
-ov11_0213A508: ; 0x0213A508
+	arm_func_start DWC_BM_Init
+DWC_BM_Init: ; 0x0213A508
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
 	sub sp, sp, #0x10
 	mov r8, r0
@@ -35953,7 +35953,7 @@ ov11_0213A508: ; 0x0213A508
 	mov sl, #1
 	add sb, sp, #0
 	mov r4, #0xfe
-	arm_func_end ov11_0213A508
+	arm_func_end DWC_BM_Init
 _0213A584:
 	mov r1, r6
 	mov r2, r4
@@ -36492,8 +36492,8 @@ _0213AD10: .word 0x5D588B65
 _0213AD14: .word 0x00269EC3
 _0213AD18: .word 0x000009BF
 
-	arm_func_start ov11_0213AD1C
-ov11_0213AD1C: ; 0x0213AD1C
+	arm_func_start DWCi_AUTH_MakeWiFiID
+DWCi_AUTH_MakeWiFiID: ; 0x0213AD1C
 	stmdb sp!, {r3, r4, lr}
 	sub sp, sp, #0x14
 	mov r4, r0
@@ -36511,7 +36511,7 @@ ov11_0213AD1C: ; 0x0213AD1C
 	moveq r0, #0
 	add sp, sp, #0x14
 	ldmia sp!, {r3, r4, pc}
-	arm_func_end ov11_0213AD1C
+	arm_func_end DWCi_AUTH_MakeWiFiID
 
 	arm_func_start ov11_0213AD60
 ov11_0213AD60: ; 0x0213AD60
@@ -36651,8 +36651,8 @@ _0213AF44: .word 0x5D588B65
 _0213AF48: .word 0x00269EC3
 _0213AF4C: .word 0x000009BF
 
-	arm_func_start ov11_0213AF50
-ov11_0213AF50: ; 0x0213AF50
+	arm_func_start DWC_Auth_CheckWiFiIDNeedCreate
+DWC_Auth_CheckWiFiIDNeedCreate: ; 0x0213AF50
 	stmdb sp!, {lr}
 	sub sp, sp, #0x14
 	add r0, sp, #0
@@ -36670,7 +36670,7 @@ ov11_0213AF50: ; 0x0213AF50
 	addeq sp, sp, #0x14
 	moveq r0, #1
 	ldmeqia sp!, {pc}
-	arm_func_end ov11_0213AF50
+	arm_func_end DWC_Auth_CheckWiFiIDNeedCreate
 _0213AF94:
 	mov r0, #0
 	add sp, sp, #0x14
@@ -56679,7 +56679,7 @@ _02146BB0:
 	mov r1, #0x20
 	bl ov11_0215C89C
 	str r0, [sp]
-	bl ov11_0213A508
+	bl DWC_BM_Init
 	add r0, sp, #0
 	bl ov11_0215C8C0
 	ldmia sp!, {r3, pc}
@@ -85268,38 +85268,6 @@ ov11_0215DB40: ; 0x0215DB40
 	.align 2, 0
 _0215DB54: .word OVERLAY11_BSS_0216C464
 	arm_func_end ov11_0215DB40
-
-	arm_func_start ov11_0215DB58
-ov11_0215DB58: ; 0x0215DB58
-	stmdb sp!, {r4, r5, r6, lr}
-	mov r6, r0
-	ldr r0, _0215DBB8 ; =0x02000C34
-	mov r5, #0
-	bl OSi_ReferSymbol
-	mov r0, r6
-	bl ov11_0213A508
-	mov r4, r0
-	bl ov11_0213AF50
-	cmp r0, #0
-	beq _0215DB90
-	mov r0, r6
-	bl ov11_0213AD1C
-	mov r5, #1
-	arm_func_end ov11_0215DB58
-_0215DB90:
-	cmp r4, #0
-	bge _0215DBA8
-	cmp r5, #0
-	movne r0, #2
-	moveq r0, #3
-	ldmia sp!, {r4, r5, r6, pc}
-_0215DBA8:
-	cmp r5, #0
-	movne r0, #1
-	moveq r0, #0
-	ldmia sp!, {r4, r5, r6, pc}
-	.align 2, 0
-_0215DBB8: .word 0x02000C34
 
     .rodata
 

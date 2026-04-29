@@ -157,6 +157,7 @@ Overlay overlay11
     # After main
     Address 0x0211C9E0
     Object main.nef.p/asm_overlay_11_0211C9E0.s.o
+    Library libdwcaccount.a
     Library libdwcnhttp_ranger2.a
     Library libdwcnd_ranger2.a
 }
