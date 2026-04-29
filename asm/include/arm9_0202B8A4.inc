@@ -553,6 +553,6 @@
 .public sub_02044B84
 .public sub_02044C9C
 .public sub_02045A18
-.public sub_02046D5C
-.public sub_02046E84
+.public CRYPTO_RC4FastInit
+.public CRYPTO_RC4FastEncrypt
 .public vsprintf

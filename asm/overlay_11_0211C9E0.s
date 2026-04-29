@@ -20189,12 +20189,12 @@ _0212CF64:
 	add r0, sp, #0x1c
 	add r1, sp, #0xc
 	mov r2, #0x10
-	bl sub_02046D5C
+	bl CRYPTO_RC4FastInit
 	add r1, r5, #4
 	add r0, sp, #0x1c
 	mov r3, r1
 	mov r2, #0x3a8
-	bl sub_02046E84
+	bl CRYPTO_RC4FastEncrypt
 	cmp r4, #0
 	beq _0212CFC0
 	mov r0, r4
@@ -20874,12 +20874,12 @@ _0212D908:
 	add r1, sp, #0
 	mov r6, r0
 	mov r2, #8
-	bl sub_02046DF4
+	bl CRYPTO_RC4Init
 	mov r0, r6
 	mov r3, r4
 	add r1, r5, #0x50
 	mov r2, #0x358
-	bl sub_02047060
+	bl CRYPTO_RC4Encrypt
 	cmp r6, #0
 	addeq sp, sp, #8
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
@@ -23962,7 +23962,7 @@ _02130274:
 	add r0, lr, #0x4c
 	add r0, r0, #0x1000
 	mov r2, #8
-	bl sub_02046DF4
+	bl CRYPTO_RC4Init
 	ldr r0, _021302D0 ; =OVERLAY11_BSS_02169C7C
 	mov r1, r5
 	ldr r0, [r0, #4]
@@ -23971,7 +23971,7 @@ _02130274:
 	add r0, r0, #0x4c
 	ldr r2, [r2, #0x160]
 	add r0, r0, #0x1000
-	bl sub_02047060
+	bl CRYPTO_RC4Encrypt
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0

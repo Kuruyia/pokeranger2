@@ -5,7 +5,7 @@ extern HeapAllocFunc sHeapAllocFunc;
 extern HeapFreeFunc sHeapFreeFunc;
 }
 
-void sub_02046D40(HeapAllocFunc allocFunc, HeapFreeFunc freeFunc)
+void CRYPTO_SetAllocator(HeapAllocFunc allocFunc, HeapFreeFunc freeFunc)
 {
     sHeapAllocFunc = allocFunc;
     sHeapFreeFunc = freeFunc;

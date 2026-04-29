@@ -3,8 +3,8 @@
 
     .text
 
-	arm_func_start sub_02046D5C
-sub_02046D5C: ; 0x02046D5C
+	arm_func_start CRYPTO_RC4FastInit
+CRYPTO_RC4FastInit: ; 0x02046D5C
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r3, #0
 	str r3, [r0]
@@ -12,7 +12,7 @@ sub_02046D5C: ; 0x02046D5C
 	str r3, [r0, #4]
 	movhi r2, #0x10
 	add r0, r0, #8
-	arm_func_end sub_02046D5C
+	arm_func_end CRYPTO_RC4FastInit
 _02046D78:
 	str r3, [r0, r3, lsl #2]
 	add r3, r3, #1
@@ -48,8 +48,8 @@ _02046DD4:
 	ldmia sp!, {r4, r5, r6, lr}
 	bx lr
 
-	arm_func_start sub_02046DF4
-sub_02046DF4: ; 0x02046DF4
+	arm_func_start CRYPTO_RC4Init
+CRYPTO_RC4Init: ; 0x02046DF4
 	stmdb sp!, {r4, r5, r6, r7, lr}
 	sub sp, sp, #4
 	mov r3, #0
@@ -58,7 +58,7 @@ sub_02046DF4: ; 0x02046DF4
 	strb r3, [r0, #1]
 	movhi r2, #0x10
 	add r0, r0, #4
-	arm_func_end sub_02046DF4
+	arm_func_end CRYPTO_RC4Init
 _02046E14:
 	strb r3, [r0, r3]
 	add r3, r3, #1
@@ -90,8 +90,8 @@ _02046E38:
 	ldmia sp!, {r4, r5, r6, r7, lr}
 	bx lr
 
-	arm_func_start sub_02046E84
-sub_02046E84: ; 0x02046E84
+	arm_func_start CRYPTO_RC4FastEncrypt
+CRYPTO_RC4FastEncrypt: ; 0x02046E84
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, lr}
 	ldr r7, [r0]
 	ldr r6, [r0, #4]
@@ -101,7 +101,7 @@ sub_02046E84: ; 0x02046E84
 	subs r2, r2, #8
 	ldr sb, [r0, r7, lsr #22]
 	bmi _02047010
-	arm_func_end sub_02046E84
+	arm_func_end CRYPTO_RC4FastEncrypt
 _02046EA8:
 	add r6, r6, sb
 	ldr r8, [r0, r6, lsr #22]
@@ -217,8 +217,8 @@ _0204704C:
 	str r7, [r0, #-8]
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, pc}
 
-	arm_func_start sub_02047060
-sub_02047060: ; 0x02047060
+	arm_func_start CRYPTO_RC4Encrypt
+CRYPTO_RC4Encrypt: ; 0x02047060
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, lr}
 	ldrb r7, [r0]
 	ldrb r6, [r0, #1]
@@ -229,7 +229,7 @@ sub_02047060: ; 0x02047060
 	ldrb sb, [r0, r7, lsr #24]
 	subs r2, r2, #1
 	bmi _020470C0
-	arm_func_end sub_02047060
+	arm_func_end CRYPTO_RC4Encrypt
 _02047088:
 	add r6, r6, sb, lsl #24
 	subs r2, r2, #1

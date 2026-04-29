@@ -28349,12 +28349,12 @@ _02042660:
 	add r0, sp, #0x28
 	mov r2, #0x10
 	ldr r5, [r3, #0x49c]
-	bl sub_02046D5C
+	bl CRYPTO_RC4FastInit
 	add r0, sp, #0x28
 	mov r1, r6
 	mov r3, r6
 	mov r2, #0x3000
-	bl sub_02046E84
+	bl CRYPTO_RC4FastEncrypt
 	ldr r0, [r6]
 	and r0, r0, #0xf0
 	cmp r0, #0x20
@@ -29894,12 +29894,12 @@ _02043C20:
 	add r0, sp, #8
 	mov r2, #0x10
 	ldr r4, [r3, #0x49c]
-	bl sub_02046D5C
+	bl CRYPTO_RC4FastInit
 	add r0, sp, #8
 	mov r1, r5
 	mov r3, r5
 	mov r2, #0x3000
-	bl sub_02046E84
+	bl CRYPTO_RC4FastEncrypt
 	ldr r0, [r5]
 	and r0, r0, #0xf0
 	cmp r0, #0x20

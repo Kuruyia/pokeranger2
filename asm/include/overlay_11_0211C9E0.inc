@@ -110,10 +110,10 @@
 .public sub_02040F88
 .public sub_02046948
 .public sub_02046B84
-.public sub_02046D5C
-.public sub_02046DF4
-.public sub_02046E84
-.public sub_02047060
+.public CRYPTO_RC4FastInit
+.public CRYPTO_RC4Init
+.public CRYPTO_RC4FastEncrypt
+.public CRYPTO_RC4Encrypt
 .public SOCL_CalmDown
 .public SOCL_Resolve
 .public SOCL_GetHostID
