@@ -471,3 +471,10 @@
 .public GX_LoadBG3Char
 .public OS_SendMessage
 .public WM_EndKeySharing
+.public DWCi_NdStartup
+.public DWCi_NdCleanupAsync
+.public DWCi_NdSetAttr
+.public DWCi_NdGetFileListNumAsync
+.public DWCi_NdGetFileListAsync
+.public DWCi_NdGetFileAsync
+.public DWCi_NdGetProgress

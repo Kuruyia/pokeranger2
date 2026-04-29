@@ -142,6 +142,12 @@ subdir('ranger2.us')
 
 
 ############################################################
+###                  INTERNAL LIBRARIES                  ###
+############################################################
+subdir('lib')
+
+
+############################################################
 ###                     FILE SYSTEM                      ###
 ############################################################
 subdir('res')
@@ -169,6 +175,7 @@ main = executable('main',
         nitrosdk_dep,
         nitrosystem_dep,
         nitrowifi_dep,
+        nitrodwc_ranger2_dep, # Needs to be before `nitrodwc_dep`
         nitrodwc_dep,
         libsyscall_dep,
     ],
@@ -207,7 +214,7 @@ pokeranger2_nds = custom_target('pokeranger2.us.nds',
         '-DICON_PNG=@INPUT2@',        # icon_png
         '-DARM7_STATIC=@INPUT3@',     # ichneumon_sub
         '-DARM7_DEFINE=@INPUT4@',     # ichneumon_sub_defs
-        '--output=@OUTPUT0@',         # pokeplatinum.us.nds
+        '--output=@OUTPUT0@',         # pokeranger2.us.nds
         rom_ini,
         filesys_csv,
     ],

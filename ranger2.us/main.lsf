@@ -153,8 +153,11 @@ Overlay overlay10
 
 Overlay overlay11
 {
-    After main
+    # TODO: Un-hardcode me
+    # After main
+    Address 0x0211C9E0
     Object main.nef.p/asm_overlay_11_0211C9E0.s.o
+    Library libdwcnd_ranger2.a
 }
 
 Overlay overlay12
