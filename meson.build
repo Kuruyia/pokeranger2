@@ -1,6 +1,6 @@
 project('pokeranger2', ['c', 'cpp', 'nasm'],
     version: '1.0',
-    meson_version: '>=1.5.0',
+    meson_version: '>=1.11.0',
     default_options : [
         'buildtype=plain',
         'warning_level=0'
