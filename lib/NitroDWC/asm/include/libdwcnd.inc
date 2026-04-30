@@ -1,14 +1,15 @@
 #pragma once
 .public _ll_udiv
+.public DWC_GetApInfo
 .public MI_CpuCopy8
 .public MI_CpuFill8
 .public OS_GetMacAddress
 .public OS_InitMutex
 .public OS_LockMutex
 .public OS_SendMessage
+.public OS_SNPrintf
 .public OS_UnlockMutex
 .public ov11_02139940
-.public DWC_GetApInfo
 .public ov11_0215DBBC
 .public ov11_0215DC84
 .public ov11_0215DF38
@@ -25,4 +26,3 @@
 .public ov11_02160D38
 .public STD_CompareNString
 .public STD_GetStringLength
-.public OS_SNPrintf
