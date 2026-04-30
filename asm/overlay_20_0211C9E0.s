@@ -355,7 +355,7 @@ ov20_0211CE54: ; 0x0211CE54
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvP10CGame_0024S6_mmm
 	bl sub_02007D68
 	ldr r0, _0211CF2C ; =s_game
 	mov r1, #0

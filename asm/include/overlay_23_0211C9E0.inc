@@ -14,7 +14,7 @@
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public _ZN17UnkClass_020091E812sub_020092D4Ev
-.public _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
+.public _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvP10CGame_0024S6_mmm
 .public sub_0200C3D0
 .public sub_0200C408
 .public sub_0200C680

@@ -3,6 +3,7 @@
 
 #include <nitro.h>
 
+#include "CGame_0024.hpp"
 #include "CTPEmulator.hpp"
 #include "CTouchPanel.hpp"
 #include "UnkClass_02001C04.hpp"
@@ -50,9 +51,9 @@ public:
     CTouchPanel *touchPanel;
     CTPEmulator *touchPanelEmulator;
     CTouchPanel *activeTouchPanel;
-    u8 unk_0024[0x400];
-    u8 unk_0424[0x400];
-    u8 unk_0824[0x400];
+    CGame_0024 unk_0024[0x80];
+    CGame_0024 unk_0424[0x80];
+    CGame_0024 unk_0824[0x80];
     UnkClass_020023EC *unk_0C24;
     UnkClass_020023EC *unk_0C28;
     u8 unk_0C2C[0x840];

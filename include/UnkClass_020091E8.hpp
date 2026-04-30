@@ -61,7 +61,7 @@ public:
     void sub_02009274();
     void sub_020092A4();
     void sub_020092D4();
-    void sub_02009328(UnkClass_02001C04 *arg0, CTouchPanel *arg1, NNSG2dFont *arg2, void *arg3, u32 arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8);
+    void sub_02009328(UnkClass_02001C04 *arg0, CTouchPanel *arg1, NNSG2dFont *arg2, void *arg3, CGame_0024 *arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8);
     void sub_020093B4();
     void sub_02009430();
     void sub_020095D0();
@@ -74,12 +74,12 @@ public:
     void sub_02009D8C(u8 *arg0, u32 arg1, u32 arg2, u32 arg3);
     BOOL sub_02009ECC();
     void sub_02009F28();
-    BOOL sub_02009FB0(u32 arg0, u32 arg1);
+    void sub_02009FB0(u32 arg0, u32 arg1);
     void sub_0200A088(u32 arg0);
     u32 sub_0200A110();
     u32 sub_0200A118();
     u32 sub_0200A804(int arg0);
-    BOOL sub_0200A84C();
+    void sub_0200A84C();
     BOOL sub_0200A97C();
     BOOL sub_0200A9C0();
     void sub_0200AA04(s32 arg0);

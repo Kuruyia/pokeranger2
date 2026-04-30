@@ -1004,7 +1004,7 @@ _0211D7E8:
 	ldr r1, [r5, #0x14]
 	ldr r2, [r5, #0x18]
 	add r3, r3, #0x14
-	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvP10CGame_0024S6_mmm
 	bl sub_02007D68
 	mov r1, #0x400
 	mov r0, sl
@@ -6983,7 +6983,7 @@ ov3_02122BCC: ; 0x02122BCC
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvP10CGame_0024S6_mmm
 	mov r0, r4
 	bl ov3_021231F4
 	mov r0, r4
@@ -7291,7 +7291,7 @@ _02123030:
 	ldr r1, [lr, #0x14]
 	ldr r2, [lr, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvP10CGame_0024S6_mmm
 	ldr r0, [r4, #0x80]
 	mov r1, #2
 	add r0, r0, #0x1000
@@ -7340,7 +7340,7 @@ ov3_02123100: ; 0x02123100
 	ldr r1, [ip, #0x14]
 	ldr r2, [ip, #0x18]
 	add r3, r3, #0xc
-	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvP10CGame_0024S6_mmm
 	mov r0, r4
 	bl ov3_021231F4
 	mov r0, r4

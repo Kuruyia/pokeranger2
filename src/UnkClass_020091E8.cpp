@@ -17,8 +17,6 @@
 
 extern "C" {
 void sub_0200B6E4(void);
-void sub_0200BC64(UnkClass_0200BBC8 *, u32, UnkClass_02001C04 *, CTouchPanel *, void *, u32, u32, u32);
-void sub_0200BE28(UnkClass_0200BBC8 *, u32, u32, u32, u32);
 u8 *sub_02018B10(void *, u32);
 u8 *sub_02018B2C(void *, u32);
 u8 *sub_02018B48(void *, u32);
@@ -114,7 +112,7 @@ void UnkClass_020091E8::sub_020092D4()
     unk_02C = NULL;
 }
 
-void UnkClass_020091E8::sub_02009328(UnkClass_02001C04 *arg0, CTouchPanel *arg1, NNSG2dFont *arg2, void *arg3, u32 arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8)
+void UnkClass_020091E8::sub_02009328(UnkClass_02001C04 *arg0, CTouchPanel *arg1, NNSG2dFont *arg2, void *arg3, CGame_0024 *arg4, void *arg5, u32 arg6, u32 arg7, u32 arg8)
 {
     sub_020092D4();
 
@@ -127,7 +125,7 @@ void UnkClass_020091E8::sub_02009328(UnkClass_02001C04 *arg0, CTouchPanel *arg1,
     sub_02009430();
     sub_020095D0();
     sub_02009670();
-    sub_0200BC64(unk_14C, arg4, unk_088, unk_08C, unk_090, arg6, arg7, arg8);
+    unk_14C->sub_0200BC64(arg4, unk_088, unk_08C, unk_090, arg6, arg7, arg8);
 }
 
 void UnkClass_020091E8::sub_020093B4()
@@ -257,7 +255,7 @@ BOOL UnkClass_020091E8::sub_02009814(u32 arg0)
             unk_0B0 = 0;
             unk_050 = 3;
 
-            sub_0200BE28(unk_14C, 0, 0xF0, ((unk_094 * 0x12 + 1) * 8) + 0x10, 1);
+            unk_14C->sub_0200BE28(0, 0xF0, ((unk_094 * 0x12 + 1) * 8) + 0x10, 1);
         }
 
         ++unk_07C;
@@ -267,7 +265,7 @@ BOOL UnkClass_020091E8::sub_02009814(u32 arg0)
 
     case 16:
         unk_050 = 4;
-        sub_0200BE28(unk_14C, 0, 0xF0, ((unk_094 * 0x12 + 1) * 8) + 0x10, 1);
+        unk_14C->sub_0200BE28(0, 0xF0, ((unk_094 * 0x12 + 1) * 8) + 0x10, 1);
 
         ++unk_07C;
         unk_078 = 0;
@@ -387,7 +385,7 @@ BOOL UnkClass_020091E8::sub_02009814(u32 arg0)
         u32 v3 = unk_0A4 + 0xE;
         u32 v4 = unk_0A8 + ((((unk_094 * 0x12) + 1) * 8) - 2);
 
-        sub_0200BE28(unk_14C, v2, v3, v4, 1);
+        unk_14C->sub_0200BE28(v2, v3, v4, 1);
         return FALSE;
     }
 
@@ -517,7 +515,7 @@ void UnkClass_020091E8::sub_02009F28()
     unk_078 = 0;
 }
 
-BOOL UnkClass_020091E8::sub_02009FB0(u32 arg0, u32 arg1)
+void UnkClass_020091E8::sub_02009FB0(u32 arg0, u32 arg1)
 {
     u32 planeMask = GX_PLANEMASK_BG1;
 
@@ -547,11 +545,9 @@ BOOL UnkClass_020091E8::sub_02009FB0(u32 arg0, u32 arg1)
     unk_078 = 0;
     unk_04C = 0;
 
-    if (arg0 == 0) {
-        return v0;
+    if (arg0 != 0) {
+        sub_0200AA68(3);
     }
-
-    return sub_0200AA68(3);
 }
 
 void UnkClass_020091E8::sub_0200A088(u32 arg0)
@@ -850,7 +846,7 @@ u32 UnkClass_020091E8::sub_0200A804(int arg0)
     return res;
 }
 
-BOOL UnkClass_020091E8::sub_0200A84C()
+void UnkClass_020091E8::sub_0200A84C()
 {
     if (unk_054 == 0) {
         if (sub_0200A9C0()) {
@@ -863,7 +859,7 @@ BOOL UnkClass_020091E8::sub_0200A84C()
     switch (unk_050) {
     case 3:
         if (!sub_0200A97C() && unk_058 != 1) {
-            return unk_058;
+            return;
         }
 
         unk_050 = 6;
@@ -873,14 +869,15 @@ BOOL UnkClass_020091E8::sub_0200A84C()
         sub_0200AA68(5);
 
         if (unk_058 != 0) {
-            return unk_058;
+            return;
         }
 
-        return unk_14C->sub_0200BFB4();
+        unk_14C->sub_0200BFB4();
+        break;
 
     case 4:
         if (!sub_0200A97C() && unk_058 != 1) {
-            return unk_058;
+            return;
         }
 
         unk_050 = 7;
@@ -890,33 +887,30 @@ BOOL UnkClass_020091E8::sub_0200A84C()
         sub_0200AA68(5);
 
         if (unk_058 != 0) {
-            return unk_058;
+            return;
         }
 
-        return unk_14C->sub_0200BF58();
+        unk_14C->sub_0200BF58();
+        break;
 
     case 5:
         if (unk_064 != 1) {
-            return unk_064;
+            return;
         }
 
         if (unk_06C != 0) {
             --unk_06C;
-            return unk_06C;
+            return;
         }
 
-        return sub_02009FB0(1, 1);
-
-    default:
-        return unk_050;
+        sub_02009FB0(1, 1);
+        break;
     }
-
-    return unk_050;
 }
 
 BOOL UnkClass_020091E8::sub_0200A97C()
 {
-    if ((u16)(unk_088->unk_0002 & 0x1) != 0 || (u16)(unk_088->unk_0002 & 0x2) != 0 || unk_08C->unk_00 != 0) {
+    if ((u16)(unk_088->unk_0002 & 0x1) != 0 || (u16)(unk_088->unk_0002 & 0x2) != 0 || unk_08C->unk_04 != 0) {
         return TRUE;
     }
 
@@ -925,7 +919,7 @@ BOOL UnkClass_020091E8::sub_0200A97C()
 
 BOOL UnkClass_020091E8::sub_0200A9C0()
 {
-    if ((u16)(unk_088->unk_0000 & 0x1) != 0 || (u16)(unk_088->unk_0000 & 0x2) != 0 || unk_08C->unk_01 != 0) {
+    if ((u16)(unk_088->unk_0000 & 0x1) != 0 || (u16)(unk_088->unk_0000 & 0x2) != 0 || unk_08C->unk_05 != 0) {
         return TRUE;
     }
 

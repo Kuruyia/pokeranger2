@@ -638,8 +638,8 @@ CNCERFile_deleting_obj_dtor: ; 0x0200329C
 _020032C8: .word PTR_LAB_0208a590
     arm_func_end CNCERFile_deleting_obj_dtor
 
-	arm_func_start sub_020032CC
-sub_020032CC: ; 0x020032CC
+	arm_func_start _ZN9CNCGRFileC1EPcmmm
+_ZN9CNCGRFileC1EPcmmm: ; 0x020032CC
 	stmdb sp!, {r4, r5, r6, r7, lr}
 	sub sp, sp, #0xc
 	mov r7, r0
@@ -676,7 +676,7 @@ sub_020032CC: ; 0x020032CC
 	ldmia sp!, {r4, r5, r6, r7, pc}
 	.align 2, 0
 _02003354: .word PTR_LAB_0208a5b8
-	arm_func_end sub_020032CC
+	arm_func_end _ZN9CNCGRFileC1EPcmmm
 
 	arm_func_start CNCGRFile_complete_obj_dtor
 CNCGRFile_complete_obj_dtor: ; 0x02003358
@@ -5463,7 +5463,7 @@ sub_02007590: ; 0x02007590
 	mov r1, r7
 	mov r3, r6
 	str r5, [sp]
-	bl sub_020032CC
+	bl _ZN9CNCGRFileC1EPcmmm
 	arm_func_end sub_02007590
 _020075CC:
 	str r0, [r4]

@@ -279,7 +279,7 @@ CFieldScene_ov0_0211CD5C: ; 0x0211CD5C
 	ldr r2, [r6, #0x18]
 	add r3, r3, #0xc
 	ldr r4, _0211DBB0 ; =MAIN_BSS_020B26A0
-	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvmS6_mmm
+	bl _ZN17UnkClass_020091E812sub_02009328EP17UnkClass_02001C04P11CTouchPanelP10NNSG2dFontPvP10CGame_0024S6_mmm
 	mov r5, r7
 	ldr r0, _0211DBB4 ; =MAIN_BSS_020BA6A0
 	str r5, [sp, #0x20]
