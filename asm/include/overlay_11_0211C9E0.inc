@@ -510,3 +510,8 @@
 .public ov11_02139940
 .public ov11_0213AD60
 .public ov11_0213ADB0
+.public ov11_02137B60
+.public ov11_02137C40
+.public ov11_02137D38
+.public ov11_02137DA0
+.public ov11_02137DE0
