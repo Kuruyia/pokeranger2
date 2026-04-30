@@ -3,8 +3,8 @@
 
     .text
 
-	arm_func_start ov11_02139914
-ov11_02139914: ; 0x02139914
+	arm_func_start DWCi_BM_GetApInfo
+DWCi_BM_GetApInfo: ; 0x02139914
 	stmdb sp!, {r3, lr}
 	ldr r1, _0213993C ; =OVERLAY11_BSS_02169D60
 	mov r2, r0
@@ -17,10 +17,10 @@ ov11_02139914: ; 0x02139914
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0213993C: .word OVERLAY11_BSS_02169D60
-	arm_func_end ov11_02139914
+	arm_func_end DWCi_BM_GetApInfo
 
-	arm_func_start ov11_02139940
-ov11_02139940: ; 0x02139940
+	arm_func_start DWCi_BM_GetWiFiInfo
+DWCi_BM_GetWiFiInfo: ; 0x02139940
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	ldr r0, _02139A00 ; =OVERLAY11_BSS_02169D6C
@@ -76,7 +76,7 @@ _02139A08: .word OVERLAY11_BSS_02169D71
 _02139A0C: .word OVERLAY11_BSS_02169D76
 _02139A10: .word 0x000003FF
 _02139A14: .word OVERLAY11_BSS_02169D78
-	arm_func_end ov11_02139940
+	arm_func_end DWCi_BM_GetWiFiInfo
 
 	arm_func_start ov11_02139A18
 ov11_02139A18: ; 0x02139A18
@@ -84,7 +84,7 @@ ov11_02139A18: ; 0x02139A18
 	ldr r2, _02139AE8 ; =OVERLAY11_BSS_02169D60
 	mov sl, r1
 	ldr sb, [r2, #8]
-	bl ov11_0213A43C
+	bl DWCi_BACKUPlConvWifiInfo
 	ldr r1, _02139AEC ; =0x0000A001
 	add r0, sl, #0x200
 	bl MATHi_CRC16InitTableRev
@@ -163,8 +163,8 @@ ov11_02139AF4: ; 0x02139AF4
 _02139B34: .word OVERLAY11_BSS_02169D60
 	arm_func_end ov11_02139AF4
 
-	arm_func_start ov11_02139B38
-ov11_02139B38: ; 0x02139B38
+	arm_func_start DWCi_BACKUPlRead
+DWCi_BACKUPlRead: ; 0x02139B38
 	stmdb sp!, {r3, lr}
 	ldr r1, _02139B60 ; =OVERLAY11_BSS_02169D60
 	mov r2, r0
@@ -177,10 +177,10 @@ ov11_02139B38: ; 0x02139B38
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02139B60: .word OVERLAY11_BSS_02169D60
-	arm_func_end ov11_02139B38
+	arm_func_end DWCi_BACKUPlRead
 
-	arm_func_start ov11_02139B64
-ov11_02139B64: ; 0x02139B64
+	arm_func_start DWCi_BACKUPlWritePage
+DWCi_BACKUPlWritePage: ; 0x02139B64
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, lr}
 	ldr r3, _02139BE8 ; =OVERLAY11_BSS_02169D60
 	mov sl, #0x100
@@ -190,7 +190,7 @@ ov11_02139B64: ; 0x02139B64
 	mov r6, r2
 	mov r4, #0
 	mov sb, sl
-	arm_func_end ov11_02139B64
+	arm_func_end DWCi_BACKUPlWritePage
 _02139B88:
 	ldr r0, [r7, r4, lsl #2]
 	cmp r0, #0
@@ -276,13 +276,13 @@ _02139C90: .word MI_CpuCopy8
 _02139C94: .word OVERLAY11_BSS_02169D6C
 	arm_func_end ov11_02139C80
 
-	arm_func_start ov11_02139C98
-ov11_02139C98: ; 0x02139C98
+	arm_func_start DWCi_BACKUPlConvMaskCidr
+DWCi_BACKUPlConvMaskCidr: ; 0x02139C98
 	stmdb sp!, {r4, lr}
 	mov ip, #0
 	mov r3, ip
 	mov r2, ip
-	arm_func_end ov11_02139C98
+	arm_func_end DWCi_BACKUPlConvMaskCidr
 _02139CA8:
 	ldrb r4, [r0, ip]
 	mov lr, r2
@@ -299,13 +299,13 @@ _02139CB0:
 	and r0, r3, #0xff
 	ldmia sp!, {r4, pc}
 
-	arm_func_start ov11_02139CDC
-ov11_02139CDC: ; 0x02139CDC
+	arm_func_start DWCi_BACKUPlConvMaskAddr
+DWCi_BACKUPlConvMaskAddr: ; 0x02139CDC
 	mvn r2, #0
 	mov r3, #0
 	eor r2, r2, r2, lsr r0
 	mov ip, r3
-	arm_func_end ov11_02139CDC
+	arm_func_end DWCi_BACKUPlConvMaskAddr
 _02139CEC:
 	rsb r0, ip, #0x18
 	mov r0, r2, lsr r0
@@ -331,13 +331,13 @@ _02139D10:
 	mov r0, #0
 	bx lr
 
-	arm_func_start ov11_02139D34
-ov11_02139D34: ; 0x02139D34
+	arm_func_start DWC_BACKUPlCheckIp
+DWC_BACKUPlCheckIp: ; 0x02139D34
 	stmdb sp!, {r3, r4, r5, lr}
 	sub sp, sp, #8
 	mov r5, r0
 	mov r4, r1
-	bl ov11_02139DB0
+	bl DWC_BACKUPlCheckAddress
 	cmp r0, #0
 	addeq sp, sp, #8
 	moveq r0, #0
@@ -364,10 +364,10 @@ ov11_02139D34: ; 0x02139D34
 	moveq r0, #0
 	add sp, sp, #8
 	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end ov11_02139D34
+	arm_func_end DWC_BACKUPlCheckIp
 
-	arm_func_start ov11_02139DB0
-ov11_02139DB0: ; 0x02139DB0
+	arm_func_start DWC_BACKUPlCheckAddress
+DWC_BACKUPlCheckAddress: ; 0x02139DB0
 	ldrb r0, [r0]
 	cmp r0, #0x7f
 	moveq r0, #0
@@ -379,7 +379,7 @@ ov11_02139DB0: ; 0x02139DB0
 	movls r0, #1
 	movhi r0, #0
 	bx lr
-	arm_func_end ov11_02139DB0
+	arm_func_end DWC_BACKUPlCheckAddress
 
 	arm_func_start ov11_02139DDC
 ov11_02139DDC: ; 0x02139DDC
@@ -847,8 +847,8 @@ ov11_0213A40C: ; 0x0213A40C
 _0213A438: .word OVERLAY11_BSS_02169D60
 	arm_func_end ov11_0213A40C
 
-	arm_func_start ov11_0213A43C
-ov11_0213A43C: ; 0x0213A43C
+	arm_func_start DWCi_BACKUPlConvWifiInfo
+DWCi_BACKUPlConvWifiInfo: ; 0x0213A43C
 	stmdb sp!, {r4, lr}
 	sub sp, sp, #8
 	mov r4, r0
@@ -898,15 +898,15 @@ ov11_0213A43C: ; 0x0213A43C
 _0213A4F0: .word OVERLAY11_BSS_02169D6C
 _0213A4F4: .word OVERLAY11_BSS_02169D72
 _0213A4F8: .word OVERLAY11_BSS_02169D78
-	arm_func_end ov11_0213A43C
+	arm_func_end DWCi_BACKUPlConvWifiInfo
 
-	arm_func_start ov11_0213A4FC
-ov11_0213A4FC: ; 0x0213A4FC
+	arm_func_start DWCi_BACKUPlGetWifi
+DWCi_BACKUPlGetWifi: ; 0x0213A4FC
 	ldr r0, _0213A504 ; =OVERLAY11_BSS_02169D6C
 	bx lr
 	.align 2, 0
 _0213A504: .word OVERLAY11_BSS_02169D6C
-	arm_func_end ov11_0213A4FC
+	arm_func_end DWCi_BACKUPlGetWifi
 
 	arm_func_start DWC_BM_Init
 DWC_BM_Init: ; 0x0213A508
@@ -926,7 +926,7 @@ DWC_BM_Init: ; 0x0213A508
 	add r0, r8, #0x500
 	bl MATHi_CRC16InitTableRev
 	mov r0, r8
-	bl ov11_02139B38
+	bl DWCi_BACKUPlRead
 	cmp r0, #0
 	addeq sp, sp, #0x10
 	ldreq r0, _0213A7FC ; =0xFFFFD8EF
@@ -1146,7 +1146,7 @@ ov11_0213A810: ; 0x0213A810
 	cmp r0, #0
 	beq _0213A8C0
 	add r0, r4, #0xc4
-	bl ov11_02139DB0
+	bl DWC_BACKUPlCheckAddress
 	cmp r0, #0
 	addeq sp, sp, #4
 	moveq r0, #0
@@ -1157,10 +1157,10 @@ ov11_0213A810: ; 0x0213A810
 	movhi r0, #0
 	ldmhiia sp!, {r3, r4, pc}
 	add r1, sp, #0
-	bl ov11_02139CDC
+	bl DWCi_BACKUPlConvMaskAddr
 	add r1, sp, #0
 	add r0, r4, #0xc0
-	bl ov11_02139D34
+	bl DWC_BACKUPlCheckIp
 	cmp r0, #0
 	addeq sp, sp, #4
 	moveq r0, #0
@@ -1174,11 +1174,11 @@ _0213A8C0:
 	cmp r0, #0
 	beq _0213A900
 	add r0, r4, #0xc8
-	bl ov11_02139DB0
+	bl DWC_BACKUPlCheckAddress
 	cmp r0, #0
 	bne _0213A900
 	add r0, r4, #0xcc
-	bl ov11_02139DB0
+	bl DWC_BACKUPlCheckAddress
 	cmp r0, #0
 	addeq sp, sp, #4
 	moveq r0, #0
@@ -1209,9 +1209,9 @@ _0213A934:
 	cmp r2, #3
 	blt _0213A934
 	add r0, sp, #0
-	bl ov11_0213AB40
+	bl DWCi_AUTH_GetNewWiFiInfo
 	add r0, sp, #0
-	bl ov11_0213A43C
+	bl DWCi_BACKUPlConvWifiInfo
 	mov r5, r0
 	mov r6, #0
 	mov r4, #0xe
@@ -1349,12 +1349,12 @@ _0213AB34: .word 0x0000FFFF
 _0213AB38: .word DAT_overlay_11_02162c08
 _0213AB3C: .word DAT_overlay_11_02162c00
 
-	arm_func_start ov11_0213AB40
-ov11_0213AB40: ; 0x0213AB40
+	arm_func_start DWCi_AUTH_GetNewWiFiInfo
+DWCi_AUTH_GetNewWiFiInfo: ; 0x0213AB40
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x24
 	mov sl, r0
-	bl ov11_02139940
+	bl DWCi_BM_GetWiFiInfo
 	bl RTC_Init
 	add r0, sp, #0x14
 	bl RTC_GetDate
@@ -1382,7 +1382,7 @@ ov11_0213AB40: ; 0x0213AB40
 	beq _0213ABBC
 	ldr r0, _0213AD0C ; =FUN_020668E8
 	adds r4, r4, r0
-	arm_func_end ov11_0213AB40
+	arm_func_end DWCi_AUTH_GetNewWiFiInfo
 _0213ABBC:
 	add r0, sp, #0
 	bl OS_GetMacAddress
@@ -1486,7 +1486,7 @@ DWCi_AUTH_MakeWiFiID: ; 0x0213AD1C
 	sub sp, sp, #0x14
 	mov r4, r0
 	add r0, sp, #0
-	bl ov11_0213AB40
+	bl DWCi_AUTH_GetNewWiFiInfo
 	cmp r0, #0
 	addeq sp, sp, #0x14
 	moveq r0, #0
@@ -1501,14 +1501,14 @@ DWCi_AUTH_MakeWiFiID: ; 0x0213AD1C
 	ldmia sp!, {r3, r4, pc}
 	arm_func_end DWCi_AUTH_MakeWiFiID
 
-	arm_func_start ov11_0213AD60
-ov11_0213AD60: ; 0x0213AD60
+	arm_func_start DWCi_AUTH_UpDateWiFiID
+DWCi_AUTH_UpDateWiFiID: ; 0x0213AD60
 	stmdb sp!, {r4, r5, lr}
 	sub sp, sp, #0x14
 	mov r5, r0
 	add r0, sp, #0
 	mov r4, r1
-	bl ov11_02139940
+	bl DWCi_BM_GetWiFiInfo
 	add ip, r5, #8
 	ldmia ip, {r2, r3}
 	stmia r5, {r2, r3}
@@ -1523,10 +1523,10 @@ ov11_0213AD60: ; 0x0213AD60
 	moveq r0, #0
 	add sp, sp, #0x14
 	ldmia sp!, {r4, r5, pc}
-	arm_func_end ov11_0213AD60
+	arm_func_end DWCi_AUTH_UpDateWiFiID
 
-	arm_func_start ov11_0213ADB0
-ov11_0213ADB0: ; 0x0213ADB0
+	arm_func_start DWCi_AUTH_RemakeWiFiID
+DWCi_AUTH_RemakeWiFiID: ; 0x0213ADB0
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x24
 	add r2, sp, #0
@@ -1538,7 +1538,7 @@ ov11_0213ADB0: ; 0x0213ADB0
 	strb r1, [r2, #3]
 	strb r1, [r2, #4]
 	strb r1, [r2, #5]
-	bl ov11_02139940
+	bl DWCi_BM_GetWiFiInfo
 	bl RTC_Init
 	add r0, sp, #0x14
 	bl RTC_GetDate
@@ -1566,7 +1566,7 @@ ov11_0213ADB0: ; 0x0213ADB0
 	beq _0213AE4C
 	ldr r0, _0213AF40 ; =FUN_020668E8
 	adds r4, r4, r0
-	arm_func_end ov11_0213ADB0
+	arm_func_end DWCi_AUTH_RemakeWiFiID
 _0213AE4C:
 	add r0, sp, #0
 	bl OS_GetMacAddress
@@ -1644,7 +1644,7 @@ DWC_Auth_CheckWiFiIDNeedCreate: ; 0x0213AF50
 	stmdb sp!, {lr}
 	sub sp, sp, #0x14
 	add r0, sp, #0
-	bl ov11_02139940
+	bl DWCi_BM_GetWiFiInfo
 	ldr r0, [sp, #0xc]
 	ldr r1, [sp, #8]
 	cmp r0, #0

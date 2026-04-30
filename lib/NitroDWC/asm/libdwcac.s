@@ -95,7 +95,7 @@ DWC_AC_Create: ; 0x02132564
 	mov r1, r1, lsl #0x1e
 	orr r1, r2, r1, lsr #26
 	strb r1, [r0, #0xd0c]
-	bl ov11_02139914
+	bl DWCi_BM_GetApInfo
 	ldr r0, _02132704 ; =OVERLAY11_BSS_02169C94
 	mov r1, #0x2300
 	ldr r0, [r0, #4]
@@ -266,7 +266,7 @@ DWC_AC_GetApSpotInfo: ; 0x0213288C
 	bl DC_InvalidateRange
 	mov r0, r4
 	add r1, r6, #6
-	bl ov11_02134E3C
+	bl DWCi_AC_GetPostalCode
 	arm_func_end DWC_AC_GetApSpotInfo
 _0213290C:
 	mov r0, #1
@@ -295,8 +295,8 @@ _02132940:
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 
-	arm_func_start ov11_02132958
-ov11_02132958: ; 0x02132958
+	arm_func_start DWCi_AC_InsertApInfo
+DWCi_AC_InsertApInfo: ; 0x02132958
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r0, #0x10
@@ -308,7 +308,7 @@ ov11_02132958: ; 0x02132958
 	mov r2, #0xf0
 	bl MIi_CpuCopy32
 	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end ov11_02132958
+	arm_func_end DWCi_AC_InsertApInfo
 
 	arm_func_start ov11_02132984
 ov11_02132984: ; 0x02132984
@@ -1478,8 +1478,8 @@ _0213389C:
 _021338B8:
 	cmp r0, #0xe
 	bne _021338D4
-	bl ov11_02137D38
-	bl ov11_02137C40
+	bl DWC_Netcheck_Abort
+	bl DWC_Netcheck_Destroy
 	mov r0, #0xc
 	strb r0, [r4]
 	b _021338EC
@@ -2823,8 +2823,8 @@ _021349EC:
 	mov r4, r0
 	b _02134A14
 _021349F8:
-	bl ov11_02137D38
-	bl ov11_02137C40
+	bl DWC_Netcheck_Abort
+	bl DWC_Netcheck_Destroy
 _02134A00:
 	ldrb r0, [r5, #0xd13]
 	mov r1, #2
@@ -2912,7 +2912,7 @@ ov11_02134B10: ; 0x02134B10
 	stmdb sp!, {r3, lr}
 	mov r0, #8
 	bl ov11_02132B1C
-	bl ov11_02137B60
+	bl DWC_Netcheck_Create
 	cmp r0, #0
 	moveq r0, #0xe
 	ldmeqia sp!, {r3, pc}
@@ -2929,7 +2929,7 @@ ov11_02134B3C: ; 0x02134B3C
 	mov r0, #1
 	bl ov11_02132B1C
 	mov r4, r0
-	bl ov11_02137DA0
+	bl DWC_Netcheck_GetError
 	movs r5, r0
 	beq _02134BA0
 	ldrb r0, [r6, #0xd0d]
@@ -2937,11 +2937,11 @@ ov11_02134B3C: ; 0x02134B3C
 	ldrb r1, [r4, #0x15]
 	cmp r1, r0
 	bne _02134B78
-	bl ov11_02137DE0
+	bl DWC_Netcheck_GetReturnCode
 	str r0, [r4, #0x10]
 	arm_func_end ov11_02134B3C
 _02134B78:
-	bl ov11_02137C40
+	bl DWC_Netcheck_Destroy
 	cmp r5, #0xb
 	moveq r0, #0xf
 	ldmeqia sp!, {r4, r5, r6, pc}
@@ -3157,8 +3157,8 @@ ov11_02134E14: ; 0x02134E14
 	ldmia sp!, {r4, pc}
 	arm_func_end ov11_02134E14
 
-	arm_func_start ov11_02134E3C
-ov11_02134E3C: ; 0x02134E3C
+	arm_func_start DWCi_AC_GetPostalCode
+DWCi_AC_GetPostalCode: ; 0x02134E3C
 	stmdb sp!, {r4, lr}
 	sub sp, sp, #0x18
 	mov r4, r1
@@ -3179,7 +3179,7 @@ ov11_02134E3C: ; 0x02134E3C
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02134E84: .word s_NDWCSHAP_overlay_11_021667b8
-	arm_func_end ov11_02134E3C
+	arm_func_end DWCi_AC_GetPostalCode
 
 	arm_func_start ov11_02134E88
 ov11_02134E88: ; 0x02134E88

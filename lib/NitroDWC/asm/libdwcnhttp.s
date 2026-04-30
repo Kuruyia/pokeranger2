@@ -3,8 +3,8 @@
 
     .text
 
-	arm_func_start ov11_0215DBBC
-ov11_0215DBBC: ; 0x0215DBBC
+	arm_func_start NHTTP_Startup
+NHTTP_Startup: ; 0x0215DBBC
 	stmdb sp!, {r4, lr}
 	ldr r3, _0215DC80 ; =OVERLAY11_BSS_0216C468
 	mov ip, #0
@@ -24,7 +24,7 @@ ov11_0215DBBC: ; 0x0215DBBC
 	str r1, [r0, #4]
 	mov r0, #0
 	ldmia sp!, {r4, pc}
-	arm_func_end ov11_0215DBBC
+	arm_func_end NHTTP_Startup
 _0215DC08:
 	ldr r1, _0215DC80 ; =OVERLAY11_BSS_0216C468
 	mov r0, #0x2000
@@ -60,8 +60,8 @@ _0215DC40:
 	.align 2, 0
 _0215DC80: .word OVERLAY11_BSS_0216C468
 
-	arm_func_start ov11_0215DC84
-ov11_0215DC84: ; 0x0215DC84
+	arm_func_start NHTTP_CleanupAsync
+NHTTP_CleanupAsync: ; 0x0215DC84
 	stmdb sp!, {r3, lr}
 	sub sp, sp, #8
 	mov r2, r0
@@ -81,7 +81,7 @@ ov11_0215DC84: ; 0x0215DC84
 _0215DCC0: .word OVERLAY11_BSS_0216C48C
 _0215DCC4: .word ov11_0215DCCC
 _0215DCC8: .word OVERLAY11_BSS_0216CD4C
-	arm_func_end ov11_0215DC84
+	arm_func_end NHTTP_CleanupAsync
 
 	arm_func_start ov11_0215DCCC
 ov11_0215DCCC: ; 0x0215DCCC
@@ -271,8 +271,8 @@ _0215DF1C:
 	.align 2, 0
 _0215DF34: .word DAT_overlay_11_02165f13
 
-	arm_func_start ov11_0215DF38
-ov11_0215DF38: ; 0x0215DF38
+	arm_func_start NHTTP_AddHeaderField
+NHTTP_AddHeaderField: ; 0x0215DF38
 	stmdb sp!, {r3, lr}
 	ldr r3, [r0]
 	cmp r3, #0
@@ -282,10 +282,10 @@ ov11_0215DF38: ; 0x0215DF38
 	mov r3, #0x18
 	bl ov11_0215DD08
 	ldmia sp!, {r3, pc}
-	arm_func_end ov11_0215DF38
+	arm_func_end NHTTP_AddHeaderField
 
-	arm_func_start ov11_0215DF5C
-ov11_0215DF5C: ; 0x0215DF5C
+	arm_func_start NHTTP_AddPostDataAscii
+NHTTP_AddPostDataAscii: ; 0x0215DF5C
 	stmdb sp!, {r4, r5, r6, r7, r8, lr}
 	mov r8, r0
 	ldr r0, [r8]
@@ -313,13 +313,13 @@ ov11_0215DF5C: ; 0x0215DF5C
 	ldrne r0, [r8, #0x38]
 	ldrne r0, [r0]
 	strne r4, [r0, #0x10]
-	arm_func_end ov11_0215DF5C
+	arm_func_end NHTTP_AddPostDataAscii
 _0215DFC8:
 	mov r0, r5
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 
-	arm_func_start ov11_0215DFD0
-ov11_0215DFD0: ; 0x0215DFD0
+	arm_func_start NHTTP_SetCAChain
+NHTTP_SetCAChain: ; 0x0215DFD0
 	ldr r3, [r0]
 	cmp r3, #0
 	movne r0, #0
@@ -327,7 +327,7 @@ ov11_0215DFD0: ; 0x0215DFD0
 	streq r2, [r0, #0x18]
 	moveq r0, #1
 	bx lr
-	arm_func_end ov11_0215DFD0
+	arm_func_end NHTTP_SetCAChain
 
 	arm_func_start ov11_0215DFEC
 ov11_0215DFEC: ; 0x0215DFEC
@@ -948,8 +948,8 @@ ov11_0215E708: ; 0x0215E708
 _0215E774: .word 0xFFFFFC15
 	arm_func_end ov11_0215E708
 
-	arm_func_start ov11_0215E778
-ov11_0215E778: ; 0x0215E778
+	arm_func_start NHTTP_CreateRequest
+NHTTP_CreateRequest: ; 0x0215E778
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	mov fp, r0
 	movs r0, r1
@@ -964,7 +964,7 @@ ov11_0215E778: ; 0x0215E778
 	mov r1, #0xb
 	str r1, [r0]
 	b _0215EC3C
-	arm_func_end ov11_0215E778
+	arm_func_end NHTTP_CreateRequest
 _0215E7B0:
 	cmp r4, #0
 	bne _0215E7C8
@@ -1334,8 +1334,8 @@ _0215ECD0: .word 0x0000FFFF
 _0215ECD4: .word DAT_overlay_11_02165f00
 _0215ECD8: .word OVERLAY11_BSS_0216C474
 
-	arm_func_start ov11_0215ECDC
-ov11_0215ECDC: ; 0x0215ECDC
+	arm_func_start NHTTP_DestroyRequest
+NHTTP_DestroyRequest: ; 0x0215ECDC
 	stmdb sp!, {r4, lr}
 	ldr r1, _0215ED00 ; =OVERLAY11_BSS_0216C474
 	mov r4, r0
@@ -1347,7 +1347,7 @@ ov11_0215ECDC: ; 0x0215ECDC
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0215ED00: .word OVERLAY11_BSS_0216C474
-	arm_func_end ov11_0215ECDC
+	arm_func_end NHTTP_DestroyRequest
 
 	arm_func_start ov11_0215ED04
 ov11_0215ED04: ; 0x0215ED04
@@ -1415,8 +1415,8 @@ _0215EDA4:
 	.align 2, 0
 _0215EDCC: .word OVERLAY11_BSS_0216C474
 
-	arm_func_start ov11_0215EDD0
-ov11_0215EDD0: ; 0x0215EDD0
+	arm_func_start NHTTP_SendRequestAsync
+NHTTP_SendRequestAsync: ; 0x0215EDD0
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	ldr r0, [r5]
@@ -1427,7 +1427,7 @@ ov11_0215EDD0: ; 0x0215EDD0
 	str r1, [r0]
 	sub r0, r1, #0xc
 	ldmia sp!, {r3, r4, r5, pc}
-	arm_func_end ov11_0215EDD0
+	arm_func_end NHTTP_SendRequestAsync
 _0215EDF8:
 	ldr r0, [r5, #0x40]
 	cmp r0, #1
@@ -1528,15 +1528,15 @@ _0215EF38:
 	strb r4, [r2, r1]
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 
-	arm_func_start ov11_0215EF48
-ov11_0215EF48: ; 0x0215EF48
+	arm_func_start NHTTP_DestroyResponse
+NHTTP_DestroyResponse: ; 0x0215EF48
 	stmdb sp!, {r4, r5, r6, lr}
 	mov r4, r0
 	ldr r0, [r4, #0x1c]
 	cmp r0, #0
 	beq _0215EF78
 	ldr r5, _0215EFBC ; =OVERLAY11_BSS_0216C474
-	arm_func_end ov11_0215EF48
+	arm_func_end NHTTP_DestroyResponse
 _0215EF60:
 	ldr r6, [r0]
 	ldr r1, [r5]
@@ -1643,8 +1643,8 @@ _0215F0C0:
 	add sp, sp, #8
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, pc}
 
-	arm_func_start ov11_0215F0CC
-ov11_0215F0CC: ; 0x0215F0CC
+	arm_func_start NHTTP_GetHeaderField
+NHTTP_GetHeaderField: ; 0x0215F0CC
 	stmdb sp!, {r3, r4, r5, r6, r7, lr}
 	mov r7, r0
 	ldr r0, [r7, #8]
@@ -1661,7 +1661,7 @@ ov11_0215F0CC: ; 0x0215F0CC
 	blx r1
 	mov r0, #0
 	str r0, [r7, #0x14]
-	arm_func_end ov11_0215F0CC
+	arm_func_end NHTTP_GetHeaderField
 _0215F10C:
 	add r2, sp, #0
 	mov r0, r7
@@ -1715,8 +1715,8 @@ _0215F1C4: .word OVERLAY11_BSS_0216C474
 _0215F1C8: .word OVERLAY11_BSS_0216C470
 _0215F1CC: .word s_HTTPSTATUSCODE_overlay_11_02169864
 
-	arm_func_start ov11_0215F1D0
-ov11_0215F1D0: ; 0x0215F1D0
+	arm_func_start NHTTP_GetBodyAll
+NHTTP_GetBodyAll: ; 0x0215F1D0
 	ldr r2, [r0, #8]
 	cmp r2, #0
 	ldrne r2, [r0, #4]
@@ -1726,7 +1726,7 @@ ov11_0215F1D0: ; 0x0215F1D0
 	strne r2, [r1]
 	ldrne r0, [r0, #4]
 	bx lr
-	arm_func_end ov11_0215F1D0
+	arm_func_end NHTTP_GetBodyAll
 
 	arm_func_start ov11_0215F1F4
 ov11_0215F1F4: ; 0x0215F1F4
@@ -1983,8 +1983,8 @@ ov11_0215F4B0: ; 0x0215F4B0
 _0215F4C4: .word MI_CpuCopy8
 	arm_func_end ov11_0215F4B0
 
-	arm_func_start ov11_0215F4C8
-ov11_0215F4C8: ; 0x0215F4C8
+	arm_func_start NHTTP_GetProgress
+NHTTP_GetProgress: ; 0x0215F4C8
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r0, #0
@@ -2013,7 +2013,7 @@ ov11_0215F4C8: ; 0x0215F4C8
 	ldrne r0, [r2, #0xc]
 	ldrne r0, [r0, #0x14]
 	str r0, [r4]
-	arm_func_end ov11_0215F4C8
+	arm_func_end NHTTP_GetProgress
 _0215F538:
 	mov r4, #1
 	b _0215F554
@@ -2705,7 +2705,7 @@ _0215FEC0:
 	beq _0215F8EC
 	mov r1, r7
 	mov r0, r4
-	bl ov11_02160D38
+	bl NHTTPi_intToStr
 	str r0, [sp, #0x34]
 	cmp r0, #0
 	beq _0215FF24
@@ -3103,7 +3103,7 @@ _02160408:
 	bne _021609B0
 	ldr r0, _0216076C ; =OVERLAY11_BSS_0216CEB9
 	mov r1, #3
-	bl ov11_02160CA0
+	bl NHTTPi_strToInt
 	cmp r0, #0
 	blt _021609B0
 	ldr r2, [sb]
@@ -3134,7 +3134,7 @@ _02160408:
 	beq _021609B0
 	ldr r0, _0216075C ; =OVERLAY11_BSS_0216CEB0
 	mov r1, r5
-	bl ov11_02160CA0
+	bl NHTTPi_strToInt
 	movs r5, r0
 	bmi _021609B0
 	str r5, [r8, #0x14]
@@ -3160,7 +3160,7 @@ _02160564:
 	mov r1, #2
 	strb r3, [sp, #0x25]
 	strb r2, [sp, #0x26]
-	bl ov11_02160CA0
+	bl NHTTPi_strToInt
 	cmp r0, #0xb
 	movge r0, #1
 	strge r0, [sp, #8]
@@ -3670,8 +3670,8 @@ _02160C98:
 	mov r0, r6
 	ldmia sp!, {r4, r5, r6, r7, r8, pc}
 
-	arm_func_start ov11_02160CA0
-ov11_02160CA0: ; 0x02160CA0
+	arm_func_start NHTTPi_strToInt
+NHTTPi_strToInt: ; 0x02160CA0
 	stmdb sp!, {r3, r4, r5, lr}
 	cmp r1, #0xa
 	mvngt r0, #0
@@ -3683,7 +3683,7 @@ ov11_02160CA0: ; 0x02160CA0
 	ble _02160D30
 	mov ip, #1
 	mov r2, #0xa
-	arm_func_end ov11_02160CA0
+	arm_func_end NHTTPi_strToInt
 _02160CCC:
 	cmp r3, #0
 	ldrsb r5, [r0, lr]
@@ -3718,8 +3718,8 @@ _02160D30:
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, pc}
 
-	arm_func_start ov11_02160D38
-ov11_02160D38: ; 0x02160D38
+	arm_func_start NHTTPi_intToStr
+NHTTPi_intToStr: ; 0x02160D38
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x24
 	ldr r6, _02160DF0 ; =DAT_overlay_11_02165f8c
@@ -3738,7 +3738,7 @@ ov11_02160D38: ; 0x02160D38
 	mov r1, r7
 	mov fp, #1
 	mov r4, #0x30
-	arm_func_end ov11_02160D38
+	arm_func_end NHTTPi_intToStr
 _02160D80:
 	ldr r8, [r5, r6, lsl #2]
 	cmp sb, r8

@@ -21,7 +21,11 @@
 .public CPSMyIp
 .public DC_InvalidateRange
 .public DWC_AC_GetApType
+.public DWCi_AC_GetPostalCode
 .public DWCi_AUTH_MakeWiFiID
+.public DWCi_AUTH_RemakeWiFiID
+.public DWCi_AUTH_UpDateWiFiID
+.public DWCi_BM_GetWiFiInfo
 .public DWCi_SetError
 .public errno
 .public memmove
@@ -46,10 +50,6 @@
 .public OS_UnlockMutex
 .public OS_WakeupThreadDirect
 .public OSi_ThreadInfo
-.public ov11_02134E3C
-.public ov11_02139940
-.public ov11_0213AD60
-.public ov11_0213ADB0
 .public RTC_ConvertDateTimeToSecond
 .public RTC_GetDateTime
 .public strcmp
