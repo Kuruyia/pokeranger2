@@ -505,3 +505,8 @@
 .public DWC_SetMemFunc
 .public DWC_ClearError
 .public DWC_GetLinkLevel
+.public DWCi_AUTH_MakeWiFiID
+.public ov11_02139914
+.public ov11_02139940
+.public ov11_0213AD60
+.public ov11_0213ADB0
