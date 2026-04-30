@@ -435,7 +435,7 @@ DWCi_NdStartup: ; 0x0216142C
 	mov r0, r5
 	mov r1, r4
 	mov r2, #0xa
-	bl ov11_0215DBBC
+	bl NHTTP_Startup
 	cmp r0, #0
 	beq _02161540
 	ldr r0, _021615D0 ; =OVERLAY11_BSS_0216D304
@@ -518,12 +518,12 @@ DWCi_NdCleanupAsync: ; 0x02161618
 	mov r2, #0
 	str r2, [r1, #0x14]
 	str r0, [r1]
-	ldr ip, _02161638 ; =ov11_0215DC84
+	ldr ip, _02161638 ; =NHTTP_CleanupAsync
 	ldr r0, _0216163C ; =ov11_021615D4
 	bx ip
 	.align 2, 0
 _02161634: .word OVERLAY11_BSS_0216D2B0
-_02161638: .word ov11_0215DC84
+_02161638: .word NHTTP_CleanupAsync
 _0216163C: .word ov11_021615D4
 	arm_func_end DWCi_NdCleanupAsync
 
@@ -610,7 +610,7 @@ ov11_02161738: ; 0x02161738
 	mov r1, #0x14
 	bl ov11_02162838
 	add r0, sp, #0x10
-	bl ov11_02139940
+	bl DWCi_BM_GetWiFiInfo
 	ldr r1, [sp, #0x10]
 	ldr r2, [sp, #0x14]
 	mov r0, #0
@@ -678,7 +678,7 @@ _0216182C:
 	ldr r1, _02161AFC ; =s_HTTPSTATUSCODE_overlay_11_02169a88
 	add r2, sp, #0x14
 	mov r0, sl
-	bl ov11_0215F0CC
+	bl NHTTP_GetHeaderField
 	cmp r0, #3
 	movne r4, #3
 	bne _02161A14
@@ -691,7 +691,7 @@ _0216182C:
 	add r1, sp, #0x10
 	mov r0, sl
 	mov r8, #0
-	bl ov11_0215F1D0
+	bl NHTTP_GetBodyAll
 	movs r6, r0
 	movmi r4, #3
 	bmi _02161A14
@@ -856,7 +856,7 @@ _02161A84:
 	str r1, [r0]
 	bl ov11_021626F8
 	mov r0, sl
-	bl ov11_0215EF48
+	bl NHTTP_DestroyResponse
 	ldr r1, _02161B08 ; =OVERLAY11_BSS_0216D2D0
 	mov r0, sb
 	ldr r1, [r1]
@@ -894,7 +894,7 @@ ov11_02161B14: ; 0x02161B14
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	mov r0, r1
-	bl ov11_0215ECDC
+	bl NHTTP_DestroyRequest
 	bl ov11_02162780
 	ldr r1, _02161B3C ; =OVERLAY11_BSS_0216D2D0
 	mov r0, r4
@@ -966,7 +966,7 @@ _02161C00:
 	ldr r3, [sp, #0x20]
 	mov r2, r5
 	mov r1, #1
-	bl ov11_0215E778
+	bl NHTTP_CreateRequest
 	movs r5, r0
 	bne _02161C54
 	bl ov11_02162780
@@ -985,56 +985,56 @@ _02161C54:
 	str r4, [r8]
 	mov r2, #1
 	str r5, [r7]
-	bl ov11_0215DFD0
+	bl NHTTP_SetCAChain
 	cmp r0, #0
 	beq _02161DD4
 	ldr r1, _02161E1C ; =s_User_Agent_overlay_11_02169aa4
 	ldr r2, _02161E20 ; =OVERLAY11_BSS_0216D338
 	mov r0, r5
-	bl ov11_0215DF38
+	bl NHTTP_AddHeaderField
 	cmp r0, #0
 	beq _02161DD4
 	ldr r1, _02161E24 ; =s_gamecd_overlay_11_02169ab0
 	ldr r2, _02161E28 ; =OVERLAY11_BSS_0216D2E4
 	mov r0, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 	ldr r1, _02161E2C ; =s_rhgamecd_overlay_11_02169ab8
 	ldr r2, _02161DF8 ; =OVERLAY11_BSS_0216D398
 	mov r0, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 	ldr r1, _02161E30 ; =s_passwd_overlay_11_02169ac4
 	ldr r2, _02161E34 ; =OVERLAY11_BSS_0216D31C
 	mov r0, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 	ldr r0, _02161E38 ; =OVERLAY11_BSS_0216D2B8
 	ldr r1, _02161E3C ; =s_token_overlay_11_02169acc
 	ldr r2, [r0]
 	mov r0, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 	ldr r1, _02161E40 ; =s_userid_overlay_11_02169ad4
 	ldr r2, _02161DFC ; =OVERLAY11_BSS_0216D3A4
 	mov r0, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 	ldr r1, _02161E44 ; =s_macadr_overlay_11_02169adc
 	ldr r2, _02161E48 ; =OVERLAY11_BSS_0216D2F0
 	mov r0, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 	ldr r1, _02161E4C ; =s_action_overlay_11_02169ae4
 	mov r0, r5
 	mov r2, r6
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 	ldr r0, _02161E50 ; =OVERLAY11_BSS_0216D2D8
@@ -1043,7 +1043,7 @@ _02161C54:
 	beq _02161D58
 	ldr r1, _02161E54 ; =s_attr1_overlay_11_02169aec
 	mov r0, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 _02161D58:
@@ -1053,7 +1053,7 @@ _02161D58:
 	beq _02161D7C
 	ldr r1, _02161E58 ; =s_attr2_overlay_11_02169af4
 	mov r0, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 _02161D7C:
@@ -1063,7 +1063,7 @@ _02161D7C:
 	beq _02161DA0
 	ldr r1, _02161E5C ; =s_attr3_overlay_11_02169afc
 	mov r0, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 _02161DA0:
@@ -1074,7 +1074,7 @@ _02161DA0:
 	ldr r1, _02161E64 ; =s_apinfo_overlay_11_02169b04
 	ldr r2, _02161E68 ; =OVERLAY11_BSS_0216D304
 	mov r0, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02161DD4
 _02161DC8:
@@ -1129,7 +1129,7 @@ ov11_02161E6C: ; 0x02161E6C
 	mov r5, r0
 	bl ov11_021626E4
 	mov r0, r4
-	bl ov11_0215EDD0
+	bl NHTTP_SendRequestAsync
 	ldr r1, _02161EC4 ; =OVERLAY11_BSS_0216D2D4
 	str r0, [r5]
 	str r0, [r1]
@@ -1297,13 +1297,13 @@ _021620D8:
 	ldr r0, [sp, #4]
 	ldr r1, _021621F8 ; =s_offset_overlay_11_02169b0c
 	mov r2, sb
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02162194
 	ldr r0, [sp, #4]
 	ldr r1, _021621FC ; =s_num_overlay_11_02169b14
 	mov r2, sl
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02162194
 	ldr r0, [sp, #8]
@@ -1447,7 +1447,7 @@ _021622E4:
 	ldr r0, [sp, #4]
 	ldr r1, _021623B8 ; =s_contents_overlay_11_02169b18
 	mov r2, r5
-	bl ov11_0215DF5C
+	bl NHTTP_AddPostDataAscii
 	cmp r0, #0
 	beq _02162374
 _0216231C:
@@ -1496,10 +1496,10 @@ _021623B8: .word s_contents_overlay_11_02169b18
 
 	arm_func_start DWCi_NdGetProgress
 DWCi_NdGetProgress: ; 0x021623BC
-	ldr ip, _021623C4 ; =ov11_0215F4C8
+	ldr ip, _021623C4 ; =NHTTP_GetProgress
 	bx ip
 	.align 2, 0
-_021623C4: .word ov11_0215F4C8
+_021623C4: .word NHTTP_GetProgress
 	arm_func_end DWCi_NdGetProgress
 
 	arm_func_start ov11_021623C8
@@ -1508,7 +1508,7 @@ ov11_021623C8: ; 0x021623C8
 	sub sp, sp, #4
 	mov r4, r1
 	add r1, sp, #0
-	bl ov11_0215F1D0
+	bl NHTTP_GetBodyAll
 	movs r1, r0
 	bmi _02162410
 	ldr r0, [sp]
@@ -1534,7 +1534,7 @@ ov11_0216241C: ; 0x0216241C
 	sub sp, sp, #4
 	mov r4, r1
 	add r1, sp, #0
-	bl ov11_0215F1D0
+	bl NHTTP_GetBodyAll
 	ldr r1, [r4, #0x14]
 	cmp r0, r1
 	moveq r0, #1
@@ -1560,7 +1560,7 @@ ov11_02162448: ; 0x02162448
 	ldr r1, _021626C4 ; =s_Content_Length_overlay_11_02169b24
 	add r2, sp, #0x10
 	mov r0, r4
-	bl ov11_0215F0CC
+	bl NHTTP_GetHeaderField
 	cmp r0, #0
 	ble _021624B0
 	ldr r1, [sp, #0x10]
@@ -1575,7 +1575,7 @@ ov11_02162448: ; 0x02162448
 _021624B0:
 	add r1, sp, #0x14
 	mov r0, r4
-	bl ov11_0215F1D0
+	bl NHTTP_GetBodyAll
 	mov r4, r0
 	cmp r4, #0
 	ble _021626B8
@@ -1898,18 +1898,18 @@ _02162860: .word MI_CpuCopy8
 
 	arm_func_start thunk_FUN_overlay_11__02160ca0
 thunk_FUN_overlay_11__02160ca0: ; 0x02162864
-	ldr ip, _0216286C ; =ov11_02160CA0
+	ldr ip, _0216286C ; =NHTTPi_strToInt
 	bx ip
 	.align 2, 0
-_0216286C: .word ov11_02160CA0
+_0216286C: .word NHTTPi_strToInt
 	arm_func_end thunk_FUN_overlay_11__02160ca0
 
 	arm_func_start thunk_FUN_overlay_11__02160d38
 thunk_FUN_overlay_11__02160d38: ; 0x02162870
-	ldr ip, _02162878 ; =ov11_02160D38
+	ldr ip, _02162878 ; =NHTTPi_intToStr
 	bx ip
 	.align 2, 0
-_02162878: .word ov11_02160D38
+_02162878: .word NHTTPi_intToStr
 	arm_func_end thunk_FUN_overlay_11__02160d38
 
 	arm_func_start ov11_0216287C

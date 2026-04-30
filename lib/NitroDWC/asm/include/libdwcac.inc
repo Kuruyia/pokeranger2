@@ -4,6 +4,12 @@
 .public DGT_Hash1GetDigest_R
 .public DGT_Hash1Reset
 .public DGT_Hash1SetSource
+.public DWC_Netcheck_Abort
+.public DWC_Netcheck_Create
+.public DWC_Netcheck_Destroy
+.public DWC_Netcheck_GetError
+.public DWC_Netcheck_GetReturnCode
+.public DWCi_BM_GetApInfo
 .public memcmp
 .public MI_CpuCopy8
 .public MI_CpuFill8
@@ -12,12 +18,6 @@
 .public OS_DisableInterrupts
 .public OS_GetTick
 .public OS_RestoreInterrupts
-.public ov11_02137B60
-.public ov11_02137C40
-.public ov11_02137D38
-.public ov11_02137DA0
-.public ov11_02137DE0
-.public ov11_02139914
 .public SOC_Cleanup
 .public SOC_GetHostID
 .public SOC_SetResolver

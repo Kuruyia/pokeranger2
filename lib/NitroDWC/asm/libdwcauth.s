@@ -325,7 +325,7 @@ ov11_02135768: ; 0x02135768
 	cmp r4, #1
 	bne _021357D8
 	ldr r0, _02135870 ; =OVERLAY11_BSS_02169CB4
-	bl ov11_02139940
+	bl DWCi_BM_GetWiFiInfo
 	arm_func_end ov11_02135768
 _021357D8:
 	ldr r0, _02135868 ; =OVERLAY11_BSS_02169CA8
@@ -617,7 +617,7 @@ _02135BDC:
 	add r1, r4, #0x1f
 	ldr r0, _02135CF4 ; =OVERLAY11_BSS_02169CB4
 	bic r1, r1, #0x1f
-	bl ov11_0213AD60
+	bl DWCi_AUTH_UpDateWiFiID
 	cmp r0, #1
 	mov r2, #0
 	beq _02135C20
@@ -648,7 +648,7 @@ _02135C34:
 	b _02135CDC
 _02135C50:
 	ldr r0, _02135CF4 ; =OVERLAY11_BSS_02169CB4
-	bl ov11_0213ADB0
+	bl DWCi_AUTH_RemakeWiFiID
 	ldr r0, _02135CE4 ; =OVERLAY11_BSS_02169CA8
 	ldr r2, _02135CFC ; =0x00004E88
 	ldr r1, [r0, #8]
@@ -1028,7 +1028,7 @@ ov11_021361B4: ; 0x021361B4
 	sub sp, sp, #0x14
 	mov r4, r0
 	add r0, sp, #0
-	bl ov11_02139940
+	bl DWCi_BM_GetWiFiInfo
 	add r1, sp, #0
 	mov r0, r4
 	bl ov11_021361DC
@@ -1197,7 +1197,7 @@ _021363C4:
 _0213642C:
 	mov r0, r5
 	add r1, r4, #0x72
-	bl ov11_02134E3C
+	bl DWCi_AC_GetPostalCode
 	mov r0, r5
 	add r1, r4, #0x4e
 	mov r2, #0x20
@@ -2854,8 +2854,8 @@ _02137B48:
 _02137B58: .word s_FREE_array_entry_i_label_overlay_11_02166c54
 _02137B5C: .word s_FREE_array_entry_i_value_overlay_11_02166c70
 
-	arm_func_start ov11_02137B60
-ov11_02137B60: ; 0x02137B60
+	arm_func_start DWC_Netcheck_Create
+DWC_Netcheck_Create: ; 0x02137B60
 	stmdb sp!, {r3, r4, r5, lr}
 	ldr r1, _02137C28 ; =OVERLAY11_BSS_02169CCC
 	mov r5, r0
@@ -2913,10 +2913,10 @@ _02137C30: .word 0x000011F4
 _02137C34: .word 0xFFFE7961
 _02137C38: .word s_ALLOC_DWChttp_overlay_11_02166cc8
 _02137C3C: .word 0x00001C14
-	arm_func_end ov11_02137B60
+	arm_func_end DWC_Netcheck_Create
 
-	arm_func_start ov11_02137C40
-ov11_02137C40: ; 0x02137C40
+	arm_func_start DWC_Netcheck_Destroy
+DWC_Netcheck_Destroy: ; 0x02137C40
 	stmdb sp!, {r4, lr}
 	ldr r0, _02137D24 ; =OVERLAY11_BSS_02169CCC
 	ldr r1, [r0]
@@ -2934,7 +2934,7 @@ ov11_02137C40: ; 0x02137C40
 	ldr r0, _02137D24 ; =OVERLAY11_BSS_02169CCC
 	mov r1, #0
 	str r1, [r0, #0x14]
-	arm_func_end ov11_02137C40
+	arm_func_end DWC_Netcheck_Destroy
 _02137C84:
 	bl DWC_Auth_Destroy
 	ldr r0, _02137D24 ; =OVERLAY11_BSS_02169CCC
@@ -2985,8 +2985,8 @@ _02137D2C: .word s_FREE_DWCnetcheck_body_302_overlay_11_02166ce8
 _02137D30: .word s_FREE_DWCnetcheck_body_wayport_overlay_11_02166d04
 _02137D34: .word s_FREE_DWCnetcheck_overlay_11_02166d24
 
-	arm_func_start ov11_02137D38
-ov11_02137D38: ; 0x02137D38
+	arm_func_start DWC_Netcheck_Abort
+DWC_Netcheck_Abort: ; 0x02137D38
 	stmdb sp!, {r3, lr}
 	ldr r0, _02137D9C ; =OVERLAY11_BSS_02169CCC
 	ldr r1, [r0]
@@ -2996,7 +2996,7 @@ ov11_02137D38: ; 0x02137D38
 	cmp r0, #0
 	beq _02137D5C
 	bl ov11_02136A30
-	arm_func_end ov11_02137D38
+	arm_func_end DWC_Netcheck_Abort
 _02137D5C:
 	bl ov11_02135578
 	ldr r0, _02137D9C ; =OVERLAY11_BSS_02169CCC
@@ -3018,8 +3018,8 @@ _02137D84:
 	.align 2, 0
 _02137D9C: .word OVERLAY11_BSS_02169CCC
 
-	arm_func_start ov11_02137DA0
-ov11_02137DA0: ; 0x02137DA0
+	arm_func_start DWC_Netcheck_GetError
+DWC_Netcheck_GetError: ; 0x02137DA0
 	stmdb sp!, {r4, lr}
 	ldr r0, _02137DDC ; =OVERLAY11_BSS_02169CCC
 	ldr r0, [r0]
@@ -3037,10 +3037,10 @@ ov11_02137DA0: ; 0x02137DA0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02137DDC: .word OVERLAY11_BSS_02169CCC
-	arm_func_end ov11_02137DA0
+	arm_func_end DWC_Netcheck_GetError
 
-	arm_func_start ov11_02137DE0
-ov11_02137DE0: ; 0x02137DE0
+	arm_func_start DWC_Netcheck_GetReturnCode
+DWC_Netcheck_GetReturnCode: ; 0x02137DE0
 	ldr r0, _02137DF4 ; =OVERLAY11_BSS_02169CCC
 	ldr r0, [r0]
 	add r0, r0, #0x1000
@@ -3048,7 +3048,7 @@ ov11_02137DE0: ; 0x02137DE0
 	bx lr
 	.align 2, 0
 _02137DF4: .word OVERLAY11_BSS_02169CCC
-	arm_func_end ov11_02137DE0
+	arm_func_end DWC_Netcheck_GetReturnCode
 
 	arm_func_start ov11_02137DF8
 ov11_02137DF8: ; 0x02137DF8
@@ -3439,7 +3439,7 @@ _02138374:
 	ldr r0, [r5, #0x14]
 	bl ov11_02136F74
 	add r0, sp, #0x30
-	bl ov11_02139940
+	bl DWCi_BM_GetWiFiInfo
 	ldr r2, [sp, #0x30]
 	ldr r1, [sp, #0x34]
 	mov r0, #0
