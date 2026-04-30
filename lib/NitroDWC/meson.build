@@ -40,6 +40,13 @@ libdwcauth_ranger2 = static_library('dwcauth_ranger2',
     dependencies: libs_deps,
 )
 
+libdwcac_ranger2 = static_library('dwcac_ranger2',
+    sources: 'asm/libdwcac.s',
+    nasm_args: asm_args,
+    pic: false,
+    dependencies: libs_deps,
+)
+
 nitrodwc_ranger2_dep = declare_dependency(
     link_with: [
         libdwcnd_ranger2,
@@ -47,5 +54,6 @@ nitrodwc_ranger2_dep = declare_dependency(
         libdwcutil_ranger2,
         libdwcbm_ranger2,
         libdwcauth_ranger2,
+        libdwcac_ranger2,
     ]
 )
