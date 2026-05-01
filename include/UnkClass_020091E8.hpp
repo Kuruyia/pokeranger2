@@ -108,6 +108,7 @@ public:
     void sub_0200B68C();
     BOOL sub_0200B6A4(u32 arg0);
     u32 sub_0200B6D4();
+    static void sub_0200B6E4();
 
 public:
     // TODO: What is this?

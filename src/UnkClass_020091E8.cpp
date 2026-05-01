@@ -16,7 +16,6 @@
 #include "file/CSmartNNSFndArchive.hpp"
 
 extern "C" {
-void sub_0200B6E4(void);
 u8 *sub_02018B10(void *, u32);
 u8 *sub_02018B2C(void *, u32);
 u8 *sub_02018B48(void *, u32);
@@ -1411,4 +1410,10 @@ BOOL UnkClass_020091E8::sub_0200B6A4(u32 arg0)
 u32 UnkClass_020091E8::sub_0200B6D4()
 {
     return unk_14C->unk_160C;
+}
+
+void UnkClass_020091E8::sub_0200B6E4()
+{
+    MI_CpuFillFast(G2_GetBG1ScrPtr(), 0, 0x180);
+    MI_CpuFillFast((u8 *)G2_GetBG1ScrPtr() + 0x480, 0, 0x180);
 }

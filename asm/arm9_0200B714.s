@@ -1,23 +1,7 @@
     .include "macros.inc"
-    .include "include/arm9_0200B6E4.inc"
+    .include "include/arm9_0200B714.inc"
 
     .text
-
-	arm_func_start sub_0200B6E4
-sub_0200B6E4: ; 0x0200B6E4
-	stmdb sp!, {r3, lr}
-	bl G2_GetBG1ScrPtr
-	mov r1, r0
-	mov r0, #0
-	mov r2, #0x180
-	bl MIi_CpuClearFast
-	bl G2_GetBG1ScrPtr
-	add r1, r0, #0x480
-	mov r0, #0
-	mov r2, #0x180
-	bl MIi_CpuClearFast
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_0200B6E4
 
 	arm_func_start _ZN17UnkClass_0200BBC012sub_0200B714EP10CGame_0024
 _ZN17UnkClass_0200BBC012sub_0200B714EP10CGame_0024: ; 0x0200B714
