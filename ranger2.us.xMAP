@@ -611,8 +611,9 @@
            10](_ZN17UnkClass_020091E812sub_02009D8CEPhmmm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_02009F28Ev,func) found in global src_UnkClass_020091E8.cpp.o
              12](_ZN17UnkClass_0200BBC812sub_0200BF58Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
-              13](_ZN17UnkClass_0200BBC012sub_0200B714EP10CGame_0024,func) found in global asm_arm9_0200B6E4.s.o
+              13](_ZN17UnkClass_0200BBC012sub_0200B714EP10CGame_0024,func) found in global src_UnkClass_0200BBC0.cpp.o
              12](s_game,object) found in global src_main.cpp.o
+             12](_ZN17UnkClass_020091E812sub_0200B6E4Ev,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200978CEm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200AA68Em,func) found in global src_UnkClass_020091E8.cpp.o
           9](_ZN17UnkClass_020091E812sub_0200AA04El,func) found in global src_UnkClass_020091E8.cpp.o
@@ -961,8 +962,10 @@
            10](_ZN17UnkClass_0200BBC812sub_0200C0C8Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
             11](_ZN17UnkClass_0200BBC812sub_0200C36CEi,func) found in global src_UnkClass_0200BBC8.cpp.o
             11](_ZN17UnkClass_0200BBC812sub_0200C2C4Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
+           10](_ZN17UnkClass_0200BBC012sub_0200B744Ev,func) found in global src_UnkClass_0200BBC0.cpp.o
           9](_ZN17UnkClass_020091E812sub_02009814Em,func) found in global src_UnkClass_020091E8.cpp.o
            10](_ZN17UnkClass_0200BBC812sub_0200BE28Emmmm,func) found in global src_UnkClass_0200BBC8.cpp.o
+            11](_ZN17UnkClass_0200BBC012sub_0200B818Emmmmlmm,func) found in global src_UnkClass_0200BBC0.cpp.o
            10](_ZN17UnkClass_0200BBC812sub_0200C060Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
            10](_ZN17UnkClass_020091E812sub_02009808Em,func) found in global src_UnkClass_020091E8.cpp.o
           9](_ZN17UnkClass_020091E812sub_0200A804Ei,func) found in global src_UnkClass_020091E8.cpp.o
@@ -2490,9 +2493,9 @@
     3](G3X_Reset,func) found in global libgx.a
      4](G3X_ResetMtxStack,func) found in global libgx.a
     3](_Z12sub_020010F8v,func) found in local src_main.cpp.o
-    3](@12884,object) found in local src_main.cpp.o
-    3](@12885,object) found in local src_main.cpp.o
-    3](@12886,object) found in local src_main.cpp.o
+    3](@12892,object) found in local src_main.cpp.o
+    3](@12893,object) found in local src_main.cpp.o
+    3](@12894,object) found in local src_main.cpp.o
 
 # .main
 #>02000000          SDK_STATIC_START (linker command file)
@@ -3149,15 +3152,16 @@
   0200B6A4 00000000 .text   $a	(src_UnkClass_020091E8.cpp.o)
   0200B6D4 00000010 .text   UnkClass_020091E8::sub_0200B6D4()	(src_UnkClass_020091E8.cpp.o)
   0200B6D4 00000000 .text   $a	(src_UnkClass_020091E8.cpp.o)
-  0200B6E4 00000030 .text   sub_0200B6E4	(asm_arm9_0200B6E4.s.o)
-  0200B6E4 000004DC .text   .text	(asm_arm9_0200B6E4.s.o)
-  0200B6E4 00000000 .text   $a	(asm_arm9_0200B6E4.s.o)
-  0200B714 00000030 .text   UnkClass_0200BBC0::sub_0200B714(CGame_0024*)	(asm_arm9_0200B6E4.s.o)
-  0200B744 00000060 .text   UnkClass_0200BBC0::sub_0200B744()	(asm_arm9_0200B6E4.s.o)
-  0200B810 00000000 .text   $d	(asm_arm9_0200B6E4.s.o)
-  0200B818 00000000 .text   $a	(asm_arm9_0200B6E4.s.o)
-  0200B818 00000048 .text   UnkClass_0200BBC0::sub_0200B818(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)	(asm_arm9_0200B6E4.s.o)
-  0200BBB8 00000000 .text   $d	(asm_arm9_0200B6E4.s.o)
+  0200B6E4 00000030 .text   UnkClass_020091E8::sub_0200B6E4()	(src_UnkClass_020091E8.cpp.o)
+  0200B6E4 00000000 .text   $a	(src_UnkClass_020091E8.cpp.o)
+  0200B714 00000030 .text   UnkClass_0200BBC0::sub_0200B714(CGame_0024*)	(src_UnkClass_0200BBC0.cpp.o)
+  0200B714 00000000 .text   $a	(src_UnkClass_0200BBC0.cpp.o)
+  0200B744 00000000 .text   $a	(src_UnkClass_0200BBC0.cpp.o)
+  0200B744 000000D4 .text   UnkClass_0200BBC0::sub_0200B744()	(src_UnkClass_0200BBC0.cpp.o)
+  0200B810 00000000 .text   $d	(src_UnkClass_0200BBC0.cpp.o)
+  0200B818 00000000 .text   $a	(src_UnkClass_0200BBC0.cpp.o)
+  0200B818 000003A8 .text   UnkClass_0200BBC0::sub_0200B818(unsigned long, unsigned long, unsigned long, unsigned long, long, unsigned long, unsigned long)	(src_UnkClass_0200BBC0.cpp.o)
+  0200BBB8 00000000 .text   $d	(src_UnkClass_0200BBC0.cpp.o)
   0200BBC0 00000004 .text   UnkClass_0200BBC0::UnkClass_0200BBC0()	(src_UnkClass_0200BBC0.cpp.o)
   0200BBC0 00000000 .text   $a	(src_UnkClass_0200BBC0.cpp.o)
   0200BBC4 00000004 .text   UnkClass_0200BBC0::~UnkClass_0200BBC0()	(src_UnkClass_0200BBC0.cpp.o)
@@ -11407,9 +11411,9 @@
 #>0208A37C          SDK_STATIC_SINIT_END (linker command file)
 #>0208A380          SDK_STATIC_TEXT_END (linker command file)
 #>0208A380          SDK_STATIC_DATA_START (linker command file)
-  0208A380 0000000D .data   @12884	(src_main.cpp.o)
-  0208A390 0000000D .data   @12885	(src_main.cpp.o)
-  0208A3A0 00000016 .data   @12886	(src_main.cpp.o)
+  0208A380 0000000D .data   @12892	(src_main.cpp.o)
+  0208A390 0000000D .data   @12893	(src_main.cpp.o)
+  0208A3A0 00000016 .data   @12894	(src_main.cpp.o)
   0208A3B8 00004180 .data   .data	(asm_arm9_02046D5C.s.o)
   0208A3B8 00000000 .data   currentOverlayID	(asm_arm9_02046D5C.s.o)
   0208A3BC 00000000 .data   PTR_ptr_FUN_02083578_0208a3bc	(asm_arm9_02046D5C.s.o)
