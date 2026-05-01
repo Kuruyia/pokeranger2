@@ -1,8 +1,9 @@
 name: pr-lint
+
 on:
   pull_request:
-    branches: [main]
-    paths: ['**.c', '**.h']
+    paths-ignore:
+      - '**.md'
   workflow_dispatch: {}
 
 jobs:
