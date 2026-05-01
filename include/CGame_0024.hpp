@@ -7,8 +7,14 @@
 
 class CGame_0024 {
 public:
-    s16 unk_00;
-    s16 unk_02;
+    inline void func0(s32 arg0, s16 arg1)
+    {
+        unk_00 = arg0;
+        unk_04 = arg1;
+    }
+
+public:
+    s32 unk_00;
     s16 unk_04;
     s16 unk_06;
 };
