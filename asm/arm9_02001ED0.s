@@ -1,15 +1,7 @@
     .include "macros.inc"
-    .include "include/arm9_02001D28.inc"
+    .include "include/arm9_02001ED0.inc"
 
     .text
-
-	arm_func_start sub_02001D28
-sub_02001D28: ; 0x02001D28
-	ldr ip, _02001D30 ; =_Z19Heap_AllocSecondarym
-	bx ip
-	.align 2, 0
-_02001D30: .word _Z19Heap_AllocSecondarym
-	arm_func_end sub_02001D28
 
 	arm_func_start CTouchPanel_ctor2
 CTouchPanel_ctor2: ; 0x02001D34

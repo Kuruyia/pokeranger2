@@ -1,0 +1,14 @@
+#pragma once
+.public OS_Terminate
+.public PM_GetLCDPower
+.public PTR_LAB_0208a3dc
+.public PTR_LAB_0208a40c
+.public TP_GetCalibratedPoint
+.public TP_GetUserInfo
+.public TP_Init
+.public TP_RequestSamplingAsync
+.public TP_SetCalibrateParam
+.public TP_WaitRawResult
+.public _Z18Heap_FreeSecondaryPv
+.public _Z19Heap_AllocSecondarym
+.public sub_02007068

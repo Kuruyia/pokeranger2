@@ -27,7 +27,7 @@
 .public _Znwm
 .public _s32_div_f
 .public s_data_field_fielddata_bin_0208ab68
-.public sub_02001D28
+.public _Z12sub_02001D28m
 .public sub_0200203C
 .public sub_020023EC
 .public sub_02008D50

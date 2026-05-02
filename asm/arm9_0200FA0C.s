@@ -138,7 +138,7 @@ _ZN5CGameC1Ev: ; 0x0200FB50
 	ldr r1, _0200FFE0 ; =MAIN_BSS_020AF358
 	mov r0, #0x2c
 	str r4, [r1]
-	bl sub_02001D28
+	bl _Z12sub_02001D28m
 	cmp r0, #0
 	beq _0200FB84
 	bl _ZN17UnkClass_02001C04C1Ev
