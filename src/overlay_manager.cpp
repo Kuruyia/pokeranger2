@@ -46,7 +46,6 @@ extern "C" {
 void ov0_02124BD4(void);
 
 extern void SDK_MAIN_ARENA_LO(void);
-extern u32 currentOverlayID;
 
 FS_EXTERN_OVERLAY(overlay0);
 FS_EXTERN_OVERLAY(overlay1);
@@ -75,21 +74,23 @@ FS_EXTERN_OVERLAY(overlay29);
 
 static void Overlay_LoadByID(FSOverlayID id, BOOL initHeap);
 
+static u32 s_currentOverlayID = -1;
+
 void Overlay_LoadByID(FSOverlayID id, BOOL initHeap)
 {
     BOOL res = TRUE;
 
-    if (id != currentOverlayID) {
-        if (currentOverlayID != -1) {
-            FS_UnloadOverlay(MI_PROCESSOR_ARM9, currentOverlayID);
-            currentOverlayID = -1;
+    if (id != s_currentOverlayID) {
+        if (s_currentOverlayID != -1) {
+            FS_UnloadOverlay(MI_PROCESSOR_ARM9, s_currentOverlayID);
+            s_currentOverlayID = -1;
         }
 
         FS_SetDefaultDMA(FS_DMA_NOT_USE);
         res = FS_LoadOverlay(MI_PROCESSOR_ARM9, id);
 
         if (res) {
-            currentOverlayID = id;
+            s_currentOverlayID = id;
         }
     }
 

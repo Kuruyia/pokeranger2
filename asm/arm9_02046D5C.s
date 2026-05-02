@@ -1221,10 +1221,6 @@ ptr_FUN_020841e4_0208a36c: ; 0x0208A36C
 
     .data
 
-	.global currentOverlayID
-currentOverlayID: ; 0x0208A3B8
-	.byte 0xFF, 0xFF, 0xFF, 0xFF
-
 	.global PTR_ptr_FUN_02083578_0208a3bc
 PTR_ptr_FUN_02083578_0208a3bc: ; 0x0208A3BC
 	.word _ZTVN10__cxxabiv117__class_type_infoE+8
