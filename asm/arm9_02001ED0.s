@@ -1,32 +1,13 @@
     .include "macros.inc"
-    .include "include/arm9_02001EB4.inc"
+    .include "include/arm9_02001ED0.inc"
 
     .text
 
-	arm_func_start CTouchPanel_complete_obj_dtor
-CTouchPanel_complete_obj_dtor: ; 0x02001EB4
-	bx lr
-	arm_func_end CTouchPanel_complete_obj_dtor
-
-	arm_func_start CTouchPanel_deleting_obj_dtor
-CTouchPanel_deleting_obj_dtor: ; 0x02001EB8
+	arm_func_start _ZN11CTouchPanel5func0Ev
+_ZN11CTouchPanel5func0Ev: ; 0x02001ED0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl thunk_FUN_0200235c
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	arm_func_end CTouchPanel_deleting_obj_dtor
-
-	arm_func_start CTouchPanel_other_obj_dtor
-CTouchPanel_other_obj_dtor: ; 0x02001ECC
-	bx lr
-	arm_func_end CTouchPanel_other_obj_dtor
-
-	arm_func_start sub_02001ED0
-sub_02001ED0: ; 0x02001ED0
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	arm_func_end sub_02001ED0
+	arm_func_end _ZN11CTouchPanel5func0Ev
 _02001ED8:
 	bl TP_RequestSamplingAsync
 	add r0, r4, #0x16
@@ -160,7 +141,7 @@ _02002070: .word PTR_LAB_0208a40c
 CTPEmulator_complete_obj_dtor: ; 0x02002074
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl CTouchPanel_other_obj_dtor
+	bl _ZN11CTouchPanelD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end CTPEmulator_complete_obj_dtor
@@ -169,7 +150,7 @@ CTPEmulator_complete_obj_dtor: ; 0x02002074
 CTPEmulator_deleting_obj_dtor: ; 0x02002088
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl CTouchPanel_other_obj_dtor
+	bl _ZN11CTouchPanelD2Ev
 	mov r0, r4
 	bl thunk_FUN_0200235c
 	mov r0, r4

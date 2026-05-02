@@ -21,3 +21,7 @@ CTouchPanel::CTouchPanel()
     unk_12 = 0x18;
     unk_14 = 4;
 }
+
+CTouchPanel::~CTouchPanel()
+{
+}

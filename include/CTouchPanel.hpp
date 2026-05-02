@@ -5,10 +5,17 @@
 
 #include "common.hpp"
 
+extern "C" void thunk_FUN_0200235c(void *ptr);
+
 class CTouchPanel {
 public:
     CTouchPanel();
     virtual ~CTouchPanel();
+
+    void operator delete(void *ptr)
+    {
+        thunk_FUN_0200235c(ptr);
+    }
 
     virtual void func0();
 

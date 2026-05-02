@@ -13,3 +13,4 @@
 .public _Z19Heap_AllocSecondarym
 .public sub_02007068
 .public _ZN11CTouchPanelC2Ev
+.public _ZN11CTouchPanelD2Ev

@@ -19,8 +19,8 @@
 .public CNSCRFile_deleting_obj_dtor
 .public CTPEmulator_complete_obj_dtor
 .public CTPEmulator_deleting_obj_dtor
-.public CTouchPanel_complete_obj_dtor
-.public CTouchPanel_deleting_obj_dtor
+.public _ZN11CTouchPanelD1Ev
+.public _ZN11CTouchPanelD0Ev
 .public MI_CpuFill8
 .public _ZTVN10__cxxabiv117__class_type_infoE
 .public _ZTVN10__cxxabiv120__si_class_type_infoE
@@ -28,7 +28,7 @@
 .public __cxa_vec_ctor
 .public __register_global_object
 .public _ll_div
-.public sub_02001ED0
+.public _ZN11CTouchPanel5func0Ev
 .public sub_020020A4
 .public sub_02003970
 .public sub_020039E8
@@ -697,3 +697,4 @@
 .public sub_020130B8
 .public sub_020130E0
 .public sub_02039E0C
+.public _ZTI11CTouchPanel

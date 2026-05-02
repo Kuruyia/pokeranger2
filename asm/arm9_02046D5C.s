@@ -1221,41 +1221,11 @@ ptr_FUN_020841e4_0208a36c: ; 0x0208A36C
 
     .data
 
-	.global PTR_ptr_FUN_02083578_0208a3bc
-PTR_ptr_FUN_02083578_0208a3bc: ; 0x0208A3BC
-	.word _ZTVN10__cxxabiv117__class_type_infoE+8
-	.word s_11CTouchPanel_0208a3c4
-
-	.global s_11CTouchPanel_0208a3c4
-s_11CTouchPanel_0208a3c4: ; 0x0208A3C4
-	.asciz "11CTouchPanel"
-
-	.global _0208A3D2
-_0208A3D2: ; 0x0208A3D2
-	.byte 0x00, 0x00
-
-    .global _ZTV11CTouchPanel
-_ZTV11CTouchPanel: ; 0x0208A3D4
-    .byte 0x00, 0x00, 0x00, 0x00
-    .word PTR_ptr_FUN_02083578_0208a3bc
-
-	.global PTR_LAB_0208a3dc
-PTR_LAB_0208a3dc: ; 0x0208A3DC
-	.word CTouchPanel_complete_obj_dtor
-
-	.global ptr_FUN_02001eb8_0208a3e0
-ptr_FUN_02001eb8_0208a3e0: ; 0x0208A3E0
-	.word CTouchPanel_deleting_obj_dtor
-
-	.global ptr_FUN_02001ed0_0208a3e4
-ptr_FUN_02001ed0_0208a3e4: ; 0x0208A3E4
-	.word sub_02001ED0
-
 	.global PTR_ptr_FUN_020835bc_0208a3e8
 PTR_ptr_FUN_020835bc_0208a3e8: ; 0x0208A3E8
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_11CTPEmulator_0208a3f4
-	.word PTR_ptr_FUN_02083578_0208a3bc
+	.word _ZTI11CTouchPanel
 
 	.global s_11CTPEmulator_0208a3f4
 s_11CTPEmulator_0208a3f4: ; 0x0208A3F4
