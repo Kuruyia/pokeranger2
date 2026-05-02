@@ -7,6 +7,7 @@
 
 class CTouchPanel {
 public:
+    CTouchPanel();
     virtual ~CTouchPanel();
 
     virtual void func0();
@@ -15,9 +16,13 @@ public:
     u8 unk_04;
     u8 unk_05;
     u8 unk_06[0x4];
-    u16 unk_0A;
-    u16 unk_0C;
-    u8 unk_0E[0x22];
+    TPData unk_0A;
+    u16 unk_12;
+    u16 unk_14;
+    TPData unk_16;
+    TPData unk_1E;
+    TPCalibrateParam unk_26;
+    u8 unk_2E[0x2];
 };
 
 STATIC_SIZE_ASSERT(CTouchPanel, 0x30);

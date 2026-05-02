@@ -149,7 +149,7 @@ _0200FB84:
 	bl sub_0200203C
 	cmp r0, #0
 	beq _0200FB9C
-	bl CTouchPanel_ctor
+	bl _ZN11CTouchPanelC1Ev
 _0200FB9C:
 	str r0, [r4, #0x18]
 	mov r0, #0x54

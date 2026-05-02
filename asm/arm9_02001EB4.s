@@ -1,115 +1,7 @@
     .include "macros.inc"
-    .include "include/arm9_02001ED0.inc"
+    .include "include/arm9_02001EB4.inc"
 
     .text
-
-	arm_func_start CTouchPanel_ctor2
-CTouchPanel_ctor2: ; 0x02001D34
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #0x10
-	ldr r1, _02001DF0 ; =PTR_LAB_0208a3dc
-	mov r4, r0
-	str r1, [r4]
-	bl TP_Init
-	add r0, r4, #0x26
-	bl TP_GetUserInfo
-	cmp r0, #0
-	bne _02001D60
-	bl OS_Terminate
-	arm_func_end CTouchPanel_ctor2
-_02001D60:
-	add r0, r4, #0x26
-	bl TP_SetCalibrateParam
-	add r1, sp, #8
-	mov lr, #0
-	strh lr, [r1]
-	ldrh r0, [sp, #8]
-	strh lr, [r1, #2]
-	strh lr, [r1, #4]
-	strh lr, [r1, #6]
-	strh r0, [r4, #0xa]
-	ldrh r0, [sp, #0xa]
-	add ip, sp, #0
-	mov r2, #0x18
-	strh r0, [r4, #0xc]
-	ldrh r3, [sp, #0xc]
-	mov r1, #4
-	mov r0, r4
-	strh r3, [r4, #0xe]
-	ldrh r3, [sp, #0xe]
-	strh r3, [r4, #0x10]
-	strh lr, [ip]
-	ldrh r3, [sp]
-	strh lr, [ip, #2]
-	strh lr, [ip, #4]
-	strh lr, [ip, #6]
-	strh r3, [r4, #0x1e]
-	ldrh r3, [sp, #2]
-	strh r3, [r4, #0x20]
-	ldrh r3, [sp, #4]
-	strh r3, [r4, #0x22]
-	ldrh r3, [sp, #6]
-	strh r3, [r4, #0x24]
-	strh r2, [r4, #0x12]
-	strh r1, [r4, #0x14]
-	add sp, sp, #0x10
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02001DF0: .word PTR_LAB_0208a3dc
-
-	arm_func_start CTouchPanel_ctor
-CTouchPanel_ctor: ; 0x02001DF4
-	stmdb sp!, {r4, lr}
-	sub sp, sp, #0x10
-	ldr r1, _02001EB0 ; =PTR_LAB_0208a3dc
-	mov r4, r0
-	str r1, [r4]
-	bl TP_Init
-	add r0, r4, #0x26
-	bl TP_GetUserInfo
-	cmp r0, #0
-	bne _02001E20
-	bl OS_Terminate
-	arm_func_end CTouchPanel_ctor
-_02001E20:
-	add r0, r4, #0x26
-	bl TP_SetCalibrateParam
-	add r1, sp, #8
-	mov lr, #0
-	strh lr, [r1]
-	ldrh r0, [sp, #8]
-	strh lr, [r1, #2]
-	strh lr, [r1, #4]
-	strh lr, [r1, #6]
-	strh r0, [r4, #0xa]
-	ldrh r0, [sp, #0xa]
-	add ip, sp, #0
-	mov r2, #0x18
-	strh r0, [r4, #0xc]
-	ldrh r3, [sp, #0xc]
-	mov r1, #4
-	mov r0, r4
-	strh r3, [r4, #0xe]
-	ldrh r3, [sp, #0xe]
-	strh r3, [r4, #0x10]
-	strh lr, [ip]
-	ldrh r3, [sp]
-	strh lr, [ip, #2]
-	strh lr, [ip, #4]
-	strh lr, [ip, #6]
-	strh r3, [r4, #0x1e]
-	ldrh r3, [sp, #2]
-	strh r3, [r4, #0x20]
-	ldrh r3, [sp, #4]
-	strh r3, [r4, #0x22]
-	ldrh r3, [sp, #6]
-	strh r3, [r4, #0x24]
-	strh r2, [r4, #0x12]
-	strh r1, [r4, #0x14]
-	add sp, sp, #0x10
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02001EB0: .word PTR_LAB_0208a3dc
 
 	arm_func_start CTouchPanel_complete_obj_dtor
 CTouchPanel_complete_obj_dtor: ; 0x02001EB4
@@ -255,7 +147,7 @@ _02002050: .word _Z18Heap_FreeSecondaryPv
 CTPEmulator_ctor: ; 0x02002054
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl CTouchPanel_ctor2
+	bl _ZN11CTouchPanelC2Ev
 	ldr r1, _02002070 ; =PTR_LAB_0208a40c
 	mov r0, r4
 	str r1, [r4]

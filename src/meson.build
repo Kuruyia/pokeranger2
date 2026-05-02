@@ -1,4 +1,5 @@
 pokeranger2_cxx = files(
+    'CTouchPanel.cpp',
     'heap.cpp',
     'main.cpp',
     'sub_02001D28.cpp',

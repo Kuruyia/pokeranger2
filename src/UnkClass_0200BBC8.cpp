@@ -207,7 +207,7 @@ void UnkClass_0200BBC8::sub_0200C0C8()
             sub_0200C36C(0x44);
         }
     } else if (unk_1618->unk_04 != 0) {
-        if (unk_1618->unk_0C >= 0x40 && unk_1618->unk_0C <= 0x80 && unk_1618->unk_0A >= 0x20 && unk_1618->unk_0A <= 0x60) {
+        if (unk_1618->unk_0A.y >= 0x40 && unk_1618->unk_0A.y <= 0x80 && unk_1618->unk_0A.x >= 0x20 && unk_1618->unk_0A.x <= 0x60) {
             // "Yes" virtual button touch
             unk_1608 = 2;
             unk_160C = 0;
@@ -216,7 +216,7 @@ void UnkClass_0200BBC8::sub_0200C0C8()
             if (!sub_0200C36C(6)) {
                 sub_0200C36C(0x43);
             }
-        } else if (unk_1618->unk_0C >= 0x40 && unk_1618->unk_0C <= 0x80 && unk_1618->unk_0A >= 0xA0 && unk_1618->unk_0A <= 0xE0) {
+        } else if (unk_1618->unk_0A.y >= 0x40 && unk_1618->unk_0A.y <= 0x80 && unk_1618->unk_0A.x >= 0xA0 && unk_1618->unk_0A.x <= 0xE0) {
             // "No" virtual button touch
             unk_1608 = 2;
             unk_160C = 1;

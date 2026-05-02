@@ -1235,8 +1235,12 @@ s_11CTouchPanel_0208a3c4: ; 0x0208A3C4
 	.asciz "11CTouchPanel"
 
 	.global _0208A3D2
-_0208A3D2:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+_0208A3D2: ; 0x0208A3D2
+	.byte 0x00, 0x00
+
+    .global _ZTV11CTouchPanel
+_ZTV11CTouchPanel: ; 0x0208A3D4
+    .byte 0x00, 0x00, 0x00, 0x00
     .word PTR_ptr_FUN_02083578_0208a3bc
 
 	.global PTR_LAB_0208a3dc
