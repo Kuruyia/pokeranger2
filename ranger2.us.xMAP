@@ -973,19 +973,29 @@
           9](_ZN17UnkClass_0200BBC8C1Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
            10](_ZN17UnkClass_0200BBC0D1Ev,func) found in global src_UnkClass_0200BBC0.cpp.o
            10](_ZN17UnkClass_0200BBC0C1Ev,func) found in global src_UnkClass_0200BBC0.cpp.o
-         8](CTPEmulator_ctor,func) found in global asm_arm9_02001D28.s.o
+         8](CTPEmulator_ctor,func) found in global asm_arm9_02001ED0.s.o
+          9](_ZN11CTouchPanelD2Ev,func) found in global src_CTouchPanel.cpp.o
+          9](_ZN11CTouchPanelC2Ev,func) found in global src_CTouchPanel.cpp.o
+           10](TP_Init,func) found in global libspi.a
+            11](.bss,section) found in local libspi.a
+            11](TPi_TpCallback,func) found in local libspi.a
+           10](TP_GetUserInfo,func) found in global libspi.a
+            11](TP_CalcCalibrateParam,func) found in global libspi.a
+           10](TP_SetCalibrateParam,func) found in global libspi.a
+           10](_ZTV11CTouchPanel,object) found in global src_CTouchPanel.cpp.o
+            11](_ZTI11CTouchPanel,object) found in multidef src_CTouchPanel.cpp.o
+             12](_ZTS11CTouchPanel,object) found in multidef src_CTouchPanel.cpp.o
+            11](_ZN11CTouchPanelD0Ev,func) found in global src_CTouchPanel.cpp.o
+             12](thunk_FUN_0200235c,func) found in global asm_arm9_02001ED0.s.o
+            11](_ZN11CTouchPanelD1Ev,func) found in global src_CTouchPanel.cpp.o
           9](_Z18Heap_FreeSecondaryPv,func) found in global src_heap.cpp.o
           9](TP_GetCalibratedPoint,func) found in global libspi.a
-           10](.bss,section) found in local libspi.a
           9](TP_WaitRawResult,func) found in global libspi.a
            10](TP_WaitBusy,func) found in global libspi.a
           9](TP_RequestSamplingAsync,func) found in global libspi.a
-          9](TP_SetCalibrateParam,func) found in global libspi.a
-          9](TP_GetUserInfo,func) found in global libspi.a
-           10](TP_CalcCalibrateParam,func) found in global libspi.a
-          9](TP_Init,func) found in global libspi.a
-           10](TPi_TpCallback,func) found in local libspi.a
+         8](_ZN11CTouchPanelC1Ev,func) found in global src_CTouchPanel.cpp.o
          8](_ZN17UnkClass_02001C04C1Ev,func) found in global src_UnkClass_02001C04.cpp.o
+         8](_Z12sub_02001D28m,func) found in global src_sub_02001D28.cpp.o
         7](NNS_G2dLoadImage2DMapping,func) found in global libnnsg2d.a
          8](NNS_G2dSetImageLocation,func) found in global libnnsg2d.a
         7](NNS_G2dInitImageProxy,func) found in global libnnsg2d.a
@@ -1535,6 +1545,7 @@
          8](.data,section) found in local libfs.a
           9](fsi_def_digest_key,object) found in local libfs.a
       5](_Z16Heap_InitOverlayPvm,func) found in global src_heap.cpp.o
+      5](.data,section) found in local src_overlay_manager.cpp.o
      4](_ZN12CBattleSceneC1EP5CGame,func) found in global asm_overlay_01_0211C9E0.s.o
       5](.data,section) found in local asm_overlay_01_0211C9E0.s.o
        6](.text,section) found in local asm_overlay_01_0211C9E0.s.o
@@ -2493,9 +2504,9 @@
     3](G3X_Reset,func) found in global libgx.a
      4](G3X_ResetMtxStack,func) found in global libgx.a
     3](_Z12sub_020010F8v,func) found in local src_main.cpp.o
-    3](@12892,object) found in local src_main.cpp.o
-    3](@12893,object) found in local src_main.cpp.o
-    3](@12894,object) found in local src_main.cpp.o
+    3](@12898,object) found in local src_main.cpp.o
+    3](@12899,object) found in local src_main.cpp.o
+    3](@12900,object) found in local src_main.cpp.o
 
 # .main
 #>02000000          SDK_STATIC_START (linker command file)
@@ -2590,36 +2601,39 @@
   02001C20 00000000 .text   $a	(src_UnkClass_02001C04.cpp.o)
   02001C20 00000108 .text   UnkClass_02001C04::sub_02001C20()	(src_UnkClass_02001C04.cpp.o)
   02001D1C 00000000 .text   $d	(src_UnkClass_02001C04.cpp.o)
-  02001D28 00000000 .text   $a	(asm_arm9_02001D28.s.o)
-  02001D28 0000000C .text   sub_02001D28	(asm_arm9_02001D28.s.o)
-  02001D28 000004A0 .text   .text	(asm_arm9_02001D28.s.o)
-  02001D30 00000000 .text   $d	(asm_arm9_02001D28.s.o)
-  02001D34 0000002C .text   CTouchPanel_ctor2	(asm_arm9_02001D28.s.o)
-  02001D34 00000000 .text   $a	(asm_arm9_02001D28.s.o)
-  02001DF0 00000000 .text   $d	(asm_arm9_02001D28.s.o)
-  02001DF4 00000000 .text   $a	(asm_arm9_02001D28.s.o)
-  02001DF4 0000002C .text   CTouchPanel_ctor	(asm_arm9_02001D28.s.o)
-  02001EB0 00000000 .text   $d	(asm_arm9_02001D28.s.o)
-  02001EB4 00000000 .text   $a	(asm_arm9_02001D28.s.o)
-  02001EB4 00000004 .text   CTouchPanel_complete_obj_dtor	(asm_arm9_02001D28.s.o)
-  02001EB8 00000014 .text   CTouchPanel_deleting_obj_dtor	(asm_arm9_02001D28.s.o)
-  02001ECC 00000004 .text   CTouchPanel_other_obj_dtor	(asm_arm9_02001D28.s.o)
-  02001ED0 00000008 .text   sub_02001ED0	(asm_arm9_02001D28.s.o)
-  0200203C 0000000C .text   sub_0200203C	(asm_arm9_02001D28.s.o)
-  02002044 00000000 .text   $d	(asm_arm9_02001D28.s.o)
-  02002048 0000000C .text   thunk_FUN_0200235c	(asm_arm9_02001D28.s.o)
-  02002048 00000000 .text   $a	(asm_arm9_02001D28.s.o)
-  02002050 00000000 .text   $d	(asm_arm9_02001D28.s.o)
-  02002054 00000020 .text   CTPEmulator_ctor	(asm_arm9_02001D28.s.o)
-  02002054 00000000 .text   $a	(asm_arm9_02001D28.s.o)
-  02002070 00000000 .text   $d	(asm_arm9_02001D28.s.o)
-  02002074 00000000 .text   $a	(asm_arm9_02001D28.s.o)
-  02002074 00000014 .text   CTPEmulator_complete_obj_dtor	(asm_arm9_02001D28.s.o)
-  02002088 0000001C .text   CTPEmulator_deleting_obj_dtor	(asm_arm9_02001D28.s.o)
-  020020A4 00000070 .text   sub_020020A4	(asm_arm9_02001D28.s.o)
-  0200215C 0000001C .text   sub_0200215C	(asm_arm9_02001D28.s.o)
-  02002178 00000020 .text   sub_02002178	(asm_arm9_02001D28.s.o)
-  02002198 00000030 .text   sub_02002198	(asm_arm9_02001D28.s.o)
+  02001D28 00000000 .text   $a	(src_sub_02001D28.cpp.o)
+  02001D28 0000000C .text   sub_02001D28(unsigned long)	(src_sub_02001D28.cpp.o)
+  02001D30 00000000 .text   $d	(src_sub_02001D28.cpp.o)
+  02001D34 00000000 .text   $a	(src_CTouchPanel.cpp.o)
+  02001D34 000000C0 .text   CTouchPanel::CTouchPanel[base]()	(src_CTouchPanel.cpp.o)
+  02001DF0 00000000 .text   $d	(src_CTouchPanel.cpp.o)
+  02001DF4 00000000 .text   $a	(src_CTouchPanel.cpp.o)
+  02001DF4 000000C0 .text   CTouchPanel::CTouchPanel()	(src_CTouchPanel.cpp.o)
+  02001EB0 00000000 .text   $d	(src_CTouchPanel.cpp.o)
+  02001EB4 00000004 .text   CTouchPanel::~CTouchPanel()	(src_CTouchPanel.cpp.o)
+  02001EB4 00000000 .text   $a	(src_CTouchPanel.cpp.o)
+  02001EB8 00000014 .text   CTouchPanel::~CTouchPanel[virtual]()	(src_CTouchPanel.cpp.o)
+  02001EB8 00000000 .text   $a	(src_CTouchPanel.cpp.o)
+  02001ECC 00000004 .text   CTouchPanel::~CTouchPanel[base]()	(src_CTouchPanel.cpp.o)
+  02001ECC 00000000 .text   $a	(src_CTouchPanel.cpp.o)
+  02001ED0 00000000 .text   $a	(asm_arm9_02001ED0.s.o)
+  02001ED0 00000008 .text   CTouchPanel::func0()	(asm_arm9_02001ED0.s.o)
+  02001ED0 000002F8 .text   .text	(asm_arm9_02001ED0.s.o)
+  0200203C 0000000C .text   sub_0200203C	(asm_arm9_02001ED0.s.o)
+  02002044 00000000 .text   $d	(asm_arm9_02001ED0.s.o)
+  02002048 00000000 .text   $a	(asm_arm9_02001ED0.s.o)
+  02002048 0000000C .text   thunk_FUN_0200235c	(asm_arm9_02001ED0.s.o)
+  02002050 00000000 .text   $d	(asm_arm9_02001ED0.s.o)
+  02002054 00000020 .text   CTPEmulator_ctor	(asm_arm9_02001ED0.s.o)
+  02002054 00000000 .text   $a	(asm_arm9_02001ED0.s.o)
+  02002070 00000000 .text   $d	(asm_arm9_02001ED0.s.o)
+  02002074 00000000 .text   $a	(asm_arm9_02001ED0.s.o)
+  02002074 00000014 .text   CTPEmulator_complete_obj_dtor	(asm_arm9_02001ED0.s.o)
+  02002088 0000001C .text   CTPEmulator_deleting_obj_dtor	(asm_arm9_02001ED0.s.o)
+  020020A4 00000070 .text   sub_020020A4	(asm_arm9_02001ED0.s.o)
+  0200215C 0000001C .text   sub_0200215C	(asm_arm9_02001ED0.s.o)
+  02002178 00000020 .text   sub_02002178	(asm_arm9_02001ED0.s.o)
+  02002198 00000030 .text   sub_02002198	(asm_arm9_02001ED0.s.o)
   020021C8 00000000 .text   $a	(src_heap.cpp.o)
   020021C8 00000090 .text   Heap_Init(unsigned long)	(src_heap.cpp.o)
   02002254 00000000 .text   $d	(src_heap.cpp.o)
@@ -11411,18 +11425,16 @@
 #>0208A37C          SDK_STATIC_SINIT_END (linker command file)
 #>0208A380          SDK_STATIC_TEXT_END (linker command file)
 #>0208A380          SDK_STATIC_DATA_START (linker command file)
-  0208A380 0000000D .data   @12892	(src_main.cpp.o)
-  0208A390 0000000D .data   @12893	(src_main.cpp.o)
-  0208A3A0 00000016 .data   @12894	(src_main.cpp.o)
-  0208A3B8 00004180 .data   .data	(asm_arm9_02046D5C.s.o)
-  0208A3B8 00000000 .data   currentOverlayID	(asm_arm9_02046D5C.s.o)
-  0208A3BC 00000000 .data   PTR_ptr_FUN_02083578_0208a3bc	(asm_arm9_02046D5C.s.o)
-  0208A3C4 00000000 .data   s_11CTouchPanel_0208a3c4	(asm_arm9_02046D5C.s.o)
-  0208A3D2 00000000 .data   _0208A3D2	(asm_arm9_02046D5C.s.o)
-  0208A3DC 00000000 .data   PTR_LAB_0208a3dc	(asm_arm9_02046D5C.s.o)
-  0208A3E0 00000000 .data   ptr_FUN_02001eb8_0208a3e0	(asm_arm9_02046D5C.s.o)
-  0208A3E4 00000000 .data   ptr_FUN_02001ed0_0208a3e4	(asm_arm9_02046D5C.s.o)
+  0208A380 0000000D .data   @12898	(src_main.cpp.o)
+  0208A390 0000000D .data   @12899	(src_main.cpp.o)
+  0208A3A0 00000016 .data   @12900	(src_main.cpp.o)
+  0208A3B8 00000000 .data   .data	(src_overlay_manager.cpp.o)
+  0208A3B8 00000004 .data   s_currentOverlayID	(src_overlay_manager.cpp.o)
+  0208A3BC 00000008 .data   typeinfo structure for CTouchPanel	(src_CTouchPanel.cpp.o)
+  0208A3C4 0000000E .data   typeinfo name for CTouchPanel	(src_CTouchPanel.cpp.o)
+  0208A3D4 00000014 .data   virtual table for CTouchPanel	(src_CTouchPanel.cpp.o)
   0208A3E8 00000000 .data   PTR_ptr_FUN_020835bc_0208a3e8	(asm_arm9_02046D5C.s.o)
+  0208A3E8 00004150 .data   .data	(asm_arm9_02046D5C.s.o)
   0208A3F4 00000000 .data   s_11CTPEmulator_0208a3f4	(asm_arm9_02046D5C.s.o)
   0208A402 00000000 .data   _0208A402	(asm_arm9_02046D5C.s.o)
   0208A40C 00000000 .data   PTR_LAB_0208a40c	(asm_arm9_02046D5C.s.o)
