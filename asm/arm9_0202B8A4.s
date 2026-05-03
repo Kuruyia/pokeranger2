@@ -6314,7 +6314,7 @@ sub_020305C4: ; 0x020305C4
 	ldr r0, [r3, #0x1c]
 	mov r1, r1, lsl #0xc
 	mov r2, r2, lsl #0xc
-	bl sub_0200215C
+	bl _ZN11CTPEmulator12sub_0200215CEmm
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -6327,7 +6327,7 @@ sub_020305F0: ; 0x020305F0
 	ldr r0, _0203060C ; =_0208F304
 	ldr r0, [r0]
 	ldr r0, [r0, #0x1c]
-	bl sub_02002178
+	bl _ZN11CTPEmulator12sub_02002178Ev
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -6347,7 +6347,7 @@ sub_02030610: ; 0x02030610
 	mov r1, ip, lsl #0xc
 	mov r2, r2, lsl #0xc
 	mov r3, r3, lsr #0x10
-	bl sub_02002198
+	bl _ZN11CTPEmulator12sub_02002198Emmt
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0

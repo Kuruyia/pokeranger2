@@ -17408,7 +17408,7 @@ ov1_0212B530: ; 0x0212B530
 	moveq r0, #0
 	ldmeqia sp!, {r4, pc}
 	ldmia r4, {r1, r2}
-	bl sub_0200215C
+	bl _ZN11CTPEmulator12sub_0200215CEmm
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_0212B530
@@ -17421,7 +17421,7 @@ ov1_0212B55C: ; 0x0212B55C
 	cmp r0, #0
 	moveq r0, #0
 	ldmeqia sp!, {r3, pc}
-	bl sub_02002178
+	bl _ZN11CTPEmulator12sub_02002178Ev
 	mov r0, #1
 	ldmia sp!, {r3, pc}
 	arm_func_end ov1_0212B55C
@@ -17440,7 +17440,7 @@ ov1_0212B580: ; 0x0212B580
 	mov r3, r2, lsl #0x10
 	ldr r2, [r4, #4]
 	mov r3, r3, lsr #0x10
-	bl sub_02002198
+	bl _ZN11CTPEmulator12sub_02002198Emmt
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_0212B580

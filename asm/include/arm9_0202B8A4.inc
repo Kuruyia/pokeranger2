@@ -307,9 +307,9 @@
 .public strcpy
 .public strlen
 .public _Z12sub_020010E4v
-.public sub_0200215C
-.public sub_02002178
-.public sub_02002198
+.public _ZN11CTPEmulator12sub_0200215CEmm
+.public _ZN11CTPEmulator12sub_02002178Ev
+.public _ZN11CTPEmulator12sub_02002198Emmt
 .public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 .public _ZN19CSmartNNSFndArchiveD1Ev
 .public sub_02002BC4

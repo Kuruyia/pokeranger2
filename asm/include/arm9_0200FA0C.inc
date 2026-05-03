@@ -1,6 +1,6 @@
 #pragma once
 .public CBattleResultParameter_ctor
-.public CTPEmulator_ctor
+.public _ZN11CTPEmulatorC1Ev
 .public _ZN11CTouchPanelC1Ev
 .public MAIN_BSS_020AF33C
 .public sPowerManage

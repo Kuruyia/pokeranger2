@@ -4,9 +4,9 @@
 .public _Znam
 .public _ZdlPv
 .public _ZdaPv
-.public sub_0200215C
-.public sub_02002178
-.public sub_02002198
+.public _ZN11CTPEmulator12sub_0200215CEmm
+.public _ZN11CTPEmulator12sub_02002178Ev
+.public _ZN11CTPEmulator12sub_02002198Emmt
 .public sub_02002434
 .public sub_020027E8
 .public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm

@@ -27,7 +27,6 @@ public:
     TPData unk_16;
     TPData unk_1E;
     TPCalibrateParam unk_26;
-    u8 unk_2E[0x2];
 };
 
 STATIC_SIZE_ASSERT(CTouchPanel, 0x30);

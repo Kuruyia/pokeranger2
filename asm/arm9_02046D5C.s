@@ -1221,33 +1221,6 @@ ptr_FUN_020841e4_0208a36c: ; 0x0208A36C
 
     .data
 
-	.global PTR_ptr_FUN_020835bc_0208a3e8
-PTR_ptr_FUN_020835bc_0208a3e8: ; 0x0208A3E8
-	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
-	.word s_11CTPEmulator_0208a3f4
-	.word _ZTI11CTouchPanel
-
-	.global s_11CTPEmulator_0208a3f4
-s_11CTPEmulator_0208a3f4: ; 0x0208A3F4
-	.asciz "11CTPEmulator"
-
-	.global _0208A402
-_0208A402:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-    .word PTR_ptr_FUN_020835bc_0208a3e8
-
-	.global PTR_LAB_0208a40c
-PTR_LAB_0208a40c: ; 0x0208A40C
-	.word CTPEmulator_complete_obj_dtor
-
-	.global ptr_FUN_02002088_0208a410
-ptr_FUN_02002088_0208a410: ; 0x0208A410
-	.word CTPEmulator_deleting_obj_dtor
-
-	.global ptr_FUN_020020a4_0208a414
-ptr_FUN_020020a4_0208a414: ; 0x0208A414
-	.word sub_020020A4
-
 	.global s_BGF_0208a418
 s_BGF_0208a418: ; 0x0208A418
 	.asciz "BGF"

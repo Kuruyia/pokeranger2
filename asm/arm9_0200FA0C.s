@@ -156,7 +156,7 @@ _0200FB9C:
 	bl _ZN11CTouchPanelnwEm
 	cmp r0, #0
 	beq _0200FBB4
-	bl CTPEmulator_ctor
+	bl _ZN11CTPEmulatorC1Ev
 _0200FBB4:
 	str r0, [r4, #0x1c]
 	mov r0, r4

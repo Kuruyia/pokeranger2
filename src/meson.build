@@ -1,5 +1,7 @@
 pokeranger2_cxx = files(
-    'CTouchPanel.cpp',
+    'CTouchPanel.cpp', # This needs to be placed before `CTPEmulator.cpp`
+                       # for the RTTI to be linked in the correct order.
+    'CTPEmulator.cpp',
     'heap.cpp',
     'main.cpp',
     'sub_02001D28.cpp',
