@@ -146,14 +146,14 @@ _ZN5CGameC1Ev: ; 0x0200FB50
 _0200FB84:
 	str r0, [r4, #0x14]
 	mov r0, #0x30
-	bl sub_0200203C
+	bl _ZN11CTouchPanelnwEm
 	cmp r0, #0
 	beq _0200FB9C
 	bl _ZN11CTouchPanelC1Ev
 _0200FB9C:
 	str r0, [r4, #0x18]
 	mov r0, #0x54
-	bl sub_0200203C
+	bl _ZN11CTouchPanelnwEm
 	cmp r0, #0
 	beq _0200FBB4
 	bl CTPEmulator_ctor

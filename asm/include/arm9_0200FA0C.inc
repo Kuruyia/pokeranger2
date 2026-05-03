@@ -28,7 +28,7 @@
 .public _s32_div_f
 .public s_data_field_fielddata_bin_0208ab68
 .public _Z12sub_02001D28m
-.public sub_0200203C
+.public _ZN11CTouchPanelnwEm
 .public sub_020023EC
 .public sub_02008D50
 .public sub_02008DB4

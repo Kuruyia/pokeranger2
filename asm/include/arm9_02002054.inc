@@ -14,3 +14,4 @@
 .public sub_02007068
 .public _ZN11CTouchPanelC2Ev
 .public _ZN11CTouchPanelD2Ev
+.public _ZN11CTouchPaneldlEPv

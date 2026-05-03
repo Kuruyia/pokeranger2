@@ -5,24 +5,22 @@
 
 #include "common.hpp"
 
-extern "C" void thunk_FUN_0200235c(void *ptr);
-
 class CTouchPanel {
 public:
     CTouchPanel();
     virtual ~CTouchPanel();
 
-    void operator delete(void *ptr)
-    {
-        thunk_FUN_0200235c(ptr);
-    }
+    void *operator new(size_t size);
+    void operator delete(void *ptr);
 
     virtual void func0();
 
 public:
     u8 unk_04;
     u8 unk_05;
-    u8 unk_06[0x4];
+    u8 unk_06;
+    u8 unk_07;
+    u16 unk_08;
     TPData unk_0A;
     u16 unk_12;
     u16 unk_14;
