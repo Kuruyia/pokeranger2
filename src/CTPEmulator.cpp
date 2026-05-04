@@ -31,6 +31,8 @@ void CTPEmulator::func0()
         if (unk_40 >= unk_42) {
             unk_30 = 1;
         }
+
+        break;
     }
 
     unk_0A.x = FX_Whole(unk_38) + (GX_LCD_SIZE_X / 2);
