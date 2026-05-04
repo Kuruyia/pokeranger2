@@ -6314,7 +6314,7 @@ sub_020305C4: ; 0x020305C4
 	ldr r0, [r3, #0x1c]
 	mov r1, r1, lsl #0xc
 	mov r2, r2, lsl #0xc
-	bl _ZN11CTPEmulator12sub_0200215CEmm
+	bl _ZN11CTPEmulator12sub_0200215CEll
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0

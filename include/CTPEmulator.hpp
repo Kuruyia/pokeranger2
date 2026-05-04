@@ -13,7 +13,7 @@ public:
 
     virtual void func0();
 
-    void sub_0200215C(u32 arg0, u32 arg1);
+    void sub_0200215C(fx32 arg0, fx32 arg1);
     void sub_02002178();
     void sub_02002198(u32 arg0, u32 arg1, u16 arg2);
 
@@ -23,12 +23,12 @@ public:
     u8 unk_35;
     u8 unk_36;
     u8 unk_37;
-    s32 unk_38;
-    s32 unk_3C;
+    fx32 unk_38;
+    fx32 unk_3C;
     u16 unk_40;
     u16 unk_42;
-    u32 unk_44;
-    u32 unk_48;
+    fx32 unk_44;
+    fx32 unk_48;
     u32 unk_4C;
     u32 unk_50;
 };

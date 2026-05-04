@@ -1,7 +1,9 @@
 #include "CTPEmulator.hpp"
 
+#include <nitro.h>
+
 extern "C" {
-u32 sub_02007068(u32, u32, u16, u16);
+fx32 sub_02007068(fx32, u32, u16, u16);
 }
 
 CTPEmulator::CTPEmulator()
@@ -31,8 +33,8 @@ void CTPEmulator::func0()
         }
     }
 
-    unk_0A.x = (unk_38 >> 0xC) + 0x80;
-    unk_0A.y = (unk_3C >> 0xC) + 0x60;
+    unk_0A.x = FX_Whole(unk_38) + (GX_LCD_SIZE_X / 2);
+    unk_0A.y = FX_Whole(unk_3C) + (GX_LCD_SIZE_Y / 2);
 
     unk_04 = unk_34;
     unk_05 = unk_35;
@@ -42,7 +44,7 @@ void CTPEmulator::func0()
     unk_36 = 0;
 }
 
-void CTPEmulator::sub_0200215C(u32 arg0, u32 arg1)
+void CTPEmulator::sub_0200215C(fx32 arg0, fx32 arg1)
 {
     unk_38 = arg0;
     unk_3C = arg1;

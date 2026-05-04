@@ -17408,7 +17408,7 @@ ov1_0212B530: ; 0x0212B530
 	moveq r0, #0
 	ldmeqia sp!, {r4, pc}
 	ldmia r4, {r1, r2}
-	bl _ZN11CTPEmulator12sub_0200215CEmm
+	bl _ZN11CTPEmulator12sub_0200215CEll
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_0212B530

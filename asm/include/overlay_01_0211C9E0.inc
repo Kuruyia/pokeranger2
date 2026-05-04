@@ -4,7 +4,7 @@
 .public _Znam
 .public _ZdlPv
 .public _ZdaPv
-.public _ZN11CTPEmulator12sub_0200215CEmm
+.public _ZN11CTPEmulator12sub_0200215CEll
 .public _ZN11CTPEmulator12sub_02002178Ev
 .public _ZN11CTPEmulator12sub_02002198Emmt
 .public sub_02002434
