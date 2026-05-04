@@ -973,8 +973,7 @@
           9](_ZN17UnkClass_0200BBC8C1Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
            10](_ZN17UnkClass_0200BBC0D1Ev,func) found in global src_UnkClass_0200BBC0.cpp.o
            10](_ZN17UnkClass_0200BBC0C1Ev,func) found in global src_UnkClass_0200BBC0.cpp.o
-         8](CTPEmulator_ctor,func) found in global asm_arm9_02001ED0.s.o
-          9](_ZN11CTouchPanelD2Ev,func) found in global src_CTouchPanel.cpp.o
+         8](_ZN11CTPEmulatorC1Ev,func) found in global src_CTPEmulator.cpp.o
           9](_ZN11CTouchPanelC2Ev,func) found in global src_CTouchPanel.cpp.o
            10](TP_Init,func) found in global libspi.a
             11](.bss,section) found in local libspi.a
@@ -986,13 +985,22 @@
             11](_ZTI11CTouchPanel,object) found in multidef src_CTouchPanel.cpp.o
              12](_ZTS11CTouchPanel,object) found in multidef src_CTouchPanel.cpp.o
             11](_ZN11CTouchPanelD0Ev,func) found in global src_CTouchPanel.cpp.o
-             12](thunk_FUN_0200235c,func) found in global asm_arm9_02001ED0.s.o
+             12](_ZN11CTouchPaneldlEPv,func) found in global src_CTouchPanel.cpp.o
+              13](_Z18Heap_FreeSecondaryPv,func) found in global src_heap.cpp.o
+            11](_ZN11CTouchPanel5func0Ev,func) found in global src_CTouchPanel.cpp.o
+             12](TP_RequestSamplingAsync,func) found in global libspi.a
+             12](TP_WaitRawResult,func) found in global libspi.a
+              13](TP_WaitBusy,func) found in global libspi.a
+             12](TP_GetCalibratedPoint,func) found in global libspi.a
             11](_ZN11CTouchPanelD1Ev,func) found in global src_CTouchPanel.cpp.o
-          9](_Z18Heap_FreeSecondaryPv,func) found in global src_heap.cpp.o
-          9](TP_GetCalibratedPoint,func) found in global libspi.a
-          9](TP_WaitRawResult,func) found in global libspi.a
-           10](TP_WaitBusy,func) found in global libspi.a
-          9](TP_RequestSamplingAsync,func) found in global libspi.a
+          9](_ZTV11CTPEmulator,object) found in global src_CTPEmulator.cpp.o
+           10](_ZTI11CTPEmulator,object) found in multidef src_CTPEmulator.cpp.o
+            11](_ZTS11CTPEmulator,object) found in multidef src_CTPEmulator.cpp.o
+           10](_ZN11CTPEmulatorD0Ev,func) found in global src_CTPEmulator.cpp.o
+            11](_ZN11CTouchPanelD2Ev,func) found in global src_CTouchPanel.cpp.o
+           10](_ZN11CTPEmulator5func0Ev,func) found in global src_CTPEmulator.cpp.o
+           10](_ZN11CTPEmulatorD1Ev,func) found in global src_CTPEmulator.cpp.o
+         8](_ZN11CTouchPanelnwEm,func) found in global src_CTouchPanel.cpp.o
          8](_ZN11CTouchPanelC1Ev,func) found in global src_CTouchPanel.cpp.o
          8](_ZN17UnkClass_02001C04C1Ev,func) found in global src_UnkClass_02001C04.cpp.o
          8](_Z12sub_02001D28m,func) found in global src_sub_02001D28.cpp.o
@@ -1296,6 +1304,9 @@
         7](EndSleep,func) found in local libnnssnd.a
          8](NNSi_SndCaptureEndSleep,func) found in global libnnssnd.a
        6](_ZN17UnkClass_020091E812sub_0200AA48El,func) found in global src_UnkClass_020091E8.cpp.o
+       6](_ZN11CTPEmulator12sub_02002198Emmt,func) found in global src_CTPEmulator.cpp.o
+       6](_ZN11CTPEmulator12sub_02002178Ev,func) found in global src_CTPEmulator.cpp.o
+       6](_ZN11CTPEmulator12sub_0200215CEmm,func) found in global src_CTPEmulator.cpp.o
        6](_Z12sub_020010E4v,func) found in global src_main.cpp.o
        6](_ZN17UnkClass_020091E812sub_0200B68CEv,func) found in global src_UnkClass_020091E8.cpp.o
        6](_ZN17UnkClass_020091E812sub_0200AA58Ev,func) found in global src_UnkClass_020091E8.cpp.o
@@ -2504,9 +2515,9 @@
     3](G3X_Reset,func) found in global libgx.a
      4](G3X_ResetMtxStack,func) found in global libgx.a
     3](_Z12sub_020010F8v,func) found in local src_main.cpp.o
-    3](@12898,object) found in local src_main.cpp.o
     3](@12899,object) found in local src_main.cpp.o
     3](@12900,object) found in local src_main.cpp.o
+    3](@12901,object) found in local src_main.cpp.o
 
 # .main
 #>02000000          SDK_STATIC_START (linker command file)
@@ -2616,24 +2627,29 @@
   02001EB8 00000000 .text   $a	(src_CTouchPanel.cpp.o)
   02001ECC 00000004 .text   CTouchPanel::~CTouchPanel[base]()	(src_CTouchPanel.cpp.o)
   02001ECC 00000000 .text   $a	(src_CTouchPanel.cpp.o)
-  02001ED0 00000000 .text   $a	(asm_arm9_02001ED0.s.o)
-  02001ED0 00000008 .text   CTouchPanel::func0()	(asm_arm9_02001ED0.s.o)
-  02001ED0 000002F8 .text   .text	(asm_arm9_02001ED0.s.o)
-  0200203C 0000000C .text   sub_0200203C	(asm_arm9_02001ED0.s.o)
-  02002044 00000000 .text   $d	(asm_arm9_02001ED0.s.o)
-  02002048 00000000 .text   $a	(asm_arm9_02001ED0.s.o)
-  02002048 0000000C .text   thunk_FUN_0200235c	(asm_arm9_02001ED0.s.o)
-  02002050 00000000 .text   $d	(asm_arm9_02001ED0.s.o)
-  02002054 00000020 .text   CTPEmulator_ctor	(asm_arm9_02001ED0.s.o)
-  02002054 00000000 .text   $a	(asm_arm9_02001ED0.s.o)
-  02002070 00000000 .text   $d	(asm_arm9_02001ED0.s.o)
-  02002074 00000000 .text   $a	(asm_arm9_02001ED0.s.o)
-  02002074 00000014 .text   CTPEmulator_complete_obj_dtor	(asm_arm9_02001ED0.s.o)
-  02002088 0000001C .text   CTPEmulator_deleting_obj_dtor	(asm_arm9_02001ED0.s.o)
-  020020A4 00000070 .text   sub_020020A4	(asm_arm9_02001ED0.s.o)
-  0200215C 0000001C .text   sub_0200215C	(asm_arm9_02001ED0.s.o)
-  02002178 00000020 .text   sub_02002178	(asm_arm9_02001ED0.s.o)
-  02002198 00000030 .text   sub_02002198	(asm_arm9_02001ED0.s.o)
+  02001ED0 0000016C .text   CTouchPanel::func0()	(src_CTouchPanel.cpp.o)
+  02001ED0 00000000 .text   $a	(src_CTouchPanel.cpp.o)
+  0200203C 00000000 .text   $a	(src_CTouchPanel.cpp.o)
+  0200203C 0000000C .text   CTouchPanel::operator new(unsigned long)	(src_CTouchPanel.cpp.o)
+  02002044 00000000 .text   $d	(src_CTouchPanel.cpp.o)
+  02002048 00000000 .text   $a	(src_CTouchPanel.cpp.o)
+  02002048 0000000C .text   CTouchPanel::operator delete(void*)	(src_CTouchPanel.cpp.o)
+  02002050 00000000 .text   $d	(src_CTouchPanel.cpp.o)
+  02002054 00000000 .text   $a	(src_CTPEmulator.cpp.o)
+  02002054 00000020 .text   CTPEmulator::CTPEmulator()	(src_CTPEmulator.cpp.o)
+  02002070 00000000 .text   $d	(src_CTPEmulator.cpp.o)
+  02002074 00000014 .text   CTPEmulator::~CTPEmulator()	(src_CTPEmulator.cpp.o)
+  02002074 00000000 .text   $a	(src_CTPEmulator.cpp.o)
+  02002088 0000001C .text   CTPEmulator::~CTPEmulator[virtual]()	(src_CTPEmulator.cpp.o)
+  02002088 00000000 .text   $a	(src_CTPEmulator.cpp.o)
+  020020A4 000000B8 .text   CTPEmulator::func0()	(src_CTPEmulator.cpp.o)
+  020020A4 00000000 .text   $a	(src_CTPEmulator.cpp.o)
+  0200215C 0000001C .text   CTPEmulator::sub_0200215C(unsigned long, unsigned long)	(src_CTPEmulator.cpp.o)
+  0200215C 00000000 .text   $a	(src_CTPEmulator.cpp.o)
+  02002178 00000020 .text   CTPEmulator::sub_02002178()	(src_CTPEmulator.cpp.o)
+  02002178 00000000 .text   $a	(src_CTPEmulator.cpp.o)
+  02002198 00000030 .text   CTPEmulator::sub_02002198(unsigned long, unsigned long, unsigned short)	(src_CTPEmulator.cpp.o)
+  02002198 00000000 .text   $a	(src_CTPEmulator.cpp.o)
   020021C8 00000000 .text   $a	(src_heap.cpp.o)
   020021C8 00000090 .text   Heap_Init(unsigned long)	(src_heap.cpp.o)
   02002254 00000000 .text   $d	(src_heap.cpp.o)
@@ -11425,22 +11441,19 @@
 #>0208A37C          SDK_STATIC_SINIT_END (linker command file)
 #>0208A380          SDK_STATIC_TEXT_END (linker command file)
 #>0208A380          SDK_STATIC_DATA_START (linker command file)
-  0208A380 0000000D .data   @12898	(src_main.cpp.o)
-  0208A390 0000000D .data   @12899	(src_main.cpp.o)
-  0208A3A0 00000016 .data   @12900	(src_main.cpp.o)
+  0208A380 0000000D .data   @12899	(src_main.cpp.o)
+  0208A390 0000000D .data   @12900	(src_main.cpp.o)
+  0208A3A0 00000016 .data   @12901	(src_main.cpp.o)
   0208A3B8 00000000 .data   .data	(src_overlay_manager.cpp.o)
   0208A3B8 00000004 .data   s_currentOverlayID	(src_overlay_manager.cpp.o)
   0208A3BC 00000008 .data   typeinfo structure for CTouchPanel	(src_CTouchPanel.cpp.o)
   0208A3C4 0000000E .data   typeinfo name for CTouchPanel	(src_CTouchPanel.cpp.o)
   0208A3D4 00000014 .data   virtual table for CTouchPanel	(src_CTouchPanel.cpp.o)
-  0208A3E8 00000000 .data   PTR_ptr_FUN_020835bc_0208a3e8	(asm_arm9_02046D5C.s.o)
-  0208A3E8 00004150 .data   .data	(asm_arm9_02046D5C.s.o)
-  0208A3F4 00000000 .data   s_11CTPEmulator_0208a3f4	(asm_arm9_02046D5C.s.o)
-  0208A402 00000000 .data   _0208A402	(asm_arm9_02046D5C.s.o)
-  0208A40C 00000000 .data   PTR_LAB_0208a40c	(asm_arm9_02046D5C.s.o)
-  0208A410 00000000 .data   ptr_FUN_02002088_0208a410	(asm_arm9_02046D5C.s.o)
-  0208A414 00000000 .data   ptr_FUN_020020a4_0208a414	(asm_arm9_02046D5C.s.o)
+  0208A3E8 0000000C .data   typeinfo structure for CTPEmulator	(src_CTPEmulator.cpp.o)
+  0208A3F4 0000000E .data   typeinfo name for CTPEmulator	(src_CTPEmulator.cpp.o)
+  0208A404 00000014 .data   virtual table for CTPEmulator	(src_CTPEmulator.cpp.o)
   0208A418 00000000 .data   s_BGF_0208a418	(asm_arm9_02046D5C.s.o)
+  0208A418 00004120 .data   .data	(asm_arm9_02046D5C.s.o)
   0208A41C 00000000 .data   s_data_system_BGFontLZ_bin_0208a41c	(asm_arm9_02046D5C.s.o)
   0208A435 00000000 .data   _0208A435	(asm_arm9_02046D5C.s.o)
   0208A438 00000000 .data   s_BGF_BGFontNCGRLZ_bin_0208a438	(asm_arm9_02046D5C.s.o)
