@@ -1306,7 +1306,7 @@
        6](_ZN17UnkClass_020091E812sub_0200AA48El,func) found in global src_UnkClass_020091E8.cpp.o
        6](_ZN11CTPEmulator12sub_02002198Emmt,func) found in global src_CTPEmulator.cpp.o
        6](_ZN11CTPEmulator12sub_02002178Ev,func) found in global src_CTPEmulator.cpp.o
-       6](_ZN11CTPEmulator12sub_0200215CEmm,func) found in global src_CTPEmulator.cpp.o
+       6](_ZN11CTPEmulator12sub_0200215CEll,func) found in global src_CTPEmulator.cpp.o
        6](_Z12sub_020010E4v,func) found in global src_main.cpp.o
        6](_ZN17UnkClass_020091E812sub_0200B68CEv,func) found in global src_UnkClass_020091E8.cpp.o
        6](_ZN17UnkClass_020091E812sub_0200AA58Ev,func) found in global src_UnkClass_020091E8.cpp.o
@@ -2644,7 +2644,7 @@
   02002088 00000000 .text   $a	(src_CTPEmulator.cpp.o)
   020020A4 000000B8 .text   CTPEmulator::func0()	(src_CTPEmulator.cpp.o)
   020020A4 00000000 .text   $a	(src_CTPEmulator.cpp.o)
-  0200215C 0000001C .text   CTPEmulator::sub_0200215C(unsigned long, unsigned long)	(src_CTPEmulator.cpp.o)
+  0200215C 0000001C .text   CTPEmulator::sub_0200215C(long, long)	(src_CTPEmulator.cpp.o)
   0200215C 00000000 .text   $a	(src_CTPEmulator.cpp.o)
   02002178 00000020 .text   CTPEmulator::sub_02002178()	(src_CTPEmulator.cpp.o)
   02002178 00000000 .text   $a	(src_CTPEmulator.cpp.o)
