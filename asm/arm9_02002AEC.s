@@ -1,18 +1,7 @@
     .include "macros.inc"
-    .include "include/arm9_02002AD4.inc"
+    .include "include/arm9_02002AEC.inc"
 
     .text
-
-    arm_func_start sub_02002AD4
-sub_02002AD4: ; 0x02002AD4
-	ldr r3, _02002AE8 ; =DAT_02084288
-	mov r0, #0xc
-	mla r0, r1, r0, r3
-	ldr r0, [r0, r2, lsl #2]
-	bx lr
-	.align 2, 0
-_02002AE8: .word DAT_02084288
-	arm_func_end sub_02002AD4
 
 	arm_func_start _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm: ; 0x02002AEC
@@ -6100,7 +6089,7 @@ sub_02007CF0: ; 0x02007CF0
 	ldr r0, [r0, #0xc24]
 	mov r1, #3
 	mov r2, #0x2000
-	bl sub_02002434
+	bl _ZN17UnkClass_020023EC12sub_02002434Emmmm
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02007D28: .word 0x0400000E
@@ -6120,7 +6109,7 @@ sub_02007D2C: ; 0x02007D2C
 	ldr r0, [r0, #0xc28]
 	mov r1, #7
 	mov r2, #0x6000
-	bl sub_02002434
+	bl _ZN17UnkClass_020023EC12sub_02002434Emmmm
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _02007D64: .word 0x0400100E
@@ -6140,9 +6129,9 @@ sub_02007D78: ; 0x02007D78
 	bl sub_0201001C
 	mov r4, r0
 	ldr r0, [r4, #0xc24]
-	bl sub_020027E8
+	bl _ZN17UnkClass_020023EC12sub_020027E8Ev
 	ldr r0, [r4, #0xc28]
-	bl sub_020027E8
+	bl _ZN17UnkClass_020023EC12sub_020027E8Ev
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02007D78
 
@@ -7574,7 +7563,7 @@ _02008F38:
 	mov r1, #0
 	ldr r3, _02008F74 ; =DAT_0208a844
 	mov r2, r1
-	bl sub_020028A4
+	bl _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 _02008F60:
 	mov r0, r6
 	bl sub_02008F90

@@ -1253,7 +1253,7 @@ _0211DB90:
 	ldr r0, [r0, #0xc24]
 	mov r1, #3
 	mov r2, #0x2000
-	bl sub_02002434
+	bl _ZN17UnkClass_020023EC12sub_02002434Emmmm
 	mov r0, #8
 	bl _Znwm
 	cmp r0, #0
@@ -38389,10 +38389,10 @@ ov1_0213D018: ; 0x0213D018
 	mov r4, r0
 	ldr r0, [r4]
 	ldr r0, [r0, #0xc24]
-	bl sub_020027E8
+	bl _ZN17UnkClass_020023EC12sub_020027E8Ev
 	ldr r0, [r4]
 	ldr r0, [r0, #0xc28]
-	bl sub_020027E8
+	bl _ZN17UnkClass_020023EC12sub_020027E8Ev
 	mov r0, r4
 	mov r1, #0x12
 	bl ov1_0213D058

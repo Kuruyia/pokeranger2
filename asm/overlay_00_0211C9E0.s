@@ -5620,7 +5620,7 @@ CFieldScene_ov0_0212197C: ; 0x0212197C
 	mov r0, r6
 	mov r2, r1
 	str r1, [r6, #0x24]
-	bl sub_020028A4
+	bl _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 	ldr r0, [r7, #0xe4]
 	ldr r0, [r0]
 	tst r0, #1
@@ -5729,7 +5729,7 @@ _02121B08:
 	ldr r3, _0212204C ; =s_FIELD_d_d_d_d_d_overlay_0_02173058
 	mov r0, r6
 	mov r2, r1
-	bl sub_020028A4
+	bl _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 	ldr r0, [r7, #0x84]
 	cmp r0, #4
 	bne _02121B58
@@ -5737,7 +5737,7 @@ _02121B08:
 	mov r0, r6
 	mov r1, #0
 	mov r2, #1
-	bl sub_020028A4
+	bl _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 	b _02121B9C
 _02121B58:
 	cmp r0, #8
@@ -5746,7 +5746,7 @@ _02121B58:
 	mov r0, r6
 	mov r1, #0
 	mov r2, #1
-	bl sub_020028A4
+	bl _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 	b _02121B9C
 _02121B78:
 	ldr r0, [r7, #0x34]
@@ -5757,7 +5757,7 @@ _02121B78:
 	mov r0, r6
 	mov r1, #0
 	mov r2, #1
-	bl sub_020028A4
+	bl _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 _02121B9C:
 	ldr r1, [r7, #0x90]
 	cmp r1, #0
@@ -5769,15 +5769,15 @@ _02121B9C:
 	mov r1, #0
 	mov r2, #2
 	str r5, [sp, #4]
-	bl sub_020028A4
+	bl _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 _02121BC8:
 	ldr r0, [r7, #4]
 	ldr r0, [r0, #0xc24]
-	bl sub_020027E8
+	bl _ZN17UnkClass_020023EC12sub_020027E8Ev
 	b _02121BE0
 _02121BD8:
 	ldr r0, [r0, #0xc24]
-	bl sub_020027E8
+	bl _ZN17UnkClass_020023EC12sub_020027E8Ev
 _02121BE0:
 	ldr r1, [r7, #8]
 	ldr r0, [r7, #0xc]

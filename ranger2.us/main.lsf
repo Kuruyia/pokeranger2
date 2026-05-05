@@ -22,9 +22,8 @@ Static main
     Object main.nef.p/src_CTouchPanel.cpp.o
     Object main.nef.p/src_CTPEmulator.cpp.o
     Object main.nef.p/src_heap.cpp.o
-    Object main.nef.p/asm_arm9_020023EC.s.o
     Object main.nef.p/src_UnkClass_020023EC.cpp.o
-    Object main.nef.p/asm_arm9_02002AD4.s.o
+    Object main.nef.p/asm_arm9_02002AEC.s.o
     Object main.nef.p/src_UnkClass_020091E8.cpp.o
     Object main.nef.p/src_UnkClass_0200BBC0.cpp.o
     Object main.nef.p/src_UnkClass_0200BBC8.cpp.o

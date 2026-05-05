@@ -105,9 +105,9 @@
 .public ptr_s_jp_mes_0208a4d4_0208a534
 .public s_s_s_0208a568
 .public _Z12sub_02001210v
-.public sub_02002434
-.public sub_020027E8
-.public sub_020028A4
+.public _ZN17UnkClass_020023EC12sub_02002434Emmmm
+.public _ZN17UnkClass_020023EC12sub_020027E8Ev
+.public _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 .public sub_0201001C
 .public _ZN5CGame12sub_020100E4EPFvvEm
 .public sub_02010124

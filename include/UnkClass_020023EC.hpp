@@ -2,75 +2,34 @@
 #define POKERANGER2_UNKCLASS_020023EC_HPP
 
 #include <nitro.h>
+#include <nnsys.h>
 
 #include "common.hpp"
 
 class UnkClass_020023EC {
 public:
-    void sub_02002A78(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+    UnkClass_020023EC();
+
+    void sub_02002434(u32 arg0, u32 arg1, u32 arg2, u32 arg3);
+    void sub_020027E8();
+    int sub_020028A4(s32 arg0, u32 arg1, char *arg2, ...);
+    void sub_0200296C(s32 arg0, u32 arg1, char arg2);
+    u16 sub_02002998(s32 arg0);
+    void sub_020029E4();
+    void sub_02002A04(u32 arg0, u32 arg1, int arg2, int arg3, u32 arg4);
+    void sub_02002A78(u32 arg0, u32 arg1, u32 arg2, s32 arg3);
+    NNS_GFD_DST_TYPE sub_02002AD4(u32 arg0, u32 arg1);
 
 public:
-    u8 unk_00;
-    u8 unk_01;
-    u8 unk_02;
-    u8 unk_03;
-    u8 unk_04;
-    u8 unk_05;
-    u8 unk_06;
-    u8 unk_07;
-    u8 unk_08;
-    u8 unk_09;
-    u8 unk_0A;
-    u8 unk_0B;
-    u8 unk_0C;
-    u8 unk_0D;
-    u8 unk_0E;
-    u8 unk_0F;
-    u32 unk_10;
-    u32 unk_14;
-    u32 unk_18;
-    u32 unk_1C;
-    u32 unk_20;
-    u8 unk_24;
-    u8 unk_25;
-    u8 unk_26;
-    u8 unk_27;
-    u8 unk_28;
-    u8 unk_29;
-    u8 unk_2A;
-    u8 unk_2B;
-    u8 unk_2C;
-    u8 unk_2D;
-    u8 unk_2E;
-    u8 unk_2F;
-    u8 unk_30;
-    u8 unk_31;
-    u8 unk_32;
-    u8 unk_33;
-    u8 unk_34;
-    u8 unk_35;
-    u8 unk_36;
-    u8 unk_37;
-    u8 unk_38;
-    u8 unk_39;
-    u8 unk_3A;
-    u8 unk_3B;
-    u8 unk_3C;
-    u8 unk_3D;
-    u8 unk_3E;
-    u8 unk_3F;
-    u8 unk_40;
-    u8 unk_41;
-    u8 unk_42;
-    u8 unk_43;
-    u8 unk_44;
-    u8 unk_45;
-    u8 unk_46;
-    u8 unk_47;
-    u8 unk_48;
-    u8 unk_49;
-    u8 unk_4A;
-    u8 unk_4B;
+    s32 unk_00;
+    u32 unk_04;
+    u32 unk_08;
+    u16 unk_0C;
+    u8 unk_0E[0x2];
+    fx32 unk_10[4];
+    u16 *unk_20;
+    u32 unk_24;
+    char unk_28[33];
 };
 
 STATIC_SIZE_ASSERT(UnkClass_020023EC, 0x4C);

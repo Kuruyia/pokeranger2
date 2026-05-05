@@ -205,14 +205,14 @@ _0200FC40:
 	bl _Znwm
 	cmp r0, #0
 	beq _0200FC70
-	bl sub_020023EC
+	bl _ZN17UnkClass_020023ECC1Ev
 _0200FC70:
 	str r0, [r4, #0xc24]
 	mov r0, #0x4c
 	bl _Znwm
 	cmp r0, #0
 	beq _0200FC88
-	bl sub_020023EC
+	bl _ZN17UnkClass_020023ECC1Ev
 _0200FC88:
 	str r0, [r4, #0xc28]
 	mov r0, #8

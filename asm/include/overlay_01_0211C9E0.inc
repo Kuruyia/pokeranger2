@@ -7,8 +7,8 @@
 .public _ZN11CTPEmulator12sub_0200215CEll
 .public _ZN11CTPEmulator12sub_02002178Ev
 .public _ZN11CTPEmulator12sub_02002198Emmt
-.public sub_02002434
-.public sub_020027E8
+.public _ZN17UnkClass_020023EC12sub_02002434Emmmm
+.public _ZN17UnkClass_020023EC12sub_020027E8Ev
 .public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
 .public _ZN19CSmartNNSFndArchiveD1Ev
 .public sub_02002BC4

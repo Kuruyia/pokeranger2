@@ -29,7 +29,7 @@
 .public s_data_field_fielddata_bin_0208ab68
 .public _Z12sub_02001D28m
 .public _ZN11CTouchPanelnwEm
-.public sub_020023EC
+.public _ZN17UnkClass_020023ECC1Ev
 .public sub_02008D50
 .public sub_02008DB4
 .public sub_02008E50

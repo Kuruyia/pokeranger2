@@ -240,7 +240,7 @@ ov20_0211CCFC: ; 0x0211CCFC
 	mov ip, #0
 	mov r2, r1
 	str ip, [r0, #0x24]
-	bl sub_020028A4
+	bl _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 	ldmia sp!, {r3, pc}
 	.align 2, 0
 _0211CD28: .word s_game

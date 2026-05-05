@@ -1,7 +1,7 @@
 #pragma once
 .public _Znwm
 .public _ZdlPv
-.public sub_020028A4
+.public _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02007D68
