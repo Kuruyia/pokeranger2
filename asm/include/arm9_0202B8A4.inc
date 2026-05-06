@@ -312,7 +312,7 @@
 .public _ZN11CTPEmulator12sub_02002198Emmt
 .public _ZN13CArchiveGuardC1EPcS0_mmmmm
 .public _ZN13CArchiveGuardD1Ev
-.public sub_02002BC4
+.public _ZN11CBinaryFileC1EPcmmmmm
 .public sub_020031E8
 .public sub_020038A8
 .public sub_02003938

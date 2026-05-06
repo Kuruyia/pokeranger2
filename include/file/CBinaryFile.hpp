@@ -7,7 +7,7 @@
 
 class CBinaryFile {
 public:
-    CBinaryFile();
+    CBinaryFile(char *path, u32 arg1, u32 arg2, u32 arg3, u32 arg4, u32 arg5);
     virtual ~CBinaryFile();
 
 public:

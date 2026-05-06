@@ -5,6 +5,7 @@
 #include <nnsys.h>
 
 #include "common.hpp"
+#include "file/CBinaryFile.hpp"
 
 class CArchiveGuard {
 public:
@@ -13,7 +14,7 @@ public:
 
 public:
     NNSFndArchive archive;
-    void *unk_068;
+    CBinaryFile *unk_68;
 };
 
 STATIC_SIZE_ASSERT(CArchiveGuard, 0x6C);

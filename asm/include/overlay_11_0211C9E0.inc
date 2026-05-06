@@ -122,7 +122,7 @@
 .public STD_ConcatenateString
 .public strcmp
 .public sub_0200071A
-.public sub_02002BC4
+.public _ZN11CBinaryFileC1EPcmmmmm
 .public sub_02003718
 .public sub_0200372C
 .public sub_02003788

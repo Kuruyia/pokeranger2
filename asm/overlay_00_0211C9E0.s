@@ -9436,7 +9436,7 @@ ov0_02124D98: ; 0x02124D98
 	add r1, sp, #0xc
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	arm_func_end ov0_02124D98
 _02124DF8:
 	str r0, [r5, #0x4c]
@@ -10608,7 +10608,7 @@ ov0_02125D28: ; 0x02125D28
 	add r1, sp, #0x2c8
 	mov r3, r2
 	str r5, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	mov fp, r0
 	arm_func_end ov0_02125D28
 _02125DB4:
@@ -10638,7 +10638,7 @@ _02125DDC:
 	add r1, sp, #0x2c8
 	mov r3, r2
 	str r5, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	mov fp, r0
 	b _02125E6C
 _02125E24:
@@ -10658,7 +10658,7 @@ _02125E24:
 	add r1, sp, #0x2c8
 	mov r3, r2
 	str r5, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	str r0, [sp, #0x10]
 _02125E6C:
 	cmp fp, #0
@@ -28555,7 +28555,7 @@ ov0_02135824: ; 0x02135824
 	mov r1, r5
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	arm_func_end ov0_02135824
 _02135870:
 	str r0, [r6, #4]
@@ -32980,7 +32980,7 @@ ov0_02139544: ; 0x02139544
 	mov r1, r6
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	arm_func_end ov0_02139544
 _02139594:
 	add r1, r7, r5, lsl #2
@@ -36398,7 +36398,7 @@ _0213C408:
 	add r1, sp, #0xc
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 _0213C470:
 	str r0, [r5, #0x1d0]
 	ldr r4, [r0, #0x4c]
@@ -38205,7 +38205,7 @@ ov0_0213DB68: ; 0x0213DB68
 	add r1, sp, #0xc
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	arm_func_end ov0_0213DB68
 _0213DBD0:
 	str r0, [r5, #0x60]
@@ -38906,7 +38906,7 @@ _0213E430:
 	add r1, sp, #0xc
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 _0213E45C:
 	str r0, [r4, #0x26c]
 	ldr r5, [r0, #0x4c]
@@ -43114,7 +43114,7 @@ _02141FD4:
 	mov r1, r7
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 _02142000:
 	str r0, [r4, #4]
 	ldr r0, [r0, #0x4c]
@@ -84384,7 +84384,7 @@ _02163944:
 	add r1, sp, #0xc
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 _0216398C:
 	mov r1, #0xc
 	mul r2, r4, r1

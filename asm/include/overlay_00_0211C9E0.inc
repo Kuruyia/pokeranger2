@@ -11,7 +11,7 @@
 .public _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 .public _ZN13CArchiveGuardC1EPcS0_mmmmm
 .public _ZN13CArchiveGuardD1Ev
-.public sub_02002BC4
+.public _ZN11CBinaryFileC1EPcmmmmm
 .public sub_020031E8
 .public sub_02003718
 .public sub_0200372C

@@ -1,64 +1,7 @@
     .include "macros.inc"
-    .include "include/arm9_02002AEC.inc"
+    .include "include/arm9_02002BA4.inc"
 
     .text
-
-	arm_func_start _ZN13CArchiveGuardC1EPcS0_mmmmm
-_ZN13CArchiveGuardC1EPcS0_mmmmm: ; 0x02002AEC
-	stmdb sp!, {r4, r5, r6, r7, lr}
-	sub sp, sp, #0xc
-	mov r7, r0
-	mov r0, #0xb8
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	bl _Znwm
-	cmp r0, #0
-	beq _02002B3C
-	ldr r2, [sp, #0x24]
-	ldr r1, [sp, #0x28]
-	str r2, [sp]
-	ldr ip, [sp, #0x2c]
-	str r1, [sp, #4]
-	ldr r3, [sp, #0x20]
-	mov r1, r5
-	mov r2, r4
-	str ip, [sp, #8]
-	bl sub_02002BC4
-	arm_func_end _ZN13CArchiveGuardC1EPcS0_mmmmm
-_02002B3C:
-	str r0, [r7, #0x68]
-	ldr r2, [r0, #0x4c]
-	cmp r2, #0
-	addeq sp, sp, #0xc
-	moveq r0, r7
-	ldmeqia sp!, {r4, r5, r6, r7, pc}
-	mov r0, r7
-	mov r1, r6
-	bl NNS_FndMountArchive
-	mov r0, r7
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, pc}
-
-	arm_func_start _ZN13CArchiveGuardD1Ev
-_ZN13CArchiveGuardD1Ev: ; 0x02002B6C
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl NNS_FndUnmountArchive
-	ldr r0, [r4, #0x68]
-	cmp r0, #0
-	beq _02002B9C
-	beq _02002B94
-	ldr r1, [r0]
-	ldr r1, [r1, #4]
-	blx r1
-	arm_func_end _ZN13CArchiveGuardD1Ev
-_02002B94:
-	mov r0, #0
-	str r0, [r4, #0x68]
-_02002B9C:
-	mov r0, r4
-	ldmia sp!, {r4, pc}
 
 	arm_func_start CBinaryFile_simple_ctor
 CBinaryFile_simple_ctor: ; 0x02002BA4
@@ -73,8 +16,8 @@ CBinaryFile_simple_ctor: ; 0x02002BA4
 _02002BC0: .word ptr_FUN_02002c34_0208a518
 	arm_func_end CBinaryFile_simple_ctor
 
-	arm_func_start sub_02002BC4
-sub_02002BC4: ; 0x02002BC4
+	arm_func_start _ZN11CBinaryFileC1EPcmmmmm
+_ZN11CBinaryFileC1EPcmmmmm: ; 0x02002BC4
 	stmdb sp!, {r4, r5, r6, r7, lr}
 	sub sp, sp, #0xc
 	ldr ip, _02002C30 ; =ptr_FUN_02002c34_0208a518
@@ -99,7 +42,7 @@ sub_02002BC4: ; 0x02002BC4
 	bne _02002C24
 	mov r0, r7
 	bl sub_02002C9C
-	arm_func_end sub_02002BC4
+	arm_func_end _ZN11CBinaryFileC1EPcmmmmm
 _02002C24:
 	mov r0, r7
 	add sp, sp, #0xc
@@ -7031,7 +6974,7 @@ sub_0200887C: ; 0x0200887C
 	mov r0, r5
 	mov r1, r8
 	str r3, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	mov r5, r0
 	arm_func_end sub_0200887C
 _020088E4:

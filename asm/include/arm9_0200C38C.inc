@@ -62,7 +62,7 @@
 .public s_s_s_NCGR_0208ab10
 .public s_s_s_NCLR_0208ab1c
 .public s_s_s_cac_0208ab34
-.public sub_02002BC4
+.public _ZN11CBinaryFileC1EPcmmmmm
 .public sub_020031E8
 .public sub_02008788
 .public sub_020087C8

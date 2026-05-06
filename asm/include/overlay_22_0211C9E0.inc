@@ -5,7 +5,7 @@
 .public _ZdaPv
 .public _ZN13CArchiveGuardC1EPcS0_mmmmm
 .public _ZN13CArchiveGuardD1Ev
-.public sub_02002BC4
+.public _ZN11CBinaryFileC1EPcmmmmm
 .public CBinaryFile_complete_obj_dtor
 .public sub_02002C7C
 .public _ZN14CBinaryFileMesC1EPcm

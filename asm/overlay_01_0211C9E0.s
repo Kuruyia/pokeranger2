@@ -1278,7 +1278,7 @@ _0211DBDC:
 	add r1, sp, #0xd8
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 _0211DC24:
 	str r0, [sl, #0xc44]
 	ldr r0, [r0, #0x4c]
@@ -1325,7 +1325,7 @@ _0211DC24:
 	add r1, sp, #0x78
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 _0211DCDC:
 	str r0, [sl, #0xe70]
 	ldr r0, [r0, #0x4c]
@@ -1373,7 +1373,7 @@ _0211DCDC:
 	add r1, sp, #0x18
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 _0211DD98:
 	add r1, sl, #0x1000
 	str r0, [r1, #0x9c]
@@ -9622,7 +9622,7 @@ ov1_02124F90: ; 0x02124F90
 	add r1, sp, #0xc
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	arm_func_end ov1_02124F90
 _02125100:
 	str r0, [r6, #0x54]
@@ -11389,7 +11389,7 @@ _021268F8:
 	add r1, sp, #0x14
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 _02126958:
 	str r0, [sl, #0x90]
 	ldr r0, [r0, #0x4c]
@@ -41522,7 +41522,7 @@ ov1_0213F9F8: ; 0x0213F9F8
 	mov r1, r5
 	mov r2, #1
 	str r3, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	mov r4, r0
 	arm_func_end ov1_0213F9F8
 _0213FA3C:
@@ -41536,7 +41536,7 @@ _0213FA3C:
 	mov r1, r6
 	mov r2, #1
 	str r3, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	mov r5, r0
 _0213FA6C:
 	ldr r0, [r5, #0x50]

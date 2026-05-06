@@ -467,7 +467,7 @@ _0211CF8C:
 	add r1, sp, #0x7c
 	str r3, [sp, #8]
 	mov r2, #1
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	ldr r0, [sp, #0x128]
 	cmp r0, #0
 	bne _0211CFE0

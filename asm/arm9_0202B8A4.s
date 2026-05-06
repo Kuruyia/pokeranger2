@@ -10884,7 +10884,7 @@ sub_02033C60: ; 0x02033C60
 	mov r1, r6
 	mov r3, r2
 	stmib sp, {r4, ip}
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	arm_func_end sub_02033C60
 _02033CB4:
 	str r0, [r6, #0x28]
@@ -13899,7 +13899,7 @@ sub_02036184: ; 0x02036184
 	mov r1, r5
 	mov r2, #1
 	str r3, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	mov r4, r0
 	arm_func_end sub_02036184
 _020361D8:
@@ -13913,7 +13913,7 @@ _020361D8:
 	mov r1, r6
 	mov r2, #1
 	str r3, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	mov r5, r0
 _02036208:
 	ldr r0, [r5, #0x50]
@@ -13998,7 +13998,7 @@ sub_020362EC: ; 0x020362EC
 	mov r1, r6
 	mov r2, #1
 	str r3, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	arm_func_end sub_020362EC
 _0203633C:
 	str r0, [r4, #0x14]
@@ -14012,7 +14012,7 @@ _0203633C:
 	mov r1, r5
 	mov r2, #1
 	str r3, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 _0203636C:
 	str r0, [r4, #0x18]
 	ldr r2, [r4, #0x14]
@@ -27616,7 +27616,7 @@ sub_02041CB4: ; 0x02041CB4
 	mov r1, r6
 	mov r3, r2
 	str r2, [sp, #8]
-	bl sub_02002BC4
+	bl _ZN11CBinaryFileC1EPcmmmmm
 	arm_func_end sub_02041CB4
 _02041CF4:
 	str r0, [r4]
