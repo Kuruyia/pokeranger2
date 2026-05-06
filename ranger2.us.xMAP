@@ -215,183 +215,50 @@
         7](__cs,object) found in global MSL_C_NITRO_Ai_LE.a
        6](@EX@fwrite,object) found in local MSL_C_NITRO_Ai_LE.a
        6](OS_Printf,func) found in global libos.a
-       6](sub_02007CC0,func) found in global asm_arm9_02002AD4.s.o
-        7](sub_020028A4,func) found in global asm_arm9_020023EC.s.o
+       6](sub_02007CC0,func) found in global asm_arm9_02002AEC.s.o
+        7](_ZN17UnkClass_020023EC12sub_020028A4ElmPcz,func) found in global src_UnkClass_020023EC.cpp.o
          8](OS_VSNPrintf,func) found in overload libos.a
           9](STD_TVSNPrintf,func) found in overload libstd.a
            10](string_put_char,func) found in local libstd.a
            10](string_fill_char,func) found in local libstd.a
            10](string_put_string,func) found in local libstd.a
-         8](MI_DmaCopy32,func) found in global libmi.a
-          9](MIi_CheckDma0SourceAddress,func) found in global libmi.a
-           10](OS_Terminate,func) found in overload libos.a
-            11](OS_Halt,func) found in overload libos.a
-          9](MIi_DmaSetParams_wait,func) found in global libmi.a
-         8](DC_FlushRange,func) found in global libos.a
-         8](_ZdlPv,func) found in global src_heap_operators.cpp.o
-          9](_Z9Heap_FreePv,func) found in global src_heap.cpp.o
-           10](NNS_FndFreeToExpHeap,func) found in global libnnsfnd.a
-            11](GetRegionOfMBlock,func) found in local libnnsfnd.a
-            11](RemoveMBlock,func) found in local libnnsfnd.a
-            11](RecycleRegion,func) found in local libnnsfnd.a
-             12](InitMBlock,func) found in local libnnsfnd.a
-             12](InsertMBlock,func) found in local libnnsfnd.a
-         8](_ZN19CSmartNNSFndArchiveD1Ev,func) found in global asm_arm9_02002AD4.s.o
-         8](NNS_GfdDoVramTransfer,func) found in global libnnsgfd.a
-          9](NNSi_GfdGetFrontVramTransferTaskQueue,func) found in global libnnsgfd.a
-          9](NNSi_GfdPopVramTransferTaskQueue,func) found in global libnnsgfd.a
-           10](IsVramTransferTaskQueueEmpty_,func) found in local libnnsgfd.a
-           10](GetNextIndex_,func) found in local libnnsgfd.a
-          9](DoTransfer_,func) found in local libnnsgfd.a
-           10](transFunc$8459,object) found in local libnnsgfd.a
-            11](DoTransfer2dObjCharSub,func) found in local libnnsgfd.a
-             12](GXS_LoadOBJ,func) found in global libgx.a
-              13](MIi_CpuCopy32,func) found in global libmi.a
-              13](GXi_DmaId,object) found in global libgx.a
-            11](DoTransfer2dObjOamSub,func) found in local libnnsgfd.a
-             12](GXS_LoadOAM,func) found in global libgx.a
-            11](DoTransfer2dBGExtPlttSub,func) found in local libnnsgfd.a
-             12](GXS_BeginLoadBGExtPltt,func) found in global libgx.a
-              13](GX_ResetBankForSubBGExtPltt,func) found in global libgx.a
-               14](resetBankForX_,func) found in local libgx.a
-                15](GX_VRAMCNT_SetLCDC_,func) found in local libgx.a
-                15](gGXState,object) found in global libgx.a
-              13](.bss,section) found in local libgx.a
-             12](GXS_LoadBGExtPltt,func) found in global libgx.a
-              13](MI_DmaCopy32Async,func) found in global libmi.a
-               14](MI_WaitDma,func) found in global libmi.a
-               14](OSi_EnterDmaCallback,func) found in global libos.a
-               14](MIi_DmaSetParams,func) found in global libmi.a
-             12](GXS_EndLoadBGExtPltt,func) found in global libgx.a
-              13](GX_SetBankForSubBGExtPltt,func) found in global libgx.a
-            11](DoTransfer2dObjExtPlttSub,func) found in local libnnsgfd.a
-             12](GXS_BeginLoadOBJExtPltt,func) found in global libgx.a
-              13](GX_ResetBankForSubOBJExtPltt,func) found in global libgx.a
-             12](GXS_LoadOBJExtPltt,func) found in global libgx.a
-             12](GXS_EndLoadOBJExtPltt,func) found in global libgx.a
-              13](GX_SetBankForSubOBJExtPltt,func) found in global libgx.a
-            11](DoTransfer2dBGPlttSub,func) found in local libnnsgfd.a
-             12](GXS_LoadBGPltt,func) found in global libgx.a
-              13](MI_DmaCopy16,func) found in global libmi.a
-              13](MIi_CpuCopy16,func) found in global libmi.a
-            11](DoTransfer2dObjPlttSub,func) found in local libnnsgfd.a
-             12](GXS_LoadOBJPltt,func) found in global libgx.a
-            11](DoTransfer2dBG3BmpSub,func) found in local libnnsgfd.a
-             12](GXS_LoadBG3Scr,func) found in global libgx.a
-              13](G2S_GetBG3ScrPtr,func) found in global libgx.a
-            11](DoTransfer2dBG2BmpSub,func) found in local libnnsgfd.a
-             12](GXS_LoadBG2Scr,func) found in global libgx.a
-              13](G2S_GetBG2ScrPtr,func) found in global libgx.a
-            11](DoTransfer2dBG3ScrSub,func) found in local libnnsgfd.a
-            11](DoTransfer2dBG2ScrSub,func) found in local libnnsgfd.a
-            11](DoTransfer2dBG1ScrSub,func) found in local libnnsgfd.a
-             12](GXS_LoadBG1Scr,func) found in global libgx.a
-              13](G2S_GetBG1ScrPtr,func) found in global libgx.a
-            11](DoTransfer2dBG0ScrSub,func) found in local libnnsgfd.a
-             12](GXS_LoadBG0Scr,func) found in global libgx.a
-              13](G2S_GetBG0ScrPtr,func) found in global libgx.a
-            11](DoTransfer2dBG3CharSub,func) found in local libnnsgfd.a
-             12](GXS_LoadBG3Char,func) found in global libgx.a
-              13](G2S_GetBG3CharPtr,func) found in global libgx.a
-            11](DoTransfer2dBG2CharSub,func) found in local libnnsgfd.a
-             12](GXS_LoadBG2Char,func) found in global libgx.a
-              13](G2S_GetBG2CharPtr,func) found in global libgx.a
-            11](DoTransfer2dBG1CharSub,func) found in local libnnsgfd.a
-             12](GXS_LoadBG1Char,func) found in global libgx.a
-              13](G2S_GetBG1CharPtr,func) found in global libgx.a
-            11](DoTransfer2dBG0CharSub,func) found in local libnnsgfd.a
-             12](GXS_LoadBG0Char,func) found in global libgx.a
-              13](G2S_GetBG0CharPtr,func) found in global libgx.a
-            11](DoTransfer2dObjCharMain,func) found in local libnnsgfd.a
-             12](GX_LoadOBJ,func) found in global libgx.a
-            11](DoTransfer2dObjOamMain,func) found in local libnnsgfd.a
-             12](GX_LoadOAM,func) found in global libgx.a
-            11](DoTransfer2dBGExtPlttMain,func) found in local libnnsgfd.a
-             12](GX_BeginLoadBGExtPltt,func) found in global libgx.a
-              13](GX_ResetBankForBGExtPltt,func) found in global libgx.a
-             12](GX_LoadBGExtPltt,func) found in global libgx.a
-             12](GX_EndLoadBGExtPltt,func) found in global libgx.a
-              13](GX_SetBankForBGExtPltt,func) found in global libgx.a
-            11](DoTransfer2dObjExtPlttMain,func) found in local libnnsgfd.a
-             12](GX_BeginLoadOBJExtPltt,func) found in global libgx.a
-              13](GX_ResetBankForOBJExtPltt,func) found in global libgx.a
-             12](GX_LoadOBJExtPltt,func) found in global libgx.a
-             12](GX_EndLoadOBJExtPltt,func) found in global libgx.a
-              13](GX_SetBankForOBJExtPltt,func) found in global libgx.a
-            11](DoTransfer2dBGPlttMain,func) found in local libnnsgfd.a
-             12](GX_LoadBGPltt,func) found in global libgx.a
-            11](DoTransfer2dObjPlttMain,func) found in local libnnsgfd.a
-             12](GX_LoadOBJPltt,func) found in global libgx.a
-            11](DoTransfer2dBG3BmpMain,func) found in local libnnsgfd.a
-             12](GX_LoadBG3Scr,func) found in global libgx.a
-              13](G2_GetBG3ScrPtr,func) found in global libgx.a
-            11](DoTransfer2dBG2BmpMain,func) found in local libnnsgfd.a
-             12](GX_LoadBG2Scr,func) found in global libgx.a
-              13](G2_GetBG2ScrPtr,func) found in global libgx.a
-            11](DoTransfer2dBG3ScrMain,func) found in local libnnsgfd.a
-            11](DoTransfer2dBG2ScrMain,func) found in local libnnsgfd.a
-            11](DoTransfer2dBG1ScrMain,func) found in local libnnsgfd.a
-             12](GX_LoadBG1Scr,func) found in global libgx.a
-              13](G2_GetBG1ScrPtr,func) found in global libgx.a
-            11](DoTransfer2dBG0ScrMain,func) found in local libnnsgfd.a
-             12](GX_LoadBG0Scr,func) found in global libgx.a
-              13](G2_GetBG0ScrPtr,func) found in global libgx.a
-            11](DoTransfer2dBG3CharMain,func) found in local libnnsgfd.a
-             12](GX_LoadBG3Char,func) found in global libgx.a
-              13](G2_GetBG3CharPtr,func) found in global libgx.a
-            11](DoTransfer2dBG2CharMain,func) found in local libnnsgfd.a
-             12](GX_LoadBG2Char,func) found in global libgx.a
-              13](G2_GetBG2CharPtr,func) found in global libgx.a
-            11](DoTransfer2dBG1CharMain,func) found in local libnnsgfd.a
-             12](GX_LoadBG1Char,func) found in global libgx.a
-              13](G2_GetBG1CharPtr,func) found in global libgx.a
-            11](DoTransfer2dBG0CharMain,func) found in local libnnsgfd.a
-             12](GX_LoadBG0Char,func) found in global libgx.a
-              13](G2_GetBG0CharPtr,func) found in global libgx.a
-            11](DoTransfer3dClearImageDepth,func) found in local libnnsgfd.a
-             12](GX_BeginLoadClearImage,func) found in global libgx.a
-              13](GX_ResetBankForClearImage,func) found in global libgx.a
-              13](.bss,section) found in local libgx.a
-             12](GX_LoadClearImageDepth,func) found in global libgx.a
-             12](GX_EndLoadClearImage,func) found in global libgx.a
-              13](GX_SetBankForClearImage,func) found in global libgx.a
-            11](DoTransfer3dClearImageColor,func) found in local libnnsgfd.a
-             12](GX_LoadClearImageColor,func) found in global libgx.a
-            11](DoTransfer3dTexPltt,func) found in local libnnsgfd.a
-             12](GX_BeginLoadTexPltt,func) found in global libgx.a
-              13](GX_ResetBankForTexPltt,func) found in global libgx.a
-              13](sTexPlttStartAddrTable,object) found in local libgx.a
-             12](GX_LoadTexPltt,func) found in global libgx.a
-             12](GX_EndLoadTexPltt,func) found in global libgx.a
-              13](GX_SetBankForTexPltt,func) found in global libgx.a
-            11](DoTransfer3dTex,func) found in local libnnsgfd.a
-             12](GX_BeginLoadTex,func) found in global libgx.a
-              13](GX_ResetBankForTex,func) found in global libgx.a
-             12](GX_LoadTex,func) found in global libgx.a
-             12](GX_EndLoadTex,func) found in global libgx.a
-              13](GX_SetBankForTex,func) found in global libgx.a
-          9](s_VramTransferManager,object) found in local libnnsgfd.a
-         8](NNS_GfdRegisterNewVramTransferTask,func) found in global libnnsgfd.a
-          9](IsVramTransferTaskQueueFull_,func) found in local libnnsgfd.a
-          9](NNSi_GfdGetEndVramTransferTaskQueue,func) found in global libnnsgfd.a
-          9](NNSi_GfdPushVramTransferTaskQueue,func) found in global libnnsgfd.a
-         8](_Znwm,func) found in global src_heap_operators.cpp.o
-          9](_Z10Heap_Allocm,func) found in global src_heap.cpp.o
-           10](NNS_FndAllocFromExpHeapEx,func) found in global libnnsfnd.a
-            11](AllocFromHead,func) found in local libnnsfnd.a
-             12](AllocUsedBlockFromFreeBlock,func) found in local libnnsfnd.a
-              13](MIi_CpuClear32,func) found in global libmi.a
-            11](AllocFromTail,func) found in local libnnsfnd.a
-         8](_Z19Heap_AllocSecondarym,func) found in global src_heap.cpp.o
+         8](_ZN17UnkClass_020023EC12sub_0200296CElmc,func) found in global src_UnkClass_020023EC.cpp.o
+          9](_ZN17UnkClass_020023EC12sub_02002998El,func) found in global src_UnkClass_020023EC.cpp.o
+         8](_ZN17UnkClass_020023EC12sub_02002A04Emmiim,func) found in global src_UnkClass_020023EC.cpp.o
+        7](_ZdlPv,func) found in global src_heap_operators.cpp.o
+         8](_Z9Heap_FreePv,func) found in global src_heap.cpp.o
+          9](NNS_FndFreeToExpHeap,func) found in global libnnsfnd.a
+           10](GetRegionOfMBlock,func) found in local libnnsfnd.a
+           10](RemoveMBlock,func) found in local libnnsfnd.a
+           10](RecycleRegion,func) found in local libnnsfnd.a
+            11](InitMBlock,func) found in local libnnsfnd.a
+            11](InsertMBlock,func) found in local libnnsfnd.a
         7](OS_GetTick,func) found in global libos.a
          8](.bss,section) found in local libos.a
         7](OS_WaitVBlankIntr,func) found in global libos.a
          8](SVC_WaitByLoop,notype) found in global libsyscall.a
          8](OS_WaitIrq,func) found in global libos.a
           9](OSi_IrqThreadQueue,object) found in global libos.a
+        7](_Znwm,func) found in global src_heap_operators.cpp.o
+         8](_Z10Heap_Allocm,func) found in global src_heap.cpp.o
+          9](NNS_FndAllocFromExpHeapEx,func) found in global libnnsfnd.a
+           10](AllocFromHead,func) found in local libnnsfnd.a
+            11](AllocUsedBlockFromFreeBlock,func) found in local libnnsfnd.a
+             12](MIi_CpuClear32,func) found in global libmi.a
+           10](AllocFromTail,func) found in local libnnsfnd.a
+        7](MIi_CpuCopy32,func) found in global libmi.a
         7](_Z23Heap_AllocWithAlignmentmm,func) found in global src_heap.cpp.o
         7](_Znam,func) found in global src_heap_operators.cpp.o
         7](_ZdaPv,func) found in global src_heap_operators.cpp.o
+        7](GXS_LoadOAM,func) found in global libgx.a
+         8](MI_DmaCopy32,func) found in global libmi.a
+          9](MIi_CheckDma0SourceAddress,func) found in global libmi.a
+           10](OS_Terminate,func) found in overload libos.a
+            11](OS_Halt,func) found in overload libos.a
+          9](MIi_DmaSetParams_wait,func) found in global libmi.a
+         8](GXi_DmaId,object) found in global libgx.a
+        7](DC_FlushRange,func) found in global libos.a
+        7](GX_LoadOAM,func) found in global libgx.a
         7](sub_0201001C,func) found in global asm_arm9_0200FA0C.s.o
          8](sub_0201926C,func) found in global asm_arm9_0201668C.s.o
           9](CARD_UnlockBackup,func) found in global libcard.a
@@ -473,10 +340,18 @@
              12](.bss,section) found in local libcard.a
            10](.bss,section) found in local libcard.a
           9](sub_0200EB28,func) found in global asm_arm9_0200C38C.s.o
+           10](sub_02008BF0,func) found in global asm_arm9_02002AEC.s.o
+           10](NNS_GfdRegisterNewVramTransferTask,func) found in global libnnsgfd.a
+            11](IsVramTransferTaskQueueFull_,func) found in local libnnsgfd.a
+            11](NNSi_GfdGetEndVramTransferTaskQueue,func) found in global libnnsgfd.a
+            11](NNSi_GfdPushVramTransferTaskQueue,func) found in global libnnsgfd.a
+             12](GetNextIndex_,func) found in local libnnsgfd.a
+            11](s_VramTransferManager,object) found in local libnnsgfd.a
            10](MIi_CpuCopyFast,func) found in global libmi.a
            10](OS_SPrintf,func) found in overload libos.a
             11](OS_VSPrintf,func) found in overload libos.a
            10](GX_GetBankForOBJ,func) found in global libgx.a
+            11](gGXState,object) found in global libgx.a
            10](GX_GetBankForSubOBJ,func) found in global libgx.a
            10](__cxa_vec_delete,func) found in global NITRO_Runtime_Ai_LE.a
             11](__cxa_vec_dtor,func) found in global NITRO_Runtime_Ai_LE.a
@@ -569,6 +444,7 @@
            10](sub_02018B10,func) found in global asm_arm9_0201668C.s.o
            10](NNS_G2dMapScrToCharText,func) found in global libnnsg2d.a
             11](NNS_G2dMapScrToChar256x16Pltt,func) found in global libnnsg2d.a
+           10](G2S_GetBG0ScrPtr,func) found in global libgx.a
            10](NNS_G2dCharCanvasInitForBG,func) found in global libnnsg2d.a
             11](InitCharCanvas,func) found in local libnnsg2d.a
             11](VTABLE_BG,object) found in local libnnsg2d.a
@@ -583,6 +459,19 @@
               13](GetCharIndex1D,func) found in local libnnsg2d.a
                14](objs$8774,object) found in local libnnsg2d.a
              12](DrawGlyph1D,func) found in local libnnsg2d.a
+           10](G2S_GetBG0CharPtr,func) found in global libgx.a
+           10](GXS_LoadBGPltt,func) found in global libgx.a
+            11](MI_DmaCopy16,func) found in global libmi.a
+            11](MIi_CpuCopy16,func) found in global libmi.a
+           10](G2_GetBG3ScrPtr,func) found in global libgx.a
+           10](G2_GetBG2ScrPtr,func) found in global libgx.a
+           10](G2_GetBG1ScrPtr,func) found in global libgx.a
+           10](G2_GetBG0ScrPtr,func) found in global libgx.a
+           10](G2_GetBG3CharPtr,func) found in global libgx.a
+           10](G2_GetBG2CharPtr,func) found in global libgx.a
+           10](G2_GetBG1CharPtr,func) found in global libgx.a
+           10](G2_GetBG0CharPtr,func) found in global libgx.a
+           10](GX_LoadBGPltt,func) found in global libgx.a
           9](sub_02041D80,func) found in global asm_arm9_0202B8A4.s.o
           9](NNS_GfdFreeLnkPlttVram,func) found in global libnnsgfd.a
            10](NNSi_GfdFreeLnkVram,func) found in global libnnsgfd.a
@@ -624,6 +513,7 @@
            10](_ZN17UnkClass_020091E812sub_0200A97CEv,func) found in global src_UnkClass_020091E8.cpp.o
           9](_ZN17UnkClass_020091E812sub_0200B6D4Ev,func) found in global src_UnkClass_020091E8.cpp.o
           9](_ZN17UnkClass_020091E812sub_0200B6A4Em,func) found in global src_UnkClass_020091E8.cpp.o
+          9](G2S_GetBG1ScrPtr,func) found in global libgx.a
           9](G2x_SetBlendAlpha_,func) found in global libgx.a
           9](NNS_G2dBGSetupEx,func) found in global libnnsg2d.a
            10](SetBGControlAuto,func) found in local libnnsg2d.a
@@ -648,6 +538,23 @@
              12](LoadBGPaletteSelect,func) found in local libnnsg2d.a
               13](GetBGExtPlttSlot,func) found in local libnnsg2d.a
               13](LoadBGPlttToExtendedPltt,func) found in local libnnsg2d.a
+               14](GX_BeginLoadBGExtPltt,func) found in global libgx.a
+                15](GX_ResetBankForBGExtPltt,func) found in global libgx.a
+                 16](resetBankForX_,func) found in local libgx.a
+                  17](GX_VRAMCNT_SetLCDC_,func) found in local libgx.a
+                15](.bss,section) found in local libgx.a
+               14](GX_LoadBGExtPltt,func) found in global libgx.a
+                15](MI_DmaCopy32Async,func) found in global libmi.a
+                 16](MI_WaitDma,func) found in global libmi.a
+                 16](OSi_EnterDmaCallback,func) found in global libos.a
+                 16](MIi_DmaSetParams,func) found in global libmi.a
+               14](GX_EndLoadBGExtPltt,func) found in global libgx.a
+                15](GX_SetBankForBGExtPltt,func) found in global libgx.a
+               14](GXS_BeginLoadBGExtPltt,func) found in global libgx.a
+                15](GX_ResetBankForSubBGExtPltt,func) found in global libgx.a
+               14](GXS_LoadBGExtPltt,func) found in global libgx.a
+               14](GXS_EndLoadBGExtPltt,func) found in global libgx.a
+                15](GX_SetBankForSubBGExtPltt,func) found in global libgx.a
               13](LoadBGPlttToNormalPltt,func) found in local libnnsg2d.a
             11](LoadBGCharacter,func) found in local libnnsg2d.a
             11](LoadBGScreen,func) found in local libnnsg2d.a
@@ -720,8 +627,30 @@
           9](GX_SetBankForSubBG,func) found in global libgx.a
           9](_Z12sub_02001210v,func) found in global src_main.cpp.o
            10](_Z12sub_0200120Cy,func) found in local src_main.cpp.o
+          9](GX_ResetBankForSubOBJExtPltt,func) found in global libgx.a
           9](GX_ResetBankForSubOBJ,func) found in global libgx.a
           9](GX_ResetBankForSubBG,func) found in global libgx.a
+          9](GXS_LoadBG3Scr,func) found in global libgx.a
+           10](G2S_GetBG3ScrPtr,func) found in global libgx.a
+          9](GXS_LoadBG2Scr,func) found in global libgx.a
+           10](G2S_GetBG2ScrPtr,func) found in global libgx.a
+          9](GXS_LoadBG1Scr,func) found in global libgx.a
+          9](GXS_LoadBG0Scr,func) found in global libgx.a
+          9](GX_LoadBG3Scr,func) found in global libgx.a
+          9](GX_LoadBG2Scr,func) found in global libgx.a
+          9](GX_LoadBG1Scr,func) found in global libgx.a
+          9](GX_LoadBG0Scr,func) found in global libgx.a
+          9](GXS_LoadBG3Char,func) found in global libgx.a
+           10](G2S_GetBG3CharPtr,func) found in global libgx.a
+          9](GXS_LoadBG2Char,func) found in global libgx.a
+           10](G2S_GetBG2CharPtr,func) found in global libgx.a
+          9](GXS_LoadBG1Char,func) found in global libgx.a
+           10](G2S_GetBG1CharPtr,func) found in global libgx.a
+          9](GXS_LoadBG0Char,func) found in global libgx.a
+          9](GX_LoadBG3Char,func) found in global libgx.a
+          9](GX_LoadBG2Char,func) found in global libgx.a
+          9](GX_LoadBG1Char,func) found in global libgx.a
+          9](GX_LoadBG0Char,func) found in global libgx.a
           9](DC_FlushAll,func) found in global libos.a
           9](MTX_Scale22_,func) found in global libfx.a
           9](ov0_02132FA0,func) found in global asm_overlay_00_0211C9E0.s.o
@@ -874,6 +803,24 @@
            10](_ZNSt13__vec_deleterImSaImEED2Ev,func) found in multidef MSL_CPP_NITRO_Ai_LE.a
            10](@EX@_ZNSt13__vec_deleterImSaImEED2Ev,object) found in local MSL_CPP_NITRO_Ai_LE.a
            10](NNS_G2dLoadPalette,func) found in global libnnsg2d.a
+            11](GX_BeginLoadOBJExtPltt,func) found in global libgx.a
+             12](GX_ResetBankForOBJExtPltt,func) found in global libgx.a
+            11](GX_LoadOBJExtPltt,func) found in global libgx.a
+            11](GX_EndLoadOBJExtPltt,func) found in global libgx.a
+             12](GX_SetBankForOBJExtPltt,func) found in global libgx.a
+            11](GX_LoadOBJPltt,func) found in global libgx.a
+            11](GXS_BeginLoadOBJExtPltt,func) found in global libgx.a
+            11](GXS_LoadOBJExtPltt,func) found in global libgx.a
+            11](GXS_EndLoadOBJExtPltt,func) found in global libgx.a
+             12](GX_SetBankForSubOBJExtPltt,func) found in global libgx.a
+            11](GXS_LoadOBJPltt,func) found in global libgx.a
+            11](GX_BeginLoadTexPltt,func) found in global libgx.a
+             12](GX_ResetBankForTexPltt,func) found in global libgx.a
+             12](.bss,section) found in local libgx.a
+             12](sTexPlttStartAddrTable,object) found in local libgx.a
+            11](GX_LoadTexPltt,func) found in global libgx.a
+            11](GX_EndLoadTexPltt,func) found in global libgx.a
+             12](GX_SetBankForTexPltt,func) found in global libgx.a
             11](NNS_G2dSetImagePaletteLocation,func) found in global libnnsg2d.a
            10](NNS_G2dInitImagePaletteProxy,func) found in global libnnsg2d.a
            10](G3_EndMakeDL,func) found in global libgx.a
@@ -910,6 +857,8 @@
            10](NNS_FndOpenArchiveFileByIndex,func) found in global libnnsfnd.a
            10](_ZN17UnkClass_020091E812sub_0200AD80Elm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200AED0Ev,func) found in global src_UnkClass_020091E8.cpp.o
+           10](_ZN17UnkClass_020023EC12sub_020027E8Ev,func) found in global src_UnkClass_020023EC.cpp.o
+            11](_ZN17UnkClass_020023EC12sub_020029E4Ev,func) found in global src_UnkClass_020023EC.cpp.o
            10](G2x_SetBlendBrightness_,func) found in global libgx.a
            10](NNS_GfdResetLnkPlttVramState,func) found in global libnnsgfd.a
             11](NNSi_GfdInitLnkVramBlockPool,func) found in global libnnsgfd.a
@@ -934,7 +883,10 @@
            10](GX_DispOn,func) found in global libgx.a
            10](GX_SetBankForBG,func) found in global libgx.a
            10](GX_SetBankForOBJ,func) found in global libgx.a
+           10](GX_SetBankForTex,func) found in global libgx.a
            10](GX_ResetBankForARM7,func) found in global libgx.a
+           10](GX_ResetBankForClearImage,func) found in global libgx.a
+           10](GX_ResetBankForTex,func) found in global libgx.a
            10](GX_ResetBankForOBJ,func) found in global libgx.a
            10](GX_ResetBankForBG,func) found in global libgx.a
          8](NNS_GfdInitVramTransferManager,func) found in global libnnsgfd.a
@@ -954,6 +906,7 @@
          8](NNS_FndGetTotalFreeSizeForExpHeap,func) found in global libnnsfnd.a
          8](_Z18Heap_GetMainHandlev,func) found in global src_heap.cpp.o
          8](_Z23Heap_GetSecondaryHandlev,func) found in global src_heap.cpp.o
+         8](_Z19Heap_AllocSecondarym,func) found in global src_heap.cpp.o
          8](_ZN17UnkClass_020091E812sub_0200A118Ev,func) found in global src_UnkClass_020091E8.cpp.o
           9](_ZN17UnkClass_020091E812sub_0200A84CEv,func) found in global src_UnkClass_020091E8.cpp.o
            10](_ZN17UnkClass_020091E812sub_0200A9C0Ev,func) found in global src_UnkClass_020091E8.cpp.o
@@ -969,10 +922,63 @@
            10](_ZN17UnkClass_0200BBC812sub_0200C060Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
            10](_ZN17UnkClass_020091E812sub_02009808Em,func) found in global src_UnkClass_020091E8.cpp.o
           9](_ZN17UnkClass_020091E812sub_0200A804Ei,func) found in global src_UnkClass_020091E8.cpp.o
+         8](NNS_GfdDoVramTransfer,func) found in global libnnsgfd.a
+          9](NNSi_GfdGetFrontVramTransferTaskQueue,func) found in global libnnsgfd.a
+          9](NNSi_GfdPopVramTransferTaskQueue,func) found in global libnnsgfd.a
+           10](IsVramTransferTaskQueueEmpty_,func) found in local libnnsgfd.a
+          9](DoTransfer_,func) found in local libnnsgfd.a
+           10](transFunc$8459,object) found in local libnnsgfd.a
+            11](DoTransfer2dObjCharSub,func) found in local libnnsgfd.a
+             12](GXS_LoadOBJ,func) found in global libgx.a
+            11](DoTransfer2dObjOamSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBGExtPlttSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dObjExtPlttSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBGPlttSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dObjPlttSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG3BmpSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG2BmpSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG3ScrSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG2ScrSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG1ScrSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG0ScrSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG3CharSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG2CharSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG1CharSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG0CharSub,func) found in local libnnsgfd.a
+            11](DoTransfer2dObjCharMain,func) found in local libnnsgfd.a
+             12](GX_LoadOBJ,func) found in global libgx.a
+            11](DoTransfer2dObjOamMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBGExtPlttMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dObjExtPlttMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBGPlttMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dObjPlttMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG3BmpMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG2BmpMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG3ScrMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG2ScrMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG1ScrMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG0ScrMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG3CharMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG2CharMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG1CharMain,func) found in local libnnsgfd.a
+            11](DoTransfer2dBG0CharMain,func) found in local libnnsgfd.a
+            11](DoTransfer3dClearImageDepth,func) found in local libnnsgfd.a
+             12](GX_BeginLoadClearImage,func) found in global libgx.a
+             12](GX_LoadClearImageDepth,func) found in global libgx.a
+             12](GX_EndLoadClearImage,func) found in global libgx.a
+              13](GX_SetBankForClearImage,func) found in global libgx.a
+            11](DoTransfer3dClearImageColor,func) found in local libnnsgfd.a
+             12](GX_LoadClearImageColor,func) found in global libgx.a
+            11](DoTransfer3dTexPltt,func) found in local libnnsgfd.a
+            11](DoTransfer3dTex,func) found in local libnnsgfd.a
+             12](GX_BeginLoadTex,func) found in global libgx.a
+             12](GX_LoadTex,func) found in global libgx.a
+             12](GX_EndLoadTex,func) found in global libgx.a
          8](_ZN17UnkClass_020091E8C1Ev,func) found in global src_UnkClass_020091E8.cpp.o
           9](_ZN17UnkClass_0200BBC8C1Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
            10](_ZN17UnkClass_0200BBC0D1Ev,func) found in global src_UnkClass_0200BBC0.cpp.o
            10](_ZN17UnkClass_0200BBC0C1Ev,func) found in global src_UnkClass_0200BBC0.cpp.o
+         8](_ZN17UnkClass_020023ECC1Ev,func) found in global src_UnkClass_020023EC.cpp.o
          8](_ZN11CTPEmulatorC1Ev,func) found in global src_CTPEmulator.cpp.o
           9](_ZN11CTouchPanelC2Ev,func) found in global src_CTouchPanel.cpp.o
            10](TP_Init,func) found in global libspi.a
@@ -1003,7 +1009,9 @@
          8](_ZN11CTouchPanelnwEm,func) found in global src_CTouchPanel.cpp.o
          8](_ZN11CTouchPanelC1Ev,func) found in global src_CTouchPanel.cpp.o
          8](_ZN17UnkClass_02001C04C1Ev,func) found in global src_UnkClass_02001C04.cpp.o
-         8](_Z12sub_02001D28m,func) found in global src_sub_02001D28.cpp.o
+         8](_ZN17UnkClass_02001C04nwEm,func) found in global src_UnkClass_02001C04.cpp.o
+        7](_ZN17UnkClass_020023EC12sub_02002434Emmmm,func) found in global src_UnkClass_020023EC.cpp.o
+         8](_ZN17UnkClass_020023EC12sub_02002AD4Emm,func) found in global src_UnkClass_020023EC.cpp.o
         7](NNS_G2dLoadImage2DMapping,func) found in global libnnsg2d.a
          8](NNS_G2dSetImageLocation,func) found in global libnnsg2d.a
         7](NNS_G2dInitImageProxy,func) found in global libnnsg2d.a
@@ -2510,14 +2518,14 @@
     3](_ZN12CPowerManage12sub_0200F9E0Ev,func) found in global src_CPowerManage.cpp.o
     3](_ZN12CPowerManage12sub_0200F9F8Ev,func) found in global src_CPowerManage.cpp.o
     3](_ZN17UnkClass_02001C0412sub_02001C20Ev,func) found in global src_UnkClass_02001C04.cpp.o
-    3](_ZN17UnkClass_020023EC12sub_02002A78Ellll,func) found in global src_UnkClass_020023EC.cpp.o
+    3](_ZN17UnkClass_020023EC12sub_02002A78Emmml,func) found in global src_UnkClass_020023EC.cpp.o
      4](MI_DmaFill16,func) found in global libmi.a
     3](G3X_Reset,func) found in global libgx.a
      4](G3X_ResetMtxStack,func) found in global libgx.a
     3](_Z12sub_020010F8v,func) found in local src_main.cpp.o
-    3](@12899,object) found in local src_main.cpp.o
-    3](@12900,object) found in local src_main.cpp.o
-    3](@12901,object) found in local src_main.cpp.o
+    3](@12919,object) found in local src_main.cpp.o
+    3](@12920,object) found in local src_main.cpp.o
+    3](@12921,object) found in local src_main.cpp.o
 
 # .main
 #>02000000          SDK_STATIC_START (linker command file)
@@ -2612,9 +2620,9 @@
   02001C20 00000000 .text   $a	(src_UnkClass_02001C04.cpp.o)
   02001C20 00000108 .text   UnkClass_02001C04::sub_02001C20()	(src_UnkClass_02001C04.cpp.o)
   02001D1C 00000000 .text   $d	(src_UnkClass_02001C04.cpp.o)
-  02001D28 00000000 .text   $a	(src_sub_02001D28.cpp.o)
-  02001D28 0000000C .text   sub_02001D28(unsigned long)	(src_sub_02001D28.cpp.o)
-  02001D30 00000000 .text   $d	(src_sub_02001D28.cpp.o)
+  02001D28 00000000 .text   $a	(src_UnkClass_02001C04.cpp.o)
+  02001D28 0000000C .text   UnkClass_02001C04::operator new(unsigned long)	(src_UnkClass_02001C04.cpp.o)
+  02001D30 00000000 .text   $d	(src_UnkClass_02001C04.cpp.o)
   02001D34 00000000 .text   $a	(src_CTouchPanel.cpp.o)
   02001D34 000000C0 .text   CTouchPanel::CTouchPanel[base]()	(src_CTouchPanel.cpp.o)
   02001DF0 00000000 .text   $d	(src_CTouchPanel.cpp.o)
@@ -2680,390 +2688,395 @@
   020023C0 00000000 .text   $a	(src_heap.cpp.o)
   020023C0 0000002C .text   Heap_DestroyOverlay()	(src_heap.cpp.o)
   020023E8 00000000 .text   $d	(src_heap.cpp.o)
-  020023EC 00000048 .text   sub_020023EC	(asm_arm9_020023EC.s.o)
-  020023EC 0000068C .text   .text	(asm_arm9_020023EC.s.o)
-  020023EC 00000000 .text   $a	(asm_arm9_020023EC.s.o)
-  02002434 00000050 .text   sub_02002434	(asm_arm9_020023EC.s.o)
-  020027B4 00000000 .text   $d	(asm_arm9_020023EC.s.o)
-  020027E8 00000000 .text   $a	(asm_arm9_020023EC.s.o)
-  020027E8 00000044 .text   sub_020027E8	(asm_arm9_020023EC.s.o)
-  020028A4 00000044 .text   sub_020028A4	(asm_arm9_020023EC.s.o)
-  0200296C 0000002C .text   sub_0200296C	(asm_arm9_020023EC.s.o)
-  02002998 00000014 .text   sub_02002998	(asm_arm9_020023EC.s.o)
-  020029E4 00000020 .text   sub_020029E4	(asm_arm9_020023EC.s.o)
-  02002A04 00000020 .text   sub_02002A04	(asm_arm9_020023EC.s.o)
-  02002A74 00000000 .text   $d	(asm_arm9_020023EC.s.o)
-  02002A78 0000005C .text   UnkClass_020023EC::sub_02002A78(long, long, long, long)	(src_UnkClass_020023EC.cpp.o)
+  020023EC 00000048 .text   UnkClass_020023EC::UnkClass_020023EC()	(src_UnkClass_020023EC.cpp.o)
+  020023EC 00000000 .text   $a	(src_UnkClass_020023EC.cpp.o)
+  02002434 00000000 .text   $a	(src_UnkClass_020023EC.cpp.o)
+  02002434 000003B4 .text   UnkClass_020023EC::sub_02002434(unsigned long, unsigned long, unsigned long, unsigned long)	(src_UnkClass_020023EC.cpp.o)
+  020027B4 00000000 .text   $d	(src_UnkClass_020023EC.cpp.o)
+  020027E8 000000BC .text   UnkClass_020023EC::sub_020027E8()	(src_UnkClass_020023EC.cpp.o)
+  020027E8 00000000 .text   $a	(src_UnkClass_020023EC.cpp.o)
+  020028A4 000000C8 .text   UnkClass_020023EC::sub_020028A4(long, unsigned long, char*, ...)	(src_UnkClass_020023EC.cpp.o)
+  020028A4 00000000 .text   $a	(src_UnkClass_020023EC.cpp.o)
+  0200296C 0000002C .text   UnkClass_020023EC::sub_0200296C(long, unsigned long, char)	(src_UnkClass_020023EC.cpp.o)
+  0200296C 00000000 .text   $a	(src_UnkClass_020023EC.cpp.o)
+  02002998 0000004C .text   UnkClass_020023EC::sub_02002998(long)	(src_UnkClass_020023EC.cpp.o)
+  02002998 00000000 .text   $a	(src_UnkClass_020023EC.cpp.o)
+  020029E4 00000020 .text   UnkClass_020023EC::sub_020029E4()	(src_UnkClass_020023EC.cpp.o)
+  020029E4 00000000 .text   $a	(src_UnkClass_020023EC.cpp.o)
+  02002A04 00000000 .text   $a	(src_UnkClass_020023EC.cpp.o)
+  02002A04 00000074 .text   UnkClass_020023EC::sub_02002A04(unsigned long, unsigned long, int, int, unsigned long)	(src_UnkClass_020023EC.cpp.o)
+  02002A74 00000000 .text   $d	(src_UnkClass_020023EC.cpp.o)
+  02002A78 0000005C .text   UnkClass_020023EC::sub_02002A78(unsigned long, unsigned long, unsigned long, long)	(src_UnkClass_020023EC.cpp.o)
   02002A78 00000000 .text   $a	(src_UnkClass_020023EC.cpp.o)
-  02002AD4 00006714 .text   .text	(asm_arm9_02002AD4.s.o)
-  02002AD4 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02002AD4 00000018 .text   sub_02002AD4	(asm_arm9_02002AD4.s.o)
-  02002AE8 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02002AEC 00000050 .text   CSmartNNSFndArchive::CSmartNNSFndArchive(char*, char*, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)	(asm_arm9_02002AD4.s.o)
-  02002AEC 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02002B6C 00000028 .text   CSmartNNSFndArchive::~CSmartNNSFndArchive()	(asm_arm9_02002AD4.s.o)
-  02002BA4 00000020 .text   CBinaryFile_simple_ctor	(asm_arm9_02002AD4.s.o)
-  02002BC0 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02002BC4 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02002BC4 00000060 .text   sub_02002BC4	(asm_arm9_02002AD4.s.o)
-  02002C30 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02002C34 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02002C34 00000020 .text   CBinaryFile_complete_obj_dtor	(asm_arm9_02002AD4.s.o)
-  02002C50 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02002C54 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02002C54 00000028 .text   CBinaryFile_deleting_obj_dtor	(asm_arm9_02002AD4.s.o)
-  02002C78 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02002C7C 00000020 .text   sub_02002C7C	(asm_arm9_02002AD4.s.o)
-  02002C7C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02002C98 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02002C9C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02002C9C 00000018 .text   sub_02002C9C	(asm_arm9_02002AD4.s.o)
-  02002CB4 0000005C .text   sub_02002CB4	(asm_arm9_02002AD4.s.o)
-  02002DCC 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02002DD0 00000058 .text   sub_02002DD0	(asm_arm9_02002AD4.s.o)
-  02002DD0 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020030CC 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020030D4 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020030D4 00000028 .text   sub_020030D4	(asm_arm9_02002AD4.s.o)
-  02003108 0000001C .text   sub_02003108	(asm_arm9_02002AD4.s.o)
-  02003124 00000018 .text   sub_02003124	(asm_arm9_02002AD4.s.o)
-  02003138 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  0200313C 00000068 .text   CBinaryFileMes::CBinaryFileMes(char*, unsigned long)	(asm_arm9_02002AD4.s.o)
-  0200313C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020031B0 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020031B8 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020031B8 00000014 .text   CBinaryFileMes_complete_obj_dtor	(asm_arm9_02002AD4.s.o)
-  020031CC 0000001C .text   CBinaryFileMes_deleting_obj_dtor	(asm_arm9_02002AD4.s.o)
-  020031E8 0000008C .text   sub_020031E8	(asm_arm9_02002AD4.s.o)
-  02003270 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003274 00000028 .text   CNCERFile_complete_obj_dtor	(asm_arm9_02002AD4.s.o)
-  02003274 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003298 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  0200329C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  0200329C 00000030 .text   CNCERFile_deleting_obj_dtor	(asm_arm9_02002AD4.s.o)
-  020032C8 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020032CC 0000008C .text   CNCGRFile::CNCGRFile(char*, unsigned long, unsigned long, unsigned long)	(asm_arm9_02002AD4.s.o)
-  020032CC 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003354 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003358 00000028 .text   CNCGRFile_complete_obj_dtor	(asm_arm9_02002AD4.s.o)
-  02003358 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  0200337C 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003380 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003380 00000030 .text   CNCGRFile_deleting_obj_dtor	(asm_arm9_02002AD4.s.o)
-  020033AC 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020033B0 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020033B0 0000008C .text   CNCLRFile::CNCLRFile(char*, unsigned long, unsigned long, unsigned long)	(asm_arm9_02002AD4.s.o)
-  02003438 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  0200343C 00000028 .text   CNCLRFile_complete_obj_dtor	(asm_arm9_02002AD4.s.o)
-  0200343C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003460 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003464 00000030 .text   CNCLRFile_deleting_obj_dtor	(asm_arm9_02002AD4.s.o)
-  02003464 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003490 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003494 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003494 0000008C .text   CNSCRFile::CNSCRFile(char*, unsigned long, unsigned long, unsigned long)	(asm_arm9_02002AD4.s.o)
-  0200351C 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003520 00000028 .text   CNSCRFile_complete_obj_dtor	(asm_arm9_02002AD4.s.o)
-  02003520 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003544 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003548 00000030 .text   CNSCRFile_deleting_obj_dtor	(asm_arm9_02002AD4.s.o)
-  02003548 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003574 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003578 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003578 0000008C .text   sub_02003578	(asm_arm9_02002AD4.s.o)
-  02003600 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003604 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003604 00000028 .text   CNANRFile_complete_obj_dtor	(asm_arm9_02002AD4.s.o)
-  02003628 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  0200362C 00000030 .text   CNANRFile_deleting_obj_dtor	(asm_arm9_02002AD4.s.o)
-  0200362C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003658 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  0200365C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  0200365C 0000008C .text   CBGNCGRFile::CBGNCGRFile(char*, unsigned long, unsigned long, unsigned long)	(asm_arm9_02002AD4.s.o)
-  020036E4 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020036E8 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020036E8 00000014 .text   CBGNCGRFile_complete_obj_dtor	(asm_arm9_02002AD4.s.o)
-  020036FC 0000001C .text   CBGNCGRFile_deleting_obj_dtor	(asm_arm9_02002AD4.s.o)
-  02003718 00000014 .text   sub_02003718	(asm_arm9_02002AD4.s.o)
-  0200372C 00000004 .text   sub_0200372C	(asm_arm9_02002AD4.s.o)
-  02003730 00000058 .text   sub_02003730	(asm_arm9_02002AD4.s.o)
-  02003788 0000002C .text   sub_02003788	(asm_arm9_02002AD4.s.o)
-  020037B4 00000068 .text   sub_020037B4	(asm_arm9_02002AD4.s.o)
-  02003810 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  0200381C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  0200381C 0000008C .text   sub_0200381C	(asm_arm9_02002AD4.s.o)
-  020038A0 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020038A8 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020038A8 0000006C .text   sub_020038A8	(asm_arm9_02002AD4.s.o)
-  02003934 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003938 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003938 00000034 .text   sub_02003938	(asm_arm9_02002AD4.s.o)
-  02003964 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  0200396C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  0200396C 00000004 .text   sub_0200396C	(asm_arm9_02002AD4.s.o)
-  02003970 00000014 .text   sub_02003970	(asm_arm9_02002AD4.s.o)
-  02003984 00000004 .text   sub_02003984	(asm_arm9_02002AD4.s.o)
-  02003988 00000030 .text   sub_02003988	(asm_arm9_02002AD4.s.o)
-  020039B4 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020039B8 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020039B8 00000030 .text   sub_020039B8	(asm_arm9_02002AD4.s.o)
-  020039E4 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020039E8 00000014 .text   sub_020039E8	(asm_arm9_02002AD4.s.o)
-  020039E8 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020039FC 0000001C .text   sub_020039FC	(asm_arm9_02002AD4.s.o)
-  02003A18 00000014 .text   sub_02003A18	(asm_arm9_02002AD4.s.o)
-  02003A2C 00000138 .text   sub_02003A2C	(asm_arm9_02002AD4.s.o)
-  02003B60 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003B64 0000004C .text   sub_02003B64	(asm_arm9_02002AD4.s.o)
-  02003B64 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003BAC 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003BB0 00000014 .text   sub_02003BB0	(asm_arm9_02002AD4.s.o)
-  02003BB0 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02003BC4 0000001C .text   sub_02003BC4	(asm_arm9_02002AD4.s.o)
-  02003BE0 00000020 .text   sub_02003BE0	(asm_arm9_02002AD4.s.o)
-  02003C00 00000024 .text   sub_02003C00	(asm_arm9_02002AD4.s.o)
-  02003C24 00000020 .text   sub_02003C24	(asm_arm9_02002AD4.s.o)
-  02003C4C 000002D0 .text   sub_02003C4C	(asm_arm9_02002AD4.s.o)
-  02003F14 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02003F1C 000001AC .text   sub_02003F1C	(asm_arm9_02002AD4.s.o)
-  02003F1C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020040C4 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020040C8 0000004C .text   sub_020040C8	(asm_arm9_02002AD4.s.o)
-  020040C8 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02004110 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02004114 0000004C .text   sub_02004114	(asm_arm9_02002AD4.s.o)
-  02004114 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  0200415C 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02004160 00000014 .text   sub_02004160	(asm_arm9_02002AD4.s.o)
-  02004160 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02004174 0000001C .text   sub_02004174	(asm_arm9_02002AD4.s.o)
-  02004190 00000014 .text   sub_02004190	(asm_arm9_02002AD4.s.o)
-  020041A4 00000040 .text   sub_020041A4	(asm_arm9_02002AD4.s.o)
-  020041E4 00000020 .text   sub_020041E4	(asm_arm9_02002AD4.s.o)
-  0200420C 00000020 .text   sub_0200420C	(asm_arm9_02002AD4.s.o)
-  02004234 000002A8 .text   sub_02004234	(asm_arm9_02002AD4.s.o)
-  020044D4 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020044DC 0000017C .text   sub_020044DC	(asm_arm9_02002AD4.s.o)
-  020044DC 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02004654 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02004658 000001E4 .text   sub_02004658	(asm_arm9_02002AD4.s.o)
-  02004658 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  0200483C 00000168 .text   sub_0200483C	(asm_arm9_02002AD4.s.o)
-  020049A4 00000030 .text   sub_020049A4	(asm_arm9_02002AD4.s.o)
-  020049D0 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020049D4 00000014 .text   sub_020049D4	(asm_arm9_02002AD4.s.o)
-  020049D4 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020049E8 0000001C .text   sub_020049E8	(asm_arm9_02002AD4.s.o)
-  02004A04 00000070 .text   sub_02004A04	(asm_arm9_02002AD4.s.o)
-  02004CA4 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02004CB4 0000004C .text   sub_02004CB4	(asm_arm9_02002AD4.s.o)
-  02004CB4 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02004CFC 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02004D00 00000014 .text   sub_02004D00	(asm_arm9_02002AD4.s.o)
-  02004D00 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02004D14 0000001C .text   sub_02004D14	(asm_arm9_02002AD4.s.o)
-  02004D30 00000020 .text   sub_02004D30	(asm_arm9_02002AD4.s.o)
-  02004D58 00000238 .text   sub_02004D58	(asm_arm9_02002AD4.s.o)
-  02004F88 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02004F90 00000138 .text   sub_02004F90	(asm_arm9_02002AD4.s.o)
-  02004F90 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020050C4 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020050C8 00000058 .text   sub_020050C8	(asm_arm9_02002AD4.s.o)
-  020050C8 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02005114 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02005120 00000024 .text   sub_02005120	(asm_arm9_02002AD4.s.o)
-  02005120 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  0200514C 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02005150 00000078 .text   sub_02005150	(asm_arm9_02002AD4.s.o)
-  02005150 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020051C4 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020051C8 00000014 .text   sub_020051C8	(asm_arm9_02002AD4.s.o)
-  020051C8 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020051DC 0000001C .text   sub_020051DC	(asm_arm9_02002AD4.s.o)
-  020051F8 00000028 .text   sub_020051F8	(asm_arm9_02002AD4.s.o)
-  02005220 00000038 .text   sub_02005220	(asm_arm9_02002AD4.s.o)
-  0200527C 00000030 .text   sub_0200527C	(asm_arm9_02002AD4.s.o)
-  02005898 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020058BC 000000CC .text   sub_020058BC	(asm_arm9_02002AD4.s.o)
-  020058BC 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02005EE0 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02005F04 00000020 .text   sub_02005F04	(asm_arm9_02002AD4.s.o)
-  02005F04 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02005F20 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02005F24 0000000C .text   sub_02005F24	(asm_arm9_02002AD4.s.o)
-  02005F24 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02005F30 00000018 .text   sub_02005F30	(asm_arm9_02002AD4.s.o)
-  02005F48 00000018 .text   sub_02005F48	(asm_arm9_02002AD4.s.o)
-  02005F60 00000024 .text   sub_02005F60	(asm_arm9_02002AD4.s.o)
-  02005FDC 00000024 .text   sub_02005FDC	(asm_arm9_02002AD4.s.o)
-  02006000 0000007C .text   sub_02006000	(asm_arm9_02002AD4.s.o)
-  02006100 00000064 .text   sub_02006100	(asm_arm9_02002AD4.s.o)
-  02006164 000000B4 .text   sub_02006164	(asm_arm9_02002AD4.s.o)
-  02006238 000000C4 .text   sub_02006238	(asm_arm9_02002AD4.s.o)
-  02006350 000000D8 .text   sub_02006350	(asm_arm9_02002AD4.s.o)
-  02006610 00000044 .text   sub_02006610	(asm_arm9_02002AD4.s.o)
-  02006764 0000008C .text   sub_02006764	(asm_arm9_02002AD4.s.o)
-  02006AE0 00000080 .text   sub_02006AE0	(asm_arm9_02002AD4.s.o)
-  02006B60 00000094 .text   sub_02006B60	(asm_arm9_02002AD4.s.o)
-  02006C04 00000058 .text   sub_02006C04	(asm_arm9_02002AD4.s.o)
-  02006E30 00000050 .text   sub_02006E30	(asm_arm9_02002AD4.s.o)
-  02006F80 0000004C .text   sub_02006F80	(asm_arm9_02002AD4.s.o)
-  02007068 0000003C .text   sub_02007068	(asm_arm9_02002AD4.s.o)
-  020070A4 00000090 .text   sub_020070A4	(asm_arm9_02002AD4.s.o)
-  02007134 000000DC .text   sub_02007134	(asm_arm9_02002AD4.s.o)
-  02007210 00000044 .text   sub_02007210	(asm_arm9_02002AD4.s.o)
-  02007254 00000070 .text   sub_02007254	(asm_arm9_02002AD4.s.o)
-  020072C0 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020072C4 00000034 .text   sub_020072C4	(asm_arm9_02002AD4.s.o)
-  020072C4 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020072F8 00000034 .text   sub_020072F8	(asm_arm9_02002AD4.s.o)
-  0200732C 00000068 .text   sub_0200732C	(asm_arm9_02002AD4.s.o)
-  020074D4 00000014 .text   sub_020074D4	(asm_arm9_02002AD4.s.o)
-  020074E8 0000003C .text   sub_020074E8	(asm_arm9_02002AD4.s.o)
-  02007524 00000024 .text   sub_02007524	(asm_arm9_02002AD4.s.o)
-  02007548 00000014 .text   sub_02007548	(asm_arm9_02002AD4.s.o)
-  0200755C 00000034 .text   sub_0200755C	(asm_arm9_02002AD4.s.o)
-  02007590 0000003C .text   sub_02007590	(asm_arm9_02002AD4.s.o)
-  0200763C 00000074 .text   sub_0200763C	(asm_arm9_02002AD4.s.o)
-  020076B0 00000024 .text   sub_020076B0	(asm_arm9_02002AD4.s.o)
-  020076E8 0000002C .text   sub_020076E8	(asm_arm9_02002AD4.s.o)
-  02007714 00000030 .text   sub_02007714	(asm_arm9_02002AD4.s.o)
-  02007738 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02007744 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02007744 0000002C .text   sub_02007744	(asm_arm9_02002AD4.s.o)
-  02007770 00000014 .text   sub_02007770	(asm_arm9_02002AD4.s.o)
-  02007784 00000014 .text   sub_02007784	(asm_arm9_02002AD4.s.o)
-  02007798 0000001C .text   sub_02007798	(asm_arm9_02002AD4.s.o)
-  020077B4 00000018 .text   sub_020077B4	(asm_arm9_02002AD4.s.o)
-  020077CC 00000018 .text   sub_020077CC	(asm_arm9_02002AD4.s.o)
-  020077E4 0000001C .text   sub_020077E4	(asm_arm9_02002AD4.s.o)
-  02007848 0000000C .text   sub_02007848	(asm_arm9_02002AD4.s.o)
-  02007854 00000020 .text   sub_02007854	(asm_arm9_02002AD4.s.o)
-  02007880 00000020 .text   sub_02007880	(asm_arm9_02002AD4.s.o)
-  020078E0 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020078E4 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020078E4 00000058 .text   sub_020078E4	(asm_arm9_02002AD4.s.o)
-  020079B4 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020079B8 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020079B8 00000078 .text   sub_020079B8	(asm_arm9_02002AD4.s.o)
-  02007A8C 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02007A94 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02007A94 00000010 .text   sub_02007A94	(asm_arm9_02002AD4.s.o)
-  02007AA4 0000001C .text   sub_02007AA4	(asm_arm9_02002AD4.s.o)
-  02007AC0 0000003C .text   sub_02007AC0	(asm_arm9_02002AD4.s.o)
-  02007AFC 0000002C .text   sub_02007AFC	(asm_arm9_02002AD4.s.o)
-  02007B28 00000014 .text   sub_02007B28	(asm_arm9_02002AD4.s.o)
-  02007B3C 00000024 .text   sub_02007B3C	(asm_arm9_02002AD4.s.o)
-  02007B60 0000003C .text   sub_02007B60	(asm_arm9_02002AD4.s.o)
-  02007BAC 00000018 .text   sub_02007BAC	(asm_arm9_02002AD4.s.o)
-  02007BC4 00000024 .text   sub_02007BC4	(asm_arm9_02002AD4.s.o)
-  02007BFC 00000038 .text   sub_02007BFC	(asm_arm9_02002AD4.s.o)
-  02007C34 00000030 .text   sub_02007C34	(asm_arm9_02002AD4.s.o)
-  02007C58 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02007C64 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02007C64 00000034 .text   sub_02007C64	(asm_arm9_02002AD4.s.o)
-  02007C98 00000010 .text   CScene::CScene[base]()	(asm_arm9_02002AD4.s.o)
-  02007CA4 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02007CA8 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02007CA8 00000004 .text   sub_02007CA8	(asm_arm9_02002AD4.s.o)
-  02007CAC 00000014 .text   sub_02007CAC	(asm_arm9_02002AD4.s.o)
-  02007CC0 00000004 .text   sub_02007CC0	(asm_arm9_02002AD4.s.o)
-  02007CC4 00000010 .text   sub_02007CC4	(asm_arm9_02002AD4.s.o)
-  02007CD4 0000000C .text   sub_02007CD4	(asm_arm9_02002AD4.s.o)
-  02007CDC 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02007CE0 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02007CE0 00000010 .text   sub_02007CE0	(asm_arm9_02002AD4.s.o)
-  02007CF0 0000003C .text   sub_02007CF0	(asm_arm9_02002AD4.s.o)
-  02007D28 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02007D2C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02007D2C 0000003C .text   sub_02007D2C	(asm_arm9_02002AD4.s.o)
-  02007D64 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02007D68 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02007D68 00000010 .text   sub_02007D68	(asm_arm9_02002AD4.s.o)
-  02007D78 00000020 .text   sub_02007D78	(asm_arm9_02002AD4.s.o)
-  02007D98 0000004C .text   sub_02007D98	(asm_arm9_02002AD4.s.o)
-  02007DE4 0000000C .text   sub_02007DE4	(asm_arm9_02002AD4.s.o)
-  02007DF0 00000030 .text   sub_02007DF0	(asm_arm9_02002AD4.s.o)
-  02007F98 00000014 .text   sub_02007F98	(asm_arm9_02002AD4.s.o)
-  02007FAC 00000030 .text   sub_02007FAC	(asm_arm9_02002AD4.s.o)
-  02008014 00000010 .text   sub_02008014	(asm_arm9_02002AD4.s.o)
-  02008024 00000008 .text   sub_02008024	(asm_arm9_02002AD4.s.o)
-  0200802C 00000030 .text   sub_0200802C	(asm_arm9_02002AD4.s.o)
-  0200805C 00000008 .text   sub_0200805C	(asm_arm9_02002AD4.s.o)
-  02008064 00000024 .text   sub_02008064	(asm_arm9_02002AD4.s.o)
-  02008104 0000006C .text   sub_02008104	(asm_arm9_02002AD4.s.o)
-  02008170 00000014 .text   sub_02008170	(asm_arm9_02002AD4.s.o)
-  020081E0 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  020081E4 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  020081E4 00000034 .text   sub_020081E4	(asm_arm9_02002AD4.s.o)
-  0200827C 00000028 .text   sub_0200827C	(asm_arm9_02002AD4.s.o)
-  02008584 00000020 .text   sub_02008584	(asm_arm9_02002AD4.s.o)
-  020086B4 00000034 .text   sub_020086B4	(asm_arm9_02002AD4.s.o)
-  02008708 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  0200870C 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  0200870C 00000008 .text   sub_0200870C	(asm_arm9_02002AD4.s.o)
-  02008714 00000008 .text   sub_02008714	(asm_arm9_02002AD4.s.o)
-  0200871C 00000008 .text   sub_0200871C	(asm_arm9_02002AD4.s.o)
-  02008724 00000008 .text   sub_02008724	(asm_arm9_02002AD4.s.o)
-  0200872C 00000008 .text   sub_0200872C	(asm_arm9_02002AD4.s.o)
-  02008734 00000044 .text   sub_02008734	(asm_arm9_02002AD4.s.o)
-  02008778 00000008 .text   sub_02008778	(asm_arm9_02002AD4.s.o)
-  02008780 00000008 .text   sub_02008780	(asm_arm9_02002AD4.s.o)
-  02008788 00000014 .text   sub_02008788	(asm_arm9_02002AD4.s.o)
-  0200879C 0000002C .text   sub_0200879C	(asm_arm9_02002AD4.s.o)
-  020087C8 00000018 .text   sub_020087C8	(asm_arm9_02002AD4.s.o)
-  02008828 0000001C .text   sub_02008828	(asm_arm9_02002AD4.s.o)
-  02008844 0000001C .text   sub_02008844	(asm_arm9_02002AD4.s.o)
-  02008860 0000001C .text   sub_02008860	(asm_arm9_02002AD4.s.o)
-  0200887C 00000068 .text   sub_0200887C	(asm_arm9_02002AD4.s.o)
-  02008968 00000028 .text   sub_02008968	(asm_arm9_02002AD4.s.o)
-  02008990 00000028 .text   sub_02008990	(asm_arm9_02002AD4.s.o)
-  020089B8 00000018 .text   sub_020089B8	(asm_arm9_02002AD4.s.o)
-  020089D0 0000001C .text   sub_020089D0	(asm_arm9_02002AD4.s.o)
-  020089EC 00000018 .text   sub_020089EC	(asm_arm9_02002AD4.s.o)
-  02008A38 00000020 .text   sub_02008A38	(asm_arm9_02002AD4.s.o)
-  02008A58 00000028 .text   sub_02008A58	(asm_arm9_02002AD4.s.o)
-  02008A80 00000058 .text   sub_02008A80	(asm_arm9_02002AD4.s.o)
-  02008B80 0000005C .text   sub_02008B80	(asm_arm9_02002AD4.s.o)
-  02008BF0 00000020 .text   sub_02008BF0	(asm_arm9_02002AD4.s.o)
-  02008C6C 00000008 .text   sub_02008C6C	(asm_arm9_02002AD4.s.o)
-  02008C74 00000040 .text   sub_02008C74	(asm_arm9_02002AD4.s.o)
-  02008CD0 00000018 .text   sub_02008CD0	(asm_arm9_02002AD4.s.o)
-  02008D20 00000018 .text   sub_02008D20	(asm_arm9_02002AD4.s.o)
-  02008D38 00000018 .text   sub_02008D38	(asm_arm9_02002AD4.s.o)
-  02008D50 0000002C .text   sub_02008D50	(asm_arm9_02002AD4.s.o)
-  02008D7C 0000000C .text   sub_02008D7C	(asm_arm9_02002AD4.s.o)
-  02008DB4 0000009C .text   sub_02008DB4	(asm_arm9_02002AD4.s.o)
-  02008E34 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02008E50 00000008 .text   sub_02008E50	(asm_arm9_02002AD4.s.o)
-  02008E50 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02008E58 00000010 .text   sub_02008E58	(asm_arm9_02002AD4.s.o)
-  02008E68 00000020 .text   sub_02008E68	(asm_arm9_02002AD4.s.o)
-  02008E88 00000038 .text   sub_02008E88	(asm_arm9_02002AD4.s.o)
-  02008ED8 00000004 .text   sub_02008ED8	(asm_arm9_02002AD4.s.o)
-  02008EDC 00000038 .text   sub_02008EDC	(asm_arm9_02002AD4.s.o)
-  02008F74 00000000 .text   $d	(asm_arm9_02002AD4.s.o)
-  02008F78 00000008 .text   sub_02008F78	(asm_arm9_02002AD4.s.o)
-  02008F78 00000000 .text   $a	(asm_arm9_02002AD4.s.o)
-  02008F80 00000008 .text   sub_02008F80	(asm_arm9_02002AD4.s.o)
-  02008F88 00000008 .text   sub_02008F88	(asm_arm9_02002AD4.s.o)
-  02008F90 00000008 .text   sub_02008F90	(asm_arm9_02002AD4.s.o)
-  02008F98 00000010 .text   sub_02008F98	(asm_arm9_02002AD4.s.o)
-  02008FA8 00000040 .text   sub_02008FA8	(asm_arm9_02002AD4.s.o)
-  02009004 0000001C .text   sub_02009004	(asm_arm9_02002AD4.s.o)
-  02009020 00000014 .text   sub_02009020	(asm_arm9_02002AD4.s.o)
-  02009050 00000034 .text   sub_02009050	(asm_arm9_02002AD4.s.o)
-  02009090 00000020 .text   sub_02009090	(asm_arm9_02002AD4.s.o)
-  020090E8 0000000C .text   sub_020090E8	(asm_arm9_02002AD4.s.o)
-  020090F4 0000000C .text   sub_020090F4	(asm_arm9_02002AD4.s.o)
-  02009100 00000008 .text   sub_02009100	(asm_arm9_02002AD4.s.o)
-  02009108 00000014 .text   sub_02009108	(asm_arm9_02002AD4.s.o)
-  0200911C 00000008 .text   sub_0200911C	(asm_arm9_02002AD4.s.o)
-  02009124 00000008 .text   sub_02009124	(asm_arm9_02002AD4.s.o)
-  0200912C 00000020 .text   sub_0200912C	(asm_arm9_02002AD4.s.o)
-  02009188 0000001C .text   sub_02009188	(asm_arm9_02002AD4.s.o)
-  020091D4 00000008 .text   sub_020091D4	(asm_arm9_02002AD4.s.o)
-  020091DC 0000000C .text   sub_020091DC	(asm_arm9_02002AD4.s.o)
+  02002AD4 00000000 .text   $a	(src_UnkClass_020023EC.cpp.o)
+  02002AD4 00000018 .text   UnkClass_020023EC::sub_02002AD4(unsigned long, unsigned long)	(src_UnkClass_020023EC.cpp.o)
+  02002AE8 00000000 .text   $d	(src_UnkClass_020023EC.cpp.o)
+  02002AEC 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02002AEC 00000050 .text   CSmartNNSFndArchive::CSmartNNSFndArchive(char*, char*, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)	(asm_arm9_02002AEC.s.o)
+  02002AEC 000066FC .text   .text	(asm_arm9_02002AEC.s.o)
+  02002B6C 00000028 .text   CSmartNNSFndArchive::~CSmartNNSFndArchive()	(asm_arm9_02002AEC.s.o)
+  02002BA4 00000020 .text   CBinaryFile_simple_ctor	(asm_arm9_02002AEC.s.o)
+  02002BC0 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02002BC4 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02002BC4 00000060 .text   sub_02002BC4	(asm_arm9_02002AEC.s.o)
+  02002C30 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02002C34 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02002C34 00000020 .text   CBinaryFile_complete_obj_dtor	(asm_arm9_02002AEC.s.o)
+  02002C50 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02002C54 00000028 .text   CBinaryFile_deleting_obj_dtor	(asm_arm9_02002AEC.s.o)
+  02002C54 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02002C78 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02002C7C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02002C7C 00000020 .text   sub_02002C7C	(asm_arm9_02002AEC.s.o)
+  02002C98 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02002C9C 00000018 .text   sub_02002C9C	(asm_arm9_02002AEC.s.o)
+  02002C9C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02002CB4 0000005C .text   sub_02002CB4	(asm_arm9_02002AEC.s.o)
+  02002DCC 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02002DD0 00000058 .text   sub_02002DD0	(asm_arm9_02002AEC.s.o)
+  02002DD0 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020030CC 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020030D4 00000028 .text   sub_020030D4	(asm_arm9_02002AEC.s.o)
+  020030D4 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003108 0000001C .text   sub_02003108	(asm_arm9_02002AEC.s.o)
+  02003124 00000018 .text   sub_02003124	(asm_arm9_02002AEC.s.o)
+  02003138 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  0200313C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  0200313C 00000068 .text   CBinaryFileMes::CBinaryFileMes(char*, unsigned long)	(asm_arm9_02002AEC.s.o)
+  020031B0 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020031B8 00000014 .text   CBinaryFileMes_complete_obj_dtor	(asm_arm9_02002AEC.s.o)
+  020031B8 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020031CC 0000001C .text   CBinaryFileMes_deleting_obj_dtor	(asm_arm9_02002AEC.s.o)
+  020031E8 0000008C .text   sub_020031E8	(asm_arm9_02002AEC.s.o)
+  02003270 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003274 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003274 00000028 .text   CNCERFile_complete_obj_dtor	(asm_arm9_02002AEC.s.o)
+  02003298 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  0200329C 00000030 .text   CNCERFile_deleting_obj_dtor	(asm_arm9_02002AEC.s.o)
+  0200329C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020032C8 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020032CC 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020032CC 0000008C .text   CNCGRFile::CNCGRFile(char*, unsigned long, unsigned long, unsigned long)	(asm_arm9_02002AEC.s.o)
+  02003354 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003358 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003358 00000028 .text   CNCGRFile_complete_obj_dtor	(asm_arm9_02002AEC.s.o)
+  0200337C 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003380 00000030 .text   CNCGRFile_deleting_obj_dtor	(asm_arm9_02002AEC.s.o)
+  02003380 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020033AC 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020033B0 0000008C .text   CNCLRFile::CNCLRFile(char*, unsigned long, unsigned long, unsigned long)	(asm_arm9_02002AEC.s.o)
+  020033B0 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003438 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  0200343C 00000028 .text   CNCLRFile_complete_obj_dtor	(asm_arm9_02002AEC.s.o)
+  0200343C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003460 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003464 00000030 .text   CNCLRFile_deleting_obj_dtor	(asm_arm9_02002AEC.s.o)
+  02003464 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003490 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003494 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003494 0000008C .text   CNSCRFile::CNSCRFile(char*, unsigned long, unsigned long, unsigned long)	(asm_arm9_02002AEC.s.o)
+  0200351C 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003520 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003520 00000028 .text   CNSCRFile_complete_obj_dtor	(asm_arm9_02002AEC.s.o)
+  02003544 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003548 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003548 00000030 .text   CNSCRFile_deleting_obj_dtor	(asm_arm9_02002AEC.s.o)
+  02003574 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003578 0000008C .text   sub_02003578	(asm_arm9_02002AEC.s.o)
+  02003578 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003600 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003604 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003604 00000028 .text   CNANRFile_complete_obj_dtor	(asm_arm9_02002AEC.s.o)
+  02003628 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  0200362C 00000030 .text   CNANRFile_deleting_obj_dtor	(asm_arm9_02002AEC.s.o)
+  0200362C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003658 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  0200365C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  0200365C 0000008C .text   CBGNCGRFile::CBGNCGRFile(char*, unsigned long, unsigned long, unsigned long)	(asm_arm9_02002AEC.s.o)
+  020036E4 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020036E8 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020036E8 00000014 .text   CBGNCGRFile_complete_obj_dtor	(asm_arm9_02002AEC.s.o)
+  020036FC 0000001C .text   CBGNCGRFile_deleting_obj_dtor	(asm_arm9_02002AEC.s.o)
+  02003718 00000014 .text   sub_02003718	(asm_arm9_02002AEC.s.o)
+  0200372C 00000004 .text   sub_0200372C	(asm_arm9_02002AEC.s.o)
+  02003730 00000058 .text   sub_02003730	(asm_arm9_02002AEC.s.o)
+  02003788 0000002C .text   sub_02003788	(asm_arm9_02002AEC.s.o)
+  020037B4 00000068 .text   sub_020037B4	(asm_arm9_02002AEC.s.o)
+  02003810 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  0200381C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  0200381C 0000008C .text   sub_0200381C	(asm_arm9_02002AEC.s.o)
+  020038A0 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020038A8 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020038A8 0000006C .text   sub_020038A8	(asm_arm9_02002AEC.s.o)
+  02003934 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003938 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003938 00000034 .text   sub_02003938	(asm_arm9_02002AEC.s.o)
+  02003964 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  0200396C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  0200396C 00000004 .text   sub_0200396C	(asm_arm9_02002AEC.s.o)
+  02003970 00000014 .text   sub_02003970	(asm_arm9_02002AEC.s.o)
+  02003984 00000004 .text   sub_02003984	(asm_arm9_02002AEC.s.o)
+  02003988 00000030 .text   sub_02003988	(asm_arm9_02002AEC.s.o)
+  020039B4 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020039B8 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020039B8 00000030 .text   sub_020039B8	(asm_arm9_02002AEC.s.o)
+  020039E4 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020039E8 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020039E8 00000014 .text   sub_020039E8	(asm_arm9_02002AEC.s.o)
+  020039FC 0000001C .text   sub_020039FC	(asm_arm9_02002AEC.s.o)
+  02003A18 00000014 .text   sub_02003A18	(asm_arm9_02002AEC.s.o)
+  02003A2C 00000138 .text   sub_02003A2C	(asm_arm9_02002AEC.s.o)
+  02003B60 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003B64 0000004C .text   sub_02003B64	(asm_arm9_02002AEC.s.o)
+  02003B64 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003BAC 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003BB0 00000014 .text   sub_02003BB0	(asm_arm9_02002AEC.s.o)
+  02003BB0 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02003BC4 0000001C .text   sub_02003BC4	(asm_arm9_02002AEC.s.o)
+  02003BE0 00000020 .text   sub_02003BE0	(asm_arm9_02002AEC.s.o)
+  02003C00 00000024 .text   sub_02003C00	(asm_arm9_02002AEC.s.o)
+  02003C24 00000020 .text   sub_02003C24	(asm_arm9_02002AEC.s.o)
+  02003C4C 000002D0 .text   sub_02003C4C	(asm_arm9_02002AEC.s.o)
+  02003F14 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02003F1C 000001AC .text   sub_02003F1C	(asm_arm9_02002AEC.s.o)
+  02003F1C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020040C4 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020040C8 0000004C .text   sub_020040C8	(asm_arm9_02002AEC.s.o)
+  020040C8 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02004110 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02004114 0000004C .text   sub_02004114	(asm_arm9_02002AEC.s.o)
+  02004114 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  0200415C 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02004160 00000014 .text   sub_02004160	(asm_arm9_02002AEC.s.o)
+  02004160 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02004174 0000001C .text   sub_02004174	(asm_arm9_02002AEC.s.o)
+  02004190 00000014 .text   sub_02004190	(asm_arm9_02002AEC.s.o)
+  020041A4 00000040 .text   sub_020041A4	(asm_arm9_02002AEC.s.o)
+  020041E4 00000020 .text   sub_020041E4	(asm_arm9_02002AEC.s.o)
+  0200420C 00000020 .text   sub_0200420C	(asm_arm9_02002AEC.s.o)
+  02004234 000002A8 .text   sub_02004234	(asm_arm9_02002AEC.s.o)
+  020044D4 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020044DC 0000017C .text   sub_020044DC	(asm_arm9_02002AEC.s.o)
+  020044DC 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02004654 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02004658 000001E4 .text   sub_02004658	(asm_arm9_02002AEC.s.o)
+  02004658 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  0200483C 00000168 .text   sub_0200483C	(asm_arm9_02002AEC.s.o)
+  020049A4 00000030 .text   sub_020049A4	(asm_arm9_02002AEC.s.o)
+  020049D0 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020049D4 00000014 .text   sub_020049D4	(asm_arm9_02002AEC.s.o)
+  020049D4 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020049E8 0000001C .text   sub_020049E8	(asm_arm9_02002AEC.s.o)
+  02004A04 00000070 .text   sub_02004A04	(asm_arm9_02002AEC.s.o)
+  02004CA4 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02004CB4 0000004C .text   sub_02004CB4	(asm_arm9_02002AEC.s.o)
+  02004CB4 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02004CFC 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02004D00 00000014 .text   sub_02004D00	(asm_arm9_02002AEC.s.o)
+  02004D00 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02004D14 0000001C .text   sub_02004D14	(asm_arm9_02002AEC.s.o)
+  02004D30 00000020 .text   sub_02004D30	(asm_arm9_02002AEC.s.o)
+  02004D58 00000238 .text   sub_02004D58	(asm_arm9_02002AEC.s.o)
+  02004F88 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02004F90 00000138 .text   sub_02004F90	(asm_arm9_02002AEC.s.o)
+  02004F90 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020050C4 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020050C8 00000058 .text   sub_020050C8	(asm_arm9_02002AEC.s.o)
+  020050C8 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02005114 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02005120 00000024 .text   sub_02005120	(asm_arm9_02002AEC.s.o)
+  02005120 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  0200514C 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02005150 00000078 .text   sub_02005150	(asm_arm9_02002AEC.s.o)
+  02005150 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020051C4 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020051C8 00000014 .text   sub_020051C8	(asm_arm9_02002AEC.s.o)
+  020051C8 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020051DC 0000001C .text   sub_020051DC	(asm_arm9_02002AEC.s.o)
+  020051F8 00000028 .text   sub_020051F8	(asm_arm9_02002AEC.s.o)
+  02005220 00000038 .text   sub_02005220	(asm_arm9_02002AEC.s.o)
+  0200527C 00000030 .text   sub_0200527C	(asm_arm9_02002AEC.s.o)
+  02005898 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020058BC 000000CC .text   sub_020058BC	(asm_arm9_02002AEC.s.o)
+  020058BC 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02005EE0 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02005F04 00000020 .text   sub_02005F04	(asm_arm9_02002AEC.s.o)
+  02005F04 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02005F20 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02005F24 0000000C .text   sub_02005F24	(asm_arm9_02002AEC.s.o)
+  02005F24 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02005F30 00000018 .text   sub_02005F30	(asm_arm9_02002AEC.s.o)
+  02005F48 00000018 .text   sub_02005F48	(asm_arm9_02002AEC.s.o)
+  02005F60 00000024 .text   sub_02005F60	(asm_arm9_02002AEC.s.o)
+  02005FDC 00000024 .text   sub_02005FDC	(asm_arm9_02002AEC.s.o)
+  02006000 0000007C .text   sub_02006000	(asm_arm9_02002AEC.s.o)
+  02006100 00000064 .text   sub_02006100	(asm_arm9_02002AEC.s.o)
+  02006164 000000B4 .text   sub_02006164	(asm_arm9_02002AEC.s.o)
+  02006238 000000C4 .text   sub_02006238	(asm_arm9_02002AEC.s.o)
+  02006350 000000D8 .text   sub_02006350	(asm_arm9_02002AEC.s.o)
+  02006610 00000044 .text   sub_02006610	(asm_arm9_02002AEC.s.o)
+  02006764 0000008C .text   sub_02006764	(asm_arm9_02002AEC.s.o)
+  02006AE0 00000080 .text   sub_02006AE0	(asm_arm9_02002AEC.s.o)
+  02006B60 00000094 .text   sub_02006B60	(asm_arm9_02002AEC.s.o)
+  02006C04 00000058 .text   sub_02006C04	(asm_arm9_02002AEC.s.o)
+  02006E30 00000050 .text   sub_02006E30	(asm_arm9_02002AEC.s.o)
+  02006F80 0000004C .text   sub_02006F80	(asm_arm9_02002AEC.s.o)
+  02007068 0000003C .text   sub_02007068	(asm_arm9_02002AEC.s.o)
+  020070A4 00000090 .text   sub_020070A4	(asm_arm9_02002AEC.s.o)
+  02007134 000000DC .text   sub_02007134	(asm_arm9_02002AEC.s.o)
+  02007210 00000044 .text   sub_02007210	(asm_arm9_02002AEC.s.o)
+  02007254 00000070 .text   sub_02007254	(asm_arm9_02002AEC.s.o)
+  020072C0 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020072C4 00000034 .text   sub_020072C4	(asm_arm9_02002AEC.s.o)
+  020072C4 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020072F8 00000034 .text   sub_020072F8	(asm_arm9_02002AEC.s.o)
+  0200732C 00000068 .text   sub_0200732C	(asm_arm9_02002AEC.s.o)
+  020074D4 00000014 .text   sub_020074D4	(asm_arm9_02002AEC.s.o)
+  020074E8 0000003C .text   sub_020074E8	(asm_arm9_02002AEC.s.o)
+  02007524 00000024 .text   sub_02007524	(asm_arm9_02002AEC.s.o)
+  02007548 00000014 .text   sub_02007548	(asm_arm9_02002AEC.s.o)
+  0200755C 00000034 .text   sub_0200755C	(asm_arm9_02002AEC.s.o)
+  02007590 0000003C .text   sub_02007590	(asm_arm9_02002AEC.s.o)
+  0200763C 00000074 .text   sub_0200763C	(asm_arm9_02002AEC.s.o)
+  020076B0 00000024 .text   sub_020076B0	(asm_arm9_02002AEC.s.o)
+  020076E8 0000002C .text   sub_020076E8	(asm_arm9_02002AEC.s.o)
+  02007714 00000030 .text   sub_02007714	(asm_arm9_02002AEC.s.o)
+  02007738 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02007744 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02007744 0000002C .text   sub_02007744	(asm_arm9_02002AEC.s.o)
+  02007770 00000014 .text   sub_02007770	(asm_arm9_02002AEC.s.o)
+  02007784 00000014 .text   sub_02007784	(asm_arm9_02002AEC.s.o)
+  02007798 0000001C .text   sub_02007798	(asm_arm9_02002AEC.s.o)
+  020077B4 00000018 .text   sub_020077B4	(asm_arm9_02002AEC.s.o)
+  020077CC 00000018 .text   sub_020077CC	(asm_arm9_02002AEC.s.o)
+  020077E4 0000001C .text   sub_020077E4	(asm_arm9_02002AEC.s.o)
+  02007848 0000000C .text   sub_02007848	(asm_arm9_02002AEC.s.o)
+  02007854 00000020 .text   sub_02007854	(asm_arm9_02002AEC.s.o)
+  02007880 00000020 .text   sub_02007880	(asm_arm9_02002AEC.s.o)
+  020078E0 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020078E4 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020078E4 00000058 .text   sub_020078E4	(asm_arm9_02002AEC.s.o)
+  020079B4 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020079B8 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020079B8 00000078 .text   sub_020079B8	(asm_arm9_02002AEC.s.o)
+  02007A8C 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02007A94 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02007A94 00000010 .text   sub_02007A94	(asm_arm9_02002AEC.s.o)
+  02007AA4 0000001C .text   sub_02007AA4	(asm_arm9_02002AEC.s.o)
+  02007AC0 0000003C .text   sub_02007AC0	(asm_arm9_02002AEC.s.o)
+  02007AFC 0000002C .text   sub_02007AFC	(asm_arm9_02002AEC.s.o)
+  02007B28 00000014 .text   sub_02007B28	(asm_arm9_02002AEC.s.o)
+  02007B3C 00000024 .text   sub_02007B3C	(asm_arm9_02002AEC.s.o)
+  02007B60 0000003C .text   sub_02007B60	(asm_arm9_02002AEC.s.o)
+  02007BAC 00000018 .text   sub_02007BAC	(asm_arm9_02002AEC.s.o)
+  02007BC4 00000024 .text   sub_02007BC4	(asm_arm9_02002AEC.s.o)
+  02007BFC 00000038 .text   sub_02007BFC	(asm_arm9_02002AEC.s.o)
+  02007C34 00000030 .text   sub_02007C34	(asm_arm9_02002AEC.s.o)
+  02007C58 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02007C64 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02007C64 00000034 .text   sub_02007C64	(asm_arm9_02002AEC.s.o)
+  02007C98 00000010 .text   CScene::CScene[base]()	(asm_arm9_02002AEC.s.o)
+  02007CA4 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02007CA8 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02007CA8 00000004 .text   sub_02007CA8	(asm_arm9_02002AEC.s.o)
+  02007CAC 00000014 .text   sub_02007CAC	(asm_arm9_02002AEC.s.o)
+  02007CC0 00000004 .text   sub_02007CC0	(asm_arm9_02002AEC.s.o)
+  02007CC4 00000010 .text   sub_02007CC4	(asm_arm9_02002AEC.s.o)
+  02007CD4 0000000C .text   sub_02007CD4	(asm_arm9_02002AEC.s.o)
+  02007CDC 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02007CE0 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02007CE0 00000010 .text   sub_02007CE0	(asm_arm9_02002AEC.s.o)
+  02007CF0 0000003C .text   sub_02007CF0	(asm_arm9_02002AEC.s.o)
+  02007D28 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02007D2C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02007D2C 0000003C .text   sub_02007D2C	(asm_arm9_02002AEC.s.o)
+  02007D64 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02007D68 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02007D68 00000010 .text   sub_02007D68	(asm_arm9_02002AEC.s.o)
+  02007D78 00000020 .text   sub_02007D78	(asm_arm9_02002AEC.s.o)
+  02007D98 0000004C .text   sub_02007D98	(asm_arm9_02002AEC.s.o)
+  02007DE4 0000000C .text   sub_02007DE4	(asm_arm9_02002AEC.s.o)
+  02007DF0 00000030 .text   sub_02007DF0	(asm_arm9_02002AEC.s.o)
+  02007F98 00000014 .text   sub_02007F98	(asm_arm9_02002AEC.s.o)
+  02007FAC 00000030 .text   sub_02007FAC	(asm_arm9_02002AEC.s.o)
+  02008014 00000010 .text   sub_02008014	(asm_arm9_02002AEC.s.o)
+  02008024 00000008 .text   sub_02008024	(asm_arm9_02002AEC.s.o)
+  0200802C 00000030 .text   sub_0200802C	(asm_arm9_02002AEC.s.o)
+  0200805C 00000008 .text   sub_0200805C	(asm_arm9_02002AEC.s.o)
+  02008064 00000024 .text   sub_02008064	(asm_arm9_02002AEC.s.o)
+  02008104 0000006C .text   sub_02008104	(asm_arm9_02002AEC.s.o)
+  02008170 00000014 .text   sub_02008170	(asm_arm9_02002AEC.s.o)
+  020081E0 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  020081E4 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  020081E4 00000034 .text   sub_020081E4	(asm_arm9_02002AEC.s.o)
+  0200827C 00000028 .text   sub_0200827C	(asm_arm9_02002AEC.s.o)
+  02008584 00000020 .text   sub_02008584	(asm_arm9_02002AEC.s.o)
+  020086B4 00000034 .text   sub_020086B4	(asm_arm9_02002AEC.s.o)
+  02008708 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  0200870C 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  0200870C 00000008 .text   sub_0200870C	(asm_arm9_02002AEC.s.o)
+  02008714 00000008 .text   sub_02008714	(asm_arm9_02002AEC.s.o)
+  0200871C 00000008 .text   sub_0200871C	(asm_arm9_02002AEC.s.o)
+  02008724 00000008 .text   sub_02008724	(asm_arm9_02002AEC.s.o)
+  0200872C 00000008 .text   sub_0200872C	(asm_arm9_02002AEC.s.o)
+  02008734 00000044 .text   sub_02008734	(asm_arm9_02002AEC.s.o)
+  02008778 00000008 .text   sub_02008778	(asm_arm9_02002AEC.s.o)
+  02008780 00000008 .text   sub_02008780	(asm_arm9_02002AEC.s.o)
+  02008788 00000014 .text   sub_02008788	(asm_arm9_02002AEC.s.o)
+  0200879C 0000002C .text   sub_0200879C	(asm_arm9_02002AEC.s.o)
+  020087C8 00000018 .text   sub_020087C8	(asm_arm9_02002AEC.s.o)
+  02008828 0000001C .text   sub_02008828	(asm_arm9_02002AEC.s.o)
+  02008844 0000001C .text   sub_02008844	(asm_arm9_02002AEC.s.o)
+  02008860 0000001C .text   sub_02008860	(asm_arm9_02002AEC.s.o)
+  0200887C 00000068 .text   sub_0200887C	(asm_arm9_02002AEC.s.o)
+  02008968 00000028 .text   sub_02008968	(asm_arm9_02002AEC.s.o)
+  02008990 00000028 .text   sub_02008990	(asm_arm9_02002AEC.s.o)
+  020089B8 00000018 .text   sub_020089B8	(asm_arm9_02002AEC.s.o)
+  020089D0 0000001C .text   sub_020089D0	(asm_arm9_02002AEC.s.o)
+  020089EC 00000018 .text   sub_020089EC	(asm_arm9_02002AEC.s.o)
+  02008A38 00000020 .text   sub_02008A38	(asm_arm9_02002AEC.s.o)
+  02008A58 00000028 .text   sub_02008A58	(asm_arm9_02002AEC.s.o)
+  02008A80 00000058 .text   sub_02008A80	(asm_arm9_02002AEC.s.o)
+  02008B80 0000005C .text   sub_02008B80	(asm_arm9_02002AEC.s.o)
+  02008BF0 00000020 .text   sub_02008BF0	(asm_arm9_02002AEC.s.o)
+  02008C6C 00000008 .text   sub_02008C6C	(asm_arm9_02002AEC.s.o)
+  02008C74 00000040 .text   sub_02008C74	(asm_arm9_02002AEC.s.o)
+  02008CD0 00000018 .text   sub_02008CD0	(asm_arm9_02002AEC.s.o)
+  02008D20 00000018 .text   sub_02008D20	(asm_arm9_02002AEC.s.o)
+  02008D38 00000018 .text   sub_02008D38	(asm_arm9_02002AEC.s.o)
+  02008D50 0000002C .text   sub_02008D50	(asm_arm9_02002AEC.s.o)
+  02008D7C 0000000C .text   sub_02008D7C	(asm_arm9_02002AEC.s.o)
+  02008DB4 0000009C .text   sub_02008DB4	(asm_arm9_02002AEC.s.o)
+  02008E34 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02008E50 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02008E50 00000008 .text   sub_02008E50	(asm_arm9_02002AEC.s.o)
+  02008E58 00000010 .text   sub_02008E58	(asm_arm9_02002AEC.s.o)
+  02008E68 00000020 .text   sub_02008E68	(asm_arm9_02002AEC.s.o)
+  02008E88 00000038 .text   sub_02008E88	(asm_arm9_02002AEC.s.o)
+  02008ED8 00000004 .text   sub_02008ED8	(asm_arm9_02002AEC.s.o)
+  02008EDC 00000038 .text   sub_02008EDC	(asm_arm9_02002AEC.s.o)
+  02008F74 00000000 .text   $d	(asm_arm9_02002AEC.s.o)
+  02008F78 00000008 .text   sub_02008F78	(asm_arm9_02002AEC.s.o)
+  02008F78 00000000 .text   $a	(asm_arm9_02002AEC.s.o)
+  02008F80 00000008 .text   sub_02008F80	(asm_arm9_02002AEC.s.o)
+  02008F88 00000008 .text   sub_02008F88	(asm_arm9_02002AEC.s.o)
+  02008F90 00000008 .text   sub_02008F90	(asm_arm9_02002AEC.s.o)
+  02008F98 00000010 .text   sub_02008F98	(asm_arm9_02002AEC.s.o)
+  02008FA8 00000040 .text   sub_02008FA8	(asm_arm9_02002AEC.s.o)
+  02009004 0000001C .text   sub_02009004	(asm_arm9_02002AEC.s.o)
+  02009020 00000014 .text   sub_02009020	(asm_arm9_02002AEC.s.o)
+  02009050 00000034 .text   sub_02009050	(asm_arm9_02002AEC.s.o)
+  02009090 00000020 .text   sub_02009090	(asm_arm9_02002AEC.s.o)
+  020090E8 0000000C .text   sub_020090E8	(asm_arm9_02002AEC.s.o)
+  020090F4 0000000C .text   sub_020090F4	(asm_arm9_02002AEC.s.o)
+  02009100 00000008 .text   sub_02009100	(asm_arm9_02002AEC.s.o)
+  02009108 00000014 .text   sub_02009108	(asm_arm9_02002AEC.s.o)
+  0200911C 00000008 .text   sub_0200911C	(asm_arm9_02002AEC.s.o)
+  02009124 00000008 .text   sub_02009124	(asm_arm9_02002AEC.s.o)
+  0200912C 00000020 .text   sub_0200912C	(asm_arm9_02002AEC.s.o)
+  02009188 0000001C .text   sub_02009188	(asm_arm9_02002AEC.s.o)
+  020091D4 00000008 .text   sub_020091D4	(asm_arm9_02002AEC.s.o)
+  020091DC 0000000C .text   sub_020091DC	(asm_arm9_02002AEC.s.o)
   020091E8 00000000 .text   $a	(src_UnkClass_020091E8.cpp.o)
   020091E8 0000008C .text   UnkClass_020091E8::UnkClass_020091E8()	(src_UnkClass_020091E8.cpp.o)
   02009270 00000000 .text   $d	(src_UnkClass_020091E8.cpp.o)
@@ -11441,9 +11454,9 @@
 #>0208A37C          SDK_STATIC_SINIT_END (linker command file)
 #>0208A380          SDK_STATIC_TEXT_END (linker command file)
 #>0208A380          SDK_STATIC_DATA_START (linker command file)
-  0208A380 0000000D .data   @12899	(src_main.cpp.o)
-  0208A390 0000000D .data   @12900	(src_main.cpp.o)
-  0208A3A0 00000016 .data   @12901	(src_main.cpp.o)
+  0208A380 0000000D .data   @12919	(src_main.cpp.o)
+  0208A390 0000000D .data   @12920	(src_main.cpp.o)
+  0208A3A0 00000016 .data   @12921	(src_main.cpp.o)
   0208A3B8 00000000 .data   .data	(src_overlay_manager.cpp.o)
   0208A3B8 00000004 .data   s_currentOverlayID	(src_overlay_manager.cpp.o)
   0208A3BC 00000008 .data   typeinfo structure for CTouchPanel	(src_CTouchPanel.cpp.o)
