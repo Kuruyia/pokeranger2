@@ -3901,7 +3901,7 @@ _02013350:
 	add r1, sp, #0x10
 	add r2, sp, #0x134
 	str r7, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 _02013390:
 	cmp r0, #0
 	addeq sp, sp, #0x1f4
@@ -4244,7 +4244,7 @@ _02013864:
 	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	beq _02013890
 	mov r0, r4
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, r4
 	bl _ZdlPv
 _02013890:
@@ -4351,7 +4351,7 @@ _020139BC:
 	add r1, sp, #0x10
 	add r2, sp, #0xd4
 	str r4, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 _02013A00:
 	cmp r0, #0
 	addeq sp, sp, #0x194
@@ -4528,7 +4528,7 @@ _02013C78:
 	ldmeqia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	beq _02013CA4
 	mov r0, r4
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, r4
 	bl _ZdlPv
 _02013CA4:
@@ -4892,7 +4892,7 @@ _02014170:
 	beq _020141A0
 	beq _02014198
 	mov r0, r5
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, r5
 	bl _ZdlPv
 _02014198:
@@ -5353,7 +5353,7 @@ _02014714:
 	add r1, sp, #0x18
 	add r2, sp, #0x13c
 	str r8, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 _0201474C:
 	cmp r0, #0
 	addeq sp, sp, #0x1fc

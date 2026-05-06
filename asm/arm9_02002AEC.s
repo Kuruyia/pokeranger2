@@ -3,8 +3,8 @@
 
     .text
 
-	arm_func_start _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
-_ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm: ; 0x02002AEC
+	arm_func_start _ZN13CArchiveGuardC1EPcS0_mmmmm
+_ZN13CArchiveGuardC1EPcS0_mmmmm: ; 0x02002AEC
 	stmdb sp!, {r4, r5, r6, r7, lr}
 	sub sp, sp, #0xc
 	mov r7, r0
@@ -25,7 +25,7 @@ _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm: ; 0x02002AEC
 	mov r2, r4
 	str ip, [sp, #8]
 	bl sub_02002BC4
-	arm_func_end _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	arm_func_end _ZN13CArchiveGuardC1EPcS0_mmmmm
 _02002B3C:
 	str r0, [r7, #0x68]
 	ldr r2, [r0, #0x4c]
@@ -40,8 +40,8 @@ _02002B3C:
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, pc}
 
-	arm_func_start _ZN19CSmartNNSFndArchiveD1Ev
-_ZN19CSmartNNSFndArchiveD1Ev: ; 0x02002B6C
+	arm_func_start _ZN13CArchiveGuardD1Ev
+_ZN13CArchiveGuardD1Ev: ; 0x02002B6C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	bl NNS_FndUnmountArchive
@@ -52,7 +52,7 @@ _ZN19CSmartNNSFndArchiveD1Ev: ; 0x02002B6C
 	ldr r1, [r0]
 	ldr r1, [r1, #4]
 	blx r1
-	arm_func_end _ZN19CSmartNNSFndArchiveD1Ev
+	arm_func_end _ZN13CArchiveGuardD1Ev
 _02002B94:
 	mov r0, #0
 	str r0, [r4, #0x68]

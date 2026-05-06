@@ -45058,7 +45058,7 @@ ov0_02143868: ; 0x02143868
 	ldr r2, _021439D4 ; =s_data_Field_Effect_ef001_LZ_bin_overlay_0_0217454c
 	add r0, sp, #0x70
 	str r4, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	mov r2, r4
 	ldr r1, _021439D8 ; =s_MEF_ef001_NCLR_overlay_0_0217456c
 	mov r3, r2
@@ -45137,7 +45137,7 @@ _021439AC:
 	cmp sb, #0xc
 	blt _02143948
 	add r0, sp, #0x70
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	add sp, sp, #0xdc
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
@@ -61101,7 +61101,7 @@ ov0_0214FFF0: ; 0x0214FFF0
 	ldr r1, _021501A4 ; =s_EFC_overlay_0_02177bf4
 	add r0, sp, #0x10
 	add r2, sp, #0x7c
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r1, _021501A8 ; =s_EFC_e_03d_NCLR_overlay_0_02177bf8
 	add r0, sp, #0x7c
 	mov r2, sb
@@ -61192,7 +61192,7 @@ _02150170:
 	mov r0, sl
 	bl sub_020295B0
 	add r0, sp, #0x10
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, #1
 	add sp, sp, #0xdc
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
@@ -61248,7 +61248,7 @@ ov0_02150204: ; 0x02150204
 	add r0, sp, #0x10
 	add r2, sp, #0x7c
 	str ip, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r1, _02150368 ; =s_MEF_i_03d_NCLR_overlay_0_02177c6c
 	add r0, sp, #0x7c
 	mov r2, r4
@@ -61318,7 +61318,7 @@ _02150330:
 	mov r0, r5
 	bl sub_020296B0
 	add r0, sp, #0x10
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, #1
 	add sp, sp, #0xdc
 	ldmia sp!, {r4, r5, pc}
@@ -61370,7 +61370,7 @@ ov0_021503B8: ; 0x021503B8
 	ldr r1, _02150524 ; =s_MEF_overlay_0_02177c68
 	add r0, sp, #0x10
 	add r2, sp, #0x7c
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r1, _02150528 ; =s_MEF_ef_03d_NCLR_overlay_0_02177cd8
 	add r0, sp, #0x7c
 	mov r2, r5
@@ -61443,7 +61443,7 @@ _021504E8:
 	bl sub_020296B0
 _0215050C:
 	add r0, sp, #0x10
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, #1
 	add sp, sp, #0xdc
 	ldmia sp!, {r3, r4, r5, r6, pc}
@@ -88769,7 +88769,7 @@ ov0_02167324: ; 0x02167324
 	add r0, sp, #0x10
 	mov r3, r5
 	str r4, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r0, [r7, #0xc]
 	cmp r0, #0
 	bne _02167380
@@ -88799,7 +88799,7 @@ _021673A0:
 	mov r5, r0
 _021673C0:
 	add r0, sp, #0x10
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	cmp r5, #0
 	beq _02167470
 	mov r0, #0x1d0
@@ -92573,7 +92573,7 @@ ov0_0216A750: ; 0x0216A750
 	ldr r2, _0216A7DC ; =s_data_Field_Effect_ef102_LZ_bin_overlay_0_0217a468
 	add r0, sp, #0x14
 	str ip, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r1, _0216A7E0 ; =s_MEF_ef102_00_ntft_overlay_0_0217a488
 	ldr r2, _0216A7E4 ; =s_MEF_ef102_00_ntfp_overlay_0_0217a49c
 	add r0, r4, #0x80
@@ -92592,7 +92592,7 @@ ov0_0216A750: ; 0x0216A750
 	ldr r2, [r2, #0x5c]
 	blx r2
 	add r0, sp, #0x14
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	add sp, sp, #0x80
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -93691,7 +93691,7 @@ ov0_0216B6AC: ; 0x0216B6AC
 	ldr r2, _0216B738 ; =s_data_Field_Effect_ef102_LZ_bin_overlay_0_0217a468
 	add r0, sp, #0x14
 	str ip, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r1, _0216B73C ; =s_MEF_ef102_00_ntft_overlay_0_0217a488
 	ldr r2, _0216B740 ; =s_MEF_ef102_00_ntfp_overlay_0_0217a49c
 	add r0, r4, #0x8c
@@ -93710,7 +93710,7 @@ ov0_0216B6AC: ; 0x0216B6AC
 	ldr r2, [r2, #0x5c]
 	blx r2
 	add r0, sp, #0x14
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	add sp, sp, #0x80
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -97546,7 +97546,7 @@ ov0_0216EA58: ; 0x0216EA58
 	ldr r2, _0216EAF8 ; =s_data_Field_Effect_ef100_LZ_bin_overlay_0_0217a7a4
 	add r0, sp, #0x10
 	str ip, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r1, _0216EAFC ; =s_MEF_ef100_00_ntft_overlay_0_0217a7c4
 	ldr r2, _0216EB00 ; =s_MEF_ef100_00_ntfp_overlay_0_0217a7d8
 	add r0, r4, #0x2c
@@ -97570,7 +97570,7 @@ ov0_0216EA58: ; 0x0216EA58
 	mov r1, #0
 	add r0, sp, #0x10
 	strb r1, [r4, #0x86]
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	add sp, sp, #0x7c
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
@@ -97876,7 +97876,7 @@ ov0_0216EE1C: ; 0x0216EE1C
 	ldr r2, _0216EE90 ; =s_data_Field_Effect_ef102_LZ_bin_overlay_0_0217aa48
 	add r0, sp, #0x10
 	str ip, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r1, _0216EE94 ; =s_MEF_ef102_00_ntft_overlay_0_0217aa68
 	ldr r2, _0216EE98 ; =s_MEF_ef102_00_ntfp_overlay_0_0217aa7c
 	add r0, r4, #4
@@ -97888,7 +97888,7 @@ ov0_0216EE1C: ; 0x0216EE1C
 	mov r1, #6
 	add r0, sp, #0x10
 	str r1, [r4, #0x20]
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, #0
 	add sp, sp, #0x7c
 	ldmia sp!, {r3, r4, pc}
@@ -100361,13 +100361,13 @@ ov0_02170EA8: ; 0x02170EA8
 	add r0, sp, #0x10
 	mov r3, r5
 	str r4, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	mov r0, r6
 	mov r1, r5
 	bl ov0_02170F88
 	mov r5, r0
 	add r0, sp, #0x10
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	arm_func_end ov0_02170EA8
 _02170F04:
 	cmp r5, #0
@@ -101076,7 +101076,7 @@ ov0_021717FC: ; 0x021717FC
 	ldr r2, _02171880 ; =s_data_field_effect_ef101_LZ_bin_overlay_0_0217aebc
 	add r0, sp, #0x10
 	str ip, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r2, _02171884 ; =s_FEF_ef101_00_ntfp_overlay_0_0217aedc
 	ldr r1, _02171888 ; =s_FEF_ef101_00_ntft_overlay_0_0217aef0
 	add r0, r4, #4
@@ -101092,7 +101092,7 @@ ov0_021717FC: ; 0x021717FC
 	str r1, [r4, #0x24]
 	add r0, sp, #0x10
 	str r1, [r4, #0x28]
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, #1
 	add sp, sp, #0x7c
 	ldmia sp!, {r3, r4, pc}
@@ -101962,7 +101962,7 @@ ov0_02172384: ; 0x02172384
 	add r0, sp, #0x10
 	mov r3, r4
 	str r5, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r0, [r7, #0xc]
 	cmp r0, #0
 	bne _021723E4
@@ -101985,7 +101985,7 @@ _021723E4:
 	mov r4, r0
 _02172408:
 	add r0, sp, #0x10
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	cmp r4, #0
 	beq _0217246C
 	mov r0, #0x198
@@ -102040,7 +102040,7 @@ ov0_0217248C: ; 0x0217248C
 	ldr r2, _02172514 ; =s_data_Field_Effect_ef104_LZ_bin_overlay_0_0217b06c
 	add r0, sp, #0x10
 	str ip, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	ldr r0, [r4, #0xc]
 	cmp r0, #0
 	bne _021724E0
@@ -102061,7 +102061,7 @@ _021724E0:
 	bl ov0_02172518
 _02172500:
 	add r0, sp, #0x10
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	add sp, sp, #0x7c
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0

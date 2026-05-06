@@ -5,8 +5,8 @@
 .public _ZdaPv
 .public _Z23Heap_AllocWithAlignmentmm
 .public _Z9Heap_FreePv
-.public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
-.public _ZN19CSmartNNSFndArchiveD1Ev
+.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardD1Ev
 .public _ZN14CBinaryFileMesC1EPcm
 .public _ZN9CNCLRFileC1EPcmmm
 .public _ZN9CNSCRFileC1EPcmmm

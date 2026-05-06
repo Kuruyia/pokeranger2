@@ -9,11 +9,11 @@
 #include "UnkClass_02001C04.hpp"
 #include "UnkClass_020B26A0.hpp"
 #include "UnkUnion_020843E0.hpp"
+#include "file/CArchiveGuard.hpp"
 #include "file/CBGNCGRFile.hpp"
 #include "file/CBinaryFileMes.hpp"
 #include "file/CNCLRFile.hpp"
 #include "file/CNSCRFile.hpp"
-#include "file/CSmartNNSFndArchive.hpp"
 
 extern "C" {
 u8 *sub_02018B10(void *, u32);
@@ -158,7 +158,7 @@ void UnkClass_020091E8::sub_020093B4()
 
 void UnkClass_020091E8::sub_02009430()
 {
-    CSmartNNSFndArchive *archive = new CSmartNNSFndArchive(&s_BGT_0208a848, &s_data_interface_i059_LZ_bin_0208a84c, 1, 1, 0, 0, 0);
+    CArchiveGuard *archive = new CArchiveGuard(&s_BGT_0208a848, &s_data_interface_i059_LZ_bin_0208a84c, 1, 1, 0, 0, 0);
 
     CBGNCGRFile *ncgrFile = new CBGNCGRFile(&s_BGT_i059_00_NCGR_0208a868, 1, 0, 0);
     CNSCRFile *nscrFile = new CNSCRFile(&s_BGT_i059_00_NSCR_0208a87c, 1, 0, 0);

@@ -3,8 +3,8 @@
 .public _Znam
 .public _ZdlPv
 .public _ZdaPv
-.public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
-.public _ZN19CSmartNNSFndArchiveD1Ev
+.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardD1Ev
 .public sub_02002BC4
 .public CBinaryFile_complete_obj_dtor
 .public sub_02002C7C

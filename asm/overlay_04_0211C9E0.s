@@ -495,7 +495,7 @@ ov4_0211D060: ; 0x0211D060
 	ldr r1, _0211D368 ; =s_BGM_overlay_4_0211d858
 	ldr r2, _0211D36C ; =s_data_menu_ml000_bg_LZ_bin_overlay_4_0211d85c
 	str r3, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	mov r4, r0
 	arm_func_end ov4_0211D060
 _0211D0A4:
@@ -600,7 +600,7 @@ _0211D208:
 	cmp r4, #0
 	beq _0211D220
 	mov r0, r4
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, r4
 	bl _ZdlPv
 _0211D220:
@@ -616,7 +616,7 @@ _0211D220:
 	ldr r1, _0211D368 ; =s_BGM_overlay_4_0211d858
 	ldr r2, _0211D384 ; =s_data_menu_mnd000_bg_LZ_bin_overlay_4_0211d8d4
 	str r3, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	mov r4, r0
 _0211D258:
 	mov r0, #0xbc
@@ -688,7 +688,7 @@ _0211D344:
 	addeq sp, sp, #0x10
 	ldmeqia sp!, {r4, r5, r6, r7, r8, pc}
 	mov r0, r4
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	add sp, sp, #0x10

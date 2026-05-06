@@ -314,8 +314,8 @@
 .public s_uppict_03d_00_0208bebc
 .public s_uppict_03d_0208beb0
 .public _Z12sub_02001210v
-.public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
-.public _ZN19CSmartNNSFndArchiveD1Ev
+.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardD1Ev
 .public sub_020031E8
 .public _ZN9CNCLRFileC1EPcmmm
 .public _ZN9CNSCRFileC1EPcmmm

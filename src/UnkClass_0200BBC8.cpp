@@ -1,9 +1,9 @@
 #include "UnkClass_0200BBC8.hpp"
 
 #include "CGame_0024.hpp"
+#include "file/CArchiveGuard.hpp"
 #include "file/CNCGRFile.hpp"
 #include "file/CNCLRFile.hpp"
-#include "file/CSmartNNSFndArchive.hpp"
 
 extern "C" {
 BOOL sub_02034C44(void *, u32);
@@ -65,7 +65,7 @@ void UnkClass_0200BBC8::sub_0200BC64(CGame_0024 *arg0, UnkClass_02001C04 *arg1, 
 
 void UnkClass_0200BBC8::sub_0200BCF4()
 {
-    CSmartNNSFndArchive *archive = new CSmartNNSFndArchive(&s_ICN_0208a9c8, &s_data_interface_i058_LZ_bin_0208a9cc, 1, 1, 0, 0, 0);
+    CArchiveGuard *archive = new CArchiveGuard(&s_ICN_0208a9c8, &s_data_interface_i058_LZ_bin_0208a9cc, 1, 1, 0, 0, 0);
 
     CNCGRFile *ncgrFile = new CNCGRFile(&s_ICN_i058_00_NCGR_0208a9e8, 1, 0, 0);
     MI_CpuCopyFast(ncgrFile->unk_B8->pRawData, (void *)(HW_OBJ_VRAM + unk_1634), ncgrFile->unk_B8->szByte);

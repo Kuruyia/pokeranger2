@@ -3333,7 +3333,7 @@ _0200EE5C:
 	add r1, sp, #0x10
 	add r2, sp, #0x70
 	str r5, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	mov r7, r0
 _0200EF10:
 	mov r0, #0xbc
@@ -3496,7 +3496,7 @@ _0200F118:
 	cmp r7, #0
 	beq _0200F144
 	mov r0, r7
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, r7
 	bl _ZdlPv
 _0200F144:
@@ -3576,7 +3576,7 @@ _0200F1B0:
 	add r1, sp, #0x10
 	add r2, sp, #0x70
 	str r4, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	mov r5, r0
 _0200F264:
 	mov r0, #0xbc
@@ -3632,7 +3632,7 @@ _0200F308:
 	cmp r5, #0
 	beq _0200F334
 	mov r0, r5
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, r5
 	bl _ZdlPv
 _0200F334:

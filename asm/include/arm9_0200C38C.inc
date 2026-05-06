@@ -36,8 +36,8 @@
 .public OS_Terminate
 .public STD_CopyString
 .public _ZN17UnkClass_0200BBC812sub_0200BE28Emmmm
-.public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
-.public _ZN19CSmartNNSFndArchiveD1Ev
+.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardD1Ev
 .public _ZN9CNCGRFileC1EPcmmm
 .public _ZN9CNCLRFileC1EPcmmm
 .public _ZdaPv

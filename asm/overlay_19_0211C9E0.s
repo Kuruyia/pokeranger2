@@ -353,7 +353,7 @@ _0211CDC4:
 	ldr r1, _0211CFAC ; =s_BGD_overlay_19_0211e43c
 	ldr r2, _0211CFB0 ; =s_data_menu_mps000_bg_LZ_bin_overlay_19_0211e440
 	str r4, [sp, #0xc]
-	bl _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
 	mov r4, r0
 _0211CE88:
 	mov r0, #0xbc
@@ -426,7 +426,7 @@ _0211CF78:
 	addeq sp, sp, #0x10
 	ldmeqia sp!, {r3, r4, r5, r6, r7, pc}
 	mov r0, r4
-	bl _ZN19CSmartNNSFndArchiveD1Ev
+	bl _ZN13CArchiveGuardD1Ev
 	mov r0, r4
 	bl _ZdlPv
 	add sp, sp, #0x10

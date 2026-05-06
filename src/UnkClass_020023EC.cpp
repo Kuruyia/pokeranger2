@@ -3,10 +3,10 @@
 #include <nitro.h>
 #include <nnsys.h>
 
+#include "file/CArchiveGuard.hpp"
 #include "file/CBGNCGRFile.hpp"
 #include "file/CNCLRFile.hpp"
 #include "file/CNSCRFile.hpp"
-#include "file/CSmartNNSFndArchive.hpp"
 #include "heap.hpp"
 
 extern "C" {
@@ -31,7 +31,7 @@ UnkClass_020023EC::UnkClass_020023EC()
 
 void UnkClass_020023EC::sub_02002434(u32 arg0, u32 arg1, u32 arg2, u32 arg3)
 {
-    CSmartNNSFndArchive *archive = new CSmartNNSFndArchive(&s_BGF_0208a418, &s_data_system_BGFontLZ_bin_0208a41c, 1, 1, 0, 0, 0);
+    CArchiveGuard *archive = new CArchiveGuard(&s_BGF_0208a418, &s_data_system_BGFontLZ_bin_0208a41c, 1, 1, 0, 0, 0);
 
     CBGNCGRFile *ncgrFile = new CBGNCGRFile(&s_BGF_BGFontNCGRLZ_bin_0208a438, 1, 1, 0);
     CNSCRFile *nscrFile = new CNSCRFile(&s_BGF_BGFontNSCRLZ_bin_0208a450, 1, 1, 0);

@@ -9,8 +9,8 @@
 .public _ZN11CTPEmulator12sub_02002198Emmt
 .public _ZN17UnkClass_020023EC12sub_02002434Emmmm
 .public _ZN17UnkClass_020023EC12sub_020027E8Ev
-.public _ZN19CSmartNNSFndArchiveC1EPcS0_mmmmm
-.public _ZN19CSmartNNSFndArchiveD1Ev
+.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardD1Ev
 .public sub_02002BC4
 .public sub_02003108
 .public _ZN14CBinaryFileMesC1EPcm
