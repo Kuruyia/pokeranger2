@@ -1,5 +1,7 @@
 #include "UnkClass_02001C04.hpp"
 
+#include "heap.hpp"
+
 UnkClass_02001C04::UnkClass_02001C04()
     : unk_0008(24)
     , unk_0009(4)
@@ -55,4 +57,14 @@ void UnkClass_02001C04::sub_02001C20()
             }
         }
     }
+}
+
+void *UnkClass_02001C04::operator new(size_t size)
+{
+    return Heap_AllocSecondary(size);
+}
+
+void UnkClass_02001C04::operator delete(void *ptr)
+{
+    Heap_FreeSecondary(ptr);
 }

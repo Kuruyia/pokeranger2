@@ -10,6 +10,9 @@ public:
     UnkClass_02001C04();
     void sub_02001C20();
 
+    void *operator new(size_t size);
+    void operator delete(void *ptr);
+
 public:
     u16 unk_0000;
     u16 unk_0002;

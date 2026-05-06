@@ -18,7 +18,6 @@ Static main
     Object main.nef.p/src_heap_operators.cpp.o
     Object main.nef.p/src_overlay_manager.cpp.o
     Object main.nef.p/src_UnkClass_02001C04.cpp.o
-    Object main.nef.p/src_sub_02001D28.cpp.o
     Object main.nef.p/src_CTouchPanel.cpp.o
     Object main.nef.p/src_CTPEmulator.cpp.o
     Object main.nef.p/src_heap.cpp.o
