@@ -20166,7 +20166,7 @@ ov11_0212CEE8: ; 0x0212CEE8
 	mov r1, r6
 	mov r2, #1
 	str r3, [sp, #8]
-	bl _ZN11CBinaryFileC1EPcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmmm
 	mov r4, r0
 	arm_func_end ov11_0212CEE8
 _0212CF48:

@@ -3,12 +3,12 @@
 .public _Znam
 .public _ZdlPv
 .public _ZdaPv
-.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
 .public _ZN13CArchiveGuardD1Ev
-.public _ZN14CBinaryFileMesC1EPcm
-.public _ZN9CNCLRFileC1EPcmmm
-.public _ZN9CNSCRFileC1EPcmmm
-.public _ZN11CBGNCGRFileC1EPcmmm
+.public _ZN14CBinaryFileMesC1EPKcm
+.public _ZN9CNCLRFileC1EPKcmmm
+.public _ZN9CNSCRFileC1EPKcmmm
+.public _ZN11CBGNCGRFileC1EPKcmmm
 .public sub_02003B64
 .public sub_02006000
 .public _ZN6CSceneC2Ev

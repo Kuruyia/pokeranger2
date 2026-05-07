@@ -444,7 +444,7 @@ ov28_0211CEDC: ; 0x0211CEDC
 	add r0, sp, #0x10
 	add r2, sp, #0x1f4
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	ldr r0, [sp, #0x78]
 	cmp r0, #0
 	ldrne r0, [r0, #0x4c]
@@ -467,7 +467,7 @@ _0211CF8C:
 	add r1, sp, #0x7c
 	str r3, [sp, #8]
 	mov r2, #1
-	bl _ZN11CBinaryFileC1EPcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmmm
 	ldr r0, [sp, #0x128]
 	cmp r0, #0
 	bne _0211CFE0

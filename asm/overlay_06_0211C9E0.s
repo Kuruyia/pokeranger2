@@ -361,7 +361,7 @@ ov6_0211CE24: ; 0x0211CE24
 	beq _0211CEC8
 	ldr r1, _0211D450 ; =s_data_message_etc_menu_mes_overlay_6_0211dcb0
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 	arm_func_end ov6_0211CE24
 _0211CEC8:
@@ -751,7 +751,7 @@ ov6_0211D460: ; 0x0211D460
 	ldr r1, _0211D620 ; =s_BGS_overlay_6_0211dcf0
 	ldr r2, _0211D624 ; =s_data_menu_mo000_bg_LZ_bin_overlay_6_0211dcf4
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 	arm_func_end ov6_0211D460
 _0211D4A0:
@@ -763,7 +763,7 @@ _0211D4A0:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 	mov r5, r0
 _0211D4C8:
 	mov r0, #0xbc
@@ -774,7 +774,7 @@ _0211D4C8:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	mov r6, r0
 _0211D4F0:
 	mov r0, #0xbc
@@ -785,7 +785,7 @@ _0211D4F0:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r7, r0
 _0211D518:
 	mov r0, #0xbc
@@ -796,7 +796,7 @@ _0211D518:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r8, r0
 _0211D540:
 	mov r0, #0

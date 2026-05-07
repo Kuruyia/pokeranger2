@@ -3901,7 +3901,7 @@ _02013350:
 	add r1, sp, #0x10
 	add r2, sp, #0x134
 	str r7, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 _02013390:
 	cmp r0, #0
 	addeq sp, sp, #0x1f4
@@ -4351,7 +4351,7 @@ _020139BC:
 	add r1, sp, #0x10
 	add r2, sp, #0xd4
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 _02013A00:
 	cmp r0, #0
 	addeq sp, sp, #0x194
@@ -5353,7 +5353,7 @@ _02014714:
 	add r1, sp, #0x18
 	add r2, sp, #0x13c
 	str r8, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 _0201474C:
 	cmp r0, #0
 	addeq sp, sp, #0x1fc

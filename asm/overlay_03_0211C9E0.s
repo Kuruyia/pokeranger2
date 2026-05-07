@@ -1039,7 +1039,7 @@ _0211D8C4:
 	beq _0211D8FC
 	ldr r1, _0211DD84 ; =s_data_message_etc_menu_mes_overlay_3_0212a84c
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _0211D8FC:
 	mov r0, #0xc
@@ -1107,7 +1107,7 @@ _0211D9DC:
 	beq _0211D9FC
 	ldr r1, _0211DD88 ; =s_data_message_system_system_mes_overlay_3_0212a868
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r5, r0
 _0211D9FC:
 	mov r0, #0xc
@@ -4859,7 +4859,7 @@ _02120E7C:
 	beq _02120F28
 	ldr r1, _021210A0 ; =s_data_message_etc_menu_mes_overlay_3_0212a9b0
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _02120F28:
 	mov r0, #0xc
@@ -5530,7 +5530,7 @@ _02121794:
 	beq _02121840
 	ldr r1, _021219B8 ; =s_data_message_etc_menu_mes_overlay_3_0212aa64
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _02121840:
 	mov r0, #0xc
@@ -7396,7 +7396,7 @@ ov3_021231F4: ; 0x021231F4
 	ldr r1, _021234F0 ; =s_BGU_overlay_3_0212aaf8
 	ldr r2, _021234F4 ; =s_data_menu_mnd000_bg_LZ_bin_overlay_3_0212aafc
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 	arm_func_end ov3_021231F4
 _02123234:
@@ -7408,7 +7408,7 @@ _02123234:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 	mov r5, r0
 _0212325C:
 	mov r0, #0xbc
@@ -7419,7 +7419,7 @@ _0212325C:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	mov r6, r0
 _02123284:
 	mov r0, #0xbc
@@ -7430,7 +7430,7 @@ _02123284:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r7, r0
 _021232AC:
 	mov r1, #0
@@ -7484,7 +7484,7 @@ _02123338:
 	ldr r1, _02123504 ; =s_BGD_overlay_3_0212ab4c
 	ldr r2, _02123508 ; =s_data_menu_mni000_bg_LZ_bin_overlay_3_0212ab50
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 _02123370:
 	mov r0, #0xbc
@@ -7495,7 +7495,7 @@ _02123370:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 	mov r5, r0
 _02123398:
 	mov r0, #0xbc
@@ -7506,7 +7506,7 @@ _02123398:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	mov r6, r0
 _021233C0:
 	mov r0, #0xbc
@@ -7517,7 +7517,7 @@ _021233C0:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r7, r0
 _021233E8:
 	mov r0, #0xbc
@@ -7528,7 +7528,7 @@ _021233E8:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r8, r0
 _02123410:
 	mov r0, #0
@@ -7614,7 +7614,7 @@ ov3_0212351C: ; 0x0212351C
 	beq _02123544
 	ldr r1, _02123628 ; =s_data_message_etc_name_entry_overlay_3_0212abb4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 	arm_func_end ov3_0212351C
 _02123544:
@@ -8826,7 +8826,7 @@ _02124544:
 	ldr r1, _02124C38 ; =s_OPD_overlay_3_0212ad14
 	ldr r2, _02124C3C ; =s_data_opening_opdm_LZ_bin_overlay_3_0212ad18
 	add r0, sp, #0x130
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	add r0, sl, #0x22c
 	ldr r7, _02124C40 ; =DAT_overlay_3_0212ac60
 	ldr fp, _02124C44 ; =s_OPD_opdm_02d_ntft_overlay_3_0212ad34

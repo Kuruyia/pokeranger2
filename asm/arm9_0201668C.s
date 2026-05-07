@@ -2157,7 +2157,7 @@ _02018268:
 	beq _02018288
 	ldr r1, _02018370 ; =s_data_message_etc_pokemon_name_0208b778
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _02018288:
 	mov r0, #0xc
@@ -2287,7 +2287,7 @@ _02018428:
 	beq _02018448
 	ldr r1, _02018530 ; =s_data_message_etc_item_name_0208b798
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _02018448:
 	mov r0, #0xc
@@ -2417,7 +2417,7 @@ _020185E8:
 	beq _02018608
 	ldr r1, _020186F0 ; =s_data_message_etc_yakumono_name_0208b7b4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _02018608:
 	mov r0, #0xc
@@ -2547,7 +2547,7 @@ _020187A8:
 	beq _020187C8
 	ldr r1, _020188B0 ; =s_data_message_etc_npc_name_0208b7d4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _020187C8:
 	mov r0, #0xc
@@ -2677,7 +2677,7 @@ _02018968:
 	beq _02018988
 	ldr r1, _02018A70 ; =s_data_message_etc_fieldwaza_name_0208b7f0
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _02018988:
 	mov r0, #0xc
@@ -5233,7 +5233,7 @@ sub_0201AB28: ; 0x0201AB28
 	mov r1, r8
 	mov r2, r7
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 	arm_func_end sub_0201AB28
 _0201AB78:
@@ -6438,7 +6438,7 @@ _0201BB6C:
 	beq _0201BB8C
 	ldr r1, _0201C318 ; =s_data_message_etc_place_name_0208baa4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r7, r0
 _0201BB8C:
 	mov r0, #0xc
@@ -6510,7 +6510,7 @@ _0201BC78:
 	beq _0201BC98
 	ldr r1, _0201C31C ; =s_data_message_etc_yakumono_info_0208bac4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _0201BC98:
 	mov r0, #0xc
@@ -6582,7 +6582,7 @@ _0201BD84:
 	beq _0201BDA4
 	ldr r1, _0201C320 ; =s_data_message_etc_menu_mes_0208bae4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _0201BDA4:
 	mov r0, #0xc
@@ -6981,7 +6981,7 @@ sub_0201C340: ; 0x0201C340
 	ldr r1, _0201C454 ; =s_TGT_0208bb74
 	ldr r2, _0201C458 ; =s_data_menu_mt000_bg_LZ_bin_0208bb58
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	arm_func_end sub_0201C340
 _0201C380:
 	str r0, [r4, #0x38]
@@ -6993,7 +6993,7 @@ _0201C380:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 _0201C3A8:
 	str r0, [r4, #0x3c]
 	mov r0, #0xbc
@@ -7004,7 +7004,7 @@ _0201C3A8:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 _0201C3D0:
 	str r0, [r4, #0x40]
 	mov r0, #0xbc
@@ -7015,7 +7015,7 @@ _0201C3D0:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 _0201C3F8:
 	str r0, [r4, #0x44]
 	mov r0, #0xbc
@@ -7026,7 +7026,7 @@ _0201C3F8:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 _0201C420:
 	str r0, [r4, #0x48]
 	mov r0, #0xbc
@@ -7037,7 +7037,7 @@ _0201C420:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 _0201C448:
 	str r0, [r4, #0x4c]
 	add sp, sp, #0x10
@@ -7825,7 +7825,7 @@ _0201CED0:
 	beq _0201CEF0
 	ldr r1, _0201D57C ; =s_data_message_etc_pokemon_info_0208bbd4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r8, r0
 _0201CEF0:
 	mov r0, #0xc
@@ -7893,7 +7893,7 @@ _0201CFD0:
 	beq _0201CFF0
 	ldr r1, _0201D580 ; =s_data_message_etc_menu_mes_0208bbf4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r7, r0
 _0201CFF0:
 	mov r0, #0xc
@@ -7961,7 +7961,7 @@ _0201D0D0:
 	beq _0201D0F0
 	ldr r1, _0201D584 ; =s_data_message_etc_assist_mes_0208bc10
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r7, r0
 _0201D0F0:
 	mov r0, #0xc
@@ -8380,7 +8380,7 @@ _0201D6E4:
 	beq _0201D704
 	ldr r1, _0201DF2C ; =s_data_message_etc_pokemon_info_0208bbd4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r7, r0
 _0201D704:
 	mov r0, #0xc
@@ -8452,7 +8452,7 @@ _0201D7F0:
 	beq _0201D810
 	ldr r1, _0201DF30 ; =s_data_message_etc_menu_mes_0208bbf4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _0201D810:
 	mov r0, #0xc
@@ -8524,7 +8524,7 @@ _0201D8FC:
 	beq _0201D91C
 	ldr r1, _0201DF34 ; =s_data_message_etc_assist_mes_0208bc10
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _0201D91C:
 	mov r0, #0xc
@@ -9337,7 +9337,7 @@ sub_0201E478: ; 0x0201E478
 	ldr r1, _0201E698 ; =s_BGS_0208bca4
 	ldr r2, _0201E69C ; =s_data_menu_mt000_bg_LZ_bin_0208bca8
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 	arm_func_end sub_0201E478
 _0201E4B8:
@@ -9349,7 +9349,7 @@ _0201E4B8:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 	mov r5, r0
 _0201E4E0:
 	mov r0, #0xbc
@@ -9360,7 +9360,7 @@ _0201E4E0:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	mov r6, r0
 _0201E508:
 	mov r0, #0xbc
@@ -9371,7 +9371,7 @@ _0201E508:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r7, r0
 _0201E530:
 	mov r0, #0xbc
@@ -9382,7 +9382,7 @@ _0201E530:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r8, r0
 _0201E558:
 	mov r0, #0xbc
@@ -9393,7 +9393,7 @@ _0201E558:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov sb, r0
 _0201E580:
 	mov r1, #0
@@ -9510,7 +9510,7 @@ _0201E6E8:
 	ldr r1, _0201E8A4 ; =s_PTC_0208bd20
 	ldr r2, _0201E8A8 ; =s_data_menu_mt000_bg_LZ_bin_0208bca8
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 _0201E71C:
 	str r0, [r4, #0x58]
 	ldr r0, [r4, #0x5c]
@@ -9532,7 +9532,7 @@ _0201E744:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 _0201E768:
 	str r0, [r4, #0x5c]
 	ldr r0, [r4, #0x60]
@@ -9554,7 +9554,7 @@ _0201E790:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 _0201E7B4:
 	str r0, [r4, #0x60]
 	ldr r0, [r4, #0x64]
@@ -9576,7 +9576,7 @@ _0201E7DC:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 _0201E800:
 	str r0, [r4, #0x64]
 	ldr r0, [r4, #0x68]
@@ -9598,7 +9598,7 @@ _0201E828:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 _0201E84C:
 	str r0, [r4, #0x68]
 	ldr r0, [r4, #0x6c]
@@ -9620,7 +9620,7 @@ _0201E874:
 	mov r3, #0
 	mov r2, #2
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 _0201E898:
 	str r0, [r4, #0x6c]
 	add sp, sp, #0x10
@@ -11890,7 +11890,7 @@ sub_02020774: ; 0x02020774
 	mov r0, r4
 	mov r2, r5
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 	arm_func_end sub_02020774
 _020207C4:
@@ -12018,7 +12018,7 @@ sub_0202091C: ; 0x0202091C
 	mov r3, r5
 	mov r2, #1
 	str ip, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 	mov r7, r0
 	arm_func_end sub_0202091C
 _0202096C:
@@ -12391,7 +12391,7 @@ sub_02020E08: ; 0x02020E08
 	mov r3, r5
 	mov r2, #1
 	str ip, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	mov r7, r0
 	arm_func_end sub_02020E08
 _02020E58:
@@ -12620,7 +12620,7 @@ sub_0202110C: ; 0x0202110C
 	mov r3, r5
 	mov r2, #1
 	str sb, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r4, r0
 	arm_func_end sub_0202110C
 _0202115C:
@@ -12907,7 +12907,7 @@ sub_020214E4: ; 0x020214E4
 	beq _02021514
 	mov r1, r4
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 	arm_func_end sub_020214E4
 _02021514:
@@ -17290,7 +17290,7 @@ sub_02024D00: ; 0x02024D00
 	beq _02024D2C
 	ldr r1, _02025038 ; =s_data_message_etc_menu_mes_0208bf14
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 	arm_func_end sub_02024D00
 _02024D2C:
@@ -17365,7 +17365,7 @@ _02024E0C:
 	ldr r1, _0202503C ; =s_BGS_0208bf30
 	ldr r2, _02025040 ; =s_data_menu_mc000_bg_LZ_bin_0208bf34
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 _02024E44:
 	mov r0, #0xbc
@@ -17376,7 +17376,7 @@ _02024E44:
 	ldr r1, _02025044 ; =s_BGS_mc000_NCGR_0208bf50
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 _02024E68:
 	str r0, [r7, #0x60]
 	mov r0, #0xbc
@@ -17387,7 +17387,7 @@ _02024E68:
 	ldr r1, _02025048 ; =s_BGS_mc000_NCLR_0208bf60
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 _02024E90:
 	str r0, [r7, #0x64]
 	mov r0, #0xbc
@@ -17398,7 +17398,7 @@ _02024E90:
 	ldr r1, _0202504C ; =s_BGS_mc000_01_NSCR_0208bf70
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 _02024EB8:
 	str r0, [r7, #0x68]
 	mov r0, #0xbc
@@ -17409,7 +17409,7 @@ _02024EB8:
 	ldr r1, _02025050 ; =s_BGS_mc000_02_NSCR_0208bf84
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 _02024EE0:
 	str r0, [r7, #0x6c]
 	mov r0, #0xbc
@@ -17420,7 +17420,7 @@ _02024EE0:
 	ldr r1, _02025054 ; =s_BGS_mc000_03_NSCR_0208bf98
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 _02024F08:
 	str r0, [r7, #0x70]
 	cmp r4, #0
@@ -18163,7 +18163,7 @@ _020258F8:
 	beq _02025994
 	ldr r1, _02026120 ; =s_data_message_etc_menu_mes_0208bfdc
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _02025994:
 	mov r0, #0xc
@@ -18793,7 +18793,7 @@ _0202621C:
 	beq _020262B8
 	ldr r1, _02026938 ; =s_data_message_etc_menu_mes_0208bfdc
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r7, r0
 _020262B8:
 	mov r0, #0xc
@@ -19287,7 +19287,7 @@ _0202699C:
 	ldr r1, _02026BFC ; =s_BGS_0208c070
 	ldr r2, _02026C00 ; =s_data_menu_mp000_bg_LZ_bin_0208c074
 	str r3, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 _020269D0:
 	str r0, [r5, #0x48]
 	b _02026BF0
@@ -19300,7 +19300,7 @@ _020269D8:
 	ldr r1, _02026C04 ; =s_BGS_mp000_NCGR_0208c090
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 _020269FC:
 	str r0, [r5, #0x4c]
 	b _02026BF0
@@ -19313,7 +19313,7 @@ _02026A04:
 	ldr r1, _02026C08 ; =s_BGS_mp000_NCLR_0208c0a0
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 _02026A28:
 	str r0, [r5, #0x50]
 	b _02026BF0
@@ -19326,7 +19326,7 @@ _02026A30:
 	ldr r1, _02026C0C ; =s_BGS_mp000_00_NSCR_0208c0b0
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r6, r0
 _02026A58:
 	mov r1, #0
@@ -19358,7 +19358,7 @@ _02026AA8:
 	ldr r1, _02026C10 ; =s_BGS_mp000_01_NSCR_0208c0c4
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r5, r0
 _02026AD0:
 	mov r2, #0
@@ -19387,7 +19387,7 @@ _02026B14:
 	ldr r1, _02026C14 ; =s_BGS_mp000_02_NSCR_0208c0d8
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r4, r0
 _02026B3C:
 	mov r2, #0
@@ -19471,7 +19471,7 @@ sub_02026C18: ; 0x02026C18
 	ldr r1, _02026E38 ; =s_BGS_0208c070
 	ldr r2, _02026E3C ; =s_data_menu_mp000_bg_LZ_bin_0208c074
 	str r3, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 	arm_func_end sub_02026C18
 _02026C58:
@@ -19483,7 +19483,7 @@ _02026C58:
 	ldr r1, _02026E40 ; =s_BGS_mp000_NCGR_0208c090
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 	mov r5, r0
 _02026C80:
 	mov r0, #0xbc
@@ -19494,7 +19494,7 @@ _02026C80:
 	ldr r1, _02026E44 ; =s_BGS_mp000_NCLR_0208c0a0
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	mov r6, r0
 _02026CA8:
 	mov r0, #0xbc
@@ -19505,7 +19505,7 @@ _02026CA8:
 	ldr r1, _02026E48 ; =s_BGS_mp000_00_NSCR_0208c0b0
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r7, r0
 _02026CD0:
 	mov r0, #0xbc
@@ -19516,7 +19516,7 @@ _02026CD0:
 	ldr r1, _02026E4C ; =s_BGS_mp000_01_NSCR_0208c0c4
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r8, r0
 _02026CF8:
 	mov r0, #0xbc
@@ -19527,7 +19527,7 @@ _02026CF8:
 	ldr r1, _02026E50 ; =s_BGS_mp000_02_NSCR_0208c0d8
 	mov r3, r2
 	str r2, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov sb, r0
 _02026D20:
 	mov r1, #0

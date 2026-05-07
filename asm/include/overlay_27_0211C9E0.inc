@@ -4,9 +4,9 @@
 .public _ZdlPv
 .public _ZdaPv
 .public _Z9Heap_FreePv
-.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
 .public _ZN13CArchiveGuardD1Ev
-.public _ZN14CBinaryFileMesC1EPcm
+.public _ZN14CBinaryFileMesC1EPKcm
 .public sub_02003718
 .public sub_0200372C
 .public sub_02003788

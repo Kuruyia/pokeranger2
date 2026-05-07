@@ -9,7 +9,7 @@
 .public CARD_UnlockBackup
 .public CARD_WaitBackupAsync
 .public CARDi_RequestStreamCommand
-.public _ZN14CBinaryFileMesC1EPcm
+.public _ZN14CBinaryFileMesC1EPKcm
 .public DAT_02084574
 .public DAT_0208461c
 .public DAT_02084670
@@ -314,12 +314,12 @@
 .public s_uppict_03d_00_0208bebc
 .public s_uppict_03d_0208beb0
 .public _Z12sub_02001210v
-.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
 .public _ZN13CArchiveGuardD1Ev
 .public sub_020031E8
-.public _ZN9CNCLRFileC1EPcmmm
-.public _ZN9CNSCRFileC1EPcmmm
-.public _ZN11CBGNCGRFileC1EPcmmm
+.public _ZN9CNCLRFileC1EPKcmmm
+.public _ZN9CNSCRFileC1EPKcmmm
+.public _ZN11CBGNCGRFileC1EPKcmmm
 .public sub_02003718
 .public sub_0200372C
 .public sub_02003788

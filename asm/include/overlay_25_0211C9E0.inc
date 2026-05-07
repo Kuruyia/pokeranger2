@@ -3,7 +3,7 @@
 .public _ZdlPv
 .public _Z23Heap_AllocWithAlignmentmm
 .public _Z9Heap_FreePv
-.public _ZN9CNCLRFileC1EPcmmm
+.public _ZN9CNCLRFileC1EPKcmmm
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02007D98

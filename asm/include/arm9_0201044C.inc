@@ -58,7 +58,7 @@
 .public s_s_s_w_0208b578
 .public s_t_03d_02d_0208b4ec
 .public strcpy
-.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
 .public _ZN13CArchiveGuardD1Ev
 .public sub_02003108
 .public sub_020031E8

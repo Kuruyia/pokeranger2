@@ -567,7 +567,7 @@ _0211D19C:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	mov r4, r0
 _0211D1C8:
 	ldr r0, [r4, #0xb8]

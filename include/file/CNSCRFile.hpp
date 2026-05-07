@@ -9,7 +9,7 @@
 
 class CNSCRFile : public CBinaryFile {
 public:
-    CNSCRFile(char *path, u32 arg1, u32 arg2, u32 arg3);
+    CNSCRFile(const char *path, u32 arg1, u32 arg2, u32 arg3);
     virtual ~CNSCRFile();
 
 public:

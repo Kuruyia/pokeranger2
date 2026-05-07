@@ -1673,7 +1673,7 @@ ov23_0211E19C: ; 0x0211E19C
 	ldr r1, _0211E42C ; =s_BGU_overlay_23_0211f1f0
 	ldr r2, _0211E430 ; =s_data_menu_mre000_bg_LZ_bin_overlay_23_0211f1f4
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 	arm_func_end ov23_0211E19C
 _0211E1DC:
@@ -1685,7 +1685,7 @@ _0211E1DC:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 	mov r5, r0
 _0211E204:
 	mov r0, #0xbc
@@ -1696,7 +1696,7 @@ _0211E204:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	mov r6, r0
 _0211E22C:
 	mov r0, #0xbc
@@ -1707,7 +1707,7 @@ _0211E22C:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r7, r0
 _0211E254:
 	mov r1, #0
@@ -1761,7 +1761,7 @@ _0211E2E0:
 	ldr r1, _0211E440 ; =s_BGD_overlay_23_0211f244
 	ldr r2, _0211E444 ; =s_data_menu_mre001_bg_LZ_bin_overlay_23_0211f248
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 _0211E318:
 	mov r0, #0xbc
@@ -1772,7 +1772,7 @@ _0211E318:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 	mov r6, r0
 _0211E340:
 	mov r0, #0xbc
@@ -1783,7 +1783,7 @@ _0211E340:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	mov r5, r0
 _0211E368:
 	mov r0, #0xbc
@@ -1794,7 +1794,7 @@ _0211E368:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r7, r0
 _0211E390:
 	mov r0, #0
@@ -1861,7 +1861,7 @@ ov23_0211E454: ; 0x0211E454
 	beq _0211E47C
 	ldr r1, _0211E660 ; =s_data_message_etc_recode_mes_overlay_23_0211f298
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 	arm_func_end ov23_0211E454
 _0211E47C:
@@ -1930,7 +1930,7 @@ _0211E55C:
 	beq _0211E57C
 	ldr r1, _0211E664 ; =s_data_message_etc_menu_mes_overlay_23_0211f2b8
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r6, r0
 _0211E57C:
 	mov r0, #0xc

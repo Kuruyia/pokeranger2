@@ -8,7 +8,7 @@
 
 class CBinaryFileMes : public CBinaryFile {
 public:
-    CBinaryFileMes(char *path, u32 arg1);
+    CBinaryFileMes(const char *path, u32 arg1);
     virtual ~CBinaryFileMes();
 };
 

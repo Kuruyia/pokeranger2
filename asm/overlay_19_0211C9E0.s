@@ -353,7 +353,7 @@ _0211CDC4:
 	ldr r1, _0211CFAC ; =s_BGD_overlay_19_0211e43c
 	ldr r2, _0211CFB0 ; =s_data_menu_mps000_bg_LZ_bin_overlay_19_0211e440
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	mov r4, r0
 _0211CE88:
 	mov r0, #0xbc
@@ -364,7 +364,7 @@ _0211CE88:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN11CBGNCGRFileC1EPcmmm
+	bl _ZN11CBGNCGRFileC1EPKcmmm
 	mov r6, r0
 _0211CEB0:
 	mov r0, #0xbc
@@ -375,7 +375,7 @@ _0211CEB0:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	mov r5, r0
 _0211CED8:
 	mov r0, #0xbc
@@ -386,7 +386,7 @@ _0211CED8:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl _ZN9CNSCRFileC1EPcmmm
+	bl _ZN9CNSCRFileC1EPKcmmm
 	mov r7, r0
 _0211CF00:
 	mov r0, #0

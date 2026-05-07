@@ -1,9 +1,9 @@
 #pragma once
 .public _Znwm
 .public _ZdlPv
-.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
 .public _ZN13CArchiveGuardD1Ev
-.public _ZN11CBinaryFileC1EPcmmmmm
+.public _ZN11CBinaryFileC1EPKcmmmmm
 .public CBinaryFile_complete_obj_dtor
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0

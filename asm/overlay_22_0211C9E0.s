@@ -1993,7 +1993,7 @@ ov22_0211E4AC: ; 0x0211E4AC
 	ldr r1, [r1, #4]
 	add r0, sp, #0
 	mov r2, #1
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	mov r0, #0xc
 	bl _Znwm
 	str r0, [r7, #0xcc]
@@ -3431,7 +3431,7 @@ ov22_0211F7B8: ; 0x0211F7B8
 	add r0, sp, #0x10
 	mov r2, r5
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPcS0_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
 	ldr r0, [sp, #0x78]
 	cmp r0, #0
 	ldrne r0, [r0, #0x4c]
@@ -3454,7 +3454,7 @@ _0211F81C:
 	add r1, sp, #0x7c
 	str r3, [sp, #8]
 	mov r2, #1
-	bl _ZN11CBinaryFileC1EPcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmmm
 	ldr r0, [sp, #0x128]
 	cmp r0, #0
 	bne _0211F870
@@ -4805,7 +4805,7 @@ ov22_02120A24: ; 0x02120A24
 	beq _02120A58
 	mov r1, r5
 	mov r2, #0
-	bl _ZN14CBinaryFileMesC1EPcm
+	bl _ZN14CBinaryFileMesC1EPKcm
 	arm_func_end ov22_02120A24
 _02120A58:
 	str r0, [r4]
@@ -4942,7 +4942,7 @@ ov22_02120BB4: ; 0x02120BB4
 	mov r1, r6
 	str r3, [sp, #8]
 	mov r2, #1
-	bl _ZN11CBinaryFileC1EPcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmmm
 	ldr r0, [sp, #0x58]
 	cmp r0, #0
 	beq _02120E48
@@ -5311,7 +5311,7 @@ ov22_021210B8: ; 0x021210B8
 	add r0, sp, #4
 	str r3, [sp]
 	mov r2, #1
-	bl _ZN9CNCLRFileC1EPcmmm
+	bl _ZN9CNCLRFileC1EPKcmmm
 	ldr r0, [sp, #0xbc]
 	mov r1, #0x20
 	ldr r0, [r0, #0xc]

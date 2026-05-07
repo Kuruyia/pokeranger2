@@ -9,9 +9,9 @@
 .public _Z9Heap_FreePv
 .public _ZN17UnkClass_020023EC12sub_020027E8Ev
 .public _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
-.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
 .public _ZN13CArchiveGuardD1Ev
-.public _ZN11CBinaryFileC1EPcmmmmm
+.public _ZN11CBinaryFileC1EPKcmmmmm
 .public sub_020031E8
 .public sub_02003718
 .public sub_0200372C

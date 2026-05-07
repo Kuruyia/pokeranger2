@@ -1,11 +1,11 @@
 #pragma once
 .public _Znwm
 .public _ZdlPv
-.public _ZN13CArchiveGuardC1EPcS0_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
 .public _ZN13CArchiveGuardD1Ev
-.public _ZN9CNCLRFileC1EPcmmm
-.public _ZN9CNSCRFileC1EPcmmm
-.public _ZN11CBGNCGRFileC1EPcmmm
+.public _ZN9CNCLRFileC1EPKcmmm
+.public _ZN9CNSCRFileC1EPKcmmm
+.public _ZN11CBGNCGRFileC1EPKcmmm
 .public sub_02003718
 .public sub_0200372C
 .public sub_02003788

@@ -9,7 +9,7 @@
 
 class CArchiveGuard {
 public:
-    CArchiveGuard(char *arcName, char *arg1, u32 arg2, u32 arg3, u32 arg4, u32 arg5, u32 arg6);
+    CArchiveGuard(const char *arcName, const char *arg1, u32 arg2, u32 arg3, u32 arg4, u32 arg5, u32 arg6);
     ~CArchiveGuard();
 
 public:

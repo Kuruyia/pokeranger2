@@ -1221,42 +1221,6 @@ ptr_FUN_020841e4_0208a36c: ; 0x0208A36C
 
     .data
 
-	.global s_BGF_0208a418
-s_BGF_0208a418: ; 0x0208A418
-	.asciz "BGF"
-
-	.global s_data_system_BGFontLZ_bin_0208a41c
-s_data_system_BGFontLZ_bin_0208a41c: ; 0x0208A41C
-	.asciz "data/system/BGFontLZ.bin"
-
-	.global _0208A435
-_0208A435:
-	.byte 0x00, 0x00, 0x00
-
-	.global s_BGF_BGFontNCGRLZ_bin_0208a438
-s_BGF_BGFontNCGRLZ_bin_0208a438: ; 0x0208A438
-	.asciz "BGF:BGFontNCGRLZ.bin"
-
-	.global _0208A44D
-_0208A44D:
-	.byte 0x00, 0x00, 0x00
-
-	.global s_BGF_BGFontNSCRLZ_bin_0208a450
-s_BGF_BGFontNSCRLZ_bin_0208a450: ; 0x0208A450
-	.asciz "BGF:BGFontNSCRLZ.bin"
-
-	.global _0208A465
-_0208A465:
-	.byte 0x00, 0x00, 0x00
-
-	.global s_BGF_BGFontNCLRLZ_bin_0208a468
-s_BGF_BGFontNCLRLZ_bin_0208a468: ; 0x0208A468
-	.asciz "BGF:BGFontNCLRLZ.bin"
-
-	.global _0208A47D
-_0208A47D:
-	.byte 0x00, 0x00, 0x00
-
 	.global DAT_0208a480
 DAT_0208a480: ; 0x0208A480
 	.byte 0x00, 0x00, 0x00, 0x00

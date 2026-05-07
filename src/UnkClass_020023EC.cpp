@@ -11,11 +11,6 @@
 
 extern "C" {
 extern NNS_GFD_DST_TYPE DAT_02084288[8][3];
-extern char s_BGF_0208a418;
-extern char s_data_system_BGFontLZ_bin_0208a41c;
-extern char s_BGF_BGFontNCGRLZ_bin_0208a438;
-extern char s_BGF_BGFontNSCRLZ_bin_0208a450;
-extern char s_BGF_BGFontNCLRLZ_bin_0208a468;
 }
 
 UnkClass_020023EC::UnkClass_020023EC()
@@ -31,11 +26,11 @@ UnkClass_020023EC::UnkClass_020023EC()
 
 void UnkClass_020023EC::sub_02002434(u32 arg0, u32 arg1, u32 arg2, u32 arg3)
 {
-    CArchiveGuard *archive = new CArchiveGuard(&s_BGF_0208a418, &s_data_system_BGFontLZ_bin_0208a41c, 1, 1, 0, 0, 0);
+    CArchiveGuard *archive = new CArchiveGuard("BGF", "data/system/BGFontLZ.bin", 1, 1, 0, 0, 0);
 
-    CBGNCGRFile *ncgrFile = new CBGNCGRFile(&s_BGF_BGFontNCGRLZ_bin_0208a438, 1, 1, 0);
-    CNSCRFile *nscrFile = new CNSCRFile(&s_BGF_BGFontNSCRLZ_bin_0208a450, 1, 1, 0);
-    CNCLRFile *nclrFile = new CNCLRFile(&s_BGF_BGFontNCLRLZ_bin_0208a468, 1, 1, 0);
+    CBGNCGRFile *ncgrFile = new CBGNCGRFile("BGF:BGFontNCGRLZ.bin", 1, 1, 0);
+    CNSCRFile *nscrFile = new CNSCRFile("BGF:BGFontNSCRLZ.bin", 1, 1, 0);
+    CNCLRFile *nclrFile = new CNCLRFile("BGF:BGFontNCLRLZ.bin", 1, 1, 0);
 
     ((u16 *)nclrFile->unk_B8->pRawData)[0] = 0;
     unk_0C = arg1 >> 5;
