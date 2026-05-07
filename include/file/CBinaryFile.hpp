@@ -7,14 +7,22 @@
 
 class CBinaryFile {
 public:
-    CBinaryFile(const char *path, u32 arg1, u32 arg2, u32 arg3, u32 arg4, u32 arg5);
+    CBinaryFile();
+    CBinaryFile(const char *path, u32 arg1, u32 arg2, u32 arg3, void *arg4, u32 arg5);
     virtual ~CBinaryFile();
+
+    void sub_02002C9C();
+    void *sub_02002CB4(const char *path, u32 arg1, u32 arg2, u32 arg3, void *arg4, u32 arg5);
+    void *sub_02002DD0(const char *path, u32 arg1, u32 arg2, void *arg3, u32 arg4);
+    void sub_020030D4();
+
+    static BOOL sub_02003108(const char *path);
 
 public:
     FSFile file;
     void *unk_4C;
     u32 unk_50;
-    void *unk_54;
+    u32 unk_54;
     u8 unk_58[0x60];
 };
 

@@ -7396,7 +7396,7 @@ ov3_021231F4: ; 0x021231F4
 	ldr r1, _021234F0 ; =s_BGU_overlay_3_0212aaf8
 	ldr r2, _021234F4 ; =s_data_menu_mnd000_bg_LZ_bin_overlay_3_0212aafc
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 	arm_func_end ov3_021231F4
 _02123234:
@@ -7484,7 +7484,7 @@ _02123338:
 	ldr r1, _02123504 ; =s_BGD_overlay_3_0212ab4c
 	ldr r2, _02123508 ; =s_data_menu_mni000_bg_LZ_bin_overlay_3_0212ab50
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 _02123370:
 	mov r0, #0xbc
@@ -8826,7 +8826,7 @@ _02124544:
 	ldr r1, _02124C38 ; =s_OPD_overlay_3_0212ad14
 	ldr r2, _02124C3C ; =s_data_opening_opdm_LZ_bin_overlay_3_0212ad18
 	add r0, sp, #0x130
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	add r0, sl, #0x22c
 	ldr r7, _02124C40 ; =DAT_overlay_3_0212ac60
 	ldr fp, _02124C44 ; =s_OPD_opdm_02d_ntft_overlay_3_0212ad34

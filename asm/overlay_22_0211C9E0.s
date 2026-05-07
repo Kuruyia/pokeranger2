@@ -3431,7 +3431,7 @@ ov22_0211F7B8: ; 0x0211F7B8
 	add r0, sp, #0x10
 	mov r2, r5
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	ldr r0, [sp, #0x78]
 	cmp r0, #0
 	ldrne r0, [r0, #0x4c]
@@ -3454,7 +3454,7 @@ _0211F81C:
 	add r1, sp, #0x7c
 	str r3, [sp, #8]
 	mov r2, #1
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 	ldr r0, [sp, #0x128]
 	cmp r0, #0
 	bne _0211F870
@@ -4942,7 +4942,7 @@ ov22_02120BB4: ; 0x02120BB4
 	mov r1, r6
 	str r3, [sp, #8]
 	mov r2, #1
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 	ldr r0, [sp, #0x58]
 	cmp r0, #0
 	beq _02120E48

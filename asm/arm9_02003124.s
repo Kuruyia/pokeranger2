@@ -1,436 +1,7 @@
     .include "macros.inc"
-    .include "include/arm9_02002BA4.inc"
+    .include "include/arm9_02003124.inc"
 
     .text
-
-	arm_func_start CBinaryFile_simple_ctor
-CBinaryFile_simple_ctor: ; 0x02002BA4
-	stmdb sp!, {r4, lr}
-	ldr r1, _02002BC0 ; =ptr_FUN_02002c34_0208a518
-	mov r4, r0
-	str r1, [r4]
-	bl sub_02002C9C
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02002BC0: .word ptr_FUN_02002c34_0208a518
-	arm_func_end CBinaryFile_simple_ctor
-
-	arm_func_start _ZN11CBinaryFileC1EPKcmmmmm
-_ZN11CBinaryFileC1EPKcmmmmm: ; 0x02002BC4
-	stmdb sp!, {r4, r5, r6, r7, lr}
-	sub sp, sp, #0xc
-	ldr ip, _02002C30 ; =ptr_FUN_02002c34_0208a518
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	str ip, [r7]
-	bl sub_02002C9C
-	ldr r1, [sp, #0x20]
-	ldr r0, [sp, #0x24]
-	str r1, [sp]
-	ldr ip, [sp, #0x28]
-	str r0, [sp, #4]
-	mov r0, r7
-	mov r1, r6
-	mov r2, r5
-	mov r3, r4
-	str ip, [sp, #8]
-	bl sub_02002CB4
-	cmp r0, #0
-	bne _02002C24
-	mov r0, r7
-	bl sub_02002C9C
-	arm_func_end _ZN11CBinaryFileC1EPKcmmmmm
-_02002C24:
-	mov r0, r7
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, pc}
-	.align 2, 0
-_02002C30: .word ptr_FUN_02002c34_0208a518
-
-	arm_func_start CBinaryFile_complete_obj_dtor
-CBinaryFile_complete_obj_dtor: ; 0x02002C34
-	stmdb sp!, {r4, lr}
-	ldr r1, _02002C50 ; =ptr_FUN_02002c34_0208a518
-	mov r4, r0
-	str r1, [r4]
-	bl sub_020030D4
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02002C50: .word ptr_FUN_02002c34_0208a518
-	arm_func_end CBinaryFile_complete_obj_dtor
-
-	arm_func_start CBinaryFile_deleting_obj_dtor
-CBinaryFile_deleting_obj_dtor: ; 0x02002C54
-	stmdb sp!, {r4, lr}
-	ldr r1, _02002C78 ; =ptr_FUN_02002c34_0208a518
-	mov r4, r0
-	str r1, [r4]
-	bl sub_020030D4
-    mov r0, r4
-    bl _ZdlPv
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02002C78: .word ptr_FUN_02002c34_0208a518
-	arm_func_end CBinaryFile_deleting_obj_dtor
-
-	arm_func_start sub_02002C7C
-sub_02002C7C: ; 0x02002C7C
-	stmdb sp!, {r4, lr}
-	ldr r1, _02002C98 ; =ptr_FUN_02002c34_0208a518
-	mov r4, r0
-	str r1, [r4]
-	bl sub_020030D4
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02002C98: .word ptr_FUN_02002c34_0208a518
-	arm_func_end sub_02002C7C
-
-	arm_func_start sub_02002C9C
-sub_02002C9C: ; 0x02002C9C
-	mov r1, #0
-	str r1, [r0, #0x4c]
-	str r1, [r0, #0x50]
-	mov r1, #1
-	str r1, [r0, #0x54]
-	bx lr
-	arm_func_end sub_02002C9C
-
-	arm_func_start sub_02002CB4
-sub_02002CB4: ; 0x02002CB4
-	stmdb sp!, {r3, r4, r5, r6, r7, lr}
-	sub sp, sp, #8
-	mov r7, r1
-	mov r4, r0
-	mov r6, r2
-	mov r5, r3
-	bl sub_020030D4
-	cmp r7, #0
-	beq _02002D10
-	ldr r0, [sp, #0x20]
-	cmp r0, #0
-	bne _02002D10
-	mov r0, r7
-	bl STD_GetStringLength
-	cmp r0, #0x60
-	addge sp, sp, #8
-	movge r0, #0
-	ldmgeia sp!, {r3, r4, r5, r6, r7, pc}
-	mov r1, r7
-	add r0, r4, #0x58
-	mov r2, #0x60
-	bl STD_CopyLString
-	b _02002D20
-	arm_func_end sub_02002CB4
-_02002D10:
-	ldr r1, _02002DCC ; =DAT_0208a564
-	add r0, r4, #0x58
-	mov r2, #0x60
-	bl STD_CopyLString
-_02002D20:
-	cmp r6, #2
-	bne _02002D7C
-	mov r0, r7
-	bl NNS_FndGetArchiveFileByName
-	str r0, [r4, #0x4c]
-	cmp r0, #0
-	beq _02002D70
-	add r0, r4, #4
-	bl FS_InitFile
-	mov r1, r7
-	add r0, r4, #4
-	bl FS_OpenFile
-	ldr r2, [r4, #0x2c]
-	ldr r1, [r4, #0x28]
-	add r0, r4, #4
-	sub r1, r2, r1
-	str r1, [r4, #0x50]
-	bl FS_CloseFile
-	mov r0, #0
-	str r0, [r4, #0x54]
-_02002D70:
-	add sp, sp, #8
-	ldr r0, [r4, #0x4c]
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-_02002D7C:
-	ldr r0, [sp, #0x24]
-	ldr ip, [sp, #0x28]
-	str r0, [sp]
-	mov r0, r4
-	mov r1, r7
-	mov r2, r6
-	mov r3, r5
-	str ip, [sp, #4]
-	bl sub_02002DD0
-	movs r5, r0
-	beq _02002DC0
-	ldr r1, [r4, #0x50]
-	bl DC_FlushRange
-	ldr r0, [sp, #0x24]
-	cmp r0, #0
-	movne r0, #0
-	strne r0, [r4, #0x54]
-_02002DC0:
-	mov r0, r5
-	add sp, sp, #8
-	ldmia sp!, {r3, r4, r5, r6, r7, pc}
-	.align 2, 0
-_02002DCC: .word DAT_0208a564
-
-	arm_func_start sub_02002DD0
-sub_02002DD0: ; 0x02002DD0
-	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
-	mov sl, r0
-	mov r4, r1
-	add r0, sl, #4
-	ldr r8, [sp, #0x28]
-	mov fp, r2
-	mov sb, r3
-	bl FS_InitFile
-	mov r1, r4
-	add r0, sl, #4
-	bl FS_OpenFile
-	cmp r0, #0
-	moveq r0, #0
-	ldmeqia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	ldr r1, [sl, #0x2c]
-	ldr r0, [sl, #0x28]
-	cmp r8, #0
-	sub r0, r1, r0
-	str r0, [sl, #0x50]
-	beq _02002E28
-	cmp sb, #0
-	beq _02002EB0
-	arm_func_end sub_02002DD0
-_02002E28:
-	cmp sb, #0
-	beq _02002E4C
-	ldr r0, [sl, #0x50]
-	cmp r0, #0x20000
-	bls _02002E40
-	bl OS_Terminate
-_02002E40:
-	ldr r0, _020030CC ; =_0208F320
-	str r0, [sl, #0x4c]
-	b _02002ED4
-_02002E4C:
-	cmp fp, #0
-	moveq r1, #4
-	mvnne r1, #3
-	cmp sb, #0
-	mvnne r0, #0
-	mulne r0, r1, r0
-	movne r1, r0
-	mov r0, #1
-	str r0, [sl, #0x54]
-	ldr r0, [sl, #0x50]
-	bl _Z23Heap_AllocWithAlignmentmm
-	str r0, [sl, #0x4c]
-	cmp r0, #0
-	bne _02002ED4
-	bl _Z18Heap_GetMainHandlev
-	mov r4, r0
-	ldr r0, [r4]
-	mov r1, #4
-	bl NNS_FndGetAllocatableSizeForExpHeapEx
-	ldr r0, [r4]
-	bl NNS_FndGetTotalFreeSizeForExpHeap
-	add r0, sl, #4
-	bl FS_CloseFile
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02002EB0:
-	ldr r1, [sp, #0x2c]
-	ldr r0, [sl, #0x50]
-	cmp r1, r0
-	bhs _02002ED0
-	add r0, sl, #4
-	bl FS_CloseFile
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02002ED0:
-	str r8, [sl, #0x4c]
-_02002ED4:
-	ldr r0, _020030D0 ; =_0208F31C
-	ldr r0, [r0]
-	cmp r0, #0
-	bne _02002F38
-	ldr r1, [sl, #0x4c]
-	ldr r2, [sl, #0x50]
-	add r0, sl, #4
-	bl FS_ReadFile
-	ldr r1, [sl, #0x50]
-	cmp r1, r0
-	beq _02002FB4
-	ldr r0, [sl, #0x4c]
-	cmp r8, r0
-	beq _02002F28
-	cmp sb, #0
-	bne _02002F28
-	cmp r0, #0
-	beq _02002F28
-	bl _Z9Heap_FreePv
-	mov r0, #0
-	str r0, [sl, #0x4c]
-_02002F28:
-	add r0, sl, #4
-	bl FS_CloseFile
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02002F38:
-	ldr r6, [sl, #0x4c]
-	ldr r7, [sl, #0x50]
-	mov r5, #0x200
-	mov r4, #0
-	b _02002FAC
-_02002F4C:
-	mov r1, r6
-	mov r2, r5
-	add r0, sl, #4
-	bl FS_ReadFile
-	cmp r0, #0
-	bge _02002F9C
-	ldr r0, [sl, #0x4c]
-	cmp r8, r0
-	beq _02002F8C
-	cmp sb, #0
-	bne _02002F8C
-	cmp r0, #0
-	beq _02002F8C
-	bl _Z9Heap_FreePv
-	mov r0, #0
-	str r0, [sl, #0x4c]
-_02002F8C:
-	add r0, sl, #4
-	bl FS_CloseFile
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02002F9C:
-	cmp r7, r0
-	movlo r7, r4
-	add r6, r6, r0
-	subhs r7, r7, r0
-_02002FAC:
-	cmp r7, #0
-	bne _02002F4C
-_02002FB4:
-	cmp sb, #0
-	beq _020030BC
-	ldr r0, [sl, #0x4c]
-	cmp r8, #0
-	ldr r0, [r0]
-	mov r0, r0, lsr #8
-	str r0, [sl, #0x50]
-	ldr r0, [sl, #0x4c]
-	ldr r0, [r0]
-	and r4, r0, #0xf0
-	bne _02003028
-	cmp fp, #0
-	moveq r1, #4
-	ldr r0, [sl, #0x50]
-	mvnne r1, #3
-	bl _Z23Heap_AllocWithAlignmentmm
-	movs r8, r0
-	bne _02003048
-	bl _Z18Heap_GetMainHandlev
-	mov r4, r0
-	ldr r0, [r4]
-	mov r1, #4
-	bl NNS_FndGetAllocatableSizeForExpHeapEx
-	ldr r0, [r4]
-	bl NNS_FndGetTotalFreeSizeForExpHeap
-	add r0, sl, #4
-	bl FS_CloseFile
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02003028:
-	ldr r1, [sp, #0x2c]
-	ldr r0, [sl, #0x50]
-	cmp r1, r0
-	bhs _02003048
-	add r0, sl, #4
-	bl FS_CloseFile
-	mov r0, #0
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-_02003048:
-	cmp r4, #0x20
-	bgt _02003060
-	bge _0200308C
-	cmp r4, #0x10
-	beq _0200307C
-	b _020030B8
-_02003060:
-	cmp r4, #0x30
-	bgt _02003070
-	beq _0200309C
-	b _020030B8
-_02003070:
-	cmp r4, #0x80
-	beq _020030AC
-	b _020030B8
-_0200307C:
-	ldr r0, [sl, #0x4c]
-	mov r1, r8
-	bl MI_UncompressLZ8
-	b _020030B8
-_0200308C:
-	ldr r0, [sl, #0x4c]
-	mov r1, r8
-	bl MI_UncompressHuffman
-	b _020030B8
-_0200309C:
-	ldr r0, [sl, #0x4c]
-	mov r1, r8
-	bl MI_UncompressRL8
-	b _020030B8
-_020030AC:
-	ldr r0, [sl, #0x4c]
-	mov r1, r8
-	bl MI_UnfilterDiff8
-_020030B8:
-	str r8, [sl, #0x4c]
-_020030BC:
-	add r0, sl, #4
-	bl FS_CloseFile
-	ldr r0, [sl, #0x4c]
-	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
-	.align 2, 0
-_020030CC: .word MAIN_BSS_0208F320
-_020030D0: .word MAIN_BSS_0208F31C
-
-	arm_func_start sub_020030D4
-sub_020030D4: ; 0x020030D4
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	ldr r0, [r4, #0x54]
-	cmp r0, #0
-	ldrne r0, [r4, #0x4c]
-	cmpne r0, #0
-	beq _020030FC
-	bl _Z9Heap_FreePv
-	mov r0, #0
-	str r0, [r4, #0x4c]
-	arm_func_end sub_020030D4
-_020030FC:
-	mov r0, r4
-	bl sub_02002C9C
-	ldmia sp!, {r4, pc}
-
-	arm_func_start sub_02003108
-sub_02003108: ; 0x02003108
-	stmdb sp!, {r3, lr}
-	sub sp, sp, #8
-	mov r1, r0
-	add r0, sp, #0
-	bl FS_ConvertPathToFileID
-	add sp, sp, #8
-	ldmia sp!, {r3, pc}
-	arm_func_end sub_02003108
 
 	arm_func_start sub_02003124
 sub_02003124: ; 0x02003124
@@ -450,7 +21,7 @@ _ZN14CBinaryFileMesC1EPKcm: ; 0x0200313C
 	mov r6, r0
 	mov r5, r1
 	mov r4, r2
-	bl CBinaryFile_simple_ctor
+	bl _ZN11CBinaryFileC1Ev
 	ldr r0, _020031B0 ; =PTR_LAB_0208a508
 	str r0, [r6]
 	bl sub_02003124
@@ -466,11 +37,11 @@ _ZN14CBinaryFileMesC1EPKcm: ; 0x0200313C
 	mov r0, r6
 	add r1, sp, #0xc
 	str r3, [sp, #8]
-	bl sub_02002CB4
+	bl _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
 	cmp r0, #0
 	bne _020031A4
 	mov r0, r6
-	bl sub_02002C9C
+	bl _ZN11CBinaryFile12sub_02002C9CEv
 	arm_func_end _ZN14CBinaryFileMesC1EPKcm
 _020031A4:
 	mov r0, r6
@@ -508,7 +79,7 @@ sub_020031E8: ; 0x020031E8
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl CBinaryFile_simple_ctor
+	bl _ZN11CBinaryFileC1Ev
 	ldr r1, _02003270 ; =PTR_LAB_0208a590
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -520,7 +91,7 @@ sub_020031E8: ; 0x020031E8
 	mov r2, r5
 	mov r3, r4
 	str ip, [sp, #8]
-	bl sub_02002CB4
+	bl _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
 	cmp r0, #0
 	addeq sp, sp, #0xc
 	moveq r0, r7
@@ -532,7 +103,7 @@ sub_020031E8: ; 0x020031E8
 	addne sp, sp, #0xc
 	mov r0, r7
 	ldmneia sp!, {r4, r5, r6, r7, pc}
-	bl sub_020030D4
+	bl _ZN11CBinaryFile12sub_020030D4Ev
 	mov r0, r7
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, pc}
@@ -546,7 +117,7 @@ CNCERFile_complete_obj_dtor: ; 0x02003274
     ldr r1, _02003298 ; =PTR_LAB_0208a590
     mov r4, r0
     str r1, [r4]
-    bl sub_020030D4
+    bl _ZN11CBinaryFile12sub_020030D4Ev
     mov r0, r4
     bl sub_02002C7C
     mov r0, r4
@@ -560,7 +131,7 @@ CNCERFile_deleting_obj_dtor: ; 0x0200329C
     ldr r1, _020032C8 ; =PTR_LAB_0208a590
     mov r4, r0
     str r1, [r4]
-    bl sub_020030D4
+    bl _ZN11CBinaryFile12sub_020030D4Ev
     mov r0, r4
     bl sub_02002C7C
     mov r0, r4
@@ -578,7 +149,7 @@ _ZN9CNCGRFileC1EPKcmmm: ; 0x020032CC
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl CBinaryFile_simple_ctor
+	bl _ZN11CBinaryFileC1Ev
 	ldr r1, _02003354 ; =PTR_LAB_0208a5b8
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -590,7 +161,7 @@ _ZN9CNCGRFileC1EPKcmmm: ; 0x020032CC
 	mov r2, r5
 	mov r3, r4
 	str ip, [sp, #8]
-	bl sub_02002CB4
+	bl _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
 	cmp r0, #0
 	addeq sp, sp, #0xc
 	moveq r0, r7
@@ -602,7 +173,7 @@ _ZN9CNCGRFileC1EPKcmmm: ; 0x020032CC
 	addne sp, sp, #0xc
 	mov r0, r7
 	ldmneia sp!, {r4, r5, r6, r7, pc}
-	bl sub_020030D4
+	bl _ZN11CBinaryFile12sub_020030D4Ev
 	mov r0, r7
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, pc}
@@ -616,7 +187,7 @@ CNCGRFile_complete_obj_dtor: ; 0x02003358
     ldr r1, _0200337C ; =PTR_LAB_0208a5b8
     mov r4, r0
     str r1, [r4]
-    bl sub_020030D4
+    bl _ZN11CBinaryFile12sub_020030D4Ev
     mov r0, r4
     bl sub_02002C7C
     mov r0, r4
@@ -630,7 +201,7 @@ CNCGRFile_deleting_obj_dtor: ; 0x02003380
     ldr r1, _020033AC ; =PTR_LAB_0208a5b8
     mov r4, r0
     str r1, [r4]
-    bl sub_020030D4
+    bl _ZN11CBinaryFile12sub_020030D4Ev
     mov r0, r4
     bl sub_02002C7C
     mov r0, r4
@@ -648,7 +219,7 @@ _ZN9CNCLRFileC1EPKcmmm: ; 0x020033B0
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl CBinaryFile_simple_ctor
+	bl _ZN11CBinaryFileC1Ev
 	ldr r1, _02003438 ; =ptr_FUN_0200343c_0208a5e0
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -660,7 +231,7 @@ _ZN9CNCLRFileC1EPKcmmm: ; 0x020033B0
 	mov r2, r5
 	mov r3, r4
 	str ip, [sp, #8]
-	bl sub_02002CB4
+	bl _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
 	cmp r0, #0
 	addeq sp, sp, #0xc
 	moveq r0, r7
@@ -672,7 +243,7 @@ _ZN9CNCLRFileC1EPKcmmm: ; 0x020033B0
 	addne sp, sp, #0xc
 	mov r0, r7
 	ldmneia sp!, {r4, r5, r6, r7, pc}
-	bl sub_020030D4
+	bl _ZN11CBinaryFile12sub_020030D4Ev
 	mov r0, r7
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, pc}
@@ -686,7 +257,7 @@ CNCLRFile_complete_obj_dtor: ; 0x0200343C
 	ldr r1, _02003460 ; =ptr_FUN_0200343c_0208a5e0
 	mov r4, r0
 	str r1, [r4]
-	bl sub_020030D4
+	bl _ZN11CBinaryFile12sub_020030D4Ev
 	mov r0, r4
 	bl sub_02002C7C
 	mov r0, r4
@@ -701,7 +272,7 @@ CNCLRFile_deleting_obj_dtor: ; 0x02003464
 	ldr r1, _02003490 ; =ptr_FUN_0200343c_0208a5e0
 	mov r4, r0
 	str r1, [r4]
-	bl sub_020030D4
+	bl _ZN11CBinaryFile12sub_020030D4Ev
 	mov r0, r4
 	bl sub_02002C7C
 	mov r0, r4
@@ -720,7 +291,7 @@ _ZN9CNSCRFileC1EPKcmmm: ; 0x02003494
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl CBinaryFile_simple_ctor
+	bl _ZN11CBinaryFileC1Ev
 	ldr r1, _0200351C ; =PTR_LAB_0208a608
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -732,7 +303,7 @@ _ZN9CNSCRFileC1EPKcmmm: ; 0x02003494
 	mov r2, r5
 	mov r3, r4
 	str ip, [sp, #8]
-	bl sub_02002CB4
+	bl _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
 	cmp r0, #0
 	addeq sp, sp, #0xc
 	moveq r0, r7
@@ -744,7 +315,7 @@ _ZN9CNSCRFileC1EPKcmmm: ; 0x02003494
 	addne sp, sp, #0xc
 	mov r0, r7
 	ldmneia sp!, {r4, r5, r6, r7, pc}
-	bl sub_020030D4
+	bl _ZN11CBinaryFile12sub_020030D4Ev
 	mov r0, r7
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, pc}
@@ -758,7 +329,7 @@ CNSCRFile_complete_obj_dtor: ; 0x02003520
     ldr r1, _02003544 ; =PTR_LAB_0208a608
     mov r4, r0
     str r1, [r4]
-    bl sub_020030D4
+    bl _ZN11CBinaryFile12sub_020030D4Ev
     mov r0, r4
     bl sub_02002C7C
     mov r0, r4
@@ -772,7 +343,7 @@ CNSCRFile_deleting_obj_dtor: ; 0x02003548
     ldr r1, _02003574 ; =PTR_LAB_0208a608
     mov r4, r0
     str r1, [r4]
-    bl sub_020030D4
+    bl _ZN11CBinaryFile12sub_020030D4Ev
     mov r0, r4
     bl sub_02002C7C
     mov r0, r4
@@ -790,7 +361,7 @@ sub_02003578: ; 0x02003578
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl CBinaryFile_simple_ctor
+	bl _ZN11CBinaryFileC1Ev
 	ldr r1, _02003600 ; =PTR_LAB_0208a630
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -802,7 +373,7 @@ sub_02003578: ; 0x02003578
 	mov r2, r5
 	mov r3, r4
 	str ip, [sp, #8]
-	bl sub_02002CB4
+	bl _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
 	cmp r0, #0
 	addeq sp, sp, #0xc
 	moveq r0, r7
@@ -814,7 +385,7 @@ sub_02003578: ; 0x02003578
 	addne sp, sp, #0xc
 	mov r0, r7
 	ldmneia sp!, {r4, r5, r6, r7, pc}
-	bl sub_020030D4
+	bl _ZN11CBinaryFile12sub_020030D4Ev
 	mov r0, r7
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, pc}
@@ -828,7 +399,7 @@ CNANRFile_complete_obj_dtor: ; 0x02003604
 	ldr r1, _02003628 ; =PTR_LAB_0208a630
 	mov r4, r0
 	str r1, [r4]
-	bl sub_020030D4
+	bl _ZN11CBinaryFile12sub_020030D4Ev
 	mov r0, r4
 	bl sub_02002C7C
 	mov r0, r4
@@ -843,7 +414,7 @@ CNANRFile_deleting_obj_dtor: ; 0x0200362C
 	ldr r1, _02003658 ; =PTR_LAB_0208a630
 	mov r4, r0
 	str r1, [r4]
-	bl sub_020030D4
+	bl _ZN11CBinaryFile12sub_020030D4Ev
 	mov r0, r4
 	bl sub_02002C7C
 	mov r0, r4
@@ -862,7 +433,7 @@ _ZN11CBGNCGRFileC1EPKcmmm: ; 0x0200365C
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl CBinaryFile_simple_ctor
+	bl _ZN11CBinaryFileC1Ev
 	ldr r1, _020036E4 ; =PTR_LAB_0208a65c
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -874,7 +445,7 @@ _ZN11CBGNCGRFileC1EPKcmmm: ; 0x0200365C
 	mov r2, r5
 	mov r3, r4
 	str ip, [sp, #8]
-	bl sub_02002CB4
+	bl _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
 	cmp r0, #0
 	addeq sp, sp, #0xc
 	moveq r0, r7
@@ -886,7 +457,7 @@ _ZN11CBGNCGRFileC1EPKcmmm: ; 0x0200365C
 	addne sp, sp, #0xc
 	mov r0, r7
 	ldmneia sp!, {r4, r5, r6, r7, pc}
-	bl sub_020030D4
+	bl _ZN11CBinaryFile12sub_020030D4Ev
 	mov r0, r7
 	add sp, sp, #0xc
 	ldmia sp!, {r4, r5, r6, r7, pc}
@@ -6974,7 +6545,7 @@ sub_0200887C: ; 0x0200887C
 	mov r0, r5
 	mov r1, r8
 	str r3, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 	mov r5, r0
 	arm_func_end sub_0200887C
 _020088E4:

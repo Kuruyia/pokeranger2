@@ -10884,7 +10884,7 @@ sub_02033C60: ; 0x02033C60
 	mov r1, r6
 	mov r3, r2
 	stmib sp, {r4, ip}
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 	arm_func_end sub_02033C60
 _02033CB4:
 	str r0, [r6, #0x28]
@@ -13782,7 +13782,7 @@ sub_02035FE8: ; 0x02035FE8
 	add r0, sp, #0x10
 	add r2, sp, #0x7c
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	ldr r1, _02036154 ; =s_MEF_ew_03d_NCLR_0208d760
 	add r0, sp, #0x7c
 	mov r2, r5
@@ -13899,7 +13899,7 @@ sub_02036184: ; 0x02036184
 	mov r1, r5
 	mov r2, #1
 	str r3, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 	mov r4, r0
 	arm_func_end sub_02036184
 _020361D8:
@@ -13913,7 +13913,7 @@ _020361D8:
 	mov r1, r6
 	mov r2, #1
 	str r3, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 	mov r5, r0
 _02036208:
 	ldr r0, [r5, #0x50]
@@ -13998,7 +13998,7 @@ sub_020362EC: ; 0x020362EC
 	mov r1, r6
 	mov r2, #1
 	str r3, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 	arm_func_end sub_020362EC
 _0203633C:
 	str r0, [r4, #0x14]
@@ -14012,7 +14012,7 @@ _0203633C:
 	mov r1, r5
 	mov r2, #1
 	str r3, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 _0203636C:
 	str r0, [r4, #0x18]
 	ldr r2, [r4, #0x14]
@@ -26207,7 +26207,7 @@ _02040A70:
 	add r1, sp, #0x14
 	add r2, sp, #0x138
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 _02040AC0:
 	cmp r0, #0
 	addeq sp, sp, #0x1f8
@@ -26932,7 +26932,7 @@ _020413DC:
 	add r1, sp, #0x14
 	add r2, sp, #0xd8
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 _02041428:
 	cmp r0, #0
 	addeq sp, sp, #0x198
@@ -27616,7 +27616,7 @@ sub_02041CB4: ; 0x02041CB4
 	mov r1, r6
 	mov r3, r2
 	str r2, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 	arm_func_end sub_02041CB4
 _02041CF4:
 	str r0, [r4]
@@ -27978,7 +27978,7 @@ sub_02042134: ; 0x02042134
 	ldr r1, _02042304 ; =DAT_0208e0d0
 	add r2, sp, #0x10
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 	arm_func_end sub_02042134
 _0204218C:

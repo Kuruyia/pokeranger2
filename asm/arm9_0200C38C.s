@@ -978,7 +978,7 @@ sub_0200CFF4: ; 0x0200CFF4
 	ldr r1, _0200D104 ; =s_data_font_font_jp_utf8_NFTR_0208aa74
 	mov r3, r2
 	str r2, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 	arm_func_end sub_0200CFF4
 _0200D044:
 	str r0, [r5]
@@ -992,7 +992,7 @@ _0200D044:
 	ldr r1, _0200D108 ; =s_data_font_font_jp_lc_utf8_NFTR_0208aa94
 	mov r3, r2
 	str r2, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 _0200D074:
 	str r0, [r5, #4]
 	b _0200D0D8
@@ -1006,7 +1006,7 @@ _0200D07C:
 	ldr r1, _0200D10C ; =s_data_font_font_us_utf8_NFTR_0208aab4
 	mov r3, r2
 	str r2, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 _0200D0A4:
 	str r0, [r5]
 	mov r0, #0xb8
@@ -1019,7 +1019,7 @@ _0200D0A4:
 	ldr r1, _0200D110 ; =s_data_font_font_us_lc_utf8_NFTR_0208aad4
 	mov r3, r2
 	str r2, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 _0200D0D4:
 	str r0, [r5, #4]
 _0200D0D8:
@@ -1077,7 +1077,7 @@ sub_0200D148: ; 0x0200D148
 	mov r1, r4
 	mov r2, #1
 	str r3, [sp, #8]
-	bl _ZN11CBinaryFileC1EPKcmmmmm
+	bl _ZN11CBinaryFileC1EPKcmmmPvm
 	arm_func_end sub_0200D148
 _0200D184:
 	str r0, [r5]
@@ -3333,7 +3333,7 @@ _0200EE5C:
 	add r1, sp, #0x10
 	add r2, sp, #0x70
 	str r5, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r7, r0
 _0200EF10:
 	mov r0, #0xbc
@@ -3576,7 +3576,7 @@ _0200F1B0:
 	add r1, sp, #0x10
 	add r2, sp, #0x70
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r5, r0
 _0200F264:
 	mov r0, #0xbc

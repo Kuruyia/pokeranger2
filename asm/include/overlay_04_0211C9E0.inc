@@ -3,7 +3,7 @@
 .public _Znam
 .public _ZdlPv
 .public _ZdaPv
-.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
 .public _ZN14CBinaryFileMesC1EPKcm
 .public _ZN9CNCLRFileC1EPKcmmm

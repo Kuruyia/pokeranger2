@@ -353,7 +353,7 @@ _0211CDC4:
 	ldr r1, _0211CFAC ; =s_BGD_overlay_19_0211e43c
 	ldr r2, _0211CFB0 ; =s_data_menu_mps000_bg_LZ_bin_overlay_19_0211e440
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 _0211CE88:
 	mov r0, #0xbc

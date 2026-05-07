@@ -1,7 +1,7 @@
 #pragma once
 .public _Znwm
 .public _ZdlPv
-.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
 .public _ZN9CNCLRFileC1EPKcmmm
 .public _ZN9CNSCRFileC1EPKcmmm

@@ -36,7 +36,7 @@
 .public OS_Terminate
 .public STD_CopyString
 .public _ZN17UnkClass_0200BBC812sub_0200BE28Emmmm
-.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
 .public _ZN9CNCGRFileC1EPKcmmm
 .public _ZN9CNCLRFileC1EPKcmmm
@@ -62,7 +62,7 @@
 .public s_s_s_NCGR_0208ab10
 .public s_s_s_NCLR_0208ab1c
 .public s_s_s_cac_0208ab34
-.public _ZN11CBinaryFileC1EPKcmmmmm
+.public _ZN11CBinaryFileC1EPKcmmmPvm
 .public sub_020031E8
 .public sub_02008788
 .public sub_020087C8

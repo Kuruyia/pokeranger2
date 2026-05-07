@@ -495,7 +495,7 @@ ov4_0211D060: ; 0x0211D060
 	ldr r1, _0211D368 ; =s_BGM_overlay_4_0211d858
 	ldr r2, _0211D36C ; =s_data_menu_ml000_bg_LZ_bin_overlay_4_0211d85c
 	str r3, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 	arm_func_end ov4_0211D060
 _0211D0A4:
@@ -616,7 +616,7 @@ _0211D220:
 	ldr r1, _0211D368 ; =s_BGM_overlay_4_0211d858
 	ldr r2, _0211D384 ; =s_data_menu_mnd000_bg_LZ_bin_overlay_4_0211d8d4
 	str r3, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 _0211D258:
 	mov r0, #0xbc

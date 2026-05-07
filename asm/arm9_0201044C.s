@@ -3901,7 +3901,7 @@ _02013350:
 	add r1, sp, #0x10
 	add r2, sp, #0x134
 	str r7, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 _02013390:
 	cmp r0, #0
 	addeq sp, sp, #0x1f4
@@ -4351,7 +4351,7 @@ _020139BC:
 	add r1, sp, #0x10
 	add r2, sp, #0xd4
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 _02013A00:
 	cmp r0, #0
 	addeq sp, sp, #0x194
@@ -4558,7 +4558,7 @@ sub_02013CD4: ; 0x02013CD4
 	bl OS_SPrintf
 	add r0, sp, #0xc4
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	addeq sp, sp, #0x124
 	moveq r0, #0
@@ -4569,7 +4569,7 @@ sub_02013CD4: ; 0x02013CD4
 	bl OS_SPrintf
 	add r0, sp, #0x64
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	addeq sp, sp, #0x124
 	moveq r0, #0
@@ -4580,7 +4580,7 @@ sub_02013CD4: ; 0x02013CD4
 	bl OS_SPrintf
 	add r0, sp, #4
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	addeq sp, sp, #0x124
 	moveq r0, #0
@@ -4676,7 +4676,7 @@ sub_02013E78: ; 0x02013E78
 	bl OS_SPrintf
 	add r0, sp, #0xc4
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	ldreq r0, [sp, #0x130]
 	cmpeq r0, #0
@@ -4689,7 +4689,7 @@ sub_02013E78: ; 0x02013E78
 	bl OS_SPrintf
 	add r0, sp, #0x64
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	addeq sp, sp, #0x124
 	moveq r0, #0
@@ -4700,7 +4700,7 @@ sub_02013E78: ; 0x02013E78
 	bl OS_SPrintf
 	add r0, sp, #4
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	addeq sp, sp, #0x124
 	moveq r0, #0
@@ -5353,7 +5353,7 @@ _02014714:
 	add r1, sp, #0x18
 	add r2, sp, #0x13c
 	str r8, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 _0201474C:
 	cmp r0, #0
 	addeq sp, sp, #0x1fc
@@ -5755,7 +5755,7 @@ sub_02014CEC: ; 0x02014CEC
 	bl OS_SPrintf
 	add r0, sp, #0xc8
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	addeq sp, sp, #0x128
 	moveq r0, #0
@@ -5766,7 +5766,7 @@ sub_02014CEC: ; 0x02014CEC
 	bl OS_SPrintf
 	add r0, sp, #0x68
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	addeq sp, sp, #0x128
 	moveq r0, #0
@@ -5777,7 +5777,7 @@ sub_02014CEC: ; 0x02014CEC
 	bl OS_SPrintf
 	add r0, sp, #8
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	addeq sp, sp, #0x128
 	moveq r0, #0
@@ -5879,7 +5879,7 @@ sub_02014EA4: ; 0x02014EA4
 	bl OS_SPrintf
 	add r0, sp, #0xc8
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	ldreq r0, [sp, #0x138]
 	cmpeq r0, #0
@@ -5892,7 +5892,7 @@ sub_02014EA4: ; 0x02014EA4
 	bl OS_SPrintf
 	add r0, sp, #0x68
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	addeq sp, sp, #0x128
 	moveq r0, #0
@@ -5903,7 +5903,7 @@ sub_02014EA4: ; 0x02014EA4
 	bl OS_SPrintf
 	add r0, sp, #8
 	mov r1, #0
-	bl sub_02003108
+	bl _ZN11CBinaryFile12sub_02003108EPKc
 	cmp r0, #0
 	addeq sp, sp, #0x128
 	moveq r0, #0

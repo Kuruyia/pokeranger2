@@ -12,6 +12,7 @@ struct HeapHandles {
 
 void Heap_Init(u32 secondarySize);
 void *Heap_Alloc(size_t size);
+void *Heap_AllocWithAlignment(size_t size, u32 alignment);
 void Heap_Free(void *ptr);
 NNSFndHeapHandle *Heap_GetMainHandle(void);
 void *Heap_AllocSecondary(size_t size);

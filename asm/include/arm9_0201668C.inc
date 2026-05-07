@@ -314,7 +314,7 @@
 .public s_uppict_03d_00_0208bebc
 .public s_uppict_03d_0208beb0
 .public _Z12sub_02001210v
-.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
 .public sub_020031E8
 .public _ZN9CNCLRFileC1EPKcmmm

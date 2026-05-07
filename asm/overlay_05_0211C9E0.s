@@ -1709,7 +1709,7 @@ ov5_0211E0D4: ; 0x0211E0D4
 	ldr r1, _0211E2F4 ; =DAT_overlay_5_02120540
 	ldr r2, _0211E2F8 ; =s_data_menu_ms000_bg_LZ_bin_overlay_5_02120544
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 	arm_func_end ov5_0211E0D4
 _0211E114:

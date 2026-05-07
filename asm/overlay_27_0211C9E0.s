@@ -1374,7 +1374,7 @@ ov27_0211DC64: ; 0x0211DC64
 	ldr r2, _0211DDA8 ; =s_data_menu_ql000_bg_LZ_bin_overlay_27_02121318
 	add r0, sp, #0x10
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r1, #1
 	str r1, [sp]
 	mov r3, #0

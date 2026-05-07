@@ -9,10 +9,10 @@
 .public _ZN11CTPEmulator12sub_02002198Emmt
 .public _ZN17UnkClass_020023EC12sub_02002434Emmmm
 .public _ZN17UnkClass_020023EC12sub_020027E8Ev
-.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
-.public _ZN11CBinaryFileC1EPKcmmmmm
-.public sub_02003108
+.public _ZN11CBinaryFileC1EPKcmmmPvm
+.public _ZN11CBinaryFile12sub_02003108EPKc
 .public _ZN14CBinaryFileMesC1EPKcm
 .public sub_020031E8
 .public _ZN9CNCLRFileC1EPKcmmm

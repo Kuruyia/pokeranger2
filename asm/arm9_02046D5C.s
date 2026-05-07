@@ -1317,6 +1317,9 @@ PTR_LAB_0208a508: ; 0x0208A508
 	.global ptr_FUN_020031cc_0208a50c
 ptr_FUN_020031cc_0208a50c: ; 0x0208A50C
 	.word CBinaryFileMes_deleting_obj_dtor
+
+    .global _ZTV11CBinaryFile
+_ZTV11CBinaryFile: ; 0x0208A510
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_02083578_0208a4bc
 

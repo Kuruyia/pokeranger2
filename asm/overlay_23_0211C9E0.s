@@ -1673,7 +1673,7 @@ ov23_0211E19C: ; 0x0211E19C
 	ldr r1, _0211E42C ; =s_BGU_overlay_23_0211f1f0
 	ldr r2, _0211E430 ; =s_data_menu_mre000_bg_LZ_bin_overlay_23_0211f1f4
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 	arm_func_end ov23_0211E19C
 _0211E1DC:
@@ -1761,7 +1761,7 @@ _0211E2E0:
 	ldr r1, _0211E440 ; =s_BGD_overlay_23_0211f244
 	ldr r2, _0211E444 ; =s_data_menu_mre001_bg_LZ_bin_overlay_23_0211f248
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 _0211E318:
 	mov r0, #0xbc

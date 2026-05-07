@@ -3,9 +3,9 @@
 .public _Znam
 .public _ZdlPv
 .public _ZdaPv
-.public _ZN13CArchiveGuardC1EPKcS1_mmmmm
+.public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
-.public _ZN11CBinaryFileC1EPKcmmmmm
+.public _ZN11CBinaryFileC1EPKcmmmPvm
 .public CBinaryFile_complete_obj_dtor
 .public sub_02002C7C
 .public _ZN14CBinaryFileMesC1EPKcm

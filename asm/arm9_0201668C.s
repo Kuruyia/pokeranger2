@@ -5233,7 +5233,7 @@ sub_0201AB28: ; 0x0201AB28
 	mov r1, r8
 	mov r2, r7
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 	arm_func_end sub_0201AB28
 _0201AB78:
@@ -6981,7 +6981,7 @@ sub_0201C340: ; 0x0201C340
 	ldr r1, _0201C454 ; =s_TGT_0208bb74
 	ldr r2, _0201C458 ; =s_data_menu_mt000_bg_LZ_bin_0208bb58
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	arm_func_end sub_0201C340
 _0201C380:
 	str r0, [r4, #0x38]
@@ -9337,7 +9337,7 @@ sub_0201E478: ; 0x0201E478
 	ldr r1, _0201E698 ; =s_BGS_0208bca4
 	ldr r2, _0201E69C ; =s_data_menu_mt000_bg_LZ_bin_0208bca8
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 	arm_func_end sub_0201E478
 _0201E4B8:
@@ -9510,7 +9510,7 @@ _0201E6E8:
 	ldr r1, _0201E8A4 ; =s_PTC_0208bd20
 	ldr r2, _0201E8A8 ; =s_data_menu_mt000_bg_LZ_bin_0208bca8
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 _0201E71C:
 	str r0, [r4, #0x58]
 	ldr r0, [r4, #0x5c]
@@ -11890,7 +11890,7 @@ sub_02020774: ; 0x02020774
 	mov r0, r4
 	mov r2, r5
 	str ip, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 	arm_func_end sub_02020774
 _020207C4:
@@ -17365,7 +17365,7 @@ _02024E0C:
 	ldr r1, _0202503C ; =s_BGS_0208bf30
 	ldr r2, _02025040 ; =s_data_menu_mc000_bg_LZ_bin_0208bf34
 	str r4, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 _02024E44:
 	mov r0, #0xbc
@@ -19287,7 +19287,7 @@ _0202699C:
 	ldr r1, _02026BFC ; =s_BGS_0208c070
 	ldr r2, _02026C00 ; =s_data_menu_mp000_bg_LZ_bin_0208c074
 	str r3, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 _020269D0:
 	str r0, [r5, #0x48]
 	b _02026BF0
@@ -19471,7 +19471,7 @@ sub_02026C18: ; 0x02026C18
 	ldr r1, _02026E38 ; =s_BGS_0208c070
 	ldr r2, _02026E3C ; =s_data_menu_mp000_bg_LZ_bin_0208c074
 	str r3, [sp, #0xc]
-	bl _ZN13CArchiveGuardC1EPKcS1_mmmmm
+	bl _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 	mov r4, r0
 	arm_func_end sub_02026C18
 _02026C58:

@@ -23,7 +23,10 @@ Static main
     Object main.nef.p/src_heap.cpp.o
     Object main.nef.p/src_UnkClass_020023EC.cpp.o
     Object main.nef.p/src_file_CArchiveGuard.cpp.o
-    Object main.nef.p/asm_arm9_02002BA4.s.o
+    Object main.nef.p/src_file_CBinaryFile.cpp.o
+    Object main.nef.p/asm_arm9_02002C34.s.o
+    Object main.nef.p/src_file_CBinaryFile_1.cpp.o
+    Object main.nef.p/asm_arm9_02003124.s.o
     Object main.nef.p/src_UnkClass_020091E8.cpp.o
     Object main.nef.p/src_UnkClass_0200BBC0.cpp.o
     Object main.nef.p/src_UnkClass_0200BBC8.cpp.o
