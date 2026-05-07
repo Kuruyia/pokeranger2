@@ -14,7 +14,7 @@
 .public _ZN11CBinaryFileC1EPKcmmmPvm
 .public _ZN11CBinaryFile12sub_02003108EPKc
 .public _ZN14CBinaryFileMesC1EPKcm
-.public sub_020031E8
+.public _ZN9CNCERFileC1EPKcmmm
 .public _ZN9CNCLRFileC1EPKcmmm
 .public _ZN9CNSCRFileC1EPKcmmm
 .public sub_02003578

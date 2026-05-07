@@ -3479,7 +3479,7 @@ _0200F0DC:
 	add r1, sp, #0x190
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _0200F100:
 	str r0, [r4, #0x34]
 	mov r0, #0x10
@@ -3615,7 +3615,7 @@ _0200F2C8:
 	add r1, sp, #0x190
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _0200F2F0:
 	str r0, [r6, #0x34]
 	mov r0, #0x10

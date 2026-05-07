@@ -45116,7 +45116,7 @@ _02143948:
 	mov r2, fp
 	mov r3, fp
 	str fp, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _0214397C:
 	add r1, sl, sb, lsl #2
 	str r0, [r1, #0x64]
@@ -61159,7 +61159,7 @@ _021500D8:
 	str r1, [sp]
 	mov r1, r5
 	mov r3, r2
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _0215011C:
 	ldr r2, [sl, #0x2c]
 	ldr r1, _021501B8 ; =s_EFC_e_03d_a_02d_cac_overlay_0_02177c38
@@ -61295,7 +61295,7 @@ _021502C4:
 	add r1, sp, #0x7c
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02150300:
 	ldr r2, [r5, #0x2c]
 	ldr r1, _02150378 ; =s_MEF_i_03d_00_cac_overlay_0_02177ca4
@@ -61417,7 +61417,7 @@ _0215047C:
 	add r1, sp, #0x7c
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _021504B8:
 	ldr r2, [r6, #0x2c]
 	ldr r1, _02150538 ; =s_MEF_ef_03d_cac_overlay_0_02177d08

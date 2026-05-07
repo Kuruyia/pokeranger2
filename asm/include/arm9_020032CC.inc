@@ -39,7 +39,6 @@
 .public NNS_G2dGetImagePaletteLocation
 .public NNS_G2dGetUnpackedAnimBank
 .public NNS_G2dGetUnpackedBGCharacterData
-.public NNS_G2dGetUnpackedCharacterData
 .public NNS_G2dGetUnpackedPaletteData
 .public NNS_G2dGetUnpackedScreenData
 .public NNS_G2dInitImagePaletteProxy
@@ -53,7 +52,6 @@
 .public OS_GetTick
 .public OS_Terminate
 .public OS_WaitVBlankIntr
-.public PTR_LAB_0208a590
 .public PTR_LAB_0208a5b8
 .public PTR_LAB_0208a608
 .public PTR_LAB_0208a630
@@ -73,6 +71,7 @@
 .public _ZN17UnkClass_020023EC12sub_020027E8Ev
 .public _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
 .public _ZN5CGame12sub_020100E4EPFvvEm
+.public _ZN9CNCGRFileC1EPKcmmm
 .public _ZdaPv
 .public _ZdlPv
 .public _Znam
@@ -89,4 +88,4 @@
 .public sub_02002C7C
 .public sub_0201001C
 .public sub_02010124
-.public NNS_G2dGetUnpackedCellBank
+.public NNS_G2dGetUnpackedCharacterData

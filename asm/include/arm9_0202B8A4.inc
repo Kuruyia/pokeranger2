@@ -313,7 +313,7 @@
 .public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
 .public _ZN11CBinaryFileC1EPKcmmmPvm
-.public sub_020031E8
+.public _ZN9CNCERFileC1EPKcmmm
 .public sub_020038A8
 .public sub_02003938
 .public sub_02003984

@@ -13829,7 +13829,7 @@ _020360A8:
 	add r1, sp, #0x7c
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _020360E4:
 	ldr r2, [r4, #0x2c]
 	ldr r1, _02036164 ; =s_MEF_ew_03d_cac_0208d790
@@ -28048,7 +28048,7 @@ _02042224:
 	add r1, sp, #0x10
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02042290:
 	str r0, [r5, #0x10]
 	mov r0, #0x4c

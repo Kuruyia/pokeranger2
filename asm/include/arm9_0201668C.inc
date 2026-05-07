@@ -316,7 +316,7 @@
 .public _Z12sub_02001210v
 .public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
-.public sub_020031E8
+.public _ZN9CNCERFileC1EPKcmmm
 .public _ZN9CNCLRFileC1EPKcmmm
 .public _ZN9CNSCRFileC1EPKcmmm
 .public _ZN11CBGNCGRFileC1EPKcmmm

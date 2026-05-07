@@ -5294,7 +5294,7 @@ _0201ABF0:
 	ldr r1, [sp, #0x2c]
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _0201AC58:
 	str r0, [r5, #8]
 _0201AC5C:

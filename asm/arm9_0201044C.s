@@ -4628,7 +4628,7 @@ _02013DDC:
 	add r1, sp, #0x64
 	mov r2, r4
 	str r3, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02013E00:
 	str r0, [r5, #8]
 	ldr r6, [r5, #0xc]
@@ -4754,7 +4754,7 @@ _02013F98:
 	mov r3, #0
 	add r1, sp, #0x64
 	str r3, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02013FBC:
 	str r0, [r4, #8]
 	ldr r5, [r4, #0xc]
@@ -5831,7 +5831,7 @@ _02014E08:
 	add r1, sp, #0x68
 	mov r2, r4
 	str r3, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02014E2C:
 	str r0, [r5, #8]
 	ldr r6, [r5, #0xc]
@@ -5961,7 +5961,7 @@ _02014FD4:
 	mov r3, #0
 	add r1, sp, #0x68
 	str r3, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02014FF8:
 	str r0, [r4, #8]
 	ldr r5, [r4, #0xc]

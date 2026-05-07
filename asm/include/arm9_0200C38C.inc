@@ -63,7 +63,7 @@
 .public s_s_s_NCLR_0208ab1c
 .public s_s_s_cac_0208ab34
 .public _ZN11CBinaryFileC1EPKcmmmPvm
-.public sub_020031E8
+.public _ZN9CNCERFileC1EPKcmmm
 .public sub_02008788
 .public sub_020087C8
 .public sub_02008828

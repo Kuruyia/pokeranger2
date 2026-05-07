@@ -7619,7 +7619,7 @@ _021233D0:
 	add r1, sp, #0x70
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02123438:
 	add r1, r5, #0x6000
 	str r0, [r1, #0x42c]
@@ -9307,7 +9307,7 @@ _02124C30:
 	add r1, sp, #0x70
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02124C98:
 	add r1, r6, #0x6000
 	str r0, [r1, #0x49c]
@@ -12332,7 +12332,7 @@ _02127590:
 	ldr r1, _0212764C ; =s_BEX_i034_00_NCER_overlay_1_02140bb8
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _021275EC:
 	str r0, [r4, #8]
 	mov r0, #0x10
@@ -12666,7 +12666,7 @@ _021279CC:
 	ldr r1, _02127A88 ; =s_BSW_i035_00_NCER_overlay_1_02140c20
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02127A28:
 	str r0, [r4, #8]
 	mov r0, #0x10
@@ -13343,7 +13343,7 @@ _02128298:
 	ldr r1, _02128354 ; =s_BSW_i028_00_NCER_overlay_1_02140d54
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _021282F4:
 	str r0, [r4, #8]
 	mov r0, #0x10
@@ -13680,7 +13680,7 @@ _021286E4:
 	ldr r1, _021287A0 ; =s_BHP_battle_number01_NCER_overlay_1_02140de0
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02128740:
 	str r0, [r4, #8]
 	mov r0, #0x10
@@ -14375,7 +14375,7 @@ _02128FC0:
 	str r1, [sp]
 	mov r1, r5
 	mov r3, r2
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02129040:
 	add r1, sl, sb, lsl #2
 	str r0, [r1, #0x28]
@@ -14813,7 +14813,7 @@ _021295A0:
 	ldr r1, _02129634 ; =s_BST_battle_status_debug_NCER_overlay_1_02140f58
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _021295FC:
 	cmp r5, #0
 	addeq sp, sp, #0x10
@@ -15049,7 +15049,7 @@ _021298A4:
 	ldr r1, _02129938 ; =s_BOK_i026_00_NCER_overlay_1_02140fbc
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02129900:
 	cmp r5, #0
 	addeq sp, sp, #0x10
@@ -15344,7 +15344,7 @@ _02129C58:
 	ldr r1, _02129D14 ; =s_BCE_i033_00_NCER_overlay_1_02141014
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02129CB4:
 	str r0, [r4, #8]
 	mov r0, #0x10
@@ -30474,7 +30474,7 @@ _02136590:
 	mov r3, #0
 	mov r2, #1
 	str r3, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _021365EC:
 	str r0, [r4, #8]
 	cmp r5, #0
@@ -33545,7 +33545,7 @@ _02138EC4:
 	ldr r1, _02138F58 ; =s_BRM_r000_00_NCER_overlay_1_02141c14
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020031E8
+	bl _ZN9CNCERFileC1EPKcmmm
 _02138F20:
 	cmp r5, #0
 	addeq sp, sp, #0x70
