@@ -1307,6 +1307,9 @@ s_11CBinaryFile_0208a4f0: ; 0x0208A4F0
 	.global _0208A4FE
 _0208A4FE:
 	.byte 0x00, 0x00
+
+    .global _ZTV14CBinaryFileMes
+_ZTV14CBinaryFileMes: ; 0x0208A500
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_0208a4e4
 

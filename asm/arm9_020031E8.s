@@ -1,75 +1,7 @@
     .include "macros.inc"
-    .include "include/arm9_02003124.inc"
+    .include "include/arm9_020031E8.inc"
 
     .text
-
-	arm_func_start sub_02003124
-sub_02003124: ; 0x02003124
-	stmdb sp!, {r3, lr}
-	bl sub_0201001C
-	ldr r0, _02003138 ; =ptr_s_jp_mes_0208a4d4_0208a534
-	ldr r0, [r0, #4]
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02003138: .word ptr_s_jp_mes_0208a4d4_0208a534
-	arm_func_end sub_02003124
-
-	arm_func_start _ZN14CBinaryFileMesC1EPKcm
-_ZN14CBinaryFileMesC1EPKcm: ; 0x0200313C
-	stmdb sp!, {r3, r4, r5, r6, lr}
-	sub sp, sp, #0x4c
-	mov r6, r0
-	mov r5, r1
-	mov r4, r2
-	bl _ZN11CBinaryFileC1Ev
-	ldr r0, _020031B0 ; =PTR_LAB_0208a508
-	str r0, [r6]
-	bl sub_02003124
-	mov r3, r0
-	ldr r1, _020031B4 ; =s_s_s_0208a568
-	mov r2, r5
-	add r0, sp, #0xc
-	bl OS_SPrintf
-	mov r3, #0
-	str r3, [sp]
-	str r3, [sp, #4]
-	mov r2, r4
-	mov r0, r6
-	add r1, sp, #0xc
-	str r3, [sp, #8]
-	bl _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
-	cmp r0, #0
-	bne _020031A4
-	mov r0, r6
-	bl _ZN11CBinaryFile12sub_02002C9CEv
-	arm_func_end _ZN14CBinaryFileMesC1EPKcm
-_020031A4:
-	mov r0, r6
-	add sp, sp, #0x4c
-	ldmia sp!, {r3, r4, r5, r6, pc}
-	.align 2, 0
-_020031B0: .word PTR_LAB_0208a508
-_020031B4: .word s_s_s_0208a568
-
-	arm_func_start CBinaryFileMes_complete_obj_dtor
-CBinaryFileMes_complete_obj_dtor: ; 0x020031B8
-    stmdb sp!, {r4, lr}
-    mov r4, r0
-    bl sub_02002C7C
-    mov r0, r4
-    ldmia sp!, {r4, pc}
-	arm_func_end CBinaryFileMes_complete_obj_dtor
-
-	arm_func_start CBinaryFileMes_deleting_obj_dtor
-CBinaryFileMes_deleting_obj_dtor: ; 0x020031CC
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl sub_02002C7C
-	mov r0, r4
-	bl _ZdlPv
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	arm_func_end CBinaryFileMes_deleting_obj_dtor
 
 	arm_func_start sub_020031E8
 sub_020031E8: ; 0x020031E8
@@ -79,7 +11,7 @@ sub_020031E8: ; 0x020031E8
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl _ZN11CBinaryFileC1Ev
+	bl _ZN11CBinaryFileC2Ev
 	ldr r1, _02003270 ; =PTR_LAB_0208a590
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -149,7 +81,7 @@ _ZN9CNCGRFileC1EPKcmmm: ; 0x020032CC
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl _ZN11CBinaryFileC1Ev
+	bl _ZN11CBinaryFileC2Ev
 	ldr r1, _02003354 ; =PTR_LAB_0208a5b8
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -219,7 +151,7 @@ _ZN9CNCLRFileC1EPKcmmm: ; 0x020033B0
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl _ZN11CBinaryFileC1Ev
+	bl _ZN11CBinaryFileC2Ev
 	ldr r1, _02003438 ; =ptr_FUN_0200343c_0208a5e0
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -291,7 +223,7 @@ _ZN9CNSCRFileC1EPKcmmm: ; 0x02003494
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl _ZN11CBinaryFileC1Ev
+	bl _ZN11CBinaryFileC2Ev
 	ldr r1, _0200351C ; =PTR_LAB_0208a608
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -361,7 +293,7 @@ sub_02003578: ; 0x02003578
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl _ZN11CBinaryFileC1Ev
+	bl _ZN11CBinaryFileC2Ev
 	ldr r1, _02003600 ; =PTR_LAB_0208a630
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
@@ -433,7 +365,7 @@ _ZN11CBGNCGRFileC1EPKcmmm: ; 0x0200365C
 	mov r6, r1
 	mov r5, r2
 	mov r4, r3
-	bl _ZN11CBinaryFileC1Ev
+	bl _ZN11CBinaryFileC2Ev
 	ldr r1, _020036E4 ; =PTR_LAB_0208a65c
 	ldr r0, [sp, #0x20]
 	str r1, [r7]
