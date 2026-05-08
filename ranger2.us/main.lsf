@@ -38,7 +38,9 @@ Static main
     Object main.nef.p/asm_arm9_02003520.s.o
     Object main.nef.p/src_file_CNANRFile.cpp.o
     Object main.nef.p/asm_arm9_02003604.s.o
-    Object main.nef.p/asm_arm9_0200365C.s.o
+    Object main.nef.p/src_file_CBGNCGRFile.cpp.o
+    Object main.nef.p/asm_arm9_020036E8.s.o
+    Object main.nef.p/asm_arm9_02003718.s.o
     Object main.nef.p/src_UnkClass_020091E8.cpp.o
     Object main.nef.p/src_UnkClass_0200BBC0.cpp.o
     Object main.nef.p/src_UnkClass_0200BBC8.cpp.o

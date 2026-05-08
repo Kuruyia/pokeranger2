@@ -1516,7 +1516,11 @@ s_11CBGNCGRFile_0208a644: ; 0x0208A644
 
 	.global _0208A652
 _0208A652:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00
+
+    .global _ZTV11CBGNCGRFile
+_ZTV11CBGNCGRFile: ; 0x0208A654
+    .byte 0x00, 0x00, 0x00, 0x00
     .word PTR_ptr_FUN_020835bc_0208a638
 
 	.global PTR_LAB_0208a65c

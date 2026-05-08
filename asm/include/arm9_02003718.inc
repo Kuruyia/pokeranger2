@@ -74,11 +74,5 @@
 .public ptr_FUN_020049d4_0208a754
 .public ptr_FUN_020051c8_0208a7f0
 .public s_game
-.public sub_02002C7C
 .public sub_0201001C
 .public sub_02010124
-.public _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
-.public _ZN11CBinaryFile12sub_020030D4Ev
-.public _ZN11CBinaryFileC2Ev
-.public NNS_G2dGetUnpackedBGCharacterData
-.public PTR_LAB_0208a65c
