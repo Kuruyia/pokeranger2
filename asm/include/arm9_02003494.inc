@@ -39,7 +39,6 @@
 .public NNS_G2dGetImagePaletteLocation
 .public NNS_G2dGetUnpackedAnimBank
 .public NNS_G2dGetUnpackedBGCharacterData
-.public NNS_G2dGetUnpackedScreenData
 .public NNS_G2dInitImagePaletteProxy
 .public NNS_G2dInitImageProxy
 .public NNS_G2dLoadImage2DMapping
@@ -77,7 +76,6 @@
 .public _Znwm
 .public _ll_div
 .public _s32_div_f
-.public ptr_FUN_0200343c_0208a5e0
 .public ptr_FUN_020039e8_0208a6b8
 .public ptr_FUN_02003bb0_0208a6ec
 .public ptr_FUN_02004160_0208a720
@@ -87,4 +85,4 @@
 .public sub_02002C7C
 .public sub_0201001C
 .public sub_02010124
-.public NNS_G2dGetUnpackedPaletteData
+.public NNS_G2dGetUnpackedScreenData

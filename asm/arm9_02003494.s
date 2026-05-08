@@ -1,81 +1,9 @@
     .include "macros.inc"
-    .include "include/arm9_020033B0.inc"
+    .include "include/arm9_02003494.inc"
 
     .text
 
-    arm_func_start _ZN9CNCLRFileC1EPKcmmm
-_ZN9CNCLRFileC1EPKcmmm: ; 0x020033B0
-	stmdb sp!, {r4, r5, r6, r7, lr}
-	sub sp, sp, #0xc
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	bl _ZN11CBinaryFileC2Ev
-	ldr r1, _02003438 ; =ptr_FUN_0200343c_0208a5e0
-	ldr r0, [sp, #0x20]
-	str r1, [r7]
-	str r0, [sp]
-	mov ip, #0
-	str ip, [sp, #4]
-	mov r0, r7
-	mov r1, r6
-	mov r2, r5
-	mov r3, r4
-	str ip, [sp, #8]
-	bl _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
-	cmp r0, #0
-	addeq sp, sp, #0xc
-	moveq r0, r7
-	ldmeqia sp!, {r4, r5, r6, r7, pc}
-	ldr r0, [r7, #0x4c]
-	add r1, r7, #0xb8
-	bl NNS_G2dGetUnpackedPaletteData
-	cmp r0, #0
-	addne sp, sp, #0xc
-	mov r0, r7
-	ldmneia sp!, {r4, r5, r6, r7, pc}
-	bl _ZN11CBinaryFile12sub_020030D4Ev
-	mov r0, r7
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, pc}
-	.align 2, 0
-_02003438: .word ptr_FUN_0200343c_0208a5e0
-	arm_func_end _ZN9CNCLRFileC1EPKcmmm
-
-	arm_func_start CNCLRFile_complete_obj_dtor
-CNCLRFile_complete_obj_dtor: ; 0x0200343C
-	stmdb sp!, {r4, lr}
-	ldr r1, _02003460 ; =ptr_FUN_0200343c_0208a5e0
-	mov r4, r0
-	str r1, [r4]
-	bl _ZN11CBinaryFile12sub_020030D4Ev
-	mov r0, r4
-	bl sub_02002C7C
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02003460: .word ptr_FUN_0200343c_0208a5e0
-	arm_func_end CNCLRFile_complete_obj_dtor
-
-	arm_func_start CNCLRFile_deleting_obj_dtor
-CNCLRFile_deleting_obj_dtor: ; 0x02003464
-	stmdb sp!, {r4, lr}
-	ldr r1, _02003490 ; =ptr_FUN_0200343c_0208a5e0
-	mov r4, r0
-	str r1, [r4]
-	bl _ZN11CBinaryFile12sub_020030D4Ev
-	mov r0, r4
-	bl sub_02002C7C
-	mov r0, r4
-	bl _ZdlPv
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_02003490: .word ptr_FUN_0200343c_0208a5e0
-	arm_func_end CNCLRFile_deleting_obj_dtor
-
-	arm_func_start _ZN9CNSCRFileC1EPKcmmm
+    arm_func_start _ZN9CNSCRFileC1EPKcmmm
 _ZN9CNSCRFileC1EPKcmmm: ; 0x02003494
 	stmdb sp!, {r4, r5, r6, r7, lr}
 	sub sp, sp, #0xc
