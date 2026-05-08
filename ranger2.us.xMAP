@@ -249,9 +249,9 @@
         7](MIi_CpuCopy32,func) found in global libmi.a
         7](_Z23Heap_AllocWithAlignmentmm,func) found in global src_heap.cpp.o
         7](_ZN11CBinaryFileC1EPKcmmmPvm,func) found in global src_file_CBinaryFile.cpp.o
-         8](_ZN11CBinaryFile12sub_02002C9CEv,func) found in global src_file_CBinaryFile_1.cpp.o
-         8](_ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm,func) found in global src_file_CBinaryFile_1.cpp.o
-          9](_ZN11CBinaryFile12sub_020030D4Ev,func) found in global src_file_CBinaryFile_1.cpp.o
+         8](_ZN11CBinaryFile12sub_02002C9CEv,func) found in global src_file_CBinaryFile.cpp.o
+         8](_ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm,func) found in global src_file_CBinaryFile.cpp.o
+          9](_ZN11CBinaryFile12sub_020030D4Ev,func) found in global src_file_CBinaryFile.cpp.o
           9](STD_GetStringLength,func) found in global libstd.a
           9](STD_CopyLString,func) found in global libstd.a
           9](NNS_FndGetArchiveFileByName,func) found in global libnnsfnd.a
@@ -285,7 +285,7 @@
                14](FSi_ExecuteSyncCommand,func) found in global libfs.a
             11](FS_OpenFileFast,func) found in global libfs.a
            10](FS_CloseFile,func) found in global libfs.a
-          9](_ZN11CBinaryFile12sub_02002DD0EPKcmmPvm,func) found in global src_file_CBinaryFile_1.cpp.o
+          9](_ZN11CBinaryFile12sub_02002DD0EPKcmmPvm,func) found in global src_file_CBinaryFile.cpp.o
            10](OS_Terminate,func) found in overload libos.a
             11](OS_Halt,func) found in overload libos.a
            10](_Z18Heap_GetMainHandlev,func) found in global src_heap.cpp.o
@@ -300,6 +300,31 @@
            10](MI_UncompressRL8,func) found in global libmi.a
            10](MI_UnfilterDiff8,func) found in global libmi.a
           9](DC_FlushRange,func) found in global libos.a
+          9](@13054,object) found in local src_file_CBinaryFile.cpp.o
+         8](_ZTV11CBinaryFile,object) found in global src_file_CBinaryFile.cpp.o
+          9](_ZTI11CBinaryFile,object) found in multidef src_file_CBinaryFile.cpp.o
+           10](_ZTS11CBinaryFile,object) found in multidef src_file_CBinaryFile.cpp.o
+           10](_ZTVN10__cxxabiv117__class_type_infoE,object) found in global NITRO_Runtime_Ai_LE.a
+            11](_ZTIN10__cxxabiv117__class_type_infoE,object) found in multidef NITRO_Runtime_Ai_LE.a
+             12](_ZTSN10__cxxabiv117__class_type_infoE,object) found in multidef NITRO_Runtime_Ai_LE.a
+             12](_ZTISt9type_info,object) found in multidef NITRO_Runtime_Ai_LE.a
+              13](_ZTSSt9type_info,object) found in multidef NITRO_Runtime_Ai_LE.a
+             12](_ZTVN10__cxxabiv120__si_class_type_infoE,object) found in global NITRO_Runtime_Ai_LE.a
+              13](_ZTIN10__cxxabiv120__si_class_type_infoE,object) found in multidef NITRO_Runtime_Ai_LE.a
+               14](_ZTSN10__cxxabiv120__si_class_type_infoE,object) found in multidef NITRO_Runtime_Ai_LE.a
+              13](_ZN10__cxxabiv120__si_class_type_infoD0Ev,func) found in global NITRO_Runtime_Ai_LE.a
+               14](_ZN10__cxxabiv117__class_type_infoD2Ev,func) found in global NITRO_Runtime_Ai_LE.a
+                15](_ZNSt9type_infoD2Ev,func) found in global NITRO_Runtime_Ai_LE.a
+               14](@EX@_ZN10__cxxabiv117__class_type_infoD2Ev,object) found in local NITRO_Runtime_Ai_LE.a
+              13](@EX@_ZN10__cxxabiv120__si_class_type_infoD0Ev,object) found in local NITRO_Runtime_Ai_LE.a
+              13](_ZN10__cxxabiv120__si_class_type_infoD1Ev,func) found in global NITRO_Runtime_Ai_LE.a
+              13](@EX@_ZN10__cxxabiv120__si_class_type_infoD1Ev,object) found in local NITRO_Runtime_Ai_LE.a
+            11](_ZN10__cxxabiv117__class_type_infoD0Ev,func) found in global NITRO_Runtime_Ai_LE.a
+            11](@EX@_ZN10__cxxabiv117__class_type_infoD0Ev,object) found in local NITRO_Runtime_Ai_LE.a
+            11](_ZN10__cxxabiv117__class_type_infoD1Ev,func) found in global NITRO_Runtime_Ai_LE.a
+            11](@EX@_ZN10__cxxabiv117__class_type_infoD1Ev,object) found in local NITRO_Runtime_Ai_LE.a
+          9](_ZN11CBinaryFileD0Ev,func) found in global src_file_CBinaryFile.cpp.o
+          9](_ZN11CBinaryFileD1Ev,func) found in global src_file_CBinaryFile.cpp.o
         7](_Znam,func) found in global src_heap_operators.cpp.o
         7](_ZdaPv,func) found in global src_heap_operators.cpp.o
         7](GXS_LoadOAM,func) found in global libgx.a
@@ -411,12 +436,28 @@
               13](NNS_G2dGetCellDataByIdx,func) found in global libnnsg2d.a
               13](UnPackExtendedData_,func) found in local libnnsg2d.a
                14](NNSi_G2dUnpackUserExCellAttrBank,func) found in global libnnsg2d.a
+            11](_ZTV9CNCERFile,object) found in global src_file_CNCERFile.cpp.o
+             12](_ZTI9CNCERFile,object) found in multidef src_file_CNCERFile.cpp.o
+              13](_ZTS9CNCERFile,object) found in multidef src_file_CNCERFile.cpp.o
+             12](_ZN9CNCERFileD0Ev,func) found in global src_file_CNCERFile.cpp.o
+              13](_ZN11CBinaryFileD2Ev,func) found in global src_file_CBinaryFile.cpp.o
+             12](_ZN9CNCERFileD1Ev,func) found in global src_file_CNCERFile.cpp.o
            10](_ZN9CNCLRFileC1EPKcmmm,func) found in global src_file_CNCLRFile.cpp.o
             11](NNS_G2dGetUnpackedPaletteData,func) found in global libnnsg2d.a
              12](NNS_G2dUnpackNCL,func) found in global libnnsg2d.a
+            11](_ZTV9CNCLRFile,object) found in global src_file_CNCLRFile.cpp.o
+             12](_ZTI9CNCLRFile,object) found in multidef src_file_CNCLRFile.cpp.o
+              13](_ZTS9CNCLRFile,object) found in multidef src_file_CNCLRFile.cpp.o
+             12](_ZN9CNCLRFileD0Ev,func) found in global src_file_CNCLRFile.cpp.o
+             12](_ZN9CNCLRFileD1Ev,func) found in global src_file_CNCLRFile.cpp.o
            10](_ZN9CNCGRFileC1EPKcmmm,func) found in global src_file_CNCGRFile.cpp.o
             11](NNS_G2dGetUnpackedCharacterData,func) found in global libnnsg2d.a
              12](NNS_G2dUnpackNCG,func) found in global libnnsg2d.a
+            11](_ZTV9CNCGRFile,object) found in global src_file_CNCGRFile.cpp.o
+             12](_ZTI9CNCGRFile,object) found in multidef src_file_CNCGRFile.cpp.o
+              13](_ZTS9CNCGRFile,object) found in multidef src_file_CNCGRFile.cpp.o
+             12](_ZN9CNCGRFileD0Ev,func) found in global src_file_CNCGRFile.cpp.o
+             12](_ZN9CNCGRFileD1Ev,func) found in global src_file_CNCGRFile.cpp.o
            10](_ZN13CArchiveGuardC1EPKcS1_mmmPvm,func) found in global src_file_CArchiveGuard.cpp.o
             11](NNS_FndMountArchive,func) found in global libnnsfnd.a
              12](IsValidArchiveBinary,func) found in local libnnsfnd.a
@@ -641,11 +682,40 @@
               13](LoadScreenPart256x16Pltt,func) found in local libnnsg2d.a
           9](_ZN9CNSCRFileC1EPKcmmm,func) found in global src_file_CNSCRFile.cpp.o
            10](NNS_G2dGetUnpackedScreenData,func) found in global libnnsg2d.a
+           10](_ZTV9CNSCRFile,object) found in global src_file_CNSCRFile.cpp.o
+            11](_ZTI9CNSCRFile,object) found in multidef src_file_CNSCRFile.cpp.o
+             12](_ZTS9CNSCRFile,object) found in multidef src_file_CNSCRFile.cpp.o
+            11](_ZN9CNSCRFileD0Ev,func) found in global src_file_CNSCRFile.cpp.o
+            11](_ZN9CNSCRFileD1Ev,func) found in global src_file_CNSCRFile.cpp.o
           9](_ZN11CBGNCGRFileC1EPKcmmm,func) found in global src_file_CBGNCGRFile.cpp.o
            10](NNS_G2dGetUnpackedBGCharacterData,func) found in global libnnsg2d.a
             11](NNS_G2dUnpackBGNCG,func) found in global libnnsg2d.a
-          9](_ZN14CBinaryFileMesC1EPKcm,func) found in global src_file_CBinaryFileMes.cpp.o
-           10](_ZN14CBinaryFileMes12sub_02003124Ev,func) found in global src_file_CBinaryFileMes.cpp.o
+           10](_ZTV11CBGNCGRFile,object) found in global src_file_CBGNCGRFile.cpp.o
+            11](_ZTI11CBGNCGRFile,object) found in multidef src_file_CBGNCGRFile.cpp.o
+             12](_ZTS11CBGNCGRFile,object) found in multidef src_file_CBGNCGRFile.cpp.o
+            11](_ZN11CBGNCGRFileD0Ev,func) found in global src_file_CBGNCGRFile.cpp.o
+            11](_ZN11CBGNCGRFileD1Ev,func) found in global src_file_CBGNCGRFile.cpp.o
+          9](_ZN14CBinaryFileMesC1EPKcm,func) found in global src_file_CBinaryFile.cpp.o
+           10](_ZN14CBinaryFileMes12sub_02003124Ev,func) found in global src_file_CBinaryFile.cpp.o
+            11](.data,section) found in local src_file_CBinaryFile.cpp.o
+             12](@12891,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12890,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12889,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12888,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12887,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12886,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12885,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12884,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12883,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12882,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12881,object) found in local src_file_CBinaryFile.cpp.o
+             12](@12880,object) found in local src_file_CBinaryFile.cpp.o
+           10](_ZTV14CBinaryFileMes,object) found in global src_file_CBinaryFile.cpp.o
+            11](_ZTI14CBinaryFileMes,object) found in multidef src_file_CBinaryFile.cpp.o
+             12](_ZTS14CBinaryFileMes,object) found in multidef src_file_CBinaryFile.cpp.o
+            11](_ZN14CBinaryFileMesD0Ev,func) found in global src_file_CBinaryFile.cpp.o
+            11](_ZN14CBinaryFileMesD1Ev,func) found in global src_file_CBinaryFile.cpp.o
+           10](@13121,object) found in local src_file_CBinaryFile.cpp.o
           9](sub_02010EAC,func) found in global asm_arm9_0201044C.s.o
            10](__cxa_vec_cleanup,func) found in global NITRO_Runtime_Ai_LE.a
            10](@EX@__cxa_vec_cleanup,object) found in local NITRO_Runtime_Ai_LE.a
@@ -654,7 +724,7 @@
            10](@EX@__cxa_vec_ctor,object) found in local NITRO_Runtime_Ai_LE.a
             11](@ET@__cxa_vec_ctor,object) found in local NITRO_Runtime_Ai_LE.a
            10](strcpy,func) found in global MSL_C_NITRO_Ai_LE.a
-           10](_ZN11CBinaryFile12sub_02003108EPKc,func) found in global src_file_CBinaryFile_1.cpp.o
+           10](_ZN11CBinaryFile12sub_02003108EPKc,func) found in global src_file_CBinaryFile.cpp.o
            10](FX_Atan2Idx,func) found in global libfx.a
             11](FX_AtanIdxTable_,object) found in global libfx.a
            10](_ZN17UnkClass_020091E812sub_0200AFC0Elm,func) found in global src_UnkClass_020091E8.cpp.o
@@ -703,25 +773,6 @@
           9](MTX_Scale22_,func) found in global libfx.a
           9](ov0_02132FA0,func) found in global asm_overlay_00_0211C9E0.s.o
            10](.data,section) found in local asm_overlay_00_0211C9E0.s.o
-            11](_ZTVN10__cxxabiv120__si_class_type_infoE,object) found in global NITRO_Runtime_Ai_LE.a
-             12](_ZTIN10__cxxabiv120__si_class_type_infoE,object) found in multidef NITRO_Runtime_Ai_LE.a
-              13](_ZTSN10__cxxabiv120__si_class_type_infoE,object) found in multidef NITRO_Runtime_Ai_LE.a
-              13](_ZTIN10__cxxabiv117__class_type_infoE,object) found in multidef NITRO_Runtime_Ai_LE.a
-               14](_ZTSN10__cxxabiv117__class_type_infoE,object) found in multidef NITRO_Runtime_Ai_LE.a
-               14](_ZTISt9type_info,object) found in multidef NITRO_Runtime_Ai_LE.a
-                15](_ZTSSt9type_info,object) found in multidef NITRO_Runtime_Ai_LE.a
-                15](_ZTVN10__cxxabiv117__class_type_infoE,object) found in global NITRO_Runtime_Ai_LE.a
-                 16](_ZN10__cxxabiv117__class_type_infoD0Ev,func) found in global NITRO_Runtime_Ai_LE.a
-                  17](_ZNSt9type_infoD2Ev,func) found in global NITRO_Runtime_Ai_LE.a
-                 16](@EX@_ZN10__cxxabiv117__class_type_infoD0Ev,object) found in local NITRO_Runtime_Ai_LE.a
-                 16](_ZN10__cxxabiv117__class_type_infoD1Ev,func) found in global NITRO_Runtime_Ai_LE.a
-                 16](@EX@_ZN10__cxxabiv117__class_type_infoD1Ev,object) found in local NITRO_Runtime_Ai_LE.a
-             12](_ZN10__cxxabiv120__si_class_type_infoD0Ev,func) found in global NITRO_Runtime_Ai_LE.a
-              13](_ZN10__cxxabiv117__class_type_infoD2Ev,func) found in global NITRO_Runtime_Ai_LE.a
-              13](@EX@_ZN10__cxxabiv117__class_type_infoD2Ev,object) found in local NITRO_Runtime_Ai_LE.a
-             12](@EX@_ZN10__cxxabiv120__si_class_type_infoD0Ev,object) found in local NITRO_Runtime_Ai_LE.a
-             12](_ZN10__cxxabiv120__si_class_type_infoD1Ev,func) found in global NITRO_Runtime_Ai_LE.a
-             12](@EX@_ZN10__cxxabiv120__si_class_type_infoD1Ev,object) found in local NITRO_Runtime_Ai_LE.a
             11](.bss,section) found in local asm_overlay_00_0211C9E0.s.o
             11](_ZTVN10__cxxabiv121__vmi_class_type_infoE,object) found in global NITRO_Runtime_Ai_LE.a
              12](_ZTIN10__cxxabiv121__vmi_class_type_infoE,object) found in multidef NITRO_Runtime_Ai_LE.a
@@ -1362,14 +1413,6 @@
         7](.bss,section) found in local libctrdg.a
        6](PMi_SendSleepStart,func) found in global libspi.a
      4](_ZN12CPowerManage4InitEv,func) found in global src_CPowerManage.cpp.o
-     4](CBGNCGRFile_deleting_obj_dtor,func) found in global asm_arm9_020036E8.s.o
-      5](sub_02002C7C,func) found in global asm_arm9_02002C34.s.o
-     4](CNANRFile_deleting_obj_dtor,func) found in global asm_arm9_02003604.s.o
-     4](CNSCRFile_deleting_obj_dtor,func) found in global asm_arm9_02003520.s.o
-     4](CNCLRFile_deleting_obj_dtor,func) found in global asm_arm9_0200343C.s.o
-     4](CNCGRFile_deleting_obj_dtor,func) found in global asm_arm9_02003358.s.o
-     4](CNCERFile_deleting_obj_dtor,func) found in global asm_arm9_02003274.s.o
-     4](CBinaryFileMes_deleting_obj_dtor,func) found in global asm_arm9_020031B8.s.o
     3](__register_global_object,func) found in global NITRO_Runtime_Ai_LE.a
   1].sinit found in asm_overlay_00_0211C9E0.s.o 
   1].sinit found in asm_overlay_01_0211C9E0.s.o 
@@ -1628,6 +1671,11 @@
        6](NNS_G2dGetUnpackedAnimBank,func) found in global libnnsg2d.a
         7](GetUnpackedAnimBankImpl_,func) found in local libnnsg2d.a
          8](NNS_G2dUnpackNAN,func) found in global libnnsg2d.a
+       6](_ZTV9CNANRFile,object) found in global src_file_CNANRFile.cpp.o
+        7](_ZTI9CNANRFile,object) found in multidef src_file_CNANRFile.cpp.o
+         8](_ZTS9CNANRFile,object) found in multidef src_file_CNANRFile.cpp.o
+        7](_ZN9CNANRFileD0Ev,func) found in global src_file_CNANRFile.cpp.o
+        7](_ZN9CNANRFileD1Ev,func) found in global src_file_CNANRFile.cpp.o
      4](_ZN12CLetterSceneC1EP5CGame,func) found in global asm_overlay_04_0211C9E0.s.o
       5](.data,section) found in local asm_overlay_04_0211C9E0.s.o
        6](.text,section) found in local asm_overlay_04_0211C9E0.s.o
@@ -2751,95 +2799,89 @@
   02002BC4 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
   02002BC4 00000070 .text   CBinaryFile::CBinaryFile(const char*, unsigned long, unsigned long, unsigned long, void*, unsigned long)	(src_file_CBinaryFile.cpp.o)
   02002C30 00000000 .text   $d	(src_file_CBinaryFile.cpp.o)
-  02002C34 00000068 .text   .text	(asm_arm9_02002C34.s.o)
-  02002C34 00000000 .text   $a	(asm_arm9_02002C34.s.o)
-  02002C34 00000020 .text   CBinaryFile_complete_obj_dtor	(asm_arm9_02002C34.s.o)
-  02002C50 00000000 .text   $d	(asm_arm9_02002C34.s.o)
-  02002C54 00000000 .text   $a	(asm_arm9_02002C34.s.o)
-  02002C54 00000028 .text   CBinaryFile_deleting_obj_dtor	(asm_arm9_02002C34.s.o)
-  02002C78 00000000 .text   $d	(asm_arm9_02002C34.s.o)
-  02002C7C 00000020 .text   sub_02002C7C	(asm_arm9_02002C34.s.o)
-  02002C7C 00000000 .text   $a	(asm_arm9_02002C34.s.o)
-  02002C98 00000000 .text   $d	(asm_arm9_02002C34.s.o)
-  02002C9C 00000018 .text   CBinaryFile::sub_02002C9C()	(src_file_CBinaryFile_1.cpp.o)
-  02002C9C 00000000 .text   $a	(src_file_CBinaryFile_1.cpp.o)
-  02002CB4 00000000 .text   $a	(src_file_CBinaryFile_1.cpp.o)
-  02002CB4 0000011C .text   CBinaryFile::sub_02002CB4(const char*, unsigned long, unsigned long, unsigned long, void*, unsigned long)	(src_file_CBinaryFile_1.cpp.o)
-  02002DCC 00000000 .text   $d	(src_file_CBinaryFile_1.cpp.o)
-  02002DD0 00000000 .text   $a	(src_file_CBinaryFile_1.cpp.o)
-  02002DD0 00000304 .text   CBinaryFile::sub_02002DD0(const char*, unsigned long, unsigned long, void*, unsigned long)	(src_file_CBinaryFile_1.cpp.o)
-  020030CC 00000000 .text   $d	(src_file_CBinaryFile_1.cpp.o)
-  020030D4 00000034 .text   CBinaryFile::sub_020030D4()	(src_file_CBinaryFile_1.cpp.o)
-  020030D4 00000000 .text   $a	(src_file_CBinaryFile_1.cpp.o)
-  02003108 0000001C .text   CBinaryFile::sub_02003108(const char*)	(src_file_CBinaryFile_1.cpp.o)
-  02003108 00000000 .text   $a	(src_file_CBinaryFile_1.cpp.o)
-  02003124 00000000 .text   $a	(src_file_CBinaryFileMes.cpp.o)
-  02003124 00000018 .text   CBinaryFileMes::sub_02003124()	(src_file_CBinaryFileMes.cpp.o)
-  02003138 00000000 .text   $d	(src_file_CBinaryFileMes.cpp.o)
-  0200313C 00000000 .text   $a	(src_file_CBinaryFileMes.cpp.o)
-  0200313C 0000007C .text   CBinaryFileMes::CBinaryFileMes(const char*, unsigned long)	(src_file_CBinaryFileMes.cpp.o)
-  020031B0 00000000 .text   $d	(src_file_CBinaryFileMes.cpp.o)
-  020031B8 00000000 .text   $a	(asm_arm9_020031B8.s.o)
-  020031B8 00000014 .text   CBinaryFileMes_complete_obj_dtor	(asm_arm9_020031B8.s.o)
-  020031B8 00000030 .text   .text	(asm_arm9_020031B8.s.o)
-  020031CC 0000001C .text   CBinaryFileMes_deleting_obj_dtor	(asm_arm9_020031B8.s.o)
+  02002C34 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  02002C34 00000020 .text   CBinaryFile::~CBinaryFile()	(src_file_CBinaryFile.cpp.o)
+  02002C50 00000000 .text   $d	(src_file_CBinaryFile.cpp.o)
+  02002C54 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  02002C54 00000028 .text   CBinaryFile::~CBinaryFile[virtual]()	(src_file_CBinaryFile.cpp.o)
+  02002C78 00000000 .text   $d	(src_file_CBinaryFile.cpp.o)
+  02002C7C 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  02002C7C 00000020 .text   CBinaryFile::~CBinaryFile[base]()	(src_file_CBinaryFile.cpp.o)
+  02002C98 00000000 .text   $d	(src_file_CBinaryFile.cpp.o)
+  02002C9C 00000018 .text   CBinaryFile::sub_02002C9C()	(src_file_CBinaryFile.cpp.o)
+  02002C9C 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  02002CB4 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  02002CB4 0000011C .text   CBinaryFile::sub_02002CB4(const char*, unsigned long, unsigned long, unsigned long, void*, unsigned long)	(src_file_CBinaryFile.cpp.o)
+  02002DCC 00000000 .text   $d	(src_file_CBinaryFile.cpp.o)
+  02002DD0 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  02002DD0 00000304 .text   CBinaryFile::sub_02002DD0(const char*, unsigned long, unsigned long, void*, unsigned long)	(src_file_CBinaryFile.cpp.o)
+  020030CC 00000000 .text   $d	(src_file_CBinaryFile.cpp.o)
+  020030D4 00000034 .text   CBinaryFile::sub_020030D4()	(src_file_CBinaryFile.cpp.o)
+  020030D4 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  02003108 0000001C .text   CBinaryFile::sub_02003108(const char*)	(src_file_CBinaryFile.cpp.o)
+  02003108 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  02003124 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  02003124 00000018 .text   CBinaryFileMes::sub_02003124()	(src_file_CBinaryFile.cpp.o)
+  02003138 00000000 .text   $d	(src_file_CBinaryFile.cpp.o)
+  0200313C 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  0200313C 0000007C .text   CBinaryFileMes::CBinaryFileMes(const char*, unsigned long)	(src_file_CBinaryFile.cpp.o)
+  020031B0 00000000 .text   $d	(src_file_CBinaryFile.cpp.o)
+  020031B8 00000014 .text   CBinaryFileMes::~CBinaryFileMes()	(src_file_CBinaryFile.cpp.o)
+  020031B8 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
+  020031CC 0000001C .text   CBinaryFileMes::~CBinaryFileMes[virtual]()	(src_file_CBinaryFile.cpp.o)
+  020031CC 00000000 .text   $a	(src_file_CBinaryFile.cpp.o)
   020031E8 00000000 .text   $a	(src_file_CNCERFile.cpp.o)
   020031E8 0000008C .text   CNCERFile::CNCERFile(const char*, unsigned long, unsigned long, unsigned long)	(src_file_CNCERFile.cpp.o)
   02003270 00000000 .text   $d	(src_file_CNCERFile.cpp.o)
-  02003274 00000058 .text   .text	(asm_arm9_02003274.s.o)
-  02003274 00000028 .text   CNCERFile_complete_obj_dtor	(asm_arm9_02003274.s.o)
-  02003274 00000000 .text   $a	(asm_arm9_02003274.s.o)
-  02003298 00000000 .text   $d	(asm_arm9_02003274.s.o)
-  0200329C 00000000 .text   $a	(asm_arm9_02003274.s.o)
-  0200329C 00000030 .text   CNCERFile_deleting_obj_dtor	(asm_arm9_02003274.s.o)
-  020032C8 00000000 .text   $d	(asm_arm9_02003274.s.o)
+  02003274 00000000 .text   $a	(src_file_CNCERFile.cpp.o)
+  02003274 00000028 .text   CNCERFile::~CNCERFile()	(src_file_CNCERFile.cpp.o)
+  02003298 00000000 .text   $d	(src_file_CNCERFile.cpp.o)
+  0200329C 00000000 .text   $a	(src_file_CNCERFile.cpp.o)
+  0200329C 00000030 .text   CNCERFile::~CNCERFile[virtual]()	(src_file_CNCERFile.cpp.o)
+  020032C8 00000000 .text   $d	(src_file_CNCERFile.cpp.o)
   020032CC 00000000 .text   $a	(src_file_CNCGRFile.cpp.o)
   020032CC 0000008C .text   CNCGRFile::CNCGRFile(const char*, unsigned long, unsigned long, unsigned long)	(src_file_CNCGRFile.cpp.o)
   02003354 00000000 .text   $d	(src_file_CNCGRFile.cpp.o)
-  02003358 00000058 .text   .text	(asm_arm9_02003358.s.o)
-  02003358 00000028 .text   CNCGRFile_complete_obj_dtor	(asm_arm9_02003358.s.o)
-  02003358 00000000 .text   $a	(asm_arm9_02003358.s.o)
-  0200337C 00000000 .text   $d	(asm_arm9_02003358.s.o)
-  02003380 00000000 .text   $a	(asm_arm9_02003358.s.o)
-  02003380 00000030 .text   CNCGRFile_deleting_obj_dtor	(asm_arm9_02003358.s.o)
-  020033AC 00000000 .text   $d	(asm_arm9_02003358.s.o)
+  02003358 00000000 .text   $a	(src_file_CNCGRFile.cpp.o)
+  02003358 00000028 .text   CNCGRFile::~CNCGRFile()	(src_file_CNCGRFile.cpp.o)
+  0200337C 00000000 .text   $d	(src_file_CNCGRFile.cpp.o)
+  02003380 00000000 .text   $a	(src_file_CNCGRFile.cpp.o)
+  02003380 00000030 .text   CNCGRFile::~CNCGRFile[virtual]()	(src_file_CNCGRFile.cpp.o)
+  020033AC 00000000 .text   $d	(src_file_CNCGRFile.cpp.o)
   020033B0 00000000 .text   $a	(src_file_CNCLRFile.cpp.o)
   020033B0 0000008C .text   CNCLRFile::CNCLRFile(const char*, unsigned long, unsigned long, unsigned long)	(src_file_CNCLRFile.cpp.o)
   02003438 00000000 .text   $d	(src_file_CNCLRFile.cpp.o)
-  0200343C 00000058 .text   .text	(asm_arm9_0200343C.s.o)
-  0200343C 00000028 .text   CNCLRFile_complete_obj_dtor	(asm_arm9_0200343C.s.o)
-  0200343C 00000000 .text   $a	(asm_arm9_0200343C.s.o)
-  02003460 00000000 .text   $d	(asm_arm9_0200343C.s.o)
-  02003464 00000000 .text   $a	(asm_arm9_0200343C.s.o)
-  02003464 00000030 .text   CNCLRFile_deleting_obj_dtor	(asm_arm9_0200343C.s.o)
-  02003490 00000000 .text   $d	(asm_arm9_0200343C.s.o)
+  0200343C 00000000 .text   $a	(src_file_CNCLRFile.cpp.o)
+  0200343C 00000028 .text   CNCLRFile::~CNCLRFile()	(src_file_CNCLRFile.cpp.o)
+  02003460 00000000 .text   $d	(src_file_CNCLRFile.cpp.o)
+  02003464 00000000 .text   $a	(src_file_CNCLRFile.cpp.o)
+  02003464 00000030 .text   CNCLRFile::~CNCLRFile[virtual]()	(src_file_CNCLRFile.cpp.o)
+  02003490 00000000 .text   $d	(src_file_CNCLRFile.cpp.o)
   02003494 00000000 .text   $a	(src_file_CNSCRFile.cpp.o)
   02003494 0000008C .text   CNSCRFile::CNSCRFile(const char*, unsigned long, unsigned long, unsigned long)	(src_file_CNSCRFile.cpp.o)
   0200351C 00000000 .text   $d	(src_file_CNSCRFile.cpp.o)
-  02003520 00000058 .text   .text	(asm_arm9_02003520.s.o)
-  02003520 00000028 .text   CNSCRFile_complete_obj_dtor	(asm_arm9_02003520.s.o)
-  02003520 00000000 .text   $a	(asm_arm9_02003520.s.o)
-  02003544 00000000 .text   $d	(asm_arm9_02003520.s.o)
-  02003548 00000000 .text   $a	(asm_arm9_02003520.s.o)
-  02003548 00000030 .text   CNSCRFile_deleting_obj_dtor	(asm_arm9_02003520.s.o)
-  02003574 00000000 .text   $d	(asm_arm9_02003520.s.o)
+  02003520 00000000 .text   $a	(src_file_CNSCRFile.cpp.o)
+  02003520 00000028 .text   CNSCRFile::~CNSCRFile()	(src_file_CNSCRFile.cpp.o)
+  02003544 00000000 .text   $d	(src_file_CNSCRFile.cpp.o)
+  02003548 00000000 .text   $a	(src_file_CNSCRFile.cpp.o)
+  02003548 00000030 .text   CNSCRFile::~CNSCRFile[virtual]()	(src_file_CNSCRFile.cpp.o)
+  02003574 00000000 .text   $d	(src_file_CNSCRFile.cpp.o)
   02003578 00000000 .text   $a	(src_file_CNANRFile.cpp.o)
   02003578 0000008C .text   CNANRFile::CNANRFile(const char*, unsigned long, unsigned long, unsigned long)	(src_file_CNANRFile.cpp.o)
   02003600 00000000 .text   $d	(src_file_CNANRFile.cpp.o)
-  02003604 00000058 .text   .text	(asm_arm9_02003604.s.o)
-  02003604 00000028 .text   CNANRFile_complete_obj_dtor	(asm_arm9_02003604.s.o)
-  02003604 00000000 .text   $a	(asm_arm9_02003604.s.o)
-  02003628 00000000 .text   $d	(asm_arm9_02003604.s.o)
-  0200362C 00000000 .text   $a	(asm_arm9_02003604.s.o)
-  0200362C 00000030 .text   CNANRFile_deleting_obj_dtor	(asm_arm9_02003604.s.o)
-  02003658 00000000 .text   $d	(asm_arm9_02003604.s.o)
+  02003604 00000000 .text   $a	(src_file_CNANRFile.cpp.o)
+  02003604 00000028 .text   CNANRFile::~CNANRFile()	(src_file_CNANRFile.cpp.o)
+  02003628 00000000 .text   $d	(src_file_CNANRFile.cpp.o)
+  0200362C 00000000 .text   $a	(src_file_CNANRFile.cpp.o)
+  0200362C 00000030 .text   CNANRFile::~CNANRFile[virtual]()	(src_file_CNANRFile.cpp.o)
+  02003658 00000000 .text   $d	(src_file_CNANRFile.cpp.o)
   0200365C 00000000 .text   $a	(src_file_CBGNCGRFile.cpp.o)
   0200365C 0000008C .text   CBGNCGRFile::CBGNCGRFile(const char*, unsigned long, unsigned long, unsigned long)	(src_file_CBGNCGRFile.cpp.o)
   020036E4 00000000 .text   $d	(src_file_CBGNCGRFile.cpp.o)
-  020036E8 00000000 .text   $a	(asm_arm9_020036E8.s.o)
-  020036E8 00000014 .text   CBGNCGRFile_complete_obj_dtor	(asm_arm9_020036E8.s.o)
-  020036E8 00000030 .text   .text	(asm_arm9_020036E8.s.o)
-  020036FC 0000001C .text   CBGNCGRFile_deleting_obj_dtor	(asm_arm9_020036E8.s.o)
+  020036E8 00000014 .text   CBGNCGRFile::~CBGNCGRFile()	(src_file_CBGNCGRFile.cpp.o)
+  020036E8 00000000 .text   $a	(src_file_CBGNCGRFile.cpp.o)
+  020036FC 0000001C .text   CBGNCGRFile::~CBGNCGRFile[virtual]()	(src_file_CBGNCGRFile.cpp.o)
+  020036FC 00000000 .text   $a	(src_file_CBGNCGRFile.cpp.o)
   02003718 00000000 .text   $a	(asm_arm9_02003718.s.o)
   02003718 00005AD0 .text   .text	(asm_arm9_02003718.s.o)
   02003718 00000014 .text   sub_02003718	(asm_arm9_02003718.s.o)
@@ -11515,77 +11557,48 @@
   0208A438 00000015 .data   @12910	(src_UnkClass_020023EC.cpp.o)
   0208A450 00000015 .data   @12911	(src_UnkClass_020023EC.cpp.o)
   0208A468 00000015 .data   @12912	(src_UnkClass_020023EC.cpp.o)
-  0208A480 00000000 .data   DAT_0208a480	(asm_arm9_02046D5C.s.o)
-  0208A480 000040B8 .data   .data	(asm_arm9_02046D5C.s.o)
-  0208A484 00000000 .data   s_spa_0208a484	(asm_arm9_02046D5C.s.o)
-  0208A489 00000000 .data   _0208A489	(asm_arm9_02046D5C.s.o)
-  0208A48C 00000000 .data   s_ger_0208a48c	(asm_arm9_02046D5C.s.o)
-  0208A491 00000000 .data   _0208A491	(asm_arm9_02046D5C.s.o)
-  0208A494 00000000 .data   s_ita_0208a494	(asm_arm9_02046D5C.s.o)
-  0208A499 00000000 .data   _0208A499	(asm_arm9_02046D5C.s.o)
-  0208A49C 00000000 .data   s_fre_0208a49c	(asm_arm9_02046D5C.s.o)
-  0208A4A1 00000000 .data   _0208A4A1	(asm_arm9_02046D5C.s.o)
-  0208A4A4 00000000 .data   s_eng_0208a4a4	(asm_arm9_02046D5C.s.o)
-  0208A4A9 00000000 .data   _0208A4A9	(asm_arm9_02046D5C.s.o)
-  0208A4AC 00000000 .data   s_fr_mes_0208a4ac	(asm_arm9_02046D5C.s.o)
-  0208A4B4 00000000 .data   s_ge_mes_0208a4b4	(asm_arm9_02046D5C.s.o)
-  0208A4BC 00000000 .data   PTR_ptr_FUN_02083578_0208a4bc	(asm_arm9_02046D5C.s.o)
-  0208A4C4 00000000 .data   s_sp_mes_0208a4c4	(asm_arm9_02046D5C.s.o)
-  0208A4CC 00000000 .data   s_it_mes_0208a4cc	(asm_arm9_02046D5C.s.o)
-  0208A4D4 00000000 .data   s_jp_mes_0208a4d4	(asm_arm9_02046D5C.s.o)
-  0208A4DC 00000000 .data   s_us_mes_0208a4dc	(asm_arm9_02046D5C.s.o)
-  0208A4E4 00000000 .data   PTR_ptr_FUN_020835bc_0208a4e4	(asm_arm9_02046D5C.s.o)
-  0208A4F0 00000000 .data   s_11CBinaryFile_0208a4f0	(asm_arm9_02046D5C.s.o)
-  0208A4FE 00000000 .data   _0208A4FE	(asm_arm9_02046D5C.s.o)
-  0208A500 00000000 .data   virtual table for CBinaryFileMes	(asm_arm9_02046D5C.s.o)
-  0208A508 00000000 .data   PTR_LAB_0208a508	(asm_arm9_02046D5C.s.o)
-  0208A50C 00000000 .data   ptr_FUN_020031cc_0208a50c	(asm_arm9_02046D5C.s.o)
-  0208A510 00000000 .data   virtual table for CBinaryFile	(asm_arm9_02046D5C.s.o)
-  0208A518 00000000 .data   ptr_FUN_02002c34_0208a518	(asm_arm9_02046D5C.s.o)
-  0208A520 00000000 .data   s_14CBinaryFileMes_0208a520	(asm_arm9_02046D5C.s.o)
-  0208A531 00000000 .data   _0208A531	(asm_arm9_02046D5C.s.o)
-  0208A534 00000000 .data   ptr_s_jp_mes_0208a4d4_0208a534	(asm_arm9_02046D5C.s.o)
-  0208A538 00000000 .data   ptr_s_us_mes_0208a4dc_0208a538	(asm_arm9_02046D5C.s.o)
-  0208A564 00000000 .data   DAT_0208a564	(asm_arm9_02046D5C.s.o)
-  0208A568 00000000 .data   s_s_s_0208a568	(asm_arm9_02046D5C.s.o)
-  0208A56D 00000000 .data   _0208A56D	(asm_arm9_02046D5C.s.o)
-  0208A570 00000000 .data   s_9CNCERFile_0208a570	(asm_arm9_02046D5C.s.o)
-  0208A57B 00000000 .data   _0208A57B	(asm_arm9_02046D5C.s.o)
-  0208A57C 00000000 .data   PTR_ptr_FUN_020835bc_0208a57c	(asm_arm9_02046D5C.s.o)
-  0208A588 00000000 .data   virtual table for CNCERFile	(asm_arm9_02046D5C.s.o)
-  0208A590 00000000 .data   PTR_LAB_0208a590	(asm_arm9_02046D5C.s.o)
-  0208A594 00000000 .data   ptr_FUN_0200329c_0208a594	(asm_arm9_02046D5C.s.o)
-  0208A598 00000000 .data   s_9CNCGRFile_0208a598	(asm_arm9_02046D5C.s.o)
-  0208A5A3 00000000 .data   _0208A5A3	(asm_arm9_02046D5C.s.o)
-  0208A5A4 00000000 .data   PTR_ptr_FUN_020835bc_0208a5a4	(asm_arm9_02046D5C.s.o)
-  0208A5B0 00000000 .data   virtual table for CNCGRFile	(asm_arm9_02046D5C.s.o)
-  0208A5B8 00000000 .data   PTR_LAB_0208a5b8	(asm_arm9_02046D5C.s.o)
-  0208A5BC 00000000 .data   ptr_FUN_02003380_0208a5bc	(asm_arm9_02046D5C.s.o)
-  0208A5C0 00000000 .data   s_9CNCLRFile_0208a5c0	(asm_arm9_02046D5C.s.o)
-  0208A5CB 00000000 .data   _0208A5CB	(asm_arm9_02046D5C.s.o)
-  0208A5CC 00000000 .data   PTR_ptr_FUN_020835bc_0208a5cc	(asm_arm9_02046D5C.s.o)
-  0208A5D8 00000000 .data   virtual table for CNCLRFile	(asm_arm9_02046D5C.s.o)
-  0208A5E0 00000000 .data   ptr_FUN_0200343c_0208a5e0	(asm_arm9_02046D5C.s.o)
-  0208A5E4 00000000 .data   ptr_FUN_02003464_0208a5e4	(asm_arm9_02046D5C.s.o)
-  0208A5E8 00000000 .data   s_9CNSCRFile_0208a5e8	(asm_arm9_02046D5C.s.o)
-  0208A5F3 00000000 .data   _0208A5F3	(asm_arm9_02046D5C.s.o)
-  0208A5F4 00000000 .data   PTR_ptr_FUN_020835bc_0208a5f4	(asm_arm9_02046D5C.s.o)
-  0208A600 00000000 .data   virtual table for CNSCRFile	(asm_arm9_02046D5C.s.o)
-  0208A608 00000000 .data   PTR_LAB_0208a608	(asm_arm9_02046D5C.s.o)
-  0208A60C 00000000 .data   ptr_FUN_02003548_0208a60c	(asm_arm9_02046D5C.s.o)
-  0208A610 00000000 .data   s_9CNANRFile_0208a610	(asm_arm9_02046D5C.s.o)
-  0208A61B 00000000 .data   _0208A61B	(asm_arm9_02046D5C.s.o)
-  0208A61C 00000000 .data   PTR_ptr_FUN_020835bc_0208a61c	(asm_arm9_02046D5C.s.o)
-  0208A628 00000000 .data   virtual table for CNANRFile	(asm_arm9_02046D5C.s.o)
-  0208A630 00000000 .data   PTR_LAB_0208a630	(asm_arm9_02046D5C.s.o)
-  0208A634 00000000 .data   ptr_FUN_0200362c_0208a634	(asm_arm9_02046D5C.s.o)
-  0208A638 00000000 .data   PTR_ptr_FUN_020835bc_0208a638	(asm_arm9_02046D5C.s.o)
-  0208A644 00000000 .data   s_11CBGNCGRFile_0208a644	(asm_arm9_02046D5C.s.o)
-  0208A652 00000000 .data   _0208A652	(asm_arm9_02046D5C.s.o)
-  0208A654 00000000 .data   virtual table for CBGNCGRFile	(asm_arm9_02046D5C.s.o)
-  0208A65C 00000000 .data   PTR_LAB_0208a65c	(asm_arm9_02046D5C.s.o)
-  0208A660 00000000 .data   ptr_FUN_020036fc_0208a660	(asm_arm9_02046D5C.s.o)
+  0208A480 00000001 .data   @12886	(src_file_CBinaryFile.cpp.o)
+  0208A484 00000005 .data   @12891	(src_file_CBinaryFile.cpp.o)
+  0208A48C 00000005 .data   @12889	(src_file_CBinaryFile.cpp.o)
+  0208A494 00000005 .data   @12890	(src_file_CBinaryFile.cpp.o)
+  0208A49C 00000005 .data   @12888	(src_file_CBinaryFile.cpp.o)
+  0208A4A4 00000005 .data   @12887	(src_file_CBinaryFile.cpp.o)
+  0208A4AC 00000008 .data   @12882	(src_file_CBinaryFile.cpp.o)
+  0208A4B4 00000008 .data   @12883	(src_file_CBinaryFile.cpp.o)
+  0208A4BC 00000008 .data   typeinfo structure for CBinaryFile	(src_file_CBinaryFile.cpp.o)
+  0208A4C4 00000008 .data   @12885	(src_file_CBinaryFile.cpp.o)
+  0208A4CC 00000008 .data   @12884	(src_file_CBinaryFile.cpp.o)
+  0208A4D4 00000008 .data   @12880	(src_file_CBinaryFile.cpp.o)
+  0208A4DC 00000008 .data   @12881	(src_file_CBinaryFile.cpp.o)
+  0208A4E4 0000000C .data   typeinfo structure for CBinaryFileMes	(src_file_CBinaryFile.cpp.o)
+  0208A4F0 0000000E .data   typeinfo name for CBinaryFile	(src_file_CBinaryFile.cpp.o)
+  0208A500 00000010 .data   virtual table for CBinaryFileMes	(src_file_CBinaryFile.cpp.o)
+  0208A510 00000010 .data   virtual table for CBinaryFile	(src_file_CBinaryFile.cpp.o)
+  0208A520 00000011 .data   typeinfo name for CBinaryFileMes	(src_file_CBinaryFile.cpp.o)
+  0208A534 00000000 .data   .data	(src_file_CBinaryFile.cpp.o)
+  0208A534 00000030 .data   DAT_0208A538$12879	(src_file_CBinaryFile.cpp.o)
+  0208A564 00000001 .data   @13054	(src_file_CBinaryFile.cpp.o)
+  0208A568 00000005 .data   @13121	(src_file_CBinaryFile.cpp.o)
+  0208A570 0000000B .data   typeinfo name for CNCERFile	(src_file_CNCERFile.cpp.o)
+  0208A57C 0000000C .data   typeinfo structure for CNCERFile	(src_file_CNCERFile.cpp.o)
+  0208A588 00000010 .data   virtual table for CNCERFile	(src_file_CNCERFile.cpp.o)
+  0208A598 0000000B .data   typeinfo name for CNCGRFile	(src_file_CNCGRFile.cpp.o)
+  0208A5A4 0000000C .data   typeinfo structure for CNCGRFile	(src_file_CNCGRFile.cpp.o)
+  0208A5B0 00000010 .data   virtual table for CNCGRFile	(src_file_CNCGRFile.cpp.o)
+  0208A5C0 0000000B .data   typeinfo name for CNCLRFile	(src_file_CNCLRFile.cpp.o)
+  0208A5CC 0000000C .data   typeinfo structure for CNCLRFile	(src_file_CNCLRFile.cpp.o)
+  0208A5D8 00000010 .data   virtual table for CNCLRFile	(src_file_CNCLRFile.cpp.o)
+  0208A5E8 0000000B .data   typeinfo name for CNSCRFile	(src_file_CNSCRFile.cpp.o)
+  0208A5F4 0000000C .data   typeinfo structure for CNSCRFile	(src_file_CNSCRFile.cpp.o)
+  0208A600 00000010 .data   virtual table for CNSCRFile	(src_file_CNSCRFile.cpp.o)
+  0208A610 0000000B .data   typeinfo name for CNANRFile	(src_file_CNANRFile.cpp.o)
+  0208A61C 0000000C .data   typeinfo structure for CNANRFile	(src_file_CNANRFile.cpp.o)
+  0208A628 00000010 .data   virtual table for CNANRFile	(src_file_CNANRFile.cpp.o)
+  0208A638 0000000C .data   typeinfo structure for CBGNCGRFile	(src_file_CBGNCGRFile.cpp.o)
+  0208A644 0000000E .data   typeinfo name for CBGNCGRFile	(src_file_CBGNCGRFile.cpp.o)
+  0208A654 00000010 .data   virtual table for CBGNCGRFile	(src_file_CBGNCGRFile.cpp.o)
   0208A664 00000000 .data   PTR_ptr_FUN_02083578_0208a664	(asm_arm9_02046D5C.s.o)
+  0208A664 00003ED4 .data   .data	(asm_arm9_02046D5C.s.o)
   0208A66C 00000000 .data   s_10CPrimitive_0208a66c	(asm_arm9_02046D5C.s.o)
   0208A679 00000000 .data   _0208A679	(asm_arm9_02046D5C.s.o)
   0208A684 00000000 .data   PTR_LAB_0208a684	(asm_arm9_02046D5C.s.o)
