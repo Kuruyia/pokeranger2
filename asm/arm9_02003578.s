@@ -1,77 +1,7 @@
     .include "macros.inc"
-    .include "include/arm9_02003494.inc"
+    .include "include/arm9_02003578.inc"
 
     .text
-
-    arm_func_start _ZN9CNSCRFileC1EPKcmmm
-_ZN9CNSCRFileC1EPKcmmm: ; 0x02003494
-	stmdb sp!, {r4, r5, r6, r7, lr}
-	sub sp, sp, #0xc
-	mov r7, r0
-	mov r6, r1
-	mov r5, r2
-	mov r4, r3
-	bl _ZN11CBinaryFileC2Ev
-	ldr r1, _0200351C ; =PTR_LAB_0208a608
-	ldr r0, [sp, #0x20]
-	str r1, [r7]
-	str r0, [sp]
-	mov ip, #0
-	str ip, [sp, #4]
-	mov r0, r7
-	mov r1, r6
-	mov r2, r5
-	mov r3, r4
-	str ip, [sp, #8]
-	bl _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
-	cmp r0, #0
-	addeq sp, sp, #0xc
-	moveq r0, r7
-	ldmeqia sp!, {r4, r5, r6, r7, pc}
-	ldr r0, [r7, #0x4c]
-	add r1, r7, #0xb8
-	bl NNS_G2dGetUnpackedScreenData
-	cmp r0, #0
-	addne sp, sp, #0xc
-	mov r0, r7
-	ldmneia sp!, {r4, r5, r6, r7, pc}
-	bl _ZN11CBinaryFile12sub_020030D4Ev
-	mov r0, r7
-	add sp, sp, #0xc
-	ldmia sp!, {r4, r5, r6, r7, pc}
-	.align 2, 0
-_0200351C: .word PTR_LAB_0208a608
-	arm_func_end _ZN9CNSCRFileC1EPKcmmm
-
-	arm_func_start CNSCRFile_complete_obj_dtor
-CNSCRFile_complete_obj_dtor: ; 0x02003520
-    stmdb sp!, {r4, lr}
-    ldr r1, _02003544 ; =PTR_LAB_0208a608
-    mov r4, r0
-    str r1, [r4]
-    bl _ZN11CBinaryFile12sub_020030D4Ev
-    mov r0, r4
-    bl sub_02002C7C
-    mov r0, r4
-    ldmia sp!, {r4, pc}
-_02003544: .word PTR_LAB_0208a608
-    arm_func_end CNSCRFile_complete_obj_dtor
-
-	arm_func_start CNSCRFile_deleting_obj_dtor
-CNSCRFile_deleting_obj_dtor: ; 0x02003548
-    stmdb sp!, {r4, lr}
-    ldr r1, _02003574 ; =PTR_LAB_0208a608
-    mov r4, r0
-    str r1, [r4]
-    bl _ZN11CBinaryFile12sub_020030D4Ev
-    mov r0, r4
-    bl sub_02002C7C
-    mov r0, r4
-    bl _ZdlPv
-    mov r0, r4
-    ldmia sp!, {r4, pc}
-_02003574: .word PTR_LAB_0208a608
-    arm_func_end CNSCRFile_deleting_obj_dtor
 
 	arm_func_start sub_02003578
 sub_02003578: ; 0x02003578

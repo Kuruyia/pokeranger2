@@ -37,7 +37,6 @@
 .public NNS_G2dGetCellDataByIdx
 .public NNS_G2dGetImageLocation
 .public NNS_G2dGetImagePaletteLocation
-.public NNS_G2dGetUnpackedAnimBank
 .public NNS_G2dGetUnpackedBGCharacterData
 .public NNS_G2dInitImagePaletteProxy
 .public NNS_G2dInitImageProxy
@@ -50,7 +49,6 @@
 .public OS_GetTick
 .public OS_Terminate
 .public OS_WaitVBlankIntr
-.public PTR_LAB_0208a608
 .public PTR_LAB_0208a630
 .public PTR_LAB_0208a65c
 .public PTR_LAB_0208a684
@@ -85,4 +83,4 @@
 .public sub_02002C7C
 .public sub_0201001C
 .public sub_02010124
-.public NNS_G2dGetUnpackedScreenData
+.public NNS_G2dGetUnpackedAnimBank
