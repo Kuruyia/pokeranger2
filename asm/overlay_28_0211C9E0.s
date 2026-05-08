@@ -472,7 +472,7 @@ _0211CF8C:
 	cmp r0, #0
 	bne _0211CFE0
 	add r0, sp, #0xdc
-	bl CBinaryFile_complete_obj_dtor
+	bl _ZN11CBinaryFileD1Ev
 	add r0, sp, #0x10
 	bl _ZN13CArchiveGuardD1Ev
 	mov r0, #0
@@ -485,7 +485,7 @@ _0211CFE0:
 	mov r1, #0
 	bl GXS_LoadBG3Scr
 	add r0, sp, #0xdc
-	bl CBinaryFile_complete_obj_dtor
+	bl _ZN11CBinaryFileD1Ev
 	add r0, sp, #0x10
 	bl _ZN13CArchiveGuardD1Ev
 	mov r0, #1

@@ -2048,7 +2048,7 @@ _0211E52C:
 	blo _0211E52C
 _0211E594:
 	add r0, sp, #0
-	bl sub_02002C7C
+	bl _ZN11CBinaryFileD2Ev
 	add sp, sp, #0xb8
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
@@ -3459,7 +3459,7 @@ _0211F81C:
 	cmp r0, #0
 	bne _0211F870
 	add r0, sp, #0xdc
-	bl CBinaryFile_complete_obj_dtor
+	bl _ZN11CBinaryFileD1Ev
 	add r0, sp, #0x10
 	bl _ZN13CArchiveGuardD1Ev
 	add sp, sp, #0x194
@@ -3472,7 +3472,7 @@ _0211F870:
 	mov r1, #0
 	bl GX_LoadBG3Scr
 	add r0, sp, #0xdc
-	bl CBinaryFile_complete_obj_dtor
+	bl _ZN11CBinaryFileD1Ev
 	add r0, sp, #0x10
 	bl _ZN13CArchiveGuardD1Ev
 	add sp, sp, #0x194
@@ -5108,7 +5108,7 @@ _02120E38:
 	mov r5, #1
 _02120E48:
 	add r0, sp, #0xc
-	bl CBinaryFile_complete_obj_dtor
+	bl _ZN11CBinaryFileD1Ev
 _02120E50:
 	mov r0, r5
 	add sp, sp, #0xc4
@@ -5322,7 +5322,7 @@ ov22_021210B8: ; 0x021210B8
 	mov r2, #0x20
 	bl GX_LoadBGPltt
 	add r0, sp, #4
-	bl CNCLRFile_complete_obj_dtor
+	bl _ZN9CNCLRFileD1Ev
 	add sp, sp, #0xc0
 	ldmia sp!, {r3, pc}
 	.align 2, 0

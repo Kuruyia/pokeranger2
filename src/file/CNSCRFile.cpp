@@ -18,3 +18,8 @@ CNSCRFile::CNSCRFile(const char *path, u32 arg1, u32 arg2, u32 arg3)
         return;
     }
 }
+
+CNSCRFile::~CNSCRFile()
+{
+    sub_020030D4();
+}

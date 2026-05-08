@@ -4,7 +4,7 @@
 .public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
 .public _ZN11CBinaryFileC1EPKcmmmPvm
-.public CBinaryFile_complete_obj_dtor
+.public _ZN11CBinaryFileD1Ev
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02008DB4

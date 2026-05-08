@@ -18,3 +18,7 @@ CBGNCGRFile::CBGNCGRFile(const char *path, u32 arg1, u32 arg2, u32 arg3)
         return;
     }
 }
+
+CBGNCGRFile::~CBGNCGRFile()
+{
+}

@@ -11,7 +11,7 @@ public:
     CBinaryFileMes(const char *path, u32 arg1);
     virtual ~CBinaryFileMes();
 
-    static char *sub_02003124();
+    static const char *sub_02003124();
 };
 
 STATIC_SIZE_ASSERT(CBinaryFileMes, 0xB8);

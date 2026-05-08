@@ -6,11 +6,11 @@
 .public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
 .public _ZN11CBinaryFileC1EPKcmmmPvm
-.public CBinaryFile_complete_obj_dtor
-.public sub_02002C7C
+.public _ZN11CBinaryFileD1Ev
+.public _ZN11CBinaryFileD2Ev
 .public _ZN14CBinaryFileMesC1EPKcm
 .public _ZN9CNCLRFileC1EPKcmmm
-.public CNCLRFile_complete_obj_dtor
+.public _ZN9CNCLRFileD1Ev
 .public sub_02003718
 .public sub_0200372C
 .public sub_02003788

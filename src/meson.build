@@ -1,8 +1,6 @@
 pokeranger2_cxx = files(
     'file/CArchiveGuard.cpp',
     'file/CBinaryFile.cpp',
-    'file/CBinaryFile_1.cpp',
-    'file/CBinaryFileMes.cpp',
     'file/CNCERFile.cpp',
     'file/CNCGRFile.cpp',
     'file/CNCLRFile.cpp',
