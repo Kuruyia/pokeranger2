@@ -17,7 +17,7 @@
 .public _ZN9CNCERFileC1EPKcmmm
 .public _ZN9CNCLRFileC1EPKcmmm
 .public _ZN9CNSCRFileC1EPKcmmm
-.public sub_02003578
+.public _ZN9CNANRFileC1EPKcmmm
 .public _ZN11CBGNCGRFileC1EPKcmmm
 .public sub_02003718
 .public sub_0200372C

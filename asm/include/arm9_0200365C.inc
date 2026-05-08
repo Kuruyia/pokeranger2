@@ -37,7 +37,6 @@
 .public NNS_G2dGetCellDataByIdx
 .public NNS_G2dGetImageLocation
 .public NNS_G2dGetImagePaletteLocation
-.public NNS_G2dGetUnpackedBGCharacterData
 .public NNS_G2dInitImagePaletteProxy
 .public NNS_G2dInitImageProxy
 .public NNS_G2dLoadImage2DMapping
@@ -49,8 +48,6 @@
 .public OS_GetTick
 .public OS_Terminate
 .public OS_WaitVBlankIntr
-.public PTR_LAB_0208a630
-.public PTR_LAB_0208a65c
 .public PTR_LAB_0208a684
 .public PTR_LAB_0208a774
 .public PTR_LAB_0208a814
@@ -58,10 +55,7 @@
 .public _Z12sub_02001210v
 .public _Z23Heap_AllocWithAlignmentmm
 .public _Z9Heap_FreePv
-.public _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
-.public _ZN11CBinaryFile12sub_020030D4Ev
 .public _ZN11CBinaryFileC1EPKcmmmPvm
-.public _ZN11CBinaryFileC2Ev
 .public _ZN17UnkClass_020023EC12sub_02002434Emmmm
 .public _ZN17UnkClass_020023EC12sub_020027E8Ev
 .public _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
@@ -83,4 +77,8 @@
 .public sub_02002C7C
 .public sub_0201001C
 .public sub_02010124
-.public NNS_G2dGetUnpackedAnimBank
+.public _ZN11CBinaryFile12sub_02002CB4EPKcmmmPvm
+.public _ZN11CBinaryFile12sub_020030D4Ev
+.public _ZN11CBinaryFileC2Ev
+.public NNS_G2dGetUnpackedBGCharacterData
+.public PTR_LAB_0208a65c

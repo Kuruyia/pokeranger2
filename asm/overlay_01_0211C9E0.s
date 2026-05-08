@@ -11361,7 +11361,7 @@ _021268A4:
 	mov r2, #1
 	mov r3, fp
 	str fp, [sp]
-	bl sub_02003578
+	bl _ZN9CNANRFileC1EPKcmmm
 _021268F0:
 	add r1, sl, r8, lsl #2
 	str r0, [r1, #0x38]
