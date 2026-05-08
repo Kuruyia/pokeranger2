@@ -1409,6 +1409,9 @@ PTR_ptr_FUN_020835bc_0208a5a4: ; 0x0208A5A4
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_9CNCGRFile_0208a598
 	.word PTR_ptr_FUN_02083578_0208a4bc
+
+    .global _ZTV9CNCGRFile
+_ZTV9CNCGRFile: ; 0x0208A5B0
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_0208a5a4
 
