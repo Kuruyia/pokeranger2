@@ -11,11 +11,11 @@
 .public _ZN14CBinaryFileMesC1EPKcm
 .public _ZN9CNCLRFileC1EPKcmmm
 .public _ZN9CNCLRFileD1Ev
-.public sub_02003718
-.public sub_0200372C
-.public sub_02003788
-.public sub_020037B4
-.public sub_0200381C
+.public _ZN17UnkClass_02003718C1Ev
+.public _ZN17UnkClass_02003718D1Ev
+.public _ZN17UnkClass_0200371812sub_02003788Elllllll
+.public _ZN17UnkClass_0200371812sub_020037B4Ev
+.public _ZN17UnkClass_0200371812sub_0200381CEv
 .public sub_02004114
 .public sub_02004160
 .public sub_020041A4

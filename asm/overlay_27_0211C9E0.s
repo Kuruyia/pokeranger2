@@ -4666,7 +4666,7 @@ ov27_02120758: ; 0x02120758
 	beq _02120798
 	beq _02120790
 	mov r0, r4
-	bl sub_0200372C
+	bl _ZN17UnkClass_02003718D1Ev
 	mov r0, r4
 	bl _ZdlPv
 	arm_func_end ov27_02120758
@@ -4712,9 +4712,9 @@ ov27_021207E4: ; 0x021207E4
 	sub r0, r0, #0x58000
 	str r0, [r1, #0x20]
 	ldr r0, [r4, #0xc]
-	bl sub_020037B4
+	bl _ZN17UnkClass_0200371812sub_020037B4Ev
 	ldr r0, [r4, #0xc]
-	bl sub_0200381C
+	bl _ZN17UnkClass_0200371812sub_0200381CEv
 	ldr r0, _0212086C ; =0x0400044C
 	mov r2, #0
 	str r2, [r0]
@@ -4987,7 +4987,7 @@ _02120B14:
 	bl _Znwm
 	cmp r0, #0
 	beq _02120C48
-	bl sub_02003718
+	bl _ZN17UnkClass_02003718C1Ev
 _02120C48:
 	mov r1, #0x100000
 	str r0, [r6, #0xc]
@@ -5002,7 +5002,7 @@ _02120C48:
 	ldr r0, [r6, #0xc]
 	mov r3, r1
 	mov r2, #0xc0000
-	bl sub_02003788
+	bl _ZN17UnkClass_0200371812sub_02003788Elllllll
 	add sp, sp, #0x14
 	ldmia sp!, {r4, r5, r6, r7, pc}
 	.align 2, 0

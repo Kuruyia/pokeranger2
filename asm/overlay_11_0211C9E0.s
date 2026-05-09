@@ -450,7 +450,7 @@ ov11_0211CF40: ; 0x0211CF40
 	beq _0211CF70
 	beq _0211CF68
 	mov r0, r5
-	bl sub_0200372C
+	bl _ZN17UnkClass_02003718D1Ev
 	mov r0, r5
 	bl _ZdlPv
 	arm_func_end ov11_0211CF40
@@ -543,9 +543,9 @@ _0211D068:
 	sub r0, r0, #0x58000
 	str r0, [r1, #0x20]
 	ldr r0, [r4, #8]
-	bl sub_020037B4
+	bl _ZN17UnkClass_0200371812sub_020037B4Ev
 	ldr r0, [r4, #8]
-	bl sub_0200381C
+	bl _ZN17UnkClass_0200371812sub_0200381CEv
 	ldr r0, _0211D0CC ; =0x0400044C
 	mov r2, #0
 	str r2, [r0]
@@ -750,7 +750,7 @@ _0211D394:
 	bl _Znwm
 	cmp r0, #0
 	beq _0211D3AC
-	bl sub_02003718
+	bl _ZN17UnkClass_02003718C1Ev
 _0211D3AC:
 	mov r1, #0x100000
 	str r0, [sl, #8]
@@ -765,7 +765,7 @@ _0211D3AC:
 	ldr r0, [sl, #8]
 	mov r3, r1
 	mov r2, #0xc0000
-	bl sub_02003788
+	bl _ZN17UnkClass_0200371812sub_02003788Elllllll
 	ldr r5, _0211D4B8 ; =DAT_overlay_11_02166114
 	mov r8, sl
 	add r7, sl, #0xa0

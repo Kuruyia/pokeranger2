@@ -1209,7 +1209,7 @@ ov8_0211D8EC: ; 0x0211D8EC
 	beq _0211D91C
 	beq _0211D914
 	mov r0, r5
-	bl sub_0200372C
+	bl _ZN17UnkClass_02003718D1Ev
 	mov r0, r5
 	bl _ZdlPv
 	arm_func_end ov8_0211D8EC
@@ -1294,9 +1294,9 @@ ov8_0211D9E8: ; 0x0211D9E8
 	sub r0, r0, #0x58000
 	str r0, [r1, #0x20]
 	ldr r0, [r4, #8]
-	bl sub_020037B4
+	bl _ZN17UnkClass_0200371812sub_020037B4Ev
 	ldr r0, [r4, #8]
-	bl sub_0200381C
+	bl _ZN17UnkClass_0200371812sub_0200381CEv
 	ldr r0, _0211DA94 ; =0x0400044C
 	mov r2, #0
 	str r2, [r0]
@@ -1601,7 +1601,7 @@ _0211DEAC:
 	bl _Znwm
 	cmp r0, #0
 	beq _0211DEC4
-	bl sub_02003718
+	bl _ZN17UnkClass_02003718C1Ev
 _0211DEC4:
 	mov r1, #0x100000
 	str r0, [sl, #8]
@@ -1616,7 +1616,7 @@ _0211DEC4:
 	ldr r0, [sl, #8]
 	mov r3, r1
 	mov r2, #0xc0000
-	bl sub_02003788
+	bl _ZN17UnkClass_0200371812sub_02003788Elllllll
 	mov sb, sl
 	add r8, sl, #0x50
 	mov r6, #0

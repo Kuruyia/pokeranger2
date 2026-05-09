@@ -1,11 +1,11 @@
 #pragma once
 .public _Znwm
 .public _ZdlPv
-.public sub_02003718
-.public sub_0200372C
-.public sub_02003788
-.public sub_020037B4
-.public sub_0200381C
+.public _ZN17UnkClass_02003718C1Ev
+.public _ZN17UnkClass_02003718D1Ev
+.public _ZN17UnkClass_0200371812sub_02003788Elllllll
+.public _ZN17UnkClass_0200371812sub_020037B4Ev
+.public _ZN17UnkClass_0200371812sub_0200381CEv
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02008DB4

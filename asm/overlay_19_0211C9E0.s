@@ -92,7 +92,7 @@ ov19_0211CAE0: ; 0x0211CAE0
 	bl _Znwm
 	cmp r0, #0
 	beq _0211CB04
-	bl sub_02003718
+	bl _ZN17UnkClass_02003718C1Ev
 	arm_func_end ov19_0211CAE0
 _0211CB04:
 	mov r1, #0x100000
@@ -108,7 +108,7 @@ _0211CB04:
 	ldr r0, [r4, #0x20]
 	mov r3, r1
 	mov r2, #0xc0000
-	bl sub_02003788
+	bl _ZN17UnkClass_0200371812sub_02003788Elllllll
 	mov r0, r4
 	bl ov19_0211CFC0
 	mov r0, r4
@@ -179,7 +179,7 @@ _0211CC1C:
 	beq _0211CC44
 	beq _0211CC3C
 	mov r0, r5
-	bl sub_0200372C
+	bl _ZN17UnkClass_02003718D1Ev
 	mov r0, r5
 	bl _ZdlPv
 _0211CC3C:
@@ -1631,9 +1631,9 @@ ov19_0211E064: ; 0x0211E064
 	ldr r0, [r4, #0x20]
 	cmp r0, #0
 	ldmeqia sp!, {r4, pc}
-	bl sub_020037B4
+	bl _ZN17UnkClass_0200371812sub_020037B4Ev
 	ldr r0, [r4, #0x20]
-	bl sub_0200381C
+	bl _ZN17UnkClass_0200371812sub_0200381CEv
 	ldr r0, _0211E138 ; =0x0400044C
 	mov r1, #0
 	str r1, [r0]
@@ -1682,9 +1682,9 @@ _0211E104:
 	str r1, [r0, #0x1c]
 	str r1, [r0, #0x20]
 	ldr r0, [r4, #0x20]
-	bl sub_020037B4
+	bl _ZN17UnkClass_0200371812sub_020037B4Ev
 	ldr r0, [r4, #0x20]
-	bl sub_0200381C
+	bl _ZN17UnkClass_0200371812sub_0200381CEv
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0211E138: .word 0x0400044C

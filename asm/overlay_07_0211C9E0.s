@@ -335,7 +335,7 @@ _0211CDE8:
 	beq _0211CE10
 	beq _0211CE08
 	mov r0, r5
-	bl sub_0200372C
+	bl _ZN17UnkClass_02003718D1Ev
 	mov r0, r5
 	bl _ZdlPv
 _0211CE08:
@@ -988,9 +988,9 @@ _0211D6D0:
 	ldr r0, [r4, #0xc]
 	cmp r0, #0
 	ldmeqia sp!, {r4, r5, r6, pc}
-	bl sub_020037B4
+	bl _ZN17UnkClass_0200371812sub_020037B4Ev
 	ldr r0, [r4, #0xc]
-	bl sub_0200381C
+	bl _ZN17UnkClass_0200371812sub_0200381CEv
 	ldr r0, _0211D7F4 ; =0x0400044C
 	mov r1, #0
 	str r1, [r0]
@@ -1241,7 +1241,7 @@ _0211D9A0:
 	beq _0211DAAC
 	beq _0211DAA4
 	mov r0, r4
-	bl sub_0200372C
+	bl _ZN17UnkClass_02003718D1Ev
 	mov r0, r4
 	bl _ZdlPv
 _0211DAA4:
@@ -1252,7 +1252,7 @@ _0211DAAC:
 	bl _Znwm
 	cmp r0, #0
 	beq _0211DAC0
-	bl sub_02003718
+	bl _ZN17UnkClass_02003718C1Ev
 _0211DAC0:
 	str r0, [sl, #0xc]
 	ldr r4, [sl, #0x10]
@@ -1287,7 +1287,7 @@ _0211DB04:
 	ldr r0, [sl, #0xc]
 	mov r3, r1
 	mov r2, #0xc0000
-	bl sub_02003788
+	bl _ZN17UnkClass_0200371812sub_02003788Elllllll
 	ldr r0, _0211DFF8 ; =MAIN_BSS_020B26A0
 	str r0, [sl, #0xb0]
 	ldr r4, [sl, #0x14]

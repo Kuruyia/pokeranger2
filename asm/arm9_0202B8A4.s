@@ -25927,7 +25927,7 @@ _020406EC:
 	add r1, sp, #0
 	mov r0, r6
 	str r3, [sp, #4]
-	bl sub_020038A8
+	bl _ZN17UnkClass_0200371812sub_020038A8EP22UnkStruct_02006B60_argl
 	cmp r0, #0
 	beq _02040728
 	ldr r0, [r7, #0xc]

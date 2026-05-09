@@ -15697,7 +15697,7 @@ sub_020237E4: ; 0x020237E4
 	bl _Znwm
 	cmp r0, #0
 	beq _0202380C
-	bl sub_02003718
+	bl _ZN17UnkClass_02003718C1Ev
 	arm_func_end sub_020237E4
 _0202380C:
 	mov r1, #0x100000
@@ -15713,7 +15713,7 @@ _0202380C:
 	ldr r0, [r4, #0xc]
 	mov r3, r1
 	mov r2, #0xc0000
-	bl sub_02003788
+	bl _ZN17UnkClass_0200371812sub_02003788Elllllll
 	mov r0, #0xd8
 	bl _Znwm
 	cmp r0, #0
@@ -15886,7 +15886,7 @@ _02023A94:
 	beq _02023ABC
 	beq _02023AB4
 	mov r0, r5
-	bl sub_0200372C
+	bl _ZN17UnkClass_02003718D1Ev
 	mov r0, r5
 	bl _ZdlPv
 _02023AB4:
@@ -16376,9 +16376,9 @@ sub_02024140: ; 0x02024140
 	mov r4, r0
 	str r2, [r1]
 	ldr r0, [r4, #0xc]
-	bl sub_020037B4
+	bl _ZN17UnkClass_0200371812sub_020037B4Ev
 	ldr r0, [r4, #0xc]
-	bl sub_0200381C
+	bl _ZN17UnkClass_0200371812sub_0200381CEv
 	ldr r0, _02024210 ; =0x0400044C
 	mov r1, #0
 	str r1, [r0]

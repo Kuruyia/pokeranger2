@@ -314,7 +314,7 @@
 .public _ZN13CArchiveGuardD1Ev
 .public _ZN11CBinaryFileC1EPKcmmmPvm
 .public _ZN9CNCERFileC1EPKcmmm
-.public sub_020038A8
+.public _ZN17UnkClass_0200371812sub_020038A8EP22UnkStruct_02006B60_argl
 .public sub_02003938
 .public sub_02003984
 .public sub_020039B8

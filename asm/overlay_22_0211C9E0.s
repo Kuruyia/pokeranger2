@@ -3332,7 +3332,7 @@ ov22_0211F594: ; 0x0211F594
 	bl _Znwm
 	cmp r0, #0
 	beq _0211F6AC
-	bl sub_02003718
+	bl _ZN17UnkClass_02003718C1Ev
 	arm_func_end ov22_0211F594
 _0211F6AC:
 	mov r1, #0x100000
@@ -3348,7 +3348,7 @@ _0211F6AC:
 	ldr r0, [r4, #8]
 	mov r3, r1
 	mov r2, #0xc0000
-	bl sub_02003788
+	bl _ZN17UnkClass_0200371812sub_02003788Elllllll
 	add sp, sp, #0x20
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -3365,7 +3365,7 @@ ov22_0211F6F8: ; 0x0211F6F8
 	ldmeqia sp!, {r3, r4, r5, pc}
 	beq _0211F720
 	mov r0, r4
-	bl sub_0200372C
+	bl _ZN17UnkClass_02003718D1Ev
 	mov r0, r4
 	bl _ZdlPv
 	arm_func_end ov22_0211F6F8
@@ -3535,9 +3535,9 @@ ov22_0211F928: ; 0x0211F928
 	add r0, r0, #0x20000
 	str r0, [r1, #0x20]
 	ldr r0, [r4, #8]
-	bl sub_020037B4
+	bl _ZN17UnkClass_0200371812sub_020037B4Ev
 	ldr r0, [r4, #8]
-	bl sub_0200381C
+	bl _ZN17UnkClass_0200371812sub_0200381CEv
 	ldr r0, _0211F9A0 ; =0x0400044C
 	mov r5, #0
 	str r5, [r0]
