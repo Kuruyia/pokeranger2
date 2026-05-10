@@ -1221,34 +1221,11 @@ ptr_FUN_020841e4_0208a36c: ; 0x0208A36C
 
     .data
 
-	.global PTR_ptr_FUN_02083578_0208a664
-PTR_ptr_FUN_02083578_0208a664: ; 0x0208A664
-	.word _ZTVN10__cxxabiv117__class_type_infoE+8
-	.word s_10CPrimitive_0208a66c
-
-	.global s_10CPrimitive_0208a66c
-s_10CPrimitive_0208a66c: ; 0x0208A66C
-	.asciz "10CPrimitive"
-
-	.global _0208A679
-_0208A679:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-	.word PTR_ptr_FUN_02083578_0208a664
-
-	.global PTR_LAB_0208a684
-PTR_LAB_0208a684: ; 0x0208A684
-	.word sub_0200396C
-
-	.global ptr_FUN_02003970_0208a688
-ptr_FUN_02003970_0208a688: ; 0x0208A688
-	.word sub_02003970
-	.byte 0x00, 0x00, 0x00, 0x00
-
 	.global PTR_ptr_FUN_020835bc_0208a690
 PTR_ptr_FUN_020835bc_0208a690: ; 0x0208A690
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_14CPrimitiveLINE_0208a69c
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 
 	.global s_14CPrimitiveLINE_0208a69c
 s_14CPrimitiveLINE_0208a69c: ; 0x0208A69C
@@ -1276,7 +1253,7 @@ ptr_FUN_02003a2c_0208a6c0: ; 0x0208A6C0
 PTR_ptr_FUN_020835bc_0208a6c4: ; 0x0208A6C4
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_14CPrimitiveRECT_0208a6d0
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 
 	.global s_14CPrimitiveRECT_0208a6d0
 s_14CPrimitiveRECT_0208a6d0: ; 0x0208A6D0
@@ -1303,7 +1280,7 @@ ptr_FUN_02003c24_0208a6f4: ; 0x0208A6F4
 PTR_ptr_FUN_020835bc_0208a6f8: ; 0x0208A6F8
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_14CPrimitiveQUAD_0208a704
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 
 	.global s_14CPrimitiveQUAD_0208a704
 s_14CPrimitiveQUAD_0208a704: ; 0x0208A704
@@ -1330,7 +1307,7 @@ ptr_FUN_020041e4_0208a728: ; 0x0208A728
 PTR_ptr_FUN_020835bc_0208a72c: ; 0x0208A72C
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_16CPrimitiveSPHERE_0208a738
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 
 	.global s_16CPrimitiveSPHERE_0208a738
 s_16CPrimitiveSPHERE_0208a738: ; 0x0208A738
@@ -1357,7 +1334,7 @@ ptr_FUN_02004a04_0208a75c: ; 0x0208A75C
 PTR_ptr_FUN_020835bc_0208a760: ; 0x0208A760
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_18CPrimitiveTRIANGLE_0208a780
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_0208a760
 
@@ -1385,7 +1362,7 @@ _0208A795:
 PTR_ptr_FUN_020835bc_0208a798: ; 0x0208A798
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_15CSoftwareSprite_0208a7d4
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 
 	.global DAT_0208a7a4
 DAT_0208a7a4: ; 0x0208A7A4
@@ -5363,13 +5340,13 @@ ptr_FUN_020354e0_0208d624: ; 0x0208D624
 PTR_ptr_FUN_020835bc_0208d62c: ; 0x0208D62C
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_17CPrimitiveQuadNTF_0208d644
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 
 	.global PTR_ptr_FUN_020835bc_0208d638
 PTR_ptr_FUN_020835bc_0208d638: ; 0x0208D638
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_17CPrimitiveRectNTF_0208d66c
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 
 	.global s_17CPrimitiveQuadNTF_0208d644
 s_17CPrimitiveQuadNTF_0208d644: ; 0x0208D644
@@ -6524,7 +6501,7 @@ _0208E03D:
 PTR_ptr_FUN_020835bc_0208e040: ; 0x0208E040
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_23CSimplePrimitiveQuadNTF_0208e094
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 
 	.global PTR_ptr_FUN_020835bc_0208e04c
 PTR_ptr_FUN_020835bc_0208e04c: ; 0x0208E04C

@@ -9656,7 +9656,7 @@ ov3_02125184: ; 0x02125184
 ov3_0212518C: ; 0x0212518C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _021251D4 ; =ptr_FUN_02036908_0208d660
 	mov r2, #0
 	str r0, [r4]
@@ -9691,7 +9691,7 @@ ov3_021251DC: ; 0x021251DC
 	str ip, [sp]
 	bl __cxa_vec_ctor
 	add r0, r4, #0x290
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r1, _0212550C ; =ptr_FUN_overlay_3_02129a68_overlay_3_0212b4e0
 	add r0, r4, #0x2b8
 	str r1, [r4, #0x290]
@@ -9908,7 +9908,7 @@ _02125528: .word PTR_LAB_overlay_3_021255b4_overlay_3_0212adf0
 ov3_0212552C: ; 0x0212552C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _02125588 ; =ptr_FUN_02036908_0208d660
 	mov r1, #0
 	str r0, [r4]
@@ -9939,7 +9939,7 @@ _02125590: .word 0x00000622
 ov3_02125594: ; 0x02125594
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov3_02125594
@@ -11749,7 +11749,7 @@ ov3_02126E98: ; 0x02126E98
 ov3_02126E9C: ; 0x02126E9C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _02126EC8 ; =ptr_FUN_020420d8_0208e088
 	mov r1, #0
 	str r0, [r4]
@@ -11785,7 +11785,7 @@ ov3_02126ECC: ; 0x02126ECC
 	str ip, [sp]
 	bl __cxa_vec_ctor
 	add r0, r4, #0x138
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _02127244 ; =ptr_FUN_overlay_3_02129130_overlay_3_0212b458
 	mov r1, #0
 	str r0, [r4, #0x138]
@@ -14249,7 +14249,7 @@ ov3_02129130: ; 0x02129130
 	add r0, r4, #0x30
 	bl sub_020051C8
 	mov r0, r4
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -14266,7 +14266,7 @@ ov3_02129160: ; 0x02129160
 	add r0, r4, #0x30
 	bl sub_020051C8
 	mov r0, r4
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -14893,7 +14893,7 @@ ov3_02129A68: ; 0x02129A68
 	str r1, [r4]
 	bl ov3_02129C54
 	mov r0, r4
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -14908,7 +14908,7 @@ ov3_02129A90: ; 0x02129A90
 	str r1, [r4]
 	bl ov3_02129C54
 	mov r0, r4
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -17197,7 +17197,7 @@ s_OPD_i019_00_cac_overlay_3_0212b420: ; 0x0212B420
 PTR_ptr_FUN_020835bc_overlay_3_0212b430: ; 0x0212B430
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_15COPDCaptureLine_overlay_3_0212b43c
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 
     .global s_15COPDCaptureLine_overlay_3_0212b43c
 s_15COPDCaptureLine_overlay_3_0212b43c: ; 0x0212B43C
@@ -17265,7 +17265,7 @@ s_OPD_i001_00_cac_overlay_3_0212b4bc: ; 0x0212B4BC
 PTR_ptr_FUN_020835bc_overlay_3_0212b4cc: ; 0x0212B4CC
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_17COPDScreenMeshNTF_overlay_3_0212b4ec
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_overlay_3_0212b4cc
 

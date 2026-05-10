@@ -14389,7 +14389,7 @@ _020368B8: .word 0x04000504
 sub_020368BC: ; 0x020368BC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -14400,7 +14400,7 @@ sub_020368BC: ; 0x020368BC
 sub_020368D8: ; 0x020368D8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020368D8
@@ -14409,7 +14409,7 @@ sub_020368D8: ; 0x020368D8
 sub_020368EC: ; 0x020368EC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -14420,7 +14420,7 @@ sub_020368EC: ; 0x020368EC
 sub_02036908: ; 0x02036908
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02036908
@@ -14454,7 +14454,7 @@ sub_02036930: ; 0x02036930
 	str r1, [r4, #0x40]
 	add r0, r4, #0x48
 	str r1, [r4, #0x44]
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r1, _020369B0 ; =ptr_FUN_020368d8_0208d688
 	mov r0, r4
 	str r1, [r4, #0x48]
@@ -14480,7 +14480,7 @@ sub_020369B4: ; 0x020369B4
 	str r1, [r4]
 	bl sub_0203731C
 	add r0, r4, #0x48
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x2c
 	bl sub_02036488
 	mov r0, r4
@@ -14497,7 +14497,7 @@ sub_020369E4: ; 0x020369E4
 	str r1, [r4]
 	bl sub_0203731C
 	add r0, r4, #0x48
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x2c
 	bl sub_02036488
 	mov r0, r4
@@ -15173,7 +15173,7 @@ sub_02037388: ; 0x02037388
 	str ip, [sp]
 	bl __cxa_vec_ctor
 	add r0, r5, #0x5c
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r1, _0203752C ; =ptr_FUN_02036908_0208d660
 	mov r0, #0
 	str r1, [r5, #0x5c]
@@ -15571,7 +15571,7 @@ sub_02037938: ; 0x02037938
 	str r1, [r4]
 	bl sub_020378F4
 	add r0, r4, #0x5c
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	ldr r3, _0203797C ; =sub_0203691C
 	add r0, r4, #0x24
 	mov r1, #2
@@ -15600,7 +15600,7 @@ sub_02037988: ; 0x02037988
 	str r1, [r4]
 	bl sub_020378F4
 	add r0, r4, #0x5c
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	ldr r3, _020379C4 ; =sub_0203691C
 	add r0, r4, #0x24
 	mov r1, #2
@@ -15632,7 +15632,7 @@ sub_020379C8: ; 0x020379C8
 	str ip, [sp]
 	bl __cxa_vec_ctor
 	add r0, r4, #0x98
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r1, _02037ADC ; =ptr_FUN_02036908_0208d660
 	mov r0, r4
 	str r1, [r4, #0x98]
@@ -16020,7 +16020,7 @@ sub_02037F60: ; 0x02037F60
 	str r1, [r4]
 	bl sub_02037F1C
 	add r0, r4, #0x98
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	ldr r3, _02037FA4 ; =sub_0203691C
 	add r0, r4, #0x20
 	mov r1, #2
@@ -16049,7 +16049,7 @@ sub_02037FB0: ; 0x02037FB0
 	str r1, [r4]
 	bl sub_02037F1C
 	add r0, r4, #0x98
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	ldr r3, _02037FEC ; =sub_0203691C
 	add r0, r4, #0x20
 	mov r1, #2
@@ -16066,7 +16066,7 @@ _02037FEC: .word sub_0203691C
 sub_02037FF0: ; 0x02037FF0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _02038014 ; =ptr_FUN_020368d8_0208d688
 	mov r1, #0
 	str r0, [r4]
@@ -16105,7 +16105,7 @@ sub_02038018: ; 0x02038018
 	str r1, [r4, #0x50]
 	add r0, r4, #0x68
 	str r1, [r4, #0x54]
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r1, _02038158 ; =ptr_FUN_02036908_0208d660
 	mov r0, #0
 	str r1, [r4, #0x68]
@@ -16726,7 +16726,7 @@ sub_02038938: ; 0x02038938
 	mov r2, #0x5c
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x68
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x3c
 	bl sub_02036488
 	add r0, r4, #0x20
@@ -16759,7 +16759,7 @@ sub_02038998: ; 0x02038998
 	mov r2, #0x5c
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x68
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x3c
 	bl sub_02036488
 	add r0, r4, #0x20
@@ -16792,7 +16792,7 @@ sub_020389E8: ; 0x020389E8
 	add r0, r5, #0x44
 	mov r6, r1
 	str r2, [r5, #0x38]
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _02038AF0 ; =ptr_FUN_02036908_0208d660
 	mov r1, #0
 	str r0, [r5, #0x44]
@@ -16986,7 +16986,7 @@ sub_02038C94: ; 0x02038C94
 	str r1, [r4]
 	bl sub_02038C5C
 	add r0, r4, #0x44
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x20
 	bl sub_02036488
 	mov r0, r4
@@ -17011,7 +17011,7 @@ sub_02038CD4: ; 0x02038CD4
 	str r1, [r4]
 	bl sub_02038C5C
 	add r0, r4, #0x44
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x20
 	bl sub_02036488
 	mov r0, r4
@@ -17041,7 +17041,7 @@ sub_02038D04: ; 0x02038D04
 	add r0, r5, #0x3dc
 	mov r4, r1
 	str r2, [r5, #0x3d8]
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r1, _02038DD8 ; =ptr_FUN_02036908_0208d660
 	mov r0, r5
 	str r1, [r5, #0x3dc]
@@ -18173,7 +18173,7 @@ sub_02039D90: ; 0x02039D90
 	str r1, [r4]
 	bl sub_02039CF0
 	add r0, r4, #0x3dc
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x3c0
 	bl sub_02036488
 	mov r0, r4
@@ -18201,7 +18201,7 @@ sub_02039DDC: ; 0x02039DDC
 	str r1, [r4]
 	bl sub_02039CF0
 	add r0, r4, #0x3dc
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x3c0
 	bl sub_02036488
 	mov r0, r4
@@ -18909,7 +18909,7 @@ sub_0203A76C: ; 0x0203A76C
 	str r1, [r4, #0x34]
 	add r0, r4, #0x4c
 	str r1, [r4, #0x38]
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r1, _0203A844 ; =ptr_FUN_02036908_0208d660
 	mov r0, r4
 	str r1, [r4, #0x4c]
@@ -19077,7 +19077,7 @@ sub_0203A9D4: ; 0x0203A9D4
 	str r1, [r4]
 	bl sub_0203A9CC
 	add r0, r4, #0x4c
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x20
 	bl sub_02036488
 	mov r0, r4
@@ -19102,7 +19102,7 @@ sub_0203AA14: ; 0x0203AA14
 	str r1, [r4]
 	bl sub_0203A9CC
 	add r0, r4, #0x4c
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x20
 	bl sub_02036488
 	mov r0, r4
@@ -19132,7 +19132,7 @@ sub_0203AA44: ; 0x0203AA44
 	str r1, [r4, #0x54c]
 	add r0, r5, #0x400
 	str r1, [r4, #0x550]
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r1, _0203AB14 ; =ptr_FUN_02036908_0208d660
 	mov r0, r4
 	str r1, [r4, #0x554]
@@ -19720,7 +19720,7 @@ sub_0203B2CC: ; 0x0203B2CC
 	bl sub_0203B244
 	add r0, r4, #0x154
 	add r0, r0, #0x400
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x138
 	add r0, r0, #0x400
 	bl sub_02036488
@@ -19747,7 +19747,7 @@ sub_0203B314: ; 0x0203B314
 	bl sub_0203B244
 	add r0, r4, #0x154
 	add r0, r0, #0x400
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x138
 	add r0, r0, #0x400
 	bl sub_02036488
@@ -19785,7 +19785,7 @@ sub_0203B34C: ; 0x0203B34C
 	add r0, r4, #0x68
 	mov r5, r1
 	str r2, [r4, #0x54]
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r1, _0203B488 ; =ptr_FUN_02036908_0208d660
 	mov r0, #0
 	str r1, [r4, #0x68]
@@ -20404,7 +20404,7 @@ sub_0203BC64: ; 0x0203BC64
 	mov r2, #0x5c
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x68
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x3c
 	bl sub_02036488
 	add r0, r4, #0x20
@@ -20437,7 +20437,7 @@ sub_0203BCC4: ; 0x0203BCC4
 	mov r2, #0x5c
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x68
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	add r0, r4, #0x3c
 	bl sub_02036488
 	add r0, r4, #0x20
@@ -27901,7 +27901,7 @@ _020420A4: .word 0x04000504
 sub_020420A8: ; 0x020420A8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020420A8
@@ -27910,7 +27910,7 @@ sub_020420A8: ; 0x020420A8
 sub_020420BC: ; 0x020420BC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -27921,7 +27921,7 @@ sub_020420BC: ; 0x020420BC
 sub_020420D8: ; 0x020420D8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020420D8
@@ -27930,7 +27930,7 @@ sub_020420D8: ; 0x020420D8
 sub_020420EC: ; 0x020420EC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4

@@ -76,3 +76,5 @@
 .public s_game
 .public sub_0201001C
 .public sub_02010124
+.public _ZN10CPrimitiveC2Ev
+.public _ZN10CPrimitiveD2Ev

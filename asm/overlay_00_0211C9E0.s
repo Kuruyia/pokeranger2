@@ -87898,7 +87898,7 @@ ov0_02166780: ; 0x02166780
 ov0_02166794: ; 0x02166794
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _021667DC ; =ptr_FUN_02036908_0208d660
 	mov r2, #0
 	str r0, [r4]
@@ -90812,7 +90812,7 @@ ov0_02168F60: ; 0x02168F60
 	stmdb sp!, {r3, r4, r5, lr}
 	mov r5, r0
 	mov r4, r1
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _02168FE0 ; =ptr_s_DWCi_MOV_WH_StepDataSharing_Wa_overlay_11_02169738_overlay_0_02179d14
 	mov r1, #0
 	str r0, [r5]
@@ -91347,7 +91347,7 @@ _02169734: .word 0x6C16C16D
 ov0_02169738: ; 0x02169738
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov0_02169738
@@ -91532,7 +91532,7 @@ ov0_02169960: ; 0x02169960
 ov0_02169968: ; 0x02169968
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -91544,7 +91544,7 @@ ov0_02169984: ; 0x02169984
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x20
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	ldr r1, _021699B4 ; =ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 	mov r0, r4
 	str r1, [r4]
@@ -91562,7 +91562,7 @@ ov0_021699B8: ; 0x021699B8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x20
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	ldr r1, _021699F0 ; =ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 	mov r0, r4
 	str r1, [r4]
@@ -93001,7 +93001,7 @@ _0216AD44: .word ov0_0216AD5C
 ov0_0216AD48: ; 0x0216AD48
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov0_0216AD48
@@ -93010,7 +93010,7 @@ ov0_0216AD48: ; 0x0216AD48
 ov0_0216AD5C: ; 0x0216AD5C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _0216ADB8 ; =ptr_FUN_02036908_0208d660
 	mov r1, #0
 	str r0, [r4]
@@ -99873,7 +99873,7 @@ ov0_0217087C: ; 0x0217087C
 	mov r1, #8
 	add r0, r4, #0x28
 	str r1, [r4, #0x24]
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _0217094C ; =ptr_FUN_02036908_0208d660
 	mov r2, #0
 	str r0, [r4, #0x28]
@@ -99921,7 +99921,7 @@ ov0_02170954: ; 0x02170954
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x28
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	ldr r1, _02170984 ; =ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 	mov r0, r4
 	str r1, [r4]
@@ -99939,7 +99939,7 @@ ov0_02170988: ; 0x02170988
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x28
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	ldr r1, _021709C0 ; =ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 	mov r0, r4
 	str r1, [r4]
@@ -101142,7 +101142,7 @@ ov0_021718D8: ; 0x021718D8
 ov0_021718E0: ; 0x021718E0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r1, _02171934 ; =ptr_FUN_overlay_0_02172638_overlay_0_0217af50
 	mov r0, #0
 	str r1, [r4]
@@ -102161,7 +102161,7 @@ ov0_02172638: ; 0x02172638
 	str r1, [r4]
 	bl ov0_02172828
 	mov r0, r4
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -102176,7 +102176,7 @@ ov0_02172660: ; 0x02172660
 	str r1, [r4]
 	bl ov0_02172828
 	mov r0, r4
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -113727,7 +113727,7 @@ PTR_ptr_FUN_020835bc_overlay_0_02179ce4: ; 0x02179CE4
 PTR_ptr_FUN_020835bc_overlay_0_02179cf0: ; 0x02179CF0
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_11CMeshSprite_overlay_0_02179cfc
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 
     .global s_11CMeshSprite_overlay_0_02179cfc
 s_11CMeshSprite_overlay_0_02179cfc: ; 0x02179CFC
@@ -115492,7 +115492,7 @@ PTR_ptr_FUN_020835bc_overlay_0_0217af1c: ; 0x0217AF1C
 PTR_ptr_FUN_020835bc_overlay_0_0217af28: ; 0x0217AF28
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_19CFEFRasterTransform_overlay_0_0217af5c
-	.word PTR_ptr_FUN_02083578_0208a664
+	.word _ZTI10CPrimitive
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word DAT_overlay_0_0217af04
 

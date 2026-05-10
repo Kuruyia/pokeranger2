@@ -19,8 +19,8 @@
 .public _ZN17UnkClass_0200371812sub_020037B4Ev
 .public _ZN17UnkClass_0200371812sub_0200381CEv
 .public _ZN17UnkClass_0200371812sub_020038A8EP22UnkStruct_02006B60_argl
-.public sub_02003938
-.public sub_02003984
+.public _ZN10CPrimitiveC2Ev
+.public _ZN10CPrimitiveD2Ev
 .public sub_02003B64
 .public sub_02003BB0
 .public sub_02003BE0
@@ -468,7 +468,7 @@
 .public MAIN_BSS_0210CEC8
 .public PTR_LAB_0208de68
 .public PTR_LAB_0208e074
-.public PTR_ptr_FUN_02083578_0208a664
+.public _ZTI10CPrimitive
 .public PTR_ptr_FUN_02083578_0208a804
 .public PTR_ptr_FUN_02083578_0208c460
 .public PTR_ptr_FUN_02083578_0208dc5c

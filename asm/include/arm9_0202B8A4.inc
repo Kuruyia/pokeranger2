@@ -315,8 +315,8 @@
 .public _ZN11CBinaryFileC1EPKcmmmPvm
 .public _ZN9CNCERFileC1EPKcmmm
 .public _ZN17UnkClass_0200371812sub_020038A8EP22UnkStruct_02006B60_argl
-.public sub_02003938
-.public sub_02003984
+.public _ZN10CPrimitiveC2Ev
+.public _ZN10CPrimitiveD2Ev
 .public sub_020039B8
 .public sub_020039E8
 .public sub_02003B64

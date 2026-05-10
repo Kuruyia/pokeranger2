@@ -24,7 +24,7 @@
 .public __cxa_vec_ctor
 .public __register_global_object
 .public _ll_div
-.public sub_02003970
+.public _ZN10CPrimitiveD0Ev
 .public sub_020039E8
 .public sub_020039FC
 .public sub_02003A2C
@@ -686,9 +686,10 @@
 .public sub_02046920
 .public sub_0204692C
 .public sub_0200FA58
-.public sub_0200396C
+.public _ZN10CPrimitiveD1Ev
 .public sub_02007CA8
 .public sub_020130B8
 .public sub_020130E0
 .public sub_02039E0C
 .public _ZTI11CBinaryFile
+.public _ZTI10CPrimitive

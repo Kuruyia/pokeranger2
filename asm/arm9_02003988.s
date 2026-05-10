@@ -1,50 +1,13 @@
     .include "macros.inc"
-    .include "include/arm9_02003938.inc"
+    .include "include/arm9_02003988.inc"
 
     .text
-
-	arm_func_start sub_02003938
-sub_02003938: ; 0x02003938
-	ldr r2, _02003964 ; =PTR_LAB_0208a684
-	ldr r1, _02003968 ; =0x00007FFF
-	str r2, [r0]
-	strh r1, [r0, #8]
-	mov r2, #0
-	str r2, [r0, #0xc]
-	str r2, [r0, #0x10]
-	mov r1, #0x1f
-	str r1, [r0, #0x14]
-	str r2, [r0, #4]
-	bx lr
-	.align 2, 0
-_02003964: .word PTR_LAB_0208a684
-_02003968: .word 0x00007FFF
-	arm_func_end sub_02003938
-
-    arm_func_start sub_0200396C
-sub_0200396C: ; 0x0200396C
-    bx lr
-    arm_func_end sub_0200396C
-
-	arm_func_start sub_02003970
-sub_02003970: ; 0x02003970
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl _ZdlPv
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_02003970
-
-	arm_func_start sub_02003984
-sub_02003984: ; 0x02003984
-	bx lr
-	arm_func_end sub_02003984
 
 	arm_func_start sub_02003988
 sub_02003988: ; 0x02003988
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r3, _020039B4 ; =ptr_FUN_020039e8_0208a6b8
 	add r0, r4, #0x18
 	mov r1, #0
@@ -61,7 +24,7 @@ _020039B4: .word ptr_FUN_020039e8_0208a6b8
 sub_020039B8: ; 0x020039B8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r3, _020039E4 ; =ptr_FUN_020039e8_0208a6b8
 	add r0, r4, #0x18
 	mov r1, #0
@@ -78,7 +41,7 @@ _020039E4: .word ptr_FUN_020039e8_0208a6b8
 sub_020039E8: ; 0x020039E8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020039E8
@@ -87,7 +50,7 @@ sub_020039E8: ; 0x020039E8
 sub_020039FC: ; 0x020039FC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -98,7 +61,7 @@ sub_020039FC: ; 0x020039FC
 sub_02003A18: ; 0x02003A18
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02003A18
@@ -190,7 +153,7 @@ _02003B60: .word 0x040004A8
 sub_02003B64: ; 0x02003B64
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r3, _02003BAC ; =ptr_FUN_02003bb0_0208a6ec
 	add r0, r4, #0x18
 	mov r1, #0
@@ -214,7 +177,7 @@ _02003BAC: .word ptr_FUN_02003bb0_0208a6ec
 sub_02003BB0: ; 0x02003BB0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02003BB0
@@ -223,7 +186,7 @@ sub_02003BB0: ; 0x02003BB0
 sub_02003BC4: ; 0x02003BC4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -571,7 +534,7 @@ _020040C4: .word 0x040004A8
 sub_020040C8: ; 0x020040C8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r3, _02004110 ; =ptr_FUN_02004160_0208a720
 	add r0, r4, #0x18
 	mov r1, #0
@@ -595,7 +558,7 @@ _02004110: .word ptr_FUN_02004160_0208a720
 sub_02004114: ; 0x02004114
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r3, _0200415C ; =ptr_FUN_02004160_0208a720
 	add r0, r4, #0x18
 	mov r1, #0
@@ -619,7 +582,7 @@ _0200415C: .word ptr_FUN_02004160_0208a720
 sub_02004160: ; 0x02004160
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02004160
@@ -628,7 +591,7 @@ sub_02004160: ; 0x02004160
 sub_02004174: ; 0x02004174
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -639,7 +602,7 @@ sub_02004174: ; 0x02004174
 sub_02004190: ; 0x02004190
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02004190
@@ -1192,7 +1155,7 @@ sub_0200483C: ; 0x0200483C
 sub_020049A4: ; 0x020049A4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r3, _020049D0 ; =ptr_FUN_020049d4_0208a754
 	add r0, r4, #0x18
 	mov r1, #0
@@ -1209,7 +1172,7 @@ _020049D0: .word ptr_FUN_020049d4_0208a754
 sub_020049D4: ; 0x020049D4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020049D4
@@ -1218,7 +1181,7 @@ sub_020049D4: ; 0x020049D4
 sub_020049E8: ; 0x020049E8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -1408,7 +1371,7 @@ _02004CB0: .word 0x04000504
 sub_02004CB4: ; 0x02004CB4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r3, _02004CFC ; =PTR_LAB_0208a774
 	add r0, r4, #0x18
 	mov r1, #0
@@ -1432,7 +1395,7 @@ _02004CFC: .word PTR_LAB_0208a774
 sub_02004D00: ; 0x02004D00
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02004D00
@@ -1441,7 +1404,7 @@ sub_02004D00: ; 0x02004D00
 sub_02004D14: ; 0x02004D14
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -1743,7 +1706,7 @@ sub_02005150: ; 0x02005150
 	stmdb sp!, {r3, r4, lr}
 	sub sp, sp, #0xc
 	mov r4, r0
-	bl sub_02003938
+	bl _ZN10CPrimitiveC2Ev
 	ldr r0, _020051C4 ; =ptr_FUN_020051c8_0208a7f0
 	mov r1, #0
 	str r0, [r4]
@@ -1777,7 +1740,7 @@ _020051C4: .word ptr_FUN_020051c8_0208a7f0
 sub_020051C8: ; 0x020051C8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020051C8
@@ -1786,7 +1749,7 @@ sub_020051C8: ; 0x020051C8
 sub_020051DC: ; 0x020051DC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003984
+	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
