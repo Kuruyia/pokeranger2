@@ -1,9 +1,7 @@
 #include "UnkClass_02003718.hpp"
 
 extern "C" {
-BOOL sub_02006B60(UnkStruct_02006B60_arg arg0, UnkStruct_02006B60_arg arg1);
-
-extern UnkStruct_02006B60_arg DAT_020842f8;
+extern Rectangle DAT_020842f8;
 }
 
 UnkClass_02003718::UnkClass_02003718()
@@ -55,17 +53,17 @@ void UnkClass_02003718::sub_0200381C()
     G3_MultMtx33(&mtx);
 }
 
-BOOL UnkClass_02003718::sub_020038A8(UnkStruct_02006B60_arg *arg0, fx32 arg1)
+BOOL UnkClass_02003718::sub_020038A8(Rectangle *arg0, fx32 arg1)
 {
-    UnkStruct_02006B60_arg v0 = DAT_020842f8;
+    Rectangle v0 = DAT_020842f8;
 
-    v0.unk_00 = -unk_1C;
-    v0.unk_04 = -unk_20;
+    v0.x = -unk_1C;
+    v0.y = -unk_20;
 
     if (arg1 != FX32_CONST(1)) {
-        v0.unk_08 = (v0.unk_08 * (fx64)arg1) >> FX32_SHIFT;
-        v0.unk_0C = (v0.unk_0C * (fx64)arg1) >> FX32_SHIFT;
+        v0.w = (v0.w * (fx64)arg1) >> FX32_SHIFT;
+        v0.h = (v0.h * (fx64)arg1) >> FX32_SHIFT;
     }
 
-    return sub_02006B60(v0, *arg0);
+    return RectanglesOverlap(v0, *arg0);
 }

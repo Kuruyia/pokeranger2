@@ -11308,7 +11308,7 @@ _0212671C:
 	ldmia r0, {r0, r1, r2, r3}
 	stmia r5, {r0, r1, r2, r3}
 	ldmia r4, {r0, r1, r2, r3}
-	bl sub_02006B60
+	bl _Z17RectanglesOverlap9RectangleS_
 	cmp r0, #0
 	beq _02126754
 	ldr r1, [r8, #0x30]
@@ -18241,7 +18241,7 @@ _0212C988:
 	stmia ip, {r0, r1, r2, r3}
 	add r0, sp, #0x4c
 	ldmia r0, {r0, r1, r2, r3}
-	bl sub_02006B60
+	bl _Z17RectanglesOverlap9RectangleS_
 	cmp r0, #0
 	beq _0212CA74
 	mov r0, #0
@@ -41591,7 +41591,7 @@ _0214099C:
 	str r4, [sp, #0x104]
 	str r4, [sp, #0xfc]
 	ldmia r0, {r0, r1, r2, r3}
-	bl sub_02006B60
+	bl _Z17RectanglesOverlap9RectangleS_
 	ldr r1, [r5, #0x58]
 	mov r4, r0
 	mov r0, r1, asr #0x18
@@ -42580,7 +42580,7 @@ _021417E8:
 	str r6, [sp, #0xf4]
 	str r6, [sp, #0xec]
 	ldmia r0, {r0, r1, r2, r3}
-	bl sub_02006B60
+	bl _Z17RectanglesOverlap9RectangleS_
 	str r0, [sp, #0x24]
 	ldr r0, [sp, #0x20]
 	ldr r1, [r5, #0xe8]
@@ -45606,7 +45606,7 @@ _02143F48:
 	str ip, [sp, #0xc]
 	str r3, [sp, #0x14]
 	str r3, [sp, #0x10]
-	bl _ZN17UnkClass_0200371812sub_020038A8EP22UnkStruct_02006B60_argl
+	bl _ZN17UnkClass_0200371812sub_020038A8EP9Rectanglel
 	mov r3, r0
 _02143F80:
 	mov r0, r3
@@ -86572,7 +86572,7 @@ _02165694:
 	ldr r2, _021656B8 ; =0x00001199
 	add r1, sp, #0
 	mov r0, r3
-	bl _ZN17UnkClass_0200371812sub_020038A8EP22UnkStruct_02006B60_argl
+	bl _ZN17UnkClass_0200371812sub_020038A8EP9Rectanglel
 	mov ip, r0
 _021656A8:
 	mov r0, ip
@@ -97402,7 +97402,7 @@ _0216E7C0:
 	str r2, [sp, #0x18]
 	str r2, [sp, #0x14]
 	ldr r2, _0216E904 ; =0x00001199
-	bl _ZN17UnkClass_0200371812sub_020038A8EP22UnkStruct_02006B60_argl
+	bl _ZN17UnkClass_0200371812sub_020038A8EP9Rectanglel
 	cmp r0, #0
 	bne _0216E8AC
 	mov r0, #0

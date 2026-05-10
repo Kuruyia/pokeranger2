@@ -4,14 +4,7 @@
 #include <nitro.h>
 
 #include "common.hpp"
-
-// TODO: Move me where sub_02006B60 is declared
-struct UnkStruct_02006B60_arg {
-    fx32 unk_00;
-    fx32 unk_04;
-    fx32 unk_08;
-    fx32 unk_0C;
-};
+#include "sub_02006B60.hpp"
 
 class UnkClass_02003718 {
 public:
@@ -22,7 +15,7 @@ public:
     void sub_02003788(fx32 arg0, fx32 arg1, fx32 arg2, fx32 arg3, fx32 arg4, fx32 arg5, fx32 arg6);
     void sub_020037B4();
     void sub_0200381C();
-    BOOL sub_020038A8(UnkStruct_02006B60_arg *arg0, fx32 arg1);
+    BOOL sub_020038A8(Rectangle *arg0, fx32 arg1);
 
 public:
     fx32 unk_00;
