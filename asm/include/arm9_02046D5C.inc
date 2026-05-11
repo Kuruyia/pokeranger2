@@ -25,9 +25,9 @@
 .public __register_global_object
 .public _ll_div
 .public _ZN10CPrimitiveD0Ev
-.public sub_020039E8
-.public sub_020039FC
-.public sub_02003A2C
+.public _ZN14CPrimitiveLINED1Ev
+.public _ZN14CPrimitiveLINED0Ev
+.public _ZN14CPrimitiveLINE6RenderEP21CPrimitive_Render_arg
 .public sub_02003BB0
 .public sub_02003BC4
 .public sub_02003C24

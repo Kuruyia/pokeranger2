@@ -7470,8 +7470,8 @@ ov1_0212306C: ; 0x0212306C
 	add sp, sp, #0xc
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
-_02123214: .word sub_020039E8
-_02123218: .word sub_020039B8
+_02123214: .word _ZN14CPrimitiveLINED1Ev
+_02123218: .word _ZN14CPrimitiveLINEC1Ev
 _0212321C: .word sub_02004160
 _02123220: .word sub_02004114
 _02123224: .word sub_02004D00
@@ -7518,7 +7518,7 @@ ov1_0212322C: ; 0x0212322C
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_021232C0: .word sub_020039E8
+_021232C0: .word _ZN14CPrimitiveLINED1Ev
 _021232C4: .word sub_02004D00
 _021232C8: .word sub_02004160
 	arm_func_end ov1_0212322C
@@ -9722,7 +9722,7 @@ ov1_021251F4: ; 0x021251F4
 	bl __cxa_vec_ctor
 	add r0, sl, #0x2b8
 	add r0, r0, #0x400
-	bl sub_020039B8
+	bl _ZN14CPrimitiveLINEC1Ev
 	add r0, sl, #0x6e0
 	bl sub_020049A4
 	strb r5, [sl, #0x48c]
@@ -9986,7 +9986,7 @@ _021255BC:
 	bl sub_020049D4
 	add r0, r4, #0x2b8
 	add r0, r0, #0x400
-	bl sub_020039E8
+	bl _ZN14CPrimitiveLINED1Ev
 	ldr r3, _02125600 ; =sub_02007784
 	add r0, r4, #0x1c0
 	mov r1, #0x1d
@@ -10109,7 +10109,7 @@ _02125754:
 	bl sub_020049D4
 	add r0, r4, #0x2b8
 	add r0, r0, #0x400
-	bl sub_020039E8
+	bl _ZN14CPrimitiveLINED1Ev
 	ldr r3, _021257A0 ; =sub_02007784
 	add r0, r4, #0x1c0
 	mov r1, #0x1d
@@ -11551,7 +11551,7 @@ ov1_02126B38: ; 0x02126B38
 	str r1, [r4]
 	bl sub_020049A4
 	add r0, r4, #0x440
-	bl sub_020039B8
+	bl _ZN14CPrimitiveLINEC1Ev
 	mov r1, #0x3f
 	strb r5, [r4, #0x1f0]
 	mov r0, #0
@@ -11588,7 +11588,7 @@ ov1_02126BD4: ; 0x02126BD4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x440
-	bl sub_020039E8
+	bl _ZN14CPrimitiveLINED1Ev
 	add r0, r4, #0x18
 	add r0, r0, #0x400
 	bl sub_020049D4
@@ -11603,7 +11603,7 @@ ov1_02126C00: ; 0x02126C00
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0x440
-	bl sub_020039E8
+	bl _ZN14CPrimitiveLINED1Ev
 	add r0, r4, #0x18
 	add r0, r0, #0x400
 	bl sub_020049D4
@@ -19754,8 +19754,8 @@ _0212D4B0:
 	add sp, sp, #0x14
 	ldmia sp!, {r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
-_0212D4FC: .word sub_020039E8
-_0212D500: .word sub_020039B8
+_0212D4FC: .word _ZN14CPrimitiveLINED1Ev
+_0212D500: .word _ZN14CPrimitiveLINEC1Ev
 _0212D504: .word s_BSE_i071_NCLR_overlay_1_02141304
 _0212D508: .word s_BSE_i071_00_NCER_overlay_1_02141314
 _0212D50C: .word s_BSE_i071_00_cac_overlay_1_02141328
@@ -19821,7 +19821,7 @@ _0212D5BC:
 	mov r0, r6
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	.align 2, 0
-_0212D5D8: .word sub_020039E8
+_0212D5D8: .word _ZN14CPrimitiveLINED1Ev
 
 	arm_func_start ov1_0212D5DC
 ov1_0212D5DC: ; 0x0212D5DC
@@ -21218,8 +21218,8 @@ ov1_0212E88C: ; 0x0212E88C
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
-_0212E8EC: .word sub_020039E8
-_0212E8F0: .word sub_020039B8
+_0212E8EC: .word _ZN14CPrimitiveLINED1Ev
+_0212E8F0: .word _ZN14CPrimitiveLINEC1Ev
 _0212E8F4: .word sub_02004160
 _0212E8F8: .word sub_02004114
 	arm_func_end ov1_0212E88C
@@ -21243,7 +21243,7 @@ ov1_0212E8FC: ; 0x0212E8FC
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0212E938: .word sub_02004160
-_0212E93C: .word sub_020039E8
+_0212E93C: .word _ZN14CPrimitiveLINED1Ev
 	arm_func_end ov1_0212E8FC
 
 	arm_func_start ov1_0212E940
@@ -31081,7 +31081,7 @@ ov1_02136D30: ; 0x02136D30
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0xc
-	bl sub_020039B8
+	bl _ZN14CPrimitiveLINEC1Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_02136D30
@@ -31091,7 +31091,7 @@ ov1_02136D48: ; 0x02136D48
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #0xc
-	bl sub_020039E8
+	bl _ZN14CPrimitiveLINED1Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_02136D48

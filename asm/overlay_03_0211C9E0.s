@@ -12016,7 +12016,7 @@ _02127274: .word ov3_02126E9C
 ov3_02127278: ; 0x02127278
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003988
+	bl _ZN14CPrimitiveLINEC2Ev
 	ldr r1, _021272AC ; =PTR_LAB_overlay_3_021272b4_overlay_3_0212b12c
 	mov r0, #0
 	str r1, [r4]
@@ -12036,7 +12036,7 @@ _021272B0: .word 0x00000622
 ov3_021272B4: ; 0x021272B4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003A18
+	bl _ZN14CPrimitiveLINED2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov3_021272B4
@@ -12045,7 +12045,7 @@ ov3_021272B4: ; 0x021272B4
 ov3_021272C8: ; 0x021272C8
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003A18
+	bl _ZN14CPrimitiveLINED2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov3_021272C8
@@ -14199,7 +14199,7 @@ ov3_021290C4: ; 0x021290C4
 ov3_021290E0: ; 0x021290E0
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02003A18
+	bl _ZN14CPrimitiveLINED2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -16807,7 +16807,7 @@ PTR_ptr_FUN_020835bc_overlay_3_0212b09c: ; 0x0212B09C
 PTR_ptr_FUN_020835bc_overlay_3_0212b0a8: ; 0x0212B0A8
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_10CSparkLine_overlay_3_0212b0f0
-	.word PTR_ptr_FUN_020835bc_0208a690
+	.word _ZTI14CPrimitiveLINE
 
     .global PTR_ptr_FUN_020835bc_overlay_3_0212b0b4
 PTR_ptr_FUN_020835bc_overlay_3_0212b0b4: ; 0x0212B0B4
@@ -16883,7 +16883,7 @@ ptr_FUN_overlay_3_021290e0_overlay_3_0212b130: ; 0x0212B130
 
     .global ptr_FUN_02003a2c_overlay_3_0212b134
 ptr_FUN_02003a2c_overlay_3_0212b134: ; 0x0212B134
-	.word sub_02003A2C
+	.word _ZN14CPrimitiveLINE6RenderEP21CPrimitive_Render_arg
 	.byte 0x00, 0x00, 0x00, 0x00
 
     .global ptr_FUN_overlay_11_0212b0c0_overlay_3_0212b13c

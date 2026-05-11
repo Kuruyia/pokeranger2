@@ -32,7 +32,8 @@ Static main
     Object main.nef.p/src_file_CBGNCGRFile.cpp.o
     Object main.nef.p/src_UnkClass_02003718.cpp.o
     Object main.nef.p/src_primitive_CPrimitive.cpp.o
-    Object main.nef.p/asm_arm9_02003988.s.o
+    Object main.nef.p/src_primitive_CPrimitiveLINE.cpp.o
+    Object main.nef.p/asm_arm9_02003B64.s.o
     Object main.nef.p/src_sub_02006B60.cpp.o
     Object main.nef.p/asm_arm9_02006C04.s.o
     Object main.nef.p/src_UnkClass_020091E8.cpp.o

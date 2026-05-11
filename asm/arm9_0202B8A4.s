@@ -13489,7 +13489,7 @@ sub_02035C74: ; 0x02035C74
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #4
-	bl sub_020039B8
+	bl _ZN14CPrimitiveLINEC1Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02035C74
@@ -13499,7 +13499,7 @@ sub_02035C8C: ; 0x02035C8C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
 	add r0, r4, #4
-	bl sub_020039E8
+	bl _ZN14CPrimitiveLINED1Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_02035C8C

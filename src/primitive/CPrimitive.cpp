@@ -2,11 +2,11 @@
 
 CPrimitive::CPrimitive()
 {
-    unk_08 = 0x7FFF;
-    unk_0C = 0;
-    unk_10 = 0;
-    unk_14 = 0x1F;
-    unk_04 = 0;
+    m_color = GX_RGB(31, 31, 31);
+    m_polygonMode = GX_POLYGONMODE_MODULATE;
+    m_polygonID = 0;
+    m_alpha = 31;
+    m_z = 0;
 }
 
 CPrimitive::~CPrimitive()

@@ -317,8 +317,8 @@
 .public _ZN17UnkClass_0200371812sub_020038A8EP9Rectanglel
 .public _ZN10CPrimitiveC2Ev
 .public _ZN10CPrimitiveD2Ev
-.public sub_020039B8
-.public sub_020039E8
+.public _ZN14CPrimitiveLINEC1Ev
+.public _ZN14CPrimitiveLINED1Ev
 .public sub_02003B64
 .public sub_02003BE0
 .public sub_02005150

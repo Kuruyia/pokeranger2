@@ -18,8 +18,8 @@
 .public _ZN17UnkClass_0200371812sub_0200381CEv
 .public _ZN10CPrimitiveC2Ev
 .public _ZN10CPrimitiveD2Ev
-.public sub_02003988
-.public sub_02003A18
+.public _ZN14CPrimitiveLINEC2Ev
+.public _ZN14CPrimitiveLINED2Ev
 .public sub_02003B64
 .public sub_02003BB0
 .public sub_020040C8
@@ -187,13 +187,13 @@
 .public PTR_LAB_0208e074
 .public _ZTI10CPrimitive
 .public PTR_ptr_FUN_02083578_0208a804
-.public PTR_ptr_FUN_020835bc_0208a690
+.public _ZTI14CPrimitiveLINE
 .public PTR_ptr_FUN_020835bc_0208a6f8
 .public ptr_FUN_02036908_0208d660
 .public ptr_FUN_020420d8_0208e088
 .public _ZTVN10__cxxabiv117__class_type_infoE
 .public _ZTVN10__cxxabiv120__si_class_type_infoE
-.public sub_02003A2C
+.public _ZN14CPrimitiveLINE6RenderEP21CPrimitive_Render_arg
 .public sub_020041E4
 .public sub_02007CC4
 .public sub_02007CE0
