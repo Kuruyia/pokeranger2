@@ -122,6 +122,8 @@ Overlay overlay3
 {
     After main
     Object main.nef.p/asm_overlay_03_0211C9E0.s.o
+    Object main.nef.p/src_CNameInputScene.cpp.o
+    Object main.nef.p/asm_overlay_03_02121DBC.s.o
 }
 
 Overlay overlay4
