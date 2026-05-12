@@ -30,5 +30,6 @@ pokeranger2_cxx = files(
     'heap_operators.cpp',
     'UnkClass_02001C04.cpp',
     'UnkClass_020023EC.cpp',
+    'CNameInputScene.cpp',
     'debug.cpp',
 )
