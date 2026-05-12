@@ -14,7 +14,7 @@
 #include "sub_02046D40.hpp"
 
 extern "C" {
-void sub_02008D7C(u32 *);
+void sub_02008D7C(u16 *);
 void sub_0200FA48(u32);
 u32 sub_0200E310(u32);
 u32 sub_0200E324(u32);
@@ -172,7 +172,7 @@ void NitroMain(void)
         OS_GetTick();
         OS_GetTick();
 
-        sub_02008D7C(&s_game->unk_146C);
+        sub_02008D7C((u16 *)&s_game->unk_146C);
 
         OS_GetTick();
         OS_GetTick();

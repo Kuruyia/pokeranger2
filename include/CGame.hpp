@@ -57,10 +57,13 @@ public:
     UnkClass_020023EC *unk_0C24;
     UnkClass_020023EC *unk_0C28;
     u8 unk_0C2C[0x840];
-    u32 unk_146C;
-    u8 unk_1470[0x20];
-    UnkClass_020091E8 *unk_1490;
-    u8 unk_1494[0x10];
+    u16 unk_146C[16];
+    void *m_audioEngine;
+    UnkClass_020091E8 *m_textboxData;
+    void *unk_1494;
+    void *unk_1498;
+    void *m_scriptManager;
+    void *m_missionQuestData;
     UnkClass_020B26A0 *unk_14A4;
     u8 unk_14A8[0x14];
     u32 unk_14BC;
