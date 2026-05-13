@@ -26,8 +26,8 @@
 .public _ZN17UnkClass_0200371812sub_0200381CEv
 .public _ZN14CPrimitiveLINEC1Ev
 .public _ZN14CPrimitiveLINED1Ev
-.public sub_02003B64
-.public sub_02003BB0
+.public _ZN14CPrimitiveRECTC1Ev
+.public _ZN14CPrimitiveRECTD1Ev
 .public sub_02004114
 .public sub_02004160
 .public sub_020041A4

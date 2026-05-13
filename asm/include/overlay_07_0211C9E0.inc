@@ -6,9 +6,9 @@
 .public _ZN17UnkClass_0200371812sub_02003788Elllllll
 .public _ZN17UnkClass_0200371812sub_020037B4Ev
 .public _ZN17UnkClass_0200371812sub_0200381CEv
-.public sub_02003B64
-.public sub_02003BB0
-.public sub_02003BE0
+.public _ZN14CPrimitiveRECTC1Ev
+.public _ZN14CPrimitiveRECTD1Ev
+.public _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
 .public sub_020050C8
 .public sub_02005120
 .public sub_02005150

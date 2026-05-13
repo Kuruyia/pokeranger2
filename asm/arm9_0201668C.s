@@ -2920,7 +2920,7 @@ _02018C48:
 	bl _Znwm
 	cmp r0, #0
 	beq _02018C94
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _02018C94:
 	mov r1, #0
 	str r0, [r4, #8]
@@ -2930,7 +2930,7 @@ _02018C94:
 	ldr r0, [r4, #8]
 	mov r2, r1
 	mov r3, r1
-	bl sub_02003BE0
+	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
 	ldr r1, [r4, #8]
 	mov r0, #0
 	str r0, [r1, #0x28]
@@ -3009,7 +3009,7 @@ sub_02018D94: ; 0x02018D94
 	stmia sp, {r1, r2}
 	ldr r0, [r0, #8]
 	ldmia r3, {r1, r2, r3}
-	bl sub_02003BE0
+	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_02018D94
@@ -3433,7 +3433,7 @@ sub_02019284: ; 0x02019284
 	bl __cxa_vec_ctor
 	add r0, r4, #0x14c
 	add r0, r0, #0x400
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	bl sub_0201001C
 	str r0, [r4, #0x184]
 	add r0, r0, #0x1000
@@ -3461,7 +3461,7 @@ sub_0201933C: ; 0x0201933C
 	bl sub_02019688
 	add r0, r4, #0x14c
 	add r0, r0, #0x400
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0x2c
 	ldr r3, _020193C0 ; =sub_02004160
 	add r0, r0, #0x400
@@ -3500,7 +3500,7 @@ sub_020193C4: ; 0x020193C4
 	bl sub_02019688
 	add r0, r4, #0x14c
 	add r0, r0, #0x400
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0x2c
 	ldr r3, _02019450 ; =sub_02004160
 	add r0, r0, #0x400
@@ -5390,7 +5390,7 @@ sub_0201AD60: ; 0x0201AD60
 	bl _Znwm
 	cmp r0, #0
 	beq _0201AD8C
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	arm_func_end sub_0201AD60
 _0201AD8C:
 	str r0, [r4, #0xc]
@@ -5429,7 +5429,7 @@ _0201ADF8:
 	bl _Znwm
 	cmp r0, #0
 	beq _0201AE0C
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _0201AE0C:
 	add r1, r4, r6, lsl #2
 	add r6, r6, #1

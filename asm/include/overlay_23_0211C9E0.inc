@@ -9,7 +9,7 @@
 .public _ZN9CNCLRFileC1EPKcmmm
 .public _ZN9CNSCRFileC1EPKcmmm
 .public _ZN11CBGNCGRFileC1EPKcmmm
-.public sub_02003B64
+.public _ZN14CPrimitiveRECTC1Ev
 .public sub_02006000
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0

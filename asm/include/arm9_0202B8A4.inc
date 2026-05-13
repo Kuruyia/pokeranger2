@@ -319,8 +319,8 @@
 .public _ZN10CPrimitiveD2Ev
 .public _ZN14CPrimitiveLINEC1Ev
 .public _ZN14CPrimitiveLINED1Ev
-.public sub_02003B64
-.public sub_02003BE0
+.public _ZN14CPrimitiveRECTC1Ev
+.public _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
 .public sub_02005150
 .public sub_02005FDC
 .public sub_02006164

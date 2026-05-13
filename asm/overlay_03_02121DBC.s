@@ -2007,7 +2007,7 @@ _021239EC:
 	bl _Znwm
 	cmp r0, #0
 	beq _02123A04
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _02123A04:
 	add r2, sl, r6, lsl #2
 	str r0, [r2, #0xcc]
@@ -2034,7 +2034,7 @@ _02123A04:
 	bl _Znwm
 	cmp r0, #0
 	beq _02123A6C
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _02123A6C:
 	mov r1, #0x60000
 	str r0, [sl, #0x1bc]
@@ -2050,7 +2050,7 @@ _02123A6C:
 	bl _Znwm
 	cmp r0, #0
 	beq _02123AA8
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _02123AA8:
 	mov r1, #0x60000
 	str r0, [sl, #0x1c0]
@@ -2066,7 +2066,7 @@ _02123AA8:
 	bl _Znwm
 	cmp r0, #0
 	beq _02123AE4
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _02123AE4:
 	str r0, [sl, #0x1c4]
 	mov r1, #0x60000
@@ -2082,7 +2082,7 @@ _02123AE4:
 	bl _Znwm
 	cmp r0, #0
 	beq _02123B20
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _02123B20:
 	mov r1, #0x38000
 	str r0, [sl, #0x1c8]
@@ -2099,7 +2099,7 @@ _02123B20:
 	bl _Znwm
 	cmp r0, #0
 	beq _02123B60
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _02123B60:
 	str r0, [sl, #0x1cc]
 	mov r1, #0
@@ -2115,7 +2115,7 @@ _02123B60:
 	bl _Znwm
 	cmp r0, #0
 	beq _02123B9C
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _02123B9C:
 	str r0, [sl, #0x1d0]
 	mov r1, #0x38000
@@ -2131,7 +2131,7 @@ _02123B9C:
 	bl _Znwm
 	cmp r0, #0
 	beq _02123BD8
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _02123BD8:
 	str r0, [sl, #0x1d4]
 	mov r1, #0x38000
@@ -2147,7 +2147,7 @@ _02123BD8:
 	bl _Znwm
 	cmp r0, #0
 	beq _02123C14
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _02123C14:
 	str r0, [sl, #0x1d8]
 	mov r1, #0
@@ -9247,7 +9247,7 @@ _02129E94: .word 0x04000448
 ov3_02129E98: ; 0x02129E98
 	stmdb sp!, {r3, r4, r5, r6, r7, r8, sb, sl, lr}
 	sub sp, sp, #4
-	ldr r5, _02129F44 ; =sub_02003BB0
+	ldr r5, _02129F44 ; =_ZN14CPrimitiveRECTD1Ev
 	ldr r3, _02129F48 ; =FUN_02003B64
 	mov r1, #7
 	mov r2, #0x40
@@ -9291,15 +9291,15 @@ _02129EF8:
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, pc}
 	.align 2, 0
-_02129F44: .word sub_02003BB0
-_02129F48: .word sub_02003B64
+_02129F44: .word _ZN14CPrimitiveRECTD1Ev
+_02129F48: .word _ZN14CPrimitiveRECTC1Ev
 _02129F4C: .word DAT_overlay_3_0212a6ac
 _02129F50: .word DAT_overlay_3_0212a690
 
 	arm_func_start ov3_02129F54
 ov3_02129F54: ; 0x02129F54
 	stmdb sp!, {r4, lr}
-	ldr r3, _02129F74 ; =sub_02003BB0
+	ldr r3, _02129F74 ; =_ZN14CPrimitiveRECTD1Ev
 	mov r1, #7
 	mov r2, #0x40
 	mov r4, r0
@@ -9307,7 +9307,7 @@ ov3_02129F54: ; 0x02129F54
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02129F74: .word sub_02003BB0
+_02129F74: .word _ZN14CPrimitiveRECTD1Ev
 	arm_func_end ov3_02129F54
 
 	arm_func_start ov3_02129F78

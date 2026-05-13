@@ -302,7 +302,7 @@ ov7_0211CD84: ; 0x0211CD84
 	mov r5, r0
 	add r0, r5, #0x18
 	mov r4, r1
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	add r0, r5, #0x22c
 	bl sub_02005150
 	mov r0, r5
@@ -461,7 +461,7 @@ _0211CF94:
 	add r0, r4, #0x22c
 	bl sub_020051C8
 	add r0, r4, #0x18
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	mov r0, r4
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
@@ -1594,7 +1594,7 @@ _0211DF54:
 	mov r1, #0
 	add r0, sl, #0x18
 	mov r2, r1
-	bl sub_02003BE0
+	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
 	mov r0, #0
 	strh r0, [sl, #0x20]
 	mov r0, #0x2b

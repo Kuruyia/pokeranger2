@@ -21,10 +21,10 @@
 .public _ZN17UnkClass_0200371812sub_020038A8EP9Rectanglel
 .public _ZN10CPrimitiveC2Ev
 .public _ZN10CPrimitiveD2Ev
-.public sub_02003B64
-.public sub_02003BB0
-.public sub_02003BE0
-.public sub_02003C00
+.public _ZN14CPrimitiveRECTC1Ev
+.public _ZN14CPrimitiveRECTD1Ev
+.public _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
+.public _ZN14CPrimitiveRECT12sub_02003C00EP32UnkClass_CPrimitiveRECT_02003C00PS_
 .public sub_020050C8
 .public sub_02005120
 .public sub_02005150

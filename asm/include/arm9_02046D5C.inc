@@ -28,9 +28,9 @@
 .public _ZN14CPrimitiveLINED1Ev
 .public _ZN14CPrimitiveLINED0Ev
 .public _ZN14CPrimitiveLINE6RenderEP21CPrimitive_Render_arg
-.public sub_02003BB0
-.public sub_02003BC4
-.public sub_02003C24
+.public _ZN14CPrimitiveRECTD1Ev
+.public _ZN14CPrimitiveRECTD0Ev
+.public _ZN14CPrimitiveRECT6RenderEP21CPrimitive_Render_arg
 .public sub_02004160
 .public sub_02004174
 .public sub_020041E4

@@ -13,7 +13,7 @@ _ZN11CFieldSceneC1EP5CGame: ; 0x0211C9E0
 	ldr r1, _0211CAC4 ; =ptr_FUN_overlay_0_0211cad0_overlay_0_02172fd4
 	add r0, r4, #0xfc
 	str r1, [r4]
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	add r0, r4, #0x13c
 	bl ov0_021518AC
 	mvn r0, #0
@@ -45,7 +45,7 @@ _ZN11CFieldSceneC1EP5CGame: ; 0x0211C9E0
 	str r0, [sp, #4]
 	add r0, r4, #0xfc
 	mov r2, r1
-	bl sub_02003BE0
+	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
 	mov r1, #0
 	add r0, r4, #0x100
 	strh r1, [r0, #4]
@@ -85,7 +85,7 @@ CFieldScene_complete_obj_dtor: ; 0x0211CAD0
 	str r2, [r1]
 	bl ov0_021518F4
 	add r0, r4, #0xfc
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	mov r0, r4
 	bl sub_02007CC0
 	mov r0, r4
@@ -112,7 +112,7 @@ CFieldScene_deleting_obj_dtor: ; 0x0211CB28
 	str r2, [r1]
 	bl ov0_021518F4
 	add r0, r4, #0xfc
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	mov r0, r4
 	bl sub_02007CC0
 	mov r0, r4
@@ -1084,7 +1084,7 @@ _0211D968:
 	bl _Znwm
 	movs r5, r0
 	beq _0211D98C
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _0211D98C:
 	str r5, [sb, #0x64]
 	ldr r0, [sb, #0xd8]
@@ -2195,7 +2195,7 @@ _0211E8CC:
 	beq _0211E8F4
 	beq _0211E8EC
 	mov r0, r5
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	mov r0, r5
 	bl _ZdlPv
 _0211E8EC:
@@ -37947,7 +37947,7 @@ ov0_0213D84C: ; 0x0213D84C
 	ldr r1, _0213D8F0 ; =PTR_LAB_overlay_0_0212dea0_overlay_0_02173f90
 	add r0, r4, #0x1c
 	str r1, [r4]
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	mov ip, #0
 	add r0, sp, #0
 	str ip, [r4, #4]
@@ -37994,7 +37994,7 @@ ov0_0213D8F4: ; 0x0213D8F4
 	str r1, [r4]
 	bl ov0_0213DBF4
 	add r0, r4, #0x1c
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
@@ -38291,7 +38291,7 @@ _0213DCC4:
 	ldr r2, [r5, #0xc]
 	ldr r3, [r5, #0x10]
 	add r0, r5, #0x1c
-	bl sub_02003BE0
+	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
 	add r0, r5, #0x1c
 	ldr r2, [r0]
 	mov r1, r4
@@ -43664,7 +43664,7 @@ ov0_021426A0: ; 0x021426A0
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_021426DC: .word sub_02003BB0
+_021426DC: .word _ZN14CPrimitiveRECTD1Ev
 _021426E0: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 	arm_func_end ov0_021426A0
 
@@ -43742,7 +43742,7 @@ _02142744:
 _021427D8: .word ptr_FUN_overlay_0_02143424_overlay_0_02174490
 _021427DC: .word MAIN_BSS_0210C1C0
 _021427E0: .word MAIN_BSS_0210CA60
-_021427E4: .word sub_02003BB0
+_021427E4: .word _ZN14CPrimitiveRECTD1Ev
 _021427E8: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 
 	arm_func_start ov0_021427EC
@@ -43817,7 +43817,7 @@ _0214283C:
 _021428D8: .word ptr_FUN_overlay_0_02143424_overlay_0_02174490
 _021428DC: .word MAIN_BSS_0210C1C0
 _021428E0: .word MAIN_BSS_0210CA60
-_021428E4: .word sub_02003BB0
+_021428E4: .word _ZN14CPrimitiveRECTD1Ev
 _021428E8: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 
 	arm_func_start ov0_021428EC
@@ -60710,7 +60710,7 @@ ov0_0214FB50: ; 0x0214FB50
 	bl _Znwm
 	cmp r0, #0
 	beq _0214FB78
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	arm_func_end ov0_0214FB50
 _0214FB78:
 	mov r1, #0x70000
@@ -60884,7 +60884,7 @@ ov0_0214FD74: ; 0x0214FD74
 	bl _Znwm
 	cmp r0, #0
 	beq _0214FD9C
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	arm_func_end ov0_0214FD74
 _0214FD9C:
 	str r0, [r4, #4]
@@ -85884,8 +85884,8 @@ _02164D8C:
 	.align 2, 0
 _02164DA4: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _02164DA8: .word ptr_FUN_overlay_0_021426a0_overlay_0_02179620
-_02164DAC: .word sub_02003BB0
-_02164DB0: .word sub_02003B64
+_02164DAC: .word _ZN14CPrimitiveRECTD1Ev
+_02164DB0: .word _ZN14CPrimitiveRECTC1Ev
 _02164DB4: .word MAIN_BSS_0210CA40
 
 	arm_func_start ov0_02164DB8
@@ -86185,7 +86185,7 @@ ov0_0216517C: ; 0x0216517C
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_021651C0: .word sub_02003BB0
+_021651C0: .word _ZN14CPrimitiveRECTD1Ev
 _021651C4: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 	arm_func_end ov0_0216517C
 
@@ -91599,7 +91599,7 @@ ov0_02169A08: ; 0x02169A08
 	ldr r1, _02169B7C ; =ptr_FUN_overlay_0_02169b90_overlay_0_02179e58
 	add r0, sl, #0x18
 	str r1, [sl]
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	ldr r0, _02169B80 ; =sub_020051C8
 	ldr r3, _02169B84 ; =FUN_02005150
 	str r0, [sp]
@@ -91703,7 +91703,7 @@ ov0_02169B90: ; 0x02169B90
 	mov r2, #0x4c
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x18
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	ldr r1, _02169BD8 ; =ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 	mov r0, r4
 	str r1, [r4]
@@ -91727,7 +91727,7 @@ ov0_02169BDC: ; 0x02169BDC
 	mov r2, #0x4c
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x18
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	ldr r1, _02169C2C ; =ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 	mov r0, r4
 	str r1, [r4]
@@ -92227,7 +92227,7 @@ ov0_0216A2D4: ; 0x0216A2D4
 	add r0, sp, #0
 	add r1, r6, #0x18
 	mov r4, r2
-	bl sub_02003C00
+	bl _ZN14CPrimitiveRECT12sub_02003C00EP32UnkClass_CPrimitiveRECT_02003C00PS_
 	ldr r0, [sp]
 	mov r1, #1
 	str r0, [r6, #0xa50]

@@ -27217,7 +27217,7 @@ _0204179C:
 	bl _Znwm
 	cmp r0, #0
 	beq _020417E8
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _020417E8:
 	mov r1, #0
 	str r0, [r4, #8]
@@ -27227,7 +27227,7 @@ _020417E8:
 	ldr r0, [r4, #8]
 	mov r2, r1
 	mov r3, r1
-	bl sub_02003BE0
+	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
 	ldr r1, [r4, #8]
 	mov r0, #0
 	str r0, [r1, #0x28]
@@ -27339,7 +27339,7 @@ _02041958:
 	stmia sp, {r0, r7}
 	ldr r0, [sl, #8]
 	ldmia r6, {r1, r2, r3}
-	bl sub_02003BE0
+	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
 	ldr r0, [sl, #8]
 	mov r1, sb
 	ldr r2, [r0]

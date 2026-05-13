@@ -119,8 +119,8 @@
 .public ptr_FUN_02036908_0208d660
 .public ptr_FUN_020420d8_0208e088
 .public s_game
-.public sub_02003B64
-.public sub_02003BB0
+.public _ZN14CPrimitiveRECTC1Ev
+.public _ZN14CPrimitiveRECTD1Ev
 .public sub_020040C8
 .public sub_02004190
 .public sub_020041A4

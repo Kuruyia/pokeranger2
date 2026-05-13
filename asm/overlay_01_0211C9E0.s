@@ -7405,7 +7405,7 @@ ov1_0212306C: ; 0x0212306C
 	bl __cxa_vec_ctor
 	add r0, r4, #0x3d4
 	add r0, r0, #0x6000
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	mov r1, #0
 	add r0, r4, #0x5400
 	strh r1, [r0, #0xc0]
@@ -7485,7 +7485,7 @@ ov1_0212322C: ; 0x0212322C
 	bl ov1_021235E8
 	add r0, r4, #0x3d4
 	add r0, r0, #0x6000
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0xd4
 	ldr r3, _021232C0 ; =FUN_020039E8
 	add r0, r0, #0x5400
@@ -17619,7 +17619,7 @@ ov1_0212B7A0: ; 0x0212B7A0
 	str r1, [r7]
 	bl sub_020049A4
 	add r0, r7, #0x1e8
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	mov r0, r7
 	bl ov1_0212BAD0
 	ldr r0, _0212BA38 ; =0x00006504
@@ -17805,7 +17805,7 @@ ov1_0212BA58: ; 0x0212BA58
 	str r1, [r4]
 	bl ov1_0212BC54
 	add r0, r4, #0x1e8
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0x1c4
 	bl sub_020049D4
 	mov r0, r4
@@ -17824,7 +17824,7 @@ ov1_0212BA90: ; 0x0212BA90
 	str r1, [r4]
 	bl ov1_0212BC54
 	add r0, r4, #0x1e8
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0x1c4
 	bl sub_020049D4
 	mov r0, r4
@@ -32534,7 +32534,7 @@ ov1_021380D4: ; 0x021380D4
 	bl _Znwm
 	cmp r0, #0
 	beq _021380F4
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	arm_func_end ov1_021380D4
 _021380F4:
 	str r0, [r4, #4]
@@ -32712,7 +32712,7 @@ ov1_021382F8: ; 0x021382F8
 	bl _Znwm
 	cmp r0, #0
 	beq _02138318
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	arm_func_end ov1_021382F8
 _02138318:
 	mov r1, #0x70000
@@ -35959,10 +35959,10 @@ ov1_0213AE18: ; 0x0213AE18
 	bl __cxa_vec_ctor
 	add r0, r4, #0x364
 	add r0, r0, #0xc00
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	add r0, r4, #0x3a4
 	add r0, r0, #0xc00
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	mov r0, r4
 	bl ov1_0213B27C
 	str r7, [r4, #0xf0]
@@ -36143,8 +36143,8 @@ _0213B194: .word sub_020117AC
 _0213B198: .word sub_0201179C
 _0213B19C: .word sub_020051C8
 _0213B1A0: .word sub_02005150
-_0213B1A4: .word sub_02003BB0
-_0213B1A8: .word sub_02003B64
+_0213B1A4: .word _ZN14CPrimitiveRECTD1Ev
+_0213B1A8: .word _ZN14CPrimitiveRECTC1Ev
 _0213B1AC: .word 0x0000042E
 
 	arm_func_start ov1_0213B1B0
@@ -36154,10 +36154,10 @@ ov1_0213B1B0: ; 0x0213B1B0
 	bl ov1_0213B454
 	add r0, r4, #0x3a4
 	add r0, r0, #0xc00
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0x364
 	add r0, r0, #0xc00
-	bl sub_02003BB0
+	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0x164
 	add r0, r0, #0xc00
 	mov r1, #8
@@ -36198,7 +36198,7 @@ ov1_0213B1B0: ; 0x0213B1B0
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0213B270: .word sub_02003BB0
+_0213B270: .word _ZN14CPrimitiveRECTD1Ev
 _0213B274: .word sub_020051C8
 _0213B278: .word sub_020117AC
 	arm_func_end ov1_0213B1B0

@@ -11,7 +11,7 @@
 .public _ZN17UnkClass_0200371812sub_02003788Elllllll
 .public _ZN17UnkClass_0200371812sub_020037B4Ev
 .public _ZN17UnkClass_0200371812sub_0200381CEv
-.public sub_02003B64
+.public _ZN14CPrimitiveRECTC1Ev
 .public sub_02005150
 .public sub_02006000
 .public _ZN6CSceneC2Ev

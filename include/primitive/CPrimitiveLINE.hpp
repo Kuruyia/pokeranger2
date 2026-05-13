@@ -13,13 +13,6 @@ public:
     virtual u32 Render(CPrimitive_Render_arg *arg0);
 
 public:
-    struct Coordinates {
-        fx32 x1;
-        fx32 y1;
-        fx32 x2;
-        fx32 y2;
-    };
-
     Coordinates m_coords;
 };
 

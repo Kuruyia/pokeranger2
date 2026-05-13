@@ -498,7 +498,7 @@ ov19_0211D070: ; 0x0211D070
 	bl _Znwm
 	cmp r0, #0
 	beq _0211D08C
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	arm_func_end ov19_0211D070
 _0211D08C:
 	mov r1, #0x38000
@@ -516,7 +516,7 @@ _0211D08C:
 	bl _Znwm
 	cmp r0, #0
 	beq _0211D0CC
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _0211D0CC:
 	mov r1, #0
 	str r0, [r4, #0x74]
@@ -532,7 +532,7 @@ _0211D0CC:
 	bl _Znwm
 	cmp r0, #0
 	beq _0211D108
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _0211D108:
 	mov r1, #0x38000
 	str r0, [r4, #0x78]
@@ -548,7 +548,7 @@ _0211D108:
 	bl _Znwm
 	cmp r0, #0
 	beq _0211D144
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _0211D144:
 	str r0, [r4, #0x6c]
 	mov r2, #0

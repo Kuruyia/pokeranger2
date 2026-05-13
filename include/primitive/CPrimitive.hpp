@@ -18,7 +18,14 @@ public:
     virtual u32 Render(CPrimitive_Render_arg *arg0) = 0;
 
 public:
-    u32 m_z;
+    struct Coordinates {
+        fx32 x1;
+        fx32 y1;
+        fx32 x2;
+        fx32 y2;
+    };
+
+    fx32 m_z;
     GXRgb m_color;
     GXPolygonMode m_polygonMode;
     int m_polygonID;

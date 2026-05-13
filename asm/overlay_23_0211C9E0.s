@@ -2071,7 +2071,7 @@ ov23_0211E75C: ; 0x0211E75C
 	bl _Znwm
 	cmp r0, #0
 	beq _0211E778
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 	arm_func_end ov23_0211E75C
 _0211E778:
 	str r0, [r4, #0x50]
@@ -2088,7 +2088,7 @@ _0211E778:
 	bl _Znwm
 	cmp r0, #0
 	beq _0211E7B4
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _0211E7B4:
 	str r0, [r4, #0x54]
 	mov r1, #0x75000
@@ -2103,7 +2103,7 @@ _0211E7B4:
 	bl _Znwm
 	cmp r0, #0
 	beq _0211E7EC
-	bl sub_02003B64
+	bl _ZN14CPrimitiveRECTC1Ev
 _0211E7EC:
 	mov r1, #0x75000
 	str r0, [r4, #0x58]
