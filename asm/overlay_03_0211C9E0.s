@@ -4931,7 +4931,7 @@ _02121008:
 	bl _Znwm
 	cmp r0, #0
 	beq _02121034
-	bl sub_020049A4
+	bl _ZN16CPrimitiveSPHEREC1Ev
 _02121034:
 	mov r1, #0x20000
 	str r0, [r7, #0x34]
@@ -4945,7 +4945,7 @@ _02121034:
 	bl _Znwm
 	cmp r0, #0
 	beq _02121068
-	bl sub_020049A4
+	bl _ZN16CPrimitiveSPHEREC1Ev
 _02121068:
 	str r0, [r7, #0x38]
 	mov r1, #0x20000
@@ -5602,7 +5602,7 @@ _02121920:
 	bl _Znwm
 	cmp r0, #0
 	beq _0212194C
-	bl sub_020049A4
+	bl _ZN16CPrimitiveSPHEREC1Ev
 _0212194C:
 	mov r1, #0x20000
 	str r0, [r7, #0x30]
@@ -5616,7 +5616,7 @@ _0212194C:
 	bl _Znwm
 	cmp r0, #0
 	beq _02121980
-	bl sub_020049A4
+	bl _ZN16CPrimitiveSPHEREC1Ev
 _02121980:
 	str r0, [r7, #0x34]
 	mov r1, #0x20000

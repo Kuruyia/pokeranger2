@@ -1,47 +1,10 @@
     .include "macros.inc"
-    .include "include/arm9_020049A4.inc"
+    .include "include/arm9_02004A04.inc"
 
     .text
 
-	arm_func_start sub_020049A4
-sub_020049A4: ; 0x020049A4
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl _ZN10CPrimitiveC2Ev
-	ldr r3, _020049D0 ; =ptr_FUN_020049d4_0208a754
-	add r0, r4, #0x18
-	mov r1, #0
-	mov r2, #0xc
-	str r3, [r4]
-	bl MI_CpuFill8
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	.align 2, 0
-_020049D0: .word ptr_FUN_020049d4_0208a754
-	arm_func_end sub_020049A4
-
-	arm_func_start sub_020049D4
-sub_020049D4: ; 0x020049D4
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl _ZN10CPrimitiveD2Ev
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_020049D4
-
-	arm_func_start sub_020049E8
-sub_020049E8: ; 0x020049E8
-	stmdb sp!, {r4, lr}
-	mov r4, r0
-	bl _ZN10CPrimitiveD2Ev
-	mov r0, r4
-	bl _ZdlPv
-	mov r0, r4
-	ldmia sp!, {r4, pc}
-	arm_func_end sub_020049E8
-
-	arm_func_start sub_02004A04
-sub_02004A04: ; 0x02004A04
+	arm_func_start _ZN16CPrimitiveSPHERE6RenderEP21CPrimitive_Render_arg
+_ZN16CPrimitiveSPHERE6RenderEP21CPrimitive_Render_arg: ; 0x02004A04
 	stmdb sp!, {r4, r5, r6, r7, r8, sb, sl, fp, lr}
 	sub sp, sp, #0x1c
 	ldrh r5, [r1, #0x28]
@@ -70,7 +33,7 @@ sub_02004A04: ; 0x02004A04
 	mov r7, r6
 	str r1, [sp, #0x14]
 	b _02004C80
-	arm_func_end sub_02004A04
+	arm_func_end _ZN16CPrimitiveSPHERE6RenderEP21CPrimitive_Render_arg
 _02004A74:
 	ldr r2, [r0, #0x1c]
 	ldr r1, [r0, #0x18]

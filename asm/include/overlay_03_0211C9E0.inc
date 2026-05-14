@@ -98,7 +98,7 @@
 .public s_tp_03d_overlay_3_0212a6f0
 .public strcat
 .public strcpy
-.public sub_020049A4
+.public _ZN16CPrimitiveSPHEREC1Ev
 .public sub_02006000
 .public sub_02006100
 .public sub_02007CC0

@@ -35,7 +35,8 @@ Static main
     Object main.nef.p/src_primitive_CPrimitiveLINE.cpp.o
     Object main.nef.p/src_primitive_CPrimitiveRECT.cpp.o
     Object main.nef.p/src_primitive_CPrimitiveQUAD.cpp.o
-    Object main.nef.p/asm_arm9_020049A4.s.o
+    Object main.nef.p/src_primitive_CPrimitiveSPHERE.cpp.o
+    Object main.nef.p/asm_arm9_02004A04.s.o
     Object main.nef.p/src_sub_02006B60.cpp.o
     Object main.nef.p/asm_arm9_02006C04.s.o
     Object main.nef.p/src_UnkClass_020091E8.cpp.o

@@ -32,8 +32,8 @@
 .public _ZN14CPrimitiveQUADD1Ev
 .public _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 .public _ZN14CPrimitiveQUAD8RenderDLEP21CPrimitive_Render_argP8GXDLInfo
-.public sub_020049A4
-.public sub_020049D4
+.public _ZN16CPrimitiveSPHEREC1Ev
+.public _ZN16CPrimitiveSPHERED1Ev
 .public sub_02005150
 .public sub_020051C8
 .public sub_020051F8

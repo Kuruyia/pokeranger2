@@ -9724,7 +9724,7 @@ ov1_021251F4: ; 0x021251F4
 	add r0, r0, #0x400
 	bl _ZN14CPrimitiveLINEC1Ev
 	add r0, sl, #0x6e0
-	bl sub_020049A4
+	bl _ZN16CPrimitiveSPHEREC1Ev
 	strb r5, [sl, #0x48c]
 	mov r0, sl
 	mov r1, sb
@@ -9983,7 +9983,7 @@ _021255BC:
 	ldr r0, [r4, #0x478]
 	bl NNS_GfdFreeLnkTexVram
 	add r0, r4, #0x6e0
-	bl sub_020049D4
+	bl _ZN16CPrimitiveSPHERED1Ev
 	add r0, r4, #0x2b8
 	add r0, r0, #0x400
 	bl _ZN14CPrimitiveLINED1Ev
@@ -10106,7 +10106,7 @@ _02125754:
 	ldr r0, [r4, #0x478]
 	bl NNS_GfdFreeLnkTexVram
 	add r0, r4, #0x6e0
-	bl sub_020049D4
+	bl _ZN16CPrimitiveSPHERED1Ev
 	add r0, r4, #0x2b8
 	add r0, r0, #0x400
 	bl _ZN14CPrimitiveLINED1Ev
@@ -11549,7 +11549,7 @@ ov1_02126B38: ; 0x02126B38
 	ldr r1, _02126BD0 ; =ptr_FUN_overlay_1_02126bd4_overlay_1_02140b38
 	add r0, r0, #0x400
 	str r1, [r4]
-	bl sub_020049A4
+	bl _ZN16CPrimitiveSPHEREC1Ev
 	add r0, r4, #0x440
 	bl _ZN14CPrimitiveLINEC1Ev
 	mov r1, #0x3f
@@ -11591,7 +11591,7 @@ ov1_02126BD4: ; 0x02126BD4
 	bl _ZN14CPrimitiveLINED1Ev
 	add r0, r4, #0x18
 	add r0, r0, #0x400
-	bl sub_020049D4
+	bl _ZN16CPrimitiveSPHERED1Ev
 	mov r0, r4
 	bl sub_02011F6C
 	mov r0, r4
@@ -11606,7 +11606,7 @@ ov1_02126C00: ; 0x02126C00
 	bl _ZN14CPrimitiveLINED1Ev
 	add r0, r4, #0x18
 	add r0, r0, #0x400
-	bl sub_020049D4
+	bl _ZN16CPrimitiveSPHERED1Ev
 	mov r0, r4
 	bl sub_02011F6C
 	mov r0, r4
@@ -15459,7 +15459,7 @@ _02129E14:
 	bl _Znwm
 	cmp r0, #0
 	beq _02129E2C
-	bl sub_020049A4
+	bl _ZN16CPrimitiveSPHEREC1Ev
 _02129E2C:
 	ldr r2, _02129E44 ; =0x00007FFF
 	mov r1, r0
@@ -17617,7 +17617,7 @@ ov1_0212B7A0: ; 0x0212B7A0
 	ldr r1, _0212BA34 ; =ptr_FUN_overlay_1_0212ba58_overlay_1_021411f8
 	add r0, r7, #0x1c4
 	str r1, [r7]
-	bl sub_020049A4
+	bl _ZN16CPrimitiveSPHEREC1Ev
 	add r0, r7, #0x1e8
 	bl _ZN14CPrimitiveRECTC1Ev
 	mov r0, r7
@@ -17807,7 +17807,7 @@ ov1_0212BA58: ; 0x0212BA58
 	add r0, r4, #0x1e8
 	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0x1c4
-	bl sub_020049D4
+	bl _ZN16CPrimitiveSPHERED1Ev
 	mov r0, r4
 	bl sub_02011F6C
 	mov r0, r4
@@ -17826,7 +17826,7 @@ ov1_0212BA90: ; 0x0212BA90
 	add r0, r4, #0x1e8
 	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0x1c4
-	bl sub_020049D4
+	bl _ZN16CPrimitiveSPHERED1Ev
 	mov r0, r4
 	bl sub_02011F6C
 	mov r0, r4

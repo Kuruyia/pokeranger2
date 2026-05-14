@@ -34,9 +34,9 @@
 .public _ZN14CPrimitiveQUADD1Ev
 .public _ZN14CPrimitiveQUADD0Ev
 .public _ZN14CPrimitiveQUAD6RenderEP21CPrimitive_Render_arg
-.public sub_020049D4
-.public sub_020049E8
-.public sub_02004A04
+.public _ZN16CPrimitiveSPHERED1Ev
+.public _ZN16CPrimitiveSPHERED0Ev
+.public _ZN16CPrimitiveSPHERE6RenderEP21CPrimitive_Render_arg
 .public sub_02004D00
 .public sub_02004D14
 .public sub_02004D30
