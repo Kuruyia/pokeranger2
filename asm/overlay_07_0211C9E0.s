@@ -1594,7 +1594,7 @@ _0211DF54:
 	mov r1, #0
 	add r0, sl, #0x18
 	mov r2, r1
-	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
+	bl _ZN14CPrimitiveRECT12SetRectangleElllll
 	mov r0, #0
 	strh r0, [sl, #0x20]
 	mov r0, #0x2b

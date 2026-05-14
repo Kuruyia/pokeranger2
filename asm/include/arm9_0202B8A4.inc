@@ -320,7 +320,7 @@
 .public _ZN14CPrimitiveLINEC1Ev
 .public _ZN14CPrimitiveLINED1Ev
 .public _ZN14CPrimitiveRECTC1Ev
-.public _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
+.public _ZN14CPrimitiveRECT12SetRectangleElllll
 .public sub_02005150
 .public sub_02005FDC
 .public sub_02006164

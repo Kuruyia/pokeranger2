@@ -13,7 +13,9 @@ public:
     virtual u32 Render(CPrimitive_Render_arg *arg0);
 
 public:
-    Coordinates m_coords;
+    typedef CoordinatesPair2D LineCoordinates;
+
+    LineCoordinates m_coords;
 };
 
 #endif // POKERANGER2_PRIMITIVE_CPRIMITIVELINE_HPP

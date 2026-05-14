@@ -2930,7 +2930,7 @@ _02018C94:
 	ldr r0, [r4, #8]
 	mov r2, r1
 	mov r3, r1
-	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
+	bl _ZN14CPrimitiveRECT12SetRectangleElllll
 	ldr r1, [r4, #8]
 	mov r0, #0
 	str r0, [r1, #0x28]
@@ -3009,7 +3009,7 @@ sub_02018D94: ; 0x02018D94
 	stmia sp, {r1, r2}
 	ldr r0, [r0, #8]
 	ldmia r3, {r1, r2, r3}
-	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
+	bl _ZN14CPrimitiveRECT12SetRectangleElllll
 	add sp, sp, #8
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_02018D94

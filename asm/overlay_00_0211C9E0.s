@@ -45,7 +45,7 @@ _ZN11CFieldSceneC1EP5CGame: ; 0x0211C9E0
 	str r0, [sp, #4]
 	add r0, r4, #0xfc
 	mov r2, r1
-	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
+	bl _ZN14CPrimitiveRECT12SetRectangleElllll
 	mov r1, #0
 	add r0, r4, #0x100
 	strh r1, [r0, #4]
@@ -38291,7 +38291,7 @@ _0213DCC4:
 	ldr r2, [r5, #0xc]
 	ldr r3, [r5, #0x10]
 	add r0, r5, #0x1c
-	bl _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
+	bl _ZN14CPrimitiveRECT12SetRectangleElllll
 	add r0, r5, #0x1c
 	ldr r2, [r0]
 	mov r1, r4

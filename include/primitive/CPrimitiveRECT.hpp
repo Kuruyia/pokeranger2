@@ -4,6 +4,7 @@
 #include <nitro.h>
 
 #include "primitive/CPrimitive.hpp"
+#include "sub_02006B60.hpp"
 
 // TODO: Figure out what this is
 class UnkClass_CPrimitiveRECT_02003C00 {
@@ -19,15 +20,16 @@ public:
 
     virtual u32 Render(CPrimitive_Render_arg *arg0);
 
-    void SetVertexCoordinates(fx32 x1, fx32 y1, fx32 x2, fx32 y2, fx32 z);
+    void SetRectangle(fx32 x, fx32 y, fx32 w, fx32 h, fx32 z);
     u32 RenderWithTexture(CPrimitive_Render_arg *arg0);
     u32 RenderWithoutTexture(CPrimitive_Render_arg *arg0);
 
     static void sub_02003C00(UnkClass_CPrimitiveRECT_02003C00 *arg0, CPrimitiveRECT *arg1);
 
 public:
-    Coordinates m_vtxCoords;
-    Coordinates m_texCoords;
+    Rectangle m_rectangle;
+    CoordinatesPair2D m_texCoords;
+
     UnkClass_CPrimitive_ImageProxy *unk_38;
     UnkClass_CPrimitive_ImagePaletteProxy *unk_3C;
 };

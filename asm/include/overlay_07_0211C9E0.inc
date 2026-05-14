@@ -8,7 +8,7 @@
 .public _ZN17UnkClass_0200371812sub_0200381CEv
 .public _ZN14CPrimitiveRECTC1Ev
 .public _ZN14CPrimitiveRECTD1Ev
-.public _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
+.public _ZN14CPrimitiveRECT12SetRectangleElllll
 .public sub_020050C8
 .public sub_02005120
 .public sub_02005150

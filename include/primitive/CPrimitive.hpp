@@ -33,7 +33,7 @@ public:
     virtual u32 Render(CPrimitive_Render_arg *arg0) = 0;
 
 public:
-    struct Coordinates {
+    struct CoordinatesPair2D {
         fx32 x1;
         fx32 y1;
         fx32 x2;

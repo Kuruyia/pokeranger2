@@ -23,7 +23,7 @@
 .public _ZN10CPrimitiveD2Ev
 .public _ZN14CPrimitiveRECTC1Ev
 .public _ZN14CPrimitiveRECTD1Ev
-.public _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
+.public _ZN14CPrimitiveRECT12SetRectangleElllll
 .public _ZN14CPrimitiveRECT12sub_02003C00EP32UnkClass_CPrimitiveRECT_02003C00PS_
 .public sub_020050C8
 .public sub_02005120
