@@ -2,12 +2,27 @@
 #define POKERANGER2_PRIMITIVE_CPRIMITIVE_HPP
 
 #include <nitro.h>
+#include <nnsys.h>
 
 // TODO: Figure out what this is
 class CPrimitive_Render_arg {
 public:
     u8 unk_00[0x28];
     u16 unk_28;
+};
+
+// TODO: Figure out what this is
+class UnkClass_CPrimitive_ImageProxy {
+public:
+    u8 unk_00[0x8];
+    NNSG2dImageProxy imageProxy;
+};
+
+// TODO: Figure out what this is
+class UnkClass_CPrimitive_ImagePaletteProxy {
+public:
+    u8 unk_00[0x8];
+    NNSG2dImagePaletteProxy imagePlttProxy;
 };
 
 class CPrimitive {

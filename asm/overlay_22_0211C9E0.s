@@ -3193,7 +3193,7 @@ ov22_0211F4A4: ; 0x0211F4A4
 ov22_0211F4C4: ; 0x0211F4C4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02004114
+	bl _ZN14CPrimitiveQUADC1Ev
 	mov r1, #0
 	mov r0, r4
 	str r1, [r4, #0x60]
@@ -3229,7 +3229,7 @@ _0211F52C: .word ov22_0211F4C4
 ov22_0211F530: ; 0x0211F530
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov22_0211F530
@@ -5471,7 +5471,7 @@ ov22_021212A4: ; 0x021212A4
 	str r2, [sp, #0x10]
 	mov ip, #0
 	str ip, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	add sp, sp, #0x18
 	ldmia sp!, {r3, pc}
 	arm_func_end ov22_021212A4

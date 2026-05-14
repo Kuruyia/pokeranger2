@@ -6112,7 +6112,7 @@ ov3_021272C8: ; 0x021272C8
 ov3_021272DC: ; 0x021272DC
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_020040C8
+	bl _ZN14CPrimitiveQUADC2Ev
 	ldr r1, _02127310 ; =PTR_LAB_overlay_3_02127318_overlay_3_0212b140
 	mov r0, #0
 	str r1, [r4]
@@ -6132,7 +6132,7 @@ _02127314: .word 0x00000622
 ov3_02127318: ; 0x02127318
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02004190
+	bl _ZN14CPrimitiveQUADD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov3_02127318
@@ -6141,7 +6141,7 @@ ov3_02127318: ; 0x02127318
 ov3_0212732C: ; 0x0212732C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02004190
+	bl _ZN14CPrimitiveQUADD2Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov3_0212732C
@@ -7773,7 +7773,7 @@ _021289E8:
 	str r2, [sp, #0x14]
 	sub r2, sb, r3
 	add r3, r1, r3
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	mov r0, r4
 	str r8, [r5]
 	ldr r2, [r0]
@@ -8246,7 +8246,7 @@ ov3_021290B0: ; 0x021290B0
 ov3_021290C4: ; 0x021290C4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02004190
+	bl _ZN14CPrimitiveQUADD2Ev
 	mov r0, r4
 	bl _ZdlPv
 	mov r0, r4
@@ -10881,7 +10881,7 @@ PTR_ptr_FUN_020835bc_overlay_3_0212b0b4: ; 0x0212B0B4
 PTR_ptr_FUN_020835bc_overlay_3_0212b0c0: ; 0x0212B0C0
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
 	.word s_13CLineParticle_overlay_3_0212b100
-	.word PTR_ptr_FUN_020835bc_0208a6f8
+	.word _ZTI14CPrimitiveQUAD
 
     .global PTR_ptr_FUN_020835bc_overlay_3_0212b0cc
 PTR_ptr_FUN_020835bc_overlay_3_0212b0cc: ; 0x0212B0CC
@@ -10962,7 +10962,7 @@ ptr_FUN_overlay_3_021290c4_overlay_3_0212b144: ; 0x0212B144
 
     .global ptr_FUN_020041e4_overlay_3_0212b148
 ptr_FUN_020041e4_overlay_3_0212b148: ; 0x0212B148
-	.word sub_020041E4
+	.word _ZN14CPrimitiveQUAD6RenderEP21CPrimitive_Render_arg
 	.byte 0x00, 0x00, 0x00, 0x00
 	.word PTR_ptr_FUN_020835bc_overlay_3_0212b0e4
 

@@ -28,10 +28,10 @@
 .public _ZN14CPrimitiveLINED1Ev
 .public _ZN14CPrimitiveRECTC1Ev
 .public _ZN14CPrimitiveRECTD1Ev
-.public sub_02004114
-.public sub_02004160
-.public sub_020041A4
-.public sub_0200420C
+.public _ZN14CPrimitiveQUADC1Ev
+.public _ZN14CPrimitiveQUADD1Ev
+.public _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
+.public _ZN14CPrimitiveQUAD8RenderDLEP21CPrimitive_Render_argP8GXDLInfo
 .public sub_020049A4
 .public sub_020049D4
 .public sub_02005150

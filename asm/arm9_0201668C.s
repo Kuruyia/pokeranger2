@@ -3410,23 +3410,23 @@ sub_02019284: ; 0x02019284
 	ldr r1, _02019330 ; =ptr_FUN_0201933c_0208b864
 	add r0, r4, #0x18c
 	str r1, [r4]
-	bl sub_02004114
+	bl _ZN14CPrimitiveQUADC1Ev
 	add r0, r4, #0x1ec
-	bl sub_02004114
+	bl _ZN14CPrimitiveQUADC1Ev
 	add r0, r4, #0x24c
-	bl sub_02004114
+	bl _ZN14CPrimitiveQUADC1Ev
 	add r0, r4, #0x2ac
-	bl sub_02004114
+	bl _ZN14CPrimitiveQUADC1Ev
 	add r0, r4, #0x30c
-	bl sub_02004114
+	bl _ZN14CPrimitiveQUADC1Ev
 	add r0, r4, #0x36c
-	bl sub_02004114
+	bl _ZN14CPrimitiveQUADC1Ev
 	add r0, r4, #0x3cc
-	bl sub_02004114
-	ldr r1, _02019334 ; =sub_02004160
+	bl _ZN14CPrimitiveQUADC1Ev
+	ldr r1, _02019334 ; =_ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x2c
 	str r1, [sp]
-	ldr r3, _02019338 ; =sub_02004114
+	ldr r3, _02019338 ; =_ZN14CPrimitiveQUADC1Ev
 	add r0, r0, #0x400
 	mov r1, #3
 	mov r2, #0x60
@@ -3448,8 +3448,8 @@ sub_02019284: ; 0x02019284
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
 _02019330: .word ptr_FUN_0201933c_0208b864
-_02019334: .word sub_02004160
-_02019338: .word sub_02004114
+_02019334: .word _ZN14CPrimitiveQUADD1Ev
+_02019338: .word _ZN14CPrimitiveQUADC1Ev
 	arm_func_end sub_02019284
 
 	arm_func_start sub_0201933C
@@ -3463,32 +3463,32 @@ sub_0201933C: ; 0x0201933C
 	add r0, r0, #0x400
 	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0x2c
-	ldr r3, _020193C0 ; =sub_02004160
+	ldr r3, _020193C0 ; =_ZN14CPrimitiveQUADD1Ev
 	add r0, r0, #0x400
 	mov r1, #3
 	mov r2, #0x60
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x3cc
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x36c
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x30c
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x2ac
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x24c
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x1ec
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x18c
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	mov r0, r4
 	bl sub_02011F6C
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _020193BC: .word ptr_FUN_0201933c_0208b864
-_020193C0: .word sub_02004160
+_020193C0: .word _ZN14CPrimitiveQUADD1Ev
 	arm_func_end sub_0201933C
 
 	arm_func_start sub_020193C4
@@ -3502,25 +3502,25 @@ sub_020193C4: ; 0x020193C4
 	add r0, r0, #0x400
 	bl _ZN14CPrimitiveRECTD1Ev
 	add r0, r4, #0x2c
-	ldr r3, _02019450 ; =sub_02004160
+	ldr r3, _02019450 ; =_ZN14CPrimitiveQUADD1Ev
 	add r0, r0, #0x400
 	mov r1, #3
 	mov r2, #0x60
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x3cc
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x36c
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x30c
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x2ac
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x24c
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x1ec
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x18c
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	mov r0, r4
 	bl sub_02011F6C
 	mov r0, r4
@@ -3529,7 +3529,7 @@ sub_020193C4: ; 0x020193C4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0201944C: .word ptr_FUN_0201933c_0208b864
-_02019450: .word sub_02004160
+_02019450: .word _ZN14CPrimitiveQUADD1Ev
 	arm_func_end sub_020193C4
 
 	arm_func_start sub_02019454
@@ -3765,7 +3765,7 @@ sub_02019750: ; 0x02019750
 	mov r3, r1
 	add r0, r4, #0x2ac
 	str ip, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	mov r2, #0x58000
 	ldr r3, _020198D8 ; =0x00006739
 	add r0, r4, #0x200
@@ -3783,7 +3783,7 @@ sub_02019750: ; 0x02019750
 	add r0, r4, #0x24c
 	add ip, ip, #1
 	str ip, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	mov r2, #0x5a000
 	ldr r3, _020198DC ; =0x0000294A
 	add r0, r4, #0x200
@@ -3800,7 +3800,7 @@ sub_02019750: ; 0x02019750
 	add r0, r4, #0x1ec
 	add ip, ip, #2
 	str ip, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	mov r1, #0x11
 	add r0, r4, #0x100
 	strh r1, [r0, #0xf4]
@@ -3818,7 +3818,7 @@ sub_02019750: ; 0x02019750
 	mov r3, r1
 	add ip, ip, #3
 	str ip, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	mov r1, #0x5e000
 	str r1, [sp]
 	mov r0, #0x60000
@@ -3833,7 +3833,7 @@ sub_02019750: ; 0x02019750
 	add r3, r3, #6
 	str r3, [sp, #0x14]
 	mov r3, r1
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	mov r2, #0
 	str r2, [r4, #0x344]
 	str r2, [r4, #0x348]
@@ -3902,7 +3902,7 @@ sub_020198E0: ; 0x020198E0
 	mov r3, r1
 	add r0, r0, #0x400
 	str ip, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	add sp, sp, #0x18
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_020198E0
@@ -4036,7 +4036,7 @@ _02019ACC:
 	mov r3, r1
 	add r0, r8, #0x18c
 	orr r4, r4, r6, lsl #20
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	mov r1, #0x5b000
 	sub r0, r4, #0x2b000
 	str r1, [sp]
@@ -4051,7 +4051,7 @@ _02019ACC:
 	add r3, r3, #2
 	str r3, [sp, #0x14]
 	mov r3, r1
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	mov r0, r8
 	mov r1, r5
 	bl sub_02019D70
@@ -4163,7 +4163,7 @@ _02019D20:
 	add ip, r0, #4
 	add r0, r4, #0x36c
 	str ip, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	add sp, sp, #0x18
 	ldmia sp!, {r4, pc}
 
@@ -4598,7 +4598,7 @@ sub_0201A26C: ; 0x0201A26C
 	add r0, r6, #0x3cc
 	str r5, [sp, #0x14]
 	mov r4, r4, lsr #0x10
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	mov r2, #0x4e000
 	ldr r5, _0201A384 ; =0x0000294A
 	add r0, r6, #0x300
@@ -4619,7 +4619,7 @@ sub_0201A26C: ; 0x0201A26C
 	add ip, lr, #5
 	mov r3, r1
 	str ip, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	add r0, r4, #8
 	mov r0, r0, lsl #0x10
 	mov r0, r0, lsr #0x10
@@ -4639,7 +4639,7 @@ sub_0201A26C: ; 0x0201A26C
 	add r4, r4, #5
 	mov r3, r5
 	str r4, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	add sp, sp, #0x18
 	ldmia sp!, {r4, r5, r6, pc}
 	.align 2, 0

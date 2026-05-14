@@ -328,9 +328,9 @@
 .public _ZN14CPrimitiveRECTC1Ev
 .public _ZN14CPrimitiveRECTD1Ev
 .public _ZN14CPrimitiveRECT20SetVertexCoordinatesElllll
-.public sub_02004114
-.public sub_02004160
-.public sub_020041A4
+.public _ZN14CPrimitiveQUADC1Ev
+.public _ZN14CPrimitiveQUADD1Ev
+.public _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 .public sub_02004CB4
 .public sub_02007068
 .public sub_020074E8

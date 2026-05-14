@@ -7472,8 +7472,8 @@ ov1_0212306C: ; 0x0212306C
 	.align 2, 0
 _02123214: .word _ZN14CPrimitiveLINED1Ev
 _02123218: .word _ZN14CPrimitiveLINEC1Ev
-_0212321C: .word sub_02004160
-_02123220: .word sub_02004114
+_0212321C: .word _ZN14CPrimitiveQUADD1Ev
+_02123220: .word _ZN14CPrimitiveQUADC1Ev
 _02123224: .word sub_02004D00
 _02123228: .word sub_02004CB4
 	arm_func_end ov1_0212306C
@@ -7520,7 +7520,7 @@ ov1_0212322C: ; 0x0212322C
 	.align 2, 0
 _021232C0: .word _ZN14CPrimitiveLINED1Ev
 _021232C4: .word sub_02004D00
-_021232C8: .word sub_02004160
+_021232C8: .word _ZN14CPrimitiveQUADD1Ev
 	arm_func_end ov1_0212322C
 
 	arm_func_start ov1_021232CC
@@ -21220,8 +21220,8 @@ ov1_0212E88C: ; 0x0212E88C
 	.align 2, 0
 _0212E8EC: .word _ZN14CPrimitiveLINED1Ev
 _0212E8F0: .word _ZN14CPrimitiveLINEC1Ev
-_0212E8F4: .word sub_02004160
-_0212E8F8: .word sub_02004114
+_0212E8F4: .word _ZN14CPrimitiveQUADD1Ev
+_0212E8F8: .word _ZN14CPrimitiveQUADC1Ev
 	arm_func_end ov1_0212E88C
 
 	arm_func_start ov1_0212E8FC
@@ -21242,7 +21242,7 @@ ov1_0212E8FC: ; 0x0212E8FC
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0212E938: .word sub_02004160
+_0212E938: .word _ZN14CPrimitiveQUADD1Ev
 _0212E93C: .word _ZN14CPrimitiveLINED1Ev
 	arm_func_end ov1_0212E8FC
 
@@ -29788,7 +29788,7 @@ ov1_02135CA0: ; 0x02135CA0
 	ldr r1, _02135CF8 ; =ptr_FUN_overlay_1_02135d04_overlay_1_021418e4
 	add r0, r5, #0x184
 	str r1, [r5]
-	bl sub_02004114
+	bl _ZN14CPrimitiveQUADC1Ev
 	add r0, r5, #0x20c
 	bl sub_02005150
 	ldr r1, _02135CFC ; =sub_020051C8
@@ -29821,7 +29821,7 @@ ov1_02135D04: ; 0x02135D04
 	add r0, r4, #0x20c
 	bl sub_020051C8
 	add r0, r4, #0x184
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	mov r0, r4
 	bl sub_02011F6C
 	mov r0, r4
@@ -29842,7 +29842,7 @@ ov1_02135D44: ; 0x02135D44
 	add r0, r4, #0x20c
 	bl sub_020051C8
 	add r0, r4, #0x184
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	mov r0, r4
 	bl sub_02011F6C
 	mov r0, r4
@@ -29879,7 +29879,7 @@ ov1_02135D8C: ; 0x02135D8C
 	mov r3, r1
 	add r0, r4, #0x184
 	str r5, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	ldr r1, _02135E6C ; =0x000003FF
 	add r0, r4, #0x100
 	strh r1, [r0, #0x8c]
@@ -30042,7 +30042,7 @@ ov1_02135F58: ; 0x02135F58
 	mov r0, r0, lsr #0x10
 	str r0, [sp, #0x14]
 	add r0, r7, #0x184
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	ldrb r0, [r7, #0x201]
 	cmp r0, #3
 	addls pc, pc, r0, lsl #2
@@ -30576,7 +30576,7 @@ _02136724:
 ov1_02136730: ; 0x02136730
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02004114
+	bl _ZN14CPrimitiveQUADC1Ev
 	mov r1, #0
 	mov r0, r4
 	strh r1, [r4, #0x80]
@@ -30587,7 +30587,7 @@ ov1_02136730: ; 0x02136730
 ov1_0213674C: ; 0x0213674C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_0213674C
@@ -30787,13 +30787,13 @@ ov1_02136930: ; 0x02136930
 	sub r2, lr, r3
 	add r3, r1, r3
 	str ip, [sp, #0x14]
-	bl sub_020041A4
+	bl _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 	cmp r4, #0
 	mov r0, r6
 	beq _021369E0
 	mov r1, r5
 	mov r2, r4
-	bl sub_0200420C
+	bl _ZN14CPrimitiveQUAD8RenderDLEP21CPrimitive_Render_argP8GXDLInfo
 	add sp, sp, #0x18
 	ldmia sp!, {r3, r4, r5, r6, r7, pc}
 	arm_func_end ov1_02136930
@@ -32927,7 +32927,7 @@ ov1_021384F8: ; 0x021384F8
 	add r0, r0, #0x400
 	bl sub_02005150
 	add r0, r4, #0x6d0
-	bl sub_02004114
+	bl _ZN14CPrimitiveQUADC1Ev
 	ldr r1, _02138C9C ; =sub_020051C8
 	add r0, r4, #0x730
 	str r1, [sp]
@@ -33405,7 +33405,7 @@ ov1_02138CAC: ; 0x02138CAC
 	ldr r3, _02138DE0 ; =sub_020051C8
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x6d0
-	bl sub_02004160
+	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x284
 	add r0, r0, #0x400
 	bl sub_020051C8

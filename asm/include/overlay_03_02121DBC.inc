@@ -45,7 +45,7 @@
 .public OS_SPrintf
 .public PTR_LAB_0208e074
 .public PTR_ptr_FUN_02083578_0208a804
-.public PTR_ptr_FUN_020835bc_0208a6f8
+.public _ZTI14CPrimitiveQUAD
 .public _Z23Heap_AllocWithAlignmentmm
 .public _Z9Heap_FreePv
 .public _ZN10CPrimitiveC2Ev
@@ -121,10 +121,10 @@
 .public s_game
 .public _ZN14CPrimitiveRECTC1Ev
 .public _ZN14CPrimitiveRECTD1Ev
-.public sub_020040C8
-.public sub_02004190
-.public sub_020041A4
-.public sub_020041E4
+.public _ZN14CPrimitiveQUADC2Ev
+.public _ZN14CPrimitiveQUADD2Ev
+.public _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
+.public _ZN14CPrimitiveQUAD6RenderEP21CPrimitive_Render_arg
 .public sub_02005150
 .public sub_020051C8
 .public sub_02006000

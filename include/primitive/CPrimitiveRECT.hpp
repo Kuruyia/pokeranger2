@@ -2,7 +2,6 @@
 #define POKERANGER2_PRIMITIVE_CPRIMITIVERECT_HPP
 
 #include <nitro.h>
-#include <nnsys.h>
 
 #include "primitive/CPrimitive.hpp"
 
@@ -11,20 +10,6 @@ class UnkClass_CPrimitiveRECT_02003C00 {
 public:
     fx32 unk_00;
     fx32 unk_04;
-};
-
-// TODO: Figure out what this is
-class UnkClass_CPrimitiveRECT_38 {
-public:
-    u8 unk_00[0x8];
-    NNSG2dImageProxy imageProxy;
-};
-
-// TODO: Figure out what this is
-class UnkClass_CPrimitiveRECT_3C {
-public:
-    u8 unk_00[0x8];
-    NNSG2dImagePaletteProxy imagePlttProxy;
 };
 
 class CPrimitiveRECT : public CPrimitive {
@@ -43,8 +28,8 @@ public:
 public:
     Coordinates m_vtxCoords;
     Coordinates m_texCoords;
-    UnkClass_CPrimitiveRECT_38 *unk_38;
-    UnkClass_CPrimitiveRECT_3C *unk_3C;
+    UnkClass_CPrimitive_ImageProxy *unk_38;
+    UnkClass_CPrimitive_ImagePaletteProxy *unk_3C;
 };
 
 #endif // POKERANGER2_PRIMITIVE_CPRIMITIVERECT_HPP

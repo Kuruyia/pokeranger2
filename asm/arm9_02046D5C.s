@@ -1221,33 +1221,6 @@ ptr_FUN_020841e4_0208a36c: ; 0x0208A36C
 
     .data
 
-	.global PTR_ptr_FUN_020835bc_0208a6f8
-PTR_ptr_FUN_020835bc_0208a6f8: ; 0x0208A6F8
-	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
-	.word s_14CPrimitiveQUAD_0208a704
-	.word _ZTI10CPrimitive
-
-	.global s_14CPrimitiveQUAD_0208a704
-s_14CPrimitiveQUAD_0208a704: ; 0x0208A704
-	.asciz "14CPrimitiveQUAD"
-
-	.global _0208A715
-_0208A715:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-    .word PTR_ptr_FUN_020835bc_0208a6f8
-
-	.global ptr_FUN_02004160_0208a720
-ptr_FUN_02004160_0208a720: ; 0x0208A720
-	.word sub_02004160
-
-	.global ptr_FUN_02004174_0208a724
-ptr_FUN_02004174_0208a724: ; 0x0208A724
-	.word sub_02004174
-
-	.global ptr_FUN_020041e4_0208a728
-ptr_FUN_020041e4_0208a728: ; 0x0208A728
-	.word sub_020041E4
-
 	.global PTR_ptr_FUN_020835bc_0208a72c
 PTR_ptr_FUN_020835bc_0208a72c: ; 0x0208A72C
 	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8

@@ -49,8 +49,8 @@ u32 CPrimitiveRECT::Render(CPrimitive_Render_arg *arg0)
 
 u32 CPrimitiveRECT::RenderWithTexture(CPrimitive_Render_arg *arg0)
 {
-    UnkClass_CPrimitiveRECT_3C *v0 = unk_3C;
-    UnkClass_CPrimitiveRECT_38 *v1 = unk_38;
+    UnkClass_CPrimitive_ImagePaletteProxy *v0 = unk_3C;
+    UnkClass_CPrimitive_ImageProxy *v1 = unk_38;
     u16 v2 = arg0->unk_28;
 
     fx32 vtxX2 = m_vtxCoords.x2 >> 1;

@@ -16,9 +16,9 @@
 .public _ZN17UnkClass_0200371812sub_02003788Elllllll
 .public _ZN17UnkClass_0200371812sub_020037B4Ev
 .public _ZN17UnkClass_0200371812sub_0200381CEv
-.public sub_02004114
-.public sub_02004160
-.public sub_020041A4
+.public _ZN14CPrimitiveQUADC1Ev
+.public _ZN14CPrimitiveQUADD1Ev
+.public _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02007D98
