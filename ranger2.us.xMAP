@@ -727,7 +727,7 @@
            10](_ZN11CBinaryFile12sub_02003108EPKc,func) found in global src_file_CBinaryFile.cpp.o
            10](FX_Atan2Idx,func) found in global libfx.a
             11](FX_AtanIdxTable_,object) found in global libfx.a
-           10](sub_020051C8,func) found in global asm_arm9_020040C8.s.o
+           10](sub_020051C8,func) found in global asm_arm9_020049A4.s.o
             11](NNSi_objSizeHTbl,object) found in global libnnsg2d.a
             11](NNS_G2dGetImagePaletteLocation,func) found in global libnnsg2d.a
             11](G3_MultMtx33,func) found in global libgx.a
@@ -763,20 +763,6 @@
               13](GX_SetBankForTexPltt,func) found in global libgx.a
              12](NNS_G2dSetImagePaletteLocation,func) found in global libnnsg2d.a
             11](NNS_G2dInitImagePaletteProxy,func) found in global libnnsg2d.a
-            11](G3C_PopMtx,func) found in global libgx.a
-             12](G3CS_Direct1,func) found in global libgx.a
-             12](G3C_UpdateGXDLInfo,func) found in global libgx.a
-            11](G3C_End,func) found in global libgx.a
-             12](G3CS_Direct0,func) found in global libgx.a
-            11](G3C_VtxXY,func) found in global libgx.a
-            11](G3C_Vtx,func) found in global libgx.a
-             12](G3CS_Direct2,func) found in global libgx.a
-            11](G3C_Color,func) found in global libgx.a
-            11](G3C_Begin,func) found in global libgx.a
-            11](G3C_PolygonAttr,func) found in global libgx.a
-            11](G3C_TexImageParam,func) found in global libgx.a
-            11](G3C_TexCoord,func) found in global libgx.a
-            11](G3C_TexPlttBase,func) found in global libgx.a
            10](_ZN17UnkClass_020091E812sub_0200AFC0Elm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200B12CEv,func) found in global src_UnkClass_020091E8.cpp.o
            10](_ZN17UnkClass_020091E812sub_0200B36CEv,func) found in global src_UnkClass_020091E8.cpp.o
@@ -839,6 +825,16 @@
              12](_ZN14CPrimitiveRECT17RenderWithTextureEP21CPrimitive_Render_arg,func) found in global src_primitive_CPrimitiveRECT.cpp.o
              12](_ZN14CPrimitiveRECT20RenderWithoutTextureEP21CPrimitive_Render_arg,func) found in global src_primitive_CPrimitiveRECT.cpp.o
             11](_ZN14CPrimitiveRECTD1Ev,func) found in global src_primitive_CPrimitiveRECT.cpp.o
+          9](_ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
+          9](_ZN14CPrimitiveQUADD1Ev,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
+          9](_ZN14CPrimitiveQUADC1Ev,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
+           10](_ZTV14CPrimitiveQUAD,object) found in global src_primitive_CPrimitiveQUAD.cpp.o
+            11](_ZTI14CPrimitiveQUAD,object) found in multidef src_primitive_CPrimitiveQUAD.cpp.o
+             12](_ZTS14CPrimitiveQUAD,object) found in multidef src_primitive_CPrimitiveQUAD.cpp.o
+            11](_ZN14CPrimitiveQUADD0Ev,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
+            11](_ZN14CPrimitiveQUAD6RenderEP21CPrimitive_Render_arg,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
+             12](_ZN14CPrimitiveQUAD17RenderWithTextureEP21CPrimitive_Render_arg,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
+             12](_ZN14CPrimitiveQUAD20RenderWithoutTextureEP21CPrimitive_Render_arg,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
           9](ov0_02132FA0,func) found in global asm_overlay_00_0211C9E0.s.o
            10](.data,section) found in local asm_overlay_00_0211C9E0.s.o
             11](.bss,section) found in local asm_overlay_00_0211C9E0.s.o
@@ -875,7 +871,7 @@
             11](_ZN17UnkClass_020091E812sub_0200B1D0Emmmm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200B410Emmmm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200B640Emmmm,func) found in global src_UnkClass_020091E8.cpp.o
-           10](_ZN14CPrimitiveRECT20SetVertexCoordinatesElllll,func) found in global src_primitive_CPrimitiveRECT.cpp.o
+           10](_ZN14CPrimitiveRECT12SetRectangleElllll,func) found in global src_primitive_CPrimitiveRECT.cpp.o
            10](_ZNSt13__vec_deleterImSaImEE13sub_push_backERKmN10Metrowerks8int2typeILi1EEE,func) found in multidef MSL_CPP_NITRO_Ai_LE.a
             11](_ZNSt13__vec_deleterImSaImEE7grow_byEm,func) found in multidef MSL_CPP_NITRO_Ai_LE.a
              12](_ZNSt15__vector_commonILb1EE18throw_length_errorEv,func) found in multidef MSL_CPP_NITRO_Ai_LE.a
@@ -967,6 +963,18 @@
            10](_ZNSt13__vec_deleterImSaImEED2Ev,func) found in multidef MSL_CPP_NITRO_Ai_LE.a
            10](@EX@_ZNSt13__vec_deleterImSaImEED2Ev,object) found in local MSL_CPP_NITRO_Ai_LE.a
            10](G3_EndMakeDL,func) found in global libgx.a
+           10](G3C_End,func) found in global libgx.a
+            11](G3CS_Direct0,func) found in global libgx.a
+            11](G3C_UpdateGXDLInfo,func) found in global libgx.a
+           10](G3C_VtxXY,func) found in global libgx.a
+            11](G3CS_Direct1,func) found in global libgx.a
+           10](G3C_TexCoord,func) found in global libgx.a
+           10](G3C_Vtx,func) found in global libgx.a
+            11](G3CS_Direct2,func) found in global libgx.a
+           10](G3C_Begin,func) found in global libgx.a
+           10](G3C_PolygonAttr,func) found in global libgx.a
+           10](G3C_TexPlttBase,func) found in global libgx.a
+           10](G3C_TexImageParam,func) found in global libgx.a
            10](G3_BeginMakeDL,func) found in global libgx.a
            10](MI_SendGXCommand,func) found in global libmi.a
            10](NNS_FndGetArchiveFileByIndex,func) found in global libnnsfnd.a
@@ -1679,6 +1687,11 @@
        6](__FileWrite,func) found in global MSL_C_NITRO_Ai_LE.a
        6](@EX@__FileWrite,object) found in local MSL_C_NITRO_Ai_LE.a
       5](@EX@printf,object) found in local MSL_C_NITRO_Ai_LE.a
+      5](_ZN14CPrimitiveQUAD8RenderDLEP21CPrimitive_Render_argP8GXDLInfo,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
+       6](_ZN14CPrimitiveQUAD19RenderWithTextureDLEP21CPrimitive_Render_argP8GXDLInfo,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
+        7](G3C_Color,func) found in global libgx.a
+        7](G3C_PopMtx,func) found in global libgx.a
+       6](_ZN14CPrimitiveQUAD22RenderWithoutTextureDLEP21CPrimitive_Render_argP8GXDLInfo,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
       5](_ZN17UnkClass_020091E812sub_0200B45CElm,func) found in global src_UnkClass_020091E8.cpp.o
       5](NNS_G2dInitCellAnimation,func) found in global libnnsg2d.a
        6](NNSi_G2dSrtcInitControl,func) found in global libnnsg2d.a
@@ -1728,7 +1741,9 @@
        6](.text,section) found in local asm_overlay_03_02121DBC.s.o
         7](.rodata,section) found in local asm_overlay_03_02121DBC.s.o
         7](_ZN14CPrimitiveLINED2Ev,func) found in global src_primitive_CPrimitiveLINE.cpp.o
+        7](_ZN14CPrimitiveQUADD2Ev,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
         7](G3X_SetClearColor,func) found in global libgx.a
+        7](_ZN14CPrimitiveQUADC2Ev,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
         7](_ZN14CPrimitiveLINEC2Ev,func) found in global src_primitive_CPrimitiveLINE.cpp.o
         7](G3X_SetToonTable,func) found in global libgx.a
         7](.bss,section) found in local asm_overlay_03_02121DBC.s.o
@@ -2968,7 +2983,7 @@
   02003BB0 00000000 .text   $a	(src_primitive_CPrimitiveRECT.cpp.o)
   02003BC4 0000001C .text   CPrimitiveRECT::~CPrimitiveRECT[virtual]()	(src_primitive_CPrimitiveRECT.cpp.o)
   02003BC4 00000000 .text   $a	(src_primitive_CPrimitiveRECT.cpp.o)
-  02003BE0 00000020 .text   CPrimitiveRECT::SetVertexCoordinates(long, long, long, long, long)	(src_primitive_CPrimitiveRECT.cpp.o)
+  02003BE0 00000020 .text   CPrimitiveRECT::SetRectangle(long, long, long, long, long)	(src_primitive_CPrimitiveRECT.cpp.o)
   02003BE0 00000000 .text   $a	(src_primitive_CPrimitiveRECT.cpp.o)
   02003C00 00000024 .text   CPrimitiveRECT::sub_02003C00(UnkClass_CPrimitiveRECT_02003C00*, CPrimitiveRECT*)	(src_primitive_CPrimitiveRECT.cpp.o)
   02003C00 00000000 .text   $a	(src_primitive_CPrimitiveRECT.cpp.o)
@@ -2980,83 +2995,91 @@
   02003F1C 00000000 .text   $a	(src_primitive_CPrimitiveRECT.cpp.o)
   02003F1C 000001AC .text   CPrimitiveRECT::RenderWithoutTexture(CPrimitive_Render_arg*)	(src_primitive_CPrimitiveRECT.cpp.o)
   020040C4 00000000 .text   $d	(src_primitive_CPrimitiveRECT.cpp.o)
-  020040C8 00002A98 .text   .text	(asm_arm9_020040C8.s.o)
-  020040C8 0000004C .text   sub_020040C8	(asm_arm9_020040C8.s.o)
-  020040C8 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  02004110 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  02004114 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  02004114 0000004C .text   sub_02004114	(asm_arm9_020040C8.s.o)
-  0200415C 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  02004160 00000014 .text   sub_02004160	(asm_arm9_020040C8.s.o)
-  02004160 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  02004174 0000001C .text   sub_02004174	(asm_arm9_020040C8.s.o)
-  02004190 00000014 .text   sub_02004190	(asm_arm9_020040C8.s.o)
-  020041A4 00000040 .text   sub_020041A4	(asm_arm9_020040C8.s.o)
-  020041E4 00000020 .text   sub_020041E4	(asm_arm9_020040C8.s.o)
-  0200420C 00000020 .text   sub_0200420C	(asm_arm9_020040C8.s.o)
-  02004234 000002A8 .text   sub_02004234	(asm_arm9_020040C8.s.o)
-  020044D4 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  020044DC 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  020044DC 0000017C .text   sub_020044DC	(asm_arm9_020040C8.s.o)
-  02004654 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  02004658 000001E4 .text   sub_02004658	(asm_arm9_020040C8.s.o)
-  02004658 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  0200483C 00000168 .text   sub_0200483C	(asm_arm9_020040C8.s.o)
-  020049A4 00000030 .text   sub_020049A4	(asm_arm9_020040C8.s.o)
-  020049D0 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  020049D4 00000014 .text   sub_020049D4	(asm_arm9_020040C8.s.o)
-  020049D4 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  020049E8 0000001C .text   sub_020049E8	(asm_arm9_020040C8.s.o)
-  02004A04 00000070 .text   sub_02004A04	(asm_arm9_020040C8.s.o)
-  02004CA4 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  02004CB4 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  02004CB4 0000004C .text   sub_02004CB4	(asm_arm9_020040C8.s.o)
-  02004CFC 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  02004D00 00000014 .text   sub_02004D00	(asm_arm9_020040C8.s.o)
-  02004D00 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  02004D14 0000001C .text   sub_02004D14	(asm_arm9_020040C8.s.o)
-  02004D30 00000020 .text   sub_02004D30	(asm_arm9_020040C8.s.o)
-  02004D58 00000238 .text   sub_02004D58	(asm_arm9_020040C8.s.o)
-  02004F88 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  02004F90 00000138 .text   sub_02004F90	(asm_arm9_020040C8.s.o)
-  02004F90 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  020050C4 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  020050C8 00000058 .text   sub_020050C8	(asm_arm9_020040C8.s.o)
-  020050C8 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  02005114 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  02005120 00000024 .text   sub_02005120	(asm_arm9_020040C8.s.o)
-  02005120 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  0200514C 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  02005150 00000078 .text   sub_02005150	(asm_arm9_020040C8.s.o)
-  02005150 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  020051C4 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  020051C8 00000014 .text   sub_020051C8	(asm_arm9_020040C8.s.o)
-  020051C8 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  020051DC 0000001C .text   sub_020051DC	(asm_arm9_020040C8.s.o)
-  020051F8 00000028 .text   sub_020051F8	(asm_arm9_020040C8.s.o)
-  02005220 00000038 .text   sub_02005220	(asm_arm9_020040C8.s.o)
-  0200527C 00000030 .text   sub_0200527C	(asm_arm9_020040C8.s.o)
-  02005898 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  020058BC 000000CC .text   sub_020058BC	(asm_arm9_020040C8.s.o)
-  020058BC 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  02005EE0 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  02005F04 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  02005F04 00000020 .text   sub_02005F04	(asm_arm9_020040C8.s.o)
-  02005F20 00000000 .text   $d	(asm_arm9_020040C8.s.o)
-  02005F24 00000000 .text   $a	(asm_arm9_020040C8.s.o)
-  02005F24 0000000C .text   sub_02005F24	(asm_arm9_020040C8.s.o)
-  02005F30 00000018 .text   sub_02005F30	(asm_arm9_020040C8.s.o)
-  02005F48 00000018 .text   sub_02005F48	(asm_arm9_020040C8.s.o)
-  02005F60 00000024 .text   sub_02005F60	(asm_arm9_020040C8.s.o)
-  02005FDC 00000024 .text   sub_02005FDC	(asm_arm9_020040C8.s.o)
-  02006000 0000007C .text   sub_02006000	(asm_arm9_020040C8.s.o)
-  02006100 00000064 .text   sub_02006100	(asm_arm9_020040C8.s.o)
-  02006164 000000B4 .text   sub_02006164	(asm_arm9_020040C8.s.o)
-  02006238 000000C4 .text   sub_02006238	(asm_arm9_020040C8.s.o)
-  02006350 000000D8 .text   sub_02006350	(asm_arm9_020040C8.s.o)
-  02006610 00000044 .text   sub_02006610	(asm_arm9_020040C8.s.o)
-  02006764 0000008C .text   sub_02006764	(asm_arm9_020040C8.s.o)
-  02006AE0 00000080 .text   sub_02006AE0	(asm_arm9_020040C8.s.o)
+  020040C8 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  020040C8 0000004C .text   CPrimitiveQUAD::CPrimitiveQUAD[base]()	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004110 00000000 .text   $d	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004114 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004114 0000004C .text   CPrimitiveQUAD::CPrimitiveQUAD()	(src_primitive_CPrimitiveQUAD.cpp.o)
+  0200415C 00000000 .text   $d	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004160 00000014 .text   CPrimitiveQUAD::~CPrimitiveQUAD()	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004160 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004174 0000001C .text   CPrimitiveQUAD::~CPrimitiveQUAD[virtual]()	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004174 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004190 00000014 .text   CPrimitiveQUAD::~CPrimitiveQUAD[base]()	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004190 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  020041A4 00000040 .text   CPrimitiveQUAD::SetVertexCoordinates(long, long, long, long, long, long, long, long, long)	(src_primitive_CPrimitiveQUAD.cpp.o)
+  020041A4 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  020041E4 00000028 .text   CPrimitiveQUAD::Render(CPrimitive_Render_arg*)	(src_primitive_CPrimitiveQUAD.cpp.o)
+  020041E4 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  0200420C 00000028 .text   CPrimitiveQUAD::RenderDL(CPrimitive_Render_arg*, GXDLInfo*)	(src_primitive_CPrimitiveQUAD.cpp.o)
+  0200420C 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004234 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004234 000002A8 .text   CPrimitiveQUAD::RenderWithTexture(CPrimitive_Render_arg*)	(src_primitive_CPrimitiveQUAD.cpp.o)
+  020044D4 00000000 .text   $d	(src_primitive_CPrimitiveQUAD.cpp.o)
+  020044DC 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  020044DC 0000017C .text   CPrimitiveQUAD::RenderWithoutTexture(CPrimitive_Render_arg*)	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004654 00000000 .text   $d	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004658 000001E4 .text   CPrimitiveQUAD::RenderWithTextureDL(CPrimitive_Render_arg*, GXDLInfo*)	(src_primitive_CPrimitiveQUAD.cpp.o)
+  02004658 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  0200483C 00000168 .text   CPrimitiveQUAD::RenderWithoutTextureDL(CPrimitive_Render_arg*, GXDLInfo*)	(src_primitive_CPrimitiveQUAD.cpp.o)
+  0200483C 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
+  020049A4 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  020049A4 00000030 .text   sub_020049A4	(asm_arm9_020049A4.s.o)
+  020049A4 000021BC .text   .text	(asm_arm9_020049A4.s.o)
+  020049D0 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  020049D4 00000014 .text   sub_020049D4	(asm_arm9_020049A4.s.o)
+  020049D4 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  020049E8 0000001C .text   sub_020049E8	(asm_arm9_020049A4.s.o)
+  02004A04 00000070 .text   sub_02004A04	(asm_arm9_020049A4.s.o)
+  02004CA4 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  02004CB4 0000004C .text   sub_02004CB4	(asm_arm9_020049A4.s.o)
+  02004CB4 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  02004CFC 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  02004D00 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  02004D00 00000014 .text   sub_02004D00	(asm_arm9_020049A4.s.o)
+  02004D14 0000001C .text   sub_02004D14	(asm_arm9_020049A4.s.o)
+  02004D30 00000020 .text   sub_02004D30	(asm_arm9_020049A4.s.o)
+  02004D58 00000238 .text   sub_02004D58	(asm_arm9_020049A4.s.o)
+  02004F88 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  02004F90 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  02004F90 00000138 .text   sub_02004F90	(asm_arm9_020049A4.s.o)
+  020050C4 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  020050C8 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  020050C8 00000058 .text   sub_020050C8	(asm_arm9_020049A4.s.o)
+  02005114 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  02005120 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  02005120 00000024 .text   sub_02005120	(asm_arm9_020049A4.s.o)
+  0200514C 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  02005150 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  02005150 00000078 .text   sub_02005150	(asm_arm9_020049A4.s.o)
+  020051C4 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  020051C8 00000014 .text   sub_020051C8	(asm_arm9_020049A4.s.o)
+  020051C8 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  020051DC 0000001C .text   sub_020051DC	(asm_arm9_020049A4.s.o)
+  020051F8 00000028 .text   sub_020051F8	(asm_arm9_020049A4.s.o)
+  02005220 00000038 .text   sub_02005220	(asm_arm9_020049A4.s.o)
+  0200527C 00000030 .text   sub_0200527C	(asm_arm9_020049A4.s.o)
+  02005898 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  020058BC 000000CC .text   sub_020058BC	(asm_arm9_020049A4.s.o)
+  020058BC 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  02005EE0 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  02005F04 00000020 .text   sub_02005F04	(asm_arm9_020049A4.s.o)
+  02005F04 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  02005F20 00000000 .text   $d	(asm_arm9_020049A4.s.o)
+  02005F24 00000000 .text   $a	(asm_arm9_020049A4.s.o)
+  02005F24 0000000C .text   sub_02005F24	(asm_arm9_020049A4.s.o)
+  02005F30 00000018 .text   sub_02005F30	(asm_arm9_020049A4.s.o)
+  02005F48 00000018 .text   sub_02005F48	(asm_arm9_020049A4.s.o)
+  02005F60 00000024 .text   sub_02005F60	(asm_arm9_020049A4.s.o)
+  02005FDC 00000024 .text   sub_02005FDC	(asm_arm9_020049A4.s.o)
+  02006000 0000007C .text   sub_02006000	(asm_arm9_020049A4.s.o)
+  02006100 00000064 .text   sub_02006100	(asm_arm9_020049A4.s.o)
+  02006164 000000B4 .text   sub_02006164	(asm_arm9_020049A4.s.o)
+  02006238 000000C4 .text   sub_02006238	(asm_arm9_020049A4.s.o)
+  02006350 000000D8 .text   sub_02006350	(asm_arm9_020049A4.s.o)
+  02006610 00000044 .text   sub_02006610	(asm_arm9_020049A4.s.o)
+  02006764 0000008C .text   sub_02006764	(asm_arm9_020049A4.s.o)
+  02006AE0 00000080 .text   sub_02006AE0	(asm_arm9_020049A4.s.o)
   02006B60 000000A4 .text   RectanglesOverlap(Rectangle, Rectangle)	(src_sub_02006B60.cpp.o)
   02006B60 00000000 .text   $a	(src_sub_02006B60.cpp.o)
   02006C04 00000000 .text   $a	(asm_arm9_02006C04.s.o)
@@ -11662,14 +11685,11 @@
   0208A6C4 0000000C .data   typeinfo structure for CPrimitiveRECT	(src_primitive_CPrimitiveRECT.cpp.o)
   0208A6D0 00000011 .data   typeinfo name for CPrimitiveRECT	(src_primitive_CPrimitiveRECT.cpp.o)
   0208A6E4 00000014 .data   virtual table for CPrimitiveRECT	(src_primitive_CPrimitiveRECT.cpp.o)
-  0208A6F8 00000000 .data   PTR_ptr_FUN_020835bc_0208a6f8	(asm_arm9_02046D5C.s.o)
-  0208A6F8 00003E40 .data   .data	(asm_arm9_02046D5C.s.o)
-  0208A704 00000000 .data   s_14CPrimitiveQUAD_0208a704	(asm_arm9_02046D5C.s.o)
-  0208A715 00000000 .data   _0208A715	(asm_arm9_02046D5C.s.o)
-  0208A720 00000000 .data   ptr_FUN_02004160_0208a720	(asm_arm9_02046D5C.s.o)
-  0208A724 00000000 .data   ptr_FUN_02004174_0208a724	(asm_arm9_02046D5C.s.o)
-  0208A728 00000000 .data   ptr_FUN_020041e4_0208a728	(asm_arm9_02046D5C.s.o)
+  0208A6F8 0000000C .data   typeinfo structure for CPrimitiveQUAD	(src_primitive_CPrimitiveQUAD.cpp.o)
+  0208A704 00000011 .data   typeinfo name for CPrimitiveQUAD	(src_primitive_CPrimitiveQUAD.cpp.o)
+  0208A718 00000014 .data   virtual table for CPrimitiveQUAD	(src_primitive_CPrimitiveQUAD.cpp.o)
   0208A72C 00000000 .data   PTR_ptr_FUN_020835bc_0208a72c	(asm_arm9_02046D5C.s.o)
+  0208A72C 00003E0C .data   .data	(asm_arm9_02046D5C.s.o)
   0208A738 00000000 .data   s_16CPrimitiveSPHERE_0208a738	(asm_arm9_02046D5C.s.o)
   0208A74B 00000000 .data   _0208A74B	(asm_arm9_02046D5C.s.o)
   0208A754 00000000 .data   ptr_FUN_020049d4_0208a754	(asm_arm9_02046D5C.s.o)
