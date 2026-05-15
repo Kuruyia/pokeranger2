@@ -63,7 +63,7 @@
 .public _ZN11CBinaryFile12sub_02003108EPKc
 .public _ZN9CNCERFileC1EPKcmmm
 .public _ZN15CSoftwareSpriteC1Ev
-.public sub_020051C8
+.public _ZN15CSoftwareSpriteD1Ev
 .public sub_02007068
 .public sub_020070A4
 .public sub_02007134

@@ -459,7 +459,7 @@ _0211CF8C:
 	str r0, [r4, #0x278]
 _0211CF94:
 	add r0, r4, #0x22c
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x18
 	bl _ZN14CPrimitiveRECTD1Ev
 	mov r0, r4

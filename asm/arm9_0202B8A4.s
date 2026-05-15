@@ -28172,7 +28172,7 @@ sub_0204240C: ; 0x0204240C
 	ldr r0, [r5, #4]
 	mov r4, r1
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	ldr r1, [r5, #4]
 	add r0, r4, r0
 	str r0, [r1, #4]

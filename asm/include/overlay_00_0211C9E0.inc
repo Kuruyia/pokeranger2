@@ -28,7 +28,7 @@
 .public _ZN15CSoftwareSprite12sub_020050C8Ev
 .public _ZN15CSoftwareSprite12sub_02005120Ev
 .public _ZN15CSoftwareSpriteC1Ev
-.public sub_020051C8
+.public _ZN15CSoftwareSpriteD1Ev
 .public sub_02006000
 .public sub_02006164
 .public sub_02006238

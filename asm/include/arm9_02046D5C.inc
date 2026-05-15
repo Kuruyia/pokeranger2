@@ -40,9 +40,9 @@
 .public _ZN18CPrimitiveTRIANGLED1Ev
 .public _ZN18CPrimitiveTRIANGLED0Ev
 .public _ZN18CPrimitiveTRIANGLE6RenderEP21CPrimitive_Render_arg
-.public sub_020051C8
+.public _ZN15CSoftwareSpriteD1Ev
 .public sub_020051DC
-.public sub_02005220
+.public _ZN15CSoftwareSprite6RenderEP21CPrimitive_Render_arg
 .public sub_02007CAC
 .public sub_02007CC4
 .public sub_02007CD4

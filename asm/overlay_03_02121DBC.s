@@ -5825,7 +5825,7 @@ ov3_02126ECC: ; 0x02126ECC
 	stmdb sp!, {r3, r4, r5, lr}
 	ldr r1, _02127230 ; =ptr_FUN_overlay_3_02127350_overlay_3_0212b218
 	mov r4, r0
-	ldr ip, _02127234 ; =sub_020051C8
+	ldr ip, _02127234 ; =_ZN15CSoftwareSpriteD1Ev
 	str r1, [r4]
 	ldr r3, _02127238 ; =FUN_02005150
 	add r0, r4, #0xc
@@ -6052,7 +6052,7 @@ _02127180:
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _02127230: .word ptr_FUN_overlay_3_02127350_overlay_3_0212b218
-_02127234: .word sub_020051C8
+_02127234: .word _ZN15CSoftwareSpriteD1Ev
 _02127238: .word _ZN15CSoftwareSpriteC1Ev
 _0212723C: .word sub_020420A8
 _02127240: .word ov3_0212518C
@@ -6240,7 +6240,7 @@ _02127438:
 	mov r1, #2
 	mov r2, #0x5c
 	bl __cxa_vec_cleanup
-	ldr r3, _02127484 ; =sub_020051C8
+	ldr r3, _02127484 ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0xc
 	mov r1, #1
 	mov r2, #0x4c
@@ -6253,7 +6253,7 @@ _02127474: .word sub_020420D8
 _02127478: .word ov3_0212732C
 _0212747C: .word ov3_021272C8
 _02127480: .word sub_020420A8
-_02127484: .word sub_020051C8
+_02127484: .word _ZN15CSoftwareSpriteD1Ev
 
 	arm_func_start ov3_02127488
 ov3_02127488: ; 0x02127488
@@ -6329,7 +6329,7 @@ _02127570:
 	mov r1, #2
 	mov r2, #0x5c
 	bl __cxa_vec_cleanup
-	ldr r3, _021275C4 ; =sub_020051C8
+	ldr r3, _021275C4 ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0xc
 	mov r1, #1
 	mov r2, #0x4c
@@ -6344,7 +6344,7 @@ _021275B4: .word sub_020420D8
 _021275B8: .word ov3_0212732C
 _021275BC: .word ov3_021272C8
 _021275C0: .word sub_020420A8
-_021275C4: .word sub_020051C8
+_021275C4: .word _ZN15CSoftwareSpriteD1Ev
 
 	arm_func_start ov3_021275C8
 ov3_021275C8: ; 0x021275C8
@@ -8305,7 +8305,7 @@ ov3_02129130: ; 0x02129130
 	str r1, [r4]
 	bl ov3_02129280
 	add r0, r4, #0x30
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	mov r0, r4
 	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4
@@ -8322,7 +8322,7 @@ ov3_02129160: ; 0x02129160
 	str r1, [r4]
 	bl ov3_02129280
 	add r0, r4, #0x30
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	mov r0, r4
 	bl _ZN10CPrimitiveD2Ev
 	mov r0, r4

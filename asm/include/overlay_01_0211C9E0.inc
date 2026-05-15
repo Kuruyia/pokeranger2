@@ -35,9 +35,9 @@
 .public _ZN16CPrimitiveSPHEREC1Ev
 .public _ZN16CPrimitiveSPHERED1Ev
 .public _ZN15CSoftwareSpriteC1Ev
-.public sub_020051C8
-.public _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
-.public sub_02005FDC
+.public _ZN15CSoftwareSpriteD1Ev
+.public _ZN15CSoftwareSprite18SetTransformParamsElllltl
+.public _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 .public sub_02006000
 .public sub_02006100
 .public sub_02006164

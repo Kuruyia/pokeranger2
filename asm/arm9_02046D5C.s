@@ -1221,48 +1221,6 @@ ptr_FUN_020841e4_0208a36c: ; 0x0208A36C
 
     .data
 
-	.global PTR_ptr_FUN_020835bc_0208a798
-PTR_ptr_FUN_020835bc_0208a798: ; 0x0208A798
-	.word _ZTVN10__cxxabiv120__si_class_type_infoE+8
-	.word s_15CSoftwareSprite_0208a7d4
-	.word _ZTI10CPrimitive
-
-	.global DAT_0208a7a4
-DAT_0208a7a4: ; 0x0208A7A4
-	.byte 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00
-	.word DAT_0208a7b4
-
-	.global DAT_0208a7b4
-DAT_0208a7b4: ; 0x0208A7B4
-	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
-	.byte 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
-	.byte 0xFF, 0xFF, 0xFF, 0xFF
-
-	.global s_15CSoftwareSprite_0208a7d4
-s_15CSoftwareSprite_0208a7d4: ; 0x0208A7D4
-	.asciz "15CSoftwareSprite"
-
-	.global _0208A7E6
-_0208A7E6:
-	.byte 0x00, 0x00
-
-    .global _ZTV15CSoftwareSprite
-_ZTV15CSoftwareSprite: ; 0x0208A7E8
-    .byte 0x00, 0x00, 0x00, 0x00
-    .word PTR_ptr_FUN_020835bc_0208a798
-
-	.global ptr_FUN_020051c8_0208a7f0
-ptr_FUN_020051c8_0208a7f0: ; 0x0208A7F0
-	.word sub_020051C8
-
-	.global ptr_FUN_020051dc_0208a7f4
-ptr_FUN_020051dc_0208a7f4: ; 0x0208A7F4
-	.word sub_020051DC
-
-	.global ptr_FUN_02005220_0208a7f8
-ptr_FUN_02005220_0208a7f8: ; 0x0208A7F8
-	.word sub_02005220
-
 	.global s_6CScene_0208a7fc
 s_6CScene_0208a7fc: ; 0x0208A7FC
 	.asciz "6CScene"

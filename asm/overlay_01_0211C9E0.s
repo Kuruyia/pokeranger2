@@ -7446,7 +7446,7 @@ ov1_0212306C: ; 0x0212306C
 	add r0, r4, #0x304
 	add r0, r0, #0x3000
 	mov r2, r1
-	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
+	bl _ZN15CSoftwareSprite18SetTransformParamsElllltl
 	add r0, r4, #0x6000
 	ldr lr, [r0, #0x42c]
 	ldr r3, [r0, #0x41c]
@@ -7465,7 +7465,7 @@ ov1_0212306C: ; 0x0212306C
 	mov lr, #0x3e8
 	add r0, ip, #0x3000
 	str lr, [sp, #8]
-	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
+	bl _ZN15CSoftwareSprite18SetTransformParamsElllltl
 	mov r0, r4
 	add sp, sp, #0xc
 	ldmia sp!, {r3, r4, pc}
@@ -7500,10 +7500,10 @@ ov1_0212322C: ; 0x0212322C
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x350
 	add r0, r0, #0x3000
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x304
 	add r0, r0, #0x3000
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x304
 	add r0, r0, #0xc00
 	mov r1, #0x60
@@ -12565,7 +12565,7 @@ ov1_021278BC: ; 0x021278BC
 	ldr r0, [r5, #4]
 	mov r4, r1
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r2, r4, r0
 	ldr r1, [r5, #4]
 	add r0, r2, #1
@@ -12874,7 +12874,7 @@ ov1_02127CAC: ; 0x02127CAC
 	ldr r0, [r5, #4]
 	mov r4, r1
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r2, r4, r0
 	ldr r1, [r5, #4]
 	add r0, r2, #1
@@ -13579,7 +13579,7 @@ ov1_021285D4: ; 0x021285D4
 	ldr r0, [r5, #4]
 	mov r4, r1
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r2, r4, r0
 	ldr r1, [r5, #4]
 	add r0, r2, #1
@@ -13792,7 +13792,7 @@ _02128888:
 	str r0, [sp, #8]
 	ldr r0, [r4, #0xc]
 	mov r2, r1
-	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
+	bl _ZN15CSoftwareSprite18SetTransformParamsElllltl
 	ldr r0, [r4, #0xc]
 	ldr r2, _021288E4 ; =0x00007FFF
 	mov r1, #0x1f
@@ -14012,7 +14012,7 @@ _02128B54:
 	str r1, [sp, #8]
 	ldr r0, [r4, #0x14]
 	mov r2, r1
-	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
+	bl _ZN15CSoftwareSprite18SetTransformParamsElllltl
 	ldr r0, [r4, #0x14]
 	ldr r2, _02128BAC ; =0x00007FFF
 	mov r1, #0x1f
@@ -14512,7 +14512,7 @@ _021291E8:
 	str r1, [sp, #8]
 	ldr r0, [r4, #4]
 	mov r2, r1
-	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
+	bl _ZN15CSoftwareSprite18SetTransformParamsElllltl
 	ldr r0, [r4, #4]
 	ldr r2, _0212923C ; =0x00007FFF
 	mov r1, #0x1f
@@ -14712,7 +14712,7 @@ ov1_02129490: ; 0x02129490
 	ldr r0, [r5, #4]
 	mov r4, r1
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r2, r4, r0
 	ldr r1, [r5, #4]
 	add r0, r2, #1
@@ -14901,7 +14901,7 @@ _021296F0:
 	str r0, [sp, #8]
 	ldr r0, [r4, #0x10]
 	mov r2, r1
-	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
+	bl _ZN15CSoftwareSprite18SetTransformParamsElllltl
 	ldr r0, [r4, #0x10]
 	ldr r2, _0212974C ; =0x00007FFF
 	mov r1, #0x1f
@@ -15243,7 +15243,7 @@ ov1_02129B48: ; 0x02129B48
 	ldr r0, [r5, #4]
 	mov r4, r1
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r2, r4, r0
 	ldr r1, [r5, #4]
 	add r0, r2, #1
@@ -15667,13 +15667,13 @@ ov1_0212A0D8: ; 0x0212A0D8
 	str r4, [r0, #4]
 	ldr r0, [r5, #4]
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	ldr r1, [r5, #4]
 	add r4, r4, r0
 	str r4, [r1, #4]
 	ldr r0, [r5, #8]
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r2, r4, r0
 	ldr r1, [r5, #8]
 	add r0, r2, #1
@@ -19471,13 +19471,13 @@ ov1_0212D0D4: ; 0x0212D0D4
 	mov r4, r0
 	ldr r0, [r5, #0x234]
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	ldr r1, [r5, #0x234]
 	add r4, r4, r0
 	str r4, [r1, #4]
 	ldr r0, [r5, #0x228]
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	ldr r2, [r5, #0x228]
 	add r1, r4, r0
 	str r1, [r2, #4]
@@ -20215,14 +20215,14 @@ _0212DB2C:
 	add r0, r7, r5, lsl #2
 	ldr r0, [r0, #0x18]
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r2, r7, r5, lsl #2
 	ldr r1, [r2, #0x18]
 	add r6, r6, r0
 	str r6, [r1, #4]
 	ldr r0, [r2, #0x24]
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r2, r0, #1
 	add r1, r7, r5, lsl #2
 	add r0, r5, r5, lsl #2
@@ -29791,7 +29791,7 @@ ov1_02135CA0: ; 0x02135CA0
 	bl _ZN14CPrimitiveQUADC1Ev
 	add r0, r5, #0x20c
 	bl _ZN15CSoftwareSpriteC1Ev
-	ldr r1, _02135CFC ; =sub_020051C8
+	ldr r1, _02135CFC ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r5, #0x258
 	str r1, [sp]
 	mov r1, #4
@@ -29805,7 +29805,7 @@ ov1_02135CA0: ; 0x02135CA0
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _02135CF8: .word ptr_FUN_overlay_1_02135d04_overlay_1_021418e4
-_02135CFC: .word sub_020051C8
+_02135CFC: .word _ZN15CSoftwareSpriteD1Ev
 _02135D00: .word _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_02135CA0
 
@@ -29813,13 +29813,13 @@ _02135D00: .word _ZN15CSoftwareSpriteC1Ev
 ov1_02135D04: ; 0x02135D04
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	ldr r3, _02135D40 ; =sub_020051C8
+	ldr r3, _02135D40 ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x258
 	mov r1, #4
 	mov r2, #0x4c
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x20c
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x184
 	bl _ZN14CPrimitiveQUADD1Ev
 	mov r0, r4
@@ -29827,20 +29827,20 @@ ov1_02135D04: ; 0x02135D04
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02135D40: .word sub_020051C8
+_02135D40: .word _ZN15CSoftwareSpriteD1Ev
 	arm_func_end ov1_02135D04
 
 	arm_func_start ov1_02135D44
 ov1_02135D44: ; 0x02135D44
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	ldr r3, _02135D88 ; =sub_020051C8
+	ldr r3, _02135D88 ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x258
 	mov r1, #4
 	mov r2, #0x4c
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x20c
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x184
 	bl _ZN14CPrimitiveQUADD1Ev
 	mov r0, r4
@@ -29850,7 +29850,7 @@ ov1_02135D44: ; 0x02135D44
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02135D88: .word sub_020051C8
+_02135D88: .word _ZN15CSoftwareSpriteD1Ev
 	arm_func_end ov1_02135D44
 
 	arm_func_start ov1_02135D8C
@@ -30206,7 +30206,7 @@ ov1_02136248: ; 0x02136248
 	ldr r5, [r4, #0xc4]
 	ldrh r1, [r5, #0x2a]
 	mov r0, r5
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	str r0, [r5, #4]
 	add r1, r0, #1
 	str r1, [r4, #0x188]
@@ -31109,9 +31109,9 @@ ov1_02136D60: ; 0x02136D60
 	mov r2, #0x34
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x260
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x214
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	mov r0, r4
 	bl sub_02011F6C
 	mov r0, r4
@@ -31134,9 +31134,9 @@ ov1_02136DB0: ; 0x02136DB0
 	mov r2, #0x34
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x260
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x214
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	mov r0, r4
 	bl sub_02011F6C
 	mov r0, r4
@@ -32267,7 +32267,7 @@ ov1_02137D7C: ; 0x02137D7C
 	mov r5, r1
 	ldrh r1, [r4, #0x2a]
 	mov r0, r4
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r0, r5, r0
 	str r0, [r4, #4]
 	add r0, r0, #1
@@ -32677,7 +32677,7 @@ ov1_021382A4: ; 0x021382A4
 	ldr r0, [r5, #8]
 	mov r4, r1
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r2, r4, r0
 	ldr r1, [r5, #8]
 	add r0, r2, #1
@@ -32856,7 +32856,7 @@ ov1_021384CC: ; 0x021384CC
 	ldr r0, [r5, #8]
 	mov r4, r1
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r2, r4, r0
 	ldr r1, [r5, #8]
 	add r0, r2, #1
@@ -32881,14 +32881,14 @@ ov1_021384F8: ; 0x021384F8
 	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x1c4
 	bl _ZN15CSoftwareSpriteC1Ev
-	ldr r1, _02138C9C ; =sub_020051C8
+	ldr r1, _02138C9C ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x210
 	str r1, [sp]
 	mov r1, #2
 	mov r2, #0x4c
 	ldr r3, _02138CA0 ; =FUN_02005150
 	bl __cxa_vec_ctor
-	ldr r1, _02138C9C ; =sub_020051C8
+	ldr r1, _02138C9C ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x2a8
 	str r1, [sp]
 	mov r1, #2
@@ -32899,7 +32899,7 @@ ov1_021384F8: ; 0x021384F8
 	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x38c
 	bl _ZN15CSoftwareSpriteC1Ev
-	ldr r1, _02138C9C ; =sub_020051C8
+	ldr r1, _02138C9C ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x3d8
 	str r1, [sp]
 	mov r1, #3
@@ -32912,7 +32912,7 @@ ov1_021384F8: ; 0x021384F8
 	add r0, r4, #0x108
 	add r0, r0, #0x400
 	bl _ZN15CSoftwareSpriteC1Ev
-	ldr r1, _02138C9C ; =sub_020051C8
+	ldr r1, _02138C9C ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x154
 	str r1, [sp]
 	add r0, r0, #0x400
@@ -32928,7 +32928,7 @@ ov1_021384F8: ; 0x021384F8
 	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x6d0
 	bl _ZN14CPrimitiveQUADC1Ev
-	ldr r1, _02138C9C ; =sub_020051C8
+	ldr r1, _02138C9C ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x730
 	str r1, [sp]
 	mov r1, #4
@@ -32941,7 +32941,7 @@ ov1_021384F8: ; 0x021384F8
 	add r0, r0, #0x800
 	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0xf8
-	ldr ip, _02138C9C ; =sub_020051C8
+	ldr ip, _02138C9C ; =_ZN15CSoftwareSpriteD1Ev
 	ldr r3, _02138CA0 ; =FUN_02005150
 	add r0, r0, #0x800
 	mov r1, #5
@@ -33373,7 +33373,7 @@ _02138BCC:
 	add sp, sp, #4
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
-_02138C9C: .word sub_020051C8
+_02138C9C: .word _ZN15CSoftwareSpriteD1Ev
 _02138CA0: .word _ZN15CSoftwareSpriteC1Ev
 _02138CA4: .word MAIN_BSS_020B26A0
 _02138CA8: .word 0x000043F0
@@ -33384,81 +33384,81 @@ ov1_02138CAC: ; 0x02138CAC
 	mov r4, r0
 	bl ov1_02138F5C
 	add r0, r4, #0xac0
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x274
 	add r0, r0, #0x800
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0xf8
 	add r0, r0, #0x800
 	mov r1, #5
 	mov r2, #0x4c
-	ldr r3, _02138DE0 ; =sub_020051C8
+	ldr r3, _02138DE0 ; =_ZN15CSoftwareSpriteD1Ev
 	bl __cxa_vec_cleanup
 	add r0, r4, #0xac
 	add r0, r0, #0x800
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x860
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x730
 	mov r1, #4
 	mov r2, #0x4c
-	ldr r3, _02138DE0 ; =sub_020051C8
+	ldr r3, _02138DE0 ; =_ZN15CSoftwareSpriteD1Ev
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x6d0
 	bl _ZN14CPrimitiveQUADD1Ev
 	add r0, r4, #0x284
 	add r0, r0, #0x400
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x238
 	add r0, r0, #0x400
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x154
 	add r0, r0, #0x400
 	mov r1, #3
 	mov r2, #0x4c
-	ldr r3, _02138DE0 ; =sub_020051C8
+	ldr r3, _02138DE0 ; =_ZN15CSoftwareSpriteD1Ev
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x108
 	add r0, r0, #0x400
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0xbc
 	add r0, r0, #0x400
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x3d8
 	mov r1, #3
 	mov r2, #0x4c
-	ldr r3, _02138DE0 ; =sub_020051C8
+	ldr r3, _02138DE0 ; =_ZN15CSoftwareSpriteD1Ev
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x38c
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x340
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x2a8
 	mov r1, #2
 	mov r2, #0x4c
-	ldr r3, _02138DE0 ; =sub_020051C8
+	ldr r3, _02138DE0 ; =_ZN15CSoftwareSpriteD1Ev
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x210
 	mov r1, #2
 	mov r2, #0x4c
-	ldr r3, _02138DE0 ; =sub_020051C8
+	ldr r3, _02138DE0 ; =_ZN15CSoftwareSpriteD1Ev
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x1c4
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x178
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x12c
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0xe0
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x94
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x48
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_02138DE0: .word sub_020051C8
+_02138DE0: .word _ZN15CSoftwareSpriteD1Ev
 	arm_func_end ov1_02138CAC
 
 	arm_func_start ov1_02138DE4
@@ -35919,7 +35919,7 @@ ov1_0213AE18: ; 0x0213AE18
 	mov r2, #0x64
 	str r8, [sp]
 	bl __cxa_vec_ctor
-	ldr r1, _0213B19C ; =sub_020051C8
+	ldr r1, _0213B19C ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x1c
 	str r1, [sp]
 	ldr r3, _0213B1A0 ; =FUN_02005150
@@ -35941,7 +35941,7 @@ ov1_0213AE18: ; 0x0213AE18
 	add r0, r4, #0x3ac
 	add r0, r0, #0x400
 	bl _ZN15CSoftwareSpriteC1Ev
-	ldr r1, _0213B19C ; =sub_020051C8
+	ldr r1, _0213B19C ; =_ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x3f8
 	str r1, [sp]
 	ldr r3, _0213B1A0 ; =FUN_02005150
@@ -36141,7 +36141,7 @@ _0213B158:
 	.align 2, 0
 _0213B194: .word sub_020117AC
 _0213B198: .word sub_0201179C
-_0213B19C: .word sub_020051C8
+_0213B19C: .word _ZN15CSoftwareSpriteD1Ev
 _0213B1A0: .word _ZN15CSoftwareSpriteC1Ev
 _0213B1A4: .word _ZN14CPrimitiveRECTD1Ev
 _0213B1A8: .word _ZN14CPrimitiveRECTC1Ev
@@ -36168,27 +36168,27 @@ ov1_0213B1B0: ; 0x0213B1B0
 	add r0, r0, #0x400
 	mov r1, #0x12
 	mov r2, #0x4c
-	ldr r3, _0213B274 ; =sub_020051C8
+	ldr r3, _0213B274 ; =_ZN15CSoftwareSpriteD1Ev
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x3ac
 	add r0, r0, #0x400
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x760
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x314
 	add r0, r0, #0x400
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x2c8
 	add r0, r0, #0x400
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x27c
 	add r0, r0, #0x400
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x1c
 	add r0, r0, #0x400
 	mov r1, #8
 	mov r2, #0x4c
-	ldr r3, _0213B274 ; =sub_020051C8
+	ldr r3, _0213B274 ; =_ZN15CSoftwareSpriteD1Ev
 	bl __cxa_vec_cleanup
 	add r0, r4, #0xfc
 	mov r1, #8
@@ -36199,7 +36199,7 @@ ov1_0213B1B0: ; 0x0213B1B0
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _0213B270: .word _ZN14CPrimitiveRECTD1Ev
-_0213B274: .word sub_020051C8
+_0213B274: .word _ZN15CSoftwareSpriteD1Ev
 _0213B278: .word sub_020117AC
 	arm_func_end ov1_0213B1B0
 
@@ -37701,7 +37701,7 @@ _0213C698:
 	add r0, r8, #0x400
 	ldrh r1, [r0, #0x46]
 	add r0, r6, r2
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r1, r0, #1
 	add r0, r7, #1
 	add r4, r4, r1
@@ -37713,7 +37713,7 @@ _0213C698:
 	ldrh r1, [r0, #0xa6]
 	add r0, r5, #0x27c
 	add r0, r0, #0x400
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r0, r0, #1
 	add r4, r4, r0
 	add r0, r5, #0x2c8
@@ -37721,7 +37721,7 @@ _0213C698:
 	add r1, r5, #0x600
 	ldrh r1, [r1, #0xf2]
 	add r0, r0, #0x400
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r0, r0, #1
 	add r4, r4, r0
 	add r0, r5, #0x314
@@ -37729,14 +37729,14 @@ _0213C698:
 	add r1, r5, #0x700
 	ldrh r1, [r1, #0x3e]
 	add r0, r0, #0x400
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r0, r0, #1
 	add r4, r4, r0
 	str r4, [r5, #0x718]
 	add r0, r5, #0x700
 	ldrh r1, [r0, #0x8a]
 	add r0, r5, #0x760
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r0, r0, #1
 	add r4, r4, r0
 	add r0, r5, #0x3ac
@@ -37744,7 +37744,7 @@ _0213C698:
 	add r1, r5, #0x700
 	ldrh r1, [r1, #0xd6]
 	add r0, r0, #0x400
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r0, r0, #1
 	add r4, r4, r0
 	add r0, r5, #0x388
@@ -37758,7 +37758,7 @@ _0213C778:
 	add r0, r8, #0xb00
 	ldrh r1, [r0, #0xb2]
 	add r0, r6, r2
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r1, r0, #1
 	add r0, r7, #1
 	add r4, r4, r1
@@ -37775,7 +37775,7 @@ _0213C7B8:
 	add r0, r8, #0x900
 	ldrh r1, [r0, #0xea]
 	add r0, r6, r2
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r1, r0, #1
 	add r0, r7, #1
 	add r4, r4, r1
@@ -37793,7 +37793,7 @@ _0213C7FC:
 	add r0, r8, #0x800
 	ldrh r1, [r0, #0x22]
 	add r0, r6, r2
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r1, r0, #1
 	add r0, r7, #1
 	add r4, r4, r1
@@ -40802,13 +40802,13 @@ ov1_0213F094: ; 0x0213F094
 	mov r4, r0
 	bl ov1_0213F2B4
 	add r0, r4, #0x100
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0xb0
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x64
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	add r0, r4, #0x14
-	bl sub_020051C8
+	bl _ZN15CSoftwareSpriteD1Ev
 	mov r0, r4
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_0213F094
@@ -41466,22 +41466,22 @@ ov1_0213F970: ; 0x0213F970
 	add r0, r5, #0x100
 	mov r4, r1
 	ldrh r1, [r0, #0x2a]
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r4, r4, r0
 	str r4, [r5, #0x104]
 	ldrh r1, [r5, #0x3e]
 	add r0, r5, #0x14
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r4, r4, r0
 	str r4, [r5, #0x18]
 	ldrh r1, [r5, #0x8e]
 	add r0, r5, #0x64
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r4, r4, r0
 	str r4, [r5, #0x68]
 	ldrh r1, [r5, #0xda]
 	add r0, r5, #0xb0
-	bl sub_02005FDC
+	bl _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
 	add r0, r4, r0
 	str r0, [r5, #0xb4]
 	ldmia sp!, {r3, r4, r5, pc}

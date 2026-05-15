@@ -2193,7 +2193,7 @@ sub_02011D60: ; 0x02011D60
 	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end sub_02011D60
 _02011D98:
-	ldr r1, _02011E4C ; =sub_020051C8
+	ldr r1, _02011E4C ; =_ZN15CSoftwareSpriteD1Ev
 	str r0, [r4, #0xc4]
 	mov r0, #8
 	ldr r3, _02011E50 ; =_ZN15CSoftwareSpriteC1Ev
@@ -2239,7 +2239,7 @@ _02011D98:
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
 _02011E48: .word ptr_FUN_02011e54_0208b488
-_02011E4C: .word sub_020051C8
+_02011E4C: .word _ZN15CSoftwareSpriteD1Ev
 _02011E50: .word _ZN15CSoftwareSpriteC1Ev
 
 	arm_func_start sub_02011E54
@@ -2270,7 +2270,7 @@ _02011EA0:
 	ldr r0, [r4, #0x160]
 	cmp r0, #0
 	beq _02011EC4
-	ldr r3, _02011ED8 ; =sub_020051C8
+	ldr r3, _02011ED8 ; =_ZN15CSoftwareSpriteD1Ev
 	mov r1, #0x4c
 	mov r2, #8
 	bl __cxa_vec_delete
@@ -2283,7 +2283,7 @@ _02011EC4:
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02011ED4: .word ptr_FUN_02011e54_0208b488
-_02011ED8: .word sub_020051C8
+_02011ED8: .word _ZN15CSoftwareSpriteD1Ev
 
 	arm_func_start sub_02011EDC
 sub_02011EDC: ; 0x02011EDC
@@ -2313,7 +2313,7 @@ _02011F28:
 	ldr r0, [r4, #0x160]
 	cmp r0, #0
 	beq _02011F4C
-	ldr r3, _02011F68 ; =sub_020051C8
+	ldr r3, _02011F68 ; =_ZN15CSoftwareSpriteD1Ev
 	mov r1, #0x4c
 	mov r2, #8
 	bl __cxa_vec_delete
@@ -2328,7 +2328,7 @@ _02011F4C:
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02011F64: .word ptr_FUN_02011e54_0208b488
-_02011F68: .word sub_020051C8
+_02011F68: .word _ZN15CSoftwareSpriteD1Ev
 
 	arm_func_start sub_02011F6C
 sub_02011F6C: ; 0x02011F6C
@@ -2358,7 +2358,7 @@ _02011FB8:
 	ldr r0, [r4, #0x160]
 	cmp r0, #0
 	beq _02011FDC
-	ldr r3, _02011FF0 ; =sub_020051C8
+	ldr r3, _02011FF0 ; =_ZN15CSoftwareSpriteD1Ev
 	mov r1, #0x4c
 	mov r2, #8
 	bl __cxa_vec_delete
@@ -2371,7 +2371,7 @@ _02011FDC:
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _02011FEC: .word ptr_FUN_02011e54_0208b488
-_02011FF0: .word sub_020051C8
+_02011FF0: .word _ZN15CSoftwareSpriteD1Ev
 
 	arm_func_start sub_02011FF4
 sub_02011FF4: ; 0x02011FF4
