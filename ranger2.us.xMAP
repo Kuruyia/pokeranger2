@@ -727,7 +727,7 @@
            10](_ZN11CBinaryFile12sub_02003108EPKc,func) found in global src_file_CBinaryFile.cpp.o
            10](FX_Atan2Idx,func) found in global libfx.a
             11](FX_AtanIdxTable_,object) found in global libfx.a
-           10](sub_020051C8,func) found in global asm_arm9_020049A4.s.o
+           10](sub_020051C8,func) found in global asm_arm9_02005150.s.o
             11](NNSi_objSizeHTbl,object) found in global libnnsg2d.a
             11](NNS_G2dGetImagePaletteLocation,func) found in global libnnsg2d.a
             11](G3_MultMtx33,func) found in global libgx.a
@@ -735,34 +735,13 @@
             11](MTX_RotZ33_,func) found in global libfx.a
             11](NNS_G2dGetImageLocation,func) found in global libnnsg2d.a
             11](_ZN10CPrimitiveD2Ev,func) found in global src_primitive_CPrimitive.cpp.o
+           10](_ZN15CSoftwareSpriteC1Ev,func) found in global src_primitive_CSoftwareSprite.cpp.o
             11](_ZN10CPrimitiveC2Ev,func) found in global src_primitive_CPrimitive.cpp.o
              12](_ZTV10CPrimitive,object) found in global src_primitive_CPrimitive.cpp.o
               13](_ZTI10CPrimitive,object) found in multidef src_primitive_CPrimitive.cpp.o
                14](_ZTS10CPrimitive,object) found in multidef src_primitive_CPrimitive.cpp.o
               13](_ZN10CPrimitiveD0Ev,func) found in global src_primitive_CPrimitive.cpp.o
               13](_ZN10CPrimitiveD1Ev,func) found in global src_primitive_CPrimitive.cpp.o
-            11](NNS_G2dLoadPalette,func) found in global libnnsg2d.a
-             12](GX_BeginLoadOBJExtPltt,func) found in global libgx.a
-              13](GX_ResetBankForOBJExtPltt,func) found in global libgx.a
-             12](GX_LoadOBJExtPltt,func) found in global libgx.a
-             12](GX_EndLoadOBJExtPltt,func) found in global libgx.a
-              13](GX_SetBankForOBJExtPltt,func) found in global libgx.a
-             12](GX_LoadOBJPltt,func) found in global libgx.a
-             12](GXS_BeginLoadOBJExtPltt,func) found in global libgx.a
-              13](GX_ResetBankForSubOBJExtPltt,func) found in global libgx.a
-             12](GXS_LoadOBJExtPltt,func) found in global libgx.a
-             12](GXS_EndLoadOBJExtPltt,func) found in global libgx.a
-              13](GX_SetBankForSubOBJExtPltt,func) found in global libgx.a
-             12](GXS_LoadOBJPltt,func) found in global libgx.a
-             12](GX_BeginLoadTexPltt,func) found in global libgx.a
-              13](GX_ResetBankForTexPltt,func) found in global libgx.a
-              13](.bss,section) found in local libgx.a
-              13](sTexPlttStartAddrTable,object) found in local libgx.a
-             12](GX_LoadTexPltt,func) found in global libgx.a
-             12](GX_EndLoadTexPltt,func) found in global libgx.a
-              13](GX_SetBankForTexPltt,func) found in global libgx.a
-             12](NNS_G2dSetImagePaletteLocation,func) found in global libnnsg2d.a
-            11](NNS_G2dInitImagePaletteProxy,func) found in global libnnsg2d.a
            10](_ZN17UnkClass_020091E812sub_0200AFC0Elm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200B12CEv,func) found in global src_UnkClass_020091E8.cpp.o
            10](_ZN17UnkClass_020091E812sub_0200B36CEv,func) found in global src_UnkClass_020091E8.cpp.o
@@ -791,6 +770,7 @@
           9](GX_SetBankForSubBG,func) found in global libgx.a
           9](_Z12sub_02001210v,func) found in global src_main.cpp.o
            10](_Z12sub_0200120Cy,func) found in local src_main.cpp.o
+          9](GX_ResetBankForSubOBJExtPltt,func) found in global libgx.a
           9](GX_ResetBankForSubOBJ,func) found in global libgx.a
           9](GX_ResetBankForSubBG,func) found in global libgx.a
           9](GXS_LoadBG3Scr,func) found in global libgx.a
@@ -825,6 +805,15 @@
              12](_ZN14CPrimitiveRECT17RenderWithTextureEP21CPrimitive_Render_arg,func) found in global src_primitive_CPrimitiveRECT.cpp.o
              12](_ZN14CPrimitiveRECT20RenderWithoutTextureEP21CPrimitive_Render_arg,func) found in global src_primitive_CPrimitiveRECT.cpp.o
             11](_ZN14CPrimitiveRECTD1Ev,func) found in global src_primitive_CPrimitiveRECT.cpp.o
+          9](_ZN18CPrimitiveTRIANGLEC1Ev,func) found in global src_primitive_CPrimitiveTRIANGLE.cpp.o
+           10](_ZTV18CPrimitiveTRIANGLE,object) found in global src_primitive_CPrimitiveTRIANGLE.cpp.o
+            11](_ZTI18CPrimitiveTRIANGLE,object) found in multidef src_primitive_CPrimitiveTRIANGLE.cpp.o
+             12](_ZTS18CPrimitiveTRIANGLE,object) found in multidef src_primitive_CPrimitiveTRIANGLE.cpp.o
+            11](_ZN18CPrimitiveTRIANGLED0Ev,func) found in global src_primitive_CPrimitiveTRIANGLE.cpp.o
+            11](_ZN18CPrimitiveTRIANGLE6RenderEP21CPrimitive_Render_arg,func) found in global src_primitive_CPrimitiveTRIANGLE.cpp.o
+             12](_ZN18CPrimitiveTRIANGLE17RenderWithTextureEP21CPrimitive_Render_arg,func) found in global src_primitive_CPrimitiveTRIANGLE.cpp.o
+             12](_ZN18CPrimitiveTRIANGLE20RenderWithoutTextureEP21CPrimitive_Render_arg,func) found in global src_primitive_CPrimitiveTRIANGLE.cpp.o
+            11](_ZN18CPrimitiveTRIANGLED1Ev,func) found in global src_primitive_CPrimitiveTRIANGLE.cpp.o
           9](_ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
           9](_ZN14CPrimitiveQUADD1Ev,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
           9](_ZN14CPrimitiveQUADC1Ev,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
@@ -962,6 +951,27 @@
            10](@EX@_ZNSt13__vec_deleterImSaImEE13sub_push_backERKmN10Metrowerks8int2typeILi1EEE,object) found in local MSL_CPP_NITRO_Ai_LE.a
            10](_ZNSt13__vec_deleterImSaImEED2Ev,func) found in multidef MSL_CPP_NITRO_Ai_LE.a
            10](@EX@_ZNSt13__vec_deleterImSaImEED2Ev,object) found in local MSL_CPP_NITRO_Ai_LE.a
+           10](NNS_G2dLoadPalette,func) found in global libnnsg2d.a
+            11](GX_BeginLoadOBJExtPltt,func) found in global libgx.a
+             12](GX_ResetBankForOBJExtPltt,func) found in global libgx.a
+            11](GX_LoadOBJExtPltt,func) found in global libgx.a
+            11](GX_EndLoadOBJExtPltt,func) found in global libgx.a
+             12](GX_SetBankForOBJExtPltt,func) found in global libgx.a
+            11](GX_LoadOBJPltt,func) found in global libgx.a
+            11](GXS_BeginLoadOBJExtPltt,func) found in global libgx.a
+            11](GXS_LoadOBJExtPltt,func) found in global libgx.a
+            11](GXS_EndLoadOBJExtPltt,func) found in global libgx.a
+             12](GX_SetBankForSubOBJExtPltt,func) found in global libgx.a
+            11](GXS_LoadOBJPltt,func) found in global libgx.a
+            11](GX_BeginLoadTexPltt,func) found in global libgx.a
+             12](GX_ResetBankForTexPltt,func) found in global libgx.a
+             12](.bss,section) found in local libgx.a
+             12](sTexPlttStartAddrTable,object) found in local libgx.a
+            11](GX_LoadTexPltt,func) found in global libgx.a
+            11](GX_EndLoadTexPltt,func) found in global libgx.a
+             12](GX_SetBankForTexPltt,func) found in global libgx.a
+            11](NNS_G2dSetImagePaletteLocation,func) found in global libnnsg2d.a
+           10](NNS_G2dInitImagePaletteProxy,func) found in global libnnsg2d.a
            10](G3_EndMakeDL,func) found in global libgx.a
            10](G3C_End,func) found in global libgx.a
             11](G3CS_Direct0,func) found in global libgx.a
@@ -990,6 +1000,7 @@
             11](NNSi_GfdAddNewFreeBlock,func) found in global libnnsgfd.a
            10](NNS_GfdResetLnkTexVramState,func) found in global libnnsgfd.a
             11](@8489,object) found in local libnnsgfd.a
+           10](_ZN15CSoftwareSprite12sub_02005120Ev,func) found in global src_primitive_CSoftwareSprite.cpp.o
            10](_ZN17UnkClass_020091E812sub_020092D4Ev,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_02009274Ev,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_020092A4Ev,func) found in global src_UnkClass_020091E8.cpp.o
@@ -1004,6 +1015,7 @@
             11](_ZN17UnkClass_020091E812sub_02009670Ev,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_0200BBC812sub_0200BC64EP10CGame_0024P17UnkClass_02001C04P11CTouchPanelPvmmm,func) found in global src_UnkClass_0200BBC8.cpp.o
              12](_ZN17UnkClass_0200BBC812sub_0200BCF4Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
+           10](_ZN15CSoftwareSprite12sub_020050C8Ev,func) found in global src_primitive_CSoftwareSprite.cpp.o
            10](GX_DispOn,func) found in global libgx.a
            10](GX_SetBankForBG,func) found in global libgx.a
            10](GX_SetBankForOBJ,func) found in global libgx.a
@@ -1692,6 +1704,13 @@
         7](G3C_Color,func) found in global libgx.a
         7](G3C_PopMtx,func) found in global libgx.a
        6](_ZN14CPrimitiveQUAD22RenderWithoutTextureDLEP21CPrimitive_Render_argP8GXDLInfo,func) found in global src_primitive_CPrimitiveQUAD.cpp.o
+      5](_ZN16CPrimitiveSPHERED1Ev,func) found in global src_primitive_CPrimitiveSPHERE.cpp.o
+      5](_ZN16CPrimitiveSPHEREC1Ev,func) found in global src_primitive_CPrimitiveSPHERE.cpp.o
+       6](_ZTV16CPrimitiveSPHERE,object) found in global src_primitive_CPrimitiveSPHERE.cpp.o
+        7](_ZTI16CPrimitiveSPHERE,object) found in multidef src_primitive_CPrimitiveSPHERE.cpp.o
+         8](_ZTS16CPrimitiveSPHERE,object) found in multidef src_primitive_CPrimitiveSPHERE.cpp.o
+        7](_ZN16CPrimitiveSPHERED0Ev,func) found in global src_primitive_CPrimitiveSPHERE.cpp.o
+        7](_ZN16CPrimitiveSPHERE6RenderEP21CPrimitive_Render_arg,func) found in global asm_arm9_02004A04.s.o
       5](_ZN17UnkClass_020091E812sub_0200B45CElm,func) found in global src_UnkClass_020091E8.cpp.o
       5](NNS_G2dInitCellAnimation,func) found in global libnnsg2d.a
        6](NNSi_G2dSrtcInitControl,func) found in global libnnsg2d.a
@@ -3023,63 +3042,69 @@
   02004658 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
   0200483C 00000168 .text   CPrimitiveQUAD::RenderWithoutTextureDL(CPrimitive_Render_arg*, GXDLInfo*)	(src_primitive_CPrimitiveQUAD.cpp.o)
   0200483C 00000000 .text   $a	(src_primitive_CPrimitiveQUAD.cpp.o)
-  020049A4 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  020049A4 00000030 .text   sub_020049A4	(asm_arm9_020049A4.s.o)
-  020049A4 000021BC .text   .text	(asm_arm9_020049A4.s.o)
-  020049D0 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  020049D4 00000014 .text   sub_020049D4	(asm_arm9_020049A4.s.o)
-  020049D4 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  020049E8 0000001C .text   sub_020049E8	(asm_arm9_020049A4.s.o)
-  02004A04 00000070 .text   sub_02004A04	(asm_arm9_020049A4.s.o)
-  02004CA4 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  02004CB4 0000004C .text   sub_02004CB4	(asm_arm9_020049A4.s.o)
-  02004CB4 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  02004CFC 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  02004D00 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  02004D00 00000014 .text   sub_02004D00	(asm_arm9_020049A4.s.o)
-  02004D14 0000001C .text   sub_02004D14	(asm_arm9_020049A4.s.o)
-  02004D30 00000020 .text   sub_02004D30	(asm_arm9_020049A4.s.o)
-  02004D58 00000238 .text   sub_02004D58	(asm_arm9_020049A4.s.o)
-  02004F88 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  02004F90 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  02004F90 00000138 .text   sub_02004F90	(asm_arm9_020049A4.s.o)
-  020050C4 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  020050C8 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  020050C8 00000058 .text   sub_020050C8	(asm_arm9_020049A4.s.o)
-  02005114 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  02005120 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  02005120 00000024 .text   sub_02005120	(asm_arm9_020049A4.s.o)
-  0200514C 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  02005150 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  02005150 00000078 .text   sub_02005150	(asm_arm9_020049A4.s.o)
-  020051C4 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  020051C8 00000014 .text   sub_020051C8	(asm_arm9_020049A4.s.o)
-  020051C8 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  020051DC 0000001C .text   sub_020051DC	(asm_arm9_020049A4.s.o)
-  020051F8 00000028 .text   sub_020051F8	(asm_arm9_020049A4.s.o)
-  02005220 00000038 .text   sub_02005220	(asm_arm9_020049A4.s.o)
-  0200527C 00000030 .text   sub_0200527C	(asm_arm9_020049A4.s.o)
-  02005898 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  020058BC 000000CC .text   sub_020058BC	(asm_arm9_020049A4.s.o)
-  020058BC 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  02005EE0 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  02005F04 00000020 .text   sub_02005F04	(asm_arm9_020049A4.s.o)
-  02005F04 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  02005F20 00000000 .text   $d	(asm_arm9_020049A4.s.o)
-  02005F24 00000000 .text   $a	(asm_arm9_020049A4.s.o)
-  02005F24 0000000C .text   sub_02005F24	(asm_arm9_020049A4.s.o)
-  02005F30 00000018 .text   sub_02005F30	(asm_arm9_020049A4.s.o)
-  02005F48 00000018 .text   sub_02005F48	(asm_arm9_020049A4.s.o)
-  02005F60 00000024 .text   sub_02005F60	(asm_arm9_020049A4.s.o)
-  02005FDC 00000024 .text   sub_02005FDC	(asm_arm9_020049A4.s.o)
-  02006000 0000007C .text   sub_02006000	(asm_arm9_020049A4.s.o)
-  02006100 00000064 .text   sub_02006100	(asm_arm9_020049A4.s.o)
-  02006164 000000B4 .text   sub_02006164	(asm_arm9_020049A4.s.o)
-  02006238 000000C4 .text   sub_02006238	(asm_arm9_020049A4.s.o)
-  02006350 000000D8 .text   sub_02006350	(asm_arm9_020049A4.s.o)
-  02006610 00000044 .text   sub_02006610	(asm_arm9_020049A4.s.o)
-  02006764 0000008C .text   sub_02006764	(asm_arm9_020049A4.s.o)
-  02006AE0 00000080 .text   sub_02006AE0	(asm_arm9_020049A4.s.o)
+  020049A4 00000000 .text   $a	(src_primitive_CPrimitiveSPHERE.cpp.o)
+  020049A4 00000030 .text   CPrimitiveSPHERE::CPrimitiveSPHERE()	(src_primitive_CPrimitiveSPHERE.cpp.o)
+  020049D0 00000000 .text   $d	(src_primitive_CPrimitiveSPHERE.cpp.o)
+  020049D4 00000014 .text   CPrimitiveSPHERE::~CPrimitiveSPHERE()	(src_primitive_CPrimitiveSPHERE.cpp.o)
+  020049D4 00000000 .text   $a	(src_primitive_CPrimitiveSPHERE.cpp.o)
+  020049E8 0000001C .text   CPrimitiveSPHERE::~CPrimitiveSPHERE[virtual]()	(src_primitive_CPrimitiveSPHERE.cpp.o)
+  020049E8 00000000 .text   $a	(src_primitive_CPrimitiveSPHERE.cpp.o)
+  02004A04 00000000 .text   $a	(asm_arm9_02004A04.s.o)
+  02004A04 000002B0 .text   .text	(asm_arm9_02004A04.s.o)
+  02004A04 00000070 .text   CPrimitiveSPHERE::Render(CPrimitive_Render_arg*)	(asm_arm9_02004A04.s.o)
+  02004CA4 00000000 .text   $d	(asm_arm9_02004A04.s.o)
+  02004CB4 00000000 .text   $a	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004CB4 0000004C .text   CPrimitiveTRIANGLE::CPrimitiveTRIANGLE()	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004CFC 00000000 .text   $d	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004D00 00000014 .text   CPrimitiveTRIANGLE::~CPrimitiveTRIANGLE()	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004D00 00000000 .text   $a	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004D14 0000001C .text   CPrimitiveTRIANGLE::~CPrimitiveTRIANGLE[virtual]()	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004D14 00000000 .text   $a	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004D30 00000028 .text   CPrimitiveTRIANGLE::Render(CPrimitive_Render_arg*)	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004D30 00000000 .text   $a	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004D58 00000000 .text   $a	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004D58 00000238 .text   CPrimitiveTRIANGLE::RenderWithTexture(CPrimitive_Render_arg*)	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004F88 00000000 .text   $d	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004F90 00000000 .text   $a	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  02004F90 00000138 .text   CPrimitiveTRIANGLE::RenderWithoutTexture(CPrimitive_Render_arg*)	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  020050C4 00000000 .text   $d	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  020050C8 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  020050C8 00000058 .text   CSoftwareSprite::sub_020050C8()	(src_primitive_CSoftwareSprite.cpp.o)
+  02005114 00000000 .text   $d	(src_primitive_CSoftwareSprite.cpp.o)
+  02005120 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  02005120 00000030 .text   CSoftwareSprite::sub_02005120()	(src_primitive_CSoftwareSprite.cpp.o)
+  0200514C 00000000 .text   $d	(src_primitive_CSoftwareSprite.cpp.o)
+  02005150 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  02005150 00000078 .text   CSoftwareSprite::CSoftwareSprite()	(src_primitive_CSoftwareSprite.cpp.o)
+  020051C4 00000000 .text   $d	(src_primitive_CSoftwareSprite.cpp.o)
+  020051C8 00000000 .text   $a	(asm_arm9_02005150.s.o)
+  020051C8 00000014 .text   sub_020051C8	(asm_arm9_02005150.s.o)
+  020051C8 00001998 .text   .text	(asm_arm9_02005150.s.o)
+  020051DC 0000001C .text   sub_020051DC	(asm_arm9_02005150.s.o)
+  020051F8 00000028 .text   CSoftwareSprite::sub_020051F8(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)	(asm_arm9_02005150.s.o)
+  02005220 00000038 .text   sub_02005220	(asm_arm9_02005150.s.o)
+  0200527C 00000030 .text   sub_0200527C	(asm_arm9_02005150.s.o)
+  02005898 00000000 .text   $d	(asm_arm9_02005150.s.o)
+  020058BC 00000000 .text   $a	(asm_arm9_02005150.s.o)
+  020058BC 000000CC .text   sub_020058BC	(asm_arm9_02005150.s.o)
+  02005EE0 00000000 .text   $d	(asm_arm9_02005150.s.o)
+  02005F04 00000020 .text   sub_02005F04	(asm_arm9_02005150.s.o)
+  02005F04 00000000 .text   $a	(asm_arm9_02005150.s.o)
+  02005F20 00000000 .text   $d	(asm_arm9_02005150.s.o)
+  02005F24 00000000 .text   $a	(asm_arm9_02005150.s.o)
+  02005F24 0000000C .text   sub_02005F24	(asm_arm9_02005150.s.o)
+  02005F30 00000018 .text   sub_02005F30	(asm_arm9_02005150.s.o)
+  02005F48 00000018 .text   sub_02005F48	(asm_arm9_02005150.s.o)
+  02005F60 00000024 .text   sub_02005F60	(asm_arm9_02005150.s.o)
+  02005FDC 00000024 .text   sub_02005FDC	(asm_arm9_02005150.s.o)
+  02006000 0000007C .text   sub_02006000	(asm_arm9_02005150.s.o)
+  02006100 00000064 .text   sub_02006100	(asm_arm9_02005150.s.o)
+  02006164 000000B4 .text   sub_02006164	(asm_arm9_02005150.s.o)
+  02006238 000000C4 .text   sub_02006238	(asm_arm9_02005150.s.o)
+  02006350 000000D8 .text   sub_02006350	(asm_arm9_02005150.s.o)
+  02006610 00000044 .text   sub_02006610	(asm_arm9_02005150.s.o)
+  02006764 0000008C .text   sub_02006764	(asm_arm9_02005150.s.o)
+  02006AE0 00000080 .text   sub_02006AE0	(asm_arm9_02005150.s.o)
   02006B60 000000A4 .text   RectanglesOverlap(Rectangle, Rectangle)	(src_sub_02006B60.cpp.o)
   02006B60 00000000 .text   $a	(src_sub_02006B60.cpp.o)
   02006C04 00000000 .text   $a	(asm_arm9_02006C04.s.o)
@@ -11688,24 +11713,19 @@
   0208A6F8 0000000C .data   typeinfo structure for CPrimitiveQUAD	(src_primitive_CPrimitiveQUAD.cpp.o)
   0208A704 00000011 .data   typeinfo name for CPrimitiveQUAD	(src_primitive_CPrimitiveQUAD.cpp.o)
   0208A718 00000014 .data   virtual table for CPrimitiveQUAD	(src_primitive_CPrimitiveQUAD.cpp.o)
-  0208A72C 00000000 .data   PTR_ptr_FUN_020835bc_0208a72c	(asm_arm9_02046D5C.s.o)
-  0208A72C 00003E0C .data   .data	(asm_arm9_02046D5C.s.o)
-  0208A738 00000000 .data   s_16CPrimitiveSPHERE_0208a738	(asm_arm9_02046D5C.s.o)
-  0208A74B 00000000 .data   _0208A74B	(asm_arm9_02046D5C.s.o)
-  0208A754 00000000 .data   ptr_FUN_020049d4_0208a754	(asm_arm9_02046D5C.s.o)
-  0208A758 00000000 .data   ptr_FUN_020049e8_0208a758	(asm_arm9_02046D5C.s.o)
-  0208A75C 00000000 .data   ptr_FUN_02004a04_0208a75c	(asm_arm9_02046D5C.s.o)
-  0208A760 00000000 .data   PTR_ptr_FUN_020835bc_0208a760	(asm_arm9_02046D5C.s.o)
-  0208A774 00000000 .data   PTR_LAB_0208a774	(asm_arm9_02046D5C.s.o)
-  0208A778 00000000 .data   ptr_FUN_02004d14_0208a778	(asm_arm9_02046D5C.s.o)
-  0208A77C 00000000 .data   ptr_FUN_02004d30_0208a77c	(asm_arm9_02046D5C.s.o)
-  0208A780 00000000 .data   s_18CPrimitiveTRIANGLE_0208a780	(asm_arm9_02046D5C.s.o)
-  0208A795 00000000 .data   _0208A795	(asm_arm9_02046D5C.s.o)
+  0208A72C 0000000C .data   typeinfo structure for CPrimitiveSPHERE	(src_primitive_CPrimitiveSPHERE.cpp.o)
+  0208A738 00000013 .data   typeinfo name for CPrimitiveSPHERE	(src_primitive_CPrimitiveSPHERE.cpp.o)
+  0208A74C 00000014 .data   virtual table for CPrimitiveSPHERE	(src_primitive_CPrimitiveSPHERE.cpp.o)
+  0208A760 0000000C .data   typeinfo structure for CPrimitiveTRIANGLE	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  0208A76C 00000014 .data   virtual table for CPrimitiveTRIANGLE	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
+  0208A780 00000015 .data   typeinfo name for CPrimitiveTRIANGLE	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
   0208A798 00000000 .data   PTR_ptr_FUN_020835bc_0208a798	(asm_arm9_02046D5C.s.o)
+  0208A798 00003DA0 .data   .data	(asm_arm9_02046D5C.s.o)
   0208A7A4 00000000 .data   DAT_0208a7a4	(asm_arm9_02046D5C.s.o)
   0208A7B4 00000000 .data   DAT_0208a7b4	(asm_arm9_02046D5C.s.o)
   0208A7D4 00000000 .data   s_15CSoftwareSprite_0208a7d4	(asm_arm9_02046D5C.s.o)
   0208A7E6 00000000 .data   _0208A7E6	(asm_arm9_02046D5C.s.o)
+  0208A7E8 00000000 .data   virtual table for CSoftwareSprite	(asm_arm9_02046D5C.s.o)
   0208A7F0 00000000 .data   ptr_FUN_020051c8_0208a7f0	(asm_arm9_02046D5C.s.o)
   0208A7F4 00000000 .data   ptr_FUN_020051dc_0208a7f4	(asm_arm9_02046D5C.s.o)
   0208A7F8 00000000 .data   ptr_FUN_02005220_0208a7f8	(asm_arm9_02046D5C.s.o)
