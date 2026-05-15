@@ -7383,10 +7383,10 @@ ov1_0212306C: ; 0x0212306C
 	bl __cxa_vec_ctor
 	add r0, r4, #0x304
 	add r0, r0, #0x3000
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x350
 	add r0, r0, #0x3000
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	ldr r1, _02123224 ; =_ZN18CPrimitiveTRIANGLED1Ev
 	add r0, r4, #0x39c
 	str r1, [sp]
@@ -7446,7 +7446,7 @@ ov1_0212306C: ; 0x0212306C
 	add r0, r4, #0x304
 	add r0, r0, #0x3000
 	mov r2, r1
-	bl sub_020051F8
+	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
 	add r0, r4, #0x6000
 	ldr lr, [r0, #0x42c]
 	ldr r3, [r0, #0x41c]
@@ -7465,7 +7465,7 @@ ov1_0212306C: ; 0x0212306C
 	mov lr, #0x3e8
 	add r0, ip, #0x3000
 	str lr, [sp, #8]
-	bl sub_020051F8
+	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
 	mov r0, r4
 	add sp, sp, #0xc
 	ldmia sp!, {r3, r4, pc}
@@ -12432,7 +12432,7 @@ ov1_0212770C: ; 0x0212770C
 	bl _Znwm
 	cmp r0, #0
 	beq _02127734
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_0212770C
 _02127734:
 	mov r1, r0
@@ -12766,7 +12766,7 @@ ov1_02127B48: ; 0x02127B48
 	bl _Znwm
 	cmp r0, #0
 	beq _02127B70
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_02127B48
 _02127B70:
 	mov r1, r0
@@ -12994,7 +12994,7 @@ ov1_02127E14: ; 0x02127E14
 	bl _Znwm
 	cmp r0, #0
 	beq _02127E3C
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_02127E14
 _02127E3C:
 	ldr r1, _02127E88 ; =0x000003FF
@@ -13007,7 +13007,7 @@ _02127E3C:
 	bl _Znwm
 	cmp r0, #0
 	beq _02127E68
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _02127E68:
 	str r0, [r4, #0x20]
 	mov r1, #0x400
@@ -13443,7 +13443,7 @@ ov1_02128414: ; 0x02128414
 	bl _Znwm
 	cmp r0, #0
 	beq _0212843C
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_02128414
 _0212843C:
 	ldr r2, _02128454 ; =0x000003FF
@@ -13780,7 +13780,7 @@ ov1_02128860: ; 0x02128860
 	bl _Znwm
 	cmp r0, #0
 	beq _02128888
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_02128860
 _02128888:
 	str r0, [r4, #0xc]
@@ -13792,7 +13792,7 @@ _02128888:
 	str r0, [sp, #8]
 	ldr r0, [r4, #0xc]
 	mov r2, r1
-	bl sub_020051F8
+	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
 	ldr r0, [r4, #0xc]
 	ldr r2, _021288E4 ; =0x00007FFF
 	mov r1, #0x1f
@@ -14001,7 +14001,7 @@ ov1_02128B24: ; 0x02128B24
 	bl _Znwm
 	cmp r0, #0
 	beq _02128B54
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_02128B24
 _02128B54:
 	str r0, [r4, #0x14]
@@ -14012,7 +14012,7 @@ _02128B54:
 	str r1, [sp, #8]
 	ldr r0, [r4, #0x14]
 	mov r2, r1
-	bl sub_020051F8
+	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
 	ldr r0, [r4, #0x14]
 	ldr r2, _02128BAC ; =0x00007FFF
 	mov r1, #0x1f
@@ -14501,7 +14501,7 @@ ov1_021291BC: ; 0x021291BC
 	bl _Znwm
 	cmp r0, #0
 	beq _021291E8
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_021291BC
 _021291E8:
 	str r0, [r4, #4]
@@ -14512,7 +14512,7 @@ _021291E8:
 	str r1, [sp, #8]
 	ldr r0, [r4, #4]
 	mov r2, r1
-	bl sub_020051F8
+	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
 	ldr r0, [r4, #4]
 	ldr r2, _0212923C ; =0x00007FFF
 	mov r1, #0x1f
@@ -14889,7 +14889,7 @@ ov1_021296C8: ; 0x021296C8
 	bl _Znwm
 	cmp r0, #0
 	beq _021296F0
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_021296C8
 _021296F0:
 	str r0, [r4, #0x10]
@@ -14901,7 +14901,7 @@ _021296F0:
 	str r0, [sp, #8]
 	ldr r0, [r4, #0x10]
 	mov r2, r1
-	bl sub_020051F8
+	bl _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
 	ldr r0, [r4, #0x10]
 	ldr r2, _0212974C ; =0x00007FFF
 	mov r1, #0x1f
@@ -15125,7 +15125,7 @@ ov1_021299CC: ; 0x021299CC
 	bl _Znwm
 	cmp r0, #0
 	beq _021299F4
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_021299CC
 _021299F4:
 	mov r1, r0
@@ -15444,7 +15444,7 @@ ov1_02129DD4: ; 0x02129DD4
 	bl _Znwm
 	cmp r0, #0
 	beq _02129DFC
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_02129DD4
 _02129DFC:
 	str r0, [r4, #4]
@@ -15452,7 +15452,7 @@ _02129DFC:
 	bl _Znwm
 	cmp r0, #0
 	beq _02129E14
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _02129E14:
 	str r0, [r4, #8]
 	mov r0, #0x24
@@ -17648,14 +17648,14 @@ _0212B818:
 	bl _Znwm
 	cmp r0, #0
 	beq _0212B830
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _0212B830:
 	str r0, [r7, #0x228]
 	mov r0, #0x4c
 	bl _Znwm
 	cmp r0, #0
 	beq _0212B848
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _0212B848:
 	str r0, [r7, #0x234]
 	mov r0, #0x190
@@ -19665,7 +19665,7 @@ _0212D3A0:
 	bl _Znwm
 	cmp r0, #0
 	beq _0212D3B4
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _0212D3B4:
 	add r1, sb, r8, lsl #2
 	str r0, [r1, #0x18]
@@ -19682,7 +19682,7 @@ _0212D3B4:
 	bl _Znwm
 	cmp r0, #0
 	beq _0212D3F4
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _0212D3F4:
 	add r1, sb, r8, lsl #2
 	str r0, [r1, #0x24]
@@ -29790,7 +29790,7 @@ ov1_02135CA0: ; 0x02135CA0
 	str r1, [r5]
 	bl _ZN14CPrimitiveQUADC1Ev
 	add r0, r5, #0x20c
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	ldr r1, _02135CFC ; =sub_020051C8
 	add r0, r5, #0x258
 	str r1, [sp]
@@ -29806,7 +29806,7 @@ ov1_02135CA0: ; 0x02135CA0
 	.align 2, 0
 _02135CF8: .word ptr_FUN_overlay_1_02135d04_overlay_1_021418e4
 _02135CFC: .word sub_020051C8
-_02135D00: .word sub_02005150
+_02135D00: .word _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov1_02135CA0
 
 	arm_func_start ov1_02135D04
@@ -31000,9 +31000,9 @@ ov1_02136C00: ; 0x02136C00
 	ldr r1, _02136D20 ; =ptr_FUN_overlay_1_02136d60_overlay_1_02141a04
 	add r0, r4, #0x214
 	str r1, [r4]
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x260
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	ldr r1, _02136D24 ; =ov1_02136D48
 	ldr r3, _02136D28 ; =ov1_02136D30
 	str r1, [sp]
@@ -32566,7 +32566,7 @@ _02138150:
 	bl _Znwm
 	cmp r0, #0
 	beq _02138168
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _02138168:
 	str r0, [r4, #8]
 	ldr r1, [r4, #0xc]
@@ -32745,7 +32745,7 @@ _02138378:
 	bl _Znwm
 	cmp r0, #0
 	beq _02138390
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _02138390:
 	str r0, [r4, #8]
 	ldr r1, [r4, #0xc]
@@ -32870,17 +32870,17 @@ ov1_021384F8: ; 0x021384F8
 	sub sp, sp, #4
 	mov r4, r0
 	add r0, r4, #0x48
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x94
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0xe0
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x12c
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x178
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x1c4
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	ldr r1, _02138C9C ; =sub_020051C8
 	add r0, r4, #0x210
 	str r1, [sp]
@@ -32896,9 +32896,9 @@ ov1_021384F8: ; 0x021384F8
 	ldr r3, _02138CA0 ; =FUN_02005150
 	bl __cxa_vec_ctor
 	add r0, r4, #0x340
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x38c
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	ldr r1, _02138C9C ; =sub_020051C8
 	add r0, r4, #0x3d8
 	str r1, [sp]
@@ -32908,10 +32908,10 @@ ov1_021384F8: ; 0x021384F8
 	bl __cxa_vec_ctor
 	add r0, r4, #0xbc
 	add r0, r0, #0x400
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x108
 	add r0, r0, #0x400
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	ldr r1, _02138C9C ; =sub_020051C8
 	add r0, r4, #0x154
 	str r1, [sp]
@@ -32922,10 +32922,10 @@ ov1_021384F8: ; 0x021384F8
 	bl __cxa_vec_ctor
 	add r0, r4, #0x238
 	add r0, r0, #0x400
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x284
 	add r0, r0, #0x400
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x6d0
 	bl _ZN14CPrimitiveQUADC1Ev
 	ldr r1, _02138C9C ; =sub_020051C8
@@ -32936,10 +32936,10 @@ ov1_021384F8: ; 0x021384F8
 	ldr r3, _02138CA0 ; =FUN_02005150
 	bl __cxa_vec_ctor
 	add r0, r4, #0x860
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0xac
 	add r0, r0, #0x800
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0xf8
 	ldr ip, _02138C9C ; =sub_020051C8
 	ldr r3, _02138CA0 ; =FUN_02005150
@@ -32950,9 +32950,9 @@ ov1_021384F8: ; 0x021384F8
 	bl __cxa_vec_ctor
 	add r0, r4, #0x274
 	add r0, r0, #0x800
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0xac0
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r0, r4
 	bl ov1_02138DE4
 	mov r0, #0
@@ -33374,7 +33374,7 @@ _02138BCC:
 	ldmia sp!, {r3, r4, pc}
 	.align 2, 0
 _02138C9C: .word sub_020051C8
-_02138CA0: .word sub_02005150
+_02138CA0: .word _ZN15CSoftwareSpriteC1Ev
 _02138CA4: .word MAIN_BSS_020B26A0
 _02138CA8: .word 0x000043F0
 
@@ -35929,18 +35929,18 @@ ov1_0213AE18: ; 0x0213AE18
 	bl __cxa_vec_ctor
 	add r0, r4, #0x27c
 	add r0, r0, #0x400
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x2c8
 	add r0, r0, #0x400
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x314
 	add r0, r0, #0x400
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x760
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x3ac
 	add r0, r0, #0x400
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	ldr r1, _0213B19C ; =sub_020051C8
 	add r0, r4, #0x3f8
 	str r1, [sp]
@@ -36142,7 +36142,7 @@ _0213B158:
 _0213B194: .word sub_020117AC
 _0213B198: .word sub_0201179C
 _0213B19C: .word sub_020051C8
-_0213B1A0: .word sub_02005150
+_0213B1A0: .word _ZN15CSoftwareSpriteC1Ev
 _0213B1A4: .word _ZN14CPrimitiveRECTD1Ev
 _0213B1A8: .word _ZN14CPrimitiveRECTC1Ev
 _0213B1AC: .word 0x0000042E
@@ -40772,13 +40772,13 @@ ov1_0213F028: ; 0x0213F028
 	mov r5, r0
 	add r0, r5, #0x14
 	mov r4, r1
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r5, #0x64
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r5, #0xb0
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r5, #0x100
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r0, r5
 	mov r1, r4
 	strh r4, [r5, #2]

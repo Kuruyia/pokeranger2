@@ -1,5 +1,4 @@
 #pragma once
-.public DAT_0208a7a4
 .public FX_Atan2Idx
 .public FX_SinCosTable_
 .public FX_Sqrt
@@ -10,9 +9,6 @@
 .public NNS_G2dGetCellDataByIdx
 .public NNS_G2dGetImageLocation
 .public NNS_G2dGetImagePaletteLocation
-.public NNS_G2dInitImagePaletteProxy
-.public NNS_G2dLoadPalette
-.public NNS_GfdAllocLnkPlttVram
 .public NNS_GfdFreeLnkPlttVram
 .public NNSi_objSizeHTbl
 .public NNSi_objSizeWTbl

@@ -62,7 +62,7 @@
 .public _ZN13CArchiveGuardD1Ev
 .public _ZN11CBinaryFile12sub_02003108EPKc
 .public _ZN9CNCERFileC1EPKcmmm
-.public sub_02005150
+.public _ZN15CSoftwareSpriteC1Ev
 .public sub_020051C8
 .public sub_02007068
 .public sub_020070A4

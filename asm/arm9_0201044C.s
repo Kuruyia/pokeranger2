@@ -2190,13 +2190,13 @@ sub_02011D60: ; 0x02011D60
 	bl _Znwm
 	cmp r0, #0
 	beq _02011D98
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	arm_func_end sub_02011D60
 _02011D98:
 	ldr r1, _02011E4C ; =sub_020051C8
 	str r0, [r4, #0xc4]
 	mov r0, #8
-	ldr r3, _02011E50 ; =sub_02005150
+	ldr r3, _02011E50 ; =_ZN15CSoftwareSpriteC1Ev
 	mov r2, r0
 	str r1, [sp]
 	mov r1, #0x4c
@@ -2240,7 +2240,7 @@ _02011D98:
 	.align 2, 0
 _02011E48: .word ptr_FUN_02011e54_0208b488
 _02011E4C: .word sub_020051C8
-_02011E50: .word sub_02005150
+_02011E50: .word _ZN15CSoftwareSpriteC1Ev
 
 	arm_func_start sub_02011E54
 sub_02011E54: ; 0x02011E54

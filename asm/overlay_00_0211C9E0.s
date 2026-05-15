@@ -256,7 +256,7 @@ CFieldScene_ov0_0211CD5C: ; 0x0211CD5C
 	ldr r0, [sb, #4]
 	ldr r0, [r0, #8]
 	str r0, [sp, #0x24]
-	bl sub_020050C8
+	bl _ZN15CSoftwareSprite12sub_020050C8Ev
 	ldr r0, _0211DBAC ; =MAIN_BSS_0210CA74
 	mov r7, #0
 	str r7, [r0]
@@ -2202,7 +2202,7 @@ _0211E8EC:
 	mov r0, #0
 	str r0, [r4, #0x64]
 _0211E8F4:
-	bl sub_02005120
+	bl _ZN15CSoftwareSprite12sub_02005120Ev
 	ldr r0, _0211E954 ; =MAIN_BSS_020B26A0
 	bl sub_020180F4
 	bl NNS_GfdResetLnkTexVramState
@@ -45879,7 +45879,7 @@ _02144334: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _02144338: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _0214433C: .word ptr_FUN_overlay_0_02144370_overlay_0_021748ec
 _02144340: .word sub_020051C8
-_02144344: .word sub_02005150
+_02144344: .word _ZN15CSoftwareSpriteC1Ev
 _02144348: .word ov0_021450CC
 _0214434C: .word ov0_0214509C
 _02144350: .word PTR_LAB_overlay_0_02145134_overlay_0_021747a0
@@ -46882,7 +46882,7 @@ ov0_02145094: ; 0x02145094
 ov0_0214509C: ; 0x0214509C
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r0, #0
 	str r0, [r4, #0x68]
 	mov r0, #8
@@ -46975,7 +46975,7 @@ ov0_0214513C: ; 0x0214513C
 	str r1, [r5, #0x20]
 	add r0, r5, #0x44
 	strh r1, [r5, #0x24]
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r0, #0x34
 	bl _Znwm
 	movs r6, r0
@@ -48280,7 +48280,7 @@ _021462A0: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _021462A4: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _021462A8: .word ptr_FUN_overlay_0_021462bc_overlay_0_02174c30
 _021462AC: .word sub_020051C8
-_021462B0: .word sub_02005150
+_021462B0: .word _ZN15CSoftwareSpriteC1Ev
 _021462B4: .word ptr_FUN_020294c0_0208c4a4
 _021462B8: .word PTR_LAB_overlay_0_021426e4_overlay_0_02177b5c
 
@@ -48684,7 +48684,7 @@ _021467C4: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _021467C8: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _021467CC: .word ptr_FUN_overlay_0_021467e0_overlay_0_02174cfc
 _021467D0: .word sub_020051C8
-_021467D4: .word sub_02005150
+_021467D4: .word _ZN15CSoftwareSpriteC1Ev
 _021467D8: .word ptr_FUN_020294c0_0208c4a4
 _021467DC: .word PTR_LAB_overlay_0_021426e4_overlay_0_02177b5c
 
@@ -50632,9 +50632,9 @@ ov0_021480D0: ; 0x021480D0
 ov0_021480E4: ; 0x021480E4
 	stmdb sp!, {r4, lr}
 	mov r4, r0
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	add r0, r4, #0x4c
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r0, #0
 	str r0, [r4, #0x98]
 	str r0, [r4, #0x9c]
@@ -60743,7 +60743,7 @@ _0214FBD8:
 	bl _Znwm
 	cmp r0, #0
 	beq _0214FBF0
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _0214FBF0:
 	str r0, [r4, #8]
 	ldr r1, [r4, #0xc]
@@ -60916,7 +60916,7 @@ _0214FDF8:
 	bl _Znwm
 	cmp r0, #0
 	beq _0214FE10
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _0214FE10:
 	str r0, [r4, #8]
 	ldr r1, [r4, #0xc]
@@ -61701,7 +61701,7 @@ _02150844: .word ov0_02150620
 _02150848: .word ov0_021505F4
 _0215084C: .word PTR_LAB_overlay_0_02150880_overlay_0_02177d50
 _02150850: .word sub_020051C8
-_02150854: .word sub_02005150
+_02150854: .word _ZN15CSoftwareSpriteC1Ev
 
 	arm_func_start ov0_02150858
 ov0_02150858: ; 0x02150858
@@ -63383,7 +63383,7 @@ _02151DD4:
 	str r2, [r4, #0x28]
 	add r0, r4, #0x2c
 	str r1, [r4]
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r2, #1
 	mov r0, r4
 	mov r1, #0
@@ -63425,7 +63425,7 @@ _02151E74:
 	str r2, [r4, #0x28]
 	add r0, r4, #0x2c
 	str r1, [r4]
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r2, #1
 	mov r0, r4
 	mov r1, #0
@@ -63492,7 +63492,7 @@ _02151F70:
 	str r2, [r4, #0x28]
 	add r0, r4, #0x2c
 	str r1, [r4]
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r2, #1
 	mov r0, r4
 	mov r1, #0
@@ -64064,7 +64064,7 @@ ov0_021526F8: ; 0x021526F8
 	str r2, [r7, #0x28]
 	add r0, r7, #0x2c
 	str r1, [r7]
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r2, #1
 	mov r0, r7
 	mov r1, r4
@@ -77340,7 +77340,7 @@ _0215DC90: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _0215DC94: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _0215DC98: .word ptr_FUN_overlay_0_0215dcb4_overlay_0_02178a84
 _0215DC9C: .word sub_020051C8
-_0215DCA0: .word sub_02005150
+_0215DCA0: .word _ZN15CSoftwareSpriteC1Ev
 _0215DCA4: .word ptr_FUN_020294c0_0208c4a4
 _0215DCA8: .word PTR_LAB_overlay_0_021426e4_overlay_0_02177b5c
 _0215DCAC: .word MAIN_BSS_0210CA60
@@ -77943,7 +77943,7 @@ _0215E484: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _0215E488: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _0215E48C: .word ptr_FUN_overlay_0_0215e4a0_overlay_0_02178b64
 _0215E490: .word sub_020051C8
-_0215E494: .word sub_02005150
+_0215E494: .word _ZN15CSoftwareSpriteC1Ev
 _0215E498: .word ptr_FUN_020294c0_0208c4a4
 _0215E49C: .word PTR_LAB_overlay_0_021426e4_overlay_0_02177b5c
 
@@ -78440,7 +78440,7 @@ _0215EB14: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _0215EB18: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _0215EB1C: .word ptr_FUN_overlay_0_0215eb28_overlay_0_02178c38
 _0215EB20: .word sub_020051C8
-_0215EB24: .word sub_02005150
+_0215EB24: .word _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov0_0215EA9C
 
 	arm_func_start ov0_0215EB28
@@ -81305,7 +81305,7 @@ _02161144: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _02161148: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _0216114C: .word ptr_FUN_overlay_0_0216116c_overlay_0_02179000
 _02161150: .word sub_020051C8
-_02161154: .word sub_02005150
+_02161154: .word _ZN15CSoftwareSpriteC1Ev
 _02161158: .word sub_02007B28
 _0216115C: .word sub_02007AA4
 _02161160: .word ptr_FUN_020294c0_0208c4a4
@@ -81897,7 +81897,7 @@ ov0_021618C0: ; 0x021618C0
 _02161924: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _02161928: .word ptr_FUN_overlay_0_02161934_overlay_0_021790cc
 _0216192C: .word sub_020051C8
-_02161930: .word sub_02005150
+_02161930: .word _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov0_021618C0
 
 	arm_func_start ov0_02161934
@@ -83237,7 +83237,7 @@ _02162AF4: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _02162AF8: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _02162AFC: .word ptr_FUN_overlay_0_02161fdc_overlay_0_02179230
 _02162B00: .word sub_020051C8
-_02162B04: .word sub_02005150
+_02162B04: .word _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov0_02162A68
 
 	arm_func_start ov0_02162B08
@@ -83340,7 +83340,7 @@ _02162C20: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _02162C24: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _02162C28: .word ptr_FUN_overlay_0_02162c34_overlay_0_02179304
 _02162C2C: .word sub_020051C8
-_02162C30: .word sub_02005150
+_02162C30: .word _ZN15CSoftwareSpriteC1Ev
 	arm_func_end ov0_02162B98
 
 	arm_func_start ov0_02162C34
@@ -85292,7 +85292,7 @@ _021645B4: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _021645B8: .word ptr_FUN_overlay_0_02143b10_overlay_0_02174628
 _021645BC: .word ptr_FUN_overlay_0_021645c8_overlay_0_021794e8
 _021645C0: .word sub_020051C8
-_021645C4: .word sub_02005150
+_021645C4: .word _ZN15CSoftwareSpriteC1Ev
 
 	arm_func_start ov0_021645C8
 ov0_021645C8: ; 0x021645C8
@@ -86205,7 +86205,7 @@ ov0_021651C8: ; 0x021651C8
 	str r1, [r4, #0x1c]
 	add r0, r4, #0x24
 	str r1, [r4, #0x20]
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r1, #0
 	mov r0, r4
 	strh r1, [r4, #0x70]
@@ -86697,7 +86697,7 @@ ov0_021657F0: ; 0x021657F0
 	strb r1, [r4, #0x18]
 	add r0, r4, #0x20
 	str r1, [r4, #0x1c]
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r1, #0
 	ldr r0, _02165860 ; =PTR_LAB_0208de68
 	strh r1, [r4, #0x6c]
@@ -91689,7 +91689,7 @@ _02169AF0:
 _02169B78: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _02169B7C: .word ptr_FUN_overlay_0_02169b90_overlay_0_02179e58
 _02169B80: .word sub_020051C8
-_02169B84: .word sub_02005150
+_02169B84: .word _ZN15CSoftwareSpriteC1Ev
 _02169B88: .word 0x00000E38
 _02169B8C: .word 0xFFFFF8E4
 
@@ -96340,7 +96340,7 @@ _0216DA10: .word ptr_FUN_overlay_0_021423c0_overlay_0_0217440c
 _0216DA14: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _0216DA18: .word ptr_FUN_overlay_0_0216da38_overlay_0_0217a65c
 _0216DA1C: .word sub_020051C8
-_0216DA20: .word sub_02005150
+_0216DA20: .word _ZN15CSoftwareSpriteC1Ev
 _0216DA24: .word ptr_FUN_020294c0_0208c4a4
 _0216DA28: .word PTR_LAB_overlay_0_021426e4_overlay_0_02177b5c
 _0216DA2C: .word 0x0000FFFF
@@ -99436,7 +99436,7 @@ _021702C0: .word ptr_FUN_overlay_11_0214ffc8_overlay_0_02177a74
 _021702C4: .word ptr_FUN_overlay_0_02143b10_overlay_0_02174628
 _021702C8: .word ptr_FUN_overlay_0_021702d8_overlay_0_0217ac44
 _021702CC: .word sub_020051C8
-_021702D0: .word sub_02005150
+_021702D0: .word _ZN15CSoftwareSpriteC1Ev
 _021702D4: .word 0x000002AA
 
 	arm_func_start ov0_021702D8

@@ -38,7 +38,8 @@ Static main
     Object main.nef.p/src_primitive_CPrimitiveSPHERE.cpp.o
     Object main.nef.p/asm_arm9_02004A04.s.o
     Object main.nef.p/src_primitive_CPrimitiveTRIANGLE.cpp.o
-    Object main.nef.p/asm_arm9_020050C8.s.o
+    Object main.nef.p/src_primitive_CSoftwareSprite.cpp.o
+    Object main.nef.p/asm_arm9_02005150.s.o
     Object main.nef.p/src_sub_02006B60.cpp.o
     Object main.nef.p/asm_arm9_02006C04.s.o
     Object main.nef.p/src_UnkClass_020091E8.cpp.o

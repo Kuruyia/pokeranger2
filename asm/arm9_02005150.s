@@ -1,87 +1,7 @@
     .include "macros.inc"
-    .include "include/arm9_020050C8.inc"
+    .include "include/arm9_02005150.inc"
 
     .text
-
-	arm_func_start sub_020050C8
-sub_020050C8: ; 0x020050C8
-	stmdb sp!, {r3, lr}
-	mov r1, #0
-	mov r2, r1
-	mov r0, #0x20
-	bl NNS_GfdAllocLnkPlttVram
-	ldr r1, _02005114 ; =MAIN_BSS_020AF320
-	str r0, [r1]
-	ldr r0, _02005118 ; =MAIN_BSS_020AF324
-	bl NNS_G2dInitImagePaletteProxy
-	ldr r1, _02005114 ; =MAIN_BSS_020AF320
-	ldr r0, _0200511C ; =DAT_0208a7a4
-	ldr r1, [r1]
-	ldr r3, _02005118 ; =MAIN_BSS_020AF324
-	mov r1, r1, lsl #0x10
-	mov r1, r1, lsr #0xd
-	mov r2, #0
-	bl NNS_G2dLoadPalette
-	mov r0, #1
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_02005114: .word MAIN_BSS_020AF320
-_02005118: .word MAIN_BSS_020AF324
-_0200511C: .word DAT_0208a7a4
-	arm_func_end sub_020050C8
-
-	arm_func_start sub_02005120
-sub_02005120: ; 0x02005120
-	stmdb sp!, {r3, lr}
-	ldr r0, _0200514C ; =MAIN_BSS_020AF320
-	ldr r0, [r0]
-	cmp r0, #0
-	beq _02005144
-	bl NNS_GfdFreeLnkPlttVram
-	ldr r0, _0200514C ; =MAIN_BSS_020AF320
-	mov r1, #0
-	str r1, [r0]
-	arm_func_end sub_02005120
-_02005144:
-	mov r0, #1
-	ldmia sp!, {r3, pc}
-	.align 2, 0
-_0200514C: .word MAIN_BSS_020AF320
-
-	arm_func_start sub_02005150
-sub_02005150: ; 0x02005150
-	stmdb sp!, {r3, r4, lr}
-	sub sp, sp, #0xc
-	mov r4, r0
-	bl _ZN10CPrimitiveC2Ev
-	ldr r0, _020051C4 ; =ptr_FUN_020051c8_0208a7f0
-	mov r1, #0
-	str r0, [r4]
-	str r1, [r4, #0x2c]
-	str r1, [r4, #0x30]
-	str r1, [r4, #0x34]
-	str r1, [r4, #0x38]
-	strh r1, [r4, #0x2a]
-	mov r3, #0x1000
-	str r3, [sp]
-	str r1, [sp, #4]
-	mov r0, r4
-	mov r2, r1
-	str r1, [sp, #8]
-	bl sub_020051F8
-	mov r1, #0
-	str r1, [r4, #0x3c]
-	strh r1, [r4, #0x46]
-	strh r1, [r4, #0x44]
-	strh r1, [r4, #0x42]
-	strh r1, [r4, #0x40]
-	mov r0, r4
-	str r1, [r4, #0x48]
-	add sp, sp, #0xc
-	ldmia sp!, {r3, r4, pc}
-	.align 2, 0
-_020051C4: .word ptr_FUN_020051c8_0208a7f0
-	arm_func_end sub_02005150
 
 	arm_func_start sub_020051C8
 sub_020051C8: ; 0x020051C8
@@ -103,8 +23,8 @@ sub_020051DC: ; 0x020051DC
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020051DC
 
-	arm_func_start sub_020051F8
-sub_020051F8: ; 0x020051F8
+	arm_func_start _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
+_ZN15CSoftwareSprite12sub_020051F8Emmmmmm: ; 0x020051F8
 	str r1, [r0, #0x18]
 	str r2, [r0, #0x1c]
 	ldr r1, [sp]
@@ -115,7 +35,7 @@ sub_020051F8: ; 0x020051F8
 	strh r2, [r0, #0x28]
 	str r1, [r0, #4]
 	bx lr
-	arm_func_end sub_020051F8
+	arm_func_end _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
 
 	arm_func_start sub_02005220
 sub_02005220: ; 0x02005220

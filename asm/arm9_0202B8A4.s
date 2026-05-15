@@ -17816,7 +17816,7 @@ _02039858:
 	bl _Znwm
 	cmp r0, #0
 	beq _02039880
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _02039880:
 	ldr r1, [sp]
 	str r0, [r1, #0x24]
@@ -18249,7 +18249,7 @@ _02039E60:
 	bl _Znwm
 	cmp r0, #0
 	beq _02039E8C
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _02039E8C:
 	str r0, [sl, #0x664]
 	mov r1, #1
@@ -19520,7 +19520,7 @@ _0203AFF8:
 	bl _Znwm
 	cmp r0, #0
 	beq _0203B01C
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _0203B01C:
 	str r0, [r4, #0x24]
 	mov r1, #1
@@ -28055,7 +28055,7 @@ _02042290:
 	bl _Znwm
 	cmp r0, #0
 	beq _020422A8
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _020422A8:
 	str r0, [r5, #4]
 	ldr r3, [r5, #0x10]

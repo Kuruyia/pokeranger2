@@ -34,9 +34,9 @@
 .public _ZN14CPrimitiveQUAD8RenderDLEP21CPrimitive_Render_argP8GXDLInfo
 .public _ZN16CPrimitiveSPHEREC1Ev
 .public _ZN16CPrimitiveSPHERED1Ev
-.public sub_02005150
+.public _ZN15CSoftwareSpriteC1Ev
 .public sub_020051C8
-.public sub_020051F8
+.public _ZN15CSoftwareSprite12sub_020051F8Emmmmmm
 .public sub_02005FDC
 .public sub_02006000
 .public sub_02006100

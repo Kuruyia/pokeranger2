@@ -1244,7 +1244,11 @@ s_15CSoftwareSprite_0208a7d4: ; 0x0208A7D4
 
 	.global _0208A7E6
 _0208A7E6:
-	.byte 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+	.byte 0x00, 0x00
+
+    .global _ZTV15CSoftwareSprite
+_ZTV15CSoftwareSprite: ; 0x0208A7E8
+    .byte 0x00, 0x00, 0x00, 0x00
     .word PTR_ptr_FUN_020835bc_0208a798
 
 	.global ptr_FUN_020051c8_0208a7f0

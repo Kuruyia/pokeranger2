@@ -125,7 +125,7 @@
 .public _ZN14CPrimitiveQUADD2Ev
 .public _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 .public _ZN14CPrimitiveQUAD6RenderEP21CPrimitive_Render_arg
-.public sub_02005150
+.public _ZN15CSoftwareSpriteC1Ev
 .public sub_020051C8
 .public sub_02006000
 .public sub_02007254

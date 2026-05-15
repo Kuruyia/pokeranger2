@@ -321,7 +321,7 @@
 .public _ZN14CPrimitiveLINED1Ev
 .public _ZN14CPrimitiveRECTC1Ev
 .public _ZN14CPrimitiveRECT12SetRectangleElllll
-.public sub_02005150
+.public _ZN15CSoftwareSpriteC1Ev
 .public sub_02005FDC
 .public sub_02006164
 .public sub_02006764

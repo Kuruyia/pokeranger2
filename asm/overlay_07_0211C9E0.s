@@ -304,7 +304,7 @@ ov7_0211CD84: ; 0x0211CD84
 	mov r4, r1
 	bl _ZN14CPrimitiveRECTC1Ev
 	add r0, r5, #0x22c
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r0, r5
 	str r4, [r5, #0x27c]
 	bl ov7_0211CFB4
@@ -948,7 +948,7 @@ ov7_0211D62C: ; 0x0211D62C
 	ldr r0, [r0, #0x490]
 	mov r2, r1
 	bl _ZN17UnkClass_020091E812sub_02009FB0Emm
-	bl sub_02005120
+	bl _ZN15CSoftwareSprite12sub_02005120Ev
 	ldr r0, [r4, #0x27c]
 	mov r1, #0x1e
 	add r0, r0, #0x6c
@@ -1113,7 +1113,7 @@ ov7_0211D7FC: ; 0x0211D7FC
 	orr r0, r0, #0x104
 	orr r0, r0, #0xc00
 	strh r0, [r1, #0xc]
-	bl sub_020050C8
+	bl _ZN15CSoftwareSprite12sub_020050C8Ev
 	ldr r0, [sl, #0x27c]
 	add r0, r0, #0x1000
 	ldr r0, [r0, #0x48c]

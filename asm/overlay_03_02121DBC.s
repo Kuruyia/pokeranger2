@@ -5852,7 +5852,7 @@ ov3_02126ECC: ; 0x02126ECC
 	str r1, [r4, #0x15c]
 	add r0, r4, #0x168
 	str r1, [r4, #0x160]
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 	mov r1, #0
 	str r1, [r4, #0x1b8]
 	str r1, [r4, #0x1bc]
@@ -6053,7 +6053,7 @@ _02127180:
 	.align 2, 0
 _02127230: .word ptr_FUN_overlay_3_02127350_overlay_3_0212b218
 _02127234: .word sub_020051C8
-_02127238: .word sub_02005150
+_02127238: .word _ZN15CSoftwareSpriteC1Ev
 _0212723C: .word sub_020420A8
 _02127240: .word ov3_0212518C
 _02127244: .word ptr_FUN_overlay_3_02129130_overlay_3_0212b458

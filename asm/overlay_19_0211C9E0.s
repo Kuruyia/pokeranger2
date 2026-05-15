@@ -123,7 +123,7 @@ _0211CB04:
 	bl _Znwm
 	cmp r0, #0
 	beq _0211CB78
-	bl sub_02005150
+	bl _ZN15CSoftwareSpriteC1Ev
 _0211CB78:
 	str r0, [r4, #0x68]
 	mov r1, #0xa
