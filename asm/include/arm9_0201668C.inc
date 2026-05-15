@@ -331,7 +331,7 @@
 .public _ZN14CPrimitiveQUADC1Ev
 .public _ZN14CPrimitiveQUADD1Ev
 .public _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
-.public sub_02004CB4
+.public _ZN18CPrimitiveTRIANGLEC1Ev
 .public sub_02007068
 .public sub_020074E8
 .public sub_02007548

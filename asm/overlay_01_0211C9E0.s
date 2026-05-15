@@ -7387,13 +7387,13 @@ ov1_0212306C: ; 0x0212306C
 	add r0, r4, #0x350
 	add r0, r0, #0x3000
 	bl sub_02005150
-	ldr r1, _02123224 ; =sub_02004D00
+	ldr r1, _02123224 ; =_ZN18CPrimitiveTRIANGLED1Ev
 	add r0, r4, #0x39c
 	str r1, [sp]
 	add r0, r0, #0x3000
 	mov r1, #0x60
 	mov r2, #0x50
-	ldr r3, _02123228 ; =sub_02004CB4
+	ldr r3, _02123228 ; =_ZN18CPrimitiveTRIANGLEC1Ev
 	bl __cxa_vec_ctor
 	ldr r1, _02123214 ; =FUN_020039E8
 	add r0, r4, #0xd4
@@ -7474,8 +7474,8 @@ _02123214: .word _ZN14CPrimitiveLINED1Ev
 _02123218: .word _ZN14CPrimitiveLINEC1Ev
 _0212321C: .word _ZN14CPrimitiveQUADD1Ev
 _02123220: .word _ZN14CPrimitiveQUADC1Ev
-_02123224: .word sub_02004D00
-_02123228: .word sub_02004CB4
+_02123224: .word _ZN18CPrimitiveTRIANGLED1Ev
+_02123228: .word _ZN18CPrimitiveTRIANGLEC1Ev
 	arm_func_end ov1_0212306C
 
 	arm_func_start ov1_0212322C
@@ -7496,7 +7496,7 @@ ov1_0212322C: ; 0x0212322C
 	add r0, r0, #0x3000
 	mov r1, #0x60
 	mov r2, #0x50
-	ldr r3, _021232C4 ; =sub_02004D00
+	ldr r3, _021232C4 ; =_ZN18CPrimitiveTRIANGLED1Ev
 	bl __cxa_vec_cleanup
 	add r0, r4, #0x350
 	add r0, r0, #0x3000
@@ -7519,7 +7519,7 @@ ov1_0212322C: ; 0x0212322C
 	ldmia sp!, {r4, pc}
 	.align 2, 0
 _021232C0: .word _ZN14CPrimitiveLINED1Ev
-_021232C4: .word sub_02004D00
+_021232C4: .word _ZN18CPrimitiveTRIANGLED1Ev
 _021232C8: .word _ZN14CPrimitiveQUADD1Ev
 	arm_func_end ov1_0212322C
 

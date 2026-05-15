@@ -5401,7 +5401,7 @@ _0201AD98:
 	bl _Znwm
 	cmp r0, #0
 	beq _0201ADAC
-	bl sub_02004CB4
+	bl _ZN18CPrimitiveTRIANGLEC1Ev
 _0201ADAC:
 	add r1, r4, r6, lsl #2
 	add r6, r6, #1
@@ -5415,7 +5415,7 @@ _0201ADC8:
 	bl _Znwm
 	cmp r0, #0
 	beq _0201ADDC
-	bl sub_02004CB4
+	bl _ZN18CPrimitiveTRIANGLEC1Ev
 _0201ADDC:
 	add r1, r4, r6, lsl #2
 	add r6, r6, #1

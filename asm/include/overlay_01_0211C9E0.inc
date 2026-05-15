@@ -361,8 +361,8 @@
 .public PTR_ptr_FUN_02083578_0208b49c
 .public _ZTVN10__cxxabiv117__class_type_infoE
 .public _ZTVN10__cxxabiv120__si_class_type_infoE
-.public sub_02004CB4
-.public sub_02004D00
+.public _ZN18CPrimitiveTRIANGLEC1Ev
+.public _ZN18CPrimitiveTRIANGLED1Ev
 .public sub_02007770
 .public sub_02007784
 .public sub_02007CC4

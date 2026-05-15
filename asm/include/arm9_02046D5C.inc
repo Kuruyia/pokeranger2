@@ -37,9 +37,9 @@
 .public _ZN16CPrimitiveSPHERED1Ev
 .public _ZN16CPrimitiveSPHERED0Ev
 .public _ZN16CPrimitiveSPHERE6RenderEP21CPrimitive_Render_arg
-.public sub_02004D00
-.public sub_02004D14
-.public sub_02004D30
+.public _ZN18CPrimitiveTRIANGLED1Ev
+.public _ZN18CPrimitiveTRIANGLED0Ev
+.public _ZN18CPrimitiveTRIANGLE6RenderEP21CPrimitive_Render_arg
 .public sub_020051C8
 .public sub_020051DC
 .public sub_02005220
