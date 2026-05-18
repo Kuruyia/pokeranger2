@@ -727,13 +727,7 @@
            10](_ZN11CBinaryFile12sub_02003108EPKc,func) found in global src_file_CBinaryFile.cpp.o
            10](FX_Atan2Idx,func) found in global libfx.a
             11](FX_AtanIdxTable_,object) found in global libfx.a
-           10](sub_020051C8,func) found in global asm_arm9_02005150.s.o
-            11](NNSi_objSizeHTbl,object) found in global libnnsg2d.a
-            11](NNS_G2dGetImagePaletteLocation,func) found in global libnnsg2d.a
-            11](G3_MultMtx33,func) found in global libgx.a
-             12](MI_Copy36B,func) found in global libmi.a
-            11](MTX_RotZ33_,func) found in global libfx.a
-            11](NNS_G2dGetImageLocation,func) found in global libnnsg2d.a
+           10](_ZN15CSoftwareSpriteD1Ev,func) found in global src_primitive_CSoftwareSprite.cpp.o
             11](_ZN10CPrimitiveD2Ev,func) found in global src_primitive_CPrimitive.cpp.o
            10](_ZN15CSoftwareSpriteC1Ev,func) found in global src_primitive_CSoftwareSprite.cpp.o
             11](_ZN10CPrimitiveC2Ev,func) found in global src_primitive_CPrimitive.cpp.o
@@ -742,6 +736,25 @@
                14](_ZTS10CPrimitive,object) found in multidef src_primitive_CPrimitive.cpp.o
               13](_ZN10CPrimitiveD0Ev,func) found in global src_primitive_CPrimitive.cpp.o
               13](_ZN10CPrimitiveD1Ev,func) found in global src_primitive_CPrimitive.cpp.o
+            11](_ZN15CSoftwareSprite18SetTransformParamsElllltl,func) found in global src_primitive_CSoftwareSprite.cpp.o
+            11](_ZTV15CSoftwareSprite,object) found in global src_primitive_CSoftwareSprite.cpp.o
+             12](_ZTI15CSoftwareSprite,object) found in multidef src_primitive_CSoftwareSprite.cpp.o
+              13](_ZTS15CSoftwareSprite,object) found in multidef src_primitive_CSoftwareSprite.cpp.o
+             12](_ZN15CSoftwareSpriteD0Ev,func) found in global src_primitive_CSoftwareSprite.cpp.o
+             12](_ZN15CSoftwareSprite6RenderEP21CPrimitive_Render_arg,func) found in global src_primitive_CSoftwareSprite.cpp.o
+              13](_ZN15CSoftwareSprite12sub_0200527CEP21CPrimitive_Render_arg,func) found in global src_primitive_CSoftwareSprite.cpp.o
+               14](MTX_RotZ33_,func) found in global libfx.a
+               14](G3_MultMtx33,func) found in global libgx.a
+                15](MI_Copy36B,func) found in global libmi.a
+               14](NNS_G2dGetImageLocation,func) found in global libnnsg2d.a
+               14](_ZN15CSoftwareSprite10GetObjPosXEPK9GXOamAttr,func) found in global src_primitive_CSoftwareSprite.cpp.o
+               14](_ZN15CSoftwareSprite10FixObjPosXEs,func) found in global src_primitive_CSoftwareSprite.cpp.o
+               14](_ZN15CSoftwareSprite10GetObjPosYEPK9GXOamAttr,func) found in global src_primitive_CSoftwareSprite.cpp.o
+               14](_ZN15CSoftwareSprite10FixObjPosYEs,func) found in global src_primitive_CSoftwareSprite.cpp.o
+               14](NNS_G2dGetImagePaletteLocation,func) found in global libnnsg2d.a
+               14](NNSi_objSizeWTbl,object) found in global libnnsg2d.a
+              13](_ZN15CSoftwareSprite12sub_020058BCEP21CPrimitive_Render_arg,func) found in global src_primitive_CSoftwareSprite.cpp.o
+               14](_ZN15CSoftwareSprite16ObjSizeToTexSizeEt,func) found in global src_primitive_CSoftwareSprite.cpp.o
            10](_ZN17UnkClass_020091E812sub_0200AFC0Elm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200B12CEv,func) found in global src_UnkClass_020091E8.cpp.o
            10](_ZN17UnkClass_020091E812sub_0200B36CEv,func) found in global src_UnkClass_020091E8.cpp.o
@@ -848,6 +861,7 @@
            10](_ZN14CPrimitiveRECT12sub_02003C00EP32UnkClass_CPrimitiveRECT_02003C00PS_,func) found in global src_primitive_CPrimitiveRECT.cpp.o
            10](MTX_Identity33_,func) found in global libfx.a
            10](sub_02046040,func) found in global asm_arm9_02044464.s.o
+           10](sub_02006164,func) found in global asm_arm9_02006000.s.o
            10](NNS_GfdDumpLnkPlttVramManager,func) found in global libnnsgfd.a
             11](NNSi_GfdDumpLnkVramManFreeListInfo,func) found in global libnnsgfd.a
              12](NNSi_GfdDumpLnkVramManFreeListInfoEx,func) found in global libnnsgfd.a
@@ -1016,6 +1030,7 @@
             11](_ZN17UnkClass_0200BBC812sub_0200BC64EP10CGame_0024P17UnkClass_02001C04P11CTouchPanelPvmmm,func) found in global src_UnkClass_0200BBC8.cpp.o
              12](_ZN17UnkClass_0200BBC812sub_0200BCF4Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
            10](_ZN15CSoftwareSprite12sub_020050C8Ev,func) found in global src_primitive_CSoftwareSprite.cpp.o
+            11](DAT_0208A7A4,object) found in local src_primitive_CSoftwareSprite.cpp.o
            10](GX_DispOn,func) found in global libgx.a
            10](GX_SetBankForBG,func) found in global libgx.a
            10](GX_SetBankForOBJ,func) found in global libgx.a
@@ -1153,6 +1168,7 @@
          8](NNS_G2dSetImageLocation,func) found in global libnnsg2d.a
         7](NNS_G2dInitImageProxy,func) found in global libnnsg2d.a
        6](CRYPTO_RC4FastEncrypt,func) found in global asm_arm9_02046D5C.s.o
+       6](_ZN15CSoftwareSprite18GetCellNumOAMAttrsEt,func) found in global src_primitive_CSoftwareSprite.cpp.o
        6](NNS_GfdGetVramTransferTaskTotalSize,func) found in global libnnsgfd.a
        6](_ZN14CPrimitiveLINED1Ev,func) found in global src_primitive_CPrimitiveLINE.cpp.o
        6](_ZN14CPrimitiveLINEC1Ev,func) found in global src_primitive_CPrimitiveLINE.cpp.o
@@ -3077,34 +3093,43 @@
   02005150 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
   02005150 00000078 .text   CSoftwareSprite::CSoftwareSprite()	(src_primitive_CSoftwareSprite.cpp.o)
   020051C4 00000000 .text   $d	(src_primitive_CSoftwareSprite.cpp.o)
-  020051C8 00000000 .text   $a	(asm_arm9_02005150.s.o)
-  020051C8 00000014 .text   sub_020051C8	(asm_arm9_02005150.s.o)
-  020051C8 00001998 .text   .text	(asm_arm9_02005150.s.o)
-  020051DC 0000001C .text   sub_020051DC	(asm_arm9_02005150.s.o)
-  020051F8 00000028 .text   CSoftwareSprite::sub_020051F8(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)	(asm_arm9_02005150.s.o)
-  02005220 00000038 .text   sub_02005220	(asm_arm9_02005150.s.o)
-  0200527C 00000030 .text   sub_0200527C	(asm_arm9_02005150.s.o)
-  02005898 00000000 .text   $d	(asm_arm9_02005150.s.o)
-  020058BC 00000000 .text   $a	(asm_arm9_02005150.s.o)
-  020058BC 000000CC .text   sub_020058BC	(asm_arm9_02005150.s.o)
-  02005EE0 00000000 .text   $d	(asm_arm9_02005150.s.o)
-  02005F04 00000020 .text   sub_02005F04	(asm_arm9_02005150.s.o)
-  02005F04 00000000 .text   $a	(asm_arm9_02005150.s.o)
-  02005F20 00000000 .text   $d	(asm_arm9_02005150.s.o)
-  02005F24 00000000 .text   $a	(asm_arm9_02005150.s.o)
-  02005F24 0000000C .text   sub_02005F24	(asm_arm9_02005150.s.o)
-  02005F30 00000018 .text   sub_02005F30	(asm_arm9_02005150.s.o)
-  02005F48 00000018 .text   sub_02005F48	(asm_arm9_02005150.s.o)
-  02005F60 00000024 .text   sub_02005F60	(asm_arm9_02005150.s.o)
-  02005FDC 00000024 .text   sub_02005FDC	(asm_arm9_02005150.s.o)
-  02006000 0000007C .text   sub_02006000	(asm_arm9_02005150.s.o)
-  02006100 00000064 .text   sub_02006100	(asm_arm9_02005150.s.o)
-  02006164 000000B4 .text   sub_02006164	(asm_arm9_02005150.s.o)
-  02006238 000000C4 .text   sub_02006238	(asm_arm9_02005150.s.o)
-  02006350 000000D8 .text   sub_02006350	(asm_arm9_02005150.s.o)
-  02006610 00000044 .text   sub_02006610	(asm_arm9_02005150.s.o)
-  02006764 0000008C .text   sub_02006764	(asm_arm9_02005150.s.o)
-  02006AE0 00000080 .text   sub_02006AE0	(asm_arm9_02005150.s.o)
+  020051C8 00000014 .text   CSoftwareSprite::~CSoftwareSprite()	(src_primitive_CSoftwareSprite.cpp.o)
+  020051C8 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  020051DC 0000001C .text   CSoftwareSprite::~CSoftwareSprite[virtual]()	(src_primitive_CSoftwareSprite.cpp.o)
+  020051DC 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  020051F8 00000028 .text   CSoftwareSprite::SetTransformParams(long, long, long, long, unsigned short, long)	(src_primitive_CSoftwareSprite.cpp.o)
+  020051F8 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  02005220 0000005C .text   CSoftwareSprite::Render(CPrimitive_Render_arg*)	(src_primitive_CSoftwareSprite.cpp.o)
+  02005220 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  0200527C 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  0200527C 00000640 .text   CSoftwareSprite::sub_0200527C(CPrimitive_Render_arg*)	(src_primitive_CSoftwareSprite.cpp.o)
+  02005898 00000000 .text   $d	(src_primitive_CSoftwareSprite.cpp.o)
+  020058BC 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  020058BC 00000648 .text   CSoftwareSprite::sub_020058BC(CPrimitive_Render_arg*)	(src_primitive_CSoftwareSprite.cpp.o)
+  02005EE0 00000000 .text   $d	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F04 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F04 00000020 .text   CSoftwareSprite::GetObjPosX(const GXOamAttr*)	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F20 00000000 .text   $d	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F24 0000000C .text   CSoftwareSprite::GetObjPosY(const GXOamAttr*)	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F24 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F30 00000018 .text   CSoftwareSprite::FixObjPosX(short)	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F30 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F48 00000018 .text   CSoftwareSprite::FixObjPosY(short)	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F48 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F60 0000007C .text   CSoftwareSprite::ObjSizeToTexSize(unsigned short)	(src_primitive_CSoftwareSprite.cpp.o)
+  02005F60 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  02005FDC 00000024 .text   CSoftwareSprite::GetCellNumOAMAttrs(unsigned short)	(src_primitive_CSoftwareSprite.cpp.o)
+  02005FDC 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
+  02006000 00000B60 .text   .text	(asm_arm9_02006000.s.o)
+  02006000 0000007C .text   sub_02006000	(asm_arm9_02006000.s.o)
+  02006000 00000000 .text   $a	(asm_arm9_02006000.s.o)
+  02006100 00000064 .text   sub_02006100	(asm_arm9_02006000.s.o)
+  02006164 000000B4 .text   sub_02006164	(asm_arm9_02006000.s.o)
+  02006238 000000C4 .text   sub_02006238	(asm_arm9_02006000.s.o)
+  02006350 000000D8 .text   sub_02006350	(asm_arm9_02006000.s.o)
+  02006610 00000044 .text   sub_02006610	(asm_arm9_02006000.s.o)
+  02006764 0000008C .text   sub_02006764	(asm_arm9_02006000.s.o)
+  02006AE0 00000080 .text   sub_02006AE0	(asm_arm9_02006000.s.o)
   02006B60 000000A4 .text   RectanglesOverlap(Rectangle, Rectangle)	(src_sub_02006B60.cpp.o)
   02006B60 00000000 .text   $a	(src_sub_02006B60.cpp.o)
   02006C04 00000000 .text   $a	(asm_arm9_02006C04.s.o)
@@ -11719,17 +11744,14 @@
   0208A760 0000000C .data   typeinfo structure for CPrimitiveTRIANGLE	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
   0208A76C 00000014 .data   virtual table for CPrimitiveTRIANGLE	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
   0208A780 00000015 .data   typeinfo name for CPrimitiveTRIANGLE	(src_primitive_CPrimitiveTRIANGLE.cpp.o)
-  0208A798 00000000 .data   PTR_ptr_FUN_020835bc_0208a798	(asm_arm9_02046D5C.s.o)
-  0208A798 00003DA0 .data   .data	(asm_arm9_02046D5C.s.o)
-  0208A7A4 00000000 .data   DAT_0208a7a4	(asm_arm9_02046D5C.s.o)
-  0208A7B4 00000000 .data   DAT_0208a7b4	(asm_arm9_02046D5C.s.o)
-  0208A7D4 00000000 .data   s_15CSoftwareSprite_0208a7d4	(asm_arm9_02046D5C.s.o)
-  0208A7E6 00000000 .data   _0208A7E6	(asm_arm9_02046D5C.s.o)
-  0208A7E8 00000000 .data   virtual table for CSoftwareSprite	(asm_arm9_02046D5C.s.o)
-  0208A7F0 00000000 .data   ptr_FUN_020051c8_0208a7f0	(asm_arm9_02046D5C.s.o)
-  0208A7F4 00000000 .data   ptr_FUN_020051dc_0208a7f4	(asm_arm9_02046D5C.s.o)
-  0208A7F8 00000000 .data   ptr_FUN_02005220_0208a7f8	(asm_arm9_02046D5C.s.o)
+  0208A798 0000000C .data   typeinfo structure for CSoftwareSprite	(src_primitive_CSoftwareSprite.cpp.o)
+  0208A7A4 00000000 .data   .data	(src_primitive_CSoftwareSprite.cpp.o)
+  0208A7A4 00000010 .data   DAT_0208A7A4	(src_primitive_CSoftwareSprite.cpp.o)
+  0208A7B4 00000020 .data   DAT_0208A7B4	(src_primitive_CSoftwareSprite.cpp.o)
+  0208A7D4 00000012 .data   typeinfo name for CSoftwareSprite	(src_primitive_CSoftwareSprite.cpp.o)
+  0208A7E8 00000014 .data   virtual table for CSoftwareSprite	(src_primitive_CSoftwareSprite.cpp.o)
   0208A7FC 00000000 .data   s_6CScene_0208a7fc	(asm_arm9_02046D5C.s.o)
+  0208A7FC 00003D3C .data   .data	(asm_arm9_02046D5C.s.o)
   0208A804 00000000 .data   PTR_ptr_FUN_02083578_0208a804	(asm_arm9_02046D5C.s.o)
   0208A814 00000000 .data   PTR_LAB_0208a814	(asm_arm9_02046D5C.s.o)
   0208A818 00000000 .data   ptr_FUN_02007cac_0208a818	(asm_arm9_02046D5C.s.o)
