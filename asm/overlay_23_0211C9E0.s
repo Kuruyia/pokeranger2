@@ -280,7 +280,7 @@ _0211CD40:
 	add r0, sp, #0x1c
 	ldmia ip, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	addeq sp, sp, #0xc
 	ldmeqia sp!, {r3, r4, lr}
@@ -378,7 +378,7 @@ _0211CEC0:
 	add r0, sp, #0x24
 	ldmia ip, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _0211CF1C
 	ldr r0, [r6, #0x14]
@@ -473,7 +473,7 @@ _0211D020:
 	add r0, sp, #0x24
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	addeq sp, sp, #0xc
 	ldmeqia sp!, {r3, r4, r5, r6, lr}

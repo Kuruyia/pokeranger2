@@ -1927,7 +1927,7 @@ _0211E404:
 	stmia r5, {r0, r1, r2, r3}
 	ldmia r5, {r2, r3}
 	ldmia r4, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	b _0211E434
 _0211E430:
 	mov r0, #0

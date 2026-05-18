@@ -10,7 +10,7 @@
 .public _ZN9CNSCRFileC1EPKcmmm
 .public _ZN11CBGNCGRFileC1EPKcmmm
 .public _ZN14CPrimitiveRECTC1Ev
-.public sub_02006000
+.public _Z12sub_020060007Point2DS_18UnkStruct_02006000
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public _ZN17UnkClass_020091E812sub_020092D4Ev

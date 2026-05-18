@@ -2584,7 +2584,7 @@ _0211EDBC:
 	stmia r8, {r0, r1, r2, r3}
 	ldmia r8, {r2, r3}
 	ldmia sl, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _0211EE60
 	ldr r0, [sb, #0x4c]
@@ -2611,7 +2611,7 @@ _0211EE60:
 	stmia r8, {r0, r1, r2, r3}
 	ldmia r8, {r2, r3}
 	ldmia sl, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _0211EEC8
 	ldr r0, [sb, #0x50]
@@ -2638,7 +2638,7 @@ _0211EEC8:
 	stmia r8, {r0, r1, r2, r3}
 	ldmia r8, {r2, r3}
 	ldmia sl, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _0211EF44
 	ldr r0, [sb, #0xd0]
@@ -2663,7 +2663,7 @@ _0211EF44:
 	stmia r8, {r0, r1, r2, r3}
 	ldmia r8, {r2, r3}
 	ldmia sl, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _0211F018
 	ldr r0, [sb, #0xd0]
@@ -7520,7 +7520,7 @@ _02123418:
 	add r0, sp, #0xc
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	b _0212344C
 _02123448:
 	mov r0, #0
@@ -7656,7 +7656,7 @@ _021235FC:
 	add r0, sp, #0xc
 	ldmia r5, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	b _02123630
 _0212362C:
 	mov r0, #0
@@ -7775,7 +7775,7 @@ _021237AC:
 	stmia r4, {r0, r1, r2, r3}
 	ldmia r4, {r2, r3}
 	ldmia fp, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	b _021237DC
 _021237D8:
 	mov r0, #0
@@ -7855,7 +7855,7 @@ _021238B4:
 	add r0, sp, #0xc
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	b _021238F4
 _021238F0:
 	mov r0, #0
@@ -7956,7 +7956,7 @@ _02123A30:
 	add r0, sp, #0xc
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	b _02123A64
 _02123A60:
 	mov r0, #0
@@ -38017,7 +38017,7 @@ ov0_0213D91C: ; 0x0213D91C
 	stmia ip, {r0, r1, r2, r3}
 	ldmia ip, {r2, r3}
 	ldmia r5, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _0213D9B0
 	ldr r0, [r6, #4]
@@ -38112,7 +38112,7 @@ ov0_0213DA50: ; 0x0213DA50
 	stmia ip, {r0, r1, r2, r3}
 	ldmia ip, {r2, r3}
 	ldmia lr, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _0213DAA8
 	ldr r0, [r5, #4]
@@ -41101,7 +41101,7 @@ _021402DC:
 	str ip, [lr]
 	ldr r3, [sl]
 	ldmia r0, {r0, r1, r2}
-	bl sub_02006238
+	bl _Z12sub_0200623818UnkStruct_0200616418UnkStruct_02006238
 	cmp r0, #0
 	beq _02140338
 	ldr r1, [sp, #0x22c]
@@ -41365,7 +41365,7 @@ _021406AC:
 	str sl, [ip]
 	ldr r3, [r4]
 	ldmia r0, {r0, r1, r2}
-	bl sub_02006238
+	bl _Z12sub_0200623818UnkStruct_0200616418UnkStruct_02006238
 	cmp r0, #0
 	beq _02140708
 	ldr r1, [sp, #0x220]
@@ -41506,7 +41506,7 @@ _0214088C:
 	str sl, [sp, #0x13c]
 	ldmia r7, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _021408F8
 	mov r0, sb
@@ -53828,7 +53828,7 @@ _0214A9BC:
 	add r0, sp, #0x24
 	ldmia ip, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	addne sp, sp, #0x3c
 	movne r0, #1
@@ -53941,7 +53941,7 @@ _0214AB48:
 	add r0, sp, #0x24
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	addne sp, sp, #0x3c
 	movne r0, #1
@@ -54526,7 +54526,7 @@ _0214B2A0:
 	add r0, sp, #0x24
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	addne sp, sp, #0x3c
 	movne r0, #1
@@ -73423,7 +73423,7 @@ _0215A88C:
 	add r0, sp, #0x84
 	ldr r3, [r3]
 	ldmia r0, {r0, r1, r2}
-	bl sub_02006164
+	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
 	cmp r0, #0
 	beq _0215A9F0
 	mov r0, r5

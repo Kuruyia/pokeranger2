@@ -25409,7 +25409,7 @@ _02040004:
 	add r0, sp, #0xf8
 	ldr r3, [r8]
 	ldmia r0, {r0, r1, r2}
-	bl sub_02006164
+	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
 	cmp r0, #0
 	beq _02040128
 	ldr r3, [sp, #0x104]
@@ -25628,7 +25628,7 @@ _02040324:
 	stmia r5, {r0, r1, r2}
 	ldr r3, [r5]
 	ldmia r7, {r0, r1, r2}
-	bl sub_02006164
+	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
 	cmp r0, #0
 	addne sp, sp, #0x34
 	movne r0, #1

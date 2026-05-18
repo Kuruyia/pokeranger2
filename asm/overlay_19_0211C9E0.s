@@ -1178,7 +1178,7 @@ ov19_0211D9B0: ; 0x0211D9B0
 	add r0, sp, #0xc
 	ldmia ip, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _0211DA68
 	ldr r0, [r4, #0x50]
@@ -1209,7 +1209,7 @@ _0211DA68:
 	add r0, sp, #0xc
 	ldmia ip, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	addeq sp, sp, #0x14
 	ldmeqia sp!, {r3, r4, pc}

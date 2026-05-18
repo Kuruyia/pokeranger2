@@ -20,3 +20,4 @@
 .public ptr_FUN_020051c8_0208a7f0
 .public sub_02007254
 .public sub_020072C4
+.public _Z12sub_0200616418UnkStruct_02006164S_P7Point2D

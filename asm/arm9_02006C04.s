@@ -18,7 +18,7 @@ sub_02006C04: ; 0x02006C04
 	ldr r5, [sp, #0xa8]
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _02006C70
 	cmp r5, #0

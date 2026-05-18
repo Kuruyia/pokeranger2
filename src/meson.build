@@ -20,6 +20,7 @@ pokeranger2_cxx = files(
     'CTPEmulator.cpp',
     'heap.cpp',
     'main.cpp',
+    'sub_02006000.cpp',
     'sub_02006B60.cpp',
     'UnkClass_0200BBC0.cpp',
     'UnkClass_0200BBC8.cpp',

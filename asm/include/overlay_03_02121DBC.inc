@@ -127,7 +127,7 @@
 .public _ZN14CPrimitiveQUAD6RenderEP21CPrimitive_Render_arg
 .public _ZN15CSoftwareSpriteC1Ev
 .public _ZN15CSoftwareSpriteD1Ev
-.public sub_02006000
+.public _Z12sub_020060007Point2DS_18UnkStruct_02006000
 .public sub_02007254
 .public sub_02007CC0
 .public sub_02007CC4

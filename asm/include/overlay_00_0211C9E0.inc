@@ -29,9 +29,9 @@
 .public _ZN15CSoftwareSprite12sub_02005120Ev
 .public _ZN15CSoftwareSpriteC1Ev
 .public _ZN15CSoftwareSpriteD1Ev
-.public sub_02006000
-.public sub_02006164
-.public sub_02006238
+.public _Z12sub_020060007Point2DS_18UnkStruct_02006000
+.public _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+.public _Z12sub_0200623818UnkStruct_0200616418UnkStruct_02006238
 .public sub_02006764
 .public _Z17RectanglesOverlap9RectangleS_
 .public sub_02007068

@@ -13,7 +13,7 @@
 .public _ZN17UnkClass_0200371812sub_0200381CEv
 .public _ZN14CPrimitiveRECTC1Ev
 .public _ZN15CSoftwareSpriteC1Ev
-.public sub_02006000
+.public _Z12sub_020060007Point2DS_18UnkStruct_02006000
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02007D68

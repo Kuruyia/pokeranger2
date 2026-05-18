@@ -40,7 +40,7 @@
 .public _ll_div
 .public _s32_div_f
 .public s_game
-.public sub_02006000
+.public _Z12sub_020060007Point2DS_18UnkStruct_02006000
 .public sub_02006350
 .public sub_02006764
 .public sub_0201001C

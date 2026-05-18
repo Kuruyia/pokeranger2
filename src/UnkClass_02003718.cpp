@@ -1,5 +1,7 @@
 #include "UnkClass_02003718.hpp"
 
+#include "fx_utils.hpp"
+
 extern "C" {
 extern Rectangle DAT_020842f8;
 }
@@ -61,8 +63,8 @@ BOOL UnkClass_02003718::sub_020038A8(Rectangle *arg0, fx32 arg1)
     v0.y = -unk_20;
 
     if (arg1 != FX32_CONST(1)) {
-        v0.w = (v0.w * (fx64)arg1) >> FX32_SHIFT;
-        v0.h = (v0.h * (fx64)arg1) >> FX32_SHIFT;
+        v0.w = FX32_MUL(v0.w, arg1);
+        v0.h = FX32_MUL(v0.h, arg1);
     }
 
     return RectanglesOverlap(v0, *arg0);

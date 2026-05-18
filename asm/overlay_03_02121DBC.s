@@ -681,7 +681,7 @@ _021226F8:
 	add r0, sp, #0x14
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _02122784
 	ldrb r1, [sl, #4]
@@ -729,7 +729,7 @@ _02122784:
 	add r0, sp, #0x14
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _02122814
 	mov r0, sl
@@ -755,7 +755,7 @@ _02122814:
 	add r0, sp, #0x14
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _02122860
 	mov r0, sl
@@ -775,7 +775,7 @@ _02122860:
 	add r0, sp, #0x14
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _021228AC
 	mov r0, sl
@@ -795,7 +795,7 @@ _021228AC:
 	add r0, sp, #0x14
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _021228F8
 	mov r0, sl
@@ -815,7 +815,7 @@ _021228F8:
 	add r0, sp, #0x14
 	ldmia r4, {r2, r3}
 	ldmia r0, {r0, r1}
-	bl sub_02006000
+	bl _Z12sub_020060007Point2DS_18UnkStruct_02006000
 	cmp r0, #0
 	beq _0212295C
 	mov r0, sl

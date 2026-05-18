@@ -38,9 +38,9 @@
 .public _ZN15CSoftwareSpriteD1Ev
 .public _ZN15CSoftwareSprite18SetTransformParamsElllltl
 .public _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
-.public sub_02006000
-.public sub_02006100
-.public sub_02006164
+.public _Z12sub_020060007Point2DS_18UnkStruct_02006000
+.public _Z12sub_020061007Point2DS_18UnkStruct_02006100
+.public _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
 .public sub_02006350
 .public sub_02006610
 .public sub_02006764

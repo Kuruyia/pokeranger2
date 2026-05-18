@@ -99,8 +99,8 @@
 .public strcat
 .public strcpy
 .public _ZN16CPrimitiveSPHEREC1Ev
-.public sub_02006000
-.public sub_02006100
+.public _Z12sub_020060007Point2DS_18UnkStruct_02006000
+.public _Z12sub_020061007Point2DS_18UnkStruct_02006100
 .public sub_02007CC0
 .public sub_02007D68
 .public sub_02007D98

@@ -3,12 +3,7 @@
 
 #include <nitro.h>
 
-struct Rectangle {
-    fx32 x;
-    fx32 y;
-    fx32 w;
-    fx32 h;
-};
+#include "sub_02006000.hpp"
 
 BOOL RectanglesOverlap(Rectangle rect1, Rectangle rect2);
 

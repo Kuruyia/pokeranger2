@@ -323,7 +323,7 @@
 .public _ZN14CPrimitiveRECT12SetRectangleElllll
 .public _ZN15CSoftwareSpriteC1Ev
 .public _ZN15CSoftwareSprite18GetCellNumOAMAttrsEt
-.public sub_02006164
+.public _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
 .public sub_02006764
 .public sub_02006C04
 .public sub_02006E30
