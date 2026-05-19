@@ -5469,7 +5469,7 @@ ov3_02126A20: ; 0x02126A20
 	ldr r1, [r4, #0x60]
 	ldr r0, [r4, #0x5c]
 	add r1, r1, #0x60000
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	sub r5, r0, #0x32000
 	mov r0, #0x41
 	umull r2, r1, r5, r0
@@ -5695,7 +5695,7 @@ ov3_02126D60: ; 0x02126D60
 	ldr r1, [r4, #0x60]
 	ldr r0, [r4, #0x5c]
 	add r1, r1, #0x60000
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	sub r1, r0, #0x32000
 	mov r0, #0x18
 	umull r3, r2, r1, r0

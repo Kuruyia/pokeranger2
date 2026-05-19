@@ -41,11 +41,11 @@
 .public _Z12sub_020060007Point2DS_18UnkStruct_02006000
 .public _Z12sub_020061007Point2DS_18UnkStruct_02006100
 .public _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
-.public sub_02006350
-.public sub_02006610
+.public _Z12sub_0200635011PointPair2DS_P7Point2Di
+.public _Z12sub_0200661011PointPair2DS_P7Point2D
 .public sub_02006764
 .public sub_02007068
-.public sub_02007254
+.public _Z12sub_02007254ll
 .public sub_020074E8
 .public sub_02007548
 .public sub_020076B0

@@ -3,10 +3,8 @@
 #include <nitro.h>
 
 #include "fx_utils.hpp"
-
-extern "C" {
-fx32 sub_02007254(fx32, fx32);
-}
+#include "sub_02006B60.hpp"
+#include "sub_02007254.hpp"
 
 BOOL sub_02006000(Point2D arg0, Point2D arg1, UnkStruct_02006000 arg2)
 {
@@ -98,4 +96,77 @@ BOOL sub_02006238(UnkStruct_02006164 arg0, UnkStruct_02006238 arg1)
     }
 
     return FALSE;
+}
+
+BOOL sub_02006350(PointPair2D arg0, PointPair2D arg1, Point2D *arg2, BOOL arg3)
+{
+    if (!arg3) {
+        s8 v0 = sub_02006AE0(arg0, arg1.p1) * sub_02006AE0(arg0, arg1.p2);
+
+        if (v0 >= 0) {
+            return FALSE;
+        }
+
+        s8 v1 = sub_02006AE0(arg1, arg0.p1) * sub_02006AE0(arg1, arg0.p2);
+
+        if (v1 >= 0) {
+            return FALSE;
+        }
+    } else {
+        s8 v2 = sub_02006AE0(arg0, arg1.p1) * sub_02006AE0(arg0, arg1.p2);
+
+        if (v2 > 0) {
+            return FALSE;
+        }
+
+        s8 v3 = sub_02006AE0(arg1, arg0.p1) * sub_02006AE0(arg1, arg0.p2);
+
+        if (v3 > 0) {
+            return FALSE;
+        }
+    }
+
+    if (arg2 != NULL) {
+        fx32 v4 = arg0.p1.x - arg0.p2.x;
+        fx32 v5 = arg0.p2.y - arg0.p1.y;
+        fx32 v8 = -(FX32_MUL(v5, arg0.p1.x) + FX32_MUL(v4, arg0.p1.y));
+
+        fx32 v6 = arg1.p1.x - arg1.p2.x;
+        fx32 v7 = arg1.p2.y - arg1.p1.y;
+        fx32 v10 = -(FX32_MUL(v7, arg1.p1.x) + FX32_MUL(v6, arg1.p1.y));
+
+        fx32 v11 = FX32_MUL(v8, v6) - FX32_MUL(v10, v4);
+        fx32 v12 = FX32_MUL(v5, v10) - FX32_MUL(v7, v8);
+
+        fx32 v9 = FX32_MUL(v4, v7) - FX32_MUL(v6, v5);
+        arg2->x = FX32_DIV(v11, v9);
+        arg2->y = FX32_DIV(v12, v9);
+    }
+
+    return TRUE;
+}
+
+BOOL sub_02006610(PointPair2D arg0, PointPair2D arg1, Point2D *arg2)
+{
+    if (arg0.p1.x >= arg0.p2.x) {
+        if ((arg0.p1.x < arg1.p1.x && arg0.p1.x < arg1.p2.x) || (arg0.p2.x > arg1.p1.x && arg0.p2.x > arg1.p2.x)) {
+            return FALSE;
+        }
+    } else {
+        if ((arg0.p2.x < arg1.p1.x && arg0.p2.x < arg1.p2.x) || (arg0.p1.x > arg1.p1.x && arg0.p1.x > arg1.p2.x)) {
+            return FALSE;
+        }
+    }
+
+    if (arg0.p1.y >= arg0.p2.y) {
+        if ((arg0.p1.y < arg1.p1.y && arg0.p1.y < arg1.p2.y) || (arg0.p2.y > arg1.p1.y && arg0.p2.y > arg1.p2.y)) {
+            return FALSE;
+        }
+    } else {
+        if ((arg0.p2.y < arg1.p1.y && arg0.p2.y < arg1.p2.y) || (arg0.p1.y > arg1.p1.y && arg0.p1.y > arg1.p2.y)) {
+            return FALSE;
+        }
+    }
+
+    return sub_02006350(arg0, arg1, arg2, FALSE);
 }

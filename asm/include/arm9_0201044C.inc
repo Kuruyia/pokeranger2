@@ -67,7 +67,7 @@
 .public sub_02007068
 .public sub_020070A4
 .public sub_02007134
-.public sub_02007254
+.public _Z12sub_02007254ll
 .public sub_020074E8
 .public sub_02007524
 .public sub_02007548

@@ -8,6 +8,11 @@ struct Point2D {
     fx32 y;
 };
 
+struct PointPair2D {
+    Point2D p1;
+    Point2D p2;
+};
+
 struct Rectangle {
     fx32 x;
     fx32 y;
@@ -47,6 +52,8 @@ BOOL sub_02006000(Point2D arg0, Point2D arg1, UnkStruct_02006000 arg2);
 BOOL sub_02006100(Point2D arg0, Point2D arg1, UnkStruct_02006100 arg2);
 BOOL sub_02006164(UnkStruct_02006164 arg0, UnkStruct_02006164 arg1, Point2D *arg2);
 BOOL sub_02006238(UnkStruct_02006164 arg0, UnkStruct_02006238 arg1);
+BOOL sub_02006350(PointPair2D arg0, PointPair2D arg1, Point2D *arg2, BOOL arg3);
+BOOL sub_02006610(PointPair2D arg0, PointPair2D arg1, Point2D *arg2);
 // TODO: End
 
 #endif // POKERANGER2_SUB_02006000_HPP

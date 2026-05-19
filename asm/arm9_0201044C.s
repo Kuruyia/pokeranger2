@@ -2087,7 +2087,7 @@ sub_02011C20: ; 0x02011C20
 	mov r6, r3
 	sub r0, r2, r0
 	sub r1, r4, r1
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	mov r1, r6
 	bl _s32_div_f
 	str r0, [r5, #0xc]
@@ -2638,7 +2638,7 @@ sub_02012340: ; 0x02012340
 	str r1, [sp, #4]
 	str r0, [sp, #0x20]
 	str r1, [sp, #0x24]
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	str r0, [r4, #8]
 	add sp, sp, #0x28
 	ldmia sp!, {r4, pc}
@@ -3560,7 +3560,7 @@ _02012EEC:
 	ldr r1, [sp, #4]
 	sub r0, r5, r0
 	sub r1, r4, r1
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	add r6, r6, #1
 	add fp, fp, r0
 	str r5, [sp, #8]

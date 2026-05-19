@@ -24957,7 +24957,7 @@ _0203F91C:
 	ldr r2, [sp, #0xdc]
 	sub r0, r3, r0
 	sub r1, r2, r1
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	cmp r6, #0
 	str r0, [r8, #4]
 	streq r8, [sp, #0x3c]
@@ -25051,7 +25051,7 @@ _0203FA74:
 	ldr r2, [sp, #0xdc]
 	sub r0, r3, r0
 	sub r1, r2, r1
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	cmp r6, #0
 	str r0, [r8, #4]
 	streq r8, [sp, #0x3c]
@@ -25096,7 +25096,7 @@ _0203FB68:
 	rsbmi r0, r0, #0
 	subs r1, r2, r1
 	rsbmi r1, r1, #0
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	mov r6, #0
 	str r0, [sp, #0x34]
 	mov r0, r6
@@ -25422,7 +25422,7 @@ _02040004:
 	str r3, [sp, #0x48]
 	str r2, [sp, #0x4c]
 	str r1, [sp, #0xd4]
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	mov r5, r0
 	ldr r4, [sp, #0x10c]
 	ldr r1, [sp, #0xd0]

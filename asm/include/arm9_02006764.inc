@@ -18,6 +18,8 @@
 .public _ZdlPv
 .public _ll_div
 .public ptr_FUN_020051c8_0208a7f0
-.public sub_02007254
-.public sub_020072C4
+.public _Z12sub_02007254ll
+.public _Z12sub_020072C4P7Point2DS0_
 .public _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+.public _Z12sub_02006AE011PointPair2D7Point2D
+.public _Z12sub_0200635011PointPair2DS_P7Point2Di

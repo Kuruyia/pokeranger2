@@ -128,7 +128,7 @@
 .public _ZN15CSoftwareSpriteC1Ev
 .public _ZN15CSoftwareSpriteD1Ev
 .public _Z12sub_020060007Point2DS_18UnkStruct_02006000
-.public sub_02007254
+.public _Z12sub_02007254ll
 .public sub_02007CC0
 .public sub_02007CC4
 .public sub_02007CE0

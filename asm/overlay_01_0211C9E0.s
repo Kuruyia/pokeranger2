@@ -4675,7 +4675,7 @@ _02120AE4:
 	sub r0, r3, r5
 	str r5, [sp, #0x20]
 	str r4, [sp, #0x24]
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	cmp r0, #0
 	rsblt r0, r0, #0
 	cmp r0, #0x8000
@@ -8701,7 +8701,7 @@ ov1_021243CC: ; 0x021243CC
 	mov r0, r4
 	mov r1, sb
 	mov r6, #0
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	mov r8, r0
 	mov r0, r4, asr #0x1f
 	mov r1, r0, lsl #0xc
@@ -8835,7 +8835,7 @@ _021245C0:
 	str r6, [sp, #0x10]
 	add r0, ip, #0x1c
 	ldmia r0, {r0, r1, r2, r3}
-	bl sub_02006610
+	bl _Z12sub_0200661011PointPair2DS_P7Point2D
 	cmp r0, #0
 	beq _02124620
 	add r0, sl, #0x5400
@@ -8912,7 +8912,7 @@ _021246E8:
 	str r5, [sp, #0x10]
 	ldmia fp, {r0, r1, r2, r3}
 	str r5, [sp, #0x14]
-	bl sub_02006350
+	bl _Z12sub_0200635011PointPair2DS_P7Point2Di
 	cmp r0, #0
 	beq _02124734
 	add r0, r7, #1
@@ -8955,7 +8955,7 @@ _02124788:
 	str r5, [sp, #0x10]
 	ldmia fp, {r0, r1, r2, r3}
 	str r5, [sp, #0x14]
-	bl sub_02006350
+	bl _Z12sub_0200635011PointPair2DS_P7Point2Di
 	cmp r0, #0
 	beq _021247D4
 	add r0, r6, #1
@@ -21078,7 +21078,7 @@ ov1_0212E6AC: ; 0x0212E6AC
 	mov r1, r6
 	str r2, [sp]
 	str sb, [sp, #4]
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	mov r7, r0
 	mov r0, r6
 	mov r1, r5
@@ -25263,7 +25263,7 @@ _02131F38:
 	rsb r1, r1, r2, lsl #12
 	mov r4, r3, lsl #0xc
 	mov r5, r2, lsl #0xc
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	cmp r0, #0x10000
 	blt _02131FA4
 	mov r0, sb
@@ -25475,7 +25475,7 @@ ov1_021321A4: ; 0x021321A4
 	ldr r1, [sb, #0x24]
 	sub r0, r4, r0
 	sub r1, r5, r1
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	mov r7, r0
 	cmp r7, #0x8000
 	ble _02132274
@@ -25840,7 +25840,7 @@ _021326B8:
 	ldr r1, [sp, #4]
 	sub r0, r3, r0
 	sub r1, r2, r1
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	cmp r0, #0x8000
 	ble _02132778
 	ldrb r1, [sb, #0x19]
@@ -26973,7 +26973,7 @@ ov1_021336CC: ; 0x021336CC
 	ldr r1, [sl, #0x20]
 	sub r0, r3, r0
 	sub r1, r2, r1
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	mov r1, r0
 	mov r0, sl
 	bl ov1_02133AAC
@@ -27063,7 +27063,7 @@ _02133800:
 	ldr r1, [sl, #0x20]
 	sub r0, r3, r0
 	sub r1, r2, r1
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	mov r1, r0, asr #0x1f
 	mov r1, r1, lsl #0xc
 	orr r1, r1, r0, lsr #20
@@ -28549,7 +28549,7 @@ _02134BA4:
 	ldr r1, [sp, #4]
 	sub r0, r3, r0
 	sub r1, r2, r1
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	cmp r0, #0x5000
 	ldrb r1, [r5, #0x19]
 	mov r0, #0xc
@@ -29193,7 +29193,7 @@ _02135484:
 	ldr r2, [r5, #0x20]
 	sub r1, r4, r0
 	sub r0, r3, r2
-	bl sub_02007254
+	bl _Z12sub_02007254ll
 	cmp r0, #0x8000
 	blt _02135560
 	ldrb r1, [r5, #0x19]

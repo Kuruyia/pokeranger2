@@ -36,8 +36,8 @@
 .public _Z17RectanglesOverlap9RectangleS_
 .public sub_02007068
 .public sub_020070A4
-.public sub_02007254
-.public sub_020072C4
+.public _Z12sub_02007254ll
+.public _Z12sub_020072C4P7Point2DS0_
 .public sub_020072F8
 .public sub_0200732C
 .public sub_020074D4

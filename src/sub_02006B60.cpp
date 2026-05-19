@@ -2,6 +2,22 @@
 
 #include <nitro.h>
 
+#include "fx_utils.hpp"
+#include "sub_02006000.hpp"
+
+s8 sub_02006AE0(PointPair2D arg0, Point2D arg1)
+{
+    fx32 v0 = FX32_MUL(arg0.p2.x - arg0.p1.x, arg1.y - arg0.p1.y) - FX32_MUL(arg0.p2.y - arg0.p1.y, arg1.x - arg0.p1.x);
+
+    if (v0 < 0) {
+        return 1;
+    } else if (v0 > 0) {
+        return -1;
+    } else {
+        return 0;
+    }
+}
+
 BOOL RectanglesOverlap(Rectangle rect1, Rectangle rect2)
 {
     fx32 left1 = rect1.x - (rect1.w >> 1);

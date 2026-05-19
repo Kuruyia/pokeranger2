@@ -329,7 +329,7 @@
 .public sub_02006E30
 .public sub_02006F80
 .public sub_02007068
-.public sub_02007254
+.public _Z12sub_02007254ll
 .public sub_0200732C
 .public sub_020074E8
 .public sub_02007548
