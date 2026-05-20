@@ -99,7 +99,7 @@
 .public strcat
 .public strcpy
 .public _ZN16CPrimitiveSPHEREC1Ev
-.public _Z12sub_020060007Point2DS_18UnkStruct_02006000
+.public _Z12sub_020060007Point2D9Rectanglem
 .public _Z12sub_020061007Point2DS_18UnkStruct_02006100
 .public sub_02007CC0
 .public sub_02007D68

@@ -24940,7 +24940,7 @@ _0203F91C:
 	add r0, sp, #0xd8
 	str r0, [sp, #0x10]
 	ldmia r5, {r0, r1, r2, r3}
-	bl sub_02006C04
+	bl _Z12sub_02006C0411PointPair2D9RectangleP7Point2D
 	cmp r0, #0
 	beq _0203FB58
 	mov r0, #0x14
@@ -25034,7 +25034,7 @@ _0203FA74:
 	str r1, [sp, #0xc]
 	str r0, [sp, #0x10]
 	ldmia r5, {r0, r1, r2, r3}
-	bl sub_02006764
+	bl _Z12sub_0200676411PointPair2D18UnkStruct_02006764P7Point2Dl
 	cmp r0, #0
 	beq _0203FB58
 	mov r0, #0x14
@@ -25253,7 +25253,7 @@ _0203FDB4:
 	add r0, sp, #0x120
 	ldr r3, [r8]
 	ldmia r0, {r0, r1, r2}
-	bl sub_02006E30
+	bl _Z12sub_02006E3018UnkStruct_020067649RectangleP7Point2Dl
 	cmp r0, #0
 	beq _0203FE28
 	ldr r0, [sp, #0xb68]
@@ -25581,7 +25581,7 @@ _02040280:
 	stmia r5, {r0, r1, r2, r3}
 	ldr r3, [r5]
 	ldmia r7, {r0, r1, r2}
-	bl sub_02006F80
+	bl _Z12sub_02006F8018UnkStruct_020067649Rectangle
 	cmp r0, #0
 	beq _02040360
 	add sp, sp, #0x34

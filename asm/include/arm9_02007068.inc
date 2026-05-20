@@ -1,0 +1,5 @@
+#pragma once
+.public _Z12sub_020060007Point2D9Rectanglem
+.public _Z12sub_0200635011PointPair2DS_P7Point2Di
+.public _ll_div
+.public _Z12sub_0200676411PointPair2D18UnkStruct_02006764P7Point2Dl

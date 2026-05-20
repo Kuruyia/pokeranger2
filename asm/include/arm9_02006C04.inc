@@ -1,5 +1,0 @@
-#pragma once
-.public _Z12sub_020060007Point2DS_18UnkStruct_02006000
-.public _Z12sub_0200635011PointPair2DS_P7Point2Di
-.public _ll_div
-.public sub_02006764

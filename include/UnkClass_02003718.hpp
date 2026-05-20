@@ -4,7 +4,7 @@
 #include <nitro.h>
 
 #include "common.hpp"
-#include "sub_02006B60.hpp"
+#include "sub_02006000.hpp"
 
 class UnkClass_02003718 {
 public:
