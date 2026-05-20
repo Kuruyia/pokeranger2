@@ -14,10 +14,8 @@ struct PointPair2D {
 };
 
 struct Rectangle {
-    fx32 x;
-    fx32 y;
-    fx32 w;
-    fx32 h;
+    Point2D pos;
+    Point2D size;
 };
 
 struct UnkStruct_02006000 {

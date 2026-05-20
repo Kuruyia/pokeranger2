@@ -59,12 +59,12 @@ BOOL UnkClass_02003718::sub_020038A8(Rectangle *arg0, fx32 arg1)
 {
     Rectangle v0 = DAT_020842f8;
 
-    v0.x = -unk_1C;
-    v0.y = -unk_20;
+    v0.pos.x = -unk_1C;
+    v0.pos.y = -unk_20;
 
     if (arg1 != FX32_CONST(1)) {
-        v0.w = FX32_MUL(v0.w, arg1);
-        v0.h = FX32_MUL(v0.h, arg1);
+        v0.size.x = FX32_MUL(v0.size.x, arg1);
+        v0.size.y = FX32_MUL(v0.size.y, arg1);
     }
 
     return RectanglesOverlap(v0, *arg0);

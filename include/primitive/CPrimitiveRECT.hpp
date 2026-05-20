@@ -4,14 +4,7 @@
 #include <nitro.h>
 
 #include "primitive/CPrimitive.hpp"
-#include "sub_02006B60.hpp"
-
-// TODO: Figure out what this is
-class UnkClass_CPrimitiveRECT_02003C00 {
-public:
-    fx32 unk_00;
-    fx32 unk_04;
-};
+#include "sub_02006000.hpp"
 
 class CPrimitiveRECT : public CPrimitive {
 public:
@@ -24,7 +17,7 @@ public:
     u32 RenderWithTexture(CPrimitive_Render_arg *arg0);
     u32 RenderWithoutTexture(CPrimitive_Render_arg *arg0);
 
-    static void sub_02003C00(UnkClass_CPrimitiveRECT_02003C00 *arg0, CPrimitiveRECT *arg1);
+    static void sub_02003C00(Point2D *arg0, CPrimitiveRECT *arg1);
 
 public:
     Rectangle m_rectangle;

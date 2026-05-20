@@ -92227,7 +92227,7 @@ ov0_0216A2D4: ; 0x0216A2D4
 	add r0, sp, #0
 	add r1, r6, #0x18
 	mov r4, r2
-	bl _ZN14CPrimitiveRECT12sub_02003C00EP32UnkClass_CPrimitiveRECT_02003C00PS_
+	bl _ZN14CPrimitiveRECT12sub_02003C00EP7Point2DPS_
 	ldr r0, [sp]
 	mov r1, #1
 	str r0, [r6, #0xa50]

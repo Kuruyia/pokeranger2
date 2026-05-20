@@ -24,7 +24,7 @@
 .public _ZN14CPrimitiveRECTC1Ev
 .public _ZN14CPrimitiveRECTD1Ev
 .public _ZN14CPrimitiveRECT12SetRectangleElllll
-.public _ZN14CPrimitiveRECT12sub_02003C00EP32UnkClass_CPrimitiveRECT_02003C00PS_
+.public _ZN14CPrimitiveRECT12sub_02003C00EP7Point2DPS_
 .public _ZN15CSoftwareSprite12sub_020050C8Ev
 .public _ZN15CSoftwareSprite12sub_02005120Ev
 .public _ZN15CSoftwareSpriteC1Ev
