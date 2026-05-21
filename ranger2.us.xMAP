@@ -726,12 +726,7 @@
            10](strcpy,func) found in global MSL_C_NITRO_Ai_LE.a
            10](_ZN11CBinaryFile12sub_02003108EPKc,func) found in global src_file_CBinaryFile.cpp.o
            10](_Z12sub_02007254ll,func) found in global src_sub_02007254.cpp.o
-           10](sub_020070A4,func) found in global asm_arm9_02006C04.s.o
-            11](sub_02006764,func) found in global asm_arm9_02006764.s.o
-             12](_Z12sub_020072C4P7Point2DS0_,func) found in global src_sub_02007254.cpp.o
-            11](_Z12sub_0200635011PointPair2DS_P7Point2Di,func) found in global src_sub_02006000.cpp.o
-             12](_Z12sub_02006AE011PointPair2D7Point2D,func) found in global src_sub_02006B60.cpp.o
-            11](_Z12sub_020060007Point2DS_18UnkStruct_02006000,func) found in global src_sub_02006000.cpp.o
+           10](sub_020070A4,func) found in global asm_arm9_02007068.s.o
            10](FX_Atan2Idx,func) found in global libfx.a
             11](FX_AtanIdxTable_,object) found in global libfx.a
            10](_ZN15CSoftwareSpriteD1Ev,func) found in global src_primitive_CSoftwareSprite.cpp.o
@@ -864,16 +859,18 @@
            10](MTX_RotZ44_,func) found in global libfx.a
            10](MTX_Identity43_,func) found in global libfx.a
            10](_ZN17UnkClass_0200371812sub_020038A8EP9Rectanglel,func) found in global src_UnkClass_02003718.cpp.o
-            11](_Z17RectanglesOverlap9RectangleS_,func) found in global src_sub_02006B60.cpp.o
+            11](_Z17RectanglesOverlap9RectangleS_,func) found in global src_sub_02006000.cpp.o
            10](_ZN14CPrimitiveRECT12sub_02003C00EP7Point2DPS_,func) found in global src_primitive_CPrimitiveRECT.cpp.o
            10](MTX_Identity33_,func) found in global libfx.a
            10](sub_02046040,func) found in global asm_arm9_02044464.s.o
-           10](_Z12sub_0200616418UnkStruct_02006164S_P7Point2D,func) found in global src_sub_02006000.cpp.o
+           10](_Z12sub_020061646CircleS_P7Point2D,func) found in global src_sub_02006000.cpp.o
+           10](_Z12sub_020072C4P7Point2DS0_,func) found in global src_sub_02007254.cpp.o
            10](NNS_GfdDumpLnkPlttVramManager,func) found in global libnnsgfd.a
             11](NNSi_GfdDumpLnkVramManFreeListInfo,func) found in global libnnsgfd.a
              12](NNSi_GfdDumpLnkVramManFreeListInfoEx,func) found in global libnnsgfd.a
              12](DefaultDumpCallBack_,func) found in local libnnsgfd.a
            10](NNS_GfdDumpLnkTexVramManager,func) found in global libnnsgfd.a
+           10](_Z12sub_020060007Point2D9Rectanglem,func) found in global src_sub_02006000.cpp.o
            10](_Z12sub_02044440v,func) found in global src_sub_02044440.cpp.o
            10](_ZN17UnkClass_020091E812sub_020097FCEmm,func) found in global src_UnkClass_020091E8.cpp.o
            10](_ZN17UnkClass_020091E812sub_0200AA84Emmmmm,func) found in global src_UnkClass_020091E8.cpp.o
@@ -881,7 +878,7 @@
             11](_ZN17UnkClass_020091E812sub_0200B1D0Emmmm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200B410Emmmm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200B640Emmmm,func) found in global src_UnkClass_020091E8.cpp.o
-           10](_Z12sub_0200623818UnkStruct_0200616418UnkStruct_02006238,func) found in global src_sub_02006000.cpp.o
+           10](_Z12sub_020062386Circle18UnkStruct_02006238,func) found in global src_sub_02006000.cpp.o
            10](_ZN14CPrimitiveRECT12SetRectangleElllll,func) found in global src_primitive_CPrimitiveRECT.cpp.o
            10](_ZNSt13__vec_deleterImSaImEE13sub_push_backERKmN10Metrowerks8int2typeILi1EEE,func) found in multidef MSL_CPP_NITRO_Ai_LE.a
             11](_ZNSt13__vec_deleterImSaImEE7grow_byEm,func) found in multidef MSL_CPP_NITRO_Ai_LE.a
@@ -1008,6 +1005,7 @@
            10](G3C_TexPlttBase,func) found in global libgx.a
            10](G3C_TexImageParam,func) found in global libgx.a
            10](G3_BeginMakeDL,func) found in global libgx.a
+           10](_Z12sub_0200676411PointPair2D6CircleP7Point2Dl,func) found in global src_sub_02006000.cpp.o
            10](MI_SendGXCommand,func) found in global libmi.a
            10](NNS_FndGetArchiveFileByIndex,func) found in global libnnsfnd.a
            10](NNS_FndOpenArchiveFileByIndex,func) found in global libnnsfnd.a
@@ -1177,6 +1175,11 @@
         7](NNS_G2dInitImageProxy,func) found in global libnnsg2d.a
        6](CRYPTO_RC4FastEncrypt,func) found in global asm_arm9_02046D5C.s.o
        6](_ZN15CSoftwareSprite18GetCellNumOAMAttrsEt,func) found in global src_primitive_CSoftwareSprite.cpp.o
+       6](_Z12sub_02006F806Circle9Rectangle,func) found in global src_sub_02006000.cpp.o
+       6](_Z12sub_02006E306Circle9RectangleP7Point2Dl,func) found in global src_sub_02006000.cpp.o
+       6](_Z12sub_02006C0411PointPair2D9RectangleP7Point2D,func) found in global src_sub_02006000.cpp.o
+        7](_Z12sub_0200635011PointPair2DS_P7Point2Di,func) found in global src_sub_02006000.cpp.o
+         8](_Z12sub_02006AE011PointPair2D7Point2D,func) found in global src_sub_02006000.cpp.o
        6](NNS_GfdGetVramTransferTaskTotalSize,func) found in global libnnsgfd.a
        6](_ZN14CPrimitiveLINED1Ev,func) found in global src_primitive_CPrimitiveLINE.cpp.o
        6](_ZN14CPrimitiveLINEC1Ev,func) found in global src_primitive_CPrimitiveLINE.cpp.o
@@ -3130,34 +3133,36 @@
   02005F60 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
   02005FDC 00000024 .text   CSoftwareSprite::GetCellNumOAMAttrs(unsigned short)	(src_primitive_CSoftwareSprite.cpp.o)
   02005FDC 00000000 .text   $a	(src_primitive_CSoftwareSprite.cpp.o)
-  02006000 00000100 .text   sub_02006000(Point2D, Point2D, UnkStruct_02006000)	(src_sub_02006000.cpp.o)
+  02006000 00000100 .text   sub_02006000(Point2D, Rectangle, unsigned long)	(src_sub_02006000.cpp.o)
   02006000 00000000 .text   $a	(src_sub_02006000.cpp.o)
   02006100 00000064 .text   sub_02006100(Point2D, Point2D, UnkStruct_02006100)	(src_sub_02006000.cpp.o)
   02006100 00000000 .text   $a	(src_sub_02006000.cpp.o)
-  02006164 000000D4 .text   sub_02006164(UnkStruct_02006164, UnkStruct_02006164, Point2D*)	(src_sub_02006000.cpp.o)
+  02006164 000000D4 .text   sub_02006164(Circle, Circle, Point2D*)	(src_sub_02006000.cpp.o)
   02006164 00000000 .text   $a	(src_sub_02006000.cpp.o)
-  02006238 00000118 .text   sub_02006238(UnkStruct_02006164, UnkStruct_02006238)	(src_sub_02006000.cpp.o)
+  02006238 00000118 .text   sub_02006238(Circle, UnkStruct_02006238)	(src_sub_02006000.cpp.o)
   02006238 00000000 .text   $a	(src_sub_02006000.cpp.o)
   02006350 000002C0 .text   sub_02006350(PointPair2D, PointPair2D, Point2D*, int)	(src_sub_02006000.cpp.o)
   02006350 00000000 .text   $a	(src_sub_02006000.cpp.o)
   02006610 00000154 .text   sub_02006610(PointPair2D, PointPair2D, Point2D*)	(src_sub_02006000.cpp.o)
   02006610 00000000 .text   $a	(src_sub_02006000.cpp.o)
-  02006764 0000037C .text   .text	(asm_arm9_02006764.s.o)
-  02006764 0000008C .text   sub_02006764	(asm_arm9_02006764.s.o)
-  02006764 00000000 .text   $a	(asm_arm9_02006764.s.o)
-  02006AE0 00000080 .text   sub_02006AE0(PointPair2D, Point2D)	(src_sub_02006B60.cpp.o)
-  02006AE0 00000000 .text   $a	(src_sub_02006B60.cpp.o)
-  02006B60 000000A4 .text   RectanglesOverlap(Rectangle, Rectangle)	(src_sub_02006B60.cpp.o)
-  02006B60 00000000 .text   $a	(src_sub_02006B60.cpp.o)
-  02006C04 00000000 .text   $a	(asm_arm9_02006C04.s.o)
-  02006C04 00000058 .text   sub_02006C04	(asm_arm9_02006C04.s.o)
-  02006C04 00000650 .text   .text	(asm_arm9_02006C04.s.o)
-  02006E30 00000050 .text   sub_02006E30	(asm_arm9_02006C04.s.o)
-  02006F80 0000004C .text   sub_02006F80	(asm_arm9_02006C04.s.o)
-  02007068 0000003C .text   sub_02007068	(asm_arm9_02006C04.s.o)
-  020070A4 00000090 .text   sub_020070A4	(asm_arm9_02006C04.s.o)
-  02007134 000000DC .text   sub_02007134	(asm_arm9_02006C04.s.o)
-  02007210 00000044 .text   sub_02007210	(asm_arm9_02006C04.s.o)
+  02006764 0000037C .text   sub_02006764(PointPair2D, Circle, Point2D*, long)	(src_sub_02006000.cpp.o)
+  02006764 00000000 .text   $a	(src_sub_02006000.cpp.o)
+  02006AE0 00000080 .text   sub_02006AE0(PointPair2D, Point2D)	(src_sub_02006000.cpp.o)
+  02006AE0 00000000 .text   $a	(src_sub_02006000.cpp.o)
+  02006B60 000000A4 .text   RectanglesOverlap(Rectangle, Rectangle)	(src_sub_02006000.cpp.o)
+  02006B60 00000000 .text   $a	(src_sub_02006000.cpp.o)
+  02006C04 0000022C .text   sub_02006C04(PointPair2D, Rectangle, Point2D*)	(src_sub_02006000.cpp.o)
+  02006C04 00000000 .text   $a	(src_sub_02006000.cpp.o)
+  02006E30 00000150 .text   sub_02006E30(Circle, Rectangle, Point2D*, long)	(src_sub_02006000.cpp.o)
+  02006E30 00000000 .text   $a	(src_sub_02006000.cpp.o)
+  02006F80 000000E8 .text   sub_02006F80(Circle, Rectangle)	(src_sub_02006000.cpp.o)
+  02006F80 00000000 .text   $a	(src_sub_02006000.cpp.o)
+  02007068 000001EC .text   .text	(asm_arm9_02007068.s.o)
+  02007068 00000000 .text   $a	(asm_arm9_02007068.s.o)
+  02007068 0000003C .text   sub_02007068	(asm_arm9_02007068.s.o)
+  020070A4 00000090 .text   sub_020070A4	(asm_arm9_02007068.s.o)
+  02007134 000000DC .text   sub_02007134	(asm_arm9_02007068.s.o)
+  02007210 00000044 .text   sub_02007210	(asm_arm9_02007068.s.o)
   02007254 00000000 .text   $a	(src_sub_02007254.cpp.o)
   02007254 00000070 .text   sub_02007254(long, long)	(src_sub_02007254.cpp.o)
   020072C0 00000000 .text   $d	(src_sub_02007254.cpp.o)
