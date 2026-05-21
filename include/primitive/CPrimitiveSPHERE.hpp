@@ -4,6 +4,7 @@
 #include <nitro.h>
 
 #include "primitive/CPrimitive.hpp"
+#include "sub_02006000.hpp"
 
 class CPrimitiveSPHERE : public CPrimitive {
 public:
@@ -14,13 +15,7 @@ public:
     virtual u32 Render(CPrimitive_Render_arg *arg0);
 
 public:
-    struct SphereCoordinates {
-        fx32 unk_00;
-        fx32 unk_04;
-        fx32 unk_08;
-    };
-
-    SphereCoordinates m_coords;
+    Circle m_circle;
 };
 
 #endif // POKERANGER2_PRIMITIVE_CPRIMITIVESPHERE_HPP

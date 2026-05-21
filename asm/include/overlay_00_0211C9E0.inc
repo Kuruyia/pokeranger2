@@ -30,9 +30,9 @@
 .public _ZN15CSoftwareSpriteC1Ev
 .public _ZN15CSoftwareSpriteD1Ev
 .public _Z12sub_020060007Point2D9Rectanglem
-.public _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
-.public _Z12sub_0200623818UnkStruct_0200616418UnkStruct_02006238
-.public _Z12sub_0200676411PointPair2D18UnkStruct_02006164P7Point2Dl
+.public _Z12sub_020061646CircleS_P7Point2D
+.public _Z12sub_020062386Circle18UnkStruct_02006238
+.public _Z12sub_0200676411PointPair2D6CircleP7Point2Dl
 .public _Z17RectanglesOverlap9RectangleS_
 .public sub_02007068
 .public sub_020070A4

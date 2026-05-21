@@ -25034,7 +25034,7 @@ _0203FA74:
 	str r1, [sp, #0xc]
 	str r0, [sp, #0x10]
 	ldmia r5, {r0, r1, r2, r3}
-	bl _Z12sub_0200676411PointPair2D18UnkStruct_02006164P7Point2Dl
+	bl _Z12sub_0200676411PointPair2D6CircleP7Point2Dl
 	cmp r0, #0
 	beq _0203FB58
 	mov r0, #0x14
@@ -25253,7 +25253,7 @@ _0203FDB4:
 	add r0, sp, #0x120
 	ldr r3, [r8]
 	ldmia r0, {r0, r1, r2}
-	bl _Z12sub_02006E3018UnkStruct_020061649RectangleP7Point2Dl
+	bl _Z12sub_02006E306Circle9RectangleP7Point2Dl
 	cmp r0, #0
 	beq _0203FE28
 	ldr r0, [sp, #0xb68]
@@ -25409,7 +25409,7 @@ _02040004:
 	add r0, sp, #0xf8
 	ldr r3, [r8]
 	ldmia r0, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _02040128
 	ldr r3, [sp, #0x104]
@@ -25581,7 +25581,7 @@ _02040280:
 	stmia r5, {r0, r1, r2, r3}
 	ldr r3, [r5]
 	ldmia r7, {r0, r1, r2}
-	bl _Z12sub_02006F8018UnkStruct_020061649Rectangle
+	bl _Z12sub_02006F806Circle9Rectangle
 	cmp r0, #0
 	beq _02040360
 	add sp, sp, #0x34
@@ -25628,7 +25628,7 @@ _02040324:
 	stmia r5, {r0, r1, r2}
 	ldr r3, [r5]
 	ldmia r7, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	addne sp, sp, #0x34
 	movne r0, #1

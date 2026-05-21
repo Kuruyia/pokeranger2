@@ -22386,7 +22386,7 @@ _0212F84C:
 	stmia r5, {r0, r1, r2}
 	ldr r3, [r5]
 	ldmia r4, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _0212F988
 	ldrb r2, [r6]
@@ -22850,7 +22850,7 @@ _0212FE7C:
 	stmia r4, {r0, r1, r2}
 	ldr r3, [r4]
 	ldmia fp, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _0212FFC8
 	mov r0, sb
@@ -23558,7 +23558,7 @@ _02130840:
 	add r0, sp, #0x1c
 	ldr r3, [r6]
 	ldmia r0, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _021309CC
 	mov r0, sl
@@ -24153,7 +24153,7 @@ _02131024:
 	add r0, sp, #0x20
 	ldr r3, [r4]
 	ldmia r0, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _02131150
 	mov r0, r8
@@ -24665,7 +24665,7 @@ _021316F8:
 	stmia r4, {r0, r1, r2}
 	ldr r3, [r4]
 	ldmia r5, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _02131868
 	mov r0, sb
@@ -25107,7 +25107,7 @@ _02131CBC:
 	stmia r5, {r0, r1, r2}
 	ldr r3, [r5]
 	ldmia sl, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _02131E48
 	mov r0, sb
@@ -26280,7 +26280,7 @@ _02132D00:
 	stmia r4, {r0, r1, r2}
 	ldr r3, [r4]
 	ldmia r7, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _02132E98
 	mov r0, sl
@@ -26703,7 +26703,7 @@ _021332EC:
 	add r0, sp, #0x34
 	ldr r3, [r4]
 	ldmia r0, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _02133510
 	add r3, r8, r6, lsl #1
@@ -27111,7 +27111,7 @@ _021338B8:
 	str r5, [sp, #0xc]
 	str r5, [sp, #0x10]
 	ldmia r4, {r0, r1, r2, r3}
-	bl _Z12sub_0200676411PointPair2D18UnkStruct_02006164P7Point2Dl
+	bl _Z12sub_0200676411PointPair2D6CircleP7Point2Dl
 	cmp r0, #0
 	beq _02133944
 	ldr r0, [sb, r8, lsl #2]
@@ -27155,7 +27155,7 @@ _0213396C:
 	str r5, [sp, #0xc]
 	str r5, [sp, #0x10]
 	ldmia r4, {r0, r1, r2, r3}
-	bl _Z12sub_0200676411PointPair2D18UnkStruct_02006164P7Point2Dl
+	bl _Z12sub_0200676411PointPair2D6CircleP7Point2Dl
 	cmp r0, #0
 	beq _021339F0
 	ldr r0, [sl, #0x5c]
@@ -27484,7 +27484,7 @@ _02133D7C:
 	add r0, r0, #0x2f8
 	add r0, r0, #0x400
 	ldmia r0, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _02133E94
 	mov r0, sb
@@ -28310,7 +28310,7 @@ _02134870:
 	stmia r4, {r0, r1, r2}
 	ldr r3, [r4]
 	ldmia r7, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _021349C8
 	mov r0, sl
@@ -28895,7 +28895,7 @@ _02135080:
 	stmia r4, {r0, r1, r2}
 	ldr r3, [r4]
 	ldmia r7, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _02135200
 	mov r0, sl
@@ -29553,7 +29553,7 @@ _0213598C:
 	stmia r4, {r0, r1, r2}
 	ldr r3, [r4]
 	ldmia r7, {r0, r1, r2}
-	bl _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
+	bl _Z12sub_020061646CircleS_P7Point2D
 	cmp r0, #0
 	beq _02135AF4
 	mov r0, sl

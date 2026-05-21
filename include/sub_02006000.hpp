@@ -40,9 +40,9 @@ struct UnkStruct_02006100 {
     u32 unk_08;
 };
 
-struct UnkStruct_02006164 {
-    Point2D unk_00;
-    fx32 unk_08;
+struct Circle {
+    Point2D pos;
+    fx32 r;
 };
 
 struct UnkStruct_02006238 {
@@ -56,15 +56,15 @@ struct UnkStruct_02006238 {
 // TODO: Make sure those function signatures are correct
 BOOL sub_02006000(Point2D arg0, Rectangle arg1, u32 arg2);
 BOOL sub_02006100(Point2D arg0, Point2D arg1, UnkStruct_02006100 arg2);
-BOOL sub_02006164(UnkStruct_02006164 arg0, UnkStruct_02006164 arg1, Point2D *arg2);
-BOOL sub_02006238(UnkStruct_02006164 arg0, UnkStruct_02006238 arg1);
+BOOL sub_02006164(Circle arg0, Circle arg1, Point2D *arg2);
+BOOL sub_02006238(Circle arg0, UnkStruct_02006238 arg1);
 BOOL sub_02006350(PointPair2D arg0, PointPair2D arg1, Point2D *arg2, BOOL arg3);
 BOOL sub_02006610(PointPair2D arg0, PointPair2D arg1, Point2D *arg2);
-BOOL sub_02006764(PointPair2D arg0, UnkStruct_02006164 arg1, Point2D *arg2, s32 arg3);
+BOOL sub_02006764(PointPair2D arg0, Circle arg1, Point2D *arg2, s32 arg3);
 s8 sub_02006AE0(PointPair2D arg0, Point2D arg1);
 BOOL sub_02006C04(PointPair2D arg0, Rectangle arg1, Point2D *arg2);
-BOOL sub_02006E30(UnkStruct_02006164 arg0, Rectangle arg1, Point2D *arg2, s32 arg3);
-BOOL sub_02006F80(UnkStruct_02006164 arg0, Rectangle arg1);
+BOOL sub_02006E30(Circle arg0, Rectangle arg1, Point2D *arg2, s32 arg3);
+BOOL sub_02006F80(Circle arg0, Rectangle arg1);
 // TODO: End
 
 BOOL RectanglesOverlap(Rectangle rect1, Rectangle rect2);

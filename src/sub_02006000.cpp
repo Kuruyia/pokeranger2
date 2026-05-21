@@ -45,15 +45,15 @@ BOOL sub_02006100(Point2D arg0, Point2D arg1, UnkStruct_02006100 arg2)
     return FX32_POW2(v0) + FX32_POW2(v1) <= FX32_POW2(arg2.unk_00);
 }
 
-BOOL sub_02006164(UnkStruct_02006164 arg0, UnkStruct_02006164 arg1, Point2D *arg2)
+BOOL sub_02006164(Circle arg0, Circle arg1, Point2D *arg2)
 {
-    fx32 v0 = arg1.unk_00.x - arg0.unk_00.x;
-    fx32 v1 = arg1.unk_00.y - arg0.unk_00.y;
+    fx32 v0 = arg1.pos.x - arg0.pos.x;
+    fx32 v1 = arg1.pos.y - arg0.pos.y;
 
-    if (sub_02007254(v0, v1) <= arg0.unk_08 + arg1.unk_08) {
+    if (sub_02007254(v0, v1) <= arg0.r + arg1.r) {
         if (arg2 != NULL) {
-            arg2->x = arg0.unk_00.x + FX32_DIV(FX32_MUL(v0, arg0.unk_08), arg0.unk_08 + arg1.unk_08);
-            arg2->y = arg0.unk_00.y + FX32_DIV(FX32_MUL(v1, arg0.unk_08), arg0.unk_08 + arg1.unk_08);
+            arg2->x = arg0.pos.x + FX32_DIV(FX32_MUL(v0, arg0.r), arg0.r + arg1.r);
+            arg2->y = arg0.pos.y + FX32_DIV(FX32_MUL(v1, arg0.r), arg0.r + arg1.r);
         }
 
         return TRUE;
@@ -62,18 +62,18 @@ BOOL sub_02006164(UnkStruct_02006164 arg0, UnkStruct_02006164 arg1, Point2D *arg
     return FALSE;
 }
 
-BOOL sub_02006238(UnkStruct_02006164 arg0, UnkStruct_02006238 arg1)
+BOOL sub_02006238(Circle arg0, UnkStruct_02006238 arg1)
 {
-    UnkStruct_02006164 v0 = {
-        .unk_00 = {
+    Circle v0 = {
+        .pos = {
             .x = arg1.unk_00,
             .y = arg1.unk_04,
         },
-        .unk_08 = arg1.unk_08,
+        .r = arg1.unk_08,
     };
 
     if (sub_02006164(arg0, v0, NULL)) {
-        s32 v1 = FX_Atan2Idx(arg0.unk_00.y - v0.unk_00.y, arg0.unk_00.x - v0.unk_00.x);
+        s32 v1 = FX_Atan2Idx(arg0.pos.y - v0.pos.y, arg0.pos.x - v0.pos.x);
 
         s32 v2 = arg1.unk_10 + (arg1.unk_10 >> 0x1F);
         s32 v3 = arg1.unk_0C + (v2 >> 1);
@@ -172,9 +172,9 @@ BOOL sub_02006610(PointPair2D arg0, PointPair2D arg1, Point2D *arg2)
     return sub_02006350(arg0, arg1, arg2, FALSE);
 }
 
-BOOL sub_02006764(PointPair2D arg0, UnkStruct_02006164 arg1, Point2D *arg2, s32 arg3)
+BOOL sub_02006764(PointPair2D arg0, Circle arg1, Point2D *arg2, s32 arg3)
 {
-    Point2D v0 = arg1.unk_00 - arg0.p1;
+    Point2D v0 = arg1.pos - arg0.p1;
     Point2D v1 = arg0.p2 - arg0.p1;
     u32 v2 = 0;
 
@@ -187,7 +187,7 @@ BOOL sub_02006764(PointPair2D arg0, UnkStruct_02006164 arg1, Point2D *arg2, s32 
     }
 
     if (sub_020072C4(&v1, &v0) < 0) {
-        if (FX32_RoundUp(sub_02007254(v0.x, v0.y), v2) < arg1.unk_08) {
+        if (FX32_RoundUp(sub_02007254(v0.x, v0.y), v2) < arg1.r) {
             if (arg2 != NULL) {
                 *arg2 = arg0.p1;
             }
@@ -195,11 +195,11 @@ BOOL sub_02006764(PointPair2D arg0, UnkStruct_02006164 arg1, Point2D *arg2, s32 
             return TRUE;
         }
     } else {
-        v0 = arg1.unk_00 - arg0.p2;
+        v0 = arg1.pos - arg0.p2;
         v1 = arg0.p1 - arg0.p2;
 
         if (sub_020072C4(&v1, &v0) < 0) {
-            if (FX32_RoundUp(sub_02007254(v0.x, v0.y), v2) < arg1.unk_08) {
+            if (FX32_RoundUp(sub_02007254(v0.x, v0.y), v2) < arg1.r) {
                 if (arg2 != NULL) {
                     *arg2 = arg0.p2;
                 }
@@ -208,22 +208,22 @@ BOOL sub_02006764(PointPair2D arg0, UnkStruct_02006164 arg1, Point2D *arg2, s32 
             }
         } else {
             if (v1.x == 0) {
-                fx32 v3 = MATH_ABS(arg1.unk_00.x - arg0.p1.x);
+                fx32 v3 = MATH_ABS(arg1.pos.x - arg0.p1.x);
 
-                if (v3 < arg1.unk_08) {
+                if (v3 < arg1.r) {
                     if (arg2 != NULL) {
                         arg2->x = arg0.p1.x;
-                        arg2->y = arg1.unk_00.y;
+                        arg2->y = arg1.pos.y;
                     }
 
                     return TRUE;
                 }
             } else if (v1.y == 0) {
-                fx32 v4 = MATH_ABS(arg1.unk_00.y - arg0.p1.y);
+                fx32 v4 = MATH_ABS(arg1.pos.y - arg0.p1.y);
 
-                if (v4 < arg1.unk_08) {
+                if (v4 < arg1.r) {
                     if (arg2 != NULL) {
-                        arg2->x = arg1.unk_00.x;
+                        arg2->x = arg1.pos.x;
                         arg2->y = arg0.p1.y;
                     }
 
@@ -233,7 +233,7 @@ BOOL sub_02006764(PointPair2D arg0, UnkStruct_02006164 arg1, Point2D *arg2, s32 
                 fx32 v5 = MATH_ABS(FX32_MUL(v1.y, v0.x) - FX32_MUL(v1.x, v0.y));
                 fx32 v6 = FX32_RoundUp(FX32_DIV(v5, sub_02007254(v1.x, v1.y)), v2);
 
-                if (v6 < arg1.unk_08) {
+                if (v6 < arg1.r) {
                     if (arg2 != NULL) {
                         fx32 v7 = sub_02007254(v0.x, v0.y);
                         fx32 v8 = FX_Sqrt(FX32_POW2(v7) - FX32_POW2(v6));
@@ -373,9 +373,9 @@ BOOL sub_02006C04(PointPair2D arg0, Rectangle arg1, Point2D *arg2)
     return res;
 }
 
-BOOL sub_02006E30(UnkStruct_02006164 arg0, Rectangle arg1, Point2D *arg2, s32 arg3)
+BOOL sub_02006E30(Circle arg0, Rectangle arg1, Point2D *arg2, s32 arg3)
 {
-    if (MATH_ABS(arg0.unk_00.x - arg1.pos.x) >= arg0.unk_08 + (arg1.size.x >> 1) || MATH_ABS(arg0.unk_00.y - arg1.pos.y) >= arg0.unk_08 + (arg1.size.y >> 1)) {
+    if (MATH_ABS(arg0.pos.x - arg1.pos.x) >= arg0.r + (arg1.size.x >> 1) || MATH_ABS(arg0.pos.y - arg1.pos.y) >= arg0.r + (arg1.size.y >> 1)) {
         return FALSE;
     }
 
@@ -390,18 +390,18 @@ BOOL sub_02006E30(UnkStruct_02006164 arg0, Rectangle arg1, Point2D *arg2, s32 ar
     fx32 v6 = arg1.pos.y - (arg1.size.y >> 1);
     fx32 v7 = arg1.pos.y + (arg1.size.y >> 1);
 
-    if (arg0.unk_00.x < arg1.pos.x) {
-        v2 = v4 - arg0.unk_00.x;
+    if (arg0.pos.x < arg1.pos.x) {
+        v2 = v4 - arg0.pos.x;
         v0 = TRUE;
     } else {
-        v2 = arg0.unk_00.x - v5;
+        v2 = arg0.pos.x - v5;
     }
 
-    if (arg0.unk_00.y < arg1.pos.y) {
-        v3 = v6 - arg0.unk_00.y;
+    if (arg0.pos.y < arg1.pos.y) {
+        v3 = v6 - arg0.pos.y;
         v1 = TRUE;
     } else {
-        v3 = arg0.unk_00.y - v7;
+        v3 = arg0.pos.y - v7;
     }
 
     PointPair2D v8;
@@ -435,36 +435,36 @@ BOOL sub_02006E30(UnkStruct_02006164 arg0, Rectangle arg1, Point2D *arg2, s32 ar
     return sub_02006764(v8, arg0, arg2, arg3);
 }
 
-BOOL sub_02006F80(UnkStruct_02006164 arg0, Rectangle arg1)
+BOOL sub_02006F80(Circle arg0, Rectangle arg1)
 {
-    if (MATH_ABS(arg0.unk_00.x - arg1.pos.x) >= arg0.unk_08 + (arg1.size.x >> 1) || MATH_ABS(arg0.unk_00.y - arg1.pos.y) >= arg0.unk_08 + (arg1.size.y >> 1)) {
+    if (MATH_ABS(arg0.pos.x - arg1.pos.x) >= arg0.r + (arg1.size.x >> 1) || MATH_ABS(arg0.pos.y - arg1.pos.y) >= arg0.r + (arg1.size.y >> 1)) {
         return FALSE;
     }
 
     fx32 v0 = arg1.pos.x - (arg1.size.x >> 1);
 
-    if (arg0.unk_00.x >= v0) {
+    if (arg0.pos.x >= v0) {
         v0 = arg1.pos.x + (arg1.size.x >> 1);
 
-        if (arg0.unk_00.x <= v0) {
-            v0 = arg0.unk_00.x;
+        if (arg0.pos.x <= v0) {
+            v0 = arg0.pos.x;
         }
     }
 
     fx32 v1 = arg1.pos.y - (arg1.size.y >> 1);
 
-    if (arg0.unk_00.y >= v1) {
+    if (arg0.pos.y >= v1) {
         v1 = arg1.pos.y + (arg1.size.y >> 1);
 
-        if (arg0.unk_00.y <= v1) {
-            v1 = arg0.unk_00.y;
+        if (arg0.pos.y <= v1) {
+            v1 = arg0.pos.y;
         }
     }
 
-    fx32 v2 = MATH_ABS(arg0.unk_00.x - v0);
-    fx32 v3 = MATH_ABS(arg0.unk_00.y - v1);
+    fx32 v2 = MATH_ABS(arg0.pos.x - v0);
+    fx32 v3 = MATH_ABS(arg0.pos.y - v1);
 
-    if (FX32_POW2(v2) + FX32_POW2(v3) > FX32_POW2(arg0.unk_08)) {
+    if (FX32_POW2(v2) + FX32_POW2(v3) > FX32_POW2(arg0.r)) {
         return FALSE;
     }
 
