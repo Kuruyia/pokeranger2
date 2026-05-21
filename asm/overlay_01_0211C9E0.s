@@ -27111,7 +27111,7 @@ _021338B8:
 	str r5, [sp, #0xc]
 	str r5, [sp, #0x10]
 	ldmia r4, {r0, r1, r2, r3}
-	bl _Z12sub_0200676411PointPair2D18UnkStruct_02006764P7Point2Dl
+	bl _Z12sub_0200676411PointPair2D18UnkStruct_02006164P7Point2Dl
 	cmp r0, #0
 	beq _02133944
 	ldr r0, [sb, r8, lsl #2]
@@ -27155,7 +27155,7 @@ _0213396C:
 	str r5, [sp, #0xc]
 	str r5, [sp, #0x10]
 	ldmia r4, {r0, r1, r2, r3}
-	bl _Z12sub_0200676411PointPair2D18UnkStruct_02006764P7Point2Dl
+	bl _Z12sub_0200676411PointPair2D18UnkStruct_02006164P7Point2Dl
 	cmp r0, #0
 	beq _021339F0
 	ldr r0, [sl, #0x5c]

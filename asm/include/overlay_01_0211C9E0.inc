@@ -43,7 +43,7 @@
 .public _Z12sub_0200616418UnkStruct_02006164S_P7Point2D
 .public _Z12sub_0200635011PointPair2DS_P7Point2Di
 .public _Z12sub_0200661011PointPair2DS_P7Point2D
-.public _Z12sub_0200676411PointPair2D18UnkStruct_02006764P7Point2Dl
+.public _Z12sub_0200676411PointPair2D18UnkStruct_02006164P7Point2Dl
 .public sub_02007068
 .public _Z12sub_02007254ll
 .public sub_020074E8
