@@ -726,9 +726,11 @@
            10](strcpy,func) found in global MSL_C_NITRO_Ai_LE.a
            10](_ZN11CBinaryFile12sub_02003108EPKc,func) found in global src_file_CBinaryFile.cpp.o
            10](_Z12sub_02007254ll,func) found in global src_sub_02007254.cpp.o
-           10](sub_020070A4,func) found in global asm_arm9_02007068.s.o
+           10](_Z20QuadraticInterpolatelllll,func) found in global src_interpolation.cpp.o
+            11](_Z31CalculateBezierCurveInterpolantll,func) found in local src_interpolation.cpp.o
            10](FX_Atan2Idx,func) found in global libfx.a
             11](FX_AtanIdxTable_,object) found in global libfx.a
+           10](_Z17LinearInterpolatellll,func) found in global src_interpolation.cpp.o
            10](_ZN15CSoftwareSpriteD1Ev,func) found in global src_primitive_CSoftwareSprite.cpp.o
             11](_ZN10CPrimitiveD2Ev,func) found in global src_primitive_CPrimitive.cpp.o
            10](_ZN15CSoftwareSpriteC1Ev,func) found in global src_primitive_CSoftwareSprite.cpp.o
@@ -757,6 +759,7 @@
                14](NNSi_objSizeWTbl,object) found in global libnnsg2d.a
               13](_ZN15CSoftwareSprite12sub_020058BCEP21CPrimitive_Render_arg,func) found in global src_primitive_CSoftwareSprite.cpp.o
                14](_ZN15CSoftwareSprite16ObjSizeToTexSizeEt,func) found in global src_primitive_CSoftwareSprite.cpp.o
+           10](_Z16CubicInterpolatellllll,func) found in global src_interpolation.cpp.o
            10](_ZN17UnkClass_020091E812sub_0200AFC0Elm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200B12CEv,func) found in global src_UnkClass_020091E8.cpp.o
            10](_ZN17UnkClass_020091E812sub_0200B36CEv,func) found in global src_UnkClass_020091E8.cpp.o
@@ -1462,7 +1465,7 @@
         7](EndSleep,func) found in local libnnssnd.a
          8](NNSi_SndCaptureEndSleep,func) found in global libnnssnd.a
        6](_ZN17UnkClass_020091E812sub_0200AA48El,func) found in global src_UnkClass_020091E8.cpp.o
-       6](_ZN11CTPEmulator12sub_02002198Emmt,func) found in global src_CTPEmulator.cpp.o
+       6](_ZN11CTPEmulator12sub_02002198Ellt,func) found in global src_CTPEmulator.cpp.o
        6](_ZN11CTPEmulator12sub_02002178Ev,func) found in global src_CTPEmulator.cpp.o
        6](_ZN11CTPEmulator12sub_0200215CEll,func) found in global src_CTPEmulator.cpp.o
        6](_Z12sub_020010E4v,func) found in global src_main.cpp.o
@@ -2835,7 +2838,7 @@
   0200215C 00000000 .text   $a	(src_CTPEmulator.cpp.o)
   02002178 00000020 .text   CTPEmulator::sub_02002178()	(src_CTPEmulator.cpp.o)
   02002178 00000000 .text   $a	(src_CTPEmulator.cpp.o)
-  02002198 00000030 .text   CTPEmulator::sub_02002198(unsigned long, unsigned long, unsigned short)	(src_CTPEmulator.cpp.o)
+  02002198 00000030 .text   CTPEmulator::sub_02002198(long, long, unsigned short)	(src_CTPEmulator.cpp.o)
   02002198 00000000 .text   $a	(src_CTPEmulator.cpp.o)
   020021C8 00000000 .text   $a	(src_heap.cpp.o)
   020021C8 00000090 .text   Heap_Init(unsigned long)	(src_heap.cpp.o)
@@ -3157,12 +3160,14 @@
   02006E30 00000000 .text   $a	(src_sub_02006000.cpp.o)
   02006F80 000000E8 .text   sub_02006F80(Circle, Rectangle)	(src_sub_02006000.cpp.o)
   02006F80 00000000 .text   $a	(src_sub_02006000.cpp.o)
-  02007068 000001EC .text   .text	(asm_arm9_02007068.s.o)
-  02007068 00000000 .text   $a	(asm_arm9_02007068.s.o)
-  02007068 0000003C .text   sub_02007068	(asm_arm9_02007068.s.o)
-  020070A4 00000090 .text   sub_020070A4	(asm_arm9_02007068.s.o)
-  02007134 000000DC .text   sub_02007134	(asm_arm9_02007068.s.o)
-  02007210 00000044 .text   sub_02007210	(asm_arm9_02007068.s.o)
+  02007068 0000003C .text   LinearInterpolate(long, long, long, long)	(src_interpolation.cpp.o)
+  02007068 00000000 .text   $a	(src_interpolation.cpp.o)
+  020070A4 00000090 .text   QuadraticInterpolate(long, long, long, long, long)	(src_interpolation.cpp.o)
+  020070A4 00000000 .text   $a	(src_interpolation.cpp.o)
+  02007134 000000DC .text   CubicInterpolate(long, long, long, long, long, long)	(src_interpolation.cpp.o)
+  02007134 00000000 .text   $a	(src_interpolation.cpp.o)
+  02007210 00000044 .text   CalculateBezierCurveInterpolant(long, long)	(src_interpolation.cpp.o)
+  02007210 00000000 .text   $a	(src_interpolation.cpp.o)
   02007254 00000000 .text   $a	(src_sub_02007254.cpp.o)
   02007254 00000070 .text   sub_02007254(long, long)	(src_sub_02007254.cpp.o)
   020072C0 00000000 .text   $d	(src_sub_02007254.cpp.o)
