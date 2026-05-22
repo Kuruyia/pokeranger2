@@ -5580,7 +5580,7 @@ sub_0201AFD4: ; 0x0201AFD4
 	strb r2, [r4, #1]
 	and r2, r2, #0xff
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r2, r0, asr #0xc
 	ldr r1, [r4, #0xc]
 	mov r0, #0x1000
@@ -5588,7 +5588,7 @@ sub_0201AFD4: ; 0x0201AFD4
 	ldrb r2, [r4, #1]
 	mov r1, #0x10000
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r5, r0, asr #0xc
 	mov r0, r4
 	mov r1, r5
@@ -5600,7 +5600,7 @@ sub_0201AFD4: ; 0x0201AFD4
 	mov r0, #0x1000
 	mov r1, #0x18000
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, r0, asr #0xc
 	mov r0, r4
 	bl sub_0201B6FC
@@ -5608,7 +5608,7 @@ sub_0201AFD4: ; 0x0201AFD4
 	mov r0, #0x4000
 	mov r1, #0x1000
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, #0
 	mov r7, #0x60000
 	mov r2, r1
@@ -5682,7 +5682,7 @@ sub_0201B154: ; 0x0201B154
 	strb r2, [r4, #1]
 	and r2, r2, #0xff
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r2, r0, asr #0xc
 	ldr r1, [r4, #0xc]
 	mov r0, #0x10000
@@ -5690,7 +5690,7 @@ sub_0201B154: ; 0x0201B154
 	ldrb r2, [r4, #1]
 	mov r1, #0x1000
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r5, r0, asr #0xc
 	mov r0, r4
 	mov r1, r5
@@ -5702,7 +5702,7 @@ sub_0201B154: ; 0x0201B154
 	mov r0, #0x18000
 	mov r1, #0x1000
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, r0, asr #0xc
 	mov r0, r4
 	bl sub_0201B6FC
@@ -5710,7 +5710,7 @@ sub_0201B154: ; 0x0201B154
 	mov r0, #0x1000
 	mov r1, #0x4000
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, #0
 	mov r7, #0x60000
 	mov r2, r1

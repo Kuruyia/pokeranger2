@@ -6462,7 +6462,7 @@ _02122364:
 	mov r1, #0
 	mov r3, #0x60000
 	add r2, lr, r2
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	ldr r2, [sp, #0x58]
 	ldr r1, [sp, #0x5c]
 	smull ip, r3, r2, r0
@@ -6547,7 +6547,7 @@ _021224A4:
 	add r2, r2, fp
 	mov r3, #0x60000
 	add r2, ip, r2
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	ldr r2, [sp, #0x48]
 	ldr r1, [sp, #0x4c]
 	smull fp, r3, r2, r0
@@ -6629,7 +6629,7 @@ _021225F0:
 	add r2, r2, fp
 	mov r3, #0x60000
 	add r2, ip, r2
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	ldr r2, [sp, #0x38]
 	ldr r1, [sp, #0x3c]
 	smull fp, r3, r2, r0
@@ -10466,7 +10466,7 @@ _02125C58:
 	mov r0, #0
 	mov r1, #8
 	mov r3, #0x30
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r1, r0, #0xff
 	mov r0, r4
 	bl ov1_0212656C
@@ -12478,7 +12478,7 @@ ov1_02127780: ; 0x02127780
 	bhi _021277F4
 	mov r1, #0x8000
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r0, r0, lsl #0x10
 	mov r0, r0, lsr #0x10
 	mov r1, r0, asr #4
@@ -14215,7 +14215,7 @@ ov1_02128DF4: ; 0x02128DF4
 	strcsb r0, [r4, #1]
 	ldrb r2, [r4, #1]
 	mov r0, #0x1f
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	ldr r1, [r4, #0x14]
 	and r0, r0, #0xff
 	str r0, [r1, #0x14]
@@ -14591,7 +14591,7 @@ ov1_021292CC: ; 0x021292CC
 	bhi _02129340
 	mov r1, #0x8000
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r0, r0, lsl #0x10
 	mov r0, r0, lsr #0x10
 	mov r1, r0, asr #4
@@ -15175,7 +15175,7 @@ ov1_02129A40: ; 0x02129A40
 	mov r0, #0x4000
 	mov r1, #0x1000
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x10]
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_02129A40
@@ -15537,7 +15537,7 @@ ov1_02129ED4: ; 0x02129ED4
 	ldr r1, [r4, #0xc]
 	mov r0, #0
 	sub r2, r3, r2
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, r0, asr #0x1f
 	mov r1, r1, lsl #0xc
 	orr r1, r1, r0, lsr #20
@@ -15563,14 +15563,14 @@ ov1_02129ED4: ; 0x02129ED4
 	mov r3, #8
 	str lr, [sp]
 	str ip, [sp, #4]
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	ldr r2, [r4, #0x10]
 	mov r1, #0x10
 	str r0, [r2, #0x20]
 	ldrh r2, [r4, #0x18]
 	mov r0, #1
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	ldr r1, [r4, #0x10]
 	and r0, r0, #0xff
 	str r0, [r1, #0x14]
@@ -17440,7 +17440,7 @@ ov1_0212B580: ; 0x0212B580
 	mov r3, r2, lsl #0x10
 	ldr r2, [r4, #4]
 	mov r3, r3, lsr #0x10
-	bl _ZN11CTPEmulator12sub_02002198Emmt
+	bl _ZN11CTPEmulator12sub_02002198Ellt
 	mov r0, #1
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_0212B580
@@ -18899,13 +18899,13 @@ _0212C850:
 	mov r3, #8
 	str r0, [sp, #0x24]
 	str r1, [sp, #0x2c]
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r2, sb
 	mov sb, r0
 	ldr r0, [sp, #0x28]
 	ldr r1, [sp, #0x30]
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, #0
 	str r1, [sp]
 	mov r1, #0x1000
@@ -19012,13 +19012,13 @@ _0212C9FC:
 	mov r3, #8
 	str r0, [sp, #0x28]
 	str r1, [sp, #0x30]
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r6, r0
 	ldr r0, [sp, #0x2c]
 	ldr r1, [sp, #0x34]
 	mov r2, r4
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, #0
 	str r1, [sp]
 	mov r1, #0x1000
@@ -19149,13 +19149,13 @@ _0212CC08:
 	mov r3, #8
 	str r0, [sp, #0x24]
 	str r1, [sp, #0x2c]
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r2, sb
 	mov sb, r0
 	ldr r0, [sp, #0x28]
 	ldr r1, [sp, #0x30]
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov sl, r0
 	mov r1, #0
 	str r1, [sp]
@@ -19947,13 +19947,13 @@ ov1_0212D774: ; 0x0212D774
 	strh r2, [r4, #4]
 	ldrh r2, [r4, #4]
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #8]
 	ldrh r2, [r4, #4]
 	mov r0, #1
 	mov r1, #0x12
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r2, r0, #0xff
 	mov r0, #0
 	arm_func_end ov1_0212D774
@@ -19969,7 +19969,7 @@ _0212D7BC:
 	mov r0, #1
 	mov r1, #0x1f
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r1, r0, #0xff
 	mov r0, #0
 _0212D7F4:
@@ -20026,13 +20026,13 @@ ov1_0212D880: ; 0x0212D880
 	strh r2, [r4, #4]
 	ldrh r2, [r4, #4]
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #8]
 	ldrh r2, [r4, #4]
 	mov r0, #0x12
 	mov r1, #1
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r2, r0, #0xff
 	mov r0, #0
 	arm_func_end ov1_0212D880
@@ -20048,7 +20048,7 @@ _0212D8C8:
 	mov r0, #0x1f
 	mov r1, #1
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r1, r0, #0xff
 	mov r0, #0
 _0212D900:
@@ -20266,7 +20266,7 @@ _0212DBD8:
 	mov r1, r6
 	mov r2, r8
 	mov r3, r5
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r2, r0, asr #0xc
 	mla r1, r8, r4, sl
 	add r0, r8, #1
@@ -24571,7 +24571,7 @@ _021315B4:
 	strh r2, [r6, #0x1c]
 	ldrh r2, [r6, #0x1a]
 	mov r3, #0xf0
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	ldrh r1, [r6, #0x1c]
 	ldr r3, _02131A10 ; =FX_SinCosTable_
 	ldr r2, [r6, #0x20]
@@ -30295,13 +30295,13 @@ _02136374:
 	rsb r0, r0, #0
 	mov r1, #0
 	mov r3, #0xc
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x208]
 	ldrb r2, [r4, #0x200]
 	mov r0, #1
 	mov r1, #0x1f
 	mov r3, #0xc
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r3, r0, #0xff
 	str r3, [r4, #0x220]
 	mov r1, #0
@@ -30360,13 +30360,13 @@ ov1_0213642C: ; 0x0213642C
 	ldrb r2, [r4, #0x200]
 	mov r0, #0
 	mov r1, #0x8000
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x208]
 	ldrb r2, [r4, #0x200]
 	mov r0, #0x1f
 	mov r1, #1
 	mov r3, #0xc
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r3, r0, #0xff
 	str r3, [r4, #0x220]
 	mov r1, #0
@@ -30709,7 +30709,7 @@ ov1_021368A8: ; 0x021368A8
 	ldrb r0, [r4, #0x9c]
 	ldrb r1, [r4, #0x9d]
 	sub r2, r3, r2
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	strb r0, [r4, #0x74]
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_021368A8
@@ -30723,7 +30723,7 @@ ov1_021368D0: ; 0x021368D0
 	ldr r0, [r4, #0xa0]
 	ldr r1, [r4, #0xa4]
 	sub r2, r3, r2
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x78]
 	ldmia sp!, {r4, pc}
 	arm_func_end ov1_021368D0
@@ -31847,7 +31847,7 @@ _021377D0:
 	ldr r1, _02137AAC ; =0x00000CCC
 	mov r0, #0x2000
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x234]
 	str r0, [r4, #0x238]
 	mov r0, #1
@@ -31906,7 +31906,7 @@ _021378B0:
 	ldr r0, _02137AB0 ; =0x00001666
 	mov r1, #0x800
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, #0x1000
 	str r1, [r4, #0x234]
 	str r0, [r4, #0x238]
@@ -33694,7 +33694,7 @@ ov1_021390A8: ; 0x021390A8
 	rsb r0, r0, #0
 	mov r1, #0
 	mov r3, #0x18
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r5, r0
 	mov r0, r4
 	mov r1, r5
@@ -33708,7 +33708,7 @@ ov1_021390A8: ; 0x021390A8
 	mov r0, #0x100000
 	mov r1, #0
 	mov r3, #0x18
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, r0
 	mov r0, r4
 	mov r2, #0x18000
@@ -33816,7 +33816,7 @@ ov1_02139280: ; 0x02139280
 	mov r0, #0x100000
 	mov r1, #0
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r2, #0x48000
 	mov r1, r0
 	mov r0, r4
@@ -33852,7 +33852,7 @@ ov1_021392F8: ; 0x021392F8
 	ldr r2, [r4]
 	add r1, r0, #0x80000
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r2, #0x28000
 	mov r1, r0
 	mov r0, r4
@@ -33987,7 +33987,7 @@ _021394EC:
 	mov r1, #0
 	mov r0, r0, lsl #0xc
 	mov r3, #0x40
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x10]
 	ldr r0, [r4, #0x20]
 	cmp r0, #0
@@ -33997,7 +33997,7 @@ _021394EC:
 	mov r0, #0
 	mov r1, r1, lsl #0xc
 	mov r3, #0x40
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x14]
 	ldr r1, [r4, #0x38]
 	ldr r1, [r1, #0x28]
@@ -34158,14 +34158,14 @@ _02139774:
 	mov r1, #0
 	mov r0, r0, lsl #0xc
 	mov r3, #0x40
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x10]
 	ldrsh r1, [r4, #8]
 	ldr r2, [r4, #0xc]
 	mov r0, #0
 	mov r1, r1, lsl #0xc
 	mov r3, #0x40
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x14]
 	ldr r1, [r4, #0x38]
 	mov r2, r0
@@ -34196,7 +34196,7 @@ ov1_021397FC: ; 0x021397FC
 	mov r0, #0x1f
 	mov r1, #4
 	mov r3, #0x20
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r0, r0, #0xff
 	str r0, [r4, #0x6e4]
 	ldr r1, _02139858 ; =0x00007FFF
@@ -34226,7 +34226,7 @@ ov1_0213985C: ; 0x0213985C
 	ldr r2, [r4]
 	add r1, r0, #0x80000
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, r0
 	mov r0, r4
 	mov r2, #0x28000
@@ -34235,7 +34235,7 @@ ov1_0213985C: ; 0x0213985C
 	mov r0, #0x140000
 	mov r1, #0x80000
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, r0
 	mov r0, r4
 	mov r2, #0x28000
@@ -34244,7 +34244,7 @@ ov1_0213985C: ; 0x0213985C
 	mov r0, #0x140000
 	mov r1, #0x80000
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, r0
 	mov r0, r4
 	mov r2, #0x28000
@@ -37121,7 +37121,7 @@ ov1_0213BEE0: ; 0x0213BEE0
 	mov r0, #0x1f
 	mov r1, #1
 	mov r3, #0x10
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r1, r0, #0xff
 	mov r0, r4
 	bl ov1_0213CBD8
@@ -37160,19 +37160,19 @@ _0213BF68:
 	mov r0, #0x1f
 	mov r1, #0xc
 	mov r3, #0x40
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r5, r0, #0xff
 	ldrb r2, [r4, #0x19]
 	mov r0, #0x1f
 	mov r1, #0xc
 	mov r3, #0x40
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r6, r0, #0xff
 	mov r0, #0x1f
 	ldrb r2, [r4, #0x19]
 	mov r1, r0
 	mov r3, #0x40
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r1, r0, #0xff
 	orr r0, r5, r6, lsl #5
 	orr r0, r0, r1, lsl #10
@@ -41073,7 +41073,7 @@ ov1_0213F41C: ; 0x0213F41C
 	mov r0, #0x28
 	mov r1, #0x1000
 	mov r3, #6
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x120]
 	ldr r0, [r4, #8]
 	ldr r1, [r4, #0xc]
@@ -41106,7 +41106,7 @@ ov1_0213F490: ; 0x0213F490
 	mov r0, #0x28
 	mov r1, #0x1000
 	mov r3, #0xa
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x124]
 	ldr r0, [r4, #8]
 	ldr r1, [r4, #0xc]
@@ -41139,7 +41139,7 @@ ov1_0213F504: ; 0x0213F504
 	mov r0, #0x100000
 	sub r1, r0, #0x160000
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	ldr r2, [r4, #0xc]
 	ldr r1, [r4, #8]
 	str r2, [sp, #0xc]
@@ -41217,7 +41217,7 @@ ov1_0213F608: ; 0x0213F608
 	mov r0, #0x1f
 	mov r1, #0
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	and r0, r0, #0xff
 	str r0, [r4, #0xc4]
 	mov r0, #0x1f
@@ -41276,7 +41276,7 @@ ov1_0213F6D0: ; 0x0213F6D0
 	ldrh r2, [r4]
 	sub r1, r0, #0x120000
 	mov r3, #8
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	ldr lr, [r4, #0xc]
 	ldr r2, [r4, #8]
 	mov r1, #0x100000
@@ -41290,7 +41290,7 @@ ov1_0213F6D0: ; 0x0213F6D0
 	str ip, [sp, #0x18]
 	str ip, [sp, #0x10]
 	str lr, [sp, #0x14]
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	ldr r2, [r4, #8]
 	ldr r1, [r4, #0xc]
 	add r2, r2, r0
@@ -41327,7 +41327,7 @@ ov1_0213F794: ; 0x0213F794
 	mov r0, #0x1000
 	mov r1, #0x28
 	mov r3, #0xa
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x124]
 	ldrh r0, [r4]
 	add r0, r0, #1
@@ -41351,7 +41351,7 @@ ov1_0213F7E4: ; 0x0213F7E4
 	mov r0, #0x1000
 	mov r1, #0x28
 	mov r3, #6
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x120]
 	ldrh r0, [r4]
 	add r0, r0, #1

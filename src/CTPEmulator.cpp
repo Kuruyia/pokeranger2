@@ -2,9 +2,7 @@
 
 #include <nitro.h>
 
-extern "C" {
-fx32 sub_02007068(fx32, u32, u16, u16);
-}
+#include "interpolation.hpp"
 
 CTPEmulator::CTPEmulator()
 {
@@ -25,8 +23,8 @@ void CTPEmulator::func0()
     case 2:
         ++unk_40;
 
-        unk_38 = sub_02007068(unk_44, unk_4C, unk_40, unk_42);
-        unk_3C = sub_02007068(unk_48, unk_50, unk_40, unk_42);
+        unk_38 = LinearInterpolate(unk_44, unk_4C, unk_40, unk_42);
+        unk_3C = LinearInterpolate(unk_48, unk_50, unk_40, unk_42);
 
         if (unk_40 >= unk_42) {
             unk_30 = 1;
@@ -64,7 +62,7 @@ void CTPEmulator::sub_02002178()
     unk_30 = 0;
 }
 
-void CTPEmulator::sub_02002198(u32 arg0, u32 arg1, u16 arg2)
+void CTPEmulator::sub_02002198(fx32 arg0, fx32 arg1, u16 arg2)
 {
     unk_40 = 0;
     unk_42 = arg2;

@@ -309,7 +309,7 @@
 .public _Z12sub_020010E4v
 .public _ZN11CTPEmulator12sub_0200215CEll
 .public _ZN11CTPEmulator12sub_02002178Ev
-.public _ZN11CTPEmulator12sub_02002198Emmt
+.public _ZN11CTPEmulator12sub_02002198Ellt
 .public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
 .public _ZN13CArchiveGuardD1Ev
 .public _ZN11CBinaryFileC1EPKcmmmPvm
@@ -328,7 +328,7 @@
 .public _Z12sub_02006C0411PointPair2D9RectangleP7Point2D
 .public _Z12sub_02006E306Circle9RectangleP7Point2Dl
 .public _Z12sub_02006F806Circle9Rectangle
-.public sub_02007068
+.public _Z17LinearInterpolatellll
 .public _Z12sub_02007254ll
 .public sub_0200732C
 .public sub_020074E8

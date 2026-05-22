@@ -4895,7 +4895,7 @@ _02120F18:
 	ldr r3, [sb, #0xf4]
 	mov r0, r0, lsl #0xc
 	mov r1, r1, lsl #0xc
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r0, r0, asr #0xc
 	strb r0, [sb, #0xfa]
 	ldr r1, [sb, #0xf0]
@@ -23100,7 +23100,7 @@ _02130C14:
 	ldr r3, [r4, #0x138]
 	mov r1, #0x20000
 	mov r2, r0
-	bl sub_020070A4
+	bl _Z20QuadraticInterpolatelllll
 	ldr r1, [r4, #8]
 	cmp r1, #0
 	ldrne r1, [r1, #0xc]
@@ -54010,7 +54010,7 @@ ov0_0214AC38: ; 0x0214AC38
 	ldr r0, [r3, #0x10]
 	str r0, [sp]
 	ldmia r3, {r0, r1, r2, r3}
-	bl sub_020070A4
+	bl _Z20QuadraticInterpolatelllll
 	ldmia sp!, {r3, pc}
 	arm_func_end ov0_0214AC38
 

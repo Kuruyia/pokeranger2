@@ -14,7 +14,7 @@
 .public _ZN15CSoftwareSpriteC1Ev
 .public _ZN15CSoftwareSpriteD1Ev
 .public _Z12sub_020060007Point2D9Rectanglem
-.public sub_02007068
+.public _Z17LinearInterpolatellll
 .public _ZN6CSceneC2Ev
 .public sub_02007CC0
 .public sub_02007D98

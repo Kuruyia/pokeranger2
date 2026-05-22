@@ -2389,7 +2389,7 @@ ov7_0211EA74: ; 0x0211EA74
 	ldr r3, [r4, #0x210]
 	mov r0, r0, lsl #0xc
 	mov r1, r1, lsl #0xc
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r0, r0, asr #0xc
 	strb r0, [r4, #0x216]
 	ldr r1, [r4, #0x20c]

@@ -6347,7 +6347,7 @@ sub_02030610: ; 0x02030610
 	mov r1, ip, lsl #0xc
 	mov r2, r2, lsl #0xc
 	mov r3, r3, lsr #0x10
-	bl _ZN11CTPEmulator12sub_02002198Emmt
+	bl _ZN11CTPEmulator12sub_02002198Ellt
 	mov r0, #0
 	ldmia sp!, {r3, pc}
 	.align 2, 0
@@ -23689,7 +23689,7 @@ _0203E860:
 	ldr r3, [r4, #0x1c0]
 	mov r0, r0, lsl #0xc
 	mov r1, r1, lsl #0xc
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r0, r0, asr #0xc
 	strb r0, [r4, #0x1c6]
 	ldr r1, [r4, #0x1bc]

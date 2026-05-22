@@ -6,7 +6,7 @@
 .public _ZdaPv
 .public _ZN11CTPEmulator12sub_0200215CEll
 .public _ZN11CTPEmulator12sub_02002178Ev
-.public _ZN11CTPEmulator12sub_02002198Emmt
+.public _ZN11CTPEmulator12sub_02002198Ellt
 .public _ZN17UnkClass_020023EC12sub_02002434Emmmm
 .public _ZN17UnkClass_020023EC12sub_020027E8Ev
 .public _ZN13CArchiveGuardC1EPKcS1_mmmPvm
@@ -44,7 +44,7 @@
 .public _Z12sub_0200635011PointPair2DS_P7Point2Di
 .public _Z12sub_0200661011PointPair2DS_P7Point2D
 .public _Z12sub_0200676411PointPair2D6CircleP7Point2Dl
-.public sub_02007068
+.public _Z17LinearInterpolatellll
 .public _Z12sub_02007254ll
 .public sub_020074E8
 .public sub_02007548

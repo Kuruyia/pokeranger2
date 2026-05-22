@@ -15,7 +15,7 @@ public:
 
     void sub_0200215C(fx32 arg0, fx32 arg1);
     void sub_02002178();
-    void sub_02002198(u32 arg0, u32 arg1, u16 arg2);
+    void sub_02002198(fx32 arg0, fx32 arg1, u16 arg2);
 
 public:
     u32 unk_30;
@@ -29,8 +29,8 @@ public:
     u16 unk_42;
     fx32 unk_44;
     fx32 unk_48;
-    u32 unk_4C;
-    u32 unk_50;
+    fx32 unk_4C;
+    fx32 unk_50;
 };
 
 STATIC_SIZE_ASSERT(CTPEmulator, 0x54);

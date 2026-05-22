@@ -22,6 +22,7 @@ pokeranger2_cxx = files(
     'main.cpp',
     'sub_02007254.cpp',
     'sub_02006000.cpp',
+    'interpolation.cpp',
     'UnkClass_0200BBC0.cpp',
     'UnkClass_0200BBC8.cpp',
     'UnkClass_020091E8.cpp',

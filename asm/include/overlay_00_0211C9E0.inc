@@ -34,8 +34,8 @@
 .public _Z12sub_020062386Circle18UnkStruct_02006238
 .public _Z12sub_0200676411PointPair2D6CircleP7Point2Dl
 .public _Z17RectanglesOverlap9RectangleS_
-.public sub_02007068
-.public sub_020070A4
+.public _Z17LinearInterpolatellll
+.public _Z20QuadraticInterpolatelllll
 .public _Z12sub_02007254ll
 .public _Z12sub_020072C4P7Point2DS0_
 .public sub_020072F8

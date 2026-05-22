@@ -1803,13 +1803,13 @@ _0201183C:
 	ldr r1, [r4, #0x2c]
 	ldr r2, [r4, #0x10]
 	ldr r3, [r4, #0xc]
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x14]
 	ldr r0, [r4, #0x28]
 	ldr r1, [r4, #0x30]
 	ldr r2, [r4, #0x10]
 	ldr r3, [r4, #0xc]
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x18]
 	b _02011A6C
 _02011870:
@@ -1819,7 +1819,7 @@ _02011870:
 	ldr r1, [r4, #0x34]
 	ldr r2, [r4, #0x2c]
 	ldr r3, [r4, #0x10]
-	bl sub_020070A4
+	bl _Z20QuadraticInterpolatelllll
 	str r0, [r4, #0x14]
 	ldr r0, [r4, #0xc]
 	str r0, [sp]
@@ -1827,7 +1827,7 @@ _02011870:
 	ldr r1, [r4, #0x38]
 	ldr r2, [r4, #0x30]
 	ldr r3, [r4, #0x10]
-	bl sub_020070A4
+	bl _Z20QuadraticInterpolatelllll
 	str r0, [r4, #0x18]
 	b _02011A6C
 _020118B4:
@@ -1839,7 +1839,7 @@ _020118B4:
 	ldr r1, [r4, #0x34]
 	ldr r2, [r4, #0x3c]
 	ldr r3, [r4, #0x2c]
-	bl sub_02007134
+	bl _Z16CubicInterpolatellllll
 	str r0, [r4, #0x14]
 	ldr r0, [r4, #0x10]
 	str r0, [sp]
@@ -1849,7 +1849,7 @@ _020118B4:
 	ldr r1, [r4, #0x38]
 	ldr r2, [r4, #0x40]
 	ldr r3, [r4, #0x30]
-	bl sub_02007134
+	bl _Z16CubicInterpolatellllll
 	str r0, [r4, #0x18]
 	b _02011A6C
 _02011908:
@@ -2663,7 +2663,7 @@ sub_020123AC: ; 0x020123AC
 	ldrh r3, [r4, #0x94]
 	ldr r0, [r4, #0x98]
 	ldr r1, [r4, #0x9c]
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4, #0x8c]
 	ldmia sp!, {r4, pc}
 	arm_func_end sub_020123AC
@@ -2687,7 +2687,7 @@ sub_020123FC: ; 0x020123FC
 	ldrh r3, [r4, #0xa8]
 	mov r0, #0
 	mov r1, #0x8000
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r1, r0, asr #4
 	ldr r0, _0201246C ; =FX_SinCosTable_
 	mov r1, r1, lsl #2
@@ -2870,7 +2870,7 @@ sub_0201267C: ; 0x0201267C
 	ldr r3, [r4, #0xc]
 	mov r0, r0, lsl #0xc
 	mov r1, r1, lsl #0xc
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r0, r0, asr #0xc
 	strb r0, [r4]
 	ldr r1, [r4, #8]
@@ -2913,7 +2913,7 @@ sub_02012710: ; 0x02012710
 	ldr r0, [r4, #0x10]
 	ldr r1, [r4, #0x14]
 	ldr r3, [r4, #0xc]
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	str r0, [r4]
 	ldr r1, [r4, #8]
 	ldr r0, [r4, #0xc]
@@ -2952,7 +2952,7 @@ sub_02012784: ; 0x02012784
 	ldr r3, [r4, #0xc]
 	mov r0, r0, lsl #0xc
 	mov r1, r1, lsl #0xc
-	bl sub_02007068
+	bl _Z17LinearInterpolatellll
 	mov r0, r0, asr #0xc
 	strh r0, [r4]
 	ldr r1, [r4, #8]
@@ -3547,14 +3547,14 @@ _02012EEC:
 	ldr r1, [sb]
 	ldr r2, [r8]
 	mov r3, r6
-	bl sub_020070A4
+	bl _Z20QuadraticInterpolatelllll
 	str r7, [sp]
 	mov r5, r0
 	ldr r0, [sl, #4]
 	ldr r1, [sb, #4]
 	ldr r2, [r8, #4]
 	mov r3, r6
-	bl sub_020070A4
+	bl _Z20QuadraticInterpolatelllll
 	mov r4, r0
 	ldr r0, [sp, #8]
 	ldr r1, [sp, #4]

@@ -332,7 +332,7 @@
 .public _ZN14CPrimitiveQUADD1Ev
 .public _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 .public _ZN18CPrimitiveTRIANGLEC1Ev
-.public sub_02007068
+.public _Z17LinearInterpolatellll
 .public sub_020074E8
 .public sub_02007548
 .public sub_020076B0

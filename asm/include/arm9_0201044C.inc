@@ -64,9 +64,9 @@
 .public _ZN9CNCERFileC1EPKcmmm
 .public _ZN15CSoftwareSpriteC1Ev
 .public _ZN15CSoftwareSpriteD1Ev
-.public sub_02007068
-.public sub_020070A4
-.public sub_02007134
+.public _Z17LinearInterpolatellll
+.public _Z20QuadraticInterpolatelllll
+.public _Z16CubicInterpolatellllll
 .public _Z12sub_02007254ll
 .public sub_020074E8
 .public sub_02007524
