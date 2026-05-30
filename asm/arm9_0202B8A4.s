@@ -25262,7 +25262,7 @@ _0203FDB4:
 	add r0, sp, #0xb8
 	add r1, sp, #0x120
 	add r2, sp, #0xd0
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0xb8]
 	ldr r0, [sp, #0xb68]
 	str r1, [r0]
@@ -25464,7 +25464,7 @@ _02040004:
 	add r0, sp, #0xa0
 	add r1, sp, #0xf8
 	add r2, sp, #0xd0
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0xa0]
 	ldr r0, [sp, #0xb68]
 	str r1, [r0]

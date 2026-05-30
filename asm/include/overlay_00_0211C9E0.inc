@@ -38,8 +38,8 @@
 .public _Z20QuadraticInterpolatelllll
 .public _Z12sub_02007254ll
 .public _Z12sub_020072C4P7Point2DS0_
-.public sub_020072F8
-.public sub_0200732C
+.public _Z12sub_020072F8P7Point2DS0_
+.public _Z12sub_0200732CP7Point2DP6CircleS0_
 .public sub_020074D4
 .public sub_020074E8
 .public sub_02007524

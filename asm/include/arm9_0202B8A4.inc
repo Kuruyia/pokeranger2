@@ -330,7 +330,7 @@
 .public _Z12sub_02006F806Circle9Rectangle
 .public _Z17LinearInterpolatellll
 .public _Z12sub_02007254ll
-.public sub_0200732C
+.public _Z12sub_0200732CP7Point2DP6CircleS0_
 .public sub_020074E8
 .public sub_02007548
 .public sub_020076B0

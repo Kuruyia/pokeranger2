@@ -3,6 +3,8 @@
 
 #include <nitro.h>
 
+#include "fx_utils.hpp"
+
 struct Point2D {
     fx32 x;
     fx32 y;
@@ -21,6 +23,22 @@ struct Point2D {
             .x = x - other.x,
             .y = y - other.y,
         };
+    }
+
+    inline Point2D &operator*=(fx32 other)
+    {
+        x = FX32_MUL(x, other);
+        y = FX32_MUL(y, other);
+
+        return *this;
+    }
+
+    inline Point2D &operator/=(fx32 other)
+    {
+        x = FX32_DIV(x, other);
+        y = FX32_DIV(y, other);
+
+        return *this;
     }
 };
 

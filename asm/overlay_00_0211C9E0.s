@@ -13559,7 +13559,7 @@ _02128694:
 	add r0, sp, #0xb0
 	add r1, sp, #0x150
 	add r2, sp, #0x130
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0xb0]
 	ldr r0, [sp, #0xb4]
 	str r1, [sp, #0x150]
@@ -13590,7 +13590,7 @@ _0212870C:
 	add r0, sp, #0xa8
 	add r1, sp, #0x150
 	add r2, sp, #0x128
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0xa8]
 	ldr r0, [sp, #0xac]
 	str r1, [sp, #0x150]
@@ -13621,7 +13621,7 @@ _02128784:
 	add r0, sp, #0xa0
 	add r1, sp, #0x150
 	add r2, sp, #0x120
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0xa0]
 	ldr r0, [sp, #0xa4]
 	str r1, [sp, #0x150]
@@ -13652,7 +13652,7 @@ _021287FC:
 	add r0, sp, #0x98
 	add r1, sp, #0x150
 	add r2, sp, #0x118
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x98]
 	ldr r0, [sp, #0x9c]
 	str r1, [sp, #0x150]
@@ -13744,7 +13744,7 @@ _02128954:
 	add r0, sp, #0x90
 	add r1, sp, #0x150
 	add r2, sp, #0x110
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x90]
 	ldr r0, [sp, #0x94]
 	str r1, [sp, #0x150]
@@ -13805,7 +13805,7 @@ _02128A38:
 	add r0, sp, #0x88
 	add r1, sp, #0x150
 	add r2, sp, #0x108
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x88]
 	ldr r0, [sp, #0x8c]
 	str r1, [sp, #0x150]
@@ -13866,7 +13866,7 @@ _02128B1C:
 	add r0, sp, #0x80
 	add r1, sp, #0x150
 	add r2, sp, #0x100
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x80]
 	ldr r0, [sp, #0x84]
 	str r1, [sp, #0x150]
@@ -13927,7 +13927,7 @@ _02128C00:
 	add r0, sp, #0x78
 	add r1, sp, #0x150
 	add r2, sp, #0xf8
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x78]
 	ldr r0, [sp, #0x7c]
 	str r1, [sp, #0x150]
@@ -13989,7 +13989,7 @@ _02128CE8:
 	add r0, sp, #0x70
 	add r1, sp, #0x150
 	add r2, sp, #0xf0
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x70]
 	ldr r0, [sp, #0x74]
 	str r1, [sp, #0x150]
@@ -14018,7 +14018,7 @@ _02128D60:
 	add r0, sp, #0x68
 	add r1, sp, #0x150
 	add r2, sp, #0xe8
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x68]
 	ldr r0, [sp, #0x6c]
 	str r1, [sp, #0x150]
@@ -14080,7 +14080,7 @@ _02128E40:
 	add r0, sp, #0x60
 	add r1, sp, #0x150
 	add r2, sp, #0xe0
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x60]
 	ldr r0, [sp, #0x64]
 	str r1, [sp, #0x150]
@@ -14109,7 +14109,7 @@ _02128EB8:
 	add r0, sp, #0x58
 	add r1, sp, #0x150
 	add r2, sp, #0xd8
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x58]
 	ldr r0, [sp, #0x5c]
 	str r1, [sp, #0x150]
@@ -14171,7 +14171,7 @@ _02128F98:
 	add r0, sp, #0x50
 	add r1, sp, #0x150
 	add r2, sp, #0xd0
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x50]
 	ldr r0, [sp, #0x54]
 	str r1, [sp, #0x150]
@@ -14200,7 +14200,7 @@ _02129010:
 	add r0, sp, #0x48
 	add r1, sp, #0x150
 	add r2, sp, #0xc8
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x48]
 	ldr r0, [sp, #0x4c]
 	str r1, [sp, #0x150]
@@ -14262,7 +14262,7 @@ _021290F0:
 	add r0, sp, #0x40
 	add r1, sp, #0x150
 	add r2, sp, #0xc0
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x40]
 	ldr r0, [sp, #0x44]
 	str r1, [sp, #0x150]
@@ -14291,7 +14291,7 @@ _02129168:
 	add r0, sp, #0x38
 	add r1, sp, #0x150
 	add r2, sp, #0xb8
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x38]
 	ldr r0, [sp, #0x3c]
 	str r1, [sp, #0x150]
@@ -15878,7 +15878,7 @@ _0212A8B4:
 	add r0, sp, #0x160
 	mov r1, r8
 	mov r2, r7
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x160]
 	ldr r0, [sp, #0x164]
 	str r1, [sp, #0x268]
@@ -15988,7 +15988,7 @@ _0212AA54:
 	add r0, sp, #0x158
 	mov r1, r8
 	mov r2, r7
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x158]
 	ldr r0, [sp, #0x15c]
 	str r1, [sp, #0x268]
@@ -16098,7 +16098,7 @@ _0212ABF4:
 	add r0, sp, #0x150
 	mov r1, r8
 	mov r2, r7
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x150]
 	ldr r0, [sp, #0x154]
 	str r1, [sp, #0x268]
@@ -16208,7 +16208,7 @@ _0212AD94:
 	add r0, sp, #0x148
 	mov r1, r8
 	mov r2, r7
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x148]
 	ldr r0, [sp, #0x14c]
 	str r1, [sp, #0x268]
@@ -16377,7 +16377,7 @@ _0212AFEC:
 	add r0, sp, #0x138
 	mov r1, r7
 	mov r2, r6
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x138]
 	ldr r0, [sp, #0x13c]
 	str r1, [sp, #0x268]
@@ -16449,7 +16449,7 @@ _0212B0F4:
 	add r0, sp, #0x130
 	mov r1, r7
 	mov r2, r6
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x130]
 	ldr r0, [sp, #0x134]
 	str r1, [sp, #0x268]
@@ -16521,7 +16521,7 @@ _0212B1FC:
 	add r0, sp, #0x128
 	mov r1, r7
 	mov r2, r6
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x128]
 	ldr r0, [sp, #0x12c]
 	str r1, [sp, #0x268]
@@ -16593,7 +16593,7 @@ _0212B304:
 	add r0, sp, #0x120
 	mov r1, r7
 	mov r2, r6
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x120]
 	ldr r0, [sp, #0x124]
 	str r1, [sp, #0x268]
@@ -16666,7 +16666,7 @@ _0212B410:
 	add r0, sp, #0x118
 	mov r1, r7
 	mov r2, r6
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x118]
 	ldr r0, [sp, #0x11c]
 	str r1, [sp, #0x268]
@@ -16703,7 +16703,7 @@ _0212B498:
 	add r0, sp, #0x110
 	mov r1, r7
 	mov r2, r6
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x110]
 	ldr r0, [sp, #0x114]
 	str r1, [sp, #0x268]
@@ -16776,7 +16776,7 @@ _0212B5A4:
 	add r0, sp, #0x108
 	mov r1, r7
 	mov r2, r6
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x108]
 	ldr r0, [sp, #0x10c]
 	str r1, [sp, #0x268]
@@ -16813,7 +16813,7 @@ _0212B62C:
 	add r0, sp, #0x100
 	mov r1, r7
 	mov r2, r6
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x100]
 	ldr r0, [sp, #0x104]
 	str r1, [sp, #0x268]
@@ -16886,7 +16886,7 @@ _0212B738:
 	add r0, sp, #0xf8
 	mov r1, r7
 	mov r2, r6
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0xf8]
 	ldr r0, [sp, #0xfc]
 	str r1, [sp, #0x268]
@@ -16923,7 +16923,7 @@ _0212B7C0:
 	add r0, sp, #0xf0
 	mov r1, r7
 	mov r2, r6
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0xf0]
 	ldr r0, [sp, #0xf4]
 	str r1, [sp, #0x268]
@@ -16996,7 +16996,7 @@ _0212B8D0:
 	add r0, sp, #0xe8
 	mov r1, r8
 	mov r2, r7
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0xe8]
 	ldr r0, [sp, #0xec]
 	str r1, [sp, #0x268]
@@ -17033,7 +17033,7 @@ _0212B958:
 	add r0, sp, #0xe0
 	mov r1, r8
 	mov r2, r7
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0xe0]
 	ldr r0, [sp, #0xe4]
 	mov r4, #1
@@ -20294,7 +20294,7 @@ _0212E46C:
 	add r0, sp, #0x6c
 	add r1, sp, #0x14c
 	add r2, sp, #0xac
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x6c]
 	ldr r0, [sp, #0x70]
 	str r1, [sp, #0x14c]
@@ -20342,7 +20342,7 @@ _0212E55C:
 	add r0, sp, #0x64
 	add r1, sp, #0x14c
 	add r2, sp, #0xa4
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x64]
 	ldr r0, [sp, #0x68]
 	str r1, [sp, #0x14c]
@@ -20389,7 +20389,7 @@ _0212E618:
 	add r0, sp, #0x5c
 	add r1, sp, #0x14c
 	add r2, sp, #0x9c
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x5c]
 	ldr r0, [sp, #0x60]
 	str r1, [sp, #0x14c]
@@ -20437,7 +20437,7 @@ _0212E6D0:
 	add r0, sp, #0x54
 	add r1, sp, #0x14c
 	add r2, sp, #0x94
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x54]
 	ldr r0, [sp, #0x58]
 	str r1, [sp, #0x14c]
@@ -20486,7 +20486,7 @@ _0212E78C:
 	add r0, sp, #0x4c
 	add r1, sp, #0x14c
 	add r2, sp, #0x8c
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x4c]
 	ldr r0, [sp, #0x50]
 	str r1, [sp, #0x14c]
@@ -20522,7 +20522,7 @@ _0212E84C:
 	add r0, sp, #0x44
 	add r1, sp, #0x14c
 	add r2, sp, #0x8c
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x44]
 	ldr r0, [sp, #0x48]
 	str r1, [sp, #0x14c]
@@ -20571,7 +20571,7 @@ _0212E8D8:
 	add r0, sp, #0x3c
 	add r1, sp, #0x14c
 	add r2, sp, #0x84
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x3c]
 	ldr r0, [sp, #0x40]
 	str r1, [sp, #0x14c]
@@ -20608,7 +20608,7 @@ _0212E998:
 	add r0, sp, #0x34
 	add r1, sp, #0x14c
 	add r2, sp, #0x84
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x34]
 	ldr r0, [sp, #0x38]
 	str r1, [sp, #0x14c]
@@ -20658,7 +20658,7 @@ _0212EA28:
 	add r0, sp, #0x2c
 	add r1, sp, #0x14c
 	add r2, sp, #0x7c
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x2c]
 	ldr r0, [sp, #0x30]
 	str r1, [sp, #0x14c]
@@ -20694,7 +20694,7 @@ _0212EAEC:
 	add r0, sp, #0x24
 	add r1, sp, #0x14c
 	add r2, sp, #0x7c
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x24]
 	ldr r0, [sp, #0x28]
 	str r1, [sp, #0x14c]
@@ -20744,7 +20744,7 @@ _0212EB78:
 	add r0, sp, #0x1c
 	add r1, sp, #0x14c
 	add r2, sp, #0x74
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x1c]
 	ldr r0, [sp, #0x20]
 	str r1, [sp, #0x14c]
@@ -20781,7 +20781,7 @@ _0212EC3C:
 	add r0, sp, #0x14
 	add r1, sp, #0x14c
 	add r2, sp, #0x74
-	bl sub_0200732C
+	bl _Z12sub_0200732CP7Point2DP6CircleS0_
 	ldr r1, [sp, #0x14]
 	ldr r0, [sp, #0x18]
 	str r1, [sp, #0x14c]
@@ -70365,7 +70365,7 @@ ov0_02157F0C: ; 0x02157F0C
 _02157F80:
 	mov r0, r6
 	mov r1, r5
-	bl sub_020072F8
+	bl _Z12sub_020072F8P7Point2DS0_
 	cmp r0, #0
 	blt _02157FEC
 	add r0, r4, #1
