@@ -9712,9 +9712,9 @@ ov1_021251F4: ; 0x021251F4
 	mov sb, r2
 	bl sub_02011D60
 	ldr r0, _0212545C ; =ptr_FUN_overlay_0_0212546c_overlay_1_02140a50
-	ldr r4, _02125460 ; =sub_02007784
+	ldr r4, _02125460 ; =_ZN17UnkClass_02007770D2Ev
 	str r0, [sl]
-	ldr r3, _02125464 ; =sub_02007770
+	ldr r3, _02125464 ; =_ZN17UnkClass_02007770C1Ev
 	add r0, sl, #0x1c0
 	mov r1, #0x1d
 	mov r2, #0x18
@@ -9749,10 +9749,10 @@ _02125264:
 	mul r8, r7, fp
 	ldr r1, [r5, #4]
 	add r0, r4, r8
-	bl sub_020077CC
+	bl _ZN17UnkClass_0200777012sub_020077CCEP17UnkClass_020074D4
 	ldr r1, [r5, #8]
 	add r0, r4, r8
-	bl sub_020077E4
+	bl _ZN17UnkClass_0200777012sub_020077E4EP9CNCERFile
 	add r0, sl, r8
 	ldr r0, [r0, #0x1d0]
 	cmp r6, r0
@@ -9873,8 +9873,8 @@ _02125398:
 	ldmia sp!, {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
 	.align 2, 0
 _0212545C: .word ptr_FUN_overlay_0_0212546c_overlay_1_02140a50
-_02125460: .word sub_02007784
-_02125464: .word sub_02007770
+_02125460: .word _ZN17UnkClass_02007770D2Ev
+_02125464: .word _ZN17UnkClass_02007770C1Ev
 _02125468: .word 0x00007FFF
 
 	arm_func_start ov1_0212546C
@@ -9987,7 +9987,7 @@ _021255BC:
 	add r0, r4, #0x2b8
 	add r0, r0, #0x400
 	bl _ZN14CPrimitiveLINED1Ev
-	ldr r3, _02125600 ; =sub_02007784
+	ldr r3, _02125600 ; =_ZN17UnkClass_02007770D2Ev
 	add r0, r4, #0x1c0
 	mov r1, #0x1d
 	mov r2, #0x18
@@ -9998,7 +9998,7 @@ _021255BC:
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _021255FC: .word ptr_FUN_overlay_0_0212546c_overlay_1_02140a50
-_02125600: .word sub_02007784
+_02125600: .word _ZN17UnkClass_02007770D2Ev
 
 	arm_func_start ov1_02125604
 ov1_02125604: ; 0x02125604
@@ -10110,7 +10110,7 @@ _02125754:
 	add r0, r4, #0x2b8
 	add r0, r0, #0x400
 	bl _ZN14CPrimitiveLINED1Ev
-	ldr r3, _021257A0 ; =sub_02007784
+	ldr r3, _021257A0 ; =_ZN17UnkClass_02007770D2Ev
 	add r0, r4, #0x1c0
 	mov r1, #0x1d
 	mov r2, #0x18
@@ -10123,7 +10123,7 @@ _02125754:
 	ldmia sp!, {r3, r4, r5, pc}
 	.align 2, 0
 _0212579C: .word ptr_FUN_overlay_0_0212546c_overlay_1_02140a50
-_021257A0: .word sub_02007784
+_021257A0: .word _ZN17UnkClass_02007770D2Ev
 
 	arm_func_start ov1_021257A4
 ov1_021257A4: ; 0x021257A4
@@ -10549,12 +10549,12 @@ ov1_02125D24: ; 0x02125D24
 	mov r1, r0
 	strh r1, [r5, #0x2a]
 	mov r0, r4
-	bl sub_020078E4
+	bl _ZN17UnkClass_0200777012sub_020078E4Et
 	mov r0, r4
 	ldr r1, [r7, #0x478]
 	mov r1, r1, lsl #0x10
 	mov r1, r1, lsr #0xd
-	bl sub_02007A94
+	bl _ZN17UnkClass_0200777012sub_02007A94Em
 	mov r0, #0
 	ldr r1, [r7, #0x478]
 	ldr r2, [r4, #0x14]

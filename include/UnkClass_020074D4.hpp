@@ -23,6 +23,11 @@ public:
 
     static void sub_02007744(void *data);
 
+    inline u8 *func0()
+    {
+        return (u8 *)unk_04->pRawData;
+    }
+
 public:
     CNCGRFile *unk_00;
     NNSG2dCharacterData *unk_04;

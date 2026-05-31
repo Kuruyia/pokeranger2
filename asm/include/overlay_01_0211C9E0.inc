@@ -50,10 +50,10 @@
 .public _ZN17UnkClass_020074D4D2Ev
 .public _ZN17UnkClass_020074D412sub_020076B0Ev
 .public _ZN17UnkClass_020074D412sub_020076E8Em
-.public sub_020077CC
-.public sub_020077E4
-.public sub_020078E4
-.public sub_02007A94
+.public _ZN17UnkClass_0200777012sub_020077CCEP17UnkClass_020074D4
+.public _ZN17UnkClass_0200777012sub_020077E4EP9CNCERFile
+.public _ZN17UnkClass_0200777012sub_020078E4Et
+.public _ZN17UnkClass_0200777012sub_02007A94Em
 .public sub_02007AC0
 .public sub_02007B28
 .public sub_02007BC4
@@ -363,8 +363,8 @@
 .public _ZTVN10__cxxabiv120__si_class_type_infoE
 .public _ZN18CPrimitiveTRIANGLEC1Ev
 .public _ZN18CPrimitiveTRIANGLED1Ev
-.public sub_02007770
-.public sub_02007784
+.public _ZN17UnkClass_02007770C1Ev
+.public _ZN17UnkClass_02007770D2Ev
 .public sub_02007CC4
 .public sub_02007CE0
 .public sub_0201179C

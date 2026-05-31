@@ -22915,11 +22915,11 @@ _0203DD68:
 	cmp r2, #0
 	beq _0203DEB4
 	ldr r0, [sp, #8]
-	ldr r1, _0203E0F4 ; =sub_02007784
+	ldr r1, _0203E0F4 ; =_ZN17UnkClass_02007770D2Ev
 	str r2, [r0, #0x198]
 	str r1, [sp]
 	ldr r0, [r0, #0x198]
-	ldr r3, _0203E0F8 ; =sub_02007770
+	ldr r3, _0203E0F8 ; =_ZN17UnkClass_02007770C1Ev
 	mov r1, #0x18
 	mov r2, #8
 	bl __cxa_vec_new
@@ -22948,12 +22948,12 @@ _0203DDE8:
 	ldr r1, [r4, #4]
 	ldr r0, [r0, #0x194]
 	add r0, r0, r7
-	bl sub_020077CC
+	bl _ZN17UnkClass_0200777012sub_020077CCEP17UnkClass_020074D4
 	ldr r0, [sp, #8]
 	ldr r1, [r4, #8]
 	ldr r0, [r0, #0x194]
 	add r0, r0, r7
-	bl sub_020077E4
+	bl _ZN17UnkClass_0200777012sub_020077E4EP9CNCERFile
 	ldr r0, [sp, #8]
 	ldr r0, [r0, #0x194]
 	add r0, r0, r7
@@ -23138,8 +23138,8 @@ _0203E0E4: .word MAIN_BSS_020B26A0
 _0203E0E8: .word 0x04000210
 _0203E0EC: .word s_game
 _0203E0F0: .word MAIN_BSS_0210CA64
-_0203E0F4: .word sub_02007784
-_0203E0F8: .word sub_02007770
+_0203E0F4: .word _ZN17UnkClass_02007770D2Ev
+_0203E0F8: .word _ZN17UnkClass_02007770C1Ev
 _0203E0FC: .word 0x01FF0000
 _0203E100: .word 0xC000C000
 _0203E104: .word NNSi_objSizeWTbl
@@ -23216,11 +23216,11 @@ _0203E1D0:
 	cmp r2, #0
 	beq _0203E304
 	ldr r0, [sp, #0x10]
-	ldr r1, _0203E544 ; =sub_02007784
+	ldr r1, _0203E544 ; =_ZN17UnkClass_02007770D2Ev
 	str r2, [r0, #0x198]
 	str r1, [sp]
 	ldr r0, [r0, #0x198]
-	ldr r3, _0203E548 ; =sub_02007770
+	ldr r3, _0203E548 ; =_ZN17UnkClass_02007770C1Ev
 	mov r1, #0x18
 	mov r2, #8
 	bl __cxa_vec_new
@@ -23245,12 +23245,12 @@ _0203E240:
 	ldr r1, [r4, #4]
 	ldr r0, [r0, #0x194]
 	add r0, r0, r7
-	bl sub_020077CC
+	bl _ZN17UnkClass_0200777012sub_020077CCEP17UnkClass_020074D4
 	ldr r0, [sp, #0x10]
 	ldr r1, [r4, #8]
 	ldr r0, [r0, #0x194]
 	add r0, r0, r7
-	bl sub_020077E4
+	bl _ZN17UnkClass_0200777012sub_020077E4EP9CNCERFile
 	ldr r0, [sp, #0x10]
 	ldr r0, [r0, #0x194]
 	add r0, r0, r7
@@ -23432,8 +23432,8 @@ _0203E4D4:
 	.align 2, 0
 _0203E53C: .word 0x00050838
 _0203E540: .word DAT_0208dd98
-_0203E544: .word sub_02007784
-_0203E548: .word sub_02007770
+_0203E544: .word _ZN17UnkClass_02007770D2Ev
+_0203E548: .word _ZN17UnkClass_02007770C1Ev
 _0203E54C: .word 0x01FF0000
 _0203E550: .word 0xC000C000
 _0203E554: .word NNSi_objSizeWTbl
@@ -23498,7 +23498,7 @@ _0203E61C:
 	ldr r0, [r4, #0x194]
 	cmp r0, #0
 	beq _0203E640
-	ldr r3, _0203E64C ; =sub_02007784
+	ldr r3, _0203E64C ; =_ZN17UnkClass_02007770D2Ev
 	mov r1, #0x18
 	mov r2, #8
 	bl __cxa_vec_delete
@@ -23509,7 +23509,7 @@ _0203E640:
 	str r0, [r4, #0x198]
 	ldmia sp!, {r4, pc}
 	.align 2, 0
-_0203E64C: .word sub_02007784
+_0203E64C: .word _ZN17UnkClass_02007770D2Ev
 
 	arm_func_start sub_0203E650
 sub_0203E650: ; 0x0203E650
@@ -23776,13 +23776,13 @@ sub_0203E934: ; 0x0203E934
 	mov r1, r4
 	eor r2, r2, #1
 	and r5, r2, #0xff
-	bl sub_020078E4
+	bl _ZN17UnkClass_0200777012sub_020078E4Et
 	mov r0, r7
 	add r1, sb, r5, lsl #2
 	ldr r1, [r1, #0x188]
 	mov r1, r1, lsl #0x10
 	mov r1, r1, lsr #0xd
-	bl sub_02007A94
+	bl _ZN17UnkClass_0200777012sub_02007A94Em
 	mov r0, #0
 	add r1, sb, r5, lsl #2
 	ldr r1, [r1, #0x188]
