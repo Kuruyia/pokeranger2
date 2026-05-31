@@ -333,11 +333,11 @@
 .public _ZN14CPrimitiveQUAD20SetVertexCoordinatesElllllllll
 .public _ZN18CPrimitiveTRIANGLEC1Ev
 .public _Z17LinearInterpolatellll
-.public sub_020074E8
-.public sub_02007548
-.public sub_020076B0
-.public sub_020076E8
-.public sub_02007714
+.public _ZN17UnkClass_020074D4C1EPKcmm
+.public _ZN17UnkClass_020074D4D2Ev
+.public _ZN17UnkClass_020074D412sub_020076B0Ev
+.public _ZN17UnkClass_020074D412sub_020076E8Em
+.public _ZN17UnkClass_020074D412sub_02007714Em
 .public sub_02007AC0
 .public sub_02007B28
 .public sub_02007BC4

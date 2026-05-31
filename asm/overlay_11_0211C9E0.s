@@ -26015,7 +26015,7 @@ _02131E70:
 	ldr r0, _0213200C ; =s_game
 	ldr r1, _02132018 ; =ov11_0213251C
 	ldr r0, [r0]
-	bl _ZN5CGame12sub_020100E4EPFvvEm
+	bl _ZN5CGame12sub_020100E4EPFvPvES0_
 	b _02132000
 _02131E84:
 	ldr r0, [r4, #4]
@@ -26042,7 +26042,7 @@ _02131ED0:
 	ldr r0, _0213200C ; =s_game
 	ldr r1, _02132018 ; =ov11_0213251C
 	ldr r0, [r0]
-	bl _ZN5CGame12sub_020100E4EPFvvEm
+	bl _ZN5CGame12sub_020100E4EPFvPvES0_
 	b _02132000
 _02131EE4:
 	ldr r0, [r4, #4]

@@ -16,7 +16,7 @@
 
 extern "C" void *sub_020101A8(u32 size);
 
-typedef void (*CGame_020100E4_arg0)();
+typedef void (*CGame_020100E4_arg0)(void *);
 
 class CGame {
 public:
@@ -34,7 +34,7 @@ public:
     }
 
     void sub_0200FB28();
-    BOOL sub_020100E4(CGame_020100E4_arg0 arg0, u32 arg1);
+    BOOL sub_020100E4(CGame_020100E4_arg0 arg0, void *arg1);
     void sub_020101B4(char *arg0);
     void sub_0201028C();
     void sub_020102E8();

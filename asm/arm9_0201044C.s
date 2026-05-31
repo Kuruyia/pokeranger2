@@ -4590,7 +4590,7 @@ sub_02013CD4: ; 0x02013CD4
 	beq _02013D90
 	beq _02013D88
 	mov r0, r6
-	bl sub_02007548
+	bl _ZN17UnkClass_020074D4D2Ev
 	mov r0, r6
 	bl _ZdlPv
 	arm_func_end sub_02013CD4
@@ -4606,7 +4606,7 @@ _02013D90:
 	add r1, sp, #0xc4
 	mov r3, r2
 	str r4, [sp]
-	bl sub_020074E8
+	bl _ZN17UnkClass_020074D4C1EPKcmm
 _02013DB4:
 	str r0, [r5, #4]
 	ldr r0, [r5, #8]
@@ -4710,7 +4710,7 @@ sub_02013E78: ; 0x02013E78
 	beq _02013F38
 	beq _02013F30
 	mov r0, r5
-	bl sub_02007548
+	bl _ZN17UnkClass_020074D4D2Ev
 	mov r0, r5
 	bl _ZdlPv
 	arm_func_end sub_02013E78
@@ -4731,7 +4731,7 @@ _02013F38:
 	add r1, sp, #0xc4
 	mov r3, r2
 	str ip, [sp]
-	bl sub_020074E8
+	bl _ZN17UnkClass_020074D4C1EPKcmm
 _02013F70:
 	str r0, [r4, #4]
 _02013F74:
@@ -4833,7 +4833,7 @@ _02014088:
 	beq _020140E4
 	beq _020140D0
 	mov r0, sl
-	bl sub_02007548
+	bl _ZN17UnkClass_020074D4D2Ev
 	mov r0, sl
 	bl _ZdlPv
 _020140D0:
@@ -4920,7 +4920,7 @@ _020141C8:
 	cmp r0, #0
 	beq _02014204
 	mov r1, r5
-	bl sub_020076E8
+	bl _ZN17UnkClass_020074D412sub_020076E8Em
 	ldr r1, [r6, #0x10]
 	ldrb r0, [r6, #6]
 	add r1, r1, r4, lsl #4
@@ -4964,7 +4964,7 @@ _02014238:
 	mov r1, r0, lsl #0x10
 	ldr r0, [r2, #4]
 	mov r1, r1, lsr #0xd
-	bl sub_020076E8
+	bl _ZN17UnkClass_020074D412sub_020076E8Em
 	ldrb r0, [r7, #6]
 	cmp r0, #0
 	ldmneia sp!, {r3, r4, r5, r6, r7, pc}
@@ -5000,7 +5000,7 @@ _020142CC:
 	ldr r0, [r0, #4]
 	cmp r0, #0
 	beq _020142E4
-	bl sub_020076B0
+	bl _ZN17UnkClass_020074D412sub_020076B0Ev
 _020142E4:
 	ldrb r0, [r5, #0x14]
 	add r4, r4, #1
@@ -5787,7 +5787,7 @@ sub_02014CEC: ; 0x02014CEC
 	beq _02014DA8
 	beq _02014DA0
 	mov r0, r6
-	bl sub_02007548
+	bl _ZN17UnkClass_020074D4D2Ev
 	mov r0, r6
 	bl _ZdlPv
 	arm_func_end sub_02014CEC
@@ -5808,7 +5808,7 @@ _02014DA8:
 	cmp r0, #0
 	beq _02014DE0
 	ldr r1, [sp, #4]
-	bl sub_02007524
+	bl _ZN17UnkClass_020074D4C1EP19NNSG2dCharacterData
 _02014DE0:
 	str r0, [r5, #4]
 _02014DE4:
@@ -5913,7 +5913,7 @@ sub_02014EA4: ; 0x02014EA4
 	beq _02014F64
 	beq _02014F5C
 	mov r0, r5
-	bl sub_02007548
+	bl _ZN17UnkClass_020074D4D2Ev
 	mov r0, r5
 	bl _ZdlPv
 	arm_func_end sub_02014EA4
@@ -5938,7 +5938,7 @@ _02014F64:
 	cmp r0, #0
 	beq _02014FAC
 	ldr r1, [sp, #4]
-	bl sub_02007524
+	bl _ZN17UnkClass_020074D4C1EP19NNSG2dCharacterData
 _02014FAC:
 	str r0, [r4, #4]
 _02014FB0:

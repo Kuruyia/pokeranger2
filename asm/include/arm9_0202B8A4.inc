@@ -331,10 +331,10 @@
 .public _Z17LinearInterpolatellll
 .public _Z12sub_02007254ll
 .public _Z12sub_0200732CP7Point2DP6CircleS0_
-.public sub_020074E8
-.public sub_02007548
-.public sub_020076B0
-.public sub_020076E8
+.public _ZN17UnkClass_020074D4C1EPKcmm
+.public _ZN17UnkClass_020074D4D2Ev
+.public _ZN17UnkClass_020074D412sub_020076B0Ev
+.public _ZN17UnkClass_020074D412sub_020076E8Em
 .public sub_02007770
 .public sub_02007784
 .public sub_020077CC

@@ -528,11 +528,11 @@ _02010098:
 	.align 2, 0
 _020100E0: .word 0x04000006
 
-	arm_func_start _ZN5CGame12sub_020100E4EPFvvEm
-_ZN5CGame12sub_020100E4EPFvvEm: ; 0x020100E4
+	arm_func_start _ZN5CGame12sub_020100E4EPFvPvES0_
+_ZN5CGame12sub_020100E4EPFvPvES0_: ; 0x020100E4
 	stmdb sp!, {r3, lr}
 	mov lr, #0
-	arm_func_end _ZN5CGame12sub_020100E4EPFvvEm
+	arm_func_end _ZN5CGame12sub_020100E4EPFvPvES0_
 _020100EC:
 	add r3, r0, lr, lsl #2
 	add r3, r3, #0x1000

@@ -46,10 +46,10 @@
 .public _Z12sub_0200676411PointPair2D6CircleP7Point2Dl
 .public _Z17LinearInterpolatellll
 .public _Z12sub_02007254ll
-.public sub_020074E8
-.public sub_02007548
-.public sub_020076B0
-.public sub_020076E8
+.public _ZN17UnkClass_020074D4C1EPKcmm
+.public _ZN17UnkClass_020074D4D2Ev
+.public _ZN17UnkClass_020074D412sub_020076B0Ev
+.public _ZN17UnkClass_020074D412sub_020076E8Em
 .public sub_020077CC
 .public sub_020077E4
 .public sub_020078E4
@@ -139,7 +139,7 @@
 .public sub_0200F6C4
 .public sub_0200F71C
 .public sub_0201001C
-.public _ZN5CGame12sub_020100E4EPFvvEm
+.public _ZN5CGame12sub_020100E4EPFvPvES0_
 .public sub_02010178
 .public sub_020107A8
 .public sub_02010B24

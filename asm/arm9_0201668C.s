@@ -2877,7 +2877,7 @@ sub_02018BC4: ; 0x02018BC4
 	ldr r1, _02018CF8 ; =s_data_shadow_NCBR_0208b814
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020074E8
+	bl _ZN17UnkClass_020074D4C1EPKcmm
 	arm_func_end sub_02018BC4
 _02018BF4:
 	str r0, [r4]
@@ -2890,9 +2890,9 @@ _02018BF4:
 	mov r1, r1, lsl #0x10
 	ldr r0, [r4]
 	mov r1, r1, lsr #0xd
-	bl sub_020076E8
+	bl _ZN17UnkClass_020074D412sub_020076E8Em
 	ldr r0, [r4]
-	bl sub_020076B0
+	bl _ZN17UnkClass_020074D412sub_020076B0Ev
 	mov r0, #0x24
 	bl _Znwm
 	cmp r0, #0
@@ -2961,7 +2961,7 @@ sub_02018D04: ; 0x02018D04
 	beq _02018D34
 	beq _02018D2C
 	mov r0, r4
-	bl sub_02007548
+	bl _ZN17UnkClass_020074D4D2Ev
 	mov r0, r4
 	bl _ZdlPv
 	arm_func_end sub_02018D04
@@ -5245,7 +5245,7 @@ _0201AB78:
 	mov r1, r6
 	mov r3, r2
 	str r2, [sp]
-	bl sub_020074E8
+	bl _ZN17UnkClass_020074D4C1EPKcmm
 _0201AB9C:
 	str r0, [r5]
 	mov r1, #0
@@ -5257,9 +5257,9 @@ _0201AB9C:
 	mov r1, r1, lsl #0x10
 	ldr r0, [r5]
 	mov r1, r1, lsr #0xd
-	bl sub_020076E8
+	bl _ZN17UnkClass_020074D412sub_020076E8Em
 	ldr r0, [r5]
-	bl sub_020076B0
+	bl _ZN17UnkClass_020074D412sub_020076B0Ev
 	mov r0, #0x24
 	bl _Znwm
 	cmp r0, #0
@@ -5365,7 +5365,7 @@ _0201AD24:
 	beq _0201AD4C
 	beq _0201AD44
 	mov r0, r5
-	bl sub_02007548
+	bl _ZN17UnkClass_020074D4D2Ev
 	mov r0, r5
 	bl _ZdlPv
 _0201AD44:
@@ -22398,7 +22398,7 @@ sub_020293A0: ; 0x020293A0
 	beq _020293D4
 	beq _020293CC
 	mov r0, r4
-	bl sub_02007548
+	bl _ZN17UnkClass_020074D4D2Ev
 	mov r0, r4
 	bl _ZdlPv
 	arm_func_end sub_020293A0
@@ -22450,13 +22450,13 @@ sub_02029424: ; 0x02029424
 	beq _02029474
 	mov r1, r1, lsl #0x10
 	mov r1, r1, lsr #0xd
-	bl sub_020076E8
+	bl _ZN17UnkClass_020074D412sub_020076E8Em
 	ldmia sp!, {r3, r4, r5, pc}
 	arm_func_end sub_02029424
 _02029474:
 	mov r1, r1, lsl #0x10
 	mov r1, r1, lsr #0xd
-	bl sub_02007714
+	bl _ZN17UnkClass_020074D412sub_02007714Em
 	ldmia sp!, {r3, r4, r5, pc}
 
 	arm_func_start sub_02029484
@@ -22478,7 +22478,7 @@ sub_020294A8: ; 0x020294A8
 	ldr r0, [r0]
 	cmp r0, #0
 	ldmeqia sp!, {r3, pc}
-	bl sub_020076B0
+	bl _ZN17UnkClass_020074D412sub_020076B0Ev
 	ldmia sp!, {r3, pc}
 	arm_func_end sub_020294A8
 

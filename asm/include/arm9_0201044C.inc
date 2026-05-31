@@ -68,11 +68,11 @@
 .public _Z20QuadraticInterpolatelllll
 .public _Z16CubicInterpolatellllll
 .public _Z12sub_02007254ll
-.public sub_020074E8
-.public sub_02007524
-.public sub_02007548
-.public sub_020076B0
-.public sub_020076E8
+.public _ZN17UnkClass_020074D4C1EPKcmm
+.public _ZN17UnkClass_020074D4C1EP19NNSG2dCharacterData
+.public _ZN17UnkClass_020074D4D2Ev
+.public _ZN17UnkClass_020074D412sub_020076B0Ev
+.public _ZN17UnkClass_020074D412sub_020076E8Em
 .public sub_02007AC0
 .public sub_02007AFC
 .public sub_02007B28

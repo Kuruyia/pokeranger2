@@ -2659,7 +2659,7 @@ _0212427C:
 	ldr r1, _021242EC ; =ov3_02125140
 	ldr r0, [r0]
 	mov r2, #0
-	bl _ZN5CGame12sub_020100E4EPFvvEm
+	bl _ZN5CGame12sub_020100E4EPFvPvES0_
 	ldr r0, [r4, #0xc]
 	cmp r0, #0
 	ldmltia sp!, {r4, pc}

@@ -30,7 +30,7 @@
 .public _ZN17UnkClass_020023EC12sub_02002434Emmmm
 .public _ZN17UnkClass_020023EC12sub_020027E8Ev
 .public _ZN17UnkClass_020023EC12sub_020028A4ElmPcz
-.public _ZN5CGame12sub_020100E4EPFvvEm
+.public _ZN5CGame12sub_020100E4EPFvPvES0_
 .public _ZN9CNCGRFileC1EPKcmmm
 .public _ZN9CNCLRFileC1EPKcmmm
 .public _ZdaPv

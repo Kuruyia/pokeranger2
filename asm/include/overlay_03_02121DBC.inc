@@ -70,7 +70,7 @@
 .public _ZN17UnkClass_020091E812sub_0200AD34Emmmm
 .public _ZN17UnkClass_020091E812sub_0200B6A4Em
 .public _ZN17UnkClass_020091E812sub_0200B6D4Ev
-.public _ZN5CGame12sub_020100E4EPFvvEm
+.public _ZN5CGame12sub_020100E4EPFvPvES0_
 .public _ZN6CSceneC2Ev
 .public _ZN9CNCLRFileC1EPKcmmm
 .public _ZN9CNSCRFileC1EPKcmmm

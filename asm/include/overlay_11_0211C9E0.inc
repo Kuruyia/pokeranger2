@@ -14,7 +14,7 @@
 .public _ZN17UnkClass_020091E812sub_0200AA84Emmmmm
 .public _ZN17UnkClass_020091E812sub_0200AB28Elm
 .public _ZN17UnkClass_020091E812sub_0200AC90Ev
-.public _ZN5CGame12sub_020100E4EPFvvEm
+.public _ZN5CGame12sub_020100E4EPFvPvES0_
 .public _ZN6CSceneC2Ev
 .public _Znam
 .public _Znwm
