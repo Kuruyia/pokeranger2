@@ -215,7 +215,7 @@
         7](__cs,object) found in global MSL_C_NITRO_Ai_LE.a
        6](@EX@fwrite,object) found in local MSL_C_NITRO_Ai_LE.a
        6](OS_Printf,func) found in global libos.a
-       6](sub_02007CC0,func) found in global asm_arm9_020074D4.s.o
+       6](sub_02007CC0,func) found in global asm_arm9_02007AA4.s.o
         7](_ZN17UnkClass_020023EC12sub_020028A4ElmPcz,func) found in global src_UnkClass_020023EC.cpp.o
          8](OS_VSNPrintf,func) found in overload libos.a
           9](STD_TVSNPrintf,func) found in overload libstd.a
@@ -300,7 +300,7 @@
            10](MI_UncompressRL8,func) found in global libmi.a
            10](MI_UnfilterDiff8,func) found in global libmi.a
           9](DC_FlushRange,func) found in global libos.a
-          9](@13054,object) found in local src_file_CBinaryFile.cpp.o
+          9](@13055,object) found in local src_file_CBinaryFile.cpp.o
          8](_ZTV11CBinaryFile,object) found in global src_file_CBinaryFile.cpp.o
           9](_ZTI11CBinaryFile,object) found in multidef src_file_CBinaryFile.cpp.o
            10](_ZTS11CBinaryFile,object) found in multidef src_file_CBinaryFile.cpp.o
@@ -413,7 +413,7 @@
              12](.bss,section) found in local libcard.a
            10](.bss,section) found in local libcard.a
           9](sub_0200EB28,func) found in global asm_arm9_0200C38C.s.o
-           10](sub_02008BF0,func) found in global asm_arm9_020074D4.s.o
+           10](sub_02008BF0,func) found in global asm_arm9_02007AA4.s.o
            10](NNS_GfdRegisterNewVramTransferTask,func) found in global libnnsgfd.a
             11](IsVramTransferTaskQueueFull_,func) found in local libnnsgfd.a
             11](NNSi_GfdGetEndVramTransferTaskQueue,func) found in global libnnsgfd.a
@@ -595,11 +595,34 @@
            10](mgr_,object) found in local libnnsgfd.a
           9](NNS_GfdAllocLnkPlttVram,func) found in global libnnsgfd.a
            10](NNSi_GfdAllocLnkVramAligned,func) found in global libnnsgfd.a
+          9](_ZN17UnkClass_020074D412sub_020076B0Ev,func) found in global src_UnkClass_020074D4.cpp.o
           9](NNS_GfdFreeLnkTexVram,func) found in global libnnsgfd.a
            10](mgr_,object) found in local libnnsgfd.a
+          9](_ZN17UnkClass_020074D412sub_02007714Em,func) found in global src_UnkClass_020074D4.cpp.o
+           10](s_game,object) found in global src_main.cpp.o
+           10](_ZN5CGame12sub_020100E4EPFvPvES0_,func) found in global asm_arm9_0200FA0C.s.o
+           10](_ZN17UnkClass_020074D412sub_02007744EPv,func) found in global src_UnkClass_020074D4.cpp.o
+            11](NNS_G2dLoadImage2DMapping,func) found in global libnnsg2d.a
+             12](GX_BeginLoadTex,func) found in global libgx.a
+              13](GX_ResetBankForTex,func) found in global libgx.a
+               14](resetBankForX_,func) found in local libgx.a
+                15](GX_VRAMCNT_SetLCDC_,func) found in local libgx.a
+              13](sTexStartAddrTable,object) found in local libgx.a
+              13](.bss,section) found in local libgx.a
+             12](GX_LoadTex,func) found in global libgx.a
+              13](MI_DmaCopy32Async,func) found in global libmi.a
+               14](MI_WaitDma,func) found in global libmi.a
+               14](OSi_EnterDmaCallback,func) found in global libos.a
+               14](MIi_DmaSetParams,func) found in global libmi.a
+             12](GX_EndLoadTex,func) found in global libgx.a
+              13](GX_SetBankForTex,func) found in global libgx.a
+             12](GX_LoadOBJ,func) found in global libgx.a
+             12](GXS_LoadOBJ,func) found in global libgx.a
+             12](NNS_G2dSetImageLocation,func) found in global libnnsg2d.a
+          9](_ZN17UnkClass_020074D412sub_020076E8Em,func) found in global src_UnkClass_020074D4.cpp.o
           9](NNS_GfdAllocLnkTexVram,func) found in global libnnsgfd.a
            10](NNSi_GfdAllocLnkVram,func) found in global libnnsgfd.a
-          9](sub_0200FA2C,func) found in global asm_arm9_0200FA0C.s.o
+          9](_ZN17UnkClass_020074D4D2Ev,func) found in global src_UnkClass_020074D4.cpp.o
           9](CARD_GetBackupTotalSize,func) found in global libcard.a
           9](CARD_GetBackupPageSize,func) found in global libcard.a
           9](_ZN17UnkClass_020B26A012sub_0201630CEP7RTCTimeP7RTCDate,func) found in global src_UnkClass_020B26A0.cpp.o
@@ -618,8 +641,7 @@
             11](_ZN17UnkClass_020091E812sub_02009F28Ev,func) found in global src_UnkClass_020091E8.cpp.o
              12](_ZN17UnkClass_0200BBC812sub_0200BF58Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
               13](_ZN17UnkClass_0200BBC012sub_0200B714EP10CGame_0024,func) found in global src_UnkClass_0200BBC0.cpp.o
-             12](s_game,object) found in global src_main.cpp.o
-             12](_ZN17UnkClass_020091E812sub_0200B6E4Ev,func) found in global src_UnkClass_020091E8.cpp.o
+             12](_ZN17UnkClass_020091E812sub_0200B6E4EPv,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200978CEm,func) found in global src_UnkClass_020091E8.cpp.o
             11](_ZN17UnkClass_020091E812sub_0200AA68Em,func) found in global src_UnkClass_020091E8.cpp.o
           9](_ZN17UnkClass_020091E812sub_0200AA04El,func) found in global src_UnkClass_020091E8.cpp.o
@@ -657,14 +679,8 @@
               13](LoadBGPlttToExtendedPltt,func) found in local libnnsg2d.a
                14](GX_BeginLoadBGExtPltt,func) found in global libgx.a
                 15](GX_ResetBankForBGExtPltt,func) found in global libgx.a
-                 16](resetBankForX_,func) found in local libgx.a
-                  17](GX_VRAMCNT_SetLCDC_,func) found in local libgx.a
                 15](.bss,section) found in local libgx.a
                14](GX_LoadBGExtPltt,func) found in global libgx.a
-                15](MI_DmaCopy32Async,func) found in global libmi.a
-                 16](MI_WaitDma,func) found in global libmi.a
-                 16](OSi_EnterDmaCallback,func) found in global libos.a
-                 16](MIi_DmaSetParams,func) found in global libmi.a
                14](GX_EndLoadBGExtPltt,func) found in global libgx.a
                 15](GX_SetBankForBGExtPltt,func) found in global libgx.a
                14](GXS_BeginLoadBGExtPltt,func) found in global libgx.a
@@ -698,6 +714,7 @@
           9](_ZN14CBinaryFileMesC1EPKcm,func) found in global src_file_CBinaryFile.cpp.o
            10](_ZN14CBinaryFileMes12sub_02003124Ev,func) found in global src_file_CBinaryFile.cpp.o
             11](.data,section) found in local src_file_CBinaryFile.cpp.o
+             12](@12892,object) found in local src_file_CBinaryFile.cpp.o
              12](@12891,object) found in local src_file_CBinaryFile.cpp.o
              12](@12890,object) found in local src_file_CBinaryFile.cpp.o
              12](@12889,object) found in local src_file_CBinaryFile.cpp.o
@@ -709,13 +726,12 @@
              12](@12883,object) found in local src_file_CBinaryFile.cpp.o
              12](@12882,object) found in local src_file_CBinaryFile.cpp.o
              12](@12881,object) found in local src_file_CBinaryFile.cpp.o
-             12](@12880,object) found in local src_file_CBinaryFile.cpp.o
            10](_ZTV14CBinaryFileMes,object) found in global src_file_CBinaryFile.cpp.o
             11](_ZTI14CBinaryFileMes,object) found in multidef src_file_CBinaryFile.cpp.o
              12](_ZTS14CBinaryFileMes,object) found in multidef src_file_CBinaryFile.cpp.o
             11](_ZN14CBinaryFileMesD0Ev,func) found in global src_file_CBinaryFile.cpp.o
             11](_ZN14CBinaryFileMesD1Ev,func) found in global src_file_CBinaryFile.cpp.o
-           10](@13121,object) found in local src_file_CBinaryFile.cpp.o
+           10](@13122,object) found in local src_file_CBinaryFile.cpp.o
           9](sub_02010EAC,func) found in global asm_arm9_0201044C.s.o
            10](__cxa_vec_cleanup,func) found in global NITRO_Runtime_Ai_LE.a
            10](@EX@__cxa_vec_cleanup,object) found in local NITRO_Runtime_Ai_LE.a
@@ -724,7 +740,13 @@
            10](@EX@__cxa_vec_ctor,object) found in local NITRO_Runtime_Ai_LE.a
             11](@ET@__cxa_vec_ctor,object) found in local NITRO_Runtime_Ai_LE.a
            10](strcpy,func) found in global MSL_C_NITRO_Ai_LE.a
+           10](_ZN17UnkClass_020074D4C1EP19NNSG2dCharacterData,func) found in global src_UnkClass_020074D4.cpp.o
+            11](_ZN17UnkClass_020074D412sub_0200755CEv,func) found in global src_UnkClass_020074D4.cpp.o
+             12](NNS_G2dInitImageProxy,func) found in global libnnsg2d.a
+            11](_ZN17UnkClass_020074D412sub_0200763CEP19NNSG2dCharacterData,func) found in global src_UnkClass_020074D4.cpp.o
            10](_ZN11CBinaryFile12sub_02003108EPKc,func) found in global src_file_CBinaryFile.cpp.o
+           10](_ZN17UnkClass_020074D4C1EPKcmm,func) found in global src_UnkClass_020074D4.cpp.o
+            11](_ZN17UnkClass_020074D412sub_02007590EPKcmmm,func) found in global src_UnkClass_020074D4.cpp.o
            10](_Z12sub_02007254ll,func) found in global src_sub_02007254.cpp.o
            10](_Z20QuadraticInterpolatelllll,func) found in global src_interpolation.cpp.o
             11](_Z31CalculateBezierCurveInterpolantll,func) found in local src_interpolation.cpp.o
@@ -875,6 +897,7 @@
              12](DefaultDumpCallBack_,func) found in local libnnsgfd.a
            10](NNS_GfdDumpLnkTexVramManager,func) found in global libnnsgfd.a
            10](_Z12sub_020060007Point2D9Rectanglem,func) found in global src_sub_02006000.cpp.o
+           10](_ZN17UnkClass_020074D4C1Ev,func) found in global src_UnkClass_020074D4.cpp.o
            10](_Z12sub_02044440v,func) found in global src_sub_02044440.cpp.o
            10](_ZN17UnkClass_020091E812sub_020097FCEmm,func) found in global src_UnkClass_020091E8.cpp.o
            10](_ZN17UnkClass_020091E812sub_0200AA84Emmmmm,func) found in global src_UnkClass_020091E8.cpp.o
@@ -988,8 +1011,6 @@
             11](GXS_LoadOBJPltt,func) found in global libgx.a
             11](GX_BeginLoadTexPltt,func) found in global libgx.a
              12](GX_ResetBankForTexPltt,func) found in global libgx.a
-             12](.bss,section) found in local libgx.a
-             12](sTexPlttStartAddrTable,object) found in local libgx.a
             11](GX_LoadTexPltt,func) found in global libgx.a
             11](GX_EndLoadTexPltt,func) found in global libgx.a
              12](GX_SetBankForTexPltt,func) found in global libgx.a
@@ -1045,10 +1066,8 @@
            10](GX_DispOn,func) found in global libgx.a
            10](GX_SetBankForBG,func) found in global libgx.a
            10](GX_SetBankForOBJ,func) found in global libgx.a
-           10](GX_SetBankForTex,func) found in global libgx.a
            10](GX_ResetBankForARM7,func) found in global libgx.a
            10](GX_ResetBankForClearImage,func) found in global libgx.a
-           10](GX_ResetBankForTex,func) found in global libgx.a
            10](GX_ResetBankForOBJ,func) found in global libgx.a
            10](GX_ResetBankForBG,func) found in global libgx.a
          8](NNS_GfdInitVramTransferManager,func) found in global libnnsgfd.a
@@ -1087,7 +1106,6 @@
           9](DoTransfer_,func) found in local libnnsgfd.a
            10](transFunc$8459,object) found in local libnnsgfd.a
             11](DoTransfer2dObjCharSub,func) found in local libnnsgfd.a
-             12](GXS_LoadOBJ,func) found in global libgx.a
             11](DoTransfer2dObjOamSub,func) found in local libnnsgfd.a
             11](DoTransfer2dBGExtPlttSub,func) found in local libnnsgfd.a
             11](DoTransfer2dObjExtPlttSub,func) found in local libnnsgfd.a
@@ -1104,7 +1122,6 @@
             11](DoTransfer2dBG1CharSub,func) found in local libnnsgfd.a
             11](DoTransfer2dBG0CharSub,func) found in local libnnsgfd.a
             11](DoTransfer2dObjCharMain,func) found in local libnnsgfd.a
-             12](GX_LoadOBJ,func) found in global libgx.a
             11](DoTransfer2dObjOamMain,func) found in local libnnsgfd.a
             11](DoTransfer2dBGExtPlttMain,func) found in local libnnsgfd.a
             11](DoTransfer2dObjExtPlttMain,func) found in local libnnsgfd.a
@@ -1129,9 +1146,6 @@
              12](GX_LoadClearImageColor,func) found in global libgx.a
             11](DoTransfer3dTexPltt,func) found in local libnnsgfd.a
             11](DoTransfer3dTex,func) found in local libnnsgfd.a
-             12](GX_BeginLoadTex,func) found in global libgx.a
-             12](GX_LoadTex,func) found in global libgx.a
-             12](GX_EndLoadTex,func) found in global libgx.a
          8](_ZN17UnkClass_020091E8C1Ev,func) found in global src_UnkClass_020091E8.cpp.o
           9](_ZN17UnkClass_0200BBC8C1Ev,func) found in global src_UnkClass_0200BBC8.cpp.o
            10](_ZN17UnkClass_0200BBC0D1Ev,func) found in global src_UnkClass_0200BBC0.cpp.o
@@ -1175,9 +1189,6 @@
          8](@12910,object) found in local src_UnkClass_020023EC.cpp.o
          8](@12911,object) found in local src_UnkClass_020023EC.cpp.o
          8](@12912,object) found in local src_UnkClass_020023EC.cpp.o
-        7](NNS_G2dLoadImage2DMapping,func) found in global libnnsg2d.a
-         8](NNS_G2dSetImageLocation,func) found in global libnnsg2d.a
-        7](NNS_G2dInitImageProxy,func) found in global libnnsg2d.a
        6](CRYPTO_RC4FastEncrypt,func) found in global asm_arm9_02046D5C.s.o
        6](_ZN15CSoftwareSprite18GetCellNumOAMAttrsEt,func) found in global src_primitive_CSoftwareSprite.cpp.o
        6](_Z12sub_02006F806Circle9Rectangle,func) found in global src_sub_02006000.cpp.o
@@ -1186,6 +1197,18 @@
         7](_Z12sub_0200635011PointPair2DS_P7Point2Di,func) found in global src_sub_02006000.cpp.o
          8](_Z12sub_02006AE011PointPair2D7Point2D,func) found in global src_sub_02006000.cpp.o
        6](NNS_GfdGetVramTransferTaskTotalSize,func) found in global libnnsgfd.a
+       6](_ZN17UnkClass_0200777012sub_02007A94Em,func) found in global src_UnkClass_02007770.cpp.o
+       6](_ZN17UnkClass_0200777012sub_020078E4Et,func) found in global src_UnkClass_02007770.cpp.o
+        7](_ZN17UnkClass_0200777012sub_020079B8EPhhht,func) found in global src_UnkClass_02007770.cpp.o
+       6](_ZN17UnkClass_02007770D2Ev,func) found in global src_UnkClass_02007770.cpp.o
+        7](_ZN17UnkClass_0200777012sub_020077B4Ev,func) found in global src_UnkClass_02007770.cpp.o
+         8](_ZN17UnkClass_0200777012sub_02007848Ev,func) found in global src_UnkClass_02007770.cpp.o
+         8](_ZN17UnkClass_0200777012sub_02007854Ev,func) found in global src_UnkClass_02007770.cpp.o
+       6](_ZN17UnkClass_02007770C1Ev,func) found in global src_UnkClass_02007770.cpp.o
+        7](_ZN17UnkClass_0200777012sub_02007798Ev,func) found in global src_UnkClass_02007770.cpp.o
+       6](_ZN17UnkClass_0200777012sub_020077E4EP9CNCERFile,func) found in global src_UnkClass_02007770.cpp.o
+        7](_ZN17UnkClass_0200777012sub_02007880EPK14NNSG2dCellData,func) found in global src_UnkClass_02007770.cpp.o
+       6](_ZN17UnkClass_0200777012sub_020077CCEP17UnkClass_020074D4,func) found in global src_UnkClass_02007770.cpp.o
        6](_ZN14CPrimitiveLINED1Ev,func) found in global src_primitive_CPrimitiveLINE.cpp.o
        6](_ZN14CPrimitiveLINEC1Ev,func) found in global src_primitive_CPrimitiveLINE.cpp.o
         7](_ZTV14CPrimitiveLINE,object) found in global src_primitive_CPrimitiveLINE.cpp.o
@@ -2707,9 +2730,9 @@
     3](G3X_Reset,func) found in global libgx.a
      4](G3X_ResetMtxStack,func) found in global libgx.a
     3](_Z12sub_020010F8v,func) found in local src_main.cpp.o
-    3](@12939,object) found in local src_main.cpp.o
     3](@12940,object) found in local src_main.cpp.o
     3](@12941,object) found in local src_main.cpp.o
+    3](@12942,object) found in local src_main.cpp.o
 
 # .main
 #>02000000          SDK_STATIC_START (linker command file)
@@ -3179,154 +3202,173 @@
   020072F8 00000000 .text   $a	(src_sub_02007254.cpp.o)
   0200732C 000001A8 .text   sub_0200732C(Point2D*, Circle*, Point2D*)	(src_sub_02007254.cpp.o)
   0200732C 00000000 .text   $a	(src_sub_02007254.cpp.o)
-  020074D4 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  020074D4 00000014 .text   sub_020074D4	(asm_arm9_020074D4.s.o)
-  020074D4 00001D14 .text   .text	(asm_arm9_020074D4.s.o)
-  020074E8 0000003C .text   sub_020074E8	(asm_arm9_020074D4.s.o)
-  02007524 00000024 .text   sub_02007524	(asm_arm9_020074D4.s.o)
-  02007548 00000014 .text   sub_02007548	(asm_arm9_020074D4.s.o)
-  0200755C 00000034 .text   sub_0200755C	(asm_arm9_020074D4.s.o)
-  02007590 0000003C .text   sub_02007590	(asm_arm9_020074D4.s.o)
-  0200763C 00000074 .text   sub_0200763C	(asm_arm9_020074D4.s.o)
-  020076B0 00000024 .text   sub_020076B0	(asm_arm9_020074D4.s.o)
-  020076E8 0000002C .text   sub_020076E8	(asm_arm9_020074D4.s.o)
-  02007714 00000030 .text   sub_02007714	(asm_arm9_020074D4.s.o)
-  02007738 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  02007744 0000002C .text   sub_02007744	(asm_arm9_020074D4.s.o)
-  02007744 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  02007770 00000014 .text   sub_02007770	(asm_arm9_020074D4.s.o)
-  02007784 00000014 .text   sub_02007784	(asm_arm9_020074D4.s.o)
-  02007798 0000001C .text   sub_02007798	(asm_arm9_020074D4.s.o)
-  020077B4 00000018 .text   sub_020077B4	(asm_arm9_020074D4.s.o)
-  020077CC 00000018 .text   sub_020077CC	(asm_arm9_020074D4.s.o)
-  020077E4 0000001C .text   sub_020077E4	(asm_arm9_020074D4.s.o)
-  02007848 0000000C .text   sub_02007848	(asm_arm9_020074D4.s.o)
-  02007854 00000020 .text   sub_02007854	(asm_arm9_020074D4.s.o)
-  02007880 00000020 .text   sub_02007880	(asm_arm9_020074D4.s.o)
-  020078E0 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  020078E4 00000058 .text   sub_020078E4	(asm_arm9_020074D4.s.o)
-  020078E4 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  020079B4 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  020079B8 00000078 .text   sub_020079B8	(asm_arm9_020074D4.s.o)
-  020079B8 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  02007A8C 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  02007A94 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  02007A94 00000010 .text   sub_02007A94	(asm_arm9_020074D4.s.o)
-  02007AA4 0000001C .text   sub_02007AA4	(asm_arm9_020074D4.s.o)
-  02007AC0 0000003C .text   sub_02007AC0	(asm_arm9_020074D4.s.o)
-  02007AFC 0000002C .text   sub_02007AFC	(asm_arm9_020074D4.s.o)
-  02007B28 00000014 .text   sub_02007B28	(asm_arm9_020074D4.s.o)
-  02007B3C 00000024 .text   sub_02007B3C	(asm_arm9_020074D4.s.o)
-  02007B60 0000003C .text   sub_02007B60	(asm_arm9_020074D4.s.o)
-  02007BAC 00000018 .text   sub_02007BAC	(asm_arm9_020074D4.s.o)
-  02007BC4 00000024 .text   sub_02007BC4	(asm_arm9_020074D4.s.o)
-  02007BFC 00000038 .text   sub_02007BFC	(asm_arm9_020074D4.s.o)
-  02007C34 00000030 .text   sub_02007C34	(asm_arm9_020074D4.s.o)
-  02007C58 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  02007C64 00000034 .text   sub_02007C64	(asm_arm9_020074D4.s.o)
-  02007C64 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  02007C98 00000010 .text   CScene::CScene[base]()	(asm_arm9_020074D4.s.o)
-  02007CA4 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  02007CA8 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  02007CA8 00000004 .text   sub_02007CA8	(asm_arm9_020074D4.s.o)
-  02007CAC 00000014 .text   sub_02007CAC	(asm_arm9_020074D4.s.o)
-  02007CC0 00000004 .text   sub_02007CC0	(asm_arm9_020074D4.s.o)
-  02007CC4 00000010 .text   sub_02007CC4	(asm_arm9_020074D4.s.o)
-  02007CD4 0000000C .text   sub_02007CD4	(asm_arm9_020074D4.s.o)
-  02007CDC 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  02007CE0 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  02007CE0 00000010 .text   sub_02007CE0	(asm_arm9_020074D4.s.o)
-  02007CF0 0000003C .text   sub_02007CF0	(asm_arm9_020074D4.s.o)
-  02007D28 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  02007D2C 0000003C .text   sub_02007D2C	(asm_arm9_020074D4.s.o)
-  02007D2C 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  02007D64 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  02007D68 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  02007D68 00000010 .text   sub_02007D68	(asm_arm9_020074D4.s.o)
-  02007D78 00000020 .text   sub_02007D78	(asm_arm9_020074D4.s.o)
-  02007D98 0000004C .text   sub_02007D98	(asm_arm9_020074D4.s.o)
-  02007DE4 0000000C .text   sub_02007DE4	(asm_arm9_020074D4.s.o)
-  02007DF0 00000030 .text   sub_02007DF0	(asm_arm9_020074D4.s.o)
-  02007F98 00000014 .text   sub_02007F98	(asm_arm9_020074D4.s.o)
-  02007FAC 00000030 .text   sub_02007FAC	(asm_arm9_020074D4.s.o)
-  02008014 00000010 .text   sub_02008014	(asm_arm9_020074D4.s.o)
-  02008024 00000008 .text   sub_02008024	(asm_arm9_020074D4.s.o)
-  0200802C 00000030 .text   sub_0200802C	(asm_arm9_020074D4.s.o)
-  0200805C 00000008 .text   sub_0200805C	(asm_arm9_020074D4.s.o)
-  02008064 00000024 .text   sub_02008064	(asm_arm9_020074D4.s.o)
-  02008104 0000006C .text   sub_02008104	(asm_arm9_020074D4.s.o)
-  02008170 00000014 .text   sub_02008170	(asm_arm9_020074D4.s.o)
-  020081E0 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  020081E4 00000034 .text   sub_020081E4	(asm_arm9_020074D4.s.o)
-  020081E4 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  0200827C 00000028 .text   sub_0200827C	(asm_arm9_020074D4.s.o)
-  02008584 00000020 .text   sub_02008584	(asm_arm9_020074D4.s.o)
-  020086B4 00000034 .text   sub_020086B4	(asm_arm9_020074D4.s.o)
-  02008708 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  0200870C 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  0200870C 00000008 .text   sub_0200870C	(asm_arm9_020074D4.s.o)
-  02008714 00000008 .text   sub_02008714	(asm_arm9_020074D4.s.o)
-  0200871C 00000008 .text   sub_0200871C	(asm_arm9_020074D4.s.o)
-  02008724 00000008 .text   sub_02008724	(asm_arm9_020074D4.s.o)
-  0200872C 00000008 .text   sub_0200872C	(asm_arm9_020074D4.s.o)
-  02008734 00000044 .text   sub_02008734	(asm_arm9_020074D4.s.o)
-  02008778 00000008 .text   sub_02008778	(asm_arm9_020074D4.s.o)
-  02008780 00000008 .text   sub_02008780	(asm_arm9_020074D4.s.o)
-  02008788 00000014 .text   sub_02008788	(asm_arm9_020074D4.s.o)
-  0200879C 0000002C .text   sub_0200879C	(asm_arm9_020074D4.s.o)
-  020087C8 00000018 .text   sub_020087C8	(asm_arm9_020074D4.s.o)
-  02008828 0000001C .text   sub_02008828	(asm_arm9_020074D4.s.o)
-  02008844 0000001C .text   sub_02008844	(asm_arm9_020074D4.s.o)
-  02008860 0000001C .text   sub_02008860	(asm_arm9_020074D4.s.o)
-  0200887C 00000068 .text   sub_0200887C	(asm_arm9_020074D4.s.o)
-  02008968 00000028 .text   sub_02008968	(asm_arm9_020074D4.s.o)
-  02008990 00000028 .text   sub_02008990	(asm_arm9_020074D4.s.o)
-  020089B8 00000018 .text   sub_020089B8	(asm_arm9_020074D4.s.o)
-  020089D0 0000001C .text   sub_020089D0	(asm_arm9_020074D4.s.o)
-  020089EC 00000018 .text   sub_020089EC	(asm_arm9_020074D4.s.o)
-  02008A38 00000020 .text   sub_02008A38	(asm_arm9_020074D4.s.o)
-  02008A58 00000028 .text   sub_02008A58	(asm_arm9_020074D4.s.o)
-  02008A80 00000058 .text   sub_02008A80	(asm_arm9_020074D4.s.o)
-  02008B80 0000005C .text   sub_02008B80	(asm_arm9_020074D4.s.o)
-  02008BF0 00000020 .text   sub_02008BF0	(asm_arm9_020074D4.s.o)
-  02008C6C 00000008 .text   sub_02008C6C	(asm_arm9_020074D4.s.o)
-  02008C74 00000040 .text   sub_02008C74	(asm_arm9_020074D4.s.o)
-  02008CD0 00000018 .text   sub_02008CD0	(asm_arm9_020074D4.s.o)
-  02008D20 00000018 .text   sub_02008D20	(asm_arm9_020074D4.s.o)
-  02008D38 00000018 .text   sub_02008D38	(asm_arm9_020074D4.s.o)
-  02008D50 0000002C .text   sub_02008D50	(asm_arm9_020074D4.s.o)
-  02008D7C 0000000C .text   sub_02008D7C	(asm_arm9_020074D4.s.o)
-  02008DB4 0000009C .text   sub_02008DB4	(asm_arm9_020074D4.s.o)
-  02008E34 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  02008E50 00000008 .text   sub_02008E50	(asm_arm9_020074D4.s.o)
-  02008E50 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  02008E58 00000010 .text   sub_02008E58	(asm_arm9_020074D4.s.o)
-  02008E68 00000020 .text   sub_02008E68	(asm_arm9_020074D4.s.o)
-  02008E88 00000038 .text   sub_02008E88	(asm_arm9_020074D4.s.o)
-  02008ED8 00000004 .text   sub_02008ED8	(asm_arm9_020074D4.s.o)
-  02008EDC 00000038 .text   sub_02008EDC	(asm_arm9_020074D4.s.o)
-  02008F74 00000000 .text   $d	(asm_arm9_020074D4.s.o)
-  02008F78 00000000 .text   $a	(asm_arm9_020074D4.s.o)
-  02008F78 00000008 .text   sub_02008F78	(asm_arm9_020074D4.s.o)
-  02008F80 00000008 .text   sub_02008F80	(asm_arm9_020074D4.s.o)
-  02008F88 00000008 .text   sub_02008F88	(asm_arm9_020074D4.s.o)
-  02008F90 00000008 .text   sub_02008F90	(asm_arm9_020074D4.s.o)
-  02008F98 00000010 .text   sub_02008F98	(asm_arm9_020074D4.s.o)
-  02008FA8 00000040 .text   sub_02008FA8	(asm_arm9_020074D4.s.o)
-  02009004 0000001C .text   sub_02009004	(asm_arm9_020074D4.s.o)
-  02009020 00000014 .text   sub_02009020	(asm_arm9_020074D4.s.o)
-  02009050 00000034 .text   sub_02009050	(asm_arm9_020074D4.s.o)
-  02009090 00000020 .text   sub_02009090	(asm_arm9_020074D4.s.o)
-  020090E8 0000000C .text   sub_020090E8	(asm_arm9_020074D4.s.o)
-  020090F4 0000000C .text   sub_020090F4	(asm_arm9_020074D4.s.o)
-  02009100 00000008 .text   sub_02009100	(asm_arm9_020074D4.s.o)
-  02009108 00000014 .text   sub_02009108	(asm_arm9_020074D4.s.o)
-  0200911C 00000008 .text   sub_0200911C	(asm_arm9_020074D4.s.o)
-  02009124 00000008 .text   sub_02009124	(asm_arm9_020074D4.s.o)
-  0200912C 00000020 .text   sub_0200912C	(asm_arm9_020074D4.s.o)
-  02009188 0000001C .text   sub_02009188	(asm_arm9_020074D4.s.o)
-  020091D4 00000008 .text   sub_020091D4	(asm_arm9_020074D4.s.o)
-  020091DC 0000000C .text   sub_020091DC	(asm_arm9_020074D4.s.o)
+  020074D4 00000014 .text   UnkClass_020074D4::UnkClass_020074D4()	(src_UnkClass_020074D4.cpp.o)
+  020074D4 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  020074E8 0000003C .text   UnkClass_020074D4::UnkClass_020074D4(const char*, unsigned long, unsigned long)	(src_UnkClass_020074D4.cpp.o)
+  020074E8 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  02007524 00000024 .text   UnkClass_020074D4::UnkClass_020074D4(NNSG2dCharacterData*)	(src_UnkClass_020074D4.cpp.o)
+  02007524 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  02007548 00000014 .text   UnkClass_020074D4::~UnkClass_020074D4[base]()	(src_UnkClass_020074D4.cpp.o)
+  02007548 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  0200755C 00000034 .text   UnkClass_020074D4::sub_0200755C()	(src_UnkClass_020074D4.cpp.o)
+  0200755C 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  02007590 000000AC .text   UnkClass_020074D4::sub_02007590(const char*, unsigned long, unsigned long, unsigned long)	(src_UnkClass_020074D4.cpp.o)
+  02007590 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  0200763C 00000074 .text   UnkClass_020074D4::sub_0200763C(NNSG2dCharacterData*)	(src_UnkClass_020074D4.cpp.o)
+  0200763C 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  020076B0 00000038 .text   UnkClass_020074D4::sub_020076B0()	(src_UnkClass_020074D4.cpp.o)
+  020076B0 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  020076E8 0000002C .text   UnkClass_020074D4::sub_020076E8(unsigned long)	(src_UnkClass_020074D4.cpp.o)
+  020076E8 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  02007714 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  02007714 00000030 .text   UnkClass_020074D4::sub_02007714(unsigned long)	(src_UnkClass_020074D4.cpp.o)
+  02007738 00000000 .text   $d	(src_UnkClass_020074D4.cpp.o)
+  02007744 0000002C .text   UnkClass_020074D4::sub_02007744(void*)	(src_UnkClass_020074D4.cpp.o)
+  02007744 00000000 .text   $a	(src_UnkClass_020074D4.cpp.o)
+  02007770 00000014 .text   UnkClass_02007770::UnkClass_02007770()	(src_UnkClass_02007770.cpp.o)
+  02007770 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  02007784 00000014 .text   UnkClass_02007770::~UnkClass_02007770[base]()	(src_UnkClass_02007770.cpp.o)
+  02007784 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  02007798 0000001C .text   UnkClass_02007770::sub_02007798()	(src_UnkClass_02007770.cpp.o)
+  02007798 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  020077B4 00000018 .text   UnkClass_02007770::sub_020077B4()	(src_UnkClass_02007770.cpp.o)
+  020077B4 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  020077CC 00000018 .text   UnkClass_02007770::sub_020077CC(UnkClass_020074D4*)	(src_UnkClass_02007770.cpp.o)
+  020077CC 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  020077E4 00000064 .text   UnkClass_02007770::sub_020077E4(CNCERFile*)	(src_UnkClass_02007770.cpp.o)
+  020077E4 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  02007848 0000000C .text   UnkClass_02007770::sub_02007848()	(src_UnkClass_02007770.cpp.o)
+  02007848 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  02007854 0000002C .text   UnkClass_02007770::sub_02007854()	(src_UnkClass_02007770.cpp.o)
+  02007854 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  02007880 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  02007880 00000064 .text   UnkClass_02007770::sub_02007880(const NNSG2dCellData*)	(src_UnkClass_02007770.cpp.o)
+  020078E0 00000000 .text   $d	(src_UnkClass_02007770.cpp.o)
+  020078E4 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  020078E4 000000D4 .text   UnkClass_02007770::sub_020078E4(unsigned short)	(src_UnkClass_02007770.cpp.o)
+  020079B4 00000000 .text   $d	(src_UnkClass_02007770.cpp.o)
+  020079B8 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  020079B8 000000DC .text   UnkClass_02007770::sub_020079B8(unsigned char*, unsigned char, unsigned char, unsigned short)	(src_UnkClass_02007770.cpp.o)
+  02007A8C 00000000 .text   $d	(src_UnkClass_02007770.cpp.o)
+  02007A94 00000010 .text   UnkClass_02007770::sub_02007A94(unsigned long)	(src_UnkClass_02007770.cpp.o)
+  02007A94 00000000 .text   $a	(src_UnkClass_02007770.cpp.o)
+  02007AA4 0000001C .text   sub_02007AA4	(asm_arm9_02007AA4.s.o)
+  02007AA4 00000000 .text   $a	(asm_arm9_02007AA4.s.o)
+  02007AA4 00001744 .text   .text	(asm_arm9_02007AA4.s.o)
+  02007AC0 0000003C .text   sub_02007AC0	(asm_arm9_02007AA4.s.o)
+  02007AFC 0000002C .text   sub_02007AFC	(asm_arm9_02007AA4.s.o)
+  02007B28 00000014 .text   sub_02007B28	(asm_arm9_02007AA4.s.o)
+  02007B3C 00000024 .text   sub_02007B3C	(asm_arm9_02007AA4.s.o)
+  02007B60 0000003C .text   sub_02007B60	(asm_arm9_02007AA4.s.o)
+  02007BAC 00000018 .text   sub_02007BAC	(asm_arm9_02007AA4.s.o)
+  02007BC4 00000024 .text   sub_02007BC4	(asm_arm9_02007AA4.s.o)
+  02007BFC 00000038 .text   sub_02007BFC	(asm_arm9_02007AA4.s.o)
+  02007C34 00000030 .text   sub_02007C34	(asm_arm9_02007AA4.s.o)
+  02007C58 00000000 .text   $d	(asm_arm9_02007AA4.s.o)
+  02007C64 00000034 .text   sub_02007C64	(asm_arm9_02007AA4.s.o)
+  02007C64 00000000 .text   $a	(asm_arm9_02007AA4.s.o)
+  02007C98 00000010 .text   CScene::CScene[base]()	(asm_arm9_02007AA4.s.o)
+  02007CA4 00000000 .text   $d	(asm_arm9_02007AA4.s.o)
+  02007CA8 00000000 .text   $a	(asm_arm9_02007AA4.s.o)
+  02007CA8 00000004 .text   sub_02007CA8	(asm_arm9_02007AA4.s.o)
+  02007CAC 00000014 .text   sub_02007CAC	(asm_arm9_02007AA4.s.o)
+  02007CC0 00000004 .text   sub_02007CC0	(asm_arm9_02007AA4.s.o)
+  02007CC4 00000010 .text   sub_02007CC4	(asm_arm9_02007AA4.s.o)
+  02007CD4 0000000C .text   sub_02007CD4	(asm_arm9_02007AA4.s.o)
+  02007CDC 00000000 .text   $d	(asm_arm9_02007AA4.s.o)
+  02007CE0 00000000 .text   $a	(asm_arm9_02007AA4.s.o)
+  02007CE0 00000010 .text   sub_02007CE0	(asm_arm9_02007AA4.s.o)
+  02007CF0 0000003C .text   sub_02007CF0	(asm_arm9_02007AA4.s.o)
+  02007D28 00000000 .text   $d	(asm_arm9_02007AA4.s.o)
+  02007D2C 0000003C .text   sub_02007D2C	(asm_arm9_02007AA4.s.o)
+  02007D2C 00000000 .text   $a	(asm_arm9_02007AA4.s.o)
+  02007D64 00000000 .text   $d	(asm_arm9_02007AA4.s.o)
+  02007D68 00000000 .text   $a	(asm_arm9_02007AA4.s.o)
+  02007D68 00000010 .text   sub_02007D68	(asm_arm9_02007AA4.s.o)
+  02007D78 00000020 .text   sub_02007D78	(asm_arm9_02007AA4.s.o)
+  02007D98 0000004C .text   sub_02007D98	(asm_arm9_02007AA4.s.o)
+  02007DE4 0000000C .text   sub_02007DE4	(asm_arm9_02007AA4.s.o)
+  02007DF0 00000030 .text   sub_02007DF0	(asm_arm9_02007AA4.s.o)
+  02007F98 00000014 .text   sub_02007F98	(asm_arm9_02007AA4.s.o)
+  02007FAC 00000030 .text   sub_02007FAC	(asm_arm9_02007AA4.s.o)
+  02008014 00000010 .text   sub_02008014	(asm_arm9_02007AA4.s.o)
+  02008024 00000008 .text   sub_02008024	(asm_arm9_02007AA4.s.o)
+  0200802C 00000030 .text   sub_0200802C	(asm_arm9_02007AA4.s.o)
+  0200805C 00000008 .text   sub_0200805C	(asm_arm9_02007AA4.s.o)
+  02008064 00000024 .text   sub_02008064	(asm_arm9_02007AA4.s.o)
+  02008104 0000006C .text   sub_02008104	(asm_arm9_02007AA4.s.o)
+  02008170 00000014 .text   sub_02008170	(asm_arm9_02007AA4.s.o)
+  020081E0 00000000 .text   $d	(asm_arm9_02007AA4.s.o)
+  020081E4 00000034 .text   sub_020081E4	(asm_arm9_02007AA4.s.o)
+  020081E4 00000000 .text   $a	(asm_arm9_02007AA4.s.o)
+  0200827C 00000028 .text   sub_0200827C	(asm_arm9_02007AA4.s.o)
+  02008584 00000020 .text   sub_02008584	(asm_arm9_02007AA4.s.o)
+  020086B4 00000034 .text   sub_020086B4	(asm_arm9_02007AA4.s.o)
+  02008708 00000000 .text   $d	(asm_arm9_02007AA4.s.o)
+  0200870C 00000000 .text   $a	(asm_arm9_02007AA4.s.o)
+  0200870C 00000008 .text   sub_0200870C	(asm_arm9_02007AA4.s.o)
+  02008714 00000008 .text   sub_02008714	(asm_arm9_02007AA4.s.o)
+  0200871C 00000008 .text   sub_0200871C	(asm_arm9_02007AA4.s.o)
+  02008724 00000008 .text   sub_02008724	(asm_arm9_02007AA4.s.o)
+  0200872C 00000008 .text   sub_0200872C	(asm_arm9_02007AA4.s.o)
+  02008734 00000044 .text   sub_02008734	(asm_arm9_02007AA4.s.o)
+  02008778 00000008 .text   sub_02008778	(asm_arm9_02007AA4.s.o)
+  02008780 00000008 .text   sub_02008780	(asm_arm9_02007AA4.s.o)
+  02008788 00000014 .text   sub_02008788	(asm_arm9_02007AA4.s.o)
+  0200879C 0000002C .text   sub_0200879C	(asm_arm9_02007AA4.s.o)
+  020087C8 00000018 .text   sub_020087C8	(asm_arm9_02007AA4.s.o)
+  02008828 0000001C .text   sub_02008828	(asm_arm9_02007AA4.s.o)
+  02008844 0000001C .text   sub_02008844	(asm_arm9_02007AA4.s.o)
+  02008860 0000001C .text   sub_02008860	(asm_arm9_02007AA4.s.o)
+  0200887C 00000068 .text   sub_0200887C	(asm_arm9_02007AA4.s.o)
+  02008968 00000028 .text   sub_02008968	(asm_arm9_02007AA4.s.o)
+  02008990 00000028 .text   sub_02008990	(asm_arm9_02007AA4.s.o)
+  020089B8 00000018 .text   sub_020089B8	(asm_arm9_02007AA4.s.o)
+  020089D0 0000001C .text   sub_020089D0	(asm_arm9_02007AA4.s.o)
+  020089EC 00000018 .text   sub_020089EC	(asm_arm9_02007AA4.s.o)
+  02008A38 00000020 .text   sub_02008A38	(asm_arm9_02007AA4.s.o)
+  02008A58 00000028 .text   sub_02008A58	(asm_arm9_02007AA4.s.o)
+  02008A80 00000058 .text   sub_02008A80	(asm_arm9_02007AA4.s.o)
+  02008B80 0000005C .text   sub_02008B80	(asm_arm9_02007AA4.s.o)
+  02008BF0 00000020 .text   sub_02008BF0	(asm_arm9_02007AA4.s.o)
+  02008C6C 00000008 .text   sub_02008C6C	(asm_arm9_02007AA4.s.o)
+  02008C74 00000040 .text   sub_02008C74	(asm_arm9_02007AA4.s.o)
+  02008CD0 00000018 .text   sub_02008CD0	(asm_arm9_02007AA4.s.o)
+  02008D20 00000018 .text   sub_02008D20	(asm_arm9_02007AA4.s.o)
+  02008D38 00000018 .text   sub_02008D38	(asm_arm9_02007AA4.s.o)
+  02008D50 0000002C .text   sub_02008D50	(asm_arm9_02007AA4.s.o)
+  02008D7C 0000000C .text   sub_02008D7C	(asm_arm9_02007AA4.s.o)
+  02008DB4 0000009C .text   sub_02008DB4	(asm_arm9_02007AA4.s.o)
+  02008E34 00000000 .text   $d	(asm_arm9_02007AA4.s.o)
+  02008E50 00000008 .text   sub_02008E50	(asm_arm9_02007AA4.s.o)
+  02008E50 00000000 .text   $a	(asm_arm9_02007AA4.s.o)
+  02008E58 00000010 .text   sub_02008E58	(asm_arm9_02007AA4.s.o)
+  02008E68 00000020 .text   sub_02008E68	(asm_arm9_02007AA4.s.o)
+  02008E88 00000038 .text   sub_02008E88	(asm_arm9_02007AA4.s.o)
+  02008ED8 00000004 .text   sub_02008ED8	(asm_arm9_02007AA4.s.o)
+  02008EDC 00000038 .text   sub_02008EDC	(asm_arm9_02007AA4.s.o)
+  02008F74 00000000 .text   $d	(asm_arm9_02007AA4.s.o)
+  02008F78 00000008 .text   sub_02008F78	(asm_arm9_02007AA4.s.o)
+  02008F78 00000000 .text   $a	(asm_arm9_02007AA4.s.o)
+  02008F80 00000008 .text   sub_02008F80	(asm_arm9_02007AA4.s.o)
+  02008F88 00000008 .text   sub_02008F88	(asm_arm9_02007AA4.s.o)
+  02008F90 00000008 .text   sub_02008F90	(asm_arm9_02007AA4.s.o)
+  02008F98 00000010 .text   sub_02008F98	(asm_arm9_02007AA4.s.o)
+  02008FA8 00000040 .text   sub_02008FA8	(asm_arm9_02007AA4.s.o)
+  02009004 0000001C .text   sub_02009004	(asm_arm9_02007AA4.s.o)
+  02009020 00000014 .text   sub_02009020	(asm_arm9_02007AA4.s.o)
+  02009050 00000034 .text   sub_02009050	(asm_arm9_02007AA4.s.o)
+  02009090 00000020 .text   sub_02009090	(asm_arm9_02007AA4.s.o)
+  020090E8 0000000C .text   sub_020090E8	(asm_arm9_02007AA4.s.o)
+  020090F4 0000000C .text   sub_020090F4	(asm_arm9_02007AA4.s.o)
+  02009100 00000008 .text   sub_02009100	(asm_arm9_02007AA4.s.o)
+  02009108 00000014 .text   sub_02009108	(asm_arm9_02007AA4.s.o)
+  0200911C 00000008 .text   sub_0200911C	(asm_arm9_02007AA4.s.o)
+  02009124 00000008 .text   sub_02009124	(asm_arm9_02007AA4.s.o)
+  0200912C 00000020 .text   sub_0200912C	(asm_arm9_02007AA4.s.o)
+  02009188 0000001C .text   sub_02009188	(asm_arm9_02007AA4.s.o)
+  020091D4 00000008 .text   sub_020091D4	(asm_arm9_02007AA4.s.o)
+  020091DC 0000000C .text   sub_020091DC	(asm_arm9_02007AA4.s.o)
   020091E8 00000000 .text   $a	(src_UnkClass_020091E8.cpp.o)
   020091E8 0000008C .text   UnkClass_020091E8::UnkClass_020091E8()	(src_UnkClass_020091E8.cpp.o)
   02009270 00000000 .text   $d	(src_UnkClass_020091E8.cpp.o)
@@ -3445,7 +3487,7 @@
   0200B6A4 00000000 .text   $a	(src_UnkClass_020091E8.cpp.o)
   0200B6D4 00000010 .text   UnkClass_020091E8::sub_0200B6D4()	(src_UnkClass_020091E8.cpp.o)
   0200B6D4 00000000 .text   $a	(src_UnkClass_020091E8.cpp.o)
-  0200B6E4 00000030 .text   UnkClass_020091E8::sub_0200B6E4()	(src_UnkClass_020091E8.cpp.o)
+  0200B6E4 00000030 .text   UnkClass_020091E8::sub_0200B6E4(void*)	(src_UnkClass_020091E8.cpp.o)
   0200B6E4 00000000 .text   $a	(src_UnkClass_020091E8.cpp.o)
   0200B714 00000030 .text   UnkClass_0200BBC0::sub_0200B714(CGame_0024*)	(src_UnkClass_0200BBC0.cpp.o)
   0200B714 00000000 .text   $a	(src_UnkClass_0200BBC0.cpp.o)
@@ -3701,7 +3743,7 @@
   0201002C 0000002C .text   sub_0201002C	(asm_arm9_0200FA0C.s.o)
   020100E0 00000000 .text   $d	(asm_arm9_0200FA0C.s.o)
   020100E4 00000000 .text   $a	(asm_arm9_0200FA0C.s.o)
-  020100E4 00000008 .text   CGame::sub_020100E4(void(*)(), unsigned long)	(asm_arm9_0200FA0C.s.o)
+  020100E4 00000008 .text   CGame::sub_020100E4(void(*)(void*), void*)	(asm_arm9_0200FA0C.s.o)
   02010124 00000054 .text   sub_02010124	(asm_arm9_0200FA0C.s.o)
   02010178 00000020 .text   sub_02010178	(asm_arm9_0200FA0C.s.o)
   020101A8 0000000C .text   sub_020101A8	(asm_arm9_0200FA0C.s.o)
@@ -11704,9 +11746,9 @@
 #>0208A37C          SDK_STATIC_SINIT_END (linker command file)
 #>0208A380          SDK_STATIC_TEXT_END (linker command file)
 #>0208A380          SDK_STATIC_DATA_START (linker command file)
-  0208A380 0000000D .data   @12939	(src_main.cpp.o)
-  0208A390 0000000D .data   @12940	(src_main.cpp.o)
-  0208A3A0 00000016 .data   @12941	(src_main.cpp.o)
+  0208A380 0000000D .data   @12940	(src_main.cpp.o)
+  0208A390 0000000D .data   @12941	(src_main.cpp.o)
+  0208A3A0 00000016 .data   @12942	(src_main.cpp.o)
   0208A3B8 00000000 .data   .data	(src_overlay_manager.cpp.o)
   0208A3B8 00000004 .data   s_currentOverlayID	(src_overlay_manager.cpp.o)
   0208A3BC 00000008 .data   typeinfo structure for CTouchPanel	(src_CTouchPanel.cpp.o)
@@ -11720,28 +11762,28 @@
   0208A438 00000015 .data   @12910	(src_UnkClass_020023EC.cpp.o)
   0208A450 00000015 .data   @12911	(src_UnkClass_020023EC.cpp.o)
   0208A468 00000015 .data   @12912	(src_UnkClass_020023EC.cpp.o)
-  0208A480 00000001 .data   @12886	(src_file_CBinaryFile.cpp.o)
-  0208A484 00000005 .data   @12891	(src_file_CBinaryFile.cpp.o)
-  0208A48C 00000005 .data   @12889	(src_file_CBinaryFile.cpp.o)
-  0208A494 00000005 .data   @12890	(src_file_CBinaryFile.cpp.o)
-  0208A49C 00000005 .data   @12888	(src_file_CBinaryFile.cpp.o)
-  0208A4A4 00000005 .data   @12887	(src_file_CBinaryFile.cpp.o)
-  0208A4AC 00000008 .data   @12882	(src_file_CBinaryFile.cpp.o)
-  0208A4B4 00000008 .data   @12883	(src_file_CBinaryFile.cpp.o)
+  0208A480 00000001 .data   @12887	(src_file_CBinaryFile.cpp.o)
+  0208A484 00000005 .data   @12892	(src_file_CBinaryFile.cpp.o)
+  0208A48C 00000005 .data   @12890	(src_file_CBinaryFile.cpp.o)
+  0208A494 00000005 .data   @12891	(src_file_CBinaryFile.cpp.o)
+  0208A49C 00000005 .data   @12889	(src_file_CBinaryFile.cpp.o)
+  0208A4A4 00000005 .data   @12888	(src_file_CBinaryFile.cpp.o)
+  0208A4AC 00000008 .data   @12883	(src_file_CBinaryFile.cpp.o)
+  0208A4B4 00000008 .data   @12884	(src_file_CBinaryFile.cpp.o)
   0208A4BC 00000008 .data   typeinfo structure for CBinaryFile	(src_file_CBinaryFile.cpp.o)
-  0208A4C4 00000008 .data   @12885	(src_file_CBinaryFile.cpp.o)
-  0208A4CC 00000008 .data   @12884	(src_file_CBinaryFile.cpp.o)
-  0208A4D4 00000008 .data   @12880	(src_file_CBinaryFile.cpp.o)
-  0208A4DC 00000008 .data   @12881	(src_file_CBinaryFile.cpp.o)
+  0208A4C4 00000008 .data   @12886	(src_file_CBinaryFile.cpp.o)
+  0208A4CC 00000008 .data   @12885	(src_file_CBinaryFile.cpp.o)
+  0208A4D4 00000008 .data   @12881	(src_file_CBinaryFile.cpp.o)
+  0208A4DC 00000008 .data   @12882	(src_file_CBinaryFile.cpp.o)
   0208A4E4 0000000C .data   typeinfo structure for CBinaryFileMes	(src_file_CBinaryFile.cpp.o)
   0208A4F0 0000000E .data   typeinfo name for CBinaryFile	(src_file_CBinaryFile.cpp.o)
   0208A500 00000010 .data   virtual table for CBinaryFileMes	(src_file_CBinaryFile.cpp.o)
   0208A510 00000010 .data   virtual table for CBinaryFile	(src_file_CBinaryFile.cpp.o)
   0208A520 00000011 .data   typeinfo name for CBinaryFileMes	(src_file_CBinaryFile.cpp.o)
   0208A534 00000000 .data   .data	(src_file_CBinaryFile.cpp.o)
-  0208A534 00000030 .data   DAT_0208A538$12879	(src_file_CBinaryFile.cpp.o)
-  0208A564 00000001 .data   @13054	(src_file_CBinaryFile.cpp.o)
-  0208A568 00000005 .data   @13121	(src_file_CBinaryFile.cpp.o)
+  0208A534 00000030 .data   DAT_0208A538$12880	(src_file_CBinaryFile.cpp.o)
+  0208A564 00000001 .data   @13055	(src_file_CBinaryFile.cpp.o)
+  0208A568 00000005 .data   @13122	(src_file_CBinaryFile.cpp.o)
   0208A570 0000000B .data   typeinfo name for CNCERFile	(src_file_CNCERFile.cpp.o)
   0208A57C 0000000C .data   typeinfo structure for CNCERFile	(src_file_CNCERFile.cpp.o)
   0208A588 00000010 .data   virtual table for CNCERFile	(src_file_CNCERFile.cpp.o)
